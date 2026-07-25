@@ -1,0 +1,138 @@
+# Peng'im (潮州話拼音方案) orthography.
+#
+# This file defines the ORTHOGRAPHY only — which letter sequences are well-formed
+# Peng'im. Phonetic realisation is per-variety and lives in varieties/*.yaml,
+# because Teochew varieties differ substantially (e.g. 潮 is [tie] in Chaozhou
+# city but [tio] in Shantou).
+#
+# Peng'im is the source of truth for every entry in this dictionary. IPA and POJ
+# are DERIVED. Hand-written IPA/POJ overrides are permitted per reading for
+# irregular forms, but should be rare and must carry a `note`.
+#
+# Scheme: 廣東省教育廳《潮州話拼音方案》(1960).
+
+scheme:
+  id: pengim
+  name: Peng'im
+  name_zh: 潮州話拼音方案
+  year: 1960
+  authority: 廣東省教育廳
+
+# ─── Syllable shape ────────────────────────────────────────────────────────────
+#
+#   syllable := initial? final tone
+#   final    := medial? nucleus nasalisation? coda?
+#
+# Notes on parsing ambiguity, encoded here so the parser and the docs cannot
+# drift apart:
+#
+#  * Initials are matched LONGEST-FIRST: `bh`, `gh`, `ng` before `b`, `g`, `n`.
+#  * Teochew has no /n/ coda (it merged with /ŋ/). Therefore a final-position
+#    `n` that is NOT part of `ng` marks NASALISATION of the preceding vowel:
+#        in  → nasalised /ĩ/       ing → /iŋ/ (velar coda)
+#        uan → nasalised /uã/      uang → /uaŋ/
+#  * `m` and `ng` may stand alone as syllabic nasals (毋 m6, 黃 ng5).
+
+syllable:
+  nasalisation_marker: n
+  syllabic_nuclei: [m, ng]
+  # Tones 4 and 8 are the "checked" (入聲) tones and occur ONLY with a stop coda.
+  # All other tones occur ONLY without one. The validator enforces this.
+  checked_codas: [b, g, d, h]
+
+# ─── Initials 聲母 ─────────────────────────────────────────────────────────────
+# 17 consonantal initials plus the zero initial.
+
+initials:
+  - { pengim: b,  example: 波, example_pengim: bo1 }
+  - { pengim: p,  example: 頗, example_pengim: po1 }
+  - { pengim: bh, example: 無, example_pengim: bho5 }
+  - { pengim: m,  example: 毛, example_pengim: mo5 }
+  - { pengim: d,  example: 多, example_pengim: do1 }
+  - { pengim: t,  example: 拖, example_pengim: to1 }
+  - { pengim: n,  example: 挪, example_pengim: no5 }
+  - { pengim: l,  example: 羅, example_pengim: lo5 }
+  - { pengim: g,  example: 哥, example_pengim: go1 }
+  - { pengim: k,  example: 戈, example_pengim: ko1 }
+  - { pengim: gh, example: 鵝, example_pengim: gho5 }
+  - { pengim: ng, example: 我, example_pengim: ngo2 }
+  - { pengim: h,  example: 何, example_pengim: ho5 }
+  - { pengim: z,  example: 之, example_pengim: zi1 }
+  - { pengim: c,  example: 徐, example_pengim: cu5 }
+  - { pengim: s,  example: 思, example_pengim: se1 }
+  - { pengim: r,  example: 而, example_pengim: ri5 }
+
+zero_initial: true
+
+# ─── Final components ──────────────────────────────────────────────────────────
+
+medials: [i, u]
+
+# Nuclei are matched longest-first so that digraphs (`ou`, `oi`, `ai`, `ao`,
+# `ê`) win over their prefixes.
+nuclei:
+  - ou
+  - oi
+  - ai
+  - ao
+  - ê
+  - a
+  - e
+  - i
+  - o
+  - u
+
+# Peng'im writes the stop codas with the SAME letters it uses for the unaspirated
+# initials — `-b` /p̚/, `-g` /k̚/, `-d` /t̚/ — not with p/t/k. So 十 is `zab8`,
+# 六 is `lag8`, 一 is `zêg8`. Transcriptions borrowed from Hokkien POJ often get
+# this wrong.
+#
+# `-d` /t̚/ is listed for completeness but is vestigial: Teochew merged the /-t/
+# coda away, so it appears at most in some literary readings.
+codas: [m, ng, b, g, d, h]
+
+# ─── Tones 聲調 ────────────────────────────────────────────────────────────────
+# `contour` is the Chao tone-letter value for the CITATION form in the reference
+# variety (Chaozhou). Per-variety contours may override these.
+
+tones:
+  - number: 1
+    name_zh: 陰平
+    name: dark level
+    contour: "33"
+    checked: false
+  - number: 2
+    name_zh: 陰上
+    name: dark rising
+    contour: "53"
+    checked: false
+  - number: 3
+    name_zh: 陰去
+    name: dark departing
+    contour: "213"
+    checked: false
+  - number: 4
+    name_zh: 陰入
+    name: dark entering
+    contour: "2"
+    checked: true
+  - number: 5
+    name_zh: 陽平
+    name: light level
+    contour: "55"
+    checked: false
+  - number: 6
+    name_zh: 陽上
+    name: light rising
+    contour: "35"
+    checked: false
+  - number: 7
+    name_zh: 陽去
+    name: light departing
+    contour: "11"
+    checked: false
+  - number: 8
+    name_zh: 陽入
+    name: light entering
+    contour: "4"
+    checked: true

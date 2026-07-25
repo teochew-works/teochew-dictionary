@@ -1,0 +1,39 @@
+# Shantou (汕頭) — a sparse OVERLAY on the Chaozhou reference variety.
+#
+# Only differences are listed; anything absent is inherited from chaozhou.yaml.
+# Keeping the overlay minimal is the point: the file doubles as a readable
+# statement of how the two varieties actually differ.
+
+variety:
+  id: shantou
+  name: Shantou
+  name_zh: 汕頭話
+  region: 汕頭市, Guangdong
+  inherits: chaozhou
+
+nuclei:
+  # The defining Shantou merger: Chaozhou /ɯ/ is realised as /u/.
+  e:
+    ipa: u
+    confidence: medium
+    note: >-
+      Shantou merges the Chaozhou high back unrounded /ɯ/ into /u/. This is the
+      most audible single difference between the two varieties.
+
+irregular:
+  # Chaozhou overrides these rimes to the fronted [ie] forms, so Shantou must
+  # override them back — an overlay can add or replace keys, never delete them.
+  io:
+    ipa: io
+    confidence: medium
+    note: "Shantou keeps [io] where Chaozhou fronts to [ie]."
+  ioh:
+    ipa: ioʔ
+    confidence: medium
+  iong:
+    ipa: ioŋ
+    confidence: medium
+
+tones:
+  # Shantou is commonly described with a higher dark-rising than Chaozhou.
+  2: "52"

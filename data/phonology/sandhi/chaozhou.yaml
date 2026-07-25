@@ -1,0 +1,39 @@
+# Tone sandhi 變調 — Chaozhou.
+#
+# ⚠️  needs_review: true — see ../REVIEW.md
+#
+# Teochew has pervasive tone sandhi: in a connected tone group, every syllable
+# EXCEPT the last surfaces with a changed tone. The final syllable keeps its
+# citation tone. This makes the citation tone recoverable, which is why entries
+# store citation tones and sandhi is computed rather than stored.
+#
+# Reported sandhi values differ noticeably between descriptions and between
+# speakers. The table below follows the pattern most commonly given for Chaozhou.
+# It is deliberately DATA rather than code: correcting it is a one-file edit and
+# requires no changes to the sandhi engine.
+
+sandhi:
+  id: chaozhou
+  variety: chaozhou
+  needs_review: true
+  scope: >-
+    Applies to every non-final syllable of a tone group. This implementation
+    treats a multi-syllable dictionary headword as a single tone group, which is
+    correct for compounds but does not model phrase-level regrouping.
+
+# citation tone → tone surfacing in non-final position.
+# `to` is the resulting tone NUMBER; `contour` records the surface contour, which
+# is not always identical to that tone's own citation contour.
+rules:
+  1: { to: 1, contour: "23", note: "33 → 23" }
+  2: { to: 6, contour: "35", note: "53 → 35" }
+  3: { to: 2, contour: "53", note: "213 → 53" }
+  4: { to: 8, contour: "5",  note: "checked; 2 → 5" }
+  5: { to: 7, contour: "11", note: "55 → 11" }
+  6: { to: 7, contour: "31", note: "35 → 31" }
+  7: { to: 7, contour: "11", note: "unchanged" }
+  8: { to: 4, contour: "2",  note: "checked; 4 → 2" }
+
+# Syllables that resist sandhi, keyed by Peng'im (no tone). Empty for now;
+# populate as exceptions are confirmed.
+exceptions: {}

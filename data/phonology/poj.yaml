@@ -1,0 +1,84 @@
+# Peng'im → Pe̍h-ōe-jī (Teochew POJ / "Gaginang" style).
+#
+# POJ is the diacritic-based Southern Min romanisation familiar to Hokkien
+# readers and to much of the diaspora. This is a pure ORTHOGRAPHIC
+# transliteration from Peng'im — it introduces no new phonological claims, so it
+# is variety-independent.
+
+scheme:
+  id: poj
+  name: Pe̍h-ōe-jī (Teochew)
+  name_zh: 白話字
+
+initials:
+  b: p
+  p: ph
+  bh: b
+  m: m
+  d: t
+  t: th
+  n: n
+  l: l
+  g: k
+  k: kh
+  gh: g
+  ng: ng
+  h: h
+  z: ts
+  c: tsh
+  s: s
+  r: j
+
+medials:
+  i: i
+  u: u
+
+nuclei:
+  a: a
+  ê: e      # Peng'im ê /e/ → POJ e
+  e: ur     # Peng'im e /ɯ/ → POJ ur (also written ṳ; see `alternates`)
+  i: i
+  o: o
+  u: u
+  ai: ai
+  ao: au    # POJ writes the /au/ diphthong `au`, not `ao`
+  oi: oi
+  ou: o͘     # o with a dot above right (U+0358)
+
+# POJ uses p/t/k for the stop codas where Peng'im uses b/g/d, so this is a real
+# re-spelling, not an identity mapping.
+codas:
+  m: m
+  ng: ng
+  b: p
+  g: k
+  d: t
+  h: h
+
+# Nasalisation is a superscript n in POJ, written after the whole rime.
+nasalisation: "ⁿ"
+
+# Tone diacritics, applied to the syllable's tone-bearing vowel.
+# Tones 1 and 4 are unmarked; 4 vs 1 is distinguished by the stop coda.
+tones:
+  1: { combining: "",  name: unmarked }
+  2: { combining: "́", name: acute }           # U+0301
+  3: { combining: "̀", name: grave }           # U+0300
+  4: { combining: "",  name: unmarked-checked }
+  5: { combining: "̂", name: circumflex }      # U+0302
+  6: { combining: "̌", name: caron }           # U+030C
+  7: { combining: "̄", name: macron }          # U+0304
+  8: { combining: "̍", name: vertical-line }   # U+030D
+
+# Which vowel in the rime carries the tone mark, in priority order. The first
+# vowel present in the rime wins. This is the standard POJ placement rule.
+tone_vowel_priority: [a, o, e, u, i, m, n]
+
+alternates:
+  # Accepted alternative spellings that some sources use. Emitted only on request.
+  nuclei:
+    e: ["ṳ"]
+    ou: ["oo"]
+  initials:
+    z: ["ch"]
+    c: ["chh"]

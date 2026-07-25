@@ -1,0 +1,122 @@
+# Chaozhou city (潮州市) — the reference variety for this dictionary.
+#
+# Maps Peng'im orthography onto IPA. Every mapping carries a `confidence` so that
+# derived IPA can be trusted selectively: `high` mappings are well attested across
+# descriptions; `medium` and `low` ones vary between sources and deserve a
+# specialist's eye before being cited as authoritative.
+#
+# See ../REVIEW.md for the open questions.
+
+variety:
+  id: chaozhou
+  name: Chaozhou
+  name_zh: 潮州話
+  region: 潮州市, Guangdong
+  reference: true
+
+initials:
+  b:  { ipa: p,   confidence: high }
+  p:  { ipa: pʰ,  confidence: high }
+  bh: { ipa: b,   confidence: high }
+  m:  { ipa: m,   confidence: high }
+  d:  { ipa: t,   confidence: high }
+  t:  { ipa: tʰ,  confidence: high }
+  n:  { ipa: n,   confidence: high }
+  l:  { ipa: l,   confidence: high }
+  g:  { ipa: k,   confidence: high }
+  k:  { ipa: kʰ,  confidence: high }
+  gh: { ipa: ɡ,   confidence: high }
+  ng: { ipa: ŋ,   confidence: high }
+  h:  { ipa: h,   confidence: high }
+  z:  { ipa: ts,  confidence: high }
+  c:  { ipa: tsʰ, confidence: high }
+  s:  { ipa: s,   confidence: high }
+  r:
+    ipa: dz
+    confidence: medium
+    note: >-
+      Realised [dz] ~ [z] ~ [l] depending on speaker and register; many younger
+      speakers merge it with /l/.
+
+medials:
+  i: { ipa: i, confidence: high }
+  u: { ipa: u, confidence: high }
+
+nuclei:
+  a: { ipa: a, confidence: high }
+  i: { ipa: i, confidence: high }
+  o: { ipa: o, confidence: high }
+  u: { ipa: u, confidence: high }
+  ê:
+    ipa: e
+    confidence: medium
+    note: >-
+      Peng'im writes the front mid vowel /e/ with the circumflex `ê`, reserving
+      bare `e` for the high back unrounded /ɯ/. Sources that drop the circumflex
+      conflate the two — a frequent source of transcription error.
+  e:
+    ipa: ɯ
+    confidence: medium
+    note: >-
+      The high back unrounded vowel. Present in Chaozhou and Jieyang; merged into
+      /u/ in Shantou (see shantou.yaml).
+  ai: { ipa: ai, confidence: high }
+  ao: { ipa: au, confidence: high }
+  oi: { ipa: oi, confidence: medium }
+  ou: { ipa: ou, confidence: medium }
+
+codas:
+  m:  { ipa: m, confidence: high }
+  ng: { ipa: ŋ, confidence: high }
+  h:  { ipa: ʔ, confidence: high }
+  b:
+    ipa: p̚
+    confidence: high
+    note: "Peng'im spells the /p̚/ coda as -b (十 zab8)."
+  g:
+    ipa: k̚
+    confidence: high
+    note: "Peng'im spells the /k̚/ coda as -g (六 lag8)."
+  d:
+    ipa: t̚
+    confidence: low
+    note: >-
+      Vestigial. Teochew merged the /-t/ coda away; retained only for the
+      occasional literary reading.
+
+# Applied to the nucleus (and any medial) when the nasalisation marker is present.
+nasalisation:
+  combining: "̃"   # U+0303 COMBINING TILDE
+  confidence: high
+
+# Citation-form tone contours. Overrides pengim.yaml when present.
+tones:
+  1: "33"
+  2: "53"
+  3: "213"
+  4: "2"
+  5: "55"
+  6: "35"
+  7: "11"
+  8: "4"
+
+# Whole-rime realisations that the compositional rules above do not predict.
+# Keyed by Peng'im RIME (medial + nucleus + nasal marker + coda), without tone.
+irregular:
+  # Chaozhou city fronts the `io` rime to [ie] where Shantou keeps [io]. This is
+  # the difference in 潮 dio5: [tie⁵⁵] here, [tio⁵⁵] in Shantou. Composition
+  # would give [io], so the reference variety carries the override and Shantou
+  # inherits it back.
+  io:
+    ipa: ie
+    confidence: medium
+    note: "Chaozhou [ie] ~ Shantou [io] (潮 dio5)."
+  ioh:
+    ipa: ieʔ
+    confidence: medium
+  iong:
+    ipa: ieŋ
+    confidence: low
+    note: >-
+      Whether the fronting extends to the nasal-coda rime is less clearly
+      attested than for the open rime. Verify before citing.
