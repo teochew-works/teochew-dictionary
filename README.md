@@ -195,17 +195,18 @@ candidates are reported rather than imported.
 
 ## Licensing
 
-Intended split, **not yet formalised — no LICENSE files are committed**:
+**[BSD 3-Clause](LICENSE)** — covering both the tooling in `src/` and the
+hand-curated lexicon in `data/`.
 
-| | |
-|---|---|
-| `src/` | permissive (MIT or similar) |
-| `data/entries/` (seed) | CC0-1.0 — marked as such in `data/sources.yaml` |
-| Anything merged from Wiktionary / CC-CEDICT | CC-BY-SA-4.0, share-alike |
+One caveat that will matter later. The importers pull from **Wiktionary and
+CC-CEDICT, which are CC-BY-SA-4.0** — a share-alike licence that is *not*
+compatible with redistributing the result under BSD-3-Clause alone. Merging any
+of their glosses would place those entries under share-alike terms and force a
+relicensing decision on the dataset as a whole.
 
-Because the third row is contagious, decide the policy *before* merging any
-imported glosses. Per-entry `sources` already tracks which entries would be
-affected.
+This is why importers write to `data/staging/` and never to `data/entries/`, and
+why every entry records its `sources`. Nothing imported has been merged, so the
+question is still open rather than already answered by accident.
 
 ---
 

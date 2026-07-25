@@ -8,7 +8,7 @@
 sources:
   - id: seed
     name: Hand-curated seed set
-    licence: CC0-1.0
+    licence: BSD-3-Clause
     note: >-
       Written by hand to bootstrap the dataset and exercise the tooling
       end to end. Core everyday vocabulary where forms are widely agreed.
