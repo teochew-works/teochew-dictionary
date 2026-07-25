@@ -1,0 +1,73 @@
+# Place names and the language's own names 地名.
+
+entries:
+  - id: dio5-ziu1-潮州
+    headword: 潮州
+    readings:
+      - pengim: dio5 ziu1
+        variety: chaozhou
+      - pengim: dio5 ziu1
+        variety: shantou
+        note: >-
+          Same spelling, different realisation: [tie⁵⁵ tsiu³³] in Chaozhou city
+          against [tio⁵⁵ tsiu³³] in Shantou. The derived IPA differs by variety
+          while the Peng'im does not.
+    senses:
+      - pos: proper-noun
+        gloss_en: [Chaozhou, Teochew]
+        gloss_zh: [潮州]
+        note: A prefecture-level city in eastern Guangdong, and the region it names.
+    tags: [placename]
+    frequency: 5
+    sources: [seed]
+
+  - id: dio5-ziu1-ue6-潮州話
+    headword: 潮州話
+    readings:
+      - pengim: dio5 ziu1 uê6
+    senses:
+      - pos: proper-noun
+        gloss_en: [the Teochew language, Chaozhou dialect]
+        gloss_zh: [潮州話]
+    tags: [language]
+    frequency: 5
+    sources: [seed]
+
+  - id: suan1-tao5-汕頭
+    headword: 汕頭
+    readings:
+      - pengim: suan1 tao5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Shantou, Swatow]
+        gloss_zh: [汕頭]
+        note: >-
+          The port city; "Swatow" is the older romanisation, still current in
+          diaspora usage.
+    tags: [placename]
+    frequency: 5
+    sources: [seed]
+
+  - id: dong1-gog4-中國
+    headword: 中國
+    readings:
+      - pengim: dong1 gog4
+    senses:
+      - pos: proper-noun
+        gloss_en: [China]
+        gloss_zh: [中國]
+    tags: [placename]
+    frequency: 4
+    sources: [seed]
+
+  - id: cu3-厝
+    headword: 厝
+    readings:
+      - pengim: cu3
+    senses:
+      - pos: noun
+        gloss_en: [house, home]
+        gloss_zh: [房子, 家]
+        note: Teochew uses 厝 where Mandarin uses 房子 or 家.
+    frequency: 5
+    sources: [seed]

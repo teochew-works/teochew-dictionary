@@ -1,0 +1,187 @@
+# Food and drink 食物.
+#
+# A dense area of everyday Teochew vocabulary, and one where the colloquial
+# stratum diverges most sharply from Mandarin — 糜 for congee, 粿 for the whole
+# family of rice-flour cakes.
+
+entries:
+  - id: bng6-飯
+    headword: 飯
+    readings:
+      - pengim: bng6
+    senses:
+      - pos: noun
+        gloss_en: [cooked rice, a meal]
+        gloss_zh: [飯]
+        examples:
+          - hanzi: 食飯
+            pengim: ziah8 bng6
+            en: to eat a meal
+    frequency: 5
+    sources: [seed]
+
+  - id: mue5-糜
+    headword: 糜
+    readings:
+      - pengim: muê5
+    senses:
+      - pos: noun
+        gloss_en: [congee, rice porridge]
+        gloss_zh: [粥]
+        note: >-
+          The everyday Teochew breakfast staple. Mandarin 粥 corresponds, but 糜
+          is the character used in Teochew writing.
+    frequency: 5
+    sources: [seed]
+
+  - id: de5-茶
+    headword: 茶
+    readings:
+      - pengim: dê5
+    senses:
+      - pos: noun
+        gloss_en: [tea]
+        gloss_zh: [茶]
+        examples:
+          - hanzi: 食茶
+            pengim: ziah8 dê5
+            en: to drink tea
+            note: Teochew uses 食 for drinking tea, not 啉.
+    frequency: 5
+    sources: [seed]
+
+  - id: zui2-水
+    headword: 水
+    readings:
+      - pengim: zui2
+    senses:
+      - pos: noun
+        gloss_en: [water]
+        gloss_zh: [水]
+    frequency: 5
+    sources: [seed]
+
+  - id: he5-魚
+    headword: 魚
+    readings:
+      - pengim: he5
+    senses:
+      - pos: noun
+        gloss_en: [fish]
+        gloss_zh: [魚]
+    frequency: 5
+    sources: [seed]
+
+  - id: neg8-肉
+    headword: 肉
+    readings:
+      - pengim: nêg8
+    senses:
+      - pos: noun
+        gloss_en: [meat, flesh]
+        gloss_zh: [肉]
+    frequency: 5
+    sources: [seed]
+
+  - id: cai3-菜
+    headword: 菜
+    readings:
+      - pengim: cai3
+    senses:
+      - pos: noun
+        gloss_en: [vegetable, dish of food]
+        gloss_zh: [菜]
+    frequency: 5
+    sources: [seed]
+
+  - id: gue2-粿
+    headword: 粿
+    readings:
+      - pengim: guê2
+    senses:
+      - pos: noun
+        gloss_en: [rice cake, steamed or fried rice-flour cake]
+        gloss_zh: [粿]
+        note: >-
+          A whole category of Teochew foods rather than a single item
+          (紅桃粿, 菜頭粿, 鼠麴粿).
+    frequency: 5
+    sources: [seed]
+
+  - id: bhi2-米
+    headword: 米
+    readings:
+      - pengim: bhi2
+    senses:
+      - pos: noun
+        gloss_en: [uncooked rice]
+        gloss_zh: [米]
+    frequency: 4
+    needs_review: true
+    sources: [seed]
+
+  - id: tng5-糖
+    headword: 糖
+    readings:
+      - pengim: tng5
+    senses:
+      - pos: noun
+        gloss_en: [sugar, sweets]
+        gloss_zh: [糖]
+    frequency: 4
+    sources: [seed]
+
+  - id: iam5-鹽
+    headword: 鹽
+    readings:
+      - pengim: iam5
+    senses:
+      - pos: noun
+        gloss_en: [salt]
+        gloss_zh: [鹽]
+    frequency: 4
+    sources: [seed]
+
+  - id: de1-豬
+    headword: 豬
+    readings:
+      - pengim: de1
+    senses:
+      - pos: noun
+        gloss_en: [pig, pork]
+        gloss_zh: [豬]
+    frequency: 4
+    sources: [seed]
+
+  - id: goi1-雞
+    headword: 雞
+    readings:
+      - pengim: goi1
+    senses:
+      - pos: noun
+        gloss_en: [chicken]
+        gloss_zh: [雞]
+    frequency: 4
+    sources: [seed]
+
+  - id: nng6-卵
+    headword: 卵
+    readings:
+      - pengim: nng6
+    senses:
+      - pos: noun
+        gloss_en: [egg]
+        gloss_zh: [蛋]
+    frequency: 4
+    sources: [seed]
+
+  - id: ziu2-酒
+    headword: 酒
+    readings:
+      - pengim: ziu2
+    senses:
+      - pos: noun
+        gloss_en: [alcohol, wine, liquor]
+        gloss_zh: [酒]
+    frequency: 4
+    sources: [seed]

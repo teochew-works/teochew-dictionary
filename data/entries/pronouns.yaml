@@ -1,0 +1,100 @@
+# Pronouns 代詞.
+#
+# Teochew distinguishes clusivity in the first person plural: 阮 excludes the
+# addressee, 咱 includes them. English collapses both to "we", so the glosses
+# carry the distinction explicitly.
+
+entries:
+  - id: ua2-我
+    headword: 我
+    readings:
+      - pengim: ua2
+    senses:
+      - pos: pronoun
+        gloss_en: [I, me]
+        gloss_zh: [我]
+    frequency: 5
+    sources: [seed]
+
+  - id: le2-你
+    headword: 你
+    variants: [汝]
+    readings:
+      - pengim: le2
+    senses:
+      - pos: pronoun
+        gloss_en: [you (singular)]
+        gloss_zh: [你]
+    frequency: 5
+    sources: [seed]
+
+  - id: i1-伊
+    headword: 伊
+    readings:
+      - pengim: i1
+    senses:
+      - pos: pronoun
+        gloss_en: [he, she, it, him, her]
+        gloss_zh: [他, 她, 它]
+        note: Not marked for gender.
+    frequency: 5
+    sources: [seed]
+
+  - id: uang2-阮
+    headword: 阮
+    readings:
+      - pengim: uang2
+    senses:
+      - pos: pronoun
+        gloss_en: [we, us (excluding the person spoken to)]
+        gloss_zh: [我們（不包括聽話人）]
+    tags: [exclusive]
+    frequency: 5
+    sources: [seed]
+
+  - id: nang2-咱
+    headword: 咱
+    readings:
+      - pengim: nang2
+    senses:
+      - pos: pronoun
+        gloss_en: [we, us (including the person spoken to)]
+        gloss_zh: [咱們（包括聽話人）]
+    tags: [inclusive]
+    frequency: 4
+    sources: [seed]
+
+  - id: ning2-恁
+    headword: 恁
+    readings:
+      - pengim: ning2
+    senses:
+      - pos: pronoun
+        gloss_en: [you (plural)]
+        gloss_zh: [你們]
+    frequency: 5
+    sources: [seed]
+
+  - id: sim2-mih8-乜
+    headword: 乜
+    readings:
+      - pengim: mih8
+    senses:
+      - pos: pronoun
+        gloss_en: [what]
+        gloss_zh: [甚麼]
+    frequency: 4
+    needs_review: true
+    sources: [seed]
+
+  - id: di6-diang5-底儂
+    headword: 底儂
+    readings:
+      - pengim: di6 nang5
+    senses:
+      - pos: pronoun
+        gloss_en: [who]
+        gloss_zh: [誰]
+    frequency: 4
+    needs_review: true
+    sources: [seed]

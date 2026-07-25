@@ -1,0 +1,219 @@
+# Verbs 動詞.
+
+entries:
+  - id: ziah8-食
+    headword: 食
+    readings:
+      - pengim: ziah8
+    senses:
+      - pos: verb
+        gloss_en: [to eat, to drink, to consume]
+        gloss_zh: [吃, 喝]
+        note: >-
+          Covers both eating and drinking, unlike Mandarin. 食茶 is "drink tea",
+          not "eat tea".
+        examples:
+          - hanzi: 食飽未
+            pengim: ziah8 ba2 bhuê6
+            en: Have you eaten yet? (a common greeting)
+    frequency: 5
+    sources: [seed]
+
+  - id: lim1-啉
+    headword: 啉
+    readings:
+      - pengim: lim1
+    senses:
+      - pos: verb
+        gloss_en: [to drink]
+        gloss_zh: [喝]
+        note: Used for drinking alcohol and water; tea takes 食.
+    frequency: 4
+    sources: [seed]
+
+  - id: ke3-去
+    headword: 去
+    readings:
+      - pengim: ke3
+    senses:
+      - pos: verb
+        gloss_en: [to go, to leave]
+        gloss_zh: [去]
+    frequency: 5
+    sources: [seed]
+
+  - id: lai5-來
+    headword: 來
+    readings:
+      - pengim: lai5
+    senses:
+      - pos: verb
+        gloss_en: [to come]
+        gloss_zh: [來]
+    frequency: 5
+    sources: [seed]
+
+  - id: toin2-看
+    headword: 看
+    readings:
+      - pengim: toin2
+    senses:
+      - pos: verb
+        gloss_en: [to look, to see, to watch, to read]
+        gloss_zh: [看]
+    frequency: 5
+    sources: [seed]
+
+  - id: tian1-聽
+    headword: 聽
+    readings:
+      - pengim: tian1
+    senses:
+      - pos: verb
+        gloss_en: [to listen, to hear]
+        gloss_zh: [聽]
+    frequency: 5
+    sources: [seed]
+
+  - id: gang2-講
+    headword: 講
+    readings:
+      - pengim: gang2
+    senses:
+      - pos: verb
+        gloss_en: [to speak, to say, to tell]
+        gloss_zh: [講, 說]
+        examples:
+          - hanzi: 講潮州話
+            pengim: gang2 dio5 ziu1 uê6
+            en: to speak Teochew
+    frequency: 5
+    sources: [seed]
+
+  - id: zai1-知
+    headword: 知
+    readings:
+      - pengim: zai1
+    senses:
+      - pos: verb
+        gloss_en: [to know]
+        gloss_zh: [知道]
+    frequency: 5
+    sources: [seed]
+
+  - id: gian5-行
+    headword: 行
+    readings:
+      - pengim: gian5
+    senses:
+      - pos: verb
+        gloss_en: [to walk, to go on foot]
+        gloss_zh: [走, 行]
+    frequency: 4
+    sources: [seed]
+
+  - id: zo6-坐
+    headword: 坐
+    readings:
+      - pengim: zo6
+    senses:
+      - pos: verb
+        gloss_en: [to sit]
+        gloss_zh: [坐]
+    frequency: 4
+    sources: [seed]
+
+  - id: kung3-睏
+    headword: 睏
+    readings:
+      - pengim: kung3
+    senses:
+      - pos: verb
+        gloss_en: [to sleep]
+        gloss_zh: [睡]
+    frequency: 4
+    sources: [seed]
+
+  - id: bhoi2-買
+    headword: 買
+    readings:
+      - pengim: bhoi2
+    senses:
+      - pos: verb
+        gloss_en: [to buy]
+        gloss_zh: [買]
+    frequency: 4
+    sources: [seed]
+
+  - id: bhoi6-賣
+    headword: 賣
+    readings:
+      - pengim: bhoi6
+    senses:
+      - pos: verb
+        gloss_en: [to sell]
+        gloss_zh: [賣]
+        note: Differs from 買 only in tone — 2 (rising) versus 6.
+    frequency: 4
+    sources: [seed]
+
+  - id: zo3-做
+    headword: 做
+    readings:
+      - pengim: zo3
+    senses:
+      - pos: verb
+        gloss_en: [to do, to make]
+        gloss_zh: [做]
+    frequency: 5
+    sources: [seed]
+
+  - id: ai3-愛
+    headword: 愛
+    readings:
+      - pengim: ai3
+    senses:
+      - pos: verb
+        gloss_en: [to want, to need]
+        gloss_zh: [要]
+      - pos: verb
+        gloss_en: [to love]
+        gloss_zh: [愛]
+    frequency: 5
+    sources: [seed]
+
+  - id: u6-有
+    headword: 有
+    readings:
+      - pengim: u6
+    senses:
+      - pos: verb
+        gloss_en: [to have, there is, there are]
+        gloss_zh: [有]
+    frequency: 5
+    sources: [seed]
+
+  - id: bho5-無
+    headword: 無
+    readings:
+      - pengim: bho5
+    senses:
+      - pos: verb
+        gloss_en: [to not have, there is not]
+        gloss_zh: [沒有]
+      - pos: adverb
+        gloss_en: [not]
+        gloss_zh: [沒]
+    frequency: 5
+    sources: [seed]
+
+  - id: si6-是
+    headword: 是
+    readings:
+      - pengim: si6
+    senses:
+      - pos: verb
+        gloss_en: [to be, is, are]
+        gloss_zh: [是]
+    frequency: 5
+    sources: [seed]

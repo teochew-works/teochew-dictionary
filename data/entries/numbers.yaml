@@ -1,0 +1,150 @@
+# Numerals 數詞.
+#
+# Several numerals have distinct colloquial (白讀) and literary (文讀) readings.
+# Both are recorded, tagged by register, because which one is used is
+# grammatically conditioned — 二 is `no6` when counting objects but `ri6` in
+# compounds and higher numbers.
+
+entries:
+  - id: zeg8-一
+    headword: 一
+    readings:
+      - pengim: zêg8
+        register: colloquial
+      - pengim: ig4
+        register: literary
+    senses:
+      - pos: numeral
+        gloss_en: [one, "1"]
+        gloss_zh: [一]
+    frequency: 5
+    sources: [seed]
+
+  - id: no6-二
+    headword: 二
+    readings:
+      - pengim: no6
+        register: colloquial
+        note: Used when counting things.
+      - pengim: ri6
+        register: literary
+        note: Used in compounds and in higher numbers (十二 zab8 ri6).
+    senses:
+      - pos: numeral
+        gloss_en: [two, "2"]
+        gloss_zh: [二]
+    frequency: 5
+    sources: [seed]
+
+  - id: san1-三
+    headword: 三
+    readings:
+      - pengim: san1
+    senses:
+      - pos: numeral
+        gloss_en: [three, "3"]
+        gloss_zh: [三]
+    frequency: 5
+    sources: [seed]
+
+  - id: si3-四
+    headword: 四
+    readings:
+      - pengim: si3
+    senses:
+      - pos: numeral
+        gloss_en: [four, "4"]
+        gloss_zh: [四]
+    frequency: 5
+    sources: [seed]
+
+  - id: ngou6-五
+    headword: 五
+    readings:
+      - pengim: ngou6
+    senses:
+      - pos: numeral
+        gloss_en: [five, "5"]
+        gloss_zh: [五]
+    frequency: 5
+    sources: [seed]
+
+  - id: lag8-六
+    headword: 六
+    readings:
+      - pengim: lag8
+    senses:
+      - pos: numeral
+        gloss_en: [six, "6"]
+        gloss_zh: [六]
+    frequency: 5
+    sources: [seed]
+
+  - id: cig4-七
+    headword: 七
+    readings:
+      - pengim: cig4
+    senses:
+      - pos: numeral
+        gloss_en: [seven, "7"]
+        gloss_zh: [七]
+    frequency: 5
+    sources: [seed]
+
+  - id: boih4-八
+    headword: 八
+    readings:
+      - pengim: boih4
+        register: colloquial
+      - pengim: bag4
+        register: literary
+    senses:
+      - pos: numeral
+        gloss_en: [eight, "8"]
+        gloss_zh: [八]
+    frequency: 5
+    sources: [seed]
+
+  - id: gao2-九
+    headword: 九
+    readings:
+      - pengim: gao2
+    senses:
+      - pos: numeral
+        gloss_en: [nine, "9"]
+        gloss_zh: [九]
+    frequency: 5
+    sources: [seed]
+
+  - id: zab8-十
+    headword: 十
+    readings:
+      - pengim: zab8
+    senses:
+      - pos: numeral
+        gloss_en: [ten, "10"]
+        gloss_zh: [十]
+    frequency: 5
+    sources: [seed]
+
+  - id: bêh4-百
+    headword: 百
+    readings:
+      - pengim: bêh4
+    senses:
+      - pos: numeral
+        gloss_en: [hundred]
+        gloss_zh: [百]
+    frequency: 4
+    sources: [seed]
+
+  - id: cing1-千
+    headword: 千
+    readings:
+      - pengim: cing1
+    senses:
+      - pos: numeral
+        gloss_en: [thousand]
+        gloss_zh: [千]
+    frequency: 4
+    sources: [seed]

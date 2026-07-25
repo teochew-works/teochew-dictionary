@@ -1,0 +1,132 @@
+# Function words, time, and everyday expressions.
+
+entries:
+  - id: m6-毋
+    headword: 毋
+    readings:
+      - pengim: m6
+    senses:
+      - pos: adverb
+        gloss_en: [not]
+        gloss_zh: [不]
+        note: >-
+          A syllabic nasal with no vowel — one of a small set of such syllables
+          alongside 黃 ng5.
+    frequency: 5
+    sources: [seed]
+
+  - id: ue6-話
+    headword: 話
+    readings:
+      - pengim: uê6
+    senses:
+      - pos: noun
+        gloss_en: [speech, language, words]
+        gloss_zh: [話]
+    frequency: 5
+    sources: [seed]
+
+  - id: rig8-日
+    headword: 日
+    readings:
+      - pengim: rig8
+    senses:
+      - pos: noun
+        gloss_en: [day, sun]
+        gloss_zh: [日, 太陽]
+    frequency: 5
+    sources: [seed]
+
+  - id: gueh8-月
+    headword: 月
+    readings:
+      - pengim: ghuêh8
+    senses:
+      - pos: noun
+        gloss_en: [moon, month]
+        gloss_zh: [月]
+    frequency: 5
+    sources: [seed]
+
+  - id: ni5-年
+    headword: 年
+    readings:
+      - pengim: ni5
+    senses:
+      - pos: noun
+        gloss_en: [year]
+        gloss_zh: [年]
+    frequency: 5
+    sources: [seed]
+
+  - id: ze1-書
+    headword: 書
+    readings:
+      - pengim: ze1
+    senses:
+      - pos: noun
+        gloss_en: [book]
+        gloss_zh: [書]
+    frequency: 4
+    sources: [seed]
+
+  - id: ri6-字
+    headword: 字
+    readings:
+      - pengim: ri6
+    senses:
+      - pos: noun
+        gloss_en: [character, written word]
+        gloss_zh: [字]
+    frequency: 4
+    sources: [seed]
+
+  - id: ng5-黃
+    headword: 黃
+    readings:
+      - pengim: ng5
+    senses:
+      - pos: adjective
+        gloss_en: [yellow]
+        gloss_zh: [黃]
+      - pos: proper-noun
+        gloss_en: [Ng, Wong, Huang (surname)]
+        gloss_zh: [黃（姓）]
+    frequency: 4
+    sources: [seed]
+
+  - id: do1-sia6-多謝
+    headword: 多謝
+    readings:
+      - pengim: do1 sia6
+    senses:
+      - pos: phrase
+        gloss_en: [thank you, thanks]
+        gloss_zh: [謝謝]
+    frequency: 5
+    sources: [seed]
+
+  - id: ba2-飽
+    headword: 飽
+    readings:
+      - pengim: ba2
+    senses:
+      - pos: adjective
+        gloss_en: [full, satiated]
+        gloss_zh: [飽]
+    frequency: 4
+    sources: [seed]
+
+  - id: bhue6-未
+    headword: 未
+    readings:
+      - pengim: bhuê6
+    senses:
+      - pos: particle
+        gloss_en: [not yet]
+        gloss_zh: [未, 沒有]
+        note: >-
+          Also forms yes-no questions when placed finally, as in 食飽未
+          "have you eaten yet?".
+    frequency: 4
+    sources: [seed]

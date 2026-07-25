@@ -1,0 +1,40 @@
+# Provenance registry. Every entry cites at least one source id from this file,
+# and the validator rejects ids that are not listed here.
+#
+# Licence hygiene matters for a lexicon: glosses and example sentences are
+# copyrightable even when individual pronunciations are not, so imported material
+# must carry its licence with it and stay separable from hand-written material.
+
+sources:
+  - id: seed
+    name: Hand-curated seed set
+    licence: CC0-1.0
+    note: >-
+      Written by hand to bootstrap the dataset and exercise the tooling
+      end to end. Core everyday vocabulary where forms are widely agreed.
+      Not yet checked by a native speaker — treat tone assignments in
+      particular as provisional.
+
+  - id: wiktionary
+    name: Wiktionary (Teochew pronunciation sections)
+    licence: CC-BY-SA-4.0
+    url: https://en.wiktionary.org/
+    note: >-
+      Share-alike. Derived work must keep the licence. Attribution is per-entry
+      via this id plus the `retrieved` date recorded by the importer.
+
+  - id: cedict
+    name: CC-CEDICT
+    licence: CC-BY-SA-4.0
+    url: https://www.mdbg.net/chinese/dictionary?page=cedict
+    note: >-
+      Mandarin-Chinese/English glosses. Useful as a gloss base for shared hanzi,
+      but carries NO Teochew pronunciation — never let a CC-CEDICT import
+      populate a reading.
+
+  - id: unihan
+    name: Unihan Database
+    licence: Unicode-DFS-2016
+    url: https://www.unicode.org/charts/unihan.html
+    note: >-
+      Character-level metadata (radical, stroke count, variants). Permissive.

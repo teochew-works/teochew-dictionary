@@ -1,0 +1,95 @@
+# People and kinship 稱謂.
+
+entries:
+  - id: nang5-儂
+    headword: 儂
+    variants: [人]
+    readings:
+      - pengim: nang5
+    senses:
+      - pos: noun
+        gloss_en: [person, people]
+        gloss_zh: [人]
+        note: >-
+          儂 is the character conventionally used in Teochew writing for the
+          colloquial word; 人 is the same morpheme written with the standard
+          Chinese character.
+    frequency: 5
+    sources: [seed]
+
+  - id: gian2-囝
+    headword: 囝
+    readings:
+      - pengim: gian2
+    senses:
+      - pos: noun
+        gloss_en: [child, son, offspring]
+        gloss_zh: [兒子, 孩子]
+      - pos: suffix
+        gloss_en: [diminutive suffix]
+        gloss_zh: [小稱後綴]
+    frequency: 5
+    sources: [seed]
+
+  - id: a1-ba1-阿爸
+    headword: 阿爸
+    readings:
+      - pengim: a1 ba1
+    senses:
+      - pos: noun
+        gloss_en: [father, dad]
+        gloss_zh: [爸爸]
+    frequency: 5
+    sources: [seed]
+
+  - id: a1-ma2-阿媽
+    headword: 阿媽
+    readings:
+      - pengim: a1 ma2
+    senses:
+      - pos: noun
+        gloss_en: [grandmother]
+        gloss_zh: [奶奶]
+        note: >-
+          Contrast Cantonese 阿媽, which means "mother". The Teochew term refers
+          to a grandmother.
+    frequency: 4
+    needs_review: true
+    sources: [seed]
+
+  - id: hian1-兄
+    headword: 兄
+    readings:
+      - pengim: hian1
+    senses:
+      - pos: noun
+        gloss_en: [elder brother]
+        gloss_zh: [哥哥]
+    frequency: 4
+    sources: [seed]
+
+  - id: beng5-iu2-朋友
+    headword: 朋友
+    readings:
+      - pengim: bêng5 iu2
+    senses:
+      - pos: noun
+        gloss_en: [friend]
+        gloss_zh: [朋友]
+    frequency: 4
+    sources: [seed]
+
+  - id: ga1-gi6-nang5-家己儂
+    headword: 家己儂
+    readings:
+      - pengim: ga1 gi6 nang5
+    senses:
+      - pos: noun
+        gloss_en: [one's own people, a fellow Teochew]
+        gloss_zh: [自己人]
+        note: >-
+          The community's own term for itself, widely romanised "gaginang" in
+          diaspora usage. Saying it to a stranger asserts shared Teochew origin.
+    tags: [identity, culture]
+    frequency: 4
+    sources: [seed]

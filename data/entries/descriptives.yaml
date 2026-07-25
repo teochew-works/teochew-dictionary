@@ -1,0 +1,129 @@
+# Descriptives 形容詞.
+#
+# Teochew descriptives function as stative verbs — 好 can head a predicate on its
+# own without a copula — but they are tagged `adjective` here to keep the
+# part-of-speech vocabulary small and familiar.
+
+entries:
+  - id: ho2-好
+    headword: 好
+    readings:
+      - pengim: ho2
+    senses:
+      - pos: adjective
+        gloss_en: [good, well, fine]
+        gloss_zh: [好]
+    frequency: 5
+    sources: [seed]
+
+  - id: pai2-歹
+    headword: 歹
+    readings:
+      - pengim: pai2
+    senses:
+      - pos: adjective
+        gloss_en: [bad, spoiled, broken]
+        gloss_zh: [壞, 不好]
+    frequency: 4
+    sources: [seed]
+
+  - id: dua6-大
+    headword: 大
+    readings:
+      - pengim: dua6
+    senses:
+      - pos: adjective
+        gloss_en: [big, large]
+        gloss_zh: [大]
+    frequency: 5
+    sources: [seed]
+
+  - id: soi3-細
+    headword: 細
+    readings:
+      - pengim: soi3
+    senses:
+      - pos: adjective
+        gloss_en: [small, little]
+        gloss_zh: [小]
+        note: Teochew uses 細 where Mandarin uses 小.
+    frequency: 5
+    sources: [seed]
+
+  - id: dng5-長
+    headword: 長
+    readings:
+      - pengim: dng5
+    senses:
+      - pos: adjective
+        gloss_en: [long]
+        gloss_zh: [長]
+    frequency: 4
+    sources: [seed]
+
+  - id: do2-短
+    headword: 短
+    readings:
+      - pengim: do2
+    senses:
+      - pos: adjective
+        gloss_en: [short (in length)]
+        gloss_zh: [短]
+    frequency: 4
+    sources: [seed]
+
+  - id: sing1-新
+    headword: 新
+    readings:
+      - pengim: sing1
+    senses:
+      - pos: adjective
+        gloss_en: [new]
+        gloss_zh: [新]
+    frequency: 4
+    sources: [seed]
+
+  - id: gu6-舊
+    headword: 舊
+    readings:
+      - pengim: gu6
+    senses:
+      - pos: adjective
+        gloss_en: [old (of things), used]
+        gloss_zh: [舊]
+    frequency: 4
+    sources: [seed]
+
+  - id: ruah8-熱
+    headword: 熱
+    readings:
+      - pengim: ruah8
+    senses:
+      - pos: adjective
+        gloss_en: [hot]
+        gloss_zh: [熱]
+    frequency: 4
+    sources: [seed]
+
+  - id: zoi6-濟
+    headword: 濟
+    readings:
+      - pengim: zoi6
+    senses:
+      - pos: adjective
+        gloss_en: [many, much, a lot]
+        gloss_zh: [多]
+        note: Teochew uses 濟 where Mandarin uses 多.
+    frequency: 5
+    sources: [seed]
+
+  - id: zio2-少
+    headword: 少
+    readings:
+      - pengim: zio2
+    senses:
+      - pos: adjective
+        gloss_en: [few, little (in quantity)]
+        gloss_zh: [少]
+    frequency: 4
+    sources: [seed]
