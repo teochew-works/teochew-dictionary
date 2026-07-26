@@ -83,7 +83,7 @@ function syllableToIpa(
   }
 
   // Syllabic nasals: the nucleus is itself a consonant, carrying the syllabicity
-  // diacritic. It may follow an initial (飯 bng6 → [pŋ̍]).
+  // diacritic. It may follow an initial (飯 bng7 → [pŋ̍]).
   if (s.syllabic) {
     const m = variety.initials?.[s.nucleus]
     if (!m) throw new Error(`variety '${variety.variety.id}' has no mapping for syllabic '${s.nucleus}'`)

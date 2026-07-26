@@ -5,6 +5,11 @@ entries:
     headword: 毋
     readings:
       - pengim: m6
+        note: >-
+          Tone uncertain. As a grammaticalised negator this has no regular
+          Middle Chinese source to derive a tone from, and the Hokkien cognate
+          m̄ sits in the merged 陽上/陽去 class, which cannot distinguish tone 6
+          from tone 7. Recorded as 6 pending a speaker.
     senses:
       - pos: adverb
         gloss_en: [not]
@@ -13,12 +18,13 @@ entries:
           A syllabic nasal with no vowel — one of a small set of such syllables
           alongside 黃 ng5.
     frequency: 5
+    needs_review: true
     sources: [seed]
 
-  - id: ue6-話
+  - id: ue7-話
     headword: 話
     readings:
-      - pengim: uê6
+      - pengim: uê7
     senses:
       - pos: noun
         gloss_en: [speech, language, words]
@@ -70,10 +76,10 @@ entries:
     frequency: 4
     sources: [seed]
 
-  - id: ri6-字
+  - id: ri7-字
     headword: 字
     readings:
-      - pengim: ri6
+      - pengim: ri7
     senses:
       - pos: noun
         gloss_en: [character, written word]
@@ -95,10 +101,10 @@ entries:
     frequency: 4
     sources: [seed]
 
-  - id: do1-sia6-多謝
+  - id: do1-sia7-多謝
     headword: 多謝
     readings:
-      - pengim: do1 sia6
+      - pengim: do1 sia7
     senses:
       - pos: phrase
         gloss_en: [thank you, thanks]
@@ -117,10 +123,10 @@ entries:
     frequency: 4
     sources: [seed]
 
-  - id: bhue6-未
+  - id: bhue7-未
     headword: 未
     readings:
-      - pengim: bhuê6
+      - pengim: bhuê7
     senses:
       - pos: particle
         gloss_en: [not yet]

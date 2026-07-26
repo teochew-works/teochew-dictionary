@@ -27,10 +27,10 @@ entries:
     frequency: 4
     sources: [seed]
 
-  - id: dua6-大
+  - id: dua7-大
     headword: 大
     readings:
-      - pengim: dua6
+      - pengim: dua7
     senses:
       - pos: adjective
         gloss_en: [big, large]
@@ -83,10 +83,10 @@ entries:
     frequency: 4
     sources: [seed]
 
-  - id: gu6-舊
+  - id: gu7-舊
     headword: 舊
     readings:
-      - pengim: gu6
+      - pengim: gu7
     senses:
       - pos: adjective
         gloss_en: [old (of things), used]
@@ -105,10 +105,14 @@ entries:
     frequency: 4
     sources: [seed]
 
-  - id: zoi6-濟
+  - id: zoi7-濟
     headword: 濟
     readings:
-      - pengim: zoi6
+      - pengim: zoi7
+        note: >-
+          The graph is a 借字: 濟's own reading is 陰去 (tone 3), so the tone comes
+          from the spoken etymon rather than the character. The cross-Min
+          cognate (Hokkien tsē) is in the 陽 departing class, giving 陽去.
     senses:
       - pos: adjective
         gloss_en: [many, much, a lot]

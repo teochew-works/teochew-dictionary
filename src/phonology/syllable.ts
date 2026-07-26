@@ -122,7 +122,7 @@ export function parseSyllable(input: string, scheme?: PengimScheme): Syllable {
 
   // ── syllabic nasal ──────────────────────────────────────────────────────────
   // Two shapes: the nasal alone (黃 ng5, 毋 m6), where the initial matcher has
-  // already consumed it; or an initial plus a nasal rime (飯 bng6, 方 bng1),
+  // already consumed it; or an initial plus a nasal rime (飯 bng7, 方 bng1),
   // where the nasal is what remains after the initial.
   if (rest.length === 0) {
     if (initial && t.syllabicNuclei.has(initial)) {

@@ -80,7 +80,41 @@ alternation rather than pick one.
 Encoded as [oi] and [ou] at `confidence: medium`. Some descriptions transcribe
 these with different second elements. Low impact, but easy to confirm.
 
-## 7. The `-d` /t̚/ coda  ·  `pengim.yaml`, `varieties/chaozhou.yaml`
+## 7. Assigning tone 6 (陽上) vs tone 7 (陽去)  ·  `entries/*.yaml`
+
+Not a phonology-table question — a **data-entry rule**, recorded here because
+getting it wrong is invisible. The seed lexicon was originally written with tone
+7 entirely absent: every 陽去 syllable had been assigned tone 6. Tone feeds IPA,
+POJ *and* sandhi derivation, so one wrong tone silently corrupts three derived
+fields.
+
+Teochew keeps 陽上 and 陽去 apart. Assign by Middle Chinese category:
+
+| MC tone | MC initial | Teochew | Example |
+|---------|-----------|---------|---------|
+| 上聲 | voiced (全濁 or 次濁) | **6** 陽上 | 五 `ngou6`, 有 `u6`, 坐 `zo6`, 卵 `nng6`, 是 `si6` |
+| 去聲 | voiced (全濁 or 次濁) | **7** 陽去 | 大 `dua7`, 飯 `bng7`, 賣 `bhoi7`, 話 `uê7`, 字 `ri7` |
+
+**A Hokkien cognate cannot settle this.** Hokkien merged 陽上 into 陽去 and writes
+a macron for both, so Hokkien 卵 nn̄g (陽上 → Teochew `nng6`) and 飯 pn̄g (陽去 →
+Teochew `bng7`) look identical there and differ here. Hokkien tells you the
+syllable is 陽上-*or*-陽去; only the MC category tells you which.
+
+**Sandhi cannot settle it either.** The table above sends both 6 and 7 to
+surface tone 7, so a non-final syllable gives no evidence. Judge from the
+citation form.
+
+Two traps worth naming:
+
+- **訓讀 graphs.** Where a character is borrowed for a word that is not its own
+  reading, the tone follows the *spoken* etymon. 二 `no6` is really 兩 (來母 上聲
+  → 陽上); the literary 二 `ri7` is 二 itself (日母 去聲 → 陽去). Same headword,
+  different tones, because they are different words.
+- **Grammaticalised forms.** Negators, interrogatives and reflexives often have
+  no regular MC source. Flag them `needs_review` rather than guessing — see the
+  table below.
+
+## 8. The `-d` /t̚/ coda  ·  `pengim.yaml`, `varieties/chaozhou.yaml`
 
 Encoded at `confidence: low`. Teochew merged the /-t/ coda away, so this should
 appear in essentially no colloquial entries. It is retained only so that literary
@@ -97,6 +131,8 @@ Run `npm run validate` for the current count. As of writing:
 | Entry | Question |
 |-------|----------|
 | 乜 `mih8` | Peng'im spelling and tone both uncertain. |
-| 底儂 `di6 nang5` | The usual word for "who"; form and tones need confirming. |
+| 底儂 `di6 nang5` | The usual word for "who"; form and tones need confirming. 底 is 陰上 by MC (端母 上聲), which predicts tone 2 — neither 6 nor 7 is regular. The id also says `diang5` where the reading says `nang5`. |
+| 家己儂 `ga1 gi6 nang5` | 己 is 陰上 by MC (見母 上聲), predicting tone 2, so the recorded 6 is irregular. Non-final position means sandhi hides 6 vs 7; needs the word in isolation. |
+| 毋 `m6` | A grammaticalised negator with no regular MC source. The Hokkien cognate m̄ is in the merged 陽上/陽去 class and so cannot distinguish 6 from 7. |
 | 米 `bhi2` | Initial may be `bh-` or `b-`; Hokkien has `bí`, which may have influenced the transcription. |
 | 阿媽 `a1 ma2` | Glossed "grandmother"; confirm it is not also used for "mother" in some families. |
