@@ -46,7 +46,7 @@ function syllableToPoj(s: Syllable, poj: PojScheme): string {
   }
 
   // Syllabic nasals carry the tone mark on the nasal itself, and may follow an
-  // initial (飯 bng6 → pnḡ).
+  // initial (飯 bng7 → pnḡ).
   if (s.syllabic) {
     const letter = poj.initials[s.nucleus]
     if (letter === undefined) throw new Error(`POJ scheme has no mapping for syllabic '${s.nucleus}'`)

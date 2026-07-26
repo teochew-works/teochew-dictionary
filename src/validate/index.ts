@@ -29,6 +29,9 @@ export interface Issue {
   message: string
 }
 
+/** Attestations per citation tone, keyed 1–8 and always fully populated. */
+export type ToneCounts = Record<number, number>
+
 export interface ValidationReport {
   issues: Issue[]
   entryCount: number
@@ -37,6 +40,22 @@ export interface ValidationReport {
   warningCount: number
   /** Entries flagged `needs_review`, plus those with low-confidence derivations. */
   reviewCount: number
+  /**
+   * Syllable tokens per tone, across readings and examples.
+   *
+   * Exists because a tone can be silently missing from the whole lexicon: the
+   * seed was originally written with tone 7 (陽去) collapsed into tone 6 (陽上),
+   * and nothing caught it, because every individual entry parsed and derived
+   * cleanly. A tone that never appears is the signal.
+   */
+  toneCounts: ToneCounts
+}
+
+/** The eight citation tones, in order. */
+export const TONES = [1, 2, 3, 4, 5, 6, 7, 8] as const
+
+function emptyToneCounts(): ToneCounts {
+  return Object.fromEntries(TONES.map((t) => [t, 0]))
 }
 
 function err(file: string, message: string, id?: string, path?: string): Issue {
@@ -49,6 +68,7 @@ function warn(file: string, message: string, id?: string, path?: string): Issue 
 
 export function validate(): ValidationReport {
   const issues: Issue[] = []
+  const toneCounts = emptyToneCounts()
   let entryCount = 0
   let readingCount = 0
   let reviewCount = 0
@@ -61,7 +81,7 @@ export function validate(): ValidationReport {
     for (const v of varieties) loadVariety(v)
   } catch (e) {
     issues.push(err('data/phonology', (e as Error).message))
-    return summarise(issues, 0, 0, 0)
+    return summarise(issues, 0, 0, 0, toneCounts)
   }
 
   try {
@@ -123,8 +143,8 @@ export function validate(): ValidationReport {
       }
 
       readingCount += entry.readings.length
-      reviewCount += checkReadings(entry, file, varieties, issues)
-      checkExamples(entry, file, issues)
+      reviewCount += checkReadings(entry, file, varieties, issues, toneCounts)
+      checkExamples(entry, file, issues, toneCounts)
     }
   }
 
@@ -136,7 +156,24 @@ export function validate(): ValidationReport {
     }
   }
 
-  return summarise(issues, entryCount, readingCount, reviewCount)
+  // A tone nobody uses is almost never a real gap in the language — it means a
+  // tone category was written as its neighbour throughout. Warning rather than
+  // error so a lexicon in progress stays buildable.
+  if (entryCount > 0) {
+    const missing = TONES.filter((t) => toneCounts[t] === 0)
+    if (missing.length > 0) {
+      issues.push(
+        warn(
+          'data/entries',
+          `tone${missing.length === 1 ? '' : 's'} ${missing.join(', ')} unattested across the whole lexicon — ` +
+            'likely collapsed into a neighbouring tone rather than genuinely absent ' +
+            '(see data/phonology/REVIEW.md § 7)',
+        ),
+      )
+    }
+  }
+
+  return summarise(issues, entryCount, readingCount, reviewCount, toneCounts)
 }
 
 /** @returns how many readings carry low-confidence derivations. */
@@ -145,6 +182,7 @@ function checkReadings(
   file: string,
   varieties: Set<string>,
   issues: Issue[],
+  toneCounts: ToneCounts,
 ): number {
   let lowConfidence = 0
 
@@ -163,6 +201,8 @@ function checkReadings(
       issues.push(err(file, parsed.error, entry.id, path))
       return
     }
+
+    for (const s of parsed.syllables) toneCounts[s.tone] = (toneCounts[s.tone] ?? 0) + 1
 
     // Derivation must actually succeed — a Peng'im string can be well-formed
     // orthographically yet hit a gap in a variety's mapping table.
@@ -188,7 +228,7 @@ function checkReadings(
   return lowConfidence
 }
 
-function checkExamples(entry: Entry, file: string, issues: Issue[]): void {
+function checkExamples(entry: Entry, file: string, issues: Issue[], toneCounts: ToneCounts): void {
   entry.senses.forEach((sense, si) => {
     sense.examples?.forEach((ex, ei) => {
       const path = `senses[${si}].examples[${ei}].pengim`
@@ -197,6 +237,8 @@ function checkExamples(entry: Entry, file: string, issues: Issue[]): void {
         issues.push(err(file, parsed.error, entry.id, path))
         return
       }
+
+      for (const s of parsed.syllables) toneCounts[s.tone] = (toneCounts[s.tone] ?? 0) + 1
       // A mismatch here usually means a syllable was dropped when transcribing.
       const hanziCount = [...ex.hanzi].filter((c) => /\p{Script=Han}/u.test(c)).length
       if (hanziCount > 0 && hanziCount !== parsed.syllables.length) {
@@ -218,12 +260,14 @@ function summarise(
   entryCount: number,
   readingCount: number,
   reviewCount: number,
+  toneCounts: ToneCounts,
 ): ValidationReport {
   return {
     issues,
     entryCount,
     readingCount,
     reviewCount,
+    toneCounts,
     errorCount: issues.filter((i) => i.level === 'error').length,
     warningCount: issues.filter((i) => i.level === 'warning').length,
   }

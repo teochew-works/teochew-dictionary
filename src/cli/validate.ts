@@ -1,4 +1,4 @@
-import { validate, type Issue } from '../validate/index.js'
+import { validate, TONES, type Issue } from '../validate/index.js'
 
 /**
  * `npm run validate` — check the dataset and exit non-zero on any error.
@@ -40,6 +40,15 @@ const summary = [
   `${report.reviewCount} flagged for review`,
 ]
 console.log(`\n${dim(summary.join(dim(' · ')))}`)
+
+// Tone coverage. An unattested tone is highlighted rather than printed as a
+// plain zero, because that is the shape the tone 6/7 collapse took: every entry
+// individually valid, one whole tone category missing.
+const tones = TONES.map((t) => {
+  const n = report.toneCounts[t] ?? 0
+  return n === 0 ? red(`T${t}:${n}`) : dim(`T${t}:${n}`)
+})
+console.log(`${dim('tones')}  ${tones.join(' ')}`)
 
 if (errors.length === 0) {
   console.log(green('✓ dataset is valid'))

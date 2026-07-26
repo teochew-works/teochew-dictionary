@@ -2,8 +2,12 @@
 #
 # Several numerals have distinct colloquial (白讀) and literary (文讀) readings.
 # Both are recorded, tagged by register, because which one is used is
-# grammatically conditioned — 二 is `no6` when counting objects but `ri6` in
+# grammatically conditioned — 二 is `no6` when counting objects but `ri7` in
 # compounds and higher numbers.
+#
+# The two 二 readings sit in different tones because they are different words.
+# The literary `ri` is 二 itself (日母 去聲 → 陽去 → tone 7); the colloquial `no`
+# is the 兩 etymon (來母 上聲 → 次濁上 → 陽上 → tone 6) written 二 as 訓讀.
 
 entries:
   - id: zeg8-一
@@ -26,9 +30,9 @@ entries:
       - pengim: no6
         register: colloquial
         note: Used when counting things.
-      - pengim: ri6
+      - pengim: ri7
         register: literary
-        note: Used in compounds and in higher numbers (十二 zab8 ri6).
+        note: Used in compounds and in higher numbers (十二 zab8 ri7).
     senses:
       - pos: numeral
         gloss_en: [two, "2"]

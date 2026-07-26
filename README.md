@@ -163,7 +163,10 @@ The validator checks a good deal more than the schema:
 - **`ê` and `e` are different vowels** — /e/ and /ɯ/. Dropping the circumflex
   silently changes the word.
 - **Syllabic nasals** stand alone (黃 `ng5`, 毋 `m6`) or follow an initial
-  (飯 `bng6`).
+  (飯 `bng7`).
+- **Tones 6 (陽上) and 7 (陽去) are distinct**, unlike Hokkien, which merged them.
+  Assign by Middle Chinese category — 上聲 → 6 (卵 `nng6`), 去聲 → 7 (飯 `bng7`).
+  See [`data/phonology/REVIEW.md`](data/phonology/REVIEW.md) § 7.
 
 ---
 

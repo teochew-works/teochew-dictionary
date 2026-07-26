@@ -14,7 +14,7 @@ entries:
           not "eat tea".
         examples:
           - hanzi: 食飽未
-            pengim: ziah8 ba2 bhuê6
+            pengim: ziah8 ba2 bhuê7
             en: Have you eaten yet? (a common greeting)
     frequency: 5
     sources: [seed]
@@ -85,7 +85,7 @@ entries:
         gloss_zh: [講, 說]
         examples:
           - hanzi: 講潮州話
-            pengim: gang2 dio5 ziu1 uê6
+            pengim: gang2 dio5 ziu1 uê7
             en: to speak Teochew
     frequency: 5
     sources: [seed]
@@ -145,10 +145,10 @@ entries:
     frequency: 4
     sources: [seed]
 
-  - id: bhoi6-賣
+  - id: bhoi7-賣
     headword: 賣
     readings:
-      - pengim: bhoi6
+      - pengim: bhoi7
     senses:
       - pos: verb
         gloss_en: [to sell]

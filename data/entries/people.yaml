@@ -83,6 +83,12 @@ entries:
     headword: 家己儂
     readings:
       - pengim: ga1 gi6 nang5
+        note: >-
+          The tone on 己 is uncertain. By Middle Chinese it is 陰上 (見母 上聲),
+          which predicts tone 2, so neither 6 nor 7 is regular — this is an
+          irregular grammaticalised form. The compound gives no evidence
+          either: 己 is non-final, and sandhi sends both 6 and 7 to 7. Settling
+          it needs the word in isolation from a speaker.
     senses:
       - pos: noun
         gloss_en: [one's own people, a fellow Teochew]
@@ -92,4 +98,5 @@ entries:
           diaspora usage. Saying it to a stranger asserts shared Teochew origin.
     tags: [identity, culture]
     frequency: 4
+    needs_review: true
     sources: [seed]

@@ -63,7 +63,7 @@ describe('parseSyllable', () => {
     expect(parseSyllable('ng5')).toMatchObject({ initial: null, nucleus: 'ng', syllabic: true })
     expect(parseSyllable('m6')).toMatchObject({ initial: null, nucleus: 'm', syllabic: true })
     // 飯 — a syllabic nasal carrying an initial.
-    expect(parseSyllable('bng6')).toMatchObject({ initial: 'b', nucleus: 'ng', syllabic: true })
+    expect(parseSyllable('bng7')).toMatchObject({ initial: 'b', nucleus: 'ng', syllabic: true })
   })
 
   it('is case- and unicode-normalisation-insensitive', () => {
@@ -119,7 +119,7 @@ describe('malformed input', () => {
 
 describe('round-trip', () => {
   const samples = [
-    'dio5', 'ziu1', 'ziah8', 'nang5', 'bng6', 'ng5', 'm6', 'san1', 'toin2',
+    'dio5', 'ziu1', 'ziah8', 'nang5', 'bng7', 'ng5', 'm6', 'san1', 'toin2',
     'ngou6', 'gao2', 'lag8', 'ua2', 'le2', 'i1', 'ing1', 'in5', 'bho5', 'cu3',
   ]
   it.each(samples)('%s survives parse → format', (s) => {

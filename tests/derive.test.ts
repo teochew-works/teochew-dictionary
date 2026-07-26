@@ -22,7 +22,7 @@ describe('toIpa — Chaozhou', () => {
   it('marks syllabic nasals, including after an initial', () => {
     // U+0329 COMBINING VERTICAL LINE BELOW — the IPA syllabicity diacritic.
     expect(toIpa('ng5').ipa).toBe('ŋ̩⁵⁵')
-    expect(toIpa('bng6').ipa).toBe('pŋ̩³⁵')
+    expect(toIpa('bng7').ipa).toBe('pŋ̩¹¹')
   })
 
   it('reports the weakest confidence used, with its caveat', () => {
@@ -80,9 +80,11 @@ describe('toPoj', () => {
   })
 
   it('marks syllabic nasals after an initial', () => {
-    // Tone 6 is the caron in Teochew POJ; Hokkien POJ, lacking tone 6, would put
-    // a macron here. The diacritic follows the tone number, not the Hokkien form.
-    expect(toPoj('bng6')).toBe('pňg'.normalize('NFC'))
+    // 卵 and 飯 are the minimal pair for the tone 6/7 distinction: 卵 is 陽上
+    // (caron), 飯 is 陽去 (macron). Hokkien merged the two categories and writes
+    // a macron for both (nn̄g, pn̄g), so a Hokkien form cannot be used to pick
+    // between them here — the diacritic follows the tone number.
+    expect(toPoj('nng6')).toBe('nňg'.normalize('NFC'))
     expect(toPoj('bng7')).toBe('pn̄g'.normalize('NFC'))
   })
 })

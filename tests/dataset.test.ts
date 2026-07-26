@@ -4,7 +4,7 @@ import type Database from 'better-sqlite3'
 import { build } from '../src/build/index.js'
 import { createEnricher, stripDiacritics, stripTones } from '../src/build/enrich.js'
 import { lookup, openDb } from '../src/lookup/index.js'
-import { validate } from '../src/validate/index.js'
+import { validate, TONES } from '../src/validate/index.js'
 import { loadEntries } from '../src/data/load.js'
 
 /**
@@ -30,6 +30,15 @@ describe('the shipped dataset', () => {
     for (const { entry } of loadEntries()) {
       expect(entry.sources.length, entry.id).toBeGreaterThan(0)
     }
+  })
+
+  it('attests all eight tones', () => {
+    // The seed originally had zero tone 7 (陽去) against twenty tone 6 (陽上):
+    // the whole category had been written as its neighbour. Every entry parsed
+    // and derived cleanly, so nothing else here would have caught it. See
+    // data/phonology/REVIEW.md § 7 for the assignment rule.
+    const unattested = TONES.filter((t) => (report.toneCounts[t] ?? 0) === 0)
+    expect(unattested, `unattested tones: ${unattested.join(', ')}`).toEqual([])
   })
 })
 
