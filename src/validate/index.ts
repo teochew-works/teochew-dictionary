@@ -1,10 +1,18 @@
 import { entryFileSchema } from '../schema/entry.js'
 import { readEntryFiles, loadSources } from '../data/load.js'
-import { listVarieties, loadPengimScheme, loadPojScheme, loadSandhi, loadVariety } from '../phonology/load.js'
+import {
+  listVarieties,
+  loadPengimScheme,
+  loadPojScheme,
+  loadRawVariety,
+  loadSandhi,
+  loadVariety,
+} from '../phonology/load.js'
 import { tryParsePengim } from '../phonology/syllable.js'
 import { toIpa } from '../phonology/ipa.js'
 import { toPoj } from '../phonology/poj.js'
 import type { Entry } from '../schema/entry.js'
+import type { Variety } from '../schema/phonology.js'
 
 /**
  * Whole-dataset validation.
@@ -105,6 +113,19 @@ export function validate(): ValidationReport {
     issues.push(err('data/sources.yaml', (e as Error).message))
   }
 
+  // Must follow the sources load — the ids are what mappings are checked against.
+  // Skipped entirely when sources.yaml failed to load, or every citation in the
+  // phonology would be reported as unresolved on top of the real error. Every
+  // variety is known to parse by this point; the block above returns early
+  // otherwise, so loadRawVariety cannot fail here.
+  if (sourceIds.size > 0) {
+    for (const id of varieties) {
+      issues.push(
+        ...checkMappingSources(`data/phonology/varieties/${id}.yaml`, loadRawVariety(id), sourceIds),
+      )
+    }
+  }
+
   const seenIds = new Map<string, string>()
   const seenHeadwords = new Map<string, string[]>()
 
@@ -174,6 +195,41 @@ export function validate(): ValidationReport {
   }
 
   return summarise(issues, entryCount, readingCount, reviewCount, toneCounts)
+}
+
+/** The mapping groups in a variety file, all of which may cite sources. */
+const MAPPING_GROUPS = ['initials', 'medials', 'nuclei', 'codas', 'irregular'] as const
+
+/**
+ * A phonology mapping may cite the descriptions its `confidence` rests on. Ids
+ * are resolved the same way entry `sources` are, and an unresolved one is an
+ * error rather than a warning: a citation that does not resolve is worse than no
+ * citation, because it still reads as evidence.
+ *
+ * Takes one variety's OWN mappings — callers pass `loadRawVariety`, not the
+ * flattened chain, so a bad id in chaozhou.yaml is reported once against that
+ * file rather than again for every overlay that inherits it.
+ */
+export function checkMappingSources(
+  file: string,
+  variety: Variety,
+  sourceIds: Set<string>,
+): Issue[] {
+  const issues: Issue[] = []
+
+  for (const group of MAPPING_GROUPS) {
+    for (const [key, m] of Object.entries(variety[group] ?? {})) {
+      for (const s of m.sources ?? []) {
+        if (!sourceIds.has(s)) {
+          issues.push(
+            err(file, `unknown source '${s}' — add it to data/sources.yaml`, undefined, `${group}.${key}.sources`),
+          )
+        }
+      }
+    }
+  }
+
+  return issues
 }
 
 /** @returns how many readings carry low-confidence derivations. */

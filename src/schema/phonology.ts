@@ -12,6 +12,13 @@ const mapping = z.object({
   ipa: z.string().min(1),
   confidence: z.enum(CONFIDENCE),
   note: z.string().optional(),
+  /**
+   * Source ids backing the mapping, resolved against `data/sources.yaml` by the
+   * validator — the same provenance rule entries follow. Optional, because most
+   * mappings are uncontroversial; what it exists for is recording the evidence
+   * behind a `confidence` that was argued rather than assumed.
+   */
+  sources: z.array(z.string().min(1)).min(1).optional(),
 })
 
 export const pengimSchemeSchema = z.object({

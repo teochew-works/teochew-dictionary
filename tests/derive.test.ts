@@ -37,15 +37,51 @@ describe('toIpa — Chaozhou', () => {
   })
 })
 
+describe('the e / ê split (REVIEW.md §1)', () => {
+  // The ruling that closed §1, pinned by its own test words so that a regression
+  // in the vowel tables fails here rather than silently re-spelling the lexicon.
+  // Peng'im's circumflex is not decorative: `de1` and `dê1` are different words.
+  const BARE_E = [
+    ['he5', 'hɯ⁵⁵', '魚'],
+    ['de1', 'tɯ³³', '豬'],
+    ['ze1', 'tsɯ³³', '書'],
+    ['le2', 'lɯ⁵³', '你'],
+  ] as const
+
+  const CIRCUMFLEX_E = [
+    ['dê5', 'te⁵⁵', '茶'],
+    ['nêg8', 'nek̚⁴', '肉'],
+    ['bêh4', 'peʔ²', '百'],
+  ] as const
+
+  it.each(BARE_E)('%s → %s (%s) — bare e is /ɯ/', (pengim, ipa) => {
+    expect(toIpa(pengim).ipa).toBe(ipa)
+  })
+
+  it.each(CIRCUMFLEX_E)('%s → %s (%s) — ê is /e/', (pengim, ipa) => {
+    expect(toIpa(pengim).ipa).toBe(ipa)
+  })
+
+  it('derives both sets at high confidence, with no caveat', () => {
+    for (const [pengim] of [...BARE_E, ...CIRCUMFLEX_E]) {
+      const r = toIpa(pengim)
+      expect(r.confidence, pengim).toBe('high')
+      expect(r.caveats, pengim).toEqual([])
+    }
+  })
+})
+
 describe('toIpa — variety differences', () => {
   it('gives Shantou [tio] where Chaozhou has [tie]', () => {
     expect(toIpa('dio5', 'chaozhou').ipa).toBe('tie⁵⁵')
     expect(toIpa('dio5', 'shantou').ipa).toBe('tio⁵⁵')
   })
 
-  it('applies the Shantou /ɯ/ → /u/ merger', () => {
+  it('keeps /ɯ/ in Shantou, which differs only in the tone contour', () => {
+    // Swatow is Northern Teochew and does NOT merge /ɯ/ into /u/ — that is the
+    // Southern (Chaoyang–Puning–Huilai) merger. See REVIEW.md §1.
     expect(toIpa('le2', 'chaozhou').ipa).toBe('lɯ⁵³')
-    expect(toIpa('le2', 'shantou').ipa).toBe('lu⁵²')
+    expect(toIpa('le2', 'shantou').ipa).toBe('lɯ⁵²')
   })
 
   it('inherits unlisted mappings from the base variety', () => {

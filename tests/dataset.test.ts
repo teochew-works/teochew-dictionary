@@ -4,8 +4,9 @@ import type Database from 'better-sqlite3'
 import { build } from '../src/build/index.js'
 import { createEnricher, stripDiacritics, stripTones } from '../src/build/enrich.js'
 import { lookup, openDb } from '../src/lookup/index.js'
-import { validate, TONES } from '../src/validate/index.js'
+import { checkMappingSources, validate, TONES } from '../src/validate/index.js'
 import { loadEntries } from '../src/data/load.js'
+import type { Variety } from '../src/schema/phonology.js'
 
 /**
  * Guards the dataset itself, not just the code. A malformed entry should fail
@@ -39,6 +40,36 @@ describe('the shipped dataset', () => {
     // data/phonology/REVIEW.md § 7 for the assignment rule.
     const unattested = TONES.filter((t) => (report.toneCounts[t] ?? 0) === 0)
     expect(unattested, `unattested tones: ${unattested.join(', ')}`).toEqual([])
+  })
+})
+
+describe('phonology provenance', () => {
+  // A mapping cites the descriptions its `confidence` rests on. An id that does
+  // not resolve is an error, not a warning — it still reads as evidence.
+  const KNOWN = new Set(['pengim-1960', 'wikipedia'])
+
+  /** One variety carrying a single nucleus mapping with the given citations. */
+  function cited(...sources: string[]): Variety {
+    return {
+      variety: { id: 'test', name: 'Test' },
+      nuclei: { e: { ipa: 'ɯ', confidence: 'high', sources } },
+    }
+  }
+
+  it('rejects a mapping citing a source that does not resolve', () => {
+    const issues = checkMappingSources(
+      'varieties/test.yaml',
+      cited('pengim-1960', 'no-such-source'),
+      KNOWN,
+    )
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'nuclei.e.sources' })
+    expect(issues[0]?.message).toContain('no-such-source')
+  })
+
+  it('accepts a mapping whose ids all resolve', () => {
+    expect(checkMappingSources('varieties/test.yaml', cited('pengim-1960', 'wikipedia'), KNOWN))
+      .toEqual([])
   })
 })
 

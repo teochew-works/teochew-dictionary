@@ -38,3 +38,42 @@ sources:
     url: https://www.unicode.org/charts/unihan.html
     note: >-
       Character-level metadata (radical, stroke count, variants). Permissive.
+
+  # ─── Reference works ─────────────────────────────────────────────────────────
+  #
+  # Cited by phonology mappings (`sources:` in varieties/*.yaml) to record the
+  # evidence behind a `confidence`. These are consulted, not imported: no text is
+  # reproduced, and a phoneme mapping is a fact rather than an expressive work.
+  # Per the header above, pronunciations are not copyrightable even where glosses
+  # are, so citing them here creates no licence obligation on the dataset.
+
+  - id: pengim-1960
+    name: 廣東省教育廳《潮州話拼音方案》(1960)
+    licence: unknown
+    note: >-
+      The scheme that defines Peng'im itself, already named in
+      phonology/pengim.yaml. Authoritative for what the orthography MEANS — it is
+      the document that assigns `ê` to /e/ and bare `e` to /ɯ/, so for questions
+      about the letters it is definitional rather than merely descriptive. Based
+      on the Swatow (汕頭) dialect. Licence unknown; cited, never reproduced.
+
+  - id: wikipedia
+    name: Wikipedia (Teochew Min, Peng'im)
+    licence: CC-BY-SA-4.0
+    url: https://en.wikipedia.org/
+    retrieved: '2026-07-27'
+    note: >-
+      Share-alike, and therefore usable here only for facts — never for wording.
+      Distinct from the `wiktionary` id, which covers per-entry pronunciation
+      imports. Useful mainly for the sub-dialect classification, which no single
+      grammar states as compactly.
+
+  - id: learnteochew
+    name: Learn Teochew (learnteochew.com)
+    licence: unknown
+    url: https://learnteochew.com/pages/pronunciation.html
+    retrieved: '2026-07-27'
+    note: >-
+      A pedagogical Peng'im reference with an explicit vowel table. Valued here
+      as corroboration independent of the Wikipedia family of texts. Cited, never
+      reproduced.

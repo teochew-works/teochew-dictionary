@@ -2,28 +2,66 @@
 
 The phonology tables were assembled from general descriptions of Teochew. The
 mappings marked `confidence: high` are well attested and consistent across
-sources. The ones below are **not settled**, and the dataset carries them with
-lower confidence so that derived IPA can be trusted selectively rather than
-wholesale.
+sources. The questions below are the ones that were **not settled** when the
+tables were written, and the dataset carries the unresolved ones at lower
+confidence so that derived IPA can be trusted selectively rather than wholesale.
 
 Anything here can be corrected by editing a YAML file. None of it requires
 touching code.
 
+A resolved question keeps its number and stays in place rather than being
+deleted, so that references to it do not rot and the reasoning behind a `high`
+mapping stays readable. A mapping records the evidence it rests on in a
+`sources:` list, resolved against `data/sources.yaml`.
+
 ---
 
-## 1. The `e` / `ê` vowel split  ·  `varieties/chaozhou.yaml`
+## 1. The `e` / `ê` vowel split  ·  `varieties/chaozhou.yaml`  ✅ **Resolved 2026-07-27**
 
-**Encoded as:** `ê` → /e/, bare `e` → /ɯ/.
+**Ruling:** `ê` → /e/ and bare `e` → /ɯ/ are **confirmed**, both raised to
+`confidence: high`. The Shantou overlay was **corrected**: Shantou does *not*
+merge /ɯ/ into /u/.
 
-The Peng'im scheme uses the circumflex to distinguish the front mid vowel from
-the high back unrounded one. Sources that drop the circumflex — which is most
-informal writing, and a fair amount of published material — conflate the two.
-This affects a large share of the lexicon (魚 `he5`, 豬 `de1`, 書 `ze1`, 你 `le2`
-all hinge on it), so it is the single highest-value thing to confirm.
+Settled from published description rather than by ear, which the sources turned
+out to support more strongly than the original hedge assumed:
 
-**Test words:** 魚 `he5`, 豬 `de1`, 書 `ze1`, 你 `le2` (all bare `e`) against 茶
-`dê5`, 肉 `nêg8`, 百 `bêh4` (all `ê`). Hearing the two sets side by side in
-citation form would settle it immediately.
+- **The contrast is definitional, not empirical.** Peng'im *is* 廣東省教育廳
+  《潮州話拼音方案》(1960), already cited in `pengim.yaml`. That scheme assigns the
+  two letters separate values — `ê` = [e] (啞), `e` = [ɯ] (余). Asking whether the
+  circumflex marks a real distinction is asking what the orthography means, and
+  the orthography answers.
+- **It is the primary isogloss of Teochew dialectology.** Presence or absence of
+  /ɯ/ is *the* criterion by which the sub-dialects are classified. A vowel that
+  load-bearing is not weakly attested.
+- **Corroborated outside the Wikipedia family** by an independent Peng'im vowel
+  table giving `ê` = /e/ and `e` = /ɯ/, with /lɯ/ 汝 and /tsɯ/ 書 — two of the
+  test words below.
+
+**The Shantou correction.** `shantou.yaml` had encoded Shantou as merging /ɯ/ into
+/u/, calling it "the most audible single difference between the two varieties".
+That is the *Southern* Teochew merger (Chaoyang, Puning, Huilai). Swatow — urban
+Shantou — is **Northern** Teochew and keeps /ɯ/, alongside Chaozhou city, Jieyang
+and Raoping. Peng'im settles it from the other direction as well: the 1960 scheme
+is based on the Swatow dialect, so its `e` = /ɯ/ *is* a Swatow value. The `nuclei`
+override is gone and Shantou now inherits /ɯ/; what actually separates the two
+varieties is §2's `io` rime and the tone-2 contour.
+
+**Residual uncertainty, deliberately not blocking `high`.** Descriptions vary in
+the *symbol* for the bare-`e` vowel — [ɯ] ~ [ɤ] ~ [ə] — and for `ê` between [e]
+and [ɛ]. This dataset follows the scheme. That is a transcription convention, not
+doubt about which phoneme is meant, and the confidence scale here rates the
+mapping rather than the choice of IPA glyph.
+
+**Still worth a speaker's ear.** None of the above is a recording. If you speak
+the language, the original test remains the fastest check: 魚 `he5`, 豬 `de1`, 書
+`ze1`, 你 `le2` (all bare `e`) against 茶 `dê5`, 肉 `nêg8`, 百 `bêh4` (all `ê`),
+in citation form. All seven are in the lexicon, and `tests/derive.test.ts` pins
+them, so a correction would surface immediately.
+
+**Follow-up:** the /ɯ/ → /u/ merger is real; it was only attached to the wrong
+variety. Modelling it properly means a `varieties/chaoyang.yaml` that does not
+exist yet — Southern Teochew is currently unrepresented in the dictionary. See
+issue #10.
 
 ## 2. Chaozhou `io` → [ie] fronting  ·  `varieties/chaozhou.yaml` → `irregular`
 
