@@ -11,14 +11,17 @@ variety:
   region: 汕頭市, Guangdong
   inherits: chaozhou
 
-nuclei:
-  # The defining Shantou merger: Chaozhou /ɯ/ is realised as /u/.
-  e:
-    ipa: u
-    confidence: medium
-    note: >-
-      Shantou merges the Chaozhou high back unrounded /ɯ/ into /u/. This is the
-      most audible single difference between the two varieties.
+# NO `nuclei` block, and that absence is the point — see REVIEW.md §1.
+#
+# This file previously overrode `e` to /u/, on the belief that Shantou merges the
+# Chaozhou high back unrounded /ɯ/. That was wrong. Swatow (urban Shantou) is
+# NORTHERN Teochew and keeps /ɯ/; the merger into /u/ belongs to the Southern
+# group — Chaoyang, Puning, Huilai. Peng'im settles it from the other direction
+# too: the 1960 scheme is based on the Swatow dialect and gives bare `e` the value
+# /ɯ/, so a Swatow overlay contradicting that contradicts its own orthography.
+#
+# Shantou therefore inherits /ɯ/ from Chaozhou, and what actually separates the
+# two varieties is the `io` rime below plus the tone-2 contour.
 
 irregular:
   # Chaozhou overrides these rimes to the fronted [ie] forms, so Shantou must

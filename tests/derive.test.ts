@@ -43,9 +43,11 @@ describe('toIpa — variety differences', () => {
     expect(toIpa('dio5', 'shantou').ipa).toBe('tio⁵⁵')
   })
 
-  it('applies the Shantou /ɯ/ → /u/ merger', () => {
+  it('keeps /ɯ/ in Shantou, which differs only in the tone contour', () => {
+    // Swatow is Northern Teochew and does NOT merge /ɯ/ into /u/ — that is the
+    // Southern (Chaoyang–Puning–Huilai) merger. See REVIEW.md §1.
     expect(toIpa('le2', 'chaozhou').ipa).toBe('lɯ⁵³')
-    expect(toIpa('le2', 'shantou').ipa).toBe('lu⁵²')
+    expect(toIpa('le2', 'shantou').ipa).toBe('lɯ⁵²')
   })
 
   it('inherits unlisted mappings from the base variety', () => {

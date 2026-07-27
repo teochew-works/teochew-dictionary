@@ -58,8 +58,9 @@ nuclei:
     ipa: ɯ
     confidence: medium
     note: >-
-      The high back unrounded vowel. Present in Chaozhou and Jieyang; merged into
-      /u/ in Shantou (see shantou.yaml).
+      The high back unrounded vowel. Retained across Northern Teochew — Chaozhou
+      city, Shantou, Jieyang, Raoping — and merged into /u/ in Southern Teochew
+      (Chaoyang, Puning, Huilai), which this dictionary does not model.
   ai: { ipa: ai, confidence: high }
   ao: { ipa: au, confidence: high }
   oi: { ipa: oi, confidence: medium }
