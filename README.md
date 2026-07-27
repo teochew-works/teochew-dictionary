@@ -84,6 +84,17 @@ matters because parts of the analysis are genuinely unsettled — see
 [data/phonology/REVIEW.md](data/phonology/REVIEW.md), which lists every open
 question and the test words that would resolve it.
 
+A mapping may also carry `sources:`, resolved against `data/sources.yaml` exactly
+as an entry's is. It records the evidence a confidence rests on, so that raising
+one is an argument someone can check rather than an assertion:
+
+```yaml
+e:
+  ipa: ɯ
+  confidence: high
+  sources: [pengim-1960, wikipedia, learnteochew]
+```
+
 **The dataset has not been checked by a native speaker.** Tone assignments in
 particular are provisional, and the tone sandhi table is flagged
 `needs_review: true` in full.
@@ -235,8 +246,10 @@ pipeline end to end; nowhere near enough to be a usable dictionary.
 
 The most valuable next contributions, in order:
 
-1. **A native speaker walking [REVIEW.md](data/phonology/REVIEW.md).** The vowel
-   question in §1 affects a large fraction of entries.
-2. **Confirming the sandhi table** in `data/phonology/sandhi/chaozhou.yaml`.
+1. **Confirming the sandhi table** in `data/phonology/sandhi/chaozhou.yaml`. It is
+   flagged `needs_review: true` in full, and published descriptions disagree with
+   each other, so this is the largest remaining unknown.
+2. **A native speaker walking [REVIEW.md](data/phonology/REVIEW.md).** §1, the
+   `e`/`ê` vowel split, is resolved; §2–§7 are not.
 3. **Volume** — the importers exist to make this less manual, but every proposal
    still needs a human.
