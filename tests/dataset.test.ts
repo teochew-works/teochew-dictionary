@@ -46,23 +46,30 @@ describe('the shipped dataset', () => {
 describe('phonology provenance', () => {
   // A mapping cites the descriptions its `confidence` rests on. An id that does
   // not resolve is an error, not a warning — it still reads as evidence.
-  const variety: Variety = {
-    variety: { id: 'test', name: 'Test' },
-    nuclei: {
-      e: { ipa: 'ɯ', confidence: 'high', sources: ['pengim-1960', 'no-such-source'] },
-    },
+  const KNOWN = new Set(['pengim-1960', 'wikipedia'])
+
+  /** One variety carrying a single nucleus mapping with the given citations. */
+  function cited(...sources: string[]): Variety {
+    return {
+      variety: { id: 'test', name: 'Test' },
+      nuclei: { e: { ipa: 'ɯ', confidence: 'high', sources } },
+    }
   }
 
   it('rejects a mapping citing a source that does not resolve', () => {
-    const issues = checkMappingSources('varieties/test.yaml', variety, new Set(['pengim-1960']))
+    const issues = checkMappingSources(
+      'varieties/test.yaml',
+      cited('pengim-1960', 'no-such-source'),
+      KNOWN,
+    )
     expect(issues).toHaveLength(1)
     expect(issues[0]).toMatchObject({ level: 'error', path: 'nuclei.e.sources' })
     expect(issues[0]?.message).toContain('no-such-source')
   })
 
   it('accepts a mapping whose ids all resolve', () => {
-    const known = new Set(['pengim-1960', 'no-such-source'])
-    expect(checkMappingSources('varieties/test.yaml', variety, known)).toEqual([])
+    expect(checkMappingSources('varieties/test.yaml', cited('pengim-1960', 'wikipedia'), KNOWN))
+      .toEqual([])
   })
 })
 

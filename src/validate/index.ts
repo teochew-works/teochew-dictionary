@@ -115,16 +115,14 @@ export function validate(): ValidationReport {
 
   // Must follow the sources load — the ids are what mappings are checked against.
   // Skipped entirely when sources.yaml failed to load, or every citation in the
-  // phonology would be reported as unresolved on top of the real error.
+  // phonology would be reported as unresolved on top of the real error. Every
+  // variety is known to parse by this point; the block above returns early
+  // otherwise, so loadRawVariety cannot fail here.
   if (sourceIds.size > 0) {
     for (const id of varieties) {
-      try {
-        issues.push(
-          ...checkMappingSources(`data/phonology/varieties/${id}.yaml`, loadRawVariety(id), sourceIds),
-        )
-      } catch {
-        // Unreadable variety file — already reported by the phonology block above.
-      }
+      issues.push(
+        ...checkMappingSources(`data/phonology/varieties/${id}.yaml`, loadRawVariety(id), sourceIds),
+      )
     }
   }
 
