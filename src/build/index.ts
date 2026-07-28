@@ -77,6 +77,7 @@ function buildSqlite(path: string, entries: EnrichedEntry[]): void {
       tags         TEXT,
       sources      TEXT NOT NULL,
       licence      TEXT NOT NULL,
+      attributions TEXT,
       json         TEXT NOT NULL
     );
 
@@ -121,8 +122,8 @@ function buildSqlite(path: string, entries: EnrichedEntry[]): void {
   `)
 
   const insEntry = db.prepare(
-    `INSERT INTO entries (id, headword, frequency, needs_review, tags, sources, licence, json)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+    `INSERT INTO entries (id, headword, frequency, needs_review, tags, sources, licence, attributions, json)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
   )
   const insReading = db.prepare(
     `INSERT INTO readings
@@ -146,6 +147,7 @@ function buildSqlite(path: string, entries: EnrichedEntry[]): void {
         e.tags?.join(' ') ?? null,
         e.sources.join(' '),
         e.licence,
+        e.attributions.length > 0 ? e.attributions.join('; ') : null,
         JSON.stringify(e),
       )
 

@@ -118,6 +118,7 @@ describe('enrichment', () => {
   it('derives the base licence for an entry that only cites the seed source', () => {
     const e = enrich(entries.get('dio5-ziu1-潮州')!)
     expect(e.licence).toBe('BSD-3-Clause')
+    expect(e.attributions).toEqual([])
   })
 })
 

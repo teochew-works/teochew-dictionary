@@ -224,18 +224,32 @@ hand-maintained snapshot, not something a script regenerates.
 entry whose sources are all permissive.
 
 **An entry's licence is derived from its `sources`, never hand-written** —
-computed by [`src/data/licence.ts`](src/data/licence.ts) and shipped as a
-`licence` field on every entry in `dist/dict.json` and `dist/dict.sqlite`, so a
-consumer can filter to a purely permissive subset without re-deriving the rule
-themselves. The rule: BSD-3-Clause, unless a cited source is share-alike, in
-which case that source's licence covers the whole entry — a merged record is
-an adaptation, not a mere collection, so it can't keep the parts separately
-licensed. Wiktionary is CC-BY-SA-4.0, so an entry that draws a reading or gloss
-from it becomes CC-BY-SA-4.0; the full text is in
-[`LICENSE-DATA-CC-BY-SA`](LICENSE-DATA-CC-BY-SA). A source with an unclassified
-licence (`unknown` included, e.g. `pengim-1960`) can be cited for corroboration
-in a phonology mapping, but can't back an entry — the validator rejects an
-entry that tries, rather than silently guessing.
+computed by [`src/data/licence.ts`](src/data/licence.ts) and shipped as
+`licence` and `attributions` fields on every entry in `dist/dict.json` and
+`dist/dict.sqlite`, so a consumer can filter to a purely permissive subset
+without re-deriving the rule themselves. The two fields answer different
+questions:
+
+- **`licence`** — what governs redistributing the entry. BSD-3-Clause, unless
+  a cited source is share-alike, in which case that source's licence covers
+  the whole entry: a merged record is an adaptation, not a mere collection, so
+  it can't keep its parts separately licensed. Wiktionary is CC-BY-SA-4.0, so
+  an entry that draws a reading or gloss from it becomes CC-BY-SA-4.0 as a
+  whole; the full text is in
+  [`LICENSE-DATA-CC-BY-SA`](LICENSE-DATA-CC-BY-SA).
+- **`attributions`** — whose notice must *also* be retained. Every cited
+  source whose own licence differs from BSD-3-Clause, share-alike or not. A
+  permissive-but-distinct licence never changes `licence` — citing `unihan`
+  (Unicode-DFS-2016) doesn't make an entry stop being BSD-3-Clause — but its
+  notice still has to travel with the entry, so it's not silently dropped.
+  Every distinct licence text a source can carry has its own `LICENSE-DATA-*`
+  file at the repo root: [`LICENSE-DATA-CC-BY-SA`](LICENSE-DATA-CC-BY-SA) and
+  [`LICENSE-DATA-UNICODE-DFS-2016`](LICENSE-DATA-UNICODE-DFS-2016) so far.
+
+A source with an unclassified licence (`unknown` included, e.g.
+`pengim-1960`) can be cited for corroboration in a phonology mapping, but
+can't back an entry — the validator rejects an entry that tries, rather than
+silently guessing.
 
 **Today the whole shipped dataset is BSD-3-Clause** — all 87 entries cite only
 `seed`. This is why importers write to `data/staging/` and never to

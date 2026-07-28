@@ -40,6 +40,13 @@ export interface EnrichedEntry extends Omit<Entry, 'readings'> {
    * which case that source's licence covers the whole entry.
    */
   licence: string
+  /**
+   * Notices owed in addition to `licence` — every cited source whose own
+   * licence differs from BASE_LICENCE, e.g. Unicode-DFS-2016 via `unihan`.
+   * A permissive source here does not change `licence`; it still has to be
+   * credited.
+   */
+  attributions: string[]
 }
 
 /** Strip tone digits: `dio5 ziu1` → `dio ziu`. Users rarely type tones. */
@@ -117,7 +124,13 @@ export function createEnricher() {
     const resolved = resolveLicence(entry.sources, sources)
     if (!resolved.ok) throw new Error(`${entry.id}: ${resolved.reason}`)
 
-    return { ...entry, readings, search_keys: [...keys], licence: resolved.licence }
+    return {
+      ...entry,
+      readings,
+      search_keys: [...keys],
+      licence: resolved.licence,
+      attributions: resolved.attributions,
+    }
   }
 
   return { enrich, enrichReading }

@@ -23,20 +23,43 @@ const sources = new Map(
 )
 
 describe('resolveLicence', () => {
-  it('resolves permissive-only sources to the base licence', () => {
-    expect(resolveLicence(['seed'], sources)).toEqual({ ok: true, licence: BASE_LICENCE })
-    expect(resolveLicence(['seed', 'unihan'], sources)).toEqual({ ok: true, licence: BASE_LICENCE })
+  it('resolves base-licence-only sources with no attribution owed', () => {
+    expect(resolveLicence(['seed'], sources)).toEqual({ ok: true, licence: BASE_LICENCE, attributions: [] })
+  })
+
+  it('keeps a permissive-but-distinct licence from changing which licence governs', () => {
+    // unihan is Unicode-DFS-2016, not BASE_LICENCE — it must not silently
+    // become "BSD-3-Clause" as if it were the project's own text, but citing
+    // it also must not force the entry away from BASE_LICENCE the way a
+    // share-alike source would.
+    expect(resolveLicence(['seed', 'unihan'], sources)).toEqual({
+      ok: true,
+      licence: BASE_LICENCE,
+      attributions: ['unihan (Unicode-DFS-2016)'],
+    })
   })
 
   it('lets a single share-alike source cover the whole entry', () => {
-    expect(resolveLicence(['wiktionary'], sources)).toEqual({ ok: true, licence: 'CC-BY-SA-4.0' })
-    expect(resolveLicence(['seed', 'wiktionary'], sources)).toEqual({ ok: true, licence: 'CC-BY-SA-4.0' })
+    expect(resolveLicence(['wiktionary'], sources)).toEqual({
+      ok: true,
+      licence: 'CC-BY-SA-4.0',
+      attributions: ['wiktionary (CC-BY-SA-4.0)'],
+    })
+    expect(resolveLicence(['seed', 'wiktionary'], sources)).toEqual({
+      ok: true,
+      licence: 'CC-BY-SA-4.0',
+      attributions: ['wiktionary (CC-BY-SA-4.0)'],
+    })
   })
 
   it('does not treat two sources under the same share-alike licence as a conflict', () => {
     // wiktionary and cedict are both CC-BY-SA-4.0 — citing both on one entry
     // is the realistic case, and must not be flagged as incompatible.
-    expect(resolveLicence(['wiktionary', 'cedict'], sources)).toEqual({ ok: true, licence: 'CC-BY-SA-4.0' })
+    expect(resolveLicence(['wiktionary', 'cedict'], sources)).toEqual({
+      ok: true,
+      licence: 'CC-BY-SA-4.0',
+      attributions: ['cedict (CC-BY-SA-4.0)', 'wiktionary (CC-BY-SA-4.0)'],
+    })
   })
 
   it('rejects a source with an unclassified licence', () => {

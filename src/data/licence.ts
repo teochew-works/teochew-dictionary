@@ -5,13 +5,22 @@ import type { Source } from '../schema/entry.js'
  *
  * An entry's licence is derived from its `sources`, never hand-written — the
  * same "store what a human must know, derive everything else" rule the schema
- * comment states for readings. A source is either `permissive` (folds into
- * the project's own BASE_LICENCE with no extra obligation) or `share-alike`
- * (its licence propagates to the whole entry, since a merged record is an
- * adaptation, not a mere collection). Anything not classified — including the
- * literal `unknown` used for sources that are cited but never reproduced,
- * e.g. `pengim-1960` — cannot back an entry directly, only a phonology
- * mapping's `sources:` (see checkMappingSources in ../validate/index.js).
+ * comment states for readings. A source is either `permissive` or
+ * `share-alike`; anything not classified — including the literal `unknown`
+ * used for sources that are cited but never reproduced, e.g. `pengim-1960` —
+ * cannot back an entry directly, only a phonology mapping's `sources:` (see
+ * checkMappingSources in ../validate/index.js).
+ *
+ * `licence` and `attributions` answer different questions, and collapsing them
+ * into one string is what caused this to need re-deriving: `licence` is what
+ * *governs* redistribution of the entry — BASE_LICENCE, unless a share-alike
+ * source overrides it, since a merged record is an adaptation, not a mere
+ * collection, and can't keep its parts separately licensed. `attributions` is
+ * whose notice must additionally be retained — every non-BASE_LICENCE source
+ * cited, share-alike or not. A permissive source whose text differs from
+ * BASE_LICENCE (e.g. `unihan`, Unicode-DFS-2016) never changes which licence
+ * governs, but it still owes its own notice; folding it silently into
+ * BASE_LICENCE would lose that.
  */
 
 export const BASE_LICENCE = 'BSD-3-Clause'
@@ -25,7 +34,7 @@ const LICENCE_CLASS: Record<string, LicenceClass> = {
 }
 
 export type LicenceResolution =
-  | { ok: true; licence: string }
+  | { ok: true; licence: string; attributions: string[] }
   | { ok: false; reason: string }
 
 /**
@@ -35,9 +44,11 @@ export type LicenceResolution =
  */
 export function resolveLicence(sourceIds: string[], sources: Map<string, Source>): LicenceResolution {
   const shareAlike = new Set<string>()
+  const attributions = new Set<string>()
 
   for (const id of sourceIds) {
-    const licence = sources.get(id)?.licence
+    const source = sources.get(id)
+    const licence = source?.licence
     const cls = licence !== undefined ? LICENCE_CLASS[licence] : undefined
     if (!cls) {
       return {
@@ -47,6 +58,7 @@ export function resolveLicence(sourceIds: string[], sources: Map<string, Source>
       }
     }
     if (cls === 'share-alike') shareAlike.add(licence!)
+    if (licence !== BASE_LICENCE) attributions.add(`${source!.name} (${licence})`)
   }
 
   if (shareAlike.size > 1) {
@@ -54,5 +66,5 @@ export function resolveLicence(sourceIds: string[], sources: Map<string, Source>
   }
 
   const [only] = shareAlike
-  return { ok: true, licence: only ?? BASE_LICENCE }
+  return { ok: true, licence: only ?? BASE_LICENCE, attributions: [...attributions].sort() }
 }
