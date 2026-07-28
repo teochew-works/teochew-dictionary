@@ -4,6 +4,14 @@
 # Licence hygiene matters for a lexicon: glosses and example sentences are
 # copyrightable even when individual pronunciations are not, so imported material
 # must carry its licence with it and stay separable from hand-written material.
+#
+# An entry's own licence is DERIVED from this file, never hand-written — see
+# src/data/licence.ts. The rule: BSD-3-Clause unless a cited source is
+# share-alike, in which case that licence covers the whole entry. A source
+# whose `licence` is `unknown` (or anything else not classified permissive or
+# share-alike in licence.ts) can be cited by a phonology mapping's `sources:`
+# for corroboration, but cannot back an entry directly — the validator flags
+# that as an unresolvable licence rather than silently guessing.
 
 sources:
   - id: seed

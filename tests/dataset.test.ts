@@ -5,7 +5,8 @@ import { build } from '../src/build/index.js'
 import { createEnricher, stripDiacritics, stripTones } from '../src/build/enrich.js'
 import { lookup, openDb } from '../src/lookup/index.js'
 import { checkMappingSources, validate, TONES } from '../src/validate/index.js'
-import { loadEntries } from '../src/data/load.js'
+import { loadEntries, loadSources } from '../src/data/load.js'
+import { resolveLicence } from '../src/data/licence.js'
 import type { Variety } from '../src/schema/phonology.js'
 
 /**
@@ -30,6 +31,13 @@ describe('the shipped dataset', () => {
     // validator enforces that the id resolves.
     for (const { entry } of loadEntries()) {
       expect(entry.sources.length, entry.id).toBeGreaterThan(0)
+    }
+  })
+
+  it('gives every entry a resolvable licence', () => {
+    const sources = new Map(loadSources().map((s) => [s.id, s]))
+    for (const { entry } of loadEntries()) {
+      expect(resolveLicence(entry.sources, sources).ok, entry.id).toBe(true)
     }
   })
 
@@ -105,6 +113,11 @@ describe('enrichment', () => {
     const cz = e.readings.find((r) => r.variety === 'chaozhou')!
     expect(cz.ipa_confidence).toBe('medium')
     expect(cz.ipa_caveats.length).toBeGreaterThan(0)
+  })
+
+  it('derives the base licence for an entry that only cites the seed source', () => {
+    const e = enrich(entries.get('dio5-ziu1-潮州')!)
+    expect(e.licence).toBe('BSD-3-Clause')
   })
 })
 

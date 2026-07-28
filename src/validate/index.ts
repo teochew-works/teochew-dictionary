@@ -11,7 +11,8 @@ import {
 import { tryParsePengim } from '../phonology/syllable.js'
 import { toIpa } from '../phonology/ipa.js'
 import { toPoj } from '../phonology/poj.js'
-import type { Entry } from '../schema/entry.js'
+import { resolveLicence } from '../data/licence.js'
+import type { Entry, Source } from '../schema/entry.js'
 import type { Variety } from '../schema/phonology.js'
 
 /**
@@ -107,8 +108,12 @@ export function validate(): ValidationReport {
   }
 
   const sourceIds = new Set<string>()
+  const sourceMap = new Map<string, Source>()
   try {
-    for (const s of loadSources()) sourceIds.add(s.id)
+    for (const s of loadSources()) {
+      sourceIds.add(s.id)
+      sourceMap.set(s.id, s)
+    }
   } catch (e) {
     issues.push(err('data/sources.yaml', (e as Error).message))
   }
@@ -157,9 +162,21 @@ export function validate(): ValidationReport {
       else seenHeadwords.set(entry.headword, [entry.id])
 
       // ── provenance ──────────────────────────────────────────────────────────
+      let sourcesResolved = true
       for (const s of entry.sources) {
         if (sourceIds.size > 0 && !sourceIds.has(s)) {
           issues.push(err(file, `unknown source '${s}' — add it to data/sources.yaml`, entry.id, 'sources'))
+          sourcesResolved = false
+        }
+      }
+
+      // An entry's licence is derived from its sources, not written by hand —
+      // skipped when a source id above didn't even resolve, so one root cause
+      // doesn't get reported twice.
+      if (sourcesResolved && sourceMap.size > 0) {
+        const licence = resolveLicence(entry.sources, sourceMap)
+        if (!licence.ok) {
+          issues.push(err(file, `unresolvable licence: ${licence.reason}`, entry.id, 'sources'))
         }
       }
 

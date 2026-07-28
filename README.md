@@ -220,18 +220,28 @@ hand-maintained snapshot, not something a script regenerates.
 
 ## Licensing
 
-**[BSD 3-Clause](LICENSE)** — covering both the tooling in `src/` and the
-hand-curated lexicon in `data/`.
+**[BSD 3-Clause](LICENSE)** by default — covering the tooling in `src/` and any
+entry whose sources are all permissive.
 
-One caveat that will matter later. The importers pull from **Wiktionary and
-CC-CEDICT, which are CC-BY-SA-4.0** — a share-alike licence that is *not*
-compatible with redistributing the result under BSD-3-Clause alone. Merging any
-of their glosses would place those entries under share-alike terms and force a
-relicensing decision on the dataset as a whole.
+**An entry's licence is derived from its `sources`, never hand-written** —
+computed by [`src/data/licence.ts`](src/data/licence.ts) and shipped as a
+`licence` field on every entry in `dist/dict.json` and `dist/dict.sqlite`, so a
+consumer can filter to a purely permissive subset without re-deriving the rule
+themselves. The rule: BSD-3-Clause, unless a cited source is share-alike, in
+which case that source's licence covers the whole entry — a merged record is
+an adaptation, not a mere collection, so it can't keep the parts separately
+licensed. Wiktionary is CC-BY-SA-4.0, so an entry that draws a reading or gloss
+from it becomes CC-BY-SA-4.0; the full text is in
+[`LICENSE-DATA-CC-BY-SA`](LICENSE-DATA-CC-BY-SA). A source with an unclassified
+licence (`unknown` included, e.g. `pengim-1960`) can be cited for corroboration
+in a phonology mapping, but can't back an entry — the validator rejects an
+entry that tries, rather than silently guessing.
 
-This is why importers write to `data/staging/` and never to `data/entries/`, and
-why every entry records its `sources`. Nothing imported has been merged, so the
-question is still open rather than already answered by accident.
+**Today the whole shipped dataset is BSD-3-Clause** — all 87 entries cite only
+`seed`. This is why importers write to `data/staging/` and never to
+`data/entries/`: nothing imported has been merged yet, so merging a CC-BY-SA
+gloss into an entry, and thereby relicensing that entry, stays a deliberate
+human act rather than something a script does by accident.
 
 ---
 
