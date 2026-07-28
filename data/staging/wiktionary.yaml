@@ -1,0 +1,1329 @@
+# Import proposals from 'wiktionary' — NOT part of the dataset.
+#
+# Review each proposal, then hand-merge the good ones into data/entries/*.yaml,
+# remembering to add the source id to the entry's `sources` list.
+#
+# requested 157 headwords, resolved 141
+# 0 candidate reading(s) rejected as malformed Peng'im
+# Wiktionary is CC-BY-SA-4.0 — merging binds the dataset to share-alike
+source: wiktionary
+proposal_count: 141
+misses:
+  - 只位
+  - 許位
+  - 底位
+  - 按怎
+  - 諸娘儂
+  - 查埔儂
+  - 阿姩
+  - 虱
+  - 指甲
+  - 膝頭
+  - 腹肚
+  - 搾
+  - 㧒
+  - 火灰
+  - 鈍
+  - 燥
+proposals:
+  - headword: 伊儂
+    readings:
+      - pengim: i1 nang5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 只
+    readings:
+      - pengim: zi2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 許
+    readings:
+      - pengim: he2
+        variety: chaozhou
+      - pengim: kou2
+        variety: chaozhou
+      - pengim: hu2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 底時
+    readings:
+      - pengim: di7 si5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 攏總
+    readings:
+      - pengim: long2 zong2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 淡薄
+    readings:
+      - pengim: dam6 boh8
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 別
+    readings:
+      - pengim: biêg8
+        variety: chaozhou
+      - pengim: biag8
+        variety: chaozhou
+      - pengim: bag8
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 闊
+    readings:
+      - pengim: kuah4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 厚
+    readings:
+      - pengim: gao6
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 重
+    readings:
+      - pengim: dang6
+        variety: chaozhou
+      - pengim: dong6
+        variety: chaozhou
+      - pengim: dêng5
+        variety: chaozhou
+      - pengim: cong5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 4 readings found — confirm which are genuine variants
+  - headword: 狹
+    readings:
+      - pengim: hiab8
+        variety: chaozhou
+      - pengim: hiêb8
+        variety: chaozhou
+      - pengim: oih8
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 薄
+    readings:
+      - pengim: boh8
+        variety: chaozhou
+      - pengim: bêg4
+        variety: chaozhou
+      - pengim: bo7
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 某
+    readings:
+      - pengim: mou2
+        variety: chaozhou
+      - pengim: mong2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 翁
+    readings:
+      - pengim: ang1
+        variety: chaozhou
+      - pengim: ong1
+        variety: chaozhou
+      - pengim: êng1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 動物
+    readings:
+      - pengim: dong6 muêh8
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 鳥
+    readings:
+      - pengim: ziao2
+        variety: chaozhou
+      - pengim: ziou2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 狗
+    readings:
+      - pengim: gao2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 蛇
+    readings:
+      - pengim: zua5
+        variety: chaozhou
+      - pengim: i5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 蟲
+    readings:
+      - pengim: tang5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 樹
+    readings:
+      - pengim: ciu7
+        variety: chaozhou
+      - pengim: su6
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 樹林
+    readings:
+      - pengim: ciu7 lim5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 柴
+    readings:
+      - pengim: ca5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 生果
+    readings:
+      - pengim: cên1 guê2
+        variety: chaozhou
+      - pengim: cên1 guên2
+        variety: chaozhou
+      - pengim: cên1 guain2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 籽
+    readings:
+      - pengim: zi2
+        variety: chaozhou
+      - pengim: ze2
+        variety: chaozhou
+      - pengim: zu2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 葉
+    readings:
+      - pengim: iab8
+        variety: chaozhou
+      - pengim: iag8
+        variety: chaozhou
+      - pengim: hiêh8
+        variety: chaozhou
+      - pengim: hioh8
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 4 readings found — confirm which are genuine variants
+  - headword: 根
+    readings:
+      - pengim: geng1
+        variety: chaozhou
+      - pengim: gêng1
+        variety: chaozhou
+      - pengim: ging1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 樹皮
+    readings:
+      - pengim: ciu7 puê5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 花
+    readings:
+      - pengim: huê1
+        variety: chaozhou
+      - pengim: hua1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 草
+    readings:
+      - pengim: co2
+        variety: chaozhou
+      - pengim: cao2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 索
+    readings:
+      - pengim: soh4
+        variety: chaozhou
+      - pengim: sog4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 皮
+    readings:
+      - pengim: puê5
+        variety: chaozhou
+      - pengim: pi5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 血
+    readings:
+      - pengim: huêh4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 骨
+    readings:
+      - pengim: gug4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 油
+    readings:
+      - pengim: iu5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 角
+    readings:
+      - pengim: gag4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 尾
+    readings:
+      - pengim: bhuê2
+        variety: chaozhou
+      - pengim: mai2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 毛
+    readings:
+      - pengim: mo5
+        variety: chaozhou
+      - pengim: mao5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 頭毛
+    readings:
+      - pengim: tao5 mo5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 頭
+    readings:
+      - pengim: tao5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 耳
+    readings:
+      - pengim: hin6
+        variety: chaozhou
+      - pengim: re2
+        variety: chaozhou
+      - pengim: re7
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 目珠
+    readings:
+      - pengim: mag8 zu1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 鼻
+    readings:
+      - pengim: pin7
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 喙
+    readings:
+      - pengim: cui3
+        variety: chaozhou
+      - pengim: hui3
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 牙
+    readings:
+      - pengim: ghê5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 舌
+    readings:
+      - pengim: zih8
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 跤
+    readings:
+      - pengim: ka1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 手
+    readings:
+      - pengim: ciu2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 翼
+    readings:
+      - pengim: sig8
+        variety: chaozhou
+      - pengim: sêg8
+        variety: chaozhou
+      - pengim: êg8
+        variety: chaozhou
+      - pengim: iah8
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 4 readings found — confirm which are genuine variants
+  - headword: 腸
+    readings:
+      - pengim: deng5
+        variety: chaozhou
+      - pengim: ciang5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 頷
+    readings:
+      - pengim: am6
+        variety: chaozhou
+      - pengim: ham5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 尻脊
+    readings:
+      - pengim: ga1 ziah4
+        variety: chaozhou
+      - pengim: ka1 ziah4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 胸
+    readings:
+      - pengim: hêng1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 心
+    readings:
+      - pengim: sim1
+        variety: chaozhou
+      - pengim: sing1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 肝
+    readings:
+      - pengim: guan1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 咬
+    readings:
+      - pengim: ga6
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 嗍
+    readings:
+      - pengim: suh4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 呸
+    readings:
+      - pengim: pui3
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 吐
+    readings:
+      - pengim: tou3
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 歕
+    readings:
+      - pengim: bung5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 喘氣
+    readings:
+      - pengim: cuêng2 kui3
+        variety: chaozhou
+      - pengim: cuang2 kui3
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 笑
+    readings:
+      - pengim: ciê3
+        variety: chaozhou
+      - pengim: cio3
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 想
+    readings:
+      - pengim: siên6
+        variety: chaozhou
+      - pengim: sion6
+        variety: chaozhou
+      - pengim: siang2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 驚
+    readings:
+      - pengim: gian1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 活
+    readings:
+      - pengim: uah8
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 死
+    readings:
+      - pengim: si2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 殺
+    readings:
+      - pengim: suah4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 相拍
+    readings:
+      - pengim: sio1 pah4
+        variety: chaozhou
+      - pengim: siê1 pah4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 掠
+    readings:
+      - pengim: liah8
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 拍
+    readings:
+      - pengim: pah4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 剪
+    readings:
+      - pengim: ziang2
+        variety: chaozhou
+      - pengim: ziêng2
+        variety: chaozhou
+      - pengim: zoin2
+        variety: chaozhou
+      - pengim: zain2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 4 readings found — confirm which are genuine variants
+  - headword: 破
+    readings:
+      - pengim: pua3
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 刺
+    readings:
+      - pengim: ci3
+        variety: chaozhou
+      - pengim: ciah4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 抓
+    readings:
+      - pengim: zua1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 掘
+    readings:
+      - pengim: gug8
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 泅水
+    readings:
+      - pengim: siu5 zui2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 飛
+    readings:
+      - pengim: buê1
+        variety: chaozhou
+      - pengim: hui1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 倒
+    readings:
+      - pengim: do2
+        variety: chaozhou
+      - pengim: dao2
+        variety: chaozhou
+      - pengim: do3
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 徛
+    readings:
+      - pengim: kia6
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 轉
+    readings:
+      - pengim: deng2
+        variety: chaozhou
+      - pengim: zuêng2
+        variety: chaozhou
+      - pengim: zuang2
+        variety: chaozhou
+      - pengim: ruêng2
+        variety: chaozhou
+      - pengim: ruang2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 5 readings found — confirm which are genuine variants
+  - headword: 落
+    readings:
+      - pengim: loh8
+        variety: chaozhou
+      - pengim: laoh8
+        variety: chaozhou
+      - pengim: lag4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 分
+    readings:
+      - pengim: bung1
+        variety: chaozhou
+      - pengim: hung1
+        variety: chaozhou
+      - pengim: hung7
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 攑
+    readings:
+      - pengim: ghia5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 挲
+    readings:
+      - pengim: so1
+        variety: chaozhou
+      - pengim: sa1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 洗
+    readings:
+      - pengim: soi2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 拭
+    readings:
+      - pengim: sêg4
+        variety: chaozhou
+      - pengim: cig4
+        variety: chaozhou
+      - pengim: cêg4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 拖
+    readings:
+      - pengim: tua1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 推
+    readings:
+      - pengim: tui1
+        variety: chaozhou
+      - pengim: cui1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 縛
+    readings:
+      - pengim: bag8
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 紩
+    readings:
+      - pengim: diêg4
+        variety: chaozhou
+      - pengim: diag4
+        variety: chaozhou
+      - pengim: tin7
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 算
+    readings:
+      - pengim: seng3
+        variety: chaozhou
+      - pengim: suang3
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 唱
+    readings:
+      - pengim: cio3
+        variety: chaozhou
+      - pengim: ciê3
+        variety: chaozhou
+      - pengim: ciang3
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 𨑨迌
+    readings:
+      - pengim: tig4 to5
+        variety: chaozhou
+      - pengim: têg4 to5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 浮
+    readings:
+      - pengim: pu5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 流
+    readings:
+      - pengim: lao5
+        variety: chaozhou
+      - pengim: liu5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 結冰
+    readings:
+      - pengim: gag4 bian1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 腫
+    readings:
+      - pengim: zêng2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 星
+    readings:
+      - pengim: cên1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 雨
+    readings:
+      - pengim: hou6
+        variety: chaozhou
+      - pengim: u2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 溪
+    readings:
+      - pengim: koi1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 湖
+    readings:
+      - pengim: ou5
+        variety: chaozhou
+      - pengim: hu5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 海
+    readings:
+      - pengim: hai2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 石
+    readings:
+      - pengim: ziêh8
+        variety: chaozhou
+      - pengim: zioh8
+        variety: chaozhou
+      - pengim: sig8
+        variety: chaozhou
+      - pengim: sêg8
+        variety: chaozhou
+      - pengim: siêh8
+        variety: chaozhou
+      - pengim: sioh8
+        variety: chaozhou
+      - pengim: dan3
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 7 readings found — confirm which are genuine variants
+  - headword: 沙
+    readings:
+      - pengim: sua1
+        variety: chaozhou
+      - pengim: sa1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 塗粉
+    readings:
+      - pengim: tou5 hung2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 塗
+    readings:
+      - pengim: tou5
+        variety: chaozhou
+      - pengim: tu5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 雲
+    readings:
+      - pengim: hung5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 霧
+    readings:
+      - pengim: bhu7
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 天
+    readings:
+      - pengim: tin1
+        variety: chaozhou
+      - pengim: tiêng1
+        variety: chaozhou
+      - pengim: tiang1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 風
+    readings:
+      - pengim: huang1
+        variety: chaozhou
+      - pengim: hong1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 雪
+    readings:
+      - pengim: soh4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 冰
+    readings:
+      - pengim: bian1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 煙
+    readings:
+      - pengim: ing1
+        variety: chaozhou
+      - pengim: êng1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 火
+    readings:
+      - pengim: huê2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 燒
+    readings:
+      - pengim: siê1
+        variety: chaozhou
+      - pengim: sio1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 路
+    readings:
+      - pengim: lou7
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 山
+    readings:
+      - pengim: suan1
+        variety: chaozhou
+      - pengim: sang1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 紅
+    readings:
+      - pengim: ang5
+        variety: chaozhou
+      - pengim: hong5
+        variety: chaozhou
+      - pengim: gang1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 青
+    readings:
+      - pengim: cên1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 白
+    readings:
+      - pengim: bêh8
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 烏
+    readings:
+      - pengim: ou1
+        variety: chaozhou
+      - pengim: u1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 暝
+    readings:
+      - pengim: mê5
+        variety: chaozhou
+      - pengim: mêng5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 溫
+    readings:
+      - pengim: ung1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 寒
+    readings:
+      - pengim: hang5
+        variety: chaozhou
+      - pengim: guan5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 滿
+    readings:
+      - pengim: muan2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 臭
+    readings:
+      - pengim: cao3
+        variety: chaozhou
+      - pengim: hiun3
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 垃圾
+    readings:
+      - pengim: nah4 sab4
+        variety: chaozhou
+      - pengim: lah4 sab4
+        variety: chaozhou
+      - pengim: la1 kib4
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 直
+    readings:
+      - pengim: dig8
+        variety: chaozhou
+      - pengim: dêg8
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 圓
+    readings:
+      - pengim: in5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 利
+    readings:
+      - pengim: lai7
+        variety: chaozhou
+      - pengim: li6
+        variety: chaozhou
+      - pengim: li7
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 滑
+    readings:
+      - pengim: gug8
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 澹
+    readings:
+      - pengim: dan6
+        variety: chaozhou
+      - pengim: tam5
+        variety: chaozhou
+      - pengim: dam5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 著
+    readings:
+      - pengim: dioh4
+        variety: chaozhou
+      - pengim: diêh4
+        variety: chaozhou
+      - pengim: dioh8
+        variety: chaozhou
+      - pengim: diêh8
+        variety: chaozhou
+      - pengim: doh8
+        variety: chaozhou
+      - pengim: du3
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 6 readings found — confirm which are genuine variants
+  - headword: 近
+    readings:
+      - pengim: geng6
+        variety: chaozhou
+      - pengim: gêng6
+        variety: chaozhou
+      - pengim: ging6
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 遠
+    readings:
+      - pengim: hng6
+        variety: chaozhou
+      - pengim: iang2
+        variety: chaozhou
+      - pengim: iêng2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 正
+    readings:
+      - pengim: zian3
+        variety: chaozhou
+      - pengim: zian1
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 佇
+    readings:
+      - pengim: diu6
+        variety: chaozhou
+      - pengim: diu2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 內
+    readings:
+      - pengim: lai6
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags: []
+  - headword: 佮
+    readings:
+      - pengim: gah4
+        variety: chaozhou
+      - pengim: kah4
+        variety: chaozhou
+      - pengim: han2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 3 readings found — confirm which are genuine variants
+  - headword: 若
+    readings:
+      - pengim: riag8
+        variety: chaozhou
+      - pengim: riêh8
+        variety: chaozhou
+      - pengim: rioh8
+        variety: chaozhou
+      - pengim: rê2
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 4 readings found — confirm which are genuine variants
+  - headword: 因為
+    readings:
+      - pengim: ing1 ui5
+        variety: chaozhou
+      - pengim: êng1 ui5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
+  - headword: 名
+    readings:
+      - pengim: mian5
+        variety: chaozhou
+      - pengim: mêng5
+        variety: chaozhou
+    source: wiktionary
+    retrieved: 2026-07-28
+    flags:
+      - 2 readings found — confirm which are genuine variants
