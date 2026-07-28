@@ -17,6 +17,10 @@ entries:
         note: >-
           A syllabic nasal with no vowel — one of a small set of such syllables
           alongside 黃 ng5.
+        examples:
+          - hanzi: 我毋知
+            pengim: ua2 m6 zai1
+            en: I don't know.
     frequency: 5
     needs_review: true
     sources: [seed]
@@ -29,6 +33,10 @@ entries:
       - pos: noun
         gloss_en: [speech, language, words]
         gloss_zh: [話]
+        examples:
+          - hanzi: 講話
+            pengim: gang2 uê7
+            en: to speak, to talk
     frequency: 5
     sources: [seed]
 
@@ -40,6 +48,10 @@ entries:
       - pos: noun
         gloss_en: [day, sun]
         gloss_zh: [日, 太陽]
+        examples:
+          - hanzi: 熱日
+            pengim: ruah8 rig8
+            en: a hot day
     frequency: 5
     sources: [seed]
 
@@ -51,6 +63,10 @@ entries:
       - pos: noun
         gloss_en: [moon, month]
         gloss_zh: [月]
+        examples:
+          - hanzi: 新月
+            pengim: sing1 ghuêh8
+            en: new moon
     frequency: 5
     sources: [seed]
 
@@ -62,7 +78,49 @@ entries:
       - pos: noun
         gloss_en: [year]
         gloss_zh: [年]
+        examples:
+          - hanzi: 年年
+            pengim: ni5 ni5
+            en: every year, year after year
     frequency: 5
+    sources: [seed]
+
+  - id: sing1-ni5-新年
+    headword: 新年
+    readings:
+      - pengim: sing1 ni5
+    senses:
+      - pos: noun
+        gloss_en: [New Year]
+        gloss_zh: [新年]
+    frequency: 4
+    sources: [seed]
+
+  - id: sing1-ni5-ho2-新年好
+    headword: 新年好
+    readings:
+      - pengim: sing1 ni5 ho2
+    senses:
+      - pos: phrase
+        gloss_en: [Happy New Year!]
+        gloss_zh: [新年快樂]
+        note: The greeting formula, literally "new year good".
+    frequency: 4
+    sources: [seed]
+
+  - id: gu7-ni5-舊年
+    headword: 舊年
+    readings:
+      - pengim: gu7 ni5
+    senses:
+      - pos: noun
+        gloss_en: [last year]
+        gloss_zh: [去年]
+        note: >-
+          Idiomatic, not compositional — 舊 elsewhere means "old", but 舊年
+          fixed together means "last year" (cf. Hokkien kū-nî), not "an old
+          year".
+    frequency: 4
     sources: [seed]
 
   - id: ze1-書
@@ -109,6 +167,10 @@ entries:
       - pos: phrase
         gloss_en: [thank you, thanks]
         gloss_zh: [謝謝]
+        examples:
+          - hanzi: 多謝你
+            pengim: do1 sia7 le2
+            en: thank you (addressed to someone)
     frequency: 5
     sources: [seed]
 

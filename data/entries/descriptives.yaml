@@ -13,6 +13,20 @@ entries:
       - pos: adjective
         gloss_en: [good, well, fine]
         gloss_zh: [好]
+        examples:
+          - hanzi: 好人
+            pengim: ho2 nang5
+            en: a good person
+      - pos: particle
+        gloss_en: [done, finished, ready (as a verb complement)]
+        gloss_zh: [好, 完]
+        note: >-
+          Attached after a verb to mark completion, as in Mandarin 做好 —
+          distinct from the "good" sense above.
+        examples:
+          - hanzi: 做好
+            pengim: zo3 ho2
+            en: finished making/doing (it)
     frequency: 5
     sources: [seed]
 
@@ -35,6 +49,10 @@ entries:
       - pos: adjective
         gloss_en: [big, large]
         gloss_zh: [大]
+        examples:
+          - hanzi: 大水
+            pengim: dua7 zui2
+            en: a flood (lit. "big water")
     frequency: 5
     sources: [seed]
 
@@ -47,6 +65,10 @@ entries:
         gloss_en: [small, little]
         gloss_zh: [小]
         note: Teochew uses 細 where Mandarin uses 小.
+        examples:
+          - hanzi: 細字
+            pengim: soi3 ri7
+            en: small print, fine print
     frequency: 5
     sources: [seed]
 
@@ -118,7 +140,45 @@ entries:
         gloss_en: [many, much, a lot]
         gloss_zh: [多]
         note: Teochew uses 濟 where Mandarin uses 多.
+        examples:
+          - hanzi: 濟儂
+            pengim: zoi7 nang5
+            en: many people, a lot of people
     frequency: 5
+    sources: [seed]
+
+  - id: ho2-ziah8-好食
+    headword: 好食
+    readings:
+      - pengim: ho2 ziah8
+    senses:
+      - pos: adjective
+        gloss_en: [delicious, tasty]
+        gloss_zh: [好吃]
+        note: 好 "good" + 食 "eat", lexicalised as a single adjective.
+    frequency: 4
+    sources: [seed]
+
+  - id: ho2-toin2-好看
+    headword: 好看
+    readings:
+      - pengim: ho2 toin2
+    senses:
+      - pos: adjective
+        gloss_en: [good-looking, nice to look at]
+        gloss_zh: [好看]
+    frequency: 4
+    sources: [seed]
+
+  - id: ho2-tian1-好聽
+    headword: 好聽
+    readings:
+      - pengim: ho2 tian1
+    senses:
+      - pos: adjective
+        gloss_en: [pleasant to listen to, nice-sounding]
+        gloss_zh: [好聽]
+    frequency: 4
     sources: [seed]
 
   - id: zio2-少

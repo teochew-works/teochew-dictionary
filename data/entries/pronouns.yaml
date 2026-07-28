@@ -13,6 +13,10 @@ entries:
       - pos: pronoun
         gloss_en: [I, me]
         gloss_zh: [我]
+        examples:
+          - hanzi: 我愛食飯
+            pengim: ua2 ai3 ziah8 bng7
+            en: I want to eat.
     frequency: 5
     sources: [seed]
 
@@ -25,6 +29,10 @@ entries:
       - pos: pronoun
         gloss_en: [you (singular)]
         gloss_zh: [你]
+        examples:
+          - hanzi: 你好
+            pengim: le2 ho2
+            en: hello
     frequency: 5
     sources: [seed]
 
@@ -37,6 +45,10 @@ entries:
         gloss_en: [he, she, it, him, her]
         gloss_zh: [他, 她, 它]
         note: Not marked for gender.
+        examples:
+          - hanzi: 伊是我朋友
+            pengim: i1 si6 ua2 bêng5 iu2
+            en: He/she is my friend.
     frequency: 5
     sources: [seed]
 
@@ -48,6 +60,10 @@ entries:
       - pos: pronoun
         gloss_en: [we, us (excluding the person spoken to)]
         gloss_zh: [我們（不包括聽話人）]
+        examples:
+          - hanzi: 阮是家己儂
+            pengim: uang2 si6 ga1 gi6 nang5
+            en: We're gaginang (fellow Teochew people).
     tags: [exclusive]
     frequency: 5
     sources: [seed]
@@ -72,6 +88,10 @@ entries:
       - pos: pronoun
         gloss_en: [you (plural)]
         gloss_zh: [你們]
+        examples:
+          - hanzi: 恁是阮朋友
+            pengim: ning2 si6 uang2 bêng5 iu2
+            en: You(pl) are our friends.
     frequency: 5
     sources: [seed]
 

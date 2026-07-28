@@ -240,7 +240,7 @@ question is still open rather than already answered by accident.
 
 ## Status
 
-87 entries covering core everyday vocabulary — numerals, pronouns, kinship,
+101 entries covering core everyday vocabulary — numerals, pronouns, kinship,
 food, common verbs and descriptives, place names. Enough to exercise the whole
 pipeline end to end; nowhere near enough to be a usable dictionary.
 

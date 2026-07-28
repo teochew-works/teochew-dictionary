@@ -7,15 +7,38 @@ entries:
       - pengim: ziah8
     senses:
       - pos: verb
-        gloss_en: [to eat, to drink, to consume]
-        gloss_zh: [吃, 喝]
-        note: >-
-          Covers both eating and drinking, unlike Mandarin. 食茶 is "drink tea",
-          not "eat tea".
+        gloss_en: [to eat, to consume]
+        gloss_zh: [吃]
         examples:
           - hanzi: 食飽未
             pengim: ziah8 ba2 bhuê7
             en: Have you eaten yet? (a common greeting)
+      - pos: verb
+        gloss_en: [to drink (tea only)]
+        gloss_zh: [喝（茶）]
+        note: >-
+          Covers both eating and drinking tea, unlike Mandarin, which uses 喝
+          for the latter. Alcohol and water take 啉 instead — see 啉.
+        examples:
+          - hanzi: 食茶
+            pengim: ziah8 dê5
+            en: to drink tea
+    frequency: 5
+    sources: [seed]
+
+  - id: ziah8-bng7-食飯
+    headword: 食飯
+    readings:
+      - pengim: ziah8 bng7
+    senses:
+      - pos: verb
+        gloss_en: [to eat, to have a meal]
+        gloss_zh: [吃飯]
+        note: The generic verb "to eat" in many everyday contexts, not limited to rice.
+        examples:
+          - hanzi: 我食飯
+            pengim: ua2 ziah8 bng7
+            en: I'm eating. / I eat.
     frequency: 5
     sources: [seed]
 
@@ -31,6 +54,17 @@ entries:
     frequency: 4
     sources: [seed]
 
+  - id: lim1-ziu2-啉酒
+    headword: 啉酒
+    readings:
+      - pengim: lim1 ziu2
+    senses:
+      - pos: verb
+        gloss_en: [to drink alcohol]
+        gloss_zh: [喝酒]
+    frequency: 4
+    sources: [seed]
+
   - id: ke3-去
     headword: 去
     readings:
@@ -39,6 +73,20 @@ entries:
       - pos: verb
         gloss_en: [to go, to leave]
         gloss_zh: [去]
+        examples:
+          - hanzi: 我去厝
+            pengim: ua2 ke3 cu3
+            en: I'm going home.
+      - pos: particle
+        gloss_en: [away, completely (as a verb complement marking a completed change of state)]
+        gloss_zh: [掉, 去]
+        note: >-
+          Attached after a verb, parallel to Mandarin 賣掉/賣去 — distinct from
+          the motion-verb sense above.
+        examples:
+          - hanzi: 賣去
+            pengim: bhoi7 ke3
+            en: sold off, all sold
     frequency: 5
     sources: [seed]
 
@@ -50,6 +98,10 @@ entries:
       - pos: verb
         gloss_en: [to come]
         gloss_zh: [來]
+        examples:
+          - hanzi: 來食飯
+            pengim: lai5 ziah8 bng7
+            en: Come and eat! (an invitation to a meal)
     frequency: 5
     sources: [seed]
 
@@ -61,6 +113,17 @@ entries:
       - pos: verb
         gloss_en: [to look, to see, to watch, to read]
         gloss_zh: [看]
+        examples:
+          - hanzi: 看書
+            pengim: toin2 ze1
+            en: to read (a book)
+      - pos: verb
+        gloss_en: [to visit]
+        gloss_zh: [探望]
+        examples:
+          - hanzi: 看朋友
+            pengim: toin2 bêng5 iu2
+            en: to visit a friend
     frequency: 5
     sources: [seed]
 
@@ -72,6 +135,10 @@ entries:
       - pos: verb
         gloss_en: [to listen, to hear]
         gloss_zh: [聽]
+        examples:
+          - hanzi: 聽話
+            pengim: tian1 uê7
+            en: to listen and obey; obedient
     frequency: 5
     sources: [seed]
 
@@ -98,6 +165,10 @@ entries:
       - pos: verb
         gloss_en: [to know]
         gloss_zh: [知道]
+        examples:
+          - hanzi: 我知
+            pengim: ua2 zai1
+            en: I know.
     frequency: 5
     sources: [seed]
 
@@ -157,6 +228,17 @@ entries:
     frequency: 4
     sources: [seed]
 
+  - id: bhoi2-bhoi7-買賣
+    headword: 買賣
+    readings:
+      - pengim: bhoi2 bhoi7
+    senses:
+      - pos: noun
+        gloss_en: [buying and selling, business, trade]
+        gloss_zh: [買賣, 生意]
+    frequency: 4
+    sources: [seed]
+
   - id: zo3-做
     headword: 做
     readings:
@@ -165,6 +247,10 @@ entries:
       - pos: verb
         gloss_en: [to do, to make]
         gloss_zh: [做]
+        examples:
+          - hanzi: 做乜
+            pengim: zo3 mih8
+            en: What are you doing?
     frequency: 5
     sources: [seed]
 
@@ -176,9 +262,17 @@ entries:
       - pos: verb
         gloss_en: [to want, to need]
         gloss_zh: [要]
+        examples:
+          - hanzi: 我愛去
+            pengim: ua2 ai3 ke3
+            en: I want to go.
       - pos: verb
         gloss_en: [to love]
         gloss_zh: [愛]
+        examples:
+          - hanzi: 我愛你
+            pengim: ua2 ai3 le2
+            en: I love you.
     frequency: 5
     sources: [seed]
 
@@ -190,6 +284,21 @@ entries:
       - pos: verb
         gloss_en: [to have, there is, there are]
         gloss_zh: [有]
+        examples:
+          - hanzi: 伊有囝
+            pengim: i1 u6 gian2
+            en: He/she has a child.
+      - pos: particle
+        gloss_en: [marks that an action did happen (emphatic/perfective), did]
+        gloss_zh: [有（完成貌標記）]
+        note: >-
+          A distinctive Southern Min feature shared with Hokkien: 有 placed
+          before a verb emphasises that the action did occur, where Mandarin
+          would rely on context or 了.
+        examples:
+          - hanzi: 我有食
+            pengim: ua2 u6 ziah8
+            en: I did eat. / I have eaten.
     frequency: 5
     sources: [seed]
 
@@ -201,9 +310,17 @@ entries:
       - pos: verb
         gloss_en: [to not have, there is not]
         gloss_zh: [沒有]
+        examples:
+          - hanzi: 伊無囝
+            pengim: i1 bho5 gian2
+            en: He/she doesn't have children.
       - pos: adverb
         gloss_en: [not]
         gloss_zh: [沒]
+        examples:
+          - hanzi: 無好
+            pengim: bho5 ho2
+            en: not good, no good
     frequency: 5
     sources: [seed]
 
@@ -215,5 +332,22 @@ entries:
       - pos: verb
         gloss_en: [to be, is, are]
         gloss_zh: [是]
+        examples:
+          - hanzi: 伊是潮州儂
+            pengim: i1 si6 dio5 ziu1 nang5
+            en: He/she is a Teochew person.
+      - pos: particle
+        gloss_en: [yes, right, correct (as a short affirmative answer)]
+        gloss_zh: [對, 是]
+        note: >-
+          Attested as a one-word affirmative answer in Mandarin-influenced
+          registers. Unconfirmed whether this is the primary colloquial
+          affirmative in Teochew speech versus echoing the verb of the
+          question — flagged for a speaker to confirm.
+        examples:
+          - hanzi: 是
+            pengim: si6
+            en: yes; that's right (as an answer)
     frequency: 5
+    needs_review: true
     sources: [seed]
