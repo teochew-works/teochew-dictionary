@@ -31,6 +31,10 @@ entries:
         note: >-
           The everyday Teochew breakfast staple. Mandarin 粥 corresponds, but 糜
           is the character used in Teochew writing.
+        examples:
+          - hanzi: 食糜
+            pengim: ziah8 muê5
+            en: to eat congee (esp. for breakfast)
     frequency: 5
     sources: [seed]
 
@@ -58,6 +62,10 @@ entries:
       - pos: noun
         gloss_en: [water]
         gloss_zh: [水]
+        examples:
+          - hanzi: 啉水
+            pengim: lim1 zui2
+            en: to drink water
     frequency: 5
     sources: [seed]
 
@@ -69,6 +77,10 @@ entries:
       - pos: noun
         gloss_en: [fish]
         gloss_zh: [魚]
+        examples:
+          - hanzi: 食魚
+            pengim: ziah8 he5
+            en: to eat fish
     frequency: 5
     sources: [seed]
 
@@ -80,6 +92,10 @@ entries:
       - pos: noun
         gloss_en: [meat, flesh]
         gloss_zh: [肉]
+        examples:
+          - hanzi: 豬肉
+            pengim: de1 nêg8
+            en: pork (lit. "pig meat")
     frequency: 5
     sources: [seed]
 
@@ -91,6 +107,11 @@ entries:
       - pos: noun
         gloss_en: [vegetable, dish of food]
         gloss_zh: [菜]
+        examples:
+          - hanzi: 食菜
+            pengim: ziah8 cai3
+            en: to eat vegetables; to be vegetarian
+            note: 食菜 idiomatically means "to be vegetarian" (esp. for Buddhist reasons), not just "to eat vegetables".
     frequency: 5
     sources: [seed]
 
@@ -105,6 +126,10 @@ entries:
         note: >-
           A whole category of Teochew foods rather than a single item
           (紅桃粿, 菜頭粿, 鼠麴粿).
+        examples:
+          - hanzi: 食粿
+            pengim: ziah8 guê2
+            en: to eat rice cake
     frequency: 5
     sources: [seed]
 
