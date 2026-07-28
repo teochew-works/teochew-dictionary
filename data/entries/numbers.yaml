@@ -21,6 +21,10 @@ entries:
       - pos: numeral
         gloss_en: [one, "1"]
         gloss_zh: [一]
+        examples:
+          - hanzi: 一日
+            pengim: zêg8 rig8
+            en: one day
     frequency: 5
     sources: [seed]
 
@@ -37,6 +41,10 @@ entries:
       - pos: numeral
         gloss_en: [two, "2"]
         gloss_zh: [二]
+        examples:
+          - hanzi: 二日
+            pengim: no6 rig8
+            en: two days
     frequency: 5
     sources: [seed]
 
@@ -48,6 +56,10 @@ entries:
       - pos: numeral
         gloss_en: [three, "3"]
         gloss_zh: [三]
+        examples:
+          - hanzi: 三月
+            pengim: san1 ghuêh8
+            en: March (the third month)
     frequency: 5
     sources: [seed]
 
@@ -59,6 +71,10 @@ entries:
       - pos: numeral
         gloss_en: [four, "4"]
         gloss_zh: [四]
+        examples:
+          - hanzi: 四月
+            pengim: si3 ghuêh8
+            en: April (the fourth month)
     frequency: 5
     sources: [seed]
 
@@ -70,6 +86,10 @@ entries:
       - pos: numeral
         gloss_en: [five, "5"]
         gloss_zh: [五]
+        examples:
+          - hanzi: 五月
+            pengim: ngou6 ghuêh8
+            en: May (the fifth month)
     frequency: 5
     sources: [seed]
 
@@ -81,6 +101,10 @@ entries:
       - pos: numeral
         gloss_en: [six, "6"]
         gloss_zh: [六]
+        examples:
+          - hanzi: 六月
+            pengim: lag8 ghuêh8
+            en: June (the sixth month)
     frequency: 5
     sources: [seed]
 
@@ -92,6 +116,10 @@ entries:
       - pos: numeral
         gloss_en: [seven, "7"]
         gloss_zh: [七]
+        examples:
+          - hanzi: 七月
+            pengim: cig4 ghuêh8
+            en: July (the seventh month)
     frequency: 5
     sources: [seed]
 
@@ -106,6 +134,10 @@ entries:
       - pos: numeral
         gloss_en: [eight, "8"]
         gloss_zh: [八]
+        examples:
+          - hanzi: 八日
+            pengim: boih4 rig8
+            en: eight days
     frequency: 5
     sources: [seed]
 
@@ -117,6 +149,10 @@ entries:
       - pos: numeral
         gloss_en: [nine, "9"]
         gloss_zh: [九]
+        examples:
+          - hanzi: 九月
+            pengim: gao2 ghuêh8
+            en: September (the ninth month)
     frequency: 5
     sources: [seed]
 
@@ -128,6 +164,10 @@ entries:
       - pos: numeral
         gloss_en: [ten, "10"]
         gloss_zh: [十]
+        examples:
+          - hanzi: 十月
+            pengim: zab8 ghuêh8
+            en: October (the tenth month)
     frequency: 5
     sources: [seed]
 
