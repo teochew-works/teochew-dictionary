@@ -152,16 +152,6 @@ Two traps worth naming:
   no regular MC source. Flag them `needs_review` rather than guessing — see the
   table below.
 
-## 8. The `-d` /t̚/ coda  ·  `pengim.yaml`, `varieties/chaozhou.yaml`
-
-Encoded at `confidence: low`. Teochew merged the /-t/ coda away, so this should
-appear in essentially no colloquial entries. It is retained only so that literary
-readings that use it can be written. **If nothing in the lexicon ever needs it,
-delete it** — a coda that cannot occur is a validation hole, because it lets a
-typo like `bad4` parse cleanly.
-
----
-
 ## Individual entries flagged `needs_review`
 
 Run `npm run validate` for the current count. As of writing:

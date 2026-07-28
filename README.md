@@ -160,15 +160,15 @@ The validator checks a good deal more than the schema:
 
 - every Peng'im syllable parses against the orthography
 - **checked tones match checked codas** — tones 4 and 8 require a final stop
-  (`-b -g -d -h`), and the other six forbid one. This catches a lot of slips.
+  (`-b -g -h`), and the other six forbid one. This catches a lot of slips.
 - IPA and POJ derivation actually succeeds for every reading
 - ids are unique; sources and varieties resolve
 - example sentences have as many Peng'im syllables as Han characters
 
 ### Peng'im gotchas that bite
 
-- **Stop codas are written `-b -g -d`**, matching the unaspirated initials —
-  十 `zab8`, 六 `lag8`, 一 `zêg8`. Not `-p -t -k`; that is Hokkien POJ.
+- **Stop codas are written `-b -g`**, matching the unaspirated initials —
+  十 `zab8`, 六 `lag8`. Not `-p -k`; that is Hokkien POJ.
 - **A final `-n` marks nasalisation; `-ng` is a velar coda.** Teochew lost the
   /n/ coda, so `in5` is /ĩ/ while `ing1` is /iŋ/.
 - **`ê` and `e` are different vowels** — /e/ and /ɯ/. Dropping the circumflex
