@@ -116,6 +116,7 @@ data/                      ← the product
     REVIEW.md                open linguistic questions
   sources.yaml               provenance and licence registry
   staging/                   importer output, awaiting human review
+  wordlists/                 headword checklists tracking growth (see below)
 
 src/
   schema/                    Zod schemas — source of truth for types + JSON Schema
@@ -204,6 +205,16 @@ Two reasons this is worth the friction:
 
 Wiktionary readings are validated as Peng'im before being proposed; malformed
 candidates are reported rather than imported.
+
+### Growing the lexicon from a checklist
+
+Ad-hoc additions make "how complete is this?" unanswerable. `data/wordlists/`
+holds headword checklists that give growth a defined denominator — currently
+`swadesh-207.yaml`, the Swadesh 1971 basic-vocabulary list, with each item's
+`status` tracking whether its Teochew headword is already `existing` in
+`data/entries/`, `to_fetch`, `staged` (an importer proposal exists in
+`data/staging/`), or `no_reading` (the importer found nothing). It's a
+hand-maintained snapshot, not something a script regenerates.
 
 ---
 
