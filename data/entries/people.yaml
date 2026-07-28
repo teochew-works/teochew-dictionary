@@ -14,6 +14,10 @@ entries:
           儂 is the character conventionally used in Teochew writing for the
           colloquial word; 人 is the same morpheme written with the standard
           Chinese character.
+        examples:
+          - hanzi: 大儂
+            pengim: dua7 nang5
+            en: an adult
     frequency: 5
     sources: [seed]
 
@@ -25,9 +29,17 @@ entries:
       - pos: noun
         gloss_en: [child, son, offspring]
         gloss_zh: [兒子, 孩子]
+        examples:
+          - hanzi: 細囝
+            pengim: soi3 gian2
+            en: a small child
       - pos: suffix
         gloss_en: [diminutive suffix]
         gloss_zh: [小稱後綴]
+        examples:
+          - hanzi: 魚囝
+            pengim: he5 gian2
+            en: a little fish, fish fry
     frequency: 5
     sources: [seed]
 
@@ -39,7 +51,33 @@ entries:
       - pos: noun
         gloss_en: [father, dad]
         gloss_zh: [爸爸]
+        examples:
+          - hanzi: 我阿爸
+            pengim: ua2 a1 ba1
+            en: my father
     frequency: 5
+    sources: [seed]
+
+  - id: dua7-nang5-大儂
+    headword: 大儂
+    readings:
+      - pengim: dua7 nang5
+    senses:
+      - pos: noun
+        gloss_en: [adult, grown-up]
+        gloss_zh: [大人]
+    frequency: 4
+    sources: [seed]
+
+  - id: soi3-gian2-細囝
+    headword: 細囝
+    readings:
+      - pengim: soi3 gian2
+    senses:
+      - pos: noun
+        gloss_en: [small child, little one]
+        gloss_zh: [小孩]
+    frequency: 4
     sources: [seed]
 
   - id: a1-ma2-阿媽
