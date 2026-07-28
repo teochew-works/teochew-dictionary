@@ -21,13 +21,19 @@ import type { Source } from '../schema/entry.js'
  * BASE_LICENCE (e.g. `unihan`, Unicode-DFS-2016) never changes which licence
  * governs, but it still owes its own notice; folding it silently into
  * BASE_LICENCE would lose that.
+ *
+ * BASE_LICENCE is deliberately not the project's code licence (BSD-3-Clause,
+ * see ../../LICENSE). A software licence's "redistributions of source code /
+ * in binary form" language doesn't fit a lexicon, and only the CC family
+ * addresses sui generis database rights — see ../../LICENSE-DATA-CC-BY-4.0.
  */
 
-export const BASE_LICENCE = 'BSD-3-Clause'
+export const BASE_LICENCE = 'CC-BY-4.0'
 
 type LicenceClass = 'permissive' | 'share-alike'
 
 const LICENCE_CLASS: Record<string, LicenceClass> = {
+  'CC-BY-4.0': 'permissive',
   'BSD-3-Clause': 'permissive',
   'Unicode-DFS-2016': 'permissive',
   'CC-BY-SA-4.0': 'share-alike',

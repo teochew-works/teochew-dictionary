@@ -220,8 +220,23 @@ hand-maintained snapshot, not something a script regenerates.
 
 ## Licensing
 
-**[BSD 3-Clause](LICENSE)** by default — covering the tooling in `src/` and any
-entry whose sources are all permissive.
+**Code and data are licensed separately — deliberately, not as an artifact of
+reusing one licence for everything.**
+
+| | Licence | File |
+|---|---|---|
+| `src/` — the tooling | BSD-3-Clause | [`LICENSE`](LICENSE) |
+| `data/` — default | CC-BY-4.0 | [`LICENSE-DATA-CC-BY-4.0`](LICENSE-DATA-CC-BY-4.0) |
+| `data/` — entries citing a share-alike source | CC-BY-SA-4.0 | [`LICENSE-DATA-CC-BY-SA-4.0`](LICENSE-DATA-CC-BY-SA-4.0) |
+| `data/` — attribution owed to `unihan` | Unicode-DFS-2016 | [`LICENSE-DATA-UNICODE-DFS-2016`](LICENSE-DATA-UNICODE-DFS-2016) |
+
+The data licence is CC-BY-4.0, not BSD-3-Clause, on purpose: a software
+licence's "redistributions of source code / in binary form" language doesn't
+fit a lexicon, and only the CC family addresses *sui generis* database
+rights — the EU-style right over a compilation, separate from copyright in
+individual facts, that a plain software licence like BSD is silent on. It's
+also the idiom the comparable projects in this space actually use (Wiktionary,
+iTaigi, Tatoeba) — nobody licenses lexical data under a software licence.
 
 **An entry's licence is derived from its `sources`, never hand-written** —
 computed by [`src/data/licence.ts`](src/data/licence.ts) and shipped as
@@ -230,28 +245,26 @@ computed by [`src/data/licence.ts`](src/data/licence.ts) and shipped as
 without re-deriving the rule themselves. The two fields answer different
 questions:
 
-- **`licence`** — what governs redistributing the entry. BSD-3-Clause, unless
-  a cited source is share-alike, in which case that source's licence covers
-  the whole entry: a merged record is an adaptation, not a mere collection, so
-  it can't keep its parts separately licensed. Wiktionary is CC-BY-SA-4.0, so
-  an entry that draws a reading or gloss from it becomes CC-BY-SA-4.0 as a
-  whole; the full text is in
-  [`LICENSE-DATA-CC-BY-SA`](LICENSE-DATA-CC-BY-SA).
+- **`licence`** — what governs redistributing the entry. CC-BY-4.0 (the data
+  default), unless a cited source is share-alike, in which case that source's
+  licence covers the whole entry: a merged record is an adaptation, not a mere
+  collection, so it can't keep its parts separately licensed. Wiktionary is
+  CC-BY-SA-4.0, so an entry that draws a reading or gloss from it becomes
+  CC-BY-SA-4.0 as a whole.
 - **`attributions`** — whose notice must *also* be retained. Every cited
-  source whose own licence differs from BSD-3-Clause, share-alike or not. A
+  source whose own licence differs from CC-BY-4.0, share-alike or not. A
   permissive-but-distinct licence never changes `licence` — citing `unihan`
-  (Unicode-DFS-2016) doesn't make an entry stop being BSD-3-Clause — but its
-  notice still has to travel with the entry, so it's not silently dropped.
-  Every distinct licence text a source can carry has its own `LICENSE-DATA-*`
-  file at the repo root: [`LICENSE-DATA-CC-BY-SA`](LICENSE-DATA-CC-BY-SA) and
-  [`LICENSE-DATA-UNICODE-DFS-2016`](LICENSE-DATA-UNICODE-DFS-2016) so far.
+  (Unicode-DFS-2016) doesn't move an entry off CC-BY-4.0 — but its notice
+  still has to travel with the entry, so it's not silently dropped. Every
+  distinct licence text a source can carry has its own `LICENSE-DATA-*` file
+  at the repo root, per the table above.
 
 A source with an unclassified licence (`unknown` included, e.g.
 `pengim-1960`) can be cited for corroboration in a phonology mapping, but
 can't back an entry — the validator rejects an entry that tries, rather than
 silently guessing.
 
-**Today the whole shipped dataset is BSD-3-Clause** — all 87 entries cite only
+**Today the whole shipped dataset is CC-BY-4.0** — all 87 entries cite only
 `seed`. This is why importers write to `data/staging/` and never to
 `data/entries/`: nothing imported has been merged yet, so merging a CC-BY-SA
 gloss into an entry, and thereby relicensing that entry, stays a deliberate

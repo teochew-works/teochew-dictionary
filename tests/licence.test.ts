@@ -12,7 +12,7 @@ function source(id: string, licence: string): Source {
   return { id, name: id, licence }
 }
 
-const SEED = source('seed', 'BSD-3-Clause')
+const SEED = source('seed', 'CC-BY-4.0')
 const UNIHAN = source('unihan', 'Unicode-DFS-2016')
 const WIKTIONARY = source('wiktionary', 'CC-BY-SA-4.0')
 const CEDICT = source('cedict', 'CC-BY-SA-4.0')
@@ -29,8 +29,8 @@ describe('resolveLicence', () => {
 
   it('keeps a permissive-but-distinct licence from changing which licence governs', () => {
     // unihan is Unicode-DFS-2016, not BASE_LICENCE — it must not silently
-    // become "BSD-3-Clause" as if it were the project's own text, but citing
-    // it also must not force the entry away from BASE_LICENCE the way a
+    // become "CC-BY-4.0" as if it were the project's own text, but citing it
+    // also must not force the entry away from BASE_LICENCE the way a
     // share-alike source would.
     expect(resolveLicence(['seed', 'unihan'], sources)).toEqual({
       ok: true,
