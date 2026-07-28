@@ -38,7 +38,7 @@ syllable:
   syllabic_nuclei: [m, ng]
   # Tones 4 and 8 are the "checked" (入聲) tones and occur ONLY with a stop coda.
   # All other tones occur ONLY without one. The validator enforces this.
-  checked_codas: [b, g, d, h]
+  checked_codas: [b, g, h]
 
 # ─── Initials 聲母 ─────────────────────────────────────────────────────────────
 # 17 consonantal initials plus the zero initial.
@@ -83,13 +83,16 @@ nuclei:
   - u
 
 # Peng'im writes the stop codas with the SAME letters it uses for the unaspirated
-# initials — `-b` /p̚/, `-g` /k̚/, `-d` /t̚/ — not with p/t/k. So 十 is `zab8`,
+# initials — `-b` /p̚/, `-g` /k̚/ — not with p/t/k. So 十 is `zab8`,
 # 六 is `lag8`, 一 is `zêg8`. Transcriptions borrowed from Hokkien POJ often get
 # this wrong.
 #
-# `-d` /t̚/ is listed for completeness but is vestigial: Teochew merged the /-t/
-# coda away, so it appears at most in some literary readings.
-codas: [m, ng, b, g, d, h]
+# There is no `-d` /t̚/ coda: Teochew merged the /-t/ coda away, and it is
+# unattested across the entire lexicon. It was previously kept for a literary
+# reading that might need it, but a coda that cannot occur is a validation
+# hole — it let a typo like `bad4` parse cleanly. If such a reading turns up,
+# restore it here, in `varieties/chaozhou.yaml`, and in `poj.yaml`.
+codas: [m, ng, b, g, h]
 
 # ─── Tones 聲調 ────────────────────────────────────────────────────────────────
 # `contour` is the Chao tone-letter value for the CITATION form in the reference

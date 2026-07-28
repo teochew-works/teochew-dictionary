@@ -96,6 +96,10 @@ describe('phonotactic constraints', () => {
     expect(parseSyllable('lang5')).toMatchObject({ nucleus: 'a', coda: 'ng', tone: 5 })
     expect(parseSyllable('lag8')).toMatchObject({ coda: 'g' })
   })
+
+  it('rejects the removed -d coda (issue #3)', () => {
+    expect(() => parseSyllable('bad4')).toThrow(/unrecognised final/u)
+  })
 })
 
 describe('malformed input', () => {

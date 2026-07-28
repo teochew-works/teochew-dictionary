@@ -45,14 +45,13 @@ nuclei:
   oi: oi
   ou: o͘     # o with a dot above right (U+0358)
 
-# POJ uses p/t/k for the stop codas where Peng'im uses b/g/d, so this is a real
+# POJ uses p/t/k for the stop codas where Peng'im uses b/g, so this is a real
 # re-spelling, not an identity mapping.
 codas:
   m: m
   ng: ng
   b: p
   g: k
-  d: t
   h: h
 
 # Nasalisation is a superscript n in POJ, written after the whole rime.
