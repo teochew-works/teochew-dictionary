@@ -17,8 +17,28 @@ entries:
         gloss_en: [Chaozhou, Teochew]
         gloss_zh: [潮州]
         note: A prefecture-level city in eastern Guangdong, and the region it names.
+        examples:
+          - hanzi: 潮州儂
+            pengim: dio5 ziu1 nang5
+            en: a Teochew person, a person from Chaozhou
     tags: [placename]
     frequency: 5
+    sources: [seed]
+
+  - id: dio5-ziu1-nang5-潮州儂
+    headword: 潮州儂
+    readings:
+      - pengim: dio5 ziu1 nang5
+    senses:
+      - pos: noun
+        gloss_en: [a Teochew person, a person from Chaozhou]
+        gloss_zh: [潮州人]
+        note: >-
+          The literal, neutral term for a person from Chaozhou — contrast 家己儂,
+          which carries in-group identity connotations rather than merely
+          stating origin.
+    tags: [placename]
+    frequency: 4
     sources: [seed]
 
   - id: dio5-ziu1-ue7-潮州話
@@ -29,6 +49,10 @@ entries:
       - pos: proper-noun
         gloss_en: [the Teochew language, Chaozhou dialect]
         gloss_zh: [潮州話]
+        examples:
+          - hanzi: 講潮州話
+            pengim: gang2 dio5 ziu1 uê7
+            en: to speak Teochew
     tags: [language]
     frequency: 5
     sources: [seed]
@@ -44,8 +68,24 @@ entries:
         note: >-
           The port city; "Swatow" is the older romanisation, still current in
           diaspora usage.
+        examples:
+          - hanzi: 汕頭儂
+            pengim: suan1 tao5 nang5
+            en: a person from Shantou
     tags: [placename]
     frequency: 5
+    sources: [seed]
+
+  - id: suan1-tao5-nang5-汕頭儂
+    headword: 汕頭儂
+    readings:
+      - pengim: suan1 tao5 nang5
+    senses:
+      - pos: noun
+        gloss_en: [a person from Shantou]
+        gloss_zh: [汕頭人]
+    tags: [placename]
+    frequency: 4
     sources: [seed]
 
   - id: dong1-gog4-中國
@@ -60,6 +100,18 @@ entries:
     frequency: 4
     sources: [seed]
 
+  - id: dong1-gog4-ue7-中國話
+    headword: 中國話
+    readings:
+      - pengim: dong1 gog4 uê7
+    senses:
+      - pos: proper-noun
+        gloss_en: [the Chinese language]
+        gloss_zh: [中國話, 漢語]
+    tags: [language]
+    frequency: 4
+    sources: [seed]
+
   - id: cu3-厝
     headword: 厝
     readings:
@@ -69,5 +121,9 @@ entries:
         gloss_en: [house, home]
         gloss_zh: [房子, 家]
         note: Teochew uses 厝 where Mandarin uses 房子 or 家.
+        examples:
+          - hanzi: 我厝
+            pengim: ua2 cu3
+            en: my house
     frequency: 5
     sources: [seed]
