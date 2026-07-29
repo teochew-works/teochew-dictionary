@@ -4,11 +4,26 @@
 # Licence hygiene matters for a lexicon: glosses and example sentences are
 # copyrightable even when individual pronunciations are not, so imported material
 # must carry its licence with it and stay separable from hand-written material.
+#
+# An entry's own licence is DERIVED from this file, never hand-written — see
+# src/data/licence.ts. The rule: CC-BY-4.0 (the data default — deliberately
+# NOT this repo's code licence, BSD-3-Clause; see LICENSE-DATA-CC-BY-4.0)
+# unless a cited source is share-alike, in which case that licence covers the
+# whole entry. Separately, every cited source whose licence differs from
+# CC-BY-4.0 (share-alike or not) is listed in the entry's `attributions` — a
+# permissive-but-distinct licence, e.g. `unihan`'s Unicode-DFS-2016, never
+# changes which licence governs the entry, but its notice still has to be
+# retained, which is why there's a LICENSE-DATA-* file per distinct licence
+# text in this file, not just one for the share-alike case. A source whose
+# `licence` is `unknown` (or anything else not classified permissive or
+# share-alike in licence.ts) can be cited by a phonology mapping's `sources:`
+# for corroboration, but cannot back an entry directly — the validator flags
+# that as an unresolvable licence rather than silently guessing.
 
 sources:
   - id: seed
     name: Hand-curated seed set
-    licence: BSD-3-Clause
+    licence: CC-BY-4.0
     note: >-
       Written by hand to bootstrap the dataset and exercise the tooling
       end to end. Core everyday vocabulary where forms are widely agreed.
