@@ -137,6 +137,22 @@ describe('applySandhi', () => {
     expect(r.surface).toBe('dio7 ziu1')
   })
 
+  // Pins every rule confirmed or corrected in REVIEW.md §3, so a regression in
+  // any of the eight sandhi contours fails here rather than only in the data.
+  it.each([
+    ['nang1 nang5', 1, 1, '34'],
+    ['nang2 nang5', 2, 6, '35'],
+    ['nang3 nang5', 3, 2, '53'],
+    ['lag4 nang5', 4, 8, '5'],
+    ['nang5 nang5', 5, 7, '23'],
+    ['nang6 nang5', 6, 7, '21'],
+    ['nang7 nang5', 7, 7, '23'],
+    ['lag8 nang5', 8, 4, '2'],
+  ] as const)('citation tone %i sandhis to tone %i, contour %s', (pengim, citation, to, contour) => {
+    const r = applySandhi(pengim)
+    expect(r.syllables[0]).toMatchObject({ citationTone: citation, surfaceTone: to, contour })
+  })
+
   it('applies across a three-syllable group', () => {
     const r = applySandhi('ga1 gi6 nang5')
     expect(r.syllables.map((s) => s.changed)).toEqual([false, true, false])
