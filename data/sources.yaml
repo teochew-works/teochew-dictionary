@@ -92,3 +92,16 @@ sources:
       A pedagogical Peng'im reference with an explicit vowel table. Valued here
       as corroboration independent of the Wikipedia family of texts. Cited, never
       reproduced.
+
+  - id: zhang-2021-tonotypes
+    name: 'Zhang, Jingfen. Tono-types and Tone Evolution: The Case of Chaoshan (2021)'
+    licence: unknown
+    url: https://books.google.com/books?id=liASEAAAQBAJ
+    retrieved: '2026-07-29'
+    note: >-
+      Springer Nature monograph on Chaoshan tone systems; ISBN 978-981-334-870-7.
+      The academic source underlying the Chaozhou/Chenghai tone sandhi table in
+      the `wikipedia` id's Teochew Min article, itself checked directly against
+      that article's page markup (not merely a search summary) to confirm the
+      exact Chao pitch numbers. Used for `sandhi/chaozhou.yaml`. Cited, never
+      reproduced.

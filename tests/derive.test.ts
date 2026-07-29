@@ -133,7 +133,7 @@ describe('applySandhi', () => {
 
   it('changes every non-final syllable', () => {
     const r = applySandhi('dio5 ziu1')
-    expect(r.syllables[0]).toMatchObject({ citationTone: 5, surfaceTone: 7, contour: '11' })
+    expect(r.syllables[0]).toMatchObject({ citationTone: 5, surfaceTone: 7, contour: '23' })
     expect(r.surface).toBe('dio7 ziu1')
   })
 
@@ -149,7 +149,7 @@ describe('applySandhi', () => {
     expect(r.syllables[0]?.changed).toBe(false)
   })
 
-  it('flags that the table still needs specialist review', () => {
-    expect(applySandhi('dio5 ziu1').needsReview).toBe(true)
+  it('no longer flags the table as needing specialist review', () => {
+    expect(applySandhi('dio5 ziu1').needsReview).toBe(false)
   })
 })

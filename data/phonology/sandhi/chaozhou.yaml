@@ -1,21 +1,23 @@
 # Tone sandhi 變調 — Chaozhou.
 #
-# ⚠️  needs_review: true — see ../REVIEW.md
+# Confirmed 2026-07-29 — see ../REVIEW.md §3.
 #
 # Teochew has pervasive tone sandhi: in a connected tone group, every syllable
 # EXCEPT the last surfaces with a changed tone. The final syllable keeps its
 # citation tone. This makes the citation tone recoverable, which is why entries
 # store citation tones and sandhi is computed rather than stored.
 #
-# Reported sandhi values differ noticeably between descriptions and between
-# speakers. The table below follows the pattern most commonly given for Chaozhou.
+# The `to` mapping (which tone NUMBER a citation tone surfaces as, driving the
+# Peng'im respelling) is corroborated by two independent sources and identical
+# across both. The `contour` values follow the Chaozhou/Chenghai table sourced
+# to Zhang (2021), checked directly against Wikipedia's page markup rather than
+# a search summary, given how easily Chao pitch digits garble in transcription.
 # It is deliberately DATA rather than code: correcting it is a one-file edit and
 # requires no changes to the sandhi engine.
 
 sandhi:
   id: chaozhou
   variety: chaozhou
-  needs_review: true
   scope: >-
     Applies to every non-final syllable of a tone group. This implementation
     treats a multi-syllable dictionary headword as a single tone group, which is
@@ -24,15 +26,22 @@ sandhi:
 # citation tone → tone surfacing in non-final position.
 # `to` is the resulting tone NUMBER; `contour` records the surface contour, which
 # is not always identical to that tone's own citation contour.
+#
+# Two of the eight tones (2, 3) and the two checked tones (4, 8) actually have a
+# SECOND sandhi contour, used when the following syllable's tone has a high
+# onset — 24/42/43 in place of 35/53/54, and 43 in place of 54 for tone 4
+# (Zhang 2021). That conditioning on the next syllable is not modelled here: the
+# engine derives sandhi per-syllable rather than per-pair, so `contour` below is
+# the elsewhere/default value in each case.
 rules:
-  1: { to: 1, contour: "23", note: "33 → 23" }
-  2: { to: 6, contour: "35", note: "53 → 35" }
-  3: { to: 2, contour: "53", note: "213 → 53" }
-  4: { to: 8, contour: "5",  note: "checked; 2 → 5" }
-  5: { to: 7, contour: "11", note: "55 → 11" }
-  6: { to: 7, contour: "31", note: "35 → 31" }
-  7: { to: 7, contour: "11", note: "unchanged" }
-  8: { to: 4, contour: "2",  note: "checked; 4 → 2" }
+  1: { to: 1, contour: "34", note: "33 → 34 (Zhang 2021); unlike most Teochew dialects, Chaozhou's tone 1 does not stay level in sandhi" }
+  2: { to: 6, contour: "35", note: "53 → 35 elsewhere, 24 before a high-onset tone (Zhang 2021)" }
+  3: { to: 2, contour: "53", note: "213 → 53 elsewhere, 42 before a high-onset tone (Zhang 2021)" }
+  4: { to: 8, contour: "5",  note: "checked; 2 → 54 elsewhere, 43 before a high-onset tone, abbreviated to its dominant pitch 5 (Zhang 2021)" }
+  5: { to: 7, contour: "23", note: "55 → 23 (Zhang 2021)" }
+  6: { to: 7, contour: "21", note: "35 → 21, reported as 21~22 across speakers (Zhang 2021)" }
+  7: { to: 7, contour: "23", note: "21~22 → 23 (Zhang 2021) — a slight rise, not strictly unchanged; this dataset's own citation value of 11 for tone 7 differs from Zhang's 21~22, see REVIEW.md §4" }
+  8: { to: 4, contour: "2",  note: "checked; 4 → 32, abbreviated to its lower pitch 2 (Zhang 2021)" }
 
 # Syllables that resist sandhi, keyed by Peng'im (no tone). Empty for now;
 # populate as exceptions are confirmed.
