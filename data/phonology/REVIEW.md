@@ -75,22 +75,59 @@ block and the compositional rule takes over.
 
 **Test words:** 潮 `dio5`, 少 `zio2`, 上 `ziong6`.
 
-## 3. The tone sandhi table  ·  `sandhi/chaozhou.yaml`  ⚠️ `needs_review: true`
+## 3. The tone sandhi table  ·  `sandhi/chaozhou.yaml`  ✅ **Resolved 2026-07-29**
 
-The whole table is provisional. Published Chaozhou sandhi descriptions disagree
-with each other, and speakers vary. The encoded values are the pattern most
-commonly reported:
+**Ruling:** all 8 rules **confirmed or corrected**, `needs_review` cleared.
 
-| Citation | → Surface | Contour |
-|----------|-----------|---------|
-| 1 (33)   | 1         | 23      |
-| 2 (53)   | 6         | 35      |
-| 3 (213)  | 2         | 53      |
-| 4 (2)    | 8         | 5       |
-| 5 (55)   | 7         | 11      |
-| 6 (35)   | 7         | 31      |
-| 7 (11)   | 7         | 11      |
-| 8 (4)    | 4         | 2       |
+The `to` field (which tone NUMBER a citation tone surfaces as — what actually
+drives the Peng'im respelling) needed no correction. It is corroborated by two
+independent sources agreeing completely: this dataset's pre-existing values, and
+[Learn Teochew](https://learnteochew.com/pages/pronunciation.html)'s own tone
+sandhi table, id `learnteochew`. Wikipedia's Teochew Min article gives the same
+mapping again as a named "simplified" convention specific to Chaozhou, Chenghai
+and Jieyang (Shantou/Raoping differ only in tone 3, which goes to 5 there instead
+of 2) — a third independent confirmation.
+
+The `contour` field (the actual Chao pitch value, which does not drive anything
+downstream but is exposed as metadata) was wrong for three of the eight rules.
+Wikipedia's article carries a detailed Chaozhou/Chenghai sandhi table sourced to
+Zhang, Jingfen. *Tono-types and Tone Evolution: The Case of Chaoshan* (Springer,
+2021) — source id `zhang-2021-tonotypes`. That table was checked directly against
+the article's page markup, not a search-engine summary, because Chao pitch digits
+(`34` vs `24` vs `43`...) are exactly the kind of detail a text summarizer garbles
+silently.
+
+| Citation | → Surface | Old contour | Corrected contour |
+|----------|-----------|-------------|--------------------|
+| 1 (33)   | 1         | 23          | **34**             |
+| 2 (53)   | 6         | 35          | 35 (confirmed)     |
+| 3 (213)  | 2         | 53          | 53 (confirmed)     |
+| 4 (2)    | 8         | 5           | 5 (confirmed)      |
+| 5 (55)   | 7         | 11          | **23**             |
+| 6 (35)   | 7         | 31          | **21**             |
+| 7 (11)   | 7         | 11          | **23**             |
+| 8 (4)    | 4         | 2           | 2 (confirmed)      |
+
+Rule 1 was the clearest error: Zhang's table calls out Chaozhou's tone 1 staying
+*non-level* in sandhi (33 → 34) as one of the dialect's most distinctive features,
+in contrast to most other Teochew varieties where it stays flat at 33. The old
+value of 23 looks like a transcription slip against tone 5's value, which sits
+right next to it in the same table. Rules 5, 6 and 7 were off for a related
+reason: Zhang's table shows tones 5, 6 and 7 converging on nearly the same low
+pitch in sandhi position (23, 21~22, 23 respectively) rather than the single flat
+"11, 31, 11" this dataset had recorded.
+
+**Residual uncertainty, deliberately not blocking resolution.** Two things Zhang's
+table records that this flatter table cannot: (1) tones 2, 3 and the checked tone
+4 each have a *second* sandhi contour used before a high-onset following tone
+(35/53/54, vs. 24/42/43 elsewhere), which would require the engine to derive
+sandhi per-syllable-pair rather than per-syllable to model — the `contour`
+values stored for these three rules are the before-high-onset-tone variant, not
+the elsewhere one; (2) rule 7's corrected
+contour (23) comes from Zhang's own citation value for tone 7 (21~22), which
+differs from this dataset's citation value of 11 for the same tone — see §4.
+Neither affects the `to` mapping, which is what the engine actually uses to
+respell Peng'im.
 
 **Known scope limitation:** the engine treats a whole headword as one tone group.
 That is correct for compounds, but real phrase-level sandhi domains are set by
@@ -103,6 +140,14 @@ Tone 2 is given as 53 for Chaozhou and 52 for Shantou; tone 3 as 213. Both are
 reported with variation in the literature. These affect only the numeric tone
 letters in derived IPA, not the tone *numbers*, so an error here is cosmetic
 rather than structural.
+
+**Tone 7 (陽去) is a further case, found while resolving §3.** This dataset
+records tone 7's citation contour as `11` (low level). Zhang (2021), the source
+behind §3's sandhi corrections, instead gives `21 ~ 22` (low falling to low
+level) for the same tone in Chaozhou and Chenghai specifically. Both describe a
+low pitch, so this is very likely the same cosmetic symbol-choice variation as
+tones 2 and 3 above, not a different phoneme. Left as `11` pending a source
+check, same reasoning as the rest of this section.
 
 ## 5. The `r` initial  ·  `varieties/chaozhou.yaml`
 
