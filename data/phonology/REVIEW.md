@@ -120,8 +120,10 @@ pitch in sandhi position (23, 21~22, 23 respectively) rather than the single fla
 **Residual uncertainty, deliberately not blocking resolution.** Two things Zhang's
 table records that this flatter table cannot: (1) tones 2, 3 and the checked tone
 4 each have a *second* sandhi contour used before a high-onset following tone
-(24/42/43 in place of 35/53/54), which would require the engine to derive sandhi
-per-syllable-pair rather than per-syllable to model; (2) rule 7's corrected
+(35/53/54, vs. 24/42/43 elsewhere), which would require the engine to derive
+sandhi per-syllable-pair rather than per-syllable to model — the `contour`
+values stored for these three rules are the before-high-onset-tone variant, not
+the elsewhere one; (2) rule 7's corrected
 contour (23) comes from Zhang's own citation value for tone 7 (21~22), which
 differs from this dataset's citation value of 11 for the same tone — see §4.
 Neither affects the `to` mapping, which is what the engine actually uses to

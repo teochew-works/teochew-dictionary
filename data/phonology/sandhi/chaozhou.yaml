@@ -27,17 +27,18 @@ sandhi:
 # `to` is the resulting tone NUMBER; `contour` records the surface contour, which
 # is not always identical to that tone's own citation contour.
 #
-# Two of the eight tones (2, 3) and the two checked tones (4, 8) actually have a
-# SECOND sandhi contour, used when the following syllable's tone has a high
-# onset — 24/42/43 in place of 35/53/54, and 43 in place of 54 for tone 4
-# (Zhang 2021). That conditioning on the next syllable is not modelled here: the
-# engine derives sandhi per-syllable rather than per-pair, so `contour` below is
-# the elsewhere/default value in each case.
+# Tones 2, 3 and the checked tone 4 actually have a SECOND sandhi contour, used
+# before a following syllable whose tone has a high onset (⑤, ②, ⑧) — 35/53/54
+# in that case, vs. 24/42/43 elsewhere (Zhang 2021). That conditioning on the
+# next syllable is not modelled here: the engine derives sandhi per-syllable
+# rather than per-pair, so `contour` below records the before-high-onset-tone
+# variant for these three rules, matching this dataset's pre-existing values —
+# not the elsewhere value, which the engine does not currently store anywhere.
 rules:
   1: { to: 1, contour: "34", note: "33 → 34 (Zhang 2021); unlike most Teochew dialects, Chaozhou's tone 1 does not stay level in sandhi" }
-  2: { to: 6, contour: "35", note: "53 → 35 elsewhere, 24 before a high-onset tone (Zhang 2021)" }
-  3: { to: 2, contour: "53", note: "213 → 53 elsewhere, 42 before a high-onset tone (Zhang 2021)" }
-  4: { to: 8, contour: "5",  note: "checked; 2 → 54 elsewhere, 43 before a high-onset tone, abbreviated to its dominant pitch 5 (Zhang 2021)" }
+  2: { to: 6, contour: "35", note: "53 → 35 before a high-onset tone, 24 elsewhere (Zhang 2021)" }
+  3: { to: 2, contour: "53", note: "213 → 53 before a high-onset tone, 42 elsewhere (Zhang 2021)" }
+  4: { to: 8, contour: "5",  note: "checked; 2 → 54 before a high-onset tone, 43 elsewhere, abbreviated to its dominant pitch 5 (Zhang 2021)" }
   5: { to: 7, contour: "23", note: "55 → 23 (Zhang 2021)" }
   6: { to: 7, contour: "21", note: "35 → 21, reported as 21~22 across speakers (Zhang 2021)" }
   7: { to: 7, contour: "23", note: "21~22 → 23 (Zhang 2021) — a slight rise, not strictly unchanged; this dataset's own citation value of 11 for tone 7 differs from Zhang's 21~22, see REVIEW.md §4" }
