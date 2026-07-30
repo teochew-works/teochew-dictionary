@@ -197,6 +197,40 @@ Two traps worth naming:
   no regular MC source. Flag them `needs_review` rather than guessing — see the
   table below.
 
+## 8. 訓讀 graphs: does the entry live under the graph or the etymon?  ·  `entries/*.yaml`  ✅ **Resolved 2026-07-30**
+
+**Ruling:** **split.** When a word is conventionally written with a graph that
+is not its own character (訓讀) and the spoken word also has its own,
+independently-attested character, that word gets its own entry filed under
+the etymon — not a second reading nested under the borrowed graph. The
+borrowed graph is recorded in a `note` on the etymon's reading, not via
+`variants`: that field already means "alternative character writings of the
+same word" (`src/schema/entry.ts`), and a 訓讀 graph is not an alternative
+writing of the etymon — it is the *only* writing anyone actually uses, and it
+belongs to a different character. Overloading `variants` would blur "this
+word is occasionally spelled another way" with "this word is always spelled
+with someone else's character."
+
+**Applied to 二/兩** (the case §7 names as the trap): 兩 `no6` is now its own
+entry (`no6-兩`), the word actually spoken when counting objects. 二
+(`ri7-二`) keeps only its own reading, used in compounds and higher numbers.
+`register` no longer appears on either entry — colloquial/literary marks two
+readings of *one* character, and after the split neither entry has two
+readings of one character to distinguish.
+
+**Consequence:** a lookup for 兩 now finds the counting word directly. A
+lookup for 二 finds only the literary numeral, which is correct: that entry
+does not spell the word meaning "two objects" — the character does, on loan.
+
+**Why 濟 is not split.** `zoi7-濟` (`descriptives.yaml`) is also 訓讀 — 濟's
+own reading is 陰去 (tone 3), not the 陽去 the entry records — but it stays as
+one entry with an explanatory note. The distinguishing fact is whether a
+*displaced etymon with its own ordinary character* exists to file a second
+entry under. 兩 does: it's an extremely common character in its own right,
+independently attested across Min and Mandarin. Teochew's colloquial "many"
+does not have one on record here. The rule turns on whether that second
+character exists, not on the mere presence of 訓讀.
+
 ## Individual entries flagged `needs_review`
 
 Run `npm run validate` for the current count. As of writing:

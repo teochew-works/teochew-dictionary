@@ -1,13 +1,14 @@
 # Numerals 數詞.
 #
-# Several numerals have distinct colloquial (白讀) and literary (文讀) readings.
-# Both are recorded, tagged by register, because which one is used is
-# grammatically conditioned — 二 is `no6` when counting objects but `ri7` in
-# compounds and higher numbers.
+# Several numerals have distinct colloquial (白讀) and literary (文讀) readings
+# of the same character, tagged by register (一, 八).
 #
-# The two 二 readings sit in different tones because they are different words.
-# The literary `ri` is 二 itself (日母 去聲 → 陽去 → tone 7); the colloquial `no`
-# is the 兩 etymon (來母 上聲 → 次濁上 → 陽上 → tone 6) written 二 as 訓讀.
+# 二/兩 is not one of these. `no6` and `ri7` are not two readings of one
+# character — they are two different words: 兩 (來母 上聲 → 陽上 → tone 6),
+# the word actually spoken when counting objects, conventionally written 二
+# (訓讀); and 二 itself (日母 去聲 → 陽去 → tone 7), used in compounds and
+# higher numbers. They are filed as separate entries below. See
+# `data/phonology/REVIEW.md` §8 for the ruling.
 
 entries:
   - id: zeg8-一
@@ -28,23 +29,38 @@ entries:
     frequency: 5
     sources: [seed]
 
-  - id: no6-二
-    headword: 二
+  - id: no6-兩
+    headword: 兩
     readings:
       - pengim: no6
-        register: colloquial
-        note: Used when counting things.
-      - pengim: ri7
-        register: literary
-        note: Used in compounds and in higher numbers (十二 zab8 ri7).
+        note: >-
+          Conventionally written 二 when counting objects (訓讀); this is the
+          etymon (來母 上聲 → 陽上). See REVIEW.md §8.
     senses:
       - pos: numeral
         gloss_en: [two, "2"]
-        gloss_zh: [二]
+        gloss_zh: [兩]
+        note: Used when counting things. Written 二 in practice, not 兩.
         examples:
           - hanzi: 二日
             pengim: no6 rig8
             en: two days
+    frequency: 5
+    sources: [seed]
+
+  - id: ri7-二
+    headword: 二
+    readings:
+      - pengim: ri7
+    senses:
+      - pos: numeral
+        gloss_en: [two, "2"]
+        gloss_zh: [二]
+        note: Used in compounds and in higher numbers, not when counting objects (see the no6-兩 entry).
+        examples:
+          - hanzi: 十二
+            pengim: zab8 ri7
+            en: twelve
     frequency: 5
     sources: [seed]
 
