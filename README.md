@@ -259,10 +259,19 @@ questions:
   distinct licence text a source can carry has its own `LICENSE-DATA-*` file
   at the repo root, per the table above.
 
-A source with an unclassified licence (`unknown` included, e.g.
-`pengim-1960`) can be cited for corroboration in a phonology mapping, but
-can't back an entry — the validator rejects an entry that tries, rather than
-silently guessing.
+**Every source also has a `kind`** — `import` (material is copied out of it
+into the dataset; `licence` is required, and defaults to `import` for a source
+that doesn't say) or `reference` (cited as evidence, e.g. to justify a
+phonology mapping's `confidence`, but never reproduced; `licence` is
+optional, since no licence obligation attaches to material that was never
+copied — `pengim-1960` and `learnteochew` carry none). An entry's `sources:`
+may cite only `import` ids; a phonology mapping's `sources:` may cite either,
+since a mapping records evidence about the language, not the origin of an
+entry's content. `wikipedia` is `kind: reference` despite having a real
+(share-alike) licence — that's what stops it being cited as an entry source
+and silently contaminating the dataset with CC-BY-SA-4.0. The validator
+rejects an entry that cites a `reference` source, rather than silently
+accepting it.
 
 **Today the whole shipped dataset is CC-BY-4.0** — all 87 entries cite only
 `seed`. This is why importers write to `data/staging/` and never to
