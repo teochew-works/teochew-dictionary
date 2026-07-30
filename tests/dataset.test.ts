@@ -4,10 +4,11 @@ import type Database from 'better-sqlite3'
 import { build } from '../src/build/index.js'
 import { createEnricher, stripDiacritics, stripTones } from '../src/build/enrich.js'
 import { lookup, openDb } from '../src/lookup/index.js'
-import { checkMappingSources, validate, TONES } from '../src/validate/index.js'
+import { checkEntrySources, checkMappingSources, validate, TONES } from '../src/validate/index.js'
 import { loadEntries, loadSources } from '../src/data/load.js'
 import { resolveLicence } from '../src/data/licence.js'
 import type { Variety } from '../src/schema/phonology.js'
+import type { Entry, Source } from '../src/schema/entry.js'
 
 /**
  * Guards the dataset itself, not just the code. A malformed entry should fail
@@ -77,6 +78,40 @@ describe('phonology provenance', () => {
 
   it('accepts a mapping whose ids all resolve', () => {
     expect(checkMappingSources('varieties/test.yaml', cited('pengim-1960', 'wikipedia'), KNOWN))
+      .toEqual([])
+  })
+})
+
+describe('entry provenance', () => {
+  // An entry's `sources:` may only cite `kind: import` ids — a `kind:
+  // reference` source is evidence about the language, not the origin of an
+  // entry's content.
+  const IMPORT_SOURCE: Source = { id: 'test-import', name: 'Test Import', kind: 'import', licence: 'CC-BY-4.0' }
+  const REFERENCE_SOURCE: Source = { id: 'test-reference', name: 'Test Reference', kind: 'reference' }
+  const sourceMap = new Map([IMPORT_SOURCE, REFERENCE_SOURCE].map((s) => [s.id, s]))
+  const sourceIds = new Set(sourceMap.keys())
+
+  /** One entry citing the given source ids, otherwise minimal but valid. */
+  function entryCiting(...sources: string[]): Entry {
+    return {
+      id: 'test-entry',
+      headword: '測試',
+      readings: [{ pengim: 'ceh4', variety: 'chaozhou' }],
+      senses: [{ pos: 'noun', gloss_en: ['test'] }],
+      sources,
+    }
+  }
+
+  it('rejects an entry citing a reference-kind source', () => {
+    const issues = checkEntrySources('data/entries/test.yaml', entryCiting('test-reference'), sourceIds, sourceMap)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'sources' })
+    expect(issues[0]?.message).toContain('test-reference')
+    expect(issues[0]?.message).toContain('kind: reference')
+  })
+
+  it('accepts an entry citing only import-kind sources', () => {
+    expect(checkEntrySources('data/entries/test.yaml', entryCiting('test-import'), sourceIds, sourceMap))
       .toEqual([])
   })
 })

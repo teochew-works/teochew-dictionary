@@ -162,23 +162,7 @@ export function validate(): ValidationReport {
       else seenHeadwords.set(entry.headword, [entry.id])
 
       // ── provenance ──────────────────────────────────────────────────────────
-      let sourcesResolved = true
-      for (const s of entry.sources) {
-        if (sourceIds.size > 0 && !sourceIds.has(s)) {
-          issues.push(err(file, `unknown source '${s}' — add it to data/sources.yaml`, entry.id, 'sources'))
-          sourcesResolved = false
-        }
-      }
-
-      // An entry's licence is derived from its sources, not written by hand —
-      // skipped when a source id above didn't even resolve, so one root cause
-      // doesn't get reported twice.
-      if (sourcesResolved && sourceMap.size > 0) {
-        const licence = resolveLicence(entry.sources, sourceMap)
-        if (!licence.ok) {
-          issues.push(err(file, `unresolvable licence: ${licence.reason}`, entry.id, 'sources'))
-        }
-      }
+      issues.push(...checkEntrySources(file, entry, sourceIds, sourceMap))
 
       readingCount += entry.readings.length
       reviewCount += checkReadings(entry, file, varieties, issues, toneCounts)
@@ -212,6 +196,50 @@ export function validate(): ValidationReport {
   }
 
   return summarise(issues, entryCount, readingCount, reviewCount, toneCounts)
+}
+
+/**
+ * An entry's `sources:` may only cite `kind: import` ids — a `kind: reference`
+ * source is evidence about the language, not the origin of an entry's content
+ * (see checkMappingSources, which mapping `sources:` go through instead and
+ * may cite either kind). An entry's licence is derived from its sources, not
+ * written by hand; that resolution is skipped when a source id above didn't
+ * even resolve, so one root cause doesn't get reported twice.
+ */
+export function checkEntrySources(
+  file: string,
+  entry: Entry,
+  sourceIds: Set<string>,
+  sourceMap: Map<string, Source>,
+): Issue[] {
+  const issues: Issue[] = []
+  let sourcesResolved = true
+
+  for (const s of entry.sources) {
+    if (sourceIds.size > 0 && !sourceIds.has(s)) {
+      issues.push(err(file, `unknown source '${s}' — add it to data/sources.yaml`, entry.id, 'sources'))
+      sourcesResolved = false
+    } else if (sourceMap.get(s)?.kind === 'reference') {
+      issues.push(
+        err(
+          file,
+          `source '${s}' is kind: reference — cannot back an entry directly (evidence about the language, not the entry's content)`,
+          entry.id,
+          'sources',
+        ),
+      )
+      sourcesResolved = false
+    }
+  }
+
+  if (sourcesResolved && sourceMap.size > 0) {
+    const licence = resolveLicence(entry.sources, sourceMap)
+    if (!licence.ok) {
+      issues.push(err(file, `unresolvable licence: ${licence.reason}`, entry.id, 'sources'))
+    }
+  }
+
+  return issues
 }
 
 /** The mapping groups in a variety file, all of which may cite sources. */

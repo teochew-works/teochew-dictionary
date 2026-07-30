@@ -32,6 +32,13 @@ export const PART_OF_SPEECH = [
 
 export const REGISTER = ['colloquial', 'literary', 'both'] as const
 
+/**
+ * `import` — material is copied out of the source into the dataset; `licence`
+ * is load-bearing. `reference` — cited as evidence (e.g. for a phonology
+ * mapping's `confidence`), never reproduced; no licence obligation attaches.
+ */
+export const SOURCE_KIND = ['import', 'reference'] as const
+
 /** Peng'im: one or more syllables, each `letters + tone digit`, space separated. */
 const pengimString = z
   .string()
@@ -92,7 +99,7 @@ export const entrySchema = z.object({
    * Used to rank search results and to pick what to work on next.
    */
   frequency: z.number().int().min(1).max(5).optional(),
-  /** Source ids, resolved against `data/sources.yaml`. */
+  /** Source ids, resolved against `data/sources.yaml` — must be `kind: import`. */
   sources: z.array(z.string().min(1)).min(1),
   /** Set when the entry is known to need a specialist's eye. */
   needs_review: z.boolean().optional(),
@@ -102,14 +109,20 @@ export const entryFileSchema = z.object({
   entries: z.array(entrySchema).min(1),
 })
 
-export const sourceSchema = z.object({
-  id: z.string().min(1),
-  name: z.string().min(1),
-  licence: z.string().min(1),
-  url: z.string().url().optional(),
-  retrieved: z.string().regex(/^\d{4}-\d{2}-\d{2}$/u).optional(),
-  note: z.string().optional(),
-})
+export const sourceSchema = z
+  .object({
+    id: z.string().min(1),
+    name: z.string().min(1),
+    kind: z.enum(SOURCE_KIND).default('import'),
+    licence: z.string().min(1).optional(),
+    url: z.string().url().optional(),
+    retrieved: z.string().regex(/^\d{4}-\d{2}-\d{2}$/u).optional(),
+    note: z.string().optional(),
+  })
+  .refine((s) => s.kind !== 'import' || !!s.licence, {
+    message: 'a source of kind `import` requires a `licence`',
+    path: ['licence'],
+  })
 
 export const sourcesFileSchema = z.object({
   sources: z.array(sourceSchema).min(1),
@@ -121,3 +134,4 @@ export type Sense = z.infer<typeof senseSchema>
 export type Entry = z.infer<typeof entrySchema>
 export type Source = z.infer<typeof sourceSchema>
 export type PartOfSpeech = (typeof PART_OF_SPEECH)[number]
+export type SourceKind = (typeof SOURCE_KIND)[number]
