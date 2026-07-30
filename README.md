@@ -273,11 +273,12 @@ and silently contaminating the dataset with CC-BY-SA-4.0. The validator
 rejects an entry that cites a `reference` source, rather than silently
 accepting it.
 
-**Today the whole shipped dataset is CC-BY-4.0** — all 87 entries cite only
-`seed`. This is why importers write to `data/staging/` and never to
-`data/entries/`: nothing imported has been merged yet, so merging a CC-BY-SA
-gloss into an entry, and thereby relicensing that entry, stays a deliberate
-human act rather than something a script does by accident.
+**As of the Swadesh-207 Wiktionary merge (issue #5), the dataset is a mix of
+both licences** — 102 entries cite only `seed` and remain CC-BY-4.0; 141
+entries cite `wiktionary` and are CC-BY-SA-4.0. This is why importers write to
+`data/staging/` and never to `data/entries/`: merging a CC-BY-SA gloss into an
+entry, and thereby relicensing that entry, stays a deliberate human act rather
+than something a script does by accident.
 
 ---
 
@@ -297,16 +298,24 @@ human act rather than something a script does by accident.
 
 ## Status
 
-101 entries covering core everyday vocabulary — numerals, pronouns, kinship,
-food, common verbs and descriptives, place names. Enough to exercise the whole
-pipeline end to end; nowhere near enough to be a usable dictionary.
+243 entries covering core everyday vocabulary against the Swadesh-207
+checklist — numerals, pronouns, kinship, body parts, animals, nature, common
+verbs and descriptives, place names, function words. 141 of those were merged
+from the Wiktionary import (issue #5) and carry `needs_review: true` wherever
+Wiktionary returned more than one candidate reading or the headword choice
+itself was a guess; a native speaker still needs to confirm them.
 
 The most valuable next contributions, in order:
 
-1. **Confirming the sandhi table** in `data/phonology/sandhi/chaozhou.yaml`. It is
+1. **A native speaker confirming the `needs_review` entries from the
+   Wiktionary merge** — around 100 entries carry unresolved multi-reading
+   ambiguity or headword/register uncertainty, tracked per-item in
+   `data/wordlists/swadesh-207.yaml`.
+2. **Confirming the sandhi table** in `data/phonology/sandhi/chaozhou.yaml`. It is
    flagged `needs_review: true` in full, and published descriptions disagree with
    each other, so this is the largest remaining unknown.
-2. **A native speaker walking [REVIEW.md](data/phonology/REVIEW.md).** §1, the
+3. **A native speaker walking [REVIEW.md](data/phonology/REVIEW.md).** §1, the
    `e`/`ê` vowel split, is resolved; §2–§7 are not.
-3. **Volume** — the importers exist to make this less manual, but every proposal
-   still needs a human.
+4. **The 16 Swadesh items still `no_reading`** in
+   `data/wordlists/swadesh-207.yaml` — the importer found nothing for these
+   headword guesses; they need better headwords before they can be re-fetched.
