@@ -1,0 +1,68 @@
+# Animals 動物.
+#
+# Merged from the Wiktionary import against the Swadesh-207 checklist
+# (issue #5).
+
+entries:
+  - id: dong6-muêh8-動物
+    headword: 動物
+    readings:
+      - pengim: dong6 muêh8
+    senses:
+      - pos: noun
+        gloss_en: [animal]
+        gloss_zh: [動物]
+        note: Likely a shared literary term rather than a distinctly colloquial Teochew word.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: ziao2-鳥
+    headword: 鳥
+    readings:
+      - pengim: ziao2
+      - pengim: ziou2
+    senses:
+      - pos: noun
+        gloss_en: [bird]
+        gloss_zh: [鳥]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: gao2-狗
+    headword: 狗
+    readings:
+      - pengim: gao2
+    senses:
+      - pos: noun
+        gloss_en: [dog]
+        gloss_zh: [狗]
+    frequency: 5
+    sources: [wiktionary]
+
+  - id: zua5-蛇
+    headword: 蛇
+    readings:
+      - pengim: zua5
+      - pengim: i5
+    senses:
+      - pos: noun
+        gloss_en: [snake]
+        gloss_zh: [蛇]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: tang5-蟲
+    headword: 蟲
+    readings:
+      - pengim: tang5
+    senses:
+      - pos: noun
+        gloss_en: [worm]
+        gloss_zh: [蟲]
+    frequency: 3
+    sources: [wiktionary]

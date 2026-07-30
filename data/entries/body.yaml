@@ -1,0 +1,333 @@
+# Body parts and anatomy 身體.
+#
+# Merged from the Wiktionary import against the Swadesh-207 checklist
+# (issue #5). Many candidate readings came back from Wiktionary's zh-pron
+# template with more than one variant; those are recorded in full and
+# flagged `needs_review` rather than guessed at.
+
+entries:
+  - id: puê5-皮
+    headword: 皮
+    readings:
+      - pengim: puê5
+      - pengim: pi5
+    senses:
+      - pos: noun
+        gloss_en: [skin]
+        gloss_zh: [皮膚, 皮]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: huêh4-血
+    headword: 血
+    readings:
+      - pengim: huêh4
+    senses:
+      - pos: noun
+        gloss_en: [blood]
+        gloss_zh: [血]
+    frequency: 4
+    sources: [wiktionary]
+
+  - id: gug4-骨
+    headword: 骨
+    readings:
+      - pengim: gug4
+    senses:
+      - pos: noun
+        gloss_en: [bone]
+        gloss_zh: [骨頭, 骨]
+    frequency: 3
+    sources: [wiktionary]
+
+  - id: iu5-油
+    headword: 油
+    readings:
+      - pengim: iu5
+    senses:
+      - pos: noun
+        gloss_en: [fat (bodily/animal)]
+        gloss_zh: [油, 脂肪]
+        note: Swadesh means bodily/animal fat (cf. 豬油 "lard"), not cooking oil — the fetched reading needs its sense confirmed, not just the pronunciation.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: gag4-角
+    headword: 角
+    readings:
+      - pengim: gag4
+    senses:
+      - pos: noun
+        gloss_en: [horn]
+        gloss_zh: [角]
+    frequency: 2
+    sources: [wiktionary]
+
+  - id: bhuê2-尾
+    headword: 尾
+    readings:
+      - pengim: bhuê2
+      - pengim: mai2
+    senses:
+      - pos: noun
+        gloss_en: [tail]
+        gloss_zh: [尾巴, 尾]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: mo5-毛
+    headword: 毛
+    readings:
+      - pengim: mo5
+      - pengim: mao5
+    senses:
+      - pos: noun
+        gloss_en: [feather]
+        gloss_zh: [毛, 羽毛]
+        note: >-
+          2 candidate readings from Wiktionary — genuine Chaozhou colloquial
+          form not yet confirmed by a speaker. Same character as in 頭毛
+          "hair" below — genuine Southern Min polysemy (毛 covers body/animal
+          hair and feathers), not a mistake.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: tao5-mo5-頭毛
+    headword: 頭毛
+    readings:
+      - pengim: tao5 mo5
+    senses:
+      - pos: noun
+        gloss_en: [hair]
+        gloss_zh: [頭髮, 毛]
+        note: Compound (頭 "head" + 毛 "hair/fur") — see 毛 "feather" above regarding the shared character.
+    frequency: 4
+    sources: [wiktionary]
+
+  - id: tao5-頭
+    headword: 頭
+    readings:
+      - pengim: tao5
+    senses:
+      - pos: noun
+        gloss_en: [head]
+        gloss_zh: [頭]
+    frequency: 5
+    sources: [wiktionary]
+
+  - id: hin6-耳
+    headword: 耳
+    readings:
+      - pengim: hin6
+      - pengim: re2
+      - pengim: re7
+    senses:
+      - pos: noun
+        gloss_en: [ear]
+        gloss_zh: [耳朵, 耳]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: mag8-zu1-目珠
+    headword: 目珠
+    readings:
+      - pengim: mag8 zu1
+    senses:
+      - pos: noun
+        gloss_en: [eye]
+        gloss_zh: [眼睛]
+        note: Teochew commonly uses the compound 目珠 rather than bare 目.
+    frequency: 5
+    sources: [wiktionary]
+
+  - id: pin7-鼻
+    headword: 鼻
+    readings:
+      - pengim: pin7
+    senses:
+      - pos: noun
+        gloss_en: [nose]
+        gloss_zh: [鼻子, 鼻]
+      - pos: verb
+        gloss_en: [to smell]
+        gloss_zh: [聞, 嗅]
+        note: Southern Min uses 鼻 as both noun and verb, not a mistake — the two senses share this one entry.
+    frequency: 5
+    sources: [wiktionary]
+
+  - id: cui3-喙
+    headword: 喙
+    readings:
+      - pengim: cui3
+      - pengim: hui3
+    senses:
+      - pos: noun
+        gloss_en: [mouth]
+        gloss_zh: [嘴, 嘴巴]
+        note: >-
+          Southern Min character for "mouth" (cf. Hokkien 喙 tshuì) rather
+          than Mandarin 嘴 — unconfirmed for Teochew specifically. 2
+          candidate readings from Wiktionary also need confirming.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: ghê5-牙
+    headword: 牙
+    readings:
+      - pengim: ghê5
+    senses:
+      - pos: noun
+        gloss_en: [tooth]
+        gloss_zh: [牙齒, 牙]
+        note: Could also be the more literary 齒 — unconfirmed which register is colloquial here.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: zih8-舌
+    headword: 舌
+    readings:
+      - pengim: zih8
+    senses:
+      - pos: noun
+        gloss_en: [tongue]
+        gloss_zh: [舌頭, 舌]
+    frequency: 3
+    sources: [wiktionary]
+
+  - id: ka1-跤
+    headword: 跤
+    readings:
+      - pengim: ka1
+    senses:
+      - pos: noun
+        gloss_en: [foot]
+        gloss_zh: [腳, 跤]
+      - pos: noun
+        gloss_en: [leg]
+        gloss_zh: [腿, 跤]
+        note: Southern Min 跤 covers both "foot" and "leg" without a lexical distinction, not a mistake.
+    frequency: 5
+    sources: [wiktionary]
+
+  - id: ciu2-手
+    headword: 手
+    readings:
+      - pengim: ciu2
+    senses:
+      - pos: noun
+        gloss_en: [hand]
+        gloss_zh: [手]
+    frequency: 5
+    sources: [wiktionary]
+
+  - id: sig8-翼
+    headword: 翼
+    readings:
+      - pengim: sig8
+      - pengim: sêg8
+      - pengim: êg8
+      - pengim: iah8
+    senses:
+      - pos: noun
+        gloss_en: [wing]
+        gloss_zh: [翅膀, 翼]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: deng5-腸
+    headword: 腸
+    readings:
+      - pengim: deng5
+      - pengim: ciang5
+    senses:
+      - pos: noun
+        gloss_en: [guts]
+        gloss_zh: [腸, 腸子]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: am6-頷
+    headword: 頷
+    readings:
+      - pengim: am6
+      - pengim: ham5
+    senses:
+      - pos: noun
+        gloss_en: [neck]
+        gloss_zh: [脖子, 頷]
+        note: >-
+          Southern Min character for "neck" (cf. Hokkien 頷 ām) — unconfirmed
+          for Teochew specifically. 2 candidate readings from Wiktionary also
+          need confirming.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: ga1-ziah4-尻脊
+    headword: 尻脊
+    readings:
+      - pengim: ga1 ziah4
+      - pengim: ka1 ziah4
+    senses:
+      - pos: noun
+        gloss_en: [back (body part)]
+        gloss_zh: [背, 背部]
+        note: >-
+          Southern Min compound for "back" (cf. Hokkien 尻脊 kha-tsiah) — low
+          confidence, may not be the Teochew term; simpler 背 is a plausible
+          fallback. 2 candidate readings from Wiktionary also need confirming.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: hêng1-胸
+    headword: 胸
+    readings:
+      - pengim: hêng1
+    senses:
+      - pos: noun
+        gloss_en: [breast, chest]
+        gloss_zh: [胸, 胸部]
+        note: Generic "chest" sense; uncertain this is the most idiomatic choice over a more specific compound.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: sim1-心
+    headword: 心
+    readings:
+      - pengim: sim1
+      - pengim: sing1
+    senses:
+      - pos: noun
+        gloss_en: [heart]
+        gloss_zh: [心, 心臟]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: guan1-肝
+    headword: 肝
+    readings:
+      - pengim: guan1
+    senses:
+      - pos: noun
+        gloss_en: [liver]
+        gloss_zh: [肝, 肝臟]
+    frequency: 2
+    sources: [wiktionary]

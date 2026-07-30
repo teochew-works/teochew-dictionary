@@ -107,6 +107,64 @@ entries:
     needs_review: true
     sources: [seed]
 
+  # The following entries were merged from the Wiktionary import against the
+  # Swadesh-207 checklist (issue #5).
+
+  - id: i1-nang5-伊儂
+    headword: 伊儂
+    readings:
+      - pengim: i1 nang5
+    senses:
+      - pos: pronoun
+        gloss_en: [they]
+        gloss_zh: [他們, 她們]
+        note: >-
+          By analogy with 阮/恁 (儂-suffixed plural pronouns) — not yet
+          confirmed as the actual lexicalised 3rd-plural; some Southern Min
+          varieties use a distinct morpheme (cf. Hokkien 𪜶) instead.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: zi2-只
+    headword: 只
+    readings:
+      - pengim: zi2
+    senses:
+      - pos: pronoun
+        gloss_en: [this]
+        gloss_zh: [這]
+    frequency: 5
+    sources: [wiktionary]
+
+  - id: he2-許
+    headword: 許
+    readings:
+      - pengim: he2
+      - pengim: kou2
+      - pengim: hu2
+    senses:
+      - pos: pronoun
+        gloss_en: [that]
+        gloss_zh: [那]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: di7-si5-底時
+    headword: 底時
+    readings:
+      - pengim: di7 si5
+    senses:
+      - pos: adverb
+        gloss_en: [when]
+        gloss_zh: [幾時, 什麼時候]
+        note: Compound guess; cf. 幾時 as an alternative form.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
   - id: di6-diang5-底儂
     headword: 底儂
     readings:

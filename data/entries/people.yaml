@@ -138,3 +138,41 @@ entries:
     frequency: 4
     needs_review: true
     sources: [seed]
+
+  # The following entries were merged from the Wiktionary import against the
+  # Swadesh-207 checklist (issue #5).
+
+  - id: mou2-某
+    headword: 某
+    readings:
+      - pengim: mou2
+      - pengim: mong2
+    senses:
+      - pos: noun
+        gloss_en: [wife]
+        gloss_zh: [妻子, 老婆]
+        note: >-
+          Colloquial Southern Min for "wife" (cf. Hokkien 某 bó͘); pairs with
+          翁 "husband" below. 2 candidate readings from Wiktionary also need
+          confirming.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: ang1-翁
+    headword: 翁
+    readings:
+      - pengim: ang1
+      - pengim: ong1
+      - pengim: êng1
+    senses:
+      - pos: noun
+        gloss_en: [husband]
+        gloss_zh: [丈夫, 老公]
+        note: >-
+          Colloquial Southern Min for "husband" (cf. Hokkien 翁 ang); pairs
+          with 某 "wife" above. 3 candidate readings from Wiktionary also
+          need confirming.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]

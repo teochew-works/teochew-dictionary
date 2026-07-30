@@ -198,3 +198,37 @@ entries:
           "have you eaten yet?".
     frequency: 4
     sources: [seed]
+
+  # The following entries were merged from the Wiktionary import against the
+  # Swadesh-207 checklist (issue #5).
+
+  - id: mê5-暝
+    headword: 暝
+    readings:
+      - pengim: mê5
+      - pengim: mêng5
+    senses:
+      - pos: noun
+        gloss_en: [night]
+        gloss_zh: [夜晚, 晚上]
+        note: >-
+          Southern Min character for "night" (cf. Hokkien 暝/暗暝) —
+          unconfirmed for Teochew specifically over 夜. 2 candidate readings
+          from Wiktionary also need confirming.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: mian5-名
+    headword: 名
+    readings:
+      - pengim: mian5
+      - pengim: mêng5
+    senses:
+      - pos: noun
+        gloss_en: [name]
+        gloss_zh: [名字]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
