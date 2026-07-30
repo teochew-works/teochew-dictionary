@@ -6,10 +6,12 @@ import type { Source } from '../schema/entry.js'
  * An entry's licence is derived from its `sources`, never hand-written — the
  * same "store what a human must know, derive everything else" rule the schema
  * comment states for readings. A source is either `permissive` or
- * `share-alike`; anything not classified — including the literal `unknown`
- * used for sources that are cited but never reproduced, e.g. `pengim-1960` —
- * cannot back an entry directly, only a phonology mapping's `sources:` (see
- * checkMappingSources in ../validate/index.js).
+ * `share-alike`; anything not classified cannot back an entry directly. This
+ * function only classifies the `licence` string itself — a `kind: reference`
+ * source (cited for corroboration, never reproduced, e.g. `pengim-1960`) is
+ * rejected earlier and never reaches here; see checkEntrySources in
+ * ../validate/index.js. A `reference` source may still appear in a phonology
+ * mapping's `sources:`, which checkMappingSources resolves separately.
  *
  * `licence` and `attributions` answer different questions, and collapsing them
  * into one string is what caused this to need re-deriving: `licence` is what

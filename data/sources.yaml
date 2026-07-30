@@ -1,6 +1,15 @@
 # Provenance registry. Every entry cites at least one source id from this file,
 # and the validator rejects ids that are not listed here.
 #
+# Every source has a `kind`: `import` (the default — material is copied out of
+# it into the dataset, so `licence` is required) or `reference` (cited as
+# evidence, e.g. for a phonology mapping's `confidence`, but never reproduced —
+# `licence` is optional, since no licence obligation attaches to material that
+# was never copied). An entry's `sources:` may only cite `kind: import` ids;
+# a phonology mapping's `sources:` may cite either — see the "Reference works"
+# section below. The validator rejects an entry that cites a `reference` id
+# rather than silently accepting it.
+#
 # Licence hygiene matters for a lexicon: glosses and example sentences are
 # copyrightable even when individual pronunciations are not, so imported material
 # must carry its licence with it and stay separable from hand-written material.
@@ -14,15 +23,12 @@
 # permissive-but-distinct licence, e.g. `unihan`'s Unicode-DFS-2016, never
 # changes which licence governs the entry, but its notice still has to be
 # retained, which is why there's a LICENSE-DATA-* file per distinct licence
-# text in this file, not just one for the share-alike case. A source whose
-# `licence` is `unknown` (or anything else not classified permissive or
-# share-alike in licence.ts) can be cited by a phonology mapping's `sources:`
-# for corroboration, but cannot back an entry directly — the validator flags
-# that as an unresolvable licence rather than silently guessing.
+# text in this file, not just one for the share-alike case.
 
 sources:
   - id: seed
     name: Hand-curated seed set
+    kind: import
     licence: CC-BY-4.0
     note: >-
       Written by hand to bootstrap the dataset and exercise the tooling
@@ -32,6 +38,7 @@ sources:
 
   - id: wiktionary
     name: Wiktionary (Teochew pronunciation sections)
+    kind: import
     licence: CC-BY-SA-4.0
     url: https://en.wiktionary.org/
     note: >-
@@ -40,6 +47,7 @@ sources:
 
   - id: cedict
     name: CC-CEDICT
+    kind: import
     licence: CC-BY-SA-4.0
     url: https://www.mdbg.net/chinese/dictionary?page=cedict
     note: >-
@@ -49,31 +57,35 @@ sources:
 
   - id: unihan
     name: Unihan Database
+    kind: import
     licence: Unicode-DFS-2016
     url: https://www.unicode.org/charts/unihan.html
     note: >-
       Character-level metadata (radical, stroke count, variants). Permissive.
 
-  # ─── Reference works ─────────────────────────────────────────────────────────
+  # ─── Reference works (kind: reference) ─────────────────────────────────────
   #
   # Cited by phonology mappings (`sources:` in varieties/*.yaml) to record the
   # evidence behind a `confidence`. These are consulted, not imported: no text is
   # reproduced, and a phoneme mapping is a fact rather than an expressive work.
   # Per the header above, pronunciations are not copyrightable even where glosses
-  # are, so citing them here creates no licence obligation on the dataset.
+  # are, so citing them here creates no licence obligation on the dataset — hence
+  # `kind: reference`, which also keeps the validator from letting one of these
+  # back an entry directly, `wikipedia`'s share-alike licence included.
 
   - id: pengim-1960
     name: 廣東省教育廳《潮州話拼音方案》(1960)
-    licence: unknown
+    kind: reference
     note: >-
       The scheme that defines Peng'im itself, already named in
       phonology/pengim.yaml. Authoritative for what the orthography MEANS — it is
       the document that assigns `ê` to /e/ and bare `e` to /ɯ/, so for questions
       about the letters it is definitional rather than merely descriptive. Based
-      on the Swatow (汕頭) dialect. Licence unknown; cited, never reproduced.
+      on the Swatow (汕頭) dialect. Cited, never reproduced.
 
   - id: wikipedia
     name: Wikipedia (Teochew Min, Peng'im)
+    kind: reference
     licence: CC-BY-SA-4.0
     url: https://en.wikipedia.org/
     retrieved: '2026-07-27'
@@ -85,7 +97,7 @@ sources:
 
   - id: learnteochew
     name: Learn Teochew (learnteochew.com)
-    licence: unknown
+    kind: reference
     url: https://learnteochew.com/pages/pronunciation.html
     retrieved: '2026-07-27'
     note: >-
@@ -95,7 +107,7 @@ sources:
 
   - id: zhang-2021-tonotypes
     name: 'Zhang, Jingfen. Tono-types and Tone Evolution: The Case of Chaoshan (2021)'
-    licence: unknown
+    kind: reference
     url: https://books.google.com/books?id=liASEAAAQBAJ
     retrieved: '2026-07-29'
     note: >-

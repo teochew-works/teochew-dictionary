@@ -1,15 +1,16 @@
 import { describe, expect, it } from 'vitest'
 
 import { BASE_LICENCE, resolveLicence } from '../src/data/licence.js'
-import type { Source } from '../src/schema/entry.js'
+import { sourceSchema } from '../src/schema/entry.js'
+import type { Source, SourceKind } from '../src/schema/entry.js'
 
 /**
  * Pure unit tests for licence resolution, independent of the shipped dataset —
  * see tests/dataset.test.ts for "every real entry resolves".
  */
 
-function source(id: string, licence: string): Source {
-  return { id, name: id, licence }
+function source(id: string, licence: string, kind: SourceKind = 'import'): Source {
+  return { id, name: id, kind, licence }
 }
 
 const SEED = source('seed', 'CC-BY-4.0')
@@ -76,5 +77,33 @@ describe('resolveLicence', () => {
     const conflicting = new Map([...sources, ['other-sa', source('other-sa', 'CC-BY-SA-3.0')]])
     const result = resolveLicence(['wiktionary', 'other-sa'], conflicting)
     expect(result.ok).toBe(false)
+  })
+})
+
+describe('sourceSchema', () => {
+  it('defaults kind to import when omitted', () => {
+    const parsed = sourceSchema.parse({ id: 'x', name: 'X', licence: 'CC-BY-4.0' })
+    expect(parsed.kind).toBe('import')
+  })
+
+  it('rejects an import-kind source with no licence', () => {
+    const result = sourceSchema.safeParse({ id: 'x', name: 'X', kind: 'import' })
+    expect(result.success).toBe(false)
+  })
+
+  it('accepts a reference-kind source with no licence', () => {
+    const result = sourceSchema.safeParse({ id: 'pengim-1960', name: 'Pengim 1960', kind: 'reference' })
+    expect(result.success).toBe(true)
+  })
+
+  it('accepts a reference-kind source that still carries a licence', () => {
+    // wikipedia's shape: kind: reference despite a real share-alike licence.
+    const result = sourceSchema.safeParse({
+      id: 'wikipedia',
+      name: 'Wikipedia',
+      kind: 'reference',
+      licence: 'CC-BY-SA-4.0',
+    })
+    expect(result.success).toBe(true)
   })
 })
