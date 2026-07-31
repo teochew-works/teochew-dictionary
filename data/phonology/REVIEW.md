@@ -79,8 +79,10 @@ Citations recorded: `io` and `ioh` (both varieties) now carry `sources:
 [wikipedia, learnteochew]` in the YAML — Wikipedia attests both directly,
 including `ioʔ → ieʔ` for the checked rime, not merely by analogy from the
 open rime. `iong` (both varieties) has no source addressing the nasal-coda
-rime specifically; its `note` says so explicitly. This is bookkeeping, not
-resolution — the open questions above stand.
+rime specifically; its `note` says so explicitly, and Shantou's copy is now
+also `confidence: low` to match Chaozhou's — both are equally uncited
+extrapolations from the open-rime pattern, so neither should outrank the
+other. This is bookkeeping, not resolution — the open questions above stand.
 
 ## 3. The tone sandhi table  ·  `sandhi/chaozhou.yaml`  ✅ **Resolved 2026-07-29**
 
