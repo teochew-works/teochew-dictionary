@@ -274,7 +274,7 @@ rejects an entry that cites a `reference` source, rather than silently
 accepting it.
 
 **As of the Swadesh-207 Wiktionary merge (issue #5), the dataset is a mix of
-both licences** — 102 entries cite only `seed` and remain CC-BY-4.0; 141
+both licences** — 103 entries cite only `seed` and remain CC-BY-4.0; 141
 entries cite `wiktionary` and are CC-BY-SA-4.0. This is why importers write to
 `data/staging/` and never to `data/entries/`: merging a CC-BY-SA gloss into an
 entry, and thereby relicensing that entry, stays a deliberate human act rather
@@ -298,7 +298,7 @@ than something a script does by accident.
 
 ## Status
 
-243 entries covering core everyday vocabulary against the Swadesh-207
+244 entries covering core everyday vocabulary against the Swadesh-207
 checklist — numerals, pronouns, kinship, body parts, animals, nature, common
 verbs and descriptives, place names, function words. 141 of those were merged
 from the Wiktionary import (issue #5) and carry `needs_review: true` wherever
