@@ -254,9 +254,12 @@ Run `npm run validate` for the current count. As of writing:
 
 | Entry | Question |
 |-------|----------|
-| 乜 `mih8` | Peng'im spelling and tone both uncertain. |
-| 底儂 `di6 nang5` | The usual word for "who"; form and tones need confirming. 底 is 陰上 by MC (端母 上聲), which predicts tone 2 — neither 6 nor 7 is regular. The id also says `diang5` where the reading says `nang5`. |
+| 乜 `mih8` | Peng'im spelling and tone both uncertain. The id also records `sim2 mih8` (i.e. 甚乜) against the reading's bare `mih8`, so whether the headword is 乜 or 甚乜 is open too. The id is deliberately left unrenamed: renaming to `mih8-乜` would assert the bare form, which is the very thing in question. |
+| 兄 `hian1` | Bare 兄 appears to be largely bound, with 阿兄 the free term of address and reference (cf. Hokkien a-hiaⁿ). Confirm for Teochew specifically, and whether 阿兄 warrants its own entry. |
+| 底儂 `di6 nang5` | The usual word for "who"; form and tones need confirming. 底 is 陰上 by MC (端母 上聲), which predicts tone 2 — neither 6 nor 7 is regular. The id also says `diang5` where the reading says `nang5`; `diang5` may in fact be the fused monosyllabic form of the whole word (cf. Hokkien tiâng < tī-lâng), i.e. an alternative reading of 底儂 recorded in the wrong slot. |
+| 底時 `di7 si5` | Resolve together with 底儂: the same morpheme 底 is written `di7` here and `di6` in 底儂, and neither is the regular reflex of 端母 上聲. |
 | 家己儂 `ga1 gi6 nang5` | 己 is 陰上 by MC (見母 上聲), predicting tone 2, so the recorded 6 is irregular. Non-final position means sandhi hides 6 vs 7; needs the word in isolation. |
 | 毋 `m6` | A grammaticalised negator with no regular MC source. The Hokkien cognate m̄ is in the merged 陽上/陽去 class and so cannot distinguish 6 from 7. |
 | 米 `bhi2` | Initial may be `bh-` or `b-`; Hokkien has `bí`, which may have influenced the transcription. |
+| 熱 `ruah8` | Not a phonological question but a semantic boundary: 熱 is glossed "hot (of weather)" on the assumption that a hot object or liquid takes 燒 instead (cf. Hokkien sio). Confirm the split, and whether 熱 can in fact describe an object. |
 | 阿媽 `a1 ma2` | Glossed "grandmother"; confirm it is not also used for "mother" in some families. |
