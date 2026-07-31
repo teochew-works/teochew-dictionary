@@ -29,13 +29,27 @@ irregular:
   io:
     ipa: io
     confidence: medium
+    sources: [wikipedia, learnteochew]
     note: "Shantou keeps [io] where Chaozhou fronts to [ie]."
   ioh:
     ipa: ioʔ
     confidence: medium
+    sources: [wikipedia, learnteochew]
+    note: >-
+      Wikipedia names Chaozhou/Chenghai specifically as fronting /ioʔ/ →
+      /ieʔ/, implying other varieties (Shantou included) retain /ioʔ/ —
+      indirect but real support.
   iong:
     ipa: ioŋ
-    confidence: medium
+    confidence: low
+    note: >-
+      No source addresses this nasal-coda rime specifically for either
+      variety — see the parallel note on Chaozhou's `irregular.iong`. This
+      value is the unmarked/non-fronted default carried over from the
+      attested open-rime pattern, not independently sourced. Lowered from
+      medium to low to match Chaozhou's parallel entry: both are uncited
+      editorial extrapolations from the same open-rime pattern, and neither
+      should read as better-supported than the other.
 
 tones:
   # Shantou is commonly described with a higher dark-rising than Chaozhou.

@@ -34,9 +34,12 @@ initials:
   r:
     ipa: dz
     confidence: medium
+    sources: [wikipedia, learnteochew]
     note: >-
       Realised [dz] ~ [z] ~ [l] depending on speaker and register; many younger
-      speakers merge it with /l/.
+      speakers merge it with /l/. The cited sources corroborate [dz], relaxing
+      to [z] for younger/overseas speakers; neither attests the further merger
+      to /l/.
 
 medials:
   i: { ipa: i, confidence: high }
@@ -74,8 +77,8 @@ nuclei:
       which is why it does not hold this mapping below `high`.
   ai: { ipa: ai, confidence: high }
   ao: { ipa: au, confidence: high }
-  oi: { ipa: oi, confidence: medium }
-  ou: { ipa: ou, confidence: medium }
+  oi: { ipa: oi, confidence: medium, sources: [wikipedia, learnteochew] }
+  ou: { ipa: ou, confidence: medium, sources: [wikipedia, learnteochew] }
 
 codas:
   m:  { ipa: m, confidence: high }
@@ -116,13 +119,25 @@ irregular:
   io:
     ipa: ie
     confidence: medium
+    sources: [wikipedia, learnteochew]
     note: "Chaozhou [ie] ~ Shantou [io] (潮 dio5)."
   ioh:
     ipa: ieʔ
     confidence: medium
+    sources: [wikipedia, learnteochew]
+    note: >-
+      Wikipedia lists /ioʔ/ → /ieʔ/ directly among the rimes fronted in
+      Chaozhou/Chenghai — direct evidence, not an extension by analogy from
+      the open rime.
   iong:
     ipa: ieŋ
     confidence: low
     note: >-
       Whether the fronting extends to the nasal-coda rime is less clearly
-      attested than for the open rime. Verify before citing.
+      attested than for the open rime. Verify before citing. No source
+      located: Wikipedia's fronting list covers the nasalised-vowel rime
+      (ĩõ) and the checked rime (ioʔ), not a true nasal-CODA rime like this
+      one, and Learn Teochew's regional-differences section explicitly says
+      it does not address codas at all. This value is an editorial
+      extrapolation from the attested open-rime pattern, not independently
+      sourced.
