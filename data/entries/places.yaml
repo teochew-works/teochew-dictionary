@@ -37,6 +37,10 @@ entries:
           The literal, neutral term for a person from Chaozhou — contrast 家己儂,
           which carries in-group identity connotations rather than merely
           stating origin.
+        examples:
+          - hanzi: 我是潮州儂
+            pengim: ua2 si6 dio5 ziu1 nang5
+            en: I'm Teochew.
     tags: [placename]
     frequency: 4
     sources: [seed]
@@ -84,6 +88,10 @@ entries:
       - pos: noun
         gloss_en: [a person from Shantou]
         gloss_zh: [汕頭人]
+        examples:
+          - hanzi: 伊是汕頭儂
+            pengim: i1 si6 suan1 tao5 nang5
+            en: He/she is from Shantou.
     tags: [placename]
     frequency: 4
     sources: [seed]
@@ -96,6 +104,10 @@ entries:
       - pos: proper-noun
         gloss_en: [China]
         gloss_zh: [中國]
+        examples:
+          - hanzi: 中國話
+            pengim: dong1 gog4 uê7
+            en: the Chinese language
     tags: [placename]
     frequency: 4
     sources: [seed]
@@ -108,6 +120,10 @@ entries:
       - pos: proper-noun
         gloss_en: [the Chinese language]
         gloss_zh: [中國話, 漢語]
+        examples:
+          - hanzi: 講中國話
+            pengim: gang2 dong1 gog4 uê7
+            en: to speak Chinese
     tags: [language]
     frequency: 4
     sources: [seed]
