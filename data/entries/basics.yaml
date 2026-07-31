@@ -93,6 +93,10 @@ entries:
       - pos: noun
         gloss_en: [New Year]
         gloss_zh: [新年]
+        examples:
+          - hanzi: 新年好
+            pengim: sing1 ni5 ho2
+            en: Happy New Year! (the greeting)
     frequency: 4
     sources: [seed]
 
@@ -120,6 +124,10 @@ entries:
           Idiomatic, not compositional — 舊 elsewhere means "old", but 舊年
           fixed together means "last year" (cf. Hokkien kū-nî), not "an old
           year".
+        examples:
+          - hanzi: 舊年我去中國
+            pengim: gu7 ni5 ua2 ke3 dong1 gog4
+            en: I went to China last year.
     frequency: 4
     sources: [seed]
 
@@ -131,6 +139,10 @@ entries:
       - pos: noun
         gloss_en: [book]
         gloss_zh: [書]
+        examples:
+          - hanzi: 看書
+            pengim: toin2 ze1
+            en: to read a book
     frequency: 4
     sources: [seed]
 
@@ -142,6 +154,10 @@ entries:
       - pos: noun
         gloss_en: [character, written word]
         gloss_zh: [字]
+        examples:
+          - hanzi: 大字
+            pengim: dua7 ri7
+            en: large characters, large print
     frequency: 4
     sources: [seed]
 
@@ -153,6 +169,10 @@ entries:
       - pos: adjective
         gloss_en: [yellow]
         gloss_zh: [黃]
+        examples:
+          - hanzi: 黃糖
+            pengim: ng5 tng5
+            en: brown sugar (lit. "yellow sugar")
       - pos: proper-noun
         gloss_en: [Ng, Wong, Huang (surname)]
         gloss_zh: [黃（姓）]
@@ -182,6 +202,10 @@ entries:
       - pos: adjective
         gloss_en: [full, satiated]
         gloss_zh: [飽]
+        examples:
+          - hanzi: 我食飽
+            pengim: ua2 ziah8 ba2
+            en: I'm full.
     frequency: 4
     sources: [seed]
 
@@ -190,12 +214,25 @@ entries:
     readings:
       - pengim: bhuê7
     senses:
-      - pos: particle
+      - pos: adverb
         gloss_en: [not yet]
         gloss_zh: [未, 沒有]
+        examples:
+          - hanzi: 未食
+            pengim: bhuê7 ziah8
+            en: hasn't eaten yet
+      - pos: particle
+        gloss_en: ["...yet? (sentence-final, forming a yes-no question)"]
+        gloss_zh: [未（句末疑問）]
         note: >-
-          Also forms yes-no questions when placed finally, as in 食飽未
-          "have you eaten yet?".
+          Placed after the predicate, 未 turns a statement into a yes-no
+          question — the ordinary Southern Min V-未 interrogative, as in 食飽未
+          (cf. Hokkien tsia̍h-pá--buē) — distinct from the "not yet" negator
+          sense above, which stands before the verb.
+        examples:
+          - hanzi: 食飽未
+            pengim: ziah8 ba2 bhuê7
+            en: Have you eaten yet? (a common greeting)
     frequency: 4
     sources: [seed]
 
