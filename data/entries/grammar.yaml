@@ -1,0 +1,87 @@
+# Function words 虛詞 — prepositions, conjunctions.
+#
+# Merged from the Wiktionary import against the Swadesh-207 checklist
+# (issue #5).
+
+entries:
+  - id: diu6-佇
+    headword: 佇
+    readings:
+      - pengim: diu6
+      - pengim: diu2
+    senses:
+      - pos: preposition
+        gloss_en: [at, in, on (locative)]
+        gloss_zh: [在]
+        note: >-
+          2 candidate readings from Wiktionary — genuine Chaozhou colloquial
+          form not yet confirmed by a speaker. Function words like this often
+          have thin Wiktionary coverage, so the ambiguity here is more about
+          Wiktionary's data than the word itself.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: lai6-內
+    headword: 內
+    readings:
+      - pengim: lai6
+    senses:
+      - pos: preposition
+        gloss_en: [in, inside]
+        gloss_zh: [內, 裡面]
+        note: Locative particle, may end up overlapping with 佇 "at" for some senses.
+    frequency: 5
+    sources: [wiktionary]
+
+  - id: gah4-佮
+    headword: 佮
+    readings:
+      - pengim: gah4
+      - pengim: kah4
+      - pengim: han2
+    senses:
+      - pos: preposition
+        gloss_en: [with]
+        gloss_zh: [跟, 和]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+      - pos: conjunction
+        gloss_en: [and]
+        gloss_zh: [和, 與]
+        note: Southern Min 佮 covers both the comitative ("with") and conjunctive ("and") senses, not a mistake — the two senses share this one entry.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: riag8-若
+    headword: 若
+    readings:
+      - pengim: riag8
+      - pengim: riêh8
+      - pengim: rioh8
+      - pengim: rê2
+    senses:
+      - pos: conjunction
+        gloss_en: [if]
+        gloss_zh: [若, 如果]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: ing1-ui5-因為
+    headword: 因為
+    readings:
+      - pengim: ing1 ui5
+      - pengim: êng1 ui5
+    senses:
+      - pos: conjunction
+        gloss_en: [because]
+        gloss_zh: [因為]
+        note: >-
+          Likely a shared literary term rather than a distinctly colloquial
+          Teochew word. 2 candidate readings from Wiktionary also need
+          confirming.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]

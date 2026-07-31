@@ -55,16 +55,19 @@ items:
   - n: 6
     gloss: they
     headword: 伊儂
-    status: staged
+    status: existing
+    entry_id: i1-nang5-伊儂
     note: By analogy with 阮/恁 (儂-suffixed plural pronouns) - not yet confirmed as the actual lexicalised 3rd-plural; some Southern Min varieties use a distinct morpheme (cf. Hokkien 𪜶) instead.
   - n: 7
     gloss: this
     headword: 只
-    status: staged
+    status: existing
+    entry_id: zi2-只
   - n: 8
     gloss: that
     headword: 許
-    status: staged
+    status: existing
+    entry_id: he2-許
   - n: 9
     gloss: here
     headword: 只位
@@ -93,7 +96,8 @@ items:
   - n: 14
     gloss: when
     headword: 底時
-    status: staged
+    status: existing
+    entry_id: di7-si5-底時
     note: Compound guess; cf. 幾時 as an alternative form.
   - n: 15
     gloss: how
@@ -107,7 +111,8 @@ items:
   - n: 17
     gloss: all
     headword: 攏總
-    status: staged
+    status: existing
+    entry_id: long2-zong2-攏總
     note: Uncertain whether this or a simpler 攏 is the idiomatic Teochew form.
   - n: 18
     gloss: many
@@ -117,7 +122,8 @@ items:
   - n: 19
     gloss: some
     headword: 淡薄
-    status: staged
+    status: existing
+    entry_id: dam6-boh8-淡薄
     note: "\"a little/some\" - uncertain this is the most idiomatic Teochew choice."
   - n: 20
     gloss: few
@@ -127,7 +133,8 @@ items:
   - n: 21
     gloss: other
     headword: 別
-    status: staged
+    status: existing
+    entry_id: biêg8-別
   - n: 22
     gloss: one
     headword: 一
@@ -167,15 +174,18 @@ items:
   - n: 29
     gloss: wide
     headword: 闊
-    status: staged
+    status: existing
+    entry_id: kuah4-闊
   - n: 30
     gloss: thick
     headword: 厚
-    status: staged
+    status: existing
+    entry_id: gao6-厚
   - n: 31
     gloss: heavy
     headword: 重
-    status: staged
+    status: existing
+    entry_id: dang6-重
   - n: 32
     gloss: small
     headword: 細
@@ -189,11 +199,13 @@ items:
   - n: 34
     gloss: narrow
     headword: 狹
-    status: staged
+    status: existing
+    entry_id: hiab8-狹
   - n: 35
     gloss: thin
     headword: 薄
-    status: staged
+    status: existing
+    entry_id: boh8-薄
   - n: 36
     gloss: woman
     headword: 諸娘儂
@@ -217,12 +229,14 @@ items:
   - n: 40
     gloss: wife
     headword: 某
-    status: staged
+    status: existing
+    entry_id: mou2-某
     note: Colloquial Southern Min for "wife" (cf. Hokkien 某 bó͘); pairs with 翁 "husband" below.
   - n: 41
     gloss: husband
     headword: 翁
-    status: staged
+    status: existing
+    entry_id: ang1-翁
     note: Colloquial Southern Min for "husband" (cf. Hokkien 翁 ang); pairs with 某 "wife" above.
   - n: 42
     gloss: mother
@@ -237,7 +251,8 @@ items:
   - n: 44
     gloss: animal
     headword: 動物
-    status: staged
+    status: existing
+    entry_id: dong6-muêh8-動物
     note: Likely a shared literary term rather than a distinctly colloquial Teochew word.
   - n: 45
     gloss: fish
@@ -247,11 +262,13 @@ items:
   - n: 46
     gloss: bird
     headword: 鳥
-    status: staged
+    status: existing
+    entry_id: ziao2-鳥
   - n: 47
     gloss: dog
     headword: 狗
-    status: staged
+    status: existing
+    entry_id: gao2-狗
   - n: 48
     gloss: louse
     headword: 虱
@@ -259,63 +276,77 @@ items:
   - n: 49
     gloss: snake
     headword: 蛇
-    status: staged
+    status: existing
+    entry_id: zua5-蛇
   - n: 50
     gloss: worm
     headword: 蟲
-    status: staged
+    status: existing
+    entry_id: tang5-蟲
   - n: 51
     gloss: tree
     headword: 樹
-    status: staged
+    status: existing
+    entry_id: ciu7-樹
   - n: 52
     gloss: forest
     headword: 樹林
-    status: staged
+    status: existing
+    entry_id: ciu7-lim5-樹林
     note: Compound guess; may not be the idiomatic colloquial term.
   - n: 53
     gloss: stick
     headword: 柴
-    status: staged
+    status: existing
+    entry_id: ca5-柴
     note: 柴 more precisely means "firewood/wood" - may not be the right sense for a generic "stick".
   - n: 54
     gloss: fruit
     headword: 生果
-    status: staged
+    status: existing
+    entry_id: cên1-guê2-生果
     note: Cantonese-influenced compound; uncertain this is the Teochew form rather than 果子 or similar.
   - n: 55
     gloss: seed
     headword: 籽
-    status: staged
+    status: existing
+    entry_id: zi2-籽
   - n: 56
     gloss: leaf
     headword: 葉
-    status: staged
+    status: existing
+    entry_id: iab8-葉
   - n: 57
     gloss: root
     headword: 根
-    status: staged
+    status: existing
+    entry_id: geng1-根
   - n: 58
     gloss: bark (of a tree)
     headword: 樹皮
-    status: staged
+    status: existing
+    entry_id: ciu7-puê5-樹皮
     note: Compound guess.
   - n: 59
     gloss: flower
     headword: 花
-    status: staged
+    status: existing
+    entry_id: huê1-花
   - n: 60
     gloss: grass
     headword: 草
-    status: staged
+    status: existing
+    entry_id: co2-草
   - n: 61
     gloss: rope
     headword: 索
-    status: staged
+    status: existing
+    entry_id: soh4-索
   - n: 62
     gloss: skin
     headword: 皮
-    status: staged
+    status: existing
+    entry_id: puê5-皮
   - n: 63
     gloss: meat
     headword: 肉
@@ -324,15 +355,18 @@ items:
   - n: 64
     gloss: blood
     headword: 血
-    status: staged
+    status: existing
+    entry_id: huêh4-血
   - n: 65
     gloss: bone
     headword: 骨
-    status: staged
+    status: existing
+    entry_id: gug4-骨
   - n: 66
     gloss: fat (noun)
     headword: 油
-    status: staged
+    status: existing
+    entry_id: iu5-油
     note: Ambiguous with "oil" - Swadesh means bodily/animal fat (cf. 豬油 "lard"); confirm the sense, not just the reading.
   - n: 67
     gloss: egg
@@ -342,55 +376,66 @@ items:
   - n: 68
     gloss: horn
     headword: 角
-    status: staged
+    status: existing
+    entry_id: gag4-角
   - n: 69
     gloss: tail
     headword: 尾
-    status: staged
+    status: existing
+    entry_id: bhuê2-尾
   - n: 70
     gloss: feather
     headword: 毛
-    status: staged
+    status: existing
+    entry_id: mo5-毛
     note: Same character proposed for "hair" (as 頭毛) below - genuine Southern Min polysemy (毛 covers body/animal hair and feathers), not a mistake, but the importer will fetch it twice under different headword strings (毛 vs 頭毛).
   - n: 71
     gloss: hair
     headword: 頭毛
-    status: staged
+    status: existing
+    entry_id: tao5-mo5-頭毛
     note: >-
       Compound (頭 "head" + 毛 "hair/fur") - see "feather" above regarding 毛
       polysemy.
   - n: 72
     gloss: head
     headword: 頭
-    status: staged
+    status: existing
+    entry_id: tao5-頭
   - n: 73
     gloss: ear
     headword: 耳
-    status: staged
+    status: existing
+    entry_id: hin6-耳
   - n: 74
     gloss: eye
     headword: 目珠
-    status: staged
+    status: existing
+    entry_id: mag8-zu1-目珠
     note: Teochew commonly uses the compound 目珠 rather than bare 目.
   - n: 75
     gloss: nose
     headword: 鼻
-    status: staged
+    status: existing
+    entry_id: pin7-鼻
     note: Same character proposed for the verb "smell" below - Southern Min uses 鼻 as both noun and verb, not a mistake.
   - n: 76
     gloss: mouth
     headword: 喙
-    status: staged
+    status: existing
+    entry_id: cui3-喙
     note: Southern Min character for "mouth" (cf. Hokkien 喙 tshuì) rather than Mandarin 嘴 - unconfirmed for Teochew specifically.
   - n: 77
     gloss: tooth
     headword: 牙
-    status: staged
+    status: existing
+    entry_id: ghê5-牙
     note: Could also be 齒 (more literary) - unconfirmed which register is colloquial here.
   - n: 78
     gloss: tongue
     headword: 舌
-    status: staged
+    status: existing
+    entry_id: zih8-舌
   - n: 79
     gloss: fingernail
     headword: 指甲
@@ -399,12 +444,14 @@ items:
   - n: 80
     gloss: foot
     headword: 跤
-    status: staged
+    status: existing
+    entry_id: ka1-跤
     note: Same character proposed for "leg" below - Southern Min 跤 covers both senses without a lexical distinction, not a mistake. Only needs fetching once.
   - n: 81
     gloss: leg
     headword: 跤
-    status: staged
+    status: existing
+    entry_id: ka1-跤
     note: See "foot" above - same headword, likely the same word in Teochew.
   - n: 82
     gloss: knee
@@ -414,11 +461,13 @@ items:
   - n: 83
     gloss: hand
     headword: 手
-    status: staged
+    status: existing
+    entry_id: ciu2-手
   - n: 84
     gloss: wing
     headword: 翼
-    status: staged
+    status: existing
+    entry_id: sig8-翼
   - n: 85
     gloss: belly
     headword: 腹肚
@@ -427,30 +476,36 @@ items:
   - n: 86
     gloss: guts
     headword: 腸
-    status: staged
+    status: existing
+    entry_id: deng5-腸
   - n: 87
     gloss: neck
     headword: 頷
-    status: staged
+    status: existing
+    entry_id: am6-頷
     note: Southern Min character for "neck" (cf. Hokkien 頷 ām) - unconfirmed for Teochew specifically.
   - n: 88
     gloss: back (body part)
     headword: 尻脊
-    status: staged
+    status: existing
+    entry_id: ga1-ziah4-尻脊
     note: Southern Min compound for "back" (cf. Hokkien 尻脊 kha-tsiah) - low confidence, may not be the Teochew term; simpler 背 is a plausible fallback if this misses.
   - n: 89
     gloss: breast
     headword: 胸
-    status: staged
+    status: existing
+    entry_id: hêng1-胸
     note: Generic "chest" sense; uncertain this is the most idiomatic choice over a more specific compound.
   - n: 90
     gloss: heart
     headword: 心
-    status: staged
+    status: existing
+    entry_id: sim1-心
   - n: 91
     gloss: liver
     headword: 肝
-    status: staged
+    status: existing
+    entry_id: guan1-肝
   - n: 92
     gloss: drink
     headword: 啉
@@ -464,33 +519,40 @@ items:
   - n: 94
     gloss: bite
     headword: 咬
-    status: staged
+    status: existing
+    entry_id: ga6-咬
   - n: 95
     gloss: suck
     headword: 嗍
-    status: staged
+    status: existing
+    entry_id: suh4-嗍
   - n: 96
     gloss: spit
     headword: 呸
-    status: staged
+    status: existing
+    entry_id: pui3-呸
   - n: 97
     gloss: vomit
     headword: 吐
-    status: staged
+    status: existing
+    entry_id: tou3-吐
   - n: 98
     gloss: blow
     headword: 歕
-    status: staged
+    status: existing
+    entry_id: bung5-歕
     note: Uncommon character - uncertain this is right over a simpler alternative.
   - n: 99
     gloss: breathe
     headword: 喘氣
-    status: staged
+    status: existing
+    entry_id: cuêng2-kui3-喘氣
     note: Compound guess.
   - n: 100
     gloss: laugh
     headword: 笑
-    status: staged
+    status: existing
+    entry_id: ciê3-笑
   - n: 101
     gloss: see
     headword: 看
@@ -509,16 +571,19 @@ items:
   - n: 104
     gloss: think
     headword: 想
-    status: staged
+    status: existing
+    entry_id: siên6-想
   - n: 105
     gloss: smell
     headword: 鼻
-    status: staged
+    status: existing
+    entry_id: pin7-鼻
     note: See "nose" above - same character used as a verb in Southern Min.
   - n: 106
     gloss: fear
     headword: 驚
-    status: staged
+    status: existing
+    entry_id: gian1-驚
   - n: 107
     gloss: sleep
     headword: 睏
@@ -527,61 +592,74 @@ items:
   - n: 108
     gloss: live (be alive)
     headword: 活
-    status: staged
+    status: existing
+    entry_id: uah8-活
     note: Sense is "be alive", not "reside" - flag for a reviewer to confirm the fetched reading matches this sense.
   - n: 109
     gloss: die
     headword: 死
-    status: staged
+    status: existing
+    entry_id: si2-死
   - n: 110
     gloss: kill
     headword: 殺
-    status: staged
+    status: existing
+    entry_id: suah4-殺
     note: Colloquial Southern Min sometimes uses 創 more broadly for "do/make/kill" - unconfirmed which is idiomatic here.
   - n: 111
     gloss: fight
     headword: 相拍
-    status: staged
+    status: existing
+    entry_id: sio1-pah4-相拍
     note: Compound (相 "mutually" + 拍 "hit") - standard Southern Min form for "to fight".
   - n: 112
     gloss: hunt
     headword: 掠
-    status: staged
+    status: existing
+    entry_id: liah8-掠
     note: More precisely "to catch/capture" - may not isolate the "hunt" sense specifically.
   - n: 113
     gloss: hit
     headword: 拍
-    status: staged
+    status: existing
+    entry_id: pah4-拍
   - n: 114
     gloss: cut
     headword: 剪
-    status: staged
+    status: existing
+    entry_id: ziang2-剪
     note: More precisely "to cut with scissors" - 割 is a plausible alternative for a more general "cut".
   - n: 115
     gloss: split
     headword: 破
-    status: staged
+    status: existing
+    entry_id: pua3-破
   - n: 116
     gloss: stab
     headword: 刺
-    status: staged
+    status: existing
+    entry_id: ci3-刺
   - n: 117
     gloss: scratch
     headword: 抓
-    status: staged
+    status: existing
+    entry_id: zua1-抓
   - n: 118
     gloss: dig
     headword: 掘
-    status: staged
+    status: existing
+    entry_id: gug8-掘
   - n: 119
     gloss: swim
     headword: 泅水
-    status: staged
+    status: existing
+    entry_id: siu5-zui2-泅水
     note: Compound guess.
   - n: 120
     gloss: fly (verb)
     headword: 飛
-    status: staged
+    status: existing
+    entry_id: buê1-飛
   - n: 121
     gloss: walk
     headword: 行
@@ -595,7 +673,8 @@ items:
   - n: 123
     gloss: lie (recline)
     headword: 倒
-    status: staged
+    status: existing
+    entry_id: do2-倒
     note: Same character proposed for "left (side)" below - genuine homograph, not a mistake (this sense is the verb "to lie down/fall over"). Distinct from existing 睏 "sleep".
   - n: 124
     gloss: sit
@@ -605,25 +684,30 @@ items:
   - n: 125
     gloss: stand
     headword: 徛
-    status: staged
+    status: existing
+    entry_id: kia6-徛
   - n: 126
     gloss: turn
     headword: 轉
-    status: staged
+    status: existing
+    entry_id: deng2-轉
   - n: 127
     gloss: fall
     headword: 落
-    status: staged
+    status: existing
+    entry_id: loh8-落
     note: Ambiguous between "fall/descend" and other extended senses (e.g. rain falling) - confirm the fetched reading covers the right sense.
   - n: 128
     gloss: give
     headword: 分
-    status: staged
+    status: existing
+    entry_id: bung1-分
     note: Colloquial Southern Min "give" (cf. Hokkien 分 pun), not Mandarin 給.
   - n: 129
     gloss: hold
     headword: 攑
-    status: staged
+    status: existing
+    entry_id: ghia5-攑
     note: Uncommon character (more precisely "to lift/raise") - 提 is a plausible alternative.
   - n: 130
     gloss: squeeze
@@ -632,24 +716,29 @@ items:
   - n: 131
     gloss: rub
     headword: 挲
-    status: staged
+    status: existing
+    entry_id: so1-挲
   - n: 132
     gloss: wash
     headword: 洗
-    status: staged
+    status: existing
+    entry_id: soi2-洗
   - n: 133
     gloss: wipe
     headword: 拭
-    status: staged
+    status: existing
+    entry_id: sêg4-拭
   - n: 134
     gloss: pull
     headword: 拖
-    status: staged
+    status: existing
+    entry_id: tua1-拖
     note: More precisely "drag" - may not isolate a generic "pull" sense.
   - n: 135
     gloss: push
     headword: 推
-    status: staged
+    status: existing
+    entry_id: tui1-推
   - n: 136
     gloss: throw
     headword: 㧒
@@ -658,16 +747,19 @@ items:
   - n: 137
     gloss: tie
     headword: 縛
-    status: staged
+    status: existing
+    entry_id: bag8-縛
   - n: 138
     gloss: sew
     headword: 紩
-    status: staged
+    status: existing
+    entry_id: diêg4-紩
     note: Uncommon character - 補 ("mend") is a plausible alternative if this misses.
   - n: 139
     gloss: count
     headword: 算
-    status: staged
+    status: existing
+    entry_id: seng3-算
   - n: 140
     gloss: say
     headword: 講
@@ -676,29 +768,35 @@ items:
   - n: 141
     gloss: sing
     headword: 唱
-    status: staged
+    status: existing
+    entry_id: cio3-唱
   - n: 142
     gloss: play
     headword: 𨑨迌
-    status: staged
+    status: existing
+    entry_id: tig4-to5-𨑨迌
     note: Highest-confidence-risk item on this list - idiomatic Southern Min compound ("to play/hang out") using rare characters; the Peng'im gate may well reject or miss this. If so, fall back to a plainer word for "play" and mark needs_review.
   - n: 143
     gloss: float
     headword: 浮
-    status: staged
+    status: existing
+    entry_id: pu5-浮
   - n: 144
     gloss: flow
     headword: 流
-    status: staged
+    status: existing
+    entry_id: lao5-流
   - n: 145
     gloss: freeze
     headword: 結冰
-    status: staged
+    status: existing
+    entry_id: gag4-bian1-結冰
     note: Compound guess; a subtropical-climate concept likely rare in the everyday lexicon.
   - n: 146
     gloss: swell
     headword: 腫
-    status: staged
+    status: existing
+    entry_id: zêng2-腫
   - n: 147
     gloss: sun
     headword: 日
@@ -714,7 +812,8 @@ items:
   - n: 149
     gloss: star
     headword: 星
-    status: staged
+    status: existing
+    entry_id: cên1-星
   - n: 150
     gloss: water
     headword: 水
@@ -723,19 +822,23 @@ items:
   - n: 151
     gloss: rain
     headword: 雨
-    status: staged
+    status: existing
+    entry_id: hou6-雨
   - n: 152
     gloss: river
     headword: 溪
-    status: staged
+    status: existing
+    entry_id: koi1-溪
   - n: 153
     gloss: lake
     headword: 湖
-    status: staged
+    status: existing
+    entry_id: ou5-湖
   - n: 154
     gloss: sea
     headword: 海
-    status: staged
+    status: existing
+    entry_id: hai2-海
   - n: 155
     gloss: salt
     headword: 鹽
@@ -744,53 +847,65 @@ items:
   - n: 156
     gloss: stone
     headword: 石
-    status: staged
+    status: existing
+    entry_id: ziêh8-石
   - n: 157
     gloss: sand
     headword: 沙
-    status: staged
+    status: existing
+    entry_id: sua1-沙
   - n: 158
     gloss: dust
     headword: 塗粉
-    status: staged
+    status: existing
+    entry_id: tou5-hung2-塗粉
     note: Compound guess; may not be the idiomatic form.
   - n: 159
     gloss: earth (soil)
     headword: 塗
-    status: staged
+    status: existing
+    entry_id: tou5-塗
   - n: 160
     gloss: cloud
     headword: 雲
-    status: staged
+    status: existing
+    entry_id: hung5-雲
   - n: 161
     gloss: fog
     headword: 霧
-    status: staged
+    status: existing
+    entry_id: bhu7-霧
   - n: 162
     gloss: sky
     headword: 天
-    status: staged
+    status: existing
+    entry_id: tin1-天
   - n: 163
     gloss: wind
     headword: 風
-    status: staged
+    status: existing
+    entry_id: huang1-風
   - n: 164
     gloss: snow
     headword: 雪
-    status: staged
+    status: existing
+    entry_id: soh4-雪
     note: Rare referent in the Chaoshan climate, but a standard Swadesh item; expect a literary rather than colloquial reading.
   - n: 165
     gloss: ice
     headword: 冰
-    status: staged
+    status: existing
+    entry_id: bian1-冰
   - n: 166
     gloss: smoke
     headword: 煙
-    status: staged
+    status: existing
+    entry_id: ing1-煙
   - n: 167
     gloss: fire
     headword: 火
-    status: staged
+    status: existing
+    entry_id: huê2-火
   - n: 168
     gloss: ash
     headword: 火灰
@@ -799,23 +914,28 @@ items:
   - n: 169
     gloss: burn
     headword: 燒
-    status: staged
+    status: existing
+    entry_id: siê1-燒
   - n: 170
     gloss: road
     headword: 路
-    status: staged
+    status: existing
+    entry_id: lou7-路
   - n: 171
     gloss: mountain
     headword: 山
-    status: staged
+    status: existing
+    entry_id: suan1-山
   - n: 172
     gloss: red
     headword: 紅
-    status: staged
+    status: existing
+    entry_id: ang5-紅
   - n: 173
     gloss: green
     headword: 青
-    status: staged
+    status: existing
+    entry_id: cên1-青
     note: Traditionally covers both "green" and "blue" - confirm which sense the fetched reading is glossed for on Wiktionary, if any gloss is present at all (the importer doesn't fetch glosses; this is for a future manual check).
   - n: 174
     gloss: yellow
@@ -825,15 +945,18 @@ items:
   - n: 175
     gloss: white
     headword: 白
-    status: staged
+    status: existing
+    entry_id: bêh8-白
   - n: 176
     gloss: black
     headword: 烏
-    status: staged
+    status: existing
+    entry_id: ou1-烏
   - n: 177
     gloss: night
     headword: 暝
-    status: staged
+    status: existing
+    entry_id: mê5-暝
     note: Southern Min character for "night" (cf. Hokkien 暝/暗暝) - unconfirmed for Teochew specifically over 夜.
   - n: 178
     gloss: day
@@ -849,17 +972,20 @@ items:
   - n: 180
     gloss: warm
     headword: 溫
-    status: staged
+    status: existing
+    entry_id: ung1-溫
     note: Distinct sense from existing 熱 "hot" (ruah8-熱) - confirm the fetched reading isn't just a duplicate of that entry.
   - n: 181
     gloss: cold
     headword: 寒
-    status: staged
+    status: existing
+    entry_id: hang5-寒
     note: Southern Min commonly uses 寒 for "cold weather" where Mandarin favours 冷 - unconfirmed which register/character is idiomatic in Teochew.
   - n: 182
     gloss: full (not empty)
     headword: 滿
-    status: staged
+    status: existing
+    entry_id: muan2-滿
     note: Distinct sense from existing 飽 "full/satiated (from eating)" (ba2-飽) - Swadesh means a full container, not a full stomach.
   - n: 183
     gloss: new
@@ -884,25 +1010,30 @@ items:
   - n: 187
     gloss: rotten
     headword: 臭
-    status: staged
+    status: existing
+    entry_id: cao3-臭
     note: More precisely "smelly/foul" - may not isolate "rotten" specifically.
   - n: 188
     gloss: dirty
     headword: 垃圾
-    status: staged
+    status: existing
+    entry_id: nah4-sab4-垃圾
     note: Standard Southern Min word for "dirty" (cf. Hokkien lah-sap), reasonably confident.
   - n: 189
     gloss: straight
     headword: 直
-    status: staged
+    status: existing
+    entry_id: dig8-直
   - n: 190
     gloss: round
     headword: 圓
-    status: staged
+    status: existing
+    entry_id: in5-圓
   - n: 191
     gloss: sharp (as a knife)
     headword: 利
-    status: staged
+    status: existing
+    entry_id: lai7-利
   - n: 192
     gloss: dull (as a knife)
     headword: 鈍
@@ -910,11 +1041,13 @@ items:
   - n: 193
     gloss: smooth
     headword: 滑
-    status: staged
+    status: existing
+    entry_id: gug8-滑
   - n: 194
     gloss: wet
     headword: 澹
-    status: staged
+    status: existing
+    entry_id: dan6-澹
     note: Uncommon character in this sense - unconfirmed for Teochew specifically.
   - n: 195
     gloss: dry
@@ -924,56 +1057,68 @@ items:
   - n: 196
     gloss: correct
     headword: 著
-    status: staged
+    status: existing
+    entry_id: dioh4-著
     note: Distinct from "right (side)" below (正) - Southern Min 著 for "correct/right" is a separate word from the directional sense.
   - n: 197
     gloss: near
     headword: 近
-    status: staged
+    status: existing
+    entry_id: geng6-近
   - n: 198
     gloss: far
     headword: 遠
-    status: staged
+    status: existing
+    entry_id: hng6-遠
   - n: 199
     gloss: right (side)
     headword: 正
-    status: staged
+    status: existing
+    entry_id: zian3-正
     note: Pairs with "left (side)" below (倒); distinct from "correct" above (著).
   - n: 200
     gloss: left (side)
     headword: 倒
-    status: staged
+    status: existing
+    entry_id: do2-倒
     note: Same character proposed for "lie (recline)" above (#123) - genuine homograph (this sense is the directional "left"), not a mistake.
   - n: 201
     gloss: at
     headword: 佇
-    status: staged
+    status: existing
+    entry_id: diu6-佇
     note: Function word - Wiktionary's Han-character entries often thin out for pure grammatical particles, so a "no reading found" miss here would not necessarily mean the word doesn't exist in Teochew.
   - n: 202
     gloss: in
     headword: 內
-    status: staged
+    status: existing
+    entry_id: lai6-內
     note: Locative particle - see caveat on "at" above; 佇 is also plausible for this sense and may end up a duplicate fetch.
   - n: 203
     gloss: with
     headword: 佮
-    status: staged
+    status: existing
+    entry_id: gah4-佮
     note: Same character proposed for "and" below - Southern Min 佮 covers both the comitative and conjunctive senses, not a mistake. Only needs fetching once.
   - n: 204
     gloss: and
     headword: 佮
-    status: staged
+    status: existing
+    entry_id: gah4-佮
     note: See "with" above - same headword.
   - n: 205
     gloss: if
     headword: 若
-    status: staged
+    status: existing
+    entry_id: riag8-若
   - n: 206
     gloss: because
     headword: 因為
-    status: staged
+    status: existing
+    entry_id: ing1-ui5-因為
     note: Likely a shared literary term rather than a distinctly colloquial Teochew word.
   - n: 207
     gloss: name
     headword: 名
-    status: staged
+    status: existing
+    entry_id: mian5-名

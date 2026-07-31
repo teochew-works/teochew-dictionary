@@ -1,0 +1,410 @@
+# Nature: plants, weather, geography, materials 自然.
+#
+# Merged from the Wiktionary import against the Swadesh-207 checklist
+# (issue #5).
+
+entries:
+  - id: ciu7-樹
+    headword: 樹
+    readings:
+      - pengim: ciu7
+      - pengim: su6
+    senses:
+      - pos: noun
+        gloss_en: [tree]
+        gloss_zh: [樹]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: ciu7-lim5-樹林
+    headword: 樹林
+    readings:
+      - pengim: ciu7 lim5
+    senses:
+      - pos: noun
+        gloss_en: [forest]
+        gloss_zh: [樹林, 森林]
+        note: Compound guess; may not be the idiomatic colloquial term.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: ca5-柴
+    headword: 柴
+    readings:
+      - pengim: ca5
+    senses:
+      - pos: noun
+        gloss_en: [stick, wood]
+        gloss_zh: [柴, 木頭]
+        note: 柴 more precisely means "firewood/wood" — may not be the right sense for a generic "stick".
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: cên1-guê2-生果
+    headword: 生果
+    readings:
+      - pengim: cên1 guê2
+      - pengim: cên1 guên2
+      - pengim: cên1 guain2
+    senses:
+      - pos: noun
+        gloss_en: [fruit]
+        gloss_zh: [水果]
+        note: >-
+          Cantonese-influenced compound; uncertain this is the Teochew form
+          rather than 果子 or similar. 3 candidate readings from Wiktionary
+          also need confirming.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: zi2-籽
+    headword: 籽
+    readings:
+      - pengim: zi2
+      - pengim: ze2
+      - pengim: zu2
+    senses:
+      - pos: noun
+        gloss_en: [seed]
+        gloss_zh: [種子, 籽]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: iab8-葉
+    headword: 葉
+    readings:
+      - pengim: iab8
+      - pengim: iag8
+      - pengim: hiêh8
+      - pengim: hioh8
+    senses:
+      - pos: noun
+        gloss_en: [leaf]
+        gloss_zh: [葉子, 葉]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: geng1-根
+    headword: 根
+    readings:
+      - pengim: geng1
+      - pengim: gêng1
+      - pengim: ging1
+    senses:
+      - pos: noun
+        gloss_en: [root]
+        gloss_zh: [根]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: ciu7-puê5-樹皮
+    headword: 樹皮
+    readings:
+      - pengim: ciu7 puê5
+    senses:
+      - pos: noun
+        gloss_en: [bark (of a tree)]
+        gloss_zh: [樹皮]
+        note: Compound guess; may not be the idiomatic colloquial term.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: huê1-花
+    headword: 花
+    readings:
+      - pengim: huê1
+      - pengim: hua1
+    senses:
+      - pos: noun
+        gloss_en: [flower]
+        gloss_zh: [花]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: co2-草
+    headword: 草
+    readings:
+      - pengim: co2
+      - pengim: cao2
+    senses:
+      - pos: noun
+        gloss_en: [grass]
+        gloss_zh: [草]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: soh4-索
+    headword: 索
+    readings:
+      - pengim: soh4
+      - pengim: sog4
+    senses:
+      - pos: noun
+        gloss_en: [rope]
+        gloss_zh: [繩子, 索]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: cên1-星
+    headword: 星
+    readings:
+      - pengim: cên1
+    senses:
+      - pos: noun
+        gloss_en: [star]
+        gloss_zh: [星, 星星]
+    frequency: 4
+    sources: [wiktionary]
+
+  - id: hou6-雨
+    headword: 雨
+    readings:
+      - pengim: hou6
+      - pengim: u2
+    senses:
+      - pos: noun
+        gloss_en: [rain]
+        gloss_zh: [雨]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: koi1-溪
+    headword: 溪
+    readings:
+      - pengim: koi1
+    senses:
+      - pos: noun
+        gloss_en: [river]
+        gloss_zh: [河, 溪]
+    frequency: 3
+    sources: [wiktionary]
+
+  - id: ou5-湖
+    headword: 湖
+    readings:
+      - pengim: ou5
+      - pengim: hu5
+    senses:
+      - pos: noun
+        gloss_en: [lake]
+        gloss_zh: [湖]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: hai2-海
+    headword: 海
+    readings:
+      - pengim: hai2
+    senses:
+      - pos: noun
+        gloss_en: [sea]
+        gloss_zh: [海]
+    frequency: 4
+    sources: [wiktionary]
+
+  - id: ziêh8-石
+    headword: 石
+    readings:
+      - pengim: ziêh8
+      - pengim: zioh8
+      - pengim: sig8
+      - pengim: sêg8
+      - pengim: siêh8
+      - pengim: sioh8
+      - pengim: dan3
+    senses:
+      - pos: noun
+        gloss_en: [stone]
+        gloss_zh: [石頭, 石]
+        note: 7 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: sua1-沙
+    headword: 沙
+    readings:
+      - pengim: sua1
+      - pengim: sa1
+    senses:
+      - pos: noun
+        gloss_en: [sand]
+        gloss_zh: [沙]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: tou5-hung2-塗粉
+    headword: 塗粉
+    readings:
+      - pengim: tou5 hung2
+    senses:
+      - pos: noun
+        gloss_en: [dust]
+        gloss_zh: [灰塵, 塵土]
+        note: Compound guess; may not be the idiomatic colloquial term.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: tou5-塗
+    headword: 塗
+    readings:
+      - pengim: tou5
+      - pengim: tu5
+    senses:
+      - pos: noun
+        gloss_en: [earth, soil]
+        gloss_zh: [土, 泥土]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: hung5-雲
+    headword: 雲
+    readings:
+      - pengim: hung5
+    senses:
+      - pos: noun
+        gloss_en: [cloud]
+        gloss_zh: [雲]
+    frequency: 3
+    sources: [wiktionary]
+
+  - id: bhu7-霧
+    headword: 霧
+    readings:
+      - pengim: bhu7
+    senses:
+      - pos: noun
+        gloss_en: [fog]
+        gloss_zh: [霧]
+    frequency: 2
+    sources: [wiktionary]
+
+  - id: tin1-天
+    headword: 天
+    readings:
+      - pengim: tin1
+      - pengim: tiêng1
+      - pengim: tiang1
+    senses:
+      - pos: noun
+        gloss_en: [sky]
+        gloss_zh: [天, 天空]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: huang1-風
+    headword: 風
+    readings:
+      - pengim: huang1
+      - pengim: hong1
+    senses:
+      - pos: noun
+        gloss_en: [wind]
+        gloss_zh: [風]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: soh4-雪
+    headword: 雪
+    readings:
+      - pengim: soh4
+    senses:
+      - pos: noun
+        gloss_en: [snow]
+        gloss_zh: [雪]
+        note: Rare referent in the Chaoshan climate; expect a literary rather than colloquial reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: bian1-冰
+    headword: 冰
+    readings:
+      - pengim: bian1
+    senses:
+      - pos: noun
+        gloss_en: [ice]
+        gloss_zh: [冰]
+    frequency: 3
+    sources: [wiktionary]
+
+  - id: ing1-煙
+    headword: 煙
+    readings:
+      - pengim: ing1
+      - pengim: êng1
+    senses:
+      - pos: noun
+        gloss_en: [smoke]
+        gloss_zh: [煙]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: huê2-火
+    headword: 火
+    readings:
+      - pengim: huê2
+    senses:
+      - pos: noun
+        gloss_en: [fire]
+        gloss_zh: [火]
+    frequency: 4
+    sources: [wiktionary]
+
+  - id: lou7-路
+    headword: 路
+    readings:
+      - pengim: lou7
+    senses:
+      - pos: noun
+        gloss_en: [road]
+        gloss_zh: [路]
+    frequency: 5
+    sources: [wiktionary]
+
+  - id: suan1-山
+    headword: 山
+    readings:
+      - pengim: suan1
+      - pengim: sang1
+    senses:
+      - pos: noun
+        gloss_en: [mountain]
+        gloss_zh: [山]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]

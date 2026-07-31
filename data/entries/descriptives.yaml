@@ -191,3 +191,384 @@ entries:
         gloss_zh: [少]
     frequency: 4
     sources: [seed]
+
+  # The following entries were merged from the Wiktionary import against the
+  # Swadesh-207 checklist (issue #5). Several candidate readings came back
+  # from Wiktionary's zh-pron template with more than one variant; those are
+  # recorded in full and flagged `needs_review` rather than guessed at.
+
+  - id: long2-zong2-攏總
+    headword: 攏總
+    readings:
+      - pengim: long2 zong2
+    senses:
+      - pos: adjective
+        gloss_en: [all]
+        gloss_zh: [全部, 攏總]
+        note: Uncertain whether this or the simpler 攏 is the idiomatic Teochew form.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: dam6-boh8-淡薄
+    headword: 淡薄
+    readings:
+      - pengim: dam6 boh8
+    senses:
+      - pos: adjective
+        gloss_en: [some]
+        gloss_zh: [一些, 淡薄]
+        note: "\"a little/some\" — uncertain this is the most idiomatic Teochew choice."
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: biêg8-別
+    headword: 別
+    readings:
+      - pengim: biêg8
+      - pengim: biag8
+      - pengim: bag8
+    senses:
+      - pos: adjective
+        gloss_en: [other]
+        gloss_zh: [別的, 其他]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: kuah4-闊
+    headword: 闊
+    readings:
+      - pengim: kuah4
+    senses:
+      - pos: adjective
+        gloss_en: [wide]
+        gloss_zh: [闊, 寬]
+    frequency: 3
+    sources: [wiktionary]
+
+  - id: gao6-厚
+    headword: 厚
+    readings:
+      - pengim: gao6
+    senses:
+      - pos: adjective
+        gloss_en: [thick]
+        gloss_zh: [厚]
+    frequency: 3
+    sources: [wiktionary]
+
+  - id: dang6-重
+    headword: 重
+    readings:
+      - pengim: dang6
+      - pengim: dong6
+      - pengim: dêng5
+      - pengim: cong5
+    senses:
+      - pos: adjective
+        gloss_en: [heavy]
+        gloss_zh: [重]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: hiab8-狹
+    headword: 狹
+    readings:
+      - pengim: hiab8
+      - pengim: hiêb8
+      - pengim: oih8
+    senses:
+      - pos: adjective
+        gloss_en: [narrow]
+        gloss_zh: [狹窄, 狹]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: boh8-薄
+    headword: 薄
+    readings:
+      - pengim: boh8
+      - pengim: bêg4
+      - pengim: bo7
+    senses:
+      - pos: adjective
+        gloss_en: [thin]
+        gloss_zh: [薄]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: ang5-紅
+    headword: 紅
+    readings:
+      - pengim: ang5
+      - pengim: hong5
+      - pengim: gang1
+    senses:
+      - pos: adjective
+        gloss_en: [red]
+        gloss_zh: [紅, 紅色]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: cên1-青
+    headword: 青
+    readings:
+      - pengim: cên1
+    senses:
+      - pos: adjective
+        gloss_en: [green, blue]
+        gloss_zh: [綠, 藍, 青]
+        note: Traditionally covers both "green" and "blue" — the sense the fetched reading is glossed for on Wiktionary (if any) still needs a manual check.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: bêh8-白
+    headword: 白
+    readings:
+      - pengim: bêh8
+    senses:
+      - pos: adjective
+        gloss_en: [white]
+        gloss_zh: [白, 白色]
+    frequency: 5
+    sources: [wiktionary]
+
+  - id: ou1-烏
+    headword: 烏
+    readings:
+      - pengim: ou1
+      - pengim: u1
+    senses:
+      - pos: adjective
+        gloss_en: [black]
+        gloss_zh: [黑, 黑色]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: ung1-溫
+    headword: 溫
+    readings:
+      - pengim: ung1
+    senses:
+      - pos: adjective
+        gloss_en: [warm]
+        gloss_zh: [溫, 溫暖]
+        note: Distinct sense from existing 熱 "hot" (ruah8-熱) — confirm the fetched reading isn't just a duplicate of that entry.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: hang5-寒
+    headword: 寒
+    readings:
+      - pengim: hang5
+      - pengim: guan5
+    senses:
+      - pos: adjective
+        gloss_en: [cold]
+        gloss_zh: [冷, 寒]
+        note: >-
+          Southern Min commonly uses 寒 for "cold weather" where Mandarin
+          favours 冷 — unconfirmed which register/character is idiomatic in
+          Teochew. 2 candidate readings from Wiktionary also need confirming.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: muan2-滿
+    headword: 滿
+    readings:
+      - pengim: muan2
+    senses:
+      - pos: adjective
+        gloss_en: [full (not empty)]
+        gloss_zh: [滿]
+        note: Distinct sense from existing 飽 "full/satiated (from eating)" (ba2-飽) — Swadesh means a full container, not a full stomach.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: cao3-臭
+    headword: 臭
+    readings:
+      - pengim: cao3
+      - pengim: hiun3
+    senses:
+      - pos: adjective
+        gloss_en: [rotten]
+        gloss_zh: [臭, 腐爛]
+        note: >-
+          More precisely "smelly/foul" — may not isolate "rotten"
+          specifically. 2 candidate readings from Wiktionary also need
+          confirming.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: nah4-sab4-垃圾
+    headword: 垃圾
+    readings:
+      - pengim: nah4 sab4
+      - pengim: lah4 sab4
+      - pengim: la1 kib4
+    senses:
+      - pos: adjective
+        gloss_en: [dirty]
+        gloss_zh: [髒, 垃圾]
+        note: >-
+          Standard Southern Min word for "dirty" (cf. Hokkien lah-sap),
+          reasonably confident. 3 candidate readings from Wiktionary still
+          need confirming which is the genuine variant.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: dig8-直
+    headword: 直
+    readings:
+      - pengim: dig8
+      - pengim: dêg8
+    senses:
+      - pos: adjective
+        gloss_en: [straight]
+        gloss_zh: [直]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: in5-圓
+    headword: 圓
+    readings:
+      - pengim: in5
+    senses:
+      - pos: adjective
+        gloss_en: [round]
+        gloss_zh: [圓]
+    frequency: 3
+    sources: [wiktionary]
+
+  - id: lai7-利
+    headword: 利
+    readings:
+      - pengim: lai7
+      - pengim: li6
+      - pengim: li7
+    senses:
+      - pos: adjective
+        gloss_en: [sharp (as a knife)]
+        gloss_zh: [利, 鋒利]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: gug8-滑
+    headword: 滑
+    readings:
+      - pengim: gug8
+    senses:
+      - pos: adjective
+        gloss_en: [smooth]
+        gloss_zh: [滑]
+    frequency: 3
+    sources: [wiktionary]
+
+  - id: dan6-澹
+    headword: 澹
+    readings:
+      - pengim: dan6
+      - pengim: tam5
+      - pengim: dam5
+    senses:
+      - pos: adjective
+        gloss_en: [wet]
+        gloss_zh: [濕, 澹]
+        note: >-
+          Uncommon character in this sense — unconfirmed for Teochew
+          specifically. 3 candidate readings from Wiktionary also need
+          confirming.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: dioh4-著
+    headword: 著
+    readings:
+      - pengim: dioh4
+      - pengim: diêh4
+      - pengim: dioh8
+      - pengim: diêh8
+      - pengim: doh8
+      - pengim: du3
+    senses:
+      - pos: adjective
+        gloss_en: [correct]
+        gloss_zh: [對, 著]
+        note: >-
+          Distinct from "right (side)" 正 — Southern Min 著 for
+          "correct/right" is a separate word from the directional sense. 6
+          candidate readings from Wiktionary also need confirming.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: geng6-近
+    headword: 近
+    readings:
+      - pengim: geng6
+      - pengim: gêng6
+      - pengim: ging6
+    senses:
+      - pos: adjective
+        gloss_en: [near]
+        gloss_zh: [近]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: hng6-遠
+    headword: 遠
+    readings:
+      - pengim: hng6
+      - pengim: iang2
+      - pengim: iêng2
+    senses:
+      - pos: adjective
+        gloss_en: [far]
+        gloss_zh: [遠]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+
+  - id: zian3-正
+    headword: 正
+    readings:
+      - pengim: zian3
+      - pengim: zian1
+    senses:
+      - pos: noun
+        gloss_en: [right (side)]
+        gloss_zh: [右, 右邊]
+        note: >-
+          Pairs with "left (side)" 倒; distinct from "correct" 著 above. 2
+          candidate readings from Wiktionary also need confirming.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
