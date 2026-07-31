@@ -45,6 +45,17 @@ entries:
           - hanzi: 魚歹去
             pengim: he5 pai2 ke3
             en: The fish has gone off.
+      - pos: prefix
+        gloss_en: [hard to, unpleasant to (before a verb)]
+        gloss_zh: [難]
+        note: >-
+          Productive before a verb, and the antonym of the 好- frame the
+          dataset already records as 好食, 好看 and 好聽 (cf. Hokkien pháiⁿ-tsia̍h)
+          — distinct from the free adjective sense above.
+        examples:
+          - hanzi: 歹食
+            pengim: pai2 ziah8
+            en: bad-tasting, unpalatable
     frequency: 4
     sources: [seed]
 
