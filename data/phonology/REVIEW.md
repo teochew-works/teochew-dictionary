@@ -75,6 +75,13 @@ block and the compositional rule takes over.
 
 **Test words:** 潮 `dio5`, 少 `zio2`, 上 `ziong6`.
 
+Citations recorded: `io` and `ioh` (both varieties) now carry `sources:
+[wikipedia, learnteochew]` in the YAML — Wikipedia attests both directly,
+including `ioʔ → ieʔ` for the checked rime, not merely by analogy from the
+open rime. `iong` (both varieties) has no source addressing the nasal-coda
+rime specifically; its `note` says so explicitly. This is bookkeeping, not
+resolution — the open questions above stand.
+
 ## 3. The tone sandhi table  ·  `sandhi/chaozhou.yaml`  ✅ **Resolved 2026-07-29**
 
 **Ruling:** all 8 rules **confirmed or corrected**, `needs_review` cleared.
@@ -158,10 +165,18 @@ speakers reported to merge it toward /l/. A single IPA value cannot capture
 this. If the variation matters for your use, the honest fix is to model it as an
 alternation rather than pick one.
 
+Citation recorded: `sources: [wikipedia, learnteochew]`. Both corroborate [dz]
+relaxing to [z] for younger/overseas speakers; neither attests the further
+merger to /l/, which remains uncited in the `note`.
+
 ## 6. The `oi` and `ou` nuclei  ·  `varieties/chaozhou.yaml`
 
 Encoded as [oi] and [ou] at `confidence: medium`. Some descriptions transcribe
 these with different second elements. Low impact, but easy to confirm.
+
+Citation recorded: `sources: [wikipedia, learnteochew]`. Both give the plain
+/oi/ and /ou/ values with no competing transcription found — corroborating,
+not yet a resolution of whichever "some descriptions" this section refers to.
 
 ## 7. Assigning tone 6 (陽上) vs tone 7 (陽去)  ·  `entries/*.yaml`
 
