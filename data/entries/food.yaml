@@ -141,6 +141,10 @@ entries:
       - pos: noun
         gloss_en: [uncooked rice]
         gloss_zh: [米]
+        examples:
+          - hanzi: 買米
+            pengim: bhoi2 bhi2
+            en: to buy rice
     frequency: 4
     needs_review: true
     sources: [seed]
@@ -153,6 +157,10 @@ entries:
       - pos: noun
         gloss_en: [sugar, sweets]
         gloss_zh: [糖]
+        examples:
+          - hanzi: 食糖
+            pengim: ziah8 tng5
+            en: to eat sweets
     frequency: 4
     sources: [seed]
 
@@ -164,6 +172,10 @@ entries:
       - pos: noun
         gloss_en: [salt]
         gloss_zh: [鹽]
+        examples:
+          - hanzi: 鹽水
+            pengim: iam5 zui2
+            en: salt water, brine
     frequency: 4
     sources: [seed]
 
@@ -175,6 +187,10 @@ entries:
       - pos: noun
         gloss_en: [pig, pork]
         gloss_zh: [豬]
+        examples:
+          - hanzi: 豬肉
+            pengim: de1 nêg8
+            en: pork (lit. "pig meat")
     frequency: 4
     sources: [seed]
 
@@ -186,6 +202,10 @@ entries:
       - pos: noun
         gloss_en: [chicken]
         gloss_zh: [雞]
+        examples:
+          - hanzi: 雞肉
+            pengim: goi1 nêg8
+            en: chicken (the meat)
     frequency: 4
     sources: [seed]
 
@@ -197,6 +217,10 @@ entries:
       - pos: noun
         gloss_en: [egg]
         gloss_zh: [蛋]
+        examples:
+          - hanzi: 雞卵
+            pengim: goi1 nng6
+            en: a chicken egg
     frequency: 4
     sources: [seed]
 
@@ -208,5 +232,9 @@ entries:
       - pos: noun
         gloss_en: [alcohol, wine, liquor]
         gloss_zh: [酒]
+        examples:
+          - hanzi: 啉酒
+            pengim: lim1 ziu2
+            en: to drink alcohol
     frequency: 4
     sources: [seed]

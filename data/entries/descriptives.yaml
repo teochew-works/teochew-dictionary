@@ -14,7 +14,7 @@ entries:
         gloss_en: [good, well, fine]
         gloss_zh: [好]
         examples:
-          - hanzi: 好人
+          - hanzi: 好儂
             pengim: ho2 nang5
             en: a good person
       - pos: particle
@@ -38,7 +38,33 @@ entries:
       - pos: adjective
         gloss_en: [bad, spoiled, broken]
         gloss_zh: [壞, 不好]
+        examples:
+          - hanzi: 歹儂
+            pengim: pai2 nang5
+            en: a bad person
+          - hanzi: 魚歹去
+            pengim: he5 pai2 ke3
+            en: The fish has gone off.
+      - pos: prefix
+        gloss_en: [hard to, unpleasant to (before a verb)]
+        gloss_zh: [難]
+        note: >-
+          Filed as a productive prefix — the antonym of the 好- frame the
+          dataset already records as 好食, 好看 and 好聽 — on the strength of
+          the parallel Hokkien pattern (cf. pháiⁿ-tsia̍h, pháiⁿ-khòaⁿ), which is
+          fully productive there. But that parallel cuts both ways: 好食, 好看
+          and 好聽 are each filed in this dataset as their own lexicalised
+          adjective entry, not as a sense of 好, precisely because they read as
+          fixed words rather than a live 好- + V pattern. Whether 歹食 is
+          similarly fixed (favouring its own entry, as 好食 got) or genuinely
+          productive (favouring the prefix sense recorded here) is not
+          confirmed for Teochew — see REVIEW.md.
+        examples:
+          - hanzi: 歹食
+            pengim: pai2 ziah8
+            en: bad-tasting, unpalatable
     frequency: 4
+    needs_review: true
     sources: [seed]
 
   - id: dua7-大
@@ -80,6 +106,10 @@ entries:
       - pos: adjective
         gloss_en: [long]
         gloss_zh: [長]
+        examples:
+          - hanzi: 日長
+            pengim: rig8 dng5
+            en: The days are long. (in summer)
     frequency: 4
     sources: [seed]
 
@@ -91,6 +121,10 @@ entries:
       - pos: adjective
         gloss_en: [short (in length)]
         gloss_zh: [短]
+        examples:
+          - hanzi: 日短
+            pengim: rig8 do2
+            en: The days are short. (in winter)
     frequency: 4
     sources: [seed]
 
@@ -102,6 +136,10 @@ entries:
       - pos: adjective
         gloss_en: [new]
         gloss_zh: [新]
+        examples:
+          - hanzi: 新書
+            pengim: sing1 ze1
+            en: a new book
     frequency: 4
     sources: [seed]
 
@@ -113,6 +151,10 @@ entries:
       - pos: adjective
         gloss_en: [old (of things), used]
         gloss_zh: [舊]
+        examples:
+          - hanzi: 舊書
+            pengim: gu7 ze1
+            en: an old book, a second-hand book
     frequency: 4
     sources: [seed]
 
@@ -122,9 +164,19 @@ entries:
       - pengim: ruah8
     senses:
       - pos: adjective
-        gloss_en: [hot]
+        gloss_en: [hot (of weather)]
         gloss_zh: [熱]
+        note: >-
+          Southern Min splits "hot": 熱 covers weather and climate, while a hot
+          object or liquid takes 燒 (cf. Hokkien sio) — see 燒. The boundary is
+          not confirmed for Teochew specifically, so the restriction in the
+          gloss is provisional.
+        examples:
+          - hanzi: 熱日
+            pengim: ruah8 rig8
+            en: a hot day
     frequency: 4
+    needs_review: true
     sources: [seed]
 
   - id: zoi7-濟
@@ -156,6 +208,10 @@ entries:
         gloss_en: [delicious, tasty]
         gloss_zh: [好吃]
         note: 好 "good" + 食 "eat", lexicalised as a single adjective.
+        examples:
+          - hanzi: 粿好食
+            pengim: guê2 ho2 ziah8
+            en: Rice cakes are delicious.
     frequency: 4
     sources: [seed]
 
@@ -167,6 +223,10 @@ entries:
       - pos: adjective
         gloss_en: [good-looking, nice to look at]
         gloss_zh: [好看]
+        examples:
+          - hanzi: 伊好看
+            pengim: i1 ho2 toin2
+            en: He/she is good-looking.
     frequency: 4
     sources: [seed]
 
@@ -178,6 +238,10 @@ entries:
       - pos: adjective
         gloss_en: [pleasant to listen to, nice-sounding]
         gloss_zh: [好聽]
+        examples:
+          - hanzi: 潮州話好聽
+            pengim: dio5 ziu1 uê7 ho2 tian1
+            en: Teochew sounds nice.
     frequency: 4
     sources: [seed]
 
@@ -189,6 +253,10 @@ entries:
       - pos: adjective
         gloss_en: [few, little (in quantity)]
         gloss_zh: [少]
+        examples:
+          - hanzi: 少儂
+            pengim: zio2 nang5
+            en: few people
     frequency: 4
     sources: [seed]
 

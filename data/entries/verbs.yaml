@@ -42,6 +42,26 @@ entries:
     frequency: 5
     sources: [seed]
 
+  - id: ziah8-ba2-bhuê7-食飽未
+    headword: 食飽未
+    readings:
+      - pengim: ziah8 ba2 bhuê7
+    senses:
+      - pos: phrase
+        gloss_en: [have you eaten?, how are you (a common greeting)]
+        gloss_zh: [吃飽了嗎]
+        note: >-
+          The everyday greeting, literally "eaten full not-yet" — an enquiry
+          after someone's wellbeing rather than a literal question about food.
+          Its own entry rather than a sense on 食, 飽 or 未, since the gloss
+          describes the whole string; cf. 新年好 and 多謝.
+        examples:
+          - hanzi: 你食飽未
+            pengim: le2 ziah8 ba2 bhuê7
+            en: Have you eaten yet? (addressed to someone)
+    frequency: 4
+    sources: [seed]
+
   - id: lim1-啉
     headword: 啉
     readings:
@@ -51,6 +71,10 @@ entries:
         gloss_en: [to drink]
         gloss_zh: [喝]
         note: Used for drinking alcohol and water; tea takes 食.
+        examples:
+          - hanzi: 啉水
+            pengim: lim1 zui2
+            en: to drink water
     frequency: 4
     sources: [seed]
 
@@ -62,6 +86,10 @@ entries:
       - pos: verb
         gloss_en: [to drink alcohol]
         gloss_zh: [喝酒]
+        examples:
+          - hanzi: 伊愛啉酒
+            pengim: i1 ai3 lim1 ziu2
+            en: He/she likes to drink.
     frequency: 4
     sources: [seed]
 
@@ -180,6 +208,10 @@ entries:
       - pos: verb
         gloss_en: [to walk, to go on foot]
         gloss_zh: [走, 行]
+        examples:
+          - hanzi: 我行去厝
+            pengim: ua2 gian5 ke3 cu3
+            en: I'm walking home.
     frequency: 4
     sources: [seed]
 
@@ -191,6 +223,10 @@ entries:
       - pos: verb
         gloss_en: [to sit]
         gloss_zh: [坐]
+        examples:
+          - hanzi: 咱坐
+            pengim: nang2 zo6
+            en: Let's sit down.
     frequency: 4
     sources: [seed]
 
@@ -202,6 +238,10 @@ entries:
       - pos: verb
         gloss_en: [to sleep]
         gloss_zh: [睡]
+        examples:
+          - hanzi: 我愛睏
+            pengim: ua2 ai3 kung3
+            en: I'm sleepy. (lit. "I want to sleep")
     frequency: 4
     sources: [seed]
 
@@ -213,6 +253,10 @@ entries:
       - pos: verb
         gloss_en: [to buy]
         gloss_zh: [買]
+        examples:
+          - hanzi: 買魚
+            pengim: bhoi2 he5
+            en: to buy fish
     frequency: 4
     sources: [seed]
 
@@ -224,7 +268,11 @@ entries:
       - pos: verb
         gloss_en: [to sell]
         gloss_zh: [賣]
-        note: Differs from 買 only in tone — 2 (rising) versus 6.
+        note: Differs from 買 only in tone — 2 (陰上) versus 7 (陽去).
+        examples:
+          - hanzi: 賣魚
+            pengim: bhoi7 he5
+            en: to sell fish
     frequency: 4
     sources: [seed]
 
@@ -236,6 +284,10 @@ entries:
       - pos: noun
         gloss_en: [buying and selling, business, trade]
         gloss_zh: [買賣, 生意]
+        examples:
+          - hanzi: 做買賣
+            pengim: zo3 bhoi2 bhoi7
+            en: to do business, to trade
     frequency: 4
     sources: [seed]
 

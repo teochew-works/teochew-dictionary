@@ -195,6 +195,10 @@ entries:
       - pos: numeral
         gloss_en: [hundred]
         gloss_zh: [百]
+        examples:
+          - hanzi: 三百
+            pengim: san1 bêh4
+            en: three hundred
     frequency: 4
     sources: [seed]
 
@@ -206,5 +210,9 @@ entries:
       - pos: numeral
         gloss_en: [thousand]
         gloss_zh: [千]
+        examples:
+          - hanzi: 一千
+            pengim: zêg8 cing1
+            en: one thousand
     frequency: 4
     sources: [seed]

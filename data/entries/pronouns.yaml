@@ -76,6 +76,10 @@ entries:
       - pos: pronoun
         gloss_en: [we, us (including the person spoken to)]
         gloss_zh: [咱們（包括聽話人）]
+        examples:
+          - hanzi: 咱去食飯
+            pengim: nang2 ke3 ziah8 bng7
+            en: Let's go and eat. (咱 includes the person spoken to)
     tags: [inclusive]
     frequency: 4
     sources: [seed]
@@ -99,10 +103,19 @@ entries:
     headword: 乜
     readings:
       - pengim: mih8
+        note: >-
+          The id records `sim2 mih8` (i.e. 甚乜) against this reading's bare
+          `mih8`; whether the headword should be 乜 or 甚乜 is unsettled, and
+          the tone is uncertain too. The id is left as it stands rather than
+          renamed, because renaming would assert the bare form.
     senses:
       - pos: pronoun
         gloss_en: [what]
         gloss_zh: [甚麼]
+        examples:
+          - hanzi: 做乜
+            pengim: zo3 mih8
+            en: What are you doing?
     frequency: 4
     needs_review: true
     sources: [seed]
@@ -174,10 +187,20 @@ entries:
           which predicts tone 2, so neither 6 nor 7 is regular — this is an
           irregular grammaticalised interrogative. The id also records 儂 as
           `diang5` against the reading's `nang5`; both need confirming.
+          `diang5` is plausibly not a reading of 儂 at all but the fused
+          monosyllabic form of the whole word — 底人 regularly fuses across
+          Southern Min (cf. Hokkien tiâng < tī-lâng). If so it is an
+          alternative reading of 底儂 rather than of its second syllable. It is
+          deliberately not recorded as a second reading, which would assert an
+          unconfirmed form.
     senses:
       - pos: pronoun
         gloss_en: [who]
         gloss_zh: [誰]
+        examples:
+          - hanzi: 伊是底儂
+            pengim: i1 si6 di6 nang5
+            en: Who is he/she?
     frequency: 4
     needs_review: true
     sources: [seed]

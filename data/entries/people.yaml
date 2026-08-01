@@ -66,6 +66,10 @@ entries:
       - pos: noun
         gloss_en: [adult, grown-up]
         gloss_zh: [大人]
+        examples:
+          - hanzi: 大儂啉酒
+            pengim: dua7 nang5 lim1 ziu2
+            en: Adults drink alcohol.
     frequency: 4
     sources: [seed]
 
@@ -77,6 +81,10 @@ entries:
       - pos: noun
         gloss_en: [small child, little one]
         gloss_zh: [小孩]
+        examples:
+          - hanzi: 細囝愛食糖
+            pengim: soi3 gian2 ai3 ziah8 tng5
+            en: Children love sweets.
     frequency: 4
     sources: [seed]
 
@@ -91,6 +99,10 @@ entries:
         note: >-
           Contrast Cantonese 阿媽, which means "mother". The Teochew term refers
           to a grandmother.
+        examples:
+          - hanzi: 我阿媽
+            pengim: ua2 a1 ma2
+            en: my grandmother
     frequency: 4
     needs_review: true
     sources: [seed]
@@ -103,7 +115,16 @@ entries:
       - pos: noun
         gloss_en: [elder brother]
         gloss_zh: [哥哥]
+        note: >-
+          Usually appears with the 阿- prefix, like 阿爸 and 阿媽; bare 兄 is
+          largely bound in Southern Min (cf. Hokkien a-hiaⁿ). Not confirmed
+          for Teochew specifically.
+        examples:
+          - hanzi: 阿兄
+            pengim: a1 hian1
+            en: elder brother (in address and reference)
     frequency: 4
+    needs_review: true
     sources: [seed]
 
   - id: beng5-iu2-朋友
@@ -114,6 +135,10 @@ entries:
       - pos: noun
         gloss_en: [friend]
         gloss_zh: [朋友]
+        examples:
+          - hanzi: 好朋友
+            pengim: ho2 bêng5 iu2
+            en: a good friend
     frequency: 4
     sources: [seed]
 
@@ -134,6 +159,10 @@ entries:
         note: >-
           The community's own term for itself, widely romanised "gaginang" in
           diaspora usage. Saying it to a stranger asserts shared Teochew origin.
+        examples:
+          - hanzi: 咱是家己儂
+            pengim: nang2 si6 ga1 gi6 nang5
+            en: We're gaginang. (said to a fellow Teochew; 咱 includes the person spoken to)
     tags: [identity, culture]
     frequency: 4
     needs_review: true
