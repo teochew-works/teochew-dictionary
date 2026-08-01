@@ -49,14 +49,22 @@ entries:
         gloss_en: [hard to, unpleasant to (before a verb)]
         gloss_zh: [難]
         note: >-
-          Productive before a verb, and the antonym of the 好- frame the
-          dataset already records as 好食, 好看 and 好聽 (cf. Hokkien pháiⁿ-tsia̍h)
-          — distinct from the free adjective sense above.
+          Filed as a productive prefix — the antonym of the 好- frame the
+          dataset already records as 好食, 好看 and 好聽 — on the strength of
+          the parallel Hokkien pattern (cf. pháiⁿ-tsia̍h, pháiⁿ-khòaⁿ), which is
+          fully productive there. But that parallel cuts both ways: 好食, 好看
+          and 好聽 are each filed in this dataset as their own lexicalised
+          adjective entry, not as a sense of 好, precisely because they read as
+          fixed words rather than a live 好- + V pattern. Whether 歹食 is
+          similarly fixed (favouring its own entry, as 好食 got) or genuinely
+          productive (favouring the prefix sense recorded here) is not
+          confirmed for Teochew — see REVIEW.md.
         examples:
           - hanzi: 歹食
             pengim: pai2 ziah8
             en: bad-tasting, unpalatable
     frequency: 4
+    needs_review: true
     sources: [seed]
 
   - id: dua7-大
