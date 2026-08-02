@@ -13,6 +13,10 @@ entries:
         gloss_en: [animal]
         gloss_zh: [動物]
         note: Likely a shared literary term rather than a distinctly colloquial Teochew word.
+        examples:
+          - hanzi: 狗是動物
+            pengim: gao2 si6 dong6 muêh8
+            en: A dog is an animal.
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -27,6 +31,10 @@ entries:
         gloss_en: [bird]
         gloss_zh: [鳥]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 鳥飛
+            pengim: ziao2 buê1
+            en: The bird flies.
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -39,6 +47,10 @@ entries:
       - pos: noun
         gloss_en: [dog]
         gloss_zh: [狗]
+        examples:
+          - hanzi: 我有狗
+            pengim: ua2 u6 gao2
+            en: I have a dog.
     frequency: 5
     sources: [wiktionary]
 
@@ -52,6 +64,10 @@ entries:
         gloss_en: [snake]
         gloss_zh: [蛇]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 蛇長
+            pengim: zua5 dng5
+            en: The snake is long.
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -64,5 +80,9 @@ entries:
       - pos: noun
         gloss_en: [worm]
         gloss_zh: [蟲]
+        examples:
+          - hanzi: 蟲細
+            pengim: tang5 soi3
+            en: The worm is small.
     frequency: 3
     sources: [wiktionary]
