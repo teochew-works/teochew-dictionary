@@ -16,6 +16,10 @@ entries:
         gloss_en: [skin]
         gloss_zh: [皮膚, 皮]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 我皮
+            pengim: ua2 puê5
+            en: my skin
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -28,6 +32,10 @@ entries:
       - pos: noun
         gloss_en: [blood]
         gloss_zh: [血]
+        examples:
+          - hanzi: 我血
+            pengim: ua2 huêh4
+            en: my blood
     frequency: 4
     sources: [wiktionary]
 
@@ -39,6 +47,10 @@ entries:
       - pos: noun
         gloss_en: [bone]
         gloss_zh: [骨頭, 骨]
+        examples:
+          - hanzi: 我骨
+            pengim: ua2 gug4
+            en: my bone
     frequency: 3
     sources: [wiktionary]
 
@@ -51,6 +63,10 @@ entries:
         gloss_en: [fat (bodily/animal)]
         gloss_zh: [油, 脂肪]
         note: Swadesh means bodily/animal fat (cf. 豬油 "lard"), not cooking oil — the fetched reading needs its sense confirmed, not just the pronunciation.
+        examples:
+          - hanzi: 豬油
+            pengim: de1 iu5
+            en: lard (lit. "pig fat")
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -63,6 +79,10 @@ entries:
       - pos: noun
         gloss_en: [horn]
         gloss_zh: [角]
+        examples:
+          - hanzi: 大角
+            pengim: dua7 gag4
+            en: a big horn
     frequency: 2
     sources: [wiktionary]
 
@@ -76,6 +96,10 @@ entries:
         gloss_en: [tail]
         gloss_zh: [尾巴, 尾]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 鳥尾
+            pengim: ziao2 bhuê2
+            en: the bird's tail
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -94,6 +118,10 @@ entries:
           form not yet confirmed by a speaker. Same character as in 頭毛
           "hair" below — genuine Southern Min polysemy (毛 covers body/animal
           hair and feathers), not a mistake.
+        examples:
+          - hanzi: 鳥毛
+            pengim: ziao2 mo5
+            en: bird feather
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -107,6 +135,10 @@ entries:
         gloss_en: [hair]
         gloss_zh: [頭髮, 毛]
         note: Compound (頭 "head" + 毛 "hair/fur") — see 毛 "feather" above regarding the shared character.
+        examples:
+          - hanzi: 我頭毛
+            pengim: ua2 tao5 mo5
+            en: my hair
     frequency: 4
     sources: [wiktionary]
 
@@ -118,6 +150,10 @@ entries:
       - pos: noun
         gloss_en: [head]
         gloss_zh: [頭]
+        examples:
+          - hanzi: 我頭
+            pengim: ua2 tao5
+            en: my head
     frequency: 5
     sources: [wiktionary]
 
@@ -132,6 +168,10 @@ entries:
         gloss_en: [ear]
         gloss_zh: [耳朵, 耳]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 我耳
+            pengim: ua2 hin6
+            en: my ear
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -145,6 +185,10 @@ entries:
         gloss_en: [eye]
         gloss_zh: [眼睛]
         note: Teochew commonly uses the compound 目珠 rather than bare 目.
+        examples:
+          - hanzi: 我目珠
+            pengim: ua2 mag8 zu1
+            en: my eye
     frequency: 5
     sources: [wiktionary]
 
@@ -156,10 +200,18 @@ entries:
       - pos: noun
         gloss_en: [nose]
         gloss_zh: [鼻子, 鼻]
+        examples:
+          - hanzi: 我鼻
+            pengim: ua2 pin7
+            en: my nose
       - pos: verb
         gloss_en: [to smell]
         gloss_zh: [聞, 嗅]
         note: Southern Min uses 鼻 as both noun and verb, not a mistake — the two senses share this one entry.
+        examples:
+          - hanzi: 我鼻花
+            pengim: ua2 pin7 huê1
+            en: I smell the flower.
     frequency: 5
     sources: [wiktionary]
 
@@ -176,6 +228,10 @@ entries:
           Southern Min character for "mouth" (cf. Hokkien 喙 tshuì) rather
           than Mandarin 嘴 — unconfirmed for Teochew specifically. 2
           candidate readings from Wiktionary also need confirming.
+        examples:
+          - hanzi: 我喙
+            pengim: ua2 cui3
+            en: my mouth
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -189,6 +245,10 @@ entries:
         gloss_en: [tooth]
         gloss_zh: [牙齒, 牙]
         note: Could also be the more literary 齒 — unconfirmed which register is colloquial here.
+        examples:
+          - hanzi: 我牙
+            pengim: ua2 ghê5
+            en: my tooth
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -201,6 +261,10 @@ entries:
       - pos: noun
         gloss_en: [tongue]
         gloss_zh: [舌頭, 舌]
+        examples:
+          - hanzi: 我舌
+            pengim: ua2 zih8
+            en: my tongue
     frequency: 3
     sources: [wiktionary]
 
@@ -212,10 +276,18 @@ entries:
       - pos: noun
         gloss_en: [foot]
         gloss_zh: [腳, 跤]
+        examples:
+          - hanzi: 我跤
+            pengim: ua2 ka1
+            en: my foot
       - pos: noun
         gloss_en: [leg]
         gloss_zh: [腿, 跤]
         note: Southern Min 跤 covers both "foot" and "leg" without a lexical distinction, not a mistake.
+        examples:
+          - hanzi: 跤長
+            pengim: ka1 dng5
+            en: The leg is long.
     frequency: 5
     sources: [wiktionary]
 
@@ -227,6 +299,10 @@ entries:
       - pos: noun
         gloss_en: [hand]
         gloss_zh: [手]
+        examples:
+          - hanzi: 我手
+            pengim: ua2 ciu2
+            en: my hand
     frequency: 5
     sources: [wiktionary]
 
@@ -242,6 +318,10 @@ entries:
         gloss_en: [wing]
         gloss_zh: [翅膀, 翼]
         note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 鳥翼
+            pengim: ziao2 sig8
+            en: the bird's wing
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -256,6 +336,10 @@ entries:
         gloss_en: [guts]
         gloss_zh: [腸, 腸子]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 我腸
+            pengim: ua2 deng5
+            en: my guts
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -273,6 +357,10 @@ entries:
           Southern Min character for "neck" (cf. Hokkien 頷 ām) — unconfirmed
           for Teochew specifically. 2 candidate readings from Wiktionary also
           need confirming.
+        examples:
+          - hanzi: 我頷
+            pengim: ua2 am6
+            en: my neck
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -290,6 +378,10 @@ entries:
           Southern Min compound for "back" (cf. Hokkien 尻脊 kha-tsiah) — low
           confidence, may not be the Teochew term; simpler 背 is a plausible
           fallback. 2 candidate readings from Wiktionary also need confirming.
+        examples:
+          - hanzi: 我尻脊
+            pengim: ua2 ga1 ziah4
+            en: my back
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -303,6 +395,10 @@ entries:
         gloss_en: [breast, chest]
         gloss_zh: [胸, 胸部]
         note: Generic "chest" sense; uncertain this is the most idiomatic choice over a more specific compound.
+        examples:
+          - hanzi: 我胸
+            pengim: ua2 hêng1
+            en: my chest
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -317,6 +413,10 @@ entries:
         gloss_en: [heart]
         gloss_zh: [心, 心臟]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 我心
+            pengim: ua2 sim1
+            en: my heart
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -329,5 +429,9 @@ entries:
       - pos: noun
         gloss_en: [liver]
         gloss_zh: [肝, 肝臟]
+        examples:
+          - hanzi: 我肝
+            pengim: ua2 guan1
+            en: my liver
     frequency: 2
     sources: [wiktionary]
