@@ -274,6 +274,10 @@ entries:
         gloss_en: [all]
         gloss_zh: [全部, 攏總]
         note: Uncertain whether this or the simpler 攏 is the idiomatic Teochew form.
+        examples:
+          - hanzi: 攏總儂
+            pengim: long2 zong2 nang5
+            en: everyone, all people
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -287,6 +291,10 @@ entries:
         gloss_en: [some]
         gloss_zh: [一些, 淡薄]
         note: "\"a little/some\" — uncertain this is the most idiomatic Teochew choice."
+        examples:
+          - hanzi: 淡薄水
+            pengim: dam6 boh8 zui2
+            en: some water
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -302,6 +310,10 @@ entries:
         gloss_en: [other]
         gloss_zh: [別的, 其他]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 別儂
+            pengim: biêg8 nang5
+            en: another person, someone else
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -314,6 +326,10 @@ entries:
       - pos: adjective
         gloss_en: [wide]
         gloss_zh: [闊, 寬]
+        examples:
+          - hanzi: 闊路
+            pengim: kuah4 lou7
+            en: a wide road
     frequency: 3
     sources: [wiktionary]
 
@@ -325,6 +341,10 @@ entries:
       - pos: adjective
         gloss_en: [thick]
         gloss_zh: [厚]
+        examples:
+          - hanzi: 厚書
+            pengim: gao6 ze1
+            en: a thick book
     frequency: 3
     sources: [wiktionary]
 
@@ -340,6 +360,10 @@ entries:
         gloss_en: [heavy]
         gloss_zh: [重]
         note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 石重
+            pengim: ziêh8 dang6
+            en: The stone is heavy.
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -355,6 +379,10 @@ entries:
         gloss_en: [narrow]
         gloss_zh: [狹窄, 狹]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 狹路
+            pengim: hiab8 lou7
+            en: a narrow road
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -370,6 +398,10 @@ entries:
         gloss_en: [thin]
         gloss_zh: [薄]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 薄書
+            pengim: boh8 ze1
+            en: a thin book
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -385,6 +417,10 @@ entries:
         gloss_en: [red]
         gloss_zh: [紅, 紅色]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 紅字
+            pengim: ang5 ri7
+            en: red characters, red print
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -398,6 +434,10 @@ entries:
         gloss_en: [green, blue]
         gloss_zh: [綠, 藍, 青]
         note: Traditionally covers both "green" and "blue" — the sense the fetched reading is glossed for on Wiktionary (if any) still needs a manual check.
+        examples:
+          - hanzi: 青天
+            pengim: cên1 tin1
+            en: a blue sky
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -410,6 +450,10 @@ entries:
       - pos: adjective
         gloss_en: [white]
         gloss_zh: [白, 白色]
+        examples:
+          - hanzi: 白日
+            pengim: bêh8 rig8
+            en: daylight, broad daylight
     frequency: 5
     sources: [wiktionary]
 
@@ -423,6 +467,10 @@ entries:
         gloss_en: [black]
         gloss_zh: [黑, 黑色]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 烏雲
+            pengim: ou1 hung5
+            en: a black cloud, a dark cloud
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -436,6 +484,10 @@ entries:
         gloss_en: [warm]
         gloss_zh: [溫, 溫暖]
         note: Distinct sense from existing 熱 "hot" (ruah8-熱) — confirm the fetched reading isn't just a duplicate of that entry.
+        examples:
+          - hanzi: 溫水
+            pengim: ung1 zui2
+            en: warm water
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -453,6 +505,10 @@ entries:
           Southern Min commonly uses 寒 for "cold weather" where Mandarin
           favours 冷 — unconfirmed which register/character is idiomatic in
           Teochew. 2 candidate readings from Wiktionary also need confirming.
+        examples:
+          - hanzi: 寒日
+            pengim: hang5 rig8
+            en: a cold day
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -466,6 +522,10 @@ entries:
         gloss_en: [full (not empty)]
         gloss_zh: [滿]
         note: Distinct sense from existing 飽 "full/satiated (from eating)" (ba2-飽) — Swadesh means a full container, not a full stomach.
+        examples:
+          - hanzi: 水滿
+            pengim: zui2 muan2
+            en: The water is full.
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -483,6 +543,10 @@ entries:
           More precisely "smelly/foul" — may not isolate "rotten"
           specifically. 2 candidate readings from Wiktionary also need
           confirming.
+        examples:
+          - hanzi: 魚臭
+            pengim: he5 cao3
+            en: The fish is rotten, the fish smells bad.
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -501,6 +565,10 @@ entries:
           Standard Southern Min word for "dirty" (cf. Hokkien lah-sap),
           reasonably confident. 3 candidate readings from Wiktionary still
           need confirming which is the genuine variant.
+        examples:
+          - hanzi: 垃圾手
+            pengim: nah4 sab4 ciu2
+            en: dirty hands
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -515,6 +583,10 @@ entries:
         gloss_en: [straight]
         gloss_zh: [直]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 路直
+            pengim: lou7 dig8
+            en: The road is straight.
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -527,6 +599,10 @@ entries:
       - pos: adjective
         gloss_en: [round]
         gloss_zh: [圓]
+        examples:
+          - hanzi: 圓粿
+            pengim: in5 guê2
+            en: a round rice cake
     frequency: 3
     sources: [wiktionary]
 
@@ -541,6 +617,10 @@ entries:
         gloss_en: [sharp (as a knife)]
         gloss_zh: [利, 鋒利]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 利角
+            pengim: lai7 gag4
+            en: a sharp horn
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -553,6 +633,10 @@ entries:
       - pos: adjective
         gloss_en: [smooth]
         gloss_zh: [滑]
+        examples:
+          - hanzi: 石滑
+            pengim: ziêh8 gug8
+            en: The stone is smooth.
     frequency: 3
     sources: [wiktionary]
 
@@ -570,6 +654,10 @@ entries:
           Uncommon character in this sense — unconfirmed for Teochew
           specifically. 3 candidate readings from Wiktionary also need
           confirming.
+        examples:
+          - hanzi: 澹跤
+            pengim: dan6 ka1
+            en: wet feet
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -591,6 +679,10 @@ entries:
           Distinct from "right (side)" 正 — Southern Min 著 for
           "correct/right" is a separate word from the directional sense. 6
           candidate readings from Wiktionary also need confirming.
+        examples:
+          - hanzi: 伊著
+            pengim: i1 dioh4
+            en: He/she is right.
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -606,6 +698,10 @@ entries:
         gloss_en: [near]
         gloss_zh: [近]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 厝近
+            pengim: cu3 geng6
+            en: The house is near, nearby.
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -621,6 +717,10 @@ entries:
         gloss_en: [far]
         gloss_zh: [遠]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 厝遠
+            pengim: cu3 hng6
+            en: The house is far away.
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -637,6 +737,10 @@ entries:
         note: >-
           Pairs with "left (side)" 倒; distinct from "correct" 著 above. 2
           candidate readings from Wiktionary also need confirming.
+        examples:
+          - hanzi: 正手
+            pengim: zian3 ciu2
+            en: right hand
     frequency: 4
     needs_review: true
     sources: [wiktionary]
