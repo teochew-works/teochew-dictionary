@@ -135,6 +135,10 @@ entries:
           By analogy with 阮/恁 (儂-suffixed plural pronouns) — not yet
           confirmed as the actual lexicalised 3rd-plural; some Southern Min
           varieties use a distinct morpheme (cf. Hokkien 𪜶) instead.
+        examples:
+          - hanzi: 伊儂是朋友
+            pengim: i1 nang5 si6 bêng5 iu2
+            en: They are friends.
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -147,6 +151,10 @@ entries:
       - pos: pronoun
         gloss_en: [this]
         gloss_zh: [這]
+        examples:
+          - hanzi: 只書
+            pengim: zi2 ze1
+            en: this book
     frequency: 5
     sources: [wiktionary]
 
@@ -161,6 +169,10 @@ entries:
         gloss_en: [that]
         gloss_zh: [那]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 許儂
+            pengim: he2 nang5
+            en: that person
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -174,6 +186,10 @@ entries:
         gloss_en: [when]
         gloss_zh: [幾時, 什麼時候]
         note: Compound guess; cf. 幾時 as an alternative form.
+        examples:
+          - hanzi: 你底時去
+            pengim: le2 di7 si5 ke3
+            en: When are you going?
     frequency: 4
     needs_review: true
     sources: [wiktionary]

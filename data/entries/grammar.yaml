@@ -18,6 +18,10 @@ entries:
           form not yet confirmed by a speaker. Function words like this often
           have thin Wiktionary coverage, so the ambiguity here is more about
           Wiktionary's data than the word itself.
+        examples:
+          - hanzi: 佇厝
+            pengim: diu6 cu3
+            en: at home
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -31,6 +35,10 @@ entries:
         gloss_en: [in, inside]
         gloss_zh: [內, 裡面]
         note: Locative particle, may end up overlapping with 佇 "at" for some senses.
+        examples:
+          - hanzi: 厝內
+            pengim: cu3 lai6
+            en: inside the house
     frequency: 5
     sources: [wiktionary]
 
@@ -45,10 +53,18 @@ entries:
         gloss_en: [with]
         gloss_zh: [跟, 和]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 我佮你去
+            pengim: ua2 gah4 le2 ke3
+            en: I'm going with you.
       - pos: conjunction
         gloss_en: [and]
         gloss_zh: [和, 與]
         note: Southern Min 佮 covers both the comitative ("with") and conjunctive ("and") senses, not a mistake — the two senses share this one entry.
+        examples:
+          - hanzi: 我佮你
+            pengim: ua2 gah4 le2
+            en: you and I
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -65,6 +81,10 @@ entries:
         gloss_en: [if]
         gloss_zh: [若, 如果]
         note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 若無
+            pengim: riag8 bho5
+            en: if not, otherwise
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -82,6 +102,10 @@ entries:
           Likely a shared literary term rather than a distinctly colloquial
           Teochew word. 2 candidate readings from Wiktionary also need
           confirming.
+        examples:
+          - hanzi: 因為熱
+            pengim: ing1 ui5 ruah8
+            en: because it's hot
     frequency: 3
     needs_review: true
     sources: [wiktionary]

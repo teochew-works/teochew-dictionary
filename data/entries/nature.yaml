@@ -14,6 +14,10 @@ entries:
         gloss_en: [tree]
         gloss_zh: [樹]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 大樹
+            pengim: dua7 ciu7
+            en: a big tree
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -27,6 +31,10 @@ entries:
         gloss_en: [forest]
         gloss_zh: [樹林, 森林]
         note: Compound guess; may not be the idiomatic colloquial term.
+        examples:
+          - hanzi: 去樹林
+            pengim: ke3 ciu7 lim5
+            en: go to the forest
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -40,6 +48,10 @@ entries:
         gloss_en: [stick, wood]
         gloss_zh: [柴, 木頭]
         note: 柴 more precisely means "firewood/wood" — may not be the right sense for a generic "stick".
+        examples:
+          - hanzi: 濟柴
+            pengim: zoi7 ca5
+            en: a lot of wood
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -58,6 +70,10 @@ entries:
           Cantonese-influenced compound; uncertain this is the Teochew form
           rather than 果子 or similar. 3 candidate readings from Wiktionary
           also need confirming.
+        examples:
+          - hanzi: 食生果
+            pengim: ziah8 cên1 guê2
+            en: eat fruit
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -73,6 +89,10 @@ entries:
         gloss_en: [seed]
         gloss_zh: [種子, 籽]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 細籽
+            pengim: soi3 zi2
+            en: a small seed
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -89,6 +109,10 @@ entries:
         gloss_en: [leaf]
         gloss_zh: [葉子, 葉]
         note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 樹葉
+            pengim: ciu7 iab8
+            en: tree leaf
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -104,6 +128,10 @@ entries:
         gloss_en: [root]
         gloss_zh: [根]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 樹根
+            pengim: ciu7 geng1
+            en: tree root
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -117,6 +145,10 @@ entries:
         gloss_en: [bark (of a tree)]
         gloss_zh: [樹皮]
         note: Compound guess; may not be the idiomatic colloquial term.
+        examples:
+          - hanzi: 有樹皮
+            pengim: u6 ciu7 puê5
+            en: There is bark.
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -131,6 +163,10 @@ entries:
         gloss_en: [flower]
         gloss_zh: [花]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 好花
+            pengim: ho2 huê1
+            en: a nice flower
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -145,6 +181,10 @@ entries:
         gloss_en: [grass]
         gloss_zh: [草]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 濟草
+            pengim: zoi7 co2
+            en: a lot of grass
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -159,6 +199,10 @@ entries:
         gloss_en: [rope]
         gloss_zh: [繩子, 索]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 長索
+            pengim: dng5 soh4
+            en: a long rope
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -171,6 +215,10 @@ entries:
       - pos: noun
         gloss_en: [star]
         gloss_zh: [星, 星星]
+        examples:
+          - hanzi: 濟星
+            pengim: zoi7 cên1
+            en: many stars
     frequency: 4
     sources: [wiktionary]
 
@@ -184,6 +232,10 @@ entries:
         gloss_en: [rain]
         gloss_zh: [雨]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 大雨
+            pengim: dua7 hou6
+            en: heavy rain
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -196,6 +248,10 @@ entries:
       - pos: noun
         gloss_en: [river]
         gloss_zh: [河, 溪]
+        examples:
+          - hanzi: 去溪
+            pengim: ke3 koi1
+            en: go to the river
     frequency: 3
     sources: [wiktionary]
 
@@ -209,6 +265,10 @@ entries:
         gloss_en: [lake]
         gloss_zh: [湖]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 大湖
+            pengim: dua7 ou5
+            en: a big lake
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -221,6 +281,10 @@ entries:
       - pos: noun
         gloss_en: [sea]
         gloss_zh: [海]
+        examples:
+          - hanzi: 去海
+            pengim: ke3 hai2
+            en: go to the sea
     frequency: 4
     sources: [wiktionary]
 
@@ -239,6 +303,10 @@ entries:
         gloss_en: [stone]
         gloss_zh: [石頭, 石]
         note: 7 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 細石
+            pengim: soi3 ziêh8
+            en: a small stone
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -253,6 +321,10 @@ entries:
         gloss_en: [sand]
         gloss_zh: [沙]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 濟沙
+            pengim: zoi7 sua1
+            en: a lot of sand
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -266,6 +338,10 @@ entries:
         gloss_en: [dust]
         gloss_zh: [灰塵, 塵土]
         note: Compound guess; may not be the idiomatic colloquial term.
+        examples:
+          - hanzi: 有塗粉
+            pengim: u6 tou5 hung2
+            en: There is dust.
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -280,6 +356,10 @@ entries:
         gloss_en: [earth, soil]
         gloss_zh: [土, 泥土]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 好塗
+            pengim: ho2 tou5
+            en: good soil
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -292,6 +372,10 @@ entries:
       - pos: noun
         gloss_en: [cloud]
         gloss_zh: [雲]
+        examples:
+          - hanzi: 濟雲
+            pengim: zoi7 hung5
+            en: a lot of clouds
     frequency: 3
     sources: [wiktionary]
 
@@ -303,6 +387,10 @@ entries:
       - pos: noun
         gloss_en: [fog]
         gloss_zh: [霧]
+        examples:
+          - hanzi: 大霧
+            pengim: dua7 bhu7
+            en: thick fog
     frequency: 2
     sources: [wiktionary]
 
@@ -317,6 +405,10 @@ entries:
         gloss_en: [sky]
         gloss_zh: [天, 天空]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 好天
+            pengim: ho2 tin1
+            en: good weather
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -331,6 +423,10 @@ entries:
         gloss_en: [wind]
         gloss_zh: [風]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 大風
+            pengim: dua7 huang1
+            en: strong wind
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -344,6 +440,10 @@ entries:
         gloss_en: [snow]
         gloss_zh: [雪]
         note: Rare referent in the Chaoshan climate; expect a literary rather than colloquial reading.
+        examples:
+          - hanzi: 大雪
+            pengim: dua7 soh4
+            en: heavy snow
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -356,6 +456,10 @@ entries:
       - pos: noun
         gloss_en: [ice]
         gloss_zh: [冰]
+        examples:
+          - hanzi: 食冰
+            pengim: ziah8 bian1
+            en: eat ice (shaved ice dessert)
     frequency: 3
     sources: [wiktionary]
 
@@ -369,6 +473,10 @@ entries:
         gloss_en: [smoke]
         gloss_zh: [煙]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 有煙
+            pengim: u6 ing1
+            en: There is smoke.
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -381,6 +489,10 @@ entries:
       - pos: noun
         gloss_en: [fire]
         gloss_zh: [火]
+        examples:
+          - hanzi: 有火
+            pengim: u6 huê2
+            en: There is fire.
     frequency: 4
     sources: [wiktionary]
 
@@ -392,6 +504,10 @@ entries:
       - pos: noun
         gloss_en: [road]
         gloss_zh: [路]
+        examples:
+          - hanzi: 大路
+            pengim: dua7 lou7
+            en: a big road, a main road
     frequency: 5
     sources: [wiktionary]
 
@@ -405,6 +521,10 @@ entries:
         gloss_en: [mountain]
         gloss_zh: [山]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 去山
+            pengim: ke3 suan1
+            en: go to the mountain
     frequency: 4
     needs_review: true
     sources: [wiktionary]
