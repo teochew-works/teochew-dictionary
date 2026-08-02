@@ -1,6 +1,7 @@
 import { entryFileSchema } from '../schema/entry.js'
 import { readEntryFiles, loadSources } from '../data/load.js'
 import {
+  listSandhiTables,
   listVarieties,
   loadPengimScheme,
   loadPojScheme,
@@ -93,18 +94,20 @@ export function validate(): ValidationReport {
     return summarise(issues, 0, 0, 0, toneCounts)
   }
 
-  try {
-    const sandhi = loadSandhi('chaozhou')
-    if (sandhi.sandhi.needs_review) {
-      issues.push(
-        warn(
-          'data/phonology/sandhi/chaozhou.yaml',
-          'sandhi table is flagged needs_review — derived sandhi tones are provisional',
-        ),
-      )
+  for (const id of listSandhiTables()) {
+    try {
+      const sandhi = loadSandhi(id)
+      if (sandhi.sandhi.needs_review) {
+        issues.push(
+          warn(
+            `data/phonology/sandhi/${id}.yaml`,
+            'sandhi table is flagged needs_review — derived sandhi tones are provisional',
+          ),
+        )
+      }
+    } catch (e) {
+      issues.push(err(`data/phonology/sandhi/${id}.yaml`, (e as Error).message))
     }
-  } catch (e) {
-    issues.push(err('data/phonology/sandhi', (e as Error).message))
   }
 
   const sourceIds = new Set<string>()
