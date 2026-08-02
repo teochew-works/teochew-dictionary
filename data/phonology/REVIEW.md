@@ -61,7 +61,7 @@ them, so a correction would surface immediately.
 **Follow-up:** the /ɯ/ → /u/ merger is real; it was only attached to the wrong
 variety. Modelling it properly means a `varieties/chaoyang.yaml` that does not
 exist yet — Southern Teochew is currently unrepresented in the dictionary. See
-issue #10.
+issue #10. **Addressed — see §9.**
 
 ## 2. Chaozhou `io` → [ie] fronting  ·  `varieties/chaozhou.yaml` → `irregular`
 
@@ -247,6 +247,81 @@ entry under. 兩 does: it's an extremely common character in its own right,
 independently attested across Min and Mandarin. Teochew's colloquial "many"
 does not have one on record here. The rule turns on whether that second
 character exists, not on the mere presence of 訓讀.
+
+## 9. Southern Teochew — `chaoyang.yaml`  ·  `varieties/chaoyang.yaml`  ✅ **Resolved 2026-08-03**
+
+**Ruling:** `chaoyang.yaml` added, a sparse overlay on `chaozhou.yaml` the same
+shape as `shantou.yaml`. It stands in for the wider Chaopu subgroup 潮普片
+(Chaoyang — incl. Chaonan/Dahao — Puning, Huilai), not just the city of
+Chaoyang: pujdict groups the three as one tonal pattern, the "练江腔"/Lianjiang
+accent. That grouping is a single-source, medium-confidence claim, not yet
+checked against a second source — if Puning or Huilai turn out to diverge,
+split them out.
+
+Two differences from Chaozhou are modelled:
+
+- **The `e` → /u/ merger** (`nuclei.e`, `confidence: high`). This is the
+  merger §1 removed from `shantou.yaml` for being attached to the wrong
+  variety — it belongs here. Corroborated two ways, directly: `pujdict`
+  states that Chaoyang speakers don't distinguish 余 from 污 (bare-e words,
+  /ɯ/ vs /u/ in Chaozhou); `mogher-region-diff`'s region table gives the same
+  `"e"→"u"` correspondence for Chaoyang, Puning and Huilai independently.
+  `wikipedia`'s Northern/Southern classification of Chaoyang is consistent
+  with this but isn't cited as a third confirmation: that classification is
+  itself *defined* by presence/absence of this exact merger, so treating it
+  as independent evidence for the merger would be circular. High confidence
+  follows the same reasoning as §1's e/ê split: a two-letter, low-ambiguity
+  correspondence attested across independent sources — unlike the
+  tone-contour digits this section declines to touch (below).
+- **`io`/`ioh` non-fronting** (`irregular`, `confidence: medium`). Chaoyang
+  patterns with Shantou here, not Chaozhou: `mogher-region-diff`'s table gives
+  the same unfronted correspondence for all three Southern varieties, so this
+  overlay copies Shantou's existing `io`/`ioh` override values. Kept at
+  `medium`, not `high` — see the caveat below. `iong` is carried at `low`,
+  same as Chaozhou's and Shantou's own `iong` entries: no source addresses
+  this nasal-coda rime specifically for any variety, so none should outrank
+  the others.
+
+**A live example of the risk §3 already flags.** While scoping this change,
+an automated fetch of `mogher-region-diff`'s page produced a natural-language
+gloss that asserted "Chaoyang fronts `io` like Chaozhou" in one sentence while
+quoting the page's own raw table notation showing the opposite in the next.
+The raw notation was trusted, the gloss was not — but this is the same
+summarizer-garbling failure mode §3 already names for Chao pitch digits,
+just showing up on a rime correspondence instead of a tone contour. It is why
+the `io`/`ioh` mappings above stay at `medium`: this is currently a single
+source, and a human should read the raw table directly before raising it.
+
+**Deliberately not modelled, and why:**
+
+- **Tone contours.** `chaoyang.yaml` carries no `tones:` block, so Chaoyang
+  inherits Chaozhou's citation contours unchanged. The strongest available
+  source — Zhang (2021)'s dedicated "Tonal Changes in the Chaoyang Area"
+  chapter — is paywalled, and two independent automated fetches of the
+  Wikipedia/pujdict tone tables already disagreed on the digits before this
+  section reproduced the same class of unreliability (above) on a simpler
+  correspondence. Chao pitch digits are exactly the detail §3 says not to
+  trust without a direct, non-summarized read of the source's raw markup.
+- **The tone 3/6 merger reported for 新派 (younger-generation) speech.**
+  `pujdict` states that newer Chaoyang speech merges citation tones 3 and 6
+  (though sandhi still distinguishes them), attributed explicitly to younger
+  speakers, with the implication that older speech keeps them apart. Not
+  modelled, matching this dataset's existing preference for the
+  conservative/older system — the same baseline `chaozhou.yaml` itself uses.
+- **A Chaoyang-specific sandhi table.** No rule-by-rule source was found —
+  only an abstract stating the system is "obviously different" from other
+  Chaoshan varieties, with no numbers. Chaoyang readings fall back to
+  `sandhi/chaozhou.yaml` via `sandhiFor()`'s existing per-variety-with-fallback
+  lookup (`src/build/enrich.ts`) — the same behaviour Shantou already has
+  today, not a new gap introduced here. `src/validate/index.ts`'s
+  `needs_review` check was generalised to loop over every sandhi table present
+  (`listSandhiTables()`) rather than hardcoding `chaozhou`, so a future
+  `sandhi/chaoyang.yaml` would get the same gate automatically.
+
+**Test words:** 汝/你 `le2` (bare `e`, contrasts all three varieties — see
+§1's test list) and 潮 `dio5` (the `io` rime, contrasts Chaoyang/Shantou
+against Chaozhou). Both pinned in `tests/derive.test.ts`; the `dio5 ziu1`
+headword's three readings are pinned in `tests/dataset.test.ts`.
 
 ## Individual entries flagged `needs_review`
 

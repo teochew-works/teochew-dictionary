@@ -112,6 +112,7 @@ data/                      ← the product
     varieties/
       chaozhou.yaml          reference variety: Peng'im → IPA
       shantou.yaml           sparse overlay on Chaozhou
+      chaoyang.yaml          sparse overlay on Chaozhou (Southern Teochew)
     sandhi/chaozhou.yaml     tone sandhi rules
     REVIEW.md                open linguistic questions
   sources.yaml               provenance and licence registry

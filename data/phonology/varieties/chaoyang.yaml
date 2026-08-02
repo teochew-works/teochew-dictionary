@@ -1,0 +1,66 @@
+# Chaoyang (潮陽) — a sparse OVERLAY on the Chaozhou reference variety, same
+# shape as shantou.yaml. Stands in for the wider Chaopu subgroup 潮普片
+# (Chaoyang incl. Chaonan/Dahao, Puning, Huilai) — the "Lianjiang accent"
+# 练江腔 — not just the city of Chaoyang; pujdict gives these as one tonal
+# pattern. If Puning or Huilai turn out to diverge, split them out; nothing
+# here should be read as claiming they're already checked separately.
+#
+# Only differences are listed; anything absent is inherited from chaozhou.yaml.
+# See REVIEW.md §9 for what this overlay does and does not model, and issue #10.
+
+variety:
+  id: chaoyang
+  name: Chaoyang
+  name_zh: 潮陽話
+  region: 潮陽區, Shantou, Guangdong
+  inherits: chaozhou
+
+nuclei:
+  # THE defining isogloss between Northern and Southern Teochew (see
+  # chaozhou.yaml's own `e` note) — Southern Teochew merges the Northern high
+  # back unrounded /ɯ/ into /u/. This is the merger #2 removed from
+  # shantou.yaml for being attached to the wrong variety; it belongs here.
+  e:
+    ipa: u
+    confidence: high
+    sources: [pujdict, mogher-region-diff]
+    note: >-
+      Corroborated two ways, directly: pujdict states that Chaoyang speakers
+      don't distinguish 余 from 污 (both bare-e words, /ɯ/ vs /u/ in
+      Chaozhou); mogher's region table gives the same "e"→"u" correspondence
+      for Chaoyang, Puning and Huilai independently. (wikipedia's
+      Northern/Southern classification of Chaoyang is consistent with this —
+      it's deliberately left out of `sources:` above, though, since that
+      classification is itself *defined* by presence/absence of this exact
+      merger; citing it as a third confirmation of the merger would be
+      circular, not independent evidence.) High confidence follows the same
+      reasoning as chaozhou.yaml's own e/ê split: a two-letter, low-ambiguity
+      correspondence attested across independent sources, unlike the
+      tone-contour digits this dataset treats with more caution.
+
+irregular:
+  # Chaoyang patterns with Shantou here, not Chaozhou: it does not front io
+  # to [ie]. Values copied from shantou.yaml's override.
+  io:
+    ipa: io
+    confidence: medium
+    sources: [mogher-region-diff]
+    note: >-
+      Mogher's table gives Chaoyang/Puning/Huilai the same unfronted
+      correspondence as Shantou. Kept at medium, not high: this is currently
+      a single source, and an automated read of the page garbled its own
+      gloss of this exact correspondence (see REVIEW.md §9) — worth a second,
+      human-read source before raising confidence.
+  ioh:
+    ipa: ioʔ
+    confidence: medium
+    sources: [mogher-region-diff]
+    note: "Chaoyang keeps [ioʔ] where Chaozhou fronts to [ieʔ] — see the `io` note."
+  iong:
+    ipa: ioŋ
+    confidence: low
+    note: >-
+      No source addresses this nasal-coda rime specifically for Chaoyang —
+      same uncited-extrapolation situation as chaozhou.yaml's and
+      shantou.yaml's parallel `iong` entries, carried over at the same
+      confidence for the same reason.

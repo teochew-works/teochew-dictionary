@@ -117,3 +117,35 @@ sources:
       that article's page markup (not merely a search summary) to confirm the
       exact Chao pitch numbers. Used for `sandhi/chaozhou.yaml`. Cited, never
       reproduced.
+
+  - id: pujdict
+    name: 潮汕方言白话字辞典 (pujdict.sourceforge.io)
+    kind: reference
+    url: https://pujdict.sourceforge.io/doc/puj.html
+    retrieved: '2026-08-03'
+    note: >-
+      Community-maintained Peng'im reference dictionary, the same tier as
+      `learnteochew`. Corroborates the Chaoyang/Puning/Huilai `e`→/u/ merger
+      (states directly that Chaoyang speakers do not distinguish 余 from 污)
+      and the "练江腔"/Lianjiang-accent grouping of those three as one tonal
+      pattern, used for `varieties/chaoyang.yaml`. Its own romanization is not
+      Peng'im: it transliterates the merged rime with the letter "o", which is
+      a symbol clash with this dataset's letters, not a competing claim that
+      the phonetic target is /o/ rather than /u/ — every other source gives
+      /u/. Cited, never reproduced.
+
+  - id: mogher-region-diff
+    name: Mogher — regional Teochew rime correspondence table
+    kind: reference
+    url: https://www.mogher.com/docs/region-diff
+    retrieved: '2026-08-03'
+    note: >-
+      The only source found giving Chaozhou/Shantou correspondences for all
+      three Southern varieties (Chaoyang, Puning, Huilai) in one table. Used
+      for `varieties/chaoyang.yaml`'s `e`→/u/ merger and `io`/`ioh`
+      non-fronting. Flag for whoever revisits this: an automated fetch of this
+      page produced a natural-language gloss that contradicted the page's own
+      quoted raw table notation on the `io` correspondence specifically — the
+      raw notation was trusted, the gloss was not, but this means mappings
+      sourced to this id alone should stay at `confidence: medium` until a
+      human reads the raw table directly. See REVIEW.md §9.

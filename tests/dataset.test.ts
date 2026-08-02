@@ -136,6 +136,20 @@ describe('enrichment', () => {
     expect(cz.ipa).not.toBe(st.ipa)
   })
 
+  it('derives Chaoyang IPA from the same Peng\'im, unfronted like Shantou (issue #10)', () => {
+    const e = enrich(entries.get('dio5-ziu1-潮州')!)
+    const cz = e.readings.find((r) => r.variety === 'chaozhou')!
+    const st = e.readings.find((r) => r.variety === 'shantou')!
+    const cy = e.readings.find((r) => r.variety === 'chaoyang')!
+    expect(cy.pengim).toBe(cz.pengim)
+    expect(cy.ipa).toBe('tio⁵⁵ tsiu³³')
+    expect(cy.ipa).not.toBe(cz.ipa)
+    // This word has no bare `e` syllable, so it doesn't exercise Chaoyang's
+    // other defining feature (the /ɯ/→/u/ merger) and coincides with
+    // Shantou here — see tests/derive.test.ts for a word that does differ.
+    expect(cy.ipa).toBe(st.ipa)
+  })
+
   it('collects search keys in every spelling a user might type', () => {
     const e = enrich(entries.get('dio5-ziu1-潮州')!)
     expect(e.search_keys).toEqual(
