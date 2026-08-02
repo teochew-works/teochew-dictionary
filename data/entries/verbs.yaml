@@ -417,6 +417,10 @@ entries:
       - pos: verb
         gloss_en: [to bite]
         gloss_zh: [咬]
+        examples:
+          - hanzi: 狗咬我
+            pengim: gao2 ga6 ua2
+            en: The dog bites me.
     frequency: 3
     sources: [wiktionary]
 
@@ -428,6 +432,10 @@ entries:
       - pos: verb
         gloss_en: [to suck]
         gloss_zh: [吸, 嗍]
+        examples:
+          - hanzi: 嗍血
+            pengim: suh4 huêh4
+            en: to suck blood
     frequency: 2
     sources: [wiktionary]
 
@@ -439,6 +447,10 @@ entries:
       - pos: verb
         gloss_en: [to spit]
         gloss_zh: [吐, 呸]
+        examples:
+          - hanzi: 伊呸
+            pengim: i1 pui3
+            en: He/she spits.
     frequency: 2
     sources: [wiktionary]
 
@@ -450,6 +462,10 @@ entries:
       - pos: verb
         gloss_en: [to vomit]
         gloss_zh: [吐, 嘔吐]
+        examples:
+          - hanzi: 囝吐
+            pengim: gian2 tou3
+            en: The child vomits.
     frequency: 2
     sources: [wiktionary]
 
@@ -462,6 +478,10 @@ entries:
         gloss_en: [to blow]
         gloss_zh: [吹]
         note: Uncommon character — uncertain this is right over a simpler alternative.
+        examples:
+          - hanzi: 歕火
+            pengim: bung5 huê2
+            en: to blow on the fire
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -478,6 +498,10 @@ entries:
         note: >-
           Compound guess; may not be the idiomatic colloquial term. 2
           candidate readings from Wiktionary also need confirming.
+        examples:
+          - hanzi: 伊喘氣
+            pengim: i1 cuêng2 kui3
+            en: He/she is breathing.
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -492,6 +516,10 @@ entries:
         gloss_en: [to laugh]
         gloss_zh: [笑]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 伊笑
+            pengim: i1 ciê3
+            en: He/she laughs.
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -507,6 +535,10 @@ entries:
         gloss_en: [to think]
         gloss_zh: [想]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 我想
+            pengim: ua2 siên6
+            en: I think. / I'm thinking.
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -519,6 +551,10 @@ entries:
       - pos: verb
         gloss_en: [to fear, to be afraid]
         gloss_zh: [怕, 驚]
+        examples:
+          - hanzi: 伊驚蛇
+            pengim: i1 gian1 zua5
+            en: He/she is afraid of snakes.
     frequency: 4
     sources: [wiktionary]
 
@@ -531,6 +567,10 @@ entries:
         gloss_en: [to live, to be alive]
         gloss_zh: [活, 活著]
         note: Sense is "be alive", not "reside" — the fetched reading needs its sense confirmed.
+        examples:
+          - hanzi: 伊活
+            pengim: i1 uah8
+            en: He/she is alive.
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -543,6 +583,10 @@ entries:
       - pos: verb
         gloss_en: [to die]
         gloss_zh: [死]
+        examples:
+          - hanzi: 狗死
+            pengim: gao2 si2
+            en: The dog died.
     frequency: 4
     sources: [wiktionary]
 
@@ -555,6 +599,10 @@ entries:
         gloss_en: [to kill]
         gloss_zh: [殺]
         note: Colloquial Southern Min sometimes uses 創 more broadly for "do/make/kill" — unconfirmed which is idiomatic here.
+        examples:
+          - hanzi: 殺豬
+            pengim: suah4 de1
+            en: to slaughter a pig
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -569,6 +617,10 @@ entries:
         gloss_en: [to fight]
         gloss_zh: [打架, 相拍]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 囝相拍
+            pengim: gian2 sio1 pah4
+            en: The children are fighting.
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -582,6 +634,10 @@ entries:
         gloss_en: [to hunt]
         gloss_zh: [抓, 捕捉]
         note: More precisely "to catch/capture" — may not isolate the "hunt" sense specifically.
+        examples:
+          - hanzi: 掠魚
+            pengim: liah8 he5
+            en: to catch fish
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -594,6 +650,10 @@ entries:
       - pos: verb
         gloss_en: [to hit]
         gloss_zh: [打, 拍]
+        examples:
+          - hanzi: 伊拍我
+            pengim: i1 pah4 ua2
+            en: He/she hits me.
     frequency: 4
     sources: [wiktionary]
 
@@ -612,6 +672,10 @@ entries:
           More precisely "to cut with scissors" — 割 is a plausible
           alternative for a more general "cut". 4 candidate readings from
           Wiktionary also need confirming.
+        examples:
+          - hanzi: 剪頭毛
+            pengim: ziang2 tao5 mo5
+            en: to get a haircut (lit. to cut hair)
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -624,6 +688,10 @@ entries:
       - pos: verb
         gloss_en: [to split]
         gloss_zh: [破, 弄破]
+        examples:
+          - hanzi: 破石
+            pengim: pua3 ziêh8
+            en: to split a stone
     frequency: 3
     sources: [wiktionary]
 
@@ -637,6 +705,10 @@ entries:
         gloss_en: [to stab]
         gloss_zh: [刺]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 刺跤
+            pengim: ci3 ka1
+            en: to prick one's foot
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -649,6 +721,10 @@ entries:
       - pos: verb
         gloss_en: [to scratch]
         gloss_zh: [抓]
+        examples:
+          - hanzi: 抓頭
+            pengim: zua1 tao5
+            en: to scratch one's head
     frequency: 3
     sources: [wiktionary]
 
@@ -660,6 +736,10 @@ entries:
       - pos: verb
         gloss_en: [to dig]
         gloss_zh: [挖, 掘]
+        examples:
+          - hanzi: 掘塗
+            pengim: gug8 tou5
+            en: to dig soil
     frequency: 3
     sources: [wiktionary]
 
@@ -672,6 +752,10 @@ entries:
         gloss_en: [to swim]
         gloss_zh: [游泳]
         note: Compound guess; may not be the idiomatic colloquial term.
+        examples:
+          - hanzi: 伊泅水
+            pengim: i1 siu5 zui2
+            en: He/she is swimming.
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -686,6 +770,10 @@ entries:
         gloss_en: [to fly]
         gloss_zh: [飛]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 鳥飛
+            pengim: ziao2 buê1
+            en: The bird flies.
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -704,10 +792,18 @@ entries:
           3 candidate readings from Wiktionary — genuine Chaozhou colloquial
           form not yet confirmed by a speaker. Distinct from existing 睏
           "sleep".
+        examples:
+          - hanzi: 我倒
+            pengim: ua2 do2
+            en: I lie down.
       - pos: noun
         gloss_en: [left (side)]
         gloss_zh: [左, 左邊]
         note: Same character, genuine homograph with the "lie down" sense above, not a mistake — pairs with 正 "right (side)".
+        examples:
+          - hanzi: 倒手
+            pengim: do2 ciu2
+            en: left hand
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -720,6 +816,10 @@ entries:
       - pos: verb
         gloss_en: [to stand]
         gloss_zh: [站, 徛]
+        examples:
+          - hanzi: 囝徛
+            pengim: gian2 kia6
+            en: The child is standing.
     frequency: 4
     sources: [wiktionary]
 
@@ -736,6 +836,10 @@ entries:
         gloss_en: [to turn]
         gloss_zh: [轉, 轉彎]
         note: 5 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 路轉
+            pengim: lou7 deng2
+            en: The road turns/bends.
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -754,6 +858,10 @@ entries:
           Ambiguous between "fall/descend" and other extended senses (e.g.
           rain falling) — confirm the fetched reading covers the right sense.
           3 candidate readings from Wiktionary also need confirming.
+        examples:
+          - hanzi: 雨落
+            pengim: hou6 loh8
+            en: It's raining. (lit. rain falls)
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -771,6 +879,10 @@ entries:
         note: >-
           Colloquial Southern Min "give" (cf. Hokkien 分 pun), not Mandarin
           給. 3 candidate readings from Wiktionary also need confirming.
+        examples:
+          - hanzi: 我分你
+            pengim: ua2 bung1 le2
+            en: I give you (something).
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -784,6 +896,10 @@ entries:
         gloss_en: [to hold]
         gloss_zh: [舉, 拿]
         note: Uncommon character (more precisely "to lift/raise") — 提 is a plausible alternative.
+        examples:
+          - hanzi: 攑手
+            pengim: ghia5 ciu2
+            en: to raise one's hand
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -798,6 +914,10 @@ entries:
         gloss_en: [to rub]
         gloss_zh: [搓, 揉]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 挲目珠
+            pengim: so1 mag8 zu1
+            en: to rub one's eyes
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -810,6 +930,10 @@ entries:
       - pos: verb
         gloss_en: [to wash]
         gloss_zh: [洗]
+        examples:
+          - hanzi: 洗手
+            pengim: soi2 ciu2
+            en: to wash one's hands
     frequency: 4
     sources: [wiktionary]
 
@@ -824,6 +948,10 @@ entries:
         gloss_en: [to wipe]
         gloss_zh: [擦, 拭]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 拭喙
+            pengim: sêg4 cui3
+            en: to wipe one's mouth
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -837,6 +965,10 @@ entries:
         gloss_en: [to pull]
         gloss_zh: [拉, 拖]
         note: More precisely "drag" — may not isolate a generic "pull" sense.
+        examples:
+          - hanzi: 拖索
+            pengim: tua1 soh4
+            en: to pull/drag a rope
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -851,6 +983,10 @@ entries:
         gloss_en: [to push]
         gloss_zh: [推]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 伊推我
+            pengim: i1 tui1 ua2
+            en: He/she pushes me.
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -863,6 +999,10 @@ entries:
       - pos: verb
         gloss_en: [to tie]
         gloss_zh: [綁, 縛]
+        examples:
+          - hanzi: 縛豬
+            pengim: bag8 de1
+            en: to tie up a pig
     frequency: 3
     sources: [wiktionary]
 
@@ -879,6 +1019,10 @@ entries:
         note: >-
           Uncommon character — 補 ("mend") is a plausible alternative. 3
           candidate readings from Wiktionary also need confirming.
+        examples:
+          - hanzi: 伊紩
+            pengim: i1 diêg4
+            en: He/she sews.
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -893,6 +1037,10 @@ entries:
         gloss_en: [to count]
         gloss_zh: [算, 數]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 我算
+            pengim: ua2 seng3
+            en: I count. / I'm calculating.
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -908,6 +1056,10 @@ entries:
         gloss_en: [to sing]
         gloss_zh: [唱]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 咱唱
+            pengim: nang2 cio3
+            en: Let's sing.
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -926,6 +1078,10 @@ entries:
           highest confidence-risk item on the Swadesh checklist. If a
           speaker rejects this, fall back to a plainer word for "play". 2
           candidate readings from Wiktionary also need confirming.
+        examples:
+          - hanzi: 阮𨑨迌
+            pengim: uang2 tig4 to5
+            en: We hang out/play.
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -938,6 +1094,10 @@ entries:
       - pos: verb
         gloss_en: [to float]
         gloss_zh: [浮]
+        examples:
+          - hanzi: 柴浮
+            pengim: ca5 pu5
+            en: The wood floats.
     frequency: 2
     sources: [wiktionary]
 
@@ -951,6 +1111,10 @@ entries:
         gloss_en: [to flow]
         gloss_zh: [流]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 水流
+            pengim: zui2 lao5
+            en: Water flows.
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -964,6 +1128,10 @@ entries:
         gloss_en: [to freeze]
         gloss_zh: [結冰]
         note: Compound guess; a subtropical-climate concept likely rare in the everyday lexicon.
+        examples:
+          - hanzi: 水結冰
+            pengim: zui2 gag4 bian1
+            en: The water freezes.
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -976,6 +1144,10 @@ entries:
       - pos: verb
         gloss_en: [to swell]
         gloss_zh: [腫]
+        examples:
+          - hanzi: 跤腫
+            pengim: ka1 zêng2
+            en: The leg is swollen.
     frequency: 2
     sources: [wiktionary]
 
@@ -989,6 +1161,10 @@ entries:
         gloss_en: [to burn]
         gloss_zh: [燒]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        examples:
+          - hanzi: 火燒厝
+            pengim: huê2 siê1 cu3
+            en: The house is on fire. (lit. fire burns house)
     frequency: 3
     needs_review: true
     sources: [wiktionary]
