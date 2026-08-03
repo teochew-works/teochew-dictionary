@@ -88,6 +88,19 @@ describe('toIpa — variety differences', () => {
     // Shantou lists no initials at all; they come from Chaozhou.
     expect(toIpa('nang5', 'shantou').ipa).toBe('naŋ⁵⁵')
   })
+
+  it('merges /ɯ/ into /u/ in Chaoyang — the Southern Teochew isogloss (REVIEW.md §9, issue #10)', () => {
+    expect(toIpa('le2', 'chaozhou').ipa).toBe('lɯ⁵³')
+    expect(toIpa('le2', 'shantou').ipa).toBe('lɯ⁵²')
+    // Chaoyang doesn't override `tones`, so it keeps Chaozhou's tone-2
+    // contour (53) — only the vowel changes.
+    expect(toIpa('le2', 'chaoyang').ipa).toBe('lu⁵³')
+  })
+
+  it('keeps Chaoyang unfronted on io, like Shantou, unlike Chaozhou', () => {
+    expect(toIpa('dio5', 'chaozhou').ipa).toBe('tie⁵⁵')
+    expect(toIpa('dio5', 'chaoyang').ipa).toBe('tio⁵⁵')
+  })
 })
 
 describe('toPoj', () => {

@@ -27,7 +27,7 @@ for (let i = 0; i < args.length; i += 1) {
 const query = terms.join(' ')
 
 if (!query) {
-  console.error('usage: npm run lookup -- <query> [--variety chaozhou|shantou]')
+  console.error('usage: npm run lookup -- <query> [--variety chaozhou|shantou|chaoyang]')
   process.exit(2)
 }
 

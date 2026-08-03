@@ -12,6 +12,13 @@ entries:
           Same spelling, different realisation: [tie⁵⁵ tsiu³³] in Chaozhou city
           against [tio⁵⁵ tsiu³³] in Shantou. The derived IPA differs by variety
           while the Peng'im does not.
+      - pengim: dio5 ziu1
+        variety: chaoyang
+        note: >-
+          [tio⁵⁵ tsiu³³] — unfronted on `io` like Shantou. This word has no
+          bare `e` syllable, so it doesn't show Chaoyang's other defining
+          feature, the Southern /ɯ/→/u/ merger; see tests/derive.test.ts for a
+          word that does.
     senses:
       - pos: proper-noun
         gloss_en: [Chaozhou, Teochew]
