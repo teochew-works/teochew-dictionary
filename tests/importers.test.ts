@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { parseCedict } from '../src/importers/cedict.js'
+import { parsePronunciationHtml } from '../src/importers/learnteochew.js'
 import { extractTeochewReadings, importWiktionary } from '../src/importers/wiktionary.js'
 
 describe('parseCedict', () => {
@@ -90,5 +91,68 @@ describe('importWiktionary', () => {
   it('stamps provenance on every proposal', async () => {
     const r = await importWiktionary(['潮州'], '2026-07-25', opts)
     expect(r.proposals[0]).toMatchObject({ source: 'wiktionary', retrieved: '2026-07-25' })
+  })
+})
+
+describe('parsePronunciationHtml', () => {
+  // A trimmed-down mirror of learnteochew.com/pages/pronunciation.html's real
+  // markup (<thead>/<tbody>, curly-quote "Peng’im" header, comma-separated
+  // alternate spellings, a non-Peng'im table that must be ignored).
+  const html = `
+    <table> <thead> <tr> <th>IPA</th> <th>Peng’im</th> <th>Duffus</th> <th>Fielde</th> </tr> </thead>
+      <tbody>
+        <tr> <td>p</td> <td>b</td> <td>p</td> <td>p</td> </tr>
+        <tr> <td>pʰ</td> <td>p</td> <td>ph</td> <td>ph</td> </tr>
+      </tbody>
+    </table>
+    <table> <thead> <tr> <th>IPA</th> <th>Peng’im</th> <th>Duffus</th> <th>Fielde</th> </tr> </thead>
+      <tbody>
+        <tr> <td>a</td> <td>a</td> <td>a</td> <td>a</td> </tr>
+      </tbody>
+    </table>
+    <table> <thead> <tr> <th>IPA</th> <th>Peng’im</th> <th>Duffus</th> <th>Fielde</th> </tr> </thead>
+      <tbody>
+        <tr> <td>a</td> <td>a</td> <td>a</td> <td>a</td> </tr>
+        <tr> <td>aʔ</td> <td>ah</td> <td>ah</td> <td>ah</td> </tr>
+        <tr> <td>ie/io</td> <td>iê, io</td> <td>ie</td> <td>ie</td> </tr>
+      </tbody>
+    </table>
+    <table> <thead> <tr> <th>Name</th> <th>IPA</th> <th>Peng’im</th> <th>Duffus</th> <th>Fielde</th> </tr> </thead>
+      <tbody>
+        <tr> <td>陰平</td> <td>33</td> <td>1</td> <td>a</td> <td>a</td> </tr>
+        <tr> <td>陰上</td> <td>53</td> <td>2</td> <td>á</td> <td>á</td> </tr>
+      </tbody>
+    </table>
+    <table> <thead> <tr> <th>Original tone</th> <th>After tone sandhi</th> </tr> </thead>
+      <tbody>
+        <tr> <td>1</td> <td>1</td> </tr>
+      </tbody>
+    </table>
+  `
+
+  it('extracts the Peng\'im column of the Consonants, Finals and Tones tables', () => {
+    const chart = parsePronunciationHtml(html)
+    expect(chart.initials).toEqual(['b', 'p'])
+    expect(chart.tones).toEqual(['1', '2'])
+  })
+
+  it('picks the largest Peng\'im-bearing table as Finals, ignoring the smaller Vowels table', () => {
+    const chart = parsePronunciationHtml(html)
+    expect(chart.finals).toContain('ah')
+  })
+
+  it('splits comma-separated alternate spellings into individual finals', () => {
+    const chart = parsePronunciationHtml(html)
+    expect(chart.finals).toContain('iê')
+    expect(chart.finals).toContain('io')
+  })
+
+  it('ignores the Tone Sandhi table, which has no Peng\'im column', () => {
+    const chart = parsePronunciationHtml(html)
+    expect(chart.tones).not.toContain('After tone sandhi')
+  })
+
+  it('throws when the expected tables cannot be found', () => {
+    expect(() => parsePronunciationHtml('<p>no tables here</p>')).toThrow()
   })
 })
