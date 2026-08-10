@@ -1,8 +1,10 @@
 import { entryFileSchema } from '../schema/entry.js'
-import { readEntryFiles, loadSources } from '../data/load.js'
+import { readEntryFiles, loadSources, loadSyllableInventory } from '../data/load.js'
 import {
+  listExternalCharts,
   listSandhiTables,
   listVarieties,
+  loadExternalChart,
   loadPengimScheme,
   loadPojScheme,
   loadRawVariety,
@@ -15,6 +17,7 @@ import { toPoj } from '../phonology/poj.js'
 import { resolveLicence } from '../data/licence.js'
 import type { Entry, Source } from '../schema/entry.js'
 import type { Variety } from '../schema/phonology.js'
+import type { ExternalChart, SyllableInventory } from '../schema/inventory.js'
 
 /**
  * Whole-dataset validation.
@@ -181,6 +184,38 @@ export function validate(): ValidationReport {
     }
   }
 
+  // ── syllable inventory (issue #30) — cheap structural/referential checks ────
+  // Whether the committed file is actually *up to date* with pengim.yaml and
+  // data/entries/ is a stronger claim than validate() makes here — that's the
+  // vitest drift-check test's job (tests/inventory.test.ts), so the same
+  // invariant isn't asserted by two different mechanisms.
+  if (sourceIds.size > 0) {
+    for (const id of listExternalCharts()) {
+      try {
+        issues.push(
+          ...checkExternalChart(`data/phonology/external/${id}.yaml`, loadExternalChart(id), sourceIds),
+        )
+      } catch (e) {
+        issues.push(err(`data/phonology/external/${id}.yaml`, (e as Error).message))
+      }
+    }
+
+    try {
+      const entryIds = new Set(seenIds.keys())
+      issues.push(
+        ...checkSyllableInventory(
+          'data/wordlists/syllable-inventory.yaml',
+          loadSyllableInventory(),
+          varieties,
+          sourceIds,
+          entryIds,
+        ),
+      )
+    } catch (e) {
+      issues.push(err('data/wordlists/syllable-inventory.yaml', (e as Error).message))
+    }
+  }
+
   // A tone nobody uses is almost never a real gap in the language — it means a
   // tone category was written as its neighbour throughout. Warning rather than
   // error so a lexicon in progress stays buildable.
@@ -276,6 +311,63 @@ export function checkMappingSources(
       }
     }
   }
+
+  return issues
+}
+
+/** A cached external reference chart's `source` must resolve, same as any other citation. */
+export function checkExternalChart(file: string, chart: ExternalChart, sourceIds: Set<string>): Issue[] {
+  if (sourceIds.has(chart.source)) return []
+  return [err(file, `unknown source '${chart.source}' — add it to data/sources.yaml`)]
+}
+
+/**
+ * Cheap structural/referential checks on the generated syllable inventory
+ * (issue #30): every `varieties` key is a known variety, every `external` key
+ * is a declared external source, every `attested_entries` id resolves against
+ * the entries just loaded. Whether the file's *content* is still fresh is the
+ * drift-check test's job, not this one's — see the comment at the call site.
+ */
+export function checkSyllableInventory(
+  file: string,
+  inventory: SyllableInventory,
+  varietyIds: Set<string>,
+  sourceIds: Set<string>,
+  entryIds: Set<string>,
+): Issue[] {
+  const issues: Issue[] = []
+
+  for (const source of inventory.external_sources) {
+    if (!sourceIds.has(source)) {
+      issues.push(err(file, `unknown external source '${source}' — add it to data/sources.yaml`))
+    }
+  }
+
+  inventory.items.forEach(({ syllable, external, varieties }) => {
+    const path = `items[${syllable}]`
+
+    for (const key of Object.keys(external)) {
+      if (!inventory.external_sources.includes(key)) {
+        issues.push(err(file, `external source '${key}' not declared in \`external_sources\``, undefined, path))
+      }
+    }
+
+    for (const [variety, status] of Object.entries(varieties)) {
+      if (!varietyIds.has(variety)) {
+        issues.push(
+          err(file, `unknown variety '${variety}' (have: ${[...varietyIds].join(', ')})`, undefined, path),
+        )
+        continue
+      }
+      for (const id of status.attested_entries ?? []) {
+        if (!entryIds.has(id)) {
+          issues.push(
+            err(file, `attested_entries references unknown entry '${id}'`, undefined, `${path}.${variety}`),
+          )
+        }
+      }
+    }
+  })
 
   return issues
 }
