@@ -1,8 +1,11 @@
 import { loadEntries, type LoadedEntry } from '../data/load.js'
 import type { PengimScheme } from '../schema/phonology.js'
 import type { SyllableInventory, SyllableStatus } from '../schema/inventory.js'
-import { loadExternalChart, listVarieties, loadPengimScheme } from './load.js'
-import { formatSyllable, tryParsePengim, type Syllable } from './syllable.js'
+import { loadExternalChart, listExternalCharts, listVarieties, loadPengimScheme } from './load.js'
+import { rimeOf } from './ipa.js'
+import { tryParsePengim, type Syllable } from './syllable.js'
+
+export { rimeOf }
 
 /**
  * The full legal Peng'im syllable inventory (issue #30).
@@ -23,8 +26,6 @@ import { formatSyllable, tryParsePengim, type Syllable } from './syllable.js'
  * expected, and exactly the "systematic gaps" over-generation the issue
  * itself asks to flag via attestation status rather than hand-filter away.
  */
-
-const EXTERNAL_SOURCES = ['learnteochew'] as const
 
 /** Every syllable shape the orthography allows, sorted by canonical form. */
 export function generateSyllables(scheme?: PengimScheme): Syllable[] {
@@ -74,27 +75,16 @@ export function generateSyllables(scheme?: PengimScheme): Syllable[] {
   return [...kept.values()].sort((a, b) => a.raw.localeCompare(b.raw))
 }
 
-/**
- * The final/rime portion of a syllable — everything after the initial, before
- * the tone digit. Matches the granularity of a published "Finals" chart, the
- * only granularity at which an external reference chart is cross-checkable
- * (no published chart enumerates full initial+final+tone syllables).
- */
-export function rimeOf(syllable: Syllable): string {
-  const rendered = formatSyllable(syllable)
-  const withoutTone = rendered.slice(0, -1)
-  return withoutTone.slice(syllable.initial?.length ?? 0)
-}
-
 /** syllable.raw → variety id → attesting entry ids. */
 export function buildAttestationIndex(
   entries: LoadedEntry[] = loadEntries(),
+  scheme?: PengimScheme,
 ): Map<string, Map<string, Set<string>>> {
   const index = new Map<string, Map<string, Set<string>>>()
 
   for (const { entry } of entries) {
     for (const reading of entry.readings) {
-      const parsed = tryParsePengim(reading.pengim)
+      const parsed = tryParsePengim(reading.pengim, scheme)
       if (!parsed.ok) continue // validate() reports malformed readings precisely; not this function's job
 
       for (const syllable of parsed.syllables) {
@@ -118,10 +108,20 @@ export function buildAttestationIndex(
 
 /** Assembles the full `syllable-inventory.yaml` content. */
 export function buildSyllableInventory(): SyllableInventory {
-  const syllables = generateSyllables()
+  // Loaded once and threaded through both calls below (rather than letting
+  // each rely on its own default), so the ~52k-candidate generator and the
+  // attestation pass share one parsed scheme and one built Tables instead of
+  // each paying to build their own.
+  const scheme = loadPengimScheme()
+  const syllables = generateSyllables(scheme)
   const varieties = listVarieties()
-  const attestation = buildAttestationIndex()
-  const externalFinals = new Set(loadExternalChart('learnteochew').finals)
+  const attestation = buildAttestationIndex(loadEntries(), scheme)
+
+  // Driven by whatever charts are actually present, not a hardcoded list —
+  // adding data/phonology/external/<id>.yaml is enough to fold `id` into
+  // both external_sources and every item's `external` map.
+  const externalSources = listExternalCharts()
+  const externalFinals = new Map(externalSources.map((id) => [id, new Set(loadExternalChart(id).finals)]))
 
   const items = syllables.map((syllable) => {
     const byVariety = attestation.get(syllable.raw)
@@ -134,9 +134,16 @@ export function buildSyllableInventory(): SyllableInventory {
           : { status: 'unattested' }
     }
 
+    // `rimeOf` (medial+nucleus+nasal+coda) is the granularity a published
+    // Finals chart is comparable at — no external chart enumerates full
+    // initial+final+tone syllables.
+    const rime = rimeOf(syllable)
+    const external: Record<string, boolean> = {}
+    for (const id of externalSources) external[id] = externalFinals.get(id)!.has(rime)
+
     return {
       syllable: syllable.raw,
-      external: { learnteochew: externalFinals.has(rimeOf(syllable)) },
+      external,
       varieties: varietyStatus,
     }
   })
@@ -144,7 +151,7 @@ export function buildSyllableInventory(): SyllableInventory {
   return {
     list: 'syllable-inventory' as const,
     varieties,
-    external_sources: [...EXTERNAL_SOURCES],
+    external_sources: externalSources,
     items,
   }
 }
