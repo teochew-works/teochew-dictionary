@@ -55,7 +55,15 @@ export function loadSources(): Source[] {
   return sourcesFileSchema.parse(raw).sources
 }
 
+/** Parse with a Zod schema, reporting the offending file when it fails. */
+function parseFile<T>(path: string, schema: { parse: (v: unknown) => T }): T {
+  try {
+    return schema.parse(parseYaml(readFileSync(path, 'utf8')))
+  } catch (err) {
+    throw new Error(`invalid data file ${path}\n${(err as Error).message}`)
+  }
+}
+
 export function loadSyllableInventory(): SyllableInventory {
-  const raw = parseYaml(readFileSync(SYLLABLE_INVENTORY_FILE, 'utf8'))
-  return syllableInventorySchema.parse(raw)
+  return parseFile(SYLLABLE_INVENTORY_FILE, syllableInventorySchema)
 }
