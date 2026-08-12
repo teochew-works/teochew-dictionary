@@ -1,3 +1,6 @@
+/** Shared across every importer that fetches from a live site. */
+export const IMPORTER_USER_AGENT = 'teochew-dictionary importer (github; contact via repo)'
+
 /**
  * Importers never write to `data/entries/`.
  *

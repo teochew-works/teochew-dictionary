@@ -99,11 +99,13 @@ sources:
     name: Learn Teochew (learnteochew.com)
     kind: reference
     url: https://learnteochew.com/pages/pronunciation.html
-    retrieved: '2026-07-27'
+    retrieved: '2026-08-10'
     note: >-
       A pedagogical Peng'im reference with an explicit vowel table. Valued here
       as corroboration independent of the Wikipedia family of texts. Cited, never
-      reproduced.
+      reproduced. Also backs the syllable-inventory external cross-check (issue
+      #30, see data/phonology/REVIEW.md § 10) — its Finals table is fetched and
+      cached at data/phonology/external/learnteochew.yaml via `npm run xref`.
 
   - id: zhang-2021-tonotypes
     name: 'Zhang, Jingfen. Tono-types and Tone Evolution: The Case of Chaoshan (2021)'

@@ -2,7 +2,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { basename, join } from 'node:path'
 import { parse as parseYaml } from 'yaml'
 
-import { PHONOLOGY_DIR, SANDHI_DIR, VARIETIES_DIR } from '../paths.js'
+import { EXTERNAL_DIR, PHONOLOGY_DIR, SANDHI_DIR, VARIETIES_DIR } from '../paths.js'
 import {
   pengimSchemeSchema,
   pojSchema,
@@ -13,6 +13,7 @@ import {
   type SandhiTable,
   type Variety,
 } from '../schema/phonology.js'
+import { externalChartSchema, type ExternalChart } from '../schema/inventory.js'
 
 function readYaml(path: string): unknown {
   return parseYaml(readFileSync(path, 'utf8'))
@@ -41,11 +42,17 @@ export function loadRawVariety(id: string): Variety {
   return parseFile(path, varietySchema)
 }
 
-export function listVarieties(): string[] {
-  return readdirSync(VARIETIES_DIR)
+/** The ids of every `.yaml` file directly in `dir`, or `[]` if `dir` doesn't exist. */
+function listYamlIds(dir: string): string[] {
+  if (!existsSync(dir)) return []
+  return readdirSync(dir)
     .filter((f) => f.endsWith('.yaml'))
     .map((f) => basename(f, '.yaml'))
     .sort()
+}
+
+export function listVarieties(): string[] {
+  return listYamlIds(VARIETIES_DIR)
 }
 
 /**
@@ -84,8 +91,15 @@ export function loadSandhi(id: string): SandhiTable {
 }
 
 export function listSandhiTables(): string[] {
-  return readdirSync(SANDHI_DIR)
-    .filter((f) => f.endsWith('.yaml'))
-    .map((f) => basename(f, '.yaml'))
-    .sort()
+  return listYamlIds(SANDHI_DIR)
+}
+
+export function loadExternalChart(id: string): ExternalChart {
+  const path = join(EXTERNAL_DIR, `${id}.yaml`)
+  if (!existsSync(path)) throw new Error(`no external chart for '${id}' (no ${path})`)
+  return parseFile(path, externalChartSchema)
+}
+
+export function listExternalCharts(): string[] {
+  return listYamlIds(EXTERNAL_DIR)
 }

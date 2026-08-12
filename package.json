@@ -17,6 +17,8 @@
     "validate": "tsx src/cli/validate.ts",
     "build": "tsx src/cli/build.ts",
     "import": "tsx src/cli/import.ts",
+    "inventory": "tsx src/cli/inventory.ts",
+    "xref": "tsx src/cli/xref.ts",
     "lookup": "tsx src/cli/lookup.ts",
     "schema": "tsx src/cli/emit-schema.ts",
     "test": "vitest run",

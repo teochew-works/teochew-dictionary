@@ -1,0 +1,117 @@
+# Cached snapshot of the Peng'im columns of https://learnteochew.com/pages/pronunciation.html's
+# Consonants, Finals and Tones tables. Backs the syllable-inventory
+# cross-check (src/phonology/inventory.ts). Read by `npm run check`, but
+# never fetched live during it — network access stays confined to `xref`.
+#
+# Regenerate with `npm run xref -- learnteochew`, then bump this source's
+# `retrieved:` date in data/sources.yaml by hand.
+source: learnteochew
+retrieved: 2026-08-10
+initials:
+  - b
+  - p
+  - bh
+  - d
+  - t
+  - z
+  - c
+  - g
+  - k
+  - gh
+  - -h
+  - m
+  - n
+  - ng
+  - s
+  - h
+  - r
+  - l
+finals:
+  - a
+  - ah
+  - am
+  - ab
+  - ang
+  - ag
+  - an
+  - ai
+  - ain
+  - ao
+  - aoh
+  - aon
+  - ê
+  - êh
+  - êng
+  - êg
+  - ên
+  - i
+  - ih
+  - im
+  - ib
+  - ing
+  - ig
+  - in
+  - ia
+  - iah
+  - iam
+  - iab
+  - iang
+  - iag
+  - ian
+  - iê
+  - io
+  - iêh
+  - ioh
+  - iêng
+  - iong
+  - iêg
+  - iog
+  - iên
+  - ion
+  - iou
+  - iu
+  - iun
+  - o
+  - oh
+  - ong
+  - og
+  - on
+  - oi
+  - oih
+  - oin
+  - ou
+  - oun
+  - u
+  - uh
+  - ung
+  - ug
+  - ua
+  - uah
+  - uam
+  - uab
+  - uang
+  - uag
+  - uan
+  - uai
+  - uê
+  - uêh
+  - uên
+  - ui
+  - uin
+  - uain
+  - e
+  - eh
+  - eng
+  - eg
+  - en
+  - m
+  - ng
+tones:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+  - "5"
+  - "6"
+  - "7"
+  - "8"

@@ -2,13 +2,14 @@ import { readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { parse as parseYaml } from 'yaml'
 
-import { ENTRIES_DIR, SOURCES_FILE } from '../paths.js'
+import { ENTRIES_DIR, SOURCES_FILE, SYLLABLE_INVENTORY_FILE } from '../paths.js'
 import {
   entryFileSchema,
   sourcesFileSchema,
   type Entry,
   type Source,
 } from '../schema/entry.js'
+import { syllableInventorySchema, type SyllableInventory } from '../schema/inventory.js'
 
 export interface LoadedEntry {
   entry: Entry
@@ -52,4 +53,17 @@ export function loadEntries(): LoadedEntry[] {
 export function loadSources(): Source[] {
   const raw = parseYaml(readFileSync(SOURCES_FILE, 'utf8'))
   return sourcesFileSchema.parse(raw).sources
+}
+
+/** Parse with a Zod schema, reporting the offending file when it fails. */
+function parseFile<T>(path: string, schema: { parse: (v: unknown) => T }): T {
+  try {
+    return schema.parse(parseYaml(readFileSync(path, 'utf8')))
+  } catch (err) {
+    throw new Error(`invalid data file ${path}\n${(err as Error).message}`)
+  }
+}
+
+export function loadSyllableInventory(): SyllableInventory {
+  return parseFile(SYLLABLE_INVENTORY_FILE, syllableInventorySchema)
 }
