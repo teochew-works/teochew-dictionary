@@ -190,7 +190,8 @@ export function validate(): ValidationReport {
   // vitest drift-check test's job (tests/inventory.test.ts), so the same
   // invariant isn't asserted by two different mechanisms.
   if (sourceIds.size > 0) {
-    for (const id of listExternalCharts()) {
+    const externalChartIds = new Set(listExternalCharts())
+    for (const id of externalChartIds) {
       try {
         issues.push(
           ...checkExternalChart(`data/phonology/external/${id}.yaml`, loadExternalChart(id), sourceIds),
@@ -209,6 +210,7 @@ export function validate(): ValidationReport {
           varieties,
           sourceIds,
           entryIds,
+          externalChartIds,
         ),
       )
     } catch (e) {
@@ -323,10 +325,13 @@ export function checkExternalChart(file: string, chart: ExternalChart, sourceIds
 
 /**
  * Cheap structural/referential checks on the generated syllable inventory
- * (issue #30): every `varieties` key is a known variety, every `external` key
- * is a declared external source, every `attested_entries` id resolves against
- * the entries just loaded. Whether the file's *content* is still fresh is the
- * drift-check test's job, not this one's — see the comment at the call site.
+ * (issue #30): every top-level `varieties` id is a known variety, every
+ * `external_sources` id both resolves against `data/sources.yaml` and has a
+ * cached chart file, every item's `external`/`external_sources` keys agree in
+ * both directions, every `varieties` key is a known variety, every
+ * `attested_entries` id resolves against the entries just loaded. Whether the
+ * file's *content* is still fresh is the drift-check test's job, not this
+ * one's — see the comment at the call site.
  */
 export function checkSyllableInventory(
   file: string,
@@ -334,12 +339,26 @@ export function checkSyllableInventory(
   varietyIds: Set<string>,
   sourceIds: Set<string>,
   entryIds: Set<string>,
+  externalChartIds: Set<string>,
 ): Issue[] {
   const issues: Issue[] = []
+
+  for (const v of inventory.varieties) {
+    if (!varietyIds.has(v)) {
+      issues.push(
+        err(file, `unknown variety '${v}' in top-level \`varieties\` (have: ${[...varietyIds].join(', ')})`),
+      )
+    }
+  }
 
   for (const source of inventory.external_sources) {
     if (!sourceIds.has(source)) {
       issues.push(err(file, `unknown external source '${source}' — add it to data/sources.yaml`))
+    }
+    if (!externalChartIds.has(source)) {
+      issues.push(
+        err(file, `external source '${source}' has no cached chart at data/phonology/external/${source}.yaml`),
+      )
     }
   }
 
@@ -349,6 +368,13 @@ export function checkSyllableInventory(
     for (const key of Object.keys(external)) {
       if (!inventory.external_sources.includes(key)) {
         issues.push(err(file, `external source '${key}' not declared in \`external_sources\``, undefined, path))
+      }
+    }
+    for (const source of inventory.external_sources) {
+      if (!(source in external)) {
+        issues.push(
+          err(file, `declared external source '${source}' missing from this item's \`external\``, undefined, path),
+        )
       }
     }
 

@@ -94,6 +94,7 @@ describe('syllable inventory provenance (issue #30)', () => {
   const KNOWN_SOURCES = new Set(['learnteochew'])
   const KNOWN_VARIETIES = new Set(['chaozhou', 'shantou'])
   const KNOWN_ENTRIES = new Set(['dio5-ziu1-潮州'])
+  const KNOWN_EXTERNAL_CHARTS = new Set(['learnteochew'])
 
   const chart: ExternalChart = { source: 'learnteochew', retrieved: '2026-08-01', initials: ['b'], finals: ['a'], tones: ['1'] }
 
@@ -108,13 +109,25 @@ describe('syllable inventory provenance (issue #30)', () => {
   })
 
   /** A single-item inventory, valid unless overridden by the caller. */
-  function inventoryWith(item: SyllableInventory['items'][number]): SyllableInventory {
+  function inventoryWith(item: SyllableInventory['items'][number], overrides: Partial<SyllableInventory> = {}): SyllableInventory {
     return {
       list: 'syllable-inventory',
       varieties: ['chaozhou', 'shantou'],
       external_sources: ['learnteochew'],
       items: [item],
+      ...overrides,
     }
+  }
+
+  function check(inventory: SyllableInventory): ReturnType<typeof checkSyllableInventory> {
+    return checkSyllableInventory(
+      'wordlists/x.yaml',
+      inventory,
+      KNOWN_VARIETIES,
+      KNOWN_SOURCES,
+      KNOWN_ENTRIES,
+      KNOWN_EXTERNAL_CHARTS,
+    )
   }
 
   it('rejects an item referencing an unknown variety', () => {
@@ -123,8 +136,7 @@ describe('syllable inventory provenance (issue #30)', () => {
       external: { learnteochew: true },
       varieties: { bogus: { status: 'unattested' } },
     })
-    const issues = checkSyllableInventory('wordlists/x.yaml', bad, KNOWN_VARIETIES, KNOWN_SOURCES, KNOWN_ENTRIES)
-    expect(issues.some((i) => i.message.includes('bogus'))).toBe(true)
+    expect(check(bad).some((i) => i.message.includes('bogus'))).toBe(true)
   })
 
   it('rejects an item whose attested_entries cites an unknown entry', () => {
@@ -133,8 +145,7 @@ describe('syllable inventory provenance (issue #30)', () => {
       external: { learnteochew: true },
       varieties: { chaozhou: { status: 'attested', attested_entries: ['no-such-entry'] } },
     })
-    const issues = checkSyllableInventory('wordlists/x.yaml', bad, KNOWN_VARIETIES, KNOWN_SOURCES, KNOWN_ENTRIES)
-    expect(issues.some((i) => i.message.includes('no-such-entry'))).toBe(true)
+    expect(check(bad).some((i) => i.message.includes('no-such-entry'))).toBe(true)
   })
 
   it('rejects an item citing an undeclared external source', () => {
@@ -143,8 +154,41 @@ describe('syllable inventory provenance (issue #30)', () => {
       external: { pujdict: true },
       varieties: { chaozhou: { status: 'unattested' } },
     })
-    const issues = checkSyllableInventory('wordlists/x.yaml', bad, KNOWN_VARIETIES, KNOWN_SOURCES, KNOWN_ENTRIES)
-    expect(issues.some((i) => i.message.includes('pujdict'))).toBe(true)
+    expect(check(bad).some((i) => i.message.includes('pujdict'))).toBe(true)
+  })
+
+  it("rejects an item missing a declared external source's key", () => {
+    const bad = inventoryWith({
+      syllable: 'dio5',
+      external: {},
+      varieties: { chaozhou: { status: 'unattested' } },
+    })
+    const issues = check(bad)
+    expect(issues.some((i) => i.message.includes('learnteochew') && i.message.includes('missing'))).toBe(true)
+  })
+
+  it('rejects an unknown variety in the top-level `varieties` list', () => {
+    const bad = inventoryWith(
+      {
+        syllable: 'dio5',
+        external: { learnteochew: true },
+        varieties: { chaozhou: { status: 'unattested' } },
+      },
+      { varieties: ['chaozhou', 'bogus'] },
+    )
+    expect(check(bad).some((i) => i.message.includes('bogus'))).toBe(true)
+  })
+
+  it('rejects a declared external source with no cached chart file', () => {
+    const bad = inventoryWith(
+      {
+        syllable: 'dio5',
+        external: { learnteochew: true, pujdict: true },
+        varieties: { chaozhou: { status: 'unattested' } },
+      },
+      { external_sources: ['learnteochew', 'pujdict'] },
+    )
+    expect(check(bad).some((i) => i.message.includes('pujdict') && i.message.includes('no cached chart'))).toBe(true)
   })
 
   it('accepts a well-formed inventory', () => {
@@ -153,9 +197,7 @@ describe('syllable inventory provenance (issue #30)', () => {
       external: { learnteochew: true },
       varieties: { chaozhou: { status: 'attested', attested_entries: ['dio5-ziu1-潮州'] } },
     })
-    expect(checkSyllableInventory('wordlists/x.yaml', good, KNOWN_VARIETIES, KNOWN_SOURCES, KNOWN_ENTRIES)).toEqual(
-      [],
-    )
+    expect(check(good)).toEqual([])
   })
 })
 
