@@ -2,6 +2,7 @@ import { mkdirSync, writeFileSync } from 'node:fs'
 import { stringify } from 'yaml'
 
 import { EXTERNAL_DIR, LEARNTEOCHEW_CHART_FILE } from '../paths.js'
+import { IMPORTER_USER_AGENT } from './types.js'
 
 /**
  * Learn Teochew (learnteochew.com) pronunciation-page importer — the source
@@ -107,7 +108,7 @@ export interface LearnteochewChart extends ParsedChart {
 
 async function fetchHtmlDefault(): Promise<string> {
   const res = await fetch(URL, {
-    headers: { 'user-agent': 'teochew-dictionary importer (github; contact via repo)' },
+    headers: { 'user-agent': IMPORTER_USER_AGENT },
   })
   if (!res.ok) throw new Error(`learnteochew: HTTP ${res.status} fetching ${URL}`)
   return res.text()
