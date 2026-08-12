@@ -42,11 +42,17 @@ export function loadRawVariety(id: string): Variety {
   return parseFile(path, varietySchema)
 }
 
-export function listVarieties(): string[] {
-  return readdirSync(VARIETIES_DIR)
+/** The ids of every `.yaml` file directly in `dir`, or `[]` if `dir` doesn't exist. */
+function listYamlIds(dir: string): string[] {
+  if (!existsSync(dir)) return []
+  return readdirSync(dir)
     .filter((f) => f.endsWith('.yaml'))
     .map((f) => basename(f, '.yaml'))
     .sort()
+}
+
+export function listVarieties(): string[] {
+  return listYamlIds(VARIETIES_DIR)
 }
 
 /**
@@ -85,10 +91,7 @@ export function loadSandhi(id: string): SandhiTable {
 }
 
 export function listSandhiTables(): string[] {
-  return readdirSync(SANDHI_DIR)
-    .filter((f) => f.endsWith('.yaml'))
-    .map((f) => basename(f, '.yaml'))
-    .sort()
+  return listYamlIds(SANDHI_DIR)
 }
 
 export function loadExternalChart(id: string): ExternalChart {
@@ -98,9 +101,5 @@ export function loadExternalChart(id: string): ExternalChart {
 }
 
 export function listExternalCharts(): string[] {
-  if (!existsSync(EXTERNAL_DIR)) return []
-  return readdirSync(EXTERNAL_DIR)
-    .filter((f) => f.endsWith('.yaml'))
-    .map((f) => basename(f, '.yaml'))
-    .sort()
+  return listYamlIds(EXTERNAL_DIR)
 }
