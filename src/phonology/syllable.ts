@@ -72,8 +72,23 @@ function buildTables(scheme: PengimScheme): Tables {
 }
 
 let cached: Tables | null = null
+/**
+ * Keyed by scheme object identity, so a caller that threads the same explicit
+ * scheme through many parse calls (buildSyllableInventory's ~52k candidates,
+ * enrich.ts's per-reading build) doesn't rebuild Tables — four sorts — from
+ * scratch every time.
+ */
+const explicitCache = new WeakMap<PengimScheme, Tables>()
+
 function tables(scheme?: PengimScheme): Tables {
-  if (scheme) return buildTables(scheme)
+  if (scheme) {
+    let built = explicitCache.get(scheme)
+    if (!built) {
+      built = buildTables(scheme)
+      explicitCache.set(scheme, built)
+    }
+    return built
+  }
   cached ??= buildTables(loadPengimScheme())
   return cached
 }
