@@ -11,11 +11,15 @@ import { z } from 'zod'
 
 export const SYLLABLE_STATUS = ['attested', 'unattested'] as const
 
-const varietyStatusSchema = z.object({
-  status: z.enum(SYLLABLE_STATUS),
-  /** Entry ids attesting this syllable for this variety. Omitted when unattested. */
-  attested_entries: z.array(z.string().min(1)).min(1).optional(),
-})
+const varietyStatusSchema = z
+  .object({
+    status: z.enum(SYLLABLE_STATUS),
+    /** Entry ids attesting this syllable for this variety. Omitted when unattested. */
+    attested_entries: z.array(z.string().min(1)).min(1).optional(),
+  })
+  .refine((v) => (v.status === 'attested') === (v.attested_entries !== undefined), {
+    message: "`attested_entries` must be present iff `status` is 'attested'",
+  })
 
 export const syllableInventoryItemSchema = z.object({
   /** Canonical Peng'im form, e.g. "dio5". Everything else is derived from this. */
