@@ -2,12 +2,14 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { basename, join } from 'node:path'
 import { parse as parseYaml } from 'yaml'
 
-import { EXTERNAL_DIR, PHONOLOGY_DIR, SANDHI_DIR, VARIETIES_DIR } from '../paths.js'
+import { AUDIO_FILES_DIR, AUDIO_METADATA_DIR, EXTERNAL_DIR, PHONOLOGY_DIR, SANDHI_DIR, VARIETIES_DIR } from '../paths.js'
 import {
+  audioSchema,
   pengimSchemeSchema,
   pojSchema,
   sandhiSchema,
   varietySchema,
+  type Audio,
   type PengimScheme,
   type PojScheme,
   type SandhiTable,
@@ -102,4 +104,27 @@ export function loadExternalChart(id: string): ExternalChart {
 
 export function listExternalCharts(): string[] {
   return listYamlIds(EXTERNAL_DIR)
+}
+
+/**
+ * Load one variety's audio clip metadata. Deliberately NOT resolved through
+ * `loadVariety`'s inheritance chain (unlike IPA/POJ mappings) — a recording
+ * cannot be borrowed from a parent variety without misrepresenting the accent
+ * it claims to be. See REVIEW.md § 11.
+ */
+export function loadAudio(id: string): Audio {
+  const path = join(AUDIO_METADATA_DIR, `${id}.yaml`)
+  if (!existsSync(path)) throw new Error(`no audio metadata for '${id}' (no ${path})`)
+  return parseFile(path, audioSchema)
+}
+
+export function listAudioVarieties(): string[] {
+  return listYamlIds(AUDIO_METADATA_DIR)
+}
+
+/** Filenames actually present under `data/audio/<variety>/`, for checking clip references resolve. */
+export function listAudioFiles(varietyId: string): Set<string> {
+  const dir = join(AUDIO_FILES_DIR, varietyId)
+  if (!existsSync(dir)) return new Set()
+  return new Set(readdirSync(dir).filter((f) => !f.startsWith('.')))
 }
