@@ -208,7 +208,6 @@ describe('entry provenance', () => {
   const IMPORT_SOURCE: Source = { id: 'test-import', name: 'Test Import', kind: 'import', licence: 'CC-BY-4.0' }
   const REFERENCE_SOURCE: Source = { id: 'test-reference', name: 'Test Reference', kind: 'reference' }
   const sourceMap = new Map([IMPORT_SOURCE, REFERENCE_SOURCE].map((s) => [s.id, s]))
-  const sourceIds = new Set(sourceMap.keys())
 
   /** One entry citing the given source ids, otherwise minimal but valid. */
   function entryCiting(...sources: string[]): Entry {
@@ -222,7 +221,7 @@ describe('entry provenance', () => {
   }
 
   it('rejects an entry citing a reference-kind source', () => {
-    const issues = checkEntrySources('data/entries/test.yaml', entryCiting('test-reference'), sourceIds, sourceMap)
+    const issues = checkEntrySources('data/entries/test.yaml', entryCiting('test-reference'), sourceMap)
     expect(issues).toHaveLength(1)
     expect(issues[0]).toMatchObject({ level: 'error', path: 'sources' })
     expect(issues[0]?.message).toContain('test-reference')
@@ -230,7 +229,7 @@ describe('entry provenance', () => {
   })
 
   it('accepts an entry citing only import-kind sources', () => {
-    expect(checkEntrySources('data/entries/test.yaml', entryCiting('test-import'), sourceIds, sourceMap))
+    expect(checkEntrySources('data/entries/test.yaml', entryCiting('test-import'), sourceMap))
       .toEqual([])
   })
 })

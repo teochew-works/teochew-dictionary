@@ -116,8 +116,9 @@ data/                      ← the product
     sandhi/chaozhou.yaml     tone sandhi rules
     external/learnteochew.yaml  cached external reference chart (see below)
     audio/chaozhou.yaml      whole-syllable audio clip metadata, per variety
+                               (clip bytes hosted on GitHub Releases, not in
+                               this repo — see REVIEW.md §§ 11–12)
     REVIEW.md                open linguistic questions
-  audio/chaozhou/*           the recorded clips themselves (see REVIEW.md § 11)
   sources.yaml               provenance and licence registry
   staging/                   importer output, awaiting human review
   wordlists/                 checklists tracking growth (see below)

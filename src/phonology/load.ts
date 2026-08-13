@@ -2,7 +2,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { basename, join } from 'node:path'
 import { parse as parseYaml } from 'yaml'
 
-import { AUDIO_FILES_DIR, AUDIO_METADATA_DIR, EXTERNAL_DIR, PHONOLOGY_DIR, SANDHI_DIR, VARIETIES_DIR } from '../paths.js'
+import { AUDIO_METADATA_DIR, EXTERNAL_DIR, PHONOLOGY_DIR, SANDHI_DIR, VARIETIES_DIR } from '../paths.js'
 import {
   audioSchema,
   pengimSchemeSchema,
@@ -30,6 +30,22 @@ function parseFile<T>(path: string, schema: { parse: (v: unknown) => T }): T {
   }
 }
 
+/** Parse `path` with `schema`, or throw `notFoundMessage` if it doesn't exist. */
+function loadRequiredFile<T>(path: string, schema: { parse: (v: unknown) => T }, notFoundMessage: string): T {
+  if (!existsSync(path)) throw new Error(notFoundMessage)
+  return parseFile(path, schema)
+}
+
+/**
+ * Parse `path` with `schema`, or `null` if it doesn't exist. Unlike
+ * `loadRequiredFile`, a missing file is expected steady state here, not an
+ * error — but a file that exists and fails to parse/validate still throws,
+ * so a malformed file is never mistaken for a merely-absent one.
+ */
+function loadOptionalFile<T>(path: string, schema: { parse: (v: unknown) => T }): T | null {
+  return existsSync(path) ? parseFile(path, schema) : null
+}
+
 export function loadPengimScheme(): PengimScheme {
   return parseFile(join(PHONOLOGY_DIR, 'pengim.yaml'), pengimSchemeSchema)
 }
@@ -40,8 +56,7 @@ export function loadPojScheme(): PojScheme {
 
 export function loadRawVariety(id: string): Variety {
   const path = join(VARIETIES_DIR, `${id}.yaml`)
-  if (!existsSync(path)) throw new Error(`unknown variety '${id}' (no ${path})`)
-  return parseFile(path, varietySchema)
+  return loadRequiredFile(path, varietySchema, `unknown variety '${id}' (no ${path})`)
 }
 
 /** The ids of every `.yaml` file directly in `dir`, or `[]` if `dir` doesn't exist. */
@@ -88,8 +103,7 @@ export function loadVariety(id: string, seen: string[] = []): Variety {
 
 export function loadSandhi(id: string): SandhiTable {
   const path = join(SANDHI_DIR, `${id}.yaml`)
-  if (!existsSync(path)) throw new Error(`no sandhi table for '${id}' (no ${path})`)
-  return parseFile(path, sandhiSchema)
+  return loadRequiredFile(path, sandhiSchema, `no sandhi table for '${id}' (no ${path})`)
 }
 
 export function listSandhiTables(): string[] {
@@ -98,8 +112,7 @@ export function listSandhiTables(): string[] {
 
 export function loadExternalChart(id: string): ExternalChart {
   const path = join(EXTERNAL_DIR, `${id}.yaml`)
-  if (!existsSync(path)) throw new Error(`no external chart for '${id}' (no ${path})`)
-  return parseFile(path, externalChartSchema)
+  return loadRequiredFile(path, externalChartSchema, `no external chart for '${id}' (no ${path})`)
 }
 
 export function listExternalCharts(): string[] {
@@ -114,17 +127,19 @@ export function listExternalCharts(): string[] {
  */
 export function loadAudio(id: string): Audio {
   const path = join(AUDIO_METADATA_DIR, `${id}.yaml`)
-  if (!existsSync(path)) throw new Error(`no audio metadata for '${id}' (no ${path})`)
-  return parseFile(path, audioSchema)
+  return loadRequiredFile(path, audioSchema, `no audio metadata for '${id}' (no ${path})`)
+}
+
+/**
+ * Same as `loadAudio`, but `null` rather than throwing when the variety has
+ * no audio metadata at all — the expected steady state pre-#36, not an error
+ * (see `createEnricher`'s `audioFor` in `src/build/enrich.ts`). A file that
+ * exists and fails to parse/validate still throws.
+ */
+export function loadAudioIfExists(id: string): Audio | null {
+  return loadOptionalFile(join(AUDIO_METADATA_DIR, `${id}.yaml`), audioSchema)
 }
 
 export function listAudioVarieties(): string[] {
   return listYamlIds(AUDIO_METADATA_DIR)
-}
-
-/** Filenames actually present under `data/audio/<variety>/`, for checking clip references resolve. */
-export function listAudioFiles(varietyId: string): Set<string> {
-  const dir = join(AUDIO_FILES_DIR, varietyId)
-  if (!existsSync(dir)) return new Set()
-  return new Set(readdirSync(dir).filter((f) => !f.startsWith('.')))
 }

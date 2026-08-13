@@ -1,10 +1,13 @@
 import { describe, expect, it } from 'vitest'
 
-import { audioSchema, type Audio } from '../src/schema/phonology.js'
+import { GITHUB_REPO, audioSchema, type Audio } from '../src/schema/phonology.js'
 import { checkAudio } from '../src/validate/index.js'
 import { deriveReadingAudio } from '../src/build/enrich.js'
 import { parsePengim } from '../src/phonology/syllable.js'
 import type { Source, SourceKind } from '../src/schema/entry.js'
+
+const VALID_URL = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/dio5.opus`
+const VALID_CHECKSUM = `sha256:${'a'.repeat(64)}`
 
 function source(id: string, kind: SourceKind = 'import', licence?: string): Source {
   return { id, name: id, kind, ...(licence !== undefined && { licence }) }
@@ -12,9 +15,10 @@ function source(id: string, kind: SourceKind = 'import', licence?: string): Sour
 
 function clip(overrides: Partial<Audio['clips'][string]> = {}): Audio['clips'][string] {
   return {
-    file: 'dio5.opus',
+    url: VALID_URL,
     confidence: 'high',
     sources: ['fixture'],
+    checksum: VALID_CHECKSUM,
     ...overrides,
   }
 }
@@ -41,18 +45,22 @@ describe('audioSchema', () => {
       note: 'citation-form recording',
       speaker: 'speaker-1',
       recorded: '2026-08-01',
-      checksum: `sha256:${'a'.repeat(64)}`,
     })
     expect(() => audioSchema.parse(audio({ dio5: full }))).not.toThrow()
   })
 
   it('rejects a clip with no sources — unlike a phonology mapping, this is required', () => {
-    const bad = { file: 'dio5.opus', confidence: 'high', sources: [] }
+    const bad = { url: VALID_URL, confidence: 'high', sources: [], checksum: VALID_CHECKSUM }
     expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
   })
 
   it('rejects a clip missing confidence', () => {
-    const bad = { file: 'dio5.opus', sources: ['fixture'] }
+    const bad = { url: VALID_URL, sources: ['fixture'], checksum: VALID_CHECKSUM }
+    expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
+  })
+
+  it('rejects a clip missing checksum — the only integrity check for an externally-hosted clip', () => {
+    const bad = { url: VALID_URL, confidence: 'high', sources: ['fixture'] }
     expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
   })
 
@@ -61,8 +69,62 @@ describe('audioSchema', () => {
     expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
   })
 
+  it('accepts an uppercase-hex checksum, normalising it to lowercase', () => {
+    const upper = clip({ checksum: `sha256:${'A'.repeat(64)}` })
+    const parsed = audioSchema.parse(rawAudio({ dio5: upper }))
+    expect(parsed.clips.dio5?.checksum).toBe(VALID_CHECKSUM)
+  })
+
   it('rejects a malformed recorded date', () => {
     const bad = clip({ recorded: '1 Aug 2026' })
+    expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
+  })
+
+  it('rejects a calendar-invalid recorded date — well-formed but not a real day', () => {
+    const bad = clip({ recorded: '2026-02-30' })
+    expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
+  })
+
+  it('rejects a bare filename as url — the old issue #31 placeholder shape', () => {
+    const bad = clip({ url: 'dio5.opus' })
+    expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
+  })
+
+  it('rejects an arbitrary non-GitHub-Releases https URL', () => {
+    const bad = clip({ url: 'https://example.com/audio/dio5.opus' })
+    expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
+  })
+
+  it('rejects a GitHub blob view URL — not a release asset download URL', () => {
+    const bad = clip({ url: `https://github.com/${GITHUB_REPO}/blob/main/dio5.opus` })
+    expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
+  })
+
+  it('rejects the floating releases/latest/download alias — a stored reference must be pinned to a tag', () => {
+    const bad = clip({
+      url: `https://github.com/${GITHUB_REPO}/releases/latest/download/dio5.opus`,
+    })
+    expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
+  })
+
+  it('accepts a release pinned to a tag literally named "latest" — not the floating alias', () => {
+    const ok = clip({
+      url: `https://github.com/${GITHUB_REPO}/releases/download/latest/dio5.opus`,
+    })
+    expect(() => audioSchema.parse(rawAudio({ dio5: ok }))).not.toThrow()
+  })
+
+  it('accepts a differently-cased owner/repo — GitHub URL routing is case-insensitive there', () => {
+    const ok = clip({
+      url: 'https://GitHub.com/Teochew-Works/Teochew-Dictionary/releases/download/audio-chaozhou/dio5.opus',
+    })
+    expect(() => audioSchema.parse(rawAudio({ dio5: ok }))).not.toThrow()
+  })
+
+  it('rejects a GitHub Release asset URL from a different repo', () => {
+    const bad = clip({
+      url: 'https://github.com/some-other-org/some-other-repo/releases/download/audio-chaozhou/dio5.opus',
+    })
     expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
   })
 })
@@ -76,63 +138,59 @@ describe('checkAudio', () => {
       source('unclassified', 'import', 'CC0'),
     ].map((s) => [s.id, s]),
   )
-  const legalSyllables = new Set(['dio5', 'ziu1'])
-  const audioFiles = new Set(['dio5.opus'])
+  const legalSyllables = new Set(['dio5', 'ziu1', 'xyz1'])
 
   it('passes a clean file', () => {
     const issues = checkAudio(
       'data/phonology/audio/chaozhou.yaml',
       audio({ dio5: clip() }),
+      'chaozhou',
       varietyIds,
       sourceMap,
       legalSyllables,
-      audioFiles,
     )
     expect(issues).toEqual([])
+  })
+
+  it("flags an audio.id that doesn't match the file it was loaded from", () => {
+    const bad = audio({ dio5: clip() })
+    bad.audio.id = 'shantou'
+    const issues = checkAudio('data/phonology/audio/chaozhou.yaml', bad, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain("audio.id 'shantou' does not match this file's name (chaozhou.yaml)")
   })
 
   it('flags an unknown variety', () => {
     const bad = audio({ dio5: clip() })
     bad.audio.variety = 'hokkien'
-    const issues = checkAudio('f.yaml', bad, varietyIds, sourceMap, legalSyllables, audioFiles)
+    const issues = checkAudio('f.yaml', bad, 'chaozhou', varietyIds, sourceMap, legalSyllables)
     expect(issues).toHaveLength(1)
     expect(issues[0]?.message).toContain("unknown variety 'hokkien'")
   })
 
   it('flags a clip key that is not a legal Peng\'im syllable', () => {
-    const issues = checkAudio(
-      'f.yaml',
-      audio({ xyz1: clip({ file: 'dio5.opus' }) }),
-      varietyIds,
-      sourceMap,
-      legalSyllables,
-      audioFiles,
-    )
+    const bad = audio({ abc9: clip({ url: `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/abc9.opus` }) })
+    const issues = checkAudio('f.yaml', bad, 'chaozhou', varietyIds, sourceMap, legalSyllables)
     expect(issues).toHaveLength(1)
-    expect(issues[0]?.message).toContain("'xyz1' is not a legal Peng'im syllable")
+    expect(issues[0]?.message).toContain("'abc9' is not a legal Peng'im syllable")
   })
 
-  it('flags a missing audio file', () => {
-    const issues = checkAudio(
-      'f.yaml',
-      audio({ ziu1: clip({ file: 'ziu1.opus' }) }),
-      varietyIds,
-      sourceMap,
-      legalSyllables,
-      audioFiles,
-    )
+  it("warns when a clip's url doesn't reference its own syllable — a likely copy-paste from another clip", () => {
+    // legal syllable, but VALID_URL (via clip()'s default) points at .../dio5.opus.
+    const issues = checkAudio('f.yaml', audio({ ziu1: clip() }), 'chaozhou', varietyIds, sourceMap, legalSyllables)
     expect(issues).toHaveLength(1)
-    expect(issues[0]?.message).toContain("audio file 'ziu1.opus' not found")
+    expect(issues[0]).toMatchObject({ level: 'warning', path: 'clips.ziu1.url' })
+    expect(issues[0]?.message).toContain("does not reference its own syllable 'ziu1'")
   })
 
   it('flags an unresolved source', () => {
     const issues = checkAudio(
       'f.yaml',
       audio({ dio5: clip({ sources: ['nope'] }) }),
+      'chaozhou',
       varietyIds,
       sourceMap,
       legalSyllables,
-      audioFiles,
     )
     expect(issues).toHaveLength(1)
     expect(issues[0]?.message).toContain("unknown source 'nope'")
@@ -144,10 +202,10 @@ describe('checkAudio', () => {
     const issues = checkAudio(
       'f.yaml',
       audio({ dio5: clip({ sources: ['pengim-1960'] }) }),
+      'chaozhou',
       varietyIds,
       sourceMap,
       legalSyllables,
-      audioFiles,
     )
     expect(issues).toHaveLength(1)
     expect(issues[0]?.message).toContain("source 'pengim-1960' is kind: reference")
@@ -157,26 +215,20 @@ describe('checkAudio', () => {
     const issues = checkAudio(
       'f.yaml',
       audio({ dio5: clip({ sources: ['unclassified'] }) }),
+      'chaozhou',
       varietyIds,
       sourceMap,
       legalSyllables,
-      audioFiles,
     )
     expect(issues).toHaveLength(1)
     expect(issues[0]?.message).toContain('unresolvable licence')
   })
 
   it('does not require attestation — a legal but unattested syllable is fine', () => {
-    // 'ziu1' is legal but has no attested_entries in this fixture's world;
+    // 'xyz1' is legal but has no attested_entries in this fixture's world;
     // recording ahead of dictionary coverage must not be blocked.
-    const issues = checkAudio(
-      'f.yaml',
-      audio({ ziu1: clip({ file: 'dio5.opus' }) }),
-      varietyIds,
-      sourceMap,
-      legalSyllables,
-      audioFiles,
-    )
+    const bad = audio({ xyz1: clip({ url: `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/xyz1.opus` }) })
+    const issues = checkAudio('f.yaml', bad, 'chaozhou', varietyIds, sourceMap, legalSyllables)
     expect(issues).toEqual([])
   })
 })
@@ -189,9 +241,9 @@ describe('deriveReadingAudio', () => {
 
   it('resolves a clip per syllable, preserving order, null where absent', () => {
     const syllables = parsePengim('dio5 ziu1')
-    const table = audio({ dio5: clip({ file: 'dio5.opus', confidence: 'medium' }) })
+    const table = audio({ dio5: clip({ confidence: 'medium' }) })
     expect(deriveReadingAudio(syllables, table)).toEqual([
-      { syllable: 'dio5', file: 'dio5.opus', confidence: 'medium' },
+      { syllable: 'dio5', url: VALID_URL, confidence: 'medium' },
       null,
     ])
   })
@@ -199,8 +251,6 @@ describe('deriveReadingAudio', () => {
   it('is variety-scoped by construction — callers pass the already-resolved table, no fallback here', () => {
     const syllables = parsePengim('dio5')
     const table = audio({ dio5: clip() })
-    expect(deriveReadingAudio(syllables, table)).toEqual([
-      { syllable: 'dio5', file: 'dio5.opus', confidence: 'high' },
-    ])
+    expect(deriveReadingAudio(syllables, table)).toEqual([{ syllable: 'dio5', url: VALID_URL, confidence: 'high' }])
   })
 })

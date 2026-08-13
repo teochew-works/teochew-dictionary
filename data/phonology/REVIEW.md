@@ -462,6 +462,78 @@ silently as a side effect of adding one more phonology schema didn't seem
 right. Left as-is here, following the existing precedent, with this noted so
 it isn't mistaken for an oversight.
 
+## 12. Audio asset hosting: GitHub Releases + manifest  ·  `phonology/audio/*.yaml`  ·  issue #32
+
+**Decision: external object storage, not git.** Clip bytes are hosted as **GitHub Release
+assets**; only a YAML manifest (URL + checksum + licence) is committed to `data/`. A clip's
+bytes never enter this repo's git history, and no Git LFS store is used either.
+
+**Why not plain git.** Every clone would grow forever as clips are added or re-recorded, and
+binary diffs are opaque. This is genuinely the repo's first binary-asset decision — zero binary
+assets exist anywhere in `data/` today, and `dist/` is gitignored build output, not a committed
+precedent to extend.
+
+**Why not Git LFS.** LFS keeps a clone shallow, but it adds a real dependency — LFS
+quota/bandwidth, and every contributor needs the `git-lfs` binary installed — that nothing else
+in this project currently requires. Rejected in favour of a zero-new-dependency option.
+
+**Why external storage + manifest, generally.** Ties directly to this README's "data-first,
+hand-editable YAML" principle: every git-tracked file in `data/` stays plain text and diffable,
+audio included. The explicit trade-off accepted: the dataset is no longer fully self-contained (a
+consumer needs network access to actually fetch a clip), and someone has to own hosting
+long-term.
+
+**Why GitHub Releases specifically.** Zero new infrastructure or accounts — it reuses this
+repo's existing GitHub hosting. Assets are versioned by release tag, free at this scale, and
+human-browsable for anyone spot-checking an upload by hand. Contrast with a cloud bucket
+(S3/R2/GCS): those would need a new account, credentials, and a billing relationship this project
+doesn't otherwise have.
+
+**How the schema embodies it.** `audioClip.url` (`src/schema/phonology.ts`) is a full GitHub
+Release asset download URL (`.../releases/download/<tag>/<asset>`, regex-constrained, and
+deliberately not the floating `/releases/latest/download/...` alias — a stored reference must be
+pinned to a tag so it can't silently start pointing at different bytes later). It replaces §11's
+provisional `file` field (a bare filename with an implicit local-directory convention), which
+`audioClip`'s own issue #31 design left for this issue to settle. `checksum` is promoted from
+optional to required: with the clip hosted externally there is no git-tracked local copy to
+compare against, so it becomes the only integrity check available. `sources` (already required)
+is unchanged and continues to derive `licence` the same way it always has. Together, `url` +
+`checksum` + `sources` are exactly the "URL + checksum + licence" manifest the issue asked for.
+
+A full URL is stored per clip rather than a bare filename plus a reconstructed base-URL
+convention. At this project's scale (see below) the repetition cost is a few hundred KB of plain,
+diffable text — nowhere near the binary-bloat problem this issue exists to prevent — while a full
+URL is self-describing without also reading `src/paths.ts` or this file, and lets each clip's
+hosting move independently (e.g. one variety re-recorded under a new release tag while others
+stay put). No separate bare-filename field is kept alongside `url` either: a decoupled cache key
+isn't useful until something wants one, which is issue #35's territory, not this one's — and this
+schema already avoids storing derivable/duplicated data (see §11: no separate `licence:` field on
+`audioClip`, for the same reason).
+
+**Scale validation.** §10/§11 established 340 (syllable, variety) pairs attested today (336
+Chaozhou, 2 each Shantou/Chaoyang), with a low-thousands ceiling if #34 later adds tone-sandhi
+forms. Each clip is a short single-syllable recording — plausibly tens of KB as opus — trivially
+within GitHub's per-asset size limit by orders of magnitude. Caveat, stated as a caveat rather
+than a claim: no documented cap on assets-per-release or total per-repo Releases storage was
+confirmed while writing this. Given the file sizes involved this is assessed as low risk, and
+splitting across multiple releases (already the plan — see below) is a trivial mitigation if it
+ever becomes one. Worth confirming empirically once #36 starts uploading, not worth blocking on
+now.
+
+**Naming convention (non-binding — refined as needed by #35/#36).** One release per variety
+(e.g. tag `audio-chaozhou`). GitHub allows uploading additional assets to an already-published
+release, so no new tag is needed per recording batch. Asset filenames should stay plain
+ASCII/hyphenated, no spaces, to avoid percent-encoding noise in stored URLs.
+
+**Out of scope, explicitly.** Full validator/build remote-resolution wiring — actually fetching a
+clip, caching it, verifying a downloaded file's bytes against `checksum`, and surfacing a
+playable reference through `lookup` — is issue #35's job; `checkAudio`
+(`src/validate/index.ts`) no longer performs any existence check on `clip.url` (it dropped the
+local-directory check §11 shipped, since that directory no longer exists), and deliberately
+gains no replacement here. Audio-specific licensing (`LICENSE-DATA-AUDIO-*`, speaker consent) is
+issue #33's job. Actual recording and upload is issue #36's job. `dist/schema.json` emission
+remains out of scope per §11's own note — unchanged by this decision.
+
 ## Individual entries flagged `needs_review`
 
 Run `npm run validate` for the current count. As of writing:
