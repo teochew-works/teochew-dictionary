@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { audioSchema, type Audio } from '../src/schema/phonology.js'
+import { checkAudio } from '../src/validate/index.js'
 
 function clip(overrides: Partial<Audio['clips'][string]> = {}): Audio['clips'][string] {
   return {
@@ -56,5 +57,85 @@ describe('audioSchema', () => {
   it('rejects a malformed recorded date', () => {
     const bad = clip({ recorded: '1 Aug 2026' })
     expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
+  })
+})
+
+describe('checkAudio', () => {
+  const varietyIds = new Set(['chaozhou', 'shantou'])
+  const sourceIds = new Set(['fixture'])
+  const legalSyllables = new Set(['dio5', 'ziu1'])
+  const audioFiles = new Set(['dio5.opus'])
+
+  it('passes a clean file', () => {
+    const issues = checkAudio(
+      'data/phonology/audio/chaozhou.yaml',
+      audio({ dio5: clip() }),
+      varietyIds,
+      sourceIds,
+      legalSyllables,
+      audioFiles,
+    )
+    expect(issues).toEqual([])
+  })
+
+  it('flags an unknown variety', () => {
+    const bad = audio({ dio5: clip() })
+    bad.audio.variety = 'hokkien'
+    const issues = checkAudio('f.yaml', bad, varietyIds, sourceIds, legalSyllables, audioFiles)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain("unknown variety 'hokkien'")
+  })
+
+  it('flags a clip key that is not a legal Peng\'im syllable', () => {
+    const issues = checkAudio(
+      'f.yaml',
+      audio({ xyz1: clip({ file: 'dio5.opus' }) }),
+      varietyIds,
+      sourceIds,
+      legalSyllables,
+      audioFiles,
+    )
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain("'xyz1' is not a legal Peng'im syllable")
+  })
+
+  it('flags a missing audio file', () => {
+    const issues = checkAudio(
+      'f.yaml',
+      audio({ ziu1: clip({ file: 'ziu1.opus' }) }),
+      varietyIds,
+      sourceIds,
+      legalSyllables,
+      audioFiles,
+    )
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain("audio file 'ziu1.opus' not found")
+  })
+
+  it('flags an unresolved source', () => {
+    const issues = checkAudio(
+      'f.yaml',
+      audio({ dio5: clip({ sources: ['nope'] }) }),
+      varietyIds,
+      sourceIds,
+      legalSyllables,
+      audioFiles,
+    )
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain("unknown source 'nope'")
+  })
+
+  it('does not require attestation — a legal but unattested syllable is fine', () => {
+    // 'ziu1' is legal but has no attested_entries in this fixture's world;
+    // recording ahead of dictionary coverage must not be blocked.
+    const issues = checkAudio(
+      'f.yaml',
+      audio({ ziu1: clip({ file: 'dio5.opus' }) }),
+      varietyIds,
+      sourceIds,
+      legalSyllables,
+      audioFiles,
+    )
+    expect(issues).toEqual([])
   })
 })
