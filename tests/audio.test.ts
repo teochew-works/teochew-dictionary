@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest'
 
 import { audioSchema, type Audio } from '../src/schema/phonology.js'
 import { checkAudio } from '../src/validate/index.js'
+import { deriveReadingAudio } from '../src/build/enrich.js'
+import { parsePengim } from '../src/phonology/syllable.js'
 
 function clip(overrides: Partial<Audio['clips'][string]> = {}): Audio['clips'][string] {
   return {
@@ -137,5 +139,29 @@ describe('checkAudio', () => {
       audioFiles,
     )
     expect(issues).toEqual([])
+  })
+})
+
+describe('deriveReadingAudio', () => {
+  it('returns null for every syllable when the variety has no audio metadata', () => {
+    const syllables = parsePengim('dio5 ziu1')
+    expect(deriveReadingAudio(syllables, null)).toEqual([null, null])
+  })
+
+  it('resolves a clip per syllable, preserving order, null where absent', () => {
+    const syllables = parsePengim('dio5 ziu1')
+    const table = audio({ dio5: clip({ file: 'dio5.opus', confidence: 'medium' }) })
+    expect(deriveReadingAudio(syllables, table)).toEqual([
+      { syllable: 'dio5', file: 'dio5.opus', confidence: 'medium' },
+      null,
+    ])
+  })
+
+  it('is variety-scoped by construction — callers pass the already-resolved table, no fallback here', () => {
+    const syllables = parsePengim('dio5')
+    const table = audio({ dio5: clip() })
+    expect(deriveReadingAudio(syllables, table)).toEqual([
+      { syllable: 'dio5', file: 'dio5.opus', confidence: 'high' },
+    ])
   })
 })
