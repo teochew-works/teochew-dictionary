@@ -236,7 +236,7 @@ export function validate(): ValidationReport {
               `data/phonology/audio/${id}.yaml`,
               loadAudio(id),
               varieties,
-              sourceIds,
+              sourceMap,
               legalSyllables,
               listAudioFiles(id),
             ),
@@ -433,13 +433,19 @@ export function checkSyllableInventory(
  * (issue #31): the variety id is known, every clip key is a legal Peng'im
  * syllable per the generated inventory (not necessarily *attested* — recording
  * ahead of dictionary coverage is legitimate), every clip's `file` exists
- * under `data/audio/<variety>/`, and every clip's `sources` resolve.
+ * under `data/audio/<variety>/`, and every clip's `sources` resolve to a
+ * licence — the same rule `checkEntrySources` applies to entries, since a
+ * clip's `sources` is its actual provenance (see the schema comment on
+ * `audioClip.sources`), not evidentiary citation like a phonology mapping's.
+ * A `kind: reference` source cannot back a clip directly, and licence
+ * resolution is skipped for a clip whose sources didn't even resolve, so one
+ * root cause isn't reported twice.
  */
 export function checkAudio(
   file: string,
   audio: Audio,
   varietyIds: Set<string>,
-  sourceIds: Set<string>,
+  sourceMap: Map<string, Source>,
   legalSyllables: Set<string>,
   audioFiles: Set<string>,
 ): Issue[] {
@@ -462,9 +468,28 @@ export function checkAudio(
       )
     }
 
+    let sourcesResolved = true
     for (const s of clip.sources) {
-      if (!sourceIds.has(s)) {
+      if (!sourceMap.has(s)) {
         issues.push(err(file, `unknown source '${s}' — add it to data/sources.yaml`, undefined, `${path}.sources`))
+        sourcesResolved = false
+      } else if (sourceMap.get(s)?.kind === 'reference') {
+        issues.push(
+          err(
+            file,
+            `source '${s}' is kind: reference — cannot back a clip directly (evidence about the language, not the clip's origin)`,
+            undefined,
+            `${path}.sources`,
+          ),
+        )
+        sourcesResolved = false
+      }
+    }
+
+    if (sourcesResolved) {
+      const licence = resolveLicence(clip.sources, sourceMap)
+      if (!licence.ok) {
+        issues.push(err(file, `unresolvable licence: ${licence.reason}`, undefined, `${path}.sources`))
       }
     }
   }
