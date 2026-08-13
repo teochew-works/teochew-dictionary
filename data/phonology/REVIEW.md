@@ -534,6 +534,74 @@ gains no replacement here. Audio-specific licensing (`LICENSE-DATA-AUDIO-*`, spe
 issue #33's job. Actual recording and upload is issue #36's job. `dist/schema.json` emission
 remains out of scope per §11's own note — unchanged by this decision.
 
+## 13. Audio licensing and speaker consent · issue #33
+
+**Decision: CC-BY-4.0, via a new `teochew-dictionary-audio` source — no new
+`LICENSE-DATA-AUDIO-*` file.** `data/sources.yaml` gains a `kind: import`
+entry, `teochew-dictionary-audio`, licensed CC-BY-4.0, that every original
+recording's `sources` cites. Because CC-BY-4.0 is already `BASE_LICENCE` in
+`src/data/licence.ts`, this needs no new `LICENCE_CLASS` entry either — the
+licence-resolution machinery §11 already wired into `audioClip.sources`
+handles it unchanged. `LICENSE-DATA-CC-BY-4.0` is extended (a header
+paragraph, not new text) to say it now also covers audio clips, rather than
+adding a parallel file whose legal text would be identical.
+
+**Why not CC0.** CC0 was the other option this issue's proposal raised. It
+was rejected: every other data category in this project requires
+attribution, even permissive ones distinct from the base (`unihan`'s
+Unicode-DFS-2016 still owes a notice) — CC0 would make audio the one
+category with no attribution obligation at all, for no offsetting benefit.
+CC-BY-4.0 also gives a volunteer speaker formal credit, which matters more
+for a recorded voice than for an imported dictionary fact.
+
+**Per-clip attribution is `speaker`, not `attributions`.** `resolveLicence`
+only adds a source to an entry's or clip's `attributions` array when that
+source's licence differs from `BASE_LICENCE` (see `src/data/licence.ts`).
+Every clip cites `teochew-dictionary-audio`, which *is* `BASE_LICENCE`, so
+`attributions` stays empty for audio the way it does for an entry that only
+cites `seed`. That's not a gap: `audioClip.speaker` (§11) already carries
+per-clip attribution, pseudonymous by design, independent of the
+`sources.yaml`-level mechanism that exists to handle *distinct* licences.
+
+**Speaker consent is a separate document, deliberately.** A licence string
+answers what governs *redistributing* a recording once it exists; it says
+nothing about whether the speaker agreed to make and release it in the first
+place. That's a personal-data/consent question this dataset has never had to
+model before — pronunciations and glosses don't have a person's voice
+attached to them. [`AUDIO-CONSENT.md`](../../AUDIO-CONSENT.md) (repo root,
+alongside the `LICENSE*` files) documents that process: what a speaker is
+agreeing to, that they're credited pseudonymously, and that CC-BY-4.0's
+irrevocability means a published clip can't be un-released even if the
+speaker later withdraws from recording further clips.
+
+**Future externally-sourced audio.** If audio is ever imported from an
+existing corpus instead of newly recorded — Wiktionary's audio files are
+licensed separately from its text; Forvo's terms are considerably more
+restrictive — it needs its own `sources.yaml` id with its own `kind`/licence,
+never folded into `teochew-dictionary-audio`, mirroring how `wiktionary` and
+`cedict` stay distinct today despite both being dictionary imports. Forvo
+specifically is flagged as likely incompatible with `kind: import` outright,
+pending an actual read of its terms if this is ever pursued — nothing here
+commits to importing from either.
+
+**Wiring: a clip's licence is no longer discarded.** `checkAudio` (§11) has
+always resolved a clip's `sources` to confirm it *can* back a licence, but
+until now nothing downstream read the result — `AudioReference` in
+`src/build/enrich.ts` exposed only `url`/`confidence`/`syllable`, unlike
+`EnrichedEntry`, which exposes `licence`/`attributions` specifically so a
+consumer can filter to a permissive subset (README § Licensing). Closed the
+same way: `deriveReadingAudio` now takes the loaded `sources` map and calls
+`resolveLicence` per clip, so `AudioReference.licence`/`.attributions` ship
+in `dist/dict.json` alongside every other per-clip field. Trusted to
+resolve, the same way entry licence resolution is: `build()` refuses to run
+while `validate()` reports an unresolvable licence.
+
+**Out of scope, still.** Remote fetch/checksum verification of `clip.url`
+stays issue #35's job (§12). Actual recording and upload — the first real
+`data/phonology/audio/*.yaml` file — stays issue #36's job; this section
+settles what licence and consent process that recording happens under, not
+who performs it.
+
 ## Individual entries flagged `needs_review`
 
 Run `npm run validate` for the current count. As of writing:

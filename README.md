@@ -263,6 +263,7 @@ reusing one licence for everything.**
 | `data/` — default | CC-BY-4.0 | [`LICENSE-DATA-CC-BY-4.0`](LICENSE-DATA-CC-BY-4.0) |
 | `data/` — entries citing a share-alike source | CC-BY-SA-4.0 | [`LICENSE-DATA-CC-BY-SA-4.0`](LICENSE-DATA-CC-BY-SA-4.0) |
 | `data/` — attribution owed to `unihan` | Unicode-DFS-2016 | [`LICENSE-DATA-UNICODE-DFS-2016`](LICENSE-DATA-UNICODE-DFS-2016) |
+| `data/phonology/audio/` — original recordings | CC-BY-4.0 | [`LICENSE-DATA-CC-BY-4.0`](LICENSE-DATA-CC-BY-4.0) |
 
 The data licence is CC-BY-4.0, not BSD-3-Clause, on purpose: a software
 licence's "redistributions of source code / in binary form" language doesn't
@@ -313,6 +314,18 @@ entries cite `wiktionary` and are CC-BY-SA-4.0. This is why importers write to
 `data/staging/` and never to `data/entries/`: merging a CC-BY-SA gloss into an
 entry, and thereby relicensing that entry, stays a deliberate human act rather
 than something a script does by accident.
+
+**Audio clips follow the same rule.** A clip's `licence` (`AudioReference` in
+`dist/dict.json`) derives from its `sources` exactly like an entry's, via the
+`teochew-dictionary-audio` id in `data/sources.yaml` — a recorded performance
+is copyrightable separately from the phonological fact it captures, so it
+needs its own provenance, not a free ride on the entry it's attached to.
+Per-clip speaker credit lives in the clip's own `speaker` field (a
+pseudonymous identifier), not the `attributions` array, since every clip
+cites the one CC-BY-4.0 source. Recording a speaker also requires their
+consent to release the recording — see [`AUDIO-CONSENT.md`](AUDIO-CONSENT.md)
+— which is a separate, genuinely new concern from copyright licensing. See
+`data/phonology/REVIEW.md` § 13 for the full rationale.
 
 ---
 
