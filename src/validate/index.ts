@@ -1,7 +1,6 @@
 import { entryFileSchema } from '../schema/entry.js'
 import { readEntryFiles, loadSources, loadSyllableInventory } from '../data/load.js'
 import {
-  listAudioFiles,
   listAudioVarieties,
   listExternalCharts,
   listSandhiTables,
@@ -232,14 +231,7 @@ export function validate(): ValidationReport {
       for (const id of listAudioVarieties()) {
         try {
           issues.push(
-            ...checkAudio(
-              `data/phonology/audio/${id}.yaml`,
-              loadAudio(id),
-              varieties,
-              sourceMap,
-              legalSyllables,
-              listAudioFiles(id),
-            ),
+            ...checkAudio(`data/phonology/audio/${id}.yaml`, loadAudio(id), varieties, sourceMap, legalSyllables),
           )
         } catch (e) {
           issues.push(err(`data/phonology/audio/${id}.yaml`, (e as Error).message))
@@ -432,14 +424,18 @@ export function checkSyllableInventory(
  * Cheap structural/referential checks on one variety's audio clip metadata
  * (issue #31): the variety id is known, every clip key is a legal Peng'im
  * syllable per the generated inventory (not necessarily *attested* — recording
- * ahead of dictionary coverage is legitimate), every clip's `file` exists
- * under `data/audio/<variety>/`, and every clip's `sources` resolve to a
- * licence — the same rule `checkEntrySources` applies to entries, since a
- * clip's `sources` is its actual provenance (see the schema comment on
- * `audioClip.sources`), not evidentiary citation like a phonology mapping's.
- * A `kind: reference` source cannot back a clip directly, and licence
- * resolution is skipped for a clip whose sources didn't even resolve, so one
- * root cause isn't reported twice.
+ * ahead of dictionary coverage is legitimate), and every clip's `sources`
+ * resolve to a licence — the same rule `checkEntrySources` applies to
+ * entries, since a clip's `sources` is its actual provenance (see the schema
+ * comment on `audioClip.sources`), not evidentiary citation like a phonology
+ * mapping's. A `kind: reference` source cannot back a clip directly, and
+ * licence resolution is skipped for a clip whose sources didn't even
+ * resolve, so one root cause isn't reported twice.
+ *
+ * Does NOT check whether `clip.url` actually resolves (the clip's bytes live
+ * on GitHub Releases, not in this repo — see `data/phonology/REVIEW.md` § 12)
+ * — remote resolution/checksum verification is issue #35's job, not this
+ * function's.
  */
 export function checkAudio(
   file: string,
@@ -447,7 +443,6 @@ export function checkAudio(
   varietyIds: Set<string>,
   sourceMap: Map<string, Source>,
   legalSyllables: Set<string>,
-  audioFiles: Set<string>,
 ): Issue[] {
   const issues: Issue[] = []
 
@@ -460,12 +455,6 @@ export function checkAudio(
 
     if (!legalSyllables.has(syllable)) {
       issues.push(err(file, `'${syllable}' is not a legal Peng'im syllable`, undefined, path))
-    }
-
-    if (!audioFiles.has(clip.file)) {
-      issues.push(
-        err(file, `audio file '${clip.file}' not found in data/audio/${audio.audio.variety}/`, undefined, path),
-      )
     }
 
     let sourcesResolved = true

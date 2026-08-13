@@ -2,7 +2,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { basename, join } from 'node:path'
 import { parse as parseYaml } from 'yaml'
 
-import { AUDIO_FILES_DIR, AUDIO_METADATA_DIR, EXTERNAL_DIR, PHONOLOGY_DIR, SANDHI_DIR, VARIETIES_DIR } from '../paths.js'
+import { AUDIO_METADATA_DIR, EXTERNAL_DIR, PHONOLOGY_DIR, SANDHI_DIR, VARIETIES_DIR } from '../paths.js'
 import {
   audioSchema,
   pengimSchemeSchema,
@@ -120,11 +120,4 @@ export function loadAudio(id: string): Audio {
 
 export function listAudioVarieties(): string[] {
   return listYamlIds(AUDIO_METADATA_DIR)
-}
-
-/** Filenames actually present under `data/audio/<variety>/`, for checking clip references resolve. */
-export function listAudioFiles(varietyId: string): Set<string> {
-  const dir = join(AUDIO_FILES_DIR, varietyId)
-  if (!existsSync(dir)) return new Set()
-  return new Set(readdirSync(dir).filter((f) => !f.startsWith('.')))
 }

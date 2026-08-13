@@ -22,8 +22,8 @@ import type { Syllable } from '../phonology/syllable.js'
 export interface AudioReference {
   /** Canonical Peng'im syllable this clip is for, e.g. `dio5`. */
   syllable: string
-  /** Filename within `data/audio/<variety>/`. */
-  file: string
+  /** GitHub Release asset URL — see `data/phonology/REVIEW.md` § 12. */
+  url: string
   confidence: Confidence
 }
 
@@ -84,7 +84,7 @@ export function stripDiacritics(s: string): string {
 export function deriveReadingAudio(syllables: Syllable[], audio: Audio | null): (AudioReference | null)[] {
   return syllables.map((s) => {
     const clip = audio?.clips[s.raw]
-    return clip ? { syllable: s.raw, file: clip.file, confidence: clip.confidence } : null
+    return clip ? { syllable: s.raw, url: clip.url, confidence: clip.confidence } : null
   })
 }
 

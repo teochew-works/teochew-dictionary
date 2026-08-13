@@ -82,13 +82,27 @@ export const varietySchema = z.object({
 })
 
 /**
+ * A GitHub Release asset download URL: https://github.com/<owner>/<repo>/
+ * releases/download/<tag>/<asset>. The pinned per-tag form, not the floating
+ * `/releases/latest/download/...` alias, so a stored reference can't start
+ * pointing at different bytes later.
+ */
+const GITHUB_RELEASE_ASSET_URL =
+  /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/releases\/download\/(?!latest\/)[\w.-]+\/[\w.-]+$/u
+
+/**
  * A recorded clip for one whole Peng'im syllable (e.g. `dio5`), in one variety.
  * Whole-syllable, not per-component (initial/medial/nucleus/coda/tone) — see
  * `data/phonology/REVIEW.md` § 11 for the rationale.
  */
 const audioClip = z.object({
-  /** Filename within `data/audio/<variety>/` — see `AUDIO_FILES_DIR` in ../paths.js. */
-  file: z.string().min(1),
+  /**
+   * Where the clip's bytes actually live (see `data/phonology/REVIEW.md` § 12):
+   * a GitHub Release asset URL, not a path into this repo. Stored in full, not
+   * a bare filename plus a reconstructed base-URL convention, so the YAML
+   * manifest alone is enough to fetch the clip.
+   */
+  url: z.string().regex(GITHUB_RELEASE_ASSET_URL, "must be a GitHub Release asset download URL"),
   confidence: z.enum(CONFIDENCE),
   note: z.string().optional(),
   /**
@@ -101,8 +115,14 @@ const audioClip = z.object({
   /** Pseudonymous speaker/recordist identifier — not necessarily a real name. */
   speaker: z.string().min(1).optional(),
   recorded: z.string().regex(/^\d{4}-\d{2}-\d{2}$/u).optional(),
-  /** `sha256:<64 hex chars>`, so a swapped or corrupted file is caught without opening it. */
-  checksum: z.string().regex(/^sha256:[0-9a-f]{64}$/u).optional(),
+  /**
+   * `sha256:<64 hex chars>`. Required: with the clip hosted externally there
+   * is no git-tracked local copy to compare against, and a release asset can
+   * be replaced independently of any `data/` commit — this is the only
+   * integrity check left, and one of the manifest's three named components
+   * (URL + checksum + licence, see REVIEW.md § 12).
+   */
+  checksum: z.string().regex(/^sha256:[0-9a-f]{64}$/u),
 })
 
 export const audioSchema = z.object({
