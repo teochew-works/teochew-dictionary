@@ -1,9 +1,12 @@
 import { entryFileSchema } from '../schema/entry.js'
 import { readEntryFiles, loadSources, loadSyllableInventory } from '../data/load.js'
 import {
+  listAudioFiles,
+  listAudioVarieties,
   listExternalCharts,
   listSandhiTables,
   listVarieties,
+  loadAudio,
   loadExternalChart,
   loadPengimScheme,
   loadPojScheme,
@@ -16,7 +19,7 @@ import { toIpa } from '../phonology/ipa.js'
 import { toPoj } from '../phonology/poj.js'
 import { resolveLicence } from '../data/licence.js'
 import type { Entry, Source } from '../schema/entry.js'
-import type { Variety } from '../schema/phonology.js'
+import type { Audio, Variety } from '../schema/phonology.js'
 import type { ExternalChart, SyllableInventory } from '../schema/inventory.js'
 
 /**
@@ -201,12 +204,15 @@ export function validate(): ValidationReport {
       }
     }
 
+    let legalSyllables: Set<string> | null = null
     try {
       const entryIds = new Set(seenIds.keys())
+      const inventory = loadSyllableInventory()
+      legalSyllables = new Set(inventory.items.map((i) => i.syllable))
       issues.push(
         ...checkSyllableInventory(
           'data/wordlists/syllable-inventory.yaml',
-          loadSyllableInventory(),
+          inventory,
           varieties,
           sourceIds,
           entryIds,
@@ -215,6 +221,30 @@ export function validate(): ValidationReport {
       )
     } catch (e) {
       issues.push(err('data/wordlists/syllable-inventory.yaml', (e as Error).message))
+    }
+
+    // ── audio clip metadata (issue #31) — same referential-check shape as ──────
+    // above. No clips have been recorded yet (issue #36), so
+    // listAudioVarieties() returning [] is the expected steady state, not an
+    // error. Skipped (not just empty) when the inventory itself failed to
+    // load, so one root cause isn't reported twice over.
+    if (legalSyllables) {
+      for (const id of listAudioVarieties()) {
+        try {
+          issues.push(
+            ...checkAudio(
+              `data/phonology/audio/${id}.yaml`,
+              loadAudio(id),
+              varieties,
+              sourceIds,
+              legalSyllables,
+              listAudioFiles(id),
+            ),
+          )
+        } catch (e) {
+          issues.push(err(`data/phonology/audio/${id}.yaml`, (e as Error).message))
+        }
+      }
     }
   }
 
@@ -394,6 +424,50 @@ export function checkSyllableInventory(
       }
     }
   })
+
+  return issues
+}
+
+/**
+ * Cheap structural/referential checks on one variety's audio clip metadata
+ * (issue #31): the variety id is known, every clip key is a legal Peng'im
+ * syllable per the generated inventory (not necessarily *attested* — recording
+ * ahead of dictionary coverage is legitimate), every clip's `file` exists
+ * under `data/audio/<variety>/`, and every clip's `sources` resolve.
+ */
+export function checkAudio(
+  file: string,
+  audio: Audio,
+  varietyIds: Set<string>,
+  sourceIds: Set<string>,
+  legalSyllables: Set<string>,
+  audioFiles: Set<string>,
+): Issue[] {
+  const issues: Issue[] = []
+
+  if (!varietyIds.has(audio.audio.variety)) {
+    issues.push(err(file, `unknown variety '${audio.audio.variety}' (have: ${[...varietyIds].join(', ')})`))
+  }
+
+  for (const [syllable, clip] of Object.entries(audio.clips)) {
+    const path = `clips.${syllable}`
+
+    if (!legalSyllables.has(syllable)) {
+      issues.push(err(file, `'${syllable}' is not a legal Peng'im syllable`, undefined, path))
+    }
+
+    if (!audioFiles.has(clip.file)) {
+      issues.push(
+        err(file, `audio file '${clip.file}' not found in data/audio/${audio.audio.variety}/`, undefined, path),
+      )
+    }
+
+    for (const s of clip.sources) {
+      if (!sourceIds.has(s)) {
+        issues.push(err(file, `unknown source '${s}' — add it to data/sources.yaml`, undefined, `${path}.sources`))
+      }
+    }
+  }
 
   return issues
 }

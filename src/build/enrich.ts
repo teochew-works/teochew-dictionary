@@ -1,4 +1,4 @@
-import { loadPengimScheme, loadPojScheme, loadSandhi, loadVariety } from '../phonology/load.js'
+import { loadAudio, loadPengimScheme, loadPojScheme, loadSandhi, loadVariety } from '../phonology/load.js'
 import { syllablesToIpa } from '../phonology/ipa.js'
 import { syllablesToPoj } from '../phonology/poj.js'
 import { applySandhiToSyllables } from '../phonology/sandhi.js'
@@ -6,7 +6,8 @@ import { parsePengim } from '../phonology/syllable.js'
 import { loadSources } from '../data/load.js'
 import { resolveLicence } from '../data/licence.js'
 import type { Entry, Reading, Source } from '../schema/entry.js'
-import type { Confidence } from '../schema/phonology.js'
+import type { Audio, Confidence } from '../schema/phonology.js'
+import type { Syllable } from '../phonology/syllable.js'
 
 /**
  * Build-time enrichment: turn each hand-written Peng'im reading into the full
@@ -16,6 +17,15 @@ import type { Confidence } from '../schema/phonology.js'
  * than re-read per reading — the naive version re-parses every YAML file
  * thousands of times over a full build.
  */
+
+/** A whole-syllable audio clip resolved for one syllable of a reading. */
+export interface AudioReference {
+  /** Canonical Peng'im syllable this clip is for, e.g. `dio5`. */
+  syllable: string
+  /** Filename within `data/audio/<variety>/`. */
+  file: string
+  confidence: Confidence
+}
 
 export interface EnrichedReading extends Reading {
   ipa: string
@@ -28,6 +38,13 @@ export interface EnrichedReading extends Reading {
   /** Peng'im with tone digits stripped — the forgiving search key. */
   pengim_toneless: string
   syllable_count: number
+  /**
+   * One entry per syllable, in order; `null` where no clip has been recorded
+   * yet. Whole-syllable, not stitched from components — see
+   * data/phonology/REVIEW.md § 11. No compositional fallback exists, unlike
+   * `ipa`/`poj`: a syllable either has a recording or it doesn't.
+   */
+  audio: (AudioReference | null)[]
 }
 
 export interface EnrichedEntry extends Omit<Entry, 'readings'> {
@@ -59,17 +76,45 @@ export function stripDiacritics(s: string): string {
   return s.normalize('NFD').replace(/\p{M}/gu, '').normalize('NFC')
 }
 
+/**
+ * Look up each syllable's whole-syllable clip, if any. Pure and independent of
+ * file I/O so it's directly testable — `audio` is `null` when the variety has
+ * no clip metadata at all yet (issue #36 hasn't started for it).
+ */
+export function deriveReadingAudio(syllables: Syllable[], audio: Audio | null): (AudioReference | null)[] {
+  return syllables.map((s) => {
+    const clip = audio?.clips[s.raw]
+    return clip ? { syllable: s.raw, file: clip.file, confidence: clip.confidence } : null
+  })
+}
+
 export function createEnricher() {
   const scheme = loadPengimScheme()
   const poj = loadPojScheme()
   const varieties = new Map<string, ReturnType<typeof loadVariety>>()
   const sandhiTables = new Map<string, ReturnType<typeof loadSandhi>>()
   const sources = new Map<string, Source>(loadSources().map((s) => [s.id, s]))
+  const audioTables = new Map<string, Audio | null>()
 
   const variety = (id: string) => {
     let v = varieties.get(id)
     if (!v) varieties.set(id, (v = loadVariety(id)))
     return v
+  }
+
+  // Deliberately NOT loadVariety's inheritance chain — a recording can't be
+  // borrowed from a parent variety. Missing metadata is expected pre-#36, not
+  // an error: cached as null so a variety with no audio.yaml isn't re-tried
+  // (and re-thrown) on every reading.
+  const audioFor = (varietyId: string): Audio | null => {
+    if (!audioTables.has(varietyId)) {
+      try {
+        audioTables.set(varietyId, loadAudio(varietyId))
+      } catch {
+        audioTables.set(varietyId, null)
+      }
+    }
+    return audioTables.get(varietyId)!
   }
 
   // Sandhi tables are per-variety where one exists, else the reference table.
@@ -100,6 +145,7 @@ export function createEnricher() {
       ipa_caveats: reading.ipa ? [] : derived.caveats,
       pengim_toneless: stripTones(reading.pengim),
       syllable_count: syllables.length,
+      audio: deriveReadingAudio(syllables, audioFor(reading.variety)),
     }
   }
 

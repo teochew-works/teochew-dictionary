@@ -392,6 +392,76 @@ attestation differs. If a future variety turns out to lack some rime entirely
 (not just lack lexicon coverage of it), that would need a new signal this
 inventory doesn't currently carry.
 
+## 11. The audio clip schema — `phonology/audio/*.yaml`  ·  issue #31
+
+**Decision: whole-syllable clips, not per-component.** A clip is recorded for
+one canonical Peng'im syllable (`dio5`, matching a `syllable-inventory.yaml`
+item key exactly), in one variety — never for an isolated initial, medial,
+nucleus, coda, or tone. `audioSchema` in `src/schema/phonology.ts` follows the
+existing `mapping` shape (`confidence`/`note`/`sources`) as the issue asked,
+plus clip-specific fields: `file`, `speaker`, `recorded`, `checksum`.
+
+**Why not component-level.** The issue framed this as a real trade-off:
+stitching ~17 initials + 2 medials + 10 nuclei + 5 codas + 8 tones per variety
+(order of 40 recordings) is a far smaller burden than recording full
+syllables, and would reuse across the whole syllabary. That framing assumed
+the alternative was recording all 25,056 legal syllables — but §10 already
+established that the inventory's job is to enumerate what's *legal*, not what
+needs a recording. Only entries actually in the lexicon do:
+**340 (syllable, variety) pairs are attested right now** (all but 4 of them
+Chaozhou), not 25,056. Whole-syllable recording burden tracks lexicon growth,
+not syllabary size — the premise that made component-level look necessary
+doesn't hold at the scale this project is actually at. Weighed against that,
+connected speech has coarticulation a stitched clip can't reproduce, and a
+syllable — not a bare initial or nucleus — is the smallest unit a speaker
+actually produces in isolation. If the lexicon someday approaches a large
+fraction of the full syllabary, this trade-off is worth revisiting; nothing
+here forecloses adding component-level clips later as an additive, separately
+designed feature.
+
+**Keyed like the inventory, not like a variety file.** `varietySchema`'s
+`initials`/`medials`/`nuclei`/`codas` are keyed by short component strings
+because they compose left-to-right into IPA (`src/phonology/ipa.ts`). Audio
+clips are keyed by the same whole-syllable string `syllable-inventory.yaml`
+already uses (`s.raw` / `formatSyllable(s)` in `src/phonology/syllable.ts`),
+since that's the unit being attached to, not composed. `checkAudio`
+(`src/validate/index.ts`) checks a clip key against the generated inventory's
+legal-syllable set, not against *attestation* — recording ahead of dictionary
+coverage is legitimate and shouldn't be blocked by validation.
+
+**No inheritance.** `loadVariety` flattens `varieties/*.yaml` key-by-key from
+a parent (Shantou/Chaoyang sparsely overlay Chaozhou) because an unlisted IPA
+mapping is a genuine claim ("same as the parent"). Audio doesn't get the same
+treatment: `loadAudio` (`src/phonology/load.ts`) reads exactly one variety's
+own file, with no fallback. A missing Shantou recording must stay missing,
+never silently served from a Chaozhou clip that describes a different accent.
+
+**Licence, not hand-written.** A `mapping`'s `sources` is optional evidentiary
+citation for a `confidence` claim. A clip's `sources` is required (`min(1)`)
+and is its actual provenance — the same "derive the licence, don't
+hand-write it" rule `src/data/licence.ts` already applies to entries applies
+here too, so `audioClip` carries no separate `licence:` field.
+
+**Wiring.** `src/build/enrich.ts` gains `EnrichedReading.audio`: one entry per
+syllable in the reading (parallel to the existing `syllable_count`), `null`
+where no clip exists. Unlike `ipa`/`poj`, there is no compositional fallback —
+a syllable either has a recording or it doesn't, so `deriveReadingAudio` is a
+plain lookup, not a derivation with a confidence-weighted default. Extracted
+as a pure function (takes an already-loaded `Audio | null`, does no I/O
+itself) specifically so it's unit-testable without needing real audio files,
+which don't exist yet — that's issue #36.
+
+**`dist/schema.json` scope, left alone.** The issue's acceptance list asks for
+`audioSchema` to be reflected in `dist/schema.json`. As it stands,
+`npm run schema` / `src/cli/emit-schema.ts` only emit `entryFileSchema` (the
+`data/entries/*.yaml` format) — `varietySchema`, `sandhiSchema`, and
+`syllableInventorySchema` were never added to it either, including when §10
+added the last of those. Broadening what gets emitted is a real, independent
+change to a generated artifact other tooling may already read; making it
+silently as a side effect of adding one more phonology schema didn't seem
+right. Left as-is here, following the existing precedent, with this noted so
+it isn't mistaken for an oversight.
+
 ## Individual entries flagged `needs_review`
 
 Run `npm run validate` for the current count. As of writing:
