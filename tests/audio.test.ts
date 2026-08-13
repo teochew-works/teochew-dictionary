@@ -91,9 +91,16 @@ describe('audioSchema', () => {
 
   it('rejects the floating releases/latest/download alias — a stored reference must be pinned to a tag', () => {
     const bad = clip({
-      url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/latest/dio5.opus',
+      url: 'https://github.com/teochew-works/teochew-dictionary/releases/latest/download/dio5.opus',
     })
     expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
+  })
+
+  it('accepts a release pinned to a tag literally named "latest" — not the floating alias', () => {
+    const ok = clip({
+      url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/latest/dio5.opus',
+    })
+    expect(() => audioSchema.parse(rawAudio({ dio5: ok }))).not.toThrow()
   })
 })
 
