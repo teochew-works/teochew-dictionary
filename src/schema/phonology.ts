@@ -81,6 +81,39 @@ export const varietySchema = z.object({
   irregular: z.record(mapping).optional(),
 })
 
+/**
+ * A recorded clip for one whole Peng'im syllable (e.g. `dio5`), in one variety.
+ * Whole-syllable, not per-component (initial/medial/nucleus/coda/tone) — see
+ * `data/phonology/REVIEW.md` § 11 for the rationale.
+ */
+const audioClip = z.object({
+  /** Filename within `data/audio/<variety>/` — see `AUDIO_FILES_DIR` in ../paths.js. */
+  file: z.string().min(1),
+  confidence: z.enum(CONFIDENCE),
+  note: z.string().optional(),
+  /**
+   * Unlike a phonology mapping's `sources` (evidentiary, optional), a clip's
+   * `sources` is its actual provenance: `licence` is derived from it the same
+   * way an entry's is (see ../data/licence.ts), so a clip with no citable
+   * origin cannot be distributed at all.
+   */
+  sources: z.array(z.string().min(1)).min(1),
+  /** Pseudonymous speaker/recordist identifier — not necessarily a real name. */
+  speaker: z.string().min(1).optional(),
+  recorded: z.string().regex(/^\d{4}-\d{2}-\d{2}$/u).optional(),
+  /** `sha256:<64 hex chars>`, so a swapped or corrupted file is caught without opening it. */
+  checksum: z.string().regex(/^sha256:[0-9a-f]{64}$/u).optional(),
+})
+
+export const audioSchema = z.object({
+  audio: z.object({
+    id: z.string().min(1),
+    variety: z.string().min(1),
+  }),
+  /** Keyed by canonical Peng'im syllable, e.g. `dio5` — matches `syllable-inventory.yaml` item keys. */
+  clips: z.record(audioClip),
+})
+
 export const pojSchema = z.object({
   scheme: z.object({ id: z.literal('poj'), name: z.string(), name_zh: z.string().optional() }),
   initials: z.record(z.string()),
@@ -119,4 +152,6 @@ export type PengimScheme = z.infer<typeof pengimSchemeSchema>
 export type Variety = z.infer<typeof varietySchema>
 export type PojScheme = z.infer<typeof pojSchema>
 export type SandhiTable = z.infer<typeof sandhiSchema>
+export type AudioClip = z.infer<typeof audioClip>
+export type Audio = z.infer<typeof audioSchema>
 export type Confidence = (typeof CONFIDENCE)[number]
