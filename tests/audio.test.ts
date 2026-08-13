@@ -234,16 +234,24 @@ describe('checkAudio', () => {
 })
 
 describe('deriveReadingAudio', () => {
+  const sources = new Map<string, Source>(
+    [
+      source('fixture', 'import', 'CC-BY-4.0'),
+      source('teochew-dictionary-audio', 'import', 'CC-BY-4.0'),
+      source('unclassified', 'import', 'CC0'),
+    ].map((s) => [s.id, s]),
+  )
+
   it('returns null for every syllable when the variety has no audio metadata', () => {
     const syllables = parsePengim('dio5 ziu1')
-    expect(deriveReadingAudio(syllables, null)).toEqual([null, null])
+    expect(deriveReadingAudio(syllables, null, sources)).toEqual([null, null])
   })
 
   it('resolves a clip per syllable, preserving order, null where absent', () => {
     const syllables = parsePengim('dio5 ziu1')
     const table = audio({ dio5: clip({ confidence: 'medium' }) })
-    expect(deriveReadingAudio(syllables, table)).toEqual([
-      { syllable: 'dio5', url: VALID_URL, confidence: 'medium' },
+    expect(deriveReadingAudio(syllables, table, sources)).toEqual([
+      { syllable: 'dio5', url: VALID_URL, confidence: 'medium', licence: 'CC-BY-4.0', attributions: [] },
       null,
     ])
   })
@@ -251,6 +259,22 @@ describe('deriveReadingAudio', () => {
   it('is variety-scoped by construction — callers pass the already-resolved table, no fallback here', () => {
     const syllables = parsePengim('dio5')
     const table = audio({ dio5: clip() })
-    expect(deriveReadingAudio(syllables, table)).toEqual([{ syllable: 'dio5', url: VALID_URL, confidence: 'high' }])
+    expect(deriveReadingAudio(syllables, table, sources)).toEqual([
+      { syllable: 'dio5', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] },
+    ])
+  })
+
+  it("derives licence/attributions from the clip's own sources, matching the real teochew-dictionary-audio shape", () => {
+    const syllables = parsePengim('dio5')
+    const table = audio({ dio5: clip({ sources: ['teochew-dictionary-audio'] }) })
+    expect(deriveReadingAudio(syllables, table, sources)).toEqual([
+      { syllable: 'dio5', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] },
+    ])
+  })
+
+  it('throws when a clip cites a source with an unresolvable licence — trusted not to happen post-validate', () => {
+    const syllables = parsePengim('dio5')
+    const table = audio({ dio5: clip({ sources: ['unclassified'] }) })
+    expect(() => deriveReadingAudio(syllables, table, sources)).toThrow(/not classified as permissive or share-alike/u)
   })
 })

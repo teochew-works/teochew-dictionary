@@ -22,6 +22,13 @@ import type { Syllable } from '../phonology/syllable.js'
 export interface AudioReference extends Pick<AudioClip, 'url' | 'confidence'> {
   /** Canonical Peng'im syllable this clip is for, e.g. `dio5`. */
   syllable: string
+  /**
+   * Derived from the clip's `sources` against data/sources.yaml — see
+   * ../data/licence.ts. Mirrors EnrichedEntry.licence; see its doc comment.
+   */
+  licence: string
+  /** Notices owed in addition to `licence`. Mirrors EnrichedEntry.attributions. */
+  attributions: string[]
 }
 
 export interface EnrichedReading extends Reading {
@@ -78,10 +85,27 @@ export function stripDiacritics(s: string): string {
  * file I/O so it's directly testable — `audio` is `null` when the variety has
  * no clip metadata at all yet (issue #36 hasn't started for it).
  */
-export function deriveReadingAudio(syllables: Syllable[], audio: Audio | null): (AudioReference | null)[] {
+export function deriveReadingAudio(
+  syllables: Syllable[],
+  audio: Audio | null,
+  sources: Map<string, Source>,
+): (AudioReference | null)[] {
   return syllables.map((s) => {
     const clip = audio?.clips[s.raw]
-    return clip ? { syllable: s.raw, url: clip.url, confidence: clip.confidence } : null
+    if (!clip) return null
+
+    // Trusted to resolve: build() refuses to run while validate() reports the
+    // dataset has an unresolvable licence, same as it does for entries.
+    const resolved = resolveLicence(clip.sources, sources)
+    if (!resolved.ok) throw new Error(`${audio!.audio.id}/${s.raw}: ${resolved.reason}`)
+
+    return {
+      syllable: s.raw,
+      url: clip.url,
+      confidence: clip.confidence,
+      licence: resolved.licence,
+      attributions: resolved.attributions,
+    }
   })
 }
 
@@ -137,7 +161,7 @@ export function createEnricher() {
       ipa_caveats: reading.ipa ? [] : derived.caveats,
       pengim_toneless: stripTones(reading.pengim),
       syllable_count: syllables.length,
-      audio: deriveReadingAudio(syllables, audioFor(reading.variety)),
+      audio: deriveReadingAudio(syllables, audioFor(reading.variety), sources),
     }
   }
 
