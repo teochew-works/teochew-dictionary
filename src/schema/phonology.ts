@@ -82,15 +82,17 @@ export const varietySchema = z.object({
 })
 
 /**
- * A GitHub Release asset download URL: https://github.com/<owner>/<repo>/
- * releases/download/<tag>/<asset>. The required literal `download` segment
- * right after `releases/` already excludes the floating
- * `/releases/latest/download/...` alias (which has `latest`, not `download`,
- * in that position) — a stored reference is always pinned to a tag, so it
- * can't start pointing at different bytes later.
+ * A GitHub Release asset download URL, pinned to this project's own repo:
+ * https://github.com/teochew-works/teochew-dictionary/releases/download/<tag>/<asset>.
+ * The required literal `download` segment right after `releases/` already
+ * excludes the floating `/releases/latest/download/...` alias (which has
+ * `latest`, not `download`, in that position) — a stored reference is always
+ * pinned to a tag, so it can't start pointing at different bytes later.
+ * Pinning the owner/repo also stops a stored reference from silently
+ * pointing at an unrelated project's release asset.
  */
 const GITHUB_RELEASE_ASSET_URL =
-  /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/releases\/download\/[\w.-]+\/[\w.-]+$/u
+  /^https:\/\/github\.com\/teochew-works\/teochew-dictionary\/releases\/download\/[\w.-]+\/[\w.-]+$/u
 
 /**
  * A recorded clip for one whole Peng'im syllable (e.g. `dio5`), in one variety.

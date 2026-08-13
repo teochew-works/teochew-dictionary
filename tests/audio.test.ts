@@ -102,6 +102,13 @@ describe('audioSchema', () => {
     })
     expect(() => audioSchema.parse(rawAudio({ dio5: ok }))).not.toThrow()
   })
+
+  it('rejects a GitHub Release asset URL from a different repo', () => {
+    const bad = clip({
+      url: 'https://github.com/some-other-org/some-other-repo/releases/download/audio-chaozhou/dio5.opus',
+    })
+    expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
+  })
 })
 
 describe('checkAudio', () => {
