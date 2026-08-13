@@ -8,6 +8,13 @@ import { z } from 'zod'
 
 export const CONFIDENCE = ['high', 'medium', 'low'] as const
 
+/** True for a real calendar date — `\d{4}-\d{2}-\d{2}` also matches e.g. 2026-02-30. */
+function isValidCalendarDate(s: string): boolean {
+  const [year, month, day] = s.split('-').map(Number) as [number, number, number]
+  const date = new Date(Date.UTC(year, month - 1, day))
+  return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day
+}
+
 const mapping = z.object({
   ipa: z.string().min(1),
   confidence: z.enum(CONFIDENCE),
@@ -81,6 +88,9 @@ export const varietySchema = z.object({
   irregular: z.record(mapping).optional(),
 })
 
+/** This project's own GitHub repo — the single source of truth for the URL pattern below. */
+export const GITHUB_REPO = 'teochew-works/teochew-dictionary'
+
 /**
  * A GitHub Release asset download URL, pinned to this project's own repo:
  * https://github.com/teochew-works/teochew-dictionary/releases/download/<tag>/<asset>.
@@ -89,10 +99,13 @@ export const varietySchema = z.object({
  * `latest`, not `download`, in that position) — a stored reference is always
  * pinned to a tag, so it can't start pointing at different bytes later.
  * Pinning the owner/repo also stops a stored reference from silently
- * pointing at an unrelated project's release asset.
+ * pointing at an unrelated project's release asset. Case-insensitive on the
+ * owner/repo segment, matching GitHub's own (case-insensitive) URL routing.
  */
-const GITHUB_RELEASE_ASSET_URL =
-  /^https:\/\/github\.com\/teochew-works\/teochew-dictionary\/releases\/download\/[\w.-]+\/[\w.-]+$/u
+const GITHUB_RELEASE_ASSET_URL = new RegExp(
+  `^https://github\\.com/${GITHUB_REPO}/releases/download/[\\w.-]+/[\\w.-]+$`,
+  'iu',
+)
 
 /**
  * A recorded clip for one whole Peng'im syllable (e.g. `dio5`), in one variety.
@@ -118,15 +131,24 @@ const audioClip = z.object({
   sources: z.array(z.string().min(1)).min(1),
   /** Pseudonymous speaker/recordist identifier — not necessarily a real name. */
   speaker: z.string().min(1).optional(),
-  recorded: z.string().regex(/^\d{4}-\d{2}-\d{2}$/u).optional(),
+  recorded: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/u)
+    .refine(isValidCalendarDate, 'must be a valid calendar date')
+    .optional(),
   /**
    * `sha256:<64 hex chars>`. Required: with the clip hosted externally there
    * is no git-tracked local copy to compare against, and a release asset can
    * be replaced independently of any `data/` commit — this is the only
    * integrity check left, and one of the manifest's three named components
-   * (URL + checksum + licence, see REVIEW.md § 12).
+   * (URL + checksum + licence, see REVIEW.md § 12). Hex accepted in either
+   * case and normalised to lowercase, since common tools (e.g. PowerShell's
+   * `Get-FileHash`) emit uppercase.
    */
-  checksum: z.string().regex(/^sha256:[0-9a-f]{64}$/u),
+  checksum: z
+    .string()
+    .regex(/^sha256:[0-9a-fA-F]{64}$/u)
+    .transform((s) => s.toLowerCase()),
 })
 
 export const audioSchema = z.object({

@@ -1,4 +1,4 @@
-import { loadAudio, loadPengimScheme, loadPojScheme, loadSandhi, loadVariety } from '../phonology/load.js'
+import { loadAudioIfExists, loadPengimScheme, loadPojScheme, loadSandhi, loadVariety } from '../phonology/load.js'
 import { syllablesToIpa } from '../phonology/ipa.js'
 import { syllablesToPoj } from '../phonology/poj.js'
 import { applySandhiToSyllables } from '../phonology/sandhi.js'
@@ -6,7 +6,7 @@ import { parsePengim } from '../phonology/syllable.js'
 import { loadSources } from '../data/load.js'
 import { resolveLicence } from '../data/licence.js'
 import type { Entry, Reading, Source } from '../schema/entry.js'
-import type { Audio, Confidence } from '../schema/phonology.js'
+import type { Audio, AudioClip, Confidence } from '../schema/phonology.js'
 import type { Syllable } from '../phonology/syllable.js'
 
 /**
@@ -19,12 +19,9 @@ import type { Syllable } from '../phonology/syllable.js'
  */
 
 /** A whole-syllable audio clip resolved for one syllable of a reading. */
-export interface AudioReference {
+export interface AudioReference extends Pick<AudioClip, 'url' | 'confidence'> {
   /** Canonical Peng'im syllable this clip is for, e.g. `dio5`. */
   syllable: string
-  /** GitHub Release asset URL — see `data/phonology/REVIEW.md` § 12. */
-  url: string
-  confidence: Confidence
 }
 
 export interface EnrichedReading extends Reading {
@@ -88,34 +85,29 @@ export function deriveReadingAudio(syllables: Syllable[], audio: Audio | null): 
   })
 }
 
+/** Cache a per-id loader's result, so a naive per-reading call re-reads/re-parses nothing twice. */
+function memoize<T>(loader: (id: string) => T): (id: string) => T {
+  const cache = new Map<string, T>()
+  return (id) => {
+    if (!cache.has(id)) cache.set(id, loader(id))
+    return cache.get(id) as T
+  }
+}
+
 export function createEnricher() {
   const scheme = loadPengimScheme()
   const poj = loadPojScheme()
-  const varieties = new Map<string, ReturnType<typeof loadVariety>>()
   const sandhiTables = new Map<string, ReturnType<typeof loadSandhi>>()
   const sources = new Map<string, Source>(loadSources().map((s) => [s.id, s]))
-  const audioTables = new Map<string, Audio | null>()
 
-  const variety = (id: string) => {
-    let v = varieties.get(id)
-    if (!v) varieties.set(id, (v = loadVariety(id)))
-    return v
-  }
+  const variety = memoize(loadVariety)
 
   // Deliberately NOT loadVariety's inheritance chain — a recording can't be
   // borrowed from a parent variety. Missing metadata is expected pre-#36, not
-  // an error: cached as null so a variety with no audio.yaml isn't re-tried
-  // (and re-thrown) on every reading.
-  const audioFor = (varietyId: string): Audio | null => {
-    if (!audioTables.has(varietyId)) {
-      try {
-        audioTables.set(varietyId, loadAudio(varietyId))
-      } catch {
-        audioTables.set(varietyId, null)
-      }
-    }
-    return audioTables.get(varietyId)!
-  }
+  // an error, so `loadAudioIfExists` returns null rather than throwing (a
+  // variety whose audio.yaml exists but fails to parse still throws, and is
+  // not swallowed here).
+  const audioFor = memoize(loadAudioIfExists)
 
   // Sandhi tables are per-variety where one exists, else the reference table.
   const sandhiFor = (varietyId: string) => {

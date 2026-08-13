@@ -170,7 +170,7 @@ export function validate(): ValidationReport {
       else seenHeadwords.set(entry.headword, [entry.id])
 
       // ── provenance ──────────────────────────────────────────────────────────
-      issues.push(...checkEntrySources(file, entry, sourceIds, sourceMap))
+      issues.push(...checkEntrySources(file, entry, sourceMap))
 
       readingCount += entry.readings.length
       reviewCount += checkReadings(entry, file, varieties, issues, toneCounts)
@@ -231,7 +231,14 @@ export function validate(): ValidationReport {
       for (const id of listAudioVarieties()) {
         try {
           issues.push(
-            ...checkAudio(`data/phonology/audio/${id}.yaml`, loadAudio(id), varieties, sourceMap, legalSyllables),
+            ...checkAudio(
+              `data/phonology/audio/${id}.yaml`,
+              loadAudio(id),
+              id,
+              varieties,
+              sourceMap,
+              legalSyllables,
+            ),
           )
         } catch (e) {
           issues.push(err(`data/phonology/audio/${id}.yaml`, (e as Error).message))
@@ -261,6 +268,48 @@ export function validate(): ValidationReport {
 }
 
 /**
+ * Resolve one citation list against `sourceMap`: every id must exist and
+ * must not be `kind: reference` (evidence about the language, not a citable
+ * origin), then — only once every id resolved — the combined licence must
+ * resolve too. Shared by `checkEntrySources` (entries) and `checkAudio`
+ * (clips), whose provenance rule is identical; only the "not citable"
+ * wording differs by context. The `sourceMap.size > 0` guards skip both
+ * checks when `sources.yaml` itself failed to load, so that one root cause
+ * isn't reported again for every id that trivially can't resolve against an
+ * empty map.
+ */
+function checkSources(
+  file: string,
+  ids: string[],
+  sourceMap: Map<string, Source>,
+  notCitableMessage: string,
+  entryId: string | undefined,
+  path: string,
+): Issue[] {
+  const issues: Issue[] = []
+  let sourcesResolved = true
+
+  for (const s of ids) {
+    if (sourceMap.size > 0 && !sourceMap.has(s)) {
+      issues.push(err(file, `unknown source '${s}' — add it to data/sources.yaml`, entryId, path))
+      sourcesResolved = false
+    } else if (sourceMap.get(s)?.kind === 'reference') {
+      issues.push(err(file, `source '${s}' is kind: reference — ${notCitableMessage}`, entryId, path))
+      sourcesResolved = false
+    }
+  }
+
+  if (sourcesResolved && sourceMap.size > 0) {
+    const licence = resolveLicence(ids, sourceMap)
+    if (!licence.ok) {
+      issues.push(err(file, `unresolvable licence: ${licence.reason}`, entryId, path))
+    }
+  }
+
+  return issues
+}
+
+/**
  * An entry's `sources:` may only cite `kind: import` ids — a `kind: reference`
  * source is evidence about the language, not the origin of an entry's content
  * (see checkMappingSources, which mapping `sources:` go through instead and
@@ -268,40 +317,15 @@ export function validate(): ValidationReport {
  * written by hand; that resolution is skipped when a source id above didn't
  * even resolve, so one root cause doesn't get reported twice.
  */
-export function checkEntrySources(
-  file: string,
-  entry: Entry,
-  sourceIds: Set<string>,
-  sourceMap: Map<string, Source>,
-): Issue[] {
-  const issues: Issue[] = []
-  let sourcesResolved = true
-
-  for (const s of entry.sources) {
-    if (sourceIds.size > 0 && !sourceIds.has(s)) {
-      issues.push(err(file, `unknown source '${s}' — add it to data/sources.yaml`, entry.id, 'sources'))
-      sourcesResolved = false
-    } else if (sourceMap.get(s)?.kind === 'reference') {
-      issues.push(
-        err(
-          file,
-          `source '${s}' is kind: reference — cannot back an entry directly (evidence about the language, not the entry's content)`,
-          entry.id,
-          'sources',
-        ),
-      )
-      sourcesResolved = false
-    }
-  }
-
-  if (sourcesResolved && sourceMap.size > 0) {
-    const licence = resolveLicence(entry.sources, sourceMap)
-    if (!licence.ok) {
-      issues.push(err(file, `unresolvable licence: ${licence.reason}`, entry.id, 'sources'))
-    }
-  }
-
-  return issues
+export function checkEntrySources(file: string, entry: Entry, sourceMap: Map<string, Source>): Issue[] {
+  return checkSources(
+    file,
+    entry.sources,
+    sourceMap,
+    "cannot back an entry directly (evidence about the language, not the entry's content)",
+    entry.id,
+    'sources',
+  )
 }
 
 /** The mapping groups in a variety file, all of which may cite sources. */
@@ -422,15 +446,16 @@ export function checkSyllableInventory(
 
 /**
  * Cheap structural/referential checks on one variety's audio clip metadata
- * (issue #31): the variety id is known, every clip key is a legal Peng'im
- * syllable per the generated inventory (not necessarily *attested* — recording
- * ahead of dictionary coverage is legitimate), and every clip's `sources`
- * resolve to a licence — the same rule `checkEntrySources` applies to
- * entries, since a clip's `sources` is its actual provenance (see the schema
- * comment on `audioClip.sources`), not evidentiary citation like a phonology
- * mapping's. A `kind: reference` source cannot back a clip directly, and
- * licence resolution is skipped for a clip whose sources didn't even
- * resolve, so one root cause isn't reported twice.
+ * (issue #31): the file's own declared `audio.id` matches the filename it
+ * was loaded from, the variety id is known, every clip key is a legal
+ * Peng'im syllable per the generated inventory (not necessarily *attested* —
+ * recording ahead of dictionary coverage is legitimate), a clip's `url`
+ * references its own syllable (a soft nudge, not a hard rule — asset naming
+ * is explicitly non-binding, see `data/phonology/REVIEW.md` § 12), and every
+ * clip's `sources` resolve to a licence — the same rule `checkEntrySources`
+ * applies to entries, since a clip's `sources` is its actual provenance (see
+ * the schema comment on `audioClip.sources`), not evidentiary citation like
+ * a phonology mapping's.
  *
  * Does NOT check whether `clip.url` actually resolves (the clip's bytes live
  * on GitHub Releases, not in this repo — see `data/phonology/REVIEW.md` § 12)
@@ -440,11 +465,16 @@ export function checkSyllableInventory(
 export function checkAudio(
   file: string,
   audio: Audio,
+  id: string,
   varietyIds: Set<string>,
   sourceMap: Map<string, Source>,
   legalSyllables: Set<string>,
 ): Issue[] {
   const issues: Issue[] = []
+
+  if (audio.audio.id !== id) {
+    issues.push(err(file, `audio.id '${audio.audio.id}' does not match this file's name (${id}.yaml)`))
+  }
 
   if (!varietyIds.has(audio.audio.variety)) {
     issues.push(err(file, `unknown variety '${audio.audio.variety}' (have: ${[...varietyIds].join(', ')})`))
@@ -457,30 +487,32 @@ export function checkAudio(
       issues.push(err(file, `'${syllable}' is not a legal Peng'im syllable`, undefined, path))
     }
 
-    let sourcesResolved = true
-    for (const s of clip.sources) {
-      if (!sourceMap.has(s)) {
-        issues.push(err(file, `unknown source '${s}' — add it to data/sources.yaml`, undefined, `${path}.sources`))
-        sourcesResolved = false
-      } else if (sourceMap.get(s)?.kind === 'reference') {
-        issues.push(
-          err(
-            file,
-            `source '${s}' is kind: reference — cannot back a clip directly (evidence about the language, not the clip's origin)`,
-            undefined,
-            `${path}.sources`,
-          ),
-        )
-        sourcesResolved = false
-      }
+    // A stale copy-pasted url (e.g. from another clip entry) is otherwise
+    // undetectable — the URL regex and licence checks pass regardless of
+    // which syllable it actually points at. Warning, not error: asset
+    // naming is explicitly non-binding (REVIEW.md § 12), so a url that
+    // legitimately omits the syllable shouldn't block the build.
+    if (!clip.url.toLowerCase().includes(syllable.toLowerCase())) {
+      issues.push(
+        warn(
+          file,
+          `clip url does not reference its own syllable '${syllable}' — double check it wasn't copied from a different clip`,
+          undefined,
+          `${path}.url`,
+        ),
+      )
     }
 
-    if (sourcesResolved) {
-      const licence = resolveLicence(clip.sources, sourceMap)
-      if (!licence.ok) {
-        issues.push(err(file, `unresolvable licence: ${licence.reason}`, undefined, `${path}.sources`))
-      }
-    }
+    issues.push(
+      ...checkSources(
+        file,
+        clip.sources,
+        sourceMap,
+        "cannot back a clip directly (evidence about the language, not the clip's origin)",
+        undefined,
+        `${path}.sources`,
+      ),
+    )
   }
 
   return issues
