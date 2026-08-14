@@ -1,5 +1,7 @@
 # Teochew Dictionary
 
+[![CI](https://github.com/teochew-works/teochew-dictionary/actions/workflows/ci.yml/badge.svg)](https://github.com/teochew-works/teochew-dictionary/actions/workflows/ci.yml)
+
 A structured, openly-licensed lexicon of Teochew (潮州話), with tooling to derive
 romanisations, validate the data, and build it into usable artifacts.
 
