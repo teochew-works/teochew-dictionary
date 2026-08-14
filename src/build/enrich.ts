@@ -4,7 +4,7 @@ import { syllablesToPoj } from '../phonology/poj.js'
 import { applySandhiToSyllables } from '../phonology/sandhi.js'
 import { parsePengim } from '../phonology/syllable.js'
 import { loadSources } from '../data/load.js'
-import { resolveLicence } from '../data/licence.js'
+import { resolveLicenceOrThrow } from '../data/licence.js'
 import type { Entry, Reading, Source } from '../schema/entry.js'
 import type { Audio, AudioClip, Confidence } from '../schema/phonology.js'
 import type { Syllable } from '../phonology/syllable.js'
@@ -90,14 +90,13 @@ export function deriveReadingAudio(
   audio: Audio | null,
   sources: Map<string, Source>,
 ): (AudioReference | null)[] {
+  if (!audio) return syllables.map(() => null)
+
   return syllables.map((s) => {
-    const clip = audio?.clips[s.raw]
+    const clip = audio.clips[s.raw]
     if (!clip) return null
 
-    // Trusted to resolve: build() refuses to run while validate() reports the
-    // dataset has an unresolvable licence, same as it does for entries.
-    const resolved = resolveLicence(clip.sources, sources)
-    if (!resolved.ok) throw new Error(`${audio!.audio.id}/${s.raw}: ${resolved.reason}`)
+    const resolved = resolveLicenceOrThrow(clip.sources, sources, `${audio.audio.id}/${s.raw}`)
 
     return {
       syllable: s.raw,
@@ -181,10 +180,7 @@ export function createEnricher() {
     }
     for (const s of entry.senses) for (const g of s.gloss_en) keys.add(g)
 
-    // Trusted to resolve: build() refuses to run while validate() reports the
-    // dataset has an unresolvable licence, same as it does for IPA/POJ.
-    const resolved = resolveLicence(entry.sources, sources)
-    if (!resolved.ok) throw new Error(`${entry.id}: ${resolved.reason}`)
+    const resolved = resolveLicenceOrThrow(entry.sources, sources, entry.id)
 
     return {
       ...entry,

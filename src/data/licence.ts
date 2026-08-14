@@ -1,12 +1,12 @@
 import type { Source } from '../schema/entry.js'
 
 /**
- * Per-entry licence resolution.
+ * Licence resolution, shared by entries and audio clips alike.
  *
- * An entry's licence is derived from its `sources`, never hand-written — the
- * same "store what a human must know, derive everything else" rule the schema
- * comment states for readings. A source is either `permissive` or
- * `share-alike`; anything not classified cannot back an entry directly. This
+ * An entry's (or clip's) licence is derived from its `sources`, never
+ * hand-written — the same "store what a human must know, derive everything
+ * else" rule the schema comment states for readings. A source is either
+ * `permissive` or `share-alike`; anything not classified cannot resolve. This
  * function only classifies the `licence` string itself — a `kind: reference`
  * source (cited for corroboration, never reproduced, e.g. `pengim-1960`) is
  * rejected earlier and never reaches here; see checkEntrySources in
@@ -52,7 +52,9 @@ export type LicenceResolution =
  */
 export function resolveLicence(sourceIds: string[], sources: Map<string, Source>): LicenceResolution {
   const shareAlike = new Set<string>()
-  const attributions = new Set<string>()
+  // Keyed by source id, not the formatted string, so two distinct sources
+  // that happen to share a name and licence don't collapse into one notice.
+  const attributions = new Map<string, string>()
 
   for (const id of sourceIds) {
     const source = sources.get(id)
@@ -62,11 +64,11 @@ export function resolveLicence(sourceIds: string[], sources: Map<string, Source>
       return {
         ok: false,
         reason: `source '${id}' has licence '${licence ?? 'unresolved'}', which is not classified as ` +
-          'permissive or share-alike — it cannot back an entry directly',
+          'permissive or share-alike',
       }
     }
     if (cls === 'share-alike') shareAlike.add(licence!)
-    if (licence !== BASE_LICENCE) attributions.add(`${source!.name} (${licence})`)
+    if (licence !== BASE_LICENCE) attributions.set(id, `${source!.name} (${licence})`)
   }
 
   if (shareAlike.size > 1) {
@@ -74,5 +76,22 @@ export function resolveLicence(sourceIds: string[], sources: Map<string, Source>
   }
 
   const [only] = shareAlike
-  return { ok: true, licence: only ?? BASE_LICENCE, attributions: [...attributions].sort() }
+  return { ok: true, licence: only ?? BASE_LICENCE, attributions: [...attributions.values()].sort() }
+}
+
+/**
+ * `resolveLicence`, throwing with a `context`-prefixed message on failure.
+ * Both call sites (entry, audio clip) are trusted to resolve — `build()`
+ * refuses to run while `validate()` reports the dataset has an unresolvable
+ * licence — so a throw here means that invariant was violated, not an
+ * expected outcome to handle.
+ */
+export function resolveLicenceOrThrow(
+  sourceIds: string[],
+  sources: Map<string, Source>,
+  context: string,
+): { licence: string; attributions: string[] } {
+  const resolved = resolveLicence(sourceIds, sources)
+  if (!resolved.ok) throw new Error(`${context}: ${resolved.reason}`)
+  return resolved
 }
