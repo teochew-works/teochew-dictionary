@@ -239,6 +239,7 @@ describe('deriveReadingAudio', () => {
       source('fixture', 'import', 'CC-BY-4.0'),
       source('teochew-dictionary-audio', 'import', 'CC-BY-4.0'),
       source('unclassified', 'import', 'CC0'),
+      source('audio-import-sa', 'import', 'CC-BY-SA-4.0'),
     ].map((s) => [s.id, s]),
   )
 
@@ -269,6 +270,20 @@ describe('deriveReadingAudio', () => {
     const table = audio({ dio5: clip({ sources: ['teochew-dictionary-audio'] }) })
     expect(deriveReadingAudio(syllables, table, sources)).toEqual([
       { syllable: 'dio5', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] },
+    ])
+  })
+
+  it('carries a non-BASE_LICENCE source through to licence and attributions', () => {
+    const syllables = parsePengim('dio5')
+    const table = audio({ dio5: clip({ sources: ['audio-import-sa'] }) })
+    expect(deriveReadingAudio(syllables, table, sources)).toEqual([
+      {
+        syllable: 'dio5',
+        url: VALID_URL,
+        confidence: 'high',
+        licence: 'CC-BY-SA-4.0',
+        attributions: ['audio-import-sa (CC-BY-SA-4.0)'],
+      },
     ])
   })
 
