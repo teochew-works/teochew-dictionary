@@ -592,9 +592,11 @@ until now nothing downstream read the result — `AudioReference` in
 consumer can filter to a permissive subset (README § Licensing). Closed the
 same way: `deriveReadingAudio` now takes the loaded `sources` map and calls
 `resolveLicence` per clip, so `AudioReference.licence`/`.attributions` ship
-in `dist/dict.json` alongside every other per-clip field. Trusted to
-resolve, the same way entry licence resolution is: `build()` refuses to run
-while `validate()` reports an unresolvable licence.
+in `dist/dict.json` alongside `url`/`confidence`/`syllable` — not every
+field a clip carries; `speaker`/`note`/`recorded`/`checksum` stay
+source-data-only. Trusted to resolve, the same way entry licence resolution
+is: `build()` refuses to run while `validate()` reports an unresolvable
+licence.
 
 **Out of scope, still.** Remote fetch/checksum verification of `clip.url`
 stays issue #35's job (§12). Actual recording and upload — the first real

@@ -320,9 +320,11 @@ than something a script does by accident.
 `teochew-dictionary-audio` id in `data/sources.yaml` — a recorded performance
 is copyrightable separately from the phonological fact it captures, so it
 needs its own provenance, not a free ride on the entry it's attached to.
-Per-clip speaker credit lives in the clip's own `speaker` field (a
-pseudonymous identifier), not the `attributions` array, since every clip
-cites the one CC-BY-4.0 source. Recording a speaker also requires their
+Per-clip speaker credit lives in the clip's own `speaker` field in
+`data/phonology/audio/*.yaml` (a pseudonymous identifier), not the
+`attributions` array, since every clip cites the one CC-BY-4.0 source —
+but `speaker` isn't part of `AudioReference`, so it never reaches
+`dist/dict.json`; it's source-data-only. Recording a speaker also requires their
 consent to release the recording — see [`AUDIO-CONSENT.md`](AUDIO-CONSENT.md)
 — which is a separate, genuinely new concern from copyright licensing. See
 `data/phonology/REVIEW.md` § 13 for the full rationale.
