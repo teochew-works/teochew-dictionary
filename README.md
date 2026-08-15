@@ -329,6 +329,19 @@ consent to release the recording — see [`AUDIO-CONSENT.md`](AUDIO-CONSENT.md)
 — which is a separate, genuinely new concern from copyright licensing. See
 `data/phonology/REVIEW.md` § 13 for the full rationale.
 
+**`npm run validate`/`checkAudio` only checks the clip metadata is internally
+consistent** (legal syllable, resolvable licence, etc.) — it does not fetch
+`clip.url` or verify `checksum` against the real bytes, since those live on
+GitHub Releases, not in this repo. That's a separate, network-touching step:
+
+```bash
+npm run audio:verify
+```
+
+which fetches every declared clip and confirms its checksum matches — kept
+out of `npm run check` for the same reason `npm run xref`/`npm run import`
+are, so `check` stays fast, offline, and CI-safe.
+
 ---
 
 ## Commands
@@ -341,6 +354,7 @@ consent to release the recording — see [`AUDIO-CONSENT.md`](AUDIO-CONSENT.md)
 | `npm run import -- <source>` | fetch proposals into `data/staging/` |
 | `npm run inventory` | regenerate `data/wordlists/syllable-inventory.yaml` |
 | `npm run xref -- <source>` | refresh a cached external phonology chart |
+| `npm run audio:verify` | fetch every audio clip and verify its checksum |
 | `npm run schema` | emit the JSON Schema alone |
 | `npm test` | unit tests + dataset guards |
 | `npm run check` | typecheck + test + validate |
