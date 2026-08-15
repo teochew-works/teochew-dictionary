@@ -8,6 +8,12 @@ lexicon, and only the CC family addresses sui generis database rights (see
 that cites a share-alike source instead is covered by
 LICENSE-DATA-CC-BY-SA-4.0. See README.md § Licensing.
 
+It also covers data/phonology/audio/*.yaml clips: a clip's `sources` cites
+`teochew-dictionary-audio` in data/sources.yaml, which is CC-BY-4.0, so this
+is the licence a recorded speaker's performance is released under too. See
+AUDIO-CONSENT.md for the speaker-consent process that's separate from, and a
+prerequisite to, that release.
+
 =======================================================================
 
 Attribution 4.0 International

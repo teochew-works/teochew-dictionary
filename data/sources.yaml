@@ -63,6 +63,25 @@ sources:
     note: >-
       Character-level metadata (radical, stroke count, variants). Permissive.
 
+  - id: teochew-dictionary-audio
+    name: Teochew Dictionary Project — original audio recordings
+    kind: import
+    licence: CC-BY-4.0
+    note: >-
+      Original whole-syllable clips recorded by volunteer speakers for this
+      project (data/phonology/audio/*.yaml). A recorded performance is
+      separately copyrightable from the phonological fact it represents —
+      this is what a clip's `sources` cites to establish that provenance,
+      the same way an entry's `sources` does for glosses. Per-clip speaker
+      credit is the clip's own `speaker` field (a pseudonymous id), not a
+      distinct attribution here, since every clip cites this one id and
+      CC-BY-4.0 is already the data default. Speaker consent to release is
+      documented in AUDIO-CONSENT.md, not by this file. Audio ever imported
+      from an existing corpus (e.g. Wiktionary's separately-licensed audio,
+      or Forvo) needs its own distinct id here with its own kind/licence —
+      never folded into this one, mirroring how `wiktionary` and `cedict`
+      stay distinct today.
+
   # ─── Reference works (kind: reference) ─────────────────────────────────────
   #
   # Cited by phonology mappings (`sources:` in varieties/*.yaml) to record the
