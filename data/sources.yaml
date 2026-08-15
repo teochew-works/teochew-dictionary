@@ -165,9 +165,13 @@ sources:
       The only source found giving Chaozhou/Shantou correspondences for all
       three Southern varieties (Chaoyang, Puning, Huilai) in one table. Used
       for `varieties/chaoyang.yaml`'s `e`→/u/ merger and `io`/`ioh`
-      non-fronting. Flag for whoever revisits this: an automated fetch of this
-      page produced a natural-language gloss that contradicted the page's own
-      quoted raw table notation on the `io` correspondence specifically — the
-      raw notation was trusted, the gloss was not, but this means mappings
-      sourced to this id alone should stay at `confidence: medium` until a
-      human reads the raw table directly. See REVIEW.md §9.
+      non-fronting. An automated fetch of this page once produced a
+      natural-language gloss that contradicted the page's own quoted raw
+      table notation on the `io` correspondence specifically — the raw
+      notation was trusted, the gloss was not. Re-checked 2026-08-15 (issue
+      #29) with a literal read of the raw table: it confirms the `io`/`ioh`
+      non-fronting for all three varieties, so that specific risk is
+      resolved. Mappings sourced to this id alone still stay at
+      `confidence: medium`, though — a second independent source wasn't
+      found (searched but came up empty; see the `io`/`ioh` notes in
+      `varieties/chaoyang.yaml`). See REVIEW.md §9.

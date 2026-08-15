@@ -47,15 +47,29 @@ irregular:
     sources: [mogher-region-diff]
     note: >-
       Mogher's table gives Chaoyang/Puning/Huilai the same unfronted
-      correspondence as Shantou. Kept at medium, not high: this is currently
-      a single source, and an automated read of the page garbled its own
-      gloss of this exact correspondence (see REVIEW.md §9) — worth a second,
-      human-read source before raising confidence.
+      correspondence as Shantou. Re-checked 2026-08-15 (issue #29) with a
+      literal, non-summarized read of the raw table: all four of mogher's
+      regional comparisons (Shantou, Chaoyang, Puning, Huilai vs. Chaozhou)
+      independently give the identical "-iê | -io" row, confirming the value
+      encoded here and resolving the original narrative-gloss-vs-raw-table
+      contradiction (see REVIEW.md §9). Still kept at medium, not high: this
+      remains a single source. A search for a second one came up empty —
+      checked pujdict's `/doc/puj.html` and `/doc/pinyin.html` (no io/ie
+      correspondence content), learnteochew.com's pronunciation page (names
+      Teochew city/Swatow/Jieyang for this vowel, never Chaoyang/Puning/
+      Huilai), and zh.wikipedia's 潮州话音系学 article (regional table exists
+      but only for tone contours, not rimes). One unexplored lead: pujdict's
+      `/doc/accents.html` has a "典型例字口音表"/"口音演变模式" section that
+      looks like the right shape but renders its table client-side, so it
+      didn't come through on an automated fetch — worth a real-browser look.
   ioh:
     ipa: ioʔ
     confidence: medium
     sources: [mogher-region-diff]
-    note: "Chaoyang keeps [ioʔ] where Chaozhou fronts to [ieʔ] — see the `io` note."
+    note: >-
+      Chaoyang keeps [ioʔ] where Chaozhou fronts to [ieʔ] — see the `io`
+      note; the same 2026-08-15 re-check and second-source search applies
+      here.
   iong:
     ipa: ioŋ
     confidence: low
