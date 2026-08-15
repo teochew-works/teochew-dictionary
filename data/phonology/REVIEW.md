@@ -524,7 +524,7 @@ schema already avoids storing derivable/duplicated data (see §11: no separate `
 
 **Scale validation.** §10/§11 established 340 (syllable, variety) pairs attested today (336
 Chaozhou, 2 each Shantou/Chaoyang), with a low-thousands ceiling if #34 later adds tone-sandhi
-forms. Each clip is a short single-syllable recording — plausibly tens of KB as opus — trivially
+forms — see §14: it does. Each clip is a short single-syllable recording — plausibly tens of KB as opus — trivially
 within GitHub's per-asset size limit by orders of magnitude. Caveat, stated as a caveat rather
 than a claim: no documented cap on assets-per-release or total per-repo Releases storage was
 confirmed while writing this. Given the file sizes involved this is assessed as low risk, and
@@ -615,6 +615,71 @@ stays issue #35's job (§12). Actual recording and upload — the first real
 `data/phonology/audio/*.yaml` file — stays issue #36's job; this section
 settles what licence and consent process that recording happens under, not
 who performs it.
+
+## 14. Tone-sandhi audio scope · issue #34  ✅ **Resolved 2026-08-15**
+
+**Ruling:** v1 audio scope includes tone-sandhi-shifted surface forms
+alongside citation forms — not citation-only. The README's own `潮州`
+example is the concrete case this settles: both `dio5 ziu1` (citation) and
+`dio7 ziu1` (sandhi) are in scope for recording, not just the former.
+
+**Why not citation-only.** Sandhi is pervasive — `sandhi/chaozhou.yaml`'s own
+header states every syllable except a tone group's last surfaces with a
+changed tone. Most spoken Teochew is therefore sandhi forms, not citation
+forms. A citation-only recording set would teach the minority pronunciation
+for every non-final syllable in any multi-syllable headword, which is most of
+the lexicon. That gap is exactly what #34 was raised to catch before #36
+recorded the wrong form and had to redo it.
+
+**Why the residual sandhi-modelling gaps don't block this.** §3 leaves two
+things unmodelled, and they cut differently. The first — the engine derives
+sandhi per-syllable rather than per-syllable-pair, so it can't produce tones
+2/3/4's second contour variant used before a high-onset following tone — is
+confined to `contour`, exposed only as descriptive metadata (the Chao pitch
+shape), never consumed to generate a recordable spelling. It does not touch
+the `to` field — the tone NUMBER a citation tone surfaces as, which is what
+actually drives Peng'im respelling and therefore what a speaker would be
+recording — and `to` was independently corroborated by three sources and
+fully resolved in §3. The second — the engine treats a whole headword as one
+tone group — is not contour-only: it doesn't change the `to` table, but it
+does decide *which* syllables the table is applied to, so a headword that
+really spans two tone groups would have its internal group-final syllable
+shifted when real speech keeps it citation. Per §3 that approximation is
+correct for compounds and only breaks down beyond them, and headwords are
+overwhelmingly compounds; a mis-shifted syllable also still yields a legal
+sandhi form of that syllable, so it cannot smuggle an out-of-scope form into
+the inventory. So the first gap is a caveat on the pitch *description*, the
+second a bounded caveat on which positions shift — neither a blocker on
+knowing which tone to record.
+
+**Why this isn't new modelling risk.** `src/phonology/sandhi.ts`'s
+`applySandhiToSyllables` already computes exactly the surface forms this
+decision puts in scope, per headword, deterministically from the `to` table.
+It is not new code written to justify this decision — it already backs
+`EnrichedReading.sandhi` in `src/build/enrich.ts`, which is what produces the
+`"sandhi": "dio7 ziu1"` field in every build today. Extending the audio
+inventory to cover sandhi forms is reuse of an already-shipped, already-tested
+derivation, not a new phonological claim.
+
+**Why the recording burden stays bounded.** §11 already established that
+recording burden tracks lexicon growth, not syllabary size: only 340 of the
+generated inventory's 25,056 legal syllables are attested today. The same
+logic applies here — sandhi forms are only needed for the non-final syllables
+of readings actually in the lexicon, not the full syllable × 8-tone
+combinatorial space. §12 priced this in ahead of time as "a low-thousands
+ceiling," which this ruling confirms is the right order of magnitude to plan
+storage against.
+
+**Consequence.** #30's generator does not yet fold sandhi forms in — it
+remains citation-tone-only today (confirmed: no `sandhi` reference in
+`src/phonology/inventory.ts` or `src/cli/inventory.ts`). Under this ruling
+that generator is incomplete, not merely conservative. The fold-in is tracked
+as its own issue, #48, rather than done as part of #34: the representation
+question (new inventory entries? a sibling artifact?) deserves its own design
+pass rather than being decided as a side effect of a scope ruling. #36
+(recording) accordingly now depends on #48 landing, not only on this
+decision — recording still cannot start against a complete inventory until
+#48 resolves.
 
 ## Individual entries flagged `needs_review`
 
