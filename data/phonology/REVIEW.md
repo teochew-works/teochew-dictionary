@@ -282,15 +282,27 @@ Two differences from Chaozhou are modelled:
   this nasal-coda rime specifically for any variety, so none should outrank
   the others.
 
-**A live example of the risk §3 already flags.** While scoping this change,
-an automated fetch of `mogher-region-diff`'s page produced a natural-language
-gloss that asserted "Chaoyang fronts `io` like Chaozhou" in one sentence while
-quoting the page's own raw table notation showing the opposite in the next.
-The raw notation was trusted, the gloss was not — but this is the same
-summarizer-garbling failure mode §3 already names for Chao pitch digits,
-just showing up on a rime correspondence instead of a tone contour. It is why
-the `io`/`ioh` mappings above stay at `medium`: this is currently a single
-source, and a human should read the raw table directly before raising it.
+**A live example of the risk §3 already flags — partially resolved
+2026-08-15 (issue #29).** While scoping this change, an automated fetch of
+`mogher-region-diff`'s page produced a natural-language gloss that asserted
+"Chaoyang fronts `io` like Chaozhou" in one sentence while quoting the page's
+own raw table notation showing the opposite in the next. The raw notation was
+trusted, the gloss was not — but this is the same summarizer-garbling failure
+mode §3 already names for Chao pitch digits, just showing up on a rime
+correspondence instead of a tone contour.
+
+Issue #29 asked for a direct, non-summarized read of the raw table to settle
+which read was right. That re-check found all four of mogher's regional
+comparison tables (Shantou, Chaoyang, Puning, Huilai vs. Chaozhou)
+independently give the identical "-iê | -io" / "-iêh | -ioh" row — the raw
+notation's reading is confirmed, the original gloss was simply wrong. That
+specific narrative-vs-table risk is resolved. What's *not* resolved: issue
+#29 also asked for a second independent source before raising confidence to
+`high`, and a search (pujdict's doc pages, learnteochew.com, zh.wikipedia's
+潮州话音系学 article) didn't find one — see the `io`/`ioh` notes in
+`chaoyang.yaml` for what was checked. The mappings above therefore
+intentionally stay at `medium`: single-sourced, but no longer for the
+original "which reading do we even trust" reason.
 
 **Deliberately not modelled, and why:**
 
