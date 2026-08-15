@@ -62,6 +62,10 @@ for (const { entry, match } of hits) {
     console.log(`  ${bits.join('  ')}  ${dim(`[${tags}]`)}`)
     if (r.sandhi !== r.pengim) console.log(`    ${dim(`sandhi: ${r.sandhi}`)}`)
     for (const caveat of r.ipa_caveats) console.log(`    ${dim(`⚠ ${caveat}`)}`)
+    for (const clip of r.audio) {
+      if (!clip) continue
+      console.log(`    ${dim(`♪ ${clip.syllable}: ${clip.url} [${clip.confidence}]`)}`)
+    }
   }
 
   for (const s of entry.senses) {
