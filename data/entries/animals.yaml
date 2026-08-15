@@ -20,6 +20,7 @@ entries:
     frequency: 3
     needs_review: true
     sources: [wiktionary]
+    retrieved: '2026-07-28'
 
   - id: ziao2-鳥
     headword: 鳥
@@ -38,6 +39,7 @@ entries:
     frequency: 4
     needs_review: true
     sources: [wiktionary]
+    retrieved: '2026-07-28'
 
   - id: gao2-狗
     headword: 狗
@@ -53,6 +55,7 @@ entries:
             en: I have a dog.
     frequency: 5
     sources: [wiktionary]
+    retrieved: '2026-07-28'
 
   - id: zua5-蛇
     headword: 蛇
@@ -71,6 +74,7 @@ entries:
     frequency: 3
     needs_review: true
     sources: [wiktionary]
+    retrieved: '2026-07-28'
 
   - id: tang5-蟲
     headword: 蟲
@@ -86,3 +90,4 @@ entries:
             en: The worm is small.
     frequency: 3
     sources: [wiktionary]
+    retrieved: '2026-07-28'

@@ -101,6 +101,8 @@ export const entrySchema = z.object({
   frequency: z.number().int().min(1).max(5).optional(),
   /** Source ids, resolved against `data/sources.yaml` — must be `kind: import`. */
   sources: z.array(z.string().min(1)).min(1),
+  /** ISO date the entry's content was retrieved from an import source. */
+  retrieved: z.string().regex(/^\d{4}-\d{2}-\d{2}$/u).optional(),
   /** Set when the entry is known to need a specialist's eye. */
   needs_review: z.boolean().optional(),
 })
