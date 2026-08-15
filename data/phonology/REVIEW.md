@@ -632,17 +632,25 @@ the lexicon. That gap is exactly what #34 was raised to catch before #36
 recorded the wrong form and had to redo it.
 
 **Why the residual sandhi-modelling gaps don't block this.** §3 leaves two
-things unmodelled: the engine derives sandhi per-syllable rather than
-per-syllable-pair, so it can't produce tones 2/3/4's second contour variant
-used before a high-onset following tone; and it treats a whole headword as
-one tone group, which is an approximation beyond a compound. Neither affects
+things unmodelled, and they cut differently. The first — the engine derives
+sandhi per-syllable rather than per-syllable-pair, so it can't produce tones
+2/3/4's second contour variant used before a high-onset following tone — is
+confined to `contour`, exposed only as descriptive metadata (the Chao pitch
+shape), never consumed to generate a recordable spelling. It does not touch
 the `to` field — the tone NUMBER a citation tone surfaces as, which is what
 actually drives Peng'im respelling and therefore what a speaker would be
-recording. `to` was independently corroborated by three sources and fully
-resolved in §3. The unmodelled parts are confined to `contour`, exposed only
-as descriptive metadata (the Chao pitch shape), never consumed to generate a
-recordable spelling. So the open sandhi questions are a caveat on the pitch
-*description*, not a blocker on knowing which tone to record.
+recording — and `to` was independently corroborated by three sources and
+fully resolved in §3. The second — the engine treats a whole headword as one
+tone group — is not contour-only: it doesn't change the `to` table, but it
+does decide *which* syllables the table is applied to, so a headword that
+really spans two tone groups would have its internal group-final syllable
+shifted when real speech keeps it citation. Per §3 that approximation is
+correct for compounds and only breaks down beyond them, and headwords are
+overwhelmingly compounds; a mis-shifted syllable also still yields a legal
+sandhi form of that syllable, so it cannot smuggle an out-of-scope form into
+the inventory. So the first gap is a caveat on the pitch *description*, the
+second a bounded caveat on which positions shift — neither a blocker on
+knowing which tone to record.
 
 **Why this isn't new modelling risk.** `src/phonology/sandhi.ts`'s
 `applySandhiToSyllables` already computes exactly the surface forms this
