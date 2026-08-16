@@ -1,0 +1,169 @@
+.dictionary-view {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  flex-wrap: wrap;
+}
+
+.dictionary-view__list-pane {
+  flex: 1 1 20rem;
+  min-width: 16rem;
+  max-width: 26rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--color-border);
+  overflow-y: auto;
+}
+
+.dictionary-view__search {
+  margin: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+  color: var(--color-fg);
+}
+
+.dictionary-view__detail-pane {
+  flex: 2 1 20rem;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.dictionary-view__placeholder {
+  color: var(--color-muted);
+}
+
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0.5rem 0.75rem;
+}
+
+.entry-list__empty {
+  padding: 0 1rem;
+  color: var(--color-muted);
+}
+
+.entry-list__item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: var(--color-fg);
+}
+
+.entry-list__item:hover {
+  background: var(--color-surface);
+}
+
+.entry-list__item--selected,
+.entry-list__item--selected:hover {
+  background: var(--color-accent);
+  color: var(--color-accent-fg);
+}
+
+.entry-list__headword {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.entry-list__pengim {
+  color: inherit;
+  opacity: 0.75;
+}
+
+.entry-list__gloss {
+  color: inherit;
+  opacity: 0.75;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.entry-detail__header h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+}
+
+.entry-detail__variants,
+.entry-detail__flag {
+  margin: 0 0 0.75rem;
+  color: var(--color-muted);
+}
+
+.entry-detail__readings {
+  margin-bottom: 1.25rem;
+}
+
+.reading {
+  margin-bottom: 0.75rem;
+}
+
+.reading__line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.reading__pengim {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.reading__ipa,
+.reading__poj {
+  color: var(--color-muted);
+}
+
+.reading__tags {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.reading__sandhi,
+.reading__caveat {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin-left: 0.25rem;
+}
+
+.sense {
+  margin-bottom: 1rem;
+}
+
+.sense__line {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+}
+
+.sense__pos {
+  color: var(--color-muted);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.sense__gloss-zh {
+  color: var(--color-muted);
+}
+
+.example {
+  margin-top: 0.4rem;
+  margin-left: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.example__pengim {
+  color: var(--color-accent);
+}
+
+.example__en {
+  color: var(--color-muted);
+}

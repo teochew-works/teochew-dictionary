@@ -4,3 +4,7 @@ dist/
 *.log
 .DS_Store
 .vitest/
+
+web/node_modules/
+web/dist/
+web/public/data/
