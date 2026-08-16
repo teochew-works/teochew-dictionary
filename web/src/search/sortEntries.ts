@@ -1,0 +1,99 @@
+import type { EnrichedEntry, PartOfSpeech } from '../types/dict'
+
+export type SortMode = 'headword' | 'english' | 'tone' | 'category'
+export type ToneSource = 'citation' | 'sandhi'
+
+export interface EntryGroup {
+  key: string
+  label: string
+  entries: EnrichedEntry[]
+}
+
+const POS_LABELS: Record<PartOfSpeech, string> = {
+  noun: 'Noun',
+  'proper-noun': 'Proper noun',
+  verb: 'Verb',
+  adjective: 'Adjective',
+  adverb: 'Adverb',
+  pronoun: 'Pronoun',
+  numeral: 'Numeral',
+  classifier: 'Classifier',
+  preposition: 'Preposition',
+  conjunction: 'Conjunction',
+  particle: 'Particle',
+  interjection: 'Interjection',
+  prefix: 'Prefix',
+  suffix: 'Suffix',
+  phrase: 'Phrase',
+  idiom: 'Idiom',
+}
+
+const collator = new Intl.Collator(undefined, { sensitivity: 'base' })
+
+/**
+ * Tone digit (1-8) of a Peng'im/sandhi string's first syllable, e.g.
+ * "dio5 ziu1" -> 5. Every syllable is schema-guaranteed to end in 1-8 (see
+ * entrySchema in src/schema/entry.ts), but this returns null defensively
+ * rather than throwing if that's ever untrue.
+ */
+export function firstSyllableTone(pengim: string): number | null {
+  const firstSyllable = pengim.trim().split(/\s+/u)[0]
+  if (!firstSyllable) return null
+  const toneChar = firstSyllable.at(-1)
+  if (!toneChar || !/[1-8]/u.test(toneChar)) return null
+  return Number(toneChar)
+}
+
+function capitalize(s: string): string {
+  return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
+/** Sorts a flat copy of `entries` by headword or first English gloss. */
+export function sortFlat(entries: EnrichedEntry[], mode: 'headword' | 'english'): EnrichedEntry[] {
+  const keyFor = mode === 'headword' ? (e: EnrichedEntry) => e.headword : (e: EnrichedEntry) => e.senses[0]?.gloss_en[0] ?? ''
+  return [...entries].sort((a, b) => collator.compare(keyFor(a), keyFor(b)))
+}
+
+function toneGroupKey(entry: EnrichedEntry, toneSource: ToneSource): { key: string; label: string } {
+  const reading = entry.readings[0]
+  const pengim = reading ? (toneSource === 'citation' ? reading.pengim : reading.sandhi) : undefined
+  const tone = pengim ? firstSyllableTone(pengim) : null
+  return tone === null ? { key: 'other', label: 'Other' } : { key: String(tone), label: `Tone ${tone}` }
+}
+
+function categoryGroupKey(entry: EnrichedEntry): { key: string; label: string } {
+  const tag = entry.tags?.[0]
+  if (tag) return { key: `tag:${tag}`, label: capitalize(tag) }
+  const pos = entry.senses[0]?.pos
+  if (pos) return { key: `pos:${pos}`, label: POS_LABELS[pos] }
+  return { key: 'other', label: 'Other' }
+}
+
+/**
+ * Groups `entries` by tone (citation or sandhi tone digit of the first
+ * reading's first syllable) or category (first tag, falling back to part of
+ * speech when the entry has no tags). Tone groups sort numerically 1-8 with
+ * any unparseable-tone "Other" group last; category groups sort
+ * alphabetically by label.
+ */
+export function groupEntries(entries: EnrichedEntry[], mode: 'tone' | 'category', toneSource: ToneSource = 'citation'): EntryGroup[] {
+  const groups = new Map<string, EntryGroup>()
+
+  for (const entry of entries) {
+    const { key, label } = mode === 'tone' ? toneGroupKey(entry, toneSource) : categoryGroupKey(entry)
+    let group = groups.get(key)
+    if (!group) {
+      group = { key, label, entries: [] }
+      groups.set(key, group)
+    }
+    group.entries.push(entry)
+  }
+
+  const result = [...groups.values()]
+  if (mode === 'tone') {
+    result.sort((a, b) => (a.key === 'other' ? 9 : Number(a.key)) - (b.key === 'other' ? 9 : Number(b.key)))
+  } else {
+    result.sort((a, b) => collator.compare(a.label, b.label))
+  }
+  return result
+}
