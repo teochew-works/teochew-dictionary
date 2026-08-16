@@ -1,12 +1,19 @@
 import type { EnrichedEntry } from '../types/dict'
 
+// Entry-level licence is only ever CC-BY-4.0 or CC-BY-SA-4.0 in practice (see
+// src/data/licence.ts) — link each to its LICENSE-DATA-* file at the repo root.
+const LICENCE_URLS: Record<string, string> = {
+  'CC-BY-4.0': 'https://github.com/teochew-works/teochew-dictionary/blob/main/LICENSE-DATA-CC-BY-4.0',
+  'CC-BY-SA-4.0': 'https://github.com/teochew-works/teochew-dictionary/blob/main/LICENSE-DATA-CC-BY-SA-4.0',
+}
+
 /**
  * Mirrors src/cli/lookup.ts's display conventions: sandhi shown only when it
  * differs from the citation form, each ipa_caveat prefixed with ⚠, and a
  * "flagged for review" indicator when needs_review is set. Per-syllable audio
  * (reading.audio) is present in the data but out of scope for the v1 UI.
  */
-export function EntryDetail({ entry }: { entry: EnrichedEntry }) {
+export function EntryDetail({ entry, showLicence }: { entry: EnrichedEntry; showLicence: boolean }) {
   return (
     <article className="entry-detail">
       <header className="entry-detail__header">
@@ -58,6 +65,28 @@ export function EntryDetail({ entry }: { entry: EnrichedEntry }) {
           </div>
         ))}
       </section>
+
+      {showLicence && (
+        <section className="entry-detail__licence">
+          <p className="entry-detail__licence-id">
+            Licence:{' '}
+            {LICENCE_URLS[entry.licence] ? (
+              <a href={LICENCE_URLS[entry.licence]} target="_blank" rel="noreferrer">
+                {entry.licence}
+              </a>
+            ) : (
+              entry.licence
+            )}
+          </p>
+          {entry.attributions.length > 0 && (
+            <ul className="entry-detail__attributions">
+              {entry.attributions.map((a, i) => (
+                <li key={i}>{a}</li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
     </article>
   )
 }
