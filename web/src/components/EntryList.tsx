@@ -1,4 +1,5 @@
 import type { EnrichedEntry } from '../types/dict'
+import { EntryRow } from './EntryRow'
 
 export function EntryList({
   entries,
@@ -15,23 +16,11 @@ export function EntryList({
 
   return (
     <ul className="entry-list">
-      {entries.map((entry) => {
-        const reading = entry.readings[0]
-        const gloss = entry.senses[0]?.gloss_en.join(', ')
-        return (
-          <li key={entry.id}>
-            <button
-              type="button"
-              className={entry.id === selectedId ? 'entry-list__item entry-list__item--selected' : 'entry-list__item'}
-              onClick={() => onSelect(entry.id)}
-            >
-              <span className="entry-list__headword">{entry.headword}</span>
-              {reading && <span className="entry-list__pengim">{reading.pengim}</span>}
-              {gloss && <span className="entry-list__gloss">{gloss}</span>}
-            </button>
-          </li>
-        )
-      })}
+      {entries.map((entry) => (
+        <li key={entry.id}>
+          <EntryRow entry={entry} selected={entry.id === selectedId} onSelect={onSelect} />
+        </li>
+      ))}
     </ul>
   )
 }

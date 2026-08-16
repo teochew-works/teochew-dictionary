@@ -1,6 +1,9 @@
 import { useMemo, useState } from 'react'
 import { createSearchIndex, search } from '../search/searchIndex'
+import { groupEntries, sortFlat } from '../search/sortEntries'
+import type { SortMode, ToneSource } from '../search/sortEntries'
 import { EntryList } from '../components/EntryList'
+import { EntryTree } from '../components/EntryTree'
 import { EntryDetail } from '../components/EntryDetail'
 import type { EnrichedEntry } from '../types/dict'
 import './DictionaryView.css'
@@ -23,15 +26,32 @@ function writeShowLicence(value: boolean): void {
   }
 }
 
+const SORT_MODE_LABELS: Record<SortMode, string> = {
+  headword: 'Headword',
+  english: 'English',
+  tone: 'Tone',
+  category: 'Category',
+}
+
 export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
   const [query, setQuery] = useState('')
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [showLicence, setShowLicence] = useState(readShowLicence)
+  const [sortMode, setSortMode] = useState<SortMode>('headword')
+  const [toneSource, setToneSource] = useState<ToneSource>('citation')
 
   const index = useMemo(() => createSearchIndex(entries), [entries])
+  const isSearching = query.trim() !== ''
   const results = useMemo(
-    () => (query.trim() ? search(index, query) : entries),
-    [index, query, entries],
+    () => (isSearching ? search(index, query) : entries),
+    [index, query, entries, isSearching],
+  )
+
+  const isFlat = sortMode === 'headword' || sortMode === 'english'
+  const sortedEntries = useMemo(() => (isFlat ? sortFlat(results, sortMode) : []), [results, sortMode, isFlat])
+  const groups = useMemo(
+    () => (isFlat ? [] : groupEntries(results, sortMode, toneSource)),
+    [results, sortMode, toneSource, isFlat],
   )
 
   const selected = results.find((e) => e.id === selectedId) ?? entries.find((e) => e.id === selectedId) ?? null
@@ -60,7 +80,36 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
           />
           Show licensing info
         </label>
-        <EntryList entries={results} selectedId={selectedId} onSelect={setSelectedId} />
+        <div className="dictionary-view__controls">
+          <select
+            className="dictionary-view__sort"
+            aria-label="Sort dictionary by"
+            value={sortMode}
+            onChange={(e) => setSortMode(e.target.value as SortMode)}
+          >
+            {Object.entries(SORT_MODE_LABELS).map(([mode, label]) => (
+              <option key={mode} value={mode}>
+                {label}
+              </option>
+            ))}
+          </select>
+          {sortMode === 'tone' && (
+            <select
+              className="dictionary-view__tone-source"
+              aria-label="Tone type"
+              value={toneSource}
+              onChange={(e) => setToneSource(e.target.value as ToneSource)}
+            >
+              <option value="citation">Citation tone</option>
+              <option value="sandhi">Sandhi tone</option>
+            </select>
+          )}
+        </div>
+        {isFlat ? (
+          <EntryList entries={sortedEntries} selectedId={selectedId} onSelect={setSelectedId} />
+        ) : (
+          <EntryTree groups={groups} selectedId={selectedId} onSelect={setSelectedId} isSearching={isSearching} />
+        )}
       </div>
       <div className="dictionary-view__detail-pane">
         {selected ? (
