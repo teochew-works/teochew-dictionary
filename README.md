@@ -140,7 +140,14 @@ dist/                      ← generated, gitignored
   dict.json                  everything, enriched
   dict.ndjson                one entry per line, for streaming
   dict.sqlite                indexed + FTS5
-  schema.json                JSON Schema for data/entries/*.yaml
+  schema.json                 JSON Schema for data/entries/*.yaml
+  pengim-schema.json          JSON Schema for data/phonology/pengim.yaml
+  poj-schema.json             JSON Schema for data/phonology/poj.yaml
+  variety-schema.json         JSON Schema for data/phonology/varieties/*.yaml
+  sandhi-schema.json          JSON Schema for data/phonology/sandhi/*.yaml
+  external-chart-schema.json  JSON Schema for data/phonology/external/*.yaml
+  audio-schema.json           JSON Schema for data/phonology/audio/*.yaml
+  syllable-inventory-schema.json  JSON Schema for data/wordlists/syllable-inventory.yaml
 ```
 
 ---
@@ -355,7 +362,7 @@ are, so `check` stays fast, offline, and CI-safe.
 | `npm run inventory` | regenerate `data/wordlists/syllable-inventory.yaml` |
 | `npm run xref -- <source>` | refresh a cached external phonology chart |
 | `npm run audio:verify` | fetch every audio clip and verify its checksum |
-| `npm run schema` | emit the JSON Schema alone |
+| `npm run schema` | emit the JSON Schemas alone |
 | `npm test` | unit tests + dataset guards |
 | `npm run check` | typecheck + test + validate |
 

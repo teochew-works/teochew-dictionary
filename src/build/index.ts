@@ -1,12 +1,11 @@
 import { mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import Database from 'better-sqlite3'
-import { zodToJsonSchema } from 'zod-to-json-schema'
 
 import { DIST_DIR } from '../paths.js'
 import { loadEntries, loadSources } from '../data/load.js'
 import { listVarieties, loadVariety } from '../phonology/load.js'
-import { entryFileSchema } from '../schema/entry.js'
+import { emitAllSchemas } from '../schema/emit.js'
 import { createEnricher, stripDiacritics, type EnrichedEntry } from './enrich.js'
 
 /**
@@ -53,10 +52,7 @@ export function build(): BuildResult {
 
   emit('dict.json', JSON.stringify({ meta, entries: enriched }, null, 2))
   emit('dict.ndjson', enriched.map((e) => JSON.stringify(e)).join('\n') + '\n')
-  emit(
-    'schema.json',
-    JSON.stringify(zodToJsonSchema(entryFileSchema, 'TeochewEntryFile'), null, 2),
-  )
+  emitAllSchemas(emit)
 
   buildSqlite(join(DIST_DIR, 'dict.sqlite'), enriched)
   outputs.push('dict.sqlite')

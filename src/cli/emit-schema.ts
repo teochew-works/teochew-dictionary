@@ -1,18 +1,20 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { zodToJsonSchema } from 'zod-to-json-schema'
 
 import { DIST_DIR } from '../paths.js'
-import { entryFileSchema } from '../schema/entry.js'
+import { emitAllSchemas } from '../schema/emit.js'
 
 /**
- * `npm run schema` — emit the entry JSON Schema.
+ * `npm run schema` — emit every schema in `src/schema/` as JSON Schema.
  *
  * Zod is the single source of truth; this exists so editors and non-TypeScript
- * consumers can validate `data/entries/*.yaml` without running our tooling.
+ * consumers can validate `data/entries/*.yaml` and the phonology data files
+ * without running our tooling.
  */
 
 mkdirSync(DIST_DIR, { recursive: true })
-const path = join(DIST_DIR, 'schema.json')
-writeFileSync(path, JSON.stringify(zodToJsonSchema(entryFileSchema, 'TeochewEntryFile'), null, 2))
-console.log(`wrote ${path}`)
+emitAllSchemas((filename, contents) => {
+  const path = join(DIST_DIR, filename)
+  writeFileSync(path, contents)
+  console.log(`wrote ${path}`)
+})
