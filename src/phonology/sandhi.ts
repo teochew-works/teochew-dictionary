@@ -97,3 +97,23 @@ export function applySandhiToSyllables(
     needsReview: table.sandhi.needs_review ?? false,
   }
 }
+
+/**
+ * A per-variety sandhi table lookup with fallback to the `chaozhou`
+ * reference table for varieties that don't have their own, cached so a
+ * variety's table (or its fallback) is only loaded once per resolver.
+ */
+export function createSandhiResolver(): (varietyId: string) => SandhiTable {
+  const cache = new Map<string, SandhiTable>()
+  return (varietyId: string) => {
+    let t = cache.get(varietyId)
+    if (t) return t
+    try {
+      t = loadSandhi(varietyId)
+    } catch {
+      t = cache.get('chaozhou') ?? loadSandhi('chaozhou')
+    }
+    cache.set(varietyId, t)
+    return t
+  }
+}

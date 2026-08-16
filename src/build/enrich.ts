@@ -1,7 +1,7 @@
-import { loadAudioIfExists, loadPengimScheme, loadPojScheme, loadSandhi, loadVariety } from '../phonology/load.js'
+import { loadAudioIfExists, loadPengimScheme, loadPojScheme, loadVariety } from '../phonology/load.js'
 import { syllablesToIpa } from '../phonology/ipa.js'
 import { syllablesToPoj } from '../phonology/poj.js'
-import { applySandhiToSyllables } from '../phonology/sandhi.js'
+import { applySandhiToSyllables, createSandhiResolver } from '../phonology/sandhi.js'
 import { parsePengim } from '../phonology/syllable.js'
 import { loadSources } from '../data/load.js'
 import { resolveLicenceOrThrow } from '../data/licence.js'
@@ -120,7 +120,6 @@ function memoize<T>(loader: (id: string) => T): (id: string) => T {
 export function createEnricher() {
   const scheme = loadPengimScheme()
   const poj = loadPojScheme()
-  const sandhiTables = new Map<string, ReturnType<typeof loadSandhi>>()
   const sources = new Map<string, Source>(loadSources().map((s) => [s.id, s]))
 
   const variety = memoize(loadVariety)
@@ -133,17 +132,7 @@ export function createEnricher() {
   const audioFor = memoize(loadAudioIfExists)
 
   // Sandhi tables are per-variety where one exists, else the reference table.
-  const sandhiFor = (varietyId: string) => {
-    let t = sandhiTables.get(varietyId)
-    if (t) return t
-    try {
-      t = loadSandhi(varietyId)
-    } catch {
-      t = sandhiTables.get('chaozhou') ?? loadSandhi('chaozhou')
-    }
-    sandhiTables.set(varietyId, t)
-    return t
-  }
+  const sandhiFor = createSandhiResolver()
 
   function enrichReading(reading: Reading): EnrichedReading {
     const syllables = parsePengim(reading.pengim, scheme)
