@@ -302,12 +302,19 @@ describe('normalisation helpers', () => {
 
 describe('lookup against the built database', () => {
   let db: Database.Database
+  let result: ReturnType<typeof build>
 
   beforeAll(() => {
-    build()
+    result = build()
     db = openDb()
   })
   afterAll(() => db?.close())
+
+  it('emits a JSON Schema file per src/schema/ schema, not just the entry format', () => {
+    expect(result.outputs).toEqual(
+      expect.arrayContaining(['schema.json', 'variety-schema.json', 'audio-schema.json']),
+    )
+  })
 
   it('finds an entry by its characters', () => {
     const hits = lookup('潮州', db)
