@@ -2,7 +2,6 @@
   flex: 1;
   display: flex;
   min-height: 0;
-  flex-wrap: wrap;
 }
 
 .dictionary-view__list-pane {
