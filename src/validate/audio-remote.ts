@@ -32,8 +32,10 @@ function err(file: string, message: string, path: string): Issue {
   return { level: 'error', file, message, path }
 }
 
+const FETCH_TIMEOUT_MS = 30_000
+
 async function fetchClipDefault(url: string): Promise<Response> {
-  return fetch(url, { headers: { 'user-agent': IMPORTER_USER_AGENT } })
+  return fetch(url, { headers: { 'user-agent': IMPORTER_USER_AGENT }, signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) })
 }
 
 export interface AudioRemoteOptions {
@@ -49,20 +51,20 @@ export async function verifyAudioRemote(sources: AudioSource[], options: AudioRe
     for (const [syllable, clip] of Object.entries(audio.clips)) {
       const path = `clips.${syllable}`
 
-      let res: Response
+      let body: Buffer
       try {
-        res = await fetchClip(clip.url)
+        const res = await fetchClip(clip.url)
+        if (!res.ok) {
+          issues.push(err(file, `HTTP ${res.status} fetching ${clip.url}`, path))
+          continue
+        }
+        body = Buffer.from(await res.arrayBuffer())
       } catch (e) {
-        issues.push(err(file, `failed to fetch ${clip.url}: ${(e as Error).message}`, path))
+        const message = e instanceof Error ? e.message : String(e)
+        issues.push(err(file, `failed to fetch ${clip.url}: ${message}`, path))
         continue
       }
 
-      if (!res.ok) {
-        issues.push(err(file, `HTTP ${res.status} fetching ${clip.url}`, path))
-        continue
-      }
-
-      const body = Buffer.from(await res.arrayBuffer())
       const digest = createHash('sha256').update(body).digest('hex')
       const expected = clip.checksum.replace(/^sha256:/u, '').toLowerCase()
 
