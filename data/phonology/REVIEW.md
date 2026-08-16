@@ -681,6 +681,76 @@ pass rather than being decided as a side effect of a scope ruling. #36
 decision — recording still cannot start against a complete inventory until
 #48 resolves.
 
+## 15. `dist/schema.json` scope — phonology-side schemas · issue #39  ✅ **Resolved 2026-08-16**
+
+**Decision: broadened, one file per schema — not a merged bag.** `npm run
+schema` / `src/build/index.ts` now emit a JSON Schema for every schema in
+`src/schema/`, not just `entryFileSchema`: `pengim-schema.json`,
+`poj-schema.json`, `variety-schema.json`, `sandhi-schema.json`,
+`external-chart-schema.json`, `audio-schema.json`, and
+`syllable-inventory-schema.json` join `schema.json` in `dist/`. This
+supersedes §11's "left alone" note (§11/§12 stand as-written, historical
+record of the state at the time — not edited here).
+
+**Why broadened.** §11 correctly declined to decide this as a side effect of
+adding `audioSchema` — it's a real, independent decision about what a
+generated artifact promises, and every phonology schema was exactly as
+absent as `audioSchema`, including `varietySchema` since #30. Once actually
+weighed on its own: the phonology data files are as much a validated part of
+this project as the lexicon (`src/schema/phonology.ts`'s own header says so),
+and `emit-schema.ts`'s original rationale — "editors and non-TypeScript
+consumers can validate ... without running our tooling" — applies to a
+contributor hand-authoring a new variety overlay exactly as much as it does
+to an entries file. `varietySchema` in particular already models the sparse
+Shantou/Chaoyang-overlay-on-Chaozhou shape correctly (every mapping group and
+`variety.inherits` are optional), so the generated schema is accurate for
+both a reference variety and an overlay, not just the reference case.
+
+**Why one file per schema, not merged.** JSON Schema has no clean way to
+express "this file is N unrelated top-level schemas" — a consumer expects to
+validate a document against *the* schema at a file's root, not pick a named
+sub-schema out of a `$defs` bag. Per-file also means `dist/schema.json` keeps
+meaning exactly what it means today (no rename, nothing that already reads
+it breaks) and each phonology file's schema is independently diffable —
+changing `sandhiSchema` doesn't perturb `audio-schema.json`.
+
+**`pengimSchemeSchema` included.** The issue's own acceptance list named
+`varietySchema`, `sandhiSchema`, `pojSchema`, `syllableInventorySchema`,
+`externalChartSchema`, and `audioSchema`, but not `pengimSchemeSchema` —
+despite it living in the same `phonology.ts` and backing `pengim.yaml`.
+Leaving it out here would reproduce the exact "arbitrary partial inclusion"
+problem the issue exists to avoid, so it's emitted too
+(`pengim-schema.json`).
+
+**The variety enum.** Raised alongside this decision: `reading.variety`
+(`src/schema/entry.ts`) is `z.string()` with no static enum — its legal
+values are derived at runtime from `listVarieties()`'s directory listing
+(`src/phonology/load.ts`), not from any zod type, and checked only by
+`src/validate/index.ts`. No amount of broadening `dist/schema.json` — merged
+or per-file — would let an external consumer catch an unknown-variety typo
+via JSON Schema alone unless the known ids are baked into the generated
+artifact directly. Fixed narrowly: `src/schema/emit.ts` injects a live
+`enum` (and `default`) into just the `variety` node of the generated entry
+schema, via zod-to-json-schema's `override` hook, sourced fresh from
+`listVarieties()` on every emission. `readingSchema.variety` itself stays a
+plain `z.string().default(DEFAULT_VARIETY)` — deliberately not promoted to a
+static `z.enum(...)`, which would couple schema definition to filesystem
+state at module-load time and duplicate `validate/index.ts`'s existing,
+friendlier runtime check (which names the offending value and lists what's
+known) with a second, less informative one. The generated JSON Schema is a
+best-effort mirror for external tooling; `validate/index.ts` remains the
+actual enforcement point for this project's own data.
+
+**Out of scope, named explicitly (same reason §11 named `dist/schema.json`
+itself rather than deciding it silently).** `sourcesFileSchema`
+(`src/schema/entry.ts`, backs `data/sources.yaml`) is not one of the
+phonology-side schemas this issue asked about and is left unemitted. The
+*enriched* output shape — `EnrichedEntry`/`EnrichedReading` from
+`src/build/enrich.ts`, i.e. what `dict.json`/`dict.ndjson` actually contain
+(`audio`, `ipa_confidence`, `sandhi`, `search_keys`, `licence`, ...) — was
+named in the issue as separate, likely-larger work and remains so; unchanged
+by this decision.
+
 ## Individual entries flagged `needs_review`
 
 Run `npm run validate` for the current count. As of writing:
