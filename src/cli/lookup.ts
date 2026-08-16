@@ -1,4 +1,5 @@
 import { NotBuiltError, lookup, openDb } from '../lookup/index.js'
+import { bold, cyan, dim } from './colour.js'
 
 /**
  * `npm run lookup -- <query>` — search the built dictionary.
@@ -6,12 +7,6 @@ import { NotBuiltError, lookup, openDb } from '../lookup/index.js'
  * Query by Chinese characters, Peng'im (with or without tone digits), POJ, or an
  * English gloss; the matcher works out which was meant.
  */
-
-const COLOUR = process.stdout.isTTY && !process.env['NO_COLOR']
-const c = (code: string, s: string) => (COLOUR ? `[${code}m${s}[0m` : s)
-const bold = (s: string) => c('1', s)
-const dim = (s: string) => c('2', s)
-const cyan = (s: string) => c('36', s)
 
 const args = process.argv.slice(2)
 let variety: string | null = null
@@ -62,6 +57,10 @@ for (const { entry, match } of hits) {
     console.log(`  ${bits.join('  ')}  ${dim(`[${tags}]`)}`)
     if (r.sandhi !== r.pengim) console.log(`    ${dim(`sandhi: ${r.sandhi}`)}`)
     for (const caveat of r.ipa_caveats) console.log(`    ${dim(`⚠ ${caveat}`)}`)
+    for (const clip of r.audio) {
+      if (!clip) continue
+      console.log(`    ${dim(`♪ ${clip.syllable}: ${clip.url} [${clip.confidence}]`)}`)
+    }
   }
 
   for (const s of entry.senses) {

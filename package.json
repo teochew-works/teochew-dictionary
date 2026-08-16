@@ -20,6 +20,7 @@
     "inventory": "tsx src/cli/inventory.ts",
     "xref": "tsx src/cli/xref.ts",
     "lookup": "tsx src/cli/lookup.ts",
+    "audio:verify": "tsx src/cli/audio-verify.ts",
     "schema": "tsx src/cli/emit-schema.ts",
     "test": "vitest run",
     "test:watch": "vitest",

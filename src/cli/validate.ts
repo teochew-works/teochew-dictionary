@@ -1,17 +1,11 @@
 import { validate, TONES, type Issue } from '../validate/index.js'
+import { dim, green, red, yellow } from './colour.js'
 
 /**
  * `npm run validate` — check the dataset and exit non-zero on any error.
  * Warnings are reported but do not fail, so a lexicon in progress stays
  * buildable.
  */
-
-const COLOUR = process.stdout.isTTY && !process.env['NO_COLOR']
-const c = (code: string, s: string) => (COLOUR ? `[${code}m${s}[0m` : s)
-const red = (s: string) => c('31', s)
-const yellow = (s: string) => c('33', s)
-const green = (s: string) => c('32', s)
-const dim = (s: string) => c('2', s)
 
 function format(issue: Issue): string {
   const tag = issue.level === 'error' ? red('error') : yellow('warn ')
