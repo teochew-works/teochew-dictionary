@@ -244,10 +244,12 @@ npm run inventory
 Unlike `swadesh-207.yaml`, this file **is** script-regenerated — it's 100%
 derivable from `pengim.yaml` and `data/entries/`, so a stale copy fails
 `npm run check` (an in-memory regenerate is diff-checked against the
-committed file). Each syllable's `varieties[<id>].status` is `attested` (some
-entry's reading in that variety uses it, see `attested_entries`) or
-`unattested`; `external` records whether an independent published chart
-corroborates the syllable's rime, refreshed separately and offline via
+committed file). Each syllable's `varieties[<id>].status` is `attested` — some
+entry's reading in that variety uses it as a citation form
+(`attested_entries`) or as the tone-sandhi surface form of a non-final
+syllable (`sandhi_attested_entries`, issue #48) — or `unattested`; `external`
+records whether an independent published chart corroborates the syllable's
+rime, refreshed separately and offline via
 
 ```bash
 npm run xref -- learnteochew
