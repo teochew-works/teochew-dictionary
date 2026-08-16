@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { loadSyllableInventory } from '../src/data/load.js'
 import {
   buildAttestationIndex,
+  buildSandhiAttestationIndex,
   buildSyllableInventory,
   generateSyllables,
   rimeOf,
@@ -83,6 +84,41 @@ describe('buildAttestationIndex', () => {
 
   it('skips malformed readings rather than throwing', () => {
     const index = buildAttestationIndex([entry('bad', [{ pengim: 'za8' }])])
+    expect(index.size).toBe(0)
+  })
+})
+
+describe('buildSandhiAttestationIndex', () => {
+  function entry(id: string, readings: { pengim: string; variety?: string }[]): LoadedEntry {
+    return {
+      file: 'fixture.yaml',
+      entry: {
+        id,
+        headword: id,
+        readings: readings.map((r) => ({ pengim: r.pengim, variety: r.variety ?? 'chaozhou' })),
+        senses: [{ pos: 'noun', gloss_en: ['x'] }],
+        sources: ['fixture'],
+      } as Entry,
+    }
+  }
+
+  it('indexes only the sandhi surface of non-final syllables', () => {
+    // dio5 ziu1 (潮州) sandhis to dio7 ziu1: only the first syllable changes.
+    const index = buildSandhiAttestationIndex([entry('dio5-ziu1-潮州', [{ pengim: 'dio5 ziu1' }])])
+
+    expect([...index.get('dio7')!.get('chaozhou')!]).toEqual(['dio5-ziu1-潮州'])
+    // The final syllable never undergoes sandhi, so it's not in this index
+    // (it's already covered by buildAttestationIndex's citation attestation).
+    expect(index.has('ziu1')).toBe(false)
+  })
+
+  it('contributes nothing for single-syllable readings', () => {
+    const index = buildSandhiAttestationIndex([entry('nang5-儂', [{ pengim: 'nang5' }])])
+    expect(index.size).toBe(0)
+  })
+
+  it('skips malformed readings rather than throwing', () => {
+    const index = buildSandhiAttestationIndex([entry('bad', [{ pengim: 'za8 nang5' }])])
     expect(index.size).toBe(0)
   })
 })
