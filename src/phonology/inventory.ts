@@ -3,7 +3,8 @@ import type { PengimScheme } from '../schema/phonology.js'
 import type { SyllableInventory, SyllableStatus } from '../schema/inventory.js'
 import { loadExternalChart, listExternalCharts, listVarieties, loadPengimScheme } from './load.js'
 import { rimeOf } from './ipa.js'
-import { tryParsePengim, type Syllable } from './syllable.js'
+import { applySandhiToSyllables, createSandhiResolver } from './sandhi.js'
+import { parseSyllable, tryParsePengim, type Syllable } from './syllable.js'
 
 export { rimeOf }
 
@@ -106,16 +107,71 @@ export function buildAttestationIndex(
   return index
 }
 
+/**
+ * syllable.raw → variety id → attesting entry ids, but for *sandhi-shifted*
+ * surface forms rather than citation forms: for every multi-syllable
+ * reading, every non-final syllable's sandhi surface (per
+ * `applySandhiToSyllables`, issue #34/#48) counts as attestation of that
+ * surface syllable. The final syllable of a reading never undergoes sandhi
+ * and is already covered by `buildAttestationIndex`, so it's skipped here.
+ */
+export function buildSandhiAttestationIndex(
+  entries: LoadedEntry[] = loadEntries(),
+  scheme?: PengimScheme,
+): Map<string, Map<string, Set<string>>> {
+  const index = new Map<string, Map<string, Set<string>>>()
+  const sandhiFor = createSandhiResolver()
+
+  for (const { entry } of entries) {
+    for (const reading of entry.readings) {
+      const parsed = tryParsePengim(reading.pengim, scheme)
+      if (!parsed.ok) continue // validate() reports malformed readings precisely; not this function's job
+
+      const { syllables } = applySandhiToSyllables(parsed.syllables, sandhiFor(reading.variety))
+      for (const s of syllables.slice(0, -1)) {
+        let byVariety = index.get(s.surface)
+        if (!byVariety) {
+          byVariety = new Map()
+          index.set(s.surface, byVariety)
+        }
+        let ids = byVariety.get(reading.variety)
+        if (!ids) {
+          ids = new Set()
+          byVariety.set(reading.variety, ids)
+        }
+        ids.add(entry.id)
+      }
+    }
+  }
+
+  return index
+}
+
 /** Assembles the full `syllable-inventory.yaml` content. */
 export function buildSyllableInventory(): SyllableInventory {
   // Loaded once and threaded through both calls below (rather than letting
   // each rely on its own default), so the ~52k-candidate generator and the
-  // attestation pass share one parsed scheme and one built Tables instead of
-  // each paying to build their own.
+  // attestation passes share one parsed scheme and one built Tables instead
+  // of each paying to build their own.
   const scheme = loadPengimScheme()
   const syllables = generateSyllables(scheme)
   const varieties = listVarieties()
-  const attestation = buildAttestationIndex(loadEntries(), scheme)
+  const entries = loadEntries()
+  const attestation = buildAttestationIndex(entries, scheme)
+  const sandhiAttestation = buildSandhiAttestationIndex(entries, scheme)
+
+  // Sandhi-shifted forms are expected to already be legal generated
+  // syllables (the sandhi tables never remap a tone across the
+  // checked/unchecked coda boundary, and `generateSyllables` already
+  // brute-forces every tone legal for a given coda shape) — but fold in any
+  // sandhi-only raw forms defensively rather than assume that holds forever.
+  // `parseSyllable` is safe here: the raw string came from `formatSyllable`
+  // applied to an already-validated `Syllable`.
+  const byRaw = new Map(syllables.map((s) => [s.raw, s] as const))
+  for (const raw of sandhiAttestation.keys()) {
+    if (!byRaw.has(raw)) byRaw.set(raw, parseSyllable(raw))
+  }
+  const allSyllables = [...byRaw.values()].sort((a, b) => a.raw.localeCompare(b.raw))
 
   // Driven by whatever charts are actually present, not a hardcoded list —
   // adding data/phonology/external/<id>.yaml is enough to fold `id` into
@@ -123,15 +179,22 @@ export function buildSyllableInventory(): SyllableInventory {
   const externalSources = listExternalCharts()
   const externalFinals = new Map(externalSources.map((id) => [id, new Set(loadExternalChart(id).finals)]))
 
-  const items = syllables.map((syllable) => {
+  const items = allSyllables.map((syllable) => {
     const byVariety = attestation.get(syllable.raw)
-    const varietyStatus: Record<string, { status: SyllableStatus; attested_entries?: string[] }> = {}
+    const bySandhiVariety = sandhiAttestation.get(syllable.raw)
+    const varietyStatus: Record<
+      string,
+      { status: SyllableStatus; attested_entries?: string[]; sandhi_attested_entries?: string[] }
+    > = {}
     for (const v of varieties) {
       const ids = byVariety?.get(v)
-      varietyStatus[v] =
-        ids && ids.size > 0
-          ? { status: 'attested', attested_entries: [...ids].sort() }
-          : { status: 'unattested' }
+      const sandhiIds = bySandhiVariety?.get(v)
+      const attested = (ids && ids.size > 0) || (sandhiIds && sandhiIds.size > 0)
+      varietyStatus[v] = {
+        status: attested ? 'attested' : 'unattested',
+        ...(ids && ids.size > 0 ? { attested_entries: [...ids].sort() } : {}),
+        ...(sandhiIds && sandhiIds.size > 0 ? { sandhi_attested_entries: [...sandhiIds].sort() } : {}),
+      }
     }
 
     // `rimeOf` (medial+nucleus+nasal+coda) is the granularity a published

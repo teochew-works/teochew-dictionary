@@ -6,7 +6,9 @@
 # rerun `npm run inventory` instead.
 #
 # `varieties[v].status` — `attested` if some entry's reading in variety `v`
-# uses this syllable (see `attested_entries`), else `unattested`. Only
+# uses this syllable as a citation form (see `attested_entries`) or as the
+# tone-sandhi surface form of a non-final syllable in one of its readings
+# (see `sandhi_attested_entries`, issue #34/#48) — else `unattested`. Only
 # readings count, not example-sentence Peng'im (examples carry no `variety`).
 #
 # `external` — whether an independent published chart (currently just
@@ -37,6 +39,9 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - a1-ba1-阿爸
+          - a1-ma2-阿媽
+        sandhi_attested_entries:
           - a1-ba1-阿爸
           - a1-ma2-阿媽
       shantou:
@@ -1471,7 +1476,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - ziah8-ba2-bhuê7-食飽未
       shantou:
         status: unattested
   - syllable: ba7
@@ -3454,7 +3461,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - beng5-iu2-朋友
       shantou:
         status: unattested
   - syllable: benh4
@@ -11391,7 +11400,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - bhoi2-bhoi7-買賣
       shantou:
         status: unattested
   - syllable: bhoi7
@@ -31089,6 +31100,8 @@ items:
           - cên1-guê2-生果
           - cên1-星
           - cên1-青
+        sandhi_attested_entries:
+          - cên1-guê2-生果
       shantou:
         status: unattested
   - syllable: cen2
@@ -36314,6 +36327,9 @@ items:
           - ciu7-lim5-樹林
           - ciu7-puê5-樹皮
           - ciu7-樹
+        sandhi_attested_entries:
+          - ciu7-lim5-樹林
+          - ciu7-puê5-樹皮
       shantou:
         status: unattested
   - syllable: ciub4
@@ -39051,7 +39067,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - cuêng2-kui3-喘氣
       shantou:
         status: unattested
   - syllable: cuang7
@@ -40303,7 +40321,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - cuêng2-kui3-喘氣
       shantou:
         status: unattested
   - syllable: cueng7
@@ -43931,7 +43951,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - dam6-boh8-淡薄
       shantou:
         status: unattested
   - syllable: dan1
@@ -45675,6 +45697,9 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - di7-si5-底時
+        sandhi_attested_entries:
+          - di6-diang5-底儂
           - di7-si5-底時
       shantou:
         status: unattested
@@ -48911,11 +48936,19 @@ items:
       learnteochew: true
     varieties:
       chaoyang:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - dio5-ziu1-潮州
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - dio5-ziu1-nang5-潮州儂
+          - dio5-ziu1-ue7-潮州話
+          - dio5-ziu1-潮州
       shantou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - dio5-ziu1-潮州
   - syllable: diob4
     external:
       learnteochew: false
@@ -50836,6 +50869,8 @@ items:
         status: attested
         attested_entries:
           - do1-sia7-多謝
+        sandhi_attested_entries:
+          - do1-sia7-多謝
       shantou:
         status: unattested
   - syllable: do2
@@ -51566,6 +51601,9 @@ items:
         attested_entries:
           - dong1-gog4-ue7-中國話
           - dong1-gog4-中國
+        sandhi_attested_entries:
+          - dong1-gog4-ue7-中國話
+          - dong1-gog4-中國
       shantou:
         status: unattested
   - syllable: dong2
@@ -51618,7 +51656,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - dong6-muêh8-動物
       shantou:
         status: unattested
   - syllable: donh4
@@ -52344,6 +52384,8 @@ items:
         attested_entries:
           - dua7-nang5-大儂
           - dua7-大
+        sandhi_attested_entries:
+          - dua7-nang5-大儂
       shantou:
         status: unattested
   - syllable: duab4
@@ -57830,6 +57872,8 @@ items:
           - ang1-翁
           - ing1-ui5-因為
           - ing1-煙
+        sandhi_attested_entries:
+          - ing1-ui5-因為
       shantou:
         status: unattested
   - syllable: eng2
@@ -58223,6 +58267,9 @@ items:
         attested_entries:
           - ga1-gi6-nang5-家己儂
           - ga1-ziah4-尻脊
+        sandhi_attested_entries:
+          - ga1-gi6-nang5-家己儂
+          - ga1-ziah4-尻脊
       shantou:
         status: unattested
   - syllable: ga2
@@ -58317,7 +58364,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - gag4-bian1-結冰
       shantou:
         status: unattested
   - syllable: gah4
@@ -74524,7 +74573,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - ga1-gi6-nang5-家己儂
       shantou:
         status: unattested
   - syllable: gia1
@@ -79758,7 +79809,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - dong1-gog4-ue7-中國話
       shantou:
         status: unattested
   - syllable: goh4
@@ -81104,6 +81157,8 @@ items:
         attested_entries:
           - gu7-ni5-舊年
           - gu7-舊
+        sandhi_attested_entries:
+          - gu7-ni5-舊年
       shantou:
         status: unattested
   - syllable: gua1
@@ -93685,7 +93740,11 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - ho2-tian1-好聽
+          - ho2-toin2-好看
+          - ho2-ziah8-好食
       shantou:
         status: unattested
   - syllable: ho7
@@ -100121,6 +100180,8 @@ items:
         attested_entries:
           - i1-nang5-伊儂
           - i1-伊
+        sandhi_attested_entries:
+          - i1-nang5-伊儂
       shantou:
         status: unattested
   - syllable: i2
@@ -103162,6 +103223,8 @@ items:
         attested_entries:
           - ing1-ui5-因為
           - ing1-煙
+        sandhi_attested_entries:
+          - ing1-ui5-因為
       shantou:
         status: unattested
   - syllable: ing2
@@ -105209,6 +105272,8 @@ items:
         attested_entries:
           - ga1-ziah4-尻脊
           - ka1-跤
+        sandhi_attested_entries:
+          - ga1-ziah4-尻脊
       shantou:
         status: unattested
   - syllable: ka2
@@ -119149,6 +119214,8 @@ items:
         status: attested
         attested_entries:
           - nah4-sab4-垃圾
+        sandhi_attested_entries:
+          - nah4-sab4-垃圾
       shantou:
         status: unattested
   - syllable: la2
@@ -119264,7 +119331,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - nah4-sab4-垃圾
       shantou:
         status: unattested
   - syllable: lai1
@@ -124356,6 +124425,8 @@ items:
         attested_entries:
           - lim1-ziu2-啉酒
           - lim1-啉
+        sandhi_attested_entries:
+          - lim1-ziu2-啉酒
       shantou:
         status: unattested
   - syllable: lim2
@@ -127423,7 +127494,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - long2-zong2-攏總
       shantou:
         status: unattested
   - syllable: long7
@@ -133249,7 +133322,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - mag8-zu1-目珠
       shantou:
         status: unattested
   - syllable: mag8
@@ -147229,7 +147304,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - nah4-sab4-垃圾
       shantou:
         status: unattested
   - syllable: nai1
@@ -163470,7 +163547,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - sing1-ni5-ho2-新年好
       shantou:
         status: unattested
   - syllable: nia1
@@ -208117,6 +208196,8 @@ items:
         attested_entries:
           - sio1-pah4-相拍
           - siê1-燒
+        sandhi_attested_entries:
+          - sio1-pah4-相拍
       shantou:
         status: unattested
   - syllable: sie2
@@ -209681,6 +209762,9 @@ items:
           - sing1-ni5-ho2-新年好
           - sing1-ni5-新年
           - sing1-新
+        sandhi_attested_entries:
+          - sing1-ni5-ho2-新年好
+          - sing1-ni5-新年
       shantou:
         status: unattested
   - syllable: sing2
@@ -209884,6 +209968,8 @@ items:
         attested_entries:
           - sio1-pah4-相拍
           - siê1-燒
+        sandhi_attested_entries:
+          - sio1-pah4-相拍
       shantou:
         status: unattested
   - syllable: sio2
@@ -211319,7 +211405,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - siu5-zui2-泅水
       shantou:
         status: unattested
   - syllable: siub4
@@ -211989,6 +212077,8 @@ items:
         status: attested
         attested_entries:
           - soi2-洗
+        sandhi_attested_entries:
+          - soi3-gian2-細囝
       shantou:
         status: unattested
   - syllable: soi3
@@ -213952,6 +214042,9 @@ items:
           - suan1-tao5-nang5-汕頭儂
           - suan1-tao5-汕頭
           - suan1-山
+        sandhi_attested_entries:
+          - suan1-tao5-nang5-汕頭儂
+          - suan1-tao5-汕頭
       shantou:
         status: unattested
   - syllable: suan2
@@ -219294,7 +219387,10 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - suan1-tao5-nang5-汕頭儂
+          - tao5-mo5-頭毛
       shantou:
         status: unattested
   - syllable: taob4
@@ -219896,7 +219992,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - tig4-to5-𨑨迌
       shantou:
         status: unattested
   - syllable: teh4
@@ -223025,7 +223123,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - tig4-to5-𨑨迌
       shantou:
         status: unattested
   - syllable: tih4
@@ -226801,7 +226901,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - tou5-hung2-塗粉
       shantou:
         status: unattested
   - syllable: toub4
@@ -239837,6 +239939,9 @@ items:
         status: attested
         attested_entries:
           - ga1-ziah4-尻脊
+        sandhi_attested_entries:
+          - ziah8-ba2-bhuê7-食飽未
+          - ziah8-bng7-食飯
       shantou:
         status: unattested
   - syllable: ziah8
@@ -244308,6 +244413,9 @@ items:
           - dio5-ziu1-nang5-潮州儂
           - dio5-ziu1-ue7-潮州話
           - dio5-ziu1-潮州
+        sandhi_attested_entries:
+          - dio5-ziu1-nang5-潮州儂
+          - dio5-ziu1-ue7-潮州話
       shantou:
         status: attested
         attested_entries:

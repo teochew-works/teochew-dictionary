@@ -385,16 +385,49 @@ an example's variety would have to be guessed. `readingSchema` does carry
 `variety` (defaulting to `chaozhou`), so readings are the precise reading of
 the issue's "attested readings in `data/entries/`."
 
-**Chaozhou: 336/25,056 attested. Shantou and Chaoyang: 2/25,056 each.** Not a
-generator bug — only one entry in the whole lexicon
-(`dio5-ziu1-潮州` in `places.yaml`) carries an explicit `shantou`/`chaoyang`
-reading; the other 625 `pengim:` readings across the lexicon default to
+**Attestation also covers tone-sandhi surface forms (issue #48, per §14's
+ruling).** For every multi-syllable reading, `buildSandhiAttestationIndex`
+(`src/phonology/inventory.ts`) runs the same `applySandhiToSyllables` that
+already backs `EnrichedReading.sandhi` in `src/build/enrich.ts` — via a
+`createSandhiResolver` now shared between both call sites, not
+reimplemented — and indexes every non-final syllable's sandhi surface (e.g.
+`dio7`, the sandhi surface of 潮州's `dio5 ziu1`) the same way a citation
+form is indexed. Each `varieties[v]` entry gained a parallel
+`sandhi_attested_entries` field alongside `attested_entries`; `status` is
+`attested` if either is non-empty. The final syllable of a reading is never
+sandhi-shifted, so it stays covered only by the existing citation index, not
+duplicated here. Sandhi tables only exist for `chaozhou` today
+(`data/phonology/sandhi/`), so all three varieties' sandhi attestation
+currently resolves through the same fallback table `enrich.ts` already uses
+for the same reason — not a new caveat.
+
+**A sandhi surface form is expected to already be a legal generated
+syllable, and this was confirmed rather than assumed.** Every sandhi rule
+maps tones within the same checked/unchecked coda class (1→1, 2→6, 3→2,
+4→8, 5→7, 6→7, 7→7, 8→4 — the two checked tones, 4 and 8, only ever map to
+each other), and `generateSyllables()` already brute-forces every tone legal
+for a given coda shape. So folding sandhi attestation in should only change
+which of the existing 25,056 syllables are marked attested, not the total
+count — regenerating after this change left the count at exactly 25,056,
+confirming it. `buildSyllableInventory` still has a defensive fallback that
+synthesizes a new item via `parseSyllable` for any sandhi surface not
+already in the generated set, in case a future sandhi table ever crosses
+that boundary, but it is a no-op today.
+
+**Chaozhou: 358/25,056 attested (336 via citation forms, 22 more via
+sandhi-only attestation). Shantou and Chaoyang: 3/25,056 each (2 via
+citation forms, 1 more via sandhi-only attestation).** Not a generator bug —
+only one entry in the whole lexicon (`dio5-ziu1-潮州` in `places.yaml`)
+carries an explicit `shantou`/`chaoyang` reading, and it's also the entry
+contributing every non-Chaozhou sandhi-only syllable (`dio7`, its own sandhi
+surface); the other 625 `pengim:` readings across the lexicon default to
 `chaozhou`. The near-empty Shantou/Chaoyang columns are exactly what that
 data distribution predicts, restated here so it isn't mistaken for broken
 code during review of the generated file. This will fill in naturally as more
-entries gain explicit non-Chaozhou readings — the file regenerates via
-`npm run inventory` whenever that happens, and a stale copy fails
-`npm run check` (see the drift-check test in `tests/inventory.test.ts`).
+entries gain explicit non-Chaozhou readings or more multi-syllable
+readings — the file regenerates via `npm run inventory` whenever that
+happens, and a stale copy fails `npm run check` (see the drift-check test in
+`tests/inventory.test.ts`).
 
 **Not modelled: variety-specific syllable legality.** `pengim.yaml` defines
 the orthography once, variety-agnostically — `varieties/*.yaml` model
@@ -680,6 +713,9 @@ pass rather than being decided as a side effect of a scope ruling. #36
 (recording) accordingly now depends on #48 landing, not only on this
 decision — recording still cannot start against a complete inventory until
 #48 resolves.
+
+**Update:** #48 has since landed — see §10, which now documents
+`sandhi_attested_entries` and the folded-in counts.
 
 ## 15. `dist/schema.json` scope — phonology-side schemas · issue #39  ✅ **Resolved 2026-08-16**
 

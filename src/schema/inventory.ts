@@ -14,12 +14,21 @@ export const SYLLABLE_STATUS = ['attested', 'unattested'] as const
 const varietyStatusSchema = z
   .object({
     status: z.enum(SYLLABLE_STATUS),
-    /** Entry ids attesting this syllable for this variety. Omitted when unattested. */
+    /** Entry ids whose own citation reading is this syllable. Omitted when none. */
     attested_entries: z.array(z.string().min(1)).min(1).optional(),
+    /**
+     * Entry ids where this syllable is the tone-sandhi surface form of a
+     * non-final syllable in one of their readings (issue #34/#48). Omitted
+     * when none.
+     */
+    sandhi_attested_entries: z.array(z.string().min(1)).min(1).optional(),
   })
-  .refine((v) => (v.status === 'attested') === (v.attested_entries !== undefined), {
-    message: "`attested_entries` must be present iff `status` is 'attested'",
-  })
+  .refine(
+    (v) => (v.status === 'attested') === (v.attested_entries !== undefined || v.sandhi_attested_entries !== undefined),
+    {
+      message: "`attested_entries` or `sandhi_attested_entries` must be present iff `status` is 'attested'",
+    },
+  )
 
 export const syllableInventoryItemSchema = z.object({
   /** Canonical Peng'im form, e.g. "dio5". Everything else is derived from this. */
