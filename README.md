@@ -148,6 +148,16 @@ dist/                      ← generated, gitignored
   external-chart-schema.json  JSON Schema for data/phonology/external/*.yaml
   audio-schema.json           JSON Schema for data/phonology/audio/*.yaml
   syllable-inventory-schema.json  JSON Schema for data/wordlists/syllable-inventory.yaml
+
+web/                       ← static frontend (issue #55), independent npm project
+  src/
+    types/dict.ts              hand-written types mirroring dist/dict.json
+    search/                    Fuse.js wrapper over EnrichedEntry.search_keys
+    srs/                       SM-2-style scheduler + IndexedDB persistence (idb)
+    views/                     DictionaryView, FlashcardsView
+  scripts/sync-data.mjs       copies ../dist/dict.json → web/public/data/ (gitignored)
+  public/data/               ← generated, gitignored
+  dist/                      ← generated, gitignored (deployed to GitHub Pages)
 ```
 
 ---
@@ -269,6 +279,7 @@ reusing one licence for everything.**
 | | Licence | File |
 |---|---|---|
 | `src/` — the tooling | BSD-3-Clause | [`LICENSE`](LICENSE) |
+| `web/` — the frontend app | BSD-3-Clause | [`LICENSE`](LICENSE) |
 | `data/` — default | CC-BY-4.0 | [`LICENSE-DATA-CC-BY-4.0`](LICENSE-DATA-CC-BY-4.0) |
 | `data/` — entries citing a share-alike source | CC-BY-SA-4.0 | [`LICENSE-DATA-CC-BY-SA-4.0`](LICENSE-DATA-CC-BY-SA-4.0) |
 | `data/` — attribution owed to `unihan` | Unicode-DFS-2016 | [`LICENSE-DATA-UNICODE-DFS-2016`](LICENSE-DATA-UNICODE-DFS-2016) |
@@ -367,6 +378,25 @@ are, so `check` stays fast, offline, and CI-safe.
 | `npm run schema` | emit the JSON Schemas alone |
 | `npm test` | unit tests + dataset guards |
 | `npm run check` | typecheck + test + validate |
+
+---
+
+## Web UI
+
+`web/` is a static, backend-free frontend (issue #55): a dictionary browser
+with client-side search plus a flashcard/SRS trainer, built on Vite + React +
+TypeScript. It's an independent npm project with its own `package.json`,
+consuming `dist/dict.json` at runtime rather than duplicating any
+data-loading logic.
+
+It requires `dist/dict.json` to already exist — run `npm run build` at the
+repo root first, then see [`web/README.md`](web/README.md) for how to run,
+build, and deploy it.
+
+> `.github/workflows/deploy.yml` publishes `web/dist` to GitHub Pages on every
+> push to `main`, but GitHub Pages itself still needs to be enabled once in
+> this repo's Settings → Pages before that workflow can actually publish
+> anything.
 
 ---
 
