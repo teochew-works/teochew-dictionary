@@ -1,5 +1,6 @@
 import { listAudioVarieties, loadAudio } from '../phonology/load.js'
 import { verifyAudioRemote } from '../validate/audio-remote.js'
+import { dim, green, red } from './colour.js'
 
 /**
  * `npm run audio:verify` — fetch every declared audio clip and verify its
@@ -10,12 +11,6 @@ import { verifyAudioRemote } from '../validate/audio-remote.js'
  * `src/validate/index.ts` already covers everything that can be checked
  * offline; this covers the rest.
  */
-
-const COLOUR = process.stdout.isTTY && !process.env['NO_COLOR']
-const c = (code: string, s: string) => (COLOUR ? `[${code}m${s}[0m` : s)
-const red = (s: string) => c('31', s)
-const green = (s: string) => c('32', s)
-const dim = (s: string) => c('2', s)
 
 const sources = listAudioVarieties().map((id) => ({ file: `data/phonology/audio/${id}.yaml`, audio: loadAudio(id) }))
 const clipCount = sources.reduce((n, s) => n + Object.keys(s.audio.clips).length, 0)
