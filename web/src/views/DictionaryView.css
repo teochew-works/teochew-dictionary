@@ -32,6 +32,22 @@
   font-size: 0.85rem;
 }
 
+.dictionary-view__controls {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 0.75rem 0.75rem;
+}
+
+.dictionary-view__sort,
+.dictionary-view__tone-source {
+  flex: 1;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+  color: var(--color-fg);
+}
+
 .dictionary-view__detail-pane {
   flex: 2 1 20rem;
   padding: 1.5rem;
@@ -92,6 +108,46 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.entry-tree {
+  padding: 0 0.5rem 0.75rem;
+}
+
+.entry-tree__group + .entry-tree__group {
+  margin-top: 0.25rem;
+}
+
+.entry-tree__summary {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.25rem;
+  border: none;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: var(--color-fg);
+  font-weight: 600;
+}
+
+.entry-tree__summary:hover {
+  background: var(--color-surface);
+}
+
+.entry-tree__caret {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.entry-tree__count {
+  color: var(--color-muted);
+  font-weight: 400;
+}
+
+.entry-tree__list {
+  padding-left: 1.25rem;
 }
 
 .entry-detail__header h2 {
