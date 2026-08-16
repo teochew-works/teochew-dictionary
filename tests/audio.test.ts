@@ -1,34 +1,21 @@
 import { describe, expect, it } from 'vitest'
 
-import { GITHUB_REPO, audioSchema, type Audio } from '../src/schema/phonology.js'
+import { GITHUB_REPO, audioSchema } from '../src/schema/phonology.js'
 import { checkAudio } from '../src/validate/index.js'
 import { deriveReadingAudio } from '../src/build/enrich.js'
 import { parsePengim } from '../src/phonology/syllable.js'
 import type { Source, SourceKind } from '../src/schema/entry.js'
+import { AUDIO_CLIP_URL, audioTable, makeClipFixture } from './helpers/audio-fixtures.js'
 
-const VALID_URL = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/dio5.opus`
+const VALID_URL = AUDIO_CLIP_URL
 const VALID_CHECKSUM = `sha256:${'a'.repeat(64)}`
 
 function source(id: string, kind: SourceKind = 'import', licence?: string): Source {
   return { id, name: id, kind, ...(licence !== undefined && { licence }) }
 }
 
-function clip(overrides: Partial<Audio['clips'][string]> = {}): Audio['clips'][string] {
-  return {
-    url: VALID_URL,
-    confidence: 'high',
-    sources: ['fixture'],
-    checksum: VALID_CHECKSUM,
-    ...overrides,
-  }
-}
-
-function audio(clips: Audio['clips'] = {}): Audio {
-  return {
-    audio: { id: 'chaozhou', variety: 'chaozhou' },
-    clips,
-  }
-}
+const clip = makeClipFixture(VALID_CHECKSUM)
+const audio = audioTable
 
 /** Raw (possibly invalid) input for schema tests — bypasses the typed `Audio` fixtures above. */
 function rawAudio(clips: Record<string, unknown>): unknown {

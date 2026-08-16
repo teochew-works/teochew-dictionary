@@ -2,8 +2,9 @@ import { createHash } from 'node:crypto'
 
 import { describe, expect, it } from 'vitest'
 
-import { GITHUB_REPO, type Audio } from '../src/schema/phonology.js'
+import { GITHUB_REPO } from '../src/schema/phonology.js'
 import { verifyAudioRemote, type AudioSource } from '../src/validate/audio-remote.js'
+import { AUDIO_CLIP_URL, audioTable, makeClipFixture } from './helpers/audio-fixtures.js'
 
 function checksumOf(body: string): string {
   return createHash('sha256').update(body).digest('hex')
@@ -11,15 +12,10 @@ function checksumOf(body: string): string {
 
 const BODY = 'pretend opus bytes'
 const CHECKSUM = `sha256:${checksumOf(BODY)}`
-const URL = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/dio5.opus`
+const URL = AUDIO_CLIP_URL
 
-function audio(clips: Audio['clips']): Audio {
-  return { audio: { id: 'chaozhou', variety: 'chaozhou' }, clips }
-}
-
-function clip(overrides: Partial<Audio['clips'][string]> = {}): Audio['clips'][string] {
-  return { url: URL, confidence: 'high', sources: ['fixture'], checksum: CHECKSUM, ...overrides }
-}
+const audio = audioTable
+const clip = makeClipFixture(CHECKSUM)
 
 function fetchClipFixture(bodiesByUrl: Record<string, { status: number; body: string }>) {
   return async (url: string): Promise<Response> => {
