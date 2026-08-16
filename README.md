@@ -121,6 +121,7 @@ data/                      ← the product
                                (clip bytes hosted on GitHub Releases, not in
                                this repo — see REVIEW.md §§ 11–12)
     REVIEW.md                open linguistic questions
+    TTS.md                   synthesis-as-audio-supplement research (issue #58)
   sources.yaml               provenance and licence registry
   staging/                   importer output, awaiting human review
   wordlists/                 checklists tracking growth (see below)
@@ -348,6 +349,15 @@ but `speaker` isn't part of `AudioReference`, so it never reaches
 consent to release the recording — see [`AUDIO-CONSENT.md`](AUDIO-CONSENT.md)
 — which is a separate, genuinely new concern from copyright licensing. See
 `data/phonology/REVIEW.md` § 13 for the full rationale.
+
+**Why not synthesize audio instead of recording it.**
+[`data/phonology/TTS.md`](data/phonology/TTS.md) (issue #58) surveys
+text-to-speech/IPA-to-audio synthesis as a possible supplement to
+volunteer recordings and finds no near-term viable option: no commercial
+TTS platform has a Teochew/Southern-Min voice or a way to carry this
+dataset's Chao-numeral tone contours, and the one technically viable path
+(a from-scratch eSpeak-NG phoneme profile) isn't worth the linguistics
+effort against a recording gap that's already small and bounded.
 
 **`npm run validate`/`checkAudio` only checks the clip metadata is internally
 consistent** (legal syllable, resolvable licence, etc.) — it does not fetch
