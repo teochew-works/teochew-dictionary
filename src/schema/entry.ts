@@ -32,6 +32,9 @@ export const PART_OF_SPEECH = [
 
 export const REGISTER = ['colloquial', 'literary', 'both'] as const
 
+/** The reference variety a reading is attested in when none is given. */
+export const DEFAULT_VARIETY = 'chaozhou'
+
 /**
  * `import` — material is copied out of the source into the dataset; `licence`
  * is load-bearing. `reference` — cited as evidence (e.g. for a phonology
@@ -60,7 +63,7 @@ export const readingSchema = z
     /** Source of truth. IPA and POJ are derived from this. */
     pengim: pengimString,
     /** Which variety this reading is attested in. Defaults to the reference variety. */
-    variety: z.string().default('chaozhou'),
+    variety: z.string().default(DEFAULT_VARIETY),
     register: z.enum(REGISTER).optional(),
     /** Override for irregular forms only. Requires `note`. */
     ipa: z.string().optional(),
