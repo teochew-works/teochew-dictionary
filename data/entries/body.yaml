@@ -613,3 +613,153 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: miang2-mog8-lag8-免疫力
+    headword: 免疫力
+    readings:
+      - pengim: miang2 mog8 lag8
+    senses:
+      - pos: noun
+        gloss_en: [immunity]
+        gloss_zh: [免疫力]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cuang5-sing1-全身
+    headword: 全身
+    readings:
+      - pengim: cuang5 sing1
+    senses:
+      - pos: noun
+        gloss_en: [the whole body; entire body]
+        gloss_zh: [全身]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nên2-guan7-冷汗
+    headword: 冷汗
+    readings:
+      - pengim: nên2 guan7
+    senses:
+      - pos: noun
+        gloss_en: [cold sweat]
+        gloss_zh: [冷汗]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong3-ceng1-凍瘡
+    headword: 凍瘡
+    readings:
+      - pengim: dong3 ceng1
+    senses:
+      - pos: noun
+        gloss_en: [chilblain, frostbite sore]
+        gloss_zh: [凍瘡]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cug4-huêh4-riag8-出血熱
+    headword: 出血熱
+    readings:
+      - pengim: cug4 huêh4 riag8
+    senses:
+      - pos: noun
+        gloss_en: [hemorrhagic fever]
+        gloss_zh: [出血熱]
+        note: Specialized pathology term; no category file cleanly fits a disease name, so body.yaml was chosen as the closest match.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: neng6-ze2-卵子
+    headword: 卵子
+    readings:
+      - pengim: neng6 ze2
+    senses:
+      - pos: noun
+        gloss_en: [ovum, egg cell]
+        gloss_zh: [卵子]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu6-zêng1-neng6-受精卵
+    headword: 受精卵
+    readings:
+      - pengim: siu6 zêng1 neng6
+    senses:
+      - pos: noun
+        gloss_en: [zygote, fertilized egg]
+        gloss_zh: [受精卵]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kao2-口
+    headword: 口
+    readings:
+      - pengim: kao2
+    senses:
+      - pos: noun
+        gloss_en: [mouth]
+        gloss_zh: [口]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kao2-kion1-口腔
+    headword: 口腔
+    readings:
+      - pengim: kao2 kion1
+    senses:
+      - pos: noun
+        gloss_en: [oral cavity]
+        gloss_zh: [口腔]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kao2-kion1-ngam5-口腔癌
+    headword: 口腔癌
+    readings:
+      - pengim: kao2 kion1 ngam5
+    senses:
+      - pos: noun
+        gloss_en: [oral cancer]
+        gloss_zh: [口腔癌]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kao2-cao3-口臭
+    headword: 口臭
+    readings:
+      - pengim: kao2 cao3
+    senses:
+      - pos: noun
+        gloss_en: [bad breath, halitosis]
+        gloss_zh: [口臭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zab8-êg4-zain2-十一指
+    headword: 十一指
+    readings:
+      - pengim: zab8 êg4 zain2
+    senses:
+      - pos: noun
+        gloss_en: [polydactylous hand (extra finger), person with an extra finger]
+        gloss_zh: [十一指]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

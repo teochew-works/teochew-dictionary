@@ -390,3 +390,45 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: ki5-其
+    headword: 其
+    readings:
+      - pengim: ki5
+    senses:
+      - pos: pronoun
+        gloss_en: [his; her; its; their, he; she; it; they]
+        gloss_zh: [其]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag8-nang5-別人
+    headword: 別人
+    readings:
+      - pengim: bag8 nang5
+    senses:
+      - pos: pronoun
+        gloss_en: [others, other people]
+        gloss_zh: [別人]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-gai5-別個
+    headword: 別個
+    readings:
+      - pengim: bag4 gai5
+    senses:
+      - pos: pronoun
+        gloss_en: [something else, someone else, another]
+        gloss_zh: [別個]
+        note: Page lists multiple senses (general pronoun 'others/someone else', a Southern-Min-specific 'something else', and an adjective 'other/else') without clarifying which corresponds to this Teochew reading.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

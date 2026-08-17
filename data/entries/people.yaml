@@ -1585,3 +1585,807 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: tu5-gung1-儲君
+    headword: 儲君
+    readings:
+      - pengim: tu5 gung1
+    senses:
+      - pos: noun
+        gloss_en: [crown prince, heir to the throne]
+        gloss_zh: [儲君, 太子]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hian1-di6-兄弟
+    headword: 兄弟
+    readings:
+      - pengim: hian1 di6
+    senses:
+      - pos: noun
+        gloss_en: [brother, siblings, buddy]
+        gloss_zh: [兄弟]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hian1-tai5-兄臺
+    headword: 兄臺
+    readings:
+      - pengim: hian1 tai5
+    senses:
+      - pos: noun
+        gloss_en: [brother (polite address), friend]
+        gloss_zh: [兄臺]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soin1-ring5-先人
+    headword: 先人
+    readings:
+      - pengim: soin1 ring5
+    senses:
+      - pos: noun
+        gloss_en: [ancestors; forebears, one's late father]
+        gloss_zh: [先人]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soin1-liag8-先烈
+    headword: 先烈
+    readings:
+      - pengim: soin1 liag8
+    senses:
+      - pos: noun
+        gloss_en: [martyr]
+        gloss_zh: [先烈]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang1-su2-光緒
+    headword: 光緒
+    readings:
+      - pengim: guang1 su2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Guangxu (Qing dynasty emperor), Guangxu era (1875-1908)]
+        gloss_zh: [光緒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ri5-兒
+    headword: 兒
+    readings:
+      - pengim: ri5
+    senses:
+      - pos: noun
+        gloss_en: [child, son (bound form)]
+        gloss_zh: [兒]
+        note: 兒 functions both as a noun meaning child/son and as a grammatical diminutive/nominalizing suffix in Mandarin (erhua); it is rarely used standalone outside compounds, so the noun sense was picked as primary but the suffix functions are equally well attested on the page.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ri5-neng2-兒女
+    headword: 兒女
+    readings:
+      - pengim: ri5 neng2
+    senses:
+      - pos: noun
+        gloss_en: [sons and daughters, children]
+        gloss_zh: [兒女, 子女]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ri5-ze2-兒子
+    headword: 兒子
+    readings:
+      - pengim: ri5 ze2
+    senses:
+      - pos: noun
+        gloss_en: [son]
+        gloss_zh: [兒子]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ri5-tong5-兒童
+    headword: 兒童
+    readings:
+      - pengim: ri5 tong5
+    senses:
+      - pos: noun
+        gloss_en: [child]
+        gloss_zh: [兒童]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang2-党
+    headword: 党
+    readings:
+      - pengim: dang2
+    senses:
+      - pos: proper-noun
+        gloss_en: [surname, (in 黨項) Tangut]
+        gloss_zh: [党]
+        note: On the Wiktionary page, the Teochew reading dang2 is attached specifically to Etymology 2 (surname; the ethnonym 黨項/Tangut), not to the separate 'simplified substitute for 黨' etymology that covers the common 'political party' meaning, so this gloss reflects only the narrow surname/Tangut sense actually tied to the given peng'im.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cuang5-ming5-全民
+    headword: 全民
+    readings:
+      - pengim: cuang5 ming5
+    senses:
+      - pos: noun
+        gloss_en: [all people; the entire population]
+        gloss_zh: [全民]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: no6-gong1-pua5-兩公婆
+    headword: 兩公婆
+    readings:
+      - pengim: no6 gong1 pua5
+    senses:
+      - pos: noun
+        gloss_en: [husband and wife, married couple]
+        gloss_zh: [兩公婆]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: no6-bho2-gian2-兩母囝
+    headword: 兩母囝
+    readings:
+      - pengim: no6 bho2 gian2
+    senses:
+      - pos: noun
+        gloss_en: [mother and child, mother and son/daughter]
+        gloss_zh: [兩母囝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-zu2-公主
+    headword: 公主
+    readings:
+      - pengim: gong1 zu2
+    senses:
+      - pos: noun
+        gloss_en: [princess]
+        gloss_zh: [公主]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-sai3-公使
+    headword: 公使
+    readings:
+      - pengim: gong1 sai3
+    senses:
+      - pos: noun
+        gloss_en: [minister (diplomatic rank below ambassador)]
+        gloss_zh: [公使]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-ma2-公媽
+    headword: 公媽
+    readings:
+      - pengim: gong1 ma2
+    senses:
+      - pos: noun
+        gloss_en: [grandparents]
+        gloss_zh: [公媽, 祖父母]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-ze2-公子
+    headword: 公子
+    readings:
+      - pengim: gong1 ze2
+    senses:
+      - pos: noun
+        gloss_en: [young master, son of a distinguished family, your son (honorific)]
+        gloss_zh: [公子]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-ang1-公安
+    headword: 公安
+    readings:
+      - pengim: gong1 ang1
+    senses:
+      - pos: noun
+        gloss_en: [public security, police (Mainland China), public security officer]
+        gloss_zh: [公安]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-dêg8-公敵
+    headword: 公敵
+    readings:
+      - pengim: gong1 dêg8
+    senses:
+      - pos: noun
+        gloss_en: [public enemy]
+        gloss_zh: [公敵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-zou2-公祖
+    headword: 公祖
+    readings:
+      - pengim: gong1 zou2
+    senses:
+      - pos: noun
+        gloss_en: [ancestor]
+        gloss_zh: [祖先]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bian1-兵
+    headword: 兵
+    readings:
+      - pengim: bian1
+    senses:
+      - pos: noun
+        gloss_en: [soldier, troops]
+        gloss_zh: [兵, 士兵]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: riam2-冉
+    headword: 冉
+    readings:
+      - pengim: riam2
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname]
+        gloss_zh: [冉(姓)]
+        note: The Wiktionary page lists several unrelated senses (archaic edge of a turtle shell, the ideophonic component of 冉冉, obsolete 'tender/weak', and a surname) all tied to the same undifferentiated reading; the surname sense was chosen as the most citable standalone meaning but this is a real judgment call.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huam5-ring5-凡人
+    headword: 凡人
+    readings:
+      - pengim: huam5 ring5
+    senses:
+      - pos: noun
+        gloss_en: [ordinary person, mortal]
+        gloss_zh: [凡人]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huam5-hu1-凡夫
+    headword: 凡夫
+    readings:
+      - pengim: huam5 hu1
+    senses:
+      - pos: noun
+        gloss_en: [ordinary person, commoner, (Buddhism) unenlightened person]
+        gloss_zh: [凡夫]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huam5-hu1-sog8-ze2-凡夫俗子
+    headword: 凡夫俗子
+    readings:
+      - pengim: huam5 hu1 sog8 ze2
+    senses:
+      - pos: idiom
+        gloss_en: [ordinary person, commoner]
+        gloss_zh: [凡夫俗子]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cug4-nab8-出納
+    headword: 出納
+    readings:
+      - pengim: cug4 nab8
+    senses:
+      - pos: noun
+        gloss_en: [cashier, teller]
+        gloss_zh: [出納, 收銀員]
+        note: Wiktionary lists both a noun sense ('cashier/teller') and verb senses ('to receive and pay out') under the same reading; the occupation noun sense was chosen as most likely for everyday usage.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puang3-guan1-判官
+    headword: 判官
+    readings:
+      - pengim: puang3 guan1
+    senses:
+      - pos: noun
+        gloss_en: [magistrate, judge, underworld judge (in mythology)]
+        gloss_zh: [判官]
+        note: The page gives multiple senses (historical magistrate, generic regional term for judge, and a mythological underworld official who assists Yama) under the same reading without clearly distinguishing which applies to the Teochew usage.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buan3-suan1-kêh4-半山客
+    headword: 半山客
+    readings:
+      - pengim: buan3 suan1 kêh4
+    senses:
+      - pos: noun
+        gloss_en: [Hakka people of the Chaoshan region (whose speech is influenced by Teochew)]
+        gloss_zh: [半山客]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buan3-tang2-sai2-半桶屎
+    headword: 半桶屎
+    readings:
+      - pengim: buan3 tang2 sai2
+    senses:
+      - pos: noun
+        gloss_en: [smatterer, amateur, dabbler]
+        gloss_zh: [半桶屎]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pag4-zu2-博主
+    headword: 博主
+    readings:
+      - pengim: pag4 zu2
+    senses:
+      - pos: noun
+        gloss_en: [blogger]
+        gloss_zh: [博主]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pag4-se6-博士
+    headword: 博士
+    readings:
+      - pengim: pag4 se6
+    senses:
+      - pos: noun
+        gloss_en: [PhD, doctor (academic degree holder)]
+        gloss_zh: [博士]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pag4-se6-sêng1-博士生
+    headword: 博士生
+    readings:
+      - pengim: pag4 se6 sêng1
+    senses:
+      - pos: noun
+        gloss_en: [PhD student, doctoral candidate]
+        gloss_zh: [博士生]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: neng6-muê6-卵妹
+    headword: 卵妹
+    readings:
+      - pengim: neng6 muê6
+    senses:
+      - pos: noun
+        gloss_en: [egg donor (person who provides ova to be sold)]
+        gloss_zh: [卵妹]
+        note: Very narrow, modern slang term (egg donor) with limited attestation; included as a neutral dictionary-style gloss for a sensitive topic (human egg donation).
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kêng1-卿
+    headword: 卿
+    readings:
+      - pengim: kêng1
+    senses:
+      - pos: noun
+        gloss_en: [minister; high official (historical), "term of endearment (archaic, between spouses)"]
+        gloss_zh: [卿]
+        note: Multiple archaic senses (minister/official title, honorific/imperial address, term of endearment between spouses) all share this reading with no Teochew-specific marking on the page, so 'minister/official title' was picked as the most attested primary sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu3-zu2-厝主
+    headword: 厝主
+    readings:
+      - pengim: cu3 zu2
+    senses:
+      - pos: noun
+        gloss_en: [landlord, owner of rental accommodation]
+        gloss_zh: [厝主, 房東]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu3-bin1-厝邊
+    headword: 厝邊
+    readings:
+      - pengim: cu3 bin1
+    senses:
+      - pos: noun
+        gloss_en: [neighbour, area around one's house]
+        gloss_zh: [厝邊, 鄰居]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu3-bin1-tao5-bhuê2-厝邊頭尾
+    headword: 厝邊頭尾
+    readings:
+      - pengim: cu3 bin1 tao5 bhuê2
+    senses:
+      - pos: noun
+        gloss_en: [neighbors, the neighborhood]
+        gloss_zh: [厝邊頭尾, 鄰居]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nguang5-go3-原告
+    headword: 原告
+    readings:
+      - pengim: nguang5 go3
+    senses:
+      - pos: noun
+        gloss_en: [plaintiff, complainant]
+        gloss_zh: [原告]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cam1-mou5-參謀
+    headword: 參謀
+    readings:
+      - pengim: cam1 mou5
+    senses:
+      - pos: noun
+        gloss_en: [staff officer, advisor]
+        gloss_zh: [參謀]
+        note: Wiktionary lists both a noun sense (staff officer/advisor) and a separate verb sense (to advise) for this word; the noun sense was chosen as the primary/more common usage.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu2-友
+    headword: 友
+    readings:
+      - pengim: iu2
+    senses:
+      - pos: noun
+        gloss_en: [friend, companion]
+        gloss_zh: [友]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêg4-gong1-叔公
+    headword: 叔公
+    readings:
+      - pengim: zêg4 gong1
+    senses:
+      - pos: noun
+        gloss_en: [granduncle (father's uncle), husband's uncle (father-in-law's younger brother)]
+        gloss_zh: [叔公]
+        note: The page lists several kinship senses (husband's father's younger brother; paternal grand-uncle; in some dialects, father's younger brother) sharing the same reading, and it is unclear which is the primary Teochew usage.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêg4-gian2-叔囝
+    headword: 叔囝
+    readings:
+      - pengim: zêg4 gian2
+    senses:
+      - pos: noun
+        gloss_en: [younger brother-in-law (husband's younger brother)]
+        gloss_zh: [叔囝, 小叔子]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêg4-sung1-叔孫
+    headword: 叔孫
+    readings:
+      - pengim: zêg4 sung1
+    senses:
+      - pos: noun
+        gloss_en: [paternal uncle and his nephew (collectively)]
+        gloss_zh: [叔孫]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêg4-sung1-gian2-叔孫囝
+    headword: 叔孫囝
+    readings:
+      - pengim: zêg4 sung1 gian2
+    senses:
+      - pos: noun
+        gloss_en: [paternal uncle and his nephew (collectively)]
+        gloss_zh: [叔孫囝]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêg4-bê6-叔父
+    headword: 叔父
+    readings:
+      - pengim: zêg4 bê6
+    senses:
+      - pos: noun
+        gloss_en: [paternal uncle, father's younger brother]
+        gloss_zh: [叔父]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu6-hai7-zia2-受害者
+    headword: 受害者
+    readings:
+      - pengim: siu6 hai7 zia2
+    senses:
+      - pos: noun
+        gloss_en: [victim, casualty, sufferer]
+        gloss_zh: [受害者]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buêng6-tu5-叛徒
+    headword: 叛徒
+    readings:
+      - pengim: buêng6 tu5
+    senses:
+      - pos: noun
+        gloss_en: [traitor, betrayer]
+        gloss_zh: [叛徒]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sou2-叟
+    headword: 叟
+    readings:
+      - pengim: sou2
+    senses:
+      - pos: noun
+        gloss_en: [old man, elderly gentleman]
+        gloss_zh: [叟]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zain5-nang5-前人
+    headword: 前人
+    readings:
+      - pengim: zain5 nang5
+    senses:
+      - pos: noun
+        gloss_en: [ex-wife]
+        gloss_zh: [前人, 前妻]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zoin5-rim6-前任
+    headword: 前任
+    readings:
+      - pengim: zoin5 rim6
+    senses:
+      - pos: noun
+        gloss_en: [predecessor, ex (former partner)]
+        gloss_zh: [前任]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zain5-ang1-前翁
+    headword: 前翁
+    readings:
+      - pengim: zain5 ang1
+    senses:
+      - pos: noun
+        gloss_en: [ex-husband; former husband]
+        gloss_zh: [前夫]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu3-guan1-副官
+    headword: 副官
+    readings:
+      - pengim: hu3 guan1
+    senses:
+      - pos: noun
+        gloss_en: [adjutant, aide-de-camp]
+        gloss_zh: [副官]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu3-ciu2-副手
+    headword: 副手
+    readings:
+      - pengim: hu3 ciu2
+    senses:
+      - pos: noun
+        gloss_en: [assistant, deputy]
+        gloss_zh: [副手]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu3-zong2-tong2-副總統
+    headword: 副總統
+    readings:
+      - pengim: hu3 zong2 tong2
+    senses:
+      - pos: noun
+        gloss_en: [vice president]
+        gloss_zh: [副總統]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giah8-zu1-劇組
+    headword: 劇組
+    readings:
+      - pengim: giah8 zu1
+    senses:
+      - pos: noun
+        gloss_en: [film crew, cast and crew]
+        gloss_zh: [劇組]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao5-劉
+    headword: 劉
+    readings:
+      - pengim: lao5
+    senses:
+      - pos: proper-noun
+        gloss_en: [surname Liu]
+        gloss_zh: [劉]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo6-ciu2-助手
+    headword: 助手
+    readings:
+      - pengim: zo6 ciu2
+    senses:
+      - pos: noun
+        gloss_en: [assistant, helper]
+        gloss_zh: [助手]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo6-li2-助理
+    headword: 助理
+    readings:
+      - pengim: zo6 li2
+    senses:
+      - pos: noun
+        gloss_en: [assistant, helper]
+        gloss_zh: [助理]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong2-se6-勇士
+    headword: 勇士
+    readings:
+      - pengim: iong2 se6
+    senses:
+      - pos: noun
+        gloss_en: [warrior, brave person]
+        gloss_zh: [勇士]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao5-dong6-zia2-勞動者
+    headword: 勞動者
+    readings:
+      - pengim: lao5 dong6 zia2
+    senses:
+      - pos: noun
+        gloss_en: [worker, laborer]
+        gloss_zh: [勞動者]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bao1-gang1-tao5-包工頭
+    headword: 包工頭
+    readings:
+      - pengim: bao1 gang1 tao5
+    senses:
+      - pos: noun
+        gloss_en: [labor contractor, foreman]
+        gloss_zh: [包工頭]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bao1-tao5-包頭
+    headword: 包頭
+    readings:
+      - pengim: bao1 tao5
+    senses:
+      - pos: noun
+        gloss_en: [foreman, labor contractor, turban]
+        gloss_zh: [包頭]
+        note: The page lists several unrelated senses (turban/headwrap, headdress, toecap, foreman/contractor, and the proper noun Baotou city) with no dialect labeling to indicate which matches the given reading; the foreman/contractor sense was chosen by analogy with 包工頭.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiong1-nou1-匈奴
+    headword: 匈奴
+    readings:
+      - pengim: hiong1 nou1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Xiongnu (ancient nomadic confederation north of Han-dynasty China)]
+        gloss_zh: [匈奴]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huin2-tu5-匪徒
+    headword: 匪徒
+    readings:
+      - pengim: huin2 tu5
+    senses:
+      - pos: noun
+        gloss_en: [bandit; gangster, robber; vagabond]
+        gloss_zh: [匪徒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

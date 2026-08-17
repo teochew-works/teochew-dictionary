@@ -157,3 +157,79 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: tou3-兔
+    headword: 兔
+    readings:
+      - pengim: tou3
+    senses:
+      - pos: noun
+        gloss_en: [rabbit, hare]
+        gloss_zh: [兔]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou3-gian2-兔囝
+    headword: 兔囝
+    readings:
+      - pengim: tou3 gian2
+    senses:
+      - pos: noun
+        gloss_en: [little rabbit, bunny]
+        gloss_zh: [兔囝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: coin1-li2-bhê2-千里馬
+    headword: 千里馬
+    readings:
+      - pengim: coin1 li2 bhê2
+    senses:
+      - pos: noun
+        gloss_en: [fine horse; fast steed, talented person (figurative)]
+        gloss_zh: [千里馬]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci3-mo5-tang5-刺毛蟲
+    headword: 刺毛蟲
+    readings:
+      - pengim: ci3 mo5 tang5
+    senses:
+      - pos: noun
+        gloss_en: [caterpillar]
+        gloss_zh: [刺毛蟲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uêh8-ce2-劃鼠
+    headword: 劃鼠
+    readings:
+      - pengim: uêh8 ce2
+    senses:
+      - pos: noun
+        gloss_en: [catfish (Clarias fuscus)]
+        gloss_zh: [劃鼠]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-gêg8-him5-北極熊
+    headword: 北極熊
+    readings:
+      - pengim: bag4 gêg8 him5
+    senses:
+      - pos: noun
+        gloss_en: [polar bear]
+        gloss_zh: [北極熊, 白熊]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

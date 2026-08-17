@@ -855,3 +855,795 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: nguêng5-ciou5-元朝
+    headword: 元朝
+    readings:
+      - pengim: nguêng5 ciou5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Yuan dynasty (1271-1368)]
+        gloss_zh: [元朝, 元代]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lai6-di7-內地
+    headword: 內地
+    readings:
+      - pengim: lai6 di7
+    senses:
+      - pos: noun
+        gloss_en: [inland; interior region, mainland China (Hong Kong/Macau/Taiwan usage)]
+        gloss_zh: [內地]
+        note: Page gives both a generic 'interior/inland' common-noun sense and a proper-noun 'mainland China' sense; unclear which the Teochew reading targets, so the more general noun sense was chosen as primary.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lai6-mong5-gou2-內蒙古
+    headword: 內蒙古
+    readings:
+      - pengim: lai6 mong5 gou2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Inner Mongolia]
+        gloss_zh: [內蒙古]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liang2-ngai6-兩岸
+    headword: 兩岸
+    readings:
+      - pengim: liang2 ngai6
+    senses:
+      - pos: noun
+        gloss_en: [both banks, both sides of a strait, cross-strait (mainland China and Taiwan)]
+        gloss_zh: [兩岸]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liang2-guang2-兩廣
+    headword: 兩廣
+    readings:
+      - pengim: liang2 guang2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Liangguang (Guangdong and Guangxi)]
+        gloss_zh: [兩廣]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liang2-uag8-兩粵
+    headword: 兩粵
+    readings:
+      - pengim: liang2 uag8
+    senses:
+      - pos: proper-noun
+        gloss_en: [Guangdong and Guangxi, Liangyue]
+        gloss_zh: [兩粵, 兩廣]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liang2-êng1-兩英
+    headword: 兩英
+    readings:
+      - pengim: liang2 êng1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Liangying (a town in Chaonan District, Shantou)"]
+        gloss_zh: [兩英]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-si1-suan1-公司山
+    headword: 公司山
+    readings:
+      - pengim: gong1 si1 suan1
+    senses:
+      - pos: noun
+        gloss_en: [public cemetery]
+        gloss_zh: [公司山]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-hng5-公園
+    headword: 公園
+    readings:
+      - pengim: gong1 hng5
+    senses:
+      - pos: noun
+        gloss_en: [park]
+        gloss_zh: [公園]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-deng5-公堂
+    headword: 公堂
+    readings:
+      - pengim: gong1 deng5
+    senses:
+      - pos: noun
+        gloss_en: [court of law, tribunal, hall]
+        gloss_zh: [公堂]
+        note: Page gives two distinct senses (dated 'court of law/tribunal' vs. general 'hall for meetings/receptions') with no dialect labels to disambiguate which matches this reading, so the primary sense is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-ang1-gêg8-公安局
+    headword: 公安局
+    readings:
+      - pengim: gong1 ang1 gêg8
+    senses:
+      - pos: noun
+        gloss_en: [public security bureau, police station (Mainland China)]
+        gloss_zh: [公安局]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-ngo6-公寓
+    headword: 公寓
+    readings:
+      - pengim: gong1 ngo6
+    senses:
+      - pos: noun
+        gloss_en: [apartment building, apartment, flat]
+        gloss_zh: [公寓]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-lou7-公路
+    headword: 公路
+    readings:
+      - pengim: gong1 lou7
+    senses:
+      - pos: noun
+        gloss_en: [highway, public road]
+        gloss_zh: [公路]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-guang2-公館
+    headword: 公館
+    readings:
+      - pengim: gong1 guang2
+    senses:
+      - pos: noun
+        gloss_en: [mansion, grand residence, official residence]
+        gloss_zh: [公館]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bian1-ian5-兵營
+    headword: 兵營
+    readings:
+      - pengim: bian1 ian5
+    senses:
+      - pos: noun
+        gloss_en: [barracks, military camp]
+        gloss_zh: [兵營]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tong2-冢
+    headword: 冢
+    readings:
+      - pengim: tong2
+    senses:
+      - pos: noun
+        gloss_en: [tomb; burial mound; grave mound]
+        gloss_zh: [塚]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nên2-ki3-冷氣
+    headword: 冷氣
+    readings:
+      - pengim: nên2 ki3
+    senses:
+      - pos: noun
+        gloss_en: [air conditioning, air conditioner, cold air]
+        gloss_zh: [冷氣]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cug4-kao2-出口
+    headword: 出口
+    readings:
+      - pengim: cug4 kao2
+    senses:
+      - pos: noun
+        gloss_en: [exit, way out]
+        gloss_zh: [出口]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cug4-zou1-og4-出租屋
+    headword: 出租屋
+    readings:
+      - pengim: cug4 zou1 og4
+    senses:
+      - pos: noun
+        gloss_en: [rental housing, rented room/apartment]
+        gloss_zh: [出租屋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hêng5-dion5-刑場
+    headword: 刑場
+    readings:
+      - pengim: hêng5 dion5
+    senses:
+      - pos: noun
+        gloss_en: [execution ground]
+        gloss_zh: [刑場]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: co1-dong1-初中
+    headword: 初中
+    readings:
+      - pengim: co1 dong1
+    senses:
+      - pos: noun
+        gloss_en: [junior high school, middle school]
+        gloss_zh: [初中]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag8-go3-別塊
+    headword: 別塊
+    readings:
+      - pengim: bag8 go3
+    senses:
+      - pos: noun
+        gloss_en: [somewhere else, elsewhere]
+        gloss_zh: [別塊]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biag8-su2-別墅
+    headword: 別墅
+    readings:
+      - pengim: biag8 su2
+    senses:
+      - pos: noun
+        gloss_en: [villa, house]
+        gloss_zh: [別墅]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-gian1-南京
+    headword: 南京
+    readings:
+      - pengim: lam5 gian1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Nanjing]
+        gloss_zh: [南京]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nam5-cong1-南充
+    headword: 南充
+    readings:
+      - pengim: nam5 cong1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Nanchong]
+        gloss_zh: [南充]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-ku1-南區
+    headword: 南區
+    readings:
+      - pengim: lam5 ku1
+    senses:
+      - pos: noun
+        gloss_en: [southern district]
+        gloss_zh: [南區]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nam5-ciang1-南昌
+    headword: 南昌
+    readings:
+      - pengim: nam5 ciang1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Nanchang]
+        gloss_zh: [南昌]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-gêg8-南極
+    headword: 南極
+    readings:
+      - pengim: lam5 gêg8
+    senses:
+      - pos: proper-noun
+        gloss_en: [the South Pole]
+        gloss_zh: [南極]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nam5-hai2-南海
+    headword: 南海
+    readings:
+      - pengim: nam5 hai2
+    senses:
+      - pos: proper-noun
+        gloss_en: [South China Sea]
+        gloss_zh: [南海]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-mui2-ziu1-南美洲
+    headword: 南美洲
+    readings:
+      - pengim: lam5 mui2 ziu1
+    senses:
+      - pos: proper-noun
+        gloss_en: [South America]
+        gloss_zh: [南美洲]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nam5-tong1-南通
+    headword: 南通
+    readings:
+      - pengim: nam5 tong1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Nantong]
+        gloss_zh: [南通]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-hui1-南非
+    headword: 南非
+    readings:
+      - pengim: lam5 hui1
+    senses:
+      - pos: proper-noun
+        gloss_en: [South Africa]
+        gloss_zh: [南非]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka2-diam2-卡點
+    headword: 卡點
+    readings:
+      - pengim: ka2 diam2
+    senses:
+      - pos: noun
+        gloss_en: [checkpoint]
+        gloss_zh: [卡點]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing3-suêh4-ciang2-印刷廠
+    headword: 印刷廠
+    readings:
+      - pengim: ing3 suêh4 ciang2
+    senses:
+      - pos: noun
+        gloss_en: [printing house, print shop]
+        gloss_zh: [印刷廠]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing3-dou7-印度
+    headword: 印度
+    readings:
+      - pengim: ing3 dou7
+    senses:
+      - pos: proper-noun
+        gloss_en: [India]
+        gloss_zh: [印度]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing3-dou7-uê7-印度話
+    headword: 印度話
+    readings:
+      - pengim: ing3 dou7 uê7
+    senses:
+      - pos: proper-noun
+        gloss_en: [Indian language, Hindi, (Singapore/Malaysia) Tamil]
+        gloss_zh: [印度話]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: am1-厂
+    headword: 厂
+    readings:
+      - pengim: am1
+    senses:
+      - pos: noun
+        gloss_en: [hermitage; nunnery (used in place names)]
+        gloss_zh: [庵]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu3-gian2-厝囝
+    headword: 厝囝
+    readings:
+      - pengim: cu3 gian2
+    senses:
+      - pos: noun
+        gloss_en: [small dwelling, hut; cottage; cabin]
+        gloss_zh: [厝囝, 小屋]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu3-dou5-厝圖
+    headword: 厝圖
+    readings:
+      - pengim: cu3 dou5
+    senses:
+      - pos: noun
+        gloss_en: [building plan]
+        gloss_zh: [厝圖]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu3-di7-厝地
+    headword: 厝地
+    readings:
+      - pengim: cu3 di7
+    senses:
+      - pos: noun
+        gloss_en: [building lot, land for construction]
+        gloss_zh: [厝地, 宅基地]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu3-gêg8-厝局
+    headword: 厝局
+    readings:
+      - pengim: cu3 gêg8
+    senses:
+      - pos: noun
+        gloss_en: [building plan]
+        gloss_zh: [厝局]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu3-ciu2-厝手
+    headword: 厝手
+    readings:
+      - pengim: cu3 ciu2
+    senses:
+      - pos: noun
+        gloss_en: [wing of a house (usually single-storey), wing-room]
+        gloss_zh: [厝手]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu3-siam5-厝檐
+    headword: 厝檐
+    readings:
+      - pengim: cu3 siam5
+    senses:
+      - pos: noun
+        gloss_en: [eaves]
+        gloss_zh: [厝檐, 屋簷]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu3-hia6-厝瓦
+    headword: 厝瓦
+    readings:
+      - pengim: cu3 hia6
+    senses:
+      - pos: noun
+        gloss_en: [roof tile]
+        gloss_zh: [厝瓦, 屋瓦]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu3-zig4-厝脊
+    headword: 厝脊
+    readings:
+      - pengim: cu3 zig4
+    senses:
+      - pos: noun
+        gloss_en: [ridge of a roof]
+        gloss_zh: [厝脊, 屋脊]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu3-dêng2-厝頂
+    headword: 厝頂
+    readings:
+      - pengim: cu3 dêng2
+    senses:
+      - pos: noun
+        gloss_en: [roof, housetop]
+        gloss_zh: [厝頂, 屋頂]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ke3-cu3-去處
+    headword: 去處
+    readings:
+      - pengim: ke3 cu3
+    senses:
+      - pos: noun
+        gloss_en: [place; destination, whereabouts]
+        gloss_zh: [去處]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu2-kuêng2-gi1-取款機
+    headword: 取款機
+    readings:
+      - pengim: cu2 kuêng2 gi1
+    senses:
+      - pos: noun
+        gloss_en: [ATM, automated teller machine]
+        gloss_zh: [取款機]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gou2-sag4-古剎
+    headword: 古剎
+    readings:
+      - pengim: gou2 sag4
+    senses:
+      - pos: noun
+        gloss_en: [old temple, ancient monastery]
+        gloss_zh: [古剎]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ti3-tao5-pou3-剃頭鋪
+    headword: 剃頭鋪
+    readings:
+      - pengim: ti3 tao5 pou3
+    senses:
+      - pos: noun
+        gloss_en: [barbershop, hairdresser's]
+        gloss_zh: [剃頭鋪, 理髮店]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giah8-dion5-劇場
+    headword: 劇場
+    readings:
+      - pengim: giah8 dion5
+    senses:
+      - pos: noun
+        gloss_en: [theater, playhouse]
+        gloss_zh: [劇場]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gia1-na2-dai6-加拿大
+    headword: 加拿大
+    readings:
+      - pengim: gia1 na2 dai6
+    senses:
+      - pos: proper-noun
+        gloss_en: [Canada]
+        gloss_zh: [加拿大]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gê1-iu5-zam6-加油站
+    headword: 加油站
+    readings:
+      - pengim: gê1 iu5 zam6
+    senses:
+      - pos: noun
+        gloss_en: [gas station, filling station, petrol station]
+        gloss_zh: [加油站]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong6-muêh8-hng5-動物園
+    headword: 動物園
+    readings:
+      - pengim: dong6 muêh8 hng5
+    senses:
+      - pos: noun
+        gloss_en: [zoo, menagerie]
+        gloss_zh: [動物園]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng3-di7-勝地
+    headword: 勝地
+    readings:
+      - pengim: sêng3 di7
+    senses:
+      - pos: noun
+        gloss_en: [famous scenic spot, scenic resort]
+        gloss_zh: [勝地]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê3-bung3-di5-化糞池
+    headword: 化糞池
+    readings:
+      - pengim: huê3 bung3 di5
+    senses:
+      - pos: noun
+        gloss_en: [septic tank]
+        gloss_zh: [化糞池]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-gian1-北京
+    headword: 北京
+    readings:
+      - pengim: bag4 gian1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Beijing]
+        gloss_zh: [北京]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-ku1-北區
+    headword: 北區
+    readings:
+      - pengim: bag4 ku1
+    senses:
+      - pos: noun
+        gloss_en: [northern district]
+        gloss_zh: [北區]
+        note: Wiktionary gives both a generic 'northern district' noun sense and a Hong Kong North District proper-noun sense at the same reading; the generic sense was picked but it is unclear which the Teochew reading targets.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-dai6-北大
+    headword: 北大
+    readings:
+      - pengim: bag4 dai6
+    senses:
+      - pos: proper-noun
+        gloss_en: [Peking University (abbr.)]
+        gloss_zh: [北大, 北京大學]
+        note: Wiktionary lists 北大 as an abbreviation for both Beijing's Peking University and Taiwan's National Taipei University at the same reading; the Mainland (Peking University) sense was picked as more likely, but the page does not disambiguate by region.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-gêg8-北極
+    headword: 北極
+    readings:
+      - pengim: bag4 gêg8
+    senses:
+      - pos: proper-noun
+        gloss_en: [the North Pole, Arctic]
+        gloss_zh: [北極]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-pêg4-北碧
+    headword: 北碧
+    readings:
+      - pengim: bag4 pêg4
+    senses:
+      - pos: proper-noun
+        gloss_en: [Kanchanaburi (Thailand)]
+        gloss_zh: [北碧]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-mui2-ziu1-北美洲
+    headword: 北美洲
+    readings:
+      - pengim: bag4 mui2 ziu1
+    senses:
+      - pos: proper-noun
+        gloss_en: [North America]
+        gloss_zh: [北美洲, 北美]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zag4-dao6-匝道
+    headword: 匝道
+    readings:
+      - pengim: zag4 dao6
+    senses:
+      - pos: noun
+        gloss_en: [freeway ramp, highway on/off-ramp]
+        gloss_zh: [匝道]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ku1-hog8-區域
+    headword: 區域
+    readings:
+      - pengim: ku1 hog8
+    senses:
+      - pos: noun
+        gloss_en: [zone, region; area; district]
+        gloss_zh: [區域]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ku1-deng7-區段
+    headword: 區段
+    readings:
+      - pengim: ku1 deng7
+    senses:
+      - pos: noun
+        gloss_en: [section (of a route/line), segment]
+        gloss_zh: [區段]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

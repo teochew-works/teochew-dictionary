@@ -735,3 +735,357 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: kiog4-克
+    headword: 克
+    readings:
+      - pengim: kiog4
+    senses:
+      - pos: classifier
+        gloss_en: [gram (unit of weight)]
+        gloss_zh: [克]
+        note: This character has multiple unrelated senses sharing the same reading (gram/unit of weight; to overcome/defeat; capable of); the common weight-unit sense was chosen as primary.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boih4-zab8-八十
+    headword: 八十
+    readings:
+      - pengim: boih4 zab8
+    senses:
+      - pos: numeral
+        gloss_en: [eighty, "80"]
+        gloss_zh: [八十]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boih4-zab8-gao2-八十九
+    headword: 八十九
+    readings:
+      - pengim: boih4 zab8 gao2
+    senses:
+      - pos: numeral
+        gloss_en: [eighty-nine, "89"]
+        gloss_zh: [八十九]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boih4-zab8-ri6-八十二
+    headword: 八十二
+    readings:
+      - pengim: boih4 zab8 ri6
+    senses:
+      - pos: numeral
+        gloss_en: [eighty-two, "82"]
+        gloss_zh: [八十二]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boih4-zab8-ngou6-八十五
+    headword: 八十五
+    readings:
+      - pengim: boih4 zab8 ngou6
+    senses:
+      - pos: numeral
+        gloss_en: [eighty-five, "85"]
+        gloss_zh: [八十五]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boih4-zab8-boih4-八十八
+    headword: 八十八
+    readings:
+      - pengim: boih4 zab8 boih4
+    senses:
+      - pos: numeral
+        gloss_en: [eighty-eight, "88"]
+        gloss_zh: [八十八]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boih4-zab8-lag8-八十六
+    headword: 八十六
+    readings:
+      - pengim: boih4 zab8 lag8
+    senses:
+      - pos: numeral
+        gloss_en: [eighty-six, "86"]
+        gloss_zh: [八十六]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boih4-zab8-si3-八十四
+    headword: 八十四
+    readings:
+      - pengim: boih4 zab8 si3
+    senses:
+      - pos: numeral
+        gloss_en: [eighty-four, "84"]
+        gloss_zh: [八十四]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-hung1-公分
+    headword: 公分
+    readings:
+      - pengim: gong1 hung1
+    senses:
+      - pos: classifier
+        gloss_en: [centimeter]
+        gloss_zh: [公分]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-geng1-公斤
+    headword: 公斤
+    readings:
+      - pengim: gong1 geng1
+    senses:
+      - pos: classifier
+        gloss_en: [kilogram, kg]
+        gloss_zh: [公斤]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-li2-公里
+    headword: 公里
+    readings:
+      - pengim: gong1 li2
+    senses:
+      - pos: classifier
+        gloss_en: [kilometre, km]
+        gloss_zh: [公里]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lag8-zab8-六十
+    headword: 六十
+    readings:
+      - pengim: lag8 zab8
+    senses:
+      - pos: numeral
+        gloss_en: [sixty, "60"]
+        gloss_zh: [六十]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lag8-zab8-san1-六十三
+    headword: 六十三
+    readings:
+      - pengim: lag8 zab8 san1
+    senses:
+      - pos: numeral
+        gloss_en: [sixty-three, "63"]
+        gloss_zh: [六十三]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lag8-zab8-gao2-六十九
+    headword: 六十九
+    readings:
+      - pengim: lag8 zab8 gao2
+    senses:
+      - pos: numeral
+        gloss_en: [sixty-nine, "69"]
+        gloss_zh: [六十九]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lag8-zab8-ri6-六十二
+    headword: 六十二
+    readings:
+      - pengim: lag8 zab8 ri6
+    senses:
+      - pos: numeral
+        gloss_en: [sixty-two, "62"]
+        gloss_zh: [六十二]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lag8-zab8-ngou6-六十五
+    headword: 六十五
+    readings:
+      - pengim: lag8 zab8 ngou6
+    senses:
+      - pos: numeral
+        gloss_en: [sixty-five, "65"]
+        gloss_zh: [六十五]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lag8-zab8-boih4-六十八
+    headword: 六十八
+    readings:
+      - pengim: lag8 zab8 boih4
+    senses:
+      - pos: numeral
+        gloss_en: [sixty-eight, "68"]
+        gloss_zh: [六十八]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lag8-zab8-lag8-六十六
+    headword: 六十六
+    readings:
+      - pengim: lag8 zab8 lag8
+    senses:
+      - pos: numeral
+        gloss_en: [sixty-six, "66"]
+        gloss_zh: [六十六]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lag8-zab8-si3-六十四
+    headword: 六十四
+    readings:
+      - pengim: lag8 zab8 si3
+    senses:
+      - pos: numeral
+        gloss_en: [sixty-four, "64"]
+        gloss_zh: [六十四]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bung1-bhi2-分米
+    headword: 分米
+    readings:
+      - pengim: bung1 bhi2
+    senses:
+      - pos: classifier
+        gloss_en: [decimetre, decimeter]
+        gloss_zh: [分米]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sab4-卅
+    headword: 卅
+    readings:
+      - pengim: sab4
+    senses:
+      - pos: numeral
+        gloss_en: [thirty (30)]
+        gloss_zh: [三十]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siab4-卌
+    headword: 卌
+    readings:
+      - pengim: siab4
+    senses:
+      - pos: numeral
+        gloss_en: [forty]
+        gloss_zh: [卌, 四十]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zab8-san1-十三
+    headword: 十三
+    readings:
+      - pengim: zab8 san1
+    senses:
+      - pos: numeral
+        gloss_en: [thirteen, "13"]
+        gloss_zh: [十三]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zab8-gao2-十九
+    headword: 十九
+    readings:
+      - pengim: zab8 gao2
+    senses:
+      - pos: numeral
+        gloss_en: [nineteen, "19"]
+        gloss_zh: [十九]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zab8-ri6-十二
+    headword: 十二
+    readings:
+      - pengim: zab8 ri6
+    senses:
+      - pos: numeral
+        gloss_en: [twelve, "12"]
+        gloss_zh: [十二]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zab8-ngou6-十五
+    headword: 十五
+    readings:
+      - pengim: zab8 ngou6
+    senses:
+      - pos: numeral
+        gloss_en: [fifteen, "15"]
+        gloss_zh: [十五]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zab8-boih4-十八
+    headword: 十八
+    readings:
+      - pengim: zab8 boih4
+    senses:
+      - pos: numeral
+        gloss_en: [eighteen, "18"]
+        gloss_zh: [十八]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zab8-lag8-十六
+    headword: 十六
+    readings:
+      - pengim: zab8 lag8
+    senses:
+      - pos: numeral
+        gloss_en: [sixteen, "16"]
+        gloss_zh: [十六]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zab8-si3-十四
+    headword: 十四
+    readings:
+      - pengim: zab8 si3
+    senses:
+      - pos: numeral
+        gloss_en: [fourteen, "14"]
+        gloss_zh: [十四]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

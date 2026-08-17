@@ -726,3 +726,433 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: guang1-huang5-光環
+    headword: 光環
+    readings:
+      - pengim: guang1 huang5
+    senses:
+      - pos: noun
+        gloss_en: [halo, ring of light, aura]
+        gloss_zh: [光環]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang1-suan3-光線
+    headword: 光線
+    readings:
+      - pengim: guang1 suan3
+    senses:
+      - pos: noun
+        gloss_en: [light, ray of light]
+        gloss_zh: [光線]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang1-pou2-光譜
+    headword: 光譜
+    readings:
+      - pengim: guang1 pou2
+    senses:
+      - pos: noun
+        gloss_en: [spectrum, light spectrum]
+        gloss_zh: [光譜]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang1-sog4-光速
+    headword: 光速
+    readings:
+      - pengim: guang1 sog4
+    senses:
+      - pos: noun
+        gloss_en: [speed of light]
+        gloss_zh: [光速]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lag8-hah8-六合
+    headword: 六合
+    readings:
+      - pengim: lag8 hah8
+    senses:
+      - pos: noun
+        gloss_en: ["the six directions (heaven, earth, and the four cardinal points)", the whole world]
+        gloss_zh: [六合]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pan3-cêg4-冇粟
+    headword: 冇粟
+    readings:
+      - pengim: pan3 cêg4
+    senses:
+      - pos: noun
+        gloss_en: [blighted grain, abortive grain, immature grain]
+        gloss_zh: [冇粟]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang1-tin1-冬天
+    headword: 冬天
+    readings:
+      - pengim: dang1 tin1
+    senses:
+      - pos: noun
+        gloss_en: [winter]
+        gloss_zh: [冬天]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang1-tang5-hê7-cao2-冬蟲夏草
+    headword: 冬蟲夏草
+    readings:
+      - pengim: dang1 tang5 hê7 cao2
+    senses:
+      - pos: noun
+        gloss_en: [caterpillar fungus, Cordyceps]
+        gloss_zh: [冬蟲夏草]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang1-tang5-cao2-冬蟲草
+    headword: 冬蟲草
+    readings:
+      - pengim: dang1 tang5 cao2
+    senses:
+      - pos: noun
+        gloss_en: [caterpillar fungus, Cordyceps]
+        gloss_zh: [冬蟲草, 冬蟲夏草]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bian1-suan1-冰山
+    headword: 冰山
+    readings:
+      - pengim: bian1 suan1
+    senses:
+      - pos: noun
+        gloss_en: [iceberg]
+        gloss_zh: [冰山]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bian1-piang3-冰片
+    headword: 冰片
+    readings:
+      - pengim: bian1 piang3
+    senses:
+      - pos: noun
+        gloss_en: [borneol, Borneo camphor]
+        gloss_zh: [冰片]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bian1-seng1-冰霜
+    headword: 冰霜
+    readings:
+      - pengim: bian1 seng1
+    senses:
+      - pos: noun
+        gloss_en: [ice and frost, "cold, unfriendly demeanor"]
+        gloss_zh: [冰霜]
+        note: The page gives both noun senses ('ice and frost'; figurative 'austerity/integrity') and a separate verb sense ('to freeze') under this reading, with no clear indication which is the core Teochew usage.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nên2-luang2-冷暖
+    headword: 冷暖
+    readings:
+      - pengim: nên2 luang2
+    senses:
+      - pos: noun
+        gloss_en: [coldness and warmth, well-being]
+        gloss_zh: [冷暖]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-凌
+    headword: 凌
+    readings:
+      - pengim: lêng5
+    senses:
+      - pos: noun
+        gloss_en: [ice]
+        gloss_zh: [凌]
+        note: The character 凌 has many senses listed under this single reading (noun 'ice' vs. verb senses like 'to rise above/encroach/bully'); picked the primary listed noun sense, but in practice the character mostly appears bound inside compounds.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngang5-tin1-si5-凝天時
+    headword: 凝天時
+    readings:
+      - pengim: ngang5 tin1 si5
+    senses:
+      - pos: noun
+        gloss_en: [winter, the cold season]
+        gloss_zh: [凝天時]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cug4-hai2-kao2-出海口
+    headword: 出海口
+    readings:
+      - pengim: cug4 hai2 kao2
+    senses:
+      - pos: noun
+        gloss_en: [estuary, river mouth]
+        gloss_zh: [出海口, 河口]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cug4-ghê5-出芽
+    headword: 出芽
+    readings:
+      - pengim: cug4 ghê5
+    senses:
+      - pos: verb
+        gloss_en: [to sprout, to germinate, to bud]
+        gloss_zh: [出芽]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cug4-kêng6-出虹
+    headword: 出虹
+    readings:
+      - pengim: cug4 kêng6
+    senses:
+      - pos: verb
+        gloss_en: [for a rainbow to appear]
+        gloss_zh: [出虹]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou2-si5-huê1-午時花
+    headword: 午時花
+    readings:
+      - pengim: ngou2 si5 huê1
+    senses:
+      - pos: noun
+        gloss_en: [sunflower]
+        gloss_zh: [向日葵]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buan3-suan1-io1-半山腰
+    headword: 半山腰
+    readings:
+      - pengim: buan3 suan1 io1
+    senses:
+      - pos: noun
+        gloss_en: [hillside, mountainside, halfway up a hill]
+        gloss_zh: [半山腰]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buan3-dao2-半島
+    headword: 半島
+    readings:
+      - pengim: buan3 dao2
+    senses:
+      - pos: noun
+        gloss_en: [peninsula]
+        gloss_zh: [半島]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buan3-giu5-半球
+    headword: 半球
+    readings:
+      - pengim: buan3 giu5
+    senses:
+      - pos: noun
+        gloss_en: [hemisphere]
+        gloss_zh: [半球]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiab4-ziêh8-協石
+    headword: 協石
+    readings:
+      - pengim: hiab4 ziêh8
+    senses:
+      - pos: noun
+        gloss_en: [magnet]
+        gloss_zh: [協石]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-bag4-南北
+    headword: 南北
+    readings:
+      - pengim: lam5 bag4
+    senses:
+      - pos: noun
+        gloss_en: [north and south, latitude span]
+        gloss_zh: [南北]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-hng1-南方
+    headword: 南方
+    readings:
+      - pengim: lam5 hng1
+    senses:
+      - pos: noun
+        gloss_en: [south, southern part]
+        gloss_zh: [南方]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nam5-boin5-南爿
+    headword: 南爿
+    readings:
+      - pengim: nam5 boin5
+    senses:
+      - pos: noun
+        gloss_en: [the south, the south side]
+        gloss_zh: [南爿, 南邊]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nam5-ming7-南面
+    headword: 南面
+    readings:
+      - pengim: nam5 ming7
+    senses:
+      - pos: noun
+        gloss_en: [south side]
+        gloss_zh: [南面]
+        note: The page also lists a literary verb sense ('to face south; to rule as monarch') under the same headword, and it is unclear which sense the Teochew reading nam5 ming7 specifically corresponds to, so the more common noun sense ('south side') was chosen.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-huang1-南風
+    headword: 南風
+    readings:
+      - pengim: lam5 huang1
+    senses:
+      - pos: noun
+        gloss_en: [south wind, southerly]
+        gloss_zh: [南風]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nguang5-liao7-原料
+    headword: 原料
+    readings:
+      - pengim: nguang5 liao7
+    senses:
+      - pos: noun
+        gloss_en: [raw material, ingredient]
+        gloss_zh: [原料]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nguang5-iu5-原油
+    headword: 原油
+    readings:
+      - pengim: nguang5 iu5
+    senses:
+      - pos: noun
+        gloss_en: [crude oil]
+        gloss_zh: [原油]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nguang5-ia2-原野
+    headword: 原野
+    readings:
+      - pengim: nguang5 ia2
+    senses:
+      - pos: noun
+        gloss_en: [open country, wilderness, field]
+        gloss_zh: [原野]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêng2-tin1-反天
+    headword: 反天
+    readings:
+      - pengim: huêng2 tin1
+    senses:
+      - pos: verb
+        gloss_en: [(of weather) to change, to turn (of weather)]
+        gloss_zh: [反天]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ga1-bog8-mi5-加薄棉
+    headword: 加薄棉
+    readings:
+      - pengim: ga1 bog8 mi5
+    senses:
+      - pos: noun
+        gloss_en: [kapok, kapok cotton]
+        gloss_zh: [木棉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng3-gêng2-勝景
+    headword: 勝景
+    readings:
+      - pengim: sêng3 gêng2
+    senses:
+      - pos: noun
+        gloss_en: [wonderful scenery, beautiful view]
+        gloss_zh: [勝景]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-北
+    headword: 北
+    readings:
+      - pengim: bag4
+    senses:
+      - pos: noun
+        gloss_en: [north, northern]
+        gloss_zh: [北]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
