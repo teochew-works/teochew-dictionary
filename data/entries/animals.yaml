@@ -385,3 +385,151 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: ua1-ua1-he5-娃娃魚
+    headword: 娃娃魚
+    readings:
+      - pengim: ua1 ua1 he5
+    senses:
+      - pos: noun
+        gloss_en: [Chinese giant salamander]
+        gloss_zh: [娃娃魚, 大鯢]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gê1-kim5-家禽
+    headword: 家禽
+    readings:
+      - pengim: gê1 kim5
+    senses:
+      - pos: noun
+        gloss_en: [poultry, domestic fowl]
+        gloss_zh: [家禽]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gia3-sên1-tang5-寄生蟲
+    headword: 寄生蟲
+    readings:
+      - pengim: gia3 sên1 tang5
+    senses:
+      - pos: noun
+        gloss_en: [parasite]
+        gloss_zh: [寄生蟲]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tong2-muêh8-寵物
+    headword: 寵物
+    readings:
+      - pengim: tong2 muêh8
+    senses:
+      - pos: noun
+        gloss_en: [pet]
+        gloss_zh: [寵物]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dui3-hê5-對蝦
+    headword: 對蝦
+    readings:
+      - pengim: dui3 hê5
+    senses:
+      - pos: noun
+        gloss_en: [prawn, Chinese white shrimp]
+        gloss_zh: [對蝦]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuê2-iah8-尾蝶
+    headword: 尾蝶
+    readings:
+      - pengim: bhuê2 iah8
+    senses:
+      - pos: noun
+        gloss_en: [butterfly]
+        gloss_zh: [蝴蝶]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai2-tang5-屎蟲
+    headword: 屎蟲
+    readings:
+      - pengim: sai2 tang5
+    senses:
+      - pos: noun
+        gloss_en: [maggot]
+        gloss_zh: [屎蟲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-iên5-山羊
+    headword: 山羊
+    readings:
+      - pengim: suan1 iên5
+    senses:
+      - pos: noun
+        gloss_en: [goat]
+        gloss_zh: [山羊]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-de1-山豬
+    headword: 山豬
+    readings:
+      - pengim: suan1 de1
+    senses:
+      - pos: noun
+        gloss_en: [wild boar]
+        gloss_zh: [山豬, 野豬]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-ngiou1-山貓
+    headword: 山貓
+    readings:
+      - pengim: suan1 ngiou1
+    senses:
+      - pos: noun
+        gloss_en: [wildcat, leopard, lynx]
+        gloss_zh: [山貓, 野貓]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bha7-gian2-峇囝
+    headword: 峇囝
+    readings:
+      - pengim: bha7 gian2
+    senses:
+      - pos: noun
+        gloss_en: [crocodile]
+        gloss_zh: [鱷魚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao5-巢
+    headword: 巢
+    readings:
+      - pengim: cao5
+    senses:
+      - pos: noun
+        gloss_en: [nest, den, lair]
+        gloss_zh: [巢, 窩]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

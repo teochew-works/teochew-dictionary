@@ -926,3 +926,151 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: nai2-iu5-奶油
+    headword: 奶油
+    readings:
+      - pengim: nai2 iu5
+    senses:
+      - pos: noun
+        gloss_en: [cream, butter]
+        gloss_zh: [奶油]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ni6-guê1-奶瓜
+    headword: 奶瓜
+    readings:
+      - pengim: ni6 guê1
+    senses:
+      - pos: noun
+        gloss_en: [papaya]
+        gloss_zh: [奶瓜, 木瓜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ni6-dê5-奶茶
+    headword: 奶茶
+    readings:
+      - pengim: ni6 dê5
+    senses:
+      - pos: noun
+        gloss_en: [milk tea]
+        gloss_zh: [奶茶]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui1-huê3-bian2-威化餅
+    headword: 威化餅
+    readings:
+      - pengim: ui1 huê3 bian2
+    senses:
+      - pos: noun
+        gloss_en: [wafer biscuit]
+        gloss_zh: [威化餅]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang3-宴
+    headword: 宴
+    readings:
+      - pengim: ang3
+    senses:
+      - pos: noun
+        gloss_en: [banquet, feast]
+        gloss_zh: [宴]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao2-bhi2-lah8-小米辣
+    headword: 小米辣
+    readings:
+      - pengim: siao2 bhi2 lah8
+    senses:
+      - pos: noun
+        gloss_en: [small chili pepper, xiaomila]
+        gloss_zh: [小米辣]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziam1-bhi2-in5-尖米圓
+    headword: 尖米圓
+    readings:
+      - pengim: ziam1 bhi2 in5
+    senses:
+      - pos: noun
+        gloss_en: [silver needle noodles, short pointed rice noodles]
+        gloss_zh: [尖米圓]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-za1-山楂
+    headword: 山楂
+    readings:
+      - pengim: suan1 za1
+    senses:
+      - pos: noun
+        gloss_en: [hawthorn, haw]
+        gloss_zh: [山楂]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-dêg4-山竹
+    headword: 山竹
+    readings:
+      - pengim: suan1 dêg4
+    senses:
+      - pos: noun
+        gloss_en: [mangosteen]
+        gloss_zh: [山竹]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang1-hu1-dê5-工夫茶
+    headword: 工夫茶
+    readings:
+      - pengim: gang1 hu1 dê5
+    senses:
+      - pos: noun
+        gloss_en: [gongfu tea, Chaoshan tea ceremony]
+        gloss_zh: [工夫茶]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ni5-mê5-bung7-年夜飯
+    headword: 年夜飯
+    readings:
+      - pengim: ni5 mê5 bung7
+    senses:
+      - pos: noun
+        gloss_en: [Chinese New Year's Eve reunion dinner]
+        gloss_zh: [年夜飯]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iun3-bhi2-ring5-幼米仁
+    headword: 幼米仁
+    readings:
+      - pengim: iun3 bhi2 ring5
+    senses:
+      - pos: noun
+        gloss_en: [corn, maize]
+        gloss_zh: [玉米]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

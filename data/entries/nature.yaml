@@ -1906,3 +1906,797 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: tin1-di7-天地
+    headword: 天地
+    readings:
+      - pengim: tin1 di7
+    senses:
+      - pos: noun
+        gloss_en: [heaven and earth, the world, universe]
+        gloss_zh: [天地]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tin1-si5-天時
+    headword: 天時
+    readings:
+      - pengim: tin1 si5
+    senses:
+      - pos: noun
+        gloss_en: [weather, timeliness]
+        gloss_zh: [天氣, 天時]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tin1-si5-ho2-天時好
+    headword: 天時好
+    readings:
+      - pengim: tin1 si5 ho2
+    senses:
+      - pos: noun
+        gloss_en: [sunny day, fine weather]
+        gloss_zh: [晴天]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tin1-zên5-天晴
+    headword: 天晴
+    readings:
+      - pengim: tin1 zên5
+    senses:
+      - pos: noun
+        gloss_en: [sunny day, clear weather]
+        gloss_zh: [天晴, 晴天]
+        note: Wiktionary marks this sense as primarily Cantonese/Hakka usage and notes Teochew normally prefers 天時好 for 'sunny day', so how current this term actually is in colloquial Teochew is uncertain despite having a confirmed reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tin1-ho5-天河
+    headword: 天河
+    readings:
+      - pengim: tin1 ho5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Milky Way, Tianhe (district of Guangzhou)]
+        gloss_zh: [天河]
+        note: Wiktionary lists two unrelated senses (Milky Way; a Guangzhou district) under the same reading with no dialect disambiguation; Milky Way was chosen as the more broadly relevant sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiang1-zai1-天災
+    headword: 天災
+    readings:
+      - pengim: tiang1 zai1
+    senses:
+      - pos: noun
+        gloss_en: [natural disaster, act of God]
+        gloss_zh: [天災]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiang1-riang5-ki3-天然氣
+    headword: 天然氣
+    readings:
+      - pengim: tiang1 riang5 ki3
+    senses:
+      - pos: noun
+        gloss_en: [natural gas]
+        gloss_zh: [天然氣]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tin1-bin1-天邊
+    headword: 天邊
+    readings:
+      - pengim: tin1 bin1
+    senses:
+      - pos: noun
+        gloss_en: [horizon, ends of the earth]
+        gloss_zh: [天邊]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tin1-dêng2-天頂
+    headword: 天頂
+    readings:
+      - pengim: tin1 dêng2
+    senses:
+      - pos: noun
+        gloss_en: [sky, zenith]
+        gloss_zh: [天頂]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiêng1-ti2-天體
+    headword: 天體
+    readings:
+      - pengim: tiêng1 ti2
+    senses:
+      - pos: noun
+        gloss_en: [celestial body, naked body (nudism)]
+        gloss_zh: [天體]
+        note: Page gives two very different senses (astronomical celestial body vs. 'naked body' in nudism compounds) under the same reading with no dialect disambiguation; celestial body was kept as the primary sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tai3-kong1-太空
+    headword: 太空
+    readings:
+      - pengim: tai3 kong1
+    senses:
+      - pos: noun
+        gloss_en: [outer space, space]
+        gloss_zh: [太空]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tai3-iang5-太陽
+    headword: 太陽
+    readings:
+      - pengim: tai3 iang5
+    senses:
+      - pos: noun
+        gloss_en: [sun, the Sun]
+        gloss_zh: [太陽]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tai3-iang5-hi6-太陽系
+    headword: 太陽系
+    readings:
+      - pengim: tai3 iang5 hi6
+    senses:
+      - pos: proper-noun
+        gloss_en: [Solar System]
+        gloss_zh: [太陽系]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gab4-bang2-夾板
+    headword: 夾板
+    readings:
+      - pengim: gab4 bang2
+    senses:
+      - pos: noun
+        gloss_en: [plywood, board for clamping, splint]
+        gloss_zh: [夾板]
+        note: The page has two etymologies (general 'plywood/splint' vs a Hokkien-specific historical 'sailboat' sense); it is unclear which etymology's pronunciation table this reading belongs to, so the more common general sense was chosen.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giab8-pang7-夾縫
+    headword: 夾縫
+    readings:
+      - pengim: giab8 pang7
+    senses:
+      - pos: noun
+        gloss_en: [crevice, crack, narrow gap]
+        gloss_zh: [夾縫]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gui1-奎
+    headword: 奎
+    readings:
+      - pengim: gui1
+    senses:
+      - pos: noun
+        gloss_en: [Kui (a lunar mansion), stride (archaic)]
+        gloss_zh: [奎]
+        note: Page lists both an archaic 'stride' sense and the astronomical lunar-mansion sense with no dialect-specific labeling to disambiguate which applies to the Teochew reading.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho2-tin1-好天
+    headword: 好天
+    readings:
+      - pengim: ho2 tin1
+    senses:
+      - pos: noun
+        gloss_en: [fine day, sunny/clear weather]
+        gloss_zh: [好天]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: u2-宇
+    headword: 宇
+    readings:
+      - pengim: u2
+    senses:
+      - pos: noun
+        gloss_en: [universe, cosmos]
+        gloss_zh: [宇]
+        note: As a classical bound morpheme, 宇 carries several distinct senses on the page (eaves, building, border, universe) with none clearly dominant for standalone modern usage.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: u2-diu6-宇宙
+    headword: 宇宙
+    readings:
+      - pengim: u2 diu6
+    senses:
+      - pos: noun
+        gloss_en: [universe, cosmos, space]
+        gloss_zh: [宇宙]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guan5-tin1-寒天
+    headword: 寒天
+    readings:
+      - pengim: guan5 tin1
+    senses:
+      - pos: noun
+        gloss_en: [cold weather, winter]
+        gloss_zh: [寒天, 冬天]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang5-liu5-寒流
+    headword: 寒流
+    readings:
+      - pengim: hang5 liu5
+    senses:
+      - pos: noun
+        gloss_en: [cold wave, cold current]
+        gloss_zh: [寒流]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guan5-lou7-寒露
+    headword: 寒露
+    readings:
+      - pengim: guan5 lou7
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Hanlu (Cold Dew), a solar term"]
+        gloss_zh: [寒露]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-zioh8-寶石
+    headword: 寶石
+    readings:
+      - pengim: bo2 zioh8
+    senses:
+      - pos: noun
+        gloss_en: [gem, gemstone, jewel]
+        gloss_zh: [寶石]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sia7-suan3-射線
+    headword: 射線
+    readings:
+      - pengim: sia7 suan3
+    senses:
+      - pos: noun
+        gloss_en: [ray, half-line (geometry)]
+        gloss_zh: [射線]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dui3-ngai6-對岸
+    headword: 對岸
+    readings:
+      - pengim: dui3 ngai6
+    senses:
+      - pos: noun
+        gloss_en: [opposite bank, opposite shore]
+        gloss_zh: [對岸]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siou2-hang5-小寒
+    headword: 小寒
+    readings:
+      - pengim: siou2 hang5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Lesser Cold (solar term)]
+        gloss_zh: [小寒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siou2-dao2-小島
+    headword: 小島
+    readings:
+      - pengim: siou2 dao2
+    senses:
+      - pos: noun
+        gloss_en: [islet, small island]
+        gloss_zh: [小島]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siou2-su2-小暑
+    headword: 小暑
+    readings:
+      - pengim: siou2 su2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Lesser Heat (solar term)]
+        gloss_zh: [小暑]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siou2-muan2-小滿
+    headword: 小滿
+    readings:
+      - pengim: siou2 muan2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Grain Full (solar term)]
+        gloss_zh: [小滿]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siou2-soh4-小雪
+    headword: 小雪
+    readings:
+      - pengim: siou2 soh4
+    senses:
+      - pos: noun
+        gloss_en: [light snow, light snowfall]
+        gloss_zh: [小雪]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-lai6-山內
+    headword: 山內
+    readings:
+      - pengim: suan1 lai6
+    senses:
+      - pos: noun
+        gloss_en: [mountainous area, remote mountains]
+        gloss_zh: [山內]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-si3-山勢
+    headword: 山勢
+    readings:
+      - pengim: suan1 si3
+    senses:
+      - pos: noun
+        gloss_en: [topography of a mountain, mountain features]
+        gloss_zh: [山勢, 山形]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-ku1-山區
+    headword: 山區
+    readings:
+      - pengim: suan1 ku1
+    senses:
+      - pos: noun
+        gloss_en: [mountainous area, hill region]
+        gloss_zh: [山區, 山地]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-ken1-山坑
+    headword: 山坑
+    readings:
+      - pengim: suan1 ken1
+    senses:
+      - pos: noun
+        gloss_en: [valley, gully, ravine]
+        gloss_zh: [山坑]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-bo1-山坡
+    headword: 山坡
+    readings:
+      - pengim: suan1 bo1
+    senses:
+      - pos: noun
+        gloss_en: [mountain slope, hillside]
+        gloss_zh: [山坡]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-ba1-山巴
+    headword: 山巴
+    readings:
+      - pengim: suan1 ba1
+    senses:
+      - pos: noun
+        gloss_en: [countryside, jungle, mountain]
+        gloss_zh: [山巴]
+        note: Page gives distinct regional senses (Malaysia 'jungle', Singapore/Thai Teochew 'countryside', Thai Teochew 'mountain') for this overseas-Teochew word, so the precise intended sense is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-lim5-山林
+    headword: 山林
+    readings:
+      - pengim: suan1 lim5
+    senses:
+      - pos: noun
+        gloss_en: [mountains and forests, mountain forest]
+        gloss_zh: [山林]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-zui2-山水
+    headword: 山水
+    readings:
+      - pengim: suan1 zui2
+    senses:
+      - pos: noun
+        gloss_en: [mountains and water; scenery, landscape]
+        gloss_zh: [山水]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-dang7-山洞
+    headword: 山洞
+    readings:
+      - pengim: suan1 dang7
+    senses:
+      - pos: noun
+        gloss_en: [cave, cavern, grotto]
+        gloss_zh: [山洞]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-hong5-山洪
+    headword: 山洪
+    readings:
+      - pengim: suan1 hong5
+    senses:
+      - pos: noun
+        gloss_en: [mountain torrent, flash flood]
+        gloss_zh: [山洪]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-gao1-山溝
+    headword: 山溝
+    readings:
+      - pengim: suan1 gao1
+    senses:
+      - pos: noun
+        gloss_en: [gully; ravine, remote mountainous region]
+        gloss_zh: [山溝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-kang1-山空
+    headword: 山空
+    readings:
+      - pengim: suan1 kang1
+    senses:
+      - pos: noun
+        gloss_en: [cave]
+        gloss_zh: [山空, 山洞]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-ti2-山體
+    headword: 山體
+    readings:
+      - pengim: suan1 ti2
+    senses:
+      - pos: noun
+        gloss_en: [massif, mountain body/mass]
+        gloss_zh: [山體]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-ti2-gug8-bo1-山體滑坡
+    headword: 山體滑坡
+    readings:
+      - pengim: suan1 ti2 gug8 bo1
+    senses:
+      - pos: noun
+        gloss_en: [landslide]
+        gloss_zh: [山體滑坡, 山崩]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki2-屺
+    headword: 屺
+    readings:
+      - pengim: ki2
+    senses:
+      - pos: noun
+        gloss_en: [bare hill (without vegetation)]
+        gloss_zh: [屺]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngam5-岩
+    headword: 岩
+    readings:
+      - pengim: ngam5
+    senses:
+      - pos: noun
+        gloss_en: [rock; cliff, cave]
+        gloss_zh: [岩]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngam5-ziêh8-岩石
+    headword: 岩石
+    readings:
+      - pengim: ngam5 ziêh8
+    senses:
+      - pos: noun
+        gloss_en: [rock]
+        gloss_zh: [岩石]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu7-岫
+    headword: 岫
+    readings:
+      - pengim: siu7
+    senses:
+      - pos: noun
+        gloss_en: [cave, den/lair (of an animal), mountain peak]
+        gloss_zh: [岫]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngag8-岳
+    headword: 岳
+    readings:
+      - pengim: ngag8
+    senses:
+      - pos: noun
+        gloss_en: [tall mountain; peak, parent-in-law (in compounds)]
+        gloss_zh: [岳]
+        note: The page gives this literary reading for both a 'mountain peak' sense and a 'parent-in-law' kinship sense (plus a surname use) without indicating which is primary for Teochew, so the best single gloss/category is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngai6-bin1-岸邊
+    headword: 岸邊
+    readings:
+      - pengim: ngai6 bin1
+    senses:
+      - pos: noun
+        gloss_en: [shore, riverbank]
+        gloss_zh: [岸邊, 邊岸]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hong1-峰
+    headword: 峰
+    readings:
+      - pengim: hong1
+    senses:
+      - pos: noun
+        gloss_en: [peak; summit]
+        gloss_zh: [峰]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao2-島
+    headword: 島
+    readings:
+      - pengim: dao2
+    senses:
+      - pos: noun
+        gloss_en: [island]
+        gloss_zh: [島]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao2-se6-島嶼
+    headword: 島嶼
+    readings:
+      - pengim: dao2 se6
+    senses:
+      - pos: noun
+        gloss_en: [island(s); islet]
+        gloss_zh: [島嶼]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kam3-崁
+    headword: 崁
+    readings:
+      - pengim: kam3
+    senses:
+      - pos: noun
+        gloss_en: [cliff, embankment, steep bank]
+        gloss_zh: [崁, 陡坡]
+        note: The page's Teochew reading kam3 is shared across two unrelated etymologies (Southern Min 'cliff/precipice' vs. Southern Min 'cover/lid/to cover'); the cliff/landform sense was picked as primary but either could match this reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngai5-崖
+    headword: 崖
+    readings:
+      - pengim: ngai5
+    senses:
+      - pos: noun
+        gloss_en: [cliff, precipice]
+        gloss_zh: [崖, 懸崖]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui1-崴
+    headword: 崴
+    readings:
+      - pengim: ui1
+    senses:
+      - pos: noun
+        gloss_en: ["bend or curve (of a mountain or river, esp. in place names)"]
+        gloss_zh: [崴]
+        note: The page gives two Mandarin readings (wēi, adjective with an incomplete/rfdef gloss; wǎi/wēi, noun 'curve in a mountain or river' and verb 'to sprain'), and the Teochew peng'im ui1 doesn't clearly map to one; the 'to sprain' sense is separately covered by 崴著 (uai2 dioh4), so the landform noun sense was picked here.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngao5-嶅
+    headword: 嶅
+    readings:
+      - pengim: ngao5
+    senses:
+      - pos: noun
+        gloss_en: ["mountain full of small stones (rare, historical)"]
+        gloss_zh: [嶅]
+        note: Extremely rare literary character attested only in historical dictionaries, with senses spread across two etymologies (mountain full of small stones, a place name in Guangdong, and an adjective 'high'); the general noun sense was picked as primary.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nian2-嶺
+    headword: 嶺
+    readings:
+      - pengim: nian2
+    senses:
+      - pos: noun
+        gloss_en: [mountain ridge, mountain pass, mountain range]
+        gloss_zh: [嶺, 山嶺]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: se6-嶼
+    headword: 嶼
+    readings:
+      - pengim: se6
+    senses:
+      - pos: noun
+        gloss_en: [island, islet]
+        gloss_zh: [嶼, 島]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngag8-嶽
+    headword: 嶽
+    readings:
+      - pengim: ngag8
+    senses:
+      - pos: noun
+        gloss_en: [tall mountain, peak]
+        gloss_zh: [嶽, 岳]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh8-帛
+    headword: 帛
+    readings:
+      - pengim: bêh8
+    senses:
+      - pos: noun
+        gloss_en: [silk, fabric]
+        gloss_zh: [帛]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bên5-di7-平地
+    headword: 平地
+    readings:
+      - pengim: bên5 di7
+    senses:
+      - pos: noun
+        gloss_en: [flat ground, level ground]
+        gloss_zh: [平地]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ni5-sêng5-年成
+    headword: 年成
+    readings:
+      - pengim: ni5 sêng5
+    senses:
+      - pos: noun
+        gloss_en: [year's harvest]
+        gloss_zh: [年成]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iun3-miao5-幼苗
+    headword: 幼苗
+    readings:
+      - pengim: iun3 miao5
+    senses:
+      - pos: noun
+        gloss_en: [seedling, sprout, sapling]
+        gloss_zh: [幼苗]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

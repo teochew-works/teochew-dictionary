@@ -997,3 +997,245 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: tiang1-huê1-天花
+    headword: 天花
+    readings:
+      - pengim: tiang1 huê1
+    senses:
+      - pos: noun
+        gloss_en: [smallpox, ceiling (colloquial)]
+        gloss_zh: [天花]
+        note: Page lists several unrelated senses (smallpox, ceiling, literary snow, a Buddhist-lore flower) under one reading with no dialect disambiguation; smallpox and ceiling were kept as the most concrete/common modern senses.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze2-gêng1-子宮
+    headword: 子宮
+    readings:
+      - pengim: ze2 gêng1
+    senses:
+      - pos: noun
+        gloss_en: [uterus, womb]
+        gloss_zh: [子宮]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gou1-dog8-zêng3-孤獨症
+    headword: 孤獨症
+    readings:
+      - pengim: gou1 dog8 zêng3
+    senses:
+      - pos: noun
+        gloss_en: [autism]
+        gloss_zh: [孤獨症, 自閉症]
+        note: No dedicated medical/health category exists in the category list, so body.yaml was chosen as the closest topical fit for this clinical term.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-gên3-ngam5-宮頸癌
+    headword: 宮頸癌
+    readings:
+      - pengim: gêng1 gên3 ngam5
+    senses:
+      - pos: noun
+        gloss_en: [cervical cancer]
+        gloss_zh: [宮頸癌]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong5-nguang5-容顏
+    headword: 容顏
+    readings:
+      - pengim: iong5 nguang5
+    senses:
+      - pos: noun
+        gloss_en: [face; countenance, looks]
+        gloss_zh: [容顏]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao2-tui2-小腿
+    headword: 小腿
+    readings:
+      - pengim: siao2 tui2
+    senses:
+      - pos: noun
+        gloss_en: [lower leg, calf]
+        gloss_zh: [小腿]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao2-zih8-小舌
+    headword: 小舌
+    readings:
+      - pengim: siao2 zih8
+    senses:
+      - pos: noun
+        gloss_en: [uvula]
+        gloss_zh: [小舌]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si1-尸
+    headword: 尸
+    readings:
+      - pengim: si1
+    senses:
+      - pos: noun
+        gloss_en: [corpse, dead body]
+        gloss_zh: [尸, 屍體]
+        note: Page gives both an archaic ritual sense ('spirit impersonator') and the modern 'corpse' sense under the same reading without indicating which is primary in Teochew.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka1-ceng1-tao5-尻川頭
+    headword: 尻川頭
+    readings:
+      - pengim: ka1 ceng1 tao5
+    senses:
+      - pos: noun
+        gloss_en: [buttocks, butt]
+        gloss_zh: [屁股]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ga1-ziah4-gug4-尻脊骨
+    headword: 尻脊骨
+    readings:
+      - pengim: ga1 ziah4 gug4
+    senses:
+      - pos: noun
+        gloss_en: [vertebra, spine bone]
+        gloss_zh: [脊椎骨]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuê2-ba1-尾巴
+    headword: 尾巴
+    readings:
+      - pengim: bhuê2 ba1
+    senses:
+      - pos: noun
+        gloss_en: [tail]
+        gloss_zh: [尾巴]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuê2-zoin2-尾指
+    headword: 尾指
+    readings:
+      - pengim: bhuê2 zoin2
+    senses:
+      - pos: noun
+        gloss_en: [little finger, pinky]
+        gloss_zh: [小指]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rio7-pao1-尿脬
+    headword: 尿脬
+    readings:
+      - pengim: rio7 pao1
+    senses:
+      - pos: noun
+        gloss_en: [urinary bladder]
+        gloss_zh: [膀胱]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rio7-dao6-尿道
+    headword: 尿道
+    readings:
+      - pengim: rio7 dao6
+    senses:
+      - pos: noun
+        gloss_en: [urethra]
+        gloss_zh: [尿道]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi1-屄
+    headword: 屄
+    readings:
+      - pengim: bi1
+    senses:
+      - pos: noun
+        gloss_en: [cunt (vulgar), vulva]
+        gloss_zh: [屄]
+        note: The page lists several senses (vulva, bodily orifice, intensifying modifier); the primary vulgar 'vulva' sense was chosen, though the page notes Teochew more often uses 膣 for this meaning.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si1-屍
+    headword: 屍
+    readings:
+      - pengim: si1
+    senses:
+      - pos: noun
+        gloss_en: [corpse, carcass]
+        gloss_zh: [屍, 屍體]
+        note: The bare character means 'corpse', but Teochew/Hokkien varieties are noted as preferring the compound 身屍 rather than 屍 alone, so standalone usage/frequency is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai2-屎
+    headword: 屎
+    readings:
+      - pengim: sai2
+    senses:
+      - pos: noun
+        gloss_en: [excrement, poop, feces]
+        gloss_zh: [屎]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai2-dou2-屎肚
+    headword: 屎肚
+    readings:
+      - pengim: sai2 dou2
+    senses:
+      - pos: noun
+        gloss_en: [belly, abdomen]
+        gloss_zh: [屎肚]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bên5-ka1-doin2-平跤底
+    headword: 平跤底
+    readings:
+      - pengim: bên5 ka1 doin2
+    senses:
+      - pos: noun
+        gloss_en: [flatfoot, pes planus]
+        gloss_zh: [平跤底, 扁平足]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
