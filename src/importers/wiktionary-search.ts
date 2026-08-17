@@ -72,8 +72,18 @@ async function requestSearchPage(query: string, offset: number): Promise<SearchP
   if (!res.ok) throw new Error(`Wiktionary search API returned ${res.status}`)
 
   const body = (await res.json()) as {
+    error?: { code?: string; info?: string }
     continue?: { sroffset?: number }
     query?: { search?: { title: string }[]; searchinfo?: { totalhits?: number } }
+  }
+
+  // MediaWiki reports API-level failures (e.g. an invalid `intitle:` regex from
+  // a bisected range — see the module doc comment) as HTTP 200 with an `error`
+  // body, not a non-2xx status. Left unchecked, `body.query` being undefined
+  // would fall through to the `?? []` / `?? 0` defaults below and get silently
+  // read as "zero hits", dropping that entire subrange with no error surfaced.
+  if (body.error) {
+    throw new Error(`Wiktionary search API error for query ${JSON.stringify(query)}: ${body.error.code} — ${body.error.info}`)
   }
 
   return {

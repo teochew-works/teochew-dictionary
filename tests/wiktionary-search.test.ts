@@ -1,8 +1,29 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { searchTeochewPages, type SearchPage } from '../src/importers/wiktionary-search.js'
 
 describe('searchTeochewPages', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
+  it('throws on a MediaWiki API error body instead of treating it as zero hits', async () => {
+    // MediaWiki reports API-level failures (e.g. the invalid `intitle:` regex a
+    // bisected range can produce — see the module doc comment) as HTTP 200 with
+    // an `error` body, not a non-2xx status; confirmed live against the actual
+    // API. Silently falling through to "zero hits" here would drop that
+    // subrange with no error surfaced.
+    const body = {
+      error: { code: 'cirrussearch-regex-syntax-error', info: 'Regular expression syntax error' },
+    }
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue(new Response(JSON.stringify(body), { status: 200 })),
+    )
+
+    await expect(searchTeochewPages({ delayMs: 0 })).rejects.toThrow(/cirrussearch-regex-syntax-error/u)
+  })
+
   it('paginates a single range until continue is absent, deduping and sorting titles', async () => {
     const pages: Record<number, SearchPage> = {
       0: { titles: ['乙', '丙'], totalHits: 3, nextOffset: 2 },
