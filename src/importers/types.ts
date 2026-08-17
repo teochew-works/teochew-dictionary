@@ -1,6 +1,36 @@
 /** Shared across every importer that fetches from a live site. */
 export const IMPORTER_USER_AGENT = 'teochew-dictionary importer (github; contact via repo)'
 
+export interface RetryOptions {
+  /** Retries on 429 before giving up. */
+  maxRetries?: number
+  /** Backoff when the response carries no `retry-after` header. */
+  backoffMs?: number
+}
+
+/**
+ * `fetch` that retries on HTTP 429, honoring the `retry-after` header when
+ * present. Wikimedia's edge rate limiter sends one (confirmed live, issue
+ * #54's bulk run trips it well before any per-request delay would suggest) —
+ * falls back to exponential backoff otherwise.
+ */
+export async function fetchWithRetry(
+  url: string | URL,
+  init: RequestInit,
+  options: RetryOptions = {},
+): Promise<Response> {
+  const { maxRetries = 5, backoffMs = 2000 } = options
+
+  for (let attempt = 0; ; attempt += 1) {
+    const res = await fetch(url, init)
+    if (res.status !== 429 || attempt >= maxRetries) return res
+
+    const retryAfter = Number(res.headers.get('retry-after'))
+    const waitMs = Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : backoffMs * 2 ** attempt
+    await new Promise((r) => setTimeout(r, waitMs))
+  }
+}
+
 /**
  * Importers never write to `data/entries/`.
  *

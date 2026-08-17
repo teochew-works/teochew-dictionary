@@ -1,5 +1,11 @@
 import { tryParsePengim } from '../phonology/syllable.js'
-import { IMPORTER_USER_AGENT, type ImportResult, type Proposal, type ProposedReading } from './types.js'
+import {
+  fetchWithRetry,
+  IMPORTER_USER_AGENT,
+  type ImportResult,
+  type Proposal,
+  type ProposedReading,
+} from './types.js'
 
 /**
  * Wiktionary importer — the one open source that actually carries Teochew
@@ -55,7 +61,7 @@ async function fetchWikitext(title: string): Promise<string | null> {
     formatversion: '2',
   }).toString()
 
-  const res = await fetch(url, {
+  const res = await fetchWithRetry(url, {
     headers: { 'user-agent': IMPORTER_USER_AGENT },
   })
   if (!res.ok) return null
