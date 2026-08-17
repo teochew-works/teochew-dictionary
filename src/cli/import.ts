@@ -2,8 +2,9 @@ import { existsSync } from 'node:fs'
 
 import { importCedict } from '../importers/cedict.js'
 import { importWiktionary } from '../importers/wiktionary.js'
-import { writeStaging } from '../importers/staging.js'
+import { mergeImportResults, readStaging, writeStaging } from '../importers/staging.js'
 import { loadEntries } from '../data/load.js'
+import { loadWiktionaryWordlist, writeWiktionaryWordlist } from '../data/wiktionary-wordlist.js'
 
 /**
  * `npm run import -- <source> [args]`
@@ -11,6 +12,13 @@ import { loadEntries } from '../data/load.js'
  *   cedict <path/to/cedict_ts.u8>   propose extra English glosses for existing entries
  *   wiktionary [headword...]        fetch Teochew readings (defaults to entries
  *                                   currently flagged needs_review)
+ *   wiktionary --from-wordlist [--limit=N] [--delay=MS]
+ *                                   fetch the to_fetch items in
+ *                                   data/wordlists/wiktionary-teochew-index.yaml
+ *                                   (issue #54); merges into staging and flips
+ *                                   each processed headword's status instead of
+ *                                   overwriting, so repeated chunked runs are
+ *                                   resumable.
  *
  * Both write to data/staging/ for review; neither touches data/entries/.
  */
@@ -18,6 +26,9 @@ import { loadEntries } from '../data/load.js'
 const USAGE = `usage:
   npm run import -- cedict <path/to/cedict_ts.u8>
   npm run import -- wiktionary [headword...]   (default: entries flagged needs_review)
+  npm run import -- wiktionary --from-wordlist [--limit=N] [--delay=MS]
+                                                (to_fetch items from
+                                                 data/wordlists/wiktionary-teochew-index.yaml)
 
 Both write proposals to data/staging/ for human review. Neither modifies data/entries/.`
 
@@ -52,9 +63,29 @@ switch (source) {
   }
 
   case 'wiktionary': {
-    const headwords =
-      rest.length > 0
-        ? rest
+    const flags = rest.filter((a) => a.startsWith('--'))
+    const explicitHeadwords = rest.filter((a) => !a.startsWith('--'))
+    const fromWordlist = flags.includes('--from-wordlist')
+    const limitFlag = flags.find((f) => f.startsWith('--limit='))
+    const delayFlag = flags.find((f) => f.startsWith('--delay='))
+    const limit = limitFlag ? Number(limitFlag.slice('--limit='.length)) : undefined
+    const delayMs = delayFlag ? Number(delayFlag.slice('--delay='.length)) : undefined
+
+    const wordlist = fromWordlist ? loadWiktionaryWordlist() : null
+    if (fromWordlist && !wordlist) {
+      console.error(
+        'wiktionary --from-wordlist: no data/wordlists/wiktionary-teochew-index.yaml — run `npm run wordlist:wiktionary` first',
+      )
+      process.exit(1)
+    }
+
+    const headwords = wordlist
+      ? (() => {
+          const toFetch = wordlist.items.filter((i) => i.status === 'to_fetch').map((i) => i.headword)
+          return limit !== undefined ? toFetch.slice(0, limit) : toFetch
+        })()
+      : explicitHeadwords.length > 0
+        ? explicitHeadwords
         : loadEntries()
             .filter(({ entry }) => entry.needs_review)
             .map(({ entry }) => entry.headword)
@@ -65,12 +96,26 @@ switch (source) {
     }
 
     console.log(`fetching ${headwords.length} headword(s) from Wiktionary…`)
-    const result = await importWiktionary(headwords, today)
-    const out = writeStaging(result)
-    console.log(`${result.proposals.length} proposal(s) → ${out}`)
+    const result = await importWiktionary(headwords, today, { delayMs })
+    const merged = wordlist ? mergeImportResults(readStaging('wiktionary') ?? { proposals: [], misses: [] }, result) : result
+    const out = writeStaging(merged)
+    console.log(`${result.proposals.length} proposal(s) this run → ${out}`)
     for (const n of result.notes) console.log(`  ${n}`)
     if (result.misses.length > 0) {
       console.log(`  no Teochew reading found for: ${result.misses.join(', ')}`)
+    }
+
+    if (wordlist) {
+      const resolved = new Set(result.proposals.map((p) => p.headword))
+      const missed = new Set(result.misses)
+      const updated = wordlist.items.map((item) => {
+        if (resolved.has(item.headword)) return { ...item, status: 'staged' as const }
+        if (missed.has(item.headword)) return { ...item, status: 'no_reading' as const }
+        return item
+      })
+      writeWiktionaryWordlist(updated)
+      const remaining = updated.filter((i) => i.status === 'to_fetch').length
+      console.log(`  ${remaining} to_fetch item(s) remaining in the wordlist`)
     }
     break
   }

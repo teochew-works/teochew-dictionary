@@ -18,6 +18,7 @@
     "build": "tsx src/cli/build.ts",
     "import": "tsx src/cli/import.ts",
     "inventory": "tsx src/cli/inventory.ts",
+    "wordlist:wiktionary": "tsx src/cli/wiktionary-index.ts",
     "xref": "tsx src/cli/xref.ts",
     "lookup": "tsx src/cli/lookup.ts",
     "audio:verify": "tsx src/cli/audio-verify.ts",
