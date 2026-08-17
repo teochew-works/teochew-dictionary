@@ -216,3 +216,22 @@ entries:
             en: one thousand
     frequency: 4
     sources: [seed]
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: zêg8-bêh4-一百
+    headword: 一百
+    readings:
+      - pengim: zêg8 bêh4
+    senses:
+      - pos: numeral
+        gloss_en: [one hundred]
+        gloss_zh: [一百]
+        examples:
+          - hanzi: 一百年
+            pengim: zêg8 bêh4 ni5
+            en: one hundred years
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

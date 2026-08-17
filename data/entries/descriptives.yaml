@@ -770,3 +770,58 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-07-28'
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: zêg8-buan1-一般
+    headword: 一般
+    readings:
+      - pengim: zêg8 buan1
+    senses:
+      - pos: adjective
+        gloss_en: [general, ordinary, common]
+        gloss_zh: [一般]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-biang6-不便
+    headword: 不便
+    readings:
+      - pengim: bug4 biang6
+    senses:
+      - pos: adjective
+        gloss_en: [inconvenient]
+        gloss_zh: [不便]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-zio2-不少
+    headword: 不少
+    readings:
+      - pengim: bug4 zio2
+    senses:
+      - pos: adjective
+        gloss_en: [quite a lot, not few, many]
+        gloss_zh: [不少]
+        examples:
+          - hanzi: 不少書
+            pengim: bug4 zio2 ze1
+            en: quite a lot of books
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guai1-ka2-乖巧
+    headword: 乖巧
+    readings:
+      - pengim: guai1 ka2
+    senses:
+      - pos: adjective
+        gloss_en: [well-behaved, cute (of a child)]
+        gloss_zh: [乖巧]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

@@ -3038,6 +3038,7 @@ items:
         status: attested
         attested_entries:
           - bêh4-百
+          - zêg8-bêh4-一百
       shantou:
         status: unattested
   - syllable: beh8
@@ -15682,7 +15683,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - dong1-bhung5-中文
       shantou:
         status: unattested
   - syllable: bhung6
@@ -18517,7 +18520,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - bug4-biang6-不便
       shantou:
         status: unattested
   - syllable: biang7
@@ -24969,7 +24974,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - zêg8-buan1-一般
       shantou:
         status: unattested
   - syllable: buan2
@@ -26651,7 +26658,11 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - bug4-biang6-不便
+          - bug4-guê3-不過
+          - bug4-zio2-不少
       shantou:
         status: unattested
   - syllable: bug8
@@ -26661,7 +26672,11 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - bug4-biang6-不便
+          - bug4-guê3-不過
+          - bug4-zio2-不少
       shantou:
         status: unattested
   - syllable: buh4
@@ -44291,7 +44306,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - ê6-zui2-dao6-下水道
       shantou:
         status: unattested
   - syllable: dao7
@@ -46402,7 +46419,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - zêg8-dian7-一定
       shantou:
         status: unattested
   - syllable: dianb4
@@ -48051,6 +48070,7 @@ items:
         status: attested
         attested_entries:
           - dig8-直
+          - zêg8-dig8-一直
       shantou:
         status: unattested
   - syllable: dih4
@@ -51599,11 +51619,17 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - dong1-bhung5-中文
           - dong1-gog4-ue7-中國話
           - dong1-gog4-中國
+          - dong1-ngou2-中午
+          - dong1-sim1-中心
         sandhi_attested_entries:
+          - dong1-bhung5-中文
           - dong1-gog4-ue7-中國話
           - dong1-gog4-中國
+          - dong1-ngou2-中午
+          - dong1-sim1-中心
       shantou:
         status: unattested
   - syllable: dong2
@@ -57425,7 +57451,11 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - ê6-ming7-下面
+          - ê6-ngou2-下午
+          - ê6-zui2-dao6-下水道
       shantou:
         status: unattested
   - syllable: e7
@@ -57445,7 +57475,13 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - zêg8-ê7-一下
+        sandhi_attested_entries:
+          - ê6-ming7-下面
+          - ê6-ngou2-下午
+          - ê6-zui2-dao6-下水道
       shantou:
         status: unattested
   - syllable: eb4
@@ -58418,7 +58454,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - si3-gai3-世界
       shantou:
         status: unattested
   - syllable: gai5
@@ -59022,7 +59060,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - hia6-gang3-下降
       shantou:
         status: unattested
   - syllable: gang5
@@ -81288,7 +81328,11 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - guai1-ka2-乖巧
+        sandhi_attested_entries:
+          - guai1-ka2-乖巧
       shantou:
         status: unattested
   - syllable: guai2
@@ -82627,7 +82671,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - bug4-guê3-不過
       shantou:
         status: unattested
   - syllable: gue5
@@ -88598,7 +88644,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - hia6-gang3-下降
       shantou:
         status: unattested
   - syllable: hia7
@@ -88608,7 +88656,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - hia6-gang3-下降
       shantou:
         status: unattested
   - syllable: hiab4
@@ -100201,7 +100251,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - zu2-i3-主意
       shantou:
         status: unattested
   - syllable: i5
@@ -105283,7 +105335,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - guai1-ka2-乖巧
       shantou:
         status: unattested
   - syllable: ka3
@@ -107587,7 +107641,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - zêg8-ki2-一起
       shantou:
         status: unattested
   - syllable: ki3
@@ -138629,7 +138685,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - ê6-ming7-下面
       shantou:
         status: unattested
   - syllable: minh4
@@ -147957,6 +148015,7 @@ items:
           - i1-nang5-伊儂
           - nang5-儂
           - suan1-tao5-nang5-汕頭儂
+          - zêg8-si3-nang5-一世人
       shantou:
         status: unattested
   - syllable: nang6
@@ -157980,7 +158039,10 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - dong1-ngou2-中午
+          - ê6-ngou2-下午
       shantou:
         status: unattested
   - syllable: ngou3
@@ -206723,6 +206785,9 @@ items:
         status: attested
         attested_entries:
           - si2-死
+        sandhi_attested_entries:
+          - si3-gai3-世界
+          - zêg8-si3-nang5-一世人
       shantou:
         status: unattested
   - syllable: si3
@@ -206734,7 +206799,9 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - si3-gai3-世界
           - si3-四
+          - zêg8-si3-nang5-一世人
       shantou:
         status: unattested
   - syllable: si5
@@ -209616,6 +209683,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - dong1-sim1-中心
           - sim1-心
       shantou:
         status: unattested
@@ -239019,7 +239087,15 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - zêg8-buan1-一般
+          - zêg8-bêh4-一百
+          - zêg8-dian7-一定
+          - zêg8-dig8-一直
+          - zêg8-ki2-一起
+          - zêg8-si3-nang5-一世人
+          - zêg8-ê7-一下
       shantou:
         status: unattested
   - syllable: zeg8
@@ -239042,6 +239118,13 @@ items:
         status: attested
         attested_entries:
           - zeg8-一
+          - zêg8-buan1-一般
+          - zêg8-bêh4-一百
+          - zêg8-dian7-一定
+          - zêg8-dig8-一直
+          - zêg8-ki2-一起
+          - zêg8-si3-nang5-一世人
+          - zêg8-ê7-一下
       shantou:
         status: unattested
   - syllable: zeh4
@@ -243032,6 +243115,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bug4-zio2-不少
           - zio2-少
       shantou:
         status: unattested
@@ -246405,6 +246489,7 @@ items:
         status: attested
         attested_entries:
           - zi2-籽
+          - zu2-i3-主意
       shantou:
         status: unattested
   - syllable: zu3
@@ -246434,7 +246519,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - zu2-i3-主意
       shantou:
         status: unattested
   - syllable: zu7
@@ -248836,6 +248923,7 @@ items:
         attested_entries:
           - siu5-zui2-泅水
           - zui2-水
+          - ê6-zui2-dao6-下水道
       shantou:
         status: unattested
   - syllable: zui3
@@ -248865,7 +248953,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - ê6-zui2-dao6-下水道
       shantou:
         status: unattested
   - syllable: zui7

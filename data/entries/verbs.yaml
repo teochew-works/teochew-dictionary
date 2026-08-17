@@ -1211,3 +1211,18 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-07-28'
+
+  # The following entry was merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: hia6-gang3-下降
+    headword: 下降
+    readings:
+      - pengim: hia6 gang3
+    senses:
+      - pos: verb
+        gloss_en: [to descend, to decrease, to decline]
+        gloss_zh: [下降]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
