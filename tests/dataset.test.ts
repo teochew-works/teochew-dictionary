@@ -13,7 +13,7 @@ import {
   TONES,
 } from '../src/validate/index.js'
 import { loadEntries, loadSources } from '../src/data/load.js'
-import { resolveLicence } from '../src/data/licence.js'
+import { PROJECT_ATTRIBUTION, resolveLicence } from '../src/data/licence.js'
 import type { Variety } from '../src/schema/phonology.js'
 import type { Entry, Source } from '../src/schema/entry.js'
 import type { ExternalChart, SyllableInventory } from '../src/schema/inventory.js'
@@ -282,10 +282,10 @@ describe('enrichment', () => {
     expect(cz.ipa_caveats.length).toBeGreaterThan(0)
   })
 
-  it('derives the base licence for an entry that only cites the seed source', () => {
+  it('derives the base licence for an entry that only cites the seed source, crediting the project itself', () => {
     const e = enrich(entries.get('dio5-ziu1-潮州')!)
     expect(e.licence).toBe('CC-BY-4.0')
-    expect(e.attributions).toEqual([])
+    expect(e.attributions).toEqual([PROJECT_ATTRIBUTION])
   })
 })
 

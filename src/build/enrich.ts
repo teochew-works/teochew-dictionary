@@ -4,7 +4,7 @@ import { syllablesToPoj } from '../phonology/poj.js'
 import { applySandhiToSyllables, createSandhiResolver } from '../phonology/sandhi.js'
 import { parsePengim } from '../phonology/syllable.js'
 import { loadSources } from '../data/load.js'
-import { resolveLicenceOrThrow } from '../data/licence.js'
+import { resolveLicenceOrThrow, withProjectAttribution } from '../data/licence.js'
 import type { Entry, Reading, Source } from '../schema/entry.js'
 import type { Audio, AudioClip, Confidence } from '../schema/phonology.js'
 import type { Syllable } from '../phonology/syllable.js'
@@ -65,7 +65,8 @@ export interface EnrichedEntry extends Omit<Entry, 'readings'> {
    * Notices owed in addition to `licence` — every cited source whose own
    * licence differs from BASE_LICENCE, e.g. Unicode-DFS-2016 via `unihan`.
    * A permissive source here does not change `licence`; it still has to be
-   * credited.
+   * credited. Never empty: an entry whose sources owe nobody else's notice
+   * credits the project itself instead — see withProjectAttribution.
    */
   attributions: string[]
 }
@@ -176,7 +177,7 @@ export function createEnricher() {
       readings,
       search_keys: [...keys],
       licence: resolved.licence,
-      attributions: resolved.attributions,
+      attributions: withProjectAttribution(resolved.attributions),
     }
   }
 

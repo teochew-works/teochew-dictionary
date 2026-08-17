@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { BASE_LICENCE, resolveLicence } from '../src/data/licence.js'
+import { BASE_LICENCE, PROJECT_ATTRIBUTION, resolveLicence, withProjectAttribution } from '../src/data/licence.js'
 import { sourceSchema } from '../src/schema/entry.js'
 import type { Source, SourceKind } from '../src/schema/entry.js'
 
@@ -77,6 +77,19 @@ describe('resolveLicence', () => {
     const conflicting = new Map([...sources, ['other-sa', source('other-sa', 'CC-BY-SA-3.0')]])
     const result = resolveLicence(['wiktionary', 'other-sa'], conflicting)
     expect(result.ok).toBe(false)
+  })
+})
+
+describe('withProjectAttribution', () => {
+  it('credits the project when no attribution would otherwise be owed', () => {
+    // The entry-level fallback for issue #69 — resolveLicence itself stays
+    // pure ("nobody else's notice is owed"); this is the separate,
+    // entry-only step that turns that into "credit the project instead".
+    expect(withProjectAttribution([])).toEqual([PROJECT_ATTRIBUTION])
+  })
+
+  it('leaves a non-empty attributions list untouched', () => {
+    expect(withProjectAttribution(['unihan (Unicode-DFS-2016)'])).toEqual(['unihan (Unicode-DFS-2016)'])
   })
 })
 
