@@ -386,3 +386,237 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: boih4-gag4-八角
+    headword: 八角
+    readings:
+      - pengim: boih4 gag4
+    senses:
+      - pos: noun
+        gloss_en: [star anise, octagon]
+        gloss_zh: [八角]
+        note: Page lists two distinct senses (star anise the spice, and octagon the geometric shape) under the same reading; filed under food for the more commonly used spice sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang1-guê1-冬瓜
+    headword: 冬瓜
+    readings:
+      - pengim: dang1 guê1
+    senses:
+      - pos: noun
+        gloss_en: [winter melon; wax gourd]
+        gloss_zh: [冬瓜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bian1-zui2-冰水
+    headword: 冰水
+    readings:
+      - pengim: bian1 zui2
+    senses:
+      - pos: noun
+        gloss_en: [ice water]
+        gloss_zh: [冰水]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bian1-teng5-冰糖
+    headword: 冰糖
+    readings:
+      - pengim: bian1 teng5
+    senses:
+      - pos: noun
+        gloss_en: [rock candy, rock sugar]
+        gloss_zh: [冰糖]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cing3-bung7-凊飯
+    headword: 凊飯
+    readings:
+      - pengim: cing3 bung7
+    senses:
+      - pos: noun
+        gloss_en: [cold rice, cold cooked rice]
+        gloss_zh: [凊飯]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou2-cang1-午餐
+    headword: 午餐
+    readings:
+      - pengim: ngou2 cang1
+    senses:
+      - pos: noun
+        gloss_en: [lunch]
+        gloss_zh: [午餐]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nam5-guê1-南瓜
+    headword: 南瓜
+    readings:
+      - pengim: nam5 guê1
+    senses:
+      - pos: noun
+        gloss_en: [pumpkin, winter squash]
+        gloss_zh: [南瓜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka1-lou7-li2-卡路里
+    headword: 卡路里
+    readings:
+      - pengim: ka1 lou7 li2
+    senses:
+      - pos: noun
+        gloss_en: [calorie]
+        gloss_zh: [卡路里]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nguêng5-bhi7-原味
+    headword: 原味
+    readings:
+      - pengim: nguêng5 bhi7
+    senses:
+      - pos: noun
+        gloss_en: [natural flavor, original taste]
+        gloss_zh: [原味]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang2-sua1-ou7-反沙芋
+    headword: 反沙芋
+    readings:
+      - pengim: huang2 sua1 ou7
+    senses:
+      - pos: noun
+        gloss_en: [candied taro (Teochew dessert), sugar-glazed taro]
+        gloss_zh: [反沙芋]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kao2-gam2-口感
+    headword: 口感
+    readings:
+      - pengim: kao2 gam2
+    senses:
+      - pos: noun
+        gloss_en: [texture (of food), mouthfeel]
+        gloss_zh: [口感]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kao2-nion5-口糧
+    headword: 口糧
+    readings:
+      - pengim: kao2 nion5
+    senses:
+      - pos: noun
+        gloss_en: [rations, food allowance]
+        gloss_zh: [口糧]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci3-guê1-刺瓜
+    headword: 刺瓜
+    readings:
+      - pengim: ci3 guê1
+    senses:
+      - pos: noun
+        gloss_en: [cucumber]
+        gloss_zh: [刺瓜, 黃瓜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng7-cai3-剩菜
+    headword: 剩菜
+    readings:
+      - pengim: sêng7 cai3
+    senses:
+      - pos: noun
+        gloss_en: [leftover food, leftovers]
+        gloss_zh: [剩菜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng7-bung6-剩飯
+    headword: 剩飯
+    readings:
+      - pengim: sêng7 bung6
+    senses:
+      - pos: noun
+        gloss_en: [leftover food, leftover rice]
+        gloss_zh: [剩飯]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bao1-gog4-包穀
+    headword: 包穀
+    readings:
+      - pengim: bao1 gog4
+    senses:
+      - pos: noun
+        gloss_en: [corn, maize]
+        gloss_zh: [包穀, 玉米]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bao1-cai3-包菜
+    headword: 包菜
+    readings:
+      - pengim: bao1 cai3
+    senses:
+      - pos: noun
+        gloss_en: [cabbage]
+        gloss_zh: [包菜, 高麗菜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-gian1-ah4-北京鴨
+    headword: 北京鴨
+    readings:
+      - pengim: bag4 gian1 ah4
+    senses:
+      - pos: noun
+        gloss_en: [Peking duck, Pekin duck]
+        gloss_zh: [北京鴨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-cang1-北蔥
+    headword: 北蔥
+    readings:
+      - pengim: bag4 cang1
+    senses:
+      - pos: noun
+        gloss_en: [onion]
+        gloss_zh: [北蔥]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

@@ -545,3 +545,159 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: zing6-guang2-儘管
+    headword: 儘管
+    readings:
+      - pengim: zing6 guang2
+    senses:
+      - pos: conjunction
+        gloss_en: [although, even though, despite]
+        gloss_zh: [儘管, 雖然]
+        note: Page also gives an adverb sense ('by all means; freely' and dialectal 'always'); unclear which sense/pos best matches the Teochew reading.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lai6-ming7-內面
+    headword: 內面
+    readings:
+      - pengim: lai6 ming7
+    senses:
+      - pos: noun
+        gloss_en: [inside; interior]
+        gloss_zh: [內面, 裡面]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki5-ta1-其他
+    headword: 其他
+    readings:
+      - pengim: ki5 ta1
+    senses:
+      - pos: adjective
+        gloss_en: [other, else]
+        gloss_zh: [其他]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giam1-ze1-兼之
+    headword: 兼之
+    readings:
+      - pengim: giam1 ze1
+    senses:
+      - pos: conjunction
+        gloss_en: [furthermore, moreover, besides]
+        gloss_zh: [兼之]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziag4-sai2-即使
+    headword: 即使
+    readings:
+      - pengim: ziag4 sai2
+    senses:
+      - pos: conjunction
+        gloss_en: [even if, even though]
+        gloss_zh: [即使]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiag4-卻
+    headword: 卻
+    readings:
+      - pengim: kiag4
+    senses:
+      - pos: conjunction
+        gloss_en: [but, yet, however]
+        gloss_zh: [卻, 但是]
+        note: The character 卻 has five senses (withdraw, drive back an enemy, decline, a verb-suffix particle, and the conjunction/adverb 'but; yet; however') all sharing the single kiag4 reading on the page; the conjunction sense was picked as the most common in everyday speech.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêg4-則
+    headword: 則
+    readings:
+      - pengim: zêg4
+    senses:
+      - pos: conjunction
+        gloss_en: [then; in that case, so; thus, classifier for rules/news items]
+        gloss_zh: [則, 才]
+        note: 則 carries many grammatical functions (noun, classifier, conjunction, particle) all sharing this reading; the conjunction/particle 'then, so' sense was picked as most representative but the exact core colloquial Teochew usage is uncertain.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zoin5-ao6-前後
+    headword: 前後
+    readings:
+      - pengim: zoin5 ao6
+    senses:
+      - pos: noun
+        gloss_en: [front and rear; before and after, around; approximately (of time)]
+        gloss_zh: [前後]
+        note: The page lists several related but distinct senses (spatial front/rear, approximate time, and successively/in turn) under one reading; chose the core spatial/temporal sense as primary.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zoin5-huang1-前方
+    headword: 前方
+    readings:
+      - pengim: zoin5 huang1
+    senses:
+      - pos: noun
+        gloss_en: [front; ahead, frontline (military)]
+        gloss_zh: [前方]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zoin5-boin5-前爿
+    headword: 前爿
+    readings:
+      - pengim: zoin5 boin5
+    senses:
+      - pos: noun
+        gloss_en: [in front; ahead]
+        gloss_zh: [前面]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zoin5-ming7-前面
+    headword: 前面
+    readings:
+      - pengim: zoin5 ming7
+    senses:
+      - pos: noun
+        gloss_en: [in front; ahead; front, previous part; preceding section]
+        gloss_zh: [前面]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pig4-匹
+    headword: 匹
+    readings:
+      - pengim: pig4
+    senses:
+      - pos: classifier
+        gloss_en: ["classifier for horses, mules, donkeys", classifier for bolts of cloth]
+        gloss_zh: [匹]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
