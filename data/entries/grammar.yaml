@@ -141,3 +141,407 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: zêg8-dang3-一旦
+    headword: 一旦
+    readings:
+      - pengim: zêg8 dang3
+    senses:
+      - pos: adverb
+        gloss_en: [once, as soon as]
+        gloss_zh: [一旦]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ê6-doi2-下底
+    headword: 下底
+    readings:
+      - pengim: ê6 doi2
+    senses:
+      - pos: noun
+        gloss_en: [underneath, below; the bottom]
+        gloss_zh: [下底, 底下]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ê6-ka1-下跤
+    headword: 下跤
+    readings:
+      - pengim: ê6 ka1
+    senses:
+      - pos: noun
+        gloss_en: [below, underneath; bottom]
+        gloss_zh: [下跤, 底下]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-lung6-不論
+    headword: 不論
+    readings:
+      - pengim: bug4 lung6
+    senses:
+      - pos: conjunction
+        gloss_en: [no matter what, regardless of, whether]
+        gloss_zh: [不論]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêng6-cia2-並且
+    headword: 並且
+    readings:
+      - pengim: bêng6 cia2
+    senses:
+      - pos: conjunction
+        gloss_en: [and, moreover, furthermore]
+        gloss_zh: [並且]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêng6-hui1-並非
+    headword: 並非
+    readings:
+      - pengim: bêng6 hui1
+    senses:
+      - pos: verb
+        gloss_en: [to not be the case, is really not, is by no means]
+        gloss_zh: [並非]
+        note: Wiktionary tags this as a verb, but functionally it negates a following predicate much like an adverb, so the part-of-speech classification is somewhat ambiguous.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nai2-zi3-乃至
+    headword: 乃至
+    readings:
+      - pengim: nai2 zi3
+    senses:
+      - pos: conjunction
+        gloss_en: [(literary) even; to the extent that, going so far as to]
+        gloss_zh: [乃至, 甚至]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-之
+    headword: 之
+    readings:
+      - pengim: ze1
+    senses:
+      - pos: particle
+        gloss_en: [(literary) genitive/possessive marker; of, (literary) him; her; it; them (object pronoun)]
+        gloss_zh: [的, 之]
+        note: 之 has several classical senses (possessive particle, third-person object pronoun, verb 'to go'); the possessive-particle sense, its most iconic use, was chosen as primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-ghua7-之外
+    headword: 之外
+    readings:
+      - pengim: ze1 ghua7
+    senses:
+      - pos: preposition
+        gloss_en: [apart from, except for, beyond]
+        gloss_zh: [之外]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-so2-in2-之所以
+    headword: 之所以
+    readings:
+      - pengim: ze1 so2 in2
+    senses:
+      - pos: conjunction
+        gloss_en: [the reason why]
+        gloss_zh: [之所以]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-gang1-之間
+    headword: 之間
+    readings:
+      - pengim: ze1 gang1
+    senses:
+      - pos: preposition
+        gloss_en: [between, among]
+        gloss_zh: [之間]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in2-以
+    headword: 以
+    readings:
+      - pengim: in2
+    senses:
+      - pos: preposition
+        gloss_en: [by means of; with, according to, in order to]
+        gloss_zh: [以]
+        note: 以 has many closely related literary senses (preposition, conjunction, verb 'to use/consider'); the preposition sense was chosen as primary.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in2-siang6-以上
+    headword: 以上
+    readings:
+      - pengim: in2 siang6
+    senses:
+      - pos: noun
+        gloss_en: [above, more than, the above-mentioned]
+        gloss_zh: [以上]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in2-ê6-以下
+    headword: 以下
+    readings:
+      - pengim: in2 ê6
+    senses:
+      - pos: noun
+        gloss_en: [below, the following]
+        gloss_zh: [以下]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in2-lai5-以來
+    headword: 以來
+    readings:
+      - pengim: in2 lai5
+    senses:
+      - pos: particle
+        gloss_en: [since, ever since]
+        gloss_zh: [以來]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in2-gib8-以及
+    headword: 以及
+    readings:
+      - pengim: in2 gib8
+    senses:
+      - pos: conjunction
+        gloss_en: [as well as, and]
+        gloss_zh: [以及]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in2-di3-以致
+    headword: 以致
+    readings:
+      - pengim: in2 di3
+    senses:
+      - pos: conjunction
+        gloss_en: [resulting in, so that]
+        gloss_zh: [以致, 致使]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gian6-件
+    headword: 件
+    readings:
+      - pengim: gian6
+    senses:
+      - pos: classifier
+        gloss_en: ["classifier for items, clothing, events (piece)", item; component]
+        gloss_zh: [件]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rim7-ho5-任何
+    headword: 任何
+    readings:
+      - pengim: rim7 ho5
+    senses:
+      - pos: adjective
+        gloss_en: [any, whatever]
+        gloss_zh: [任何]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung7-份
+    headword: 份
+    readings:
+      - pengim: hung7
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for shares/portions/copies, share; portion]
+        gloss_zh: [份]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: m6-伓
+    headword: 伓
+    readings:
+      - pengim: m6
+    senses:
+      - pos: particle
+        gloss_en: [not, no]
+        gloss_zh: [不]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang6-但
+    headword: 但
+    readings:
+      - pengim: dang6
+    senses:
+      - pos: conjunction
+        gloss_en: [but, however, only]
+        gloss_zh: [但]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang6-si6-但是
+    headword: 但是
+    readings:
+      - pengim: dang6 si6
+    senses:
+      - pos: conjunction
+        gloss_en: [but, however]
+        gloss_zh: [但是]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui7-位
+    headword: 位
+    readings:
+      - pengim: ui7
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for people (polite), position; seat]
+        gloss_zh: [位]
+        note: Character has several common senses (polite classifier for people, noun 'position/seat', verb 'to be located') with no dialect-specific sense distinguished on the page; the classifier sense was chosen as most frequent in everyday use.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho5-kuang3-何況
+    headword: 何況
+    readings:
+      - pengim: ho5 kuang3
+    senses:
+      - pos: conjunction
+        gloss_en: [let alone, not to mention, moreover]
+        gloss_zh: [何況]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zoh4-ui5-作為
+    headword: 作為
+    readings:
+      - pengim: zoh4 ui5
+    senses:
+      - pos: preposition
+        gloss_en: [as; in the capacity of, conduct; deeds]
+        gloss_zh: [作為]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li7-ru5-例如
+    headword: 例如
+    readings:
+      - pengim: li7 ru5
+    senses:
+      - pos: verb
+        gloss_en: [for example, for instance, such as]
+        gloss_zh: [例如, 比如]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i1-ge6-依據
+    headword: 依據
+    readings:
+      - pengim: i1 ge6
+    senses:
+      - pos: preposition
+        gloss_en: [according to, on the basis of, basis]
+        gloss_zh: [依據]
+        note: Page gives distinct verb, preposition, and noun senses (base on / according to / basis); preposition chosen as the most representative everyday use.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i1-ziou3-依照
+    headword: 依照
+    readings:
+      - pengim: i1 ziou3
+    senses:
+      - pos: preposition
+        gloss_en: [according to, in accordance with]
+        gloss_zh: [依照]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mung5-們
+    headword: 們
+    readings:
+      - pengim: mung5
+    senses:
+      - pos: suffix
+        gloss_en: [plural suffix (for pronouns and people)]
+        gloss_zh: [們]
+        note: Colloquial Teochew often marks plurality by other means, so it is unclear how frequently this Mandarin-style suffix is actually used in everyday spoken Teochew versus written/formal registers.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tang2-倘
+    headword: 倘
+    readings:
+      - pengim: tang2
+    senses:
+      - pos: conjunction
+        gloss_en: [if; supposing; in case]
+        gloss_zh: [倘]
+        note: Several senses (surprised/confused, leisurely/at ease, and 'if/supposing') share this Teochew reading, and the conditional 'if' sense is labeled obsolete in Standard Chinese, so its actual currency in spoken Teochew is unclear.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêg4-側
+    headword: 側
+    readings:
+      - pengim: cêg4
+    senses:
+      - pos: noun
+        gloss_en: [side]
+        gloss_zh: [側]
+        note: Wiktionary groups the noun sense 'side' and the verb sense 'to lean/incline' under one shared pronunciation without indicating which corresponds to the Teochew reading cêg4, so pos could arguably be verb instead.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

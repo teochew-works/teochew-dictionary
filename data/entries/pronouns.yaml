@@ -224,3 +224,169 @@ entries:
     frequency: 4
     needs_review: true
     sources: [seed]
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: zêg8-ciag4-一切
+    headword: 一切
+    readings:
+      - pengim: zêg8 ciag4
+    senses:
+      - pos: pronoun
+        gloss_en: [all, everything, anything]
+        gloss_zh: [一切]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mih4-sai2-乜屎
+    headword: 乜屎
+    readings:
+      - pengim: mih4 sai2
+    senses:
+      - pos: pronoun
+        gloss_en: [what, whatever (dismissive)]
+        gloss_zh: [乜屎, 什麼]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mih4-gug4-tao5-乜骨頭
+    headword: 乜骨頭
+    readings:
+      - pengim: mih4 gug4 tao5
+    senses:
+      - pos: pronoun
+        gloss_en: [what (emphatic)]
+        gloss_zh: [乜骨頭, 什麼]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sim2-mih4-什乜
+    headword: 什乜
+    readings:
+      - pengim: sim2 mih4
+    senses:
+      - pos: pronoun
+        gloss_en: [what]
+        gloss_zh: [什麼]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ta1-他
+    headword: 他
+    readings:
+      - pengim: ta1
+    senses:
+      - pos: pronoun
+        gloss_en: [he; him; she; her (third-person pronoun)]
+        gloss_zh: [他]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ta1-mung5-他們
+    headword: 他們
+    readings:
+      - pengim: ta1 mung5
+    senses:
+      - pos: pronoun
+        gloss_en: [they; them]
+        gloss_zh: [他們]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i1-nang5-伊人
+    headword: 伊人
+    readings:
+      - pengim: i1 nang5
+    senses:
+      - pos: pronoun
+        gloss_en: [they, them]
+        gloss_zh: [伊人]
+        note: The given reading matches the Teochew/Hokkien-specific plural-pronoun sense ('they; them') rather than the more common literary Mandarin sense ('that person; beloved'); the pronoun sense was chosen to match the reading.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho5-何
+    headword: 何
+    readings:
+      - pengim: ho5
+    senses:
+      - pos: pronoun
+        gloss_en: [what; which (interrogative), where; why; how (interrogative)]
+        gloss_zh: [何]
+        note: 何 covers both an interrogative pronoun sense (what; which) and an interrogative adverb sense (where; why; how) under the same Teochew reading ho5; pronoun was chosen as the primary pos but the adverb sense is equally attested.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho5-si5-何時
+    headword: 何時
+    readings:
+      - pengim: ho5 si5
+    senses:
+      - pos: pronoun
+        gloss_en: [when, what time]
+        gloss_zh: [何時]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho5-cu3-何處
+    headword: 何處
+    readings:
+      - pengim: ho5 cu3
+    senses:
+      - pos: pronoun
+        gloss_en: [where, what place]
+        gloss_zh: [何處]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: le2-mung5-你們
+    headword: 你們
+    readings:
+      - pengim: le2 mung5
+    senses:
+      - pos: pronoun
+        gloss_en: [you (plural), you all, you guys]
+        gloss_zh: [你們]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nang2-俺
+    headword: 俺
+    readings:
+      - pengim: nang2
+    senses:
+      - pos: pronoun
+        gloss_en: [we; us (inclusive)]
+        gloss_zh: [咱]
+        note: Wiktionary lists this as an alternate form of 咱 used in Hokkien/Teochew (a separate etymology from the Mandarin 'I/we' sense), and it is unclear how common this variant is relative to other first-person plural pronouns in everyday Teochew speech.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gai5-gai5-個個
+    headword: 個個
+    readings:
+      - pengim: gai5 gai5
+    senses:
+      - pos: pronoun
+        gloss_en: [each; every, everyone; every one]
+        gloss_zh: [每個, 個個]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

@@ -238,3 +238,151 @@ entries:
             en: to drink alcohol
     frequency: 4
     sources: [seed]
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: sang2-nêg8-㾪肉
+    headword: 㾪肉
+    readings:
+      - pengim: sang2 nêg8
+    senses:
+      - pos: noun
+        gloss_en: [lean meat]
+        gloss_zh: [瘦肉]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: san1-sên1-三牲
+    headword: 三牲
+    readings:
+      - pengim: san1 sên1
+    senses:
+      - pos: noun
+        gloss_en: ["three sacrificial meats (pork, chicken, fish)", traditional three-animal offering]
+        gloss_zh: [三牲]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: san1-deng3-三頓
+    headword: 三頓
+    readings:
+      - pengim: san1 deng3
+    senses:
+      - pos: noun
+        gloss_en: [three daily meals, "breakfast, lunch, and dinner"]
+        gloss_zh: [三頓, 三餐]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong1-cang1-中餐
+    headword: 中餐
+    readings:
+      - pengim: dong1 cang1
+    senses:
+      - pos: noun
+        gloss_en: [Chinese cuisine, Chinese food]
+        gloss_zh: [中餐]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bing1-bong5-guê2-乒乓粿
+    headword: 乒乓粿
+    readings:
+      - pengim: bing1 bong5 guê2
+    senses:
+      - pos: noun
+        gloss_en: [Chaoshan rice cake with peanuts and sesame, peanut rice cake (Jieyang specialty)]
+        gloss_zh: [乒乓粿]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-zang5-tah4-九層塔
+    headword: 九層塔
+    readings:
+      - pengim: gao2 zang5 tah4
+    senses:
+      - pos: noun
+        gloss_en: [basil, Thai basil]
+        gloss_zh: [九層塔]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang1-niên5-乾糧
+    headword: 乾糧
+    readings:
+      - pengim: gang1 niên5
+    senses:
+      - pos: noun
+        gloss_en: [dry provisions, dry rations/snacks]
+        gloss_zh: [乾糧]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou6-gag4-五穀
+    headword: 五穀
+    readings:
+      - pengim: ngou6 gag4
+    senses:
+      - pos: noun
+        gloss_en: [the five grains, cereals, staple crops]
+        gloss_zh: [五穀]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou6-hiang1-五香
+    headword: 五香
+    readings:
+      - pengim: ngou6 hiang1
+    senses:
+      - pos: noun
+        gloss_en: [five-spice (seasoning), ngo hiang (fried meat roll)]
+        gloss_zh: [五香]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou2-hiang1-hung2-五香粉
+    headword: 五香粉
+    readings:
+      - pengim: ngou2 hiang1 hung2
+    senses:
+      - pos: noun
+        gloss_en: [five-spice powder]
+        gloss_zh: [五香粉]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siêng1-cao2-仙草
+    headword: 仙草
+    readings:
+      - pengim: siêng1 cao2
+    senses:
+      - pos: noun
+        gloss_en: [grass jelly (dessert), Chinese mesona (plant used to make grass jelly)]
+        gloss_zh: [仙草]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao6-lag8-侯栗
+    headword: 侯栗
+    readings:
+      - pengim: gao6 lag8
+    senses:
+      - pos: noun
+        gloss_en: [chestnut]
+        gloss_zh: [侯栗]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

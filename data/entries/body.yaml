@@ -459,3 +459,157 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-07-28'
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: ê6-hai5-下頦
+    headword: 下頦
+    readings:
+      - pengim: ê6 hai5
+    senses:
+      - pos: noun
+        gloss_en: [chin]
+        gloss_zh: [下頦]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang1-zoin2-中指
+    headword: 中指
+    readings:
+      - pengim: dang1 zoin2
+    senses:
+      - pos: noun
+        gloss_en: [middle finger]
+        gloss_zh: [中指]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang1-cang5-丹田
+    headword: 丹田
+    readings:
+      - pengim: dang1 cang5
+    senses:
+      - pos: noun
+        gloss_en: [dantian, elixir field (in Chinese medicine/martial arts)]
+        gloss_zh: [丹田]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ru2-乳
+    headword: 乳
+    readings:
+      - pengim: ru2
+    senses:
+      - pos: noun
+        gloss_en: [milk, breast, to breastfeed]
+        gloss_zh: [乳]
+        note: The single Teochew reading covers several distinct senses (to breastfeed, breast, milk, to breed/multiply, newborn) with no dialect-specific restriction, so a single primary sense/part of speech required judgment.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou6-zang6-lag8-hu2-五臟六腑
+    headword: 五臟六腑
+    readings:
+      - pengim: ngou6 zang6 lag8 hu2
+    senses:
+      - pos: idiom
+        gloss_en: [the internal organs, five viscera and six bowels]
+        gloss_zh: [五臟六腑]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nang5-liam2-人臉
+    headword: 人臉
+    readings:
+      - pengim: nang5 liam2
+    senses:
+      - pos: noun
+        gloss_en: [human face]
+        gloss_zh: [人臉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nang5-sing1-人身
+    headword: 人身
+    readings:
+      - pengim: nang5 sing1
+    senses:
+      - pos: adjective
+        gloss_en: ["personal (of freedom, safety, attacks, etc.)", bodily; of the human body]
+        gloss_zh: [人身]
+        note: Wiktionary lists both an adjective sense ('personal', attributive, as in 人身自由/人身攻擊) and a literary noun sense ('the human body') under the same Teochew reading nang5 sing1; the adjective sense was chosen as primary since it is the more common usage pattern.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêng6-huag4-zêng3-併發症
+    headword: 併發症
+    readings:
+      - pengim: bêng6 huag4 zêng3
+    senses:
+      - pos: noun
+        gloss_en: [complication (medical)]
+        gloss_zh: [併發症]
+        note: No dedicated medical/health category exists in the category list, so body.yaml was chosen as the closest topical fit for this clinical term.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: do3-ciu2-倒手
+    headword: 倒手
+    readings:
+      - pengim: do3 ciu2
+    senses:
+      - pos: noun
+        gloss_en: [left hand]
+        gloss_zh: [左手]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sion1-cang5-傷殘
+    headword: 傷殘
+    readings:
+      - pengim: sion1 cang5
+    senses:
+      - pos: noun
+        gloss_en: [disability, impairment]
+        gloss_zh: [傷殘]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sion1-ba1-傷疤
+    headword: 傷疤
+    readings:
+      - pengim: sion1 ba1
+    senses:
+      - pos: noun
+        gloss_en: [scar]
+        gloss_zh: [傷疤]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sion1-ziah4-傷跡
+    headword: 傷跡
+    readings:
+      - pengim: sion1 ziah4
+    senses:
+      - pos: noun
+        gloss_en: [scar, mark from an injury]
+        gloss_zh: [傷跡]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

@@ -235,3 +235,503 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: zêg8-gai5-一個
+    headword: 一個
+    readings:
+      - pengim: zêg8 gai5
+    senses:
+      - pos: phrase
+        gloss_en: [one, a, an]
+        gloss_zh: [一個]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêng1-丁
+    headword: 丁
+    readings:
+      - pengim: dêng1
+    senses:
+      - pos: numeral
+        gloss_en: [the fourth heavenly stem, ordinal marker (like 'D')]
+        gloss_zh: [丁]
+        note: 丁 carries many senses (heavenly stem, adult male, small cube, surname) under the same basic reading; the heavenly-stem/ordinal sense was chosen as primary per the page's own cross-reference but this remains genuinely ambiguous.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: san1-zab8-三十
+    headword: 三十
+    readings:
+      - pengim: san1 zab8
+    senses:
+      - pos: numeral
+        gloss_en: [thirty, "30"]
+        gloss_zh: [三十]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: san1-zab8-san1-三十三
+    headword: 三十三
+    readings:
+      - pengim: san1 zab8 san1
+    senses:
+      - pos: numeral
+        gloss_en: [thirty-three, "33"]
+        gloss_zh: [三十三]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: san1-zab8-gao2-三十九
+    headword: 三十九
+    readings:
+      - pengim: san1 zab8 gao2
+    senses:
+      - pos: numeral
+        gloss_en: [thirty-nine, "39"]
+        gloss_zh: [三十九]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: san1-zab8-ri6-三十二
+    headword: 三十二
+    readings:
+      - pengim: san1 zab8 ri6
+    senses:
+      - pos: numeral
+        gloss_en: [thirty-two, "32"]
+        gloss_zh: [三十二]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: san1-zab8-ngou6-三十五
+    headword: 三十五
+    readings:
+      - pengim: san1 zab8 ngou6
+    senses:
+      - pos: numeral
+        gloss_en: [thirty-five, "35"]
+        gloss_zh: [三十五]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: san1-zab8-boih4-三十八
+    headword: 三十八
+    readings:
+      - pengim: san1 zab8 boih4
+    senses:
+      - pos: numeral
+        gloss_en: [thirty-eight, "38"]
+        gloss_zh: [三十八]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: san1-zab8-lag8-三十六
+    headword: 三十六
+    readings:
+      - pengim: san1 zab8 lag8
+    senses:
+      - pos: numeral
+        gloss_en: [thirty-six, "36"]
+        gloss_zh: [三十六]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: san1-zab8-si3-三十四
+    headword: 三十四
+    readings:
+      - pengim: san1 zab8 si3
+    senses:
+      - pos: numeral
+        gloss_en: [thirty-four, "34"]
+        gloss_zh: [三十四]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bian2-丙
+    headword: 丙
+    readings:
+      - pengim: bian2
+    senses:
+      - pos: noun
+        gloss_en: ["third (in a sequence, e.g. grade 'C')", third heavenly stem]
+        gloss_zh: [丙]
+        note: 丙 is an ordinal/cyclical marker (like a grade letter) rather than a cardinal numeral, so its fit under numbers.yaml is approximate.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-zab8-九十
+    headword: 九十
+    readings:
+      - pengim: gao2 zab8
+    senses:
+      - pos: numeral
+        gloss_en: [ninety, "90"]
+        gloss_zh: [九十]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-zab8-san1-九十三
+    headword: 九十三
+    readings:
+      - pengim: gao2 zab8 san1
+    senses:
+      - pos: numeral
+        gloss_en: [ninety-three, "93"]
+        gloss_zh: [九十三]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-zab8-gao2-九十九
+    headword: 九十九
+    readings:
+      - pengim: gao2 zab8 gao2
+    senses:
+      - pos: numeral
+        gloss_en: [ninety-nine, "99"]
+        gloss_zh: [九十九]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-zab8-ri6-九十二
+    headword: 九十二
+    readings:
+      - pengim: gao2 zab8 ri6
+    senses:
+      - pos: numeral
+        gloss_en: [ninety-two, "92"]
+        gloss_zh: [九十二]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-zab8-ngou6-九十五
+    headword: 九十五
+    readings:
+      - pengim: gao2 zab8 ngou6
+    senses:
+      - pos: numeral
+        gloss_en: [ninety-five, "95"]
+        gloss_zh: [九十五]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-zab8-boih4-九十八
+    headword: 九十八
+    readings:
+      - pengim: gao2 zab8 boih4
+    senses:
+      - pos: numeral
+        gloss_en: [ninety-eight, "98"]
+        gloss_zh: [九十八]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-zab8-lag8-九十六
+    headword: 九十六
+    readings:
+      - pengim: gao2 zab8 lag8
+    senses:
+      - pos: numeral
+        gloss_en: [ninety-six, "96"]
+        gloss_zh: [九十六]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-zab8-si3-九十四
+    headword: 九十四
+    readings:
+      - pengim: gao2 zab8 si3
+    senses:
+      - pos: numeral
+        gloss_en: [ninety-four, "94"]
+        gloss_zh: [九十四]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ri6-zab8-二十
+    headword: 二十
+    readings:
+      - pengim: ri6 zab8
+    senses:
+      - pos: numeral
+        gloss_en: [twenty, "20"]
+        gloss_zh: [二十]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ri6-zab8-san1-二十三
+    headword: 二十三
+    readings:
+      - pengim: ri6 zab8 san1
+    senses:
+      - pos: numeral
+        gloss_en: [twenty-three, "23"]
+        gloss_zh: [二十三]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ri6-zab8-gao2-二十九
+    headword: 二十九
+    readings:
+      - pengim: ri6 zab8 gao2
+    senses:
+      - pos: numeral
+        gloss_en: [twenty-nine, "29"]
+        gloss_zh: [二十九]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ri6-zab8-ri6-二十二
+    headword: 二十二
+    readings:
+      - pengim: ri6 zab8 ri6
+    senses:
+      - pos: numeral
+        gloss_en: [twenty-two, "22"]
+        gloss_zh: [二十二]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ri6-zab8-ngou6-二十五
+    headword: 二十五
+    readings:
+      - pengim: ri6 zab8 ngou6
+    senses:
+      - pos: numeral
+        gloss_en: [twenty-five, "25"]
+        gloss_zh: [二十五, 廿五]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ri6-zab8-boih4-二十八
+    headword: 二十八
+    readings:
+      - pengim: ri6 zab8 boih4
+    senses:
+      - pos: numeral
+        gloss_en: [twenty-eight, "28"]
+        gloss_zh: [二十八]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ri6-zab8-lag8-二十六
+    headword: 二十六
+    readings:
+      - pengim: ri6 zab8 lag8
+    senses:
+      - pos: numeral
+        gloss_en: [twenty-six, "26"]
+        gloss_zh: [二十六]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ri6-zab8-si3-二十四
+    headword: 二十四
+    readings:
+      - pengim: ri6 zab8 si3
+    senses:
+      - pos: numeral
+        gloss_en: [twenty-four, "24"]
+        gloss_zh: [二十四]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou6-zab8-五十
+    headword: 五十
+    readings:
+      - pengim: ngou6 zab8
+    senses:
+      - pos: numeral
+        gloss_en: [fifty, "50"]
+        gloss_zh: [五十]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou6-zab8-san1-五十三
+    headword: 五十三
+    readings:
+      - pengim: ngou6 zab8 san1
+    senses:
+      - pos: numeral
+        gloss_en: [fifty-three, "53"]
+        gloss_zh: [五十三]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou6-zab8-gao2-五十九
+    headword: 五十九
+    readings:
+      - pengim: ngou6 zab8 gao2
+    senses:
+      - pos: numeral
+        gloss_en: [fifty-nine, "59"]
+        gloss_zh: [五十九]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou6-zab8-ri6-五十二
+    headword: 五十二
+    readings:
+      - pengim: ngou6 zab8 ri6
+    senses:
+      - pos: numeral
+        gloss_en: [fifty-two, "52"]
+        gloss_zh: [五十二]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou6-zab8-ngou6-五十五
+    headword: 五十五
+    readings:
+      - pengim: ngou6 zab8 ngou6
+    senses:
+      - pos: numeral
+        gloss_en: [fifty-five, "55"]
+        gloss_zh: [五十五]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou6-zab8-boih4-五十八
+    headword: 五十八
+    readings:
+      - pengim: ngou6 zab8 boih4
+    senses:
+      - pos: numeral
+        gloss_en: [fifty-eight, "58"]
+        gloss_zh: [五十八]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou6-zab8-lag8-五十六
+    headword: 五十六
+    readings:
+      - pengim: ngou6 zab8 lag8
+    senses:
+      - pos: numeral
+        gloss_en: [fifty-six, "56"]
+        gloss_zh: [五十六]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou6-zab8-si3-五十四
+    headword: 五十四
+    readings:
+      - pengim: ngou6 zab8 si3
+    senses:
+      - pos: numeral
+        gloss_en: [fifty-four, "54"]
+        gloss_zh: [五十四]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou6-bêh4-五百
+    headword: 五百
+    readings:
+      - pengim: ngou6 bêh4
+    senses:
+      - pos: numeral
+        gloss_en: [five hundred]
+        gloss_zh: [五百]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nang5-ce3-人次
+    headword: 人次
+    readings:
+      - pengim: nang5 ce3
+    senses:
+      - pos: classifier
+        gloss_en: [person-times (visit count unit)]
+        gloss_zh: [人次]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liang2-倆
+    headword: 倆
+    readings:
+      - pengim: liang2
+    senses:
+      - pos: numeral
+        gloss_en: [two; both, a couple; a pair]
+        gloss_zh: [兩個, 倆]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê6-倍
+    headword: 倍
+    readings:
+      - pengim: buê6
+    senses:
+      - pos: classifier
+        gloss_en: [times; -fold (multiplier), double]
+        gloss_zh: [倍]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê6-siou3-倍數
+    headword: 倍數
+    readings:
+      - pengim: buê6 siou3
+    senses:
+      - pos: noun
+        gloss_en: [multiple (mathematics)]
+        gloss_zh: [倍數]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êg8-億
+    headword: 億
+    readings:
+      - pengim: êg8
+    senses:
+      - pos: numeral
+        gloss_en: ["hundred million (100,000,000)"]
+        gloss_zh: [億]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
