@@ -165,3 +165,693 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: san1-gang1-三江
+    headword: 三江
+    readings:
+      - pengim: san1 gang1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["the Three Rivers of Chaoshan (Han, Rong, and Lian rivers)"]
+        gloss_zh: [三江]
+        note: The page lists several unrelated senses (a Book of Documents rivers reference, Guangxi/Hubei place names, and a Teochew-specific 'Three Rivers of Chaoshan' sense); picked the Teochew-local sense as most relevant to the given Teochew reading, but the page does not explicitly tie the peng'im to one sense over the others.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang6-hai2-上海
+    headword: 上海
+    readings:
+      - pengim: siang6 hai2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Shanghai (city in China)]
+        gloss_zh: [上海]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-dong6-suan2-不動產
+    headword: 不動產
+    readings:
+      - pengim: bug4 dong6 suan2
+    senses:
+      - pos: noun
+        gloss_en: [real estate, immovable property]
+        gloss_zh: [不動產]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-gui1-lou7-不歸路
+    headword: 不歸路
+    readings:
+      - pengim: bug4 gui1 lou7
+    senses:
+      - pos: noun
+        gloss_en: [road of no return, point of no return]
+        gloss_zh: [不歸路]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong1-nguêng5-中原
+    headword: 中原
+    readings:
+      - pengim: dong1 nguêng5
+    senses:
+      - pos: proper-noun
+        gloss_en: [the Central Plain (China), China (literary)]
+        gloss_zh: [中原]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong1-gog4-di7-hng1-中國地方
+    headword: 中國地方
+    readings:
+      - pengim: dong1 gog4 di7 hng1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Chūgoku region (Japan)]
+        gloss_zh: [中國地方]
+        note: The Wiktionary Chinese entry defines this specifically as the Chūgoku region of western Japan rather than a literal 'China region' sense, an unexpected and narrow meaning worth double-checking.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong1-gog4-dai6-lêg8-中國大陸
+    headword: 中國大陸
+    readings:
+      - pengim: dong1 gog4 dai6 lêg8
+    senses:
+      - pos: proper-noun
+        gloss_en: [mainland China]
+        gloss_zh: [中國大陸]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong1-hag8-中學
+    headword: 中學
+    readings:
+      - pengim: dong1 hag8
+    senses:
+      - pos: noun
+        gloss_en: [secondary school, middle school, high school]
+        gloss_zh: [中學]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong1-siao2-hag8-中小學
+    headword: 中小學
+    readings:
+      - pengim: dong1 siao2 hag8
+    senses:
+      - pos: noun
+        gloss_en: [primary and secondary schools]
+        gloss_zh: [中小學]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong1-hua5-中華
+    headword: 中華
+    readings:
+      - pengim: dong1 hua5
+    senses:
+      - pos: proper-noun
+        gloss_en: [China (formal/poetic term), Chinese civilization]
+        gloss_zh: [中華]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong1-hua5-ring5-ming5-gang7-hua5-gog4-中華人民共和國
+    headword: 中華人民共和國
+    readings:
+      - pengim: dong1 hua5 ring5 ming5 gang7 hua5 gog4
+    senses:
+      - pos: proper-noun
+        gloss_en: [People's Republic of China]
+        gloss_zh: [中華人民共和國]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong1-hua5-ming5-gog4-中華民國
+    headword: 中華民國
+    readings:
+      - pengim: dong1 hua5 ming5 gog4
+    senses:
+      - pos: proper-noun
+        gloss_en: [Republic of China, Taiwan (colloquially)]
+        gloss_zh: [中華民國]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong1-zuang2-zam6-中轉站
+    headword: 中轉站
+    readings:
+      - pengim: dong1 zuang2 zam6
+    senses:
+      - pos: noun
+        gloss_en: [transfer station, interchange]
+        gloss_zh: [中轉站]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang1-bhêh8-丹麥
+    headword: 丹麥
+    readings:
+      - pengim: dang1 bhêh8
+    senses:
+      - pos: proper-noun
+        gloss_en: [Denmark]
+        gloss_zh: [丹麥]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu2-gang3-dao6-主幹道
+    headword: 主幹道
+    readings:
+      - pengim: zu2 gang3 dao6
+    senses:
+      - pos: noun
+        gloss_en: [main road, arterial road]
+        gloss_zh: [主幹道]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giu2-zê7-gao1-九寨溝
+    headword: 九寨溝
+    readings:
+      - pengim: giu2 zê7 gao1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Jiuzhaigou (nature reserve and national park in Sichuan, China)"]
+        gloss_zh: [九寨溝]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giu2-lêng5-九龍
+    headword: 九龍
+    readings:
+      - pengim: giu2 lêng5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Kowloon (urban area of Hong Kong)]
+        gloss_zh: [九龍]
+        note: The same reading also has a general noun sense ('nine dragons' of Chinese mythology) on the page, so the proper-noun 'Kowloon' sense was chosen as the most salient but this involved judgment.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giu2-lêng5-sian5-九龍城
+    headword: 九龍城
+    readings:
+      - pengim: giu2 lêng5 sian5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Kowloon City (Hong Kong)]
+        gloss_zh: [九龍城]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou2-gên1-pou3-五經富
+    headword: 五經富
+    readings:
+      - pengim: ngou2 gên1 pou3
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Wujingfu (town in Jiexi, Jieyang, Guangdong)"]
+        gloss_zh: [五經富]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou6-ka1-gih4-五腳砌
+    headword: 五腳砌
+    readings:
+      - pengim: ngou6 ka1 gih4
+    senses:
+      - pos: noun
+        gloss_en: [five-foot way, covered walkway under a shophouse arcade]
+        gloss_zh: [騎樓下]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zên2-井
+    headword: 井
+    readings:
+      - pengim: zên2
+    senses:
+      - pos: noun
+        gloss_en: [well (for water)]
+        gloss_zh: [井]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zên2-koin3-井蓋
+    headword: 井蓋
+    readings:
+      - pengim: zên2 koin3
+    senses:
+      - pos: noun
+        gloss_en: [manhole cover]
+        gloss_zh: [井蓋]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a1-tai3-亞太
+    headword: 亞太
+    readings:
+      - pengim: a1 tai3
+    senses:
+      - pos: adjective
+        gloss_en: [Asia-Pacific]
+        gloss_zh: [亞太]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a1-ziu1-亞洲
+    headword: 亞洲
+    readings:
+      - pengim: a1 ziu1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Asia]
+        gloss_zh: [亞洲]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ga1-la1-ba1-交拉吧
+    headword: 交拉吧
+    readings:
+      - pengim: ga1 la1 ba1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Java (island of Indonesia; obsolete), Batavia; Jakarta (obsolete), (by extension) faraway place]
+        gloss_zh: [爪哇, 遠方]
+        note: Page tags both a proper-noun place-name sense (Java/Batavia/Indonesia) and a common-noun sense ('faraway place') for Teochew/Zhangzhou Hokkien under the same reading; the proper-noun sense was picked as primary.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-tong1-suan3-交通線
+    headword: 交通線
+    readings:
+      - pengim: gao1 tong1 suan3
+    senses:
+      - pos: noun
+        gloss_en: [transportation line; traffic route, communication line]
+        gloss_zh: [交通線]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gian1-京
+    headword: 京
+    readings:
+      - pengim: gian1
+    senses:
+      - pos: noun
+        gloss_en: [capital (city)]
+        gloss_zh: [京, 京城]
+        note: The page lists many senses sharing this reading (capital city, shorthand for Beijing/Nanjing/Kyoto, obsolete large numerals, obsolete 'mound'); 'capital city', the most general/common sense, was chosen.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gian1-sian5-京城
+    headword: 京城
+    readings:
+      - pengim: gian1 sian5
+    senses:
+      - pos: noun
+        gloss_en: [capital city]
+        gloss_zh: [京城]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêng5-亭
+    headword: 亭
+    readings:
+      - pengim: dêng5
+    senses:
+      - pos: noun
+        gloss_en: [pavilion, kiosk]
+        gloss_zh: [亭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ring5-ming5-gang7-hua5-gog4-人民共和國
+    headword: 人民共和國
+    readings:
+      - pengim: ring5 ming5 gang7 hua5 gog4
+    senses:
+      - pos: noun
+        gloss_en: [people's republic, People's Republic of China (elliptical)]
+        gloss_zh: [人民共和國]
+        note: 人民共和國 can be read either as a generic common noun ('a people's republic') or, elliptically, as shorthand for the People's Republic of China; which sense fits the given reading is unclear.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nang5-gian5-tiang1-gio5-人行天橋
+    headword: 人行天橋
+    readings:
+      - pengim: nang5 gian5 tiang1 gio5
+    senses:
+      - pos: noun
+        gloss_en: [pedestrian overpass, footbridge]
+        gloss_zh: [人行天橋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nang5-gian5-huên5-dao6-人行橫道
+    headword: 人行橫道
+    readings:
+      - pengim: nang5 gian5 huên5 dao6
+    senses:
+      - pos: noun
+        gloss_en: [pedestrian crossing, crosswalk]
+        gloss_zh: [人行橫道]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nang5-gian5-dao6-人行道
+    headword: 人行道
+    readings:
+      - pengim: nang5 gian5 dao6
+    senses:
+      - pos: noun
+        gloss_en: [sidewalk, pavement, footpath]
+        gloss_zh: [人行道]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in2-sêg4-liêg8-以色列
+    headword: 以色列
+    readings:
+      - pengim: in2 sêg4 liêg8
+    senses:
+      - pos: proper-noun
+        gloss_en: [Israel]
+        gloss_zh: [以色列]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i1-lang6-伊朗
+    headword: 伊朗
+    readings:
+      - pengim: i1 lang6
+    senses:
+      - pos: proper-noun
+        gloss_en: [Iran]
+        gloss_zh: [伊朗]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêg4-li6-hêng5-伯利恆
+    headword: 伯利恆
+    readings:
+      - pengim: bêg4 li6 hêng5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Bethlehem]
+        gloss_zh: [伯利恆]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui7-di3-位置
+    headword: 位置
+    readings:
+      - pengim: ui7 di3
+    senses:
+      - pos: noun
+        gloss_en: [location, position, place]
+        gloss_zh: [位置]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu6-zi2-住址
+    headword: 住址
+    readings:
+      - pengim: zu6 zi2
+    senses:
+      - pos: noun
+        gloss_en: [address, residential address]
+        gloss_zh: [住址]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu6-têh8-住宅
+    headword: 住宅
+    readings:
+      - pengim: zu6 têh8
+    senses:
+      - pos: noun
+        gloss_en: [residence, dwelling, house]
+        gloss_zh: [住宅]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu6-bang5-住房
+    headword: 住房
+    readings:
+      - pengim: zu6 bang5
+    senses:
+      - pos: noun
+        gloss_en: [housing, residence]
+        gloss_zh: [住房]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu6-cu3-住處
+    headword: 住處
+    readings:
+      - pengim: zu6 cu3
+    senses:
+      - pos: noun
+        gloss_en: [dwelling place, residence, abode]
+        gloss_zh: [住處]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hug8-ri7-佛寺
+    headword: 佛寺
+    readings:
+      - pengim: hug8 ri7
+    senses:
+      - pos: noun
+        gloss_en: [Buddhist temple]
+        gloss_zh: [佛寺]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hug8-suan1-佛山
+    headword: 佛山
+    readings:
+      - pengim: hug8 suan1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Foshan (city in Guangdong)]
+        gloss_zh: [佛山]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngo5-俄
+    headword: 俄
+    readings:
+      - pengim: ngo5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Russia (short form), Russian]
+        gloss_zh: [俄羅斯]
+        note: The Teochew ngo5 reading appears under two separate etymologies with unrelated meanings ('suddenly; tilted' vs. short for 俄羅斯 'Russia'); the Russia sense was chosen as the more common modern usage, but this is a judgment call.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngo5-gog4-俄國
+    headword: 俄國
+    readings:
+      - pengim: ngo5 gog4
+    senses:
+      - pos: proper-noun
+        gloss_en: [Russia, Soviet Russia (Taiwan usage)]
+        gloss_zh: [俄國, 俄羅斯]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngo5-lo5-se1-俄羅斯
+    headword: 俄羅斯
+    readings:
+      - pengim: ngo5 lo5 se1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Russia]
+        gloss_zh: [俄羅斯]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing3-ho7-dêng1-信號燈
+    headword: 信號燈
+    readings:
+      - pengim: sing3 ho7 dêng1
+    senses:
+      - pos: noun
+        gloss_en: [traffic light, signal light]
+        gloss_zh: [信號燈]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang1-kou3-倉庫
+    headword: 倉庫
+    readings:
+      - pengim: cang1 kou3
+    senses:
+      - pos: noun
+        gloss_en: [warehouse, storehouse]
+        gloss_zh: [倉庫]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao7-ziang2-sig4-候診室
+    headword: 候診室
+    readings:
+      - pengim: hao7 ziang2 sig4
+    senses:
+      - pos: noun
+        gloss_en: [waiting room (at a clinic/hospital)]
+        gloss_zh: [候診室]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lung5-dung1-倫敦
+    headword: 倫敦
+    readings:
+      - pengim: lung5 dung1
+    senses:
+      - pos: proper-noun
+        gloss_en: [London]
+        gloss_zh: [倫敦]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêg8-bang1-sig4-值班室
+    headword: 值班室
+    readings:
+      - pengim: dêg8 bang1 sig4
+    senses:
+      - pos: noun
+        gloss_en: [duty room]
+        gloss_zh: [值班室]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gê2-suan1-假山
+    headword: 假山
+    readings:
+      - pengim: gê2 suan1
+    senses:
+      - pos: noun
+        gloss_en: [rockery, rock garden]
+        gloss_zh: [假山]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-cia1-ui7-停車位
+    headword: 停車位
+    readings:
+      - pengim: têng5 cia1 ui7
+    senses:
+      - pos: noun
+        gloss_en: [parking space, parking spot]
+        gloss_zh: [停車位]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-cia1-dion5-停車場
+    headword: 停車場
+    readings:
+      - pengim: têng5 cia1 dion5
+    senses:
+      - pos: noun
+        gloss_en: [parking lot, car park]
+        gloss_zh: [停車場]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giang6-sing1-bang5-健身房
+    headword: 健身房
+    readings:
+      - pengim: giang6 sing1 bang5
+    senses:
+      - pos: noun
+        gloss_en: [gym, gymnasium]
+        gloss_zh: [健身房]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiao5-hion1-僑鄉
+    headword: 僑鄉
+    readings:
+      - pengim: kiao5 hion1
+    senses:
+      - pos: noun
+        gloss_en: [hometown of overseas emigrants, region known for its expatriates abroad]
+        gloss_zh: [僑鄉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

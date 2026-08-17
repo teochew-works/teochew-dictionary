@@ -558,3 +558,171 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-07-28'
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: zian2-zui2-䭕水
+    headword: 䭕水
+    readings:
+      - pengim: zian2 zui2
+    senses:
+      - pos: noun
+        gloss_en: [fresh water]
+        gloss_zh: [淡水]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêg8-iang2-huê3-tuan3-一氧化碳
+    headword: 一氧化碳
+    readings:
+      - pengim: zêg8 iang2 huê3 tuan3
+    senses:
+      - pos: noun
+        gloss_en: [carbon monoxide]
+        gloss_zh: [一氧化碳]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ê6-iu5-下游
+    headword: 下游
+    readings:
+      - pengim: ê6 iu5
+    senses:
+      - pos: noun
+        gloss_en: [downstream, lower reaches (of a river)]
+        gloss_zh: [下游]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-dêng5-tiang1-九重天
+    headword: 九重天
+    readings:
+      - pengim: gao2 dêng5 tiang1
+    senses:
+      - pos: noun
+        gloss_en: [the ninth heaven, the highest heaven; the sky (literary)]
+        gloss_zh: [九重天]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ri6-iang2-huê3-liu5-二氧化硫
+    headword: 二氧化硫
+    readings:
+      - pengim: ri6 iang2 huê3 liu5
+    senses:
+      - pos: noun
+        gloss_en: [sulfur dioxide]
+        gloss_zh: [二氧化硫]
+        note: Highly technical chemistry term rarely used in everyday colloquial Teochew speech.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou6-cên1-五星
+    headword: 五星
+    readings:
+      - pengim: ngou6 cên1
+    senses:
+      - pos: noun
+        gloss_en: [five stars, "the five visible planets (Mercury, Venus, Mars, Jupiter, Saturn)"]
+        gloss_zh: [五星]
+        note: Wiktionary lists two distinct senses under the same reading (the classical astronomical 'five visible planets' and the modern 'five stars' rating sense), so the chosen primary gloss and nature.yaml category involve some judgment.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngou2-hêng5-五行
+    headword: 五行
+    readings:
+      - pengim: ngou2 hêng5
+    senses:
+      - pos: noun
+        gloss_en: [five elements (wuxing), (Teochew) looks; appearance of a person]
+        gloss_zh: [五行]
+        note: The Teochew reading ngou2 hêng5 is shared by both the general Chinese 'five elements' cosmology sense and a Teochew-only 'appearance' sense, so it is unclear which is primary.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a3-mua5-亞麻
+    headword: 亞麻
+    readings:
+      - pengim: a3 mua5
+    senses:
+      - pos: noun
+        gloss_en: [flax, linen]
+        gloss_zh: [亞麻]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ring5-siam1-人參
+    headword: 人參
+    readings:
+      - pengim: ring5 siam1
+    senses:
+      - pos: noun
+        gloss_en: [ginseng]
+        gloss_zh: [人參]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang1-nang5-zion2-仙人掌
+    headword: 仙人掌
+    readings:
+      - pengim: siang1 nang5 zion2
+    senses:
+      - pos: noun
+        gloss_en: [cactus]
+        gloss_zh: [仙人掌]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siêng1-ba1-ziên2-仙巴掌
+    headword: 仙巴掌
+    readings:
+      - pengim: siêng1 ba1 ziên2
+    senses:
+      - pos: noun
+        gloss_en: [cactus (dialectal term)]
+        gloss_zh: [仙人掌]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di1-gog4-低谷
+    headword: 低谷
+    readings:
+      - pengim: di1 gog4
+    senses:
+      - pos: noun
+        gloss_en: [low valley, low point, slump]
+        gloss_zh: [低谷]
+        note: The page gives both a literal geographic sense (low-lying valley) and a common figurative sense (economic/emotional low point), and it's unclear which category best represents the word's dominant everyday use.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-dua7-zui2-做大水
+    headword: 做大水
+    readings:
+      - pengim: zo3 dua7 zui2
+    senses:
+      - pos: verb
+        gloss_en: [to flood, to be inundated]
+        gloss_zh: [淹水]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

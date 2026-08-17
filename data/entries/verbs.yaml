@@ -1226,3 +1226,3795 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: pi1-dou5-P圖
+    headword: P圖
+    readings:
+      - pengim: pi1 dou5
+    senses:
+      - pos: verb
+        gloss_en: [to photoshop, to digitally edit a photo]
+        gloss_zh: [P圖]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bou3-㕮
+    headword: 㕮
+    readings:
+      - pengim: bou3
+    senses:
+      - pos: verb
+        gloss_en: [to chew, to masticate]
+        gloss_zh: [嚼]
+        note: Classical/technical character used mainly in the pharmacological compound 㕮咀 (to prepare medicine by chewing/cutting); the page lists overlapping senses (chew, dwell on, Chinese-medicine term) without clearly separating them.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bung5-㖹
+    headword: 㖹
+    readings:
+      - pengim: bung5
+    senses:
+      - pos: verb
+        gloss_en: [to spurt, to blow out, to puff out]
+        gloss_zh: [噴]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: du1-㧣
+    headword: 㧣
+    readings:
+      - pengim: du1
+    senses:
+      - pos: verb
+        gloss_en: [to push]
+        gloss_zh: [推]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao1-㨮
+    headword: 㨮
+    readings:
+      - pengim: dao1
+    senses:
+      - pos: verb
+        gloss_en: [to slap someone's face, to box someone's ears]
+        gloss_zh: [摑]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai1-㩄
+    headword: 㩄
+    readings:
+      - pengim: sai1
+    senses:
+      - pos: verb
+        gloss_en: [to get scattered and lost, to waste (possibly)]
+        gloss_zh: [散失]
+        note: The page does not specify whether the Teochew reading sai1 corresponds to the general sense 'to get scattered and lost' or the Cantonese-labeled 'to waste' (=嘥) sense; the gloss follows the more general, unlabeled sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gam2-䃭
+    headword: 䃭
+    readings:
+      - pengim: gam2
+    senses:
+      - pos: verb
+        gloss_en: [to bury]
+        gloss_zh: [埋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tin7-䋎
+    headword: 䋎
+    readings:
+      - pengim: tin7
+    senses:
+      - pos: verb
+        gloss_en: [to sew, to stitch]
+        gloss_zh: [縫]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a3-䛩
+    headword: 䛩
+    readings:
+      - pengim: a3
+    senses:
+      - pos: verb
+        gloss_en: [to argue, to dispute, to quarrel]
+        gloss_zh: [詏, 爭論]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêg8-rig8-coin1-li2-一日千里
+    headword: 一日千里
+    readings:
+      - pengim: zêg8 rig8 coin1 li2
+    senses:
+      - pos: idiom
+        gloss_en: [to progress rapidly, to advance by leaps and bounds]
+        gloss_zh: [一日千里]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêng1-duê3-丁綴
+    headword: 丁綴
+    readings:
+      - pengim: dêng1 duê3
+    senses:
+      - pos: verb
+        gloss_en: [to attend to, to care for]
+        gloss_zh: [丁綴]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: san1-lêng6-ngou6-sing1-三令五申
+    headword: 三令五申
+    readings:
+      - pengim: san1 lêng6 ngou6 sing1
+    senses:
+      - pos: idiom
+        gloss_en: [to repeatedly order and warn, to give repeated exhortations]
+        gloss_zh: [三令五申]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziên6-rim6-上任
+    headword: 上任
+    readings:
+      - pengim: ziên6 rim6
+    senses:
+      - pos: verb
+        gloss_en: [to take up a new post, to assume office]
+        gloss_zh: [上任]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-lai5-上來
+    headword: 上來
+    readings:
+      - pengim: zion6 lai5
+    senses:
+      - pos: verb
+        gloss_en: [to come up, to ascend]
+        gloss_zh: [上來]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion7-tuang5-上傳
+    headword: 上傳
+    readings:
+      - pengim: zion7 tuang5
+    senses:
+      - pos: verb
+        gloss_en: [to upload]
+        gloss_zh: [上傳]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziên6-sêng1-上升
+    headword: 上升
+    readings:
+      - pengim: ziên6 sêng1
+    senses:
+      - pos: verb
+        gloss_en: [to rise, to increase, to ascend]
+        gloss_zh: [上升]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-bo3-上報
+    headword: 上報
+    readings:
+      - pengim: zion6 bo3
+    senses:
+      - pos: verb
+        gloss_en: [to report to a superior, to appear in the news]
+        gloss_zh: [上報]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-pung5-上墳
+    headword: 上墳
+    readings:
+      - pengim: zion6 pung5
+    senses:
+      - pos: verb
+        gloss_en: [to visit a grave, to pay respects at a tomb]
+        gloss_zh: [上墳]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion7-hag8-上學
+    headword: 上學
+    readings:
+      - pengim: zion7 hag8
+    senses:
+      - pos: verb
+        gloss_en: [to go to school, to attend school]
+        gloss_zh: [上學]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziên6-suan1-上山
+    headword: 上山
+    readings:
+      - pengim: ziên6 suan1
+    senses:
+      - pos: verb
+        gloss_en: [to climb a mountain/hill, (Teochew) to visit a grave to pay respects]
+        gloss_zh: [上山]
+        note: The page lists multiple senses (general 'climb a hill', euphemistic 'die and be buried', and a Teochew-specific 'visit a grave' sense) but does not clearly indicate which sense pairs with this exact reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-ngai6-上岸
+    headword: 上岸
+    readings:
+      - pengim: zion6 ngai6
+    senses:
+      - pos: verb
+        gloss_en: [to go ashore, to disembark, "(figurative) to make it, to land a spot"]
+        gloss_zh: [上岸]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-gang1-上崗
+    headword: 上崗
+    readings:
+      - pengim: zion6 gang1
+    senses:
+      - pos: verb
+        gloss_en: [to go on duty, to go on sentry duty]
+        gloss_zh: [上崗]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-gang1-上工
+    headword: 上工
+    readings:
+      - pengim: zion6 gang1
+    senses:
+      - pos: verb
+        gloss_en: [to start work, to go to work]
+        gloss_zh: [上工]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-ci6-上市
+    headword: 上市
+    readings:
+      - pengim: zion6 ci6
+    senses:
+      - pos: verb
+        gloss_en: [to go on the market, to be listed (of a company)]
+        gloss_zh: [上市]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-iang3-上映
+    headword: 上映
+    readings:
+      - pengim: zion6 iang3
+    senses:
+      - pos: verb
+        gloss_en: [to be screened (of a movie), to be shown]
+        gloss_zh: [上映]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-ing5-上演
+    headword: 上演
+    readings:
+      - pengim: zion6 ing5
+    senses:
+      - pos: verb
+        gloss_en: [to stage (a play), to screen (a movie), to perform]
+        gloss_zh: [上演]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-ziang3-上漲
+    headword: 上漲
+    readings:
+      - pengim: zion6 ziang3
+    senses:
+      - pos: verb
+        gloss_en: [to rise, to go up (of prices or water levels)]
+        gloss_zh: [上漲]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion7-dang3-上當
+    headword: 上當
+    readings:
+      - pengim: zion7 dang3
+    senses:
+      - pos: verb
+        gloss_en: [to be fooled, to be duped, to be taken in]
+        gloss_zh: [上當]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziên6-mang6-上網
+    headword: 上網
+    readings:
+      - pengim: ziên6 mang6
+    senses:
+      - pos: verb
+        gloss_en: [to go online, to access the internet]
+        gloss_zh: [上網]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-suan3-上線
+    headword: 上線
+    readings:
+      - pengim: zion6 suan3
+    senses:
+      - pos: verb
+        gloss_en: [to go online, to launch (a product)]
+        gloss_zh: [上線]
+        note: This reading covers several distinct senses (going online, reaching an admission score, launching a product, and a derogatory noun for a gang contact); the general 'go online' verb sense was chosen as most representative.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-goin1-上肩
+    headword: 上肩
+    readings:
+      - pengim: zion6 goin1
+    senses:
+      - pos: verb
+        gloss_en: [to hoist onto one's shoulder, to shoulder a load]
+        gloss_zh: [上肩]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-sêg4-上色
+    headword: 上色
+    readings:
+      - pengim: zion6 sêg4
+    senses:
+      - pos: verb
+        gloss_en: [to colour, to dye, to paint]
+        gloss_zh: [上色]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-su3-上訴
+    headword: 上訴
+    readings:
+      - pengim: zion6 su3
+    senses:
+      - pos: verb
+        gloss_en: [to appeal (a judicial case)]
+        gloss_zh: [上訴]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziên6-cia1-上車
+    headword: 上車
+    readings:
+      - pengim: ziên6 cia1
+    senses:
+      - pos: verb
+        gloss_en: [to get in a vehicle, to board (a car/train)]
+        gloss_zh: [上車]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-liang7-上鏈
+    headword: 上鏈
+    readings:
+      - pengim: zion6 liang7
+    senses:
+      - pos: verb
+        gloss_en: [to wind (a watch or clock)]
+        gloss_zh: [上鏈, 上發條]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-mung5-上門
+    headword: 上門
+    readings:
+      - pengim: zion6 mung5
+    senses:
+      - pos: verb
+        gloss_en: [to visit; drop in, to lock the door]
+        gloss_zh: [上門]
+        note: The page lists several distinct senses (visit, lock the door, closed for business, marry into the wife's family) under the same general Chinese reading without per-sense dialect breakdown, so which sense is standard in Teochew is unclear.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion6-bhê2-上馬
+    headword: 上馬
+    readings:
+      - pengim: zion6 bhê2
+    senses:
+      - pos: verb
+        gloss_en: [to mount a horse]
+        gloss_zh: [上馬]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hia6-huang3-下放
+    headword: 下放
+    readings:
+      - pengim: hia6 huang3
+    senses:
+      - pos: verb
+        gloss_en: [to decentralize (power), to send down to the countryside]
+        gloss_zh: [下放]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hia6-dim5-下沉
+    headword: 下沉
+    readings:
+      - pengim: hia6 dim5
+    senses:
+      - pos: verb
+        gloss_en: [to sink, to subside]
+        gloss_zh: [下沉]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hia6-zeng3-下葬
+    headword: 下葬
+    readings:
+      - pengim: hia6 zeng3
+    senses:
+      - pos: verb
+        gloss_en: [to bury (the dead), to inter]
+        gloss_zh: [下葬]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hia6-guin6-下跪
+    headword: 下跪
+    readings:
+      - pengim: hia6 guin6
+    senses:
+      - pos: verb
+        gloss_en: [to kneel down]
+        gloss_zh: [下跪]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-têng5-不停
+    headword: 不停
+    readings:
+      - pengim: bug4 têng5
+    senses:
+      - pos: verb
+        gloss_en: [to not stop, nonstop, incessant]
+        gloss_zh: [不停]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-zung2-不准
+    headword: 不准
+    readings:
+      - pengim: bug4 zung2
+    senses:
+      - pos: verb
+        gloss_en: [to forbid; to prohibit, not allowed]
+        gloss_zh: [不准]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-gib8-不及
+    headword: 不及
+    readings:
+      - pengim: bug4 gib8
+    senses:
+      - pos: verb
+        gloss_en: [too late; not in time, to not reach, to be unable to match]
+        gloss_zh: [不及]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-kam1-不堪
+    headword: 不堪
+    readings:
+      - pengim: bug4 kam1
+    senses:
+      - pos: verb
+        gloss_en: [to be unable to bear; unbearable, must not; should not]
+        gloss_zh: [不堪]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-kam1-huê5-siu2-不堪回首
+    headword: 不堪回首
+    readings:
+      - pengim: bug4 kam1 huê5 siu2
+    senses:
+      - pos: idiom
+        gloss_en: [cannot bear to look back on, too painful to recall]
+        gloss_zh: [不堪回首]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-dig4-ki5-si2-不得其死
+    headword: 不得其死
+    readings:
+      - pengim: bug4 dig4 ki5 si2
+    senses:
+      - pos: verb
+        gloss_en: [to die suddenly/violently, to not die a natural death]
+        gloss_zh: [不得其死]
+        note: This is a rare classical set phrase (from the Analects, meaning to fail to die a natural death) glossed on the page in modern colloquial terms as "to die suddenly for no reason"; its currency and precise nuance in everyday Teochew are uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-sioh4-不惜
+    headword: 不惜
+    readings:
+      - pengim: bug4 sioh4
+    senses:
+      - pos: verb
+        gloss_en: [to not spare; to not begrudge, at any cost]
+        gloss_zh: [不惜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-zin1-不支
+    headword: 不支
+    readings:
+      - pengim: bug4 zin1
+    senses:
+      - pos: verb
+        gloss_en: [to be unable to endure, to give way from exhaustion]
+        gloss_zh: [不支]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-lêng5-不能
+    headword: 不能
+    readings:
+      - pengim: bug4 lêng5
+    senses:
+      - pos: verb
+        gloss_en: [cannot, unable to, must not]
+        gloss_zh: [不能]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si3-sib8-世襲
+    headword: 世襲
+    readings:
+      - pengim: si3 sib8
+    senses:
+      - pos: verb
+        gloss_en: [to inherit (a title/position) hereditarily, to pass down through generations]
+        gloss_zh: [世襲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diu1-丟
+    headword: 丟
+    readings:
+      - pengim: diu1
+    senses:
+      - pos: verb
+        gloss_en: [to throw, to toss, to hurl]
+        gloss_zh: [丟]
+        note: The character has multiple senses across two etymologies (lose/discard vs. throw); the Teochew reading diu1 is tied specifically to the Southern Min 'alternative form of 擲, to throw/hurl' sense, so the gloss picks that sense rather than the Mandarin 'to lose' sense.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diu1-ki3-丟棄
+    headword: 丟棄
+    readings:
+      - pengim: diu1 ki3
+    senses:
+      - pos: verb
+        gloss_en: [to abandon, to discard, to throw away]
+        gloss_zh: [丟棄]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêng6-bai5-並排
+    headword: 並排
+    readings:
+      - pengim: bêng6 bai5
+    senses:
+      - pos: verb
+        gloss_en: [to be side by side, to be abreast, to be parallel]
+        gloss_zh: [並排]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong3-zio1-中招
+    headword: 中招
+    readings:
+      - pengim: dong3 zio1
+    senses:
+      - pos: verb
+        gloss_en: [to fall into a trap, to be taken in, to be infected]
+        gloss_zh: [中招]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong3-su2-中暑
+    headword: 中暑
+    readings:
+      - pengim: dong3 su2
+    senses:
+      - pos: verb
+        gloss_en: [to suffer heatstroke, heatstroke, sunstroke]
+        gloss_zh: [中暑]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong3-dag8-中毒
+    headword: 中毒
+    readings:
+      - pengim: dong3 dag8
+    senses:
+      - pos: verb
+        gloss_en: [to be poisoned, to be intoxicated, to be brainwashed]
+        gloss_zh: [中毒]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cuang3-tong1-串通
+    headword: 串通
+    readings:
+      - pengim: cuang3 tong1
+    senses:
+      - pos: verb
+        gloss_en: [to collude, to conspire, to gang up]
+        gloss_zh: [串通]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu2-dao6-主導
+    headword: 主導
+    readings:
+      - pengim: zu2 dao6
+    senses:
+      - pos: verb
+        gloss_en: [to lead, to guide, to dominate]
+        gloss_zh: [主導]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu2-ziang1-主張
+    headword: 主張
+    readings:
+      - pengim: zu2 ziang1
+    senses:
+      - pos: verb
+        gloss_en: [to advocate, to maintain (a position), to stand for]
+        gloss_zh: [主張]
+        note: 主張 functions as both a verb ('to advocate/maintain a position') and a noun ('opinion; stance') under the same reading; the verb sense was chosen as primary.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu2-ti5-主持
+    headword: 主持
+    readings:
+      - pengim: zu2 ti5
+    senses:
+      - pos: verb
+        gloss_en: [to preside over; to chair, to host (a show), to direct; to manage]
+        gloss_zh: [主持]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu2-poin7-主辦
+    headword: 主辦
+    readings:
+      - pengim: zu2 poin7
+    senses:
+      - pos: verb
+        gloss_en: [to host (an event), to sponsor; to organize]
+        gloss_zh: [主辦]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng6-si3-乘勢
+    headword: 乘勢
+    readings:
+      - pengim: sêng6 si3
+    senses:
+      - pos: verb
+        gloss_en: [to seize the opportunity, to take advantage of a favorable situation]
+        gloss_zh: [乘勢]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng6-zo6-乘坐
+    headword: 乘坐
+    readings:
+      - pengim: sêng6 zo6
+    senses:
+      - pos: verb
+        gloss_en: [to ride (a vehicle), to board]
+        gloss_zh: [乘坐]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng5-cia1-乘車
+    headword: 乘車
+    readings:
+      - pengim: sêng5 cia1
+    senses:
+      - pos: verb
+        gloss_en: [to ride in a car, to ride a vehicle]
+        gloss_zh: [乘車]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: luang6-dan3-亂呾
+    headword: 亂呾
+    readings:
+      - pengim: luang6 dan3
+    senses:
+      - pos: verb
+        gloss_en: [to speak carelessly, to talk nonsense]
+        gloss_zh: [亂呾]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liao2-se7-了事
+    headword: 了事
+    readings:
+      - pengim: liao2 se7
+    senses:
+      - pos: verb
+        gloss_en: [to settle a matter (perfunctorily), to conclude]
+        gloss_zh: [了事]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: e2-in2-予以
+    headword: 予以
+    readings:
+      - pengim: e2 in2
+    senses:
+      - pos: verb
+        gloss_en: [to give, to grant, to accord]
+        gloss_zh: [予以]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: se6-li2-事理
+    headword: 事理
+    readings:
+      - pengim: se6 li2
+    senses:
+      - pos: verb
+        gloss_en: [to fix, to repair, to prepare]
+        gloss_zh: [事理]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: se6-li2-ziah8-事理食
+    headword: 事理食
+    readings:
+      - pengim: se6 li2 ziah8
+    senses:
+      - pos: verb
+        gloss_en: [to prepare food, to cook]
+        gloss_zh: [事理食]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: se7-huag4-事發
+    headword: 事發
+    readings:
+      - pengim: se7 huag4
+    senses:
+      - pos: verb
+        gloss_en: [(of an incident) to occur, to come to light, to happen]
+        gloss_zh: [事發]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: se7-guang1-事關
+    headword: 事關
+    readings:
+      - pengim: se7 guang1
+    senses:
+      - pos: verb
+        gloss_en: [to concern, to have importance for, to relate to]
+        gloss_zh: [事關]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu6-li6-互利
+    headword: 互利
+    readings:
+      - pengim: hu6 li6
+    senses:
+      - pos: verb
+        gloss_en: [to be mutually beneficial, to benefit each other]
+        gloss_zh: [互利]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu6-zo6-互助
+    headword: 互助
+    readings:
+      - pengim: hu6 zo6
+    senses:
+      - pos: verb
+        gloss_en: [to help one another, mutual aid]
+        gloss_zh: [互助]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu6-dong6-互動
+    headword: 互動
+    readings:
+      - pengim: hu6 dong6
+    senses:
+      - pos: verb
+        gloss_en: [to interact, interaction]
+        gloss_zh: [互動]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu6-hui6-互惠
+    headword: 互惠
+    readings:
+      - pengim: hu6 hui6
+    senses:
+      - pos: verb
+        gloss_en: [to be reciprocal, mutually beneficial]
+        gloss_zh: [互惠]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu6-uan7-互換
+    headword: 互換
+    readings:
+      - pengim: hu6 uan7
+    senses:
+      - pos: verb
+        gloss_en: [to exchange, to swap, to interchange]
+        gloss_zh: [互換]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu6-liang6-互聯
+    headword: 互聯
+    readings:
+      - pengim: hu6 liang6
+    senses:
+      - pos: verb
+        gloss_en: [to interconnect, to connect to each other]
+        gloss_zh: [互聯]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuang5-亡
+    headword: 亡
+    readings:
+      - pengim: bhuang5
+    senses:
+      - pos: verb
+        gloss_en: [to die; to perish, to flee; to escape, to be destroyed]
+        gloss_zh: [亡, 死]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-交
+    headword: 交
+    readings:
+      - pengim: gao1
+    senses:
+      - pos: verb
+        gloss_en: [to hand over; to deliver, to intersect; to cross, to associate with; make friends]
+        gloss_zh: [交, 交付]
+        note: As a bound morpheme 交 covers several distinct core senses (hand over, intersect, associate/mate) under the same single reading; 'to hand over' was picked as primary but usage varies heavily by compound/context.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-hu3-交付
+    headword: 交付
+    readings:
+      - pengim: gao1 hu3
+    senses:
+      - pos: verb
+        gloss_en: [to hand over; to deliver, to pay]
+        gloss_zh: [交付]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-dai3-交代
+    headword: 交代
+    readings:
+      - pengim: gao1 dai3
+    senses:
+      - pos: verb
+        gloss_en: [to explain; to make clear, to hand over (duties), to instruct; to tell]
+        gloss_zh: [交代]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-êng5-交寅
+    headword: 交寅
+    readings:
+      - pengim: gao1 êng5
+    senses:
+      - pos: verb
+        gloss_en: [to get married; to marry]
+        gloss_zh: [交寅, 結婚]
+        note: Malay loanword ('kahwin') for 'to marry' documented specifically in Southeast Asian (Singapore/Malaysia) Hokkien-Teochew usage; unclear how widely recognized outside that diaspora context.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-uan7-交換
+    headword: 交換
+    readings:
+      - pengim: gao1 uan7
+    senses:
+      - pos: verb
+        gloss_en: [to exchange; to swap, to barter; to trade]
+        gloss_zh: [交換]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-êg8-交易
+    headword: 交易
+    readings:
+      - pengim: gao1 êg8
+    senses:
+      - pos: verb
+        gloss_en: [to trade; to transact, trade; transaction]
+        gloss_zh: [交易]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-liu5-交流
+    headword: 交流
+    readings:
+      - pengim: gao1 liu5
+    senses:
+      - pos: verb
+        gloss_en: [to exchange; to communicate, to interact, to flow together]
+        gloss_zh: [交流]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-gai3-交界
+    headword: 交界
+    readings:
+      - pengim: gao1 gai3
+    senses:
+      - pos: verb
+        gloss_en: [to share a border with, to border on]
+        gloss_zh: [交界]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-zi3-交際
+    headword: 交際
+    readings:
+      - pengim: gao1 zi3
+    senses:
+      - pos: verb
+        gloss_en: [to socialize, to associate, to have dealings with]
+        gloss_zh: [交際]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang2-享
+    headword: 享
+    readings:
+      - pengim: hiang2
+    senses:
+      - pos: verb
+        gloss_en: [to enjoy]
+        gloss_zh: [享, 享受]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang2-siu6-享受
+    headword: 享受
+    readings:
+      - pengim: hiang2 siu6
+    senses:
+      - pos: verb
+        gloss_en: [to enjoy, to relish, enjoyment]
+        gloss_zh: [享受]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang2-lag8-享樂
+    headword: 享樂
+    readings:
+      - pengim: hiang2 lag8
+    senses:
+      - pos: verb
+        gloss_en: [to enjoy pleasure, to seek pleasure]
+        gloss_zh: [享樂]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang2-hog4-享福
+    headword: 享福
+    readings:
+      - pengim: hiang2 hog4
+    senses:
+      - pos: verb
+        gloss_en: [to enjoy a comfortable life, to live in comfort]
+        gloss_zh: [享福]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang2-e6-享譽
+    headword: 享譽
+    readings:
+      - pengim: hiang2 e6
+    senses:
+      - pos: verb
+        gloss_en: [to be renowned, to enjoy a good reputation]
+        gloss_zh: [享譽]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liang6-siang3-亮相
+    headword: 亮相
+    readings:
+      - pengim: liang6 siang3
+    senses:
+      - pos: verb
+        gloss_en: [to appear in public, to make one's debut, to strike a pose (on stage)]
+        gloss_zh: [亮相]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu5-bu3-仇富
+    headword: 仇富
+    readings:
+      - pengim: ciu5 bu3
+    senses:
+      - pos: verb
+        gloss_en: [to resent the rich, to be resentful of wealthy people]
+        gloss_zh: [仇富]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu5-heng6-仇恨
+    headword: 仇恨
+    readings:
+      - pengim: ciu5 heng6
+    senses:
+      - pos: verb
+        gloss_en: [to hate, hatred]
+        gloss_zh: [仇恨]
+        note: Attested as both a verb ('to hate') and a noun ('hatred'); verb was chosen as the single best fit though the noun usage is equally common.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu5-si6-仇視
+    headword: 仇視
+    readings:
+      - pengim: ciu5 si6
+    senses:
+      - pos: verb
+        gloss_en: [to view with hostility, to regard as an enemy]
+        gloss_zh: [仇視]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gai3-介
+    headword: 介
+    readings:
+      - pengim: gai3
+    senses:
+      - pos: verb
+        gloss_en: [to introduce, to connect; to link]
+        gloss_zh: [介]
+        note: The character 介 is highly polysemous (lie between, connect/introduce, assist, classifier, shell, etc.) all under this same reading; 'to introduce/connect' was chosen as the best single-sense fit.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gai3-rib8-介入
+    headword: 介入
+    readings:
+      - pengim: gai3 rib8
+    senses:
+      - pos: verb
+        gloss_en: [to intervene, to get involved]
+        gloss_zh: [介入]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gai3-i3-介意
+    headword: 介意
+    readings:
+      - pengim: gai3 i3
+    senses:
+      - pos: verb
+        gloss_en: [to mind, to take offense, to be bothered by]
+        gloss_zh: [介意]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gai3-siao6-介紹
+    headword: 介紹
+    readings:
+      - pengim: gai3 siao6
+    senses:
+      - pos: verb
+        gloss_en: [to introduce, to recommend]
+        gloss_zh: [介紹]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu3-付
+    headword: 付
+    readings:
+      - pengim: hu3
+    senses:
+      - pos: verb
+        gloss_en: [to pay, to give; to hand over, to entrust]
+        gloss_zh: [付]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu3-cug4-付出
+    headword: 付出
+    readings:
+      - pengim: hu3 cug4
+    senses:
+      - pos: verb
+        gloss_en: [to pay; to expend, to put in effort; to invest time/energy]
+        gloss_zh: [付出]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu3-kuêng2-付款
+    headword: 付款
+    readings:
+      - pengim: hu3 kuêng2
+    senses:
+      - pos: verb
+        gloss_en: [to pay a sum of money; to make payment]
+        gloss_zh: [付款]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu3-toh4-付託
+    headword: 付託
+    readings:
+      - pengim: hu3 toh4
+    senses:
+      - pos: verb
+        gloss_en: [to entrust; to commit to someone's care]
+        gloss_zh: [付託]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu3-zin5-付錢
+    headword: 付錢
+    readings:
+      - pengim: hu3 zin5
+    senses:
+      - pos: verb
+        gloss_en: [to pay (money)]
+        gloss_zh: [付錢]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: toi3-hêng6-代孕
+    headword: 代孕
+    readings:
+      - pengim: toi3 hêng6
+    senses:
+      - pos: verb
+        gloss_en: [to act as a surrogate (pregnancy); to be a surrogate mother]
+        gloss_zh: [代孕]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: toi3-ti3-代替
+    headword: 代替
+    readings:
+      - pengim: toi3 ti3
+    senses:
+      - pos: verb
+        gloss_en: [to substitute for; to replace; to take the place of]
+        gloss_zh: [代替]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: toi3-bou7-代步
+    headword: 代步
+    readings:
+      - pengim: toi3 bou7
+    senses:
+      - pos: verb
+        gloss_en: [to use as a means of transportation (instead of walking)]
+        gloss_zh: [代步]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: toi3-biao2-代表
+    headword: 代表
+    readings:
+      - pengim: toi3 biao2
+    senses:
+      - pos: verb
+        gloss_en: [to represent, on behalf of, delegate (person)]
+        gloss_zh: [代表]
+        note: 代表 functions as both a verb ('to represent') and a noun ('representative/delegate') with comparable everyday frequency; the verb sense was chosen as primary.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng6-令
+    headword: 令
+    readings:
+      - pengim: lêng6
+    senses:
+      - pos: verb
+        gloss_en: [to order, to command, to cause]
+        gloss_zh: [令, 命令]
+        note: 令 carries many senses (command, causative, honorific 'your', historical title, surname); the verb sense 'to order/cause' was chosen as most representative but usage is highly context-dependent.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng6-nang5-令人
+    headword: 令人
+    readings:
+      - pengim: lêng6 nang5
+    senses:
+      - pos: verb
+        gloss_en: [to make one (feel), to cause]
+        gloss_zh: [令人]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in2-ui5-以為
+    headword: 以為
+    readings:
+      - pengim: in2 ui5
+    senses:
+      - pos: verb
+        gloss_en: [to think (mistakenly), to assume, to believe]
+        gloss_zh: [以為]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rim6-iu5-任由
+    headword: 任由
+    readings:
+      - pengim: rim6 iu5
+    senses:
+      - pos: verb
+        gloss_en: [to allow, to let (someone do as they please)]
+        gloss_zh: [任由, 任憑]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang2-仿
+    headword: 仿
+    readings:
+      - pengim: huang2
+    senses:
+      - pos: verb
+        gloss_en: [to imitate, to copy, to resemble]
+        gloss_zh: [仿, 仿照]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang2-mao6-仿冒
+    headword: 仿冒
+    readings:
+      - pengim: huang2 mao6
+    senses:
+      - pos: verb
+        gloss_en: [to counterfeit, to fake]
+        gloss_zh: [仿冒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang2-gou2-仿古
+    headword: 仿古
+    readings:
+      - pengim: huang2 gou2
+    senses:
+      - pos: verb
+        gloss_en: [to imitate an antique style, in the style of the ancients]
+        gloss_zh: [仿古]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang2-zing1-仿真
+    headword: 仿真
+    readings:
+      - pengim: huang2 zing1
+    senses:
+      - pos: verb
+        gloss_en: [to simulate, to emulate]
+        gloss_zh: [仿真]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi6-企
+    headword: 企
+    readings:
+      - pengim: gi6
+    senses:
+      - pos: verb
+        gloss_en: [to stand]
+        gloss_zh: [企, 站]
+        note: The Teochew reading gi6 is given once for the whole Etymology-1 pronunciation block spanning several senses (tiptoe-stand, plan, expect anxiously, enterprise abbreviation, surname); only Cantonese and Hakka are explicitly labeled for the plain 'to stand' sense, so the Teochew sense is inferred rather than directly labeled.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi6-tu5-企圖
+    headword: 企圖
+    readings:
+      - pengim: gi6 tu5
+    senses:
+      - pos: verb
+        gloss_en: [to attempt, to try, to scheme]
+        gloss_zh: [企圖]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i1-si2-伊始
+    headword: 伊始
+    readings:
+      - pengim: i1 si2
+    senses:
+      - pos: verb
+        gloss_en: [to begin, to start, beginning (of a period)]
+        gloss_zh: [伊始]
+        note: The page lists 伊始 as both a literary verb ('to begin/start') and a noun ('beginning'); it was classified as a verb, though it is also commonly used nominally, e.g. 開學伊始.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hog8-huab4-伏法
+    headword: 伏法
+    readings:
+      - pengim: hog8 huab4
+    senses:
+      - pos: verb
+        gloss_en: [to be executed, to be put to death]
+        gloss_zh: [伏法]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiun1-gia2-休假
+    headword: 休假
+    readings:
+      - pengim: hiun1 gia2
+    senses:
+      - pos: verb
+        gloss_en: [to take a vacation, to go on holiday, to be on leave]
+        gloss_zh: [休假]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiun1-kiog4-休克
+    headword: 休克
+    readings:
+      - pengim: hiun1 kiog4
+    senses:
+      - pos: verb
+        gloss_en: [to go into shock, shock (medical condition)]
+        gloss_zh: [休克]
+        note: 休克 functions as both a noun (the medical condition 'shock') and a verb ('to go into shock'); classified as a verb, though the noun use is also common, e.g. 過敏性休克.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiun1-hag8-休學
+    headword: 休學
+    readings:
+      - pengim: hiun1 hag8
+    senses:
+      - pos: verb
+        gloss_en: [to suspend schooling, to defer study]
+        gloss_zh: [休學]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiun1-sêg4-休息
+    headword: 休息
+    readings:
+      - pengim: hiun1 sêg4
+    senses:
+      - pos: verb
+        gloss_en: [to rest, to take a break]
+        gloss_zh: [休息]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiun1-huê6-休會
+    headword: 休會
+    readings:
+      - pengim: hiun1 huê6
+    senses:
+      - pos: verb
+        gloss_en: [to adjourn a meeting, to go into recess]
+        gloss_zh: [休會]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiun1-zi2-休止
+    headword: 休止
+    readings:
+      - pengim: hiun1 zi2
+    senses:
+      - pos: verb
+        gloss_en: [to stop, to halt, to cease]
+        gloss_zh: [休止]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiun1-oin5-休閒
+    headword: 休閒
+    readings:
+      - pengim: hiun1 oin5
+    senses:
+      - pos: verb
+        gloss_en: [to be at leisure, leisure, casual]
+        gloss_zh: [休閒]
+        note: Wiktionary tags 休閒 as a verb ('to be at leisure'), but in modern usage it frequently functions attributively as a noun/adjective meaning 'leisure; casual' (e.g. 休閒裝, 休閒活動).
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiun1-iang2-休養
+    headword: 休養
+    readings:
+      - pengim: hiun1 iang2
+    senses:
+      - pos: verb
+        gloss_en: [to recuperate, to convalesce, to rest and recover]
+        gloss_zh: [休養]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gou2-goi3-估計
+    headword: 估計
+    readings:
+      - pengim: gou2 goi3
+    senses:
+      - pos: verb
+        gloss_en: [to guess, to estimate, to reckon]
+        gloss_zh: [估計]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puan6-伴
+    headword: 伴
+    readings:
+      - pengim: puan6
+    senses:
+      - pos: verb
+        gloss_en: [to accompany, companion]
+        gloss_zh: [伴]
+        note: Word carries both a common noun sense ('companion') and a verb sense ('to accompany') with no single dominant reading distinguished on the page; verb was chosen as the primary sense.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puan6-u6-伴有
+    headword: 伴有
+    readings:
+      - pengim: puan6 u6
+    senses:
+      - pos: verb
+        gloss_en: [to be accompanied by, to occur together with]
+        gloss_zh: [伴有]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puan6-sui5-伴隨
+    headword: 伴隨
+    readings:
+      - pengim: puan6 sui5
+    senses:
+      - pos: verb
+        gloss_en: [to accompany, to follow, along with]
+        gloss_zh: [伴隨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: se6-gi1-伺機
+    headword: 伺機
+    readings:
+      - pengim: se6 gi1
+    senses:
+      - pos: verb
+        gloss_en: [to watch for a chance, to wait for an opportunity]
+        gloss_zh: [伺機]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: se6-似
+    headword: 似
+    readings:
+      - pengim: se6
+    senses:
+      - pos: verb
+        gloss_en: [to resemble, to be similar to, to be like]
+        gloss_zh: [似]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin6-佃
+    headword: 佃
+    readings:
+      - pengim: doin6
+    senses:
+      - pos: verb
+        gloss_en: [to rent land (from a landlord), to farm as a tenant]
+        gloss_zh: [佃]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bou3-cang5-佈田
+    headword: 佈田
+    readings:
+      - pengim: bou3 cang5
+    senses:
+      - pos: verb
+        gloss_en: [to transplant rice seedlings]
+        gloss_zh: [佈田]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bu3-di3-佈置
+    headword: 佈置
+    readings:
+      - pengim: bu3 di3
+    senses:
+      - pos: verb
+        gloss_en: [to arrange, to decorate, to set up]
+        gloss_zh: [佈置]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui7-i1-位於
+    headword: 位於
+    readings:
+      - pengim: ui7 i1
+    senses:
+      - pos: verb
+        gloss_en: [to be located in, to be situated at]
+        gloss_zh: [位於]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di1-tao5-低頭
+    headword: 低頭
+    readings:
+      - pengim: di1 tao5
+    senses:
+      - pos: verb
+        gloss_en: [to lower one's head, to bow, to submit; to give in]
+        gloss_zh: [低頭]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di1-lêng5-huê3-低齡化
+    headword: 低齡化
+    readings:
+      - pengim: di1 lêng5 huê3
+    senses:
+      - pos: verb
+        gloss_en: [to trend toward younger age, to skew younger]
+        gloss_zh: [低齡化]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu6-in7-住院
+    headword: 住院
+    readings:
+      - pengim: zu6 in7
+    senses:
+      - pos: verb
+        gloss_en: [to be hospitalized, to stay in hospital]
+        gloss_zh: [住院]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo2-佐
+    headword: 佐
+    readings:
+      - pengim: zo2
+    senses:
+      - pos: verb
+        gloss_en: [to assist, to aid, to second]
+        gloss_zh: [佐, 輔佐]
+        note: The page gives roughly equally weighted verb (to assist) and noun (assistant) senses for the same reading, and it's unclear which is the intended core sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu6-佑
+    headword: 佑
+    readings:
+      - pengim: iu6
+    senses:
+      - pos: verb
+        gloss_en: [to bless, to protect, to help]
+        gloss_zh: [佑, 保佑]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziam3-biang6-ngi5-佔便宜
+    headword: 佔便宜
+    readings:
+      - pengim: ziam3 biang6 ngi5
+    senses:
+      - pos: verb
+        gloss_en: [to take advantage of, to gain unfair advantage, to profit at others' expense]
+        gloss_zh: [佔便宜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziam1-di7-佔地
+    headword: 佔地
+    readings:
+      - pengim: ziam1 di7
+    senses:
+      - pos: verb
+        gloss_en: [to occupy an area, to cover an area, to take up space]
+        gloss_zh: [佔地]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziam3-u6-佔有
+    headword: 佔有
+    readings:
+      - pengim: ziam3 u6
+    senses:
+      - pos: verb
+        gloss_en: [to possess, to own, to occupy]
+        gloss_zh: [佔有]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziam3-êng7-佔用
+    headword: 佔用
+    readings:
+      - pengim: ziam3 êng7
+    senses:
+      - pos: verb
+        gloss_en: [to occupy and use, to take up (time/space)]
+        gloss_zh: [佔用]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ig8-佚
+    headword: 佚
+    readings:
+      - pengim: ig8
+    senses:
+      - pos: verb
+        gloss_en: [to be lost, to escape; to flee]
+        gloss_zh: [佚]
+        note: Page lists many senses under this reading (verb 'to be lost', alternative form of 逸 with several meanings, obsolete adjective 'beautiful', obsolete noun 'fault', surname) without clarifying which corresponds specifically to Teochew ig8.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-cug4-作出
+    headword: 作出
+    readings:
+      - pengim: zo3 cug4
+    senses:
+      - pos: verb
+        gloss_en: ["to make (a decision, choice)", to come up with, to issue]
+        gloss_zh: [作出]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zoh4-cang5-作塍
+    headword: 作塍
+    readings:
+      - pengim: zoh4 cang5
+    senses:
+      - pos: verb
+        gloss_en: [to farm; to work the fields]
+        gloss_zh: [作塍, 作田]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zag4-hui3-作廢
+    headword: 作廢
+    readings:
+      - pengim: zag4 hui3
+    senses:
+      - pos: verb
+        gloss_en: [to nullify; to void, to become invalid]
+        gloss_zh: [作廢]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zag4-bi7-作弊
+    headword: 作弊
+    readings:
+      - pengim: zag4 bi7
+    senses:
+      - pos: verb
+        gloss_en: [to cheat, to practice fraud]
+        gloss_zh: [作弊]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zag4-sêg4-作息
+    headword: 作息
+    readings:
+      - pengim: zag4 sêg4
+    senses:
+      - pos: verb
+        gloss_en: [to work and rest, daily routine]
+        gloss_zh: [作息]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zag4-kêg4-作曲
+    headword: 作曲
+    readings:
+      - pengim: zag4 kêg4
+    senses:
+      - pos: verb
+        gloss_en: [to compose music, to write music]
+        gloss_zh: [作曲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zag4-uan3-作案
+    headword: 作案
+    readings:
+      - pengim: zag4 uan3
+    senses:
+      - pos: verb
+        gloss_en: [to commit a crime, to commit an offense]
+        gloss_zh: [作案]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zoh4-cang5-作田
+    headword: 作田
+    readings:
+      - pengim: zoh4 cang5
+    senses:
+      - pos: verb
+        gloss_en: [to farm, to work the land]
+        gloss_zh: [種田, 作田]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zag4-se5-作詞
+    headword: 作詞
+    readings:
+      - pengim: zag4 se5
+    senses:
+      - pos: verb
+        gloss_en: [to write lyrics]
+        gloss_zh: [作詞]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-zêng3-作證
+    headword: 作證
+    readings:
+      - pengim: zo3 zêng3
+    senses:
+      - pos: verb
+        gloss_en: [to testify, to bear witness]
+        gloss_zh: [作證]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê6-佩
+    headword: 佩
+    readings:
+      - pengim: buê6
+    senses:
+      - pos: verb
+        gloss_en: ["to wear (a pendant, ornament)", to wear at the waist]
+        gloss_zh: [佩戴, 佩]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê6-dua3-佩帶
+    headword: 佩帶
+    readings:
+      - pengim: buê6 dua3
+    senses:
+      - pos: verb
+        gloss_en: ["to wear (a badge, medal, or accessory)"]
+        gloss_zh: [佩戴, 佩帶]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê6-hog8-佩服
+    headword: 佩服
+    readings:
+      - pengim: buê6 hog8
+    senses:
+      - pos: verb
+        gloss_en: [to admire, to look up to]
+        gloss_zh: [佩服]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gah4-i3-佮意
+    headword: 佮意
+    readings:
+      - pengim: gah4 i3
+    senses:
+      - pos: verb
+        gloss_en: [to like]
+        gloss_zh: [佮意]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dên3-佯
+    headword: 佯
+    readings:
+      - pengim: dên3
+    senses:
+      - pos: verb
+        gloss_en: [to pretend, to feign]
+        gloss_zh: [佯]
+        note: The page has separate etymologies (literary 'to pretend/feign' vs. a Hokkien-specific 'to exert effort' sense) and it is not fully clear which one the Teochew dên3 reading corresponds to, though 'to pretend' fits the related compound 佯戇.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dên3-gong5-佯戇
+    headword: 佯戇
+    readings:
+      - pengim: dên3 gong5
+    senses:
+      - pos: verb
+        gloss_en: [to play dumb, to act foolish]
+        gloss_zh: [佯戇]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai2-huai6-使壞
+    headword: 使壞
+    readings:
+      - pengim: sai2 huai6
+    senses:
+      - pos: verb
+        gloss_en: [to play tricks, to be mischievous]
+        gloss_zh: [使壞]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai2-êng7-使用
+    headword: 使用
+    readings:
+      - pengim: sai2 êng7
+    senses:
+      - pos: verb
+        gloss_en: [to use, to utilize, to employ]
+        gloss_zh: [使用]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai2-zin5-使錢
+    headword: 使錢
+    readings:
+      - pengim: sai2 zin5
+    senses:
+      - pos: verb
+        gloss_en: [to spend money]
+        gloss_zh: [使錢]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lai5-huê5-來回
+    headword: 來回
+    readings:
+      - pengim: lai5 huê5
+    senses:
+      - pos: verb
+        gloss_en: [to go back and forth, round trip]
+        gloss_zh: [來回]
+        note: The page lists verb ('to go to and fro'), noun ('round trip'), and adverb ('repeatedly') senses all under the same reading, so the single best pos is uncertain.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lai5-uang2-來往
+    headword: 來往
+    readings:
+      - pengim: lai5 uang2
+    senses:
+      - pos: verb
+        gloss_en: [to come and go, to have dealings with]
+        gloss_zh: [來往]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lai5-lim5-來臨
+    headword: 來臨
+    readings:
+      - pengim: lai5 lim5
+    senses:
+      - pos: verb
+        gloss_en: [to arrive, to approach]
+        gloss_zh: [來臨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lai5-ze6-來自
+    headword: 來自
+    readings:
+      - pengim: lai5 ze6
+    senses:
+      - pos: verb
+        gloss_en: [to come from, to be from]
+        gloss_zh: [來自]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lai5-sib8-來襲
+    headword: 來襲
+    readings:
+      - pengim: lai5 sib8
+    senses:
+      - pos: verb
+        gloss_en: [to invade, "to strike (of an enemy, storm, etc.)"]
+        gloss_zh: [來襲]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li7-gian5-例行
+    headword: 例行
+    readings:
+      - pengim: li7 gian5
+    senses:
+      - pos: verb
+        gloss_en: [to carry out routinely, routine (as scheduled)]
+        gloss_zh: [例行]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: se6-侍
+    headword: 侍
+    readings:
+      - pengim: se6
+    senses:
+      - pos: verb
+        gloss_en: [to wait upon, to serve]
+        gloss_zh: [侍候, 服侍]
+        note: Page gives noun ('attendant'), verb ('to wait upon; serve'), and proper-noun (surname) senses under the same general reading; verb was picked as the most central sense but some ambiguity remains.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-êng3-供應
+    headword: 供應
+    readings:
+      - pengim: gêng1 êng3
+    senses:
+      - pos: verb
+        gloss_en: [to supply, to provide]
+        gloss_zh: [供應]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-zui2-供水
+    headword: 供水
+    readings:
+      - pengim: gêng1 zui2
+    senses:
+      - pos: verb
+        gloss_en: [to supply water, to provide water]
+        gloss_zh: [供水]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-ring7-bug4-hui3-供認不諱
+    headword: 供認不諱
+    readings:
+      - pengim: gêng1 ring7 bug4 hui3
+    senses:
+      - pos: idiom
+        gloss_en: [to confess everything, to make a full confession, to plead guilty]
+        gloss_zh: [供認不諱]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-sug8-供述
+    headword: 供述
+    readings:
+      - pengim: gêng1 sug8
+    senses:
+      - pos: verb
+        gloss_en: [to make a statement, to testify]
+        gloss_zh: [供述]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i1-依
+    headword: 依
+    readings:
+      - pengim: i1
+    senses:
+      - pos: verb
+        gloss_en: [to lean on, to rely on, to comply with]
+        gloss_zh: [依]
+        note: Page lists several related senses (lean on, rely on, obey/comply, and a prepositional 'according to' use); verb chosen as the primary POS but the word straddles verb/preposition.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i1-toh4-依託
+    headword: 依託
+    readings:
+      - pengim: i1 toh4
+    senses:
+      - pos: verb
+        gloss_en: [to rely on, to depend on]
+        gloss_zh: [依託]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i1-nai6-依賴
+    headword: 依賴
+    readings:
+      - pengim: i1 nai6
+    senses:
+      - pos: verb
+        gloss_en: [to rely on, to depend on]
+        gloss_zh: [依賴]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhu2-rog8-侮辱
+    headword: 侮辱
+    readings:
+      - pengim: bhu2 rog8
+    senses:
+      - pos: verb
+        gloss_en: [to insult, to humiliate]
+        gloss_zh: [侮辱]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: co7-侳
+    headword: 侳
+    readings:
+      - pengim: co7
+    senses:
+      - pos: verb
+        gloss_en: [to put into a container, to place into]
+        gloss_zh: [侳, 盛]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cim1-侵
+    headword: 侵
+    readings:
+      - pengim: cim1
+    senses:
+      - pos: verb
+        gloss_en: [to invade, to encroach]
+        gloss_zh: [侵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cim5-ziam3-侵佔
+    headword: 侵佔
+    readings:
+      - pengim: cim5 ziam3
+    senses:
+      - pos: verb
+        gloss_en: [to seize (property/land), to encroach on, to occupy illegally]
+        gloss_zh: [侵佔]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cim5-rib8-侵入
+    headword: 侵入
+    readings:
+      - pengim: cim5 rib8
+    senses:
+      - pos: verb
+        gloss_en: [to invade, to trespass, to intrude]
+        gloss_zh: [侵入]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cim1-hai7-侵害
+    headword: 侵害
+    readings:
+      - pengim: cim1 hai7
+    senses:
+      - pos: verb
+        gloss_en: [to infringe on, to violate, to encroach on]
+        gloss_zh: [侵害]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cim1-kuang5-侵權
+    headword: 侵權
+    readings:
+      - pengim: cim1 kuang5
+    senses:
+      - pos: verb
+        gloss_en: [to infringe on rights, to violate (e.g. copyright)]
+        gloss_zh: [侵權]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cim5-huang6-侵犯
+    headword: 侵犯
+    readings:
+      - pengim: cim5 huang6
+    senses:
+      - pos: verb
+        gloss_en: [to violate, to infringe upon, to invade]
+        gloss_zh: [侵犯]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cim5-liag8-侵略
+    headword: 侵略
+    readings:
+      - pengim: cim5 liag8
+    senses:
+      - pos: verb
+        gloss_en: [to invade, to commit aggression]
+        gloss_zh: [侵略]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hi6-係
+    headword: 係
+    readings:
+      - pengim: hi6
+    senses:
+      - pos: verb
+        gloss_en: [to relate to, to concern, to be connected with]
+        gloss_zh: [關係, 涉及]
+        note: Etymology 1 groups several senses (relate/bind, copula 'to be', affirmative 'yes') under the hi6 reading, but the copula and 'yes' senses are specifically labeled Cantonese/Hakka rather than Teochew, so the exact Teochew usage is uncertain; the more general 'relate/connect' sense was chosen as the safest fit.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cog4-促
+    headword: 促
+    readings:
+      - pengim: cog4
+    senses:
+      - pos: verb
+        gloss_en: [to urge, to hasten, urgent; hurried]
+        gloss_zh: [促, 催促]
+        note: Etymology 1 covers both adjectival ('short; hurried; urgent') and verbal ('to urge; to promote; to come close') senses under the same cog4 reading, and the character is normally a bound morpheme in compounds rather than used standalone, so the single best pos/gloss is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cog4-zing3-促進
+    headword: 促進
+    readings:
+      - pengim: cog4 zing3
+    senses:
+      - pos: verb
+        gloss_en: [to promote, to boost, to advance]
+        gloss_zh: [促進]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cog4-siao1-促銷
+    headword: 促銷
+    readings:
+      - pengim: cog4 siao1
+    senses:
+      - pos: verb
+        gloss_en: [to promote sales, sales promotion]
+        gloss_zh: [促銷]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu1-俘
+    headword: 俘
+    readings:
+      - pengim: hu1
+    senses:
+      - pos: verb
+        gloss_en: [to capture (an enemy)]
+        gloss_zh: [俘]
+        note: This character is rarely used standalone (mostly appearing in compounds like 俘獲/俘虜) and Wiktionary lists both a verb sense ('to capture') and a noun sense ('prisoner of war'); the verb sense was chosen but standalone usage is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu1-uag8-俘獲
+    headword: 俘獲
+    readings:
+      - pengim: hu1 uag8
+    senses:
+      - pos: verb
+        gloss_en: [to capture (the enemy), to seize (materials)]
+        gloss_zh: [俘獲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu1-lu2-俘虜
+    headword: 俘虜
+    readings:
+      - pengim: hu1 lu2
+    senses:
+      - pos: verb
+        gloss_en: [to capture (the enemy), to take captive]
+        gloss_zh: [俘虜]
+        note: Wiktionary lists both a verb sense ('to capture/take captive') and an equally common noun sense ('captive; prisoner of war'); the verb sense was chosen but the noun sense may be just as frequent in actual usage.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-iu6-保佑
+    headword: 保佑
+    readings:
+      - pengim: bo2 iu6
+    senses:
+      - pos: verb
+        gloss_en: [to bless and protect]
+        gloss_zh: [保佑]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-cung5-保存
+    headword: 保存
+    readings:
+      - pengim: bo2 cung5
+    senses:
+      - pos: verb
+        gloss_en: [to preserve, to keep, to save (a file)]
+        gloss_zh: [保存]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-mig8-保密
+    headword: 保密
+    readings:
+      - pengim: bo2 mig8
+    senses:
+      - pos: verb
+        gloss_en: [to keep secret, to maintain confidentiality]
+        gloss_zh: [保密]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-bi3-保庇
+    headword: 保庇
+    readings:
+      - pengim: bo2 bi3
+    senses:
+      - pos: verb
+        gloss_en: [to bless and protect]
+        gloss_zh: [保庇]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-ti5-保持
+    headword: 保持
+    readings:
+      - pengim: bo2 ti5
+    senses:
+      - pos: verb
+        gloss_en: [to keep, to maintain, to preserve]
+        gloss_zh: [保持]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-u6-保有
+    headword: 保有
+    readings:
+      - pengim: bo2 u6
+    senses:
+      - pos: verb
+        gloss_en: [to hold, to possess, to own]
+        gloss_zh: [保有]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bao2-ung1-保溫
+    headword: 保溫
+    readings:
+      - pengim: bao2 ung1
+    senses:
+      - pos: verb
+        gloss_en: [to keep warm, to insulate]
+        gloss_zh: [保溫]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-liu5-保留
+    headword: 保留
+    readings:
+      - pengim: bo2 liu5
+    senses:
+      - pos: verb
+        gloss_en: [to retain, to keep, to reserve]
+        gloss_zh: [保留]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-guang2-保管
+    headword: 保管
+    readings:
+      - pengim: bo2 guang2
+    senses:
+      - pos: verb
+        gloss_en: [to take care of, to safeguard]
+        gloss_zh: [保管]
+        note: Wiktionary lists 保管 as a verb ('to safeguard'), an adverb ('certainly, surely'), and a noun ('custodian/storekeeper'); the verb sense was chosen but the reading does not disambiguate which is intended.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-iog8-保育
+    headword: 保育
+    readings:
+      - pengim: bo2 iog8
+    senses:
+      - pos: verb
+        gloss_en: [to nurture; provide childcare, to conserve (wildlife/nature)]
+        gloss_zh: [保育]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-cang5-保藏
+    headword: 保藏
+    readings:
+      - pengim: bo2 cang5
+    senses:
+      - pos: verb
+        gloss_en: [to keep in store, to preserve]
+        gloss_zh: [保藏]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-ho7-保號
+    headword: 保號
+    readings:
+      - pengim: bo2 ho7
+    senses:
+      - pos: verb
+        gloss_en: [to bless and protect (of a deity)]
+        gloss_zh: [保號]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-uê6-保衛
+    headword: 保衛
+    readings:
+      - pengim: bo2 uê6
+    senses:
+      - pos: verb
+        gloss_en: [to defend, to safeguard, to protect]
+        gloss_zh: [保衛]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-zêng3-保證
+    headword: 保證
+    readings:
+      - pengim: bo2 zêng3
+    senses:
+      - pos: verb
+        gloss_en: [to guarantee, to assure, to promise]
+        gloss_zh: [保證]
+        note: The page gives both a verb sense ('to guarantee/assure') and a noun sense ('guarantee; pledge') under the same reading; the verb was chosen as the more common usage.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-hu6-保護
+    headword: 保護
+    readings:
+      - pengim: bo2 hu6
+    senses:
+      - pos: verb
+        gloss_en: [to protect, to safeguard]
+        gloss_zh: [保護]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bao2-ziang3-保障
+    headword: 保障
+    readings:
+      - pengim: bao2 ziang3
+    senses:
+      - pos: verb
+        gloss_en: [to guarantee, to ensure, to protect]
+        gloss_zh: [保障]
+        note: The page lists both a verb sense ('to guarantee/protect') and a noun sense ('guarantee; safeguard') under the same reading; the verb was chosen as primary.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bao2-nia2-保領
+    headword: 保領
+    readings:
+      - pengim: bao2 nia2
+    senses:
+      - pos: verb
+        gloss_en: [to assure, to guarantee]
+        gloss_zh: [保領]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing3-rim6-信任
+    headword: 信任
+    readings:
+      - pengim: sing3 rim6
+    senses:
+      - pos: verb
+        gloss_en: [to trust, to have confidence in]
+        gloss_zh: [信任]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu1-修
+    headword: 修
+    readings:
+      - pengim: siu1
+    senses:
+      - pos: verb
+        gloss_en: [to repair, to build, to cultivate (oneself)]
+        gloss_zh: [修]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu1-hog8-修復
+    headword: 修復
+    readings:
+      - pengim: siu1 hog8
+    senses:
+      - pos: verb
+        gloss_en: [to repair, to restore]
+        gloss_zh: [修復]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu1-goi2-修改
+    headword: 修改
+    readings:
+      - pengim: siu1 goi2
+    senses:
+      - pos: verb
+        gloss_en: [to revise, to modify, to amend]
+        gloss_zh: [修改]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu1-zian3-修正
+    headword: 修正
+    readings:
+      - pengim: siu1 zian3
+    senses:
+      - pos: verb
+        gloss_en: [to revise, to amend, to correct]
+        gloss_zh: [修正]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu1-li2-修理
+    headword: 修理
+    readings:
+      - pengim: siu1 li2
+    senses:
+      - pos: verb
+        gloss_en: [to repair, to fix, to punish (slang)]
+        gloss_zh: [修理]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu1-siang6-修繕
+    headword: 修繕
+    readings:
+      - pengim: siu1 siang6
+    senses:
+      - pos: verb
+        gloss_en: [to repair (a structure), to renovate]
+        gloss_zh: [修繕]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu1-gian5-修行
+    headword: 修行
+    readings:
+      - pengim: siu1 gian5
+    senses:
+      - pos: verb
+        gloss_en: [to cultivate spiritually, to practice Buddhism/Taoism]
+        gloss_zh: [修行]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu1-bou2-修補
+    headword: 修補
+    readings:
+      - pengim: siu1 bou2
+    senses:
+      - pos: verb
+        gloss_en: [to mend, to patch up, to repair]
+        gloss_zh: [修補]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu1-sêng1-修身
+    headword: 修身
+    readings:
+      - pengim: siu1 sêng1
+    senses:
+      - pos: verb
+        gloss_en: [to cultivate one's moral character, self-cultivation]
+        gloss_zh: [修身]
+        note: Page gives two unrelated senses under the same reading — a Confucian self-cultivation verb sense and a modern fashion adjective sense ('slim-fitting'); the verb sense was chosen as primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu1-dao6-修道
+    headword: 修道
+    readings:
+      - pengim: siu1 dao6
+    senses:
+      - pos: verb
+        gloss_en: [to practice a religious discipline, to cultivate the Way]
+        gloss_zh: [修道]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu1-sêg4-修飾
+    headword: 修飾
+    readings:
+      - pengim: siu1 sêg4
+    senses:
+      - pos: verb
+        gloss_en: [to decorate, to embellish, to modify (grammar)]
+        gloss_zh: [修飾]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu2-俯
+    headword: 俯
+    readings:
+      - pengim: hu2
+    senses:
+      - pos: verb
+        gloss_en: [to bow down, to look down from above]
+        gloss_zh: [俯]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu2-kam2-俯瞰
+    headword: 俯瞰
+    readings:
+      - pengim: hu2 kam2
+    senses:
+      - pos: verb
+        gloss_en: [to overlook, to look down at, to get a bird's-eye view]
+        gloss_zh: [俯瞰]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: do2-tab8-倒塌
+    headword: 倒塌
+    readings:
+      - pengim: do2 tab8
+    senses:
+      - pos: verb
+        gloss_en: [to collapse, to fall down (of a structure)]
+        gloss_zh: [倒塌, 崩塌]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao2-toi3-倒替
+    headword: 倒替
+    readings:
+      - pengim: dao2 toi3
+    senses:
+      - pos: verb
+        gloss_en: [to take turns, to alternate]
+        gloss_zh: [輪流, 倒替]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: do2-bhoi7-倒賣
+    headword: 倒賣
+    readings:
+      - pengim: do2 bhoi7
+    senses:
+      - pos: verb
+        gloss_en: [to resell at a profit, to scalp (goods)]
+        gloss_zh: [倒賣]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: do3-deng2-倒轉
+    headword: 倒轉
+    readings:
+      - pengim: do3 deng2
+    senses:
+      - pos: verb
+        gloss_en: [to turn around; to reverse direction, to return; to come/go back]
+        gloss_zh: [倒轉]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: do2-ziu2-倒酒
+    headword: 倒酒
+    readings:
+      - pengim: do2 ziu2
+    senses:
+      - pos: verb
+        gloss_en: [to pour a drink (wine/alcohol)]
+        gloss_zh: [倒酒]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hêng6-倖
+    headword: 倖
+    readings:
+      - pengim: hêng6
+    senses:
+      - pos: verb
+        gloss_en: [to favor; to dote on]
+        gloss_zh: [倖]
+        note: The Chinese etymology group sharing this Teochew reading covers two related but distinct senses ('to favor/dote on' and 'by fluke/chance'); 'to favor/dote on' was picked as the primary gloss.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao7-候
+    headword: 候
+    readings:
+      - pengim: hao7
+    senses:
+      - pos: verb
+        gloss_en: [to wait; to wait for]
+        gloss_zh: [候]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i2-dong6-倚重
+    headword: 倚重
+    readings:
+      - pengim: i2 dong6
+    senses:
+      - pos: verb
+        gloss_en: [to rely heavily on; to count on]
+        gloss_zh: [倚重]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zioh4-dai3-借貸
+    headword: 借貸
+    readings:
+      - pengim: zioh4 dai3
+    senses:
+      - pos: verb
+        gloss_en: [to borrow or lend money]
+        gloss_zh: [借貸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziêh4-zin5-借錢
+    headword: 借錢
+    readings:
+      - pengim: ziêh4 zin5
+    senses:
+      - pos: verb
+        gloss_en: [to borrow money, to lend money]
+        gloss_zh: [借錢]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zioh4-gam3-借鑒
+    headword: 借鑒
+    readings:
+      - pengim: zioh4 gam3
+    senses:
+      - pos: verb
+        gloss_en: [to use for reference; to learn from]
+        gloss_zh: [借鑒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciang3-倡
+    headword: 倡
+    readings:
+      - pengim: ciang3
+    senses:
+      - pos: verb
+        gloss_en: [to advocate; to promote]
+        gloss_zh: [倡]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciang3-dao6-倡導
+    headword: 倡導
+    readings:
+      - pengim: ciang3 dao6
+    senses:
+      - pos: verb
+        gloss_en: [to advocate; to promote; to initiate]
+        gloss_zh: [倡導]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciang3-ngi2-倡議
+    headword: 倡議
+    readings:
+      - pengim: ciang3 ngi2
+    senses:
+      - pos: verb
+        gloss_en: [to propose; to suggest, proposal; initiative]
+        gloss_zh: [倡議]
+        note: Commonly used as both a verb ('to propose') and a noun ('proposal/initiative', e.g. in news usage); tagged verb here though the noun sense is equally frequent.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêg8-siu2-值守
+    headword: 值守
+    readings:
+      - pengim: dêg8 siu2
+    senses:
+      - pos: verb
+        gloss_en: [to be on duty, to keep watch]
+        gloss_zh: [值守]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dag8-dig4-值得
+    headword: 值得
+    readings:
+      - pengim: dag8 dig4
+    senses:
+      - pos: verb
+        gloss_en: [to be worth, to deserve, worthwhile]
+        gloss_zh: [值得]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêg8-bang1-值班
+    headword: 值班
+    readings:
+      - pengim: dêg8 bang1
+    senses:
+      - pos: verb
+        gloss_en: [to be on duty, to work a shift]
+        gloss_zh: [值班]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gê2-mao6-假冒
+    headword: 假冒
+    readings:
+      - pengim: gê2 mao6
+    senses:
+      - pos: verb
+        gloss_en: [to impersonate, to counterfeit, to pass oneself off as]
+        gloss_zh: [假冒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gê2-bang3-假扮
+    headword: 假扮
+    readings:
+      - pengim: gê2 bang3
+    senses:
+      - pos: verb
+        gloss_en: [to disguise oneself as, to impersonate]
+        gloss_zh: [假扮]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gian2-siêg4-假設
+    headword: 假設
+    readings:
+      - pengim: gian2 siêg4
+    senses:
+      - pos: verb
+        gloss_en: [to suppose, to hypothesize, to assume]
+        gloss_zh: [假設]
+        note: Wiktionary lists this reading as verb, noun, and conjunction (e.g. 'if; supposing') with no separate pronunciation to disambiguate; the verb sense 'to suppose/hypothesize' was chosen as primary.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-se7-做事
+    headword: 做事
+    readings:
+      - pengim: zo3 se7
+    senses:
+      - pos: verb
+        gloss_en: [to do things; to handle matters, to work; to have a job]
+        gloss_zh: [做事]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-nang5-做人
+    headword: 做人
+    readings:
+      - pengim: zo3 nang5
+    senses:
+      - pos: verb
+        gloss_en: [to conduct oneself, to behave properly/with integrity]
+        gloss_zh: [做人]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-puan6-做伴
+    headword: 做伴
+    readings:
+      - pengim: zo3 puan6
+    senses:
+      - pos: verb
+        gloss_en: [to accompany, to keep someone company]
+        gloss_zh: [做伴]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-gê2-做假
+    headword: 做假
+    readings:
+      - pengim: zo3 gê2
+    senses:
+      - pos: verb
+        gloss_en: [to pretend, to feign, to fake]
+        gloss_zh: [做假]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-cug4-做出
+    headword: 做出
+    readings:
+      - pengim: zo3 cug4
+    senses:
+      - pos: verb
+        gloss_en: ["to make (a decision, contribution)", "to carry out (an action, esp. with an outcome)"]
+        gloss_zh: [做出]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-gong1-dêg4-做功德
+    headword: 做功德
+    readings:
+      - pengim: zo3 gong1 dêg4
+    senses:
+      - pos: verb
+        gloss_en: [to perform Buddhist/Taoist rites for the dead]
+        gloss_zh: [做功德]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-mang7-做夢
+    headword: 做夢
+    readings:
+      - pengim: zo3 mang7
+    senses:
+      - pos: verb
+        gloss_en: [to dream, to have a pipe dream (fig.)]
+        gloss_zh: [做夢]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-ho2-做好
+    headword: 做好
+    readings:
+      - pengim: zo3 ho2
+    senses:
+      - pos: verb
+        gloss_en: [to finish; to get ready, to do a good job]
+        gloss_zh: [做好]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-gang1-做工
+    headword: 做工
+    readings:
+      - pengim: zo3 gang1
+    senses:
+      - pos: verb
+        gloss_en: [to do manual work, to work]
+        gloss_zh: [做工]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-zian5-做成
+    headword: 做成
+    readings:
+      - pengim: zo3 zian5
+    senses:
+      - pos: verb
+        gloss_en: [to successfully complete, to finish; to make]
+        gloss_zh: [做成]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-hi3-做戲
+    headword: 做戲
+    readings:
+      - pengim: zo3 hi3
+    senses:
+      - pos: verb
+        gloss_en: [to put on a performance; to playact, to put on an act; to pretend]
+        gloss_zh: [做戲]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-sên1-rig8-做生日
+    headword: 做生日
+    readings:
+      - pengim: zo3 sên1 rig8
+    senses:
+      - pos: verb
+        gloss_en: [to celebrate a birthday, to throw a birthday party]
+        gloss_zh: [做生日]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-sêng1-li2-做生理
+    headword: 做生理
+    readings:
+      - pengim: zo3 sêng1 li2
+    senses:
+      - pos: verb
+        gloss_en: [to do business, to trade]
+        gloss_zh: [做生意]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-zoih4-做節
+    headword: 做節
+    readings:
+      - pengim: zo3 zoih4
+    senses:
+      - pos: verb
+        gloss_en: [to celebrate a festival/holiday]
+        gloss_zh: [過節]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo3-cai3-做菜
+    headword: 做菜
+    readings:
+      - pengim: zo3 cai3
+    senses:
+      - pos: verb
+        gloss_en: [to cook]
+        gloss_zh: [做菜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-停
+    headword: 停
+    readings:
+      - pengim: têng5
+    senses:
+      - pos: verb
+        gloss_en: [to stop, to halt, to park]
+        gloss_zh: [停]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-gang1-停工
+    headword: 停工
+    readings:
+      - pengim: têng5 gang1
+    senses:
+      - pos: verb
+        gloss_en: [to stop work, to shut down]
+        gloss_zh: [停工]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-huang3-停放
+    headword: 停放
+    readings:
+      - pengim: têng5 huang3
+    senses:
+      - pos: verb
+        gloss_en: [to park (a vehicle), to place (an object) down, to anchor]
+        gloss_zh: [停放]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-ngiab8-停業
+    headword: 停業
+    readings:
+      - pengim: têng5 ngiab8
+    senses:
+      - pos: verb
+        gloss_en: [to close (a business), to stop doing business]
+        gloss_zh: [停業]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-hiah4-停歇
+    headword: 停歇
+    readings:
+      - pengim: têng5 hiah4
+    senses:
+      - pos: verb
+        gloss_en: [to stop, to rest, to cease]
+        gloss_zh: [停歇]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-zui2-停水
+    headword: 停水
+    readings:
+      - pengim: têng5 zui2
+    senses:
+      - pos: verb
+        gloss_en: [to have a water outage, to lose water supply]
+        gloss_zh: [停水]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-ti3-停滯
+    headword: 停滯
+    readings:
+      - pengim: têng5 ti3
+    senses:
+      - pos: verb
+        gloss_en: [to stagnate, to be at a standstill]
+        gloss_zh: [停滯]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-suan2-停產
+    headword: 停產
+    readings:
+      - pengim: têng5 suan2
+    senses:
+      - pos: verb
+        gloss_en: [to stop production, to discontinue production]
+        gloss_zh: [停產]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-kuê3-停課
+    headword: 停課
+    readings:
+      - pengim: têng5 kuê3
+    senses:
+      - pos: verb
+        gloss_en: [to suspend classes, to close school]
+        gloss_zh: [停課]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-cia1-停車
+    headword: 停車
+    readings:
+      - pengim: têng5 cia1
+    senses:
+      - pos: verb
+        gloss_en: [to park (a vehicle), to stop a vehicle]
+        gloss_zh: [停車]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-diang6-停電
+    headword: 停電
+    readings:
+      - pengim: têng5 diang6
+    senses:
+      - pos: verb
+        gloss_en: [to have a power outage, to lose power]
+        gloss_zh: [停電]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêg4-huang1-側翻
+    headword: 側翻
+    readings:
+      - pengim: cêg4 huang1
+    senses:
+      - pos: verb
+        gloss_en: [to roll over, to tumble]
+        gloss_zh: [側翻]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng1-偵
+    headword: 偵
+    readings:
+      - pengim: zêng1
+    senses:
+      - pos: verb
+        gloss_en: [to spy, to reconnoiter, detective]
+        gloss_zh: [偵]
+        note: 偵 is a bound morpheme used mainly in compounds like 偵探/偵察; Wiktionary lists both a verb sense ('to spy') and a noun sense ('detective') without clarifying which is primary for standalone use.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng1-cê5-偵查
+    headword: 偵查
+    readings:
+      - pengim: zêng1 cê5
+    senses:
+      - pos: verb
+        gloss_en: [to investigate (a crime), to detect, to scout]
+        gloss_zh: [偵查]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng1-pua3-偵破
+    headword: 偵破
+    readings:
+      - pengim: zêng1 pua3
+    senses:
+      - pos: verb
+        gloss_en: [to solve (a case), to crack (a case)]
+        gloss_zh: [偵破]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng1-poin7-偵辦
+    headword: 偵辦
+    readings:
+      - pengim: zêng1 poin7
+    senses:
+      - pos: verb
+        gloss_en: [to investigate and handle (a case)]
+        gloss_zh: [偵辦]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tao1-偷
+    headword: 偷
+    readings:
+      - pengim: tao1
+    senses:
+      - pos: verb
+        gloss_en: [to steal, to snatch]
+        gloss_zh: [偷]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tao1-pah4-偷拍
+    headword: 偷拍
+    readings:
+      - pengim: tao1 pah4
+    senses:
+      - pos: verb
+        gloss_en: [to secretly photograph, to film covertly]
+        gloss_zh: [偷拍]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tao1-toin2-偷睇
+    headword: 偷睇
+    readings:
+      - pengim: tao1 toin2
+    senses:
+      - pos: verb
+        gloss_en: [to steal a glance, to peek]
+        gloss_zh: [偷看]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngui6-zuang1-偽裝
+    headword: 偽裝
+    readings:
+      - pengim: ngui6 zuang1
+    senses:
+      - pos: verb
+        gloss_en: [to disguise, to pretend, to camouflage]
+        gloss_zh: [偽裝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngui6-zao6-偽造
+    headword: 偽造
+    readings:
+      - pengim: ngui6 zao6
+    senses:
+      - pos: verb
+        gloss_en: [to forge, to falsify, to counterfeit]
+        gloss_zh: [偽造]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang5-傍
+    headword: 傍
+    readings:
+      - pengim: pang5
+    senses:
+      - pos: verb
+        gloss_en: [to be next to, to rely on, to approach]
+        gloss_zh: [靠, 傍]
+        note: The Teochew reading pang5 covers several closely related sub-senses (draw near/be beside, rely on, assist) with no single sense clearly marked as primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi6-備
+    headword: 備
+    readings:
+      - pengim: bi6
+    senses:
+      - pos: verb
+        gloss_en: [to prepare, to provide against]
+        gloss_zh: [準備]
+        note: The character carries several senses under the same reading (verb 'to prepare'/'to possess', adjective 'complete', noun 'equipment'); the core verb sense 'to prepare' was chosen as most representative.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi6-cu2-備取
+    headword: 備取
+    readings:
+      - pengim: bi6 cu2
+    senses:
+      - pos: verb
+        gloss_en: [to be on the waiting list (for school admission)]
+        gloss_zh: [備取]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi6-siu6-備受
+    headword: 備受
+    readings:
+      - pengim: bi6 siu6
+    senses:
+      - pos: verb
+        gloss_en: [to receive a great deal of, to be deeply affected by]
+        gloss_zh: [備受]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi6-uan3-備案
+    headword: 備案
+    readings:
+      - pengim: bi6 uan3
+    senses:
+      - pos: verb
+        gloss_en: [to put on record, to file (with authorities)]
+        gloss_zh: [備案]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cui1-催
+    headword: 催
+    readings:
+      - pengim: cui1
+    senses:
+      - pos: verb
+        gloss_en: [to urge, to press someone, to speed up]
+        gloss_zh: [催促]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cui1-hung1-催婚
+    headword: 催婚
+    readings:
+      - pengim: cui1 hung1
+    senses:
+      - pos: verb
+        gloss_en: [to pressure someone to get married]
+        gloss_zh: [催婚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cui1-siu1-催收
+    headword: 催收
+    readings:
+      - pengim: cui1 siu1
+    senses:
+      - pos: verb
+        gloss_en: [to pursue debt repayment, to collect (a debt)]
+        gloss_zh: [催收]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cui1-sêg8-催熟
+    headword: 催熟
+    readings:
+      - pengim: cui1 sêg8
+    senses:
+      - pos: verb
+        gloss_en: [to accelerate ripening (of fruit)]
+        gloss_zh: [催熟]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuang5-cug4-傳出
+    headword: 傳出
+    readings:
+      - pengim: tuang5 cug4
+    senses:
+      - pos: verb
+        gloss_en: [to spread outward, to disseminate, (news) to get out]
+        gloss_zh: [傳出]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuang5-dao6-傳導
+    headword: 傳導
+    readings:
+      - pengim: tuang5 dao6
+    senses:
+      - pos: verb
+        gloss_en: [to conduct, "to transmit (electricity, heat)"]
+        gloss_zh: [傳導]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuang5-cêng5-傳情
+    headword: 傳情
+    readings:
+      - pengim: tuang5 cêng5
+    senses:
+      - pos: verb
+        gloss_en: [to express love, to convey affection]
+        gloss_zh: [傳情]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuang5-sêng5-傳承
+    headword: 傳承
+    readings:
+      - pengim: tuang5 sêng5
+    senses:
+      - pos: verb
+        gloss_en: [to pass on (traditions), to inherit, to carry on]
+        gloss_zh: [傳承]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuang5-ga3-傳教
+    headword: 傳教
+    readings:
+      - pengim: tuang5 ga3
+    senses:
+      - pos: verb
+        gloss_en: [to proselytize, to preach, to do missionary work]
+        gloss_zh: [傳教]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuêng5-su1-傳輸
+    headword: 傳輸
+    readings:
+      - pengim: tuêng5 su1
+    senses:
+      - pos: verb
+        gloss_en: [to transmit, transmission (of data/energy)]
+        gloss_zh: [傳輸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuang5-do6-傳道
+    headword: 傳道
+    readings:
+      - pengim: tuang5 do6
+    senses:
+      - pos: verb
+        gloss_en: [to preach, to preach the gospel]
+        gloss_zh: [傳道]
+        note: Page lists both a verb sense ('to preach') and a noun sense ('(Protestant) preacher/pastor') under the same reading; verb sense was chosen as primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuang5-dag8-傳達
+    headword: 傳達
+    readings:
+      - pengim: tuang5 dag8
+    senses:
+      - pos: verb
+        gloss_en: [to convey, to pass on, to communicate]
+        gloss_zh: [傳達]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuang5-di5-傳遞
+    headword: 傳遞
+    readings:
+      - pengim: tuang5 di5
+    senses:
+      - pos: verb
+        gloss_en: [to transmit, to pass on, to deliver]
+        gloss_zh: [傳遞]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang1-sia5-傾斜
+    headword: 傾斜
+    readings:
+      - pengim: kuang1 sia5
+    senses:
+      - pos: verb
+        gloss_en: [to tilt, to incline, to slant]
+        gloss_zh: [傾斜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang1-tian1-傾聽
+    headword: 傾聽
+    readings:
+      - pengim: kuang1 tian1
+    senses:
+      - pos: verb
+        gloss_en: [to listen attentively]
+        gloss_zh: [傾聽]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciam3-僭
+    headword: 僭
+    readings:
+      - pengim: ciam3
+    senses:
+      - pos: verb
+        gloss_en: [to usurp, to overstep, to assume without right]
+        gloss_zh: [僭]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gou3-iong5-僱傭
+    headword: 僱傭
+    readings:
+      - pengim: gou3 iong5
+    senses:
+      - pos: verb
+        gloss_en: [to employ, to hire]
+        gloss_zh: [僱傭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giang1-ti5-僵持
+    headword: 僵持
+    readings:
+      - pengim: giang1 ti5
+    senses:
+      - pos: verb
+        gloss_en: [to be deadlocked, to be in a standoff, to be at a stalemate]
+        gloss_zh: [僵持]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

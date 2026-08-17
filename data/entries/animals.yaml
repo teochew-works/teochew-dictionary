@@ -91,3 +91,69 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-07-28'
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: tê7-䖳
+    headword: 䖳
+    readings:
+      - pengim: tê7
+    senses:
+      - pos: noun
+        gloss_en: [jellyfish]
+        gloss_zh: [水母]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: na2-乸
+    headword: 乸
+    readings:
+      - pengim: na2
+    senses:
+      - pos: noun
+        gloss_en: [female (animal), mother (dialectal)]
+        gloss_zh: [母]
+        note: The page's definitions are all labeled Cantonese-specific even though it also lists a matching Teochew Peng'im reading, so it is unclear whether the same senses fully carry over to Teochew usage.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi6-gho5-企鵝
+    headword: 企鵝
+    readings:
+      - pengim: gi6 gho5
+    senses:
+      - pos: noun
+        gloss_en: [penguin]
+        gloss_zh: [企鵝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao7-ziao2-候鳥
+    headword: 候鳥
+    readings:
+      - pengim: hao7 ziao2
+    senses:
+      - pos: noun
+        gloss_en: [migratory bird]
+        gloss_zh: [候鳥]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nuan3-僆
+    headword: 僆
+    readings:
+      - pengim: nuan3
+    senses:
+      - pos: noun
+        gloss_en: [newly hatched chick, chick]
+        gloss_zh: [僆]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
