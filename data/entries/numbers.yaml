@@ -1089,3 +1089,129 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: si3-zab8-四十
+    headword: 四十
+    readings:
+      - pengim: si3 zab8
+    senses:
+      - pos: numeral
+        gloss_en: [forty, "40"]
+        gloss_zh: [四十]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si3-zab8-san1-四十三
+    headword: 四十三
+    readings:
+      - pengim: si3 zab8 san1
+    senses:
+      - pos: numeral
+        gloss_en: [forty-three, "43"]
+        gloss_zh: [四十三]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si3-zab8-gao2-四十九
+    headword: 四十九
+    readings:
+      - pengim: si3 zab8 gao2
+    senses:
+      - pos: numeral
+        gloss_en: [forty-nine, "49"]
+        gloss_zh: [四十九]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si3-zab8-ri6-四十二
+    headword: 四十二
+    readings:
+      - pengim: si3 zab8 ri6
+    senses:
+      - pos: numeral
+        gloss_en: [forty-two, "42"]
+        gloss_zh: [四十二]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si3-zab8-ngou6-四十五
+    headword: 四十五
+    readings:
+      - pengim: si3 zab8 ngou6
+    senses:
+      - pos: numeral
+        gloss_en: [forty-five, "45"]
+        gloss_zh: [四十五]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si3-zab8-boih4-四十八
+    headword: 四十八
+    readings:
+      - pengim: si3 zab8 boih4
+    senses:
+      - pos: numeral
+        gloss_en: [forty-eight, "48"]
+        gloss_zh: [四十八]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si3-zab8-lag8-四十六
+    headword: 四十六
+    readings:
+      - pengim: si3 zab8 lag8
+    senses:
+      - pos: numeral
+        gloss_en: [forty-six, "46"]
+        gloss_zh: [四十六]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si3-zab8-si3-四十四
+    headword: 四十四
+    readings:
+      - pengim: si3 zab8 si3
+    senses:
+      - pos: numeral
+        gloss_en: [forty-four, "44"]
+        gloss_zh: [四十四]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-siao3-基數
+    headword: 基數
+    readings:
+      - pengim: gi1 siao3
+    senses:
+      - pos: noun
+        gloss_en: [cardinal number, base number]
+        gloss_zh: [基數]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rim6-壬
+    headword: 壬
+    readings:
+      - pengim: rim6
+    senses:
+      - pos: noun
+        gloss_en: [ninth heavenly stem]
+        gloss_zh: [壬]
+        note: The page gives several unrelated senses (ninth heavenly stem, classical adjective 'crafty', surname, internet slang for 人) under the same general reading with no dialect-specific labeling, so the intended sense is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

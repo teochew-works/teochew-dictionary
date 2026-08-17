@@ -432,3 +432,215 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: zi2-gai7-只個
+    headword: 只個
+    readings:
+      - pengim: zi2 gai7
+    senses:
+      - pos: pronoun
+        gloss_en: [this, this one]
+        gloss_zh: [只個, 這個]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-coh4-只撮
+    headword: 只撮
+    readings:
+      - pengim: zi2 coh4
+    senses:
+      - pos: pronoun
+        gloss_en: [these]
+        gloss_zh: [只撮, 這些]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-tao5-只頭
+    headword: 只頭
+    readings:
+      - pengim: zi2 tao5
+    senses:
+      - pos: pronoun
+        gloss_en: [this side, here, in here]
+        gloss_zh: [只頭, 這邊]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gag4-各
+    headword: 各
+    readings:
+      - pengim: gag4
+    senses:
+      - pos: pronoun
+        gloss_en: [each, every]
+        gloss_zh: [各, 每]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gag4-ui7-各位
+    headword: 各位
+    readings:
+      - pengim: gag4 ui7
+    senses:
+      - pos: pronoun
+        gloss_en: [everyone, ladies and gentlemen (polite)]
+        gloss_zh: [各位, 大家]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gag4-zêng2-各種
+    headword: 各種
+    readings:
+      - pengim: gag4 zêng2
+    senses:
+      - pos: pronoun
+        gloss_en: [various, all kinds of, every kind of]
+        gloss_zh: [各種]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gag4-lui7-各類
+    headword: 各類
+    readings:
+      - pengim: gag4 lui7
+    senses:
+      - pos: pronoun
+        gloss_en: [all sorts of, all kinds of, various types of]
+        gloss_zh: [各類]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hio2-go3-向塊
+    headword: 向塊
+    readings:
+      - pengim: hio2 go3
+    senses:
+      - pos: pronoun
+        gloss_en: [there]
+        gloss_zh: [向塊]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: u5-吾
+    headword: 吾
+    readings:
+      - pengim: u5
+    senses:
+      - pos: pronoun
+        gloss_en: [I (literary), my (literary)]
+        gloss_zh: [吾, 我]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ham5-nang5-咸人
+    headword: 咸人
+    readings:
+      - pengim: ham5 nang5
+    senses:
+      - pos: pronoun
+        gloss_en: [everyone, all people]
+        gloss_zh: [咸儂]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ham5-nang5-咸儂
+    headword: 咸儂
+    readings:
+      - pengim: ham5 nang5
+    senses:
+      - pos: pronoun
+        gloss_en: [everyone, all people]
+        gloss_zh: [咸儂]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ai1-gia1-哀家
+    headword: 哀家
+    readings:
+      - pengim: ai1 gia1
+    senses:
+      - pos: pronoun
+        gloss_en: [I; this widow (self-referential pronoun used by a widowed empress dowager)]
+        gloss_zh: [哀家]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: na2-li2-哪裡
+    headword: 哪裡
+    readings:
+      - pengim: na2 li2
+    senses:
+      - pos: pronoun
+        gloss_en: [where, wherever, anywhere]
+        gloss_zh: [哪裡]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sa6-啥
+    headword: 啥
+    readings:
+      - pengim: sa6
+    senses:
+      - pos: pronoun
+        gloss_en: [what]
+        gloss_zh: [啥]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ma2-嗎
+    headword: 嗎
+    readings:
+      - pengim: ma2
+    senses:
+      - pos: pronoun
+        gloss_en: [what]
+        gloss_zh: [乜, 乜個]
+        note: 嗎 has multiple unrelated etymologies on the page (Mandarin question particle, loanword syllable in 嗎啡, Hainanese sense, colloquial 'what'); the 'what' sense was chosen because it is the one the page explicitly ties to the ma2 Teochew reading.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-go3-地塊
+    headword: 地塊
+    readings:
+      - pengim: di7 go3
+    senses:
+      - pos: pronoun
+        gloss_en: [where]
+        gloss_zh: [地塊, 底塊]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: do1-zio2-多少
+    headword: 多少
+    readings:
+      - pengim: do1 zio2
+    senses:
+      - pos: pronoun
+        gloss_en: [how much; how many, amount]
+        gloss_zh: [多少]
+        note: Wiktionary lists 多少 across adjective/noun/adverb readings (interrogative quantity, amount, and 'somewhat'); pronoun was chosen for the core interrogative-quantity sense but the part-of-speech classification is not clear-cut.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

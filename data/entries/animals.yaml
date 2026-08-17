@@ -233,3 +233,155 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: gu7-gu1-咕鴣
+    headword: 咕鴣
+    readings:
+      - pengim: gu7 gu1
+    senses:
+      - pos: noun
+        gloss_en: [turtledove]
+        gloss_zh: [咕鴣, 斑鳩]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ha1-ba1-gao2-哈巴狗
+    headword: 哈巴狗
+    readings:
+      - pengim: ha1 ba1 gao2
+    senses:
+      - pos: noun
+        gloss_en: [Pekingese dog, pug, "(figurative) toady, sycophant"]
+        gloss_zh: [哈巴狗]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu5-ghu5-囚牛
+    headword: 囚牛
+    readings:
+      - pengim: ciu5 ghu5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["mythical dragon-cow hybrid (one of the nine sons of the dragon), fond of music"]
+        gloss_zh: [囚牛]
+        note: Specialized mythological creature name with very low real-world frequency; classified as proper-noun since it names one specific figure from the 'nine sons of the dragon' legend, though a common-noun reading is also plausible.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si5-塒
+    headword: 塒
+    readings:
+      - pengim: si5
+    senses:
+      - pos: noun
+        gloss_en: [roost (esp. one made by piercing a wall), chicken roost]
+        gloss_zh: [塒]
+        note: Literary term for a fowl roost; classified under animals.yaml though it could also be read as a built-environment noun (a wall structure), since its core meaning is tied to keeping poultry.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou5-ung2-塗蚓
+    headword: 塗蚓
+    readings:
+      - pengim: tou5 ung2
+    senses:
+      - pos: noun
+        gloss_en: [earthworm]
+        gloss_zh: [塗蚓]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou5-liu1-塗鰡
+    headword: 塗鰡
+    readings:
+      - pengim: tou5 liu1
+    senses:
+      - pos: noun
+        gloss_en: [loach]
+        gloss_zh: [塗鰡, 泥鰍]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhag8-dao2-墨斗
+    headword: 墨斗
+    readings:
+      - pengim: bhag8 dao2
+    senses:
+      - pos: noun
+        gloss_en: [cuttlefish]
+        gloss_zh: [墨斗, 花枝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: do1-bo2-he5-多寶魚
+    headword: 多寶魚
+    readings:
+      - pengim: do1 bo2 he5
+    senses:
+      - pos: noun
+        gloss_en: [turbot]
+        gloss_zh: [多寶魚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-him5-ngiao1-大熊貓
+    headword: 大熊貓
+    readings:
+      - pengim: dua7 him5 ngiao1
+    senses:
+      - pos: noun
+        gloss_en: [giant panda]
+        gloss_zh: [大熊貓, 熊貓]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-bêh8-sua1-大白鯊
+    headword: 大白鯊
+    readings:
+      - pengim: dua7 bêh8 sua1
+    senses:
+      - pos: noun
+        gloss_en: [great white shark]
+        gloss_zh: [大白鯊]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-tao5-guai1-大頭蛙
+    headword: 大頭蛙
+    readings:
+      - pengim: dua7 tao5 guai1
+    senses:
+      - pos: noun
+        gloss_en: [tadpole]
+        gloss_zh: [大頭蛙, 蝌蚪]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-tao5-song5-大頭鱅
+    headword: 大頭鱅
+    readings:
+      - pengim: dua7 tao5 song5
+    senses:
+      - pos: noun
+        gloss_en: [bighead carp]
+        gloss_zh: [鱅魚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
