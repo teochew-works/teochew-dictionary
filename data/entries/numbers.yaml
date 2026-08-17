@@ -1243,3 +1243,31 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: bhou7-戊
+    headword: 戊
+    readings:
+      - pengim: bhou7
+    senses:
+      - pos: noun
+        gloss_en: [fifth heavenly stem]
+        gloss_zh: [戊]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sug4-戌
+    headword: 戌
+    readings:
+      - pengim: sug4
+    senses:
+      - pos: noun
+        gloss_en: [eleventh earthly branch, Dog (of the Chinese zodiac)]
+        gloss_zh: [戌]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

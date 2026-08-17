@@ -533,3 +533,67 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: am1-lo1-庵螺
+    headword: 庵螺
+    readings:
+      - pengim: am1 lo1
+    senses:
+      - pos: noun
+        gloss_en: [snail]
+        gloss_zh: [庵螺]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di6-彘
+    headword: 彘
+    readings:
+      - pengim: di6
+    senses:
+      - pos: noun
+        gloss_en: [pig, swine]
+        gloss_zh: [豬]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kia6-gho5-徛鵝
+    headword: 徛鵝
+    readings:
+      - pengim: kia6 gho5
+    senses:
+      - pos: noun
+        gloss_en: [penguin]
+        gloss_zh: [企鵝]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiong2-lêng5-恐龍
+    headword: 恐龍
+    readings:
+      - pengim: kiong2 lêng5
+    senses:
+      - pos: noun
+        gloss_en: [dinosaur]
+        gloss_zh: [恐龍]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi1-iam5-悲蟬
+    headword: 悲蟬
+    readings:
+      - pengim: bi1 iam5
+    senses:
+      - pos: noun
+        gloss_en: [cicada]
+        gloss_zh: [蟬]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

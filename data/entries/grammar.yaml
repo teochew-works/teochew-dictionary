@@ -1139,3 +1139,175 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: hug4-弗
+    headword: 弗
+    readings:
+      - pengim: hug4
+    senses:
+      - pos: adverb
+        gloss_en: [not (classical negation)]
+        gloss_zh: [弗, 勿]
+        note: Classical negation particle; the page gives Teochew hug4 as an alternative form of 勿, but it is unclear whether this reflects genuine living colloquial usage or only a literary/archaic reading.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang2-往
+    headword: 往
+    readings:
+      - pengim: uang2
+    senses:
+      - pos: preposition
+        gloss_en: [towards, to, to go]
+        gloss_zh: [往]
+        note: The character functions as both a verb ('to go') and a preposition ('towards, to') with no reading distinction between the senses on the page, so the single best POS is uncertain.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ao6-biah4-後壁
+    headword: 後壁
+    readings:
+      - pengim: ao6 biah4
+    senses:
+      - pos: noun
+        gloss_en: [the back; the rear]
+        gloss_zh: [後面, 後壁]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ao6-zia2-後者
+    headword: 後者
+    readings:
+      - pengim: ao6 zia2
+    senses:
+      - pos: noun
+        gloss_en: [the latter]
+        gloss_zh: [後者]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cong5-從
+    headword: 從
+    readings:
+      - pengim: cong5
+    senses:
+      - pos: preposition
+        gloss_en: [from, since, via]
+        gloss_zh: [從]
+        note: 從 carries many closely related senses under the same reading (to follow, to comply, from/since, via, never-with-negation); the prepositional 'from/since' sense was chosen as most representative of common usage.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cong5-re5-從而
+    headword: 從而
+    readings:
+      - pengim: cong5 re5
+    senses:
+      - pos: conjunction
+        gloss_en: [thus, thereby, as a result]
+        gloss_zh: [從而]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rui5-惟
+    headword: 惟
+    readings:
+      - pengim: rui5
+    senses:
+      - pos: adverb
+        gloss_en: [only, but, however]
+        gloss_zh: [惟, 只]
+        note: The page lists 惟 with several distinct senses/parts of speech (preposition 'but', adverb 'only', verb 'to think', an obsolete particle, and a surname) under the same reading, making a single POS/gloss choice uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hog8-或
+    headword: 或
+    readings:
+      - pengim: hog8
+    senses:
+      - pos: conjunction
+        gloss_en: [or, either...or]
+        gloss_zh: [或]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hog8-zia2-或者
+    headword: 或者
+    readings:
+      - pengim: hog8 zia2
+    senses:
+      - pos: conjunction
+        gloss_en: [or, either...or, perhaps]
+        gloss_zh: [或者]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: so2-所
+    headword: 所
+    readings:
+      - pengim: so2
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for institutions/buildings, place (in compounds)]
+        gloss_zh: [所]
+        note: 所 serves multiple grammatical functions (place noun, classifier, and a very common nominalizing prefix as in 所以/所謂); classifier was picked as the best single-word pos but doesn't capture its main function as a bound prefix.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: so2-in2-所以
+    headword: 所以
+    readings:
+      - pengim: so2 in2
+    senses:
+      - pos: conjunction
+        gloss_en: [therefore, so, consequently]
+        gloss_zh: [所以]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba2-ziang1-把將
+    headword: 把將
+    readings:
+      - pengim: ba2 ziang1
+    senses:
+      - pos: preposition
+        gloss_en: [object-fronting marker (formal), disposal preposition]
+        gloss_zh: [把將]
+        note: Wiktionary describes this only briefly as a formal/literary Teochew object-fronting preposition (parallel to Mandarin 把); its precise colloquial usage and register are hard to fully verify from the page.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a1-si6-抑是
+    headword: 抑是
+    readings:
+      - pengim: a1 si6
+    senses:
+      - pos: conjunction
+        gloss_en: [or]
+        gloss_zh: [抑是, 或]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

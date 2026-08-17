@@ -1239,3 +1239,257 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: ao6-dao2-後斗
+    headword: 後斗
+    readings:
+      - pengim: ao6 dao2
+    senses:
+      - pos: noun
+        gloss_en: [back of the head, hindbrain]
+        gloss_zh: [後腦勺]
+        note: "Page gives two distinct Teochew sub-dialect senses under the same generic reading (Jieyang Teochew: hindbrain vs. Shantou Teochew: back of the head), with no way to tell which the given ao6 dao2 reading specifically targets."
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ao6-dao2-zin1-後斗支
+    headword: 後斗支
+    readings:
+      - pengim: ao6 dao2 zin1
+    senses:
+      - pos: noun
+        gloss_en: [back of the head]
+        gloss_zh: [後腦勺, 後斗支]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sim1-lug8-心率
+    headword: 心率
+    readings:
+      - pengim: sim1 lug8
+    senses:
+      - pos: noun
+        gloss_en: [heart rate]
+        gloss_zh: [心率]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sim1-zang6-心臟
+    headword: 心臟
+    readings:
+      - pengim: sim1 zang6
+    senses:
+      - pos: noun
+        gloss_en: [heart (organ)]
+        gloss_zh: [心臟]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu2-gong1-手公
+    headword: 手公
+    readings:
+      - pengim: ciu2 gong1
+    senses:
+      - pos: noun
+        gloss_en: [thumb]
+        gloss_zh: [拇指]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu2-doi2-手底
+    headword: 手底
+    readings:
+      - pengim: ciu2 doi2
+    senses:
+      - pos: noun
+        gloss_en: [palm of the hand]
+        gloss_zh: [手底]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu2-ao6-teng6-手後捅
+    headword: 手後捅
+    readings:
+      - pengim: ciu2 ao6 teng6
+    senses:
+      - pos: noun
+        gloss_en: [elbow]
+        gloss_zh: [手後捅]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu2-zoin2-tao5-手指頭
+    headword: 手指頭
+    readings:
+      - pengim: ciu2 zoin2 tao5
+    senses:
+      - pos: noun
+        gloss_en: [finger, thumb]
+        gloss_zh: [手指頭]
+        note: Wiktionary lists a general 'finger' sense plus a separate Cantonese/Hakka/Teochew-specific 'thumb' sense, but does not indicate which one the given Teochew reading corresponds to.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu2-zion2-手掌
+    headword: 手掌
+    readings:
+      - pengim: ciu2 zion2
+    senses:
+      - pos: noun
+        gloss_en: [palm (of the hand)]
+        gloss_zh: [手掌]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu2-mag8-手目
+    headword: 手目
+    readings:
+      - pengim: ciu2 mag8
+    senses:
+      - pos: noun
+        gloss_en: [wrist, protrusion at the wrist]
+        gloss_zh: [手目]
+        note: The page's Teochew-tagged senses ('wrist' vs 'protrusion at the wrist') are not disambiguated by pronunciation, so it is unclear which precisely matches this reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu2-gou2-手股
+    headword: 手股
+    readings:
+      - pengim: ciu2 gou2
+    senses:
+      - pos: noun
+        gloss_en: [upper arm]
+        gloss_zh: [手股]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu2-uang2-手腕
+    headword: 手腕
+    readings:
+      - pengim: ciu2 uang2
+    senses:
+      - pos: noun
+        gloss_en: [wrist, skill; finesse]
+        gloss_zh: [手腕]
+        note: The page lists wrist, trickery, and skill/finesse senses under one pronunciation, with a Hokkien-specific note tying the sound to 'skill' rather than the body part, so it is unclear which sense the Teochew reading foregrounds.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu2-bi3-手臂
+    headword: 手臂
+    readings:
+      - pengim: ciu2 bi3
+    senses:
+      - pos: noun
+        gloss_en: [arm, helper, assistant]
+        gloss_zh: [手臂]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di2-kang3-lag8-抵抗力
+    headword: 抵抗力
+    readings:
+      - pengim: di2 kang3 lag8
+    senses:
+      - pos: noun
+        gloss_en: [resistance (to disease), immunity]
+        gloss_zh: [抵抗力]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kung5-拳
+    headword: 拳
+    readings:
+      - pengim: kung5
+    senses:
+      - pos: noun
+        gloss_en: [fist, boxing]
+        gloss_zh: [拳]
+        note: Multiple senses (fist, Chinese boxing, classifier for punches, surname) share this reading, and it overlaps with 拳頭/拳頭母 which already cover 'fist' specifically, so the primary Teochew sense is uncertain.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kung5-tao5-拳頭
+    headword: 拳頭
+    readings:
+      - pengim: kung5 tao5
+    senses:
+      - pos: noun
+        gloss_en: [fist]
+        gloss_zh: [拳頭]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kung5-tao5-bho2-拳頭母
+    headword: 拳頭母
+    readings:
+      - pengim: kung5 tao5 bho2
+    senses:
+      - pos: noun
+        gloss_en: [fist]
+        gloss_zh: [拳頭母, 拳頭]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zain2-bhou5-指模
+    headword: 指模
+    readings:
+      - pengim: zain2 bhou5
+    senses:
+      - pos: noun
+        gloss_en: [fingerprint]
+        gloss_zh: [指模]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion2-bhung5-指紋
+    headword: 指紋
+    readings:
+      - pengim: zion2 bhung5
+    senses:
+      - pos: noun
+        gloss_en: [fingerprint]
+        gloss_zh: [指紋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zoi2-pang7-指縫
+    headword: 指縫
+    readings:
+      - pengim: zoi2 pang7
+    senses:
+      - pos: noun
+        gloss_en: [space between the fingers]
+        gloss_zh: [指縫]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
