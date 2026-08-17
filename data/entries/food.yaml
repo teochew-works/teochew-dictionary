@@ -1074,3 +1074,31 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: kuai3-ziah8-min7-快食麵
+    headword: 快食麵
+    readings:
+      - pengim: kuai3 ziah8 min7
+    senses:
+      - pos: noun
+        gloss_en: [instant noodles]
+        gloss_zh: [快食麵, 方便麵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mang7-huê2-慢火
+    headword: 慢火
+    readings:
+      - pengim: mang7 huê2
+    senses:
+      - pos: noun
+        gloss_en: [low heat; slow fire, weak fire]
+        gloss_zh: [慢火, 小火]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

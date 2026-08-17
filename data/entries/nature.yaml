@@ -2700,3 +2700,119 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: hui3-zui2-廢水
+    headword: 廢水
+    readings:
+      - pengim: hui3 zui2
+    senses:
+      - pos: noun
+        gloss_en: [wastewater, sewage]
+        gloss_zh: [廢水]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing2-lag8-引力
+    headword: 引力
+    readings:
+      - pengim: ing2 lag8
+    senses:
+      - pos: noun
+        gloss_en: [gravity, gravitation]
+        gloss_zh: [引力]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui6-彗
+    headword: 彗
+    readings:
+      - pengim: hui6
+    senses:
+      - pos: noun
+        gloss_en: [broom, comet]
+        gloss_zh: [彗, 彗星]
+        note: Character carries two distinct literary/obsolete senses (broom; comet) plus a rarer verb sense (to sweep); rarely used standalone in modern Teochew so the primary sense for this reading is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui6-cên1-彗星
+    headword: 彗星
+    readings:
+      - pengim: hui6 cên1
+    senses:
+      - pos: noun
+        gloss_en: [comet]
+        gloss_zh: [彗星]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cai2-hong5-彩虹
+    headword: 彩虹
+    readings:
+      - pengim: cai2 hong5
+    senses:
+      - pos: noun
+        gloss_en: [rainbow]
+        gloss_zh: [彩虹]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cai2-hung5-彩雲
+    headword: 彩雲
+    readings:
+      - pengim: cai2 hung5
+    senses:
+      - pos: noun
+        gloss_en: [colorful clouds, vibrant clouds]
+        gloss_zh: [彩雲]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mui5-sên1-muêh8-微生物
+    headword: 微生物
+    readings:
+      - pengim: mui5 sên1 muêh8
+    senses:
+      - pos: noun
+        gloss_en: [microorganism, microbe]
+        gloss_zh: [微生物]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang3-sen3-慣性
+    headword: 慣性
+    readings:
+      - pengim: guang3 sen3
+    senses:
+      - pos: noun
+        gloss_en: [inertia, momentum]
+        gloss_zh: [慣性]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zih4-sia7-折射
+    headword: 折射
+    readings:
+      - pengim: zih4 sia7
+    senses:
+      - pos: noun
+        gloss_en: [refraction, to reflect (figuratively)]
+        gloss_zh: [折射]
+        note: "Wiktionary lists this mainly as a noun (physics: refraction) but also gives a figurative verbal sense ('to indicate; to reflect'); noun sense chosen as primary."
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

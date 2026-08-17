@@ -3985,3 +3985,675 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: doi2-zang5-底層
+    headword: 底層
+    readings:
+      - pengim: doi2 zang5
+    senses:
+      - pos: noun
+        gloss_en: [ground floor, bottom (of a pile), lowest rung (of society)]
+        gloss_zh: [底層]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diam3-店
+    headword: 店
+    readings:
+      - pengim: diam3
+    senses:
+      - pos: noun
+        gloss_en: [shop; store, inn]
+        gloss_zh: [店]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu2-府
+    headword: 府
+    readings:
+      - pengim: hu2
+    senses:
+      - pos: noun
+        gloss_en: [prefecture; prefectural office, mansion; residence]
+        gloss_zh: [府]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu2-sian5-府城
+    headword: 府城
+    readings:
+      - pengim: hu2 sian5
+    senses:
+      - pos: noun
+        gloss_en: [prefectural seat; prefectural capital]
+        gloss_zh: [府城]
+        note: The entry mixes a common-noun sense ('prefectural seat') with proper-noun senses (e.g. an alternate name for Tainan and several unrelated place names), so it is unclear which reading is intended here.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang5-庠
+    headword: 庠
+    readings:
+      - pengim: siang5
+    senses:
+      - pos: noun
+        gloss_en: [(archaic) country school]
+        gloss_zh: [庠]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kou3-庫
+    headword: 庫
+    readings:
+      - pengim: kou3
+    senses:
+      - pos: noun
+        gloss_en: [warehouse; storehouse]
+        gloss_zh: [庫]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-in7-庭院
+    headword: 庭院
+    readings:
+      - pengim: têng5 in7
+    senses:
+      - pos: noun
+        gloss_en: [courtyard, house with a courtyard]
+        gloss_zh: [庭院]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: am1-庵
+    headword: 庵
+    readings:
+      - pengim: am1
+    senses:
+      - pos: noun
+        gloss_en: [nunnery; small Buddhist temple, hut]
+        gloss_zh: [庵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: am1-bou1-庵埠
+    headword: 庵埠
+    readings:
+      - pengim: am1 bou1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Anbu (a town in Chao'an district, Chaozhou)"]
+        gloss_zh: [庵埠]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cê3-廁
+    headword: 廁
+    readings:
+      - pengim: cê3
+    senses:
+      - pos: noun
+        gloss_en: [toilet, lavatory]
+        gloss_zh: [廁]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cê3-so2-廁所
+    headword: 廁所
+    readings:
+      - pengim: cê3 so2
+    senses:
+      - pos: noun
+        gloss_en: [toilet, restroom; bathroom]
+        gloss_zh: [廁所]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ê6-mung5-廈門
+    headword: 廈門
+    readings:
+      - pengim: ê6 mung5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Xiamen (city in Fujian, China)"]
+        gloss_zh: [廈門]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lang5-廊
+    headword: 廊
+    readings:
+      - pengim: lang5
+    senses:
+      - pos: noun
+        gloss_en: [corridor, veranda; porch]
+        gloss_zh: [廊]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngao5-廒
+    headword: 廒
+    readings:
+      - pengim: ngao5
+    senses:
+      - pos: noun
+        gloss_en: [granary, storehouse]
+        gloss_zh: [廒]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liao7-lai6-廖內
+    headword: 廖內
+    readings:
+      - pengim: liao7 lai6
+    senses:
+      - pos: proper-noun
+        gloss_en: [Riau (province of Indonesia)]
+        gloss_zh: [廖內]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou5-廚
+    headword: 廚
+    readings:
+      - pengim: dou5
+    senses:
+      - pos: noun
+        gloss_en: [kitchen, cook; chef]
+        gloss_zh: [廚]
+        note: The character covers distinct senses (kitchen; cook/chef; archaic form of 櫥 'cupboard') under the same reading, so the primary standalone colloquial Teochew sense is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou5-bang5-廚房
+    headword: 廚房
+    readings:
+      - pengim: dou5 bang5
+    senses:
+      - pos: noun
+        gloss_en: [kitchen]
+        gloss_zh: [廚房]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciang2-廠
+    headword: 廠
+    readings:
+      - pengim: ciang2
+    senses:
+      - pos: noun
+        gloss_en: [factory, plant, workshop]
+        gloss_zh: [廠]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciang2-bang5-廠房
+    headword: 廠房
+    readings:
+      - pengim: ciang2 bang5
+    senses:
+      - pos: noun
+        gloss_en: [factory building, workshop]
+        gloss_zh: [廠房]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geng2-ziu1-廣州
+    headword: 廣州
+    readings:
+      - pengim: geng2 ziu1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Guangzhou]
+        gloss_zh: [廣州]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geng2-ziu1-uê7-廣州話
+    headword: 廣州話
+    readings:
+      - pengim: geng2 ziu1 uê7
+    senses:
+      - pos: noun
+        gloss_en: [Guangzhou dialect, Guangzhou Cantonese]
+        gloss_zh: [廣州話]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang2-hu2-廣府
+    headword: 廣府
+    readings:
+      - pengim: guang2 hu2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Guangfu region, Cantonese-speaking region]
+        gloss_zh: [廣府]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang2-hu2-uê7-廣府話
+    headword: 廣府話
+    readings:
+      - pengim: guang2 hu2 uê7
+    senses:
+      - pos: noun
+        gloss_en: [Cantonese language]
+        gloss_zh: [廣府話]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geng2-dang1-廣東
+    headword: 廣東
+    readings:
+      - pengim: geng2 dang1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Guangdong]
+        gloss_zh: [廣東]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geng2-dang1-uê7-廣東話
+    headword: 廣東話
+    readings:
+      - pengim: geng2 dang1 uê7
+    senses:
+      - pos: noun
+        gloss_en: [Cantonese, Cantonese language]
+        gloss_zh: [廣東話]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geng2-sai1-廣西
+    headword: 廣西
+    readings:
+      - pengim: geng2 sai1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Guangxi (province of China)]
+        gloss_zh: [廣西]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tian1-廳
+    headword: 廳
+    readings:
+      - pengim: tian1
+    senses:
+      - pos: noun
+        gloss_en: [hall, large room, government department]
+        gloss_zh: [廳]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-廷
+    headword: 廷
+    readings:
+      - pengim: têng5
+    senses:
+      - pos: noun
+        gloss_en: [court, government office, palace courtyard]
+        gloss_zh: [廷, 庭]
+        note: 廷 is mostly a bound morpheme appearing only in compounds like 朝廷/清廷 rather than used standalone, so its standalone frequency and category fit are uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giang6-cai5-建材
+    headword: 建材
+    readings:
+      - pengim: giang6 cai5
+    senses:
+      - pos: noun
+        gloss_en: [building material]
+        gloss_zh: [建材]
+        note: Building material could arguably fit either the built-environment sense (places.yaml) or the materials sense of nature.yaml; placed under places.yaml as the more specific construction context.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pên5-ziu1-彭州
+    headword: 彭州
+    readings:
+      - pengim: pên5 ziu1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Pengzhou (county-level city of Chengdu, Sichuan)"]
+        gloss_zh: [彭州]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ian2-in7-影院
+    headword: 影院
+    readings:
+      - pengim: ian2 in7
+    senses:
+      - pos: noun
+        gloss_en: [cinema, movie theater]
+        gloss_zh: [影院]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ao6-gang2-後港
+    headword: 後港
+    readings:
+      - pengim: ao6 gang2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Hougang (place in Singapore)]
+        gloss_zh: [後港]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ao6-tai5-後臺
+    headword: 後臺
+    readings:
+      - pengim: ao6 tai5
+    senses:
+      - pos: noun
+        gloss_en: [backstage, behind-the-scenes backer]
+        gloss_zh: [後臺]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gên3-徑
+    headword: 徑
+    readings:
+      - pengim: gên3
+    senses:
+      - pos: noun
+        gloss_en: [path, road, diameter]
+        gloss_zh: [徑, 路徑]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêg4-gog4-德國
+    headword: 德國
+    readings:
+      - pengim: dêg4 gog4
+    senses:
+      - pos: proper-noun
+        gloss_en: [Germany]
+        gloss_zh: [德國]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuai3-cang1-diam3-快餐店
+    headword: 快餐店
+    readings:
+      - pengim: kuai3 cang1 diam3
+    senses:
+      - pos: noun
+        gloss_en: [fast food restaurant]
+        gloss_zh: [快餐店]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui6-lai5-惠來
+    headword: 惠來
+    readings:
+      - pengim: hui6 lai5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Huilai (county in Jieyang, Guangdong)"]
+        gloss_zh: [惠來]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui6-ziu1-惠州
+    headword: 惠州
+    readings:
+      - pengim: hui6 ziu1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Huizhou (prefecture-level city in Guangdong)]
+        gloss_zh: [惠州]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i3-dai6-li6-意大利
+    headword: 意大利
+    readings:
+      - pengim: i3 dai6 li6
+    senses:
+      - pos: proper-noun
+        gloss_en: [Italy]
+        gloss_zh: [意大利]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ain3-re2-lang5-愛爾蘭
+    headword: 愛爾蘭
+    readings:
+      - pengim: ain3 re2 lang5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Ireland]
+        gloss_zh: [愛爾蘭]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sian5-zoin5-成田
+    headword: 成田
+    readings:
+      - pengim: sian5 zoin5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Narita (city in Chiba Prefecture, Japan)"]
+        gloss_zh: [成田]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng5-dou1-成都
+    headword: 成都
+    readings:
+      - pengim: sêng5 dou1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Chengdu (city in Sichuan, China)"]
+        gloss_zh: [成都]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziang3-hao5-戰壕
+    headword: 戰壕
+    readings:
+      - pengim: ziang3 hao5
+    senses:
+      - pos: noun
+        gloss_en: [trench, dugout]
+        gloss_zh: [戰壕]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hi3-bên5-戲棚
+    headword: 戲棚
+    readings:
+      - pengim: hi3 bên5
+    senses:
+      - pos: noun
+        gloss_en: [open-air stage (for opera)]
+        gloss_zh: [戲棚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hi3-in7-戲院
+    headword: 戲院
+    readings:
+      - pengim: hi3 in7
+    senses:
+      - pos: noun
+        gloss_en: [theater (playhouse), cinema; movie theater]
+        gloss_zh: [戲院]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang5-房
+    headword: 房
+    readings:
+      - pengim: bang5
+    senses:
+      - pos: noun
+        gloss_en: [room, house]
+        gloss_zh: [房]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang5-di7-suan2-房地產
+    headword: 房地產
+    readings:
+      - pengim: bang5 di7 suan2
+    senses:
+      - pos: noun
+        gloss_en: [real estate, realty]
+        gloss_zh: [房地產]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang5-suan2-房產
+    headword: 房產
+    readings:
+      - pengim: bang5 suan2
+    senses:
+      - pos: noun
+        gloss_en: [property, real estate, house]
+        gloss_zh: [房產]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui1-扉
+    headword: 扉
+    readings:
+      - pengim: hui1
+    senses:
+      - pos: noun
+        gloss_en: [door panel, door leaf]
+        gloss_zh: [扉]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: toh4-ri5-so2-托兒所
+    headword: 托兒所
+    readings:
+      - pengim: toh4 ri5 so2
+    senses:
+      - pos: noun
+        gloss_en: [daycare center, nursery, creche]
+        gloss_zh: [托兒所]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu5-ciu2-扶手
+    headword: 扶手
+    readings:
+      - pengim: hu5 ciu2
+    senses:
+      - pos: noun
+        gloss_en: [handrail, armrest]
+        gloss_zh: [扶手]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu5-tui1-扶梯
+    headword: 扶梯
+    readings:
+      - pengim: hu5 tui1
+    senses:
+      - pos: noun
+        gloss_en: [escalator, staircase, ladder]
+        gloss_zh: [扶梯, 樓梯]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: poi1-guan2-批館
+    headword: 批館
+    readings:
+      - pengim: poi1 guan2
+    senses:
+      - pos: noun
+        gloss_en: [letter and remittance agency, overseas mail office (dated)]
+        gloss_zh: [批館]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: la1-dêng1-拉丁
+    headword: 拉丁
+    readings:
+      - pengim: la1 dêng1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Latin]
+        gloss_zh: [拉丁]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: na2-sag4-lêg8-拿撒勒
+    headword: 拿撒勒
+    readings:
+      - pengim: na2 sag4 lêg8
+    senses:
+      - pos: proper-noun
+        gloss_en: [Nazareth]
+        gloss_zh: [拿撒勒]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

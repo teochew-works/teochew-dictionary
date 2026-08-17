@@ -6149,3 +6149,763 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: diam3-zu2-店主
+    headword: 店主
+    readings:
+      - pengim: diam3 zu2
+    senses:
+      - pos: noun
+        gloss_en: [shop owner; shopkeeper]
+        gloss_zh: [店主]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diam3-uang5-店員
+    headword: 店員
+    readings:
+      - pengim: diam3 uang5
+    senses:
+      - pos: noun
+        gloss_en: [shop assistant; salesclerk]
+        gloss_zh: [店員]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kang1-hi1-康熙
+    headword: 康熙
+    readings:
+      - pengim: kang1 hi1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Kangxi Emperor, Kangxi era (1662-1722)]
+        gloss_zh: [康熙]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong5-cai5-庸才
+    headword: 庸才
+    readings:
+      - pengim: iong5 cai5
+    senses:
+      - pos: noun
+        gloss_en: [mediocre person, person of limited talent]
+        gloss_zh: [庸才]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou5-zi2-廚子
+    headword: 廚子
+    readings:
+      - pengim: dou5 zi2
+    senses:
+      - pos: noun
+        gloss_en: [cook, chef]
+        gloss_zh: [廚子]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou5-se1-廚師
+    headword: 廚師
+    readings:
+      - pengim: dou5 se1
+    senses:
+      - pos: noun
+        gloss_en: [chef, cook]
+        gloss_zh: [廚師]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang2-hu2-nang5-廣府人
+    headword: 廣府人
+    readings:
+      - pengim: guang2 hu2 nang5
+    senses:
+      - pos: noun
+        gloss_en: [Cantonese person]
+        gloss_zh: [廣府人]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di6-弟
+    headword: 弟
+    readings:
+      - pengim: di6
+    senses:
+      - pos: noun
+        gloss_en: [younger brother]
+        gloss_zh: [弟弟]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di6-hian1-zê2-muê7-弟兄姐妹
+    headword: 弟兄姐妹
+    readings:
+      - pengim: di6 hian1 zê2 muê7
+    senses:
+      - pos: noun
+        gloss_en: [brothers and sisters, brethren (fellow believers)]
+        gloss_zh: [弟兄姐妹]
+        note: Wiktionary's primary listed sense is the Christian term 'brothers and sisters in Christ', but the compound could also simply read as literal 'siblings'; unclear which predominates in Teochew usage.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di6-so2-弟嫂
+    headword: 弟嫂
+    readings:
+      - pengim: di6 so2
+    senses:
+      - pos: noun
+        gloss_en: [younger brother's wife, sister-in-law]
+        gloss_zh: [弟媳]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di6-ze2-弟子
+    headword: 弟子
+    readings:
+      - pengim: di6 ze2
+    senses:
+      - pos: noun
+        gloss_en: [disciple, student; follower]
+        gloss_zh: [徒弟]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiang5-dao6-強盜
+    headword: 強盜
+    readings:
+      - pengim: kiang5 dao6
+    senses:
+      - pos: noun
+        gloss_en: [robber, bandit]
+        gloss_zh: [強盜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i5-彝
+    headword: 彝
+    readings:
+      - pengim: i5
+    senses:
+      - pos: noun
+        gloss_en: [ritual vessel, rule; convention, Yi (ethnic group)]
+        gloss_zh: [彝]
+        note: Page lists several distinct senses (ancestral ritual vessel, rule/convention, and the Yi ethnonym) under one reading, and it is unclear which is primary for this headword.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngang6-彥
+    headword: 彥
+    readings:
+      - pengim: ngang6
+    senses:
+      - pos: noun
+        gloss_en: [person of virtue and talent, worthy person]
+        gloss_zh: [彥]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cai2-loi2-彩禮
+    headword: 彩禮
+    readings:
+      - pengim: cai2 loi2
+    senses:
+      - pos: noun
+        gloss_en: [betrothal gifts, bride price]
+        gloss_zh: [彩禮]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pên5-彭
+    headword: 彭
+    readings:
+      - pengim: pên5
+    senses:
+      - pos: proper-noun
+        gloss_en: [surname Peng]
+        gloss_zh: [彭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ao6-do7-後代
+    headword: 後代
+    readings:
+      - pengim: ao6 do7
+    senses:
+      - pos: noun
+        gloss_en: [descendants; offspring, later generations]
+        gloss_zh: [後代, 後裔]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ao6-ai5-後嬡
+    headword: 後嬡
+    readings:
+      - pengim: ao6 ai5
+    senses:
+      - pos: noun
+        gloss_en: [stepmother]
+        gloss_zh: [繼母]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ao6-be6-後爸
+    headword: 後爸
+    readings:
+      - pengim: ao6 be6
+    senses:
+      - pos: noun
+        gloss_en: [stepfather]
+        gloss_zh: [後爸, 繼父]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao6-sên1-後生
+    headword: 後生
+    readings:
+      - pengim: hao6 sên1
+    senses:
+      - pos: noun
+        gloss_en: [young person, young man]
+        gloss_zh: [後生, 年輕人]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao6-sên1-nang5-後生人
+    headword: 後生人
+    readings:
+      - pengim: hao6 sên1 nang5
+    senses:
+      - pos: noun
+        gloss_en: [young person]
+        gloss_zh: [後生人, 年輕人]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao6-sên1-gian2-後生仔
+    headword: 後生仔
+    readings:
+      - pengim: hao6 sên1 gian2
+    senses:
+      - pos: noun
+        gloss_en: [young person, young man]
+        gloss_zh: [後生仔, 年輕人]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao6-sên1-gian2-後生囝
+    headword: 後生囝
+    readings:
+      - pengim: hao6 sên1 gian2
+    senses:
+      - pos: noun
+        gloss_en: [young person, child]
+        gloss_zh: [後生囝, 年輕人]
+        note: Alternative written form sharing the same peng'im and overlapping senses (young person vs child) with 後生仔; exact nuance distinguishing the two is unclear from the page.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ao6-i6-後裔
+    headword: 後裔
+    readings:
+      - pengim: ao6 i6
+    senses:
+      - pos: noun
+        gloss_en: [descendant, offspring]
+        gloss_zh: [後裔, 後代]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tu5-徒
+    headword: 徒
+    readings:
+      - pengim: tu5
+    senses:
+      - pos: noun
+        gloss_en: [disciple, apprentice, follower]
+        gloss_zh: [徒, 徒弟]
+        note: Character carries many distinct senses (disciple, on foot, prison sentence, merely/only, surname) under one shared Teochew reading; the noun 'disciple/apprentice' sense was chosen as most representative.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tu5-di6-徒弟
+    headword: 徒弟
+    readings:
+      - pengim: tu5 di6
+    senses:
+      - pos: noun
+        gloss_en: [apprentice, disciple]
+        gloss_zh: [徒弟]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sim1-tao5-nêg8-心頭肉
+    headword: 心頭肉
+    readings:
+      - pengim: sim1 tao5 nêg8
+    senses:
+      - pos: noun
+        gloss_en: ["apple of one's eye, beloved person"]
+        gloss_zh: [心頭肉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi3-nguang6-zia2-志願者
+    headword: 志願者
+    readings:
+      - pengim: zi3 nguang6 zia2
+    senses:
+      - pos: noun
+        gloss_en: [volunteer, volunteer worker]
+        gloss_zh: [志願者]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong1-cing5-忠臣
+    headword: 忠臣
+    readings:
+      - pengim: dong1 cing5
+    senses:
+      - pos: noun
+        gloss_en: [loyal minister]
+        gloss_zh: [忠臣]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuai3-di5-uang5-快遞員
+    headword: 快遞員
+    readings:
+      - pengim: kuai3 di5 uang5
+    senses:
+      - pos: noun
+        gloss_en: [courier, delivery worker]
+        gloss_zh: [快遞員]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guai3-nang5-怪人
+    headword: 怪人
+    readings:
+      - pengim: guai3 nang5
+    senses:
+      - pos: noun
+        gloss_en: [eccentric person, weirdo, strange person]
+        gloss_zh: [怪人]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiong2-bu3-hung7-ze2-恐怖分子
+    headword: 恐怖分子
+    readings:
+      - pengim: kiong2 bu3 hung7 ze2
+    senses:
+      - pos: noun
+        gloss_en: [terrorist]
+        gloss_zh: [恐怖分子]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang6-ri5-患兒
+    headword: 患兒
+    readings:
+      - pengim: huang6 ri5
+    senses:
+      - pos: noun
+        gloss_en: [pediatric patient, child suffering from a disease]
+        gloss_zh: [患兒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang6-zia2-患者
+    headword: 患者
+    readings:
+      - pengim: huang6 zia2
+    senses:
+      - pos: noun
+        gloss_en: [patient, sufferer (of a disease)]
+        gloss_zh: [患者]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêng5-nang5-情人
+    headword: 情人
+    readings:
+      - pengim: cêng5 nang5
+    senses:
+      - pos: noun
+        gloss_en: [lover, sweetheart]
+        gloss_zh: [情人]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêng5-le6-情侶
+    headword: 情侶
+    readings:
+      - pengim: cêng5 le6
+    senses:
+      - pos: noun
+        gloss_en: [sweetheart, lover, couple]
+        gloss_zh: [情侶]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêng5-dêg8-情敵
+    headword: 情敵
+    readings:
+      - pengim: cêng5 dêg8
+    senses:
+      - pos: noun
+        gloss_en: [rival in love]
+        gloss_zh: [情敵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: duan6-nang5-惰人
+    headword: 惰人
+    readings:
+      - pengim: duan6 nang5
+    senses:
+      - pos: noun
+        gloss_en: [lazybones, lazy person, sluggard]
+        gloss_zh: [惰人, 懶人]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: duan6-gian2-惰囝
+    headword: 惰囝
+    readings:
+      - pengim: duan6 gian2
+    senses:
+      - pos: noun
+        gloss_en: [lazybones, lazy person, idler]
+        gloss_zh: [惰囝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i3-dang1-nang5-意中人
+    headword: 意中人
+    readings:
+      - pengim: i3 dang1 nang5
+    senses:
+      - pos: noun
+        gloss_en: [one's beloved, the person one has in mind]
+        gloss_zh: [意中人, 心上人]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ain3-ring5-愛人
+    headword: 愛人
+    readings:
+      - pengim: ain3 ring5
+    senses:
+      - pos: noun
+        gloss_en: [spouse, sweetheart; lover]
+        gloss_zh: [愛人]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ain3-haon3-zia2-愛好者
+    headword: 愛好者
+    readings:
+      - pengim: ain3 haon3 zia2
+    senses:
+      - pos: noun
+        gloss_en: [enthusiast, hobbyist, amateur]
+        gloss_zh: [愛好者]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ain3-dao7-愛豆
+    headword: 愛豆
+    readings:
+      - pengim: ain3 dao7
+    senses:
+      - pos: noun
+        gloss_en: [idol (celebrity)]
+        gloss_zh: [愛豆]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ce5-bho2-慈母
+    headword: 慈母
+    readings:
+      - pengim: ce5 bho2
+    senses:
+      - pos: noun
+        gloss_en: [loving mother, affectionate mother]
+        gloss_zh: [慈母]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: no3-hu1-懦夫
+    headword: 懦夫
+    readings:
+      - pengim: no3 hu1
+    senses:
+      - pos: noun
+        gloss_en: [coward, craven]
+        gloss_zh: [懦夫]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong5-gian2-戇囝
+    headword: 戇囝
+    readings:
+      - pengim: gong5 gian2
+    senses:
+      - pos: noun
+        gloss_en: [silly child (affectionate), fool; idiot]
+        gloss_zh: [戇囝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng5-ni5-nang5-成年人
+    headword: 成年人
+    readings:
+      - pengim: sêng5 ni5 nang5
+    senses:
+      - pos: noun
+        gloss_en: [adult; grown-up]
+        gloss_zh: [成年人]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêg4-戚
+    headword: 戚
+    readings:
+      - pengim: cêg4
+    senses:
+      - pos: noun
+        gloss_en: [relative; kin, sadness; sorrow (literary)]
+        gloss_zh: [戚]
+        note: The character has two disparate senses (kinship relative vs. literary sadness/grief, plus a rare 'battle-axe' sense) and the page does not indicate which one the Teochew reading corresponds to.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziang3-iu2-戰友
+    headword: 戰友
+    readings:
+      - pengim: ziang3 iu2
+    senses:
+      - pos: noun
+        gloss_en: [comrade-in-arms, fellow soldier]
+        gloss_zh: [戰友]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziang3-se6-戰士
+    headword: 戰士
+    readings:
+      - pengim: ziang3 se6
+    senses:
+      - pos: noun
+        gloss_en: [soldier, warrior; fighter]
+        gloss_zh: [戰士]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziang3-huam6-戰犯
+    headword: 戰犯
+    readings:
+      - pengim: ziang3 huam6
+    senses:
+      - pos: noun
+        gloss_en: [war criminal]
+        gloss_zh: [戰犯]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hi3-gian2-戲囝
+    headword: 戲囝
+    readings:
+      - pengim: hi3 gian2
+    senses:
+      - pos: noun
+        gloss_en: [opera actor (derogatory)]
+        gloss_zh: [戲囝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hi3-duan3-戲旦
+    headword: 戲旦
+    readings:
+      - pengim: hi3 duan3
+    senses:
+      - pos: noun
+        gloss_en: [female role in Chinese opera]
+        gloss_zh: [戲旦]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hi3-giêh4-戲腳
+    headword: 戲腳
+    readings:
+      - pengim: hi3 giêh4
+    senses:
+      - pos: noun
+        gloss_en: [opera actor]
+        gloss_zh: [戲腳]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou6-zu2-戶主
+    headword: 戶主
+    readings:
+      - pengim: hou6 zu2
+    senses:
+      - pos: noun
+        gloss_en: [head of household]
+        gloss_zh: [戶主]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang5-dong1-房東
+    headword: 房東
+    readings:
+      - pengim: bang5 dong1
+    senses:
+      - pos: noun
+        gloss_en: [landlord, landlady]
+        gloss_zh: [房東]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang5-tao5-房頭
+    headword: 房頭
+    readings:
+      - pengim: bang5 tao5
+    senses:
+      - pos: noun
+        gloss_en: [family; household, clan branch]
+        gloss_zh: [房頭]
+        note: Literary term with multiple listed senses (family/household, clan branch, room); the entry doesn't indicate which sense the Teochew reading corresponds to, so the family/clan sense was chosen as most typical for Teochew usage.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pa1-gian2-扒囝
+    headword: 扒囝
+    readings:
+      - pengim: pa1 gian2
+    senses:
+      - pos: noun
+        gloss_en: [pickpocket]
+        gloss_zh: [扒手]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pa1-gu1-gian2-扒龜囝
+    headword: 扒龜囝
+    readings:
+      - pengim: pa1 gu1 gian2
+    senses:
+      - pos: noun
+        gloss_en: [pickpocket]
+        gloss_zh: [扒手]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi6-gang1-技工
+    headword: 技工
+    readings:
+      - pengim: gi6 gang1
+    senses:
+      - pos: noun
+        gloss_en: [technician, skilled worker, mechanic]
+        gloss_zh: [技工]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pah4-tih4-gian2-拍鐵囝
+    headword: 拍鐵囝
+    readings:
+      - pengim: pah4 tih4 gian2
+    senses:
+      - pos: noun
+        gloss_en: [blacksmith]
+        gloss_zh: [拍鐵囝, 鐵匠]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guai2-ka1-gian2-拐跤囝
+    headword: 拐跤囝
+    readings:
+      - pengim: guai2 ka1 gian2
+    senses:
+      - pos: noun
+        gloss_en: [cripple, lame person]
+        gloss_zh: [拐跤囝]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

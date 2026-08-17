@@ -674,3 +674,165 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: di7-nang5-底人
+    headword: 底人
+    readings:
+      - pengim: di7 nang5
+    senses:
+      - pos: pronoun
+        gloss_en: [who, whom]
+        gloss_zh: [底人, 誰]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-gai5-底個
+    headword: 底個
+    readings:
+      - pengim: di7 gai5
+    senses:
+      - pos: pronoun
+        gloss_en: [which, which one]
+        gloss_zh: [底個, 哪個]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-gian2-底囝
+    headword: 底囝
+    readings:
+      - pengim: di7 gian2
+    senses:
+      - pos: pronoun
+        gloss_en: [where]
+        gloss_zh: [底囝, 哪裡]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-coh4-底撮
+    headword: 底撮
+    readings:
+      - pengim: di7 coh4
+    senses:
+      - pos: pronoun
+        gloss_en: [which ones (plural)]
+        gloss_zh: [底撮, 哪些]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-diang5-底𫢗
+    headword: 底𫢗
+    readings:
+      - pengim: di7 diang5
+    senses:
+      - pos: pronoun
+        gloss_en: [who, whom]
+        gloss_zh: [誰]
+        note: Wiktionary labels this word's part of speech as adverb, but it functions semantically as the Teochew interrogative pronoun 'who' (a dialectal synonym of 誰); pronoun was chosen here despite the page's literal adverb tag.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi2-彼
+    headword: 彼
+    readings:
+      - pengim: bi2
+    senses:
+      - pos: pronoun
+        gloss_en: [that; those (literary), he; she; it (literary)]
+        gloss_zh: [彼]
+        note: Wiktionary notes Teochew typically uses 許 instead of 彼 for this sense, so how commonly 彼 itself is actually used in Teochew (versus a more literary/Mandarin-influenced register) is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi2-ce2-彼此
+    headword: 彼此
+    readings:
+      - pengim: bi2 ce2
+    senses:
+      - pos: pronoun
+        gloss_en: [each other, one another]
+        gloss_zh: [彼此]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za2-怎
+    headword: 怎
+    readings:
+      - pengim: za2
+    senses:
+      - pos: pronoun
+        gloss_en: [how, why, what]
+        gloss_zh: [怎]
+        note: Wiktionary tags this word as both adverb and pronoun ('how'/'what') and does not mark any sense as specifically colloquial Teochew, which more commonly uses 做呢/乜生 for 'how', so its part of speech and everyday frequency in Teochew are uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za2-moh4-怎麼
+    headword: 怎麼
+    readings:
+      - pengim: za2 moh4
+    senses:
+      - pos: pronoun
+        gloss_en: [how, why, what way]
+        gloss_zh: [怎麼]
+        note: All senses on the page are explicitly labeled 'chiefly Mandarin' even though a distinct Teochew reading (za2 moh4) is given, and colloquial Teochew typically uses 做呢/做物 instead, so actual Teochew usage frequency is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: le2-您
+    headword: 您
+    readings:
+      - pengim: le2
+    senses:
+      - pos: pronoun
+        gloss_en: ["you (polite, singular)"]
+        gloss_zh: [您]
+        note: The Teochew reading le2 does not match the character's usual Mandarin-derived pronunciations, and Wiktionary notes Teochew normally uses 汝 for 'you', so it is unclear whether 您 here is simply a written stand-in for the native pronoun rather than a distinct sense.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngo5-diêg8-愚姪
+    headword: 愚姪
+    readings:
+      - pengim: ngo5 diêg8
+    senses:
+      - pos: pronoun
+        gloss_en: [this foolish nephew (humble self-reference), I (used by a nephew addressing an elder)]
+        gloss_zh: [愚姪]
+        note: Archaic/formal humble self-referential term; Wiktionary classifies it as a pronoun but its usage is rare and largely obsolete, leaving some uncertainty in pos and frequency.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ua2-mung5-我們
+    headword: 我們
+    readings:
+      - pengim: ua2 mung5
+    senses:
+      - pos: pronoun
+        gloss_en: [we, us]
+        gloss_zh: [我們]
+        note: Wiktionary's main 'we/us' sense is labeled as chiefly Mandarin/Gan/Jin/Changsha Xiang (not Teochew), while separate 'my'/'my kid' senses are only labeled generically '(dialect)'; it is unclear which sense the Teochew reading ua2 mung5 actually attaches to, so 'we/us' was chosen as the best guess.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
