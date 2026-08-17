@@ -1647,3 +1647,1375 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: gou2-ziah4-古跡
+    headword: 古跡
+    readings:
+      - pengim: gou2 ziah4
+    senses:
+      - pos: noun
+        gloss_en: [historical site, heritage site, ruin]
+        gloss_zh: [古跡]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si1-lêng6-bou6-司令部
+    headword: 司令部
+    readings:
+      - pengim: si1 lêng6 bou6
+    senses:
+      - pos: noun
+        gloss_en: [headquarters, command centre]
+        gloss_zh: [司令部]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si1-bhê2-pou2-司馬浦
+    headword: 司馬浦
+    readings:
+      - pengim: si1 bhê2 pou2
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Simapu (a town in Chaonan District, Shantou, Guangdong)"]
+        gloss_zh: [司馬浦]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lag8-bou1-叻埠
+    headword: 叻埠
+    readings:
+      - pengim: lag8 bou1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Singapore (dated, regional term)"]
+        gloss_zh: [新加坡]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gig4-lim5-吉林
+    headword: 吉林
+    readings:
+      - pengim: gig4 lim5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Jilin (province of China), Jilin City]
+        gloss_zh: [吉林]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba1-sian5-吧城
+    headword: 吧城
+    readings:
+      - pengim: ba1 sian5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Batavia (old name for Jakarta)]
+        gloss_zh: [吧城]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghou5-gog4-吳國
+    headword: 吳國
+    readings:
+      - pengim: ghou5 gog4
+    senses:
+      - pos: proper-noun
+        gloss_en: [Wu (ancient Chinese kingdom)]
+        gloss_zh: [吳國]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: le6-song3-呂宋
+    headword: 呂宋
+    readings:
+      - pengim: le6 song3
+    senses:
+      - pos: proper-noun
+        gloss_en: [Luzon, Philippines (archaic)]
+        gloss_zh: [呂宋, 菲律賓]
+        note: The page lists several distinct historical senses (Luzon island, the Philippines archaically, Manila obsoletely, and even Spanish subjects/Mexico in some regional Cantonese usages); the core geographic sense (Luzon/Philippines) was picked as most likely but exact scope in Teochew usage is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gia1-hui1-guang2-咖啡館
+    headword: 咖啡館
+    readings:
+      - pengim: gia1 hui1 guang2
+    senses:
+      - pos: noun
+        gloss_en: [cafe, coffee shop]
+        gloss_zh: [咖啡館]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go1-da2-dêng1-ngi5-哥打丁宜
+    headword: 哥打丁宜
+    readings:
+      - pengim: go1 da2 dêng1 ngi5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Kota Tinggi (town and district in Johor, Malaysia)"]
+        gloss_zh: [哥打丁宜]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go1-lim5-do1-哥林多
+    headword: 哥林多
+    readings:
+      - pengim: go1 lim5 do1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Corinth (city in Greece)]
+        gloss_zh: [哥林多]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: deng5-rêng5-goi1-唐人街
+    headword: 唐人街
+    readings:
+      - pengim: deng5 rêng5 goi1
+    senses:
+      - pos: noun
+        gloss_en: [Chinatown]
+        gloss_zh: [唐人街]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: deng5-suan1-唐山
+    headword: 唐山
+    readings:
+      - pengim: deng5 suan1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["China, the ancestral homeland (overseas usage)", the old country]
+        gloss_zh: [唐山]
+        note: The page has two etymologies sharing this reading — a diaspora term meaning 'China/ancestral homeland' and the proper name of Tangshan city in Hebei; the ancestral-homeland sense was chosen as the more likely Teochew usage.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang1-sian5-商城
+    headword: 商城
+    readings:
+      - pengim: siang1 sian5
+    senses:
+      - pos: noun
+        gloss_en: [shopping centre, mall]
+        gloss_zh: [商城]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang1-bou1-商埠
+    headword: 商埠
+    readings:
+      - pengim: siang1 bou1
+    senses:
+      - pos: noun
+        gloss_en: [trading port, treaty port]
+        gloss_zh: [商埠]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang1-diam3-商店
+    headword: 商店
+    readings:
+      - pengim: siang1 diam3
+    senses:
+      - pos: noun
+        gloss_en: [shop, store]
+        gloss_zh: [商店]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang1-tiao3-商超
+    headword: 商超
+    readings:
+      - pengim: siang1 tiao3
+    senses:
+      - pos: noun
+        gloss_en: [supermarket, department store]
+        gloss_zh: [商超]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang1-pou3-商鋪
+    headword: 商鋪
+    readings:
+      - pengim: siang1 pou3
+    senses:
+      - pos: noun
+        gloss_en: [shop, store]
+        gloss_zh: [商鋪]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang6-deng5-善堂
+    headword: 善堂
+    readings:
+      - pengim: siang6 deng5
+    senses:
+      - pos: noun
+        gloss_en: [charitable hall; benevolent society]
+        gloss_zh: [善堂]
+        note: Page also lists a Hokkien-labeled third sense that is left untranslated, so it's unclear whether it overlaps with or differs from the general 'charitable hall/society' sense used here.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cong1-囪
+    headword: 囪
+    readings:
+      - pengim: cong1
+    senses:
+      - pos: noun
+        gloss_en: [chimney, flue]
+        gloss_zh: [囪]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pou2-圃
+    headword: 圃
+    readings:
+      - pengim: pou2
+    senses:
+      - pos: noun
+        gloss_en: [garden, plot for growing plants]
+        gloss_zh: [圃]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-國
+    headword: 國
+    readings:
+      - pengim: gog4
+    senses:
+      - pos: noun
+        gloss_en: [country, nation, state]
+        gloss_zh: [國]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-lai6-國內
+    headword: 國內
+    readings:
+      - pengim: gog4 lai6
+    senses:
+      - pos: noun
+        gloss_en: [within the country, domestic, back home]
+        gloss_zh: [國內]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-lai6-ghua7-國內外
+    headword: 國內外
+    readings:
+      - pengim: gog4 lai6 ghua7
+    senses:
+      - pos: adjective
+        gloss_en: [domestic and international, at home and abroad]
+        gloss_zh: [國內外]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-tou2-國土
+    headword: 國土
+    readings:
+      - pengim: gog4 tou2
+    senses:
+      - pos: noun
+        gloss_en: [national territory, country's land]
+        gloss_zh: [國土]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-ghua7-國外
+    headword: 國外
+    readings:
+      - pengim: gog4 ghua7
+    senses:
+      - pos: noun
+        gloss_en: [abroad, overseas, outside the country]
+        gloss_zh: [國外]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-gê1-國家
+    headword: 國家
+    readings:
+      - pengim: gog4 gê1
+    senses:
+      - pos: noun
+        gloss_en: [country, nation, state]
+        gloss_zh: [國家]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-dou7-國度
+    headword: 國度
+    readings:
+      - pengim: gog4 dou7
+    senses:
+      - pos: noun
+        gloss_en: [nation, country, kingdom]
+        gloss_zh: [國度]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-gai3-國界
+    headword: 國界
+    readings:
+      - pengim: gog4 gai3
+    senses:
+      - pos: noun
+        gloss_en: [national border, national boundary]
+        gloss_zh: [國界]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-ghe2-國語
+    headword: 國語
+    readings:
+      - pengim: gog4 ghe2
+    senses:
+      - pos: noun
+        gloss_en: [national language, Standard Mandarin]
+        gloss_zh: [國語]
+        note: Term has many region-specific senses (Standard Mandarin in Taiwan, Malay in Malaysia, obsolete Japanese in colonial Taiwan, etc.); no Teochew-specific sense is given, so the general 'national language' sense is used.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-dao6-國道
+    headword: 國道
+    readings:
+      - pengim: gog4 dao6
+    senses:
+      - pos: noun
+        gloss_en: [national highway]
+        gloss_zh: [國道]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-dou1-國都
+    headword: 國都
+    readings:
+      - pengim: gog4 dou1
+    senses:
+      - pos: noun
+        gloss_en: [national capital]
+        gloss_zh: [國都]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui5-lang5-圍欄
+    headword: 圍欄
+    readings:
+      - pengim: ui5 lang5
+    senses:
+      - pos: noun
+        gloss_en: [fence, railing]
+        gloss_zh: [圍欄]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui5-cion5-圍牆
+    headword: 圍牆
+    readings:
+      - pengim: ui5 cion5
+    senses:
+      - pos: noun
+        gloss_en: [wall, enclosing wall]
+        gloss_zh: [圍牆]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hng5-園
+    headword: 園
+    readings:
+      - pengim: hng5
+    senses:
+      - pos: noun
+        gloss_en: [garden, orchard]
+        gloss_zh: [園]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hng5-ku1-園區
+    headword: 園區
+    readings:
+      - pengim: hng5 ku1
+    senses:
+      - pos: noun
+        gloss_en: [park (e.g. industrial or science park), development zone]
+        gloss_zh: [園區]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hng5-li5-園籬
+    headword: 園籬
+    readings:
+      - pengim: hng5 li5
+    senses:
+      - pos: noun
+        gloss_en: [fence, hedge]
+        gloss_zh: [籬笆]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in5-mêng5-hng5-圓明園
+    headword: 圓明園
+    readings:
+      - pengim: in5 mêng5 hng5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Old Summer Palace (former imperial garden complex in Beijing)]
+        gloss_zh: [圓明園]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou2-bhag8-土木
+    headword: 土木
+    readings:
+      - pengim: tou2 bhag8
+    senses:
+      - pos: noun
+        gloss_en: [construction, building (civil engineering)]
+        gloss_zh: [土木]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou2-re2-ki5-土耳其
+    headword: 土耳其
+    readings:
+      - pengim: tou2 re2 ki5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Turkey (country)]
+        gloss_zh: [土耳其]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-ê6-地下
+    headword: 地下
+    readings:
+      - pengim: di7 ê6
+    senses:
+      - pos: noun
+        gloss_en: [ground; floor, underground]
+        gloss_zh: [地下]
+        note: The Mandarin readings for 'underground' (dìxià) and colloquial 'on the ground/floor' (dìxia) are distinct senses on the page, but both map to the same given Teochew peng'im di7 ê6, so it is unclear which single sense the reading specifically targets.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-ê6-sig4-地下室
+    headword: 地下室
+    readings:
+      - pengim: di7 ê6 sig4
+    senses:
+      - pos: noun
+        gloss_en: [basement, cellar]
+        gloss_zh: [地下室]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-ku1-地區
+    headword: 地區
+    readings:
+      - pengim: di7 ku1
+    senses:
+      - pos: noun
+        gloss_en: [area; region; district]
+        gloss_zh: [地區]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-dua3-地帶
+    headword: 地帶
+    readings:
+      - pengim: di7 dua3
+    senses:
+      - pos: noun
+        gloss_en: [zone; region; territory]
+        gloss_zh: [地帶]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-bang2-地板
+    headword: 地板
+    readings:
+      - pengim: di7 bang2
+    senses:
+      - pos: noun
+        gloss_en: [floor, flooring]
+        gloss_zh: [地板]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-zin1-地氈
+    headword: 地氈
+    readings:
+      - pengim: di7 zin1
+    senses:
+      - pos: noun
+        gloss_en: [carpet, rug]
+        gloss_zh: [地氈]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-kib4-ci6-地級市
+    headword: 地級市
+    readings:
+      - pengim: di7 kib4 ci6
+    senses:
+      - pos: noun
+        gloss_en: [prefecture-level city]
+        gloss_zh: [地級市]
+        note: A specialized PRC administrative-classification term with narrow, technical usage rather than everyday colloquial Teochew vocabulary.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-gang1-地缸
+    headword: 地缸
+    readings:
+      - pengim: di7 gang1
+    senses:
+      - pos: noun
+        gloss_en: [spittoon]
+        gloss_zh: [痰盂]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-tih4-地鐵
+    headword: 地鐵
+    readings:
+      - pengim: di7 tih4
+    senses:
+      - pos: noun
+        gloss_en: [subway, metro, underground railway]
+        gloss_zh: [地鐵]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-ka1-地骹
+    headword: 地骹
+    readings:
+      - pengim: di7 ka1
+    senses:
+      - pos: noun
+        gloss_en: [foundation (of a building)]
+        gloss_zh: [地骹]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-址
+    headword: 址
+    readings:
+      - pengim: zi2
+    senses:
+      - pos: noun
+        gloss_en: [site, location, foundation]
+        gloss_zh: [址]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kung1-diang6-坤甸
+    headword: 坤甸
+    readings:
+      - pengim: kung1 diang6
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Pontianak (city in West Kalimantan, Indonesia)"]
+        gloss_zh: [坤甸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ai1-gib8-埃及
+    headword: 埃及
+    readings:
+      - pengim: ai1 gib8
+    senses:
+      - pos: proper-noun
+        gloss_en: [Egypt]
+        gloss_zh: [埃及]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sian5-城
+    headword: 城
+    readings:
+      - pengim: sian5
+    senses:
+      - pos: noun
+        gloss_en: [city, town, city wall]
+        gloss_zh: [城]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sian5-ku1-城區
+    headword: 城區
+    readings:
+      - pengim: sian5 ku1
+    senses:
+      - pos: noun
+        gloss_en: [city proper, urban district, city centre]
+        gloss_zh: [城區]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sian5-ci6-城市
+    headword: 城市
+    readings:
+      - pengim: sian5 ci6
+    senses:
+      - pos: noun
+        gloss_en: [city, town, urban area]
+        gloss_zh: [城市]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sian5-hion1-城鄉
+    headword: 城鄉
+    readings:
+      - pengim: sian5 hion1
+    senses:
+      - pos: noun
+        gloss_en: [urban and rural areas, city and countryside]
+        gloss_zh: [城鄉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sian5-meng5-城門
+    headword: 城門
+    readings:
+      - pengim: sian5 meng5
+    senses:
+      - pos: noun
+        gloss_en: [city gate]
+        gloss_zh: [城門]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dian5-埕
+    headword: 埕
+    readings:
+      - pengim: dian5
+    senses:
+      - pos: noun
+        gloss_en: [yard, "open ground for drying grain, salt production, or aquaculture"]
+        gloss_zh: [埕]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bou1-埠
+    headword: 埠
+    readings:
+      - pengim: bou1
+    senses:
+      - pos: noun
+        gloss_en: [wharf, port city]
+        gloss_zh: [埠]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-基
+    headword: 基
+    readings:
+      - pengim: gi1
+    senses:
+      - pos: noun
+        gloss_en: [foundation, base, basis]
+        gloss_zh: [基]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-di7-基地
+    headword: 基地
+    readings:
+      - pengim: gi1 di7
+    senses:
+      - pos: noun
+        gloss_en: [base, site]
+        gloss_zh: [基地]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-long5-na2-基隆拿
+    headword: 基隆拿
+    readings:
+      - pengim: gi1 long5 na2
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Kelowna (city in British Columbia, Canada)"]
+        gloss_zh: [基隆拿]
+        note: Entry is labeled chiefly Hong Kong/Cantonese/Canada/Taiwan usage and flags the Hokkien/Teochew romanizations as needing verification, so its genuine currency in Teochew is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diêb8-堞
+    headword: 堞
+    readings:
+      - pengim: diêb8
+    senses:
+      - pos: noun
+        gloss_en: [plate]
+        gloss_zh: [堞]
+        note: Wiktionary's Chinese section glosses this only as 'plate', which is inconsistent with the character's role in compounds like 雉堞/城堞 (city-wall battlements/crenellations); the definition may be incomplete.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doi1-堤
+    headword: 堤
+    readings:
+      - pengim: doi1
+    senses:
+      - pos: noun
+        gloss_en: [dike, embankment]
+        gloss_zh: [堤]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo3-guang2-報館
+    headword: 報館
+    readings:
+      - pengim: bo3 guang2
+    senses:
+      - pos: noun
+        gloss_en: [newspaper office, newspaper publisher]
+        gloss_zh: [報館]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dion5-di7-場地
+    headword: 場地
+    readings:
+      - pengim: dion5 di7
+    senses:
+      - pos: noun
+        gloss_en: [site, venue, sports pitch]
+        gloss_zh: [場地]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dion5-guang2-場館
+    headword: 場館
+    readings:
+      - pengim: dion5 guang2
+    senses:
+      - pos: noun
+        gloss_en: [venue, stadium/arena]
+        gloss_zh: [場館]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tah4-塔
+    headword: 塔
+    readings:
+      - pengim: tah4
+    senses:
+      - pos: noun
+        gloss_en: [tower, pagoda, spire]
+        gloss_zh: [塔]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou5-ê6-塗下
+    headword: 塗下
+    readings:
+      - pengim: tou5 ê6
+    senses:
+      - pos: noun
+        gloss_en: [floor, ground, on the ground]
+        gloss_zh: [塗下]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou5-ka1-塗跤
+    headword: 塗跤
+    readings:
+      - pengim: tou5 ka1
+    senses:
+      - pos: noun
+        gloss_en: [floor, ground]
+        gloss_zh: [塗跤, 地板]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tong2-塚
+    headword: 塚
+    readings:
+      - pengim: tong2
+    senses:
+      - pos: noun
+        gloss_en: [tomb, burial mound]
+        gloss_zh: [塚, 墳墓]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sog8-塾
+    headword: 塾
+    readings:
+      - pengim: sog8
+    senses:
+      - pos: noun
+        gloss_en: [old-style private school]
+        gloss_zh: [塾]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng2-境
+    headword: 境
+    readings:
+      - pengim: gêng2
+    senses:
+      - pos: noun
+        gloss_en: [border; boundary, area; region, condition; situation]
+        gloss_zh: [境]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng2-lai6-境內
+    headword: 境內
+    readings:
+      - pengim: gêng2 lai6
+    senses:
+      - pos: noun
+        gloss_en: [within the border(s), domestic; inland]
+        gloss_zh: [境內]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng2-ghua7-境外
+    headword: 境外
+    readings:
+      - pengim: gêng2 ghua7
+    senses:
+      - pos: noun
+        gloss_en: [outside the border(s), abroad; overseas]
+        gloss_zh: [境外]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: su2-墅
+    headword: 墅
+    readings:
+      - pengim: su2
+    senses:
+      - pos: noun
+        gloss_en: [villa; country house]
+        gloss_zh: [墅]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mo6-墓
+    headword: 墓
+    readings:
+      - pengim: mo6
+    senses:
+      - pos: noun
+        gloss_en: [grave; tomb]
+        gloss_zh: [墓, 墳]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he1-墟
+    headword: 墟
+    readings:
+      - pengim: he1
+    senses:
+      - pos: noun
+        gloss_en: [market; fair (periodic rural market), ruins]
+        gloss_zh: [墟, 集市]
+        note: Wiktionary lists 'ruin', 'literary village', and 'fair/market' senses for 墟 without explicitly tying the given Teochew he1 reading to a specific one; 'market/fair' was chosen by analogy with the parallel Cantonese sense but this is not certain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhag8-sai1-go1-墨西哥
+    headword: 墨西哥
+    readings:
+      - pengim: bhag8 sai1 go1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Mexico]
+        gloss_zh: [墨西哥]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pung5-墳
+    headword: 墳
+    readings:
+      - pengim: pung5
+    senses:
+      - pos: noun
+        gloss_en: [grave; tomb; mound]
+        gloss_zh: [墳, 墓]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biah4-壁
+    headword: 壁
+    readings:
+      - pengim: biah4
+    senses:
+      - pos: noun
+        gloss_en: [wall]
+        gloss_zh: [牆, 壁]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biah4-gag4-壁角
+    headword: 壁角
+    readings:
+      - pengim: biah4 gag4
+    senses:
+      - pos: noun
+        gloss_en: [corner (formed by two walls)]
+        gloss_zh: [牆角, 壁角]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: duan5-壇
+    headword: 壇
+    readings:
+      - pengim: duan5
+    senses:
+      - pos: noun
+        gloss_en: [altar, platform, forum]
+        gloss_zh: [壇]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba3-壩
+    headword: 壩
+    readings:
+      - pengim: ba3
+    senses:
+      - pos: noun
+        gloss_en: [dam, embankment, dike]
+        gloss_zh: [壩]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hê7-ui1-i5-夏威夷
+    headword: 夏威夷
+    readings:
+      - pengim: hê7 ui1 i5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Hawaii]
+        gloss_zh: [夏威夷]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hê7-ciou5-夏朝
+    headword: 夏朝
+    readings:
+      - pengim: hê7 ciou5
+    senses:
+      - pos: proper-noun
+        gloss_en: [the Xia dynasty]
+        gloss_zh: [夏朝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghua7-gog4-外國
+    headword: 外國
+    readings:
+      - pengim: ghua7 gog4
+    senses:
+      - pos: noun
+        gloss_en: [foreign country, abroad]
+        gloss_zh: [外國]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghua7-di7-外地
+    headword: 外地
+    readings:
+      - pengim: ghua7 di7
+    senses:
+      - pos: noun
+        gloss_en: [other places, elsewhere, out of town]
+        gloss_zh: [外地]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghua7-sên2-外省
+    headword: 外省
+    readings:
+      - pengim: ghua7 sên2
+    senses:
+      - pos: noun
+        gloss_en: [another province, province other than one's own]
+        gloss_zh: [外省]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghua7-sua1-外砂
+    headword: 外砂
+    readings:
+      - pengim: ghua7 sua1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Waisha (subdistrict in Longhu District, Shantou)"]
+        gloss_zh: [外砂]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mê5-ci6-夜市
+    headword: 夜市
+    readings:
+      - pengim: mê5 ci6
+    senses:
+      - pos: noun
+        gloss_en: [night market]
+        gloss_zh: [夜市]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mên5-zong2-huê6-夜總會
+    headword: 夜總會
+    readings:
+      - pengim: mên5 zong2 huê6
+    senses:
+      - pos: noun
+        gloss_en: [nightclub]
+        gloss_zh: [夜總會]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dai6-sai3-guêng2-大使館
+    headword: 大使館
+    readings:
+      - pengim: dai6 sai3 guêng2
+    senses:
+      - pos: noun
+        gloss_en: [embassy]
+        gloss_zh: [大使館]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-cu3-大厝
+    headword: 大厝
+    readings:
+      - pengim: dua7 cu3
+    senses:
+      - pos: noun
+        gloss_en: [large house, coffin (euphemism)]
+        gloss_zh: [大厝]
+        note: Page gives both a general Southern Min 'large house' sense and a Teochew-tagged euphemistic 'coffin' sense for this word; both are included and it is placed in places.yaml as the closest built-environment fit.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-in5-大圓
+    headword: 大圓
+    readings:
+      - pengim: dua7 in5
+    senses:
+      - pos: noun
+        gloss_en: [roundabout, traffic circle]
+        gloss_zh: [大圓, 圓環]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-sian5-大城
+    headword: 大城
+    readings:
+      - pengim: dua7 sian5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Ayutthaya, Thailand (place name)", Dacheng (place name)]
+        gloss_zh: [大城]
+        note: 大城 has several unrelated place-name senses (Ayutthaya in Thailand, Dacheng county in Hebei, a Taiwan township, a Pyongyang district) and the page does not specify which one corresponds to the Teochew reading dua7 sian5.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-bou1-大埔
+    headword: 大埔
+    readings:
+      - pengim: dua7 bou1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Tai Po (Hong Kong), Dabu County (Guangdong)]
+        gloss_zh: [大埔]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-deng5-大堂
+    headword: 大堂
+    readings:
+      - pengim: dua7 deng5
+    senses:
+      - pos: noun
+        gloss_en: [hall, lobby]
+        gloss_zh: [大堂]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-ba3-大壩
+    headword: 大壩
+    readings:
+      - pengim: dua7 ba3
+    senses:
+      - pos: noun
+        gloss_en: [dam]
+        gloss_zh: [大壩]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dai6-zuang1-大專
+    headword: 大專
+    readings:
+      - pengim: dai6 zuang1
+    senses:
+      - pos: noun
+        gloss_en: [tertiary college, community college, polytechnic]
+        gloss_zh: [大專]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dai6-hê7-大廈
+    headword: 大廈
+    readings:
+      - pengim: dai6 hê7
+    senses:
+      - pos: noun
+        gloss_en: [large building, skyscraper, high-rise]
+        gloss_zh: [大廈]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-bang5-大房
+    headword: 大房
+    readings:
+      - pengim: dua7 bang5
+    senses:
+      - pos: noun
+        gloss_en: [principal rooms of a house, main chamber (in a quadrangle)]
+        gloss_zh: [大房]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-gio5-大橋
+    headword: 大橋
+    readings:
+      - pengim: dua7 gio5
+    senses:
+      - pos: noun
+        gloss_en: [large bridge]
+        gloss_zh: [大橋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dai6-cêng1-gog4-大清國
+    headword: 大清國
+    readings:
+      - pengim: dai6 cêng1 gog4
+    senses:
+      - pos: proper-noun
+        gloss_en: [the Qing dynasty, Great Qing]
+        gloss_zh: [大清國, 清朝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-koi1-大溪
+    headword: 大溪
+    readings:
+      - pengim: dua7 koi1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Daxi (district in Taoyuan, Taiwan)", "Daxi (township in Chongqing, China)"]
+        gloss_zh: [大溪]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-uang1-ku1-大灣區
+    headword: 大灣區
+    readings:
+      - pengim: dua7 uang1 ku1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Greater Bay Area]
+        gloss_zh: [大灣區]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dai6-li2-大理
+    headword: 大理
+    readings:
+      - pengim: dai6 li2
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Dali (city/prefecture in Yunnan, China)", Dali Kingdom (historical)]
+        gloss_zh: [大理]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-mung5-大門
+    headword: 大門
+    readings:
+      - pengim: dua7 mung5
+    senses:
+      - pos: noun
+        gloss_en: [main gate, front door, entrance]
+        gloss_zh: [大門]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dai6-lêg8-大陸
+    headword: 大陸
+    readings:
+      - pengim: dai6 lêg8
+    senses:
+      - pos: noun
+        gloss_en: [continent, mainland, Mainland China]
+        gloss_zh: [大陸]
+        note: The page treats 大陸 as both a common noun ('continent/mainland') and a proper noun ('Mainland China') under the same reading without distinguishing which sense the Teochew form corresponds to.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dai6-bhê2-大馬
+    headword: 大馬
+    readings:
+      - pengim: dai6 bhê2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Malaysia]
+        gloss_zh: [馬來西亞]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiang1-zu2-deng5-天主堂
+    headword: 天主堂
+    readings:
+      - pengim: tiang1 zu2 deng5
+    senses:
+      - pos: noun
+        gloss_en: [Catholic church (building)]
+        gloss_zh: [天主堂]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

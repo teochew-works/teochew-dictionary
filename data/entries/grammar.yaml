@@ -701,3 +701,319 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: lêng5-ghua7-另外
+    headword: 另外
+    readings:
+      - pengim: lêng5 ghua7
+    senses:
+      - pos: adverb
+        gloss_en: [additionally, besides, in addition]
+        gloss_zh: [另外]
+        note: Wiktionary lists this word as adjective, conjunction, and adverb all under the same reading; adverb was chosen as the most common usage but the primary sense/POS is genuinely ambiguous without context.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-bug4-guê3-只不過
+    headword: 只不過
+    readings:
+      - pengim: zi2 bug4 guê3
+    senses:
+      - pos: conjunction
+        gloss_en: [merely, just, only]
+        gloss_zh: [只不過]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-si6-只是
+    headword: 只是
+    readings:
+      - pengim: zi2 si6
+    senses:
+      - pos: adverb
+        gloss_en: [only, merely, just]
+        gloss_zh: [只是]
+        note: Wiktionary gives this reading both an adverb sense ('only; merely; just') and a distinct conjunction sense ('however; but'), so the single best POS is genuinely ambiguous without context.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-lêng5-只能
+    headword: 只能
+    readings:
+      - pengim: zi2 lêng5
+    senses:
+      - pos: adverb
+        gloss_en: [can only, have no choice but to]
+        gloss_zh: [只能]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ko2-可
+    headword: 可
+    readings:
+      - pengim: ko2
+    senses:
+      - pos: verb
+        gloss_en: [can; may (modal), but; however, worth (doing)]
+        gloss_zh: [可]
+        note: The character 可 carries many senses on the page (modal verb, adjective, particle, adverb, literary 'about'/'recover') with no dialect-specific disambiguation, so the core modal 'can/may' sense was chosen as the primary gloss.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu6-右
+    headword: 右
+    readings:
+      - pengim: iu6
+    senses:
+      - pos: noun
+        gloss_en: [right (direction/side)]
+        gloss_zh: [右]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mian5-ê6-名下
+    headword: 名下
+    readings:
+      - pengim: mian5 ê6
+    senses:
+      - pos: noun
+        gloss_en: [under one's name, belonging to someone]
+        gloss_zh: [名下]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou2-zêg4-否則
+    headword: 否則
+    readings:
+      - pengim: hou2 zêg4
+    senses:
+      - pos: conjunction
+        gloss_en: [otherwise, or else]
+        gloss_zh: [否則]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu1-ui5-周圍
+    headword: 周圍
+    readings:
+      - pengim: ziu1 ui5
+    senses:
+      - pos: noun
+        gloss_en: [surroundings, vicinity, around]
+        gloss_zh: [周圍]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu1-bin1-周邊
+    headword: 周邊
+    readings:
+      - pengim: ziu1 bin1
+    senses:
+      - pos: noun
+        gloss_en: [periphery, surroundings, vicinity]
+        gloss_zh: [周邊]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zai7-哉
+    headword: 哉
+    readings:
+      - pengim: zai7
+    senses:
+      - pos: particle
+        gloss_en: [particle of exclamation/emphasis (classical)]
+        gloss_zh: [哉]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li1-哩
+    headword: 哩
+    readings:
+      - pengim: li1
+    senses:
+      - pos: particle
+        gloss_en: [sentence-final particle for declarative emphasis]
+        gloss_zh: [哩]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: m6-zu6-唔住
+    headword: 唔住
+    readings:
+      - pengim: m6 zu6
+    senses:
+      - pos: particle
+        gloss_en: [cannot]
+        gloss_zh: [唔住]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: m6-duan1-唔單
+    headword: 唔單
+    readings:
+      - pengim: m6 duan1
+    senses:
+      - pos: conjunction
+        gloss_en: [not only]
+        gloss_zh: [不但, 不僅]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: m6-duan1-zi2-唔單只
+    headword: 唔單只
+    readings:
+      - pengim: m6 duan1 zi2
+    senses:
+      - pos: conjunction
+        gloss_en: [not only]
+        gloss_zh: [不但, 不僅]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rui6-唯
+    headword: 唯
+    readings:
+      - pengim: rui6
+    senses:
+      - pos: particle
+        gloss_en: [only, alone]
+        gloss_zh: [只, 僅]
+        note: 唯 carries many classical/literary senses under this one reading (topic-marking particle, 'only', 'because', 'although', a meaningless sentence-initial particle, etc.); 'only; alone' was picked as the most practically useful sense but the exact sense matching this reading is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: duan1-duan1-單單
+    headword: 單單
+    readings:
+      - pengim: duan1 duan1
+    senses:
+      - pos: adverb
+        gloss_en: [only, merely, just]
+        gloss_zh: [單單]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing1-因
+    headword: 因
+    readings:
+      - pengim: ing1
+    senses:
+      - pos: conjunction
+        gloss_en: [because, due to, cause; reason]
+        gloss_zh: [因]
+        note: The page lists 11 senses (verb, noun, conjunction, several archaic/literary) all sharing one Teochew reading; the common 'because/reason' sense was chosen as primary though other senses are equally plausible for this reading.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing1-re5-因而
+    headword: 因而
+    readings:
+      - pengim: ing1 re5
+    senses:
+      - pos: conjunction
+        gloss_en: [thus, consequently, as a result]
+        gloss_zh: [因而]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gin5-墘
+    headword: 墘
+    readings:
+      - pengim: gin5
+    senses:
+      - pos: noun
+        gloss_en: [edge; side; brink]
+        gloss_zh: [墘]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: na7-壏
+    headword: 壏
+    readings:
+      - pengim: na7
+    senses:
+      - pos: preposition
+        gloss_en: [at, in]
+        gloss_zh: [在]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghua7-外
+    headword: 外
+    readings:
+      - pengim: ghua7
+    senses:
+      - pos: noun
+        gloss_en: [outside, external, foreign]
+        gloss_zh: [外]
+        note: The Wiktionary character entry gives no explicit part-of-speech header (generic hanzi head), and 外 functions as noun/adjective/locative depending on context, so the noun tag here is an approximation.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghua7-kao2-外口
+    headword: 外口
+    readings:
+      - pengim: ghua7 kao2
+    senses:
+      - pos: noun
+        gloss_en: [outside, exterior]
+        gloss_zh: [外口]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghua7-ming7-外面
+    headword: 外面
+    readings:
+      - pengim: ghua7 ming7
+    senses:
+      - pos: noun
+        gloss_en: [outside, exterior]
+        gloss_zh: [外面]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghua7-tao5-外頭
+    headword: 外頭
+    readings:
+      - pengim: ghua7 tao5
+    senses:
+      - pos: noun
+        gloss_en: [outside (colloquial), exterior]
+        gloss_zh: [外頭]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

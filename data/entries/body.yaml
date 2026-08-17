@@ -763,3 +763,237 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: ziu1-sêng1-周身
+    headword: 周身
+    readings:
+      - pengim: ziu1 sêng1
+    senses:
+      - pos: noun
+        gloss_en: [whole body, all over the body]
+        gloss_zh: [周身]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu1-kib4-dao6-呼吸道
+    headword: 呼吸道
+    readings:
+      - pengim: hu1 kib4 dao6
+    senses:
+      - pos: noun
+        gloss_en: [respiratory tract, airway]
+        gloss_zh: [呼吸道]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao1-cuang2-哮喘
+    headword: 哮喘
+    readings:
+      - pengim: hao1 cuang2
+    senses:
+      - pos: noun
+        gloss_en: [asthma]
+        gloss_zh: [哮喘]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: to2-唾
+    headword: 唾
+    readings:
+      - pengim: to2
+    senses:
+      - pos: noun
+        gloss_en: [saliva, spit]
+        gloss_zh: [口水, 唾液]
+        note: 唾 has both a noun sense ('saliva') and separate verb senses ('to spit', 'to spit at', 'to vomit') listed under the same reading; the noun sense was picked as primary since it pairs with 唾液, but which sense matches this specific reading is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: to6-êg8-唾液
+    headword: 唾液
+    readings:
+      - pengim: to6 êg8
+    senses:
+      - pos: noun
+        gloss_en: [saliva]
+        gloss_zh: [唾液]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ao5-lêng5-喉嚨
+    headword: 喉嚨
+    readings:
+      - pengim: ao5 lêng5
+    senses:
+      - pos: noun
+        gloss_en: [throat, larynx and pharynx]
+        gloss_zh: [喉嚨]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cui3-nua6-喙瀾
+    headword: 喙瀾
+    readings:
+      - pengim: cui3 nua6
+    senses:
+      - pos: noun
+        gloss_en: [saliva; drool; slobber]
+        gloss_zh: [喙瀾]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cui3-dung5-喙脣
+    headword: 喙脣
+    readings:
+      - pengim: cui3 dung5
+    senses:
+      - pos: noun
+        gloss_en: [lip(s)]
+        gloss_zh: [喙脣]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: duan1-mag8-puê5-單目皮
+    headword: 單目皮
+    readings:
+      - pengim: duan1 mag8 puê5
+    senses:
+      - pos: noun
+        gloss_en: [single eyelid, monolid]
+        gloss_zh: [單目皮, 單眼皮]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: duan1-ngang2-puê5-單眼皮
+    headword: 單眼皮
+    readings:
+      - pengim: duan1 ngang2 puê5
+    senses:
+      - pos: noun
+        gloss_en: [single eyelid, monolid]
+        gloss_zh: [單眼皮]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cui3-嘴
+    headword: 嘴
+    readings:
+      - pengim: cui3
+    senses:
+      - pos: noun
+        gloss_en: [mouth]
+        gloss_zh: [嘴]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-guan1-器官
+    headword: 器官
+    readings:
+      - pengim: ki3 guan1
+    senses:
+      - pos: noun
+        gloss_en: [organ (biology)]
+        gloss_zh: [器官]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si3-zi1-四肢
+    headword: 四肢
+    readings:
+      - pengim: si3 zi1
+    senses:
+      - pos: noun
+        gloss_en: [four limbs, extremities]
+        gloss_zh: [四肢]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing3-囟
+    headword: 囟
+    readings:
+      - pengim: sing3
+    senses:
+      - pos: noun
+        gloss_en: [fontanelle, soft spot on an infant's skull]
+        gloss_zh: [囟]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dai6-biang6-大便
+    headword: 大便
+    readings:
+      - pengim: dai6 biang6
+    senses:
+      - pos: verb
+        gloss_en: [to defecate; to have a bowel movement, feces; stool]
+        gloss_zh: [大便]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-nao2-大腦
+    headword: 大腦
+    readings:
+      - pengim: dua7 nao2
+    senses:
+      - pos: noun
+        gloss_en: [brain, cerebrum, mind]
+        gloss_zh: [大腦, 腦]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-tui2-大腿
+    headword: 大腿
+    readings:
+      - pengim: dua7 tui2
+    senses:
+      - pos: noun
+        gloss_en: [thigh]
+        gloss_zh: [大腿]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-am6-gui1-大頷胿
+    headword: 大頷胿
+    readings:
+      - pengim: dua7 am6 gui1
+    senses:
+      - pos: noun
+        gloss_en: [goiter]
+        gloss_zh: [大頷胿]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-lang6-pa1-大𡳞脬
+    headword: 大𡳞脬
+    readings:
+      - pengim: dua7 lang6 pa1
+    senses:
+      - pos: noun
+        gloss_en: [hernia (vulgar), scrotal hernia]
+        gloss_zh: [大𡳞脬]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

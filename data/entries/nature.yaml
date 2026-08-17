@@ -1156,3 +1156,753 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: hu1-呋
+    headword: 呋
+    readings:
+      - pengim: hu1
+    senses:
+      - pos: noun
+        gloss_en: [furan (chemistry), used in transliteration]
+        gloss_zh: [呋]
+        note: Character is mainly used for phonetic transcription (e.g. in 呋喃/furan); Wiktionary gives little standalone meaning beyond that narrow chemistry sense, so pos and category are uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kêh4-se1-dêg8-喀斯特
+    headword: 喀斯特
+    readings:
+      - pengim: kêh4 se1 dêg8
+    senses:
+      - pos: noun
+        gloss_en: [karst (landform)]
+        gloss_zh: [喀斯特]
+        note: 喀斯特 is a specialized geological loanword (karst) with limited everyday colloquial usage.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: la1-ba1-huê1-喇叭花
+    headword: 喇叭花
+    readings:
+      - pengim: la1 ba1 huê1
+    senses:
+      - pos: noun
+        gloss_en: [morning glory (flower)]
+        gloss_zh: [喇叭花]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gu3-ti2-固體
+    headword: 固體
+    readings:
+      - pengim: gu3 ti2
+    senses:
+      - pos: noun
+        gloss_en: [solid (state of matter)]
+        gloss_zh: [固體]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hng5-ghoi7-園藝
+    headword: 園藝
+    readings:
+      - pengim: hng5 ghoi7
+    senses:
+      - pos: noun
+        gloss_en: [gardening, horticulture]
+        gloss_zh: [園藝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in5-ghuêh8-圓月
+    headword: 圓月
+    readings:
+      - pengim: in5 ghuêh8
+    senses:
+      - pos: noun
+        gloss_en: [full moon, round moon]
+        gloss_zh: [圓月]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou2-di7-土地
+    headword: 土地
+    readings:
+      - pengim: tou2 di7
+    senses:
+      - pos: noun
+        gloss_en: [land, soil, territory]
+        gloss_zh: [土地]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou2-cên1-土星
+    headword: 土星
+    readings:
+      - pengim: tou2 cên1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Saturn (planet)]
+        gloss_zh: [土星]
+        note: Astronomical proper noun with no closely matching category among the provided list; nature.yaml chosen as the closest fit.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gui1-圭
+    headword: 圭
+    readings:
+      - pengim: gui1
+    senses:
+      - pos: noun
+        gloss_en: [ancient jade ceremonial tablet, surname]
+        gloss_zh: [圭]
+        note: Classical/archaic term with several senses (ceremonial jade tablet held by officials, ancient sundial gnomon, surname) and no category in the given list is a clean fit.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gui1-ziang1-圭璋
+    headword: 圭璋
+    readings:
+      - pengim: gui1 ziang1
+    senses:
+      - pos: noun
+        gloss_en: [ceremonial jade tablet/ornament, "(figurative) person of noble, refined character"]
+        gloss_zh: [圭璋]
+        note: Rare literary compound with both a literal jade-object sense and a figurative sense describing character; category fit among the given options is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-si3-地勢
+    headword: 地勢
+    readings:
+      - pengim: di7 si3
+    senses:
+      - pos: noun
+        gloss_en: [terrain; topography]
+        gloss_zh: [地勢]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-pêng5-suan3-地平線
+    headword: 地平線
+    readings:
+      - pengim: di7 pêng5 suan3
+    senses:
+      - pos: noun
+        gloss_en: [horizon]
+        gloss_zh: [地平線]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-giu5-地球
+    headword: 地球
+    readings:
+      - pengim: di7 giu5
+    senses:
+      - pos: noun
+        gloss_en: [Earth, the globe]
+        gloss_zh: [地球]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-li2-地理
+    headword: 地理
+    readings:
+      - pengim: di7 li2
+    senses:
+      - pos: noun
+        gloss_en: [geography, topography]
+        gloss_zh: [地理]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-gai3-地界
+    headword: 地界
+    readings:
+      - pengim: di7 gai3
+    senses:
+      - pos: noun
+        gloss_en: [boundary, land demarcation]
+        gloss_zh: [地界]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-biou2-地表
+    headword: 地表
+    readings:
+      - pengim: di7 biou2
+    senses:
+      - pos: noun
+        gloss_en: [earth's surface, ground surface]
+        gloss_zh: [地表]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-mao6-地貌
+    headword: 地貌
+    readings:
+      - pengim: di7 mao6
+    senses:
+      - pos: noun
+        gloss_en: [topography, landform, terrain]
+        gloss_zh: [地貌]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-zioh4-hag8-地質學
+    headword: 地質學
+    readings:
+      - pengim: di7 zioh4 hag8
+    senses:
+      - pos: noun
+        gloss_en: [geology]
+        gloss_zh: [地質學]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-zing2-地震
+    headword: 地震
+    readings:
+      - pengim: di7 zing2
+    senses:
+      - pos: noun
+        gloss_en: [earthquake]
+        gloss_zh: [地震]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-zing2-dua3-地震帶
+    headword: 地震帶
+    readings:
+      - pengim: di7 zing2 dua3
+    senses:
+      - pos: noun
+        gloss_en: [seismic zone, earthquake belt]
+        gloss_zh: [地震帶]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-ming7-地面
+    headword: 地面
+    readings:
+      - pengim: di7 ming7
+    senses:
+      - pos: noun
+        gloss_en: [ground, floor, earth's surface]
+        gloss_zh: [地面]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zung3-圳
+    headword: 圳
+    readings:
+      - pengim: zung3
+    senses:
+      - pos: noun
+        gloss_en: [irrigation ditch, furrow (drainage channel between fields)]
+        gloss_zh: [圳]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kam2-坎
+    headword: 坎
+    readings:
+      - pengim: kam2
+    senses:
+      - pos: noun
+        gloss_en: [pit, hole, ridge between fields]
+        gloss_zh: [坎]
+        note: The character has several senses under the same Teochew reading (pit/hole, ridge between fields, critical juncture, trigram name, surname); a separate Cantonese-only mahjong sense under a different etymology was excluded, and it is unclear which general sense is most idiomatic in everyday Teochew.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kên1-坑
+    headword: 坑
+    readings:
+      - pengim: kên1
+    senses:
+      - pos: noun
+        gloss_en: [pit, hole, ditch]
+        gloss_zh: [坑]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kên1-gao1-坑溝
+    headword: 坑溝
+    readings:
+      - pengim: kên1 gao1
+    senses:
+      - pos: noun
+        gloss_en: [gully, ditch, trench]
+        gloss_zh: [坑溝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo1-坡
+    headword: 坡
+    readings:
+      - pengim: bo1
+    senses:
+      - pos: noun
+        gloss_en: [slope, hillside, bank]
+        gloss_zh: [坡]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo1-dou7-坡度
+    headword: 坡度
+    readings:
+      - pengim: bo1 dou7
+    senses:
+      - pos: noun
+        gloss_en: [gradient, slope (degree of incline)]
+        gloss_zh: [坡度]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puê1-坯
+    headword: 坯
+    readings:
+      - pengim: puê1
+    senses:
+      - pos: noun
+        gloss_en: [unfired brick or pottery blank, adobe]
+        gloss_zh: [坯]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gên2-埂
+    headword: 埂
+    readings:
+      - pengim: gên2
+    senses:
+      - pos: noun
+        gloss_en: [ridge between fields, earthen dyke]
+        gloss_zh: [埂]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ai1-埃
+    headword: 埃
+    readings:
+      - pengim: ai1
+    senses:
+      - pos: noun
+        gloss_en: [fine dust, dirt]
+        gloss_zh: [埃]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bou1-埔
+    headword: 埔
+    readings:
+      - pengim: bou1
+    senses:
+      - pos: noun
+        gloss_en: [plain, flatland]
+        gloss_zh: [埔]
+        note: The bou1 reading is shared across several etymologies on the Wiktionary page (plain/flatland, chiefly Hakka/Southern Min; an alternative form of 埠 'wharf'; a component in place names like 黃埔/柬埔寨), so the exact core standalone sense is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nao2-堖
+    headword: 堖
+    readings:
+      - pengim: nao2
+    senses:
+      - pos: noun
+        gloss_en: [mound, small hill]
+        gloss_zh: [堖]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iam2-sag4-ou5-堰塞湖
+    headword: 堰塞湖
+    readings:
+      - pengim: iam2 sag4 ou5
+    senses:
+      - pos: noun
+        gloss_en: [landslide dam, quake lake]
+        gloss_zh: [堰塞湖]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo3-ni5-ang5-報年紅
+    headword: 報年紅
+    readings:
+      - pengim: bo3 ni5 ang5
+    senses:
+      - pos: noun
+        gloss_en: [poinsettia]
+        gloss_zh: [報年紅, 一品紅]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êng1-dêng5-塕塵
+    headword: 塕塵
+    readings:
+      - pengim: êng1 dêng5
+    senses:
+      - pos: noun
+        gloss_en: [dust, cobweb (Teochew)]
+        gloss_zh: [塕塵]
+        note: Wiktionary lists two distinct senses under this reading, 'dust' (shared across several dialects) and 'cobweb/spiderweb' (Teochew-only), and it is unclear which is primary in everyday Teochew usage.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tu5-liao7-塗料
+    headword: 塗料
+    readings:
+      - pengim: tu5 liao7
+    senses:
+      - pos: noun
+        gloss_en: [coating, paint]
+        gloss_zh: [塗料]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou5-iu5-塗油
+    headword: 塗油
+    readings:
+      - pengim: tou5 iu5
+    senses:
+      - pos: noun
+        gloss_en: [kerosene, paraffin]
+        gloss_zh: [塗油]
+        note: The reading tou5 iu5 could correspond to either the Southern-Min-specific noun sense 'kerosene' or the general verb senses 'to grease/anoint'; the literal 'earth-oil' meaning suggests kerosene, but the page does not disambiguate pronunciation by sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou5-tuan3-塗炭
+    headword: 塗炭
+    readings:
+      - pengim: tou5 tuan3
+    senses:
+      - pos: noun
+        gloss_en: [coal briquette, coal]
+        gloss_zh: [塗炭]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou5-tuan3-sai2-塗炭屎
+    headword: 塗炭屎
+    readings:
+      - pengim: tou5 tuan3 sai2
+    senses:
+      - pos: noun
+        gloss_en: [coal cinder]
+        gloss_zh: [塗炭屎]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou5-muê5-塗糜
+    headword: 塗糜
+    readings:
+      - pengim: tou5 muê5
+    senses:
+      - pos: noun
+        gloss_en: [mud, slush, slurry]
+        gloss_zh: [塗糜]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ding5-ai1-塵埃
+    headword: 塵埃
+    readings:
+      - pengim: ding5 ai1
+    senses:
+      - pos: noun
+        gloss_en: [dust]
+        gloss_zh: [塵埃]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhag8-墨
+    headword: 墨
+    readings:
+      - pengim: bhag8
+    senses:
+      - pos: noun
+        gloss_en: [ink, black; dark]
+        gloss_zh: [墨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhag8-zab4-墨汁
+    headword: 墨汁
+    readings:
+      - pengim: bhag8 zab4
+    senses:
+      - pos: noun
+        gloss_en: [prepared ink (liquid)]
+        gloss_zh: [墨汁]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hag4-壑
+    headword: 壑
+    readings:
+      - pengim: hag4
+    senses:
+      - pos: noun
+        gloss_en: [ravine, gully, mountain valley]
+        gloss_zh: [壑]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: riang2-壤
+    headword: 壤
+    readings:
+      - pengim: riang2
+    senses:
+      - pos: noun
+        gloss_en: [soil, earth, land]
+        gloss_zh: [壤]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: se7-lêg8-士叻
+    headword: 士叻
+    readings:
+      - pengim: se7 lêg8
+    senses:
+      - pos: noun
+        gloss_en: [shellac]
+        gloss_zh: [紫膠, 蟲膠]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hê7-zi3-夏至
+    headword: 夏至
+    readings:
+      - pengim: hê7 zi3
+    senses:
+      - pos: noun
+        gloss_en: [summer solstice]
+        gloss_zh: [夏至]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêg4-iang5-夕陽
+    headword: 夕陽
+    readings:
+      - pengim: sêg4 iang5
+    senses:
+      - pos: noun
+        gloss_en: [setting sun, sunset]
+        gloss_zh: [夕陽]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghua7-hai2-外海
+    headword: 外海
+    readings:
+      - pengim: ghua7 hai2
+    senses:
+      - pos: noun
+        gloss_en: [open sea, offshore waters]
+        gloss_zh: [外海]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-dang1-大冬
+    headword: 大冬
+    readings:
+      - pengim: dua7 dang1
+    senses:
+      - pos: noun
+        gloss_en: [late-season rice (harvested after Shuangjiang)]
+        gloss_zh: [大冬]
+        note: Specialized Teochew agricultural term for post-Shuangjiang rice; category could arguably be food.yaml (rice) instead of nature.yaml (crop/season), chosen the latter.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-hang5-大寒
+    headword: 大寒
+    readings:
+      - pengim: dua7 hang5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Greater Cold (24th solar term), Dahan]
+        gloss_zh: [大寒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-su2-大暑
+    headword: 大暑
+    readings:
+      - pengim: dua7 su2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Greater Heat (12th solar term), Dashu]
+        gloss_zh: [大暑]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dai6-ki3-大氣
+    headword: 大氣
+    readings:
+      - pengim: dai6 ki3
+    senses:
+      - pos: noun
+        gloss_en: [atmosphere, air]
+        gloss_zh: [大氣]
+        note: Page lists multiple senses under this reading (meteorological 'atmosphere' as a noun vs. 'imposing/magnanimous' as an adjective) without clear disambiguation for the Teochew pronunciation; the meteorological noun sense was chosen as primary.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-zui2-大水
+    headword: 大水
+    readings:
+      - pengim: dua7 zui2
+    senses:
+      - pos: noun
+        gloss_en: [flood, high water]
+        gloss_zh: [大水]
+        note: No sense on the page is explicitly tied to the Teochew reading; 'flood' is the most common general Chinese sense, but the page also lists 'sea/river' and a Taishanese-specific 'heavy rain' sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-hai2-大海
+    headword: 大海
+    readings:
+      - pengim: dua7 hai2
+    senses:
+      - pos: noun
+        gloss_en: [ocean, sea]
+        gloss_zh: [大海]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-huê2-大火
+    headword: 大火
+    readings:
+      - pengim: dua7 huê2
+    senses:
+      - pos: noun
+        gloss_en: [large fire, conflagration, high heat (cooking)]
+        gloss_zh: [大火]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-hou6-大雨
+    headword: 大雨
+    readings:
+      - pengim: dua7 hou6
+    senses:
+      - pos: noun
+        gloss_en: [heavy rain, downpour]
+        gloss_zh: [大雨]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-soh4-大雪
+    headword: 大雪
+    readings:
+      - pengim: dua7 soh4
+    senses:
+      - pos: noun
+        gloss_en: [heavy snow, Major Snow (solar term)]
+        gloss_zh: [大雪]
+        note: The page lists both a common-noun weather sense ('heavy snow') and a proper-noun solar-term sense ('Major Snow') under the same reading without disambiguating which applies.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-huang1-大風
+    headword: 大風
+    readings:
+      - pengim: dua7 huang1
+    senses:
+      - pos: noun
+        gloss_en: [windstorm, gale, storm]
+        gloss_zh: [大風]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-huang1-dua7-êng2-大風大湧
+    headword: 大風大湧
+    readings:
+      - pengim: dua7 huang1 dua7 êng2
+    senses:
+      - pos: idiom
+        gloss_en: [wind and waves; great storms, "(fig.) turmoil, hardship"]
+        gloss_zh: [大風大浪]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

@@ -620,3 +620,309 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: ko2-kao2-ko2-lag8-可口可樂
+    headword: 可口可樂
+    readings:
+      - pengim: ko2 kao2 ko2 lag8
+    senses:
+      - pos: proper-noun
+        gloss_en: [Coca-Cola]
+        gloss_zh: [可口可樂]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ko2-lag8-可樂
+    headword: 可樂
+    readings:
+      - pengim: ko2 lag8
+    senses:
+      - pos: noun
+        gloss_en: [cola (soft drink), coke; pepsi]
+        gloss_zh: [可樂]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hah8-to5-合桃
+    headword: 合桃
+    readings:
+      - pengim: hah8 to5
+    senses:
+      - pos: noun
+        gloss_en: [walnut]
+        gloss_zh: [合桃, 核桃]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diao3-guê1-吊瓜
+    headword: 吊瓜
+    readings:
+      - pengim: diao3 guê1
+    senses:
+      - pos: noun
+        gloss_en: [cucumber]
+        gloss_zh: [吊瓜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhi7-味
+    headword: 味
+    readings:
+      - pengim: bhi7
+    senses:
+      - pos: noun
+        gloss_en: [taste; flavor, smell; odor]
+        gloss_zh: [味]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhi7-zêng1-味精
+    headword: 味精
+    readings:
+      - pengim: bhi7 zêng1
+    senses:
+      - pos: noun
+        gloss_en: [MSG, monosodium glutamate]
+        gloss_zh: [味精]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhi7-dao6-味道
+    headword: 味道
+    readings:
+      - pengim: bhi7 dao6
+    senses:
+      - pos: noun
+        gloss_en: [taste; flavor, smell; odor]
+        gloss_zh: [味道]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gia1-咖
+    headword: 咖
+    readings:
+      - pengim: gia1
+    senses:
+      - pos: noun
+        gloss_en: [coffee (short for 咖啡)]
+        gloss_zh: [咖啡]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ga1-li5-咖喱
+    headword: 咖喱
+    readings:
+      - pengim: ga1 li5
+    senses:
+      - pos: noun
+        gloss_en: [curry]
+        gloss_zh: [咖喱]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ha1-bhig8-guê1-哈密瓜
+    headword: 哈密瓜
+    readings:
+      - pengim: ha1 bhig8 guê1
+    senses:
+      - pos: noun
+        gloss_en: [Hami melon]
+        gloss_zh: [哈密瓜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui1-啡
+    headword: 啡
+    readings:
+      - pengim: hui1
+    senses:
+      - pos: noun
+        gloss_en: [coffee (loanword element)]
+        gloss_zh: [啡]
+        note: The character functions mainly as a bound transliteration element (as in 咖啡), so it is unclear whether the Teochew reading is used as a free-standing word for 'coffee' or only within compounds.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi5-啤
+    headword: 啤
+    readings:
+      - pengim: bi5
+    senses:
+      - pos: noun
+        gloss_en: ["beer (bound form, used in compounds)"]
+        gloss_zh: [啤]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi5-ziu2-啤酒
+    headword: 啤酒
+    readings:
+      - pengim: bi5 ziu2
+    senses:
+      - pos: noun
+        gloss_en: [beer]
+        gloss_zh: [啤酒]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-gao1-iu5-地溝油
+    headword: 地溝油
+    readings:
+      - pengim: di7 gao1 iu5
+    senses:
+      - pos: noun
+        gloss_en: [gutter oil, illicit recycled cooking oil]
+        gloss_zh: [地溝油]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-dao7-地豆
+    headword: 地豆
+    readings:
+      - pengim: di7 dao7
+    senses:
+      - pos: noun
+        gloss_en: [peanut]
+        gloss_zh: [花生]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-dao7-rêng5-地豆仁
+    headword: 地豆仁
+    readings:
+      - pengim: di7 dao7 rêng5
+    senses:
+      - pos: noun
+        gloss_en: [shelled peanut, peanut kernel]
+        gloss_zh: [地豆仁]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou5-dao7-塗豆
+    headword: 塗豆
+    readings:
+      - pengim: tou5 dao7
+    senses:
+      - pos: noun
+        gloss_en: [peanut]
+        gloss_zh: [塗豆, 花生]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu5-壺
+    headword: 壺
+    readings:
+      - pengim: hu5
+    senses:
+      - pos: noun
+        gloss_en: [pot, kettle, jug]
+        gloss_zh: [壺]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghua7-bhoi7-外賣
+    headword: 外賣
+    readings:
+      - pengim: ghua7 bhoi7
+    senses:
+      - pos: noun
+        gloss_en: [takeout, food delivery, carryout]
+        gloss_zh: [外賣]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-bai5-dang3-大排檔
+    headword: 大排檔
+    readings:
+      - pengim: dua7 bai5 dang3
+    senses:
+      - pos: noun
+        gloss_en: [dai pai dong, open-air food stalls, street food stall area]
+        gloss_zh: [大排檔]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-bêh4-cai3-大白菜
+    headword: 大白菜
+    readings:
+      - pengim: dua7 bêh4 cai3
+    senses:
+      - pos: noun
+        gloss_en: [Chinese cabbage, napa cabbage]
+        gloss_zh: [大白菜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-bhi2-大米
+    headword: 大米
+    readings:
+      - pengim: dua7 bhi2
+    senses:
+      - pos: noun
+        gloss_en: [uncooked rice, husked rice]
+        gloss_zh: [大米, 米]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-cai3-大菜
+    headword: 大菜
+    readings:
+      - pengim: dua7 cai3
+    senses:
+      - pos: noun
+        gloss_en: [Chinese mustard greens, mustard plant]
+        gloss_zh: [大菜, 芥菜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-cang1-大蔥
+    headword: 大蔥
+    readings:
+      - pengim: dua7 cang1
+    senses:
+      - pos: noun
+        gloss_en: [onion]
+        gloss_zh: [大蔥, 洋蔥]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua7-dian2-bung7-大鼎飯
+    headword: 大鼎飯
+    readings:
+      - pengim: dua7 dian2 bung7
+    senses:
+      - pos: noun
+        gloss_en: [food from a large communal pot, mess-hall food]
+        gloss_zh: [大鍋飯]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
