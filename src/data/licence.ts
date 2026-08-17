@@ -95,3 +95,22 @@ export function resolveLicenceOrThrow(
   if (!resolved.ok) throw new Error(`${context}: ${resolved.reason}`)
   return resolved
 }
+
+/**
+ * Notice credited to the project itself, for an entry whose `attributions`
+ * would otherwise be empty — see withProjectAttribution.
+ */
+export const PROJECT_ATTRIBUTION = `Teochew Works Dictionary Project (${BASE_LICENCE})`
+
+/**
+ * An empty `attributions` means every source an entry cites is BASE_LICENCE,
+ * i.e. project-original work (`seed`, `teochew-dictionary-audio`) — nobody
+ * else's notice is owed. Left blank, that's indistinguishable in the UI from
+ * "attribution wasn't checked," so the entry credits the project instead of
+ * showing nothing. Entry-only: an audio clip's credit is its own `speaker`
+ * field (see data/sources.yaml), not this notice, so callers resolving a
+ * clip's licence should use resolveLicence/resolveLicenceOrThrow directly.
+ */
+export function withProjectAttribution(attributions: string[]): string[] {
+  return attributions.length > 0 ? attributions : [PROJECT_ATTRIBUTION]
+}
