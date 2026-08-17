@@ -290,6 +290,52 @@ which caches `data/phonology/external/learnteochew.yaml` — network access
 stays confined to that command, same as `npm run import`. See
 `data/phonology/REVIEW.md` § 10 for the design and its known caveats.
 
+### Hand-merging Wiktionary candidates into entries (issue #68)
+
+`wiktionary-teochew-index.yaml`'s `staged` items (15,845 at the time of
+issue #54/#67) are reading-only — a headword and a peng'im, nothing else.
+The Wiktionary importer never fetches a gloss, by design (licence hygiene
+again: readings and glosses are separate decisions). So merging one into
+`data/entries/` still needs a human, or an agent, to read the headword's own
+page at `https://en.wiktionary.org/wiki/<headword>` and write its gloss,
+part of speech, and — where the page gives one — an example, the same way
+the 141 entries from issue #5 were done. That per-entry cost is why 15,845
+candidates gets worked in many small batches rather than one PR.
+
+```bash
+npm run batch:wiktionary -- --limit=25
+```
+
+lists the next batch: the first N `wiktionary-teochew-index.yaml` items
+still `status: staged`, cross-referenced against their
+`data/staging/wiktionary.yaml` proposal. Unflagged proposals (a single,
+unambiguous reading) come first; `--include-flagged` pulls from the
+multi-reading tail instead. Re-run it after merging a batch — the status
+flip below means it never repeats a headword, so "next batch" is always
+whatever is left.
+
+Per headword in a batch:
+
+1. Fetch its Wiktionary page for a gloss and part of speech (single-reading
+   proposals), or to judge which candidate reading(s) are genuine Chaozhou
+   colloquial forms (multi-reading proposals — keep only the genuine ones,
+   set `needs_review: true`, and summarize why in `senses[].note`, e.g.
+   `ciu7-樹` in `data/entries/nature.yaml`). Never invent a reading or a
+   gloss that the page doesn't support.
+2. Add the entry to whichever existing category file fits its meaning
+   (`data/entries/*.yaml` — no new Wiktionary-only file), with
+   `sources: [wiktionary]` and `retrieved` carried across from the staging
+   proposal's date.
+3. Flip the headword's `wiktionary-teochew-index.yaml` entry from
+   `staged` to `existing` with `entry_id: <the new id>` — the same
+   `status` lifecycle `swadesh-207.yaml` already uses, so this doubles as
+   the batch's resumability marker.
+
+Then `npm run inventory` (new syllables need re-deriving) and `npm run
+check` before opening the PR, same as any other change. One PR per batch,
+referencing #68 without closing it — it stays open until no `staged` items
+remain.
+
 ---
 
 ## Licensing
@@ -404,6 +450,7 @@ are, so `check` stays fast, offline, and CI-safe.
 | `npm run import -- <source>` | fetch proposals into `data/staging/` |
 | `npm run inventory` | regenerate `data/wordlists/syllable-inventory.yaml` |
 | `npm run wordlist:wiktionary` | regenerate `data/wordlists/wiktionary-teochew-index.yaml` |
+| `npm run batch:wiktionary -- --limit=N` | list the next Wiktionary merge batch (issue #68) |
 | `npm run xref -- <source>` | refresh a cached external phonology chart |
 | `npm run audio:verify` | fetch every audio clip and verify its checksum |
 | `npm run schema` | emit the JSON Schemas alone |
@@ -433,24 +480,30 @@ build, and deploy it.
 
 ## Status
 
-244 entries covering core everyday vocabulary against the Swadesh-207
+264 entries. 244 cover core everyday vocabulary against the Swadesh-207
 checklist — numerals, pronouns, kinship, body parts, animals, nature, common
-verbs and descriptives, place names, function words. 141 of those were merged
-from the Wiktionary import (issue #5) and carry `needs_review: true` wherever
-Wiktionary returned more than one candidate reading or the headword choice
-itself was a guess; a native speaker still needs to confirm them.
+verbs and descriptives, place names, function words — 141 of those merged
+from the Wiktionary import (issue #5). A further 20 are the first batch of
+the much larger Wiktionary index sweep (issue #68, 15,825 `staged` proposals
+remaining after this batch). Entries merged from Wiktionary carry
+`needs_review: true` wherever Wiktionary returned more than one candidate
+reading or the headword choice itself was a guess; a native speaker still
+needs to confirm them.
 
 The most valuable next contributions, in order:
 
-1. **A native speaker confirming the `needs_review` entries from the
+1. **Working through the issue #68 batches** — `npm run batch:wiktionary`
+   lists the next batch of `data/staging/wiktionary.yaml` proposals to
+   hand-merge; see "Hand-merging Wiktionary candidates into entries" above.
+2. **A native speaker confirming the `needs_review` entries from the
    Wiktionary merge** — around 100 entries carry unresolved multi-reading
    ambiguity or headword/register uncertainty, tracked per-item in
    `data/wordlists/swadesh-207.yaml`.
-2. **Confirming the sandhi table** in `data/phonology/sandhi/chaozhou.yaml`. It is
+3. **Confirming the sandhi table** in `data/phonology/sandhi/chaozhou.yaml`. It is
    flagged `needs_review: true` in full, and published descriptions disagree with
    each other, so this is the largest remaining unknown.
-3. **A native speaker walking [REVIEW.md](data/phonology/REVIEW.md).** §1, the
+4. **A native speaker walking [REVIEW.md](data/phonology/REVIEW.md).** §1, the
    `e`/`ê` vowel split, is resolved; §2–§7 are not.
-4. **The 16 Swadesh items still `no_reading`** in
+5. **The 16 Swadesh items still `no_reading`** in
    `data/wordlists/swadesh-207.yaml` — the importer found nothing for these
    headword guesses; they need better headwords before they can be re-fetched.

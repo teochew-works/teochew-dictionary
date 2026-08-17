@@ -150,3 +150,18 @@ entries:
             en: my house
     frequency: 5
     sources: [seed]
+
+  # The following entry was merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: ê6-zui2-dao6-下水道
+    headword: 下水道
+    readings:
+      - pengim: ê6 zui2 dao6
+    senses:
+      - pos: noun
+        gloss_en: [sewer, drain]
+        gloss_zh: [下水道]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

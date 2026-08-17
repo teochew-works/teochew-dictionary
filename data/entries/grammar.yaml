@@ -114,3 +114,30 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-07-28'
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: ê6-ming7-下面
+    headword: 下面
+    readings:
+      - pengim: ê6 ming7
+    senses:
+      - pos: noun
+        gloss_en: [below, underneath, next (in order)]
+        gloss_zh: [下面]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bug4-guê3-不過
+    headword: 不過
+    readings:
+      - pengim: bug4 guê3
+    senses:
+      - pos: conjunction
+        gloss_en: [however, but]
+        gloss_zh: [不過]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

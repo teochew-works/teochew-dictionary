@@ -279,3 +279,153 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-07-28'
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: zêg8-ê7-一下
+    headword: 一下
+    readings:
+      - pengim: zêg8 ê7
+    senses:
+      - pos: adverb
+        gloss_en: [briefly, for a moment, once]
+        gloss_zh: [一下]
+        examples:
+          - hanzi: 看一下
+            pengim: toin2 zêg8 ê7
+            en: take a look
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêg8-si3-nang5-一世人
+    headword: 一世人
+    readings:
+      - pengim: zêg8 si3 nang5
+    senses:
+      - pos: noun
+        gloss_en: [a whole lifetime, one's entire life]
+        gloss_zh: [一世人]
+        note: >-
+          Southern Min colloquial idiom (cf. Hokkien chi̍t-sì-lâng); absent
+          from standard Mandarin, which instead says 一輩子.
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêg8-dian7-一定
+    headword: 一定
+    readings:
+      - pengim: zêg8 dian7
+    senses:
+      - pos: adverb
+        gloss_en: [definitely, certainly, surely]
+        gloss_zh: [一定]
+        examples:
+          - hanzi: 我一定去
+            pengim: ua2 zêg8 dian7 ke3
+            en: I will definitely go.
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêg8-dig8-一直
+    headword: 一直
+    readings:
+      - pengim: zêg8 dig8
+    senses:
+      - pos: adverb
+        gloss_en: [always, continuously, straight ahead]
+        gloss_zh: [一直]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêg8-ki2-一起
+    headword: 一起
+    readings:
+      - pengim: zêg8 ki2
+    senses:
+      - pos: adverb
+        gloss_en: [together]
+        gloss_zh: [一起]
+        examples:
+          - hanzi: 一起去
+            pengim: zêg8 ki2 ke3
+            en: to go together
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ê6-ngou2-下午
+    headword: 下午
+    readings:
+      - pengim: ê6 ngou2
+    senses:
+      - pos: noun
+        gloss_en: [afternoon]
+        gloss_zh: [下午]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong1-ngou2-中午
+    headword: 中午
+    readings:
+      - pengim: dong1 ngou2
+    senses:
+      - pos: noun
+        gloss_en: [noon, midday]
+        gloss_zh: [中午]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong1-bhung5-中文
+    headword: 中文
+    readings:
+      - pengim: dong1 bhung5
+    senses:
+      - pos: noun
+        gloss_en: [Chinese language]
+        gloss_zh: [中文]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong1-sim1-中心
+    headword: 中心
+    readings:
+      - pengim: dong1 sim1
+    senses:
+      - pos: noun
+        gloss_en: [center, core]
+        gloss_zh: [中心]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu2-i3-主意
+    headword: 主意
+    readings:
+      - pengim: zu2 i3
+    senses:
+      - pos: noun
+        gloss_en: [idea, plan]
+        gloss_zh: [主意]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si3-gai3-世界
+    headword: 世界
+    readings:
+      - pengim: si3 gai3
+    senses:
+      - pos: noun
+        gloss_en: [world]
+        gloss_zh: [世界]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

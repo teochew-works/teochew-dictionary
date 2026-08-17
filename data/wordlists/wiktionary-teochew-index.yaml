@@ -320,9 +320,11 @@ items:
     status: existing
     entry_id: zeg8-一
   - headword: 一下
-    status: staged
+    status: existing
+    entry_id: zêg8-ê7-一下
   - headword: 一世人
-    status: staged
+    status: existing
+    entry_id: zêg8-si3-nang5-一世人
   - headword: 一事無成
     status: staged
   - headword: 一個
@@ -352,7 +354,8 @@ items:
   - headword: 一如既往
     status: staged
   - headword: 一定
-    status: staged
+    status: existing
+    entry_id: zêg8-dian7-一定
   - headword: 一家
     status: staged
   - headword: 一家人
@@ -394,11 +397,13 @@ items:
   - headword: 一畔……一畔……
     status: no_reading
   - headword: 一百
-    status: staged
+    status: existing
+    entry_id: zêg8-bêh4-一百
   - headword: 一目瞭然
     status: staged
   - headword: 一直
-    status: staged
+    status: existing
+    entry_id: zêg8-dig8-一直
   - headword: 一瞬間
     status: staged
   - headword: 一籌莫展
@@ -412,13 +417,15 @@ items:
   - headword: 一舉
     status: staged
   - headword: 一般
-    status: staged
+    status: existing
+    entry_id: zêg8-buan1-一般
   - headword: 一萬
     status: staged
   - headword: 一見鍾情
     status: staged
   - headword: 一起
-    status: staged
+    status: existing
+    entry_id: zêg8-ki2-一起
   - headword: 一輩子
     status: staged
   - headword: 一邊
@@ -634,7 +641,8 @@ items:
   - headword: 下世人
     status: staged
   - headword: 下午
-    status: staged
+    status: existing
+    entry_id: ê6-ngou2-下午
   - headword: 下回
     status: staged
   - headword: 下底
@@ -650,7 +658,8 @@ items:
   - headword: 下次
     status: staged
   - headword: 下水道
-    status: staged
+    status: existing
+    entry_id: ê6-zui2-dao6-下水道
   - headword: 下沉
     status: staged
   - headword: 下流
@@ -668,15 +677,18 @@ items:
   - headword: 下輩
     status: staged
   - headword: 下降
-    status: staged
+    status: existing
+    entry_id: hia6-gang3-下降
   - headword: 下面
-    status: staged
+    status: existing
+    entry_id: ê6-ming7-下面
   - headword: 下頦
     status: staged
   - headword: 不
     status: staged
   - headword: 不便
-    status: staged
+    status: existing
+    entry_id: bug4-biang6-不便
   - headword: 不倒翁
     status: staged
   - headword: 不停
@@ -710,7 +722,8 @@ items:
   - headword: 不宜
     status: staged
   - headword: 不少
-    status: staged
+    status: existing
+    entry_id: bug4-zio2-不少
   - headword: 不幸
     status: staged
   - headword: 不得不
@@ -766,7 +779,8 @@ items:
   - headword: 不足
     status: staged
   - headword: 不過
-    status: staged
+    status: existing
+    entry_id: bug4-guê3-不過
   - headword: 不雅
     status: staged
   - headword: 丐
@@ -792,7 +806,8 @@ items:
   - headword: 世代
     status: staged
   - headword: 世界
-    status: staged
+    status: existing
+    entry_id: si3-gai3-世界
   - headword: 世界盃
     status: staged
   - headword: 世界觀
@@ -834,7 +849,8 @@ items:
   - headword: 中共
     status: staged
   - headword: 中午
-    status: staged
+    status: existing
+    entry_id: dong1-ngou2-中午
   - headword: 中原
     status: staged
   - headword: 中國
@@ -864,13 +880,15 @@ items:
   - headword: 中年
     status: staged
   - headword: 中心
-    status: staged
+    status: existing
+    entry_id: dong1-sim1-中心
   - headword: 中招
     status: staged
   - headword: 中指
     status: staged
   - headword: 中文
-    status: staged
+    status: existing
+    entry_id: dong1-bhung5-中文
   - headword: 中斷
     status: staged
   - headword: 中暑
@@ -948,7 +966,8 @@ items:
   - headword: 主張
     status: staged
   - headword: 主意
-    status: staged
+    status: existing
+    entry_id: zu2-i3-主意
   - headword: 主持
     status: staged
   - headword: 主持人
@@ -1016,7 +1035,8 @@ items:
   - headword: 乖
     status: staged
   - headword: 乖巧
-    status: staged
+    status: existing
+    entry_id: guai1-ka2-乖巧
   - headword: 乘
     status: staged
   - headword: 乘勢
