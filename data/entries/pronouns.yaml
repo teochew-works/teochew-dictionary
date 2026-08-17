@@ -644,3 +644,33 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: le2-妳
+    headword: 妳
+    readings:
+      - pengim: le2
+    senses:
+      - pos: pronoun
+        gloss_en: ["you (singular, female)"]
+        gloss_zh: [妳]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zio2-go3-少塊
+    headword: 少塊
+    readings:
+      - pengim: zio2 go3
+    senses:
+      - pos: pronoun
+        gloss_en: [here]
+        gloss_zh: [這裡]
+        note: Wiktionary lists this Jieyang-Teochew word under a Noun heading, but semantically it is a demonstrative/locative meaning 'here' (a dialectal synonym of 這裡), so it was classified as a pronoun rather than a noun.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

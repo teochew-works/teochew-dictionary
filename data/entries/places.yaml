@@ -3019,3 +3019,969 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: tiêng1-zên2-天井
+    headword: 天井
+    readings:
+      - pengim: tiêng1 zên2
+    senses:
+      - pos: noun
+        gloss_en: [courtyard, atrium, patio]
+        gloss_zh: [天井]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiêng1-hou6-gêng1-天后宮
+    headword: 天后宮
+    readings:
+      - pengim: tiêng1 hou6 gêng1
+    senses:
+      - pos: noun
+        gloss_en: [Mazu temple, temple of the sea goddess]
+        gloss_zh: [天后宮, 媽祖廟]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiang1-bhung5-tai5-天文臺
+    headword: 天文臺
+    readings:
+      - pengim: tiang1 bhung5 tai5
+    senses:
+      - pos: noun
+        gloss_en: [observatory]
+        gloss_zh: [天文臺]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiang1-gio5-天橋
+    headword: 天橋
+    readings:
+      - pengim: tiang1 gio5
+    senses:
+      - pos: noun
+        gloss_en: [overpass, footbridge]
+        gloss_zh: [天橋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiang1-tai5-天臺
+    headword: 天臺
+    readings:
+      - pengim: tiang1 tai5
+    senses:
+      - pos: noun
+        gloss_en: [rooftop]
+        gloss_zh: [天臺]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tai3-nguang5-太原
+    headword: 太原
+    readings:
+      - pengim: tai3 nguang5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Taiyuan (city in Shanxi)]
+        gloss_zh: [太原]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tai3-bhiê7-太廟
+    headword: 太廟
+    readings:
+      - pengim: tai3 bhiê7
+    senses:
+      - pos: noun
+        gloss_en: [Imperial Ancestral Temple]
+        gloss_zh: [太廟]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: o3-di7-li6-奧地利
+    headword: 奧地利
+    readings:
+      - pengim: o3 di7 li6
+    senses:
+      - pos: proper-noun
+        gloss_en: [Austria]
+        gloss_zh: [奧地利]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ma2-gêng1-媽宮
+    headword: 媽宮
+    readings:
+      - pengim: ma2 gêng1
+    senses:
+      - pos: noun
+        gloss_en: [Mazu temple, temple of the sea goddess Mazu]
+        gloss_zh: [媽祖廟]
+        note: The page lists two distinct senses (common noun 'Mazu temple' vs. proper noun, the historical name for 馬公/Magong); the common-noun sense is chosen as attested in Jieyang Teochew, but it is unclear which the given reading is meant to cover.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ma2-zou2-bhiê7-媽祖廟
+    headword: 媽祖廟
+    readings:
+      - pengim: ma2 zou2 bhiê7
+    senses:
+      - pos: noun
+        gloss_en: [Mazu temple]
+        gloss_zh: [媽祖廟]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kong2-bhio7-孔廟
+    headword: 孔廟
+    readings:
+      - pengim: kong2 bhio7
+    senses:
+      - pos: noun
+        gloss_en: [Confucian temple, temple of Confucius]
+        gloss_zh: [孔廟]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hag8-hu2-學府
+    headword: 學府
+    readings:
+      - pengim: hag8 hu2
+    senses:
+      - pos: noun
+        gloss_en: [institution of higher learning]
+        gloss_zh: [學府]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hag8-hao6-學校
+    headword: 學校
+    readings:
+      - pengim: hag8 hao6
+    senses:
+      - pos: noun
+        gloss_en: [school]
+        gloss_zh: [學校]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hag8-in7-學院
+    headword: 學院
+    readings:
+      - pengim: hag8 in7
+    senses:
+      - pos: noun
+        gloss_en: [institute, academy, college]
+        gloss_zh: [學院]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têh8-宅
+    headword: 宅
+    readings:
+      - pengim: têh8
+    senses:
+      - pos: noun
+        gloss_en: [residence, house, home]
+        gloss_zh: [宅]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uan1-cuang5-dao2-安全島
+    headword: 安全島
+    readings:
+      - pengim: uan1 cuang5 dao2
+    senses:
+      - pos: noun
+        gloss_en: [traffic island, pedestrian refuge]
+        gloss_zh: [安全島]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang1-hui1-安徽
+    headword: 安徽
+    readings:
+      - pengim: ang1 hui1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Anhui (province in China)]
+        gloss_zh: [安徽]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang1-gêh4-su1-安格斯
+    headword: 安格斯
+    readings:
+      - pengim: ang1 gêh4 su1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Angus (Scotland), Angus cattle]
+        gloss_zh: [安格斯]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang1-iang5-安陽
+    headword: 安陽
+    readings:
+      - pengim: ang1 iang5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Anyang (city in Henan, China)"]
+        gloss_zh: [安陽]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kêh4-gê1-uê7-客家話
+    headword: 客家話
+    readings:
+      - pengim: kêh4 gê1 uê7
+    senses:
+      - pos: noun
+        gloss_en: [Hakka language, Hakka (Chinese lect)]
+        gloss_zh: [客家話]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kêh4-diam3-客店
+    headword: 客店
+    readings:
+      - pengim: kêh4 diam3
+    senses:
+      - pos: noun
+        gloss_en: [inn, tavern, roadhouse]
+        gloss_zh: [客店]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kêh4-uê7-客話
+    headword: 客話
+    readings:
+      - pengim: kêh4 uê7
+    senses:
+      - pos: noun
+        gloss_en: [Hakka language, Hakka (Chinese lect)]
+        gloss_zh: [客話]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kêh4-dêng2-客頂
+    headword: 客頂
+    readings:
+      - pengim: kêh4 dêng2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Hakka region (Meixian and Xingning area of Guangdong)]
+        gloss_zh: [客頂]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-宮
+    headword: 宮
+    readings:
+      - pengim: gêng1
+    senses:
+      - pos: noun
+        gloss_en: [palace, temple; shrine]
+        gloss_zh: [宮]
+        note: 宮 carries several distinct senses at this same general-Chinese reading (palace, temple/shrine, womb, historical castration, surname); picked the two most concrete architectural senses as the gloss.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-bhio7-宮廟
+    headword: 宮廟
+    readings:
+      - pengim: gêng1 bhio7
+    senses:
+      - pos: noun
+        gloss_en: [temple]
+        gloss_zh: [宮廟]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gê1-heng5-家園
+    headword: 家園
+    readings:
+      - pengim: gê1 heng5
+    senses:
+      - pos: noun
+        gloss_en: [home, homeland]
+        gloss_zh: [家園]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suah4-sia3-宿舍
+    headword: 宿舍
+    readings:
+      - pengim: suah4 sia3
+    senses:
+      - pos: noun
+        gloss_en: [dormitory, living quarters]
+        gloss_zh: [宿舍, 寢室]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cim2-sig4-寢室
+    headword: 寢室
+    readings:
+      - pengim: cim2 sig4
+    senses:
+      - pos: noun
+        gloss_en: [bedroom, dormitory]
+        gloss_zh: [寢室]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sig8-ngiam7-sig4-實驗室
+    headword: 實驗室
+    readings:
+      - pengim: sig8 ngiam7 sig4
+    senses:
+      - pos: noun
+        gloss_en: [laboratory, lab]
+        gloss_zh: [實驗室]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-hê7-寧夏
+    headword: 寧夏
+    readings:
+      - pengim: lêng5 hê7
+    senses:
+      - pos: proper-noun
+        gloss_en: [Ningxia]
+        gloss_zh: [寧夏]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zê7-寨
+    headword: 寨
+    readings:
+      - pengim: zê7
+    senses:
+      - pos: noun
+        gloss_en: [stockade, fort, stockaded village]
+        gloss_zh: [寨]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-tah4-寶塔
+    headword: 寶塔
+    readings:
+      - pengim: bo2 tah4
+    senses:
+      - pos: noun
+        gloss_en: [pagoda]
+        gloss_zh: [寶塔]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-ang1-寶安
+    headword: 寶安
+    readings:
+      - pengim: bo2 ang1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Bao'an (district of Shenzhen), "Bao'an (former county, now Shenzhen)"]
+        gloss_zh: [寶安]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo2-dao2-寶島
+    headword: 寶島
+    readings:
+      - pengim: bo2 dao2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Taiwan ("Treasure Island"), Formosa]
+        gloss_zh: [寶島]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ri7-寺
+    headword: 寺
+    readings:
+      - pengim: ri7
+    senses:
+      - pos: noun
+        gloss_en: [temple, monastery]
+        gloss_zh: [寺]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao2-ku1-小區
+    headword: 小區
+    readings:
+      - pengim: siao2 ku1
+    senses:
+      - pos: noun
+        gloss_en: [residential complex, neighborhood, apartment complex]
+        gloss_zh: [小區]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao2-bhoi7-bou6-小賣部
+    headword: 小賣部
+    readings:
+      - pengim: siao2 bhoi7 bou6
+    senses:
+      - pos: noun
+        gloss_en: [convenience store, corner store]
+        gloss_zh: [小賣部]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sio2-ding3-小鎮
+    headword: 小鎮
+    readings:
+      - pengim: sio2 ding3
+    senses:
+      - pos: noun
+        gloss_en: [small town]
+        gloss_zh: [小鎮]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao3-lim5-少林
+    headword: 少林
+    readings:
+      - pengim: siao3 lim5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Shaolin]
+        gloss_zh: [少林]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ni5-gou1-am1-尼姑庵
+    headword: 尼姑庵
+    readings:
+      - pengim: ni5 gou1 am1
+    senses:
+      - pos: noun
+        gloss_en: [Buddhist nunnery, convent]
+        gloss_zh: [尼姑庵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ge1-ming5-ku1-居民區
+    headword: 居民區
+    readings:
+      - pengim: ge1 ming5 ku1
+    senses:
+      - pos: noun
+        gloss_en: [residential area]
+        gloss_zh: [居民區]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: og4-屋
+    headword: 屋
+    readings:
+      - pengim: og4
+    senses:
+      - pos: noun
+        gloss_en: [house, room]
+        gloss_zh: [屋, 屋子]
+        note: 屋 is documented with the general 'house/room' senses, but the page notes Teochew/Southern Min varieties more commonly use 厝 for standalone 'house', so the frequency of the bare character alone is uncertain.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai2-gao1-屎溝
+    headword: 屎溝
+    readings:
+      - pengim: sai2 gao1
+    senses:
+      - pos: noun
+        gloss_en: [ditch, drain]
+        gloss_zh: [屎溝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai2-hag8-屎礐
+    headword: 屎礐
+    readings:
+      - pengim: sai2 hag8
+    senses:
+      - pos: noun
+        gloss_en: [toilet, latrine, outhouse]
+        gloss_zh: [屎礐]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai2-geng1-屎缸
+    headword: 屎缸
+    readings:
+      - pengim: sai2 geng1
+    senses:
+      - pos: noun
+        gloss_en: [chamber pot, toilet, latrine]
+        gloss_zh: [屎缸]
+        note: Wiktionary lists two related but distinct sub-senses (portable chamber pot vs. fixed toilet/latrine) both attributed to Teochew among other dialects, so it's unclear which specific object the headword denotes.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diang2-ku1-展區
+    headword: 展區
+    readings:
+      - pengim: diang2 ku1
+    senses:
+      - pos: noun
+        gloss_en: [display area, exhibition area]
+        gloss_zh: [展區]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-zê7-山寨
+    headword: 山寨
+    readings:
+      - pengim: suan1 zê7
+    senses:
+      - pos: noun
+        gloss_en: [mountain fortress; stronghold, fake/knockoff good]
+        gloss_zh: [山寨]
+        note: The page lists two very different senses under the same reading, a historical mountain fortress/stronghold and a modern slang term for a fake or pirated product; both are included but the primary sense for this word is uncertain.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-dang1-山東
+    headword: 山東
+    readings:
+      - pengim: suan1 dang1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Shandong (province)]
+        gloss_zh: [山東]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan1-sai1-山西
+    headword: 山西
+    readings:
+      - pengim: suan1 sai1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Shanxi (province in northern China)]
+        gloss_zh: [山西]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bha7-li5-峇厘
+    headword: 峇厘
+    readings:
+      - pengim: bha7 li5
+    senses:
+      - pos: noun
+        gloss_en: [small cabin (on a junk/boat)]
+        gloss_zh: [峇厘]
+        note: The page lists two unrelated senses sharing this Teochew reading — a nautical 'boat cabin' term and a proper-noun sense for the island of Bali — and it is unclear which the headword is meant to target.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hab8-suan1-峽山
+    headword: 峽山
+    readings:
+      - pengim: hab8 suan1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Xiashan (subdistrict of Chaonan district, Shantou)"]
+        gloss_zh: [峽山]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gia6-lag4-崎碌
+    headword: 崎碌
+    readings:
+      - pengim: gia6 lag4
+    senses:
+      - pos: proper-noun
+        gloss_en: [Kialat (historic district of Shantou), Qilu]
+        gloss_zh: [崎碌]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nian2-nam5-嶺南
+    headword: 嶺南
+    readings:
+      - pengim: nian2 nam5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Lingnan (region south of the Nanling Mountains, covering Guangdong, Guangxi, Hainan)"]
+        gloss_zh: [嶺南]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngag8-log8-嶽麓
+    headword: 嶽麓
+    readings:
+      - pengim: ngag8 log8
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Yuelu (district/mountain in Changsha, Hunan)"]
+        gloss_zh: [嶽麓]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu1-州
+    headword: 州
+    readings:
+      - pengim: ziu1
+    senses:
+      - pos: noun
+        gloss_en: [state (administrative division), prefecture, province]
+        gloss_zh: [州]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang1-se7-工事
+    headword: 工事
+    readings:
+      - pengim: gang1 se7
+    senses:
+      - pos: noun
+        gloss_en: [fortifications, defense works]
+        gloss_zh: [工事]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang1-di7-工地
+    headword: 工地
+    readings:
+      - pengim: gang1 di7
+    senses:
+      - pos: noun
+        gloss_en: [construction site, building site]
+        gloss_zh: [工地]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang1-dion5-工場
+    headword: 工場
+    readings:
+      - pengim: gang1 dion5
+    senses:
+      - pos: noun
+        gloss_en: [workshop, atelier]
+        gloss_zh: [工場]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang1-ciang2-工廠
+    headword: 工廠
+    readings:
+      - pengim: gang1 ciang2
+    senses:
+      - pos: noun
+        gloss_en: [factory, plant, works]
+        gloss_zh: [工廠]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang1-ngiab8-ku1-工業區
+    headword: 工業區
+    readings:
+      - pengim: gang1 ngiab8 ku1
+    senses:
+      - pos: noun
+        gloss_en: [industrial zone, industrial park]
+        gloss_zh: [工業區]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba1-sag4-巴剎
+    headword: 巴剎
+    readings:
+      - pengim: ba1 sag4
+    senses:
+      - pos: noun
+        gloss_en: [market, bazaar, wet market]
+        gloss_zh: [巴剎, 菜市場]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba1-gi1-se1-tang2-巴基斯坦
+    headword: 巴基斯坦
+    readings:
+      - pengim: ba1 gi1 se1 tang2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Pakistan]
+        gloss_zh: [巴基斯坦]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba1-bi2-lung5-巴比倫
+    headword: 巴比倫
+    readings:
+      - pengim: ba1 bi2 lung5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Babylon]
+        gloss_zh: [巴比倫]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba1-sai1-巴西
+    headword: 巴西
+    readings:
+      - pengim: ba1 sai1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Brazil]
+        gloss_zh: [巴西]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba1-li5-巴黎
+    headword: 巴黎
+    readings:
+      - pengim: ba1 li5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Paris]
+        gloss_zh: [巴黎]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang7-巷
+    headword: 巷
+    readings:
+      - pengim: hang7
+    senses:
+      - pos: noun
+        gloss_en: [alley, lane]
+        gloss_zh: [巷]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang7-kao2-巷口
+    headword: 巷口
+    readings:
+      - pengim: hang7 kao2
+    senses:
+      - pos: noun
+        gloss_en: [alley entrance, mouth of a lane]
+        gloss_zh: [巷口]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang7-gian2-巷囝
+    headword: 巷囝
+    readings:
+      - pengim: hang7 gian2
+    senses:
+      - pos: noun
+        gloss_en: [alley, lane]
+        gloss_zh: [巷囝, 小巷]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci6-市
+    headword: 市
+    readings:
+      - pengim: ci6
+    senses:
+      - pos: noun
+        gloss_en: [city, market]
+        gloss_zh: [市]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci6-zên2-市井
+    headword: 市井
+    readings:
+      - pengim: ci6 zên2
+    senses:
+      - pos: noun
+        gloss_en: [marketplace, town (literary), common folk]
+        gloss_zh: [市井]
+        note: The page gives both a literal sense ('marketplace; town') and a figurative sense ('vulgar/unrefined people'); it is unclear which is the intended primary sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci6-lai6-市內
+    headword: 市內
+    readings:
+      - pengim: ci6 lai6
+    senses:
+      - pos: noun
+        gloss_en: [within the city, in town]
+        gloss_zh: [市內]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci6-ku1-市區
+    headword: 市區
+    readings:
+      - pengim: ci6 ku1
+    senses:
+      - pos: noun
+        gloss_en: [urban area, city proper]
+        gloss_zh: [市區]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci6-iong5-市容
+    headword: 市容
+    readings:
+      - pengim: ci6 iong5
+    senses:
+      - pos: noun
+        gloss_en: [cityscape, appearance of a city]
+        gloss_zh: [市容]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci6-zêng3-市政
+    headword: 市政
+    readings:
+      - pengim: ci6 zêng3
+    senses:
+      - pos: noun
+        gloss_en: [municipal administration]
+        gloss_zh: [市政]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci6-gao1-市郊
+    headword: 市郊
+    readings:
+      - pengim: ci6 gao1
+    senses:
+      - pos: noun
+        gloss_en: [suburbs, outskirts]
+        gloss_zh: [市郊]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hi1-lah8-希臘
+    headword: 希臘
+    readings:
+      - pengim: hi1 lah8
+    senses:
+      - pos: proper-noun
+        gloss_en: [Greece]
+        gloss_zh: [希臘]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pêng5-tai5-平臺
+    headword: 平臺
+    readings:
+      - pengim: pêng5 tai5
+    senses:
+      - pos: noun
+        gloss_en: [platform, terrace, balcony]
+        gloss_zh: [平臺]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang3-suan3-幹線
+    headword: 幹線
+    readings:
+      - pengim: gang3 suan3
+    senses:
+      - pos: noun
+        gloss_en: [main line, trunk line]
+        gloss_zh: [幹線]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iun3-ri5-hng5-幼兒園
+    headword: 幼兒園
+    readings:
+      - pengim: iun3 ri5 hng5
+    senses:
+      - pos: noun
+        gloss_en: [kindergarten, nursery school, preschool]
+        gloss_zh: [幼兒園]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

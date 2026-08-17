@@ -1017,3 +1017,125 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: nai6-奈
+    headword: 奈
+    readings:
+      - pengim: nai6
+    senses:
+      - pos: adverb
+        gloss_en: [how; why (rhetorical), nothing can be done about]
+        gloss_zh: [奈何, 怎奈]
+        note: 奈 carries multiple distinct senses (rhetorical adverb 'how/why', verb 'to endure', and a modern loan prefix 'nano-'); the classical adverbial sense was chosen as most likely for a native Teochew reading, but this is not certain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ru5-如
+    headword: 如
+    readings:
+      - pengim: ru5
+    senses:
+      - pos: verb
+        gloss_en: [to be like, as, such as]
+        gloss_zh: [如, 好比]
+        note: The page lists many senses under one general reading (comparative verb, conditional conjunction, postposition, archaic pronoun, surname) with no dialect-specific sense marked, so picking a single primary sense is somewhat uncertain.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dui3-i1-對於
+    headword: 對於
+    readings:
+      - pengim: dui3 i1
+    senses:
+      - pos: preposition
+        gloss_en: [concerning, regarding, as for]
+        gloss_zh: [對於]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dui3-ming7-對面
+    headword: 對面
+    readings:
+      - pengim: dui3 ming7
+    senses:
+      - pos: adjective
+        gloss_en: [opposite, across (the street), face-to-face]
+        gloss_zh: [對面]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu6-seng3-就算
+    headword: 就算
+    readings:
+      - pengim: ziu6 seng3
+    senses:
+      - pos: conjunction
+        gloss_en: [even if, granted that]
+        gloss_zh: [就算]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo2-geng6-左近
+    headword: 左近
+    readings:
+      - pengim: zo2 geng6
+    senses:
+      - pos: noun
+        gloss_en: [nearby, vicinity, in the vicinity of]
+        gloss_zh: [左近]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiab4-帖
+    headword: 帖
+    readings:
+      - pengim: tiab4
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for doses of medicine, note; invitation card]
+        gloss_zh: [帖]
+        note: The character 帖 has three distinct pronunciation-linked sense groups (submissive/stable; note/classifier/document; copybook) and it is unclear which corresponds precisely to the entering-tone Teochew reading tiab4.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-幅
+    headword: 幅
+    readings:
+      - pengim: bag4
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for cloth and pictures]
+        gloss_zh: [幅]
+        note: The Teochew reading bag4 is noted on the page only as the general vernacular Southern Min reading tied to the 'classifier for textiles/pictures' sense, not explicitly confirmed as Teochew-specific versus 幅's other senses (width, hem, wall-classifier).
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu6-就
+    headword: 就
+    readings:
+      - pengim: ziu6
+    senses:
+      - pos: adverb
+        gloss_en: [at once; right away, then, precisely; exactly, only; merely]
+        gloss_zh: [就]
+        note: Highly polysemous function word with many closely related adverbial senses under this one reading; the set here reflects Etymology 1 on Wiktionary.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+

@@ -1215,3 +1215,31 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+
+  # The following entries were merged from the Wiktionary index sweep
+  # (issue #68).
+
+  - id: ba1-siang1-巴仙
+    headword: 巴仙
+    readings:
+      - pengim: ba1 siang1
+    senses:
+      - pos: noun
+        gloss_en: [percent, percentage]
+        gloss_zh: [巴仙]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iao1-幺
+    headword: 幺
+    readings:
+      - pengim: iao1
+    senses:
+      - pos: numeral
+        gloss_en: ["one (used for clarity, e.g. reciting digits)"]
+        gloss_zh: [幺, 一]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
