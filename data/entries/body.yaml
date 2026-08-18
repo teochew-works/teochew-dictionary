@@ -1493,3 +1493,90 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+  - id: zeng2-gah4-掌甲
+    headword: 掌甲
+    readings:
+      - pengim: zeng2 gah4
+    senses:
+      - pos: noun
+        gloss_en: [fingernail]
+        gloss_zh: [掌甲]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zoin2-tao5-bho2-掌頭拇
+    headword: 掌頭拇
+    readings:
+      - pengim: zoin2 tao5 bho2
+    senses:
+      - pos: noun
+        gloss_en: [thumb]
+        gloss_zh: [掌頭拇]
+        note: The page labels the 'thumb' sense specifically as Hokkien rather than Teochew, though it lists a Teochew Peng'im reading matching the given pronunciation on the same page.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cag4-sion1-擦傷
+    headword: 擦傷
+    readings:
+      - pengim: cag4 sion1
+    senses:
+      - pos: noun
+        gloss_en: [graze, scratch, abrasion]
+        gloss_zh: [擦傷]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kog4-tao5-擴頭
+    headword: 擴頭
+    readings:
+      - pengim: kog4 tao5
+    senses:
+      - pos: noun
+        gloss_en: [protruding forehead]
+        gloss_zh: [擴頭]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kog4-hiah8-擴額
+    headword: 擴額
+    readings:
+      - pengim: kog4 hiah8
+    senses:
+      - pos: noun
+        gloss_en: [protruding forehead]
+        gloss_zh: [擴額]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mêng5-mag8-明目
+    headword: 明目
+    readings:
+      - pengim: mêng5 mag8
+    senses:
+      - pos: verb
+        gloss_en: [to improve eyesight, to brighten the eyes]
+        gloss_zh: [明目]
+        note: The page gives an archaic noun sense ('clear eyesight') and a verb sense ('to improve eyesight') with no clear indication which is more common; verb chosen as the more actionable sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghuêh8-gêng1-月經
+    headword: 月經
+    readings:
+      - pengim: ghuêh8 gêng1
+    senses:
+      - pos: noun
+        gloss_en: [menstruation, period]
+        gloss_zh: [月經]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

@@ -2816,3 +2816,966 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+  - id: sao3-siu2-cên1-掃帚星
+    headword: 掃帚星
+    readings:
+      - pengim: sao3 siu2 cên1
+    senses:
+      - pos: noun
+        gloss_en: [comet, bearer of bad luck (figurative)]
+        gloss_zh: [掃帚星]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zeng2-gah4-huê1-掌甲花
+    headword: 掌甲花
+    readings:
+      - pengim: zeng2 gah4 huê1
+    senses:
+      - pos: noun
+        gloss_en: [garden balsam (Impatiens balsamina)]
+        gloss_zh: [掌甲花]
+        note: The page also lists a Taiwanese-Hokkien-specific 'nail polish' sense; it is not fully certain which sense the given Teochew reading corresponds to, so the broader Min-dialect 'garden balsam' plant sense was used.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka3-lui5-敲雷
+    headword: 敲雷
+    readings:
+      - pengim: ka3 lui5
+    senses:
+      - pos: verb
+        gloss_en: [to thunder; to rumble with thunder]
+        gloss_zh: [打雷]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sia5-bo1-斜坡
+    headword: 斜坡
+    readings:
+      - pengim: sia5 bo1
+    senses:
+      - pos: noun
+        gloss_en: [slope, incline, ramp]
+        gloss_zh: [斜坡]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rig8-cug4-日出
+    headword: 日出
+    readings:
+      - pengim: rig8 cug4
+    senses:
+      - pos: noun
+        gloss_en: [sunrise]
+        gloss_zh: [日出]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rig8-sêg4-日色
+    headword: 日色
+    readings:
+      - pengim: rig8 sêg4
+    senses:
+      - pos: noun
+        gloss_en: [color of the sky, time of day]
+        gloss_zh: [日色, 天色]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rig8-cao2-日草
+    headword: 日草
+    readings:
+      - pengim: rig8 cao2
+    senses:
+      - pos: noun
+        gloss_en: [sunlight, sunshine, daylight]
+        gloss_zh: [日草, 太陽光]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rig8-loh8-日落
+    headword: 日落
+    readings:
+      - pengim: rig8 loh8
+    senses:
+      - pos: noun
+        gloss_en: [sunset, sundown]
+        gloss_zh: [日落]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rig8-tao5-hou6-日頭雨
+    headword: 日頭雨
+    readings:
+      - pengim: rig8 tao5 hou6
+    senses:
+      - pos: noun
+        gloss_en: [sun shower]
+        gloss_zh: [日頭雨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rig8-sih8-日食
+    headword: 日食
+    readings:
+      - pengim: rig8 sih8
+    senses:
+      - pos: noun
+        gloss_en: [solar eclipse]
+        gloss_zh: [日食, 日蝕]
+        note: The Teochew reading is given once for a shared pronunciation block covering three listed senses (solar eclipse; literary/Hokkien 'daily food'; literary/Hokkien 'daily life') with no sense-specific split, so the general 'solar eclipse' sense was chosen as most likely but is not confirmed by the page.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za2-dang1-早冬
+    headword: 早冬
+    readings:
+      - pengim: za2 dang1
+    senses:
+      - pos: noun
+        gloss_en: [summer harvest, early rice-harvest season]
+        gloss_zh: [早冬, 早稻]
+        note: Three closely related senses (Hokkien early rice-harvest season, Mainland-China+Hokkien early-season rice, Teochew summer harvest/crops) share one reading noted only as 'Jieyang'; the Teochew-labeled sense was inferred from the Jieyang locale but is not explicitly confirmed by the page.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za2-cang5-早田
+    headword: 早田
+    readings:
+      - pengim: za2 cang5
+    senses:
+      - pos: noun
+        gloss_en: [early season paddy, paddy field planted in spring]
+        gloss_zh: [早田, 早稻]
+        note: Etymology 2 lists two senses (early-season unhusked paddy rice vs. a paddy field planted in spring) under one shared reading with no sense-specific split, so it is unclear which the given pronunciation targets.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za2-guê3-早過
+    headword: 早過
+    readings:
+      - pengim: za2 guê3
+    senses:
+      - pos: noun
+        gloss_en: [early season paddy, early-season unhusked rice]
+        gloss_zh: [早過, 早稻]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za2-guê3-diu6-早過稻
+    headword: 早過稻
+    readings:
+      - pengim: za2 guê3 diu6
+    senses:
+      - pos: noun
+        gloss_en: [early season paddy, early-season unhusked rice]
+        gloss_zh: [早過稻, 早稻]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiog4-旭
+    headword: 旭
+    readings:
+      - pengim: hiog4
+    senses:
+      - pos: noun
+        gloss_en: [rising sun, radiant]
+        gloss_zh: [旭]
+        note: The page lists both a noun sense ('rising sun') and an adjective sense ('brilliant; radiant') under the same reading; noun was picked as primary but the split is not fully certain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uan6-旱
+    headword: 旱
+    readings:
+      - pengim: uan6
+    senses:
+      - pos: noun
+        gloss_en: [drought, dry spell, aridness]
+        gloss_zh: [旱]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mêng5-ghuêh8-明月
+    headword: 明月
+    readings:
+      - pengim: mêng5 ghuêh8
+    senses:
+      - pos: noun
+        gloss_en: [bright moon]
+        gloss_zh: [明月]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mêng5-huê2-明火
+    headword: 明火
+    readings:
+      - pengim: mêng5 huê2
+    senses:
+      - pos: noun
+        gloss_en: [open flame, naked fire]
+        gloss_zh: [明火]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-guang1-星光
+    headword: 星光
+    readings:
+      - pengim: cên1 guang1
+    senses:
+      - pos: noun
+        gloss_en: [starlight]
+        gloss_zh: [星光]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-ri5-星兒
+    headword: 星兒
+    readings:
+      - pengim: cên1 ri5
+    senses:
+      - pos: noun
+        gloss_en: [star (poetic/diminutive form)]
+        gloss_zh: [星]
+        note: The page lists no explicit Teochew pronunciation for this headword; the given reading was matched to the poetic/dialectal 'diminutive of star' sense (which parallels the Hokkien Southern Min reading) rather than the Mandarin-only erhua 'speck' sense, but this correspondence is inferred rather than directly attested on the page.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-siu3-星宿
+    headword: 星宿
+    readings:
+      - pengim: cên1 siu3
+    senses:
+      - pos: noun
+        gloss_en: [constellation, the stars]
+        gloss_zh: [星宿]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-sai2-星屎
+    headword: 星屎
+    readings:
+      - pengim: cên1 sai2
+    senses:
+      - pos: noun
+        gloss_en: [meteor, shooting star]
+        gloss_zh: [星屎]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-zo7-星座
+    headword: 星座
+    readings:
+      - pengim: cên1 zo7
+    senses:
+      - pos: noun
+        gloss_en: [constellation, astrological sign, star sign]
+        gloss_zh: [星座]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-dah4-dou7-星搭渡
+    headword: 星搭渡
+    readings:
+      - pengim: cên1 dah4 dou7
+    senses:
+      - pos: noun
+        gloss_en: [meteor, shooting star]
+        gloss_zh: [流星]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-dao2-星斗
+    headword: 星斗
+    readings:
+      - pengim: cên1 dao2
+    senses:
+      - pos: noun
+        gloss_en: [star (dialectal/literary)]
+        gloss_zh: [星星]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-cên1-星星
+    headword: 星星
+    readings:
+      - pengim: cên1 cên1
+    senses:
+      - pos: noun
+        gloss_en: [star]
+        gloss_zh: [星星]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-giu5-星球
+    headword: 星球
+    readings:
+      - pengim: cên1 giu5
+    senses:
+      - pos: noun
+        gloss_en: [planet, celestial body]
+        gloss_zh: [星球]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-kong1-星空
+    headword: 星空
+    readings:
+      - pengim: cên1 kong1
+    senses:
+      - pos: noun
+        gloss_en: [starry sky]
+        gloss_zh: [星空]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-sing5-星辰
+    headword: 星辰
+    readings:
+      - pengim: cên1 sing5
+    senses:
+      - pos: noun
+        gloss_en: [stars, heavenly bodies]
+        gloss_zh: [星辰]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-guê3-gêng1-星過宮
+    headword: 星過宮
+    readings:
+      - pengim: cên1 guê3 gêng1
+    senses:
+      - pos: noun
+        gloss_en: [meteor, shooting star]
+        gloss_zh: [流星]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-hung5-星雲
+    headword: 星雲
+    readings:
+      - pengim: cên1 hung5
+    senses:
+      - pos: noun
+        gloss_en: [nebula]
+        gloss_zh: [星雲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cung1-春
+    headword: 春
+    readings:
+      - pengim: cung1
+    senses:
+      - pos: noun
+        gloss_en: [spring (season), vitality; liveliness, love; lust]
+        gloss_zh: [春]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cung1-hung1-春分
+    headword: 春分
+    readings:
+      - pengim: cung1 hung1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Spring Equinox (solar term)]
+        gloss_zh: [春分]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cung1-tin1-春天
+    headword: 春天
+    readings:
+      - pengim: cung1 tin1
+    senses:
+      - pos: noun
+        gloss_en: [spring (season), springtime]
+        gloss_zh: [春天]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cung1-tin1-si5-春天時
+    headword: 春天時
+    readings:
+      - pengim: cung1 tin1 si5
+    senses:
+      - pos: noun
+        gloss_en: [spring (season)]
+        gloss_zh: [春天]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cung1-kui3-春季
+    headword: 春季
+    readings:
+      - pengim: cung1 kui3
+    senses:
+      - pos: noun
+        gloss_en: [spring (season), springtime]
+        gloss_zh: [春季]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cung1-hui1-春暉
+    headword: 春暉
+    readings:
+      - pengim: cung1 hui1
+    senses:
+      - pos: noun
+        gloss_en: [spring sunshine (literary), maternal love (figurative)]
+        gloss_zh: [春暉]
+        note: Literary term with two divergent senses (literal 'spring sunshine' vs. figurative 'maternal/loving mother') under one reading, making the single best-fit category a judgment call.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cung1-ki5-春期
+    headword: 春期
+    readings:
+      - pengim: cung1 ki5
+    senses:
+      - pos: noun
+        gloss_en: [springtime (literary/dialectal)]
+        gloss_zh: [春天]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cung1-sêg4-春色
+    headword: 春色
+    readings:
+      - pengim: cung1 sêg4
+    senses:
+      - pos: noun
+        gloss_en: [spring scenery, flushed/joyful look (figurative), lust (figurative)]
+        gloss_zh: [春色]
+        note: The page lists three divergent senses (literal spring scenery, figurative flushed look, figurative lust/sexual desire) under the same reading without indicating which is primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cung1-tao5-春頭
+    headword: 春頭
+    readings:
+      - pengim: cung1 tao5
+    senses:
+      - pos: noun
+        gloss_en: [early spring]
+        gloss_zh: [早春]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiog4-昱
+    headword: 昱
+    readings:
+      - pengim: hiog4
+    senses:
+      - pos: noun
+        gloss_en: [bright light; sunlight, to shine (literary)]
+        gloss_zh: [昱]
+        note: Wiktionary lists several literary senses under this character (bright light/sunlight, verb 'to shine', and an obsolete form of 翌 'tomorrow') without singling out which corresponds to the Teochew reading, so the chosen noun sense is a best guess.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhao2-昴
+    headword: 昴
+    readings:
+      - pengim: bhao2
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Pleiades (Hairy Head Mansion, one of the Twenty-Eight Mansions in Chinese astronomy)"]
+        gloss_zh: [昴]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mung2-diu6-晚稻
+    headword: 晚稻
+    readings:
+      - pengim: mung2 diu6
+    senses:
+      - pos: noun
+        gloss_en: [late rice, second-season rice]
+        gloss_zh: [晚稻]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng2-景
+    headword: 景
+    readings:
+      - pengim: gêng2
+    senses:
+      - pos: noun
+        gloss_en: [scenery, view, scene]
+        gloss_zh: [景, 風景]
+        note: The character carries many senses across four etymologies (scenery, situation/scene, classifier for scenes in a play, surname, several obsolete senses); 'scenery/view' was chosen as the main modern living sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng2-muêh8-景物
+    headword: 景物
+    readings:
+      - pengim: gêng2 muêh8
+    senses:
+      - pos: noun
+        gloss_en: [scenery, landscape, view]
+        gloss_zh: [景物]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng2-di3-景致
+    headword: 景致
+    readings:
+      - pengim: gêng2 di3
+    senses:
+      - pos: noun
+        gloss_en: [scenery, view, landscape]
+        gloss_zh: [景致]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng2-sêg4-景色
+    headword: 景色
+    readings:
+      - pengim: gêng2 sêg4
+    senses:
+      - pos: noun
+        gloss_en: [scenery, landscape, view]
+        gloss_zh: [景色]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng2-guang1-景觀
+    headword: 景觀
+    readings:
+      - pengim: gêng2 guang1
+    senses:
+      - pos: noun
+        gloss_en: [landscape, view]
+        gloss_zh: [景觀]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zên5-晴
+    headword: 晴
+    readings:
+      - pengim: zên5
+    senses:
+      - pos: adjective
+        gloss_en: [clear (weather), fine, cloudless]
+        gloss_zh: [晴]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian1-晶
+    headword: 晶
+    readings:
+      - pengim: zian1
+    senses:
+      - pos: noun
+        gloss_en: [crystal, quartz]
+        gloss_zh: [晶]
+        note: Page gives both a noun sense ('crystal/quartz') and an adjective sense ('brilliant, glittering') for this bound morpheme; noun sense chosen as the more standard standalone meaning.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian1-ti2-晶體
+    headword: 晶體
+    readings:
+      - pengim: zian1 ti2
+    senses:
+      - pos: noun
+        gloss_en: [crystal, (anatomy) lens]
+        gloss_zh: [晶體]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: su2-暑
+    headword: 暑
+    readings:
+      - pengim: su2
+    senses:
+      - pos: noun
+        gloss_en: [summer heat, hot weather]
+        gloss_zh: [暑]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mê5-sêg4-暝色
+    headword: 暝色
+    readings:
+      - pengim: mê5 sêg4
+    senses:
+      - pos: noun
+        gloss_en: [night scenery, nightscape]
+        gloss_zh: [暝色]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bao6-hou6-暴雨
+    headword: 暴雨
+    readings:
+      - pengim: bao6 hou6
+    senses:
+      - pos: noun
+        gloss_en: [torrential rain, cloudburst, rainstorm]
+        gloss_zh: [暴雨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bao6-huang1-hou6-暴風雨
+    headword: 暴風雨
+    readings:
+      - pengim: bao6 huang1 hou6
+    senses:
+      - pos: noun
+        gloss_en: [rainstorm, storm]
+        gloss_zh: [暴風雨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iao6-曜
+    headword: 曜
+    readings:
+      - pengim: iao6
+    senses:
+      - pos: noun
+        gloss_en: [sunlight, brilliance]
+        gloss_zh: [曜]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hi1-曦
+    headword: 曦
+    readings:
+      - pengim: hi1
+    senses:
+      - pos: noun
+        gloss_en: [sunshine, dawn light]
+        gloss_zh: [曦, 陽光]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghuêh8-liang6-月亮
+    headword: 月亮
+    readings:
+      - pengim: ghuêh8 liang6
+    senses:
+      - pos: noun
+        gloss_en: [moon]
+        gloss_zh: [月亮]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghuêh8-guang1-月光
+    headword: 月光
+    readings:
+      - pengim: ghuêh8 guang1
+    senses:
+      - pos: noun
+        gloss_en: [moonlight, moon (dialectal)]
+        gloss_zh: [月光]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghuêh8-ri5-月兒
+    headword: 月兒
+    readings:
+      - pengim: ghuêh8 ri5
+    senses:
+      - pos: noun
+        gloss_en: [moon (affectionate/diminutive)]
+        gloss_zh: [月亮, 月]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghuêh8-hung5-月痕
+    headword: 月痕
+    readings:
+      - pengim: ghuêh8 hung5
+    senses:
+      - pos: noun
+        gloss_en: [crescent moon]
+        gloss_zh: [月痕]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghuêh8-bhai5-月眉
+    headword: 月眉
+    readings:
+      - pengim: ghuêh8 bhai5
+    senses:
+      - pos: noun
+        gloss_en: [crescent moon]
+        gloss_zh: [月眉]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghuêh8-sêg4-月色
+    headword: 月色
+    readings:
+      - pengim: ghuêh8 sêg4
+    senses:
+      - pos: noun
+        gloss_en: [moonlight]
+        gloss_zh: [月色]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guêh8-hua5-月華
+    headword: 月華
+    readings:
+      - pengim: guêh8 hua5
+    senses:
+      - pos: noun
+        gloss_en: [moonlight (literary), moon (literary)]
+        gloss_zh: [月華]
+        note: Wiktionary lists multiple undifferentiated senses (literary 'moonlight', literary/Hakka 'moon', 'lunar corona') with no sense explicitly restricted to the Teochew reading, so the precise intended sense is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghuêh8-sih8-月食
+    headword: 月食
+    readings:
+      - pengim: ghuêh8 sih8
+    senses:
+      - pos: noun
+        gloss_en: [lunar eclipse]
+        gloss_zh: [月食]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhag8-木
+    headword: 木
+    readings:
+      - pengim: bhag8
+    senses:
+      - pos: noun
+        gloss_en: [wood, tree, timber]
+        gloss_zh: [木]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhag8-cên1-木星
+    headword: 木星
+    readings:
+      - pengim: bhag8 cên1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Jupiter]
+        gloss_zh: [木星]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhag8-cai5-木材
+    headword: 木材
+    readings:
+      - pengim: bhag8 cai5
+    senses:
+      - pos: noun
+        gloss_en: [wood, lumber, timber]
+        gloss_zh: [木材]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhag8-min5-木棉
+    headword: 木棉
+    readings:
+      - pengim: bhag8 min5
+    senses:
+      - pos: noun
+        gloss_en: [kapok, Bombax ceiba]
+        gloss_zh: [木棉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhag8-tong1-木通
+    headword: 木通
+    readings:
+      - pengim: bhag8 tong1
+    senses:
+      - pos: noun
+        gloss_en: [Akebia stem (used in traditional Chinese medicine)]
+        gloss_zh: [木通]
+        note: This is a specialized traditional-Chinese-medicine botanical term, so its real-world frequency in everyday Teochew speech is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu1-朱
+    headword: 朱
+    readings:
+      - pengim: zu1
+    senses:
+      - pos: noun
+        gloss_en: [vermilion, cinnabar (bright red)]
+        gloss_zh: [朱]
+        note: Multiple senses (cinnabar/vermilion color, a common surname, Hong Kong Cantonese slang for chocolate/number one) all share the zu1 reading; the color/mineral sense was picked as primary but the surname sense may be equally or more salient.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu1-sa1-朱砂
+    headword: 朱砂
+    readings:
+      - pengim: zu1 sa1
+    senses:
+      - pos: noun
+        gloss_en: [cinnabar]
+        gloss_zh: [朱砂]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiun2-bhag8-朽木
+    headword: 朽木
+    readings:
+      - pengim: hiun2 bhag8
+    senses:
+      - pos: noun
+        gloss_en: [rotten wood, hopeless case; good-for-nothing person (figurative)]
+        gloss_zh: [朽木]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sam1-杉
+    headword: 杉
+    readings:
+      - pengim: sam1
+    senses:
+      - pos: noun
+        gloss_en: [fir, cedar (conifer tree)]
+        gloss_zh: [杉]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cai5-材
+    headword: 材
+    readings:
+      - pengim: cai5
+    senses:
+      - pos: noun
+        gloss_en: [material; stuff, timber]
+        gloss_zh: [材]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puê3-杮
+    headword: 杮
+    readings:
+      - pengim: puê3
+    senses:
+      - pos: noun
+        gloss_en: [wood shavings]
+        gloss_zh: [杮]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang1-bag4-東北
+    headword: 東北
+    readings:
+      - pengim: dang1 bag4
+    senses:
+      - pos: noun
+        gloss_en: [northeast, Northeast China]
+        gloss_zh: [東北]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang1-buan3-giu5-東半球
+    headword: 東半球
+    readings:
+      - pengim: dang1 buan3 giu5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Eastern Hemisphere]
+        gloss_zh: [東半球]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
