@@ -1580,3 +1580,175 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: zim2-gug4-枕骨
+    headword: 枕骨
+    readings:
+      - pengim: zim2 gug4
+    senses:
+      - pos: noun
+        gloss_en: [occipital bone]
+        gloss_zh: [枕骨]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian3-ciu2-正手
+    headword: 正手
+    readings:
+      - pengim: zian3 ciu2
+    senses:
+      - pos: noun
+        gloss_en: [right hand]
+        gloss_zh: [右手]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si2-si1-死屍
+    headword: 死屍
+    readings:
+      - pengim: si2 si1
+    senses:
+      - pos: noun
+        gloss_en: [corpse, dead body]
+        gloss_zh: [屍體, 死屍]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mo5-kong2-毛孔
+    headword: 毛孔
+    readings:
+      - pengim: mo5 kong2
+    senses:
+      - pos: noun
+        gloss_en: [pore, skin pore]
+        gloss_zh: [毛孔]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mao2-mao5-毛毛
+    headword: 毛毛
+    readings:
+      - pengim: mao2 mao5
+    senses:
+      - pos: noun
+        gloss_en: [fine hair; fuzz, baby (colloquial)]
+        gloss_zh: [毛毛]
+        note: Page lists several senses (fine hair/fuzz, baby, fur/feather) sharing the same Teochew reading without indicating which one this Southern Min pronunciation specifically covers.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mo5-sui1-毛𩮴
+    headword: 毛𩮴
+    readings:
+      - pengim: mo5 sui1
+    senses:
+      - pos: noun
+        gloss_en: [fringe; bangs]
+        gloss_zh: [劉海]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-sêg4-氣息
+    headword: 氣息
+    readings:
+      - pengim: ki3 sêg4
+    senses:
+      - pos: noun
+        gloss_en: [breath, smell; odor, style; spirit]
+        gloss_zh: [氣息]
+        note: Wiktionary lists five related senses (breath, smell, flavour, style, spirit) sharing one Teochew reading with no sense-specific dialect labeling, so the best category (body vs. abstract) is uncertain; entry defaults to the primary 'breath' sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-guang2-氣管
+    headword: 氣管
+    readings:
+      - pengim: ki3 guang2
+    senses:
+      - pos: noun
+        gloss_en: [trachea, windpipe]
+        gloss_zh: [氣管]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-sêg4-氣色
+    headword: 氣色
+    readings:
+      - pengim: ki3 sêg4
+    senses:
+      - pos: noun
+        gloss_en: [complexion, facial appearance / look of health]
+        gloss_zh: [氣色]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guan7-mo5-汗毛
+    headword: 汗毛
+    readings:
+      - pengim: guan7 mo5
+    senses:
+      - pos: noun
+        gloss_en: [fine body hair, down]
+        gloss_zh: [汗毛]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sua1-mag8-沙目
+    headword: 沙目
+    readings:
+      - pengim: sua1 mag8
+    senses:
+      - pos: noun
+        gloss_en: [trachoma]
+        gloss_zh: [沙眼]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sua1-hin6-沙耳
+    headword: 沙耳
+    readings:
+      - pengim: sua1 hin6
+    senses:
+      - pos: noun
+        gloss_en: [dry earwax]
+        gloss_zh: [沙耳]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-hin6-油耳
+    headword: 油耳
+    readings:
+      - pengim: iu5 hin6
+    senses:
+      - pos: noun
+        gloss_en: [wet earwax]
+        gloss_zh: [油耳]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lui6-淚
+    headword: 淚
+    readings:
+      - pengim: lui6
+    senses:
+      - pos: noun
+        gloss_en: [tear, teardrop]
+        gloss_zh: [淚, 眼淚]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

@@ -21392,3 +21392,3381 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: zim2-枕
+    headword: 枕
+    readings:
+      - pengim: zim2
+    senses:
+      - pos: noun
+        gloss_en: [pillow]
+        gloss_zh: [枕]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zim2-tao5-枕頭
+    headword: 枕頭
+    readings:
+      - pengim: zim2 tao5
+    senses:
+      - pos: noun
+        gloss_en: [pillow]
+        gloss_zh: [枕頭]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zim2-tao5-long5-枕頭囊
+    headword: 枕頭囊
+    readings:
+      - pengim: zim2 tao5 long5
+    senses:
+      - pos: noun
+        gloss_en: [pillowcase]
+        gloss_zh: [枕頭囊]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zim2-tao5-sim1-枕頭心
+    headword: 枕頭心
+    readings:
+      - pengim: zim2 tao5 sim1
+    senses:
+      - pos: noun
+        gloss_en: [bare pillow (without a pillowcase)]
+        gloss_zh: [枕頭心]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guan2-zing1-果真
+    headword: 果真
+    readings:
+      - pengim: guan2 zing1
+    senses:
+      - pos: adverb
+        gloss_en: [really, sure enough, if indeed]
+        gloss_zh: [果真]
+        note: The word functions as both an adverb ('really, sure enough') and a conjunction ('if indeed'); adverb was chosen as the single primary sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gê3-架
+    headword: 架
+    readings:
+      - pengim: gê3
+    senses:
+      - pos: noun
+        gloss_en: [rack, stand, frame]
+        gloss_zh: [架]
+        note: The word has multiple senses (noun 'rack/frame', verb 'to prop up/erect', and a classifier for vehicles/planes); noun was chosen as the primary sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gê3-si3-架勢
+    headword: 架勢
+    readings:
+      - pengim: gê3 si3
+    senses:
+      - pos: noun
+        gloss_en: [posture, stance, manner]
+        gloss_zh: [架勢]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bên3-柄
+    headword: 柄
+    readings:
+      - pengim: bên3
+    senses:
+      - pos: noun
+        gloss_en: [handle, stem (of a flower or fruit)]
+        gloss_zh: [柄]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za1-mou2-huang1-查某瘋
+    headword: 查某瘋
+    readings:
+      - pengim: za1 mou2 huang1
+    senses:
+      - pos: noun
+        gloss_en: [AIDS (Hat Yai Teochew term)]
+        gloss_zh: [艾滋病]
+        note: Highly localized Hat Yai Teochew slang term for AIDS with limited attestation; no medical-specific category exists in the file list, so basics.yaml was used as the catch-all.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang2-柬
+    headword: 柬
+    readings:
+      - pengim: gang2
+    senses:
+      - pos: noun
+        gloss_en: [letter; invitation (formal), abbr. for Cambodia]
+        gloss_zh: [柬, 請柬]
+        note: Multiple distinct senses (obsolete alt-forms of 揀/簡, 'letter/invitation' noun, and abbreviation for 柬埔寨/Cambodia) all share the gang2 reading with no single clearly primary sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ca5-siu1-柴梳
+    headword: 柴梳
+    readings:
+      - pengim: ca5 siu1
+    senses:
+      - pos: noun
+        gloss_en: [wooden comb]
+        gloss_zh: [柴梳, 木梳]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ca5-tui5-柴槌
+    headword: 柴槌
+    readings:
+      - pengim: ca5 tui5
+    senses:
+      - pos: noun
+        gloss_en: [wooden mallet, wooden stick]
+        gloss_zh: [柴槌, 木棒]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ca5-bhi2-iu5-iam5-柴米油鹽
+    headword: 柴米油鹽
+    readings:
+      - pengim: ca5 bhi2 iu5 iam5
+    senses:
+      - pos: idiom
+        gloss_en: ["daily necessities (lit. firewood, rice, oil, salt)", the mundane necessities of life]
+        gloss_zh: [柴米油鹽]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao6-kêng3-校慶
+    headword: 校慶
+    readings:
+      - pengim: hao6 kêng3
+    senses:
+      - pos: noun
+        gloss_en: [school anniversary, founding anniversary of a school]
+        gloss_zh: [校慶]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao6-gi5-校旗
+    headword: 校旗
+    readings:
+      - pengim: hao6 gi5
+    senses:
+      - pos: noun
+        gloss_en: [school flag]
+        gloss_zh: [校旗]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao6-hog8-校服
+    headword: 校服
+    readings:
+      - pengim: hao6 hog8
+    senses:
+      - pos: noun
+        gloss_en: [school uniform]
+        gloss_zh: [校服]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hêg4-sim1-核心
+    headword: 核心
+    readings:
+      - pengim: hêg4 sim1
+    senses:
+      - pos: noun
+        gloss_en: [core, center, nucleus]
+        gloss_zh: [核心]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hêg4-seng1-核酸
+    headword: 核酸
+    readings:
+      - pengim: hêg4 seng1
+    senses:
+      - pos: noun
+        gloss_en: [nucleic acid]
+        gloss_zh: [核酸]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geng1-nguang5-根源
+    headword: 根源
+    readings:
+      - pengim: geng1 nguang5
+    senses:
+      - pos: noun
+        gloss_en: [root, cause, origin]
+        gloss_zh: [根源]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêh4-格
+    headword: 格
+    readings:
+      - pengim: gêh4
+    senses:
+      - pos: noun
+        gloss_en: [pattern, grid; cell, standard]
+        gloss_zh: [格]
+        note: 格 has many senses spread across separate etymologies (pattern/style, grid/cell, personality, grammatical case, literary 'to strike', a Cantonese-specific 'cubicle' sense, and a Wu Chinese demonstrative), and the page gives no indication which corresponds to the given Teochew reading; 'pattern/grid' was chosen as the most common, generic sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêh4-gêg8-格局
+    headword: 格局
+    readings:
+      - pengim: gêh4 gêg8
+    senses:
+      - pos: noun
+        gloss_en: [setup, structure, layout]
+        gloss_zh: [格局]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêh4-sêg4-格式
+    headword: 格式
+    readings:
+      - pengim: gêh4 sêg4
+    senses:
+      - pos: noun
+        gloss_en: [format, style]
+        gloss_zh: [格式]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: to5-sêg4-桃色
+    headword: 桃色
+    readings:
+      - pengim: to5 sêg4
+    senses:
+      - pos: noun
+        gloss_en: [pink (color), illicit love; scandal (figurative)]
+        gloss_zh: [桃色]
+        note: Wiktionary gives two related noun senses under the same reading (literal peach/pink color vs. the figurative 'illicit romance/scandal' sense), with no dialect-specific split indicating which predominates in Teochew.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang1-框
+    headword: 框
+    readings:
+      - pengim: kuang1
+    senses:
+      - pos: noun
+        gloss_en: [frame, "case (e.g. door frame, picture frame)"]
+        gloss_zh: [框]
+        note: The page lists both a noun sense ('frame') and dialectal verb senses ('to draw a frame; enclose; dig out') under literary/vernacular Hokkien readings, and it is unclear which sense the Teochew kuang1 reading specifically corresponds to; the common noun sense was chosen.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uan3-li7-案例
+    headword: 案例
+    readings:
+      - pengim: uan3 li7
+    senses:
+      - pos: noun
+        gloss_en: ["case (in law, research, etc.)", example case]
+        gloss_zh: [案例]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uan1-ceng5-案床
+    headword: 案床
+    readings:
+      - pengim: uan1 ceng5
+    senses:
+      - pos: noun
+        gloss_en: [magistrate's bench (historical)]
+        gloss_zh: [案床]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uan3-cêng5-案情
+    headword: 案情
+    readings:
+      - pengim: uan3 cêng5
+    senses:
+      - pos: noun
+        gloss_en: [details of a case, case (legal)]
+        gloss_zh: [案情]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doh4-桌
+    headword: 桌
+    readings:
+      - pengim: doh4
+    senses:
+      - pos: noun
+        gloss_en: [table, desk]
+        gloss_zh: [桌]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doh4-giu5-桌球
+    headword: 桌球
+    readings:
+      - pengim: doh4 giu5
+    senses:
+      - pos: noun
+        gloss_en: [billiards; snooker, table tennis (regional)]
+        gloss_zh: [桌球]
+        note: The page gives two regionally-split senses (billiards/snooker in southern Mainland China/HK/Macau/Malaysia/Singapore vs. table tennis in Taiwan/Southern Min/Puxian Min) and does not clarify which applies specifically to the Teochew reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doh4-ming7-桌面
+    headword: 桌面
+    readings:
+      - pengim: doh4 ming7
+    senses:
+      - pos: noun
+        gloss_en: [tabletop; table surface, desktop (computer GUI)]
+        gloss_zh: [桌面]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tang2-桶
+    headword: 桶
+    readings:
+      - pengim: tang2
+    senses:
+      - pos: noun
+        gloss_en: [bucket; pail, barrel; keg]
+        gloss_zh: [桶]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gên2-kai3-梗概
+    headword: 梗概
+    readings:
+      - pengim: gên2 kai3
+    senses:
+      - pos: noun
+        gloss_en: [gist, outline, summary]
+        gloss_zh: [梗概]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diao5-li7-條例
+    headword: 條例
+    readings:
+      - pengim: diao5 li7
+    senses:
+      - pos: noun
+        gloss_en: [regulations, ordinance, bylaw]
+        gloss_zh: [條例]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diao5-ioh4-條約
+    headword: 條約
+    readings:
+      - pengim: diao5 ioh4
+    senses:
+      - pos: noun
+        gloss_en: [treaty, pact]
+        gloss_zh: [條約]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: so1-梭
+    headword: 梭
+    readings:
+      - pengim: so1
+    senses:
+      - pos: noun
+        gloss_en: [weaver's shuttle, to shuttle back and forth]
+        gloss_zh: [梭]
+        note: The page lists noun (shuttle), verb (go to and fro), and classifier senses under the same reading with no dialect labeling to distinguish them, so the primary noun sense was chosen.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tui1-梯
+    headword: 梯
+    readings:
+      - pengim: tui1
+    senses:
+      - pos: noun
+        gloss_en: [ladder, stairs]
+        gloss_zh: [梯]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu1-梳
+    headword: 梳
+    readings:
+      - pengim: siu1
+    senses:
+      - pos: noun
+        gloss_en: [comb]
+        gloss_zh: [梳]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: min5-puê6-棉被
+    headword: 棉被
+    readings:
+      - pengim: min5 puê6
+    senses:
+      - pos: noun
+        gloss_en: [cotton-wadded quilt, quilt]
+        gloss_zh: [棉被]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mi5-hiun5-棉裘
+    headword: 棉裘
+    readings:
+      - pengim: mi5 hiun5
+    senses:
+      - pos: noun
+        gloss_en: [cotton-padded jacket]
+        gloss_zh: [棉裘]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi5-棋
+    headword: 棋
+    readings:
+      - pengim: gi5
+    senses:
+      - pos: noun
+        gloss_en: [chess; board game]
+        gloss_zh: [棋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi5-zi2-棋子
+    headword: 棋子
+    readings:
+      - pengim: gi5 zi2
+    senses:
+      - pos: noun
+        gloss_en: [chess piece; game piece, (figurative) pawn]
+        gloss_zh: [棋子]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi5-buan5-棋盤
+    headword: 棋盤
+    readings:
+      - pengim: gi5 buan5
+    senses:
+      - pos: noun
+        gloss_en: [chessboard]
+        gloss_zh: [棋盤]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang6-棒
+    headword: 棒
+    readings:
+      - pengim: bang6
+    senses:
+      - pos: noun
+        gloss_en: [stick; club; rod]
+        gloss_zh: [棒]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang6-giu5-棒球
+    headword: 棒球
+    readings:
+      - pengim: bang6 giu5
+    senses:
+      - pos: noun
+        gloss_en: [baseball]
+        gloss_zh: [棒球]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zang1-sui1-棕蓑
+    headword: 棕蓑
+    readings:
+      - pengim: zang1 sui1
+    senses:
+      - pos: noun
+        gloss_en: [straw raincoat; rain cape woven from palm fiber]
+        gloss_zh: [棕蓑, 蓑衣]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong3-棟
+    headword: 棟
+    readings:
+      - pengim: dong3
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for buildings, ridgepole; main beam of a house]
+        gloss_zh: [棟]
+        note: The page does not indicate whether the Teochew reading covers the classifier sense (for buildings) or the literary noun sense (ridgepole/main beam); classifier use is far more common in everyday speech so it is listed first.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guan1-棺
+    headword: 棺
+    readings:
+      - pengim: guan1
+    senses:
+      - pos: noun
+        gloss_en: [coffin, inner coffin]
+        gloss_zh: [棺]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guan1-ca5-棺柴
+    headword: 棺柴
+    readings:
+      - pengim: guan1 ca5
+    senses:
+      - pos: noun
+        gloss_en: [coffin]
+        gloss_zh: [棺柴]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in2-diao5-椅條
+    headword: 椅條
+    readings:
+      - pengim: in2 diao5
+    senses:
+      - pos: noun
+        gloss_en: [wooden bench]
+        gloss_zh: [板凳]
+        note: The definition line is labeled '(Hokkien) wooden bench' with no explicit Teochew-labeled sense, even though a Teochew pronunciation is given, so the dialect labeling is inconsistent for this sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in2-tao5-椅頭
+    headword: 椅頭
+    readings:
+      - pengim: in2 tao5
+    senses:
+      - pos: noun
+        gloss_en: [stool, small seat, bench]
+        gloss_zh: [凳子]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ia5-hu5-椰胡
+    headword: 椰胡
+    readings:
+      - pengim: ia5 hu5
+    senses:
+      - pos: noun
+        gloss_en: [yehu (coconut-shell bowed fiddle)]
+        gloss_zh: [椰胡]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-楞
+    headword: 楞
+    readings:
+      - pengim: lêng5
+    senses:
+      - pos: noun
+        gloss_en: [edge, corner, ridge]
+        gloss_zh: [稜, 棱]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiab8-業
+    headword: 業
+    readings:
+      - pengim: ngiab8
+    senses:
+      - pos: noun
+        gloss_en: [profession, business, karma (Buddhism)]
+        gloss_zh: [業]
+        note: Character carries many distinct senses (profession, achievements, property, karma, literary 'already', suffix/measure-word uses) under the single reading; the general 'profession/business' sense was chosen as most representative but is not certain to be primary in Teochew.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiab8-bhu6-業務
+    headword: 業務
+    readings:
+      - pengim: ngiab8 bhu6
+    senses:
+      - pos: noun
+        gloss_en: [business, operations, affairs]
+        gloss_zh: [業務]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiab8-tai3-業態
+    headword: 業態
+    readings:
+      - pengim: ngiab8 tai3
+    senses:
+      - pos: noun
+        gloss_en: [form of business operation, business model]
+        gloss_zh: [業態]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêg8-極
+    headword: 極
+    readings:
+      - pengim: gêg8
+    senses:
+      - pos: adverb
+        gloss_en: [extremely, utmost, to the extreme]
+        gloss_zh: [極]
+        note: Character has many senses across several parts of speech (noun 'pole/extreme point', adverb 'extremely', obsolete verb meanings) tied to the same reading; the common intensifier adverb sense was chosen but is not certain to be the primary Teochew usage.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêg8-dou7-極度
+    headword: 極度
+    readings:
+      - pengim: gêg8 dou7
+    senses:
+      - pos: adverb
+        gloss_en: [extremely, to the utmost, exceedingly]
+        gloss_zh: [極度]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêg8-ui5-極為
+    headword: 極為
+    readings:
+      - pengim: gêg8 ui5
+    senses:
+      - pos: adverb
+        gloss_en: [extremely, exceedingly]
+        gloss_zh: [極為]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kai3-niam6-概念
+    headword: 概念
+    readings:
+      - pengim: kai3 niam6
+    senses:
+      - pos: noun
+        gloss_en: [concept, notion, idea]
+        gloss_zh: [概念]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kai3-lug8-概率
+    headword: 概率
+    readings:
+      - pengim: kai3 lug8
+    senses:
+      - pos: noun
+        gloss_en: [probability, odds]
+        gloss_zh: [概率]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang2-榜
+    headword: 榜
+    readings:
+      - pengim: bang2
+    senses:
+      - pos: noun
+        gloss_en: [list (of names), placard, notice board]
+        gloss_zh: [榜]
+        note: Character has several unrelated etymological senses sharing the reading bang2 (placard/list, boat/oar, to beat, to loosen soil); the common 'list/placard' sense was chosen but which applies to Teochew usage is uncertain.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang2-zion7-u6-mian5-榜上有名
+    headword: 榜上有名
+    readings:
+      - pengim: bang2 zion7 u6 mian5
+    senses:
+      - pos: idiom
+        gloss_en: [to have one's name on the list (of successful candidates)]
+        gloss_zh: [榜上有名]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang2-ion7-榜樣
+    headword: 榜樣
+    readings:
+      - pengim: bang2 ion7
+    senses:
+      - pos: noun
+        gloss_en: [example, role model, model]
+        gloss_zh: [榜樣]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sung2-榫
+    headword: 榫
+    readings:
+      - pengim: sung2
+    senses:
+      - pos: noun
+        gloss_en: [tenon, joint (woodworking)]
+        gloss_zh: [榫]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong5-iao6-榮耀
+    headword: 榮耀
+    readings:
+      - pengim: iong5 iao6
+    senses:
+      - pos: noun
+        gloss_en: [glory, honor]
+        gloss_zh: [榮耀]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gou3-zao6-構造
+    headword: 構造
+    readings:
+      - pengim: gou3 zao6
+    senses:
+      - pos: noun
+        gloss_en: [structure, construction, makeup]
+        gloss_zh: [構造]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo5-槽
+    headword: 槽
+    readings:
+      - pengim: zo5
+    senses:
+      - pos: noun
+        gloss_en: [trough, manger, groove; slot]
+        gloss_zh: [槽]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghaoh8-ki3-樂器
+    headword: 樂器
+    readings:
+      - pengim: ghaoh8 ki3
+    senses:
+      - pos: noun
+        gloss_en: [musical instrument]
+        gloss_zh: [樂器]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: piao1-ciang1-標籤
+    headword: 標籤
+    readings:
+      - pengim: piao1 ciang1
+    senses:
+      - pos: noun
+        gloss_en: [label, tag]
+        gloss_zh: [標籤]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biê1-gi3-標記
+    headword: 標記
+    readings:
+      - pengim: biê1 gi3
+    senses:
+      - pos: noun
+        gloss_en: [mark, sign, notation]
+        gloss_zh: [標記]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biê1-zi3-標誌
+    headword: 標誌
+    readings:
+      - pengim: biê1 zi3
+    senses:
+      - pos: noun
+        gloss_en: [symbol, sign, logo]
+        gloss_zh: [標誌]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biê1-ghe2-標語
+    headword: 標語
+    readings:
+      - pengim: biê1 ghe2
+    senses:
+      - pos: noun
+        gloss_en: [slogan, motto]
+        gloss_zh: [標語]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: piao1-puê3-標配
+    headword: 標配
+    readings:
+      - pengim: piao1 puê3
+    senses:
+      - pos: noun
+        gloss_en: [standard equipment, standard configuration]
+        gloss_zh: [標配]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ku1-樞
+    headword: 樞
+    readings:
+      - pengim: ku1
+    senses:
+      - pos: noun
+        gloss_en: [hinge, pivot]
+        gloss_zh: [樞]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ku1-niu2-樞紐
+    headword: 樞紐
+    readings:
+      - pengim: ku1 niu2
+    senses:
+      - pos: noun
+        gloss_en: [hub, pivot, key position]
+        gloss_zh: [樞紐]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mo5-sêg4-模式
+    headword: 模式
+    readings:
+      - pengim: mo5 sêg4
+    senses:
+      - pos: noun
+        gloss_en: [pattern, mode, model]
+        gloss_zh: [模式]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iên7-ze2-樣子
+    headword: 樣子
+    readings:
+      - pengim: iên7 ze2
+    senses:
+      - pos: noun
+        gloss_en: [appearance, manner, shape]
+        gloss_zh: [樣子]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ion7-mao6-樣貌
+    headword: 樣貌
+    readings:
+      - pengim: ion7 mao6
+    senses:
+      - pos: noun
+        gloss_en: [appearance, looks]
+        gloss_zh: [樣貌]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu7-ni5-kou1-樹奶箍
+    headword: 樹奶箍
+    readings:
+      - pengim: ciu7 ni5 kou1
+    senses:
+      - pos: noun
+        gloss_en: [rubber band]
+        gloss_zh: [樹奶箍]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zung1-樽
+    headword: 樽
+    readings:
+      - pengim: zung1
+    senses:
+      - pos: noun
+        gloss_en: [bottle, vase]
+        gloss_zh: [樽, 瓶子]
+        note: The page lists an archaic 'goblet/wine vessel' sense alongside a modern Cantonese/Hakka/Teochew 'bottle' sense and a closely related classifier-for-bottles sense, all under the same reading, so the single best pos/gloss pairing is somewhat uncertain.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gan1-na2-giu5-橄欖球
+    headword: 橄欖球
+    readings:
+      - pengim: gan1 na2 giu5
+    senses:
+      - pos: noun
+        gloss_en: [rugby, rugby ball]
+        gloss_zh: [橄欖球]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-機
+    headword: 機
+    readings:
+      - pengim: gi1
+    senses:
+      - pos: noun
+        gloss_en: [machine, apparatus, opportunity]
+        gloss_zh: [機]
+        note: The character carries many senses sharing the same reading (machine/apparatus, short for aircraft or cellphone, opportunity/chance, quick-witted), and 'machine' was chosen as the core general meaning though the exact intended sense is genuinely ambiguous without more context.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-zi3-機制
+    headword: 機制
+    readings:
+      - pengim: gi1 zi3
+    senses:
+      - pos: noun
+        gloss_en: [mechanism, system]
+        gloss_zh: [機制]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-ki3-機器
+    headword: 機器
+    readings:
+      - pengim: gi1 ki3
+    senses:
+      - pos: noun
+        gloss_en: [machine]
+        gloss_zh: [機器]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-ki3-nang5-機器人
+    headword: 機器人
+    readings:
+      - pengim: gi1 ki3 nang5
+    senses:
+      - pos: noun
+        gloss_en: [robot]
+        gloss_zh: [機器人]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-ki3-hag8-sib8-機器學習
+    headword: 機器學習
+    readings:
+      - pengim: gi1 ki3 hag8 sib8
+    senses:
+      - pos: noun
+        gloss_en: [machine learning]
+        gloss_zh: [機器學習]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-hêng5-機型
+    headword: 機型
+    readings:
+      - pengim: gi1 hêng5
+    senses:
+      - pos: noun
+        gloss_en: ["model (of a machine, aircraft, or phone)"]
+        gloss_zh: [機型]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-huê6-機會
+    headword: 機會
+    readings:
+      - pengim: gi1 huê6
+    senses:
+      - pos: noun
+        gloss_en: [opportunity, chance]
+        gloss_zh: [機會]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-hai6-機械
+    headword: 機械
+    readings:
+      - pengim: gi1 hai6
+    senses:
+      - pos: noun
+        gloss_en: [machine, machinery]
+        gloss_zh: [機械]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-gou3-機構
+    headword: 機構
+    readings:
+      - pengim: gi1 gou3
+    senses:
+      - pos: noun
+        gloss_en: [organization, institution, agency]
+        gloss_zh: [機構]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-iu3-機油
+    headword: 機油
+    readings:
+      - pengim: gi1 iu3
+    senses:
+      - pos: noun
+        gloss_en: [engine oil, motor oil]
+        gloss_zh: [機油]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-pio3-機票
+    headword: 機票
+    readings:
+      - pengim: gi1 pio3
+    senses:
+      - pos: noun
+        gloss_en: [plane ticket, airline ticket]
+        gloss_zh: [機票]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-ngo6-機遇
+    headword: 機遇
+    readings:
+      - pengim: gi1 ngo6
+    senses:
+      - pos: noun
+        gloss_en: [opportunity, favorable circumstances]
+        gloss_zh: [機遇]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-guang1-機關
+    headword: 機關
+    readings:
+      - pengim: gi1 guang1
+    senses:
+      - pos: noun
+        gloss_en: [institution; agency, mechanism, trick; scheme]
+        gloss_zh: [機關]
+        note: The Wiktionary page lists institution/agency, mechanism, and trick/scheme senses under one shared reading without specifying which corresponds most directly to the Teochew reading.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cion6-puê5-橡皮
+    headword: 橡皮
+    readings:
+      - pengim: cion6 puê5
+    senses:
+      - pos: noun
+        gloss_en: [rubber, eraser]
+        gloss_zh: [橡皮]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: to2-in5-橢圓
+    headword: 橢圓
+    readings:
+      - pengim: to2 in5
+    senses:
+      - pos: noun
+        gloss_en: [ellipse, oval]
+        gloss_zh: [橢圓]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: to2-in5-gi1-橢圓機
+    headword: 橢圓機
+    readings:
+      - pengim: to2 in5 gi1
+    senses:
+      - pos: noun
+        gloss_en: [elliptical trainer, cross-trainer]
+        gloss_zh: [橢圓機]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang3-檔
+    headword: 檔
+    readings:
+      - pengim: dang3
+    senses:
+      - pos: noun
+        gloss_en: [shelf; frame, grade; class, document]
+        gloss_zh: [檔]
+        note: The page lists several distinct senses (shelf/frame, document, Cantonese 'stall', Taiwanese 'time slot') without indicating which corresponds most directly to standalone Teochew usage.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang3-uan3-檔案
+    headword: 檔案
+    readings:
+      - pengim: dang3 uan3
+    senses:
+      - pos: noun
+        gloss_en: [file, archive, record]
+        gloss_zh: [檔案]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang3-ce3-檔次
+    headword: 檔次
+    readings:
+      - pengim: dang3 ce3
+    senses:
+      - pos: noun
+        gloss_en: [quality; grade, class; rank]
+        gloss_zh: [檔次]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciang5-檣
+    headword: 檣
+    readings:
+      - pengim: ciang5
+    senses:
+      - pos: noun
+        gloss_en: [mast, yardarm]
+        gloss_zh: [檣, 桅杆]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tai5-giu5-檯球
+    headword: 檯球
+    readings:
+      - pengim: tai5 giu5
+    senses:
+      - pos: noun
+        gloss_en: [billiards, pool (cue sport)]
+        gloss_zh: [檯球]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lang5-mag8-欄目
+    headword: 欄目
+    readings:
+      - pengim: lang5 mag8
+    senses:
+      - pos: noun
+        gloss_en: [column (in a publication), segment (in a broadcast)]
+        gloss_zh: [欄目]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuêng5-li6-權利
+    headword: 權利
+    readings:
+      - pengim: kuêng5 li6
+    senses:
+      - pos: noun
+        gloss_en: [right, entitlement]
+        gloss_zh: [權利]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang5-ui1-權威
+    headword: 權威
+    readings:
+      - pengim: kuang5 ui1
+    senses:
+      - pos: noun
+        gloss_en: [authority, prestige]
+        gloss_zh: [權威]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang5-bên3-權柄
+    headword: 權柄
+    readings:
+      - pengim: kuang5 bên3
+    senses:
+      - pos: noun
+        gloss_en: [power, authority]
+        gloss_zh: [權柄]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang5-iah4-權益
+    headword: 權益
+    readings:
+      - pengim: kuang5 iah4
+    senses:
+      - pos: noun
+        gloss_en: [rights and interests, entitlements]
+        gloss_zh: [權益]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang5-hang6-權限
+    headword: 權限
+    readings:
+      - pengim: kuang5 hang6
+    senses:
+      - pos: noun
+        gloss_en: [authority, jurisdiction, permissions (computing)]
+        gloss_zh: [權限]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiam3-kuang2-欠款
+    headword: 欠款
+    readings:
+      - pengim: kiam3 kuang2
+    senses:
+      - pos: noun
+        gloss_en: [debt, money owed, arrears]
+        gloss_zh: [欠款]
+        note: Wiktionary lists both a verb sense ('to owe money') and a noun sense ('money owed; debt'); noun was chosen as the primary fit.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ce3-次
+    headword: 次
+    readings:
+      - pengim: ce3
+    senses:
+      - pos: classifier
+        gloss_en: [time (occurrence), counter for frequency/occurrences]
+        gloss_zh: [次]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hng1-riang5-欣然
+    headword: 欣然
+    readings:
+      - pengim: hng1 riang5
+    senses:
+      - pos: adverb
+        gloss_en: [joyfully, gladly, readily]
+        gloss_zh: [欣然]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiah4-ao6-ghe2-歇後語
+    headword: 歇後語
+    readings:
+      - pengim: hiah4 ao6 ghe2
+    senses:
+      - pos: noun
+        gloss_en: [two-part allegorical saying, truncated witticism]
+        gloss_zh: [歇後語]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gua1-cêh4-歌冊
+    headword: 歌冊
+    readings:
+      - pengim: gua1 cêh4
+    senses:
+      - pos: noun
+        gloss_en: [booklet of Teochew ballads, ballad songbook]
+        gloss_zh: [歌冊]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go1-kêg4-歌曲
+    headword: 歌曲
+    readings:
+      - pengim: go1 kêg4
+    senses:
+      - pos: noun
+        gloss_en: [song]
+        gloss_zh: [歌曲]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go1-sian1-歌聲
+    headword: 歌聲
+    readings:
+      - pengim: go1 sian1
+    senses:
+      - pos: noun
+        gloss_en: [singing voice, sound of singing]
+        gloss_zh: [歌聲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go1-bhu2-歌舞
+    headword: 歌舞
+    readings:
+      - pengim: go1 bhu2
+    senses:
+      - pos: noun
+        gloss_en: [singing and dancing, song and dance]
+        gloss_zh: [歌舞]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go1-bhu2-giah8-歌舞劇
+    headword: 歌舞劇
+    readings:
+      - pengim: go1 bhu2 giah8
+    senses:
+      - pos: noun
+        gloss_en: [musical, song and dance drama]
+        gloss_zh: [歌舞劇]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go1-bhu2-sêng1-pêng5-歌舞昇平
+    headword: 歌舞昇平
+    readings:
+      - pengim: go1 bhu2 sêng1 pêng5
+    senses:
+      - pos: idiom
+        gloss_en: [peace and prosperity (depicted through singing and dancing)]
+        gloss_zh: [歌舞昇平]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go1-se5-歌詞
+    headword: 歌詞
+    readings:
+      - pengim: go1 se5
+    senses:
+      - pos: noun
+        gloss_en: [lyrics]
+        gloss_zh: [歌詞]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêng1-ngiêng5-guang1-lim5-歡迎光臨
+    headword: 歡迎光臨
+    readings:
+      - pengim: huêng1 ngiêng5 guang1 lim5
+    senses:
+      - pos: interjection
+        gloss_en: [welcome! (said to a customer entering a shop)]
+        gloss_zh: [歡迎光臨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-huêh4-ga1-bou3-止血膠布
+    headword: 止血膠布
+    readings:
+      - pengim: zi2 huêh4 ga1 bou3
+    senses:
+      - pos: noun
+        gloss_en: [adhesive bandage, sticking plaster, band-aid]
+        gloss_zh: [止血膠布]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian3-dag8-正值
+    headword: 正值
+    readings:
+      - pengim: zian3 dag8
+    senses:
+      - pos: adverb
+        gloss_en: [just at the time of, to coincide with (a time/period)]
+        gloss_zh: [正值, 適逢]
+        note: The adverb sense ("just at the time of") and an unrelated noun sense ("positive value") share the same single Teochew reading in one pronunciation block, with no way to tell from the reading alone which was intended; the more commonly used adverb sense was picked.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian3-bang1-hêng5-正方形
+    headword: 正方形
+    readings:
+      - pengim: zian3 bang1 hêng5
+    senses:
+      - pos: noun
+        gloss_en: [square]
+        gloss_zh: [正方形]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian1-ghuêh8-正月
+    headword: 正月
+    readings:
+      - pengim: zian1 ghuêh8
+    senses:
+      - pos: noun
+        gloss_en: [first month of the lunar calendar]
+        gloss_zh: [正月]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian1-ghuêh8-ciu1-ig4-正月初一
+    headword: 正月初一
+    readings:
+      - pengim: zian1 ghuêh8 ciu1 ig4
+    senses:
+      - pos: noun
+        gloss_en: [first day of Chinese New Year]
+        gloss_zh: [正月初一]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian1-ghuêh8-zab8-ngou6-正月十五
+    headword: 正月十五
+    readings:
+      - pengim: zian1 ghuêh8 zab8 ngou6
+    senses:
+      - pos: noun
+        gloss_en: [Lantern Festival, 15th day of the first lunar month]
+        gloss_zh: [正月十五]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian1-nguêh8-tao5-正月頭
+    headword: 正月頭
+    readings:
+      - pengim: zian1 nguêh8 tao5
+    senses:
+      - pos: noun
+        gloss_en: [Chinese New Year]
+        gloss_zh: [正月頭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian3-ki3-正氣
+    headword: 正氣
+    readings:
+      - pengim: zian3 ki3
+    senses:
+      - pos: noun
+        gloss_en: [righteousness; moral courage, healthy atmosphere]
+        gloss_zh: [正氣]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian3-boin5-正爿
+    headword: 正爿
+    readings:
+      - pengim: zian3 boin5
+    senses:
+      - pos: noun
+        gloss_en: [right side; the right]
+        gloss_zh: [右邊]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian3-ngi6-正義
+    headword: 正義
+    readings:
+      - pengim: zian3 ngi6
+    senses:
+      - pos: noun
+        gloss_en: [justice; fairness, righteous]
+        gloss_zh: [正義]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian3-lêng5-liang6-正能量
+    headword: 正能量
+    readings:
+      - pengim: zian3 lêng5 liang6
+    senses:
+      - pos: noun
+        gloss_en: [positive energy; positivity]
+        gloss_zh: [正能量]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian3-goi2-正解
+    headword: 正解
+    readings:
+      - pengim: zian3 goi2
+    senses:
+      - pos: noun
+        gloss_en: [right answer; correct understanding]
+        gloss_zh: [正解]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ce2-zai6-此在
+    headword: 此在
+    readings:
+      - pengim: ce2 zai6
+    senses:
+      - pos: adverb
+        gloss_en: [now; at present]
+        gloss_zh: [現在]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ce2-si5-此時
+    headword: 此時
+    readings:
+      - pengim: ce2 si5
+    senses:
+      - pos: noun
+        gloss_en: [this moment, now, at present]
+        gloss_zh: [此時]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bou7-步
+    headword: 步
+    readings:
+      - pengim: bou7
+    senses:
+      - pos: noun
+        gloss_en: [step, pace]
+        gloss_zh: [步, 步伐]
+        note: Wiktionary lists many senses (noun 'step/pace', verb 'to walk/follow/measure', classifier) without sense-specific dialect labels, so which precise sense matches this Teochew reading is uncertain.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bou7-bou7-gao1-sêng1-步步高升
+    headword: 步步高升
+    readings:
+      - pengim: bou7 bou7 gao1 sêng1
+    senses:
+      - pos: idiom
+        gloss_en: [to advance step by step, to get promoted steadily]
+        gloss_zh: [步步高升]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bou7-diao7-步調
+    headword: 步調
+    readings:
+      - pengim: bou7 diao7
+    senses:
+      - pos: noun
+        gloss_en: [pace, tempo]
+        gloss_zh: [步調, 步伐]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhu2-武
+    headword: 武
+    readings:
+      - pengim: bhu2
+    senses:
+      - pos: noun
+        gloss_en: [military; martial, valiant; martial affairs]
+        gloss_zh: [武]
+        note: Entry lists many senses (military, martial arts, valiant, soldier, footstep, classifier, surname) without sense-specific dialect labels, so the precise sense matching this reading is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhu2-ki3-武器
+    headword: 武器
+    readings:
+      - pengim: bhu2 ki3
+    senses:
+      - pos: noun
+        gloss_en: [weapon, arms]
+        gloss_zh: [武器]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhu2-sug8-武術
+    headword: 武術
+    readings:
+      - pengim: bhu2 sug8
+    senses:
+      - pos: noun
+        gloss_en: [martial arts, wushu]
+        gloss_zh: [武術]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suê3-ghuêh8-歲月
+    headword: 歲月
+    readings:
+      - pengim: suê3 ghuêh8
+    senses:
+      - pos: noun
+        gloss_en: [years, the passage of time]
+        gloss_zh: [歲月]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêh8-lai5-歷來
+    headword: 歷來
+    readings:
+      - pengim: lêh8 lai5
+    senses:
+      - pos: adverb
+        gloss_en: [always, all along, constantly]
+        gloss_zh: [歷來]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêh8-se2-歷史
+    headword: 歷史
+    readings:
+      - pengim: lêh8 se2
+    senses:
+      - pos: noun
+        gloss_en: [history]
+        gloss_zh: [歷史]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêh8-tian5-歷程
+    headword: 歷程
+    readings:
+      - pengim: lêh8 tian5
+    senses:
+      - pos: noun
+        gloss_en: [course (of events), process; journey]
+        gloss_zh: [歷程, 過程]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gui1-sim1-se6-zin3-歸心似箭
+    headword: 歸心似箭
+    readings:
+      - pengim: gui1 sim1 se6 zin3
+    senses:
+      - pos: idiom
+        gloss_en: [eager to return home, heart set on going home like an arrow]
+        gloss_zh: [歸心似箭]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gui1-ki5-歸期
+    headword: 歸期
+    readings:
+      - pengim: gui1 ki5
+    senses:
+      - pos: noun
+        gloss_en: [return date, date of return]
+        gloss_zh: [歸期]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gui1-geng1-gag4-doi2-歸根結底
+    headword: 歸根結底
+    readings:
+      - pengim: gui1 geng1 gag4 doi2
+    senses:
+      - pos: idiom
+        gloss_en: [ultimately, when all is said and done, in the final analysis]
+        gloss_zh: [歸根結底, 說到底]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pai2-giu5-歹球
+    headword: 歹球
+    readings:
+      - pengim: pai2 giu5
+    senses:
+      - pos: noun
+        gloss_en: [bad shot; bad pass (in a ball game)]
+        gloss_zh: [歹球]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si2-hêng5-死刑
+    headword: 死刑
+    readings:
+      - pengim: si2 hêng5
+    senses:
+      - pos: noun
+        gloss_en: [death penalty, capital punishment]
+        gloss_zh: [死刑]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si2-bê6-死爸
+    headword: 死爸
+    readings:
+      - pengim: si2 bê6
+    senses:
+      - pos: adverb
+        gloss_en: [very; extremely (vulgar intensifier)]
+        gloss_zh: [很, 非常]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si2-gag4-死結
+    headword: 死結
+    readings:
+      - pengim: si2 gag4
+    senses:
+      - pos: noun
+        gloss_en: [tight knot; fast knot, impasse; intractable problem]
+        gloss_zh: [死結]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si2-zuê6-死罪
+    headword: 死罪
+    readings:
+      - pengim: si2 zuê6
+    senses:
+      - pos: noun
+        gloss_en: [capital crime; capital offense]
+        gloss_zh: [死罪]
+        note: The page lists both a noun sense ('capital crime') and an archaic interjection sense ('forgive me for such a grievous offense'); which one the Teochew reading specifically covers is unclear, so the more literal noun sense was used.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iang1-殃
+    headword: 殃
+    readings:
+      - pengim: iang1
+    senses:
+      - pos: noun
+        gloss_en: [disaster, misfortune, calamity]
+        gloss_zh: [殃]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dai6-殆
+    headword: 殆
+    readings:
+      - pengim: dai6
+    senses:
+      - pos: adverb
+        gloss_en: [nearly; almost, probably; perhaps]
+        gloss_zh: [殆]
+        note: This literary character has several divergent classical senses (in peril, weary, probably, nearly) and the page does not indicate which one is tied to the standalone Teochew reading, so 'nearly/almost' was chosen as the most common surviving modern usage.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: su5-bug4-zai1-殊不知
+    headword: 殊不知
+    readings:
+      - pengim: su5 bug4 zai1
+    senses:
+      - pos: phrase
+        gloss_en: [little did (one) know, who would have thought]
+        gloss_zh: [殊不知]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang5-cuang2-殘喘
+    headword: 殘喘
+    readings:
+      - pengim: cang5 cuang2
+    senses:
+      - pos: noun
+        gloss_en: [dying breath, last gasp]
+        gloss_zh: [殘喘]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: su5-殳
+    headword: 殳
+    readings:
+      - pengim: su5
+    senses:
+      - pos: noun
+        gloss_en: [ancient Chinese staff-weapon (halberd), handle of a halberd]
+        gloss_zh: [殳]
+        note: This is a rare classical/archaic term (also a Kangxi radical) primarily used as a character component; it is unclear how much it functions as a standalone spoken word in Teochew.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suah4-de1-buan5-殺豬盤
+    headword: 殺豬盤
+    readings:
+      - pengim: suah4 de1 buan5
+    senses:
+      - pos: noun
+        gloss_en: [pig-butchering scam, romance scam]
+        gloss_zh: [殺豬盤]
+        note: This is a modern slang/neologism (labeled slang/neologism on the page); it's uncertain how established or frequent this borrowed term is in everyday spoken Teochew.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: m6-ging2-iao3-毋緊要
+    headword: 毋緊要
+    readings:
+      - pengim: m6 ging2 iao3
+    senses:
+      - pos: interjection
+        gloss_en: [never mind, it doesn't matter, no problem]
+        gloss_zh: [毋緊要]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bho2-cing1-zoih4-母親節
+    headword: 母親節
+    readings:
+      - pengim: bho2 cing1 zoih4
+    senses:
+      - pos: noun
+        gloss_en: [Mother's Day]
+        gloss_zh: [母親節]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: muê2-rig8-每日
+    headword: 每日
+    readings:
+      - pengim: muê2 rig8
+    senses:
+      - pos: adverb
+        gloss_en: [every day, daily]
+        gloss_zh: [每日]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dag8-毒
+    headword: 毒
+    readings:
+      - pengim: dag8
+    senses:
+      - pos: noun
+        gloss_en: [poison, toxin, venom]
+        gloss_zh: [毒]
+        note: 毒 has multiple coexisting senses under this reading (noun 'poison', verb 'to poison', adjective 'poisonous/vicious'); the noun sense was chosen as primary.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dag8-du1-毒株
+    headword: 毒株
+    readings:
+      - pengim: dag8 du1
+    senses:
+      - pos: noun
+        gloss_en: [viral strain]
+        gloss_zh: [毒株]
+        note: This is a specialized virology term; its everyday conversational frequency outside medical/news contexts is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dag8-iêh8-毒藥
+    headword: 毒藥
+    readings:
+      - pengim: dag8 iêh8
+    senses:
+      - pos: noun
+        gloss_en: [poison]
+        gloss_zh: [毒藥]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi2-li7-比例
+    headword: 比例
+    readings:
+      - pengim: bi2 li7
+    senses:
+      - pos: noun
+        gloss_en: [ratio, proportion, scale]
+        gloss_zh: [比例]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi2-hung1-比分
+    headword: 比分
+    readings:
+      - pengim: bi2 hung1
+    senses:
+      - pos: noun
+        gloss_en: [score (of a match)]
+        gloss_zh: [比分]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi2-ru5-比如
+    headword: 比如
+    readings:
+      - pengim: bi2 ru5
+    senses:
+      - pos: verb
+        gloss_en: [for example, such as, for instance]
+        gloss_zh: [比如]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi2-ga3-比較
+    headword: 比較
+    readings:
+      - pengim: bi2 ga3
+    senses:
+      - pos: adverb
+        gloss_en: [comparatively; relatively, to compare]
+        gloss_zh: [比較]
+        note: 比較 functions commonly as both a verb ('to compare') and an adverb ('relatively/comparatively'); the adverb sense was chosen as primary given its very high frequency in everyday speech.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mao5-bên7-毛病
+    headword: 毛病
+    readings:
+      - pengim: mao5 bên7
+    senses:
+      - pos: noun
+        gloss_en: [fault; defect; problem, illness; ailment (regional)]
+        gloss_zh: [毛病]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mo5-bêg4-毛筆
+    headword: 毛筆
+    readings:
+      - pengim: mo5 bêg4
+    senses:
+      - pos: noun
+        gloss_en: [writing brush, calligraphy brush]
+        gloss_zh: [毛筆]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mo5-lah8-毛蠟
+    headword: 毛蠟
+    readings:
+      - pengim: mo5 lah8
+    senses:
+      - pos: noun
+        gloss_en: [hair pomade]
+        gloss_zh: [毛蠟, 髮蠟]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mo5-san1-毛衫
+    headword: 毛衫
+    readings:
+      - pengim: mo5 san1
+    senses:
+      - pos: noun
+        gloss_en: [sweater, wool sweater; pullover]
+        gloss_zh: [毛衫, 毛衣]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao5-毫
+    headword: 毫
+    readings:
+      - pengim: hao5
+    senses:
+      - pos: noun
+        gloss_en: [dime; 10 cents (currency), fine hair, slightest bit]
+        gloss_zh: [毫]
+        note: This character carries many senses under the same reading (fine hair, writing brush, slightest amount, milli- prefix, monetary dime); the dialect-labeled monetary 'dime' sense was chosen as most relevant to Teochew but real ambiguity remains.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao5-kiog4-毫克
+    headword: 毫克
+    readings:
+      - pengim: hao5 kiog4
+    senses:
+      - pos: noun
+        gloss_en: [milligram]
+        gloss_zh: [毫克]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao5-zi2-毫子
+    headword: 毫子
+    readings:
+      - pengim: hao5 zi2
+    senses:
+      - pos: noun
+        gloss_en: [coin (small denomination), dime; 10 cents]
+        gloss_zh: [毫子]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao5-bhi2-毫米
+    headword: 毫米
+    readings:
+      - pengim: hao5 bhi2
+    senses:
+      - pos: noun
+        gloss_en: [millimetre]
+        gloss_zh: [毫米]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tang2-毯
+    headword: 毯
+    readings:
+      - pengim: tang2
+    senses:
+      - pos: noun
+        gloss_en: [rug; carpet, blanket]
+        gloss_zh: [毯, 毯子]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giang6-毽
+    headword: 毽
+    readings:
+      - pengim: giang6
+    senses:
+      - pos: noun
+        gloss_en: [shuttlecock (used in jianzi)]
+        gloss_zh: [毽, 毽子]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zin1-氈
+    headword: 氈
+    readings:
+      - pengim: zin1
+    senses:
+      - pos: noun
+        gloss_en: [felt, blanket; rug; carpet]
+        gloss_zh: [氈]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming5-zu2-民主
+    headword: 民主
+    readings:
+      - pengim: ming5 zu2
+    senses:
+      - pos: noun
+        gloss_en: [democracy]
+        gloss_zh: [民主]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming5-se7-民事
+    headword: 民事
+    readings:
+      - pengim: ming5 se7
+    senses:
+      - pos: noun
+        gloss_en: [civil law; civil affairs, civil (relating to civil law)]
+        gloss_zh: [民事]
+        note: Page lists several older/dialectal senses (farm work, corvée, civil administration) alongside the modern legal 'civil' sense; the modern legal sense was chosen as most likely but the reading itself doesn't disambiguate.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming5-in2-ziah8-ui5-tin1-民以食為天
+    headword: 民以食為天
+    readings:
+      - pengim: ming5 in2 ziah8 ui5 tin1
+    senses:
+      - pos: idiom
+        gloss_en: [food is the first necessity of the people, people regard food as all-important]
+        gloss_zh: [民以食為天]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming5-sên1-民生
+    headword: 民生
+    readings:
+      - pengim: ming5 sên1
+    senses:
+      - pos: noun
+        gloss_en: [people's livelihood, people's welfare]
+        gloss_zh: [民生]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung1-ui5-氛圍
+    headword: 氛圍
+    readings:
+      - pengim: hung1 ui5
+    senses:
+      - pos: noun
+        gloss_en: [atmosphere, ambiance]
+        gloss_zh: [氛圍]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-si3-氣勢
+    headword: 氣勢
+    readings:
+      - pengim: ki3 si3
+    senses:
+      - pos: noun
+        gloss_en: [momentum, imposing manner, force]
+        gloss_zh: [氣勢]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-bhi7-氣味
+    headword: 氣味
+    readings:
+      - pengim: ki3 bhi7
+    senses:
+      - pos: noun
+        gloss_en: [smell; odor; scent, (fig.) charm; appeal]
+        gloss_zh: [氣味]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-kai3-氣概
+    headword: 氣概
+    readings:
+      - pengim: ki3 kai3
+    senses:
+      - pos: noun
+        gloss_en: [mettle, lofty spirit; noble character]
+        gloss_zh: [氣概]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-cion1-氣槍
+    headword: 氣槍
+    readings:
+      - pengim: ki3 cion1
+    senses:
+      - pos: noun
+        gloss_en: [air gun, air rifle]
+        gloss_zh: [氣槍]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-hung1-氣氛
+    headword: 氣氛
+    readings:
+      - pengim: ki3 hung1
+    senses:
+      - pos: noun
+        gloss_en: [atmosphere, ambiance; mood]
+        gloss_zh: [氣氛]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-giu5-氣球
+    headword: 氣球
+    readings:
+      - pengim: ki3 giu5
+    senses:
+      - pos: noun
+        gloss_en: [balloon]
+        gloss_zh: [氣球]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-liang6-氣量
+    headword: 氣量
+    readings:
+      - pengim: ki3 liang6
+    senses:
+      - pos: noun
+        gloss_en: [tolerance, forbearance]
+        gloss_zh: [氣量]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-pêg4-氣魄
+    headword: 氣魄
+    readings:
+      - pengim: ki3 pêg4
+    senses:
+      - pos: noun
+        gloss_en: [boldness; daring, imposing manner]
+        gloss_zh: [氣魄]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-bhag8-水墨
+    headword: 水墨
+    readings:
+      - pengim: zui2 bhag8
+    senses:
+      - pos: noun
+        gloss_en: [ink wash (Chinese ink painting), ink painting]
+        gloss_zh: [水墨]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-bou3-水布
+    headword: 水布
+    readings:
+      - pengim: zui2 bou3
+    senses:
+      - pos: noun
+        gloss_en: [krama (checkered wrap cloth/scarf)]
+        gloss_zh: [水布]
+        note: Wiktionary gives only a bare link to 'krama' (a Cambodian checkered scarf) with no further context, so the precise everyday meaning and usage of this term in Teochew is unclear.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-pêng5-水平
+    headword: 水平
+    readings:
+      - pengim: zui2 pêng5
+    senses:
+      - pos: noun
+        gloss_en: [level; standard; proficiency, horizontal]
+        gloss_zh: [水平]
+        note: The word functions as both a noun ('standard/level') and an adjective ('horizontal') under the same reading, so the single best part-of-speech tag is genuinely ambiguous.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-tang2-水桶
+    headword: 水桶
+    readings:
+      - pengim: zui2 tang2
+    senses:
+      - pos: noun
+        gloss_en: [bucket, pail]
+        gloss_zh: [水桶]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-cion1-水槍
+    headword: 水槍
+    readings:
+      - pengim: zui2 cion1
+    senses:
+      - pos: noun
+        gloss_en: [water gun, water cannon]
+        gloss_zh: [水槍]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-siab8-bug4-tong1-水洩不通
+    headword: 水洩不通
+    readings:
+      - pengim: zui2 siab8 bug4 tong1
+    senses:
+      - pos: idiom
+        gloss_en: [packed solid, extremely crowded, impenetrable]
+        gloss_zh: [水洩不通]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-zung2-水準
+    headword: 水準
+    readings:
+      - pengim: zui2 zung2
+    senses:
+      - pos: noun
+        gloss_en: [level, standard]
+        gloss_zh: [水準, 水平]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-ung1-水溫
+    headword: 水溫
+    readings:
+      - pengim: zui2 ung1
+    senses:
+      - pos: noun
+        gloss_en: [water temperature]
+        gloss_zh: [水溫]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-oi5-水鞋
+    headword: 水鞋
+    readings:
+      - pengim: zui2 oi5
+    senses:
+      - pos: noun
+        gloss_en: [rain boots, rubber boots]
+        gloss_zh: [水鞋, 雨鞋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uêng2-sên1-永生
+    headword: 永生
+    readings:
+      - pengim: uêng2 sên1
+    senses:
+      - pos: noun
+        gloss_en: [eternal life, immortality]
+        gloss_zh: [永生]
+        note: Page gives both a verb sense ('to live forever; to be immortal') and a noun sense ('eternal life; immortality') under the same reading; noun sense was chosen as the more common usage, but the intended part of speech is not fully certain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang1-ou5-江湖
+    headword: 江湖
+    readings:
+      - pengim: gang1 ou5
+    senses:
+      - pos: noun
+        gloss_en: [rivers and lakes (literal), the world at large; society, the itinerant/underworld domain]
+        gloss_zh: [江湖]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang1-汪
+    headword: 汪
+    readings:
+      - pengim: uang1
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for a pool/mass of liquid, (of water) vast and deep]
+        gloss_zh: [汪]
+        note: Wiktionary gives 汪 four distinct senses (adjective 'vast/deep', classifier for liquid, onomatopoeia 'woof', and a surname) under the same reading; classifier was chosen as a common colloquial usage but the intended sense is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guag4-dian7-sên3-決定性
+    headword: 決定性
+    readings:
+      - pengim: guag4 dian7 sên3
+    senses:
+      - pos: noun
+        gloss_en: [decisiveness, conclusiveness]
+        gloss_zh: [決定性]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-dêg8-汽笛
+    headword: 汽笛
+    readings:
+      - pengim: ki3 dêg8
+    senses:
+      - pos: noun
+        gloss_en: [steam whistle, siren]
+        gloss_zh: [汽笛]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-têng2-汽艇
+    headword: 汽艇
+    readings:
+      - pengim: ki3 têng2
+    senses:
+      - pos: noun
+        gloss_en: [motorboat]
+        gloss_zh: [汽艇]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-cia1-汽車
+    headword: 汽車
+    readings:
+      - pengim: ki3 cia1
+    senses:
+      - pos: noun
+        gloss_en: [automobile, car, motor vehicle]
+        gloss_zh: [汽車]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sua1-sab4-沙𧐔
+    headword: 沙𧐔
+    readings:
+      - pengim: sua1 sab4
+    senses:
+      - pos: noun
+        gloss_en: [disaster, calamity, catastrophe]
+        gloss_zh: [沙𧐔]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-uê7-油畫
+    headword: 油畫
+    readings:
+      - pengim: iu5 uê7
+    senses:
+      - pos: noun
+        gloss_en: [oil painting]
+        gloss_zh: [油畫]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-uan1-治安
+    headword: 治安
+    readings:
+      - pengim: di7 uan1
+    senses:
+      - pos: noun
+        gloss_en: [public security, public order]
+        gloss_zh: [治安]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing5-tu5-沿途
+    headword: 沿途
+    readings:
+      - pengim: ing5 tu5
+    senses:
+      - pos: adverb
+        gloss_en: [along the way, en route]
+        gloss_zh: [沿途]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang3-況
+    headword: 況
+    readings:
+      - pengim: kuang3
+    senses:
+      - pos: noun
+        gloss_en: [condition, situation]
+        gloss_zh: [況, 情況]
+        note: Character has several distinct senses (noun 'situation', adverb 'furthermore', conjunction 'let alone', verb 'to compare') with no Teochew-specific sense given to disambiguate the standalone reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huab4-lêng6-法令
+    headword: 法令
+    readings:
+      - pengim: huab4 lêng6
+    senses:
+      - pos: noun
+        gloss_en: [law, decree, statute]
+        gloss_zh: [法令]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huag4-bhu6-法務
+    headword: 法務
+    readings:
+      - pengim: huag4 bhu6
+    senses:
+      - pos: noun
+        gloss_en: [legal affairs]
+        gloss_zh: [法務]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huag4-diao5-法條
+    headword: 法條
+    readings:
+      - pengim: huag4 diao5
+    senses:
+      - pos: noun
+        gloss_en: [section of a law, legal article]
+        gloss_zh: [法條]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huag4-di7-法治
+    headword: 法治
+    readings:
+      - pengim: huag4 di7
+    senses:
+      - pos: noun
+        gloss_en: [rule of law]
+        gloss_zh: [法治]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huag4-li2-法理
+    headword: 法理
+    readings:
+      - pengim: huag4 li2
+    senses:
+      - pos: noun
+        gloss_en: [legal principles, jurisprudence]
+        gloss_zh: [法理]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huag4-gui1-法規
+    headword: 法規
+    readings:
+      - pengim: huag4 gui1
+    senses:
+      - pos: noun
+        gloss_en: [regulation, law]
+        gloss_zh: [法規]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo1-oi5-波鞋
+    headword: 波鞋
+    readings:
+      - pengim: bo1 oi5
+    senses:
+      - pos: noun
+        gloss_en: [sneakers, trainers, athletic shoes]
+        gloss_zh: [波鞋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bong5-泵
+    headword: 泵
+    readings:
+      - pengim: bong5
+    senses:
+      - pos: noun
+        gloss_en: [pump, to pump]
+        gloss_zh: [泵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ion5-huê3-洋貨
+    headword: 洋貨
+    readings:
+      - pengim: ion5 huê3
+    senses:
+      - pos: noun
+        gloss_en: [imported goods, western goods]
+        gloss_zh: [洋貨]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soi2-loi2-洗禮
+    headword: 洗禮
+    readings:
+      - pengim: soi2 loi2
+    senses:
+      - pos: noun
+        gloss_en: [baptism, ordeal (figurative)]
+        gloss_zh: [洗禮]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soi2-i1-êg8-洗衣液
+    headword: 洗衣液
+    readings:
+      - pengim: soi2 i1 êg8
+    senses:
+      - pos: noun
+        gloss_en: [liquid laundry detergent]
+        gloss_zh: [洗衣液]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soi2-san1-gi1-洗衫機
+    headword: 洗衫機
+    readings:
+      - pengim: soi2 san1 gi1
+    senses:
+      - pos: noun
+        gloss_en: [washing machine]
+        gloss_zh: [洗衫機, 洗衣機]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soi2-san1-hung2-洗衫粉
+    headword: 洗衫粉
+    readings:
+      - pengim: soi2 san1 hung2
+    senses:
+      - pos: noun
+        gloss_en: [washing powder, laundry detergent]
+        gloss_zh: [洗衫粉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: log8-iang5-zua2-gui3-洛陽紙貴
+    headword: 洛陽紙貴
+    readings:
+      - pengim: log8 iang5 zua2 gui3
+    senses:
+      - pos: idiom
+        gloss_en: [(of a literary work) to be all the rage for a time; immensely popular]
+        gloss_zh: [洛陽紙貴]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong6-gag4-洞葛
+    headword: 洞葛
+    readings:
+      - pengim: dong6 gag4
+    senses:
+      - pos: noun
+        gloss_en: [cane, walking stick]
+        gloss_zh: [拐杖]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uah8-dong6-活動
+    headword: 活動
+    readings:
+      - pengim: uah8 dong6
+    senses:
+      - pos: noun
+        gloss_en: [activity, event]
+        gloss_zh: [活動]
+        note: The word has several hard-to-disambiguate senses under the same reading (noun 'activity/event', verb 'to move/exercise', adjective 'movable/shaky'); the common noun sense was chosen as primary.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uah8-gag4-活結
+    headword: 活結
+    readings:
+      - pengim: uah8 gag4
+    senses:
+      - pos: noun
+        gloss_en: [slip knot]
+        gloss_zh: [活結]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pai3-biag8-派別
+    headword: 派別
+    readings:
+      - pengim: pai3 biag8
+    senses:
+      - pos: noun
+        gloss_en: [faction, branch, denomination]
+        gloss_zh: [派別]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pai3-tao5-派頭
+    headword: 派頭
+    readings:
+      - pengim: pai3 tao5
+    senses:
+      - pos: noun
+        gloss_en: [style, swagger, panache]
+        gloss_zh: [派頭]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-dong6-sên3-流動性
+    headword: 流動性
+    readings:
+      - pengim: liu5 dong6 sên3
+    senses:
+      - pos: noun
+        gloss_en: [liquidity, fluidity, mobility]
+        gloss_zh: [流動性]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-gam2-流感
+    headword: 流感
+    readings:
+      - pengim: liu5 gam2
+    senses:
+      - pos: noun
+        gloss_en: [flu, influenza]
+        gloss_zh: [流感, 流行性感冒]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-zui2-suan3-流水線
+    headword: 流水線
+    readings:
+      - pengim: liu5 zui2 suan3
+    senses:
+      - pos: noun
+        gloss_en: [assembly line]
+        gloss_zh: [流水線]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-zui2-dion3-流水賬
+    headword: 流水賬
+    readings:
+      - pengim: liu5 zui2 dion3
+    senses:
+      - pos: noun
+        gloss_en: [daybook, chronological account (recorded without analysis)]
+        gloss_zh: [流水賬]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-pai3-流派
+    headword: 流派
+    readings:
+      - pengim: liu5 pai3
+    senses:
+      - pos: noun
+        gloss_en: [school of thought, genre, tributary]
+        gloss_zh: [流派]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-tian5-流程
+    headword: 流程
+    readings:
+      - pengim: liu5 tian5
+    senses:
+      - pos: noun
+        gloss_en: [process, procedure, workflow]
+        gloss_zh: [流程]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-gian5-sên3-流行性
+    headword: 流行性
+    readings:
+      - pengim: liu5 gian5 sên3
+    senses:
+      - pos: noun
+        gloss_en: [epidemic (attributive), epidemicity]
+        gloss_zh: [流行性]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-gian5-bên7-hag8-流行病學
+    headword: 流行病學
+    readings:
+      - pengim: liu5 gian5 bên7 hag8
+    senses:
+      - pos: noun
+        gloss_en: [epidemiology]
+        gloss_zh: [流行病學]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-tiao5-流調
+    headword: 流調
+    readings:
+      - pengim: liu5 tiao5
+    senses:
+      - pos: noun
+        gloss_en: [contact tracing, epidemiological investigation]
+        gloss_zh: [流調]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-liang5-流量
+    headword: 流量
+    readings:
+      - pengim: liu5 liang5
+    senses:
+      - pos: noun
+        gloss_en: [flow rate, (mobile/internet) data, web traffic]
+        gloss_zh: [流量]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pu5-diao1-浮雕
+    headword: 浮雕
+    readings:
+      - pengim: pu5 diao1
+    senses:
+      - pos: noun
+        gloss_en: [relief sculpture, embossment]
+        gloss_zh: [浮雕]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êg8-bou3-浴布
+    headword: 浴布
+    readings:
+      - pengim: êg8 bou3
+    senses:
+      - pos: noun
+        gloss_en: [bath towel]
+        gloss_zh: [浴布]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-lai6-ghua7-海內外
+    headword: 海內外
+    readings:
+      - pengim: hai2 lai6 ghua7
+    senses:
+      - pos: noun
+        gloss_en: [home and abroad, domestic and international]
+        gloss_zh: [海內外]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-bo3-海報
+    headword: 海報
+    readings:
+      - pengim: hai2 bo3
+    senses:
+      - pos: noun
+        gloss_en: [poster, placard]
+        gloss_zh: [海報]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-ghua7-海外
+    headword: 海外
+    readings:
+      - pengim: hai2 ghua7
+    senses:
+      - pos: noun
+        gloss_en: [overseas, abroad]
+        gloss_zh: [海外]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-uan2-海碗
+    headword: 海碗
+    readings:
+      - pengim: hai2 uan2
+    senses:
+      - pos: noun
+        gloss_en: [large bowl, big bowl]
+        gloss_zh: [海碗]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-zeng3-海葬
+    headword: 海葬
+    readings:
+      - pengim: hai2 zeng3
+    senses:
+      - pos: noun
+        gloss_en: [burial at sea, sea burial]
+        gloss_zh: [海葬]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-gung1-海軍
+    headword: 海軍
+    readings:
+      - pengim: hai2 gung1
+    senses:
+      - pos: noun
+        gloss_en: [navy]
+        gloss_zh: [海軍]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zim3-loi2-浸禮
+    headword: 浸禮
+    readings:
+      - pengim: zim3 loi2
+    senses:
+      - pos: noun
+        gloss_en: [baptism (by immersion)]
+        gloss_zh: [浸禮]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: niab4-puang5-涅槃
+    headword: 涅槃
+    readings:
+      - pengim: niab4 puang5
+    senses:
+      - pos: noun
+        gloss_en: [nirvana]
+        gloss_zh: [涅槃]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siou1-sêg4-消息
+    headword: 消息
+    readings:
+      - pengim: siou1 sêg4
+    senses:
+      - pos: noun
+        gloss_en: [news, message, information]
+        gloss_zh: [消息]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao1-huang5-cia1-消防車
+    headword: 消防車
+    readings:
+      - pengim: siao1 huang5 cia1
+    senses:
+      - pos: noun
+        gloss_en: [fire engine, fire truck]
+        gloss_zh: [消防車]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao1-huang5-dui7-消防隊
+    headword: 消防隊
+    readings:
+      - pengim: siao1 huang5 dui7
+    senses:
+      - pos: noun
+        gloss_en: [fire brigade]
+        gloss_zh: [消防隊]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nê5-suan3-涼傘
+    headword: 涼傘
+    readings:
+      - pengim: nê5 suan3
+    senses:
+      - pos: noun
+        gloss_en: [parasol, ceremonial umbrella]
+        gloss_zh: [涼傘]
+        note: No listed category file cleanly fits this ceremonial/processional object (a sun parasol carried by officials/in temple processions), so it was placed in basics.yaml as the catch-all.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dan6-zuang1-淡妝
+    headword: 淡妝
+    readings:
+      - pengim: dan6 zuang1
+    senses:
+      - pos: noun
+        gloss_en: [light makeup]
+        gloss_zh: [淡妝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dan6-kui3-淡季
+    headword: 淡季
+    readings:
+      - pengim: dan6 kui3
+    senses:
+      - pos: noun
+        gloss_en: [off-season, low season]
+        gloss_zh: [淡季]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng6-tou2-淨土
+    headword: 淨土
+    readings:
+      - pengim: zêng6 tou2
+    senses:
+      - pos: noun
+        gloss_en: [pure land (Buddhism), unpolluted place (figurative)]
+        gloss_zh: [淨土]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng6-zui2-ki3-淨水器
+    headword: 淨水器
+    readings:
+      - pengim: zêng6 zui2 ki3
+    senses:
+      - pos: noun
+        gloss_en: [water purifier]
+        gloss_zh: [淨水器]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung6-hah8-muêh8-混合物
+    headword: 混合物
+    readings:
+      - pengim: hung6 hah8 muêh8
+    senses:
+      - pos: noun
+        gloss_en: [mixture]
+        gloss_zh: [混合物]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciang2-siang5-diag4-zi2-淺嘗輒止
+    headword: 淺嘗輒止
+    readings:
+      - pengim: ciang2 siang5 diag4 zi2
+    senses:
+      - pos: idiom
+        gloss_en: [to dabble without deep study, to stop after a superficial taste of something]
+        gloss_zh: [淺嘗輒止]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciang2-giang3-淺見
+    headword: 淺見
+    readings:
+      - pengim: ciang2 giang3
+    senses:
+      - pos: noun
+        gloss_en: [superficial view, (humble) my humble opinion]
+        gloss_zh: [淺見]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêng1-duan1-清單
+    headword: 清單
+    readings:
+      - pengim: cêng1 duan1
+    senses:
+      - pos: noun
+        gloss_en: [list, inventory, checklist]
+        gloss_zh: [清單]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêng1-mêng5-清明
+    headword: 清明
+    readings:
+      - pengim: cêng1 mêng5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Qingming (solar term), Tomb Sweeping Day]
+        gloss_zh: [清明]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêng1-mêng5-zoih4-清明節
+    headword: 清明節
+    readings:
+      - pengim: cêng1 mêng5 zoih4
+    senses:
+      - pos: proper-noun
+        gloss_en: [Tomb Sweeping Day, Qingming Festival]
+        gloss_zh: [清明節]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêng1-giag4-lêng5-nguang5-清潔能源
+    headword: 清潔能源
+    readings:
+      - pengim: cêng1 giag4 lêng5 nguang5
+    senses:
+      - pos: noun
+        gloss_en: [clean energy]
+        gloss_zh: [清潔能源]
+        note: Modern technical/policy compound (clean energy) does not fit any of the specific category files well, so it was placed in basics.yaml as the default catch-all.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêng1-gui1-清規
+    headword: 清規
+    readings:
+      - pengim: cêng1 gui1
+    senses:
+      - pos: noun
+        gloss_en: [monastic rules (Buddhist or Taoist)]
+        gloss_zh: [清規]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ke5-dao6-渠道
+    headword: 渠道
+    readings:
+      - pengim: ke5 dao6
+    senses:
+      - pos: noun
+        gloss_en: [channel, means, medium]
+        gloss_zh: [渠道]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou7-zung5-渡船
+    headword: 渡船
+    readings:
+      - pengim: dou7 zung5
+    senses:
+      - pos: noun
+        gloss_en: [ferry, ferryboat]
+        gloss_zh: [渡船]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou7-lung5-渡輪
+    headword: 渡輪
+    readings:
+      - pengim: dou7 lung5
+    senses:
+      - pos: noun
+        gloss_en: [ferry, ferryboat]
+        gloss_zh: [渡輪]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za1-渣
+    headword: 渣
+    readings:
+      - pengim: za1
+    senses:
+      - pos: noun
+        gloss_en: [dregs, sediment, fragment]
+        gloss_zh: [渣]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang2-zua2-港紙
+    headword: 港紙
+    readings:
+      - pengim: gang2 zua2
+    senses:
+      - pos: noun
+        gloss_en: [Hong Kong dollar]
+        gloss_zh: [港幣]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zim2-bhag8-枕木
+    headword: 枕木
+    readings:
+      - pengim: zim2 bhag8
+    senses:
+      - pos: noun
+        gloss_en: [railway sleeper; railroad tie]
+        gloss_zh: [枕木]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-dêng1-油燈
+    headword: 油燈
+    readings:
+      - pengim: iu5 dêng1
+    senses:
+      - pos: noun
+        gloss_en: [oil lamp]
+        gloss_zh: [油燈]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

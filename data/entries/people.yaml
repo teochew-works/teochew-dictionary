@@ -7550,3 +7550,545 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: za1-bhou2-nang5-查某人
+    headword: 查某人
+    readings:
+      - pengim: za1 bhou2 nang5
+    senses:
+      - pos: noun
+        gloss_en: [woman, wife (indirect reference)]
+        gloss_zh: [女人]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zao2-sung1-查某孫
+    headword: 查某孫
+    readings:
+      - pengim: zao2 sung1
+    senses:
+      - pos: noun
+        gloss_en: [granddaughter, niece (brother's daughter)]
+        gloss_zh: [孫女]
+        note: Wiktionary lists both 'granddaughter' and 'fraternal niece' as valid senses under the same Teochew reading without further disambiguation.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za1-bhou2-pêng5-iu2-查某朋友
+    headword: 查某朋友
+    readings:
+      - pengim: za1 bhou2 pêng5 iu2
+    senses:
+      - pos: noun
+        gloss_en: [girlfriend]
+        gloss_zh: [女朋友]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao6-huê1-校花
+    headword: 校花
+    readings:
+      - pengim: hao6 huê1
+    senses:
+      - pos: noun
+        gloss_en: [campus belle, prettiest girl in school]
+        gloss_zh: [校花]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao6-cao2-校草
+    headword: 校草
+    readings:
+      - pengim: hao6 cao2
+    senses:
+      - pos: noun
+        gloss_en: [campus heartthrob, most handsome guy in school]
+        gloss_zh: [校草]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao6-ui1-校醫
+    headword: 校醫
+    readings:
+      - pengim: hao6 ui1
+    senses:
+      - pos: noun
+        gloss_en: [school doctor, campus doctor]
+        gloss_zh: [校醫]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao6-ziang2-校長
+    headword: 校長
+    readings:
+      - pengim: hao6 ziang2
+    senses:
+      - pos: noun
+        gloss_en: [principal, headteacher, president (of a school)]
+        gloss_zh: [校長]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiou1-hiong5-梟雄
+    headword: 梟雄
+    readings:
+      - pengim: hiou1 hiong5
+    senses:
+      - pos: noun
+        gloss_en: [ambitious and ruthless leader, formidable schemer]
+        gloss_zh: [梟雄]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-êng1-棄嬰
+    headword: 棄嬰
+    readings:
+      - pengim: ki3 êng1
+    senses:
+      - pos: noun
+        gloss_en: [abandoned baby, unwanted child]
+        gloss_zh: [棄嬰]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di6-棣
+    headword: 棣
+    readings:
+      - pengim: di6
+    senses:
+      - pos: noun
+        gloss_en: [younger brother (literary), cherry tree, surname]
+        gloss_zh: [棣]
+        note: The page groups several distinct senses (cherry tree/Kerria japonica, younger brother, surname) under the same Teochew reading di6 without disambiguating which is primary.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiab8-zu2-業主
+    headword: 業主
+    readings:
+      - pengim: ngiab8 zu2
+    senses:
+      - pos: noun
+        gloss_en: [proprietor, owner]
+        gloss_zh: [業主]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go1-ciu2-歌手
+    headword: 歌手
+    readings:
+      - pengim: go1 ciu2
+    senses:
+      - pos: noun
+        gloss_en: [singer, vocalist]
+        gloss_zh: [歌手]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go1-cên1-歌星
+    headword: 歌星
+    readings:
+      - pengim: go1 cên1
+    senses:
+      - pos: noun
+        gloss_en: [singing star, famous singer]
+        gloss_zh: [歌星]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ao1-iang5-歐陽
+    headword: 歐陽
+    readings:
+      - pengim: ao1 iang5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Ouyang (a Chinese compound surname)]
+        gloss_zh: [歐陽]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhu2-duan3-武旦
+    headword: 武旦
+    readings:
+      - pengim: bhu2 duan3
+    senses:
+      - pos: noun
+        gloss_en: [martial female role (in Chinese opera)]
+        gloss_zh: [武旦]
+        note: Highly specialized traditional-opera role-type term, so its best-fit category (people vs. a more specialized/arts category) is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhu2-gêng6-武警
+    headword: 武警
+    readings:
+      - pengim: bhu2 gêng6
+    senses:
+      - pos: noun
+        gloss_en: [armed police (China)]
+        gloss_zh: [武警, 武裝警察]
+        note: Page lists two distinct senses sharing this reading (short for 'armed police' vs. a residential place name in Fujian); the armed-police sense was chosen as the more general-vocabulary one.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê3-sian1-歲聲
+    headword: 歲聲
+    readings:
+      - pengim: huê3 sian1
+    senses:
+      - pos: noun
+        gloss_en: [age (of a person)]
+        gloss_zh: [歲聲, 年紀]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pai2-gian2-歹囝
+    headword: 歹囝
+    readings:
+      - pengim: pai2 gian2
+    senses:
+      - pos: noun
+        gloss_en: [naughty child; brat, hooligan; troublemaker]
+        gloss_zh: [壞孩子, 小流氓]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si2-nang5-死人
+    headword: 死人
+    readings:
+      - pengim: si2 nang5
+    senses:
+      - pos: noun
+        gloss_en: [dead person, corpse]
+        gloss_zh: [死人, 屍體]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si2-bê6-gian2-死爸囝
+    headword: 死爸囝
+    readings:
+      - pengim: si2 bê6 gian2
+    senses:
+      - pos: noun
+        gloss_en: [bastard (vulgar term of abuse)]
+        gloss_zh: [死爸囝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si2-dang2-死黨
+    headword: 死黨
+    readings:
+      - pengim: si2 dang2
+    senses:
+      - pos: noun
+        gloss_en: [best friend, diehard buddy, ride-or-die friend]
+        gloss_zh: [死黨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang5-hui3-殘廢
+    headword: 殘廢
+    readings:
+      - pengim: cang5 hui3
+    senses:
+      - pos: noun
+        gloss_en: [disabled person (dated term), cripple]
+        gloss_zh: [殘廢, 殘疾]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang5-zib8-殘疾
+    headword: 殘疾
+    readings:
+      - pengim: cang5 zib8
+    senses:
+      - pos: noun
+        gloss_en: [physical disability, handicap]
+        gloss_zh: [殘疾]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang5-ziang3-殘障
+    headword: 殘障
+    readings:
+      - pengim: cang5 ziang3
+    senses:
+      - pos: noun
+        gloss_en: [physical disability, disabled]
+        gloss_zh: [殘障]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suah4-ciu2-殺手
+    headword: 殺手
+    readings:
+      - pengim: suah4 ciu2
+    senses:
+      - pos: noun
+        gloss_en: [killer, hitman, assassin]
+        gloss_zh: [殺手]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bho2-母
+    headword: 母
+    readings:
+      - pengim: bho2
+    senses:
+      - pos: noun
+        gloss_en: [mother, female]
+        gloss_zh: [母, 母親]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bho2-gian2-母囝
+    headword: 母囝
+    readings:
+      - pengim: bho2 gian2
+    senses:
+      - pos: noun
+        gloss_en: [mother and child]
+        gloss_zh: [母囝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bho2-cing1-母親
+    headword: 母親
+    readings:
+      - pengim: bho2 cing1
+    senses:
+      - pos: noun
+        gloss_en: [mother]
+        gloss_zh: [母親]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming5-zog8-民族
+    headword: 民族
+    readings:
+      - pengim: ming5 zog8
+    senses:
+      - pos: noun
+        gloss_en: [nation, ethnic group, nationality]
+        gloss_zh: [民族]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming5-gêng6-民警
+    headword: 民警
+    readings:
+      - pengim: ming5 gêng6
+    senses:
+      - pos: noun
+        gloss_en: [people's police, civil police officer]
+        gloss_zh: [民警]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mang5-氓
+    headword: 氓
+    readings:
+      - pengim: mang5
+    senses:
+      - pos: noun
+        gloss_en: [people, folk, wanderer]
+        gloss_zh: [氓]
+        note: The page lists two etymologies for 氓 (a bound morpheme used only in 流氓 vs. a free noun meaning people/folk/nomad); it is not fully certain which sense the mang5 reading pairs with, though the free-noun sense is the most likely match.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sim2-沈
+    headword: 沈
+    readings:
+      - pengim: sim2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Shen (surname)]
+        gloss_zh: [沈]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-gêng1-治宮
+    headword: 治宮
+    readings:
+      - pengim: di7 gêng1
+    senses:
+      - pos: noun
+        gloss_en: [temple attendant in charge of incense and candles]
+        gloss_zh: [治宮, 廟祝]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huag4-guan1-法官
+    headword: 法官
+    readings:
+      - pengim: huag4 guan1
+    senses:
+      - pos: noun
+        gloss_en: [judge, justice]
+        gloss_zh: [法官]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ni5-zui2-ziang6-泥水匠
+    headword: 泥水匠
+    readings:
+      - pengim: ni5 zui2 ziang6
+    senses:
+      - pos: noun
+        gloss_en: [bricklayer, plasterer, tiler]
+        gloss_zh: [泥水匠]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ni5-zui2-gang1-泥水工
+    headword: 泥水工
+    readings:
+      - pengim: ni5 zui2 gang1
+    senses:
+      - pos: noun
+        gloss_en: [bricklayer, plasterer, tiler]
+        gloss_zh: [泥水工]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-biang6-流便
+    headword: 流便
+    readings:
+      - pengim: liu5 biang6
+    senses:
+      - pos: proper-noun
+        gloss_en: [Reuben (Protestant Bible transliteration)]
+        gloss_zh: [流便]
+        note: The only sense on the Wiktionary page is a niche Protestant Bible transliteration of the name Reuben, a highly specialized proper-noun use rather than a common word.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-mang5-流氓
+    headword: 流氓
+    readings:
+      - pengim: liu5 mang5
+    senses:
+      - pos: noun
+        gloss_en: [hooligan, scoundrel, rascal]
+        gloss_zh: [流氓]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-lam5-nang5-海南人
+    headword: 海南人
+    readings:
+      - pengim: hai2 lam5 nang5
+    senses:
+      - pos: noun
+        gloss_en: [Hainanese person]
+        gloss_zh: [海南人]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-dao6-海盜
+    headword: 海盜
+    readings:
+      - pengim: hai2 dao6
+    senses:
+      - pos: noun
+        gloss_en: [pirate]
+        gloss_zh: [海盜]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-cag8-海賊
+    headword: 海賊
+    readings:
+      - pengim: hai2 cag8
+    senses:
+      - pos: noun
+        gloss_en: [pirate]
+        gloss_zh: [海賊, 海盜]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao1-hui3-zia2-消費者
+    headword: 消費者
+    readings:
+      - pengim: siao1 hui3 zia2
+    senses:
+      - pos: noun
+        gloss_en: [consumer, customer]
+        gloss_zh: [消費者]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sog4-neng2-淑女
+    headword: 淑女
+    readings:
+      - pengim: sog4 neng2
+    senses:
+      - pos: noun
+        gloss_en: [lady, virtuous woman]
+        gloss_zh: [淑女]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gam3-淦
+    headword: 淦
+    readings:
+      - pengim: gam3
+    senses:
+      - pos: proper-noun
+        gloss_en: [surname, "(obsolete, of water) to leak into a boat"]
+        gloss_zh: [淦]
+        note: Etymology 1 groups an obsolete verb sense ('water leaking into a boat'), a river name (Gan River in Jiangxi), and a surname under the identical Teochew reading gam3; the surname sense was picked as the most plausible everyday usage.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

@@ -1407,3 +1407,537 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: bi5-bê5-枇杷
+    headword: 枇杷
+    readings:
+      - pengim: bi5 bê5
+    senses:
+      - pos: noun
+        gloss_en: [loquat (fruit)]
+        gloss_zh: [枇杷]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lim5-kim5-林檎
+    headword: 林檎
+    readings:
+      - pengim: lim5 kim5
+    senses:
+      - pos: noun
+        gloss_en: [sugar apple; custard apple (Teochew)]
+        gloss_zh: [林檎]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guê2-ring5-果仁
+    headword: 果仁
+    readings:
+      - pengim: guê2 ring5
+    senses:
+      - pos: noun
+        gloss_en: [nut, kernel, peanut]
+        gloss_zh: [果仁]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guên2-zi2-果子
+    headword: 果子
+    readings:
+      - pengim: guên2 zi2
+    senses:
+      - pos: noun
+        gloss_en: [fruit]
+        gloss_zh: [果子, 水果]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guê2-zab4-果汁
+    headword: 果汁
+    readings:
+      - pengim: guê2 zab4
+    senses:
+      - pos: noun
+        gloss_en: [fruit juice]
+        gloss_zh: [果汁]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guê2-zion3-果醬
+    headword: 果醬
+    readings:
+      - pengim: guê2 zion3
+    senses:
+      - pos: noun
+        gloss_en: [jam, fruit preserve, jelly]
+        gloss_zh: [果醬]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guên2-zi2-果隻
+    headword: 果隻
+    readings:
+      - pengim: guên2 zi2
+    senses:
+      - pos: noun
+        gloss_en: [fruit]
+        gloss_zh: [果子]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gan1-柑
+    headword: 柑
+    readings:
+      - pengim: gan1
+    senses:
+      - pos: noun
+        gloss_en: [mandarin orange, tangerine]
+        gloss_zh: [柑]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nai6-柰
+    headword: 柰
+    readings:
+      - pengim: nai6
+    senses:
+      - pos: noun
+        gloss_en: [a kind of crabapple (Malus asiatica)]
+        gloss_zh: [柰]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai6-柿
+    headword: 柿
+    readings:
+      - pengim: sai6
+    senses:
+      - pos: noun
+        gloss_en: [persimmon]
+        gloss_zh: [柿, 柿子]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai6-bian2-柿餅
+    headword: 柿餅
+    readings:
+      - pengim: sai6 bian2
+    senses:
+      - pos: noun
+        gloss_en: [dried persimmon, persimmon cake]
+        gloss_zh: [柿餅]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uan3-bang2-案板
+    headword: 案板
+    readings:
+      - pengim: uan3 bang2
+    senses:
+      - pos: noun
+        gloss_en: [kneading/chopping board, cutting board]
+        gloss_zh: [案板]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: seng1-sui5-桑垂
+    headword: 桑垂
+    readings:
+      - pengim: seng1 sui5
+    senses:
+      - pos: noun
+        gloss_en: [mulberry (fruit), mulberry berries]
+        gloss_zh: [桑垂, 桑葚]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hia1-桸
+    headword: 桸
+    readings:
+      - pengim: hia1
+    senses:
+      - pos: noun
+        gloss_en: [ladle]
+        gloss_zh: [桸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lai5-梨
+    headword: 梨
+    readings:
+      - pengim: lai5
+    senses:
+      - pos: noun
+        gloss_en: [pear]
+        gloss_zh: [梨]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo2-棗
+    headword: 棗
+    readings:
+      - pengim: zo2
+    senses:
+      - pos: noun
+        gloss_en: [jujube, Chinese date]
+        gloss_zh: [棗]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ia5-椰
+    headword: 椰
+    readings:
+      - pengim: ia5
+    senses:
+      - pos: noun
+        gloss_en: [coconut]
+        gloss_zh: [椰子]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ion5-bhuê5-楊梅
+    headword: 楊梅
+    readings:
+      - pengim: ion5 bhuê5
+    senses:
+      - pos: noun
+        gloss_en: [Chinese bayberry (yangmei), strawberry (dialectal)]
+        gloss_zh: [楊梅]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-榴
+    headword: 榴
+    readings:
+      - pengim: liu5
+    senses:
+      - pos: noun
+        gloss_en: [pomegranate (short for 石榴)]
+        gloss_zh: [石榴]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu7-ze5-樹薯
+    headword: 樹薯
+    readings:
+      - pengim: ciu7 ze5
+    senses:
+      - pos: noun
+        gloss_en: [cassava]
+        gloss_zh: [樹薯, 木薯]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gan1-na2-橄欖
+    headword: 橄欖
+    readings:
+      - pengim: gan1 na2
+    senses:
+      - pos: noun
+        gloss_en: [olive, Chinese olive]
+        gloss_zh: [橄欖]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêng5-橙
+    headword: 橙
+    readings:
+      - pengim: cêng5
+    senses:
+      - pos: noun
+        gloss_en: [orange (fruit), orange (tree)]
+        gloss_zh: [橙]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suain7-檨
+    headword: 檨
+    readings:
+      - pengim: suain7
+    senses:
+      - pos: noun
+        gloss_en: [mango]
+        gloss_zh: [檨, 芒果]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êng1-to5-櫻桃
+    headword: 櫻桃
+    readings:
+      - pengim: êng1 to5
+    senses:
+      - pos: noun
+        gloss_en: [cherry (fruit)]
+        gloss_zh: [櫻桃]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-guên2-水果
+    headword: 水果
+    readings:
+      - pengim: zui2 guên2
+    senses:
+      - pos: noun
+        gloss_en: [fruit]
+        gloss_zh: [水果, 生果]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-sên1-水生
+    headword: 水生
+    readings:
+      - pengim: zui2 sên1
+    senses:
+      - pos: noun
+        gloss_en: [oyster]
+        gloss_zh: [蠔, 水生]
+        note: The page gives both a general adjective sense 'aquatic' and a Teochew-labeled noun sense 'oyster' for 水生; the oyster sense was chosen as the more likely match for a native colloquial Teochew reading, but this is not fully certain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-guê2-水粿
+    headword: 水粿
+    readings:
+      - pengim: zui2 guê2
+    senses:
+      - pos: noun
+        gloss_en: [steamed rice cake with preserved radish]
+        gloss_zh: [水粿]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zab4-汁
+    headword: 汁
+    readings:
+      - pengim: zab4
+    senses:
+      - pos: noun
+        gloss_en: [juice, sauce, gravy]
+        gloss_zh: [汁]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-zui2-汽水
+    headword: 汽水
+    readings:
+      - pengim: ki3 zui2
+    senses:
+      - pos: noun
+        gloss_en: [soda, soft drink, carbonated water]
+        gloss_zh: [汽水]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sa1-la1-沙拉
+    headword: 沙拉
+    readings:
+      - pengim: sa1 la1
+    senses:
+      - pos: noun
+        gloss_en: [salad]
+        gloss_zh: [沙拉]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sa1-dê5-沙茶
+    headword: 沙茶
+    readings:
+      - pengim: sa1 dê5
+    senses:
+      - pos: noun
+        gloss_en: [shacha sauce, satay sauce]
+        gloss_zh: [沙茶]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sa1-dê5-min7-沙茶麵
+    headword: 沙茶麵
+    readings:
+      - pengim: sa1 dê5 min7
+    senses:
+      - pos: noun
+        gloss_en: [shacha noodle soup]
+        gloss_zh: [沙茶麵]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-za1-guê2-油炸粿
+    headword: 油炸粿
+    readings:
+      - pengim: iu5 za1 guê2
+    senses:
+      - pos: noun
+        gloss_en: [youtiao, deep-fried dough stick]
+        gloss_zh: [油炸粿]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-guê2-油粿
+    headword: 油粿
+    readings:
+      - pengim: iu5 guê2
+    senses:
+      - pos: noun
+        gloss_en: [Teochew deep-fried glutinous rice cake, fried rice dumpling]
+        gloss_zh: [油粿]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-cai3-油菜
+    headword: 油菜
+    readings:
+      - pengim: iu5 cai3
+    senses:
+      - pos: noun
+        gloss_en: [rapeseed, oilseed rape, bok choy (regional)]
+        gloss_zh: [油菜]
+        note: Wiktionary lists several distinct senses (rapeseed/oilseed brassica vs. Northern-China bok choy vs. Hong Kong slang) without singling out which applies to the Teochew reading.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-cang1-油蔥
+    headword: 油蔥
+    readings:
+      - pengim: iu5 cang1
+    senses:
+      - pos: noun
+        gloss_en: [fried shallots, crispy fried onion]
+        gloss_zh: [油蔥]
+        note: Page also gives a Hakka/Teochew-labeled sense 'aloe' for the same word; chose the more common culinary sense (fried shallots) since it is unclear which sense the given reading targets.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-mua5-油麻
+    headword: 油麻
+    readings:
+      - pengim: iu5 mua5
+    senses:
+      - pos: noun
+        gloss_en: [sesame]
+        gloss_zh: [油麻, 芝麻]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gam1-泔
+    headword: 泔
+    readings:
+      - pengim: gam1
+    senses:
+      - pos: noun
+        gloss_en: [rice-washing water, kitchen slops, swill]
+        gloss_zh: [泔水]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pao3-min7-泡麵
+    headword: 泡麵
+    readings:
+      - pengim: pao3 min7
+    senses:
+      - pos: noun
+        gloss_en: [instant noodles]
+        gloss_zh: [泡麵]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zig4-cou3-浙醋
+    headword: 浙醋
+    readings:
+      - pengim: zig4 cou3
+    senses:
+      - pos: noun
+        gloss_en: [red vinegar (Zhejiang-style)]
+        gloss_zh: [浙醋]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-tai5-海苔
+    headword: 海苔
+    readings:
+      - pengim: hai2 tai5
+    senses:
+      - pos: noun
+        gloss_en: [nori, dried seaweed]
+        gloss_zh: [海苔]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-cin1-海鮮
+    headword: 海鮮
+    readings:
+      - pengim: hai2 cin1
+    senses:
+      - pos: noun
+        gloss_en: [seafood]
+        gloss_zh: [海鮮]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liang5-dê5-涼茶
+    headword: 涼茶
+    readings:
+      - pengim: liang5 dê5
+    senses:
+      - pos: noun
+        gloss_en: [herbal tea, cooling tea]
+        gloss_zh: [涼茶]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêng1-sim1-in5-清心丸
+    headword: 清心丸
+    readings:
+      - pengim: cêng1 sim1 in5
+    senses:
+      - pos: noun
+        gloss_en: [Teochew jelly cube (in sweet mung bean soup), clear-heart ball]
+        gloss_zh: [清心丸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

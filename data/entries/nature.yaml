@@ -3779,3 +3779,2003 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: dang1-huang1-東方
+    headword: 東方
+    readings:
+      - pengim: dang1 huang1
+    senses:
+      - pos: noun
+        gloss_en: [east, eastern region]
+        gloss_zh: [東方]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang1-huang1-東風
+    headword: 東風
+    readings:
+      - pengim: dang1 huang1
+    senses:
+      - pos: noun
+        gloss_en: [east wind, favorable situation (fig.)]
+        gloss_zh: [東風]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng5-bêh4-松柏
+    headword: 松柏
+    readings:
+      - pengim: sêng5 bêh4
+    senses:
+      - pos: noun
+        gloss_en: [pine (Quanzhou Hokkien/Teochew), pine and cypress (literary)]
+        gloss_zh: [松柏]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng5-mo5-松毛
+    headword: 松毛
+    readings:
+      - pengim: sêng5 mo5
+    senses:
+      - pos: noun
+        gloss_en: [pine needle]
+        gloss_zh: [松毛, 松針]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng5-giu5-松球
+    headword: 松球
+    readings:
+      - pengim: sêng5 giu5
+    senses:
+      - pos: noun
+        gloss_en: [pine cone]
+        gloss_zh: [松球]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang1-枋
+    headword: 枋
+    readings:
+      - pengim: bang1
+    senses:
+      - pos: noun
+        gloss_en: [slab; plank (Southern Min), classifier for pieces of objects]
+        gloss_zh: [枋]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-枝
+    headword: 枝
+    readings:
+      - pengim: gi1
+    senses:
+      - pos: noun
+        gloss_en: [branch, twig]
+        gloss_zh: [枝, 樹枝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-diao5-枝條
+    headword: 枝條
+    readings:
+      - pengim: gi1 diao5
+    senses:
+      - pos: noun
+        gloss_en: [twig, branch, stem]
+        gloss_zh: [枝條]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: su2-枲
+    headword: 枲
+    readings:
+      - pengim: su2
+    senses:
+      - pos: noun
+        gloss_en: [ramie, male hemp plant]
+        gloss_zh: [枲]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-枳
+    headword: 枳
+    readings:
+      - pengim: zi2
+    senses:
+      - pos: noun
+        gloss_en: [trifoliate orange (Citrus trifoliata)]
+        gloss_zh: [枳]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh4-柏
+    headword: 柏
+    readings:
+      - pengim: bêh4
+    senses:
+      - pos: noun
+        gloss_en: [cypress]
+        gloss_zh: [柏樹]
+        note: Wiktionary lists the same Teochew reading bêh4 under two separate pronunciation sections (cypress vs. an alternative form of 檗 used in 黃柏); glossed with the more common 'cypress' sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zia3-柘
+    headword: 柘
+    readings:
+      - pengim: zia3
+    senses:
+      - pos: noun
+        gloss_en: [silkworm thorn tree (Maclura tricuspidata), "sugarcane (dialectal, alt. form of 蔗)"]
+        gloss_zh: [柘樹]
+        note: The page lists multiple senses (silkworm thorn tree; alternative form of 蔗 'sugarcane'; a surname) without specifying which corresponds to the Teochew reading zia3.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu2-柳
+    headword: 柳
+    readings:
+      - pengim: liu2
+    senses:
+      - pos: noun
+        gloss_en: [willow, willow tree]
+        gloss_zh: [柳, 柳樹]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu2-ciu7-柳樹
+    headword: 柳樹
+    readings:
+      - pengim: liu2 ciu7
+    senses:
+      - pos: noun
+        gloss_en: [willow tree]
+        gloss_zh: [柳樹]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ca5-puê3-柴杮
+    headword: 柴杮
+    readings:
+      - pengim: ca5 puê3
+    senses:
+      - pos: noun
+        gloss_en: [wood shavings]
+        gloss_zh: [柴杮, 木屑]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ca5-iu5-柴油
+    headword: 柴油
+    readings:
+      - pengim: ca5 iu5
+    senses:
+      - pos: noun
+        gloss_en: [diesel fuel, diesel]
+        gloss_zh: [柴油]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ca5-huê2-柴火
+    headword: 柴火
+    readings:
+      - pengim: ca5 huê2
+    senses:
+      - pos: noun
+        gloss_en: [firewood]
+        gloss_zh: [柴火]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ca5-mag8-柴目
+    headword: 柴目
+    readings:
+      - pengim: ca5 mag8
+    senses:
+      - pos: noun
+        gloss_en: [knot or lump in wood/tree trunk]
+        gloss_zh: [柴目]
+        note: Page lists two senses under the same ca5 mag8 reading — a noun ('knot/lump in wood') and an unrelated adjective ('unable to discern things; poor judgement/eyesight') — with no clear indication which is primary; the more literal noun sense was chosen.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ca5-poh4-柴粕
+    headword: 柴粕
+    readings:
+      - pengim: ca5 poh4
+    senses:
+      - pos: noun
+        gloss_en: [sawdust, wood shavings]
+        gloss_zh: [柴粕, 木屑]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ca5-tao5-柴頭
+    headword: 柴頭
+    readings:
+      - pengim: ca5 tao5
+    senses:
+      - pos: noun
+        gloss_en: [firewood, wood; log]
+        gloss_zh: [柴頭, 木柴]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai6-dih4-柿蒂
+    headword: 柿蒂
+    readings:
+      - pengim: sai6 dih4
+    senses:
+      - pos: noun
+        gloss_en: [persimmon calyx (used in traditional Chinese medicine)]
+        gloss_zh: [柿蒂]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêng6-栟
+    headword: 栟
+    readings:
+      - pengim: bêng6
+    senses:
+      - pos: noun
+        gloss_en: ["palm (bound form, as in 栟櫚/棕櫚 'palm tree')"]
+        gloss_zh: [棕櫚]
+        note: Bound character with no independent meaning, used only in 栟櫚/棕櫚 ('palm tree', Mandarin reading bīng) and the place name 栟茶 (reading bēn); the single Teochew reading bêng6 is listed under both with no indication which compound it derives from, so the more generally useful palm-tree sense was chosen.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gui3-桂
+    headword: 桂
+    readings:
+      - pengim: gui3
+    senses:
+      - pos: noun
+        gloss_en: [osmanthus, cassia; cinnamon]
+        gloss_zh: [桂]
+        note: The character has several distinct senses (osmanthus tree, cassia/cinnamon, laurel, a surname, a Guilin-related place element) all sharing the bare reading gui3; the general aromatic-tree sense was picked as most notable.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gui3-huê1-桂花
+    headword: 桂花
+    readings:
+      - pengim: gui3 huê1
+    senses:
+      - pos: noun
+        gloss_en: [sweet osmanthus, osmanthus flower]
+        gloss_zh: [桂花]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: seng1-桑
+    headword: 桑
+    readings:
+      - pengim: seng1
+    senses:
+      - pos: noun
+        gloss_en: [mulberry tree]
+        gloss_zh: [桑]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuê5-梅
+    headword: 梅
+    readings:
+      - pengim: bhuê5
+    senses:
+      - pos: noun
+        gloss_en: [Chinese plum; Japanese apricot (Prunus mume)]
+        gloss_zh: [梅]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuê5-huê1-梅花
+    headword: 梅花
+    readings:
+      - pengim: bhuê5 huê1
+    senses:
+      - pos: noun
+        gloss_en: [plum blossom]
+        gloss_zh: [梅花]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze2-梓
+    headword: 梓
+    readings:
+      - pengim: ze2
+    senses:
+      - pos: noun
+        gloss_en: [catalpa tree, hometown (literary)]
+        gloss_zh: [梓]
+        note: The page lists several unrelated senses (catalpa tree, hometown, craftsman, printing block, surname) under the same reading with no dialect labeling to indicate which is used in Teochew, so the concrete tree sense was chosen as the primary gloss.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-梔
+    headword: 梔
+    readings:
+      - pengim: gi1
+    senses:
+      - pos: noun
+        gloss_en: [gardenia, Cape jasmine]
+        gloss_zh: [梔]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gên2-梗
+    headword: 梗
+    readings:
+      - pengim: gên2
+    senses:
+      - pos: noun
+        gloss_en: [stalk, stem]
+        gloss_zh: [梗]
+        note: The character has many unrelated senses sharing this reading (stalk, outline/gist, meme/punchline, to block, upright/surname) with no clear indication which applies to the Teochew reading, so the basic concrete 'stalk' sense was picked.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngo5-梧
+    headword: 梧
+    readings:
+      - pengim: ngo5
+    senses:
+      - pos: noun
+        gloss_en: ["Chinese parasol tree (bound form, as in 梧桐)"]
+        gloss_zh: [梧]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngo5-tong5-梧桐
+    headword: 梧桐
+    readings:
+      - pengim: ngo5 tong5
+    senses:
+      - pos: noun
+        gloss_en: [Chinese parasol tree, wutong tree]
+        gloss_zh: [梧桐]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zang1-棕
+    headword: 棕
+    readings:
+      - pengim: zang1
+    senses:
+      - pos: noun
+        gloss_en: [palm (tree), palm fiber]
+        gloss_zh: [棕]
+        note: The character has multiple senses (palm tree/palm fiber vs. brown color) sharing the same reading; a related-dialect vernacular/literary split suggests the palm sense is primary here, but the page does not explicitly confirm this for the Teochew reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêg4-棘
+    headword: 棘
+    readings:
+      - pengim: gêg4
+    senses:
+      - pos: noun
+        gloss_en: [thorn, bramble; thorny bush]
+        gloss_zh: [棘]
+        note: Etymology 1 (the one matching this Teochew reading) spans several closely related senses (noun 'thorn/bramble', adjective 'thorny', verb 'to prick'); the nominal sense was picked as most representative but the page does not indicate which is most common in Teochew.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tang5-棠
+    headword: 棠
+    readings:
+      - pengim: tang5
+    senses:
+      - pos: noun
+        gloss_en: [crabapple tree, wild plum]
+        gloss_zh: [棠]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sim1-lim5-森林
+    headword: 森林
+    readings:
+      - pengim: sim1 lim5
+    senses:
+      - pos: noun
+        gloss_en: [forest, woods]
+        gloss_zh: [森林]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci1-sêg4-di7-棲息地
+    headword: 棲息地
+    readings:
+      - pengim: ci1 sêg4 di7
+    senses:
+      - pos: noun
+        gloss_en: [habitat]
+        gloss_zh: [棲息地, 生境]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêg4-muêh8-植物
+    headword: 植物
+    readings:
+      - pengim: sêg4 muêh8
+    senses:
+      - pos: noun
+        gloss_en: [plant, vegetation, flora]
+        gloss_zh: [植物]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iang5-liu2-楊柳
+    headword: 楊柳
+    readings:
+      - pengim: iang5 liu2
+    senses:
+      - pos: noun
+        gloss_en: [willow, poplar and willow]
+        gloss_zh: [楊柳]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: beng1-ciu7-楓樹
+    headword: 楓樹
+    readings:
+      - pengim: beng1 ciu7
+    senses:
+      - pos: noun
+        gloss_en: [maple tree]
+        gloss_zh: [楓樹]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ru5-榆
+    headword: 榆
+    readings:
+      - pengim: ru5
+    senses:
+      - pos: noun
+        gloss_en: [elm, elm tree]
+        gloss_zh: [榆, 榆樹]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-榖
+    headword: 榖
+    readings:
+      - pengim: gog4
+    senses:
+      - pos: noun
+        gloss_en: [paper mulberry (Broussonetia papyrifera)]
+        gloss_zh: [榖, 構樹]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêg4-槭
+    headword: 槭
+    readings:
+      - pengim: cêg4
+    senses:
+      - pos: noun
+        gloss_en: ["maple (tree, genus Acer)"]
+        gloss_zh: [槭, 楓]
+        note: The page has two etymologies under this character (noun 'maple tree' vs. adjective 'bare of leaves'); it is not clear which corresponds to the given Teochew reading, so the more common noun/tree sense is used.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu7-zang5-樹叢
+    headword: 樹叢
+    readings:
+      - pengim: ciu7 zang5
+    senses:
+      - pos: noun
+        gloss_en: [thicket, grove, undergrowth]
+        gloss_zh: [樹叢]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu7-dung1-樹墩
+    headword: 樹墩
+    readings:
+      - pengim: ciu7 dung1
+    senses:
+      - pos: noun
+        gloss_en: [tree stump]
+        gloss_zh: [樹墩]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu7-ni5-樹奶
+    headword: 樹奶
+    readings:
+      - pengim: ciu7 ni5
+    senses:
+      - pos: noun
+        gloss_en: [rubber]
+        gloss_zh: [樹奶]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu7-bhuê2-樹尾
+    headword: 樹尾
+    readings:
+      - pengim: ciu7 bhuê2
+    senses:
+      - pos: noun
+        gloss_en: [treetop, tip of a tree]
+        gloss_zh: [樹尾]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu7-ian2-樹影
+    headword: 樹影
+    readings:
+      - pengim: ciu7 ian2
+    senses:
+      - pos: noun
+        gloss_en: [shadow of a tree, tree shade]
+        gloss_zh: [樹影]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu7-gi1-樹枝
+    headword: 樹枝
+    readings:
+      - pengim: ciu7 gi1
+    senses:
+      - pos: noun
+        gloss_en: [tree branch, twig]
+        gloss_zh: [樹枝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu7-geng1-樹根
+    headword: 樹根
+    readings:
+      - pengim: ciu7 geng1
+    senses:
+      - pos: noun
+        gloss_en: [root of a tree, tree root]
+        gloss_zh: [樹根]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu7-zai1-樹栽
+    headword: 樹栽
+    readings:
+      - pengim: ciu7 zai1
+    senses:
+      - pos: noun
+        gloss_en: [sapling, seedling]
+        gloss_zh: [樹栽, 樹苗]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hua5-樺
+    headword: 樺
+    readings:
+      - pengim: hua5
+    senses:
+      - pos: noun
+        gloss_en: [birch]
+        gloss_zh: [樺, 樺樹]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gan1-橄
+    headword: 橄
+    readings:
+      - pengim: gan1
+    senses:
+      - pos: noun
+        gloss_en: ["olive (bound form, only occurs in 橄欖)"]
+        gloss_zh: [橄欖]
+        note: 橄 is a bound morpheme that Wiktionary says is used only within the compound 橄欖 (olive) and has no independent meaning, so the assigned part of speech and gloss are an approximation rather than a true standalone sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tang5-檀
+    headword: 檀
+    readings:
+      - pengim: tang5
+    senses:
+      - pos: noun
+        gloss_en: [sandalwood tree, surname]
+        gloss_zh: [檀]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êng1-櫻
+    headword: 櫻
+    readings:
+      - pengim: êng1
+    senses:
+      - pos: noun
+        gloss_en: [cherry (tree)]
+        gloss_zh: [櫻]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êng1-huê1-櫻花
+    headword: 櫻花
+    readings:
+      - pengim: êng1 huê1
+    senses:
+      - pos: noun
+        gloss_en: [cherry blossom, sakura]
+        gloss_zh: [櫻花]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zang5-欉
+    headword: 欉
+    readings:
+      - pengim: zang5
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for trees/plants/bushes, clump; cluster]
+        gloss_zh: [叢]
+        note: Classifier sense is Southern-Min/Penang-Hokkien-specific and the best-fitting category (grammar/classifier vs. plant domain) is genuinely ambiguous.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si2-huê2-suan1-死火山
+    headword: 死火山
+    readings:
+      - pengim: si2 huê2 suan1
+    senses:
+      - pos: noun
+        gloss_en: [extinct volcano]
+        gloss_zh: [死火山]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kag4-殼
+    headword: 殼
+    readings:
+      - pengim: kag4
+    senses:
+      - pos: noun
+        gloss_en: [shell, husk, hull, casing]
+        gloss_zh: [殼]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung1-氛
+    headword: 氛
+    readings:
+      - pengim: hung1
+    senses:
+      - pos: noun
+        gloss_en: [atmosphere, vapor, miasma]
+        gloss_zh: [氛]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-hao7-氣候
+    headword: 氣候
+    readings:
+      - pengim: ki3 hao7
+    senses:
+      - pos: noun
+        gloss_en: [climate, weather]
+        gloss_zh: [氣候]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-iab4-氣壓
+    headword: 氣壓
+    readings:
+      - pengim: ki3 iab4
+    senses:
+      - pos: noun
+        gloss_en: [atmospheric pressure, air pressure]
+        gloss_zh: [氣壓]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-iab4-goi3-氣壓計
+    headword: 氣壓計
+    readings:
+      - pengim: ki3 iab4 goi3
+    senses:
+      - pos: noun
+        gloss_en: [barometer]
+        gloss_zh: [氣壓計]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-liu5-氣流
+    headword: 氣流
+    readings:
+      - pengim: ki3 liu5
+    senses:
+      - pos: noun
+        gloss_en: [air current, airflow]
+        gloss_zh: [氣流]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-ung1-氣溫
+    headword: 氣溫
+    readings:
+      - pengim: ki3 ung1
+    senses:
+      - pos: noun
+        gloss_en: [air temperature]
+        gloss_zh: [氣溫]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-siang6-氣象
+    headword: 氣象
+    readings:
+      - pengim: ki3 siang6
+    senses:
+      - pos: noun
+        gloss_en: [weather phenomena, meteorology]
+        gloss_zh: [氣象]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-ti2-氣體
+    headword: 氣體
+    readings:
+      - pengim: ki3 ti2
+    senses:
+      - pos: noun
+        gloss_en: [gas (state of matter)]
+        gloss_zh: [氣體]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iang2-氧
+    headword: 氧
+    readings:
+      - pengim: iang2
+    senses:
+      - pos: noun
+        gloss_en: [oxygen]
+        gloss_zh: [氧]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêg8-氯
+    headword: 氯
+    readings:
+      - pengim: lêg8
+    senses:
+      - pos: noun
+        gloss_en: [chlorine, chlorine gas]
+        gloss_zh: [氯]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ung1-氳
+    headword: 氳
+    readings:
+      - pengim: ung1
+    senses:
+      - pos: noun
+        gloss_en: ["thick, heavy atmosphere (literary)", "misty, hazy (bound morpheme in 氤氳)"]
+        gloss_zh: [氤氳]
+        note: This character is a literary bound morpheme almost always occurring within the compound 氤氳, so its independent colloquial use in Teochew is unclear.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-ui7-水位
+    headword: 水位
+    readings:
+      - pengim: zui2 ui7
+    senses:
+      - pos: noun
+        gloss_en: [water level, water table]
+        gloss_zh: [水位]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-tou3-水土
+    headword: 水土
+    readings:
+      - pengim: zui2 tou3
+    senses:
+      - pos: noun
+        gloss_en: [water and soil, natural environment; climate]
+        gloss_zh: [水土]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-hog8-水域
+    headword: 水域
+    readings:
+      - pengim: zui2 hog8
+    senses:
+      - pos: noun
+        gloss_en: [body of water, waters]
+        gloss_zh: [水域]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-doi2-水底
+    headword: 水底
+    readings:
+      - pengim: zui2 doi2
+    senses:
+      - pos: noun
+        gloss_en: [underwater, bottom of a body of water]
+        gloss_zh: [水底]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-di5-水池
+    headword: 水池
+    readings:
+      - pengim: zui2 di5
+    senses:
+      - pos: noun
+        gloss_en: [pond, pool, sink; washbasin]
+        gloss_zh: [水池]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-ki3-水汽
+    headword: 水汽
+    readings:
+      - pengim: zui2 ki3
+    senses:
+      - pos: noun
+        gloss_en: [water vapor, steam]
+        gloss_zh: [水汽]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-iu5-水油
+    headword: 水油
+    readings:
+      - pengim: zui2 iu5
+    senses:
+      - pos: noun
+        gloss_en: [kerosene, paraffin oil]
+        gloss_zh: [水油, 煤油]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-zuan5-水泉
+    headword: 水泉
+    readings:
+      - pengim: zui2 zuan5
+    senses:
+      - pos: noun
+        gloss_en: [spring water, fountainhead; wellspring]
+        gloss_zh: [水泉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-ni5-水泥
+    headword: 水泥
+    readings:
+      - pengim: zui2 ni5
+    senses:
+      - pos: noun
+        gloss_en: [cement]
+        gloss_zh: [水泥]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-nguang5-水源
+    headword: 水源
+    readings:
+      - pengim: zui2 nguang5
+    senses:
+      - pos: noun
+        gloss_en: [water source, headwaters, fountainhead]
+        gloss_zh: [水源]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-dao6-水稻
+    headword: 水稻
+    readings:
+      - pengim: zui2 dao6
+    senses:
+      - pos: noun
+        gloss_en: [paddy rice, rice (grown in a paddy)]
+        gloss_zh: [水稻]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-kug4-水窟
+    headword: 水窟
+    readings:
+      - pengim: zui2 kug4
+    senses:
+      - pos: noun
+        gloss_en: [puddle, small pool of water]
+        gloss_zh: [水窟]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-zioh4-水質
+    headword: 水質
+    readings:
+      - pengim: zui2 zioh4
+    senses:
+      - pos: noun
+        gloss_en: [water quality]
+        gloss_zh: [水質]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-liang6-水量
+    headword: 水量
+    readings:
+      - pengim: zui2 liang6
+    senses:
+      - pos: noun
+        gloss_en: [volume of water, amount of water]
+        gloss_zh: [水量]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-ngeng5-水銀
+    headword: 水銀
+    readings:
+      - pengim: zui2 ngeng5
+    senses:
+      - pos: noun
+        gloss_en: [mercury, quicksilver]
+        gloss_zh: [水銀]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-ming7-水面
+    headword: 水面
+    readings:
+      - pengim: zui2 ming7
+    senses:
+      - pos: noun
+        gloss_en: [surface of water, water surface]
+        gloss_zh: [水面]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-ti2-水體
+    headword: 水體
+    readings:
+      - pengim: zui2 ti2
+    senses:
+      - pos: noun
+        gloss_en: [body of water]
+        gloss_zh: [水體]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang6-氹
+    headword: 氹
+    readings:
+      - pengim: dang6
+    senses:
+      - pos: noun
+        gloss_en: [puddle, pool, pit]
+        gloss_zh: [氹]
+        note: The 'puddle/pool/pit' sense on the page is explicitly labeled Cantonese/dialectal Hakka rather than Teochew, even though the Teochew reading is grouped under the same etymology, so the exact Teochew-applicable sense is not fully confirmed.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong3-汞
+    headword: 汞
+    readings:
+      - pengim: gong3
+    senses:
+      - pos: noun
+        gloss_en: [mercury (Hg)]
+        gloss_zh: [汞, 水銀]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang1-江
+    headword: 江
+    readings:
+      - pengim: gang1
+    senses:
+      - pos: noun
+        gloss_en: [river, the Yangtze River]
+        gloss_zh: [江, 河]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang1-zui2-江水
+    headword: 江水
+    readings:
+      - pengim: gang1 zui2
+    senses:
+      - pos: noun
+        gloss_en: [river water]
+        gloss_zh: [江水]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang1-ho5-江河
+    headword: 江河
+    readings:
+      - pengim: gang1 ho5
+    senses:
+      - pos: noun
+        gloss_en: [rivers, waterways]
+        gloss_zh: [江河]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang1-bin1-江邊
+    headword: 江邊
+    readings:
+      - pengim: gang1 bin1
+    senses:
+      - pos: noun
+        gloss_en: [riverside, riverbank]
+        gloss_zh: [江邊]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di5-池
+    headword: 池
+    readings:
+      - pengim: di5
+    senses:
+      - pos: noun
+        gloss_en: [pond, pool]
+        gloss_zh: [池, 池塘]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: u1-ni5-污泥
+    headword: 污泥
+    readings:
+      - pengim: u1 ni5
+    senses:
+      - pos: noun
+        gloss_en: [mud, sludge, mire]
+        gloss_zh: [污泥]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-汽
+    headword: 汽
+    readings:
+      - pengim: ki3
+    senses:
+      - pos: noun
+        gloss_en: [steam, water vapor, gas]
+        gloss_zh: [汽]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-iu5-汽油
+    headword: 汽油
+    readings:
+      - pengim: ki3 iu5
+    senses:
+      - pos: noun
+        gloss_en: [gasoline, petrol]
+        gloss_zh: [汽油]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ung5-沄
+    headword: 沄
+    readings:
+      - pengim: ung5
+    senses:
+      - pos: adjective
+        gloss_en: [(of waves) surging and swirling, billowing]
+        gloss_zh: [沄]
+        note: The character has two etymologies on the page (a descriptive sense for swirling waves, and use as a simplified form of 澐 'river billows'), and it is unclear exactly which corresponds to the Teochew ung5 reading.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sua1-bou1-沙埔
+    headword: 沙埔
+    readings:
+      - pengim: sua1 bou1
+    senses:
+      - pos: noun
+        gloss_en: [sandy beach, sandy shore (by a river)]
+        gloss_zh: [沙埔]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sua1-tuan1-沙灘
+    headword: 沙灘
+    readings:
+      - pengim: sua1 tuan1
+    senses:
+      - pos: noun
+        gloss_en: [beach, sandy shore]
+        gloss_zh: [沙灘]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-沝
+    headword: 沝
+    readings:
+      - pengim: zui2
+    senses:
+      - pos: noun
+        gloss_en: [water, river]
+        gloss_zh: [水]
+        note: The page lists two pronunciation classes with different senses (confluence of rivers vs. Min dialectal form of 水 'water'); picked the 'water' sense as most plausible for the Teochew reading zui2, but this is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho5-河
+    headword: 河
+    readings:
+      - pengim: ho5
+    senses:
+      - pos: noun
+        gloss_en: [river]
+        gloss_zh: [河]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho5-liu5-河流
+    headword: 河流
+    readings:
+      - pengim: ho5 liu5
+    senses:
+      - pos: noun
+        gloss_en: [river]
+        gloss_zh: [河流]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho5-koi1-河溪
+    headword: 河溪
+    readings:
+      - pengim: ho5 koi1
+    senses:
+      - pos: noun
+        gloss_en: [Milky Way]
+        gloss_zh: [河溪]
+        note: Wiktionary glosses 河溪 as 'Milky Way' rather than a literal 'river and stream' sense; flagging to confirm this is the intended meaning for the Teochew reading.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho5-ming7-河面
+    headword: 河面
+    readings:
+      - pengim: ho5 ming7
+    senses:
+      - pos: noun
+        gloss_en: [surface of a river]
+        gloss_zh: [河面]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-bing2-油品
+    headword: 油品
+    readings:
+      - pengim: iu5 bing2
+    senses:
+      - pos: noun
+        gloss_en: [oil product, petroleum product]
+        gloss_zh: [油品]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-cag4-油漆
+    headword: 油漆
+    readings:
+      - pengim: iu5 cag4
+    senses:
+      - pos: noun
+        gloss_en: [paint, to paint]
+        gloss_zh: [油漆]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing5-ngai6-沿岸
+    headword: 沿岸
+    readings:
+      - pengim: ing5 ngai6
+    senses:
+      - pos: noun
+        gloss_en: [coast, coastline, shore]
+        gloss_zh: [沿岸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing5-hai2-沿海
+    headword: 沿海
+    readings:
+      - pengim: ing5 hai2
+    senses:
+      - pos: noun
+        gloss_en: [coastal, along the coast]
+        gloss_zh: [沿海]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zuan5-泉
+    headword: 泉
+    readings:
+      - pengim: zuan5
+    senses:
+      - pos: noun
+        gloss_en: [spring, springwater]
+        gloss_zh: [泉, 泉水]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zuan5-zui2-泉水
+    headword: 泉水
+    readings:
+      - pengim: zuan5 zui2
+    senses:
+      - pos: noun
+        gloss_en: [spring water]
+        gloss_zh: [泉水]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pan3-ziêh8-泛石
+    headword: 泛石
+    readings:
+      - pengim: pan3 ziêh8
+    senses:
+      - pos: noun
+        gloss_en: [pumice]
+        gloss_zh: [浮石]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo1-波
+    headword: 波
+    readings:
+      - pengim: bo1
+    senses:
+      - pos: noun
+        gloss_en: [wave, undulation]
+        gloss_zh: [波]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo1-lang6-波浪
+    headword: 波浪
+    readings:
+      - pengim: bo1 lang6
+    senses:
+      - pos: noun
+        gloss_en: [wave (of water)]
+        gloss_zh: [波浪]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo1-lang5-波瀾
+    headword: 波瀾
+    readings:
+      - pengim: bo1 lang5
+    senses:
+      - pos: noun
+        gloss_en: [billows, great waves, surge of emotion]
+        gloss_zh: [波瀾]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo1-bhung5-波紋
+    headword: 波紋
+    readings:
+      - pengim: bo1 bhung5
+    senses:
+      - pos: noun
+        gloss_en: [ripple, corrugation]
+        gloss_zh: [波紋]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo1-ciang5-波長
+    headword: 波長
+    readings:
+      - pengim: bo1 ciang5
+    senses:
+      - pos: noun
+        gloss_en: [wavelength]
+        gloss_zh: [波長]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ni5-泥
+    headword: 泥
+    readings:
+      - pengim: ni5
+    senses:
+      - pos: noun
+        gloss_en: [mud, soil]
+        gloss_zh: [泥]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ni5-tou2-泥土
+    headword: 泥土
+    readings:
+      - pengim: ni5 tou2
+    senses:
+      - pos: noun
+        gloss_en: [earth, soil, clay]
+        gloss_zh: [泥土]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ni5-tam5-泥潭
+    headword: 泥潭
+    readings:
+      - pengim: ni5 tam5
+    senses:
+      - pos: noun
+        gloss_en: [mire, mud pit, "quagmire (figurative: difficult situation)"]
+        gloss_zh: [泥潭]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iang5-huê1-洋灰
+    headword: 洋灰
+    readings:
+      - pengim: iang5 huê1
+    senses:
+      - pos: noun
+        gloss_en: [cement]
+        gloss_zh: [洋灰, 水泥]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ko2-lao5-洘流
+    headword: 洘流
+    readings:
+      - pengim: ko2 lao5
+    senses:
+      - pos: verb
+        gloss_en: [(of a tide) to ebb, to go out]
+        gloss_zh: [退潮]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zing1-津
+    headword: 津
+    readings:
+      - pengim: zing1
+    senses:
+      - pos: noun
+        gloss_en: [ford, ferry crossing]
+        gloss_zh: [渡口]
+        note: The character 津 carries several senses under one reading (ford/ferry crossing, short for Tianjin, bodily fluid such as saliva); the ford/ferry-crossing sense was chosen as the base meaning but the exact intended sense for this reading is not fully disambiguated on the page.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hong5-zui2-洪水
+    headword: 洪水
+    readings:
+      - pengim: hong5 zui2
+    senses:
+      - pos: noun
+        gloss_en: [flood, floodwater]
+        gloss_zh: [洪水]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hong5-zai1-洪災
+    headword: 洪災
+    readings:
+      - pengim: hong5 zai1
+    senses:
+      - pos: noun
+        gloss_en: [flood disaster, flooding]
+        gloss_zh: [洪災]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu1-洲
+    headword: 洲
+    readings:
+      - pengim: ziu1
+    senses:
+      - pos: noun
+        gloss_en: [continent, islet (in a river)]
+        gloss_zh: [洲]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uah8-huê2-suan1-活火山
+    headword: 活火山
+    readings:
+      - pengim: uah8 huê2 suan1
+    senses:
+      - pos: noun
+        gloss_en: [active volcano]
+        gloss_zh: [活火山]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-hog8-流域
+    headword: 流域
+    readings:
+      - pengim: liu5 hog8
+    senses:
+      - pos: noun
+        gloss_en: [river basin, watershed]
+        gloss_zh: [流域]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-cên1-流星
+    headword: 流星
+    readings:
+      - pengim: liu5 cên1
+    senses:
+      - pos: noun
+        gloss_en: [meteor, shooting star]
+        gloss_zh: [流星]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-zui2-流水
+    headword: 流水
+    readings:
+      - pengim: liu5 zui2
+    senses:
+      - pos: noun
+        gloss_en: [flowing water, running water]
+        gloss_zh: [流水]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pou2-浦
+    headword: 浦
+    readings:
+      - pengim: pou2
+    senses:
+      - pos: noun
+        gloss_en: [riverbank, shore, river mouth]
+        gloss_zh: [浦]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pu5-pio5-浮薸
+    headword: 浮薸
+    readings:
+      - pengim: pu5 pio5
+    senses:
+      - pos: noun
+        gloss_en: [duckweed]
+        gloss_zh: [浮薸]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pu5-hung5-浮雲
+    headword: 浮雲
+    readings:
+      - pengim: pu5 hung5
+    senses:
+      - pos: noun
+        gloss_en: [floating clouds]
+        gloss_zh: [浮雲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-sao3-海嘯
+    headword: 海嘯
+    readings:
+      - pengim: hai2 sao3
+    senses:
+      - pos: noun
+        gloss_en: [tsunami]
+        gloss_zh: [海嘯]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-hog8-海域
+    headword: 海域
+    readings:
+      - pengim: hai2 hog8
+    senses:
+      - pos: noun
+        gloss_en: [sea area, maritime region]
+        gloss_zh: [海域]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-gin5-海墘
+    headword: 海墘
+    readings:
+      - pengim: hai2 gin5
+    senses:
+      - pos: noun
+        gloss_en: [seashore, beach, waterfront]
+        gloss_zh: [海墘]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-ngai6-海岸
+    headword: 海岸
+    readings:
+      - pengim: hai2 ngai6
+    senses:
+      - pos: noun
+        gloss_en: [coast, seashore]
+        gloss_zh: [海岸]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-dao2-海島
+    headword: 海島
+    readings:
+      - pengim: hai2 dao2
+    senses:
+      - pos: noun
+        gloss_en: [island]
+        gloss_zh: [海島]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-giab4-海峽
+    headword: 海峽
+    readings:
+      - pengim: hai2 giab4
+    senses:
+      - pos: noun
+        gloss_en: [strait, channel]
+        gloss_zh: [海峽]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-buêg8-海拔
+    headword: 海拔
+    readings:
+      - pengim: hai2 buêg8
+    senses:
+      - pos: noun
+        gloss_en: [altitude, elevation, height above sea level]
+        gloss_zh: [海拔]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-gêng2-海景
+    headword: 海景
+    readings:
+      - pengim: hai2 gêng2
+    senses:
+      - pos: noun
+        gloss_en: [sea view, seascape]
+        gloss_zh: [海景]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-zui2-海水
+    headword: 海水
+    readings:
+      - pengim: hai2 zui2
+    senses:
+      - pos: noun
+        gloss_en: [seawater, sea water]
+        gloss_zh: [海水]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-ion5-海洋
+    headword: 海洋
+    readings:
+      - pengim: hai2 ion5
+    senses:
+      - pos: noun
+        gloss_en: [ocean, sea]
+        gloss_zh: [海洋]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-lang6-海浪
+    headword: 海浪
+    readings:
+      - pengim: hai2 lang6
+    senses:
+      - pos: noun
+        gloss_en: [sea wave, ocean wave]
+        gloss_zh: [海浪]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-êng2-海湧
+    headword: 海湧
+    readings:
+      - pengim: hai2 êng2
+    senses:
+      - pos: noun
+        gloss_en: [sea wave, ocean wave]
+        gloss_zh: [海湧, 海浪]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-diê5-海潮
+    headword: 海潮
+    readings:
+      - pengim: hai2 diê5
+    senses:
+      - pos: noun
+        gloss_en: [tide]
+        gloss_zh: [海潮]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-bing1-海濱
+    headword: 海濱
+    readings:
+      - pengim: hai2 bing1
+    senses:
+      - pos: noun
+        gloss_en: [seashore, waterfront, beach]
+        gloss_zh: [海濱]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-bing1-海瀕
+    headword: 海瀕
+    readings:
+      - pengim: hai2 bing1
+    senses:
+      - pos: noun
+        gloss_en: [seashore, coast]
+        gloss_zh: [海瀕, 海濱]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-bin1-海邊
+    headword: 海邊
+    readings:
+      - pengim: hai2 bin1
+    senses:
+      - pos: noun
+        gloss_en: [seaside, beach]
+        gloss_zh: [海邊]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-mung5-海門
+    headword: 海門
+    readings:
+      - pengim: hai2 mung5
+    senses:
+      - pos: noun
+        gloss_en: [mouth of a river (where it enters the sea)]
+        gloss_zh: [海門]
+        note: Page also gives proper-noun place senses (Haimen town in Chaoyang, Shantou; Haimen district in Jiangsu) under the same reading; the general geographic noun sense was chosen as primary but either could be intended.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-ming7-海面
+    headword: 海面
+    readings:
+      - pengim: hai2 ming7
+    senses:
+      - pos: noun
+        gloss_en: [sea surface, sea level]
+        gloss_zh: [海面, 海平面]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-huang1-海風
+    headword: 海風
+    readings:
+      - pengim: hai2 huang1
+    senses:
+      - pos: noun
+        gloss_en: [sea breeze]
+        gloss_zh: [海風]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cong1-涌
+    headword: 涌
+    readings:
+      - pengim: cong1
+    senses:
+      - pos: noun
+        gloss_en: [small river; creek (esp. in place names)]
+        gloss_zh: [涌]
+        note: The only sense on the page is explicitly labeled 'Cantonese' ('small river, often in place names'), yet the same entry lists a Teochew (cong1) pronunciation for this character, so the dialect labeling for this reading is inconsistent.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngai5-涯
+    headword: 涯
+    readings:
+      - pengim: ngai5
+    senses:
+      - pos: noun
+        gloss_en: [shore; bank (literary), limit; boundary; margin]
+        gloss_zh: [涯]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êg8-zian1-液晶
+    headword: 液晶
+    readings:
+      - pengim: êg8 zian1
+    senses:
+      - pos: noun
+        gloss_en: [liquid crystal]
+        gloss_zh: [液晶]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liang5-huang1-涼風
+    headword: 涼風
+    readings:
+      - pengim: liang5 huang1
+    senses:
+      - pos: noun
+        gloss_en: [cool breeze]
+        gloss_zh: [涼風]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dan6-zui2-淡水
+    headword: 淡水
+    readings:
+      - pengim: dan6 zui2
+    senses:
+      - pos: noun
+        gloss_en: [fresh water]
+        gloss_zh: [淡水]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: im5-hou6-淫雨
+    headword: 淫雨
+    readings:
+      - pengim: im5 hou6
+    senses:
+      - pos: noun
+        gloss_en: [prolonged heavy rain]
+        gloss_zh: [淫雨]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cim1-suan1-na5-lai6-深山林內
+    headword: 深山林內
+    readings:
+      - pengim: cim1 suan1 na5 lai6
+    senses:
+      - pos: noun
+        gloss_en: [secluded wooded mountain]
+        gloss_zh: [深山林內]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cim1-tam5-深潭
+    headword: 深潭
+    readings:
+      - pengim: cim1 tam5
+    senses:
+      - pos: noun
+        gloss_en: [deep pool; deep pond]
+        gloss_zh: [深潭]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciang2-tuan1-淺灘
+    headword: 淺灘
+    readings:
+      - pengim: ciang2 tuan1
+    senses:
+      - pos: noun
+        gloss_en: [shoal, sandbar, shallows]
+        gloss_zh: [淺灘]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang2-港
+    headword: 港
+    readings:
+      - pengim: gang2
+    senses:
+      - pos: noun
+        gloss_en: [river (dialectal), harbor; port]
+        gloss_zh: [港]
+        note: Wiktionary lists several senses under the same reading (dialectal river, harbor/port, tributary/stream, plus a Hokkien classifier use and 'short for Hong Kong') without pinning one to the gang2 Teochew reading specifically, so pos/gloss/category involve some judgment.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kim5-檎
+    headword: 檎
+    readings:
+      - pengim: kim5
+    senses:
+      - pos: noun
+        gloss_en: ["sugar apple (bound form, used only in 林檎)"]
+        gloss_zh: [林檎]
+        note: 檎 has no independent meaning apart from the compound 林檎; per Wiktionary's dialect table the Teochew (kim5) sense of 林檎 is sugar apple (Annona squamosa), not Malus domestica apple (that reading is Taiwanese Hokkien/Hakka only).
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
