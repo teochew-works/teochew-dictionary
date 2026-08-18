@@ -1102,3 +1102,308 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+  - id: bai5-gug4-排骨
+    headword: 排骨
+    readings:
+      - pengim: bai5 gug4
+    senses:
+      - pos: noun
+        gloss_en: [ribs, spareribs]
+        gloss_zh: [排骨]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cah4-sio1-插燒
+    headword: 插燒
+    readings:
+      - pengim: cah4 sio1
+    senses:
+      - pos: noun
+        gloss_en: [char siu; barbecued pork]
+        gloss_zh: [插燒, 叉燒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liao7-li2-料理
+    headword: 料理
+    readings:
+      - pengim: liao7 li2
+    senses:
+      - pos: noun
+        gloss_en: [cuisine, cooking (style)]
+        gloss_zh: [料理]
+        note: Wiktionary lists both a verb sense (to handle/arrange; to cook) and a noun sense (cuisine, an orthographic borrowing from Japanese) under the same reading; the noun/cuisine sense was chosen as primary given modern usage.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rig8-dao3-bung7-日晝飯
+    headword: 日晝飯
+    readings:
+      - pengim: rig8 dao3 bung7
+    senses:
+      - pos: noun
+        gloss_en: [lunch]
+        gloss_zh: [日晝飯]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za2-deng3-早頓
+    headword: 早頓
+    readings:
+      - pengim: za2 deng3
+    senses:
+      - pos: noun
+        gloss_en: [breakfast]
+        gloss_zh: [早頓, 早餐]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za2-bung7-早飯
+    headword: 早飯
+    readings:
+      - pengim: za2 bung7
+    senses:
+      - pos: noun
+        gloss_en: [breakfast]
+        gloss_zh: [早飯]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za2-cang1-早餐
+    headword: 早餐
+    readings:
+      - pengim: za2 cang1
+    senses:
+      - pos: noun
+        gloss_en: [breakfast]
+        gloss_zh: [早餐]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mêng5-teng5-明糖
+    headword: 明糖
+    readings:
+      - pengim: mêng5 teng5
+    senses:
+      - pos: noun
+        gloss_en: [Teochew soft sugar sweet with a sesame coating]
+        gloss_zh: [明糖]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cung1-bian2-春餅
+    headword: 春餅
+    readings:
+      - pengim: cung1 bian2
+    senses:
+      - pos: noun
+        gloss_en: [spring roll, spring pancake]
+        gloss_zh: [春餅]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cung1-gu1-春龜
+    headword: 春龜
+    readings:
+      - pengim: cung1 gu1
+    senses:
+      - pos: noun
+        gloss_en: [turtle-shaped pastry made in spring]
+        gloss_zh: [春龜]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mung2-bung7-晚飯
+    headword: 晚飯
+    readings:
+      - pengim: mung2 bung7
+    senses:
+      - pos: noun
+        gloss_en: [dinner, supper, evening meal]
+        gloss_zh: [晚飯]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mung2-cang1-晚餐
+    headword: 晚餐
+    readings:
+      - pengim: mung2 cang1
+    senses:
+      - pos: noun
+        gloss_en: [dinner, supper, evening meal]
+        gloss_zh: [晚餐]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mê5-heng1-deng3-暝昏頓
+    headword: 暝昏頓
+    readings:
+      - pengim: mê5 heng1 deng3
+    senses:
+      - pos: noun
+        gloss_en: [dinner, evening meal]
+        gloss_zh: [暝昏頓]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mê5-heng1-bung7-暝昏飯
+    headword: 暝昏飯
+    readings:
+      - pengim: mê5 heng1 bung7
+    senses:
+      - pos: noun
+        gloss_en: [dinner, evening meal]
+        gloss_zh: [暝昏飯]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mê5-muê5-暝糜
+    headword: 暝糜
+    readings:
+      - pengim: mê5 muê5
+    senses:
+      - pos: noun
+        gloss_en: [midnight snack, late-night meal]
+        gloss_zh: [暝糜]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghuêh8-bian2-月餅
+    headword: 月餅
+    readings:
+      - pengim: ghuêh8 bian2
+    senses:
+      - pos: noun
+        gloss_en: [mooncake]
+        gloss_zh: [月餅]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: la5-朥
+    headword: 朥
+    readings:
+      - pengim: la5
+    senses:
+      - pos: noun
+        gloss_en: [lard; fat; tallow]
+        gloss_zh: [朥]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: la5-bang1-朥肪
+    headword: 朥肪
+    readings:
+      - pengim: la5 bang1
+    senses:
+      - pos: noun
+        gloss_en: [leaf fat, leaf lard]
+        gloss_zh: [朥肪, 板油]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhag8-gian2-木囝
+    headword: 木囝
+    readings:
+      - pengim: bhag8 gian2
+    senses:
+      - pos: noun
+        gloss_en: [guava]
+        gloss_zh: [木囝, 番石榴]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhag8-guê1-木瓜
+    headword: 木瓜
+    readings:
+      - pengim: bhag8 guê1
+    senses:
+      - pos: noun
+        gloss_en: [papaya, Chinese quince]
+        gloss_zh: [木瓜]
+        note: The page lists distinct senses (Chinese quince/Chaenomeles, papaya, and a figurative 'slow-witted person') without a Teochew-specific label, so which sense predominates in Teochew was uncertain; papaya was assumed as the common everyday fruit sense.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhag8-re2-木耳
+    headword: 木耳
+    readings:
+      - pengim: bhag8 re2
+    senses:
+      - pos: noun
+        gloss_en: [wood ear fungus, black fungus]
+        gloss_zh: [木耳]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li2-李
+    headword: 李
+    readings:
+      - pengim: li2
+    senses:
+      - pos: noun
+        gloss_en: [plum, surname Li]
+        gloss_zh: [李]
+        note: 李 covers both the 'plum' fruit sense (the standalone Teochew term per the page, vs. Hokkien 李仔) and the extremely common surname Li sharing the same reading; plum was picked as primary but the surname use may dominate actual frequency.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sog4-sa1-束砂
+    headword: 束砂
+    readings:
+      - pengim: sog4 sa1
+    senses:
+      - pos: noun
+        gloss_en: [sugar-coated peanut candy (Teochew)]
+        gloss_zh: [束砂]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê1-杯
+    headword: 杯
+    readings:
+      - pengim: buê1
+    senses:
+      - pos: noun
+        gloss_en: [cup, glass, drinkware]
+        gloss_zh: [杯, 杯子]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê1-min7-杯麵
+    headword: 杯麵
+    readings:
+      - pengim: buê1 min7
+    senses:
+      - pos: noun
+        gloss_en: [cup noodles]
+        gloss_zh: [杯麵]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

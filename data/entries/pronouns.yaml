@@ -836,3 +836,108 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+  - id: se1-斯
+    headword: 斯
+    readings:
+      - pengim: se1
+    senses:
+      - pos: pronoun
+        gloss_en: [this; these (classical), then; thus (classical), phonetic transliteration character]
+        gloss_zh: [斯, 這]
+        note: The page lists several distinct classical senses (demonstrative pronoun, connective particle, emphatic particle, surname, phonetic-transcription use) under the same reading, so the demonstrative-pronoun sense was chosen as primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-ki5-gui2-星期幾
+    headword: 星期幾
+    readings:
+      - pengim: cên1 ki5 gui2
+    senses:
+      - pos: pronoun
+        gloss_en: [which day of the week, what day is it]
+        gloss_zh: [星期幾]
+        note: Wiktionary's page categories tag this both as a pronoun and as an adverb, so the exact part-of-speech classification is not fully unambiguous.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si6-mih4-是乜
+    headword: 是乜
+    readings:
+      - pengim: si6 mih4
+    senses:
+      - pos: pronoun
+        gloss_en: [what]
+        gloss_zh: [什麼]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hag4-曷
+    headword: 曷
+    readings:
+      - pengim: hag4
+    senses:
+      - pos: pronoun
+        gloss_en: [why, what, how]
+        gloss_zh: [曷, 為何]
+        note: Wiktionary marks this as an obsolete/classical interrogative pronoun used mainly in classical texts, so it is unclear whether it carries any distinct colloquial usage in modern Teochew beyond the literary sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: u6-gai7-有個
+    headword: 有個
+    readings:
+      - pengim: u6 gai7
+    senses:
+      - pos: pronoun
+        gloss_en: [some]
+        gloss_zh: [有個, 有些]
+        note: Wiktionary tags this Teochew sense as a 'determiner', a part of speech not in our list; mapped to pronoun as the closest fit for this indefinite quantifier.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dim6-朕
+    headword: 朕
+    readings:
+      - pengim: dim6
+    senses:
+      - pos: pronoun
+        gloss_en: [I (self-reference used exclusively by an emperor), royal we]
+        gloss_zh: [朕]
+        note: The page lists several senses (literary noun 'omen', archaic first-person pronoun, and the imperial-exclusive 'I') under the same pronunciation without indicating which corresponds to the Teochew reading; the iconic imperial pronoun sense was chosen.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bung2-nang5-本人
+    headword: 本人
+    readings:
+      - pengim: bung2 nang5
+    senses:
+      - pos: pronoun
+        gloss_en: [oneself, myself, I (formal)]
+        gloss_zh: [本人]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bung2-sing1-本身
+    headword: 本身
+    readings:
+      - pengim: bung2 sing1
+    senses:
+      - pos: pronoun
+        gloss_en: [itself, oneself, per se]
+        gloss_zh: [本身]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

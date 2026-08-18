@@ -1271,3 +1271,26 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+  - id: siao3-liag8-數列
+    headword: 數列
+    readings:
+      - pengim: siao3 liag8
+    senses:
+      - pos: noun
+        gloss_en: [sequence (mathematics); numerical progression]
+        gloss_zh: [數列]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao3-ri7-數字
+    headword: 數字
+    readings:
+      - pengim: siao3 ri7
+    senses:
+      - pos: noun
+        gloss_en: [number; numeral; digit]
+        gloss_zh: [數字]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

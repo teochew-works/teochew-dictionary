@@ -1311,3 +1311,90 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+  - id: ge6-據
+    headword: 據
+    readings:
+      - pengim: ge6
+    senses:
+      - pos: preposition
+        gloss_en: [according to, based on]
+        gloss_zh: [據, 根據]
+        note: The page lists several senses sharing this reading (preposition 'according to', verb 'to rely on/occupy', noun 'evidence/proof', plus a surname use); preposition was picked as the primary sense but real ambiguity remains among them.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i1-si6-於是
+    headword: 於是
+    readings:
+      - pengim: i1 si6
+    senses:
+      - pos: conjunction
+        gloss_en: [so, therefore, thereupon]
+        gloss_zh: [於是]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang5-旁
+    headword: 旁
+    readings:
+      - pengim: pang5
+    senses:
+      - pos: noun
+        gloss_en: [side; beside, other]
+        gloss_zh: [旁, 邊]
+        note: 旁 carries several distinct senses under the same pang5 reading (side/beside, other, radical, obsolete 'to assist', surname); the core spatial/attributive sense was picked as primary.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang5-biang1-旁邊
+    headword: 旁邊
+    readings:
+      - pengim: pang5 biang1
+    senses:
+      - pos: noun
+        gloss_en: [side, beside; next to]
+        gloss_zh: [旁邊]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si6-houn2-是否
+    headword: 是否
+    readings:
+      - pengim: si6 houn2
+    senses:
+      - pos: conjunction
+        gloss_en: [whether or not, if]
+        gloss_zh: [是否]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si6-dan3-是呾
+    headword: 是呾
+    readings:
+      - pengim: si6 dan3
+    senses:
+      - pos: conjunction
+        gloss_en: [but]
+        gloss_zh: [但是]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zuê3-最
+    headword: 最
+    readings:
+      - pengim: zuê3
+    senses:
+      - pos: adverb
+        gloss_en: [most, -est (superlative marker)]
+        gloss_zh: [最]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

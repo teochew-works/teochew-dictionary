@@ -597,3 +597,78 @@ entries:
     sources: [wiktionary]
     retrieved: '2026-08-16'
 
+  - id: bang1-bhê2-斑馬
+    headword: 斑馬
+    readings:
+      - pengim: bang1 bhê2
+    senses:
+      - pos: noun
+        gloss_en: [zebra]
+        gloss_zh: [斑馬]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boin1-he5-斑魚
+    headword: 斑魚
+    readings:
+      - pengim: boin1 he5
+    senses:
+      - pos: noun
+        gloss_en: [northern snakehead (fish)]
+        gloss_zh: [斑魚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhag8-sag4-木蝨
+    headword: 木蝨
+    readings:
+      - pengim: bhag8 sag4
+    senses:
+      - pos: noun
+        gloss_en: [bedbug, woodlouse]
+        gloss_zh: [木蝨]
+        note: The page gives two distinct senses ('woodlouse' generally, and '(Cantonese, Min) bedbug'); since Teochew falls under Min, it is unclear which sense (or both) applies to this reading.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou6-杜
+    headword: 杜
+    readings:
+      - pengim: dou6
+    senses:
+      - pos: prefix
+        gloss_en: [prefix in certain Teochew animal/insect names (e.g. 杜猴 mole cricket), to prevent; block (literary)]
+        gloss_zh: [杜]
+        note: 杜 covers both a literary verb sense ('to prevent/block') and a Southern Min/Teochew-specific prefix used in animal/insect names (as in 杜猴, 杜蚓); it is unclear which better represents the single confirmed dou6 reading, so the animal-prefix sense was chosen given the surrounding batch of 杜-compounds.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou6-bai5-杜排
+    headword: 杜排
+    readings:
+      - pengim: dou6 bai5
+    senses:
+      - pos: noun
+        gloss_en: [squirrel (Singapore Teochew)]
+        gloss_zh: [松鼠]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou6-gao5-杜猴
+    headword: 杜猴
+    readings:
+      - pengim: dou6 gao5
+    senses:
+      - pos: noun
+        gloss_en: [mole cricket]
+        gloss_zh: [杜猴]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
