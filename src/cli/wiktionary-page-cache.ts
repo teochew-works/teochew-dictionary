@@ -1,7 +1,10 @@
+import { symlinkSync } from 'node:fs'
+
 import { loadWiktionaryWordlist } from '../data/wiktionary-wordlist.js'
 import {
   cacheFileName,
   checkCacheSymlink,
+  findMainWorktreeCacheTarget,
   isCached,
   syncWiktionaryPages,
   type CacheSymlinkStatus,
@@ -59,7 +62,22 @@ function describeCacheIssue(status: Extract<CacheSymlinkStatus, { valid: false }
   }
 }
 
-const symlinkStatus = checkCacheSymlink()
+let symlinkStatus = checkCacheSymlink()
+
+// A brand-new worktree of this repo starts with no `.cache` of its own, even
+// though the main checkout usually already has one — mirror that instead of
+// making every worktree an operator has to link by hand. Only for the
+// `missing` case: a `.cache` that exists but is broken or the wrong kind of
+// thing is left for the refusal below, not silently relinked.
+if (!symlinkStatus.valid && symlinkStatus.reason === 'missing') {
+  const mainTarget = findMainWorktreeCacheTarget()
+  if (mainTarget) {
+    symlinkSync(mainTarget, CACHE_DIR)
+    console.log(dim(`linked .cache → ${mainTarget} (matching the main checkout)`))
+    symlinkStatus = checkCacheSymlink()
+  }
+}
+
 if (!symlinkStatus.valid) {
   console.error(red(`refusing to sync: ${describeCacheIssue(symlinkStatus)}`))
   console.error(`expected .cache to be a symlink to an external cache directory, e.g.:`)

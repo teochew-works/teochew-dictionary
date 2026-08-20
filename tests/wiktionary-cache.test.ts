@@ -3,7 +3,13 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { cacheFileName, checkCacheSymlink, isCached, syncWiktionaryPages } from '../src/importers/wiktionary-cache.js'
+import {
+  cacheFileName,
+  checkCacheSymlink,
+  findMainWorktreeCacheTarget,
+  isCached,
+  syncWiktionaryPages,
+} from '../src/importers/wiktionary-cache.js'
 import type { WikitextResult } from '../src/importers/wiktionary.js'
 
 describe('cacheFileName', () => {
@@ -76,6 +82,64 @@ describe('checkCacheSymlink', () => {
     const link = join(scratch, 'link')
     symlinkSync(target, link)
     expect(checkCacheSymlink(link)).toEqual({ valid: true, target })
+  })
+})
+
+describe('findMainWorktreeCacheTarget', () => {
+  let mainRepoRoot: string
+
+  beforeEach(() => {
+    mainRepoRoot = mkdtempSync(join(tmpdir(), 'main-repo-'))
+  })
+
+  afterEach(() => {
+    rmSync(mainRepoRoot, { recursive: true, force: true })
+  })
+
+  // A linked worktree's `--git-dir` is an absolute path under the main
+  // checkout's `.git/worktrees/<name>`; the main checkout's own `--git-dir`
+  // and `--git-common-dir` are identical, which is exactly the signal this
+  // function uses to tell "I am the main checkout" from "I am a worktree".
+  function fakeWorktreeGit(worktreeName = 'my-branch') {
+    const responses: Record<string, string> = {
+      'rev-parse --git-dir': join(mainRepoRoot, '.git', 'worktrees', worktreeName),
+      'rev-parse --git-common-dir': join(mainRepoRoot, '.git'),
+    }
+    return (args: string[]): string | null => responses[args.join(' ')] ?? null
+  }
+
+  it('returns null when git-dir and git-common-dir agree — this checkout is not a linked worktree', () => {
+    const runGit = (args: string[]): string | null => ({ 'rev-parse --git-dir': '.git', 'rev-parse --git-common-dir': '.git' })[args.join(' ')] ?? null
+    expect(findMainWorktreeCacheTarget({ repoRoot: '/some/worktree', runGit })).toBeNull()
+  })
+
+  it('returns null when git commands fail — no repo, or git unavailable', () => {
+    expect(findMainWorktreeCacheTarget({ repoRoot: '/some/worktree', runGit: () => null })).toBeNull()
+  })
+
+  it("returns null when the main checkout's .cache does not exist", () => {
+    expect(findMainWorktreeCacheTarget({ repoRoot: '/some/worktree', runGit: fakeWorktreeGit() })).toBeNull()
+  })
+
+  it("returns null when the main checkout's .cache is not a symlink", () => {
+    mkdirSync(join(mainRepoRoot, '.cache'))
+    expect(findMainWorktreeCacheTarget({ repoRoot: '/some/worktree', runGit: fakeWorktreeGit() })).toBeNull()
+  })
+
+  it("mirrors the main checkout's .cache symlink target when it is valid", () => {
+    const target = mkdtempSync(join(tmpdir(), 'wiktionary-page-cache-'))
+    symlinkSync(target, join(mainRepoRoot, '.cache'))
+
+    expect(findMainWorktreeCacheTarget({ repoRoot: '/some/worktree', runGit: fakeWorktreeGit() })).toBe(target)
+    rmSync(target, { recursive: true, force: true })
+  })
+
+  it('resolves a relative symlink target against the main checkout root, not the worktree', () => {
+    const targetDir = join(mainRepoRoot, 'actual-cache')
+    mkdirSync(targetDir)
+    symlinkSync('actual-cache', join(mainRepoRoot, '.cache'))
+
+    expect(findMainWorktreeCacheTarget({ repoRoot: '/some/worktree', runGit: fakeWorktreeGit() })).toBe(targetDir)
   })
 })
 

@@ -1,7 +1,8 @@
+import { execFileSync } from 'node:child_process'
 import { existsSync, lstatSync, mkdirSync, readlinkSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'
-import { join } from 'node:path'
+import { dirname, isAbsolute, join, resolve } from 'node:path'
 
-import { CACHE_DIR, WIKTIONARY_PAGE_CACHE_DIR } from '../paths.js'
+import { CACHE_DIR, ROOT, WIKTIONARY_PAGE_CACHE_DIR } from '../paths.js'
 import { fetchWikitextResult, type WikitextResult } from './wiktionary.js'
 
 /**
@@ -107,6 +108,54 @@ export function checkCacheSymlink(cacheDir: string = CACHE_DIR): CacheSymlinkSta
   if (!targetStat.isDirectory()) return { valid: false, reason: 'not-a-directory' }
 
   return { valid: true, target: readlinkSync(cacheDir) }
+}
+
+function defaultRunGit(args: string[], cwd: string): string | null {
+  try {
+    return execFileSync('git', args, { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim()
+  } catch {
+    return null
+  }
+}
+
+export interface FindMainWorktreeCacheOptions {
+  /** Where to run git from — defaults to this repo's own root. */
+  repoRoot?: string
+  /** Injectable for tests, so this needs no real git repo to exercise. */
+  runGit?: (args: string[], cwd: string) => string | null
+}
+
+/**
+ * A linked worktree (`git worktree add`) starts with no `.cache` of its own,
+ * even though the main checkout usually already has one set up. Rather than
+ * make every new worktree an operator has to symlink by hand, find whatever
+ * target the main checkout's `.cache` already points at, so the CLI can
+ * mirror it.
+ *
+ * Deliberately narrow: this only ever answers "what does the *main* checkout
+ * point at", and only when that is itself a valid symlink. It is up to the
+ * caller to use this solely for the `missing` case — a `.cache` that exists
+ * here but is broken or the wrong kind of thing is a problem to surface, not
+ * something to paper over by relinking it.
+ */
+export function findMainWorktreeCacheTarget(options: FindMainWorktreeCacheOptions = {}): string | null {
+  const { repoRoot = ROOT, runGit = defaultRunGit } = options
+
+  const gitDir = runGit(['rev-parse', '--git-dir'], repoRoot)
+  const commonDir = runGit(['rev-parse', '--git-common-dir'], repoRoot)
+  if (gitDir === null || commonDir === null) return null
+
+  const absoluteGitDir = resolve(repoRoot, gitDir)
+  const absoluteCommonDir = resolve(repoRoot, commonDir)
+  // Equal for the main checkout itself (and for a plain, non-worktree clone) —
+  // only a linked worktree's git-dir lives apart from the shared common-dir.
+  if (absoluteGitDir === absoluteCommonDir) return null
+
+  const mainRepoRoot = dirname(absoluteCommonDir)
+  const status = checkCacheSymlink(join(mainRepoRoot, '.cache'))
+  if (!status.valid) return null
+
+  return isAbsolute(status.target) ? status.target : resolve(mainRepoRoot, status.target)
 }
 
 export interface PageCacheResult {

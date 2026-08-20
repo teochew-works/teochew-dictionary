@@ -301,10 +301,10 @@ Those fetches are the bulk of the cost, and none of them survive an
 interruption — a subagent that dies halfway through a batch re-downloads
 everything on retry.
 
-**One-time setup:** `.cache` must already be a symlink to wherever you want
-the page cache to actually live (it grows to tens of thousands of small files,
-so it's worth keeping outside the worktree, and shareable across worktrees of
-this repo, rather than accumulating inside one):
+**One-time setup:** `.cache` must be a symlink to wherever you want the page
+cache to actually live (it grows to tens of thousands of small files, so it's
+worth keeping outside any one worktree, and shared across every worktree of
+this repo, rather than accumulating separately inside each):
 
 ```bash
 ln -s /path/to/your/wiktionary-page-cache .cache
@@ -312,7 +312,11 @@ ln -s /path/to/your/wiktionary-page-cache .cache
 
 The command refuses to run rather than silently creating a plain directory in
 its place if `.cache` is missing, isn't a symlink, or is a symlink whose
-target doesn't exist or isn't a directory.
+target doesn't exist or isn't a directory — with one exception: a fresh `git
+worktree` of this repo starts with no `.cache` of its own, so if the main
+checkout already has a working `.cache` symlink, the command mirrors it into
+the new worktree automatically rather than making that a manual step every
+time a worktree is created.
 
 ```bash
 npm run cache:wiktionary
