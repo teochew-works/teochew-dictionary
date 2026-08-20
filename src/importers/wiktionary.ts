@@ -35,6 +35,10 @@ const API = 'https://en.wiktionary.org/w/api.php'
  * nothing ever cancelling them. Same 30s budget `verifyAudioRemote` uses for
  * the other bulk-fetch command — generous next to a healthy request, which is
  * the point: it fires on dead connections, not slow ones.
+ *
+ * Applied per attempt (via `fetchWithRetry`'s `timeoutMs`), not once for the
+ * whole retry sequence — a 429 backoff can legitimately run past 30s of
+ * *waiting* without any single request having stalled.
  */
 const FETCH_TIMEOUT_MS = 30_000
 
@@ -90,10 +94,11 @@ export async function fetchWikitextResult(title: string): Promise<WikitextResult
 
   let res: Response
   try {
-    res = await fetchWithRetry(url, {
-      headers: { 'user-agent': IMPORTER_USER_AGENT },
-      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
-    })
+    res = await fetchWithRetry(
+      url,
+      { headers: { 'user-agent': IMPORTER_USER_AGENT } },
+      { timeoutMs: FETCH_TIMEOUT_MS },
+    )
   } catch (e) {
     // A timeout lands here as an abort. Reporting it as an error rather than a
     // miss is the point: the caller retries it instead of recording "no such

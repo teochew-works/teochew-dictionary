@@ -61,4 +61,37 @@ describe('fetchWithRetry', () => {
     expect(res.status).toBe(429)
     expect(fetchMock).toHaveBeenCalledTimes(3) // initial attempt + 2 retries
   })
+
+  // Real timers here: AbortSignal.timeout runs on platform timers that fake
+  // timers don't drive, and the delays below are small enough to stay fast.
+  it('gives each retry attempt its own timeout budget, so backoff time is not counted against it', async () => {
+    const seenSignals: (AbortSignal | undefined)[] = []
+    const fetchMock = vi.fn(async (_url: unknown, init?: RequestInit) => {
+      seenSignals.push(init?.signal ?? undefined)
+      return seenSignals.length === 1 ? new Response('', { status: 429 }) : new Response('ok', { status: 200 })
+    })
+    vi.stubGlobal('fetch', fetchMock)
+
+    // Backoff alone (60ms) outlasts the per-attempt timeout (30ms). A signal
+    // shared across attempts — the bug this guards against — would already be
+    // aborted by the time the second fetch fires.
+    const res = await fetchWithRetry('https://example.test', {}, { backoffMs: 60, timeoutMs: 30 })
+
+    expect(res.status).toBe(200)
+    expect(seenSignals).toHaveLength(2)
+    expect(seenSignals[0]).not.toBe(seenSignals[1])
+    expect(seenSignals[1]?.aborted).toBe(false)
+  })
+
+  it('still aborts a single attempt that genuinely stalls past its timeout', async () => {
+    const fetchMock = vi.fn(
+      (_url: unknown, init?: RequestInit) =>
+        new Promise((_resolve, reject) => {
+          init?.signal?.addEventListener('abort', () => reject(new DOMException('The operation was aborted.', 'AbortError')))
+        }),
+    )
+    vi.stubGlobal('fetch', fetchMock)
+
+    await expect(fetchWithRetry('https://example.test', {}, { timeoutMs: 20 })).rejects.toThrow()
+  })
 })

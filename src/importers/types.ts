@@ -6,6 +6,16 @@ export interface RetryOptions {
   maxRetries?: number
   /** Backoff when the response carries no `retry-after` header. */
   backoffMs?: number
+  /**
+   * Deadline applied fresh to *each* attempt, so a request that stalls gets
+   * cancelled without eating into another attempt's budget. Deliberately not
+   * a single deadline for the whole retry sequence: `backoffMs` alone can sum
+   * past a typical timeout well before `maxRetries` is reached (2s+4s+8s+16s
+   * already exceeds a 30s budget), which would abort a request that was
+   * genuinely on track to succeed after backing off from a 429 — the
+   * situation `retry-after` handling above exists for in the first place.
+   */
+  timeoutMs?: number
 }
 
 /**
@@ -19,10 +29,11 @@ export async function fetchWithRetry(
   init: RequestInit,
   options: RetryOptions = {},
 ): Promise<Response> {
-  const { maxRetries = 5, backoffMs = 2000 } = options
+  const { maxRetries = 5, backoffMs = 2000, timeoutMs } = options
 
   for (let attempt = 0; ; attempt += 1) {
-    const res = await fetch(url, init)
+    const attemptInit = timeoutMs !== undefined ? { ...init, signal: AbortSignal.timeout(timeoutMs) } : init
+    const res = await fetch(url, attemptInit)
     if (res.status !== 429 || attempt >= maxRetries) return res
 
     const retryAfter = Number(res.headers.get('retry-after'))
