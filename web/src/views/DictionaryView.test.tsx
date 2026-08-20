@@ -46,6 +46,12 @@ describe('DictionaryView', () => {
     expect(screen.queryByText(/Licence:/)).not.toBeInTheDocument()
   })
 
+  it('shows a decorative empty state with accessible fallback text when no entry is selected', () => {
+    render(<DictionaryView entries={ENTRIES} />)
+    expect(screen.getByText('食茶学字')).toBeInTheDocument()
+    expect(screen.getByText('Select an entry to see its details.')).toBeInTheDocument()
+  })
+
   it('shows licence info once toggled on and persists the choice across remounts', () => {
     const { unmount } = render(<DictionaryView entries={ENTRIES} />)
     fireEvent.click(screen.getByText('潮州'))

@@ -115,7 +115,18 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
         {selected ? (
           <EntryDetail entry={selected} showLicence={showLicence} />
         ) : (
-          <p className="dictionary-view__placeholder">Select an entry to see its details.</p>
+          <div className="dictionary-view__empty-state">
+            <ruby className="dictionary-view__empty-state-headline" aria-hidden="true">
+              食<rt>ziah</rt>
+              茶<rt>de</rt>
+              学<rt>oh</rt>
+              字<rt>zi</rt>
+            </ruby>
+            <p className="dictionary-view__empty-state-tagline" aria-hidden="true">
+              your teochew dictionary
+            </p>
+            <span className="sr-only">Select an entry to see its details.</span>
+          </div>
         )}
       </div>
     </div>

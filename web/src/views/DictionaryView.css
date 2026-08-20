@@ -1,3 +1,19 @@
+/* Ma Shan Zheng, subset to exactly 食茶学字 (the empty-state headline glyphs).
+   Uses simplified 学 rather than traditional 學: every brush/handwriting font
+   tried draws 學's doubled 爻 radical as a dense, heavy cluster that doesn't
+   match the surrounding characters — an inherent stroke-count/type-design
+   limit of decorative CJK fonts, not a loading or rendering bug. Inlined as a
+   data URI (2.5KB) rather than loaded from Google Fonts to avoid the async
+   CDN round-trip on this page's initial layout. */
+@font-face {
+  font-family: 'Ma Shan Zheng';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(data:font/woff2;base64,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) format('woff2');
+  unicode-range: U+5b57, U+5b66, U+8336, U+98df;
+}
+
 .dictionary-view {
   flex: 1;
   display: flex;
@@ -54,8 +70,34 @@
   overflow-y: auto;
 }
 
-.dictionary-view__placeholder {
+.dictionary-view__empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.dictionary-view__empty-state-headline {
+  margin: 0;
+  font-family: 'Ma Shan Zheng', cursive, system-ui, sans-serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-fg);
+}
+
+.dictionary-view__empty-state-headline rt {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1rem;
   color: var(--color-muted);
+}
+
+.dictionary-view__empty-state-tagline {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 1rem;
 }
 
 .entry-list {
