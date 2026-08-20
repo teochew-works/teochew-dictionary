@@ -28,6 +28,16 @@ import {
 
 const API = 'https://en.wiktionary.org/w/api.php'
 
+/**
+ * Without a deadline a stalled connection hangs the whole run. Measured on a
+ * bulk sync: most requests answer in well under a second, but roughly one in
+ * ten stalls, and before this existed those stalls ran past a minute with
+ * nothing ever cancelling them. Same 30s budget `verifyAudioRemote` uses for
+ * the other bulk-fetch command — generous next to a healthy request, which is
+ * the point: it fires on dead connections, not slow ones.
+ */
+const FETCH_TIMEOUT_MS = 30_000
+
 /** `mn-t=` or `mn_t=`, up to the next `|` or `}}`. */
 const MN_T = /\|\s*mn[-_]t\s*=\s*([^|}\n]+)/giu
 
@@ -51,7 +61,24 @@ export function extractTeochewReadings(wikitext: string): string[] {
   return [...new Set(out)]
 }
 
-async function fetchWikitext(title: string): Promise<string | null> {
+/**
+ * Why three states rather than `string | null`: "Wiktionary has no such page"
+ * and "the network ate the request" need telling apart by anything that
+ * *records* the outcome. The page cache (`./wiktionary-cache.js`, issue #79)
+ * writes a permanent `.miss` marker for the former and would otherwise bake a
+ * transient failure into the cache, never retrying it.
+ *
+ * `importWiktionary` itself doesn't care — a headword it couldn't resolve is a
+ * miss either way — so it keeps using the flattening wrapper below.
+ */
+export type WikitextResult =
+  | { status: 'ok'; wikitext: string }
+  /** The API answered, and there is no page (or no wikitext) under that title. */
+  | { status: 'missing' }
+  /** The API did not answer usefully: transport failure, non-2xx, or an API error. */
+  | { status: 'error'; message: string }
+
+export async function fetchWikitextResult(title: string): Promise<WikitextResult> {
   const url = new URL(API)
   url.search = new URLSearchParams({
     action: 'parse',
@@ -61,12 +88,46 @@ async function fetchWikitext(title: string): Promise<string | null> {
     formatversion: '2',
   }).toString()
 
-  const res = await fetchWithRetry(url, {
-    headers: { 'user-agent': IMPORTER_USER_AGENT },
-  })
-  if (!res.ok) return null
-  const body = (await res.json()) as { parse?: { wikitext?: string }; error?: unknown }
-  return body.parse?.wikitext ?? null
+  let res: Response
+  try {
+    res = await fetchWithRetry(url, {
+      headers: { 'user-agent': IMPORTER_USER_AGENT },
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+    })
+  } catch (e) {
+    // A timeout lands here as an abort. Reporting it as an error rather than a
+    // miss is the point: the caller retries it instead of recording "no such
+    // page" for something that merely timed out.
+    return { status: 'error', message: e instanceof Error ? e.message : String(e) }
+  }
+
+  // A title that doesn't exist comes back as HTTP *200* carrying an
+  // `error.code: missingtitle` body (confirmed live), so `res.ok` alone doesn't
+  // mean the page was found — read the body before judging either way.
+  let body: { parse?: { wikitext?: string }; error?: { code?: string; info?: string } }
+  try {
+    body = (await res.json()) as typeof body
+  } catch {
+    return { status: 'error', message: `HTTP ${res.status} with an unparseable body` }
+  }
+
+  if (body.error) {
+    // `missingtitle` (and `invalidtitle`, for a title Wiktionary can never
+    // hold) are settled answers: there is nothing to fetch, now or later.
+    const code = body.error.code
+    if (code === 'missingtitle' || code === 'invalidtitle') return { status: 'missing' }
+    return { status: 'error', message: `API error '${code ?? 'unknown'}': ${body.error.info ?? ''}`.trim() }
+  }
+
+  if (!res.ok) return { status: 'error', message: `HTTP ${res.status}` }
+
+  const wikitext = body.parse?.wikitext
+  return wikitext === undefined ? { status: 'missing' } : { status: 'ok', wikitext }
+}
+
+async function fetchWikitext(title: string): Promise<string | null> {
+  const result = await fetchWikitextResult(title)
+  return result.status === 'ok' ? result.wikitext : null
 }
 
 export interface WiktionaryOptions {
