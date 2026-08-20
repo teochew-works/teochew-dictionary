@@ -5779,3 +5779,1281 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: ou5-boh8-湖泊
+    headword: 湖泊
+    readings:
+      - pengim: ou5 boh8
+    senses:
+      - pos: noun
+        gloss_en: [lake]
+        gloss_zh: [湖泊]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou5-ming7-湖面
+    headword: 湖面
+    readings:
+      - pengim: ou5 ming7
+    senses:
+      - pos: noun
+        gloss_en: [lake surface]
+        gloss_zh: [湖面]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nguang5-tao5-源頭
+    headword: 源頭
+    readings:
+      - pengim: nguang5 tao5
+    senses:
+      - pos: noun
+        gloss_en: [source; origin; headwaters]
+        gloss_zh: [源頭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: koi1-gin5-溪墘
+    headword: 溪墘
+    readings:
+      - pengim: koi1 gin5
+    senses:
+      - pos: noun
+        gloss_en: [riverside, riverbank]
+        gloss_zh: [溪墘]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: koi1-zui2-溪水
+    headword: 溪水
+    readings:
+      - pengim: koi1 zui2
+    senses:
+      - pos: noun
+        gloss_en: [creek water, stream]
+        gloss_zh: [溪水]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: koi1-liu5-溪流
+    headword: 溪流
+    readings:
+      - pengim: koi1 liu5
+    senses:
+      - pos: noun
+        gloss_en: [stream, brook, creek]
+        gloss_zh: [溪流]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ung1-dou7-溫度
+    headword: 溫度
+    readings:
+      - pengim: ung1 dou7
+    senses:
+      - pos: noun
+        gloss_en: [temperature]
+        gloss_zh: [溫度]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong5-zi3-溶劑
+    headword: 溶劑
+    readings:
+      - pengim: iong5 zi3
+    senses:
+      - pos: noun
+        gloss_en: [solvent]
+        gloss_zh: [溶劑]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong5-êg8-溶液
+    headword: 溶液
+    readings:
+      - pengim: iong5 êg8
+    senses:
+      - pos: noun
+        gloss_en: [chemical solution]
+        gloss_zh: [溶液]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong5-goi2-dou7-溶解度
+    headword: 溶解度
+    readings:
+      - pengim: iong5 goi2 dou7
+    senses:
+      - pos: noun
+        gloss_en: [solubility]
+        gloss_zh: [溶解度]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong5-goi2-riag8-溶解熱
+    headword: 溶解熱
+    readings:
+      - pengim: iong5 goi2 riag8
+    senses:
+      - pos: noun
+        gloss_en: [heat of solution]
+        gloss_zh: [溶解熱]
+        note: Specialized chemistry term with no closely matching category file; assigned to nature.yaml (materials) for lack of a better fit.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong5-zioh4-溶質
+    headword: 溶質
+    readings:
+      - pengim: iong5 zioh4
+    senses:
+      - pos: noun
+        gloss_en: [solute]
+        gloss_zh: [溶質]
+        note: Specialized chemistry term with no closely matching category file; assigned to nature.yaml (materials) for lack of a better fit.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gug8-bo1-滑坡
+    headword: 滑坡
+    readings:
+      - pengim: gug8 bo1
+    senses:
+      - pos: noun
+        gloss_en: [landslide; landslip]
+        gloss_zh: [滑坡]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ga3-滘
+    headword: 滘
+    readings:
+      - pengim: ga3
+    senses:
+      - pos: noun
+        gloss_en: [branch of a river, river channel/inlet]
+        gloss_zh: [滘]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cag4-漆
+    headword: 漆
+    readings:
+      - pengim: cag4
+    senses:
+      - pos: noun
+        gloss_en: [paint; lacquer; varnish]
+        gloss_zh: [漆]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nam3-tou5-漤塗
+    headword: 漤塗
+    readings:
+      - pengim: nam3 tou5
+    senses:
+      - pos: noun
+        gloss_en: [mud, slush; ooze; mire]
+        gloss_zh: [漤塗]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang5-潢
+    headword: 潢
+    readings:
+      - pengim: huang5
+    senses:
+      - pos: noun
+        gloss_en: [pool (literary), to dye paper]
+        gloss_zh: [潢]
+        note: Obscure literary character with two fairly distinct senses (pool vs. to dye paper); unclear which, if either, sees real use in spoken Teochew.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tam5-潭
+    headword: 潭
+    readings:
+      - pengim: tam5
+    senses:
+      - pos: noun
+        gloss_en: [deep pool; pond, lake]
+        gloss_zh: [潭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dio5-zui2-潮水
+    headword: 潮水
+    readings:
+      - pengim: dio5 zui2
+    senses:
+      - pos: noun
+        gloss_en: [tide; tidal water]
+        gloss_zh: [潮水]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang2-澗
+    headword: 澗
+    readings:
+      - pengim: gang2
+    senses:
+      - pos: noun
+        gloss_en: [mountain stream; brook between mountains]
+        gloss_zh: [澗]
+        note: Senses are quite disparate (mountain stream vs. a numeral for 10^36 vs. a Hokkien historical term for 'alleyway'); picked the core 'mountain stream' sense as primary.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêg8-澤
+    headword: 澤
+    readings:
+      - pengim: zêg8
+    senses:
+      - pos: noun
+        gloss_en: [marsh; wetland, luster; sheen]
+        gloss_zh: [澤]
+        note: Character has several disparate senses (marsh, moist, luster, grace/favor, surname) sharing the same reading, with no clear indication which is primary without more context.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si7-澨
+    headword: 澨
+    readings:
+      - pengim: si7
+    senses:
+      - pos: noun
+        gloss_en: [riverbank, embankment, shore]
+        gloss_zh: [澨]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: o3-澳
+    headword: 澳
+    readings:
+      - pengim: o3
+    senses:
+      - pos: noun
+        gloss_en: [bay; inlet, (abbreviation) Australia; Macau]
+        gloss_zh: [澳]
+        note: Character has both a literal geographic 'bay/inlet' sense and common abbreviated senses for Australia/Macau (as in 澳洲, 澳門); the base geographic sense was chosen as primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sib4-di7-濕地
+    headword: 濕地
+    readings:
+      - pengim: sib4 di7
+    senses:
+      - pos: noun
+        gloss_en: [wetland]
+        gloss_zh: [濕地]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sib4-dou7-濕度
+    headword: 濕度
+    readings:
+      - pengim: sib4 dou7
+    senses:
+      - pos: noun
+        gloss_en: [humidity, moisture content]
+        gloss_zh: [濕度]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bing1-濱
+    headword: 濱
+    readings:
+      - pengim: bing1
+    senses:
+      - pos: noun
+        gloss_en: [shore, beach, coast, bank]
+        gloss_zh: [濱]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bing1-hai2-濱海
+    headword: 濱海
+    readings:
+      - pengim: bing1 hai2
+    senses:
+      - pos: noun
+        gloss_en: [seashore, coast]
+        gloss_zh: [濱海]
+        note: The same reading is shared by a generic 'seashore/coast' sense, the proper name for Tianjin's Binhai New Area / Russia's Primorsky Krai, and an unrelated Cantonese dish term, so the intended sense is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pag8-bou3-瀑布
+    headword: 瀑布
+    readings:
+      - pengim: pag8 bou3
+    senses:
+      - pos: noun
+        gloss_en: [waterfall]
+        gloss_zh: [瀑布]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bing1-hai2-瀕海
+    headword: 瀕海
+    readings:
+      - pengim: bing1 hai2
+    senses:
+      - pos: noun
+        gloss_en: [seashore, coast]
+        gloss_zh: [瀕海]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong5-瀛
+    headword: 瀛
+    readings:
+      - pengim: iong5
+    senses:
+      - pos: noun
+        gloss_en: [ocean, sea]
+        gloss_zh: [瀛]
+        note: Character carries several distinct senses (archaic 'ocean/sea', obsolete 'marsh', and 'a surname') all attested under the same Teochew reading; the primary literary 'ocean' sense (as in compounds like 東瀛) was chosen but disambiguation is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêh8-cên1-瀝青
+    headword: 瀝青
+    readings:
+      - pengim: lêh8 cên1
+    senses:
+      - pos: noun
+        gloss_en: [asphalt, bitumen, pitch]
+        gloss_zh: [瀝青, 柏油]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuan1-灘
+    headword: 灘
+    readings:
+      - pengim: tuan1
+    senses:
+      - pos: noun
+        gloss_en: [shoal, beach]
+        gloss_zh: [灘]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuan1-tou5-灘塗
+    headword: 灘塗
+    readings:
+      - pengim: tuan1 tou5
+    senses:
+      - pos: noun
+        gloss_en: [tidal flat]
+        gloss_zh: [灘塗]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-sai2-火屎
+    headword: 火屎
+    readings:
+      - pengim: huê2 sai2
+    senses:
+      - pos: noun
+        gloss_en: [spark of fire, ash]
+        gloss_zh: [火屎]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-suan1-火山
+    headword: 火山
+    readings:
+      - pengim: huê2 suan1
+    senses:
+      - pos: noun
+        gloss_en: [volcano]
+        gloss_zh: [火山]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-uang6-火旺
+    headword: 火旺
+    readings:
+      - pengim: huê2 uang6
+    senses:
+      - pos: noun
+        gloss_en: [cactus]
+        gloss_zh: [火旺]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-cên1-火星
+    headword: 火星
+    readings:
+      - pengim: huê2 cên1
+    senses:
+      - pos: noun
+        gloss_en: [Mars, Antares]
+        gloss_zh: [火星]
+        note: The dossier lists an astronomy noun sense (Mars/Antares) and an unrelated Internet-slang verb sense ("to be outdated and unaware") under the same peng'im reading; chose the astronomical noun sense as the more likely core meaning.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-zui2-iu5-火水油
+    headword: 火水油
+    readings:
+      - pengim: huê2 zui2 iu5
+    senses:
+      - pos: noun
+        gloss_en: [kerosene, paraffin]
+        gloss_zh: [火水油]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-iu5-火油
+    headword: 火油
+    readings:
+      - pengim: huê2 iu5
+    senses:
+      - pos: noun
+        gloss_en: [kerosene, paraffin]
+        gloss_zh: [火油]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-tuan3-火炭
+    headword: 火炭
+    readings:
+      - pengim: huê2 tuan3
+    senses:
+      - pos: noun
+        gloss_en: [charcoal, burning charcoal]
+        gloss_zh: [火炭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-iam7-火焰
+    headword: 火焰
+    readings:
+      - pengim: huê2 iam7
+    senses:
+      - pos: noun
+        gloss_en: [flame]
+        gloss_zh: [火焰]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-zih8-火舌
+    headword: 火舌
+    readings:
+      - pengim: huê2 zih8
+    senses:
+      - pos: noun
+        gloss_en: [tongues of fire, flame]
+        gloss_zh: [火舌]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-huê1-火花
+    headword: 火花
+    readings:
+      - pengim: huê2 huê1
+    senses:
+      - pos: noun
+        gloss_en: [spark]
+        gloss_zh: [火花]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-iêh8-火藥
+    headword: 火藥
+    readings:
+      - pengim: huê2 iêh8
+    senses:
+      - pos: noun
+        gloss_en: [gunpowder]
+        gloss_zh: [火藥]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê1-tou5-灰塗
+    headword: 灰塗
+    readings:
+      - pengim: huê1 tou5
+    senses:
+      - pos: noun
+        gloss_en: [lime-sand-clay mixture, concrete]
+        gloss_zh: [灰塗]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuan3-炭
+    headword: 炭
+    readings:
+      - pengim: tuan3
+    senses:
+      - pos: noun
+        gloss_en: [charcoal]
+        gloss_zh: [炭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-am3-tin1-烏暗天
+    headword: 烏暗天
+    readings:
+      - pengim: ou1 am3 tin1
+    senses:
+      - pos: noun
+        gloss_en: [overcast sky; cloudy day]
+        gloss_zh: [烏暗天]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-im1-烏陰
+    headword: 烏陰
+    readings:
+      - pengim: ou1 im1
+    senses:
+      - pos: adjective
+        gloss_en: [overcast; cloudy; gloomy]
+        gloss_zh: [烏陰]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-im1-tin1-烏陰天
+    headword: 烏陰天
+    readings:
+      - pengim: ou1 im1 tin1
+    senses:
+      - pos: noun
+        gloss_en: [overcast sky; cloudy day]
+        gloss_zh: [烏陰天]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-hung5-烏雲
+    headword: 烏雲
+    readings:
+      - pengim: ou1 hung5
+    senses:
+      - pos: noun
+        gloss_en: [dark clouds; storm clouds, (literary) a woman's dark hair]
+        gloss_zh: [烏雲]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hong1-烽
+    headword: 烽
+    readings:
+      - pengim: hong1
+    senses:
+      - pos: noun
+        gloss_en: [beacon fire, signal fire]
+        gloss_zh: [烽]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iam7-焰
+    headword: 焰
+    readings:
+      - pengim: iam7
+    senses:
+      - pos: noun
+        gloss_en: [flame]
+        gloss_zh: [焰]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êng1-dêng5-煙塵
+    headword: 煙塵
+    readings:
+      - pengim: êng1 dêng5
+    senses:
+      - pos: noun
+        gloss_en: [dust, cobweb]
+        gloss_zh: [塕塵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing1-bhu7-煙霧
+    headword: 煙霧
+    readings:
+      - pengim: ing1 bhu7
+    senses:
+      - pos: noun
+        gloss_en: [smog, mist, smoke and fog]
+        gloss_zh: [煙霧]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuê5-煤
+    headword: 煤
+    readings:
+      - pengim: bhuê5
+    senses:
+      - pos: noun
+        gloss_en: [coal]
+        gloss_zh: [煤]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuê5-ki3-煤氣
+    headword: 煤氣
+    readings:
+      - pengim: bhuê5 ki3
+    senses:
+      - pos: noun
+        gloss_en: [coal gas, gas (for cooking)]
+        gloss_zh: [煤氣]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuê5-tuan3-煤炭
+    headword: 煤炭
+    readings:
+      - pengim: bhuê5 tuan3
+    senses:
+      - pos: noun
+        gloss_en: [coal]
+        gloss_zh: [煤炭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sih8-rig8-熄日
+    headword: 熄日
+    readings:
+      - pengim: sih8 rig8
+    senses:
+      - pos: noun
+        gloss_en: [solar eclipse]
+        gloss_zh: [熄日]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêg8-tih4-熟鐵
+    headword: 熟鐵
+    readings:
+      - pengim: sêg8 tih4
+    senses:
+      - pos: noun
+        gloss_en: [wrought iron]
+        gloss_zh: [熟鐵]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ruah8-tin1-熱天
+    headword: 熱天
+    readings:
+      - pengim: ruah8 tin1
+    senses:
+      - pos: noun
+        gloss_en: [hot weather, summer]
+        gloss_zh: [熱天]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ruah8-tin1-si5-熱天時
+    headword: 熱天時
+    readings:
+      - pengim: ruah8 tin1 si5
+    senses:
+      - pos: noun
+        gloss_en: [summer]
+        gloss_zh: [熱天時]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: riag8-dua3-熱帶
+    headword: 熱帶
+    readings:
+      - pengim: riag8 dua3
+    senses:
+      - pos: noun
+        gloss_en: [the tropics, torrid zone]
+        gloss_zh: [熱帶]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: riag8-dua3-huang1-bao6-熱帶風暴
+    headword: 熱帶風暴
+    readings:
+      - pengim: riag8 dua3 huang1 bao6
+    senses:
+      - pos: noun
+        gloss_en: [tropical storm]
+        gloss_zh: [熱帶風暴]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ruah8-dag8-tin1-熱毒天
+    headword: 熱毒天
+    readings:
+      - pengim: ruah8 dag8 tin1
+    senses:
+      - pos: noun
+        gloss_en: [hot weather, dog days]
+        gloss_zh: [熱毒天]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sih4-nah4-爍爁
+    headword: 爍爁
+    readings:
+      - pengim: sih4 nah4
+    senses:
+      - pos: noun
+        gloss_en: [lightning]
+        gloss_zh: [閃電]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gu5-puê5-牛皮
+    headword: 牛皮
+    readings:
+      - pengim: gu5 puê5
+    senses:
+      - pos: noun
+        gloss_en: [cattle hide, leather, (figurative) bragging talk]
+        gloss_zh: [牛皮]
+        note: The page attests both a literal noun sense (cattle hide/leather), a figurative noun sense (bragging), and a separate adjective sense (tough, durable) all under the same reading; this entry consolidates them under the primary literal noun sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-puê5-zua2-牛皮紙
+    headword: 牛皮紙
+    readings:
+      - pengim: ghu5 puê5 zua2
+    senses:
+      - pos: noun
+        gloss_en: [kraft paper]
+        gloss_zh: [牛皮紙]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-guan1-kung2-牛肝菌
+    headword: 牛肝菌
+    readings:
+      - pengim: ghu5 guan1 kung2
+    senses:
+      - pos: noun
+        gloss_en: [Boletus mushroom, porcini]
+        gloss_zh: [牛肝菌]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-pang5-牛蒡
+    headword: 牛蒡
+    readings:
+      - pengim: ghu5 pang5
+    senses:
+      - pos: noun
+        gloss_en: [burdock]
+        gloss_zh: [牛蒡]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-ng5-牛黃
+    headword: 牛黃
+    readings:
+      - pengim: ghu5 ng5
+    senses:
+      - pos: noun
+        gloss_en: [bezoar (cattle gallstone used in traditional Chinese medicine)]
+        gloss_zh: [牛黃]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhou2-duan1-牡丹
+    headword: 牡丹
+    readings:
+      - pengim: bhou2 duan1
+    senses:
+      - pos: noun
+        gloss_en: [peony, tree peony]
+        gloss_zh: [牡丹]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: muêh8-liao7-物料
+    headword: 物料
+    readings:
+      - pengim: muêh8 liao7
+    senses:
+      - pos: noun
+        gloss_en: [material, raw material (used in manufacturing)]
+        gloss_zh: [物料]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: muêh8-zêng2-物種
+    headword: 物種
+    readings:
+      - pengim: muêh8 zêng2
+    senses:
+      - pos: noun
+        gloss_en: [species]
+        gloss_zh: [物種]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghêg8-玉
+    headword: 玉
+    readings:
+      - pengim: ghêg8
+    senses:
+      - pos: noun
+        gloss_en: [jade]
+        gloss_zh: [玉]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang5-bug4-liu5-gian5-王不留行
+    headword: 王不留行
+    readings:
+      - pengim: uang5 bug4 liu5 gian5
+    senses:
+      - pos: noun
+        gloss_en: [cowherb seed (herb used in traditional Chinese medicine to promote blood circulation)]
+        gloss_zh: [王不留行]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhung5-gui3-玫瑰
+    headword: 玫瑰
+    readings:
+      - pengim: bhung5 gui3
+    senses:
+      - pos: noun
+        gloss_en: [rose, rose flower]
+        gloss_zh: [玫瑰]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhung5-gui3-huê1-玫瑰花
+    headword: 玫瑰花
+    readings:
+      - pengim: bhung5 gui3 huê1
+    senses:
+      - pos: noun
+        gloss_en: [rose (flower)]
+        gloss_zh: [玫瑰花]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo1-玻
+    headword: 玻
+    readings:
+      - pengim: bo1
+    senses:
+      - pos: noun
+        gloss_en: ["glass (bound form, as in 玻璃)"]
+        gloss_zh: [玻]
+        note: Bound character with unrelated senses (short for 玻璃 'glass', a transliteration character, and short for 玻利維亞 'Bolivia'); rarely used standalone.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo1-li5-玻璃
+    headword: 玻璃
+    readings:
+      - pengim: bo1 li5
+    senses:
+      - pos: noun
+        gloss_en: [glass (material)]
+        gloss_zh: [玻璃]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ko1-珂
+    headword: 珂
+    readings:
+      - pengim: ko1
+    senses:
+      - pos: noun
+        gloss_en: [pretty white jade-like stone (literary)]
+        gloss_zh: [珂]
+        note: Obsolete/literary bound character, rarely used standalone in modern speech and mostly seen in given names.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sang1-珊
+    headword: 珊
+    readings:
+      - pengim: sang1
+    senses:
+      - pos: noun
+        gloss_en: [coral]
+        gloss_zh: [珊]
+        note: Bound character mainly used in compounds such as 珊瑚 (coral); standalone usage is limited.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diang1-zu1-珍珠
+    headword: 珍珠
+    readings:
+      - pengim: diang1 zu1
+    senses:
+      - pos: noun
+        gloss_en: [pearl]
+        gloss_zh: [珍珠]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang5-珩
+    headword: 珩
+    readings:
+      - pengim: hang5
+    senses:
+      - pos: noun
+        gloss_en: [horizontal top piece of a jade pendant (historical)]
+        gloss_zh: [珩]
+        note: Rare historical/literary bound character, now mainly seen in personal names.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-li5-琉璃
+    headword: 琉璃
+    readings:
+      - pengim: liu5 li5
+    senses:
+      - pos: noun
+        gloss_en: [coloured glass; glaze, translucent glasswork]
+        gloss_zh: [琉璃]
+        note: 琉璃 has several distinct senses (a precious stone, coloured glaze, a literary synonym for glass, a glass lamp, and 'dragonfly' in Beijing Mandarin); the 'coloured glass/glaze' sense was chosen as most representative.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dim1-琛
+    headword: 琛
+    readings:
+      - pengim: dim1
+    senses:
+      - pos: noun
+        gloss_en: [treasure; gem (literary)]
+        gloss_zh: [琛]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lim5-琳
+    headword: 琳
+    readings:
+      - pengim: lim5
+    senses:
+      - pos: noun
+        gloss_en: [beautiful jade (literary)]
+        gloss_zh: [琳]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suêng1-瑄
+    headword: 瑄
+    readings:
+      - pengim: suêng1
+    senses:
+      - pos: noun
+        gloss_en: [large jade annulus (archaic), character used in given names]
+        gloss_zh: [瑄]
+        note: 瑄 is glossed only as an obsolete/archaic term for a type of jade ring; in practice the character is mainly encountered today as a component of given names.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ru5-瑜
+    headword: 瑜
+    readings:
+      - pengim: ru5
+    senses:
+      - pos: noun
+        gloss_en: [fine jade (archaic), used in Sanskrit transliterations and given names]
+        gloss_zh: [瑜]
+        note: 瑜's senses are marked obsolete/archaic on their own in Standard Chinese, and the character is mostly used today in Sanskrit transliterations or personal names, so the standalone meaning is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ma2-nao2-瑪瑙
+    headword: 瑪瑙
+    readings:
+      - pengim: ma2 nao2
+    senses:
+      - pos: noun
+        gloss_en: [agate]
+        gloss_zh: [瑪瑙]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li5-璃
+    headword: 璃
+    readings:
+      - pengim: li5
+    senses:
+      - pos: noun
+        gloss_en: ["glass; glaze (bound form, as in 玻璃 'glass' and 琉璃 'colored glaze')"]
+        gloss_zh: [玻璃]
+        note: The character is only attested bound in compounds (玻璃, 琉璃) and has no independent gloss of its own on the page.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pog4-璞
+    headword: 璞
+    readings:
+      - pengim: pog4
+    senses:
+      - pos: noun
+        gloss_en: [uncut jade; jade in the rough]
+        gloss_zh: [璞玉]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-璣
+    headword: 璣
+    readings:
+      - pengim: gi1
+    senses:
+      - pos: noun
+        gloss_en: [imperfect/irregular pearl]
+        gloss_zh: [璣]
+        note: The page flags that its pronunciation data doesn't specify which of two unrelated senses (irregular pearl vs. ancient astronomical instrument) it applies to.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biah4-璧
+    headword: 璧
+    readings:
+      - pengim: biah4
+    senses:
+      - pos: noun
+        gloss_en: [jade annulus; flat ring-shaped jade disc]
+        gloss_zh: [璧]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ce5-ki3-瓷器
+    headword: 瓷器
+    readings:
+      - pengim: ce5 ki3
+    senses:
+      - pos: noun
+        gloss_en: [porcelain, china, chinaware]
+        gloss_zh: [瓷器]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gam1-cao2-甘草
+    headword: 甘草
+    readings:
+      - pengim: gam1 cao2
+    senses:
+      - pos: noun
+        gloss_en: [licorice (Glycyrrhiza uralensis)]
+        gloss_zh: [甘草]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gam1-bhig8-甘蜜
+    headword: 甘蜜
+    readings:
+      - pengim: gam1 bhig8
+    senses:
+      - pos: noun
+        gloss_en: [gambier (Uncaria gambir)]
+        gloss_zh: [甘蜜]
+        note: Specialized regional term (Indonesia/Malaysia/Singapore) for a plant extract; uncertain how current or core this is to everyday Teochew.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sên1-tai3-生態
+    headword: 生態
+    readings:
+      - pengim: sên1 tai3
+    senses:
+      - pos: noun
+        gloss_en: [ecology, ecosystem]
+        gloss_zh: [生態]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sên1-muêh8-生物
+    headword: 生物
+    readings:
+      - pengim: sên1 muêh8
+    senses:
+      - pos: noun
+        gloss_en: [organism, living being, lifeform]
+        gloss_zh: [生物]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sên1-tih4-生鐵
+    headword: 生鐵
+    readings:
+      - pengim: sên1 tih4
+    senses:
+      - pos: noun
+        gloss_en: [pig iron]
+        gloss_zh: [生鐵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng1-ziang2-gêg4-su3-生長激素
+    headword: 生長激素
+    readings:
+      - pengim: sêng1 ziang2 gêg4 su3
+    senses:
+      - pos: noun
+        gloss_en: [growth hormone]
+        gloss_zh: [生長激素]
+        note: Highly specialized biochemistry/medical term (growth hormone); category assignment between nature.yaml and body.yaml is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang5-hng5-田園
+    headword: 田園
+    readings:
+      - pengim: cang5 hng5
+    senses:
+      - pos: noun
+        gloss_en: [countryside; rural area, farmland; cropland]
+        gloss_zh: [田園]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang5-di7-田地
+    headword: 田地
+    readings:
+      - pengim: cang5 di7
+    senses:
+      - pos: noun
+        gloss_en: [farmland; cropland, field]
+        gloss_zh: [田地]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang5-huan7-田岸
+    headword: 田岸
+    readings:
+      - pengim: cang5 huan7
+    senses:
+      - pos: noun
+        gloss_en: [ridge/footpath between paddy fields, embankment between fields]
+        gloss_zh: [田岸, 田埂]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

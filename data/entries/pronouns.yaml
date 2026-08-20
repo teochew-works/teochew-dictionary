@@ -989,3 +989,27 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: mua2-nang5-滿人
+    headword: 滿人
+    readings:
+      - pengim: mua2 nang5
+    senses:
+      - pos: noun
+        gloss_en: [everyone; everybody]
+        gloss_zh: [滿人]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bho5-mih4-gai5-無乜個
+    headword: 無乜個
+    readings:
+      - pengim: bho5 mih4 gai5
+    senses:
+      - pos: pronoun
+        gloss_en: [nothing]
+        gloss_zh: [無乜個, 沒什麼]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

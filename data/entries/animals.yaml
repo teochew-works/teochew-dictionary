@@ -868,3 +868,721 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: huê2-mê5-gou1-火暝蛄
+    headword: 火暝蛄
+    readings:
+      - pengim: huê2 mê5 gou1
+    senses:
+      - pos: noun
+        gloss_en: [firefly]
+        gloss_zh: [火暝蛄]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-mê5-tang5-火暝蟲
+    headword: 火暝蟲
+    readings:
+      - pengim: huê2 mê5 tang5
+    senses:
+      - pos: noun
+        gloss_en: [firefly, lightning bug, glowworm]
+        gloss_zh: [火暝蟲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-gim1-gou1-火金蛄
+    headword: 火金蛄
+    readings:
+      - pengim: huê2 gim1 gou1
+    senses:
+      - pos: noun
+        gloss_en: [firefly, glowworm]
+        gloss_zh: [火金蛄, 螢火蟲]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-goi1-烏雞
+    headword: 烏雞
+    readings:
+      - pengim: ou1 goi1
+    senses:
+      - pos: noun
+        gloss_en: [silkie; black-boned chicken]
+        gloss_zh: [烏雞]
+        note: Two unrelated senses (silkie chicken breed vs. mold spots on damp fabric) share this reading; picked the better-known 'silkie chicken' sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-zui1-bhê2-烏騅馬
+    headword: 烏騅馬
+    readings:
+      - pengim: ou1 zui1 bhê2
+    senses:
+      - pos: noun
+        gloss_en: [black piebald steed (esp. the one ridden by Xiang Yu)]
+        gloss_zh: [烏騅馬]
+        note: Ambiguous whether this denotes a generic black-piebald-horse type or specifically the proper name of Xiang Yu's own steed.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-he5-烏魚
+    headword: 烏魚
+    readings:
+      - pengim: ou1 he5
+    senses:
+      - pos: noun
+        gloss_en: [flathead grey mullet]
+        gloss_zh: [烏魚]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-a1-烏鴉
+    headword: 烏鴉
+    readings:
+      - pengim: ou1 a1
+    senses:
+      - pos: noun
+        gloss_en: [crow; raven]
+        gloss_zh: [烏鴉]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bho5-bhuê2-him5-無尾熊
+    headword: 無尾熊
+    readings:
+      - pengim: bho5 bhuê2 him5
+    senses:
+      - pos: noun
+        gloss_en: [koala]
+        gloss_zh: [無尾熊]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: riag8-dua3-he5-熱帶魚
+    headword: 熱帶魚
+    readings:
+      - pengim: riag8 dua3 he5
+    senses:
+      - pos: noun
+        gloss_en: [tropical fish]
+        gloss_zh: [熱帶魚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in3-ziao2-燕鳥
+    headword: 燕鳥
+    readings:
+      - pengim: in3 ziao2
+    senses:
+      - pos: noun
+        gloss_en: [swallow (bird)]
+        gloss_zh: [燕子, 燕]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-牛
+    headword: 牛
+    readings:
+      - pengim: ghu5
+    senses:
+      - pos: noun
+        gloss_en: [cow, ox, cattle, beef]
+        gloss_zh: [牛]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-gian2-牛囝
+    headword: 牛囝
+    readings:
+      - pengim: ghu5 gian2
+    senses:
+      - pos: noun
+        gloss_en: [calf, young cow or bull]
+        gloss_zh: [牛囝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-sai2-牛屎
+    headword: 牛屎
+    readings:
+      - pengim: ghu5 sai2
+    senses:
+      - pos: noun
+        gloss_en: [cow dung]
+        gloss_zh: [牛屎]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-sai2-hug8-牛屎核
+    headword: 牛屎核
+    readings:
+      - pengim: ghu5 sai2 hug8
+    senses:
+      - pos: noun
+        gloss_en: [dung beetle]
+        gloss_zh: [牛屎核]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-sai2-gu1-牛屎龜
+    headword: 牛屎龜
+    readings:
+      - pengim: ghu5 sai2 gu1
+    senses:
+      - pos: noun
+        gloss_en: [dung beetle]
+        gloss_zh: [牛屎龜]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-bho2-牛母
+    headword: 牛母
+    readings:
+      - pengim: ghu5 bho2
+    senses:
+      - pos: noun
+        gloss_en: [cow, female cow]
+        gloss_zh: [牛母]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-gou2-牛牯
+    headword: 牛牯
+    readings:
+      - pengim: ghu5 gou2
+    senses:
+      - pos: noun
+        gloss_en: [bull, ox (castrated bull)]
+        gloss_zh: [牛牯]
+        note: Wiktionary lists two competing dialectal senses for this word — an intact bull versus a castrated bullock/ox — without clarifying which applies specifically in Teochew.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-ong3-牛螉
+    headword: 牛螉
+    readings:
+      - pengim: ghu5 ong3
+    senses:
+      - pos: noun
+        gloss_en: [gadfly, warble fly]
+        gloss_zh: [牛螉, 牛虻]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-bi5-牛螕
+    headword: 牛螕
+    readings:
+      - pengim: ghu5 bi5
+    senses:
+      - pos: noun
+        gloss_en: [gadfly, horsefly]
+        gloss_zh: [牛螕]
+        note: The page shows both a noun 'gadfly' sense (Southern Min/Puxian-Min) and a separate adjective 'stingy; miserly' sense (Taiwanese Hokkien) under the same reading; the noun sense was picked as primary but the adjective sense may also be current in Teochew.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gou2-牯
+    headword: 牯
+    readings:
+      - pengim: gou2
+    senses:
+      - pos: noun
+        gloss_en: [bull; ox (male animal), male (suffix for animals)]
+        gloss_zh: [牯]
+        note: Character page bundles several related senses (bull/ox, female cow, and a Hakka/Teochew masculine suffix) under one shared reading; picked the core male-animal sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai1-犀
+    headword: 犀
+    readings:
+      - pengim: sai1
+    senses:
+      - pos: noun
+        gloss_en: [rhinoceros]
+        gloss_zh: [犀, 犀牛]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai1-ghu5-犀牛
+    headword: 犀牛
+    readings:
+      - pengim: sai1 ghu5
+    senses:
+      - pos: noun
+        gloss_en: [rhinoceros]
+        gloss_zh: [犀牛]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i1-犄
+    headword: 犄
+    readings:
+      - pengim: i1
+    senses:
+      - pos: noun
+        gloss_en: [castrated male bovine (historical), alternative form of 猗]
+        gloss_zh: [犄, 猗]
+        note: All senses are qualified as appearing only in historical dictionaries and one sense further overlaps with an 'alternative form of 猗' gloss, making the intended meaning uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dog8-犢
+    headword: 犢
+    readings:
+      - pengim: dog8
+    senses:
+      - pos: noun
+        gloss_en: [calf (young cow or bull)]
+        gloss_zh: [犢]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-gian2-狗囝
+    headword: 狗囝
+    readings:
+      - pengim: gao2 gian2
+    senses:
+      - pos: noun
+        gloss_en: [puppy]
+        gloss_zh: [狗囝]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-bho2-狗母
+    headword: 狗母
+    readings:
+      - pengim: gao2 bho2
+    senses:
+      - pos: noun
+        gloss_en: [female dog, bitch]
+        gloss_zh: [狗母]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-bho2-zua5-狗母蛇
+    headword: 狗母蛇
+    readings:
+      - pengim: gao2 bho2 zua5
+    senses:
+      - pos: noun
+        gloss_en: [lizard]
+        gloss_zh: [狗母蛇]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-gou2-狗牯
+    headword: 狗牯
+    readings:
+      - pengim: gao2 gou2
+    senses:
+      - pos: noun
+        gloss_en: [male dog]
+        gloss_zh: [狗牯]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-hê5-狗蝦
+    headword: 狗蝦
+    readings:
+      - pengim: gao2 hê5
+    senses:
+      - pos: noun
+        gloss_en: [a shrimp species (Parapenaeopsis hardwickii)]
+        gloss_zh: [狗蝦]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-sag4-狗蝨
+    headword: 狗蝨
+    readings:
+      - pengim: gao2 sag4
+    senses:
+      - pos: noun
+        gloss_en: [flea, dog louse]
+        gloss_zh: [狗蝨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-hia6-狗蟻
+    headword: 狗蟻
+    readings:
+      - pengim: gao2 hia6
+    senses:
+      - pos: noun
+        gloss_en: [ant]
+        gloss_zh: [狗蟻]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi2-狴
+    headword: 狴
+    readings:
+      - pengim: bi2
+    senses:
+      - pos: noun
+        gloss_en: [legendary tiger-like beast (painted on prison doors), prison (figurative)]
+        gloss_zh: [狴]
+        note: Rare literary bound character with two related senses (mythological beast vs. figurative 'prison') and no indication which is primary for standalone use.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi2-ngang6-狴犴
+    headword: 狴犴
+    readings:
+      - pengim: bi2 ngang6
+    senses:
+      - pos: noun
+        gloss_en: [legendary tiger-like beast (painted on prison doors), prison (figurative)]
+        gloss_zh: [狴犴]
+        note: Rare literary term with two related senses (mythological beast vs. figurative 'prison') and no indication which is primary.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suêng1-ngi5-狻猊
+    headword: 狻猊
+    readings:
+      - pengim: suêng1 ngi5
+    senses:
+      - pos: noun
+        gloss_en: [lion (archaic), mythical lion-dragon hybrid creature]
+        gloss_zh: [狻猊]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lang5-狼
+    headword: 狼
+    readings:
+      - pengim: lang5
+    senses:
+      - pos: noun
+        gloss_en: [wolf]
+        gloss_zh: [狼]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê6-狽
+    headword: 狽
+    readings:
+      - pengim: buê6
+    senses:
+      - pos: noun
+        gloss_en: ["legendary wolf-like beast (short forelegs, long hind legs)"]
+        gloss_zh: [狽]
+        note: Bound character mostly appearing only in the compound 狼狽; its 'distressed/wretched' senses derive from that compound rather than standalone use, so only the literal mythological-beast sense was drafted.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li6-猁
+    headword: 猁
+    readings:
+      - pengim: li6
+    senses:
+      - pos: noun
+        gloss_en: ["lynx (bound form, used only in 猞猁)"]
+        gloss_zh: [猁]
+        note: This character has no independent meaning outside the compound 猞猁; an unrelated Cantonese internet-slang sense (a nickname for Liverpool F.C.) is not applicable to Teochew.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mêng2-siu3-猛獸
+    headword: 猛獸
+    readings:
+      - pengim: mêng2 siu3
+    senses:
+      - pos: noun
+        gloss_en: [beast of prey; wild predator]
+        gloss_zh: [猛獸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sia3-猞
+    headword: 猞
+    readings:
+      - pengim: sia3
+    senses:
+      - pos: noun
+        gloss_en: ['(bound form) used only in 猞猁, "lynx"']
+        gloss_zh: [猞猁]
+        note: This character has no independent meaning of its own; it occurs only in the compound 猞猁 (lynx), so the entry glosses the bound form rather than a standalone word.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng1-猩
+    headword: 猩
+    readings:
+      - pengim: sêng1
+    senses:
+      - pos: noun
+        gloss_en: [ape; orangutan (short for 猩猩)]
+        gloss_zh: [猩猩]
+        note: The character functions mainly as a bound form (short for 猩猩) or as a synonym element for 'scarlet' (猩紅); no single standalone gloss is clearly indicated for this reading, so the animal sense was chosen.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng1-sêng1-猩猩
+    headword: 猩猩
+    readings:
+      - pengim: sêng1 sêng1
+    senses:
+      - pos: noun
+        gloss_en: [orangutan; ape]
+        gloss_zh: [猩猩]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nao5-猱
+    headword: 猱
+    readings:
+      - pengim: nao5
+    senses:
+      - pos: noun
+        gloss_en: [macaque; a kind of monkey]
+        gloss_zh: [獼猴]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao5-猴
+    headword: 猴
+    readings:
+      - pengim: gao5
+    senses:
+      - pos: noun
+        gloss_en: [monkey; ape]
+        gloss_zh: [猴子, 猴]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai1-獅
+    headword: 獅
+    readings:
+      - pengim: sai1
+    senses:
+      - pos: noun
+        gloss_en: [lion]
+        gloss_zh: [獅]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiam2-獫
+    headword: 獫
+    readings:
+      - pengim: hiam2
+    senses:
+      - pos: noun
+        gloss_en: [dog with a long snout (archaic)]
+        gloss_zh: [獫]
+        note: Wiktionary marks both senses as obsolete on their own in Standard Chinese, with the character used almost exclusively in the historical ethnonym 獫允/猃允 (Xiǎnyǔn); the standalone gloss is included for completeness but is rarely used independently.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai6-zai6-獬豸
+    headword: 獬豸
+    readings:
+      - pengim: hai6 zai6
+    senses:
+      - pos: noun
+        gloss_en: ["xiezhi (a mythical creature resembling an ox or goat, with a single horn, said to detect guilt)"]
+        gloss_zh: [獬豸]
+        note: Highly specialized mythological/cultural term (associated with justice symbolism); categorized under animals for the mythical-beast sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lah8-muêh8-獵物
+    headword: 獵物
+    readings:
+      - pengim: lah8 muêh8
+    senses:
+      - pos: noun
+        gloss_en: [prey, game (hunted animal)]
+        gloss_zh: [獵物]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu3-獸
+    headword: 獸
+    readings:
+      - pengim: siu3
+    senses:
+      - pos: noun
+        gloss_en: [beast, animal]
+        gloss_zh: [獸, 野獸]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuah4-獺
+    headword: 獺
+    readings:
+      - pengim: tuah4
+    senses:
+      - pos: noun
+        gloss_en: [otter]
+        gloss_zh: [獺, 水獺]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghêg8-tou3-玉兔
+    headword: 玉兔
+    readings:
+      - pengim: ghêg8 tou3
+    senses:
+      - pos: noun
+        gloss_en: [Jade Rabbit (mythological rabbit associated with the moon), the moon (literary)]
+        gloss_zh: [玉兔]
+        note: "Category placement is ambiguous: 玉兔 is a mythological rabbit figure tied to the moon, so it could fit animals.yaml, nature.yaml, or basics.yaml about equally well."
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dai3-玳
+    headword: 玳
+    readings:
+      - pengim: dai3
+    senses:
+      - pos: noun
+        gloss_en: [tortoiseshell; hawksbill sea turtle (short for 玳瑁)]
+        gloss_zh: [玳瑁]
+        note: Bound character used only as the short form of 玳瑁 (hawksbill turtle/tortoiseshell); rarely used standalone.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kim5-zua5-琴蛇
+    headword: 琴蛇
+    readings:
+      - pengim: kim5 zua5
+    senses:
+      - pos: noun
+        gloss_en: [python, boa]
+        gloss_zh: [蟒蛇, 琴蛇]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang5-lo5-田螺
+    headword: 田螺
+    readings:
+      - pengim: cang5 lo5
+    senses:
+      - pos: noun
+        gloss_en: [river snail, freshwater snail]
+        gloss_zh: [田螺]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang5-hoi6-田蟹
+    headword: 田蟹
+    readings:
+      - pengim: cang5 hoi6
+    senses:
+      - pos: noun
+        gloss_en: [crab]
+        gloss_zh: [田蟹, 螃蟹]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang5-siang6-田鱔
+    headword: 田鱔
+    readings:
+      - pengim: cang5 siang6
+    senses:
+      - pos: noun
+        gloss_en: [Asian swamp eel]
+        gloss_zh: [田鱔, 鱔魚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiog4-sên1-畜生
+    headword: 畜生
+    readings:
+      - pengim: tiog4 sên1
+    senses:
+      - pos: noun
+        gloss_en: [domestic animal; livestock, beast; brute (insult)]
+        gloss_zh: [畜生]
+        note: Senses split between the literal 'domestic animal' meaning, a common derogatory 'beast/bastard' insult usage, and a specialized Buddhist technical term; literal animal sense taken as primary for categorization.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-goi1-番雞
+    headword: 番雞
+    readings:
+      - pengim: huang1 goi1
+    senses:
+      - pos: noun
+        gloss_en: [turkey]
+        gloss_zh: [番雞, 火雞]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

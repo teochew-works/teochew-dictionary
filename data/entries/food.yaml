@@ -1941,3 +1941,683 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: teng1-湯
+    headword: 湯
+    readings:
+      - pengim: teng1
+    senses:
+      - pos: noun
+        gloss_en: [soup; broth]
+        gloss_zh: [湯]
+        note: Character page lists many senses (hot water, broth, soup, medicinal decoction, hot spring, meal, pus, historical figure, surname) under one reading, and flags missing POS-specific pronunciation data; picked 'soup/broth' as the most likely common Teochew sense.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: teng1-si5-湯匙
+    headword: 湯匙
+    readings:
+      - pengim: teng1 si5
+    senses:
+      - pos: noun
+        gloss_en: [spoon; tablespoon]
+        gloss_zh: [湯匙]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-bhi7-滋味
+    headword: 滋味
+    readings:
+      - pengim: ze1 bhi7
+    senses:
+      - pos: noun
+        gloss_en: [taste; flavor, feeling; experience]
+        gloss_zh: [滋味]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou2-bhi7-滷味
+    headword: 滷味
+    readings:
+      - pengim: lou2 bhi7
+    senses:
+      - pos: noun
+        gloss_en: [lou mei; meat/offal simmered in master stock]
+        gloss_zh: [滷味]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou2-zui2-滷水
+    headword: 滷水
+    readings:
+      - pengim: lou2 zui2
+    senses:
+      - pos: noun
+        gloss_en: [master stock; marinade]
+        gloss_zh: [滷水]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou2-nêg8-滷肉
+    headword: 滷肉
+    readings:
+      - pengim: lou2 nêg8
+    senses:
+      - pos: noun
+        gloss_en: [braised meat; stewed meat]
+        gloss_zh: [滷肉]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou2-ah4-滷鴨
+    headword: 滷鴨
+    readings:
+      - pengim: lou2 ah4
+    senses:
+      - pos: noun
+        gloss_en: [braised duck]
+        gloss_zh: [滷鴨]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou2-gho5-滷鵝
+    headword: 滷鵝
+    readings:
+      - pengim: lou2 gho5
+    senses:
+      - pos: noun
+        gloss_en: [braised goose (a Teochew dish)]
+        gloss_zh: [滷鵝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gung2-zui2-滾水
+    headword: 滾水
+    readings:
+      - pengim: gung2 zui2
+    senses:
+      - pos: noun
+        gloss_en: [boiling water; hot water]
+        gloss_zh: [滾水]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang3-bao2-bao1-漢堡包
+    headword: 漢堡包
+    readings:
+      - pengim: hang3 bao2 bao1
+    senses:
+      - pos: noun
+        gloss_en: [hamburger]
+        gloss_zh: [漢堡包]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siab4-nêg8-澀肉
+    headword: 澀肉
+    readings:
+      - pengim: siab4 nêg8
+    senses:
+      - pos: noun
+        gloss_en: [lean meat (esp. pork)]
+        gloss_zh: [澀肉]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-hao7-火候
+    headword: 火候
+    readings:
+      - pengim: huê2 hao7
+    senses:
+      - pos: noun
+        gloss_en: [heat control (in cooking), crucial moment; opportunity]
+        gloss_zh: [火候]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-ziu2-火酒
+    headword: 火酒
+    readings:
+      - pengim: huê2 ziu2
+    senses:
+      - pos: noun
+        gloss_en: [alcohol; spirits (distilled liquor), rubbing alcohol]
+        gloss_zh: [火酒]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-uê1-火鍋
+    headword: 火鍋
+    readings:
+      - pengim: huê2 uê1
+    senses:
+      - pos: noun
+        gloss_en: [hot pot]
+        gloss_zh: [火鍋]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-lêng5-guê2-火龍果
+    headword: 火龍果
+    readings:
+      - pengim: huê2 lêng5 guê2
+    senses:
+      - pos: noun
+        gloss_en: [dragon fruit, pitaya]
+        gloss_zh: [火龍果]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ca2-guê2-炒粿
+    headword: 炒粿
+    readings:
+      - pengim: ca2 guê2
+    senses:
+      - pos: noun
+        gloss_en: [fried rice cakes (a Teochew dish)]
+        gloss_zh: [炒粿]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ca2-guê2-gag4-炒粿角
+    headword: 炒粿角
+    readings:
+      - pengim: ca2 guê2 gag4
+    senses:
+      - pos: noun
+        gloss_en: [fried rice cake cubes (a Teochew dish from Penang)]
+        gloss_zh: [炒粿角]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ca2-min7-炒麵
+    headword: 炒麵
+    readings:
+      - pengim: ca2 min7
+    senses:
+      - pos: noun
+        gloss_en: [stir-fried noodles; chow mein]
+        gloss_zh: [炒麵]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liag8-ziu2-烈酒
+    headword: 烈酒
+    readings:
+      - pengim: liag8 ziu2
+    senses:
+      - pos: noun
+        gloss_en: [hard liquor; spirits]
+        gloss_zh: [烈酒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-liang5-烏涼
+    headword: 烏涼
+    readings:
+      - pengim: ou1 liang5
+    senses:
+      - pos: noun
+        gloss_en: [oliang; Thai iced black coffee]
+        gloss_zh: [烏涼]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-ruah8-烏熱
+    headword: 烏熱
+    readings:
+      - pengim: ou1 ruah8
+    senses:
+      - pos: noun
+        gloss_en: [hot black coffee]
+        gloss_zh: [烏熱]
+        note: Word has multiple unrelated senses (black grasscloth, a type of fever, hot black coffee) across different Hokkien/Teochew varieties; the Teochew/Thai-tagged 'hot black coffee' sense was selected to pair with 烏涼.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-teng5-烏糖
+    headword: 烏糖
+    readings:
+      - pengim: ou1 teng5
+    senses:
+      - pos: noun
+        gloss_en: [brown sugar]
+        gloss_zh: [烏糖]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-dao7-烏豆
+    headword: 烏豆
+    readings:
+      - pengim: ou1 dao7
+    senses:
+      - pos: noun
+        gloss_en: [black soybean]
+        gloss_zh: [烏豆]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-lêng5-dê5-烏龍茶
+    headword: 烏龍茶
+    readings:
+      - pengim: ou1 lêng5 dê5
+    senses:
+      - pos: noun
+        gloss_en: [oolong tea]
+        gloss_zh: [烏龍茶]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog8-焗
+    headword: 焗
+    readings:
+      - pengim: gog8
+    senses:
+      - pos: verb
+        gloss_en: [to bake, to cook wrapped/sealed in a pot]
+        gloss_zh: [焗]
+        note: The page's senses are tagged Cantonese/Hakka rather than explicitly Teochew, even though this exact reading is listed as an attested Teochew pronunciation, so which sense best fits Teochew usage is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bho5-bhi2-guê2-無米粿
+    headword: 無米粿
+    readings:
+      - pengim: bho5 bhi2 guê2
+    senses:
+      - pos: noun
+        gloss_en: [Teochew chive dumplings]
+        gloss_zh: [無米粿]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bho5-huê1-guê2-無花果
+    headword: 無花果
+    readings:
+      - pengim: bho5 huê1 guê2
+    senses:
+      - pos: noun
+        gloss_en: [fig]
+        gloss_zh: [無花果]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cog4-焯
+    headword: 焯
+    readings:
+      - pengim: cog4
+    senses:
+      - pos: verb
+        gloss_en: [to scald, to blanch]
+        gloss_zh: [焯]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêg4-煏
+    headword: 煏
+    readings:
+      - pengim: bêg4
+    senses:
+      - pos: verb
+        gloss_en: [to grill, to roast/dry over fire]
+        gloss_zh: [煏]
+        note: The page bundles several dialect-specific senses (dry by fire, stir-fry/roast, burst/crack, be exposed, grill) under one entry; the sense explicitly tagged Teochew ("to grill") was chosen, but the boundary with the closely related Hokkien senses for the same reading is unclear.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sah8-煠
+    headword: 煠
+    readings:
+      - pengim: sah8
+    senses:
+      - pos: verb
+        gloss_en: [to boil, to blanch, to deep-fry]
+        gloss_zh: [煠]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sio1-kao2-燒烤
+    headword: 燒烤
+    readings:
+      - pengim: sio1 kao2
+    senses:
+      - pos: noun
+        gloss_en: [barbecue, BBQ]
+        gloss_zh: [燒烤]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sio1-ziu2-燒酒
+    headword: 燒酒
+    readings:
+      - pengim: sio1 ziu2
+    senses:
+      - pos: noun
+        gloss_en: [liquor, spirits, "alcohol (any alcoholic beverage, dialectal)"]
+        gloss_zh: [燒酒]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in3-o1-燕窩
+    headword: 燕窩
+    readings:
+      - pengim: in3 o1
+    senses:
+      - pos: noun
+        gloss_en: [edible bird's nest]
+        gloss_zh: [燕窩]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ian5-iang2-營養
+    headword: 營養
+    readings:
+      - pengim: ian5 iang2
+    senses:
+      - pos: noun
+        gloss_en: [nutrition, nourishment, nutrients]
+        gloss_zh: [營養]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-ni6-牛奶
+    headword: 牛奶
+    readings:
+      - pengim: ghu5 ni6
+    senses:
+      - pos: noun
+        gloss_en: [cow's milk, milk]
+        gloss_zh: [牛奶]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-bai5-牛排
+    headword: 牛排
+    readings:
+      - pengim: ghu5 bai5
+    senses:
+      - pos: noun
+        gloss_en: [steak, beefsteak, beef short rib]
+        gloss_zh: [牛排]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-bêh4-hiêh8-牛百葉
+    headword: 牛百葉
+    readings:
+      - pengim: ghu5 bêh4 hiêh8
+    senses:
+      - pos: noun
+        gloss_en: [beef tripe, omasum]
+        gloss_zh: [牛百葉]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: muêh8-puê3-物配
+    headword: 物配
+    readings:
+      - pengim: muêh8 puê3
+    senses:
+      - pos: noun
+        gloss_en: [side dish (eaten with rice), accompaniment to staple food]
+        gloss_zh: [物配]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: muêh8-puê3-gian2-物配囝
+    headword: 物配囝
+    readings:
+      - pengim: muêh8 puê3 gian2
+    senses:
+      - pos: noun
+        gloss_en: [snack]
+        gloss_zh: [物配囝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: muêh8-ziah8-物食
+    headword: 物食
+    readings:
+      - pengim: muêh8 ziah8
+    senses:
+      - pos: noun
+        gloss_en: [snack]
+        gloss_zh: [物食]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-nêg8-狗肉
+    headword: 狗肉
+    readings:
+      - pengim: gao2 nêg8
+    senses:
+      - pos: noun
+        gloss_en: [dog meat]
+        gloss_zh: [狗肉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mê2-huê2-猛火
+    headword: 猛火
+    readings:
+      - pengim: mê2 huê2
+    senses:
+      - pos: noun
+        gloss_en: [high heat; strong fire (cooking)]
+        gloss_zh: [大火, 旺火]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang5-lai5-王梨
+    headword: 王梨
+    readings:
+      - pengim: uang5 lai5
+    senses:
+      - pos: noun
+        gloss_en: [pineapple]
+        gloss_zh: [王梨]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang5-zian1-bêh8-王精白
+    headword: 王精白
+    readings:
+      - pengim: uang5 zian1 bêh8
+    senses:
+      - pos: noun
+        gloss_en: [napa cabbage, Chinese cabbage]
+        gloss_zh: [王精白]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guê1-瓜
+    headword: 瓜
+    readings:
+      - pengim: guê1
+    senses:
+      - pos: noun
+        gloss_en: [melon; gourd; squash]
+        gloss_zh: [瓜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guê1-zi2-瓜子
+    headword: 瓜子
+    readings:
+      - pengim: guê1 zi2
+    senses:
+      - pos: noun
+        gloss_en: [melon seed, edible seed eaten as a snack (e.g. watermelon/sunflower seed)]
+        gloss_zh: [瓜子]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng1-甑
+    headword: 甑
+    readings:
+      - pengim: zêng1
+    senses:
+      - pos: noun
+        gloss_en: [earthenware steaming pot, wooden rice steamer]
+        gloss_zh: [甑]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gam1-zia3-甘蔗
+    headword: 甘蔗
+    readings:
+      - pengim: gam1 zia3
+    senses:
+      - pos: noun
+        gloss_en: [sugar cane]
+        gloss_zh: [甘蔗]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gam1-lam5-甘藍
+    headword: 甘藍
+    readings:
+      - pengim: gam1 lam5
+    senses:
+      - pos: noun
+        gloss_en: [cabbage (Brassica oleracea)]
+        gloss_zh: [甘藍]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diam5-cêng5-甜橙
+    headword: 甜橙
+    readings:
+      - pengim: diam5 cêng5
+    senses:
+      - pos: noun
+        gloss_en: [sweet orange, orange (Citrus sinensis)]
+        gloss_zh: [甜橙]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diam5-guê2-甜粿
+    headword: 甜粿
+    readings:
+      - pengim: diam5 guê2
+    senses:
+      - pos: noun
+        gloss_en: [nian gao, New Year rice cake]
+        gloss_zh: [甜粿, 年糕]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diam5-tao5-甜頭
+    headword: 甜頭
+    readings:
+      - pengim: diam5 tao5
+    senses:
+      - pos: noun
+        gloss_en: [sweet taste, pleasant flavour]
+        gloss_zh: [甜頭]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-iam1-生醃
+    headword: 生醃
+    readings:
+      - pengim: cên1 iam1
+    senses:
+      - pos: noun
+        gloss_en: [Chaoshan-style raw marinated seafood]
+        gloss_zh: [生醃]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-cin1-生鮮
+    headword: 生鮮
+    readings:
+      - pengim: cên1 cin1
+    senses:
+      - pos: noun
+        gloss_en: ["fresh food (fish, fruit, vegetables)", fresh produce]
+        gloss_zh: [生鮮]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-dao7-番豆
+    headword: 番豆
+    readings:
+      - pengim: huang1 dao7
+    senses:
+      - pos: noun
+        gloss_en: [broad bean, fava bean]
+        gloss_zh: [番豆, 蚕豆]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-bhêh8-番麥
+    headword: 番麥
+    readings:
+      - pengim: huang1 bhêh8
+    senses:
+      - pos: noun
+        gloss_en: [corn, maize]
+        gloss_zh: [番麥, 玉米]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

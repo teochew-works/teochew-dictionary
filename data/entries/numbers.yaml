@@ -1308,3 +1308,39 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: bhou2-畝
+    headword: 畝
+    readings:
+      - pengim: bhou2
+    senses:
+      - pos: classifier
+        gloss_en: ["mu (unit of land area, ~667 m²)"]
+        gloss_zh: [畝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-gian2-bê2-番囝碼
+    headword: 番囝碼
+    readings:
+      - pengim: huang1 gian2 bê2
+    senses:
+      - pos: noun
+        gloss_en: [Arabic numeral]
+        gloss_zh: [阿拉伯数字]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-bê2-gian2-番碼囝
+    headword: 番碼囝
+    readings:
+      - pengim: huang1 bê2 gian2
+    senses:
+      - pos: noun
+        gloss_en: [Arabic numeral]
+        gloss_zh: [阿拉伯数字]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

@@ -1752,3 +1752,239 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: gêg4-su3-激素
+    headword: 激素
+    readings:
+      - pengim: gêg4 su3
+    senses:
+      - pos: noun
+        gloss_en: [hormone]
+        gloss_zh: [激素]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-cên1-烏青
+    headword: 烏青
+    readings:
+      - pengim: ou1 cên1
+    senses:
+      - pos: noun
+        gloss_en: [bruise; hematoma; black-and-blue mark]
+        gloss_zh: [烏青]
+        note: Shares this reading with a separate adjective sense ('dark blue; blue-black'); picked the noun 'bruise' sense as the more common colloquial usage.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sio1-sion1-燒傷
+    headword: 燒傷
+    readings:
+      - pengim: sio1 sion1
+    senses:
+      - pos: noun
+        gloss_en: [burn (injury)]
+        gloss_zh: [燒傷]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghê5-bho2-牙母
+    headword: 牙母
+    readings:
+      - pengim: ghê5 bho2
+    senses:
+      - pos: noun
+        gloss_en: [molar]
+        gloss_zh: [牙母]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghê5-tao5-bho2-牙頭母
+    headword: 牙頭母
+    readings:
+      - pengim: ghê5 tao5 bho2
+    senses:
+      - pos: noun
+        gloss_en: [molar]
+        gloss_zh: [牙母]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghu5-gag4-牛角
+    headword: 牛角
+    readings:
+      - pengim: ghu5 gag4
+    senses:
+      - pos: noun
+        gloss_en: [cow horn, ox horn]
+        gloss_zh: [牛角]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou5-lai5-zoin2-狐狸指
+    headword: 狐狸指
+    readings:
+      - pengim: hou5 lai5 zoin2
+    senses:
+      - pos: noun
+        gloss_en: [ring finger]
+        gloss_zh: [狐狸指]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu5-hiun3-狐臭
+    headword: 狐臭
+    readings:
+      - pengim: hu5 hiun3
+    senses:
+      - pos: noun
+        gloss_en: [body odour (especially underarm)]
+        gloss_zh: [狐臭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao2-ki2-狗齒
+    headword: 狗齒
+    readings:
+      - pengim: gao2 ki2
+    senses:
+      - pos: noun
+        gloss_en: [canine tooth, cuspid]
+        gloss_zh: [狗齒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diam5-rio7-甜尿
+    headword: 甜尿
+    readings:
+      - pengim: diam5 rio7
+    senses:
+      - pos: noun
+        gloss_en: [sweet urine, "diabetes (colloquial, short for 甜尿病)"]
+        gloss_zh: [甜尿, 糖尿病]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diam5-rio7-bên7-甜尿病
+    headword: 甜尿病
+    readings:
+      - pengim: diam5 rio7 bên7
+    senses:
+      - pos: noun
+        gloss_en: [diabetes mellitus, diabetes]
+        gloss_zh: [甜尿病, 糖尿病]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sang3-疝
+    headword: 疝
+    readings:
+      - pengim: sang3
+    senses:
+      - pos: noun
+        gloss_en: [hernia]
+        gloss_zh: [疝]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba1-疤
+    headword: 疤
+    readings:
+      - pengim: ba1
+    senses:
+      - pos: noun
+        gloss_en: [scar, mark]
+        gloss_zh: [疤]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi3-疥
+    headword: 疥
+    readings:
+      - pengim: goi3
+    senses:
+      - pos: noun
+        gloss_en: [scabies, the itch]
+        gloss_zh: [疥]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gam1-zêg4-疳積
+    headword: 疳積
+    readings:
+      - pengim: gam1 zêg4
+    senses:
+      - pos: noun
+        gloss_en: [infantile malnutrition (from digestive disturbances or intestinal parasites), pediatric malnutrition syndrome]
+        gloss_zh: [疳積]
+        note: Specialized traditional-medicine/pediatric term; no dedicated disease/medical category exists so body.yaml was chosen as the closest fit.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zib8-疾
+    headword: 疾
+    readings:
+      - pengim: zib8
+    senses:
+      - pos: noun
+        gloss_en: ["illness, disease (literary)", "swift, hasty (literary)"]
+        gloss_zh: [疾]
+        note: Bound literary morpheme with two divergent senses (illness vs. swift/hasty) sharing the same Teochew reading; noun chosen as primary sense though the 'swift' sense is more adjectival, and category is approximate since no disease-term category exists.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zib8-bên7-疾病
+    headword: 疾病
+    readings:
+      - pengim: zib8 bên7
+    senses:
+      - pos: noun
+        gloss_en: ["disease, illness, disorder"]
+        gloss_zh: [疾病]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bên7-nguang5-kung2-病原菌
+    headword: 病原菌
+    readings:
+      - pengim: bên7 nguang5 kung2
+    senses:
+      - pos: noun
+        gloss_en: ["pathogenic bacteria, germs"]
+        gloss_zh: [病原菌]
+        note: Specialized medical/pathology term; no dedicated science/medical category exists so body.yaml was chosen as the closest fit.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bên7-ing1-病因
+    headword: 病因
+    readings:
+      - pengim: bên7 ing1
+    senses:
+      - pos: noun
+        gloss_en: ["cause of a disease, pathogenesis"]
+        gloss_zh: [病因]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

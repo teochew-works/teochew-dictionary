@@ -1448,3 +1448,117 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: ui5-liao2-為了
+    headword: 為了
+    readings:
+      - pengim: ui5 liao2
+    senses:
+      - pos: preposition
+        gloss_en: [for the sake of; in order to, because of]
+        gloss_zh: [為了]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui5-ho5-為何
+    headword: 為何
+    readings:
+      - pengim: ui5 ho5
+    senses:
+      - pos: adverb
+        gloss_en: [why; for what reason]
+        gloss_zh: [為何]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui5-zi2-為止
+    headword: 為止
+    readings:
+      - pengim: ui5 zi2
+    senses:
+      - pos: preposition
+        gloss_en: [until; up till]
+        gloss_zh: [為止]
+        note: Source tags this word as a postposition, a category not present in our POS list; classified as preposition as the closest functional match.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bho5-lung6-無論
+    headword: 無論
+    readings:
+      - pengim: bho5 lung6
+    senses:
+      - pos: conjunction
+        gloss_en: [no matter (what/how), regardless of; whether]
+        gloss_zh: [無論]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zio3-bain5-照爿
+    headword: 照爿
+    readings:
+      - pengim: zio3 bain5
+    senses:
+      - pos: noun
+        gloss_en: [this side, here (this side of something)]
+        gloss_zh: [照爿]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: re2-爾
+    headword: 爾
+    readings:
+      - pengim: re2
+    senses:
+      - pos: particle
+        gloss_en: [only; that's all (sentence-final particle)]
+        gloss_zh: [爾]
+        note: Several senses (literary pronoun 'you', literary particle, Hokkien-tagged 'only/that's all') share the same reading; chose the particle sense as most plausible for colloquial Teochew but this is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sim6-zi3-甚至
+    headword: 甚至
+    readings:
+      - pengim: sim6 zi3
+    senses:
+      - pos: conjunction
+        gloss_en: [even; even if, go so far as to, to the extent that]
+        gloss_zh: [甚至]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-由
+    headword: 由
+    readings:
+      - pengim: iu5
+    senses:
+      - pos: preposition
+        gloss_en: [from; via, because of; due to, by means of]
+        gloss_zh: [由]
+        note: The character carries many closely related function-word senses (cause, from, by, through, to follow) under the same reading, so the boundary between its preposition, conjunction, and verb uses is not sharp.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-i1-由於
+    headword: 由於
+    readings:
+      - pengim: iu5 i1
+    senses:
+      - pos: conjunction
+        gloss_en: [because; since, due to; owing to]
+        gloss_zh: [由於]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

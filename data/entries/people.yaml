@@ -8092,3 +8092,853 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: iu5-kêg4-dui7-游擊隊
+    headword: 游擊隊
+    readings:
+      - pengim: iu5 kêg4 dui7
+    senses:
+      - pos: noun
+        gloss_en: [guerrilla force, guerrilla detachment]
+        gloss_zh: [游擊隊]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-滕
+    headword: 滕
+    readings:
+      - pengim: têng5
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname, name of an ancient state in Shandong]
+        gloss_zh: [滕]
+        note: The same reading covers both a surname sense and an ancient-state-name sense; the surname was chosen as primary, placing it under people.yaml rather than places.yaml.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: muan2-hang3-滿漢
+    headword: 滿漢
+    readings:
+      - pengim: muan2 hang3
+    senses:
+      - pos: noun
+        gloss_en: [Manchus and Han Chinese]
+        gloss_zh: [滿漢]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he5-ming5-漁民
+    headword: 漁民
+    readings:
+      - pengim: he5 ming5
+    senses:
+      - pos: noun
+        gloss_en: [fishermen, fisherfolk]
+        gloss_zh: [漁民]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing5-uang5-演員
+    headword: 演員
+    readings:
+      - pengim: ing5 uang5
+    senses:
+      - pos: noun
+        gloss_en: [actor; performer]
+        gloss_zh: [演員]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang3-漢
+    headword: 漢
+    readings:
+      - pengim: hang3
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Han (Chinese ethnicity, dynasty, or China itself)", man; fellow]
+        gloss_zh: [漢]
+        note: The character page bundles many senses under one reading (Han dynasty/ethnicity/China, colloquial 'man/fellow', dialectal 'husband', assorted rare technical meanings); the core Han/China sense was picked as primary.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang3-ring5-漢人
+    headword: 漢人
+    readings:
+      - pengim: hang3 ring5
+    senses:
+      - pos: noun
+        gloss_en: [Han Chinese person, Han Chinese people]
+        gloss_zh: [漢人]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang3-zog8-漢族
+    headword: 漢族
+    readings:
+      - pengim: hang3 zog8
+    senses:
+      - pos: noun
+        gloss_en: [Han Chinese ethnic group]
+        gloss_zh: [漢族]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dio5-rêng5-潮人
+    headword: 潮人
+    readings:
+      - pengim: dio5 rêng5
+    senses:
+      - pos: noun
+        gloss_en: [Teochew person]
+        gloss_zh: [潮人]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-diên2-火長
+    headword: 火長
+    readings:
+      - pengim: huê2 diên2
+    senses:
+      - pos: noun
+        gloss_en: [captain of a steamship]
+        gloss_zh: [火長]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-tao5-gung1-火頭軍
+    headword: 火頭軍
+    readings:
+      - pengim: huê2 tao5 gung1
+    senses:
+      - pos: noun
+        gloss_en: [army cook, canteen cook]
+        gloss_zh: [火頭軍]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê1-gang1-灰工
+    headword: 灰工
+    readings:
+      - pengim: huê1 gang1
+    senses:
+      - pos: noun
+        gloss_en: [bricklayer, plasterer, tiler]
+        gloss_zh: [灰工]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zao3-gung1-灶君
+    headword: 灶君
+    readings:
+      - pengim: zao3 gung1
+    senses:
+      - pos: noun
+        gloss_en: [kitchen god]
+        gloss_zh: [灶君]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zao3-sing5-灶神
+    headword: 灶神
+    readings:
+      - pengim: zao3 sing5
+    senses:
+      - pos: noun
+        gloss_en: [kitchen god]
+        gloss_zh: [灶神, 灶君]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-huang1-烏番
+    headword: 烏番
+    readings:
+      - pengim: ou1 huang1
+    senses:
+      - pos: noun
+        gloss_en: [black person (dated term)]
+        gloss_zh: [烏番]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-san1-duan3-烏衫旦
+    headword: 烏衫旦
+    readings:
+      - pengim: ou1 san1 duan3
+    senses:
+      - pos: noun
+        gloss_en: ["black-robed dan (Chaozhou opera role type for a strong-willed, cultured woman)"]
+        gloss_zh: [烏衫旦]
+        note: Highly specialized traditional-opera role-type term, limited to a niche technical register.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-ming7-nang5-烏面人
+    headword: 烏面人
+    readings:
+      - pengim: ou1 ming7 nang5
+    senses:
+      - pos: noun
+        gloss_en: [(dated) black person]
+        gloss_zh: [黑人]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-gui2-烏鬼
+    headword: 烏鬼
+    readings:
+      - pengim: ou1 gui2
+    senses:
+      - pos: noun
+        gloss_en: ["(dated, derogatory) black person, African", (literary) Japanese cormorant]
+        gloss_zh: [黑人]
+        note: Shares this reading with an unrelated 'Japanese cormorant' sense; the dialect-tagged sense here is a dated/derogatory historical term for a black person, glossed neutrally as Wiktionary does.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziao3-gu3-zia2-照顧者
+    headword: 照顧者
+    readings:
+      - pengim: ziao3 gu3 zia2
+    senses:
+      - pos: noun
+        gloss_en: [carer, caregiver, caretaker]
+        gloss_zh: [照顧者]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: him5-hai6-ze2-熊孩子
+    headword: 熊孩子
+    readings:
+      - pengim: him5 hai6 ze2
+    senses:
+      - pos: noun
+        gloss_en: [naughty child, brat]
+        gloss_zh: [熊孩子]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêg8-huêng1-熟番
+    headword: 熟番
+    readings:
+      - pengim: sêg8 huêng1
+    senses:
+      - pos: noun
+        gloss_en: [sinicized ethnic minority (historical term)]
+        gloss_zh: [熟番]
+        note: Historical/ethnographic term (chiefly Taiwan aboriginal context) for assimilated indigenous groups; gloss follows Wiktionary's plain historical definition but the term's specialized and potentially sensitive nature warrants review.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bê6-ri5-bho2-gian2-父兒母囝
+    headword: 父兒母囝
+    readings:
+      - pengim: bê6 ri5 bho2 gian2
+    senses:
+      - pos: phrase
+        gloss_en: ["husband, wife and children; the whole family"]
+        gloss_zh: [父兒母囝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bê6-ai5-父嬡
+    headword: 父嬡
+    readings:
+      - pengim: bê6 ai5
+    senses:
+      - pos: noun
+        gloss_en: [parents; father and mother]
+        gloss_zh: [父母]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bê6-bho2-父母
+    headword: 父母
+    readings:
+      - pengim: bê6 bho2
+    senses:
+      - pos: noun
+        gloss_en: [parents, mother and father]
+        gloss_zh: [父母]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bê6-bho2-guan1-父母官
+    headword: 父母官
+    readings:
+      - pengim: bê6 bho2 guan1
+    senses:
+      - pos: noun
+        gloss_en: [local official (archaic)]
+        gloss_zh: [父母官]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bê6-bho2-爸母
+    headword: 爸母
+    readings:
+      - pengim: bê6 bho2
+    senses:
+      - pos: noun
+        gloss_en: [father and mother; parents]
+        gloss_zh: [父母]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba5-ba5-爸爸
+    headword: 爸爸
+    readings:
+      - pengim: ba5 ba5
+    senses:
+      - pos: noun
+        gloss_en: [dad, papa]
+        gloss_zh: [爸爸]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bê6-cing1-爸親
+    headword: 爸親
+    readings:
+      - pengim: bê6 cing1
+    senses:
+      - pos: noun
+        gloss_en: [father]
+        gloss_zh: [父親]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dia1-爹
+    headword: 爹
+    readings:
+      - pengim: dia1
+    senses:
+      - pos: noun
+        gloss_en: [father; dad (colloquial)]
+        gloss_zh: [爹]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ia5-爺
+    headword: 爺
+    readings:
+      - pengim: ia5
+    senses:
+      - pos: noun
+        gloss_en: [father (dialectal), grandfather, sir (term of address for an elderly man)]
+        gloss_zh: [爺]
+        note: Wiktionary lists several dialectal senses (father, grandfather, honorific 'sir') under the same character/reading without pinning down which applies specifically in Teochew.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghê5-ui1-牙醫
+    headword: 牙醫
+    readings:
+      - pengim: ghê5 ui1
+    senses:
+      - pos: noun
+        gloss_en: [dentist]
+        gloss_zh: [牙醫]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mog8-se1-牧師
+    headword: 牧師
+    readings:
+      - pengim: mog8 se1
+    senses:
+      - pos: noun
+        gloss_en: [pastor, minister, reverend]
+        gloss_zh: [牧師]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mog8-ming5-牧民
+    headword: 牧民
+    readings:
+      - pengim: mog8 ming5
+    senses:
+      - pos: noun
+        gloss_en: [herdsman, grazier]
+        gloss_zh: [牧民]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang6-ring5-犯人
+    headword: 犯人
+    readings:
+      - pengim: huang6 ring5
+    senses:
+      - pos: noun
+        gloss_en: [criminal, convict; prisoner]
+        gloss_zh: [犯人]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zo6-nguang5-狀元
+    headword: 狀元
+    readings:
+      - pengim: zo6 nguang5
+    senses:
+      - pos: noun
+        gloss_en: [zhuangyuan; top scorer in an examination, valedictorian; top performer in a field]
+        gloss_zh: [狀元]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêg8-狄
+    headword: 狄
+    readings:
+      - pengim: dêg8
+    senses:
+      - pos: proper-noun
+        gloss_en: [the Di people (ancient northern tribe), a surname]
+        gloss_zh: [狄]
+        note: The character carries several distinct senses (ancient ethnonym, surname, obsolete meanings, alternative form of 翟) and it is unclear which is intended without more context.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou5-lai5-zian1-狐狸精
+    headword: 狐狸精
+    readings:
+      - pengim: hou5 lai5 zian1
+    senses:
+      - pos: noun
+        gloss_en: [fox spirit, seductress; homewrecker (derogatory)]
+        gloss_zh: [狐狸精]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang5-sung1-玄孫
+    headword: 玄孫
+    readings:
+      - pengim: hiang5 sung1
+    senses:
+      - pos: noun
+        gloss_en: [great-great-grandson, distant descendant]
+        gloss_zh: [玄孫]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghêg8-huang5-dai6-di3-玉皇大帝
+    headword: 玉皇大帝
+    readings:
+      - pengim: ghêg8 huang5 dai6 di3
+    senses:
+      - pos: proper-noun
+        gloss_en: [the Jade Emperor (supreme deity in Chinese folk religion and Taoism)]
+        gloss_zh: [玉皇大帝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang5-ia5-王爺
+    headword: 王爺
+    readings:
+      - pengim: uang5 ia5
+    senses:
+      - pos: noun
+        gloss_en: [honorific title for a deity, prince (archaic term of address)]
+        gloss_zh: [王爺]
+        note: Multiple senses share this reading (an honorific title for a deity, an archaic term for a prince, and an adjectival sense 'tyrannical/domineering') with inconsistent dialect tagging across sources, so it is unclear which sense is primary in Teochew usage.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang5-zia2-王者
+    headword: 王者
+    readings:
+      - pengim: uang5 zia2
+    senses:
+      - pos: noun
+        gloss_en: [king, monarch, sovereign]
+        gloss_zh: [王者]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang1-zu2-rim6-班主任
+    headword: 班主任
+    readings:
+      - pengim: bang1 zu2 rim6
+    senses:
+      - pos: noun
+        gloss_en: [homeroom teacher, class teacher]
+        gloss_zh: [班主任]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang1-ziang2-班長
+    headword: 班長
+    readings:
+      - pengim: bang1 ziang2
+    senses:
+      - pos: noun
+        gloss_en: [class monitor, squad leader, team leader]
+        gloss_zh: [班長]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ke5-璩
+    headword: 璩
+    readings:
+      - pengim: ke5
+    senses:
+      - pos: proper-noun
+        gloss_en: [surname (Qu)]
+        gloss_zh: [璩]
+        note: The page also gives a literary 'jade ring/earring' noun sense at the same reading; in practice this character today is almost exclusively used as a surname.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-hung7-nang5-生份人
+    headword: 生份人
+    readings:
+      - pengim: cên1 hung7 nang5
+    senses:
+      - pos: noun
+        gloss_en: [stranger]
+        gloss_zh: [生份人, 陌生人]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sên1-i5-生姨
+    headword: 生姨
+    readings:
+      - pengim: sên1 i5
+    senses:
+      - pos: noun
+        gloss_en: [midwife]
+        gloss_zh: [生姨, 接生婆]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sên1-bho2-生母
+    headword: 生母
+    readings:
+      - pengim: sên1 bho2
+    senses:
+      - pos: noun
+        gloss_en: [biological mother]
+        gloss_zh: [生母]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sên1-uah8-kuang1-生活圈
+    headword: 生活圈
+    readings:
+      - pengim: sên1 uah8 kuang1
+    senses:
+      - pos: noun
+        gloss_en: [community, social circle, friend circle]
+        gloss_zh: [生活圈]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-huêng1-生番
+    headword: 生番
+    readings:
+      - pengim: cên1 huêng1
+    senses:
+      - pos: noun
+        gloss_en: ["barbarian; savage (dated, derogatory)", uncivilized or unreasonable person (derogatory)]
+        gloss_zh: [生番]
+        note: Dated and derogatory ethnic term with several closely related senses (barbarian, member of a non-sinicized ethnic minority, uncivilized/insolent person) combined into one gloss; flagging for careful human review given the sensitive nature.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan2-hu6-產婦
+    headword: 產婦
+    readings:
+      - pengim: suan2 hu6
+    senses:
+      - pos: noun
+        gloss_en: [woman in childbirth, postpartum woman]
+        gloss_zh: [產婦]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng1-甥
+    headword: 甥
+    readings:
+      - pengim: sêng1
+    senses:
+      - pos: noun
+        gloss_en: [nephew or niece through one's sister]
+        gloss_zh: [甥, 外甥]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êng7-hou6-用戶
+    headword: 用戶
+    readings:
+      - pengim: êng7 hou6
+    senses:
+      - pos: noun
+        gloss_en: [user, customer, subscriber]
+        gloss_zh: [用戶]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang5-zu2-田主
+    headword: 田主
+    readings:
+      - pengim: cang5 zu2
+    senses:
+      - pos: noun
+        gloss_en: [landowner]
+        gloss_zh: [田主, 地主]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-neng2-男女
+    headword: 男女
+    readings:
+      - pengim: lam5 neng2
+    senses:
+      - pos: noun
+        gloss_en: [men and women, both sexes]
+        gloss_zh: [男女]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-sên3-男性
+    headword: 男性
+    readings:
+      - pengim: lam5 sên3
+    senses:
+      - pos: noun
+        gloss_en: [male, man]
+        gloss_zh: [男性]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-pêng5-iu2-男朋友
+    headword: 男朋友
+    readings:
+      - pengim: lam5 pêng5 iu2
+    senses:
+      - pos: noun
+        gloss_en: [boyfriend]
+        gloss_zh: [男朋友]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nam5-sêng1-男生
+    headword: 男生
+    readings:
+      - pengim: nam5 sêng1
+    senses:
+      - pos: noun
+        gloss_en: [schoolboy; male student, boy; young male]
+        gloss_zh: [男生]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-hag8-sêng1-留學生
+    headword: 留學生
+    readings:
+      - pengim: liu5 hag8 sêng1
+    senses:
+      - pos: noun
+        gloss_en: [international student; student studying abroad]
+        gloss_zh: [留學生]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: big8-ngiab8-sêng1-畢業生
+    headword: 畢業生
+    readings:
+      - pengim: big8 ngiab8 sêng1
+    senses:
+      - pos: noun
+        gloss_en: [graduate; graduating student]
+        gloss_zh: [畢業生]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-gian2-番囝
+    headword: 番囝
+    readings:
+      - pengim: huang1 gian2
+    senses:
+      - pos: noun
+        gloss_en: [foreigner, Westerner]
+        gloss_zh: [番囝, 外國人]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-gian2-gui2-番囝鬼
+    headword: 番囝鬼
+    readings:
+      - pengim: huang1 gian2 gui2
+    senses:
+      - pos: noun
+        gloss_en: ["foreigner, especially a Westerner"]
+        gloss_zh: [番囝鬼]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-pua5-番婆
+    headword: 番婆
+    readings:
+      - pengim: huang1 pua5
+    senses:
+      - pos: noun
+        gloss_en: [foreign woman, foreign wife of an overseas Chinese]
+        gloss_zh: [番婆, 外國女人]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-kêh4-番客
+    headword: 番客
+    readings:
+      - pengim: huang1 kêh4
+    senses:
+      - pos: noun
+        gloss_en: [overseas Chinese returnee, foreign resident (historical)]
+        gloss_zh: [番客, 歸僑]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-gui2-番鬼
+    headword: 番鬼
+    readings:
+      - pengim: huang1 gui2
+    senses:
+      - pos: noun
+        gloss_en: ["foreigner, especially a Westerner (derogatory)"]
+        gloss_zh: [番鬼, 洋鬼子]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i6-sên3-異性
+    headword: 異性
+    readings:
+      - pengim: i6 sên3
+    senses:
+      - pos: noun
+        gloss_en: [the opposite sex]
+        gloss_zh: [異性]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sia5-畲
+    headword: 畲
+    readings:
+      - pengim: sia5
+    senses:
+      - pos: proper-noun
+        gloss_en: [She (ethnic group)]
+        gloss_zh: [畲族]
+        note: The dossier lists two equally-reading senses for 畲 ("She people" ethnonym vs. an alternative form of 畬 "slash-and-burn farmland", now mostly in place names); the ethnonym sense was chosen as the more independently recognizable meaning.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: deng1-se7-nang5-當事人
+    headword: 當事人
+    readings:
+      - pengim: deng1 se7 nang5
+    senses:
+      - pos: noun
+        gloss_en: [person involved; person implicated, party (in a legal case)]
+        gloss_zh: [當事人]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bên7-ring5-病人
+    headword: 病人
+    readings:
+      - pengim: bên7 ring5
+    senses:
+      - pos: noun
+        gloss_en: ["patient, invalid, sick person"]
+        gloss_zh: [病人]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bên7-iu2-病友
+    headword: 病友
+    readings:
+      - pengim: bên7 iu2
+    senses:
+      - pos: noun
+        gloss_en: ["wardmate, fellow patient, person sharing a medical condition"]
+        gloss_zh: [病友]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
