@@ -1,7 +1,7 @@
-import { existsSync, mkdirSync, renameSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, lstatSync, mkdirSync, readlinkSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-import { WIKTIONARY_PAGE_CACHE_DIR } from '../paths.js'
+import { CACHE_DIR, WIKTIONARY_PAGE_CACHE_DIR } from '../paths.js'
 import { fetchWikitextResult, type WikitextResult } from './wiktionary.js'
 
 /**
@@ -68,6 +68,45 @@ export function missPath(headword: string, cacheDir: string = WIKTIONARY_PAGE_CA
 /** True once a headword has a settled answer on disk — a page or a miss. */
 export function isCached(headword: string, cacheDir: string = WIKTIONARY_PAGE_CACHE_DIR): boolean {
   return existsSync(pagePath(headword, cacheDir)) || existsSync(missPath(headword, cacheDir))
+}
+
+export type CacheSymlinkStatus =
+  | { valid: true; target: string }
+  | { valid: false; reason: 'missing' | 'not-a-symlink' | 'broken' | 'not-a-directory' }
+
+/**
+ * `CACHE_DIR` (`.cache` at the repo root) is meant to be a symlink out to
+ * wherever the operator actually wants the page cache to live — it can grow
+ * to tens of thousands of files and is worth keeping outside the worktree
+ * (and shared across worktrees of this repo) rather than letting a plain
+ * directory accumulate inside one. The CLI refuses to sync unless that
+ * symlink is genuinely there and resolves, rather than silently creating a
+ * real directory in its place — see `assertCacheSymlink` in
+ * ../cli/wiktionary-page-cache.js.
+ *
+ * `syncWiktionaryPages` itself stays agnostic to any of this: it takes
+ * whatever `cacheDir` it's given, which is what keeps it testable against a
+ * plain tmp directory. This check is a CLI-level policy, not a property of
+ * the sync logic.
+ */
+export function checkCacheSymlink(cacheDir: string = CACHE_DIR): CacheSymlinkStatus {
+  let linkStat
+  try {
+    linkStat = lstatSync(cacheDir)
+  } catch {
+    return { valid: false, reason: 'missing' }
+  }
+  if (!linkStat.isSymbolicLink()) return { valid: false, reason: 'not-a-symlink' }
+
+  let targetStat
+  try {
+    targetStat = statSync(cacheDir) // follows the symlink
+  } catch {
+    return { valid: false, reason: 'broken' }
+  }
+  if (!targetStat.isDirectory()) return { valid: false, reason: 'not-a-directory' }
+
+  return { valid: true, target: readlinkSync(cacheDir) }
 }
 
 export interface PageCacheResult {

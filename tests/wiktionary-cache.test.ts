@@ -1,9 +1,9 @@
-import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdtempSync, mkdirSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { cacheFileName, isCached, syncWiktionaryPages } from '../src/importers/wiktionary-cache.js'
+import { cacheFileName, checkCacheSymlink, isCached, syncWiktionaryPages } from '../src/importers/wiktionary-cache.js'
 import type { WikitextResult } from '../src/importers/wiktionary.js'
 
 describe('cacheFileName', () => {
@@ -25,6 +25,57 @@ describe('cacheFileName', () => {
   it('encodes the bare relative-path names', () => {
     expect(cacheFileName('.')).toBe('%2E')
     expect(cacheFileName('..')).toBe('%2E%2E')
+  })
+})
+
+describe('checkCacheSymlink', () => {
+  let scratch: string
+
+  beforeEach(() => {
+    scratch = mkdtempSync(join(tmpdir(), 'cache-symlink-'))
+  })
+
+  afterEach(() => {
+    rmSync(scratch, { recursive: true, force: true })
+  })
+
+  it('reports missing when nothing exists at the path', () => {
+    const status = checkCacheSymlink(join(scratch, 'nope'))
+    expect(status).toEqual({ valid: false, reason: 'missing' })
+  })
+
+  it('reports not-a-symlink for a plain directory', () => {
+    const dir = join(scratch, 'plain')
+    mkdirSync(dir)
+    expect(checkCacheSymlink(dir)).toEqual({ valid: false, reason: 'not-a-symlink' })
+  })
+
+  it('reports not-a-symlink for a plain file', () => {
+    const file = join(scratch, 'plain-file')
+    writeFileSync(file, '')
+    expect(checkCacheSymlink(file)).toEqual({ valid: false, reason: 'not-a-symlink' })
+  })
+
+  it('reports broken for a symlink whose target does not exist', () => {
+    const link = join(scratch, 'broken-link')
+    symlinkSync(join(scratch, 'does-not-exist'), link)
+    expect(checkCacheSymlink(link)).toEqual({ valid: false, reason: 'broken' })
+  })
+
+  it('reports not-a-directory for a symlink that resolves to a file', () => {
+    const file = join(scratch, 'a-file')
+    writeFileSync(file, '')
+    const link = join(scratch, 'link-to-file')
+    symlinkSync(file, link)
+    expect(checkCacheSymlink(link)).toEqual({ valid: false, reason: 'not-a-directory' })
+  })
+
+  it('is valid for a symlink that resolves to a real directory', () => {
+    const target = join(scratch, 'target')
+    mkdirSync(target)
+    const link = join(scratch, 'link')
+    symlinkSync(target, link)
+    expect(checkCacheSymlink(link)).toEqual({ valid: true, target })
   })
 })
 
