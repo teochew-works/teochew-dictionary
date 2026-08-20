@@ -1398,3 +1398,53 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: geng1-ge6-根據
+    headword: 根據
+    readings:
+      - pengim: geng1 ge6
+    senses:
+      - pos: preposition
+        gloss_en: [according to, based on]
+        gloss_zh: [根據]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guêh8-橛
+    headword: 橛
+    readings:
+      - pengim: guêh8
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for sections/segments of something long]
+        gloss_zh: [橛]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: m6-bag4-毋捌
+    headword: 毋捌
+    readings:
+      - pengim: m6 bag4
+    senses:
+      - pos: adverb
+        gloss_en: [never (done before), have not (ever experienced)]
+        gloss_zh: [毋捌]
+        note: The page gives two closely related Southern Min senses under this reading — an experiential-negation adverb ('never done before') and a verb ('to not recognize') — and it is not fully clear which one the given Teochew reading is meant to represent, though the adverbial sense is the more common colloquial usage.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing5-dioh8-沿著
+    headword: 沿著
+    readings:
+      - pengim: ing5 dioh8
+    senses:
+      - pos: preposition
+        gloss_en: [along, following (a route)]
+        gloss_zh: [沿著]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

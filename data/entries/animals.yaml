@@ -672,3 +672,199 @@ entries:
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: gou1-sing5-枯蠅
+    headword: 枯蠅
+    readings:
+      - pengim: gou1 sing5
+    senses:
+      - pos: noun
+        gloss_en: [aphid]
+        gloss_zh: [蚜蟲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gan1-iên5-柑蛘
+    headword: 柑蛘
+    readings:
+      - pengim: gan1 iên5
+    senses:
+      - pos: noun
+        gloss_en: [longhorn beetle, longicorn]
+        gloss_zh: [天牛]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuê5-huê1-dêg8-梅花鹿
+    headword: 梅花鹿
+    readings:
+      - pengim: bhuê5 huê1 dêg8
+    senses:
+      - pos: noun
+        gloss_en: [sika deer]
+        gloss_zh: [梅花鹿]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tag4-toh8-橐駝
+    headword: 橐駝
+    readings:
+      - pengim: tag4 toh8
+    senses:
+      - pos: noun
+        gloss_en: [camel (archaic/classical term)]
+        gloss_zh: [橐駝, 駱駝]
+        note: Classical Chinese term with two distinct senses (camel; age-related hunchback) and no dialect-specific labeling tying the given reading to one particular sense, so the camel sense was chosen as the more prominent meaning.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zin5-lêng5-檐龍
+    headword: 檐龍
+    readings:
+      - pengim: zin5 lêng5
+    senses:
+      - pos: noun
+        gloss_en: [gecko, house lizard]
+        gloss_zh: [檐龍, 壁虎]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi2-mag8-he5-比目魚
+    headword: 比目魚
+    readings:
+      - pengim: bi2 mag8 he5
+    senses:
+      - pos: noun
+        gloss_en: [flatfish]
+        gloss_zh: [比目魚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-ghu5-水牛
+    headword: 水牛
+    readings:
+      - pengim: zui2 ghu5
+    senses:
+      - pos: noun
+        gloss_en: [water buffalo, buffalo]
+        gloss_zh: [水牛]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-tuah4-水獺
+    headword: 水獺
+    readings:
+      - pengim: zui2 tuah4
+    senses:
+      - pos: noun
+        gloss_en: [otter]
+        gloss_zh: [水獺]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-goi1-水雞
+    headword: 水雞
+    readings:
+      - pengim: zui2 goi1
+    senses:
+      - pos: noun
+        gloss_en: [frog]
+        gloss_zh: [水雞, 青蛙]
+        note: The Wiktionary page lists many dialect-specific senses for 水雞 (frog, duck, turtle, rail bird, etc.); 'frog' was chosen as the literary/dialectal sense most consistent with Southern Min usage, but a Teochew-specific confirmation is not separately given.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zui2-he5-水魚
+    headword: 水魚
+    readings:
+      - pengim: zui2 he5
+    senses:
+      - pos: noun
+        gloss_en: [soft-shell turtle]
+        gloss_zh: [水魚, 甲魚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sua1-dêng1-he5-沙丁魚
+    headword: 沙丁魚
+    readings:
+      - pengim: sua1 dêng1 he5
+    senses:
+      - pos: noun
+        gloss_en: [sardine]
+        gloss_zh: [沙丁魚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sua1-hê5-沙蝦
+    headword: 沙蝦
+    readings:
+      - pengim: sua1 hê5
+    senses:
+      - pos: noun
+        gloss_en: [Chinese white shrimp, fleshy prawn]
+        gloss_zh: [沙蝦]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-tuah4-海獺
+    headword: 海獺
+    readings:
+      - pengim: hai2 tuah4
+    senses:
+      - pos: noun
+        gloss_en: [sea otter]
+        gloss_zh: [海獺]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-tung5-海豚
+    headword: 海豚
+    readings:
+      - pengim: hai2 tung5
+    senses:
+      - pos: noun
+        gloss_en: [dolphin]
+        gloss_zh: [海豚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-de1-海豬
+    headword: 海豬
+    readings:
+      - pengim: hai2 de1
+    senses:
+      - pos: noun
+        gloss_en: [dolphin (dialectal)]
+        gloss_zh: [海豬, 海豚]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai2-bhê2-海馬
+    headword: 海馬
+    readings:
+      - pengim: hai2 bhê2
+    senses:
+      - pos: noun
+        gloss_en: [seahorse]
+        gloss_zh: [海馬]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

@@ -941,3 +941,51 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: mong2-nang5-某人
+    headword: 某人
+    readings:
+      - pengim: mong2 nang5
+    senses:
+      - pos: pronoun
+        gloss_en: [somebody, someone]
+        gloss_zh: [某人]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ce2-此
+    headword: 此
+    readings:
+      - pengim: ce2
+    senses:
+      - pos: pronoun
+        gloss_en: [this, here]
+        gloss_zh: [此]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: muê2-每
+    headword: 每
+    readings:
+      - pengim: muê2
+    senses:
+      - pos: pronoun
+        gloss_en: [every, each]
+        gloss_zh: [每]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ke5-渠
+    headword: 渠
+    readings:
+      - pengim: ke5
+    senses:
+      - pos: pronoun
+        gloss_en: [he, she, it]
+        gloss_zh: [渠]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

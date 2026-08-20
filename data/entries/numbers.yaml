@@ -1294,3 +1294,17 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: bhuê5-枚
+    headword: 枚
+    readings:
+      - pengim: bhuê5
+    senses:
+      - pos: classifier
+        gloss_en: ["classifier for small flat objects (coins, stamps, medals)", "generic counter: piece"]
+        gloss_zh: [枚]
+        note: No category file is dedicated to classifiers; placed under numbers.yaml as the closest fit since classifiers pair with numerals.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
