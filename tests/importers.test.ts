@@ -1,8 +1,8 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { parseCedict } from '../src/importers/cedict.js'
 import { parsePronunciationHtml } from '../src/importers/learnteochew.js'
-import { extractTeochewReadings, importWiktionary } from '../src/importers/wiktionary.js'
+import { extractTeochewReadings, fetchWikitextResult, importWiktionary } from '../src/importers/wiktionary.js'
 
 describe('parseCedict', () => {
   const sample = [
@@ -91,6 +91,36 @@ describe('importWiktionary', () => {
   it('stamps provenance on every proposal', async () => {
     const r = await importWiktionary(['潮州'], '2026-07-25', opts)
     expect(r.proposals[0]).toMatchObject({ source: 'wiktionary', retrieved: '2026-07-25' })
+  })
+})
+
+describe('fetchWikitextResult', () => {
+  afterEach(() => vi.unstubAllGlobals())
+
+  function stub(body: unknown, status = 200): void {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response(JSON.stringify(body), { status })))
+  }
+
+  it('returns the wikitext of a page that exists', async () => {
+    stub({ parse: { title: '潮州', wikitext: '==Chinese==' } })
+    expect(await fetchWikitextResult('潮州')).toEqual({ status: 'ok', wikitext: '==Chinese==' })
+  })
+
+  it("reports a title Wiktionary has no page for as missing, not as an error", async () => {
+    // Confirmed live: the API answers HTTP 200 with an error body here, so the
+    // status code alone cannot be used to tell these two cases apart.
+    stub({ error: { code: 'missingtitle', info: "The page you specified doesn't exist." } })
+    expect(await fetchWikitextResult('無此字')).toEqual({ status: 'missing' })
+  })
+
+  it('reports a server failure as an error, so callers can retry it', async () => {
+    stub({}, 503)
+    expect(await fetchWikitextResult('潮州')).toMatchObject({ status: 'error' })
+  })
+
+  it('reports a transport failure as an error rather than throwing', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('socket hang up')))
+    expect(await fetchWikitextResult('潮州')).toEqual({ status: 'error', message: 'socket hang up' })
   })
 })
 

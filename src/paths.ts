@@ -22,3 +22,12 @@ export const WORDLISTS_DIR = join(DATA_DIR, 'wordlists')
 export const SYLLABLE_INVENTORY_FILE = join(WORDLISTS_DIR, 'syllable-inventory.yaml')
 export const WIKTIONARY_WORDLIST_FILE = join(WORDLISTS_DIR, 'wiktionary-teochew-index.yaml')
 export const DIST_DIR = join(ROOT, 'dist')
+
+/**
+ * Scratch space for anything fetched from a live site that is neither part of
+ * the dataset nor a build artifact. Gitignored, and safe to delete wholesale —
+ * every command that writes here can refetch what it lost.
+ */
+export const CACHE_DIR = join(ROOT, '.cache')
+/** Raw Wiktionary wikitext, one file per headword (issue #79). */
+export const WIKTIONARY_PAGE_CACHE_DIR = join(CACHE_DIR, 'wiktionary-pages')

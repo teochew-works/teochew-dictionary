@@ -137,6 +137,9 @@ src/
   importers/                 CC-CEDICT, Wiktionary, Learn Teochew
   cli/                       the npm-script entry points
 
+.cache/                    ← generated, gitignored
+  wiktionary-pages/          raw Wiktionary wikitext, one file per headword
+
 dist/                      ← generated, gitignored
   dict.json                  everything, enriched
   dict.ndjson                one entry per line, for streaming
@@ -289,6 +292,79 @@ npm run xref -- learnteochew
 which caches `data/phonology/external/learnteochew.yaml` — network access
 stays confined to that command, same as `npm run import`. See
 `data/phonology/REVIEW.md` § 10 for the design and its known caveats.
+
+### Caching Wiktionary pages locally (issue #79)
+
+The hand-merge below reads each candidate's Wiktionary page to write its
+gloss, and the audit pass then reads the same page again to check the result.
+Those fetches are the bulk of the cost, and none of them survive an
+interruption — a subagent that dies halfway through a batch re-downloads
+everything on retry.
+
+**One-time setup:** `.cache` must be a symlink to wherever you want the page
+cache to actually live (it grows to tens of thousands of small files, so it's
+worth keeping outside any one worktree, and shared across every worktree of
+this repo, rather than accumulating separately inside each):
+
+```bash
+ln -s /path/to/your/wiktionary-page-cache .cache
+```
+
+The command refuses to run rather than silently creating a plain directory in
+its place if `.cache` is missing, isn't a symlink, or is a symlink whose
+target doesn't exist or isn't a directory — with one exception: a fresh `git
+worktree` of this repo starts with no `.cache` of its own, so if the main
+checkout already has a working `.cache` symlink, the command mirrors it into
+the new worktree automatically rather than making that a manual step every
+time a worktree is created.
+
+```bash
+npm run cache:wiktionary
+```
+
+downloads every headword's raw wikitext to `.cache/wiktionary-pages/` over
+plain HTTP, no model involved, so the expensive reasoning step is no longer
+welded to the flaky network one. It caches **every** headword in
+`wiktionary-teochew-index.yaml` whatever its `status`, not just the `staged`
+ones: an already-merged `existing` entry is exactly what a later re-verification
+pass needs its source page for.
+
+State is the filenames, so there is no manifest to drift out of sync with the
+directory:
+
+```
+.cache/wiktionary-pages/
+  潮州.wikitext        the page, raw and unextracted
+  無此字.miss          empty marker: asked, and there is no such page
+```
+
+A *failed request* writes neither, deliberately — recording a network blip as a
+permanent miss would mean never retrying it.
+
+```bash
+npm run cache:wiktionary -- --resume            # only fetch what is not on disk yet
+npm run cache:wiktionary -- --resume --limit=500  # ...500 *new* pages, not 500 skips
+npm run cache:wiktionary -- --delay=200 --concurrency=4
+npm run cache:wiktionary -- 挪威 挫折              # ad-hoc, bypassing the wordlist
+```
+
+`--resume` (alias `--continue`) is the mode a long sync gets re-invoked with
+after a `Ctrl-C`, a network blip, or a session limit; without it a run refetches
+and overwrites everything. `--delay` is a rate limit on request *starts* shared
+across all workers rather than a per-worker sleep, so `--concurrency` never
+makes the run hit Wiktionary harder than `--delay` allows.
+
+Expect failures on a run this size, and don't read them as breakage. Most
+requests answer in under a second, but roughly one in ten stalls until it hits
+the 30s timeout; those are reported as failures and left *uncached*, precisely
+so `--resume` retries them rather than a dead connection being memorialised as
+"no such page". Raising `--concurrency` stops one stall from blocking the queue,
+which is the main reason to bother with it — the measured gain is real but
+erratic. Network-touching, so kept out of `npm run check` like `npm run import`
+and `npm run xref`.
+
+Nothing in the repo reads the cache yet: populating it and teaching the
+drafting/audit passes to prefer it over a live fetch are separate steps.
 
 ### Hand-merging Wiktionary candidates into entries (issue #68)
 
@@ -451,6 +527,7 @@ are, so `check` stays fast, offline, and CI-safe.
 | `npm run inventory` | regenerate `data/wordlists/syllable-inventory.yaml` |
 | `npm run wordlist:wiktionary` | regenerate `data/wordlists/wiktionary-teochew-index.yaml` |
 | `npm run batch:wiktionary -- --limit=N` | list the next Wiktionary merge batch (issue #68) |
+| `npm run cache:wiktionary` | sync Wiktionary wikitext into `.cache/wiktionary-pages/` (issue #79) |
 | `npm run xref -- <source>` | refresh a cached external phonology chart |
 | `npm run audio:verify` | fetch every audio clip and verify its checksum |
 | `npm run schema` | emit the JSON Schemas alone |
