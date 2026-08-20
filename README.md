@@ -396,10 +396,10 @@ English Wiktionary page. `grep '"lang_code": "zh"'` narrows to the
 Chinese-language section of each page (329,257 lines); the second
 `grep '"Teochew"'` narrows further to sections carrying a
 Min-Nan/Teochew/Peng'im-tagged reading in their `sounds` array
-(**32,291 lines**, ~0.3% of the full dump).
+(**32,167 lines**, ~0.3% of the full dump).
 
 **Why two chained greps and not one regex:** `"Teochew"` alone matches
-32,971 lines, but 680 of those aren't Chinese-language sections at all —
+32,373 lines, but 206 of those aren't Chinese-language sections at all —
 English/Hokkien/etc. entries that mention Teochew in etymology or a
 cross-reference, not the dialect-reading tag. Anchoring on both keeps
 precision without a fragile exact-tag-array regex.
@@ -416,7 +416,7 @@ no promise to keep here beyond the commands themselves being a five-minute
 job whenever the local copy is judged stale.
 
 **Disk cost:** `raw-wiktextract-data.jsonl` (~24.5 GB) only needs to exist
-long enough to produce `teochew-relevant.jsonl` (tens of MB) — safe to
+long enough to produce `teochew-relevant.jsonl` (526 MB) — safe to
 delete once the extraction succeeds. Keeping it around is purely a
 convenience for re-running the grep with a different pattern later, not a
 requirement.
@@ -424,6 +424,118 @@ requirement.
 Nothing in the repo reads `teochew-relevant.jsonl` yet: producing it and
 teaching the drafting/audit passes to prefer it over a live fetch are
 separate steps.
+
+### Trimming teochew-relevant.jsonl to the fields that matter (issue #84)
+
+`teochew-relevant.jsonl` is 526 MB over 32,167 lines, and still carries every
+field wiktextract records per entry — most of which has nothing to do with
+writing a gloss for this dictionary. Trimming to the schema below cuts
+**97.4% of the bytes**: measured on a 300-line sample spread evenly across
+the whole file (every ~107th line, not cherry-picked), the average line drops
+from 15,756 bytes to 413, putting the full file at roughly **13.8 MB** —
+small enough to load whole rather than needing an index.
+
+Where the dropped bytes go, measured as each top-level field's share of the
+whole line: `synonyms` 47.3%, `sounds` 29.9% (of which only 4.7% is the
+Teochew reading itself — the rest is Mandarin/Cantonese/Hakka/Wu/Min-Dong/etc.,
+out of scope for a Teochew dictionary), `senses` 6.9%, `derived` 3.2%,
+`categories` 1.3%, and everything else (`etymology_*`, `head_templates`,
+`forms`, `descendants`, `related`, `antonyms`, `hypernyms`,
+`coordinate_terms`, `anagrams`, `redirects`, `wikipedia`) under 1% each.
+Within a sense object the bulk isn't the gloss either: `examples` — long
+historical quotations, Shakespeare and Borges among them — is 45.1% of its
+bytes, `categories` 23.4% and `links` (internal wikilink pairs) 9.6%, against
+`glosses` itself at only 5.8% and the droppable `raw_glosses` at 4.9%.
+
+The schema that survives the trim:
+
+```json
+{
+  "word": "本土",
+  "pos": "noun",
+  "senses": [
+    {
+      "glosses": ["one's native country"],
+      "tags": ["..."],
+      "raw_tags": ["..."],
+      "topics": ["..."],
+      "qualifier": "...",
+      "alt_of": [{"word": "...", "extra": "..."}]
+    }
+  ],
+  "teochew_sound": [{"zh_pron": "bung² tou²", "tags": ["Min-Nan", "Teochew", "Peng'im"]}],
+  "flags": ["zh-pron usage missing POS"]
+}
+```
+
+`tags`/`raw_tags`/`topics`/`qualifier`/`alt_of` are emitted only when
+non-empty, so most senses come out as just `{"glosses": [...]}`. Everything
+not listed above is dropped, `raw_glosses` included. `tags` still earns its
+place on senses that have no gloss at all: 攛 trims down to a single
+`{"tags": ["no-gloss"]}` sense, which is how you tell the gloss is missing
+upstream rather than lost in the trim.
+
+**Two fields that look droppable and are not.** Both were nearly cut on a
+first pass; the corrections are written down here so a later trimming pass
+doesn't quietly re-drop them.
+
+- **`alt_of` is kept.** Senses tagged `"alt-of"` carry the "this headword is
+  only an alternate form of another word" signal, and there are 23 such
+  senses spread over 17 of the 300 sampled lines (5.7% of lines) — not a
+  rare edge case. It is exactly the pattern behind cases already hit by
+  hand: 檎 (used only in 林檎), 㵣 (an alternate spelling of 渴). Dropping
+  it would mean an agent has to
+  rediscover "this isn't an independent word" by reading the live page
+  anyway, defeating the point of trimming.
+- **Diagnostic `categories` entries are kept, filtered.** Most `categories`
+  strings are Wiktionary-internal taxonomy noise whose substance is already
+  captured by `qualifier`/`tags`/`topics` — verified on 億, where
+  `raw_glosses`'s inline "(obsolete on its own in Standard Chinese)" exactly
+  matches the separately-kept `qualifier` field, which is what makes
+  `raw_glosses` redundant enough to drop. But a real minority — 10 of 300
+  sampled entries (~3.3%) — carry a `categories` string with no equivalent
+  anywhere else: a data-quality flag on the *source page* itself, e.g.
+  `"zh-pron usage missing POS"`, saying nothing about the word's usage. So
+  rather than dropping the field wholesale, entries matching a narrow
+  `/missing|issue/i` filter are collected into a `flags` array — a free,
+  pre-computed signal for auto-setting `needs_review` later, at negligible
+  size cost given the rest of the field is discarded.
+
+The transform, as a `jq` filter. This is a starting point rather than a
+mandate — a small typed script under `src/cli/` may fit the rest of the
+codebase's conventions better — but it is the transform such a script would
+implement, and the numbers above were measured by running it:
+
+```bash
+jq -c '{
+  word, pos,
+  senses: [.senses[]? | {
+    glosses, tags, raw_tags, topics, qualifier, alt_of
+  } | with_entries(select(.value != null and .value != []))],
+  teochew_sound: [.sounds[]? | select(.tags // [] | index("Teochew"))],
+  flags: [.categories[]? | select(test("missing|issue"; "i"))]
+} | with_entries(select(.value != null and .value != []))' \
+  teochew-relevant.jsonl > teochew-relevant.min.jsonl
+```
+
+**Don't rewrite the optional fields as `tags: (.tags // empty)`** — an
+appealing-looking way to say "omit when absent" that quietly destroys the
+file. `empty` inside an object construction kills the *entire* object, not
+just the one key, so every sense lacking a `tags` field — nearly all of
+them — vanishes from the array: on this 300-line sample, all 566 senses in
+and 0 out, glosses included, with jq exiting 0 and the output looking
+plausible because `word`/`pos`/`teochew_sound` survive. The `{glosses, tags,
+…}` shorthand above leaves absent keys as `null` instead, and the trailing
+`with_entries(select(...))` is what actually drops them. Before trusting the
+output, check that no senses went missing — these two totals must agree:
+
+```bash
+jq '[.senses[]?] | length' teochew-relevant.jsonl     | paste -sd+ - | bc
+jq '[.senses[]?] | length' teochew-relevant.min.jsonl | paste -sd+ - | bc
+```
+
+Same boundary as the refresh above: this documents the trim, it doesn't wire
+any drafting or audit pass to read the result.
 
 ### The shared .cache layout (issue #84)
 
@@ -438,24 +550,30 @@ this repo has been populated:
   wiktionary-pages/                     issue #79 — one file per headword, raw wikitext
   raw-wiktextract-data.jsonl            issue #84 — full kaikki.org dump (optional to keep)
   teochew-relevant.jsonl                issue #84 — grepped down to Teochew-relevant lines
+  teochew-relevant.min.jsonl            issue #84 — the above, trimmed to the fields used
 <each worktree>/.cache                  -> symlink to the same shared directory
                                             (directly, or via the main checkout's own
                                             symlink — either resolves the same)
 ```
 
-All of these are multi-GB-to-tens-of-GB downloads, fetched once and reused
-across every worktree of this repo — never duplicated per-worktree, and
-never committed (`.cache` is already in `.gitignore`). Because the symlink
+These are multi-GB-to-tens-of-GB downloads and the files derived from them,
+fetched or built once and reused across every worktree of this repo — never
+duplicated per-worktree, and never committed (`.cache` is already in
+`.gitignore`). Because the symlink
 covers the whole shared directory, [`npm run cache:wiktionary`'s validation
 and auto-mirroring](#caching-wiktionary-pages-locally-issue-79) — refusing to
 run against a missing/broken `.cache`, but mirroring a working symlink into a
 fresh worktree automatically — already enforces the base of this convention
 for every file under `.cache`, not just `wiktionary-pages/`. What's *not*
 enforced by any tooling is the convention itself: that
-`raw-wiktextract-data.jsonl` and `teochew-relevant.jsonl` belong at the
-`.cache` root alongside `wiktionary-pages/`, and that only
-`teochew-relevant.jsonl` is actually required — the raw dump is disposable
-once extracted.
+`raw-wiktextract-data.jsonl`, `teochew-relevant.jsonl` and
+`teochew-relevant.min.jsonl` belong at the `.cache` root alongside
+`wiktionary-pages/`, and which of them are disposable. Each is derived from
+the one above it, so only the last one you actually read has to survive: the
+24.5 GB raw dump can go as soon as the extraction succeeds, and
+`teochew-relevant.jsonl` as soon as the trimmed copy exists — though keeping
+that one costs half a gigabyte and saves re-downloading 24.5 GB if the trim
+schema later changes.
 
 ### Hand-merging Wiktionary candidates into entries (issue #68)
 
