@@ -1,6 +1,8 @@
 node_modules/
 dist/
-.cache/
+# No trailing slash: `.cache/` alone doesn't match a symlink (only a real
+# directory), and .cache is a symlink to an external cache location.
+.cache
 *.log
 .DS_Store
 .vitest/
