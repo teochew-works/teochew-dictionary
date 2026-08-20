@@ -82,7 +82,15 @@ export type WikitextResult =
   /** The API did not answer usefully: transport failure, non-2xx, or an API error. */
   | { status: 'error'; message: string }
 
-export async function fetchWikitextResult(title: string): Promise<WikitextResult> {
+export interface FetchWikitextOptions {
+  /** See `RetryOptions.onRetry` — fires the moment a 429 is seen, not just on exhaustion. */
+  onRetry?: (status: number, attempt: number, waitMs: number) => void
+}
+
+export async function fetchWikitextResult(
+  title: string,
+  options: FetchWikitextOptions = {},
+): Promise<WikitextResult> {
   const url = new URL(API)
   url.search = new URLSearchParams({
     action: 'parse',
@@ -97,7 +105,7 @@ export async function fetchWikitextResult(title: string): Promise<WikitextResult
     res = await fetchWithRetry(
       url,
       { headers: { 'user-agent': IMPORTER_USER_AGENT } },
-      { timeoutMs: FETCH_TIMEOUT_MS },
+      { timeoutMs: FETCH_TIMEOUT_MS, onRetry: options.onRetry },
     )
   } catch (e) {
     // A timeout lands here as an abort. Reporting it as an error rather than a

@@ -178,9 +178,12 @@ export interface PageCacheOptions {
    */
   delayMs?: number
   /**
-   * Requests in flight at once. The default of 1 is exactly the existing
-   * importers' sequential behaviour, and `delayMs` still caps the rate however
-   * high this goes.
+   * Ceiling on requests in flight at once — not a fixed worker count.
+   * Concurrency actually used starts at 1 and ramps toward this ceiling as
+   * requests succeed cleanly (see `AdaptiveConcurrency`), so the default of 1
+   * is exactly the existing importers' sequential behaviour and stays that
+   * way unless a caller opts into a higher ceiling. `delayMs` still caps the
+   * request-start rate however high this goes.
    *
    * Worth raising mainly because of how the API misbehaves in bulk: most
    * requests answer in well under a second, but roughly one in ten stalls until
@@ -193,7 +196,77 @@ export interface PageCacheOptions {
   resume?: boolean
   /** Injectable for tests, and for running against a local dump. */
   fetchPage?: (title: string) => Promise<WikitextResult>
-  onProgress?: (done: number, total: number, result: PageCacheResult) => void
+  /** `concurrency` is the adaptive governor's *current* limit, not the ceiling. */
+  onProgress?: (done: number, total: number, result: PageCacheResult, concurrency: number) => void
+}
+
+/**
+ * AIMD governor for how many requests may be in flight at once. Starts at the
+ * most conservative value (1) and adds one more slot after `rampAfter`
+ * consecutive clean completions (a settled `ok`/`missing` answer). A 429 —
+ * the one unambiguous "back off" signal Wiktimedia sends — halves the limit
+ * immediately and resets the streak, so a run finds its own safe ceiling
+ * instead of a fixed `--concurrency` either sitting needlessly idle or
+ * hammering straight through a rate limit.
+ *
+ * Deliberately does *not* react to a plain timeout/error: roughly one request
+ * in ten stalls under completely normal conditions (see `PageCacheOptions`),
+ * so treating every failure as a rate-limit signal would suppress concurrency
+ * even when nothing is actually wrong.
+ */
+export class AdaptiveConcurrency {
+  private limit = 1
+  private active = 0
+  private cleanStreak = 0
+  private readonly waiters: Array<() => void> = []
+
+  constructor(
+    private readonly ceiling: number,
+    private readonly rampAfter = 5,
+  ) {}
+
+  async acquire(): Promise<void> {
+    if (this.active < this.limit) {
+      this.active += 1
+      return
+    }
+    await new Promise<void>((resolve) => this.waiters.push(resolve))
+    this.active += 1
+  }
+
+  /** Releases this caller's own slot — always call once per successful `acquire`. */
+  release(): void {
+    this.active -= 1
+    this.waiters.shift()?.()
+  }
+
+  reportSuccess(): void {
+    this.cleanStreak += 1
+    if (this.cleanStreak < this.rampAfter || this.limit >= this.ceiling) return
+    this.cleanStreak = 0
+    this.limit += 1
+    // The extra slot is usable immediately, not just after the next release().
+    this.waiters.shift()?.()
+  }
+
+  /** A non-rate-limit failure: interrupts the ramp streak without punishing the limit. */
+  resetStreak(): void {
+    this.cleanStreak = 0
+  }
+
+  reportThrottle(): void {
+    this.cleanStreak = 0
+    this.limit = Math.max(1, Math.floor(this.limit / 2))
+  }
+
+  get currentLimit(): number {
+    return this.limit
+  }
+}
+
+/** `HTTP 429` (only reached once `fetchWithRetry` exhausts its own retries) reads as a rate-limit signal too, not just `onRetry` — the fallback that also makes this testable through a plain `fetchPage` mock. */
+function isRateLimitError(result: WikitextResult): boolean {
+  return result.status === 'error' && /\b429\b/u.test(result.message)
 }
 
 /** Write via a temp file, so an interrupted run can't leave a truncated page that a resume would trust. */
@@ -228,7 +301,7 @@ export async function syncWiktionaryPages(
     delayMs = 200,
     concurrency = 1,
     resume = false,
-    fetchPage = fetchWikitextResult,
+    fetchPage,
     onProgress,
   } = options
 
@@ -236,51 +309,59 @@ export async function syncWiktionaryPages(
 
   const result: PageCacheResult = { fetched: 0, missing: 0, skipped: 0, failed: [] }
   const pace = makePacer(delayMs)
+  const gate = new AdaptiveConcurrency(Math.max(1, Math.trunc(concurrency) || 1))
 
-  let cursor = 0
+  // The default path wires the governor to `onRetry`, which fires the moment
+  // a 429 is *seen* rather than only once a request finally gives up on it —
+  // an injected `fetchPage` (tests, local-dump runs) has no such signal, so it
+  // falls back to the `isRateLimitError` check below on the settled result.
+  const resolvedFetchPage =
+    fetchPage ?? ((title: string) => fetchWikitextResult(title, { onRetry: () => gate.reportThrottle() }))
+
   let done = 0
 
-  async function work(): Promise<void> {
-    for (;;) {
-      const index = cursor
-      cursor += 1
-      const headword = headwords[index]
-      if (headword === undefined) return
+  async function processOne(headword: string): Promise<void> {
+    const page = pagePath(headword, cacheDir)
+    const miss = missPath(headword, cacheDir)
 
-      const page = pagePath(headword, cacheDir)
-      const miss = missPath(headword, cacheDir)
+    if (resume && (existsSync(page) || existsSync(miss))) {
+      result.skipped += 1
+    } else {
+      await pace()
+      const fetched = await resolvedFetchPage(headword).catch(
+        (e: unknown): WikitextResult => ({ status: 'error', message: e instanceof Error ? e.message : String(e) }),
+      )
 
-      if (resume && (existsSync(page) || existsSync(miss))) {
-        result.skipped += 1
+      // A default (non-resume) re-sync overwrites, so the previous run's
+      // answer for this headword has to go — otherwise a stale `.miss` sits
+      // next to a fresh page and readers see both.
+      if (fetched.status === 'ok') {
+        writeAtomic(page, fetched.wikitext)
+        rmSync(miss, { force: true })
+        result.fetched += 1
+        gate.reportSuccess()
+      } else if (fetched.status === 'missing') {
+        writeAtomic(miss, '')
+        rmSync(page, { force: true })
+        result.missing += 1
+        gate.reportSuccess()
       } else {
-        await pace()
-        const fetched = await fetchPage(headword).catch(
-          (e: unknown): WikitextResult => ({ status: 'error', message: e instanceof Error ? e.message : String(e) }),
-        )
-
-        // A default (non-resume) re-sync overwrites, so the previous run's
-        // answer for this headword has to go — otherwise a stale `.miss` sits
-        // next to a fresh page and readers see both.
-        if (fetched.status === 'ok') {
-          writeAtomic(page, fetched.wikitext)
-          rmSync(miss, { force: true })
-          result.fetched += 1
-        } else if (fetched.status === 'missing') {
-          writeAtomic(miss, '')
-          rmSync(page, { force: true })
-          result.missing += 1
-        } else {
-          result.failed.push(headword)
-        }
+        result.failed.push(headword)
+        if (isRateLimitError(fetched)) gate.reportThrottle()
+        else gate.resetStreak()
       }
-
-      done += 1
-      onProgress?.(done, headwords.length, result)
     }
+
+    done += 1
+    onProgress?.(done, headwords.length, result, gate.currentLimit)
   }
 
-  const workers = Math.max(1, Math.min(Math.trunc(concurrency) || 1, headwords.length))
-  await Promise.all(Array.from({ length: workers }, () => work()))
+  const pending: Promise<void>[] = []
+  for (const headword of headwords) {
+    await gate.acquire()
+    pending.push(processOne(headword).finally(() => gate.release()))
+  }
+  await Promise.all(pending)
 
   return result
 }
