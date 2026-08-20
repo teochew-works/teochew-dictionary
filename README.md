@@ -372,6 +372,91 @@ independently of whatever the ceiling allows. Network-touching, so kept out of
 Nothing in the repo reads the cache yet: populating it and teaching the
 drafting/audit passes to prefer it over a live fetch are separate steps.
 
+### Refreshing teochew-relevant.jsonl from kaikki.org (issue #84)
+
+[Caching Wiktionary pages locally (issue #79)](#caching-wiktionary-pages-locally-issue-79)
+above fetches one page per headword, live, over HTTP. kaikki.org publishes a
+combined wiktextract dump of *all* Wiktionary content — every language
+section of every page, one JSON object per POS/etymology section, the same
+data those live fetches read — regenerated periodically from a live
+Wiktionary snapshot. Grepped down to just the lines this project cares about,
+it's a bulk, one-shot alternative to the per-headword fetch: cheaper for
+large batches, complementary to (not a replacement for) issue #79's tooling.
+
+```bash
+cd .cache
+curl -LO https://kaikki.org/dictionary/raw-wiktextract-data.jsonl.gz
+gunzip raw-wiktextract-data.jsonl.gz
+grep '"lang_code": "zh"' raw-wiktextract-data.jsonl | grep '"Teochew"' > teochew-relevant.jsonl
+```
+
+On the full dump downloaded 2026-08-20: `raw-wiktextract-data.jsonl` is
+10,806,865 lines (~24.5 GB decompressed) — every language section of every
+English Wiktionary page. `grep '"lang_code": "zh"'` narrows to the
+Chinese-language section of each page (329,257 lines); the second
+`grep '"Teochew"'` narrows further to sections carrying a
+Min-Nan/Teochew/Peng'im-tagged reading in their `sounds` array
+(**32,291 lines**, ~0.3% of the full dump).
+
+**Why two chained greps and not one regex:** `"Teochew"` alone matches
+32,971 lines, but 680 of those aren't Chinese-language sections at all —
+English/Hokkien/etc. entries that mention Teochew in etymology or a
+cross-reference, not the dialect-reading tag. Anchoring on both keeps
+precision without a fragile exact-tag-array regex.
+
+**Why one pass is enough, not one pass per headword:** every POS/etymology
+section for a word carries its own copy of the pronunciation data, not just
+the first — confirmed via 本土's two sections (`noun` and `adj`), both
+carrying the Teochew tag independently. So the single grep above is a
+complete extraction; it doesn't need a second, headword-keyed pass to
+backfill sibling sections.
+
+**Freshness:** kaikki.org regenerates the dump on no fixed cadence. There's
+no promise to keep here beyond the commands themselves being a five-minute
+job whenever the local copy is judged stale.
+
+**Disk cost:** `raw-wiktextract-data.jsonl` (~24.5 GB) only needs to exist
+long enough to produce `teochew-relevant.jsonl` (tens of MB) — safe to
+delete once the extraction succeeds. Keeping it around is purely a
+convenience for re-running the grep with a different pattern later, not a
+requirement.
+
+Nothing in the repo reads `teochew-relevant.jsonl` yet: producing it and
+teaching the drafting/audit passes to prefer it over a live fetch are
+separate steps.
+
+### The shared .cache layout (issue #84)
+
+[Caching Wiktionary pages locally (issue #79)](#caching-wiktionary-pages-locally-issue-79)
+above covers why `.cache` must be a symlink and how to set one up; this is
+the inventory of everything that symlink can point at, once every cache in
+this repo has been populated:
+
+```
+<your main checkout>/.cache             -> symlink to a directory OUTSIDE any checkout
+<sibling cache dir>/
+  wiktionary-pages/                     issue #79 — one file per headword, raw wikitext
+  raw-wiktextract-data.jsonl            issue #84 — full kaikki.org dump (optional to keep)
+  teochew-relevant.jsonl                issue #84 — grepped down to Teochew-relevant lines
+<each worktree>/.cache                  -> symlink to the same shared directory
+                                            (directly, or via the main checkout's own
+                                            symlink — either resolves the same)
+```
+
+All of these are multi-GB-to-tens-of-GB downloads, fetched once and reused
+across every worktree of this repo — never duplicated per-worktree, and
+never committed (`.cache` is already in `.gitignore`). Because the symlink
+covers the whole shared directory, [`npm run cache:wiktionary`'s validation
+and auto-mirroring](#caching-wiktionary-pages-locally-issue-79) — refusing to
+run against a missing/broken `.cache`, but mirroring a working symlink into a
+fresh worktree automatically — already enforces the base of this convention
+for every file under `.cache`, not just `wiktionary-pages/`. What's *not*
+enforced by any tooling is the convention itself: that
+`raw-wiktextract-data.jsonl` and `teochew-relevant.jsonl` belong at the
+`.cache` root alongside `wiktionary-pages/`, and that only
+`teochew-relevant.jsonl` is actually required — the raw dump is disposable
+once extracted.
+
 ### Hand-merging Wiktionary candidates into entries (issue #68)
 
 `wiktionary-teochew-index.yaml`'s `staged` items (15,845 at the time of
