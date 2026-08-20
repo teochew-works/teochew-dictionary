@@ -359,9 +359,15 @@ requests answer in under a second, but roughly one in ten stalls until it hits
 the 30s timeout; those are reported as failures and left *uncached*, precisely
 so `--resume` retries them rather than a dead connection being memorialised as
 "no such page". Raising `--concurrency` stops one stall from blocking the queue,
-which is the main reason to bother with it — the measured gain is real but
-erratic. Network-touching, so kept out of `npm run check` like `npm run import`
-and `npm run xref`.
+which is the main reason to bother with it.
+
+`--concurrency=N` is a *ceiling*, not a fixed worker count. Each run starts at
+1 request in flight and adds one more after every 5 clean completions, so a
+generous ceiling costs nothing when the network happens to be quiet — and the
+moment a 429 shows up, the limit halves immediately rather than waiting to
+find out the hard way. `--delay` still caps the request-*start* rate
+independently of whatever the ceiling allows. Network-touching, so kept out of
+`npm run check` like `npm run import` and `npm run xref`.
 
 Nothing in the repo reads the cache yet: populating it and teaching the
 drafting/audit passes to prefer it over a live fetch are separate steps.

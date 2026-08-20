@@ -16,6 +16,13 @@ export interface RetryOptions {
    * situation `retry-after` handling above exists for in the first place.
    */
   timeoutMs?: number
+  /**
+   * Fired the moment a 429 is seen, before the backoff wait — a caller that
+   * wants to react to rate-limiting (e.g. an adaptive concurrency governor)
+   * otherwise has no signal until the whole retry sequence either succeeds or
+   * exhausts `maxRetries`, by which point real time has already been lost.
+   */
+  onRetry?: (status: number, attempt: number, waitMs: number) => void
 }
 
 /**
@@ -29,7 +36,7 @@ export async function fetchWithRetry(
   init: RequestInit,
   options: RetryOptions = {},
 ): Promise<Response> {
-  const { maxRetries = 5, backoffMs = 2000, timeoutMs } = options
+  const { maxRetries = 5, backoffMs = 2000, timeoutMs, onRetry } = options
 
   for (let attempt = 0; ; attempt += 1) {
     const attemptInit = timeoutMs !== undefined ? { ...init, signal: AbortSignal.timeout(timeoutMs) } : init
@@ -38,6 +45,7 @@ export async function fetchWithRetry(
 
     const retryAfter = Number(res.headers.get('retry-after'))
     const waitMs = Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : backoffMs * 2 ** attempt
+    onRetry?.(res.status, attempt, waitMs)
     await new Promise((r) => setTimeout(r, waitMs))
   }
 }

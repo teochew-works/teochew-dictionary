@@ -8,13 +8,14 @@ import {
   isCached,
   syncWiktionaryPages,
   type CacheSymlinkStatus,
+  type PageCacheResult,
 } from '../importers/wiktionary-cache.js'
 import { CACHE_DIR, WIKTIONARY_PAGE_CACHE_DIR } from '../paths.js'
 import { dim, green, red, yellow } from './colour.js'
 
 /**
  * `npm run cache:wiktionary -- [--resume] [--limit=N] [--delay=MS]
- *  [--concurrency=N] [headword...]` (issue #79)
+ *  [--concurrency=N] [--progress] [headword...]` (issue #79)
  *
  * Bulk-downloads each candidate headword's raw Wiktionary wikitext into
  * .cache/wiktionary-pages/, so the hand-merge work of issue #68 stops paying
@@ -23,6 +24,11 @@ import { dim, green, red, yellow } from './colour.js'
  *
  * Network-touching, so deliberately kept out of `npm run check` — same reason
  * `npm run import`/`npm run xref`/`npm run audio:verify` are excluded.
+ *
+ * `--concurrency` is a ceiling, not a fixed worker count: the run starts at 1
+ * request in flight and adds one more after every 5 clean completions, back
+ * down to half the moment a 429 shows up. See `AdaptiveConcurrency` in
+ * ../importers/wiktionary-cache.js.
  *
  * Fetch-only. Nothing in this repo reads the cache yet; wiring the drafting
  * and audit passes to it is a separate follow-on to #79.
@@ -33,7 +39,8 @@ const USAGE = `usage:
   npm run cache:wiktionary -- --resume         skip headwords already cached on disk
   npm run cache:wiktionary -- --limit=500      cap this run to N headwords
   npm run cache:wiktionary -- --delay=200      ms between requests (default 200)
-  npm run cache:wiktionary -- --concurrency=4  requests in flight (default 1)
+  npm run cache:wiktionary -- --concurrency=4  ceiling on requests in flight; ramps up from 1, halves on a 429 (default 1)
+  npm run cache:wiktionary -- --progress       redraw a live progress bar instead of periodic lines
   npm run cache:wiktionary -- 挪威 挫折          ad-hoc headwords, bypassing the wordlist
 
 Writes <headword>.wikitext (or an empty <headword>.miss) to .cache/wiktionary-pages/.`
@@ -101,7 +108,7 @@ function numberFlag(name: string): number | undefined {
 }
 
 const unknown = flags.filter(
-  (f) => !['--resume', '--continue'].includes(f) && !/^--(limit|delay|concurrency)=/u.test(f),
+  (f) => !['--resume', '--continue', '--progress'].includes(f) && !/^--(limit|delay|concurrency)=/u.test(f),
 )
 if (unknown.length > 0) {
   console.error(`unknown flag(s): ${unknown.join(' ')}\n\n${USAGE}`)
@@ -112,6 +119,11 @@ const resume = flags.includes('--resume') || flags.includes('--continue')
 const limit = numberFlag('limit')
 const delayMs = numberFlag('delay')
 const concurrency = numberFlag('concurrency')
+// Redrawing a line with `\r` garbles output that isn't a real terminal (a log
+// file, CI capture), so --progress only switches on the bar when stdout is
+// actually a TTY — otherwise it silently falls back to the periodic lines
+// below, same as leaving the flag off.
+const showProgressBar = flags.includes('--progress') && process.stdout.isTTY
 
 // Default scope is deliberately every headword on record, not just the
 // `staged` ones: caching only what is pending would leave already-merged
@@ -165,19 +177,57 @@ if (headwords.length === 0) {
 
 console.log(
   `fetching ${headwords.length} Wiktionary page(s) from the ${source}` +
-    dim(` (delay ${delayMs ?? 200}ms, concurrency ${concurrency ?? 1})`),
+    dim(` (delay ${delayMs ?? 200}ms, concurrency ≤${concurrency ?? 1}, adaptive)`),
 )
 
 const PROGRESS_EVERY = 100
+const PROGRESS_BAR_WIDTH = 24
+
+function formatDuration(seconds: number): string {
+  if (!Number.isFinite(seconds) || seconds < 0) return '?'
+  const m = Math.floor(seconds / 60)
+  const s = Math.round(seconds % 60)
+  return m > 0 ? `${m}m${String(s).padStart(2, '0')}s` : `${s}s`
+}
+
+function renderProgressBar(
+  done: number,
+  total: number,
+  running: PageCacheResult,
+  elapsedMs: number,
+  currentConcurrency: number,
+): string {
+  const ratio = total === 0 ? 1 : done / total
+  const filled = Math.round(PROGRESS_BAR_WIDTH * ratio)
+  const bar = '█'.repeat(filled) + '░'.repeat(PROGRESS_BAR_WIDTH - filled)
+  const rate = elapsedMs > 0 ? done / (elapsedMs / 1000) : 0
+  const eta = rate > 0 ? formatDuration((total - done) / rate) : '?'
+  return (
+    `[${bar}] ${done}/${total} (${Math.round(ratio * 100)}%) — ` +
+    `${running.fetched} page(s), ${running.missing} miss(es), ${running.failed.length} failed — ` +
+    `${rate.toFixed(2)} req/s, concurrency ${currentConcurrency} — ETA ${eta}`
+  )
+}
+
+const startedAt = Date.now()
 
 const result = await syncWiktionaryPages(headwords, {
   resume,
   ...(delayMs !== undefined ? { delayMs } : {}),
   ...(concurrency !== undefined ? { concurrency } : {}),
-  onProgress: (done, total, running) => {
+  onProgress: (done, total, running, currentConcurrency) => {
+    if (showProgressBar) {
+      const line = renderProgressBar(done, total, running, Date.now() - startedAt, currentConcurrency)
+      process.stdout.write(`\r${dim(line)}\x1b[K`)
+      if (done === total) process.stdout.write('\n')
+      return
+    }
     if (done % PROGRESS_EVERY !== 0 && done !== total) return
     console.log(
-      dim(`  ${done}/${total} — ${running.fetched} page(s), ${running.missing} miss(es), ${running.failed.length} failed`),
+      dim(
+        `  ${done}/${total} — ${running.fetched} page(s), ${running.missing} miss(es), ` +
+          `${running.failed.length} failed — concurrency ${currentConcurrency}`,
+      ),
     )
   },
 })

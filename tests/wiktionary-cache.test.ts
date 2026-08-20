@@ -302,4 +302,93 @@ describe('syncWiktionaryPages', () => {
       [2, 2],
     ])
   })
+
+  describe('adaptive concurrency', () => {
+    it('ramps concurrency up from 1 as requests succeed cleanly, capped at the ceiling', async () => {
+      const headwords = Array.from({ length: 30 }, (_, i) => `字${i}`)
+      let inFlight = 0
+      let maxInFlight = 0
+
+      const result = await run(headwords, {
+        concurrency: 3,
+        fetchPage: async (title: string): Promise<WikitextResult> => {
+          inFlight += 1
+          maxInFlight = Math.max(maxInFlight, inFlight)
+          await new Promise((r) => setTimeout(r, 5))
+          inFlight -= 1
+          return { status: 'ok', wikitext: title }
+        },
+      })
+
+      expect(result.fetched).toBe(30)
+      // Proves it actually ramped (not stuck at the starting point of 1)...
+      expect(maxInFlight).toBeGreaterThan(1)
+      // ...without ever exceeding the ceiling passed as `concurrency`.
+      expect(maxInFlight).toBeLessThanOrEqual(3)
+    })
+
+    it('keeps concurrency low when 429s keep interrupting the clean-success streak', async () => {
+      const headwords = Array.from({ length: 40 }, (_, i) => `字${i}`)
+      let inFlight = 0
+      let maxInFlight = 0
+      let calls = 0
+
+      const result = await run(headwords, {
+        concurrency: 8,
+        fetchPage: async (title: string): Promise<WikitextResult> => {
+          calls += 1
+          const thisCall = calls
+          inFlight += 1
+          maxInFlight = Math.max(maxInFlight, inFlight)
+          await new Promise((r) => setTimeout(r, 2))
+          inFlight -= 1
+          // A 429 often enough that a clean streak never reaches the 5-success
+          // ramp threshold, so the ceiling of 8 should never be approached —
+          // proving the halve-on-429 behaviour, not just the ramp-up half.
+          if (thisCall % 4 === 0) return { status: 'error', message: 'HTTP 429' }
+          return { status: 'ok', wikitext: title }
+        },
+      })
+
+      expect(result.fetched + result.failed.length).toBe(40)
+      expect(maxInFlight).toBeLessThan(4)
+    })
+
+    it('does not punish concurrency for an ordinary (non-429) failure', async () => {
+      const headwords = Array.from({ length: 20 }, (_, i) => `字${i}`)
+      let inFlight = 0
+      let maxInFlight = 0
+
+      const result = await run(headwords, {
+        concurrency: 3,
+        fetchPage: async (title: string): Promise<WikitextResult> => {
+          inFlight += 1
+          maxInFlight = Math.max(maxInFlight, inFlight)
+          await new Promise((r) => setTimeout(r, 5))
+          inFlight -= 1
+          if (title === '字0') return { status: 'error', message: 'socket hang up' }
+          return { status: 'ok', wikitext: title }
+        },
+      })
+
+      expect(result.failed).toEqual(['字0'])
+      // A single stall shouldn't stop the run from still reaching the ceiling.
+      expect(maxInFlight).toBe(3)
+    })
+
+    it('reports the current adaptive limit via onProgress, never exceeding the ceiling', async () => {
+      const headwords = Array.from({ length: 12 }, (_, i) => `字${i}`)
+      const concurrencySeen: number[] = []
+
+      await run(headwords, {
+        concurrency: 4,
+        onProgress: (_done: number, _total: number, _result: unknown, concurrency: number) =>
+          concurrencySeen.push(concurrency),
+        fetchPage: async (title: string): Promise<WikitextResult> => ({ status: 'ok', wikitext: title }),
+      })
+
+      expect(concurrencySeen).toHaveLength(12)
+      expect(concurrencySeen.every((c) => c >= 1 && c <= 4)).toBe(true)
+    })
+  })
 })
