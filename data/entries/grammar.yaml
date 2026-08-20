@@ -1562,3 +1562,65 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: di1-uê7-的話
+    headword: 的話
+    readings:
+      - pengim: di1 uê7
+    senses:
+      - pos: particle
+        gloss_en: [if; in that case (particle marking a conditional clause)]
+        gloss_zh: [的話]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zuan2-盞
+    headword: 盞
+    readings:
+      - pengim: zuan2
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for lamps/lanterns, classifier for cups of drink]
+        gloss_zh: [盞]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dig8-gao3-直到
+    headword: 直到
+    readings:
+      - pengim: dig8 gao3
+    senses:
+      - pos: preposition
+        gloss_en: [until, up to]
+        gloss_zh: [直到]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin6-第
+    headword: 第
+    readings:
+      - pengim: doin6
+    senses:
+      - pos: prefix
+        gloss_en: ["ordinal number prefix (forms ordinals, e.g. 第一 'first')", sequence; number]
+        gloss_zh: [第]
+        note: 第 has many distinct senses on the page (ordinal-number prefix, mansion/residence, examination rank, literary 'only/but', a surname); classified here by its overwhelmingly common present-day use as the ordinal prefix.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liab8-粒
+    headword: 粒
+    readings:
+      - pengim: liab8
+    senses:
+      - pos: classifier
+        gloss_en: ["classifier for small round objects (grain, pill, fruit, etc.)", grain; particle]
+        gloss_zh: [粒]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

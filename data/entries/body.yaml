@@ -1988,3 +1988,815 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: bên7-cêng5-病情
+    headword: 病情
+    readings:
+      - pengim: bên7 cêng5
+    senses:
+      - pos: noun
+        gloss_en: [condition of an illness, state of a patient's illness]
+        gloss_zh: [病情]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bên7-bang5-病房
+    headword: 病房
+    readings:
+      - pengim: bên7 bang5
+    senses:
+      - pos: noun
+        gloss_en: [hospital ward, sickroom]
+        gloss_zh: [病房]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bên7-geng1-病根
+    headword: 病根
+    readings:
+      - pengim: bên7 geng1
+    senses:
+      - pos: noun
+        gloss_en: [root cause of a disease, root cause of trouble (figurative)]
+        gloss_zh: [病根]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bên7-lêh8-病歷
+    headword: 病歷
+    readings:
+      - pengim: bên7 lêh8
+    senses:
+      - pos: noun
+        gloss_en: [medical history, medical record]
+        gloss_zh: [病歷]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bên7-dag8-病毒
+    headword: 病毒
+    readings:
+      - pengim: bên7 dag8
+    senses:
+      - pos: noun
+        gloss_en: [virus]
+        gloss_zh: [病毒]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bên7-li2-病理
+    headword: 病理
+    readings:
+      - pengim: bên7 li2
+    senses:
+      - pos: noun
+        gloss_en: [pathology]
+        gloss_zh: [病理]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng3-症
+    headword: 症
+    readings:
+      - pengim: zêng3
+    senses:
+      - pos: noun
+        gloss_en: [sign or indication of disease, "illness, disease"]
+        gloss_zh: [症]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng3-hao7-症候
+    headword: 症候
+    readings:
+      - pengim: zêng3 hao7
+    senses:
+      - pos: noun
+        gloss_en: [symptom (of an illness), disease]
+        gloss_zh: [症候]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng3-zuang6-症狀
+    headword: 症狀
+    readings:
+      - pengim: zêng3 zuang6
+    senses:
+      - pos: noun
+        gloss_en: [symptom (of an illness)]
+        gloss_zh: [症狀]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gai1-痎
+    headword: 痎
+    readings:
+      - pengim: gai1
+    senses:
+      - pos: noun
+        gloss_en: [tertian malaria (literary)]
+        gloss_zh: [痎瘧]
+        note: The page lists two senses under the identical Teochew reading gai1 ("tertian malaria" and "itchy"); the "itchy" sense is explicitly tagged as Cantonese/Hakka dialectal (not Teochew), so the general literary sense "tertian malaria" was chosen, but this is a rare classical character and the dialect scoping is not fully explicit for the first sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ti6-痔
+    headword: 痔
+    readings:
+      - pengim: ti6
+    senses:
+      - pos: noun
+        gloss_en: [hemorrhoid]
+        gloss_zh: [痔]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung5-痕
+    headword: 痕
+    readings:
+      - pengim: hung5
+    senses:
+      - pos: noun
+        gloss_en: [scar, "trace, mark, vestige"]
+        gloss_zh: [痕]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung5-ziah4-痕跡
+    headword: 痕跡
+    readings:
+      - pengim: hung5 ziah4
+    senses:
+      - pos: noun
+        gloss_en: [trace, "mark, vestige, evidence"]
+        gloss_zh: [痕跡]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao7-痘
+    headword: 痘
+    readings:
+      - pengim: dao7
+    senses:
+      - pos: noun
+        gloss_en: ["pox, smallpox", pimple]
+        gloss_zh: [痘]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hê1-gu1-痚呴
+    headword: 痚呴
+    readings:
+      - pengim: hê1 gu1
+    senses:
+      - pos: noun
+        gloss_en: [asthma]
+        gloss_zh: [哮喘, 痚呴]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hê1-gu1-tiu1-痚呴抽
+    headword: 痚呴抽
+    readings:
+      - pengim: hê1 gu1 tiu1
+    senses:
+      - pos: noun
+        gloss_en: [asthma]
+        gloss_zh: [哮喘, 痚呴抽]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tam5-痰
+    headword: 痰
+    readings:
+      - pengim: tam5
+    senses:
+      - pos: noun
+        gloss_en: [phlegm, sputum]
+        gloss_zh: [痰]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iang5-瘍
+    headword: 瘍
+    readings:
+      - pengim: iang5
+    senses:
+      - pos: noun
+        gloss_en: [sore; ulcer; carbuncle]
+        gloss_zh: [瘍]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ung1-ziang3-瘟瘴
+    headword: 瘟瘴
+    readings:
+      - pengim: ung1 ziang3
+    senses:
+      - pos: noun
+        gloss_en: [plague]
+        gloss_zh: [瘟瘴]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ceng1-瘡
+    headword: 瘡
+    readings:
+      - pengim: ceng1
+    senses:
+      - pos: noun
+        gloss_en: [sore; boil; skin ulcer, wound; cut]
+        gloss_zh: [瘡]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao5-癆
+    headword: 癆
+    readings:
+      - pengim: lao5
+    senses:
+      - pos: noun
+        gloss_en: [tuberculosis]
+        gloss_zh: [癆]
+        note: Two etymology blocks share this reading with divergent senses (tuberculosis vs. archaic/dialectal 'to poison' / 'painful'); the widely recognized 'tuberculosis' sense was chosen.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui3-癈
+    headword: 癈
+    readings:
+      - pengim: hui3
+    senses:
+      - pos: noun
+        gloss_en: [chronic illness]
+        gloss_zh: [癈]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngam5-癌
+    headword: 癌
+    readings:
+      - pengim: ngam5
+    senses:
+      - pos: noun
+        gloss_en: [cancer; carcinoma]
+        gloss_zh: [癌]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngam5-zêng3-癌症
+    headword: 癌症
+    readings:
+      - pengim: ngam5 zêng3
+    senses:
+      - pos: noun
+        gloss_en: [cancer (disease)]
+        gloss_zh: [癌症]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngam5-biang3-癌變
+    headword: 癌變
+    readings:
+      - pengim: ngam5 biang3
+    senses:
+      - pos: noun
+        gloss_en: [carcinogenesis; cancerization]
+        gloss_zh: [癌變]
+        note: Highly technical medical/oncology term rarely used outside clinical contexts.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tai2-go1-癩𰣻
+    headword: 癩𰣻
+    readings:
+      - pengim: tai2 go1
+    senses:
+      - pos: noun
+        gloss_en: [leprosy]
+        gloss_zh: [癩𰣻]
+        note: Page gives both a noun sense ('leprosy') and an unrelated adjective sense ('filthy') under the same reading; the noun sense was chosen as the more literal, dictionary-standard meaning.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diang1-gang2-癲癇
+    headword: 癲癇
+    readings:
+      - pengim: diang1 gang2
+    senses:
+      - pos: noun
+        gloss_en: [epilepsy]
+        gloss_zh: [癲癇]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêng1-gêg4-riag8-登革熱
+    headword: 登革熱
+    readings:
+      - pengim: dêng1 gêg4 riag8
+    senses:
+      - pos: noun
+        gloss_en: [dengue fever]
+        gloss_zh: [登革熱]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh8-lai6-ziang3-白內障
+    headword: 白內障
+    readings:
+      - pengim: bêh8 lai6 ziang3
+    senses:
+      - pos: noun
+        gloss_en: [cataract]
+        gloss_zh: [白內障]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh8-dua3-白帶
+    headword: 白帶
+    readings:
+      - pengim: bêh8 dua3
+    senses:
+      - pos: noun
+        gloss_en: [leukorrhea, vaginal discharge]
+        gloss_zh: [白帶]
+        note: The page lists this reading for both the medical sense (leukorrhea) and unrelated 'white belt' senses (funeral mourning belt, sports rank); chose the medical sense as more central but the belt senses are equally valid readings.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh8-huêh4-bên7-白血病
+    headword: 白血病
+    readings:
+      - pengim: bêh8 huêh4 bên7
+    senses:
+      - pos: noun
+        gloss_en: [leukemia]
+        gloss_zh: [白血病]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puê5-hu1-皮膚
+    headword: 皮膚
+    readings:
+      - pengim: puê5 hu1
+    senses:
+      - pos: noun
+        gloss_en: [skin, dermis]
+        gloss_zh: [皮膚]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: niao3-bhung5-皺紋
+    headword: 皺紋
+    readings:
+      - pengim: niao3 bhung5
+    senses:
+      - pos: noun
+        gloss_en: [wrinkle]
+        gloss_zh: [皺紋]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mag8-目
+    headword: 目
+    readings:
+      - pengim: mag8
+    senses:
+      - pos: noun
+        gloss_en: [eye]
+        gloss_zh: [目]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mag8-ring5-目仁
+    headword: 目仁
+    readings:
+      - pengim: mag8 ring5
+    senses:
+      - pos: noun
+        gloss_en: [eyeball]
+        gloss_zh: [目仁]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mag8-sai2-目屎
+    headword: 目屎
+    readings:
+      - pengim: mag8 sai2
+    senses:
+      - pos: noun
+        gloss_en: [eye discharge, rheum, sleep (in the eye)]
+        gloss_zh: [目屎]
+        note: Page splits senses by dialect group without an explicit 'Teochew' tag on either sense; chose the eye-discharge/rheum sense (rather than the Hokkien-tagged 'tears' sense) since 目汁 is the entry explicitly marked as the Teochew word for tears, but the dialect attribution for this particular sense is inferred rather than stated outright.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mag8-zab4-目汁
+    headword: 目汁
+    readings:
+      - pengim: mag8 zab4
+    senses:
+      - pos: noun
+        gloss_en: [tears]
+        gloss_zh: [目汁]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mag8-gao2-zam1-目狗針
+    headword: 目狗針
+    readings:
+      - pengim: mag8 gao2 zam1
+    senses:
+      - pos: noun
+        gloss_en: [stye, hordeolum]
+        gloss_zh: [目狗針]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mag8-bhai5-目眉
+    headword: 目眉
+    readings:
+      - pengim: mag8 bhai5
+    senses:
+      - pos: noun
+        gloss_en: [eyebrow]
+        gloss_zh: [目眉]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mag8-ci3-mo5-目眥毛
+    headword: 目眥毛
+    readings:
+      - pengim: mag8 ci3 mo5
+    senses:
+      - pos: noun
+        gloss_en: [eyelash]
+        gloss_zh: [目眥毛]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mag8-ziu1-目睭
+    headword: 目睭
+    readings:
+      - pengim: mag8 ziu1
+    senses:
+      - pos: noun
+        gloss_en: [eye, eyeball]
+        gloss_zh: [目睭]
+        note: The source tags a generic 'eye' sense for other Southern Min varieties and a specific 'eyeball' sense for Teochew (among others); colloquially 目睭 is the everyday Teochew word for 'eye' in general, so both glosses are kept rather than narrowing to just 'eyeball'.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mag8-ziu1-ring5-目睭仁
+    headword: 目睭仁
+    readings:
+      - pengim: mag8 ziu1 ring5
+    senses:
+      - pos: noun
+        gloss_en: [eyeball]
+        gloss_zh: [目睭仁]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mag8-kou1-目箍
+    headword: 目箍
+    readings:
+      - pengim: mag8 kou1
+    senses:
+      - pos: noun
+        gloss_en: [eye socket, rim of the eye]
+        gloss_zh: [目箍]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mag8-zam1-目針
+    headword: 目針
+    readings:
+      - pengim: mag8 zam1
+    senses:
+      - pos: noun
+        gloss_en: [stye, hordeolum]
+        gloss_zh: [目針]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mêng5-deng5-盲腸
+    headword: 盲腸
+    readings:
+      - pengim: mêng5 deng5
+    senses:
+      - pos: noun
+        gloss_en: [caecum, appendix]
+        gloss_zh: [盲腸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mêng5-deng5-iam7-盲腸炎
+    headword: 盲腸炎
+    readings:
+      - pengim: mêng5 deng5 iam7
+    senses:
+      - pos: noun
+        gloss_en: [appendicitis]
+        gloss_zh: [盲腸炎]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhai5-mag8-眉目
+    headword: 眉目
+    readings:
+      - pengim: bhai5 mag8
+    senses:
+      - pos: noun
+        gloss_en: [eyebrows and eyes; facial features]
+        gloss_zh: [眉目]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang1-眶
+    headword: 眶
+    readings:
+      - pengim: kuang1
+    senses:
+      - pos: noun
+        gloss_en: [eye socket; eye rim]
+        gloss_zh: [眼眶]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngang2-眼
+    headword: 眼
+    readings:
+      - pengim: ngang2
+    senses:
+      - pos: noun
+        gloss_en: [eye]
+        gloss_zh: [眼睛]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngang2-lui6-眼淚
+    headword: 眼淚
+    readings:
+      - pengim: ngang2 lui6
+    senses:
+      - pos: noun
+        gloss_en: [tear; teardrop]
+        gloss_zh: [眼淚]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngang2-giu5-眼球
+    headword: 眼球
+    readings:
+      - pengim: ngang2 giu5
+    senses:
+      - pos: noun
+        gloss_en: [eyeball, (figurative) attention; focus]
+        gloss_zh: [眼球]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngang2-zêng1-眼睛
+    headword: 眼睛
+    readings:
+      - pengim: ngang2 zêng1
+    senses:
+      - pos: noun
+        gloss_en: [eye; eyes]
+        gloss_zh: [眼睛]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngang2-sing5-眼神
+    headword: 眼神
+    readings:
+      - pengim: ngang2 sing5
+    senses:
+      - pos: noun
+        gloss_en: [look in one's eyes; gaze; expression shown in the eyes]
+        gloss_zh: [眼神]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngang2-kuê1-眼科
+    headword: 眼科
+    readings:
+      - pengim: ngang2 kuê1
+    senses:
+      - pos: noun
+        gloss_en: [ophthalmology; eye clinic]
+        gloss_zh: [眼科]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngang2-liam5-眼簾
+    headword: 眼簾
+    readings:
+      - pengim: ngang2 liam5
+    senses:
+      - pos: noun
+        gloss_en: [eyes (literary)]
+        gloss_zh: [眼簾]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngai5-睚
+    headword: 睚
+    readings:
+      - pengim: ngai5
+    senses:
+      - pos: noun
+        gloss_en: [rim of the eye (archaic), cliff edge]
+        gloss_zh: [睚]
+        note: The defined senses (eye rim, cliff edge) are archaic/historical-dictionary meanings; in living Teochew this character mainly occurs as a bound morpheme in 睚眥 rather than as a free word.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng1-睛
+    headword: 睛
+    readings:
+      - pengim: zêng1
+    senses:
+      - pos: noun
+        gloss_en: [eyeball, pupil of the eye]
+        gloss_zh: [睛, 眼珠]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-睪
+    headword: 睪
+    readings:
+      - pengim: gao1
+    senses:
+      - pos: noun
+        gloss_en: [testicle]
+        gloss_zh: [睪]
+        note: The page lists four senses sharing the same gao1 reading (testicle, plus three literary alternative-character glosses for unrelated words); the concrete anatomical sense 'testicle' was chosen as the most dictionary-relevant.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu1-睭
+    headword: 睭
+    readings:
+      - pengim: ziu1
+    senses:
+      - pos: noun
+        gloss_en: ["eye (bound form, used only in the compound 目睭 'eye')"]
+        gloss_zh: [睭]
+        note: The page gives no standalone gloss, only 'used in 目睭'; treated as a bound morpheme meaning 'eye' since it lacks an independent meaning of its own.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tong5-瞳
+    headword: 瞳
+    readings:
+      - pengim: tong5
+    senses:
+      - pos: noun
+        gloss_en: [pupil of eye]
+        gloss_zh: [瞳]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tong5-kong2-瞳孔
+    headword: 瞳孔
+    readings:
+      - pengim: tong5 kong2
+    senses:
+      - pos: noun
+        gloss_en: [pupil (of the eye)]
+        gloss_zh: [瞳孔]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing5-gêng1-nguang5-神經元
+    headword: 神經元
+    readings:
+      - pengim: sing5 gêng1 nguang5
+    senses:
+      - pos: noun
+        gloss_en: [neuron]
+        gloss_zh: [神經元]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng1-ze2-精子
+    headword: 精子
+    readings:
+      - pengim: zêng1 ze2
+    senses:
+      - pos: noun
+        gloss_en: [sperm cell, spermatozoon]
+        gloss_zh: [精子]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng1-sing5-hung1-lih8-zêng3-精神分裂症
+    headword: 精神分裂症
+    readings:
+      - pengim: zêng1 sing5 hung1 lih8 zêng3
+    senses:
+      - pos: noun
+        gloss_en: [schizophrenia]
+        gloss_zh: [精神分裂症]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: teng5-rio7-bên7-糖尿病
+    headword: 糖尿病
+    readings:
+      - pengim: teng5 rio7 bên7
+    senses:
+      - pos: noun
+        gloss_en: [diabetes mellitus; diabetes]
+        gloss_zh: [糖尿病]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sua1-痧
+    headword: 痧
+    readings:
+      - pengim: sua1
+    senses:
+      - pos: noun
+        gloss_en: ["acute febrile illness (heatstroke, cholera, measles, etc.)", sha (TCM ailment)]
+        gloss_zh: [痧]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

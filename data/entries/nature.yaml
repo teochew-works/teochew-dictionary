@@ -7057,3 +7057,881 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: huêg4-nguêng5-di7-發源地
+    headword: 發源地
+    readings:
+      - pengim: huêg4 nguêng5 di7
+    senses:
+      - pos: noun
+        gloss_en: [place of origin, birthplace, source]
+        gloss_zh: [發源地]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh8-tih4-白鐵
+    headword: 白鐵
+    readings:
+      - pengim: bêh8 tih4
+    senses:
+      - pos: noun
+        gloss_en: [galvanized iron, white iron]
+        gloss_zh: [白鐵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh8-hung5-白雲
+    headword: 白雲
+    readings:
+      - pengim: bêh8 hung5
+    senses:
+      - pos: noun
+        gloss_en: [white cloud]
+        gloss_zh: [白雲]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh8-lou7-白露
+    headword: 白露
+    readings:
+      - pengim: bêh8 lou7
+    senses:
+      - pos: noun
+        gloss_en: [dew in autumn, White Dew (solar term around September 8)]
+        gloss_zh: [白露]
+        note: The page has separate noun (autumn dew / a tea), classical verb ('to reveal'), and proper-noun (solar term; obsolete name for Peru) blocks all sharing this same reading; entry merges the core meteorological/solar-term senses as most useful.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh4-hah8-百合
+    headword: 百合
+    readings:
+      - pengim: bêh4 hah8
+    senses:
+      - pos: noun
+        gloss_en: [lily (flower or bulb)]
+        gloss_zh: [百合]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-皋
+    headword: 皋
+    readings:
+      - pengim: gao1
+    senses:
+      - pos: noun
+        gloss_en: [shore; land by a body of water (literary), highland (literary)]
+        gloss_zh: [皋]
+        note: Literary character with several disparate, mostly obsolete senses (shore, highland, marsh, rice paddy, alt. form of 高, surname); the single Teochew reading does not disambiguate which sense is intended.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puê5-gêg4-皮革
+    headword: 皮革
+    readings:
+      - pengim: puê5 gêg4
+    senses:
+      - pos: noun
+        gloss_en: [leather, hide]
+        gloss_zh: [皮革]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng6-hê7-盛夏
+    headword: 盛夏
+    readings:
+      - pengim: sêng6 hê7
+    senses:
+      - pos: noun
+        gloss_en: [midsummer, height of summer]
+        gloss_zh: [盛夏]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng6-gêng2-盛景
+    headword: 盛景
+    readings:
+      - pengim: sêng6 gêng2
+    senses:
+      - pos: noun
+        gloss_en: [grand view, magnificent scenery]
+        gloss_zh: [盛景]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziêh8-bang2-石板
+    headword: 石板
+    readings:
+      - pengim: ziêh8 bang2
+    senses:
+      - pos: noun
+        gloss_en: [stone slab, flagstone, slate (for writing)]
+        gloss_zh: [石板]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zioh8-mi5-石棉
+    headword: 石棉
+    readings:
+      - pengim: zioh8 mi5
+    senses:
+      - pos: noun
+        gloss_en: [asbestos]
+        gloss_zh: [石棉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zioh8-iu5-石油
+    headword: 石油
+    readings:
+      - pengim: zioh8 iu5
+    senses:
+      - pos: noun
+        gloss_en: [petroleum, oil]
+        gloss_zh: [石油]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zioh8-huê1-石灰
+    headword: 石灰
+    readings:
+      - pengim: zioh8 huê1
+    senses:
+      - pos: noun
+        gloss_en: [lime (calcium compound)]
+        gloss_zh: [石灰]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zioh8-gou2-石牯
+    headword: 石牯
+    readings:
+      - pengim: zioh8 gou2
+    senses:
+      - pos: noun
+        gloss_en: [stone; rock (dialectal)]
+        gloss_zh: [石頭]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zioh8-go1-石膏
+    headword: 石膏
+    readings:
+      - pengim: zioh8 go1
+    senses:
+      - pos: noun
+        gloss_en: [gypsum, plaster, (medical) cast]
+        gloss_zh: [石膏]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziêh8-lah8-石蠟
+    headword: 石蠟
+    readings:
+      - pengim: ziêh8 lah8
+    senses:
+      - pos: noun
+        gloss_en: [paraffin wax, coal oil]
+        gloss_zh: [石蠟]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zioh8-bou6-石部
+    headword: 石部
+    readings:
+      - pengim: zioh8 bou6
+    senses:
+      - pos: noun
+        gloss_en: [stone; rock]
+        gloss_zh: [石頭]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zioh8-tao5-石頭
+    headword: 石頭
+    readings:
+      - pengim: zioh8 tao5
+    senses:
+      - pos: noun
+        gloss_en: [stone, rock]
+        gloss_zh: [石頭]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pua3-hia6-piang3-破瓦片
+    headword: 破瓦片
+    readings:
+      - pengim: pua3 hia6 piang3
+    senses:
+      - pos: noun
+        gloss_en: [broken bricks and tiles, rubble]
+        gloss_zh: [破瓦片]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hêng5-硎
+    headword: 硎
+    readings:
+      - pengim: hêng5
+    senses:
+      - pos: noun
+        gloss_en: [whetstone]
+        gloss_zh: [硎]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siou1-硝
+    headword: 硝
+    readings:
+      - pengim: siou1
+    senses:
+      - pos: noun
+        gloss_en: [saltpetre; niter]
+        gloss_zh: [硝]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-硫
+    headword: 硫
+    readings:
+      - pengim: liu5
+    senses:
+      - pos: noun
+        gloss_en: [sulfur]
+        gloss_zh: [硫]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-huê3-king1-硫化氫
+    headword: 硫化氫
+    readings:
+      - pengim: liu5 huê3 king1
+    senses:
+      - pos: noun
+        gloss_en: [hydrogen sulfide]
+        gloss_zh: [硫化氫]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-seng1-硫酸
+    headword: 硫酸
+    readings:
+      - pengim: liu5 seng1
+    senses:
+      - pos: noun
+        gloss_en: [sulfuric acid]
+        gloss_zh: [硫酸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-ng5-硫黃
+    headword: 硫黃
+    readings:
+      - pengim: liu5 ng5
+    senses:
+      - pos: noun
+        gloss_en: [sulfur; sulphur]
+        gloss_zh: [硫黃]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diang2-碘
+    headword: 碘
+    readings:
+      - pengim: diang2
+    senses:
+      - pos: noun
+        gloss_en: [iodine]
+        gloss_zh: [碘]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diang2-ziu2-碘酒
+    headword: 碘酒
+    readings:
+      - pengim: diang2 ziu2
+    senses:
+      - pos: noun
+        gloss_en: [tincture of iodine, iodine antiseptic]
+        gloss_zh: [碘酒]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuan3-碳
+    headword: 碳
+    readings:
+      - pengim: tuan3
+    senses:
+      - pos: noun
+        gloss_en: [carbon]
+        gloss_zh: [碳]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuan3-dong1-hua5-碳中和
+    headword: 碳中和
+    readings:
+      - pengim: tuan3 dong1 hua5
+    senses:
+      - pos: noun
+        gloss_en: [carbon neutrality]
+        gloss_zh: [碳中和]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tuan3-dag8-hong1-碳達峰
+    headword: 碳達峰
+    readings:
+      - pengim: tuan3 dag8 hong1
+    senses:
+      - pos: noun
+        gloss_en: [carbon peak (peak carbon dioxide emissions)]
+        gloss_zh: [碳達峰]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ce5-dion5-磁場
+    headword: 磁場
+    readings:
+      - pengim: ce5 dion5
+    senses:
+      - pos: noun
+        gloss_en: [magnetic field]
+        gloss_zh: [磁場]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ce5-sên3-磁性
+    headword: 磁性
+    readings:
+      - pengim: ce5 sên3
+    senses:
+      - pos: noun
+        gloss_en: [magnetism, (of a voice) deep and attractive quality]
+        gloss_zh: [磁性]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ce5-zam1-磁針
+    headword: 磁針
+    readings:
+      - pengim: ce5 zam1
+    senses:
+      - pos: noun
+        gloss_en: [magnetic needle]
+        gloss_zh: [磁針]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zeng1-磚
+    headword: 磚
+    readings:
+      - pengim: zeng1
+    senses:
+      - pos: noun
+        gloss_en: [brick, tile]
+        gloss_zh: [磚]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zeng1-go3-磚塊
+    headword: 磚塊
+    readings:
+      - pengim: zeng1 go3
+    senses:
+      - pos: noun
+        gloss_en: [brick]
+        gloss_zh: [磚塊]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ling5-磷
+    headword: 磷
+    readings:
+      - pengim: ling5
+    senses:
+      - pos: noun
+        gloss_en: [phosphorus]
+        gloss_zh: [磷]
+        note: The character page lists many disparate senses (phosphorus, ignis fatuus, mica, thin/blemish/stain, stony) all under the same reading with no dialect-specific tagging, making it unclear which sense is actually current in Teochew.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziao1-zioh8-礁石
+    headword: 礁石
+    readings:
+      - pengim: ziao1 zioh8
+    senses:
+      - pos: noun
+        gloss_en: [reef, submerged rock]
+        gloss_zh: [礁石]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dung1-礅
+    headword: 礅
+    readings:
+      - pengim: dung1
+    senses:
+      - pos: noun
+        gloss_en: [large stone]
+        gloss_zh: [礅]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bha7-du2-礣砥
+    headword: 礣砥
+    readings:
+      - pengim: bha7 du2
+    senses:
+      - pos: noun
+        gloss_en: [stone]
+        gloss_zh: [礣砥]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang3-礦
+    headword: 礦
+    readings:
+      - pengim: kuang3
+    senses:
+      - pos: noun
+        gloss_en: [mineral deposit; ore, mine]
+        gloss_zh: [礦]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang3-zuan5-礦泉
+    headword: 礦泉
+    readings:
+      - pengim: kuang3 zuan5
+    senses:
+      - pos: noun
+        gloss_en: [mineral spring]
+        gloss_zh: [礦泉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang3-muêh8-礦物
+    headword: 礦物
+    readings:
+      - pengim: kuang3 muêh8
+    senses:
+      - pos: noun
+        gloss_en: [mineral]
+        gloss_zh: [礦物]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang3-ziêh8-礦石
+    headword: 礦石
+    readings:
+      - pengim: kuang3 ziêh8
+    senses:
+      - pos: noun
+        gloss_en: [ore]
+        gloss_zh: [礦石]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu1-秋
+    headword: 秋
+    readings:
+      - pengim: ciu1
+    senses:
+      - pos: noun
+        gloss_en: [autumn, fall, harvest season]
+        gloss_zh: [秋]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu1-hung1-秋分
+    headword: 秋分
+    readings:
+      - pengim: ciu1 hung1
+    senses:
+      - pos: noun
+        gloss_en: [autumnal equinox]
+        gloss_zh: [秋分]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu1-tin1-秋天
+    headword: 秋天
+    readings:
+      - pengim: ciu1 tin1
+    senses:
+      - pos: noun
+        gloss_en: [autumn, fall]
+        gloss_zh: [秋天]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu1-tin1-si5-秋天時
+    headword: 秋天時
+    readings:
+      - pengim: ciu1 tin1 si5
+    senses:
+      - pos: noun
+        gloss_en: [autumn, fall]
+        gloss_zh: [秋天時]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu1-kui3-秋季
+    headword: 秋季
+    readings:
+      - pengim: ciu1 kui3
+    senses:
+      - pos: noun
+        gloss_en: [autumn (as a season)]
+        gloss_zh: [秋季]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu1-liang5-秋涼
+    headword: 秋涼
+    readings:
+      - pengim: ciu1 liang5
+    senses:
+      - pos: noun
+        gloss_en: [cool autumn days, autumn coolness]
+        gloss_zh: [秋涼]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu1-huang1-秋風
+    headword: 秋風
+    readings:
+      - pengim: ciu1 huang1
+    senses:
+      - pos: noun
+        gloss_en: [autumn wind, fall wind]
+        gloss_zh: [秋風]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-dag4-穀笪
+    headword: 穀笪
+    readings:
+      - pengim: gog4 dag4
+    senses:
+      - pos: noun
+        gloss_en: [coarse bamboo mat (used for drying grain)]
+        gloss_zh: [穀笪]
+        note: Regional Teochew/Hokkien word for a bamboo drying mat; unsure whether nature.yaml (materials) or basics.yaml (catch-all household object) is the better category fit.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-u2-穀雨
+    headword: 穀雨
+    readings:
+      - pengim: gog4 u2
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Guyu, Grain Rain (one of the 24 solar terms)"]
+        gloss_zh: [穀雨]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sui7-穗
+    headword: 穗
+    readings:
+      - pengim: sui7
+    senses:
+      - pos: noun
+        gloss_en: [ear of grain, spike (of grain)]
+        gloss_zh: [穗, 稻穗]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giong1-穹
+    headword: 穹
+    readings:
+      - pengim: giong1
+    senses:
+      - pos: noun
+        gloss_en: [sky; the heavens (literary), vault of the sky]
+        gloss_zh: [穹, 蒼穹]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kong1-dang1-空中
+    headword: 空中
+    readings:
+      - pengim: kong1 dang1
+    senses:
+      - pos: noun
+        gloss_en: [the air; the sky, overhead; in the air]
+        gloss_zh: [空中]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kong1-ki3-空氣
+    headword: 空氣
+    readings:
+      - pengim: kong1 ki3
+    senses:
+      - pos: noun
+        gloss_en: [air]
+        gloss_zh: [空氣]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: long5-窿
+    headword: 窿
+    readings:
+      - pengim: long5
+    senses:
+      - pos: noun
+        gloss_en: [hole]
+        gloss_zh: [窿, 窟窿]
+        note: The 'hole' sense is tagged as used in Cantonese/Pinghua/Southern varieties rather than explicitly Min-Nan/Teochew, and the other listed use is only a bound morpheme in 窟窿, so applicability of a standalone 'hole' meaning to Teochew is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lib8-dang1-立冬
+    headword: 立冬
+    readings:
+      - pengim: lib8 dang1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Start of Winter (solar term, around Nov 7)"]
+        gloss_zh: [立冬]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lib8-hê7-立夏
+    headword: 立夏
+    readings:
+      - pengim: lib8 hê7
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Start of Summer (solar term, around May 5-7)"]
+        gloss_zh: [立夏]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lib8-cung1-立春
+    headword: 立春
+    readings:
+      - pengim: lib8 cung1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Start of Spring (solar term, around Feb 3-5)"]
+        gloss_zh: [立春]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lib8-ciu1-立秋
+    headword: 立秋
+    readings:
+      - pengim: lib8 ciu1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Start of Autumn (solar term, around Aug 8)"]
+        gloss_zh: [立秋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêg4-竹
+    headword: 竹
+    readings:
+      - pengim: dêg4
+    senses:
+      - pos: noun
+        gloss_en: [bamboo]
+        gloss_zh: [竹]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêg4-mag8-竹目
+    headword: 竹目
+    readings:
+      - pengim: dêg4 mag8
+    senses:
+      - pos: noun
+        gloss_en: [bamboo joint]
+        gloss_zh: [竹目]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêg4-go1-竹篙
+    headword: 竹篙
+    readings:
+      - pengim: dêg4 go1
+    senses:
+      - pos: noun
+        gloss_en: [bamboo pole]
+        gloss_zh: [竹篙]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêg4-竺
+    headword: 竺
+    readings:
+      - pengim: dêg4
+    senses:
+      - pos: noun
+        gloss_en: [bamboo (archaic/literary), short for 天竺 (India)]
+        gloss_zh: [竺]
+        note: 竺 carries several disparate senses (archaic 'bamboo', abbreviation for 天竺/India, a mountain name, an ancient instrument, a surname) all under the same reading; classified here by its core literary meaning.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sung2-kag4-筍殼
+    headword: 筍殼
+    readings:
+      - pengim: sung2 kag4
+    senses:
+      - pos: noun
+        gloss_en: [sheath of a bamboo shoot]
+        gloss_zh: [筍殼]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhih8-篾
+    headword: 篾
+    readings:
+      - pengim: bhih8
+    senses:
+      - pos: noun
+        gloss_en: [bamboo strip, splint, slat]
+        gloss_zh: [篾]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhih8-neng5-篾瓤
+    headword: 篾瓤
+    readings:
+      - pengim: bhih8 neng5
+    senses:
+      - pos: noun
+        gloss_en: [inner pith of a bamboo stem]
+        gloss_zh: [篾瓤]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liab8-ze2-粒子
+    headword: 粒子
+    readings:
+      - pengim: liab8 ze2
+    senses:
+      - pos: noun
+        gloss_en: [particle (physics), grain; granule; pellet]
+        gloss_zh: [粒子, 顆粒]
+        note: Two distinct senses (technical physics 'particle' vs. general 'grain/granule') share this reading with no clear indication which is more idiomatic in everyday Teochew, affecting the category choice.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cou1-keng1-粗糠
+    headword: 粗糠
+    readings:
+      - pengim: cou1 keng1
+    senses:
+      - pos: noun
+        gloss_en: [chaff]
+        gloss_zh: [粗糠]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diu6-go2-cao2-粙稿草
+    headword: 粙稿草
+    readings:
+      - pengim: diu6 go2 cao2
+    senses:
+      - pos: noun
+        gloss_en: [rice straw]
+        gloss_zh: [粙稿草, 稻草]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng1-iu5-精油
+    headword: 精油
+    readings:
+      - pengim: zêng1 iu5
+    senses:
+      - pos: noun
+        gloss_en: [essential oil]
+        gloss_zh: [精油]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
