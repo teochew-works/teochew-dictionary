@@ -3005,3 +3005,152 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: tang3-通
+    headword: 通
+    readings:
+      - pengim: tang3
+    senses:
+      - pos: adverb
+        gloss_en: [throughout; completely (as a verb complement)]
+        gloss_zh: [通]
+        note: 1 candidate reading from Wiktionary (tang3) — genuine Chaozhou colloquial form not yet confirmed by a speaker. This entry covers the Southern-Min-specific complement usage meaning 'throughout; completely', split from the other 通 entry (tang1/tong1), which covers the general senses and does not attest this reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ia5-邪
+    headword: 邪
+    readings:
+      - pengim: ia5
+    senses:
+      - pos: particle
+        gloss_en: [alternative form of 耶 (sentence-final interrogative particle)]
+        gloss_zh: [耶]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This entry covers the alternative-form senses (of 琅琊 and 耶) tied to a separate etymology block from the main 'evil; wicked' sense (reading sia5), which was drafted as its own entry.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou1-都
+    headword: 都
+    readings:
+      - pengim: dou1
+      - pengim: do1
+    senses:
+      - pos: adverb
+        gloss_en: [all; both, even (emphatic)]
+        gloss_zh: [都]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ding3-dang1-鎮中
+    headword: 鎮中
+    readings:
+      - pengim: ding3 dang1
+      - pengim: ling3 dang1
+      - pengim: lêng3 dang1
+    senses:
+      - pos: noun
+        gloss_en: [middle, center]
+        gloss_zh: [鎮中]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The page marks this sense specifically as Teochew usage.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang1-i1-關於
+    headword: 關於
+    readings:
+      - pengim: guang1 i1
+      - pengim: guêng1 i1
+    senses:
+      - pos: preposition
+        gloss_en: [concerning; regarding; about]
+        gloss_zh: [關於]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu6-geng6-附近
+    headword: 附近
+    readings:
+      - pengim: hu6 geng6
+      - pengim: hu6 gêng6
+    senses:
+      - pos: noun
+        gloss_en: [nearby; vicinity; proximity]
+        gloss_zh: [附近]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sui1-riêng5-雖然
+    headword: 雖然
+    readings:
+      - pengim: sui1 riêng5
+      - pengim: sui1 riang5
+    senses:
+      - pos: conjunction
+        gloss_en: [although; even though]
+        gloss_zh: [雖然]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming7-tao5-zoin5-面頭前
+    headword: 面頭前
+    readings:
+      - pengim: ming7 tao5 zoin5
+      - pengim: mêng7 tao5 zain5
+    senses:
+      - pos: noun
+        gloss_en: [in front of one's face; in front]
+        gloss_zh: [面頭前]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêng2-boin5-頂爿
+    headword: 頂爿
+    readings:
+      - pengim: dêng2 boin5
+      - pengim: dêng2 bain5
+    senses:
+      - pos: noun
+        gloss_en: [above; on top]
+        gloss_zh: [頂爿]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tao5-zoin5-頭前
+    headword: 頭前
+    readings:
+      - pengim: tao5 zoin5
+      - pengim: tao5 zain5
+    senses:
+      - pos: noun
+        gloss_en: [in front; ahead]
+        gloss_zh: [頭前, 前面]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

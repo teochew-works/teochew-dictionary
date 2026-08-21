@@ -2339,3 +2339,64 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: zai2-載
+    headword: 載
+    readings:
+      - pengim: zai2
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for years, extremely large number (10^44)]
+        gloss_zh: [載]
+        note: 1 candidate reading from Wiktionary (out of 2 originally listed for 載) — genuine Chaozhou colloquial form not yet confirmed by a speaker. This reading is tied to a separate sense (classifier for years / numeral), distinct from zai3's 'to carry' sense, so drafted as a separate entry.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêg8-陸-numeral
+    headword: 陸
+    readings:
+      - pengim: lêg8
+      - pengim: log8
+      - pengim: lag8
+    senses:
+      - pos: numeral
+        gloss_en: [six (formal/financial numeral used in place of 六)]
+        gloss_zh: [六, 陸]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the 'land; continent' entry above because this financial-numeral sense (alternative form of 六) is the one that attests the additional reading 'lag8'.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-零
+    headword: 零
+    readings:
+      - pengim: lêng5
+      - pengim: lang5
+    senses:
+      - pos: numeral
+        gloss_en: [zero, nil]
+        gloss_zh: [零]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ko1-顆
+    headword: 顆
+    readings:
+      - pengim: ko1
+      - pengim: ko2
+      - pengim: lo2
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for small round objects]
+        gloss_zh: [顆]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

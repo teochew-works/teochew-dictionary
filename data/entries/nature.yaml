@@ -13445,3 +13445,276 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: hi1-蹊
+    headword: 蹊
+    readings:
+      - pengim: hi1
+      - pengim: hi5
+    senses:
+      - pos: noun
+        gloss_en: [footpath, path; way]
+        gloss_zh: [蹊]
+        note: 2 candidate readings from Wiktionary (out of 3 originally listed for 蹊) — genuine Chaozhou colloquial form not yet confirmed by a speaker. Dropped ki1, which the dossier ties to a separate bound-morpheme sense ('used in 蹊蹺'), not this 'footpath' sense; drafted as a separate entry below.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gim1-金
+    headword: 金
+    readings:
+      - pengim: gim1
+      - pengim: ging1
+    senses:
+      - pos: noun
+        gloss_en: [gold, metal, money]
+        gloss_zh: [金]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huam5-釩
+    headword: 釩
+    readings:
+      - pengim: huam5
+      - pengim: huang5
+    senses:
+      - pos: noun
+        gloss_en: [vanadium]
+        gloss_zh: [釩]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sên1-鉎
+    headword: 鉎
+    readings:
+      - pengim: sên1
+      - pengim: sang1
+    senses:
+      - pos: noun
+        gloss_en: [cast iron, rust]
+        gloss_zh: [鉎]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing5-鉛
+    headword: 鉛
+    readings:
+      - pengim: ing5
+      - pengim: êng5
+      - pengim: iang5
+    senses:
+      - pos: noun
+        gloss_en: [lead (metal), graphite (pencil lead)]
+        gloss_zh: [鉛]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lui5-鐳
+    headword: 鐳
+    readings:
+      - pengim: lui5
+    senses:
+      - pos: noun
+        gloss_en: [radium]
+        gloss_zh: [鐳]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the original two-candidate set (lui5, lui1) because the 'radium' sense on the page attests only lui5; the lui1 reading belongs to a separate 'money/coin' sense, drafted as its own entry.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siam2-diêng6-閃電
+    headword: 閃電
+    readings:
+      - pengim: siam2 diêng6
+      - pengim: siam2 diang6
+    senses:
+      - pos: noun
+        gloss_en: [lightning]
+        gloss_zh: [閃電]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a1-阿-noun
+    headword: 阿
+    readings:
+      - pengim: a1
+      - pengim: o1
+    senses:
+      - pos: noun
+        gloss_en: [hillside; mound; slope]
+        gloss_zh: [阿]
+        note: "2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into separate sense-specific entries: this entry (hillside/mound sense) is attested with both a1 and o1; the far more common prefix-of-address sense is attested only with a1, entered separately."
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêg8-陸
+    headword: 陸
+    readings:
+      - pengim: lêg8
+      - pengim: log8
+    senses:
+      - pos: noun
+        gloss_en: [land; continent, mainland]
+        gloss_zh: [陸地, 陸]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Dropped 'lag8' as unattested for this 'land/continent' sense; it is confirmed only for the formal numeral sense, drafted as a separate entry below.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iang5-陽
+    headword: 陽
+    readings:
+      - pengim: iang5
+      - pengim: iên5
+      - pengim: ion5
+    senses:
+      - pos: noun
+        gloss_en: [yang (opposite of yin), sun]
+        gloss_zh: [陽]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou6-zui2-雨水
+    headword: 雨水
+    readings:
+      - pengim: hou6 zui2
+    senses:
+      - pos: noun
+        gloss_en: [rainwater, rainfall]
+        gloss_zh: [雨水]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into sense-specific entries because the two candidate readings correspond to different senses on the source page: hou6 zui2 is attested for the 'rainwater' sense (this entry), while u2 sui2 is attested only for the separate 'Yushui' solar-term sense."
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diang6-電
+    headword: 電
+    readings:
+      - pengim: diang6
+      - pengim: diêng6
+    senses:
+      - pos: noun
+        gloss_en: [electricity, electric power, lightning]
+        gloss_zh: [電]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-霆
+    headword: 霆
+    readings:
+      - pengim: têng5
+    senses:
+      - pos: noun
+        gloss_en: [thunderclap, thunder, lightning]
+        gloss_zh: [霆]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the dang5 reading: the dossier ties têng5 to the 'thunder/thunderclap; lightning' sense and dang5 to a distinct Southern-Min 'to ring' sense, rather than duplicating both readings across the same block, so two sense-specific entries were drafted."
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siab4-霎
+    headword: 霎
+    readings:
+      - pengim: siab4
+      - pengim: siag4
+    senses:
+      - pos: noun
+        gloss_en: [light rain, drizzle]
+        gloss_zh: [霎]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Selected the Southern-Min-tagged 'light rain; drizzle' sense over the character's other Mandarin/Cantonese/Hokkien-specific senses (instant/moment, sound of rain or wind, crumbs, to speak loudly), which are less relevant to Teochew.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan3-霰
+    headword: 霰
+    readings:
+      - pengim: suan3
+      - pengim: sang3
+    senses:
+      - pos: noun
+        gloss_en: [graupel, hail, sleet]
+        gloss_zh: [霰]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin7-靛
+    headword: 靛
+    readings:
+      - pengim: doin7
+      - pengim: diang6
+      - pengim: diêng6
+    senses:
+      - pos: noun
+        gloss_en: [indigo (dye), indigo (colour)]
+        gloss_zh: [靛]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diang1-顛
+    headword: 顛
+    readings:
+      - pengim: diang1
+      - pengim: diêng1
+      - pengim: ding1
+    senses:
+      - pos: noun
+        gloss_en: [top; peak; summit, crown of the head]
+        gloss_zh: [顛]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: piou1-飆
+    headword: 飆
+    readings:
+      - pengim: piou1
+      - pengim: piao1
+      - pengim: biê1
+      - pengim: bio1
+    senses:
+      - pos: noun
+        gloss_en: [whirlwind, strong gusting wind]
+        gloss_zh: [飆]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

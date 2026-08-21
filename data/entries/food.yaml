@@ -9091,3 +9091,383 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: ciah4-nêg8-赤肉
+    headword: 赤肉
+    readings:
+      - pengim: ciah4 nêg8
+      - pengim: ciah4 bhah4
+    senses:
+      - pos: noun
+        gloss_en: [lean meat (esp. pork)]
+        gloss_zh: [赤肉, 瘦肉]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sog4-ziah8-min7-速食麵
+    headword: 速食麵
+    readings:
+      - pengim: sog4 ziah8 min7
+      - pengim: sog4 sig8 min7
+      - pengim: sog4 sêg8 min7
+    senses:
+      - pos: noun
+        gloss_en: [instant noodles]
+        gloss_zh: [速食麵]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ria2-ghong7-遮戇
+    headword: 遮戇
+    readings:
+      - pengim: ria2 ghong7
+      - pengim: ria1 gong7
+      - pengim: ria7 ghong7
+      - pengim: ria1 ghong5
+    senses:
+      - pos: noun
+        gloss_en: [corn; maize]
+        gloss_zh: [玉米]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lo5-醪
+    headword: 醪
+    readings:
+      - pengim: lo5
+      - pengim: lao5
+      - pengim: liao5
+      - pengim: liou5
+    senses:
+      - pos: noun
+        gloss_en: [unstrained wine; alcohol with dregs, alcoholic beverage]
+        gloss_zh: [醪]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziên3-醬
+    headword: 醬
+    readings:
+      - pengim: ziên3
+      - pengim: zion3
+    senses:
+      - pos: noun
+        gloss_en: [sauce, paste, jam]
+        gloss_zh: [醬]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tih4-guang1-im1-鐵觀音
+    headword: 鐵觀音
+    readings:
+      - pengim: tih4 guang1 im1
+      - pengim: tih4 guêng1 im1
+    senses:
+      - pos: noun
+        gloss_en: [Tieguanyin tea, oolong tea variety]
+        gloss_zh: [鐵觀音]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uag8-鑊
+    headword: 鑊
+    readings:
+      - pengim: uag8
+      - pengim: uêg8
+    senses:
+      - pos: noun
+        gloss_en: [cauldron, large cooking pot]
+        gloss_zh: [鑊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cing5-puê5-陳皮
+    headword: 陳皮
+    readings:
+      - pengim: cing5 puê5
+      - pengim: cêng5 puê5
+    senses:
+      - pos: noun
+        gloss_en: [chenpi, dried tangerine peel]
+        gloss_zh: [陳皮]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-nêg8-雞肉
+    headword: 雞肉
+    readings:
+      - pengim: goi1 nêg8
+      - pengim: goi1 bhah4
+    senses:
+      - pos: noun
+        gloss_en: [chicken (meat)]
+        gloss_zh: [雞肉]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-dang3-雞蛋
+    headword: 雞蛋
+    readings:
+      - pengim: goi1 dang3
+    senses:
+      - pos: noun
+        gloss_en: [chicken egg]
+        gloss_zh: [雞蛋]
+        note: 1 candidate reading confirmed from Wiktionary (goi1 dang3) — genuine Chaozhou colloquial form not yet confirmed by a speaker. Dropped 'goi1 duan1' as unattested for this general sense; it is confirmed only for the more specific 'unlaid egg' sense, drafted as a separate entry below.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-dang3-雞蛋-noun
+    headword: 雞蛋
+    readings:
+      - pengim: goi1 dang3
+      - pengim: goi1 duan1
+    senses:
+      - pos: noun
+        gloss_en: [unlaid egg (still inside the hen)]
+        gloss_zh: [雞蛋]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the general 'chicken egg' entry above because this Teochew-specific sense is the one that attests the additional reading 'goi1 duan1'.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soh4-diou5-雪條
+    headword: 雪條
+    readings:
+      - pengim: soh4 diou5
+      - pengim: soh4 diao5
+    senses:
+      - pos: noun
+        gloss_en: [ice popsicle, ice lolly]
+        gloss_zh: [雪條]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-guê2-青果
+    headword: 青果
+    readings:
+      - pengim: cên1 guê2
+      - pengim: cên1 guên2
+      - pengim: cên1 guain2
+    senses:
+      - pos: noun
+        gloss_en: [Chinese olive (Canarium album), green unripe fruit]
+        gloss_zh: [青果]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bung7-si5-飯匙
+    headword: 飯匙
+    readings:
+      - pengim: bung7 si5
+      - pengim: beng7 si5
+    senses:
+      - pos: noun
+        gloss_en: [rice scoop, rice paddle]
+        gloss_zh: [飯匙]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bung7-pi2-飯疕
+    headword: 飯疕
+    readings:
+      - pengim: bung7 pi2
+      - pengim: beng7 pi2
+    senses:
+      - pos: noun
+        gloss_en: [rice crust, crust of cooked rice]
+        gloss_zh: [飯疕]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giao2-餃
+    headword: 餃
+    readings:
+      - pengim: giao2
+      - pengim: giou2
+    senses:
+      - pos: noun
+        gloss_en: [dumpling, wonton]
+        gloss_zh: [餃]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuêng6-tao5-饅頭
+    headword: 饅頭
+    readings:
+      - pengim: bhuêng6 tao5
+      - pengim: mang6 tao5
+    senses:
+      - pos: noun
+        gloss_en: [steamed bun, mantou]
+        gloss_zh: [饅頭]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiên1-ng5-香櫞
+    headword: 香櫞
+    readings:
+      - pengim: hiên1 ng5
+      - pengim: hion1 ng5
+    senses:
+      - pos: noun
+        gloss_en: [citron]
+        gloss_zh: [香櫞]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiên1-ng5-guê1-香櫞瓜
+    headword: 香櫞瓜
+    readings:
+      - pengim: hiên1 ng5 guê1
+      - pengim: hion1 ng5 guê1
+    senses:
+      - pos: noun
+        gloss_en: [chayote]
+        gloss_zh: [香櫞瓜]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiên1-gou1-香菇
+    headword: 香菇
+    readings:
+      - pengim: hiên1 gou1
+      - pengim: hion1 gou1
+    senses:
+      - pos: noun
+        gloss_en: [shiitake mushroom]
+        gloss_zh: [香菇]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhê2-lêng5-ze5-馬鈴薯
+    headword: 馬鈴薯
+    readings:
+      - pengim: bhê2 lêng5 ze5
+      - pengim: bhê2 lêng1 ze5
+    senses:
+      - pos: noun
+        gloss_en: [potato]
+        gloss_zh: [馬鈴薯]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-li5-高麗
+    headword: 高麗
+    readings:
+      - pengim: gao1 li5
+      - pengim: go1 lê6
+    senses:
+      - pos: noun
+        gloss_en: [cabbage]
+        gloss_zh: [高麗]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Both readings are attested together for the Teochew-specific 'cabbage' sense; the historical 'Goryeo/Korea' sense in the same dossier attests only gao1 li5.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ng5-duain7-黃彈
+    headword: 黃彈
+    readings:
+      - pengim: ng5 duain7
+      - pengim: ng5 doin7
+    senses:
+      - pos: noun
+        gloss_en: ["wampee (fruit, Clausena lansium)"]
+        gloss_zh: [黃彈]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu2-黍
+    headword: 黍
+    readings:
+      - pengim: siu2
+      - pengim: su2
+    senses:
+      - pos: noun
+        gloss_en: [proso millet, millet]
+        gloss_zh: [黍]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-ngang2-龍眼
+    headword: 龍眼
+    readings:
+      - pengim: lêng5 ngang2
+      - pengim: nêg8 oin2
+    senses:
+      - pos: noun
+        gloss_en: [longan]
+        gloss_zh: [龍眼]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

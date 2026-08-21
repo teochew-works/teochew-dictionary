@@ -15772,3 +15772,384 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: gia2-賈
+    headword: 賈
+    readings:
+      - pengim: gia2
+      - pengim: gu2
+    senses:
+      - pos: noun
+        gloss_en: [merchant, to trade; to do business]
+        gloss_zh: [賈]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Both readings are attested together for the merchant/trade sense; the separate surname/transcription sense in the dossier only attests gia2.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bing1-賓
+    headword: 賓
+    readings:
+      - pengim: bing1
+      - pengim: biang1
+    senses:
+      - pos: noun
+        gloss_en: [guest; visitor]
+        gloss_zh: [賓]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dio6-趙
+    headword: 趙
+    readings:
+      - pengim: dio6
+      - pengim: diê6
+      - pengim: dion6
+      - pengim: diên6
+    senses:
+      - pos: proper-noun
+        gloss_en: [Zhao (surname)]
+        gloss_zh: [趙]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Drafted using the common surname sense; the page's historical-kingdom and politically-loaded Internet-slang senses were not used.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giê7-bou1-轎夫
+    headword: 轎夫
+    readings:
+      - pengim: giê7 bou1
+      - pengim: gio7 bou1
+      - pengim: gio7 hu1
+    senses:
+      - pos: noun
+        gloss_en: [sedan chair bearer, palanquin bearer]
+        gloss_zh: [轎夫]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao1-sung1-逗孫
+    headword: 逗孫
+    readings:
+      - pengim: dao1 sung1
+      - pengim: dao2 sung1
+    senses:
+      - pos: noun
+        gloss_en: [nephew (brother's son)]
+        gloss_zh: [逗孫]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao6-se6-道士
+    headword: 道士
+    readings:
+      - pengim: dao6 se6
+      - pengim: dao6 su6
+    senses:
+      - pos: noun
+        gloss_en: [Daoist priest]
+        gloss_zh: [道士]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ku1-邱
+    headword: 邱
+    readings:
+      - pengim: ku1
+      - pengim: kiu1
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname (Qiu)]
+        gloss_zh: [邱]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao6-邵
+    headword: 邵
+    readings:
+      - pengim: siao6
+      - pengim: siou6
+      - pengim: siên7
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname (Shao)]
+        gloss_zh: [邵]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sung5-郇
+    headword: 郇
+    readings:
+      - pengim: sung5
+      - pengim: huang5
+      - pengim: huêng5
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname, Xun (ancient state during the Zhou dynasty)]
+        gloss_zh: [郇]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: neng5-郎
+    headword: 郎
+    readings:
+      - pengim: neng5
+      - pengim: lang5
+    senses:
+      - pos: noun
+        gloss_en: ["young man; man (as in compounds like bridegroom, lover)", darling; term of address for a husband or lover]
+        gloss_zh: [郎]
+        note: 2 of 3 candidate readings from Wiktionary confirmed (neng5, lang5) — genuine Chaozhou colloquial form not yet confirmed by a speaker. The third candidate (lang6) is attested only for a narrow bound morpheme used solely in 屎殼郎 (dung beetle), not an independently definable sense, so it was dropped.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-酋
+    headword: 酋
+    readings:
+      - pengim: iu5
+      - pengim: ciu5
+    senses:
+      - pos: noun
+        gloss_en: [chief, chieftain]
+        gloss_zh: [酋]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guêng1-ia5-關爺
+    headword: 關爺
+    readings:
+      - pengim: guêng1 ia5
+      - pengim: guang1 ia5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Guan Yu (deified general, worshipped as a god of war and loyalty)"]
+        gloss_zh: [關爺, 關公]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a1-dion6-阿丈
+    headword: 阿丈
+    readings:
+      - pengim: a1 dion6
+      - pengim: a1 diên6
+    senses:
+      - pos: noun
+        gloss_en: [uncle (husband of one's father's or mother's sister)]
+        gloss_zh: [阿丈]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a1-niê5-阿娘
+    headword: 阿娘
+    readings:
+      - pengim: a1 niê5
+      - pengim: a1 nio5
+    senses:
+      - pos: noun
+        gloss_en: [mother]
+        gloss_zh: [阿娘]
+        note: "2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into separate sense-specific entries: this entry (mother sense) is attested with niê5 and nio5; the nia5 reading is attested only for a distinct 'young woman/mistress' sense entered separately."
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a1-nia5-阿娘
+    headword: 阿娘
+    readings:
+      - pengim: a1 nia5
+    senses:
+      - pos: noun
+        gloss_en: [beautiful young woman (slang), mistress; female master (dated)]
+        gloss_zh: [阿娘]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into separate sense-specific entries: only nia5 is attested for this sense; niê5 and nio5 are attested only for a distinct 'mother' sense entered separately."
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a1-dia1-阿爹
+    headword: 阿爹
+    readings:
+      - pengim: a1 dia1
+    senses:
+      - pos: noun
+        gloss_en: [dad; papa]
+        gloss_zh: [阿爹]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The 'a1 diê1' candidate was not attested anywhere in the source data and was dropped as a likely mis-extraction.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ting5-陳-proper-noun
+    headword: 陳
+    readings:
+      - pengim: ting5
+      - pengim: cing5
+      - pengim: ding5
+      - pengim: dang5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Chen (a common Chinese surname)]
+        gloss_zh: [陳]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the 'old; ancient' entry above because this surname sense is the only block that attests the additional reading 'dang5', alongside the literary ting5/cing5/ding5 readings also used here.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui2-韋
+    headword: 韋
+    readings:
+      - pengim: ui2
+      - pengim: ui5
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname (Wei), tanned leather (archaic)]
+        gloss_zh: [韋]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tao5-gê1-niê5-頭家娘
+    headword: 頭家娘
+    readings:
+      - pengim: tao5 gê1 niê5
+      - pengim: tao5 gê1 nio5
+    senses:
+      - pos: noun
+        gloss_en: [proprietress; boss's wife, female boss]
+        gloss_zh: [頭家娘]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: loh8-駱
+    headword: 駱
+    readings:
+      - pengim: loh8
+      - pengim: log8
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname, used in 駱駝 (camel)]
+        gloss_zh: [駱]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghui7-魏
+    headword: 魏
+    readings:
+      - pengim: ghui7
+      - pengim: ngui7
+    senses:
+      - pos: proper-noun
+        gloss_en: [Wei (surname)]
+        gloss_zh: [魏]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang1-鰥
+    headword: 鰥
+    readings:
+      - pengim: guang1
+      - pengim: guêng1
+    senses:
+      - pos: noun
+        gloss_en: [widower, widowed]
+        gloss_zh: [鰥夫]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li5-黎
+    headword: 黎
+    readings:
+      - pengim: li5
+      - pengim: loi5
+    senses:
+      - pos: proper-noun
+        gloss_en: [surname Li]
+        gloss_zh: [黎]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang2-uêng5-黨員
+    headword: 黨員
+    readings:
+      - pengim: dang2 uêng5
+      - pengim: dang2 uang5
+    senses:
+      - pos: noun
+        gloss_en: [party member]
+        gloss_zh: [黨員]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong1-龔
+    headword: 龔
+    readings:
+      - pengim: gong1
+      - pengim: giong1
+      - pengim: giong2
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname]
+        gloss_zh: [龔]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

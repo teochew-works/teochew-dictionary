@@ -1465,3 +1465,47 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: lang2-赧
+    headword: 赧
+    readings:
+      - pengim: lang2
+      - pengim: nang2
+    senses:
+      - pos: pronoun
+        gloss_en: [we; us (inclusive), alt. form of 咱]
+        gloss_zh: [咱]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Drafted as the Teochew-tagged alternate form of 咱 (inclusive "we/us"), per the alt_of sense on the page, rather than the unrelated literary/Cantonese senses sharing the same readings.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing1-𪜶
+    headword: 𪜶
+    readings:
+      - pengim: ing1
+      - pengim: êng1
+    senses:
+      - pos: pronoun
+        gloss_en: [they, them]
+        gloss_zh: [𪜶]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diang5-𫢗
+    headword: 𫢗
+    readings:
+      - pengim: diang5
+    senses:
+      - pos: pronoun
+        gloss_en: [who]
+        gloss_zh: [𫢗]
+        note: 1 of 2 candidate readings from Wiktionary confirmed for this sense — genuine Chaozhou colloquial form not yet confirmed by a speaker. The candidate diang1 is attested in the dossier only for 𫢗's bound-morpheme use inside 𫢗時 ('when', drafted as its own headword), not for this independent 'who' sense, so it was dropped here.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
