@@ -191,7 +191,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - a5-R
       shantou:
         status: unattested
   - syllable: a6
@@ -449,6 +451,7 @@ items:
         status: attested
         attested_entries:
           - a1-ai5-阿嬡
+          - ai5-I
           - ai5-嬡
           - ao6-ai5-後嬡
           - bê6-ai5-父嬡
@@ -5104,6 +5107,7 @@ items:
           - beng5-iu2-朋友
           - bêng5-huag4-迸發
           - bêng5-lang5-憑欄
+          - bêng5-si6-Benz
           - bêng5-zêng3-憑證
           - bêng5-迸
           - pêng5-憑
@@ -5181,6 +5185,7 @@ items:
           - beng5-iu2-朋友
           - bêng5-huag4-迸發
           - bêng5-lang5-憑欄
+          - bêng5-si6-Benz
           - bêng5-zêng3-憑證
           - bêng6-bai5-並排
           - bêng6-bhung5-駢文
@@ -8004,9 +8009,11 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhi1-ri1-êm1-BGM
           - bhi1-tiao3-B超
           - ze6-dua3-bhi1-ri1-êm1-自帶BGM
         sandhi_attested_entries:
+          - bhi1-ri1-êm1-BGM
           - bhi1-tiao3-B超
           - ze6-dua3-bhi1-ri1-êm1-自帶BGM
       shantou:
@@ -8072,6 +8079,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhi5-B
           - bhi5-咪
           - cu3-bhi7-趣味
       shantou:
@@ -17752,7 +17760,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - bhui5-V
       shantou:
         status: unattested
   - syllable: bhui6
@@ -31096,7 +31106,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - sih8-buh8-sah8-nah4
       shantou:
         status: unattested
   - syllable: buh8
@@ -31109,6 +31121,7 @@ items:
         status: attested
         attested_entries:
           - buh8-𠜙
+          - sih8-buh8-sah8-nah4
       shantou:
         status: unattested
   - syllable: bui1
@@ -45730,7 +45743,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - êh8-cu7-H
       shantou:
         status: unattested
   - syllable: cua1
@@ -51353,6 +51368,8 @@ items:
           - huê5-dab4-回答
           - ing3-dab4-應答
           - zêg8-meng7-zêg8-dab4-一問一答
+        sandhi_attested_entries:
+          - dab8-liu7-W
       shantou:
         status: unattested
   - syllable: dab8
@@ -51364,6 +51381,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - dab8-liu7-W
           - dab8-霅
         sandhi_attested_entries:
           - a1-dab4-cu3-亞答厝
@@ -55313,6 +55331,7 @@ items:
         attested_entries:
           - ca1-di5-差池
           - dao5-di5-投遞
+          - di5-D
           - di5-zêng1-遞增
           - di5-池
           - di5-遞
@@ -69658,7 +69677,10 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - ê5-A
+          - ê5-le7-L
       shantou:
         status: unattested
   - syllable: e6
@@ -69794,6 +69816,7 @@ items:
           - hia6-liu5-下流
           - hiên1-ê6-nang5-鄉下人
           - rui6-kiong2-tin1-ê6-bug4-luang6-唯恐天下不亂
+          - ê5-le7-L
           - ê6-bhuê2-華美
           - ê6-boin5-下爿
           - ê6-buê3-下輩
@@ -70000,6 +70023,10 @@ items:
         attested_entries:
           - êh4-厄
           - êh4-軛
+        sandhi_attested_entries:
+          - êh8-cu7-H
+          - êh8-hu7-F
+          - êh8-se7-S
       shantou:
         status: unattested
   - syllable: eh8
@@ -70019,7 +70046,11 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - êh8-cu7-H
+          - êh8-hu7-F
+          - êh8-se7-S
       shantou:
         status: unattested
   - syllable: em1
@@ -70041,6 +70072,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhi1-ri1-êm1-BGM
           - ze6-dua3-bhi1-ri1-êm1-自帶BGM
       shantou:
         status: unattested
@@ -70101,7 +70133,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - êm5-M
       shantou:
         status: unattested
   - syllable: em6
@@ -70546,6 +70580,7 @@ items:
           - ing5-鉛
           - iong5-鎣
           - zang5-層
+          - êng5-N
           - êng5-riao3-縈繞
           - êng5-suan3-鉛線
       shantou:
@@ -116901,6 +116936,7 @@ items:
           - u1-hu7-ai1-zai7-嗚呼哀哉
           - u1-hu7-嗚呼
           - ze1-hu7-zia2-ia2-之乎者也
+          - êh8-hu7-F
         sandhi_attested_entries:
           - bhuang5-eng1-hu6-ngi6-忘恩負義
           - bo2-hu6-moh8-保護膜
@@ -124295,6 +124331,7 @@ items:
           - hu1-gio3-zuang2-i5-呼叫轉移
           - huin2-i5-so2-se1-匪夷所思
           - hê7-ui1-i5-夏威夷
+          - i5-E
           - i5-dao2-su3-胰島素
           - i5-dion6-姨丈
           - i5-dong6-移動
@@ -130398,6 +130435,7 @@ items:
           - huê1-sêng1-iu5-花生油
           - huê2-iu5-火油
           - huê2-zui2-iu5-火水油
+          - iu5-U
           - iu5-bao1-郵包
           - iu5-bing2-油品
           - iu5-cag4-油漆
@@ -132988,7 +133026,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - kê5-K
       shantou:
         status: unattested
   - syllable: ke6
@@ -139484,6 +139524,7 @@ items:
           - guah4-kiu5-渴求
           - hiun5-裘
           - iou1-kiu5-要求
+          - kiu5-Q
           - kiu5-gao3-求告
           - kiu5-giu3-求救
           - kiu5-hag8-求學
@@ -149628,6 +149669,8 @@ items:
         status: unattested
       chaozhou:
         status: attested
+        attested_entries:
+          - ê5-le7-L
         sandhi_attested_entries:
           - le5-bho2-驢母
           - le5-gou2-驢牯
@@ -156400,6 +156443,8 @@ items:
         status: unattested
       chaozhou:
         status: attested
+        attested_entries:
+          - dab8-liu7-W
         sandhi_attested_entries:
           - cuang1-liu5-bug4-sêg4-川流不息
           - liu5-biang6-流便
@@ -180259,6 +180304,7 @@ items:
           - nah4-sab4-tang2-垃圾桶
           - nah4-sab4-垃圾
           - sih4-nah4-爍爁
+          - sih8-buh8-sah8-nah4
       shantou:
         status: unattested
   - syllable: nah8
@@ -211377,6 +211423,7 @@ items:
           - lo5-ou5-羅湖
           - lêng5-ou5-龍湖
           - mi5-ou5-棉湖
+          - ou5-O
           - ou5-bag4-湖北
           - ou5-boh8-湖泊
           - ou5-lam5-湖南
@@ -214621,6 +214668,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - pi1-P
           - pi1-dou5-P圖
           - pi1-hong1-披風
           - pi1-lou7-披露
@@ -228751,7 +228799,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - rêh8-Z
       shantou:
         status: unattested
   - syllable: rem1
@@ -229476,8 +229526,10 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhi1-ri1-êm1-BGM
           - ze6-dua3-bhi1-ri1-êm1-自帶BGM
         sandhi_attested_entries:
+          - bhi1-ri1-êm1-BGM
           - ze6-dua3-bhi1-ri1-êm1-自帶BGM
       shantou:
         status: unattested
@@ -242223,7 +242275,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - sih8-buh8-sah8-nah4
       shantou:
         status: unattested
   - syllable: sah8
@@ -242236,6 +242290,7 @@ items:
         status: attested
         attested_entries:
           - sah8-煠
+          - sih8-buh8-sah8-nah4
       shantou:
         status: unattested
   - syllable: sai1
@@ -243497,6 +243552,8 @@ items:
         status: unattested
       chaozhou:
         status: attested
+        attested_entries:
+          - so2-嫂
         sandhi_attested_entries:
           - sao3-bhê2-掃碼
           - sao3-do3-掃地
@@ -244332,6 +244389,7 @@ items:
           - zo3-se7-做事
           - zoin5-se7-bug4-bhuang5-ao6-se7-ze1-se1-前事不忘，後事之師
           - zêg8-se7-bho5-sêng5-一事無成
+          - êh8-se7-S
         sandhi_attested_entries:
           - bhuêng7-se7-ru5-i3-萬事如意
           - deng1-se7-nang5-當事人
@@ -246352,6 +246410,7 @@ items:
           - pêng5-si5-平時
           - ri5-si5-兒時
           - ruah8-tin1-si5-熱天時
+          - si5-C
           - si5-bug4-si5-時不時
           - si5-ciang5-時長
           - si5-do7-時代
@@ -246407,6 +246466,7 @@ items:
           - a1-si6-猶是
           - ao6-si6-gian3-後視鏡
           - bhue7-si6-未是
+          - bêng5-si6-Benz
           - ciu5-si6-仇視
           - dang6-si6-但是
           - diang6-si6-tai5-電視臺
@@ -250018,6 +250078,7 @@ items:
           - sih4-nah4-爍爁
           - sih4-薛
         sandhi_attested_entries:
+          - sih8-buh8-sah8-nah4
           - sih8-bung2-蝕本
           - sih8-rig8-熄日
       shantou:
@@ -250034,6 +250095,7 @@ items:
           - ghuêh8-sih8-月食
           - hu1-sih8-腐蝕
           - rig8-sih8-日食
+          - sih8-buh8-sah8-nah4
           - sih8-bung2-蝕本
           - sih8-rig8-熄日
           - sih8-蝕
@@ -253875,6 +253937,7 @@ items:
           - so2-u6-所有
           - so2-ui3-所謂
           - so2-zai6-所在
+          - so2-嫂
           - so2-所
           - so2-鎖
           - toh4-ri5-so2-托兒所
@@ -264815,6 +264878,7 @@ items:
           - giang1-ti5-堅持
           - rui5-ti5-維持
           - siang1-ti5-bêng6-lung6-相提並論
+          - ti5-T
           - ti5-ciang3-提倡
           - ti5-cio3-gai1-hui1-啼笑皆非
           - ti5-cug4-提出
@@ -278231,7 +278295,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - uai5-Y
       shantou:
         status: unattested
   - syllable: uai6
