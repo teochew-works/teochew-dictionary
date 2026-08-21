@@ -2800,3 +2800,1039 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: soi3-bao1-細胞
+    headword: 細胞
+    readings:
+      - pengim: soi3 bao1
+    senses:
+      - pos: noun
+        gloss_en: [cell (biology)]
+        gloss_zh: [細胞]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gag4-hêg4-bên7-結核病
+    headword: 結核病
+    readings:
+      - pengim: gag4 hêg4 bên7
+    senses:
+      - pos: noun
+        gloss_en: [tuberculosis]
+        gloss_zh: [結核病]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-ki5-經期
+    headword: 經期
+    readings:
+      - pengim: gêng1 ki5
+    senses:
+      - pos: noun
+        gloss_en: [menstrual period, menstruation]
+        gloss_zh: [經期]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kih4-cui3-缺喙
+    headword: 缺喙
+    readings:
+      - pengim: kih4 cui3
+    senses:
+      - pos: noun
+        gloss_en: [harelip, cleft lip]
+        gloss_zh: [缺喙]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kih4-cui3-缺嘴
+    headword: 缺嘴
+    readings:
+      - pengim: kih4 cui3
+    senses:
+      - pos: noun
+        gloss_en: [harelip, cleft lip]
+        gloss_zh: [缺嘴]
+        note: Page lists two distinct senses under the identical reading kih4 cui3 -- noun 'harelip' and a Mandarin-tagged colloquial verb 'to fail to satisfy one's hunger'; picked the noun sense (matching sibling entry 缺喙) as primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: u2-羽
+    headword: 羽
+    readings:
+      - pengim: u2
+    senses:
+      - pos: noun
+        gloss_en: [feather, plume, wing]
+        gloss_zh: [羽]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: u2-mo5-羽毛
+    headword: 羽毛
+    readings:
+      - pengim: u2 mo5
+    senses:
+      - pos: noun
+        gloss_en: [feather, plumage]
+        gloss_zh: [羽毛]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ti3-pang5-翅膀
+    headword: 翅膀
+    readings:
+      - pengim: ti3 pang5
+    senses:
+      - pos: noun
+        gloss_en: [wing (of a bird or insect), wing-like object]
+        gloss_zh: [翅膀]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hin6-sai2-耳屎
+    headword: 耳屎
+    readings:
+      - pengim: hin6 sai2
+    senses:
+      - pos: noun
+        gloss_en: [earwax]
+        gloss_zh: [耳屎]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hin6-kang1-耳空
+    headword: 耳空
+    readings:
+      - pengim: hin6 kang1
+    senses:
+      - pos: noun
+        gloss_en: [ear, earhole]
+        gloss_zh: [耳朵, 耳空]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hin6-bin1-耳邊
+    headword: 耳邊
+    readings:
+      - pengim: hin6 bin1
+    senses:
+      - pos: noun
+        gloss_en: [by one's ear, near the ear]
+        gloss_zh: [耳边]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sian1-dua3-聲帶
+    headword: 聲帶
+    readings:
+      - pengim: sian1 dua3
+    senses:
+      - pos: noun
+        gloss_en: [vocal cords]
+        gloss_zh: [聲帶]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêg8-肋
+    headword: 肋
+    readings:
+      - pengim: lêg8
+    senses:
+      - pos: noun
+        gloss_en: [rib]
+        gloss_zh: [肋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-肌
+    headword: 肌
+    readings:
+      - pengim: gi1
+    senses:
+      - pos: noun
+        gloss_en: [muscle, flesh]
+        gloss_zh: [肌]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi1-nêg8-肌肉
+    headword: 肌肉
+    readings:
+      - pengim: gi1 nêg8
+    senses:
+      - pos: noun
+        gloss_en: [muscle]
+        gloss_zh: [肌肉]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou2-ga2-肚絞
+    headword: 肚絞
+    readings:
+      - pengim: dou2 ga2
+    senses:
+      - pos: noun
+        gloss_en: [gripes, stomach cramps]
+        gloss_zh: [肚絞]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou2-zai5-肚臍
+    headword: 肚臍
+    readings:
+      - pengim: dou2 zai5
+    senses:
+      - pos: noun
+        gloss_en: [navel, belly button]
+        gloss_zh: [肚臍]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou2-zai5-dua3-肚臍帶
+    headword: 肚臍帶
+    readings:
+      - pengim: dou2 zai5 dua3
+    senses:
+      - pos: noun
+        gloss_en: [umbilical cord]
+        gloss_zh: [肚臍帶]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang1-肛
+    headword: 肛
+    readings:
+      - pengim: gang1
+    senses:
+      - pos: noun
+        gloss_en: [anus]
+        gloss_zh: [肛]
+        note: Multiple senses are attested at the same reading (anus; slang verb 'to have anal sex'; obsolete 'to be swollen'); the core anatomical noun sense was chosen.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guan1-iam7-肝炎
+    headword: 肝炎
+    readings:
+      - pengim: guan1 iam7
+    senses:
+      - pos: noun
+        gloss_en: [hepatitis]
+        gloss_zh: [肝炎]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guan1-zang6-肝臟
+    headword: 肝臟
+    readings:
+      - pengim: guan1 zang6
+    senses:
+      - pos: noun
+        gloss_en: [liver]
+        gloss_zh: [肝臟]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gou2-股
+    headword: 股
+    readings:
+      - pengim: gou2
+    senses:
+      - pos: noun
+        gloss_en: [thigh, haunches]
+        gloss_zh: [股]
+        note: Character is highly polysemous (thigh; a mathematical term; an administrative unit; share/stock; several classifier uses) all attested at the same reading; the anatomical 'thigh' sense was chosen given this batch's body-part focus, though the finance sense is also common.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zin1-肢
+    headword: 肢
+    readings:
+      - pengim: zin1
+    senses:
+      - pos: noun
+        gloss_en: [limb]
+        gloss_zh: [肢]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goin1-gah4-肩胛
+    headword: 肩胛
+    readings:
+      - pengim: goin1 gah4
+    senses:
+      - pos: noun
+        gloss_en: [shoulder, scapula]
+        gloss_zh: [肩胛]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dung1-肫
+    headword: 肫
+    readings:
+      - pengim: dung1
+    senses:
+      - pos: noun
+        gloss_en: [gizzard (of a bird), stomach (of birds)]
+        gloss_zh: [肫]
+        note: The character has several unrelated senses at the same reading (obsolete 'cheek', 'gizzard of birds', literary 'sincere'); picked the gizzard/organ sense as most concretely usable, but the correct everyday sense is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui3-肺
+    headword: 肺
+    readings:
+      - pengim: hui3
+    senses:
+      - pos: noun
+        gloss_en: [lung]
+        gloss_zh: [肺]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui3-uah8-liang6-肺活量
+    headword: 肺活量
+    readings:
+      - pengim: hui3 uah8 liang6
+    senses:
+      - pos: noun
+        gloss_en: [vital capacity (of the lungs)]
+        gloss_zh: [肺活量]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui3-iam7-肺炎
+    headword: 肺炎
+    readings:
+      - pengim: hui3 iam7
+    senses:
+      - pos: noun
+        gloss_en: [pneumonia]
+        gloss_zh: [肺炎]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui3-lao5-肺癆
+    headword: 肺癆
+    readings:
+      - pengim: hui3 lao5
+    senses:
+      - pos: noun
+        gloss_en: [pulmonary tuberculosis]
+        gloss_zh: [肺癆]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui3-hu2-肺腑
+    headword: 肺腑
+    readings:
+      - pengim: hui3 hu2
+    senses:
+      - pos: noun
+        gloss_en: [lungs; internal organs (literary), the bottom of one's heart; innermost feelings]
+        gloss_zh: [肺腑]
+        note: Wiktionary tags this as an adjective but every sense given is nominal (literal 'lungs/internal organs', figurative 'bottom of one's heart', 'trustworthy person', archaic 'imperial relative'); noun chosen as the best fit and the literal/figurative-heart senses combined, but the primary intended sense is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui7-胃
+    headword: 胃
+    readings:
+      - pengim: ui7
+    senses:
+      - pos: noun
+        gloss_en: [stomach]
+        gloss_zh: [胃]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui7-kao2-胃口
+    headword: 胃口
+    readings:
+      - pengim: ui7 kao2
+    senses:
+      - pos: noun
+        gloss_en: [appetite, liking; taste (figuratively)]
+        gloss_zh: [胃口]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui7-bên7-胃病
+    headword: 胃病
+    readings:
+      - pengim: ui7 bên7
+    senses:
+      - pos: noun
+        gloss_en: [stomach disease; gastric illness]
+        gloss_zh: [胃病]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: to1-胎
+    headword: 胎
+    readings:
+      - pengim: to1
+    senses:
+      - pos: noun
+        gloss_en: [fetus, unborn child]
+        gloss_zh: [胎, 胎兒]
+        note: The character 胎 has two unrelated senses sharing the same reading to1 on the source page — 'fetus' and 'pneumatic tire' — with no indication which is primary in Teochew; 'fetus' was chosen as the more standard core meaning of the character.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: to1-buan5-胎盤
+    headword: 胎盤
+    readings:
+      - pengim: to1 buan5
+    senses:
+      - pos: noun
+        gloss_en: [placenta]
+        gloss_zh: [胎盤]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puê1-to1-胚胎
+    headword: 胚胎
+    readings:
+      - pengim: puê1 to1
+    senses:
+      - pos: noun
+        gloss_en: [embryo]
+        gloss_zh: [胚胎]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gah4-胛
+    headword: 胛
+    readings:
+      - pengim: gah4
+    senses:
+      - pos: noun
+        gloss_en: [shoulder, shoulder blade]
+        gloss_zh: [胛]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bao1-胞
+    headword: 胞
+    readings:
+      - pengim: bao1
+    senses:
+      - pos: noun
+        gloss_en: [placenta; afterbirth, of the same parentage; compatriot]
+        gloss_zh: [胞]
+        note: The character 胞 has several distinct senses (placenta/afterbirth, womb, same-parentage/compatriot, abbreviation for 細胞 'cell') all sharing the same reading, with no single clear primary standalone sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bao1-i1-胞衣
+    headword: 胞衣
+    readings:
+      - pengim: bao1 i1
+    senses:
+      - pos: noun
+        gloss_en: [afterbirth]
+        gloss_zh: [胞衣]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou5-sêng5-sai2-胡蠅屎
+    headword: 胡蠅屎
+    readings:
+      - pengim: hou5 sêng5 sai2
+    senses:
+      - pos: noun
+        gloss_en: [freckle]
+        gloss_zh: [胡蠅屎]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i5-胰
+    headword: 胰
+    readings:
+      - pengim: i5
+    senses:
+      - pos: noun
+        gloss_en: [pancreas]
+        gloss_zh: [胰, 胰臟]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i5-dao2-su3-胰島素
+    headword: 胰島素
+    readings:
+      - pengim: i5 dao2 su3
+    senses:
+      - pos: noun
+        gloss_en: [insulin]
+        gloss_zh: [胰島素]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang1-胱
+    headword: 胱
+    readings:
+      - pengim: guang1
+    senses:
+      - pos: noun
+        gloss_en: [bladder (in 膀胱), used only in 膀胱 'bladder']
+        gloss_zh: [膀胱]
+        note: Only attested as a bound morpheme within 膀胱 (bladder); not used as an independent word.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goh4-lang2-ê6-胳囊下
+    headword: 胳囊下
+    readings:
+      - pengim: goh4 lang2 ê6
+    senses:
+      - pos: noun
+        gloss_en: [armpit, underarm]
+        gloss_zh: [胳肢窩, 腋下]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hêng1-ui5-胸圍
+    headword: 胸圍
+    readings:
+      - pengim: hêng1 ui5
+    senses:
+      - pos: noun
+        gloss_en: [bust measurement, chest measurement]
+        gloss_zh: [胸圍]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hêng1-tang3-胸膛
+    headword: 胸膛
+    readings:
+      - pengim: hêng1 tang3
+    senses:
+      - pos: noun
+        gloss_en: [chest, thorax]
+        gloss_zh: [胸膛]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hêng1-tao5-胸頭
+    headword: 胸頭
+    readings:
+      - pengim: hêng1 tao5
+    senses:
+      - pos: noun
+        gloss_en: [chest, thorax]
+        gloss_zh: [胸膛]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zin1-脂
+    headword: 脂
+    readings:
+      - pengim: zin1
+    senses:
+      - pos: noun
+        gloss_en: [fat, grease, lard]
+        gloss_zh: [脂肪]
+        note: Character has multiple senses (fat/grease vs. short for 胭脂 'rouge'); dossier does not indicate which is the standard Teochew usage for this reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mêh8-脈
+    headword: 脈
+    readings:
+      - pengim: mêh8
+    senses:
+      - pos: noun
+        gloss_en: [pulse, blood vessel, vein]
+        gloss_zh: [脈搏, 血管]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zig4-tiao6-脊柱
+    headword: 脊柱
+    readings:
+      - pengim: zig4 tiao6
+    senses:
+      - pos: noun
+        gloss_en: [spine, spinal column, backbone]
+        gloss_zh: [脊柱, 脊椎]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dung5-脣
+    headword: 脣
+    readings:
+      - pengim: dung5
+    senses:
+      - pos: noun
+        gloss_en: [lip]
+        gloss_zh: [嘴脣]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dung5-ki2-脣齒
+    headword: 脣齒
+    readings:
+      - pengim: dung5 ki2
+    senses:
+      - pos: noun
+        gloss_en: [lips and teeth, closely interdependent (figurative)]
+        gloss_zh: [脣齒]
+        note: Page lists both a literal noun sense (lips and teeth) and a distinct figurative adjective sense (interdependent) at the same reading; picked the literal noun as primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tug4-huag4-脫髮
+    headword: 脫髮
+    readings:
+      - pengim: tug4 huag4
+    senses:
+      - pos: noun
+        gloss_en: [hair loss, alopecia; balding]
+        gloss_zh: [脫髮]
+        note: Page gives both a verb sense ('to lose one's hair', verb-object) and a noun sense ('alopecia') at the same reading; noun chosen as the more headword-like reading but verb is equally valid.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou6-脰
+    headword: 脰
+    readings:
+      - pengim: dou6
+    senses:
+      - pos: noun
+        gloss_en: [neck]
+        gloss_zh: [脰]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êg8-腋
+    headword: 腋
+    readings:
+      - pengim: êg8
+    senses:
+      - pos: noun
+        gloss_en: [armpit, underarm; axilla]
+        gloss_zh: [腋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang6-zi2-腎子
+    headword: 腎子
+    readings:
+      - pengim: siang6 zi2
+    senses:
+      - pos: noun
+        gloss_en: [kidney (of an animal)]
+        gloss_zh: [腎子]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu2-腑
+    headword: 腑
+    readings:
+      - pengim: hu2
+    senses:
+      - pos: noun
+        gloss_en: [viscera; internal organs]
+        gloss_zh: [腑]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui1-腓
+    headword: 腓
+    readings:
+      - pengim: hui1
+    senses:
+      - pos: noun
+        gloss_en: [calf (back of the lower leg)]
+        gloss_zh: [腓]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang2-腕
+    headword: 腕
+    readings:
+      - pengim: uang2
+    senses:
+      - pos: noun
+        gloss_en: [wrist]
+        gloss_zh: [腕]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nao2-zui6-dong3-腦卒中
+    headword: 腦卒中
+    readings:
+      - pengim: nao2 zui6 dong3
+    senses:
+      - pos: noun
+        gloss_en: [stroke, apoplexy]
+        gloss_zh: [腦卒中, 中風]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nao2-tuan1-腦癱
+    headword: 腦癱
+    readings:
+      - pengim: nao2 tuan1
+    senses:
+      - pos: noun
+        gloss_en: [cerebral palsy, (derogatory) idiot]
+        gloss_zh: [腦癱]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nao2-moh8-iam7-腦膜炎
+    headword: 腦膜炎
+    readings:
+      - pengim: nao2 moh8 iam7
+    senses:
+      - pos: noun
+        gloss_en: [meningitis]
+        gloss_zh: [腦膜炎]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nao2-bou6-腦部
+    headword: 腦部
+    readings:
+      - pengim: nao2 bou6
+    senses:
+      - pos: noun
+        gloss_en: [brain]
+        gloss_zh: [腦部]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng2-liu5-腫瘤
+    headword: 腫瘤
+    readings:
+      - pengim: zêng2 liu5
+    senses:
+      - pos: noun
+        gloss_en: [tumor, tumour]
+        gloss_zh: [腫瘤]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai1-腮
+    headword: 腮
+    readings:
+      - pengim: sai1
+    senses:
+      - pos: noun
+        gloss_en: [cheek, jaw]
+        gloss_zh: [腮, 臉頰]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai1-suan3-iam7-腮腺炎
+    headword: 腮腺炎
+    readings:
+      - pengim: sai1 suan3 iam7
+    senses:
+      - pos: noun
+        gloss_en: [mumps, parotitis]
+        gloss_zh: [腮腺炎]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: io1-zui1-gang1-buan1-dug8-cug4-腰椎間盤突出
+    headword: 腰椎間盤突出
+    readings:
+      - pengim: io1 zui1 gang1 buan1 dug8 cug4
+    senses:
+      - pos: noun
+        gloss_en: [lumbar disc herniation]
+        gloss_zh: [腰椎間盤突出]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka1-hua5-腳踝
+    headword: 腳踝
+    readings:
+      - pengim: ka1 hua5
+    senses:
+      - pos: noun
+        gloss_en: [ankle]
+        gloss_zh: [腳踝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suan3-腺
+    headword: 腺
+    readings:
+      - pengim: suan3
+    senses:
+      - pos: noun
+        gloss_en: [gland]
+        gloss_zh: [腺]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tui2-腿
+    headword: 腿
+    readings:
+      - pengim: tui2
+    senses:
+      - pos: noun
+        gloss_en: [leg]
+        gloss_zh: [腿]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêh4-膈
+    headword: 膈
+    readings:
+      - pengim: gêh4
+    senses:
+      - pos: noun
+        gloss_en: [diaphragm]
+        gloss_zh: [膈, 橫膈膜]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu1-膚
+    headword: 膚
+    readings:
+      - pengim: hu1
+    senses:
+      - pos: noun
+        gloss_en: [skin]
+        gloss_zh: [膚, 皮膚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tang5-膛
+    headword: 膛
+    readings:
+      - pengim: tang5
+    senses:
+      - pos: noun
+        gloss_en: [chest cavity, cavity; chamber (of an object)]
+        gloss_zh: [膛]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: moh8-膜
+    headword: 膜
+    readings:
+      - pengim: moh8
+    senses:
+      - pos: noun
+        gloss_en: [membrane; film]
+        gloss_zh: [膜]
+        note: Two separate character sense-blocks on the page share the teochew_sound moh8 ('membrane; film' vs. 'to prostrate'), so it is unclear which the reading specifically targets; the far more common general sense (membrane/film) was chosen.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cag4-膝
+    headword: 膝
+    readings:
+      - pengim: cag4
+    senses:
+      - pos: noun
+        gloss_en: [knee]
+        gloss_zh: [膝]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dan2-膽
+    headword: 膽
+    readings:
+      - pengim: dan2
+    senses:
+      - pos: noun
+        gloss_en: [gallbladder, guts; courage; nerve]
+        gloss_zh: [膽]
+        note: The character carries several senses sharing the same teochew_sound dan2 (gallbladder, figurative courage, container liner, vacuum tube, a gambling term); the anatomical and figurative-courage senses were chosen as the most common.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dan2-zab4-膽汁
+    headword: 膽汁
+    readings:
+      - pengim: dan2 zab4
+    senses:
+      - pos: noun
+        gloss_en: [bile, gall]
+        gloss_zh: [膽汁]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi3-臂
+    headword: 臂
+    readings:
+      - pengim: bi3
+    senses:
+      - pos: noun
+        gloss_en: [arm]
+        gloss_zh: [臂]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zai5-臍
+    headword: 臍
+    readings:
+      - pengim: zai5
+    senses:
+      - pos: noun
+        gloss_en: [navel]
+        gloss_zh: [臍]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zang6-臟
+    headword: 臟
+    readings:
+      - pengim: zang6
+    senses:
+      - pos: noun
+        gloss_en: [internal organs, viscera]
+        gloss_zh: [臟]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ku6-ki2-臼齒
+    headword: 臼齒
+    readings:
+      - pengim: ku6 ki2
+    senses:
+      - pos: noun
+        gloss_en: [molar (tooth)]
+        gloss_zh: [臼齒]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zih8-gian2-舌囝
+    headword: 舌囝
+    readings:
+      - pengim: zih8 gian2
+    senses:
+      - pos: noun
+        gloss_en: [tongue]
+        gloss_zh: [舌頭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zih8-bhuê2-舌尾
+    headword: 舌尾
+    readings:
+      - pengim: zih8 bhuê2
+    senses:
+      - pos: noun
+        gloss_en: [tip of the tongue]
+        gloss_zh: [舌尖]
+        note: The source page's sense is tagged 'Min Southern' but the qualifier confusingly references Yongding Hakka and Zhenghe Northern Min dialects, so the exact dialect scope of this sense is unclear even though the given Teochew reading itself is confirmed.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao2-ngang2-草眼
+    headword: 草眼
+    readings:
+      - pengim: cao2 ngang2
+    senses:
+      - pos: noun
+        gloss_en: [temple (of the head)]
+        gloss_zh: [草眼]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

@@ -7935,3 +7935,701 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: ang5-mo5-huê1-紅毛灰
+    headword: 紅毛灰
+    readings:
+      - pengim: ang5 mo5 huê1
+    senses:
+      - pos: noun
+        gloss_en: [cement]
+        gloss_zh: [紅毛灰, 水泥]
+        note: The qualifier on this sense says 'Malaysian Cantonese' while the tags list Hakka/Min/Puxian-Min varieties with no explicit Teochew tag, so it's uncertain whether 'cement' is a genuine Teochew sense for this reading or borrowed labeling from a related dialect.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-ghua7-suan3-紫外線
+    headword: 紫外線
+    readings:
+      - pengim: zi2 ghua7 suan3
+    senses:
+      - pos: noun
+        gloss_en: [ultraviolet ray, UV ray]
+        gloss_zh: [紫外線]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soi3-kung2-細菌
+    headword: 細菌
+    readings:
+      - pengim: soi3 kung2
+    senses:
+      - pos: noun
+        gloss_en: [bacterium, germ]
+        gloss_zh: [細菌]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soi3-hou6-細雨
+    headword: 細雨
+    readings:
+      - pengim: soi3 hou6
+    senses:
+      - pos: noun
+        gloss_en: [drizzle, light rain]
+        gloss_zh: [細雨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gag4-zian1-結晶
+    headword: 結晶
+    readings:
+      - pengim: gag4 zian1
+    senses:
+      - pos: noun
+        gloss_en: [crystal, crystallization (fig.); fruit of one's labor]
+        gloss_zh: [結晶]
+        note: The same reading also appears in a verb block meaning 'to crystallize'; the noun sense was chosen as the more common headword meaning.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si1-絲
+    headword: 絲
+    readings:
+      - pengim: si1
+    senses:
+      - pos: noun
+        gloss_en: [silk, thread; string]
+        gloss_zh: [絲]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si1-diu5-絲綢
+    headword: 絲綢
+    readings:
+      - pengim: si1 diu5
+    senses:
+      - pos: noun
+        gloss_en: [silk (cloth or fabric)]
+        gloss_zh: [絲綢]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-ui2-經緯
+    headword: 經緯
+    readings:
+      - pengim: gêng1 ui2
+    senses:
+      - pos: noun
+        gloss_en: [longitude and latitude, warp and woof]
+        gloss_zh: [經緯]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-ui2-suan3-經緯線
+    headword: 經緯線
+    readings:
+      - pengim: gêng1 ui2 suan3
+    senses:
+      - pos: noun
+        gloss_en: [lines of latitude and longitude]
+        gloss_zh: [經緯線]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diu5-綢
+    headword: 綢
+    readings:
+      - pengim: diu5
+    senses:
+      - pos: noun
+        gloss_en: [silk cloth, satin damask]
+        gloss_zh: [綢, 絲綢]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diu5-deng7-綢緞
+    headword: 綢緞
+    readings:
+      - pengim: diu5 deng7
+    senses:
+      - pos: noun
+        gloss_en: [silks and satins]
+        gloss_zh: [綢緞]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui2-緯
+    headword: 緯
+    readings:
+      - pengim: ui2
+    senses:
+      - pos: noun
+        gloss_en: [weft (of a woven fabric), latitude]
+        gloss_zh: [緯]
+        note: Character carries several distinct senses (weft, latitude, planet, abbreviation for 緯書) all tied to the same reading with no disambiguation; chose the core weft/latitude senses as most representative.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-縆
+    headword: 縆
+    readings:
+      - pengim: gêng1
+    senses:
+      - pos: noun
+        gloss_en: [thick rope]
+        gloss_zh: [縆]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu3-giu5-繡球
+    headword: 繡球
+    readings:
+      - pengim: siu3 giu5
+    senses:
+      - pos: noun
+        gloss_en: [hydrangea (flower), embroidered ball]
+        gloss_zh: [繡球]
+        note: The page gives two fairly distinct senses (the hydrangea flower vs. a traditional embroidered silk ball) under the same reading, and it is unclear which is the more common Teochew usage.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êng1-纓
+    headword: 纓
+    readings:
+      - pengim: êng1
+    senses:
+      - pos: noun
+        gloss_en: [tassel, ribbon, rope]
+        gloss_zh: [纓]
+        note: Page lists both noun senses (tassel/ribbon/rope) and verb senses (to twine, to suffer from) under the same single reading êng1 with no cue distinguishing which applies; picked the noun sense as primary.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hia3-罅
+    headword: 罅
+    readings:
+      - pengim: hia3
+    senses:
+      - pos: noun
+        gloss_en: [crack, gap, split]
+        gloss_zh: [罅, 裂縫]
+        note: Multiple blocks share the hia3 reading, including a Hakka-only 'enough' sense and a note that it is only used bound in 含罅; picked the general 'crack/gap' noun sense as most likely to apply to Teochew.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang1-罡
+    headword: 罡
+    readings:
+      - pengim: gang1
+    senses:
+      - pos: noun
+        gloss_en: [Big Dipper (constellation), astral (Daoism)]
+        gloss_zh: [罡]
+        note: Specialized Daoist/astrological term; the source only gives relational/descriptive glosses ('relating to the Big Dipper', 'astral in quality'), so the exact pos and a clean standalone gloss are approximate.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mui2-gêng2-美景
+    headword: 美景
+    readings:
+      - pengim: mui2 gêng2
+    senses:
+      - pos: noun
+        gloss_en: [beautiful scenery, enchanting view]
+        gloss_zh: [美景]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kung5-dao2-群島
+    headword: 群島
+    readings:
+      - pengim: kung5 dao2
+    senses:
+      - pos: noun
+        gloss_en: [archipelago, chain of islands]
+        gloss_zh: [群島]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: u2-rong5-羽絨
+    headword: 羽絨
+    readings:
+      - pengim: u2 rong5
+    senses:
+      - pos: noun
+        gloss_en: [down (soft feathers used as insulation)]
+        gloss_zh: [羽絨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui1-cui3-翡翠
+    headword: 翡翠
+    readings:
+      - pengim: hui1 cui3
+    senses:
+      - pos: noun
+        gloss_en: [jadeite, kingfisher]
+        gloss_zh: [翡翠]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho3-cai5-耗材
+    headword: 耗材
+    readings:
+      - pengim: ho3 cai5
+    senses:
+      - pos: noun
+        gloss_en: [consumables, consumable materials, supplies]
+        gloss_zh: [耗材]
+        note: The page gives both a verb sense ('to consume materials') and a noun sense ('consumable materials') under the same reading; the noun sense was chosen as the standard modern usage (e.g. printer/office supplies).
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go1-膏
+    headword: 膏
+    readings:
+      - pengim: go1
+    senses:
+      - pos: noun
+        gloss_en: [paste, ointment, grease]
+        gloss_zh: [膏]
+        note: Page mixes distinct noun senses ('paste/fat/ointment') and adjective senses ('oily', 'fertile') under one reading with no indication which is primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ga1-膠
+    headword: 膠
+    readings:
+      - pengim: ga1
+    senses:
+      - pos: noun
+        gloss_en: [glue; adhesive, rubber (material)]
+        gloss_zh: [膠]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze6-riang5-自然
+    headword: 自然
+    readings:
+      - pengim: ze6 riang5
+    senses:
+      - pos: noun
+        gloss_en: [nature; the natural world, natural; naturally (also attested as adjective/adverb/conjunction)]
+        gloss_zh: [自然]
+        note: Wiktionary lists 自然 as noun, adjective, adverb, and conjunction, all sharing the identical Teochew reading; the noun 'nature' sense was chosen as primary though the word is equally common as an adjective/adverb ('natural'/'naturally').
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze6-riang5-gai3-自然界
+    headword: 自然界
+    readings:
+      - pengim: ze6 riang5 gai3
+    senses:
+      - pos: noun
+        gloss_en: [the natural world, nature]
+        gloss_zh: [自然界]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liang5-cang5-良田
+    headword: 良田
+    readings:
+      - pengim: liang5 cang5
+    senses:
+      - pos: noun
+        gloss_en: [fertile farmland; good farmland]
+        gloss_zh: [良田]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciag4-iag8-芍藥
+    headword: 芍藥
+    readings:
+      - pengim: ciag4 iag8
+    senses:
+      - pos: noun
+        gloss_en: [Chinese peony, peony (Paeonia lactiflora)]
+        gloss_zh: [芍藥]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mang5-zong2-芒種
+    headword: 芒種
+    readings:
+      - pengim: mang5 zong2
+    senses:
+      - pos: noun
+        gloss_en: ["Grain in Ear (9th of the 24 solar terms, around June 5-7)"]
+        gloss_zh: [芒種]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê1-gang1-zioh8-花崗石
+    headword: 花崗石
+    readings:
+      - pengim: huê1 gang1 zioh8
+    senses:
+      - pos: noun
+        gloss_en: [granite]
+        gloss_zh: [花崗石]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê1-hung2-花粉
+    headword: 花粉
+    readings:
+      - pengim: huê1 hung2
+    senses:
+      - pos: noun
+        gloss_en: [pollen]
+        gloss_zh: [花粉]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê1-lui2-花蕊
+    headword: 花蕊
+    readings:
+      - pengim: huê1 lui2
+    senses:
+      - pos: noun
+        gloss_en: [flower bud, flower, stamen]
+        gloss_zh: [花蕊, 花苞]
+        note: Senses are tagged differently (Eastern Min literary 'flower bud' vs Hokkien 'flower'), neither explicitly Teochew, so the exact colloquial meaning intended here is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê1-lui2-花蕾
+    headword: 花蕾
+    readings:
+      - pengim: huê1 lui2
+    senses:
+      - pos: noun
+        gloss_en: [flower bud]
+        gloss_zh: [花蕾, 花苞]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-芷
+    headword: 芷
+    readings:
+      - pengim: zi2
+    senses:
+      - pos: noun
+        gloss_en: [angelica (Angelica dahurica)]
+        gloss_zh: [芷]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ung5-芸
+    headword: 芸
+    readings:
+      - pengim: ung5
+    senses:
+      - pos: noun
+        gloss_en: ["rue (fragrant herb, short for 芸香)", surname]
+        gloss_zh: [芸]
+        note: Character page lists several unrelated senses (a vegetable, short for 芸香 'rue', alt form of 蕓/耘, bound form in 芸芸, and a surname) sharing this reading with no single clearly primary meaning; the herb sense was picked as most concrete.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu1-芻
+    headword: 芻
+    readings:
+      - pengim: cu1
+    senses:
+      - pos: noun
+        gloss_en: [hay; fodder, to mow grass (literary)]
+        gloss_zh: [芻]
+        note: Character page gives several disparate senses (to mow grass, hay/fodder, livestock, to raise/rear) under the same reading with no single dominant modern usage.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghê5-芽
+    headword: 芽
+    readings:
+      - pengim: ghê5
+    senses:
+      - pos: noun
+        gloss_en: [bud; sprout; shoot]
+        gloss_zh: [芽]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kou2-nai6-苦楝
+    headword: 苦楝
+    readings:
+      - pengim: kou2 nai6
+    senses:
+      - pos: noun
+        gloss_en: [bead tree; Chinaberry (Melia azedarach)]
+        gloss_zh: [苦楝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kou2-muan5-苦麻
+    headword: 苦麻
+    readings:
+      - pengim: kou2 muan5
+    senses:
+      - pos: noun
+        gloss_en: [jute]
+        gloss_zh: [苦麻]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diu6-苧
+    headword: 苧
+    readings:
+      - pengim: diu6
+    senses:
+      - pos: noun
+        gloss_en: [ramie (Boehmeria nivea)]
+        gloss_zh: [苧]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bung2-苯
+    headword: 苯
+    readings:
+      - pengim: bung2
+    senses:
+      - pos: noun
+        gloss_en: [benzene]
+        gloss_zh: [苯]
+        note: The single attested reading covers several unrelated senses (benzene; short for 苯教/Bon religion; a misspelling of 笨); benzene, the productive modern-Chinese sense, was chosen as primary.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gan1-苷
+    headword: 苷
+    readings:
+      - pengim: gan1
+    senses:
+      - pos: noun
+        gloss_en: [glycoside]
+        gloss_zh: [苷]
+        note: Bound morpheme with two disparate senses under one reading (an obsolete word for licorice, and the modern chemistry term 'glycoside'); glycoside was chosen as the productive modern usage.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mao5-茅
+    headword: 茅
+    readings:
+      - pengim: mao5
+    senses:
+      - pos: noun
+        gloss_en: [cogon grass (Imperata cylindrica)]
+        gloss_zh: [茅]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao2-di7-草地
+    headword: 草地
+    readings:
+      - pengim: cao2 di7
+    senses:
+      - pos: noun
+        gloss_en: [lawn, grassland, meadow]
+        gloss_zh: [草地]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao2-bou1-草埔
+    headword: 草埔
+    readings:
+      - pengim: cao2 bou1
+    senses:
+      - pos: noun
+        gloss_en: [lawn, grassland, pasture]
+        gloss_zh: [草埔]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao2-puê5-草皮
+    headword: 草皮
+    readings:
+      - pengim: cao2 puê5
+    senses:
+      - pos: noun
+        gloss_en: [sod, turf, sward]
+        gloss_zh: [草皮]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao2-ioh8-草藥
+    headword: 草藥
+    readings:
+      - pengim: cao2 ioh8
+    senses:
+      - pos: noun
+        gloss_en: [herbal medicine]
+        gloss_zh: [草藥]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-荊
+    headword: 荊
+    readings:
+      - pengim: gêng1
+    senses:
+      - pos: noun
+        gloss_en: [chaste tree, thorny shrub]
+        gloss_zh: [荊]
+        note: The Wiktionary entry lists many divergent senses for this bound character (chaste tree/plant, rod for flogging, humble term for one's wife, place-name abbreviation, alternate name for the state of Chu, a surname) with no sense-specific Teochew reading to disambiguate which is intended.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-gêg4-荊棘
+    headword: 荊棘
+    readings:
+      - pengim: gêng1 gêg4
+    senses:
+      - pos: noun
+        gloss_en: [thorns; brambles, difficulties; obstacles]
+        gloss_zh: [荊棘]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-di7-荒地
+    headword: 荒地
+    readings:
+      - pengim: huang1 di7
+    senses:
+      - pos: noun
+        gloss_en: [wasteland, uncultivated land]
+        gloss_zh: [荒地]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-ia2-荒野
+    headword: 荒野
+    readings:
+      - pengim: huang1 ia2
+    senses:
+      - pos: noun
+        gloss_en: [wilderness]
+        gloss_zh: [荒野]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho5-huê1-荷花
+    headword: 荷花
+    readings:
+      - pengim: ho5 huê1
+    senses:
+      - pos: noun
+        gloss_en: [lotus, Nelumbo nucifera]
+        gloss_zh: [荷花]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li6-莉
+    headword: 莉
+    readings:
+      - pengim: li6
+    senses:
+      - pos: noun
+        gloss_en: ["jasmine (bound form, as in 茉莉)", character used in female given names]
+        gloss_zh: [茉莉]
+        note: The character has no independent meaning on its own; Wiktionary lists it as occurring only bound in 茉莉 (jasmine) and as an element in female personal names/transliterations, and it is unclear which use is most salient in Teochew.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kêng5-莖
+    headword: 莖
+    readings:
+      - pengim: kêng5
+    senses:
+      - pos: noun
+        gloss_en: [stem, stalk]
+        gloss_zh: [莖]
+        note: The entry bundles several senses (botanical stem/stalk, a classifier for stalks, and obsolete/technical senses including 'penis' and 'pillar'); the core botanical sense was chosen as primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngo5-莪
+    headword: 莪
+    readings:
+      - pengim: ngo5
+    senses:
+      - pos: noun
+        gloss_en: [Incarvillea sinensis (a plant)]
+        gloss_zh: [莪]
+        note: This is an obscure, specialized botanical term with a secondary obsolete sense as an alternate form of 菌 'mushroom'; the specific plant identity is technical and uncertain in everyday usage.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

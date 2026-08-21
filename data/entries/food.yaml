@@ -3397,3 +3397,997 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: ang5-sai6-紅柿
+    headword: 紅柿
+    readings:
+      - pengim: ang5 sai6
+    senses:
+      - pos: noun
+        gloss_en: [persimmon]
+        gloss_zh: [紅柿]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-sai6-gian2-紅柿囝
+    headword: 紅柿囝
+    readings:
+      - pengim: ang5 sai6 gian2
+    senses:
+      - pos: noun
+        gloss_en: [tomato]
+        gloss_zh: [紅柿囝, 番茄]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-to5-guê2-紅桃粿
+    headword: 紅桃粿
+    readings:
+      - pengim: ang5 to5 guê2
+    senses:
+      - pos: noun
+        gloss_en: [red peach kueh (Teochew festive rice cake)]
+        gloss_zh: [紅桃粿]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-lai5-紅梨
+    headword: 紅梨
+    readings:
+      - pengim: ang5 lai5
+    senses:
+      - pos: noun
+        gloss_en: [pineapple]
+        gloss_zh: [紅梨, 鳳梨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-zo2-紅棗
+    headword: 紅棗
+    readings:
+      - pengim: ang5 zo2
+    senses:
+      - pos: noun
+        gloss_en: [red jujube, red date]
+        gloss_zh: [紅棗]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-mo5-dang1-紅毛丹
+    headword: 紅毛丹
+    readings:
+      - pengim: ang5 mo5 dang1
+    senses:
+      - pos: noun
+        gloss_en: [rambutan]
+        gloss_zh: [紅毛丹]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-mo5-gio5-紅毛茄
+    headword: 紅毛茄
+    readings:
+      - pengim: ang5 mo5 gio5
+    senses:
+      - pos: noun
+        gloss_en: [tomato]
+        gloss_zh: [紅毛茄, 番茄]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-nêg8-紅肉
+    headword: 紅肉
+    readings:
+      - pengim: ang5 nêg8
+    senses:
+      - pos: noun
+        gloss_en: [red meat]
+        gloss_zh: [紅肉]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-nêg8-bhi2-紅肉米
+    headword: 紅肉米
+    readings:
+      - pengim: ang5 nêg8 bhi2
+    senses:
+      - pos: noun
+        gloss_en: [red meat]
+        gloss_zh: [紅肉米]
+        note: The page's terse gloss 'red meat' does not clearly match the compound's components (肉 'meat' + 米 'rice'), so the precise sense is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-nêg8-bou5-紅肉蜅
+    headword: 紅肉蜅
+    readings:
+      - pengim: ang5 nêg8 bou5
+    senses:
+      - pos: noun
+        gloss_en: [red meat]
+        gloss_zh: [紅肉蜅]
+        note: The page's terse gloss 'red meat' does not clearly match the compound's components (肉 'meat' + 蜅, likely a shellfish name), so the precise sense is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-dê5-紅茶
+    headword: 紅茶
+    readings:
+      - pengim: ang5 dê5
+    senses:
+      - pos: noun
+        gloss_en: [black tea]
+        gloss_zh: [紅茶]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-cai3-tao5-紅菜頭
+    headword: 紅菜頭
+    readings:
+      - pengim: ang5 cai3 tao5
+    senses:
+      - pos: noun
+        gloss_en: [beetroot; beet, carrot]
+        gloss_zh: [紅菜頭]
+        note: The page lists both 'beetroot' (unmarked) and 'carrot' (tagged Hakka/Southern Min, which includes Teochew) senses under this same reading, so the exact referent in Teochew usage is uncertain.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-dao7-紅豆
+    headword: 紅豆
+    readings:
+      - pengim: ang5 dao7
+    senses:
+      - pos: noun
+        gloss_en: [red bean, azuki bean]
+        gloss_zh: [紅豆]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-ziu2-紅酒
+    headword: 紅酒
+    readings:
+      - pengim: ang5 ziu2
+    senses:
+      - pos: noun
+        gloss_en: [red wine]
+        gloss_zh: [紅酒]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-gu1-guê2-紅龜粿
+    headword: 紅龜粿
+    readings:
+      - pengim: ang5 gu1 guê2
+    senses:
+      - pos: noun
+        gloss_en: [red tortoise cake (traditional rice cake)]
+        gloss_zh: [紅龜粿]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sung5-zêng6-zui2-純淨水
+    headword: 純淨水
+    readings:
+      - pengim: sung5 zêng6 zui2
+    senses:
+      - pos: noun
+        gloss_en: [purified water]
+        gloss_zh: [純淨水]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-cai3-紫菜
+    headword: 紫菜
+    readings:
+      - pengim: zi2 cai3
+    senses:
+      - pos: noun
+        gloss_en: [laver, nori, edible seaweed]
+        gloss_zh: [紫菜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-sou1-紫蘇
+    headword: 紫蘇
+    readings:
+      - pengim: zi2 sou1
+    senses:
+      - pos: noun
+        gloss_en: [perilla, shiso]
+        gloss_zh: [紫蘇]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gib4-iang2-給養
+    headword: 給養
+    readings:
+      - pengim: gib4 iang2
+    senses:
+      - pos: noun
+        gloss_en: [provisions, rations, victuals]
+        gloss_zh: [給養]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêg8-dê5-綠茶
+    headword: 綠茶
+    readings:
+      - pengim: lêg8 dê5
+    senses:
+      - pos: noun
+        gloss_en: [green tea]
+        gloss_zh: [綠茶]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêg8-dao7-綠豆
+    headword: 綠豆
+    readings:
+      - pengim: lêg8 dao7
+    senses:
+      - pos: noun
+        gloss_en: [mung bean]
+        gloss_zh: [綠豆]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêg8-dao7-suang3-綠豆爽
+    headword: 綠豆爽
+    readings:
+      - pengim: lêg8 dao7 suang3
+    senses:
+      - pos: noun
+        gloss_en: [sweet split mung bean soup (Teochew dessert)]
+        gloss_zh: [綠豆爽]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buah4-缽
+    headword: 缽
+    readings:
+      - pengim: buah4
+    senses:
+      - pos: noun
+        gloss_en: [bowl, basin, alms bowl]
+        gloss_zh: [缽]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tam5-罈
+    headword: 罈
+    readings:
+      - pengim: tam5
+    senses:
+      - pos: noun
+        gloss_en: [earthenware jar, jug]
+        gloss_zh: [罈]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lo5-di5-羅啲
+    headword: 羅啲
+    readings:
+      - pengim: lo5 di5
+    senses:
+      - pos: noun
+        gloss_en: [bread]
+        gloss_zh: [羅啲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lo5-hang3-guê2-羅漢果
+    headword: 羅漢果
+    readings:
+      - pengim: lo5 hang3 guê2
+    senses:
+      - pos: noun
+        gloss_en: [monk fruit (Siraitia grosvenorii)]
+        gloss_zh: [羅漢果]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mui2-ziah8-美食
+    headword: 美食
+    readings:
+      - pengim: mui2 ziah8
+    senses:
+      - pos: noun
+        gloss_en: [delicious food, fine cuisine]
+        gloss_zh: [美食]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go1-bi5-羔丕
+    headword: 羔丕
+    readings:
+      - pengim: go1 bi5
+    senses:
+      - pos: noun
+        gloss_en: [coffee (Singapore Teochew term)]
+        gloss_zh: [咖啡]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gên1-羹
+    headword: 羹
+    readings:
+      - pengim: gên1
+    senses:
+      - pos: noun
+        gloss_en: [thick soup, broth]
+        gloss_zh: [羹]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gên1-cai3-羹菜
+    headword: 羹菜
+    readings:
+      - pengim: gên1 cai3
+    senses:
+      - pos: noun
+        gloss_en: [vegetable, greens]
+        gloss_zh: [羹菜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao6-bhi2-老米
+    headword: 老米
+    readings:
+      - pengim: lao6 bhi2
+    senses:
+      - pos: noun
+        gloss_en: [old rice; aged rice]
+        gloss_zh: [老米]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nêg8-in5-肉丸
+    headword: 肉丸
+    readings:
+      - pengim: nêg8 in5
+    senses:
+      - pos: noun
+        gloss_en: [meatball]
+        gloss_zh: [肉丸]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nêg8-in5-肉圓
+    headword: 肉圓
+    readings:
+      - pengim: nêg8 in5
+    senses:
+      - pos: noun
+        gloss_en: [meatball, ba-wan (Taiwanese meatball snack)]
+        gloss_zh: [肉圓]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nêg8-gui3-肉桂
+    headword: 肉桂
+    readings:
+      - pengim: nêg8 gui3
+    senses:
+      - pos: noun
+        gloss_en: [cassia, cinnamon]
+        gloss_zh: [肉桂]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhah4-co3-mi7-肉脞麵
+    headword: 肉脞麵
+    readings:
+      - pengim: bhah4 co3 mi7
+    senses:
+      - pos: noun
+        gloss_en: [bak chor mee (minced meat noodles)]
+        gloss_zh: [肉脞麵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhah4-zio1-肉蕉
+    headword: 肉蕉
+    readings:
+      - pengim: bhah4 zio1
+    senses:
+      - pos: noun
+        gloss_en: [plantain (banana variety)]
+        gloss_zh: [肉蕉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nêg8-gan3-肉酵
+    headword: 肉酵
+    readings:
+      - pengim: nêg8 gan3
+    senses:
+      - pos: noun
+        gloss_en: [starch-and-meat patty (Teochew snack)]
+        gloss_zh: [肉酵]
+        note: Niche, highly specific Teochew snack-food term with only a descriptive gloss on Wiktionary; translation kept close to the source description.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nêg4-ziên3-肉醬
+    headword: 肉醬
+    readings:
+      - pengim: nêg4 ziên3
+    senses:
+      - pos: noun
+        gloss_en: [meat paste, minced meat, meat sauce]
+        gloss_zh: [肉醬]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhah4-gug4-dê5-肉骨茶
+    headword: 肉骨茶
+    readings:
+      - pengim: bhah4 gug4 dê5
+    senses:
+      - pos: noun
+        gloss_en: [bak kut teh (pork rib soup)]
+        gloss_zh: [肉骨茶]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kêng2-dêg4-gi1-肯德基
+    headword: 肯德基
+    readings:
+      - pengim: kêng2 dêg4 gi1
+    senses:
+      - pos: proper-noun
+        gloss_en: [KFC (Kentucky Fried Chicken)]
+        gloss_zh: [肯德基]
+        note: The page gives two unrelated senses for the same reading, the fast-food chain KFC and the US state Kentucky; KFC was chosen as the far more common usage.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou5-zio1-hung2-胡椒粉
+    headword: 胡椒粉
+    readings:
+      - pengim: hou5 zio1 hung2
+    senses:
+      - pos: noun
+        gloss_en: [ground pepper, pepper powder]
+        gloss_zh: [胡椒粉]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuê5-脢
+    headword: 脢
+    readings:
+      - pengim: bhuê5
+    senses:
+      - pos: noun
+        gloss_en: [meat from the back of an animal, loin meat]
+        gloss_zh: [脢肉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu7-ru2-腐乳
+    headword: 腐乳
+    readings:
+      - pengim: hu7 ru2
+    senses:
+      - pos: noun
+        gloss_en: [fermented bean curd]
+        gloss_zh: [腐乳]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu7-puê5-腐皮
+    headword: 腐皮
+    readings:
+      - pengim: hu7 puê5
+    senses:
+      - pos: noun
+        gloss_en: [tofu skin; beancurd skin]
+        gloss_zh: [腐皮]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu7-zog8-腐竹
+    headword: 腐竹
+    readings:
+      - pengim: hu7 zog8
+    senses:
+      - pos: noun
+        gloss_en: [dried beancurd sticks, tofu skin rolls]
+        gloss_zh: [腐竹]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: deng5-hung2-腸粉
+    headword: 腸粉
+    readings:
+      - pengim: deng5 hung2
+    senses:
+      - pos: noun
+        gloss_en: [cheong fun, rice noodle rolls]
+        gloss_zh: [腸粉]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-lai6-腹內
+    headword: 腹內
+    readings:
+      - pengim: bag4 lai6
+    senses:
+      - pos: noun
+        gloss_en: [offal, internal organs (esp. pork)]
+        gloss_zh: [腹內, 內臟]
+        note: Source page lists several senses under the same reading (offal; literally 'in the stomach'; figuratively 'in the heart'/'inner being'), so the primary intended sense here is not fully certain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: la5-膫
+    headword: 膫
+    readings:
+      - pengim: la5
+    senses:
+      - pos: noun
+        gloss_en: [lard]
+        gloss_zh: [膫]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: la5-poh4-膫粕
+    headword: 膫粕
+    readings:
+      - pengim: la5 poh4
+    senses:
+      - pos: noun
+        gloss_en: [pork rind, crackling]
+        gloss_zh: [膫粕]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: co1-teng1-臊湯
+    headword: 臊湯
+    readings:
+      - pengim: co1 teng1
+    senses:
+      - pos: noun
+        gloss_en: [fish sauce]
+        gloss_zh: [臊湯]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lah4-ah4-臘鴨
+    headword: 臘鴨
+    readings:
+      - pengim: lah4 ah4
+    senses:
+      - pos: noun
+        gloss_en: [dried preserved duck]
+        gloss_zh: [臘鴨]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze6-lai5-zui2-自來水
+    headword: 自來水
+    readings:
+      - pengim: ze6 lai5 zui2
+    senses:
+      - pos: noun
+        gloss_en: [tap water]
+        gloss_zh: [自來水]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao3-sai6-臭柿
+    headword: 臭柿
+    readings:
+      - pengim: cao3 sai6
+    senses:
+      - pos: noun
+        gloss_en: [tomato]
+        gloss_zh: [臭柿]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao3-dao7-hu7-臭豆腐
+    headword: 臭豆腐
+    readings:
+      - pengim: cao3 dao7 hu7
+    senses:
+      - pos: noun
+        gloss_en: [stinky tofu]
+        gloss_zh: [臭豆腐]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou7-芋
+    headword: 芋
+    readings:
+      - pengim: ou7
+    senses:
+      - pos: noun
+        gloss_en: [taro]
+        gloss_zh: [芋]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou7-ni5-芋泥
+    headword: 芋泥
+    readings:
+      - pengim: ou7 ni5
+    senses:
+      - pos: noun
+        gloss_en: [taro purée, taro paste dessert]
+        gloss_zh: [芋泥]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mang5-guang1-芒光
+    headword: 芒光
+    readings:
+      - pengim: mang5 guang1
+    senses:
+      - pos: noun
+        gloss_en: [jicama]
+        gloss_zh: [芒光]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mang1-hig8-芒吉
+    headword: 芒吉
+    readings:
+      - pengim: mang1 hig8
+    senses:
+      - pos: noun
+        gloss_en: [mangosteen]
+        gloss_zh: [芒吉]
+        note: The sense is tagged Hokkien/Penang-Hokkien/Singapore rather than explicitly Teochew, though a matching Teochew reading is attested for this word.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mang5-guê2-芒果
+    headword: 芒果
+    readings:
+      - pengim: mang5 guê2
+    senses:
+      - pos: noun
+        gloss_en: [mango]
+        gloss_zh: [芒果]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-mua5-gou5-芝麻糊
+    headword: 芝麻糊
+    readings:
+      - pengim: ze1 mua5 gou5
+    senses:
+      - pos: noun
+        gloss_en: [black sesame soup]
+        gloss_zh: [芝麻糊]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-mua5-zion3-芝麻醬
+    headword: 芝麻醬
+    readings:
+      - pengim: ze1 mua5 zion3
+    senses:
+      - pos: noun
+        gloss_en: [sesame paste, tahini]
+        gloss_zh: [芝麻醬]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kag4-na5-cai3-芥藍菜
+    headword: 芥藍菜
+    readings:
+      - pengim: kag4 na5 cai3
+    senses:
+      - pos: noun
+        gloss_en: [kailan, Chinese kale]
+        gloss_zh: [芥藍菜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê1-sêng1-iu5-花生油
+    headword: 花生油
+    readings:
+      - pengim: huê1 sêng1 iu5
+    senses:
+      - pos: noun
+        gloss_en: [peanut oil]
+        gloss_zh: [花生油]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê1-cai3-花菜
+    headword: 花菜
+    readings:
+      - pengim: huê1 cai3
+    senses:
+      - pos: noun
+        gloss_en: [cauliflower]
+        gloss_zh: [花菜, 花椰菜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang1-iu5-芳油
+    headword: 芳油
+    readings:
+      - pengim: pang1 iu5
+    senses:
+      - pos: noun
+        gloss_en: [sesame oil (especially from white sesame)]
+        gloss_zh: [芳油, 芝麻油]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ge6-苣
+    headword: 苣
+    readings:
+      - pengim: ge6
+    senses:
+      - pos: noun
+        gloss_en: [lettuce]
+        gloss_zh: [苣]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kou2-guê1-苦瓜
+    headword: 苦瓜
+    readings:
+      - pengim: kou2 guê1
+    senses:
+      - pos: noun
+        gloss_en: [bitter melon, bitter gourd]
+        gloss_zh: [苦瓜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê5-茴
+    headword: 茴
+    readings:
+      - pengim: huê5
+    senses:
+      - pos: noun
+        gloss_en: [fennel, aniseed]
+        gloss_zh: [茴]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dê5-hu5-茶壺
+    headword: 茶壺
+    readings:
+      - pengim: dê5 hu5
+    senses:
+      - pos: noun
+        gloss_en: [teapot]
+        gloss_zh: [茶壺]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dê5-hioh8-茶箬
+    headword: 茶箬
+    readings:
+      - pengim: dê5 hioh8
+    senses:
+      - pos: noun
+        gloss_en: [tea leaf (processed)]
+        gloss_zh: [茶箬]
+        note: The page tags this sense as Coastal-Min with a 'Laiyuan Hakka' qualifier rather than explicitly Teochew, though the Teochew Peng'im reading is attested for the headword.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dê5-bhi2-茶米
+    headword: 茶米
+    readings:
+      - pengim: dê5 bhi2
+    senses:
+      - pos: noun
+        gloss_en: [tea leaf]
+        gloss_zh: [茶米]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dê5-zi2-茶籽
+    headword: 茶籽
+    readings:
+      - pengim: dê5 zi2
+    senses:
+      - pos: noun
+        gloss_en: [tea seed]
+        gloss_zh: [茶籽]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dê5-poh4-茶粕
+    headword: 茶粕
+    readings:
+      - pengim: dê5 poh4
+    senses:
+      - pos: noun
+        gloss_en: [tea dregs, spent tea leaves]
+        gloss_zh: [茶粕]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dê5-gou2-茶鈷
+    headword: 茶鈷
+    readings:
+      - pengim: dê5 gou2
+    senses:
+      - pos: noun
+        gloss_en: [teapot (for brewing tea)]
+        gloss_zh: [茶鈷]
+        note: This sense is dialect-tagged Hakka/Min/Puxian-Min/Southern/Zhao'an but not explicitly Teochew, though the Teochew Peng'im reading is attested for the headword.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang5-o1-茼蒿
+    headword: 茼蒿
+    readings:
+      - pengim: dang5 o1
+    senses:
+      - pos: noun
+        gloss_en: [garland chrysanthemum, crown daisy]
+        gloss_zh: [茼蒿]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao2-guê2-草粿
+    headword: 草粿
+    readings:
+      - pengim: cao2 guê2
+    senses:
+      - pos: noun
+        gloss_en: [grass jelly]
+        gloss_zh: [草粿]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao2-bhuê5-草莓
+    headword: 草莓
+    readings:
+      - pengim: cao2 bhuê5
+    senses:
+      - pos: noun
+        gloss_en: [strawberry]
+        gloss_zh: [草莓]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao2-gou1-草菇
+    headword: 草菇
+    readings:
+      - pengim: cao2 gou1
+    senses:
+      - pos: noun
+        gloss_en: [straw mushroom]
+        gloss_zh: [草菇]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li6-gi1-荔枝
+    headword: 荔枝
+    readings:
+      - pengim: li6 gi1
+    senses:
+      - pos: noun
+        gloss_en: [lychee]
+        gloss_zh: [荔枝]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sui1-荽
+    headword: 荽
+    readings:
+      - pengim: sui1
+    senses:
+      - pos: noun
+        gloss_en: ["coriander (bound form, as in 芫荽/胡荽)", cilantro]
+        gloss_zh: [芫荽]
+        note: This character has no independent meaning; Wiktionary states it only occurs bound in the compounds 胡荽/芫荽 (coriander), so the gloss is drawn from those compounds rather than a standalone sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuê5-莓
+    headword: 莓
+    readings:
+      - pengim: bhuê5
+    senses:
+      - pos: noun
+        gloss_en: [berry]
+        gloss_zh: [莓]
+        note: The character carries multiple unrelated senses (berry vs. moss); 'berry', the first-listed sense, was chosen as primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
