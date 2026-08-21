@@ -21980,7 +21980,8 @@ items:
     status: existing
     entry_id: bung2-di7-nang5-本地儂
   - headword: 本港
-    status: staged
+    status: existing
+    entry_id: beng2-gang2-本港
   - headword: 本科
     status: existing
     entry_id: bung2-kuê1-本科
@@ -22003,12 +22004,14 @@ items:
     status: existing
     entry_id: bung2-nia2-本領
   - headword: 札
-    status: staged
+    status: existing
+    entry_id: zab4-札
   - headword: 朱
     status: existing
     entry_id: zu1-朱
   - headword: 朱古力
-    status: staged
+    status: existing
+    entry_id: zu1-gou2-lag8-朱古力
   - headword: 朱砂
     status: existing
     entry_id: zu1-sa1-朱砂
@@ -22016,11 +22019,14 @@ items:
     status: existing
     entry_id: bê5-朳
   - headword: 朴
-    status: staged
+    status: existing
+    entry_id: poh4-朴
   - headword: 朵
-    status: staged
+    status: existing
+    entry_id: do2-朵
   - headword: 朽
-    status: staged
+    status: existing
+    entry_id: hiun2-朽
   - headword: 朽木
     status: existing
     entry_id: hiun2-bhag8-朽木
@@ -22031,9 +22037,11 @@ items:
     status: existing
     entry_id: li2-李
   - headword: 杏
-    status: staged
+    status: existing
+    entry_id: hêng6-杏
   - headword: 杏仁
-    status: staged
+    status: existing
+    entry_id: hêng6-ring5-杏仁
   - headword: 材
     status: existing
     entry_id: cai5-材
@@ -22068,7 +22076,8 @@ items:
     status: existing
     entry_id: dou6-bung3-tang2-杜糞桶
   - headword: 杞
-    status: staged
+    status: existing
+    entry_id: gi2-杞
   - headword: 束
     status: existing
     entry_id: sog4-束
@@ -22091,7 +22100,8 @@ items:
     status: existing
     entry_id: buê1-min7-杯麵
   - headword: 東
-    status: staged
+    status: existing
+    entry_id: dang1-東
   - headword: 東京
     status: existing
     entry_id: dang1-gian1-東京
@@ -22125,9 +22135,11 @@ items:
   - headword: 杳
     status: no_reading
   - headword: 杵
-    status: staged
+    status: existing
+    entry_id: su2-杵
   - headword: 松
-    status: staged
+    status: existing
+    entry_id: sêng5-松
   - headword: 松柏
     status: existing
     entry_id: sêng5-bêh4-松柏
@@ -22141,9 +22153,11 @@ items:
     status: existing
     entry_id: sêng5-giu5-松球
   - headword: 松針
-    status: staged
+    status: existing
+    entry_id: sêng5-zam1-松針
   - headword: 板
-    status: staged
+    status: existing
+    entry_id: boin2-板
   - headword: 枇杷
     status: existing
     entry_id: bi5-bê5-枇杷
@@ -22161,7 +22175,8 @@ items:
   - headword: 枑
     status: no_reading
   - headword: 枓
-    status: staged
+    status: existing
+    entry_id: diu2-枓
   - headword: 枕
     status: existing
     entry_id: zim2-枕
@@ -22181,7 +22196,8 @@ items:
     status: existing
     entry_id: zim2-gug4-枕骨
   - headword: 林
-    status: staged
+    status: existing
+    entry_id: nan5-林
   - headword: 林投
     status: no_reading
   - headword: 林檎
@@ -22191,7 +22207,8 @@ items:
     status: existing
     entry_id: bhuê5-枚
   - headword: 果
-    status: staged
+    status: existing
+    entry_id: guê2-果
   - headword: 果仁
     status: existing
     entry_id: guê2-ring5-果仁
@@ -22226,7 +22243,8 @@ items:
     status: existing
     entry_id: gi1-diao5-枝條
   - headword: 枯
-    status: staged
+    status: existing
+    entry_id: gou1-枯
   - headword: 枯竭
     status: existing
     entry_id: kou1-giag8-枯竭
@@ -22240,7 +22258,8 @@ items:
     status: existing
     entry_id: zi2-枳
   - headword: 枵
-    status: staged
+    status: existing
+    entry_id: iao1-枵
   - headword: 架
     status: existing
     entry_id: gê3-架
@@ -22251,7 +22270,8 @@ items:
     status: existing
     entry_id: gê3-siag4-架設
   - headword: 枸
-    status: staged
+    status: existing
+    entry_id: ge2-枸
   - headword: 柄
     status: existing
     entry_id: bên3-柄
@@ -22271,9 +22291,11 @@ items:
     status: existing
     entry_id: gan1-iên5-柑蛘
   - headword: 染
-    status: staged
+    status: existing
+    entry_id: riam2-染
   - headword: 染蠻
-    status: staged
+    status: existing
+    entry_id: liam1-bang5-染蠻
   - headword: 柔
     status: existing
     entry_id: riu5-柔
@@ -22287,19 +22309,23 @@ items:
     status: existing
     entry_id: zia3-柘
   - headword: 柚
-    status: staged
+    status: existing
+    entry_id: iu7-柚
   - headword: 查
-    status: staged
+    status: existing
+    entry_id: cê5-查
   - headword: 查扣
     status: existing
     entry_id: cê5-kao3-查扣
   - headword: 查某
-    status: staged
+    status: existing
+    entry_id: za1-bhou2-查某
   - headword: 查某人
     status: existing
     entry_id: za1-bhou2-nang5-查某人
   - headword: 查某囝
-    status: staged
+    status: existing
+    entry_id: za1-bhou2-gian2-查某囝
   - headword: 查某孫
     status: existing
     entry_id: zao2-sung1-查某孫
@@ -22337,12 +22363,14 @@ items:
     status: existing
     entry_id: gang2-bou1-zê7-柬埔寨
   - headword: 柯
-    status: staged
+    status: existing
+    entry_id: gua1-柯
   - headword: 柰
     status: existing
     entry_id: nai6-柰
   - headword: 柱
-    status: staged
+    status: existing
+    entry_id: tiao6-柱
   - headword: 柳
     status: existing
     entry_id: liu2-柳
@@ -22392,16 +22420,19 @@ items:
     status: existing
     entry_id: sai6-bian2-柿餅
   - headword: 栓
-    status: staged
+    status: existing
+    entry_id: cuêng5-栓
   - headword: 栗
-    status: staged
+    status: existing
+    entry_id: lag8-栗
   - headword: 栚
     status: no_reading
   - headword: 栟
     status: existing
     entry_id: bêng6-栟
   - headword: 校
-    status: staged
+    status: existing
+    entry_id: hao6-校
   - headword: 校區
     status: existing
     entry_id: hao6-ku1-校區
@@ -22439,9 +22470,11 @@ items:
     status: existing
     entry_id: hu2-hu2-ru5-sên1-栩栩如生
   - headword: 株
-    status: staged
+    status: existing
+    entry_id: du1-株
   - headword: 核
-    status: staged
+    status: existing
+    entry_id: hêg4-核
   - headword: 核實
     status: existing
     entry_id: hêg4-sig8-核實
@@ -22458,7 +22491,8 @@ items:
     status: existing
     entry_id: geng1-ge6-根據
   - headword: 根本
-    status: staged
+    status: existing
+    entry_id: geng1-bung2-根本
   - headword: 根源
     status: existing
     entry_id: geng1-nguang5-根源
@@ -22493,19 +22527,23 @@ items:
     status: existing
     entry_id: gui3-huê1-桂花
   - headword: 桃
-    status: staged
+    status: existing
+    entry_id: to5-桃
   - headword: 桃色
     status: existing
     entry_id: to5-sêg4-桃色
   - headword: 桅
-    status: staged
+    status: existing
+    entry_id: ui5-桅
   - headword: 框
     status: existing
     entry_id: kuang1-框
   - headword: 案
-    status: staged
+    status: existing
+    entry_id: uan3-案
   - headword: 案件
-    status: staged
+    status: existing
+    entry_id: ang3-gian6-案件
   - headword: 案例
     status: existing
     entry_id: uan3-li7-案例
@@ -22528,7 +22566,8 @@ items:
     status: existing
     entry_id: doh4-ming7-桌面
   - headword: 桐
-    status: staged
+    status: existing
+    entry_id: tong5-桐
   - headword: 桐油
     status: no_reading
   - headword: 桑
@@ -22538,7 +22577,8 @@ items:
     status: existing
     entry_id: seng1-sui5-桑垂
   - headword: 桓
-    status: staged
+    status: existing
+    entry_id: huang5-桓
   - headword: 桶
     status: existing
     entry_id: tang2-桶
@@ -22548,7 +22588,8 @@ items:
     status: existing
     entry_id: hia1-桸
   - headword: 梁
-    status: staged
+    status: existing
+    entry_id: nion5-梁
   - headword: 梅
     status: existing
     entry_id: bhuê5-梅
@@ -22577,9 +22618,11 @@ items:
     status: existing
     entry_id: gên2-kai3-梗概
   - headword: 條
-    status: staged
+    status: existing
+    entry_id: diao5-條
   - headword: 條件
-    status: staged
+    status: existing
+    entry_id: diou5-gian6-條件
   - headword: 條例
     status: existing
     entry_id: diao5-li7-條例
@@ -22587,7 +22630,8 @@ items:
     status: existing
     entry_id: diao5-ioh4-條約
   - headword: 梟
-    status: staged
+    status: existing
+    entry_id: hiou1-梟
   - headword: 梟雄
     status: existing
     entry_id: hiou1-hiong5-梟雄
@@ -22625,7 +22669,8 @@ items:
     status: existing
     entry_id: siu1-tao5-梳頭
   - headword: 梵
-    status: staged
+    status: existing
+    entry_id: huam6-梵
   - headword: 棄
     status: existing
     entry_id: ki3-棄
@@ -22633,7 +22678,8 @@ items:
     status: existing
     entry_id: ki3-êng1-棄嬰
   - headword: 棉
-    status: staged
+    status: existing
+    entry_id: mi5-棉
   - headword: 棉湖
     status: existing
     entry_id: mi5-ou5-棉湖
@@ -22693,7 +22739,8 @@ items:
     status: existing
     entry_id: di6-棣
   - headword: 森
-    status: staged
+    status: existing
+    entry_id: siam1-森
   - headword: 森林
     status: existing
     entry_id: sim1-lim5-森林
@@ -22714,7 +22761,8 @@ items:
     status: existing
     entry_id: guan1-ca5-棺柴
   - headword: 椅
-    status: staged
+    status: existing
+    entry_id: in2-椅
   - headword: 椅條
     status: existing
     entry_id: in2-diao5-椅條
@@ -22722,7 +22770,8 @@ items:
     status: existing
     entry_id: in2-tao5-椅頭
   - headword: 植
-    status: staged
+    status: existing
+    entry_id: sêg4-植
   - headword: 植物
     status: existing
     entry_id: sêg4-muêh8-植物
@@ -22730,23 +22779,28 @@ items:
     status: existing
     entry_id: sêg4-huag4-植髮
   - headword: 椏
-    status: staged
+    status: existing
+    entry_id: a1-椏
   - headword: 椒
-    status: staged
+    status: existing
+    entry_id: zio1-椒
   - headword: 椰
     status: existing
     entry_id: ia5-椰
   - headword: 椰漿
-    status: staged
+    status: existing
+    entry_id: ia5-ziên1-椰漿
   - headword: 椰胡
     status: existing
     entry_id: ia5-hu5-椰胡
   - headword: 椽
-    status: staged
+    status: existing
+    entry_id: uêng5-椽
   - headword: 椿
     status: no_reading
   - headword: 楊
-    status: staged
+    status: existing
+    entry_id: ion5-楊
   - headword: 楊柳
     status: existing
     entry_id: iang5-liu2-楊柳
@@ -22757,7 +22811,8 @@ items:
     status: existing
     entry_id: ion5-pou2-楊浦
   - headword: 楓
-    status: staged
+    status: existing
+    entry_id: bung1-楓
   - headword: 楓樹
     status: existing
     entry_id: beng1-ciu7-楓樹
@@ -22768,12 +22823,14 @@ items:
     status: existing
     entry_id: co2-楚
   - headword: 楝
-    status: staged
+    status: existing
+    entry_id: noin7-楝
   - headword: 楞
     status: existing
     entry_id: lêng5-楞
   - headword: 楠
-    status: staged
+    status: existing
+    entry_id: lam5-楠
   - headword: 楦
     status: existing
     entry_id: suêng1-楦
@@ -22803,9 +22860,11 @@ items:
     status: existing
     entry_id: gêg8-ui5-極為
   - headword: 極端
-    status: staged
+    status: existing
+    entry_id: gêg8-duêng1-極端
   - headword: 楷
-    status: staged
+    status: existing
+    entry_id: gai1-楷
   - headword: 楹
     status: existing
     entry_id: ên5-楹
@@ -22825,12 +22884,14 @@ items:
     status: existing
     entry_id: ru5-榆
   - headword: 榕
-    status: staged
+    status: existing
+    entry_id: sêng5-榕
   - headword: 榕城
     status: existing
     entry_id: iong5-sian5-榕城
   - headword: 榕樹
-    status: staged
+    status: existing
+    entry_id: sêng5-ciu7-榕樹
   - headword: 榕江
     status: existing
     entry_id: iong5-gang1-榕江
@@ -22856,7 +22917,8 @@ items:
     status: existing
     entry_id: sung2-榫
   - headword: 榮
-    status: staged
+    status: existing
+    entry_id: iong5-榮
   - headword: 榮獲
     status: existing
     entry_id: iong5-uag8-榮獲
@@ -22867,7 +22929,8 @@ items:
     status: existing
     entry_id: liu5-榴
   - headword: 榴槤
-    status: staged
+    status: existing
+    entry_id: liu5-liêng5-榴槤
   - headword: 榷
     status: no_reading
   - headword: 榼
@@ -22893,34 +22956,42 @@ items:
   - headword: 槌
     status: no_reading
   - headword: 槍
-    status: staged
+    status: existing
+    entry_id: cion1-槍
   - headword: 槎
     status: no_reading
   - headword: 槓
-    status: staged
+    status: existing
+    entry_id: gang3-槓
   - headword: 槭
     status: existing
     entry_id: cêg4-槭
   - headword: 槳
-    status: staged
+    status: existing
+    entry_id: ziên2-槳
   - headword: 槽
     status: existing
     entry_id: zo5-槽
   - headword: 槿
-    status: staged
+    status: existing
+    entry_id: geng2-槿
   - headword: 樀
     status: no_reading
   - headword: 樁
-    status: staged
+    status: existing
+    entry_id: zuang1-樁
   - headword: 樂
-    status: staged
+    status: existing
+    entry_id: ghaoh8-樂
   - headword: 樂器
     status: existing
     entry_id: ghaoh8-ki3-樂器
   - headword: 樊
-    status: staged
+    status: existing
+    entry_id: huang5-樊
   - headword: 樑
-    status: staged
+    status: existing
+    entry_id: niên5-樑
   - headword: 樓
     status: existing
     entry_id: lao5-樓
@@ -22937,11 +23008,14 @@ items:
     status: existing
     entry_id: lao5-dêng2-樓頂
   - headword: 標
-    status: staged
+    status: existing
+    entry_id: biê1-標
   - headword: 標準
-    status: staged
+    status: existing
+    entry_id: piou1-zung2-標準
   - headword: 標準化
-    status: staged
+    status: existing
+    entry_id: piou1-zung2-huê3-標準化
   - headword: 標籤
     status: existing
     entry_id: piao1-ciang1-標籤
@@ -22961,7 +23035,8 @@ items:
     status: existing
     entry_id: bio1-cên1-標青
   - headword: 標題
-    status: staged
+    status: existing
+    entry_id: piou1-doi5-標題
   - headword: 樞
     status: existing
     entry_id: ku1-樞
@@ -22969,11 +23044,14 @@ items:
     status: existing
     entry_id: ku1-niu2-樞紐
   - headword: 樟
-    status: staged
+    status: existing
+    entry_id: ziang1-樟
   - headword: 樟腦
-    status: staged
+    status: existing
+    entry_id: ziên1-lo2-樟腦
   - headword: 模
-    status: staged
+    status: existing
+    entry_id: mo5-模
   - headword: 模仿
     status: existing
     entry_id: mo5-huang2-模仿
@@ -22984,12 +23062,14 @@ items:
     status: existing
     entry_id: mo5-ngi2-模擬
   - headword: 模樣
-    status: staged
+    status: existing
+    entry_id: mo5-iên7-模樣
   - headword: 模糊
     status: existing
     entry_id: mo5-hu5-模糊
   - headword: 樣
-    status: staged
+    status: existing
+    entry_id: iên7-樣
   - headword: 樣子
     status: existing
     entry_id: iên7-ze2-樣子
@@ -22997,7 +23077,8 @@ items:
     status: existing
     entry_id: ion7-mao6-樣貌
   - headword: 樵
-    status: staged
+    status: existing
+    entry_id: ziou1-樵
   - headword: 樸素
     status: existing
     entry_id: pog4-su3-樸素
@@ -23041,7 +23122,8 @@ items:
     status: existing
     entry_id: su6-lib8-樹立
   - headword: 樹箬
-    status: staged
+    status: existing
+    entry_id: ciu7-hioh8-樹箬
   - headword: 樹薯
     status: existing
     entry_id: ciu7-ze5-樹薯
@@ -23052,7 +23134,8 @@ items:
     status: existing
     entry_id: zung1-樽
   - headword: 樾
-    status: staged
+    status: existing
+    entry_id: uag8-樾
   - headword: 橄
     status: existing
     entry_id: gan1-橄
@@ -23063,7 +23146,8 @@ items:
     status: existing
     entry_id: gan1-na2-giu5-橄欖球
   - headword: 橋
-    status: staged
+    status: existing
+    entry_id: gio5-橋
   - headword: 橋樑
     status: existing
     entry_id: gio5-nion5-橋樑
@@ -23107,7 +23191,8 @@ items:
     status: existing
     entry_id: gi1-hêng5-機型
   - headword: 機場
-    status: staged
+    status: existing
+    entry_id: gi1-diên5-機場
   - headword: 機房
     status: existing
     entry_id: gi1-bang5-機房
@@ -23157,7 +23242,8 @@ items:
     status: existing
     entry_id: kim5-檎
   - headword: 檐
-    status: staged
+    status: existing
+    entry_id: siam5-檐
   - headword: 檐階石
     status: existing
     entry_id: lim5-goi1-ziêh8-檐階石
@@ -23179,7 +23265,8 @@ items:
   - headword: 檝
     status: no_reading
   - headword: 檢
-    status: staged
+    status: existing
+    entry_id: giam2-檢
   - headword: 檢查
     status: existing
     entry_id: giam2-cê5-檢查
@@ -23196,7 +23283,8 @@ items:
     status: existing
     entry_id: suain7-檨
   - headword: 檬
-    status: staged
+    status: existing
+    entry_id: mong5-檬
   - headword: 檯
     status: existing
     entry_id: tai5-檯
@@ -23204,13 +23292,17 @@ items:
     status: existing
     entry_id: tai5-giu5-檯球
   - headword: 檳
-    status: staged
+    status: existing
+    entry_id: bing1-檳
   - headword: 檳榔
-    status: staged
+    status: existing
+    entry_id: bing1-no5-檳榔
   - headword: 檸
-    status: staged
+    status: existing
+    entry_id: lêng5-檸
   - headword: 檸檬
-    status: staged
+    status: existing
+    entry_id: lêng5-mong5-檸檬
   - headword: 檽
     status: no_reading
   - headword: 櫃
@@ -23222,7 +23314,8 @@ items:
   - headword: 櫄
     status: no_reading
   - headword: 櫟
-    status: staged
+    status: existing
+    entry_id: lêh8-櫟
   - headword: 櫥
     status: existing
     entry_id: du5-櫥
@@ -23239,7 +23332,8 @@ items:
     status: existing
     entry_id: ciam1-dui7-櫼隊
   - headword: 欄
-    status: staged
+    status: existing
+    entry_id: lang5-欄
   - headword: 欄杆
     status: existing
     entry_id: lang5-gang1-欄杆
@@ -23252,12 +23346,14 @@ items:
     status: existing
     entry_id: zang5-欉
   - headword: 權
-    status: staged
+    status: existing
+    entry_id: kuang5-權
   - headword: 權利
     status: existing
     entry_id: kuêng5-li6-權利
   - headword: 權力
-    status: staged
+    status: existing
+    entry_id: kuêng5-lag8-權力
   - headword: 權威
     status: existing
     entry_id: kuang5-ui1-權威
@@ -23271,9 +23367,11 @@ items:
     status: existing
     entry_id: kuang5-hang6-權限
   - headword: 欖
-    status: staged
+    status: existing
+    entry_id: na2-欖
   - headword: 欠
-    status: staged
+    status: existing
+    entry_id: kiam3-欠
   - headword: 欠數
     status: existing
     entry_id: kiam3-siao3-欠數
@@ -23290,7 +23388,8 @@ items:
     status: existing
     entry_id: ce3-sên1-次生
   - headword: 欣
-    status: staged
+    status: existing
+    entry_id: heng1-欣
   - headword: 欣喜
     status: existing
     entry_id: hng1-hi2-欣喜
@@ -23301,7 +23400,8 @@ items:
     status: existing
     entry_id: hêng1-sion2-欣賞
   - headword: 欲
-    status: staged
+    status: existing
+    entry_id: iog8-欲
   - headword: 欺
     status: existing
     entry_id: ki1-欺
@@ -23321,7 +23421,8 @@ items:
     status: existing
     entry_id: kim1-欽
   - headword: 款
-    status: staged
+    status: existing
+    entry_id: kuang2-款
   - headword: 歃
     status: existing
     entry_id: cah4-歃
@@ -23338,7 +23439,8 @@ items:
     status: existing
     entry_id: kiam2-歉
   - headword: 歌
-    status: staged
+    status: existing
+    entry_id: gua1-歌
   - headword: 歌冊
     status: existing
     entry_id: gua1-cêh4-歌冊
@@ -23385,7 +23487,8 @@ items:
     status: existing
     entry_id: bung5-歕
   - headword: 歡
-    status: staged
+    status: existing
+    entry_id: huan1-歡
   - headword: 歡喜
     status: existing
     entry_id: huan1-hi2-歡喜
@@ -23417,7 +23520,8 @@ items:
     status: existing
     entry_id: zian3-ru5-正如
   - headword: 正常
-    status: staged
+    status: existing
+    entry_id: zian3-siên5-正常
   - headword: 正式
     status: existing
     entry_id: zian3-sêg4-正式
@@ -23425,7 +23529,8 @@ items:
     status: existing
     entry_id: zian3-ciu2-正手
   - headword: 正手爿
-    status: staged
+    status: existing
+    entry_id: zian3-ciu2-boin5-正手爿
   - headword: 正方形
     status: existing
     entry_id: zian3-bang1-hêng5-正方形
@@ -23528,9 +23633,11 @@ items:
     status: existing
     entry_id: ki5-si6-歧視
   - headword: 歪
-    status: staged
+    status: existing
+    entry_id: uai1-歪
   - headword: 歲
-    status: staged
+    status: existing
+    entry_id: huê3-歲
   - headword: 歲月
     status: existing
     entry_id: suê3-ghuêh8-歲月
@@ -23573,7 +23680,8 @@ items:
     status: existing
     entry_id: pai2-歹
   - headword: 歹勢
-    status: staged
+    status: existing
+    entry_id: pai2-sê3-歹勢
   - headword: 歹囝
     status: existing
     entry_id: pai2-gian2-歹囝
@@ -23653,11 +23761,13 @@ items:
     status: existing
     entry_id: su5-bug4-zai1-殊不知
   - headword: 殍
-    status: staged
+    status: existing
+    entry_id: biao2-殍
   - headword: 殕
     status: no_reading
   - headword: 殖
-    status: staged
+    status: existing
+    entry_id: sêg4-殖
   - headword: 殖民
     status: existing
     entry_id: sêg4-mêng5-殖民
@@ -23671,7 +23781,8 @@ items:
     status: existing
     entry_id: cang5-hui3-殘廢
   - headword: 殘忍
-    status: staged
+    status: existing
+    entry_id: cang5-rim2-殘忍
   - headword: 殘留
     status: existing
     entry_id: cang5-liu5-殘留
@@ -23690,14 +23801,17 @@ items:
   - headword: 殫
     status: no_reading
   - headword: 殯
-    status: staged
+    status: existing
+    entry_id: bing3-殯
   - headword: 殳
     status: existing
     entry_id: su5-殳
   - headword: 段
-    status: staged
+    status: existing
+    entry_id: deng7-段
   - headword: 殷
-    status: staged
+    status: existing
+    entry_id: hng1-殷
   - headword: 殺
     status: existing
     entry_id: suah4-殺
@@ -23726,7 +23840,8 @@ items:
     status: existing
     entry_id: kag4-殼
   - headword: 殿
-    status: staged
+    status: existing
+    entry_id: doin7-殿
   - headword: 毀
     status: existing
     entry_id: huin2-毀
@@ -23740,9 +23855,11 @@ items:
     status: existing
     entry_id: huin2-ioh4-毀約
   - headword: 毅
-    status: staged
+    status: existing
+    entry_id: ngi5-毅
   - headword: 毆
-    status: staged
+    status: existing
+    entry_id: ao1-毆
   - headword: 毋
     status: existing
     entry_id: m6-毋
@@ -23774,7 +23891,8 @@ items:
     status: existing
     entry_id: bho2-cing1-母親
   - headword: 母親河
-    status: staged
+    status: existing
+    entry_id: bho2-cing1-ho5-母親河
   - headword: 母親節
     status: existing
     entry_id: bho2-cing1-zoih4-母親節
@@ -23788,7 +23906,8 @@ items:
     status: existing
     entry_id: dag8-毒
   - headword: 毒品
-    status: staged
+    status: existing
+    entry_id: dag8-bing2-毒品
   - headword: 毒株
     status: existing
     entry_id: dag8-du1-毒株
@@ -23881,11 +24000,14 @@ items:
     status: existing
     entry_id: zin1-氈
   - headword: 氏
-    status: staged
+    status: existing
+    entry_id: si6-氏
   - headword: 氐
-    status: staged
+    status: existing
+    entry_id: di1-氐
   - headword: 民
-    status: staged
+    status: existing
+    entry_id: ming5-民
   - headword: 民主
     status: existing
     entry_id: ming5-zu2-民主
@@ -23896,7 +24018,8 @@ items:
     status: existing
     entry_id: ming5-in2-ziah8-ui5-tin1-民以食為天
   - headword: 民俗
-    status: staged
+    status: existing
+    entry_id: ming5-sog8-民俗
   - headword: 民國
     status: existing
     entry_id: ming5-gog4-民國
@@ -23927,7 +24050,8 @@ items:
     status: existing
     entry_id: hung1-ui5-氛圍
   - headword: 氣
-    status: staged
+    status: existing
+    entry_id: kui3-氣
   - headword: 氣候
     status: existing
     entry_id: ki3-hao7-氣候
@@ -23991,7 +24115,8 @@ items:
     status: existing
     entry_id: ki3-siang6-tai5-氣象臺
   - headword: 氣質
-    status: staged
+    status: existing
+    entry_id: ki3-ziêh4-氣質
   - headword: 氣量
     status: existing
     entry_id: ki3-liang6-氣量
@@ -24002,7 +24127,8 @@ items:
     status: existing
     entry_id: ki3-pêg4-氣魄
   - headword: 氤
-    status: staged
+    status: existing
+    entry_id: ing1-氤
   - headword: 氧
     status: existing
     entry_id: iang2-氧
@@ -24141,7 +24267,8 @@ items:
     status: existing
     entry_id: zui2-he5-水魚
   - headword: 永
-    status: staged
+    status: existing
+    entry_id: iong2-永
   - headword: 永久
     status: existing
     entry_id: uêng2-gu2-永久
@@ -24155,7 +24282,8 @@ items:
     status: existing
     entry_id: uêng2-sên1-永生
   - headword: 永遠
-    status: staged
+    status: existing
+    entry_id: iong2-iêng2-永遠
   - headword: 氹
     status: existing
     entry_id: dang6-氹
@@ -24187,9 +24315,11 @@ items:
     status: existing
     entry_id: kiu5-zêh4-求職
   - headword: 汆
-    status: staged
+    status: existing
+    entry_id: suêng3-汆
   - headword: 汕
-    status: staged
+    status: existing
+    entry_id: suan3-汕
   - headword: 汕尾
     status: existing
     entry_id: suan3-bhuê2-汕尾
@@ -24200,7 +24330,8 @@ items:
     status: existing
     entry_id: suan1-tao5-uê7-汕頭話
   - headword: 汗
-    status: staged
+    status: existing
+    entry_id: guan7-汗
   - headword: 汗毛
     status: existing
     entry_id: guan7-mo5-汗毛
@@ -24208,14 +24339,17 @@ items:
     status: existing
     entry_id: guan7-lao5-zab4-dih4-汗流汁滴
   - headword: 汛
-    status: staged
+    status: existing
+    entry_id: sing3-汛
   - headword: 汜
-    status: staged
+    status: existing
+    entry_id: se6-汜
   - headword: 汝
     status: existing
     entry_id: le2-你
   - headword: 汝好
-    status: staged
+    status: existing
+    entry_id: le2-ho2-汝好
   - headword: 汞
     status: existing
     entry_id: gong3-汞
@@ -24256,9 +24390,11 @@ items:
     status: existing
     entry_id: u1-ni5-污泥
   - headword: 污漬
-    status: staged
+    status: existing
+    entry_id: e3-ze3-污漬
   - headword: 汨
-    status: staged
+    status: existing
+    entry_id: mig8-汨
   - headword: 汪
     status: existing
     entry_id: uang1-汪
@@ -24269,9 +24405,11 @@ items:
     status: existing
     entry_id: zian2-汫
   - headword: 決
-    status: staged
+    status: existing
+    entry_id: guag4-決
   - headword: 決定
-    status: staged
+    status: existing
+    entry_id: guêg4-dian7-決定
   - headword: 決定性
     status: existing
     entry_id: guag4-dian7-sên3-決定性
@@ -24300,12 +24438,14 @@ items:
     status: existing
     entry_id: ki3-cia1-汽車
   - headword: 沁
-    status: staged
+    status: existing
+    entry_id: cim3-沁
   - headword: 沂
     status: existing
     entry_id: ki5-沂
   - headword: 沃
-    status: staged
+    status: existing
+    entry_id: ag4-沃
   - headword: 沃水
     status: existing
     entry_id: ag4-zui2-沃水
@@ -24322,7 +24462,8 @@ items:
     status: existing
     entry_id: sim2-沈
   - headword: 沉
-    status: staged
+    status: existing
+    entry_id: dim5-沉
   - headword: 沉寂
     status: existing
     entry_id: dim5-sog4-沉寂
@@ -24354,7 +24495,8 @@ items:
     status: existing
     entry_id: mog8-iog8-沐浴
   - headword: 沒
-    status: staged
+    status: existing
+    entry_id: mog8-沒
   - headword: 沕
     status: existing
     entry_id: bhih4-沕
@@ -24398,7 +24540,8 @@ items:
     status: existing
     entry_id: sua1-tuan1-沙灘
   - headword: 沙發
-    status: staged
+    status: existing
+    entry_id: sua1-huag4-沙發
   - headword: 沙盤
     status: existing
     entry_id: sua1-buan5-沙盤
@@ -24431,7 +24574,8 @@ items:
   - headword: 沠
     status: no_reading
   - headword: 沫
-    status: staged
+    status: existing
+    entry_id: bhuah8-沫
   - headword: 沬
     status: existing
     entry_id: bhi7-沬
@@ -24439,7 +24583,8 @@ items:
     status: existing
     entry_id: bhih4-tao5-siu5-沬頭泅
   - headword: 沮
-    status: staged
+    status: existing
+    entry_id: zu2-沮
   - headword: 沮喪
     status: existing
     entry_id: zu1-sang3-沮喪
@@ -24522,16 +24667,20 @@ items:
     status: existing
     entry_id: di7-li2-治理
   - headword: 治療
-    status: staged
+    status: existing
+    entry_id: di7-liou5-治療
   - headword: 治癒
     status: existing
     entry_id: di7-ru2-治癒
   - headword: 沼
-    status: staged
+    status: existing
+    entry_id: riou3-沼
   - headword: 沾
-    status: staged
+    status: existing
+    entry_id: diam1-沾
   - headword: 沿
-    status: staged
+    status: existing
+    entry_id: ing5-沿
   - headword: 沿岸
     status: existing
     entry_id: ing5-ngai6-沿岸
@@ -24584,7 +24733,8 @@ items:
     status: existing
     entry_id: gam1-泔
   - headword: 法
-    status: staged
+    status: existing
+    entry_id: huab4-法
   - headword: 法令
     status: existing
     entry_id: huab4-lêng6-法令
@@ -24592,7 +24742,8 @@ items:
     status: existing
     entry_id: huag4-bhu6-法務
   - headword: 法國
-    status: staged
+    status: existing
+    entry_id: huab4-gog4-法國
   - headword: 法官
     status: existing
     entry_id: huag4-guan1-法官
@@ -24603,7 +24754,8 @@ items:
     status: existing
     entry_id: huab4-têng5-法庭
   - headword: 法律
-    status: staged
+    status: existing
+    entry_id: huag4-lug8-法律
   - headword: 法條
     status: existing
     entry_id: huag4-diao5-法條
@@ -24620,7 +24772,8 @@ items:
     status: existing
     entry_id: huag4-in7-法院
   - headword: 泛
-    status: staged
+    status: existing
+    entry_id: huam3-泛
   - headword: 泛泛
     status: existing
     entry_id: huang3-huang3-泛泛
@@ -24628,7 +24781,8 @@ items:
     status: existing
     entry_id: pan3-ziêh8-泛石
   - headword: 泡
-    status: staged
+    status: existing
+    entry_id: pao1-泡
   - headword: 泡茶
     status: existing
     entry_id: pao3-dê5-泡茶
@@ -24675,7 +24829,8 @@ items:
     status: existing
     entry_id: ni5-tam5-泥潭
   - headword: 注
-    status: staged
+    status: existing
+    entry_id: du3-注
   - headword: 注射
     status: existing
     entry_id: zu3-sia7-注射
@@ -24701,7 +24856,8 @@ items:
     status: existing
     entry_id: bong5-泵
   - headword: 洋
-    status: staged
+    status: existing
+    entry_id: ion5-洋
   - headword: 洋溢
     status: existing
     entry_id: iang5-êg4-洋溢
@@ -24733,7 +24889,8 @@ items:
     status: existing
     entry_id: soi2-loi2-洗禮
   - headword: 洗腎
-    status: staged
+    status: existing
+    entry_id: soi2-siang6-洗腎
   - headword: 洗腦
     status: existing
     entry_id: soi2-nao2-洗腦
@@ -24744,7 +24901,8 @@ items:
     status: existing
     entry_id: soi2-san1-洗衫
   - headword: 洗衫板
-    status: staged
+    status: existing
+    entry_id: soi2-san1-boin2-洗衫板
   - headword: 洗衫機
     status: existing
     entry_id: soi2-san1-gi1-洗衫機
@@ -24761,7 +24919,8 @@ items:
     status: existing
     entry_id: soi2-zin5-洗錢
   - headword: 洗面
-    status: staged
+    status: existing
+    entry_id: soi2-ming7-洗面
   - headword: 洗面盆
     status: existing
     entry_id: soi2-ming7-pung5-洗面盆
@@ -24790,7 +24949,8 @@ items:
     status: existing
     entry_id: log8-iang5-zua2-gui3-洛陽紙貴
   - headword: 洞
-    status: staged
+    status: existing
+    entry_id: dang7-洞
   - headword: 洞葛
     status: existing
     entry_id: dong6-gag4-洞葛
@@ -24798,7 +24958,8 @@ items:
     status: existing
     entry_id: zing1-津
   - headword: 洨
-    status: staged
+    status: existing
+    entry_id: ngao5-洨
   - headword: 洩
     status: existing
     entry_id: siab8-洩
@@ -24809,12 +24970,14 @@ items:
     status: existing
     entry_id: siab8-hong5-洩洪
   - headword: 洩漏
-    status: staged
+    status: existing
+    entry_id: siêb8-lao7-洩漏
   - headword: 洩題
     status: existing
     entry_id: siab8-doi5-洩題
   - headword: 洪
-    status: staged
+    status: existing
+    entry_id: hong5-洪
   - headword: 洪水
     status: existing
     entry_id: hong5-zui2-洪水
@@ -24825,7 +24988,8 @@ items:
     status: existing
     entry_id: ang5-iang5-洪陽
   - headword: 洰
-    status: staged
+    status: existing
+    entry_id: geg8-洰
   - headword: 洱
     status: staged
   - headword: 洲
@@ -24877,7 +25041,8 @@ items:
     status: existing
     entry_id: liu5-biang6-流便
   - headword: 流傳
-    status: staged
+    status: existing
+    entry_id: liu5-tuang5-流傳
   - headword: 流利
     status: existing
     entry_id: liu5-li6-流利
@@ -24969,7 +25134,8 @@ items:
     status: existing
     entry_id: hao1-浩
   - headword: 浪
-    status: staged
+    status: existing
+    entry_id: lang6-浪
   - headword: 浪漫
     status: existing
     entry_id: lang6-bhuang6-浪漫
@@ -25013,7 +25179,8 @@ items:
     status: existing
     entry_id: u5-浯
   - headword: 浴
-    status: staged
+    status: existing
+    entry_id: êg8-浴
   - headword: 浴室
     status: existing
     entry_id: êg8-sig4-浴室
@@ -25030,7 +25197,8 @@ items:
     status: existing
     entry_id: hai2-海
   - headword: 海上
-    status: staged
+    status: existing
+    entry_id: hai2-ziên6-海上
   - headword: 海內外
     status: existing
     entry_id: hai2-lai6-ghua7-海內外
@@ -25044,9 +25212,11 @@ items:
     status: existing
     entry_id: hai2-lam5-dao2-海南島
   - headword: 海參
-    status: staged
+    status: existing
+    entry_id: hai3-siam1-海參
   - headword: 海和尚
-    status: staged
+    status: existing
+    entry_id: hai2-huê5-siên7-海和尚
   - headword: 海嘯
     status: existing
     entry_id: hai2-sao3-海嘯
@@ -25104,7 +25274,8 @@ items:
     status: existing
     entry_id: hai2-bing1-海瀕
   - headword: 海灣
-    status: staged
+    status: existing
+    entry_id: hai2-uêng1-海灣
   - headword: 海獺
     status: existing
     entry_id: hai2-tuah4-海獺
@@ -25144,7 +25315,8 @@ items:
     status: existing
     entry_id: hai2-mung5-海門
   - headword: 海關
-    status: staged
+    status: existing
+    entry_id: hai2-guêng1-海關
   - headword: 海面
     status: existing
     entry_id: hai2-ming7-海面
@@ -25176,7 +25348,8 @@ items:
     status: existing
     entry_id: gêng1-涇
   - headword: 消
-    status: staged
+    status: existing
+    entry_id: siao1-消
   - headword: 消化
     status: existing
     entry_id: siao1-huê3-消化
@@ -25211,7 +25384,8 @@ items:
     status: existing
     entry_id: siao1-hui3-zia2-消費者
   - headword: 消退
-    status: staged
+    status: existing
+    entry_id: siou1-to3-消退
   - headword: 消遣
     status: existing
     entry_id: siao1-kiang2-消遣
@@ -25252,7 +25426,8 @@ items:
     status: existing
     entry_id: cong1-涌
   - headword: 涎
-    status: staged
+    status: existing
+    entry_id: iêng6-涎
   - headword: 涑
     status: existing
     entry_id: sog4-涑
@@ -25260,7 +25435,8 @@ items:
     status: existing
     entry_id: ngai5-涯
   - headword: 液
-    status: staged
+    status: existing
+    entry_id: siêh8-液
   - headword: 液晶
     status: existing
     entry_id: êg8-zian1-液晶
@@ -25271,7 +25447,8 @@ items:
     status: existing
     entry_id: ham5-gai3-涵蓋
   - headword: 涸
-    status: staged
+    status: existing
+    entry_id: hoh8-涸
   - headword: 涼
     status: existing
     entry_id: liang5-涼
@@ -25285,7 +25462,8 @@ items:
     status: existing
     entry_id: liang5-huang1-涼風
   - headword: 淄
-    status: staged
+    status: existing
+    entry_id: ze1-淄
   - headword: 淄博
     status: existing
     entry_id: ze1-pag4-淄博
@@ -25293,7 +25471,8 @@ items:
     status: existing
     entry_id: ngao5-淆
   - headword: 淋
-    status: staged
+    status: existing
+    entry_id: lam5-淋
   - headword: 淌
     status: existing
     entry_id: tang2-淌
@@ -25313,7 +25492,8 @@ items:
     status: existing
     entry_id: ci1-liang5-淒涼
   - headword: 淘
-    status: staged
+    status: existing
+    entry_id: tao5-淘
   - headword: 淙浴
     status: existing
     entry_id: zang5-êg8-淙浴
@@ -25321,7 +25501,8 @@ items:
     status: existing
     entry_id: lui6-淚
   - headword: 淡
-    status: staged
+    status: existing
+    entry_id: dan6-淡
   - headword: 淡妝
     status: existing
     entry_id: dan6-zuang1-淡妝
@@ -25335,7 +25516,8 @@ items:
     status: existing
     entry_id: dam6-boh8-淡薄
   - headword: 淤
-    status: staged
+    status: existing
+    entry_id: e3-淤
   - headword: 淤積
     status: existing
     entry_id: e3-zêg4-淤積
@@ -25387,7 +25569,8 @@ items:
     status: existing
     entry_id: huai5-淮
   - headword: 深
-    status: staged
+    status: existing
+    entry_id: cim1-深
   - headword: 深入
     status: existing
     entry_id: cim1-rib8-深入
@@ -25410,7 +25593,8 @@ items:
     status: existing
     entry_id: cim1-gui1-深閨
   - headword: 淵
-    status: staged
+    status: existing
+    entry_id: iêng1-淵
   - headword: 混
     status: existing
     entry_id: hung6-混
@@ -25427,9 +25611,11 @@ items:
     status: existing
     entry_id: hung6-ngao5-混淆
   - headword: 淹
-    status: staged
+    status: existing
+    entry_id: im1-淹
   - headword: 淺
-    status: staged
+    status: existing
+    entry_id: ciêng2-淺
   - headword: 淺嘗輒止
     status: existing
     entry_id: ciang2-siang5-diag4-zi2-淺嘗輒止
@@ -25449,7 +25635,8 @@ items:
     status: existing
     entry_id: ciang2-hiang2-淺顯
   - headword: 添
-    status: staged
+    status: existing
+    entry_id: tin1-添
   - headword: 添丁
     status: existing
     entry_id: tiam1-dêng1-添丁
@@ -25496,14 +25683,17 @@ items:
     status: existing
     entry_id: cêng1-lang6-清朗
   - headword: 清朝
-    status: staged
+    status: existing
+    entry_id: cêng1-ciou5-清朝
   - headword: 清楚
     status: existing
     entry_id: cêng1-co2-清楚
   - headword: 清氣
-    status: staged
+    status: existing
+    entry_id: cêng1-ki3-清氣
   - headword: 清氣相
-    status: staged
+    status: existing
+    entry_id: cêng1-ki3-sion3-清氣相
   - headword: 清涼
     status: existing
     entry_id: cêng1-liang5-清涼
@@ -25547,7 +25737,8 @@ items:
     status: existing
     entry_id: cêng1-de5-清除
   - headword: 清靜
-    status: staged
+    status: existing
+    entry_id: cêng1-zên6-清靜
   - headword: 清香
     status: existing
     entry_id: cêng1-hion1-清香
@@ -25636,12 +25827,14 @@ items:
     status: existing
     entry_id: miou2-渺
   - headword: 渾
-    status: staged
+    status: existing
+    entry_id: hung6-渾
   - headword: 渾濁
     status: existing
     entry_id: hung6-zuag8-渾濁
   - headword: 湄
-    status: staged
+    status: existing
+    entry_id: mi5-湄
   - headword: 湊
     status: existing
     entry_id: cou3-湊
@@ -25652,9 +25845,11 @@ items:
     status: existing
     entry_id: cou3-zin5-湊錢
   - headword: 湍
-    status: staged
+    status: existing
+    entry_id: zuêng1-湍
   - headword: 湑
-    status: staged
+    status: existing
+    entry_id: su2-湑
   - headword: 湔
     status: no_reading
   - headword: 湖
@@ -25664,7 +25859,8 @@ items:
     status: existing
     entry_id: ou5-bag4-湖北
   - headword: 湖南
-    status: staged
+    status: existing
+    entry_id: ou5-lam5-湖南
   - headword: 湖泊
     status: existing
     entry_id: ou5-boh8-湖泊
@@ -25678,11 +25874,14 @@ items:
     status: existing
     entry_id: siang1-tam5-湘潭
   - headword: 湛
-    status: staged
+    status: existing
+    entry_id: zam3-湛
   - headword: 湜
-    status: staged
+    status: existing
+    entry_id: sig8-湜
   - headword: 湧
-    status: staged
+    status: existing
+    entry_id: iong3-湧
   - headword: 湮
     status: no_reading
   - headword: 湯
@@ -25695,7 +25894,8 @@ items:
     status: existing
     entry_id: kai3-溉
   - headword: 源
-    status: staged
+    status: existing
+    entry_id: nguang5-源
   - headword: 源源不斷
     status: existing
     entry_id: nguang5-nguang5-bug4-duang6-源源不斷
@@ -25718,7 +25918,8 @@ items:
     status: existing
     entry_id: zung2-kag4-準確
   - headword: 溜
-    status: staged
+    status: existing
+    entry_id: liu1-溜
   - headword: 溜冰
     status: existing
     entry_id: liu3-bian1-溜冰
@@ -25729,7 +25930,8 @@ items:
     status: existing
     entry_id: gao1-tong1-溝通
   - headword: 溢
-    status: staged
+    status: existing
+    entry_id: êg8-溢
   - headword: 溢奶
     status: existing
     entry_id: iah4-ni6-溢奶
@@ -25770,12 +25972,14 @@ items:
     status: existing
     entry_id: ung1-cêng5-溫情
   - headword: 溫暖
-    status: staged
+    status: existing
+    entry_id: ung1-luang2-溫暖
   - headword: 溯
     status: existing
     entry_id: suag4-溯
   - headword: 溶
-    status: staged
+    status: existing
+    entry_id: ion5-溶
   - headword: 溶劑
     status: existing
     entry_id: iong5-zi3-溶劑
@@ -25823,9 +26027,11 @@ items:
     status: existing
     entry_id: mig8-huê2-滅火
   - headword: 滇
-    status: staged
+    status: existing
+    entry_id: diang1-滇
   - headword: 滋
-    status: staged
+    status: existing
+    entry_id: ze1-滋
   - headword: 滋事
     status: existing
     entry_id: ze1-se7-滋事
@@ -25839,7 +26045,8 @@ items:
     status: existing
     entry_id: dêg8-滌
   - headword: 滎
-    status: staged
+    status: existing
+    entry_id: hêng5-滎
   - headword: 滑
     status: existing
     entry_id: gug8-滑
@@ -25879,7 +26086,8 @@ items:
     status: existing
     entry_id: dih4-gian2-滴囝
   - headword: 滷
-    status: staged
+    status: existing
+    entry_id: lou2-滷
   - headword: 滷味
     status: existing
     entry_id: lou2-bhi7-滷味
@@ -25896,7 +26104,8 @@ items:
     status: existing
     entry_id: lou2-gho5-滷鵝
   - headword: 滸
-    status: staged
+    status: existing
+    entry_id: hu2-滸
   - headword: 滾
     status: existing
     entry_id: gung2-滾
@@ -25943,9 +26152,11 @@ items:
     status: existing
     entry_id: he5-zung5-漁船
   - headword: 漂
-    status: staged
+    status: existing
+    entry_id: piou1-漂
   - headword: 漂泊
-    status: staged
+    status: existing
+    entry_id: piao1-boh8-漂泊
   - headword: 漂洋過海
     status: existing
     entry_id: piou1-iên5-guê3-hai2-漂洋過海
@@ -25959,7 +26170,8 @@ items:
     status: existing
     entry_id: cag4-ki3-漆器
   - headword: 漉
-    status: staged
+    status: existing
+    entry_id: log8-漉
   - headword: 漏
     status: existing
     entry_id: lao7-漏
@@ -25970,7 +26182,8 @@ items:
     status: existing
     entry_id: lao7-dang7-漏洞
   - headword: 演
-    status: staged
+    status: existing
+    entry_id: ing5-演
   - headword: 演員
     status: existing
     entry_id: ing5-uang5-演員
@@ -25999,7 +26212,8 @@ items:
     status: existing
     entry_id: ao1-bui5-漚肥
   - headword: 漠
-    status: staged
+    status: existing
+    entry_id: moh8-漠
   - headword: 漢
     status: existing
     entry_id: hang3-漢
@@ -26019,9 +26233,11 @@ items:
     status: existing
     entry_id: hang3-hog8-漢服
   - headword: 漢朝
-    status: staged
+    status: existing
+    entry_id: hang3-ciou5-漢朝
   - headword: 漣
-    status: staged
+    status: existing
+    entry_id: liêng5-漣
   - headword: 漤
     status: existing
     entry_id: nam3-漤
@@ -26029,18 +26245,23 @@ items:
     status: existing
     entry_id: nam3-tou5-漤塗
   - headword: 漪
-    status: staged
+    status: existing
+    entry_id: i1-漪
   - headword: 漫
-    status: staged
+    status: existing
+    entry_id: bhuêng6-漫
   - headword: 漫步
     status: existing
     entry_id: bhuang6-bou7-漫步
   - headword: 漫長
-    status: staged
+    status: existing
+    entry_id: muang6-ciang5-漫長
   - headword: 漬
-    status: staged
+    status: existing
+    entry_id: ze3-漬
   - headword: 漱
-    status: staged
+    status: existing
+    entry_id: sog4-漱
   - headword: 漱齒
     status: existing
     entry_id: ciu3-ki2-漱齒
@@ -26057,21 +26278,26 @@ items:
     status: existing
     entry_id: ziang1-ziu1-漳州
   - headword: 漴
-    status: staged
+    status: existing
+    entry_id: cong5-漴
   - headword: 漸
-    status: staged
+    status: existing
+    entry_id: ziam6-漸
   - headword: 漸漸
     status: existing
     entry_id: ziam6-ziam6-漸漸
   - headword: 漾
-    status: staged
+    status: existing
+    entry_id: iang6-漾
   - headword: 漿
-    status: staged
+    status: existing
+    entry_id: ziên1-漿
   - headword: 潁
     status: existing
     entry_id: têng2-潁
   - headword: 潔
-    status: staged
+    status: existing
+    entry_id: giêg4-潔
   - headword: 潔淨
     status: existing
     entry_id: giag4-zêng6-潔淨
@@ -26079,7 +26305,8 @@ items:
     status: existing
     entry_id: giag4-bêh8-潔白
   - headword: 潘
-    status: staged
+    status: existing
+    entry_id: pung1-潘
   - headword: 潛
     status: existing
     entry_id: ciam5-潛
@@ -26108,24 +26335,29 @@ items:
     status: existing
     entry_id: tam5-潭
   - headword: 潮
-    status: staged
+    status: existing
+    entry_id: dio5-潮
   - headword: 潮人
     status: existing
     entry_id: dio5-rêng5-潮人
   - headword: 潮劇
-    status: staged
+    status: existing
+    entry_id: diê5-giah8-潮劇
   - headword: 潮南
     status: existing
     entry_id: dio5-nam5-潮南
   - headword: 潮安
-    status: staged
+    status: existing
+    entry_id: diê5-ang1-潮安
   - headword: 潮州
     status: existing
     entry_id: dio5-ziu1-潮州
   - headword: 潮州人
-    status: staged
+    status: existing
+    entry_id: diê5-ziu1-nang5-潮州人
   - headword: 潮州人，福建祖
-    status: staged
+    status: existing
+    entry_id: dio5-ziu1-nang5-潮州人，福建祖
   - headword: 潮州話
     status: existing
     entry_id: dio5-ziu1-ue7-潮州話
@@ -26133,26 +26365,35 @@ items:
     status: existing
     entry_id: dio5-zui2-潮水
   - headword: 潮汕
-    status: staged
+    status: existing
+    entry_id: diê5-suan1-潮汕
   - headword: 潮汕人
-    status: staged
+    status: existing
+    entry_id: diê5-suan1-nang5-潮汕人
   - headword: 潮汕儂
-    status: staged
+    status: existing
+    entry_id: diê5-suan1-nang5-潮汕儂
   - headword: 潮汕話
-    status: staged
+    status: existing
+    entry_id: diê5-suan1-uê7-潮汕話
   - headword: 潮流
-    status: staged
+    status: existing
+    entry_id: dio5-liu5-潮流
   - headword: 潮語
-    status: staged
+    status: existing
+    entry_id: dio5-ghe2-潮語
   - headword: 潮陽
-    status: staged
+    status: existing
+    entry_id: diê5-iên5-潮陽
   - headword: 潰
     status: existing
     entry_id: kui6-潰
   - headword: 潲
-    status: staged
+    status: existing
+    entry_id: sao3-潲
   - headword: 潺
-    status: staged
+    status: existing
+    entry_id: cang5-潺
   - headword: 澀
     status: existing
     entry_id: siab4-澀
@@ -26169,12 +26410,14 @@ items:
     status: existing
     entry_id: têng5-hai2-澄海
   - headword: 澈
-    status: staged
+    status: existing
+    entry_id: têh4-澈
   - headword: 澎湃
     status: existing
     entry_id: pên5-pai3-澎湃
   - headword: 澎湖
-    status: staged
+    status: existing
+    entry_id: pên5-ou5-澎湖
   - headword: 澗
     status: existing
     entry_id: gang2-澗
@@ -26233,7 +26476,8 @@ items:
     status: existing
     entry_id: gêg4-ziu2-激酒
   - headword: 濁
-    status: staged
+    status: existing
+    entry_id: zuag8-濁
   - headword: 濂
     status: no_reading
   - headword: 濃
@@ -26283,7 +26527,8 @@ items:
     status: existing
     entry_id: hao5-gang1-濠江
   - headword: 濤
-    status: staged
+    status: existing
+    entry_id: tiu5-濤
   - headword: 濫
     status: existing
     entry_id: lam7-濫
@@ -26299,7 +26544,8 @@ items:
     status: existing
     entry_id: pog4-iang5-濮陽
   - headword: 濯
-    status: staged
+    status: existing
+    entry_id: dêg8-濯
   - headword: 濰
     status: existing
     entry_id: rui5-濰
@@ -26330,12 +26576,14 @@ items:
     status: existing
     entry_id: sia3-suê1-瀉衰
   - headword: 瀑
-    status: staged
+    status: existing
+    entry_id: pag8-瀑
   - headword: 瀑布
     status: existing
     entry_id: pag8-bou3-瀑布
   - headword: 瀕
-    status: staged
+    status: existing
+    entry_id: bing1-瀕
   - headword: 瀕危
     status: existing
     entry_id: ping5-nguin5-瀕危
@@ -26343,7 +26591,8 @@ items:
     status: existing
     entry_id: bing1-hai2-瀕海
   - headword: 瀚
-    status: staged
+    status: existing
+    entry_id: hang5-瀚
   - headword: 瀛
     status: existing
     entry_id: iong5-瀛
@@ -26351,14 +26600,16 @@ items:
     status: existing
     entry_id: lêh8-cên1-瀝青
   - headword: 瀟
-    status: staged
+    status: existing
+    entry_id: siao1-瀟
   - headword: 瀟灑
     status: existing
     entry_id: siao1-sa3-瀟灑
   - headword: 瀰
     status: no_reading
   - headword: 瀾
-    status: staged
+    status: existing
+    entry_id: lang5-瀾
   - headword: 灃
     status: existing
     entry_id: hong1-灃
@@ -26369,11 +26620,14 @@ items:
     status: existing
     entry_id: zang5-êg8-gêng1-灇浴間
   - headword: 灌
-    status: staged
+    status: existing
+    entry_id: guang3-灌
   - headword: 灌腸
-    status: staged
+    status: existing
+    entry_id: guang3-deng5-灌腸
   - headword: 灑
-    status: staged
+    status: existing
+    entry_id: sai3-灑
   - headword: 灕
     status: existing
     entry_id: li5-灕
@@ -26384,7 +26638,8 @@ items:
     status: existing
     entry_id: tuan1-tou5-灘塗
   - headword: 灣
-    status: staged
+    status: existing
+    entry_id: uêng1-灣
   - headword: 灩
     status: existing
     entry_id: iam7-灩
@@ -26449,7 +26704,8 @@ items:
     status: existing
     entry_id: huê2-riag8-火熱
   - headword: 火燒厝
-    status: staged
+    status: existing
+    entry_id: huê2-sio1-cu3-火燒厝
   - headword: 火爆
     status: existing
     entry_id: huê2-bao6-火爆
@@ -26502,12 +26758,14 @@ items:
     status: existing
     entry_id: huê2-tao5-gung1-火頭軍
   - headword: 火食
-    status: staged
+    status: existing
+    entry_id: huê2-sig8-火食
   - headword: 火龍果
     status: existing
     entry_id: huê2-lêng5-guê2-火龍果
   - headword: 灰
-    status: staged
+    status: existing
+    entry_id: huê1-灰
   - headword: 灰塗
     status: existing
     entry_id: huê1-tou5-灰塗
@@ -26515,7 +26773,8 @@ items:
     status: existing
     entry_id: huê1-gang1-灰工
   - headword: 灰色
-    status: staged
+    status: existing
+    entry_id: huê1-sêg4-灰色
   - headword: 灱
     status: existing
     entry_id: da1-灱
@@ -26579,7 +26838,8 @@ items:
     status: existing
     entry_id: ca2-guê2-炒粿
   - headword: 炒粿條
-    status: staged
+    status: existing
+    entry_id: ca2-guê2-diao5-炒粿條
   - headword: 炒粿角
     status: existing
     entry_id: ca2-guê2-gag4-炒粿角
@@ -26602,7 +26862,8 @@ items:
     status: existing
     entry_id: ko1-炣
   - headword: 炫
-    status: staged
+    status: existing
+    entry_id: hiang5-炫
   - headword: 炫麗
     status: existing
     entry_id: hiang5-li6-炫麗
@@ -26622,7 +26883,8 @@ items:
     status: existing
     entry_id: pao3-tai5-炮臺
   - headword: 炯
-    status: staged
+    status: existing
+    entry_id: guang2-炯
   - headword: 炰水
     status: existing
     entry_id: bu5-zui2-炰水
@@ -26633,7 +26895,8 @@ items:
     status: existing
     entry_id: bêng2-炳
   - headword: 炸
-    status: staged
+    status: existing
+    entry_id: zan3-炸
   - headword: 炸彈
     status: existing
     entry_id: za3-tang5-炸彈
@@ -26647,7 +26910,8 @@ items:
     status: existing
     entry_id: ui5-liao2-為了
   - headword: 為什麼
-    status: staged
+    status: existing
+    entry_id: ui5-sim6-moh4-為什麼
   - headword: 為何
     status: existing
     entry_id: ui5-ho5-為何
@@ -26655,17 +26919,20 @@ items:
     status: existing
     entry_id: ui5-zi2-為止
   - headword: 為著
-    status: staged
+    status: existing
+    entry_id: ui5-diêh8-為著
   - headword: 為難
     status: existing
     entry_id: ui5-lang5-為難
   - headword: 烈
-    status: staged
+    status: existing
+    entry_id: liêg8-烈
   - headword: 烈酒
     status: existing
     entry_id: liag8-ziu2-烈酒
   - headword: 烊
-    status: staged
+    status: existing
+    entry_id: ion5-烊
   - headword: 烏
     status: existing
     entry_id: ou1-烏
@@ -26685,12 +26952,14 @@ items:
     status: existing
     entry_id: ou1-am3-tin1-烏暗天
   - headword: 烏暗眩
-    status: staged
+    status: existing
+    entry_id: ou1-am3-hiêng5-烏暗眩
   - headword: 烏有
     status: existing
     entry_id: u1-iu2-烏有
   - headword: 烏欖
-    status: staged
+    status: existing
+    entry_id: ou1-lam2-烏欖
   - headword: 烏毆
     status: existing
     entry_id: ou1-ao2-烏毆
@@ -26758,9 +27027,11 @@ items:
     status: existing
     entry_id: ou1-lêng5-dê5-烏龍茶
   - headword: 烘
-    status: staged
+    status: existing
+    entry_id: hong1-烘
   - headword: 烙
-    status: staged
+    status: existing
+    entry_id: luah4-烙
   - headword: 烝
     status: no_reading
   - headword: 烤
@@ -26815,7 +27086,8 @@ items:
     status: existing
     entry_id: bho5-nang5-gi1-無人機
   - headword: 無偌久
-    status: staged
+    status: existing
+    entry_id: bho5-riêh8-gu2-無偌久
   - headword: 無償
     status: existing
     entry_id: bho5-sion5-無償
@@ -26928,7 +27200,8 @@ items:
     status: existing
     entry_id: bho5-cu3-bug4-do6-無處不在
   - headword: 無要緊
-    status: staged
+    status: existing
+    entry_id: bho5-iao3-ging2-無要緊
   - headword: 無語
     status: existing
     entry_id: bho5-ghe2-無語
@@ -26939,7 +27212,8 @@ items:
     status: existing
     entry_id: bho5-lung6-ru5-ho5-無論如何
   - headword: 無變
-    status: staged
+    status: existing
+    entry_id: bho5-biang3-無變
   - headword: 無走絀
     status: existing
     entry_id: bho5-zao2-zuah8-無走絀
@@ -26962,7 +27236,8 @@ items:
     status: existing
     entry_id: bho5-siah4-無錫
   - headword: 無閒
-    status: staged
+    status: existing
+    entry_id: bho5-oin5-無閒
   - headword: 無關係
     status: existing
     entry_id: bho5-guêng1-hi6-無關係
@@ -26985,9 +27260,11 @@ items:
     status: existing
     entry_id: bho5-hung5-bho5-ian2-無魂無影
   - headword: 無魚，蝦也好
-    status: staged
+    status: existing
+    entry_id: bho5-he5-無魚，蝦也好
   - headword: 焦
-    status: staged
+    status: existing
+    entry_id: ziao1-焦
   - headword: 焦慮
     status: existing
     entry_id: ziao1-le6-焦慮
@@ -27001,11 +27278,14 @@ items:
     status: existing
     entry_id: iam7-焰
   - headword: 然
-    status: staged
+    status: existing
+    entry_id: riêng5-然
   - headword: 然後
-    status: staged
+    status: existing
+    entry_id: riêng5-ao6-然後
   - headword: 然而
-    status: staged
+    status: existing
+    entry_id: riang5-re5-然而
   - headword: 煃
     status: no_reading
   - headword: 煅
@@ -27017,7 +27297,8 @@ items:
     status: existing
     entry_id: huang5-煌
   - headword: 煎
-    status: staged
+    status: existing
+    entry_id: ziang1-煎
   - headword: 煎熬
     status: existing
     entry_id: ziang1-ngao5-煎熬
@@ -27025,7 +27306,8 @@ items:
     status: existing
     entry_id: bêg4-煏
   - headword: 煑
-    status: staged
+    status: existing
+    entry_id: ze2-煑
   - headword: 煙
     status: existing
     entry_id: ing1-煙
@@ -27036,7 +27318,8 @@ items:
     status: existing
     entry_id: hung1-sai2-煙屎
   - headword: 煙火
-    status: staged
+    status: existing
+    entry_id: ing1-huê2-煙火
   - headword: 煙筒
     status: existing
     entry_id: ing1-dang5-煙筒
@@ -27044,14 +27327,16 @@ items:
     status: existing
     entry_id: ing1-tai5-煙臺
   - headword: 煙花
-    status: staged
+    status: existing
+    entry_id: ing1-huê1-煙花
   - headword: 煙霧
     status: existing
     entry_id: ing1-bhu7-煙霧
   - headword: 煚
     status: no_reading
   - headword: 煜
-    status: staged
+    status: existing
+    entry_id: hiog4-煜
   - headword: 煟
     status: no_reading
   - headword: 煠
@@ -27067,14 +27352,17 @@ items:
     status: existing
     entry_id: bhuê5-tuan3-煤炭
   - headword: 煥
-    status: staged
+    status: existing
+    entry_id: huang3-煥
   - headword: 煥然一新
     status: existing
     entry_id: huang3-riang5-zêg8-sing1-煥然一新
   - headword: 煦
-    status: staged
+    status: existing
+    entry_id: hu6-煦
   - headword: 照
-    status: staged
+    status: existing
+    entry_id: zio3-照
   - headword: 照亮
     status: existing
     entry_id: zio3-liang6-照亮
@@ -27088,7 +27376,8 @@ items:
     status: existing
     entry_id: zio3-bain5-照爿
   - headword: 照生
-    status: staged
+    status: existing
+    entry_id: ziên3-sên1-照生
   - headword: 照相
     status: existing
     entry_id: zio3-sion3-照相
@@ -27108,11 +27397,14 @@ items:
     status: existing
     entry_id: ui1-煨
   - headword: 煩
-    status: staged
+    status: existing
+    entry_id: huêng5-煩
   - headword: 煩惱
-    status: staged
+    status: existing
+    entry_id: huêng5-lo2-煩惱
   - headword: 煮
-    status: staged
+    status: existing
+    entry_id: ze2-煮
   - headword: 煮炒
     status: existing
     entry_id: ze2-ca2-煮炒
@@ -27123,7 +27415,8 @@ items:
     status: existing
     entry_id: ze2-bung7-煮飯
   - headword: 煲
-    status: staged
+    status: existing
+    entry_id: bao1-煲
   - headword: 煲湯
     status: existing
     entry_id: bu5-teng1-煲湯
@@ -27150,12 +27443,14 @@ items:
   - headword: 熇
     status: no_reading
   - headword: 熊
-    status: staged
+    status: existing
+    entry_id: him5-熊
   - headword: 熊孩子
     status: existing
     entry_id: him5-hai6-ze2-熊孩子
   - headword: 熏
-    status: staged
+    status: existing
+    entry_id: hung1-熏
   - headword: 熒
     status: no_reading
   - headword: 熙
@@ -27186,7 +27481,8 @@ items:
     status: existing
     entry_id: ug4-dao2-熨斗
   - headword: 熬
-    status: staged
+    status: existing
+    entry_id: ngao5-熬
   - headword: 熬暝
     status: existing
     entry_id: ngao5-mê5-熬暝
@@ -27233,9 +27529,11 @@ items:
     status: existing
     entry_id: ruah8-zui2-熱水
   - headword: 熱水器
-    status: staged
+    status: existing
+    entry_id: riêg8-zui2-ki3-熱水器
   - headword: 熱水壺
-    status: staged
+    status: existing
+    entry_id: riêg8-zui2-hu5-熱水壺
   - headword: 熱水瓶
     status: existing
     entry_id: riag8-zui2-bang5-熱水瓶
@@ -27258,7 +27556,8 @@ items:
     status: existing
     entry_id: riag8-liang6-熱量
   - headword: 熱門
-    status: staged
+    status: existing
+    entry_id: riag8-mung5-熱門
   - headword: 熹
     status: existing
     entry_id: hi1-熹
@@ -27266,11 +27565,14 @@ items:
     status: existing
     entry_id: hib4-熻
   - headword: 熾
-    status: staged
+    status: existing
+    entry_id: zi3-熾
   - headword: 燃
-    status: staged
+    status: existing
+    entry_id: riang5-燃
   - headword: 燃料
-    status: staged
+    status: existing
+    entry_id: riêng5-liou7-燃料
   - headword: 燃氣
     status: existing
     entry_id: riang5-ki3-燃氣
@@ -27326,7 +27628,8 @@ items:
   - headword: 燊
     status: no_reading
   - headword: 燎
-    status: staged
+    status: existing
+    entry_id: liao5-燎
   - headword: 燒
     status: existing
     entry_id: siê1-燒
@@ -27334,9 +27637,11 @@ items:
     status: existing
     entry_id: sio1-sion1-燒傷
   - headword: 燒毀
-    status: staged
+    status: existing
+    entry_id: siê1-huin2-燒毀
   - headword: 燒水
-    status: staged
+    status: existing
+    entry_id: siê1-zui2-燒水
   - headword: 燒烤
     status: existing
     entry_id: sio1-kao2-燒烤
@@ -27344,14 +27649,17 @@ items:
     status: existing
     entry_id: sio1-hung1-燒薰
   - headword: 燒衣
-    status: staged
+    status: existing
+    entry_id: sio1-ui1-燒衣
   - headword: 燒酒
     status: existing
     entry_id: sio1-ziu2-燒酒
   - headword: 燒香
-    status: staged
+    status: existing
+    entry_id: siê1-hiên1-燒香
   - headword: 燕
-    status: staged
+    status: existing
+    entry_id: in3-燕
   - headword: 燕窩
     status: existing
     entry_id: in3-o1-燕窩
@@ -27365,7 +27673,8 @@ items:
     status: existing
     entry_id: teng3-sion1-燙傷
   - headword: 營
-    status: staged
+    status: existing
+    entry_id: ian5-營
   - headword: 營業
     status: existing
     entry_id: ian5-ngiab8-營業
@@ -27400,12 +27709,14 @@ items:
     status: existing
     entry_id: zêg4-dai5-燭臺
   - headword: 爆
-    status: staged
+    status: existing
+    entry_id: bao6-爆
   - headword: 爆料
     status: existing
     entry_id: bao6-liao7-爆料
   - headword: 爍
-    status: staged
+    status: existing
+    entry_id: iag4-爍
   - headword: 爍爁
     status: existing
     entry_id: sih4-nah4-爍爁
@@ -27413,14 +27724,16 @@ items:
     status: existing
     entry_id: lou5-爐
   - headword: 爛
-    status: staged
+    status: existing
+    entry_id: nuan7-爛
   - headword: 爞
     status: no_reading
   - headword: 爨
     status: existing
     entry_id: cuêng3-爨
   - headword: 爪
-    status: staged
+    status: existing
+    entry_id: riao2-爪
   - headword: 爬
     status: existing
     entry_id: bê5-爬
@@ -27466,7 +27779,8 @@ items:
     status: existing
     entry_id: ziag4-log8-爵祿
   - headword: 父
-    status: staged
+    status: existing
+    entry_id: hu6-父
   - headword: 父兒母囝
     status: existing
     entry_id: bê6-ri5-bho2-gian2-父兒母囝
@@ -27480,7 +27794,8 @@ items:
     status: existing
     entry_id: bê6-bho2-guan1-父母官
   - headword: 爸
-    status: staged
+    status: existing
+    entry_id: bê6-爸
   - headword: 爸母
     status: existing
     entry_id: bê6-bho2-爸母
@@ -27506,11 +27821,14 @@ items:
     status: existing
     entry_id: re2-爾
   - headword: 爿
-    status: staged
+    status: existing
+    entry_id: boin5-爿
   - headword: 牆
-    status: staged
+    status: existing
+    entry_id: ciên5-牆
   - headword: 片
-    status: staged
+    status: existing
+    entry_id: piang3-片
   - headword: 片尾
     status: existing
     entry_id: piêng3-bhuê2-片尾
@@ -27518,7 +27836,8 @@ items:
     status: existing
     entry_id: piang3-duang6-片段
   - headword: 版
-    status: staged
+    status: existing
+    entry_id: bang2-版
   - headword: 版圖
     status: existing
     entry_id: bang2-dou5-版圖
@@ -27608,7 +27927,8 @@ items:
     status: existing
     entry_id: ghu5-puê5-zua2-牛皮紙
   - headword: 牛肉
-    status: staged
+    status: existing
+    entry_id: ghu5-nêg8-牛肉
   - headword: 牛肝菌
     status: existing
     entry_id: ghu5-guan1-kung2-牛肝菌
@@ -27631,11 +27951,13 @@ items:
     status: existing
     entry_id: ghu5-ng5-牛黃
   - headword: 牝
-    status: staged
+    status: existing
+    entry_id: ping2-牝
   - headword: 牞
     status: no_reading
   - headword: 牟
-    status: staged
+    status: existing
+    entry_id: mou5-牟
   - headword: 牟利
     status: existing
     entry_id: mou5-li6-牟利
@@ -27711,12 +28033,14 @@ items:
     status: existing
     entry_id: gou2-牯
   - headword: 牲
-    status: staged
+    status: existing
+    entry_id: sêng1-牲
   - headword: 特
     status: existing
     entry_id: dêg8-特
   - headword: 特別
-    status: staged
+    status: existing
+    entry_id: dêg8-biag8-特別
   - headword: 特區
     status: existing
     entry_id: dêg8-ku1-特區
@@ -27769,7 +28093,8 @@ items:
     status: existing
     entry_id: kang1-la1-牽拉
   - headword: 牽掛
-    status: staged
+    status: existing
+    entry_id: kang1-gua3-牽掛
   - headword: 牽涉
     status: existing
     entry_id: kang1-siab8-牽涉
@@ -27810,9 +28135,11 @@ items:
     status: existing
     entry_id: hi1-sêng1-犧牲
   - headword: 犬
-    status: staged
+    status: existing
+    entry_id: kiêng2-犬
   - headword: 犯
-    status: staged
+    status: existing
+    entry_id: huang6-犯
   - headword: 犯人
     status: existing
     entry_id: huang6-ring5-犯人
@@ -27823,16 +28150,19 @@ items:
     status: existing
     entry_id: huam6-huab4-犯法
   - headword: 犯罪
-    status: staged
+    status: existing
+    entry_id: huang6-zuê6-犯罪
   - headword: 犯錯
     status: existing
     entry_id: huang6-co3-犯錯
   - headword: 犰
     status: no_reading
   - headword: 犴
-    status: staged
+    status: existing
+    entry_id: ngang6-犴
   - headword: 狀
-    status: staged
+    status: existing
+    entry_id: zuang6-狀
   - headword: 狀元
     status: existing
     entry_id: zo6-nguang5-狀元
@@ -27861,9 +28191,11 @@ items:
     status: existing
     entry_id: dêg8-狄
   - headword: 狐
-    status: staged
+    status: existing
+    entry_id: hou5-狐
   - headword: 狐狸
-    status: staged
+    status: existing
+    entry_id: hou5-lai5-狐狸
   - headword: 狐狸指
     status: existing
     entry_id: hou5-lai5-zoin2-狐狸指
@@ -27932,7 +28264,8 @@ items:
     status: existing
     entry_id: bi2-ngang6-狴犴
   - headword: 狸
-    status: staged
+    status: existing
+    entry_id: li5-狸
   - headword: 狹
     status: existing
     entry_id: hiab8-狹
@@ -27940,7 +28273,8 @@ items:
     status: existing
     entry_id: hiab8-za3-狹窄
   - headword: 狺
-    status: staged
+    status: existing
+    entry_id: ngeng5-狺
   - headword: 狻猊
     status: existing
     entry_id: suêng1-ngi5-狻猊
@@ -27958,7 +28292,8 @@ items:
   - headword: 猖
     status: staged
   - headword: 猛
-    status: staged
+    status: existing
+    entry_id: mên2-猛
   - headword: 猛擊
     status: existing
     entry_id: mêng2-kêg4-猛擊
@@ -28036,7 +28371,8 @@ items:
     status: existing
     entry_id: gug8-猾
   - headword: 猿
-    status: staged
+    status: existing
+    entry_id: uang5-猿
   - headword: 獃
     status: no_reading
   - headword: 獄
@@ -28067,11 +28403,13 @@ items:
     status: existing
     entry_id: ziang3-gim1-獎金
   - headword: 獐
-    status: staged
+    status: existing
+    entry_id: ziang1-獐
   - headword: 獧
     status: no_reading
   - headword: 獨
-    status: staged
+    status: existing
+    entry_id: dag8-獨
   - headword: 獨具一格
     status: existing
     entry_id: dog8-gu6-zêg8-gêh4-獨具一格
@@ -28120,7 +28458,8 @@ items:
     status: existing
     entry_id: uag8-poi1-獲批
   - headword: 獴
-    status: staged
+    status: existing
+    entry_id: mong5-獴
   - headword: 獵
     status: existing
     entry_id: lah8-獵
@@ -28140,7 +28479,8 @@ items:
     status: existing
     entry_id: tuah4-獺
   - headword: 獻
-    status: staged
+    status: existing
+    entry_id: hiang3-獻
   - headword: 獻花
     status: existing
     entry_id: hiang3-huê1-獻花
@@ -28151,7 +28491,8 @@ items:
     status: existing
     entry_id: hiang3-sing1-獻身
   - headword: 獾
-    status: staged
+    status: existing
+    entry_id: huêng1-獾
   - headword: 玄
     status: existing
     entry_id: hiang5-玄
@@ -28165,9 +28506,11 @@ items:
     status: existing
     entry_id: hiang5-gi1-玄機
   - headword: 玄武山佛祖
-    status: staged
+    status: existing
+    entry_id: hiêng5-bhu2-suan1-hug4-zou2-玄武山佛祖
   - headword: 率
-    status: staged
+    status: existing
+    entry_id: zug4-率
   - headword: 率先
     status: existing
     entry_id: zug4-soin1-率先
@@ -28178,7 +28521,8 @@ items:
     status: existing
     entry_id: ghêg8-玉
   - headword: 玉不琢，不成器
-    status: staged
+    status: existing
+    entry_id: ghêg8-bug4-dog4-玉不琢，不成器
   - headword: 玉兔
     status: existing
     entry_id: ghêg8-tou3-玉兔
@@ -28191,7 +28535,8 @@ items:
   - headword: 玉米
     status: no_reading
   - headword: 王
-    status: staged
+    status: existing
+    entry_id: uang5-王
   - headword: 王不留行
     status: existing
     entry_id: uang5-bug4-liu5-gian5-王不留行
@@ -28223,7 +28568,8 @@ items:
   - headword: 玞
     status: no_reading
   - headword: 玩
-    status: staged
+    status: existing
+    entry_id: nguêng2-玩
   - headword: 玩世不恭
     status: no_reading
   - headword: 玩具
@@ -28244,7 +28590,8 @@ items:
     status: existing
     entry_id: nguang2-sion2-玩賞
   - headword: 玫
-    status: staged
+    status: existing
+    entry_id: bhuê5-玫
   - headword: 玫瑰
     status: existing
     entry_id: bhung5-gui3-玫瑰
@@ -28282,7 +28629,8 @@ items:
     status: existing
     entry_id: sang1-珊
   - headword: 珍
-    status: staged
+    status: existing
+    entry_id: diêng1-珍
   - headword: 珍珠
     status: existing
     entry_id: diang1-zu1-珍珠
@@ -28290,9 +28638,11 @@ items:
     status: existing
     entry_id: diang1-gui3-珍貴
   - headword: 珓
-    status: staged
+    status: existing
+    entry_id: ga3-珓
   - headword: 珠
-    status: staged
+    status: existing
+    entry_id: zu1-珠
   - headword: 珠寶
     status: existing
     entry_id: zu1-bo2-珠寶
@@ -28332,18 +28682,23 @@ items:
     status: existing
     entry_id: bang1-ziang2-班長
   - headword: 現
-    status: staged
+    status: existing
+    entry_id: hing7-現
   - headword: 現代
-    status: staged
+    status: existing
+    entry_id: hing7-do7-現代
   - headword: 現代化
     status: existing
     entry_id: hing7-do7-huê3-現代化
   - headword: 現在
-    status: staged
+    status: existing
+    entry_id: hing7-zai6-現在
   - headword: 現場
-    status: staged
+    status: existing
+    entry_id: hing7-dion5-現場
   - headword: 現實
-    status: staged
+    status: existing
+    entry_id: hing7-sig8-現實
   - headword: 現現
     status: existing
     entry_id: hêng7-hêng7-現現
@@ -28488,7 +28843,8 @@ items:
     status: existing
     entry_id: sêg4-瑟
   - headword: 瑤
-    status: staged
+    status: existing
+    entry_id: iao5-瑤
   - headword: 瑩
     status: existing
     entry_id: iong5-瑩
@@ -28501,7 +28857,8 @@ items:
   - headword: 瑯
     status: no_reading
   - headword: 瑰
-    status: staged
+    status: existing
+    entry_id: gui1-瑰
   - headword: 瑰寶
     status: existing
     entry_id: gui1-bo2-瑰寶
@@ -28519,7 +28876,8 @@ items:
   - headword: 璆
     status: no_reading
   - headword: 璇
-    status: staged
+    status: existing
+    entry_id: suêng5-璇
   - headword: 璇刀
     status: existing
     entry_id: suang7-do1-璇刀
@@ -28543,12 +28901,14 @@ items:
   - headword: 璬
     status: no_reading
   - headword: 環
-    status: staged
+    status: existing
+    entry_id: huang5-環
   - headword: 環保
     status: existing
     entry_id: huang5-bo2-環保
   - headword: 環境
-    status: staged
+    status: existing
+    entry_id: huêng5-gêng2-環境
   - headword: 環球
     status: existing
     entry_id: huêng5-giu5-環球
@@ -28561,12 +28921,14 @@ items:
   - headword: 璷
     status: no_reading
   - headword: 璺
-    status: staged
+    status: existing
+    entry_id: meng7-璺
   - headword: 璽
     status: existing
     entry_id: si2-璽
   - headword: 瓊
-    status: staged
+    status: existing
+    entry_id: kuang5-瓊
   - headword: 瓔
     status: no_reading
   - headword: 瓗
@@ -28583,25 +28945,31 @@ items:
     status: existing
     entry_id: guê1-zi2-瓜子
   - headword: 瓞
-    status: staged
+    status: existing
+    entry_id: diag4-瓞
   - headword: 瓤
-    status: staged
+    status: existing
+    entry_id: neng5-瓤
   - headword: 瓦
-    status: staged
+    status: existing
+    entry_id: hia6-瓦
   - headword: 瓦楞
     status: existing
     entry_id: hia6-lêng5-瓦楞
   - headword: 瓵
     status: no_reading
   - headword: 瓶
-    status: staged
+    status: existing
+    entry_id: bang5-瓶
   - headword: 瓷
-    status: staged
+    status: existing
+    entry_id: ce5-瓷
   - headword: 瓷器
     status: existing
     entry_id: ce5-ki3-瓷器
   - headword: 甄
-    status: staged
+    status: existing
+    entry_id: ing1-甄
   - headword: 甌
     status: existing
     entry_id: ao1-甌
@@ -28663,7 +29031,8 @@ items:
     status: existing
     entry_id: diam5-tao5-甜頭
   - headword: 生
-    status: staged
+    status: existing
+    entry_id: sên1-生
   - headword: 生份
     status: existing
     entry_id: cên1-hung7-生份
@@ -28752,7 +29121,8 @@ items:
     status: existing
     entry_id: cên1-huêng1-生番
   - headword: 生相
-    status: staged
+    status: existing
+    entry_id: sên1-siên3-生相
   - headword: 生育
     status: existing
     entry_id: sên1-iog8-生育
@@ -28838,9 +29208,11 @@ items:
     status: existing
     entry_id: suai1-甩
   - headword: 甪
-    status: staged
+    status: existing
+    entry_id: log8-甪
   - headword: 甫
-    status: staged
+    status: existing
+    entry_id: pou2-甫
   - headword: 甫母
     status: existing
     entry_id: pu2-bho2-甫母
@@ -28850,7 +29222,8 @@ items:
   - headword: 甯
     status: no_reading
   - headword: 田
-    status: staged
+    status: existing
+    entry_id: tiêng5-田
   - headword: 田主
     status: existing
     entry_id: cang5-zu2-田主
@@ -28906,7 +29279,8 @@ items:
     status: existing
     entry_id: sing1-cian2-申請
   - headword: 男
-    status: staged
+    status: existing
+    entry_id: lam5-男
   - headword: 男女
     status: existing
     entry_id: lam5-neng2-男女
@@ -28920,9 +29294,11 @@ items:
     status: existing
     entry_id: nam5-sêng1-男生
   - headword: 甸
-    status: staged
+    status: existing
+    entry_id: diang6-甸
   - headword: 畀
-    status: staged
+    status: existing
+    entry_id: bi3-畀
   - headword: 界
     status: existing
     entry_id: gai3-界
@@ -28933,13 +29309,17 @@ items:
     status: existing
     entry_id: gai3-hang6-界限
   - headword: 畏
-    status: staged
+    status: existing
+    entry_id: ui3-畏
   - headword: 畏小禮
-    status: staged
+    status: existing
+    entry_id: ui3-siao2-li2-畏小禮
   - headword: 畔
-    status: staged
+    status: existing
+    entry_id: boin5-畔
   - headword: 留
-    status: staged
+    status: existing
+    entry_id: lao5-留
   - headword: 留下
     status: existing
     entry_id: liu5-hia6-留下
@@ -28979,22 +29359,29 @@ items:
     status: existing
     entry_id: bhou2-畝
   - headword: 畢
-    status: staged
+    status: existing
+    entry_id: big8-畢
   - headword: 畢業
-    status: staged
+    status: existing
+    entry_id: big8-ngiab8-畢業
   - headword: 畢業生
     status: existing
     entry_id: big8-ngiab8-sêng1-畢業生
   - headword: 略
-    status: staged
+    status: existing
+    entry_id: liag8-略
   - headword: 番
-    status: staged
+    status: existing
+    entry_id: huang1-番
   - headword: 番人
-    status: staged
+    status: existing
+    entry_id: huêng1-nang5-番人
   - headword: 番仔
-    status: staged
+    status: existing
+    entry_id: huang1-gian2-番仔
   - headword: 番儂
-    status: staged
+    status: existing
+    entry_id: huêng1-nang5-番儂
   - headword: 番囝
     status: existing
     entry_id: huang1-gian2-番囝
@@ -29017,28 +29404,38 @@ items:
     status: existing
     entry_id: huang1-poi1-番批
   - headword: 番梨
-    status: staged
+    status: existing
+    entry_id: huêng1-lai5-番梨
   - headword: 番爿
-    status: staged
+    status: existing
+    entry_id: huang1-boin5-番爿
   - headword: 番爿錢，唐山福
-    status: staged
+    status: existing
+    entry_id: huêng1-boin5-zin5-番爿錢，唐山福
   - headword: 番瓜
-    status: staged
+    status: existing
+    entry_id: huêng1-guê1-番瓜
   - headword: 番石榴
-    status: staged
+    status: existing
+    entry_id: huang1-zioh8-liu5-番石榴
   - headword: 番碼囝
     status: existing
     entry_id: huang1-bê2-gian2-番碼囝
   - headword: 番禺
-    status: staged
+    status: existing
+    entry_id: puan1-ngo5-番禺
   - headword: 番茄
-    status: staged
+    status: existing
+    entry_id: huang1-giê5-番茄
   - headword: 番葛
-    status: staged
+    status: existing
+    entry_id: huang1-guah4-番葛
   - headword: 番蔥
-    status: staged
+    status: existing
+    entry_id: huang1-cang1-番蔥
   - headword: 番薯
-    status: staged
+    status: existing
+    entry_id: huang1-ze5-番薯
   - headword: 番話
     status: existing
     entry_id: huang1-uê7-番話
@@ -29046,9 +29443,11 @@ items:
     status: existing
     entry_id: huang1-dao7-番豆
   - headword: 番車
-    status: staged
+    status: existing
+    entry_id: huêng1-cia1-番車
   - headword: 番邦
-    status: staged
+    status: existing
+    entry_id: huang1-bang1-番邦
   - headword: 番雞
     status: existing
     entry_id: huang1-goi1-番雞
@@ -29056,12 +29455,14 @@ items:
     status: existing
     entry_id: huang1-gui2-番鬼
   - headword: 番鹼
-    status: staged
+    status: existing
+    entry_id: huêng1-gang2-番鹼
   - headword: 番麥
     status: existing
     entry_id: huang1-bhêh8-番麥
   - headword: 畫
-    status: staged
+    status: existing
+    entry_id: uê7-畫
   - headword: 畫卷
     status: existing
     entry_id: uê7-geng2-畫卷
@@ -29106,7 +29507,8 @@ items:
     status: existing
     entry_id: sia5-畲
   - headword: 當
-    status: staged
+    status: existing
+    entry_id: deng1-當
   - headword: 當下
     status: existing
     entry_id: deng1-hia6-當下
@@ -29147,7 +29549,8 @@ items:
     status: existing
     entry_id: deng1-dao3-當晝
   - headword: 當然
-    status: staged
+    status: existing
+    entry_id: deng1-riêng5-當然
   - headword: 當鋪
     status: existing
     entry_id: deng3-pou3-當鋪
@@ -29163,7 +29566,8 @@ items:
     status: existing
     entry_id: giang1-疆
   - headword: 疊
-    status: staged
+    status: existing
+    entry_id: tah8-疊
   - headword: 疊加
     status: existing
     entry_id: tah8-gia1-疊加
@@ -29208,7 +29612,8 @@ items:
   - headword: 疦
     status: no_reading
   - headword: 疫
-    status: staged
+    status: existing
+    entry_id: mog8-疫
   - headword: 疫情
     status: existing
     entry_id: mog8-cêng5-疫情
@@ -29216,7 +29621,8 @@ items:
     status: existing
     entry_id: mog8-zêng3-疫症
   - headword: 疫苗
-    status: staged
+    status: existing
+    entry_id: mog8-miou5-疫苗
   - headword: 疲
     status: existing
     entry_id: pi5-疲
@@ -29229,7 +29635,8 @@ items:
   - headword: 疵
     status: no_reading
   - headword: 疼
-    status: staged
+    status: existing
+    entry_id: dong3-疼
   - headword: 疼痛
     status: existing
     entry_id: dong3-tong3-疼痛
@@ -29324,7 +29731,8 @@ items:
     status: existing
     entry_id: hê1-gu1-tiu1-痚呴抽
   - headword: 痛
-    status: staged
+    status: existing
+    entry_id: tong3-痛
   - headword: 痛哭
     status: existing
     entry_id: tong3-kao3-痛哭
@@ -29344,16 +29752,20 @@ items:
     status: existing
     entry_id: tong3-huang1-痛風
   - headword: 痟
-    status: staged
+    status: existing
+    entry_id: siao1-痟
   - headword: 痟囝
-    status: staged
+    status: existing
+    entry_id: siou2-gian2-痟囝
   - headword: 痟狗
-    status: staged
+    status: existing
+    entry_id: siao2-gao2-痟狗
   - headword: 痠
     status: existing
     entry_id: seng1-痠
   - headword: 痣
-    status: staged
+    status: existing
+    entry_id: zi3-痣
   - headword: 痥
     status: existing
     entry_id: tuê5-痥
@@ -29370,12 +29782,14 @@ items:
     status: existing
     entry_id: tam5-hu5-痰盂
   - headword: 痱
-    status: staged
+    status: existing
+    entry_id: bui3-痱
   - headword: 痴
     status: existing
     entry_id: ci1-痴
   - headword: 痴呆
-    status: staged
+    status: existing
+    entry_id: ci1-ngai5-痴呆
   - headword: 痴哥
     status: existing
     entry_id: ci1-go1-痴哥
@@ -29395,7 +29809,8 @@ items:
     status: existing
     entry_id: bi3-痺
   - headword: 痺筋
-    status: staged
+    status: existing
+    entry_id: bi3-geng1-痺筋
   - headword: 痿
     status: existing
     entry_id: ui2-痿
@@ -29420,9 +29835,11 @@ items:
     status: existing
     entry_id: ceng1-瘡
   - headword: 瘤
-    status: staged
+    status: existing
+    entry_id: lao5-瘤
   - headword: 瘦
-    status: staged
+    status: existing
+    entry_id: sou2-瘦
   - headword: 瘦弱
     status: existing
     entry_id: sou2-riag8-瘦弱
@@ -29441,12 +29858,14 @@ items:
   - headword: 瘻
     status: no_reading
   - headword: 療
-    status: staged
+    status: existing
+    entry_id: liao5-療
   - headword: 癆
     status: existing
     entry_id: lao5-癆
   - headword: 癇
-    status: staged
+    status: existing
+    entry_id: hiêng5-癇
   - headword: 癈
     status: existing
     entry_id: hui3-癈
@@ -29465,21 +29884,25 @@ items:
     status: existing
     entry_id: piah4-癖
   - headword: 癢
-    status: staged
+    status: existing
+    entry_id: ziên6-癢
   - headword: 癩𰣻
     status: existing
     entry_id: tai2-go1-癩𰣻
   - headword: 癬
     status: no_reading
   - headword: 癮
-    status: staged
+    status: existing
+    entry_id: eng2-癮
   - headword: 癱
-    status: staged
+    status: existing
+    entry_id: tang1-癱
   - headword: 癱瘓
     status: existing
     entry_id: tuan1-huang3-癱瘓
   - headword: 癲
-    status: staged
+    status: existing
+    entry_id: diêng1-癲
   - headword: 癲癇
     status: existing
     entry_id: diang1-gang2-癲癇
@@ -29508,7 +29931,8 @@ items:
     status: existing
     entry_id: dêng1-ciu1-登鞦
   - headword: 發
-    status: staged
+    status: existing
+    entry_id: huêg4-發
   - headword: 發作
     status: existing
     entry_id: huag4-zag4-發作
@@ -29525,7 +29949,8 @@ items:
     status: existing
     entry_id: huag4-mung7-發問
   - headword: 發展
-    status: staged
+    status: existing
+    entry_id: huêg4-diêng2-發展
   - headword: 發布
     status: existing
     entry_id: huag4-bu3-發布
@@ -29545,7 +29970,8 @@ items:
     status: existing
     entry_id: huêg4-mêng5-發明
   - headword: 發條
-    status: staged
+    status: existing
+    entry_id: huag4-diou5-發條
   - headword: 發洩
     status: existing
     entry_id: huag4-siab8-發洩
@@ -29561,7 +29987,8 @@ items:
     status: existing
     entry_id: huag4-riag8-發熱
   - headword: 發燒
-    status: staged
+    status: existing
+    entry_id: huêg4-siê1-發燒
   - headword: 發狂
     status: existing
     entry_id: huag4-kuang5-發狂
@@ -29569,7 +29996,8 @@ items:
     status: existing
     entry_id: huag4-hing7-發現
   - headword: 發生
-    status: staged
+    status: existing
+    entry_id: huêg4-sên1-發生
   - headword: 發病
     status: existing
     entry_id: huag4-bên7-發病
@@ -29595,7 +30023,8 @@ items:
     status: existing
     entry_id: huag4-ngang5-nang5-發言人
   - headword: 發財
-    status: staged
+    status: existing
+    entry_id: huag4-cai5-發財
   - headword: 發起
     status: existing
     entry_id: huag4-ki2-發起
@@ -29618,9 +30047,11 @@ items:
     status: existing
     entry_id: bêh8-白
   - headword: 白仁
-    status: staged
+    status: existing
+    entry_id: bêh8-ring5-白仁
   - headword: 白仁囝
-    status: staged
+    status: existing
+    entry_id: bêh8-ring5-gian2-白仁囝
   - headword: 白內障
     status: existing
     entry_id: bêh8-lai6-ziang3-白內障
@@ -29660,7 +30091,8 @@ items:
     status: existing
     entry_id: bêh8-sêg4-白色
   - headword: 白芍
-    status: staged
+    status: existing
+    entry_id: bêh8-ziag4-白芍
   - headword: 白菜
     status: existing
     entry_id: bêh8-cai3-白菜
@@ -29704,12 +30136,14 @@ items:
     status: existing
     entry_id: bêh8-tao5-hai5-lao2-白頭偕老
   - headword: 白鷺鷥
-    status: staged
+    status: existing
+    entry_id: bêh8-liao6-si1-白鷺鷥
   - headword: 百
     status: existing
     entry_id: bêh4-百
   - headword: 百分之
-    status: staged
+    status: existing
+    entry_id: bêh4-hung1-ze1-百分之
   - headword: 百分百
     status: existing
     entry_id: bêh4-hung1-bêh4-百分百
@@ -29735,7 +30169,8 @@ items:
     status: existing
     entry_id: bêh4-kuê1-cuang5-ze1-百科全書
   - headword: 百萬
-    status: staged
+    status: existing
+    entry_id: bêh4-bhuêng7-百萬
   - headword: 百葉窗
     status: existing
     entry_id: bêh4-hioh8-têng1-百葉窗
@@ -29749,9 +30184,11 @@ items:
     status: existing
     entry_id: zao6-皂
   - headword: 的
-    status: staged
+    status: existing
+    entry_id: dêg8-的
   - headword: 的士
-    status: staged
+    status: existing
+    entry_id: di1-se6-的士
   - headword: 的禾
     status: existing
     entry_id: di1-da5-的禾
@@ -29765,7 +30202,8 @@ items:
     status: existing
     entry_id: gai1-dai6-huêng1-hi2-皆大歡喜
   - headword: 皇
-    status: staged
+    status: existing
+    entry_id: uang5-皇
   - headword: 皇后
     status: existing
     entry_id: huang5-hou6-皇后
@@ -29785,7 +30223,8 @@ items:
     status: existing
     entry_id: hao2-皓
   - headword: 皖
-    status: staged
+    status: existing
+    entry_id: uêng2-皖
   - headword: 皚
     status: no_reading
   - headword: 皫
@@ -29821,7 +30260,8 @@ items:
   - headword: 皰
     status: no_reading
   - headword: 皺
-    status: staged
+    status: existing
+    entry_id: niou3-皺
   - headword: 皺眉
     status: existing
     entry_id: niou3-bhai5-皺眉
@@ -29832,7 +30272,8 @@ items:
     status: existing
     entry_id: mêng2-皿
   - headword: 盂
-    status: staged
+    status: existing
+    entry_id: u1-盂
   - headword: 盂蘭盆節
     status: existing
     entry_id: u1-lang5-pung5-zoih4-盂蘭盆節
@@ -29843,7 +30284,8 @@ items:
     status: existing
     entry_id: pung5-盆
   - headword: 盈
-    status: staged
+    status: existing
+    entry_id: iong5-盈
   - headword: 盈利
     status: existing
     entry_id: iong5-li6-盈利
@@ -29913,7 +30355,8 @@ items:
     status: existing
     entry_id: zêng6-tao5-盡頭
   - headword: 監
-    status: staged
+    status: existing
+    entry_id: gam1-監
   - headword: 監察
     status: existing
     entry_id: gam3-cag4-監察
@@ -29948,7 +30391,8 @@ items:
     status: existing
     entry_id: gam1-hu6-nang5-監護人
   - headword: 盤
-    status: staged
+    status: existing
+    entry_id: buan5-盤
   - headword: 盤旋
     status: existing
     entry_id: puang5-suang5-盤旋
@@ -29956,7 +30400,8 @@ items:
     status: existing
     entry_id: puang5-cê5-盤查
   - headword: 盧
-    status: staged
+    status: existing
+    entry_id: lu5-盧
   - headword: 盪
     status: existing
     entry_id: dang6-盪
@@ -30029,9 +30474,11 @@ items:
     status: existing
     entry_id: mag8-gian3-目鏡
   - headword: 盯
-    status: staged
+    status: existing
+    entry_id: dêng3-盯
   - headword: 盲
-    status: staged
+    status: existing
+    entry_id: mang5-盲
   - headword: 盲人
     status: existing
     entry_id: mang5-ring5-盲人
@@ -30084,7 +30531,8 @@ items:
     status: existing
     entry_id: dig8-hag4-ci6-直轄市
   - headword: 相
-    status: staged
+    status: existing
+    entry_id: siang1-相
   - headword: 相互
     status: existing
     entry_id: siang1-hu6-相互
@@ -30098,9 +30546,11 @@ items:
     status: existing
     entry_id: siang1-i1-ui5-mian7-相依為命
   - headword: 相信
-    status: staged
+    status: existing
+    entry_id: siang1-sing3-相信
   - headword: 相借問
-    status: staged
+    status: existing
+    entry_id: sio1-zioh4-mung7-相借問
   - headword: 相傳
     status: existing
     entry_id: siang1-tuang5-相傳
@@ -30123,12 +30573,14 @@ items:
     status: existing
     entry_id: sion3-mian7-相命
   - headword: 相唚
-    status: staged
+    status: existing
+    entry_id: siê1-zim1-相唚
   - headword: 相好
     status: existing
     entry_id: siang1-ho2-相好
   - headword: 相對
-    status: staged
+    status: existing
+    entry_id: siang1-dui3-相對
   - headword: 相對論
     status: existing
     entry_id: siang1-dui3-lung6-相對論
@@ -30160,7 +30612,8 @@ items:
     status: existing
     entry_id: siang1-ti5-bêng6-lung6-相提並論
   - headword: 相機
-    status: staged
+    status: existing
+    entry_id: sion3-gi1-相機
   - headword: 相比
     status: existing
     entry_id: siang1-bi2-相比
@@ -30186,7 +30639,8 @@ items:
     status: existing
     entry_id: siang1-gi3-相繼
   - headword: 相罵
-    status: staged
+    status: existing
+    entry_id: siê1-mên7-相罵
   - headword: 相聲
     status: existing
     entry_id: siang3-sian1-相聲
@@ -30209,7 +30663,8 @@ items:
     status: existing
     entry_id: sio1-ho3-相賀
   - headword: 相輔
-    status: staged
+    status: existing
+    entry_id: sio1-hu6-相輔
   - headword: 相輔相成
     status: no_reading
   - headword: 相輸
@@ -30251,12 +30706,14 @@ items:
   - headword: 眂
     status: no_reading
   - headword: 眄
-    status: staged
+    status: existing
+    entry_id: miang2-眄
   - headword: 眈
     status: existing
     entry_id: dam1-眈
   - headword: 眉
-    status: staged
+    status: existing
+    entry_id: bhai5-眉
   - headword: 眉怨怨
     status: existing
     entry_id: bhai5-uang3-uang3-眉怨怨
@@ -30270,7 +30727,8 @@ items:
     status: existing
     entry_id: toin2-mo7-看望
   - headword: 看相
-    status: staged
+    status: existing
+    entry_id: kang3-siên3-看相
   - headword: 眎
     status: no_reading
   - headword: 眏
@@ -30280,14 +30738,16 @@ items:
   - headword: 眝
     status: no_reading
   - headword: 真
-    status: staged
+    status: existing
+    entry_id: zing1-真
   - headword: 真人真事
     status: no_reading
   - headword: 真切
     status: existing
     entry_id: zing1-ciag4-真切
   - headword: 真實
-    status: staged
+    status: existing
+    entry_id: zing1-sig8-真實
   - headword: 真心
     status: existing
     entry_id: zing1-sim1-真心
@@ -30310,27 +30770,34 @@ items:
     status: existing
     entry_id: zing1-gim1-bêh8-ngeng5-真金白銀
   - headword: 眠
-    status: staged
+    status: existing
+    entry_id: ming5-眠
   - headword: 眠床
-    status: staged
+    status: existing
+    entry_id: ming5-ceng5-眠床
   - headword: 眠起
-    status: staged
+    status: existing
+    entry_id: mung5-ki2-眠起
   - headword: 眠起好
     status: existing
     entry_id: mung5-ki2-ho2-眠起好
   - headword: 眠起早
-    status: staged
+    status: existing
+    entry_id: mung5-ki2-za2-眠起早
   - headword: 眡
     status: no_reading
   - headword: 眩
-    status: staged
+    status: existing
+    entry_id: hiêng5-眩
   - headword: 眩機
     status: existing
     entry_id: hêng5-gi1-眩機
   - headword: 眩船
-    status: staged
+    status: existing
+    entry_id: hiêng5-zung5-眩船
   - headword: 眩車
-    status: staged
+    status: existing
+    entry_id: hiêng5-cia1-眩車
   - headword: 眵
     status: no_reading
   - headword: 眶
@@ -30399,7 +30866,8 @@ items:
     status: existing
     entry_id: zêng3-sên1-眾生
   - headword: 睇
-    status: staged
+    status: existing
+    entry_id: ti3-睇
   - headword: 睇唔起
     status: existing
     entry_id: toin2-m6-ki2-睇唔起
@@ -30416,11 +30884,14 @@ items:
     status: existing
     entry_id: toin2-bên7-睇病
   - headword: 睇相
-    status: staged
+    status: existing
+    entry_id: toin2-sion3-睇相
   - headword: 睇著
-    status: staged
+    status: existing
+    entry_id: toin2-dioh4-睇著
   - headword: 睇見
-    status: staged
+    status: existing
+    entry_id: toin2-gin3-睇見
   - headword: 睇輕
     status: existing
     entry_id: toin2-kêng1-睇輕
@@ -30481,7 +30952,8 @@ items:
   - headword: 瞁
     status: no_reading
   - headword: 瞄
-    status: staged
+    status: existing
+    entry_id: miao5-瞄
   - headword: 瞅
     status: existing
     entry_id: ciu1-瞅
@@ -30491,7 +30963,8 @@ items:
   - headword: 瞋
     status: no_reading
   - headword: 瞌
-    status: staged
+    status: existing
+    entry_id: kab4-瞌
   - headword: 瞍
     status: existing
     entry_id: sou2-瞍
@@ -30509,7 +30982,8 @@ items:
   - headword: 瞦
     status: no_reading
   - headword: 瞧
-    status: staged
+    status: existing
+    entry_id: ciao5-瞧
   - headword: 瞪
     status: existing
     entry_id: têng5-瞪
@@ -30520,7 +30994,8 @@ items:
     status: existing
     entry_id: sung3-gang1-瞬間
   - headword: 瞭
-    status: staged
+    status: existing
+    entry_id: liao5-瞭
   - headword: 瞰
     status: staged
   - headword: 瞳
@@ -30563,12 +31038,14 @@ items:
     status: existing
     entry_id: mao5-矛
   - headword: 矜
-    status: staged
+    status: existing
+    entry_id: geng1-矜
   - headword: 矢
     status: existing
     entry_id: si2-矢
   - headword: 矣
-    status: staged
+    status: existing
+    entry_id: in7-矣
   - headword: 知
     status: existing
     entry_id: zai1-知
@@ -30600,7 +31077,8 @@ items:
     status: existing
     entry_id: zai1-guang1-知觀
   - headword: 知識
-    status: staged
+    status: existing
+    entry_id: zai1-sêg4-知識
   - headword: 知識產權
     status: existing
     entry_id: di3-sêg4-suan2-kuang5-知識產權
@@ -30611,7 +31089,8 @@ items:
     status: existing
     entry_id: zai1-im1-知音
   - headword: 矩
-    status: staged
+    status: existing
+    entry_id: ge2-矩
   - headword: 短
     status: existing
     entry_id: do2-短
@@ -30640,16 +31119,20 @@ items:
     status: existing
     entry_id: oi2-soi3-矮細
   - headword: 矯
-    status: staged
+    status: existing
+    entry_id: giou2-矯
   - headword: 矱
-    status: staged
+    status: existing
+    entry_id: huag8-矱
   - headword: 石
     status: existing
     entry_id: ziêh8-石
   - headword: 石叻
-    status: staged
+    status: existing
+    entry_id: sig8-lag8-石叻
   - headword: 石囝
-    status: staged
+    status: existing
+    entry_id: zioh8-gian2-石囝
   - headword: 石板
     status: existing
     entry_id: ziêh8-bang2-石板
@@ -30657,11 +31140,14 @@ items:
     status: existing
     entry_id: zioh8-mi5-石棉
   - headword: 石榴
-    status: staged
+    status: existing
+    entry_id: siêh8-liu5-石榴
   - headword: 石榴皮
-    status: staged
+    status: existing
+    entry_id: siêh8-liu5-puê5-石榴皮
   - headword: 石榴皮熬鹽——鹹澀
-    status: staged
+    status: existing
+    entry_id: giam5-siab4-石榴皮熬鹽——鹹澀
   - headword: 石橋
     status: existing
     entry_id: zioh8-gio5-石橋
@@ -30675,7 +31161,8 @@ items:
     status: existing
     entry_id: zioh8-gou2-石牯
   - headword: 石狗卵
-    status: staged
+    status: existing
+    entry_id: ziêh8-gao2-neng6-石狗卵
   - headword: 石碑
     status: existing
     entry_id: ziêh8-bi1-石碑
@@ -30694,9 +31181,11 @@ items:
   - headword: 矴
     status: no_reading
   - headword: 砂
-    status: staged
+    status: existing
+    entry_id: sua1-砂
   - headword: 砂石
-    status: staged
+    status: existing
+    entry_id: sua1-ziêh8-砂石
   - headword: 砂鍋
     status: existing
     entry_id: sua1-uê1-砂鍋
@@ -30710,7 +31199,8 @@ items:
     status: existing
     entry_id: kam2-ciu7-砍樹
   - headword: 研
-    status: staged
+    status: existing
+    entry_id: ngiêng2-研
   - headword: 研判
     status: existing
     entry_id: ngiang5-puang3-研判
@@ -30718,7 +31208,8 @@ items:
     status: existing
     entry_id: ngiêng5-huêg4-研發
   - headword: 研究
-    status: staged
+    status: existing
+    entry_id: ngiêng5-giu3-研究
   - headword: 研究員
     status: existing
     entry_id: ngiang5-giu3-uang5-研究員
@@ -30729,14 +31220,16 @@ items:
     status: existing
     entry_id: ngiang5-giu3-sêng1-研究生
   - headword: 砝
-    status: staged
+    status: existing
+    entry_id: huab4-砝
   - headword: 砝碼
     status: existing
     entry_id: huag4-bhê2-砝碼
   - headword: 砦
     status: no_reading
   - headword: 砧
-    status: staged
+    status: existing
+    entry_id: diam1-砧
   - headword: 砱
     status: no_reading
   - headword: 破
@@ -30772,7 +31265,8 @@ items:
     status: existing
     entry_id: pua3-bên7-破病
   - headword: 破相
-    status: staged
+    status: existing
+    entry_id: pua3-sion3-破相
   - headword: 破碎
     status: existing
     entry_id: pua3-cui3-破碎
@@ -30797,7 +31291,8 @@ items:
   - headword: 砼
     status: no_reading
   - headword: 硇
-    status: staged
+    status: existing
+    entry_id: nao1-硇
   - headword: 硎
     status: existing
     entry_id: hêng5-硎
@@ -30811,7 +31306,8 @@ items:
     status: existing
     entry_id: dêh4-zua2-硩紙
   - headword: 硩腰錢
-    status: staged
+    status: existing
+    entry_id: dêh4-io1-zin5-硩腰錢
   - headword: 硫
     status: existing
     entry_id: liu5-硫
@@ -30846,7 +31342,8 @@ items:
     status: existing
     entry_id: ngên6-houn2-硬虎
   - headword: 硯
-    status: staged
+    status: existing
+    entry_id: in7-硯
   - headword: 碇
     status: existing
     entry_id: dêng3-碇
@@ -30895,9 +31392,11 @@ items:
     status: existing
     entry_id: dih8-bung7-碟飯
   - headword: 碣
-    status: staged
+    status: existing
+    entry_id: giêg4-碣
   - headword: 碣石
-    status: staged
+    status: existing
+    entry_id: gig4-zioh8-碣石
   - headword: 碧
     status: existing
     entry_id: pêg4-碧
@@ -30923,7 +31422,8 @@ items:
     status: existing
     entry_id: pong3-ce5-碰瓷
   - headword: 碰鰾
-    status: staged
+    status: existing
+    entry_id: pong3-piê6-碰鰾
   - headword: 碳
     status: existing
     entry_id: tuan3-碳
@@ -30961,12 +31461,14 @@ items:
     status: existing
     entry_id: bhê2-tao5-碼頭
   - headword: 碾
-    status: staged
+    status: existing
+    entry_id: diêng2-碾
   - headword: 碾米
     status: existing
     entry_id: diang2-bhi2-碾米
   - headword: 磁
-    status: staged
+    status: existing
+    entry_id: ce5-磁
   - headword: 磁場
     status: existing
     entry_id: ce5-dion5-磁場
@@ -30986,9 +31488,11 @@ items:
     status: existing
     entry_id: pang5-boh8-磅礴
   - headword: 磊
-    status: staged
+    status: existing
+    entry_id: lui2-磊
   - headword: 磐
-    status: staged
+    status: existing
+    entry_id: puêng5-磐
   - headword: 磑
     status: no_reading
   - headword: 磚
@@ -31001,7 +31505,8 @@ items:
     status: existing
     entry_id: zeng1-iê5-磚窯
   - headword: 磨
-    status: staged
+    status: existing
+    entry_id: bhua5-磨
   - headword: 磨夜
     status: existing
     entry_id: bhua5-mê5-磨夜
@@ -31018,12 +31523,14 @@ items:
     status: existing
     entry_id: ling5-磷
   - headword: 磽
-    status: staged
+    status: existing
+    entry_id: kiao1-磽
   - headword: 磽囝
     status: existing
     entry_id: kiao1-gian2-磽囝
   - headword: 礁
-    status: staged
+    status: existing
+    entry_id: ziao1-礁
   - headword: 礁石
     status: existing
     entry_id: ziao1-zioh8-礁石
@@ -31120,7 +31627,8 @@ items:
     status: existing
     entry_id: zou2-tuang5-祖傳
   - headword: 祖先
-    status: staged
+    status: existing
+    entry_id: zou2-soin1-祖先
   - headword: 祖國
     status: existing
     entry_id: zou2-gog4-祖國
@@ -31151,7 +31659,8 @@ items:
     status: existing
     entry_id: zog4-hog4-祝福
   - headword: 神
-    status: staged
+    status: existing
+    entry_id: sing5-神
   - headword: 神仙
     status: existing
     entry_id: sêng5-siang1-神仙
@@ -31206,7 +31715,8 @@ items:
     status: existing
     entry_id: siang5-sui6-祥瑞
   - headword: 票
-    status: staged
+    status: existing
+    entry_id: pio3-票
   - headword: 票價
     status: existing
     entry_id: pio3-gê3-票價
@@ -31220,7 +31730,8 @@ items:
     status: existing
     entry_id: piê3-bang5-票房
   - headword: 祭
-    status: staged
+    status: existing
+    entry_id: zi3-祭
   - headword: 祭奠
     status: existing
     entry_id: zi3-diang6-祭奠
@@ -31293,11 +31804,14 @@ items:
     status: existing
     entry_id: hog4-ziu1-uê7-福州話
   - headword: 福建
-    status: staged
+    status: existing
+    entry_id: hog4-giêng3-福建
   - headword: 福建人
-    status: staged
+    status: existing
+    entry_id: hog4-giêng3-nang5-福建人
   - headword: 福建話
-    status: staged
+    status: existing
+    entry_id: hog4-giêng3-uê7-福建話
   - headword: 福氣
     status: existing
     entry_id: hog4-ki3-福氣
@@ -31311,7 +31825,8 @@ items:
     status: existing
     entry_id: hog4-im1-福音
   - headword: 禤
-    status: staged
+    status: existing
+    entry_id: hng1-禤
   - headword: 禦
     status: existing
     entry_id: ghe6-禦
@@ -31319,9 +31834,11 @@ items:
     status: existing
     entry_id: hi1-禧
   - headword: 禪
-    status: staged
+    status: existing
+    entry_id: siam5-禪
   - headword: 禮
-    status: staged
+    status: existing
+    entry_id: loi2-禮
   - headword: 禮券
     status: existing
     entry_id: li2-guang3-禮券
@@ -31335,9 +31852,11 @@ items:
     status: existing
     entry_id: li2-bho7-禮帽
   - headword: 禮拜
-    status: staged
+    status: existing
+    entry_id: loi2-bai3-禮拜
   - headword: 禮拜堂
-    status: staged
+    status: existing
+    entry_id: li2-bai3-deng5-禮拜堂
   - headword: 禮拜日
     status: existing
     entry_id: li2-bai3-rêg8-禮拜日
@@ -31348,7 +31867,8 @@ items:
     status: existing
     entry_id: li2-pao3-禮炮
   - headword: 禮物
-    status: staged
+    status: existing
+    entry_id: li2-muêh8-禮物
   - headword: 禮盒
     status: existing
     entry_id: loi2-ab8-禮盒
@@ -31356,7 +31876,8 @@ items:
     status: existing
     entry_id: li2-zag4-禮節
   - headword: 禮貌
-    status: staged
+    status: existing
+    entry_id: loi2-mao6-禮貌
   - headword: 禮金
     status: existing
     entry_id: loi2-gim1-禮金
@@ -31381,7 +31902,8 @@ items:
     status: existing
     entry_id: kim5-siu3-禽獸
   - headword: 禾
-    status: staged
+    status: existing
+    entry_id: hua5-禾
   - headword: 禿
     status: existing
     entry_id: têg4-禿
@@ -31407,12 +31929,14 @@ items:
     status: existing
     entry_id: siu3-li6-秀麗
   - headword: 私
-    status: staged
+    status: existing
+    entry_id: se1-私
   - headword: 私下
     status: existing
     entry_id: se1-ê6-私下
   - headword: 私事
-    status: staged
+    status: existing
+    entry_id: se1-se7-私事
   - headword: 私交
     status: existing
     entry_id: se1-gao1-私交
@@ -31426,9 +31950,11 @@ items:
     status: existing
     entry_id: sai2-kia1-私奇
   - headword: 私奇錢
-    status: staged
+    status: existing
+    entry_id: sai1-kia1-zin5-私奇錢
   - headword: 私家
-    status: staged
+    status: existing
+    entry_id: se1-gê1-私家
   - headword: 私家車
     status: existing
     entry_id: se1-gê1-cia1-私家車
@@ -31525,14 +32051,16 @@ items:
     status: existing
     entry_id: kuê1-ge2-科舉
   - headword: 秒
-    status: staged
+    status: existing
+    entry_id: miao2-秒
   - headword: 秖
     status: no_reading
   - headword: 秘
     status: existing
     entry_id: bi3-秘
   - headword: 秘密
-    status: staged
+    status: existing
+    entry_id: bi3-mig8-秘密
   - headword: 秘方
     status: existing
     entry_id: bi3-hng1-秘方
@@ -31573,19 +32101,23 @@ items:
     status: existing
     entry_id: cing3-tui5-秤錘
   - headword: 秦
-    status: staged
+    status: existing
+    entry_id: cing5-秦
   - headword: 秦始皇
     status: existing
     entry_id: cing5-si2-huang5-秦始皇
   - headword: 秦朝
-    status: staged
+    status: existing
+    entry_id: cing5-ciou5-秦朝
   - headword: 秦淮
     status: existing
     entry_id: cing5-huai5-秦淮
   - headword: 秧
-    status: staged
+    status: existing
+    entry_id: ng1-秧
   - headword: 秩
-    status: staged
+    status: existing
+    entry_id: diag4-秩
   - headword: 秩序
     status: existing
     entry_id: diag4-su6-秩序
@@ -31647,11 +32179,13 @@ items:
     status: existing
     entry_id: tian5-ig8-程逸
   - headword: 稍
-    status: staged
+    status: existing
+    entry_id: ciao2-稍
   - headword: 稕
     status: no_reading
   - headword: 稗
-    status: staged
+    status: existing
+    entry_id: poin7-稗
   - headword: 稚
     status: existing
     entry_id: zin2-稚
@@ -31664,7 +32198,8 @@ items:
     status: existing
     entry_id: bing2-hu3-稟賦
   - headword: 種
-    status: staged
+    status: existing
+    entry_id: zêng2-種
   - headword: 種作
     status: existing
     entry_id: zêng3-zoh4-種作
@@ -31684,7 +32219,8 @@ items:
     status: existing
     entry_id: zêng2-zêng2-種種
   - headword: 稱
-    status: staged
+    status: existing
+    entry_id: cêng1-稱
   - headword: 稱呼
     status: existing
     entry_id: cêng1-hu1-稱呼
@@ -31695,7 +32231,8 @@ items:
     status: existing
     entry_id: cêng1-zang3-稱讚
   - headword: 稻
-    status: staged
+    status: existing
+    entry_id: dao6-稻
   - headword: 稼
     status: existing
     entry_id: gê3-稼
@@ -31718,7 +32255,8 @@ items:
     status: existing
     entry_id: go2-hui3-稿費
   - headword: 穀
-    status: staged
+    status: existing
+    entry_id: gog4-穀
   - headword: 穀笪
     status: existing
     entry_id: gog4-dag4-穀笪
@@ -31732,7 +32270,8 @@ items:
     status: existing
     entry_id: mog8-穆
   - headword: 積
-    status: staged
+    status: existing
+    entry_id: zêh4-積
   - headword: 積分
     status: existing
     entry_id: zêh4-hung1-積分
@@ -31790,7 +32329,8 @@ items:
   - headword: 穮
     status: no_reading
   - headword: 穴
-    status: staged
+    status: existing
+    entry_id: huag8-穴
   - headword: 究
     status: existing
     entry_id: giu3-究
@@ -31801,7 +32341,8 @@ items:
     status: existing
     entry_id: giong1-穹
   - headword: 空
-    status: staged
+    status: existing
+    entry_id: kang1-空
   - headword: 空中
     status: existing
     entry_id: kong1-dang1-空中
@@ -31830,7 +32371,8 @@ items:
     status: existing
     entry_id: kong1-he1-空虛
   - headword: 空調
-    status: staged
+    status: existing
+    entry_id: kong1-tiou5-空調
   - headword: 空談
     status: existing
     entry_id: kong1-tam5-空談
@@ -31856,7 +32398,8 @@ items:
     status: existing
     entry_id: kong1-hiah8-空額
   - headword: 穿
-    status: staged
+    status: existing
+    entry_id: ceng1-穿
   - headword: 穿山甲
     status: existing
     entry_id: cuang1-suan1-gah4-穿山甲
@@ -31900,7 +32443,8 @@ items:
     status: existing
     entry_id: iao2-tiao2-sog4-neng2-窈窕淑女
   - headword: 窒
-    status: staged
+    status: existing
+    entry_id: diag4-窒
   - headword: 窖
     status: existing
     entry_id: ga3-窖
@@ -31926,9 +32470,11 @@ items:
     status: existing
     entry_id: têng1-huê1-窗花
   - headword: 窘
-    status: staged
+    status: existing
+    entry_id: kung2-窘
   - headword: 窟
-    status: staged
+    status: existing
+    entry_id: kug4-窟
   - headword: 窩
     status: existing
     entry_id: o1-窩
@@ -31939,7 +32485,8 @@ items:
     status: existing
     entry_id: o1-diam2-窩點
   - headword: 窮
-    status: staged
+    status: existing
+    entry_id: kiong5-窮
   - headword: 窮苦
     status: existing
     entry_id: kiong5-kou2-窮苦
@@ -31956,15 +32503,19 @@ items:
     status: existing
     entry_id: long5-窿
   - headword: 竄
-    status: staged
+    status: existing
+    entry_id: cuang3-竄
   - headword: 竅
-    status: staged
+    status: existing
+    entry_id: kiao3-竅
   - headword: 竇
-    status: staged
+    status: existing
+    entry_id: dou6-竇
   - headword: 竈
     status: no_reading
   - headword: 竊
-    status: staged
+    status: existing
+    entry_id: ciab4-竊
   - headword: 竊電
     status: existing
     entry_id: ciag4-diang6-竊電
@@ -32011,7 +32562,8 @@ items:
     status: existing
     entry_id: gêng2-riang5-竟然
   - headword: 章
-    status: staged
+    status: existing
+    entry_id: zion1-章
   - headword: 章程
     status: existing
     entry_id: ziang1-tian5-章程
@@ -32022,7 +32574,8 @@ items:
     status: existing
     entry_id: zung3-gang1-竣工
   - headword: 童
-    status: staged
+    status: existing
+    entry_id: dang5-童
   - headword: 童乩
     status: existing
     entry_id: dang5-gi1-童乩
@@ -32042,14 +32595,17 @@ items:
     status: existing
     entry_id: tong5-iao5-童謠
   - headword: 竭
-    status: staged
+    status: existing
+    entry_id: giêg8-竭
   - headword: 竭力
     status: existing
     entry_id: giag8-lag8-竭力
   - headword: 端
-    status: staged
+    status: existing
+    entry_id: duêng1-端
   - headword: 端午
-    status: staged
+    status: existing
+    entry_id: duêng1-ngou2-端午
   - headword: 競
     status: existing
     entry_id: gêng6-競
@@ -32095,7 +32651,8 @@ items:
   - headword: 竻
     status: no_reading
   - headword: 竿
-    status: staged
+    status: existing
+    entry_id: guan1-竿
   - headword: 笈
     status: no_reading
   - headword: 笊
@@ -32130,14 +32687,16 @@ items:
     status: existing
     entry_id: hu5-ho7-符號
   - headword: 笨
-    status: staged
+    status: existing
+    entry_id: bung3-笨
   - headword: 笫
     status: no_reading
   - headword: 第
     status: existing
     entry_id: doin6-第
   - headword: 第一
-    status: staged
+    status: existing
+    entry_id: doin6-ig4-第一
   - headword: 第一時間
     status: existing
     entry_id: doin6-ig4-si5-gang1-第一時間
@@ -32178,15 +32737,18 @@ items:
     status: existing
     entry_id: doin6-gui2-第幾
   - headword: 笱
-    status: staged
+    status: existing
+    entry_id: go5-笱
   - headword: 笳
     status: no_reading
   - headword: 筀
     status: no_reading
   - headword: 筅
-    status: staged
+    status: existing
+    entry_id: coin2-筅
   - headword: 筆
-    status: staged
+    status: existing
+    entry_id: big4-筆
   - headword: 筆墨
     status: existing
     entry_id: big4-bhag8-筆墨
@@ -32200,9 +32762,11 @@ items:
     status: existing
     entry_id: big4-log8-筆錄
   - headword: 筆錔
-    status: staged
+    status: existing
+    entry_id: big4-tab4-筆錔
   - headword: 等
-    status: staged
+    status: existing
+    entry_id: dêng2-等
   - headword: 等候
     status: existing
     entry_id: dang2-hao7-等候
@@ -32216,7 +32780,8 @@ items:
     status: existing
     entry_id: dêng2-kib4-等級
   - headword: 筋
-    status: staged
+    status: existing
+    entry_id: geng1-筋
   - headword: 筍
     status: existing
     entry_id: sung2-筍
@@ -32230,7 +32795,8 @@ items:
     status: existing
     entry_id: kêng1-筐
   - headword: 筒
-    status: staged
+    status: existing
+    entry_id: dang5-筒
   - headword: 答
     status: existing
     entry_id: dab4-答
@@ -32250,7 +32816,8 @@ items:
     status: existing
     entry_id: dab4-doi5-ka2-答題卡
   - headword: 策
-    status: staged
+    status: existing
+    entry_id: cêh4-策
   - headword: 筦
     status: no_reading
   - headword: 筭
@@ -32258,9 +32825,11 @@ items:
   - headword: 筲
     status: staged
   - headword: 筵
-    status: staged
+    status: existing
+    entry_id: iêng6-筵
   - headword: 筷
-    status: staged
+    status: existing
+    entry_id: kuai3-筷
   - headword: 箋
     status: no_reading
   - headword: 箍
@@ -32298,7 +32867,8 @@ items:
   - headword: 箠
     status: no_reading
   - headword: 管
-    status: staged
+    status: existing
+    entry_id: guang2-管
   - headword: 管制
     status: existing
     entry_id: guang2-zi3-管制
@@ -32321,14 +32891,16 @@ items:
     status: existing
     entry_id: guang2-dao6-管道
   - headword: 箬
-    status: staged
+    status: existing
+    entry_id: riag8-箬
   - headword: 箭
     status: existing
     entry_id: zin3-箭
   - headword: 箯
     status: no_reading
   - headword: 箱
-    status: staged
+    status: existing
+    entry_id: siên1-箱
   - headword: 箴
     status: existing
     entry_id: zim1-箴
@@ -32336,12 +32908,14 @@ items:
     status: existing
     entry_id: zim1-ngang5-箴言
   - headword: 箸
-    status: staged
+    status: existing
+    entry_id: de7-箸
   - headword: 箸筒
     status: existing
     entry_id: de7-dang5-箸筒
   - headword: 節
-    status: staged
+    status: existing
+    entry_id: zag4-節
   - headword: 節假日
     status: existing
     entry_id: zoih4-gian2-rig8-節假日
@@ -32382,7 +32956,8 @@ items:
     status: existing
     entry_id: zag4-lêng5-節能
   - headword: 範
-    status: staged
+    status: existing
+    entry_id: huang6-範
   - headword: 範圍
     status: existing
     entry_id: huam6-ui5-範圍
@@ -32390,7 +32965,8 @@ items:
     status: existing
     entry_id: duang6-篆
   - headword: 篇
-    status: staged
+    status: existing
+    entry_id: piêng1-篇
   - headword: 築
     status: existing
     entry_id: dog4-築
@@ -32410,7 +32986,8 @@ items:
     status: existing
     entry_id: dog4-篤
   - headword: 篦
-    status: staged
+    status: existing
+    entry_id: bi3-篦
   - headword: 篩
     status: existing
     entry_id: tai1-篩
@@ -32429,7 +33006,8 @@ items:
   - headword: 篲
     status: no_reading
   - headword: 篷
-    status: staged
+    status: existing
+    entry_id: pang5-篷
   - headword: 篷布
     status: existing
     entry_id: pang5-bou3-篷布
@@ -32450,7 +33028,8 @@ items:
   - headword: 簞
     status: no_reading
   - headword: 簠
-    status: staged
+    status: existing
+    entry_id: hu2-簠
   - headword: 簡
     status: existing
     entry_id: gang2-簡
@@ -32478,7 +33057,8 @@ items:
     status: existing
     entry_id: zam1-簪
   - headword: 簫
-    status: staged
+    status: existing
+    entry_id: siao1-簫
   - headword: 簶
     status: no_reading
   - headword: 簸
@@ -32488,7 +33068,8 @@ items:
     status: existing
     entry_id: bua3-gi1-gah4-簸箕甲
   - headword: 簽
-    status: staged
+    status: existing
+    entry_id: ciam1-簽
   - headword: 簽名
     status: existing
     entry_id: ciam1-mian5-簽名
@@ -32535,7 +33116,8 @@ items:
     status: existing
     entry_id: tiu5-giêng3-籌建
   - headword: 籌款
-    status: staged
+    status: existing
+    entry_id: tiu5-kuêng2-籌款
   - headword: 籌碼
     status: existing
     entry_id: tiu5-bhê2-籌碼
@@ -32563,26 +33145,31 @@ items:
   - headword: 籝
     status: no_reading
   - headword: 籠
-    status: staged
+    status: existing
+    entry_id: lang5-籠
   - headword: 籠床
     status: existing
     entry_id: lêng5-seng5-籠床
   - headword: 籤
-    status: staged
+    status: existing
+    entry_id: ciam1-籤
   - headword: 籥
     status: existing
     entry_id: iag4-籥
   - headword: 籪
     status: no_reading
   - headword: 籬
-    status: staged
+    status: existing
+    entry_id: li5-籬
   - headword: 籮
-    status: staged
+    status: existing
+    entry_id: lo5-籮
   - headword: 籯
     status: existing
     entry_id: iong5-籯
   - headword: 籲
-    status: staged
+    status: existing
+    entry_id: u1-籲
   - headword: 米
     status: existing
     entry_id: bhi2-米
@@ -32662,7 +33249,8 @@ items:
     status: existing
     entry_id: cou1-lu2-粗魯
   - headword: 粘
-    status: staged
+    status: existing
+    entry_id: liam1-粘
   - headword: 粘米
     status: existing
     entry_id: ziam1-bhi2-粘米
@@ -32679,12 +33267,14 @@ items:
     status: existing
     entry_id: cêg4-粟
   - headword: 粥
-    status: staged
+    status: existing
+    entry_id: giog4-粥
   - headword: 粱
     status: existing
     entry_id: liang5-粱
   - headword: 粵
-    status: staged
+    status: existing
+    entry_id: uêg8-粵
   - headword: 粵劇
     status: existing
     entry_id: uag8-giah8-粵劇
@@ -32707,7 +33297,8 @@ items:
     status: existing
     entry_id: zang3-giu5-粽球
   - headword: 精
-    status: staged
+    status: existing
+    entry_id: zêng1-精
   - headword: 精力
     status: existing
     entry_id: zêng1-lag8-精力
@@ -32742,7 +33333,8 @@ items:
     status: existing
     entry_id: zêng1-iah4-kiu5-zêng1-精益求精
   - headword: 精神
-    status: staged
+    status: existing
+    entry_id: zêng1-sing5-精神
   - headword: 精神分裂症
     status: existing
     entry_id: zêng1-sing5-hung1-lih8-zêng3-精神分裂症
@@ -32762,7 +33354,8 @@ items:
     status: existing
     entry_id: zêng1-mui2-精美
   - headword: 精肉
-    status: staged
+    status: existing
+    entry_id: zian1-nêg8-精肉
   - headword: 精良
     status: existing
     entry_id: zêng1-liang5-精良
@@ -32776,7 +33369,8 @@ items:
     status: existing
     entry_id: gue2-粿
   - headword: 粿條
-    status: staged
+    status: existing
+    entry_id: guê2-diao5-粿條
   - headword: 粿汁
     status: existing
     entry_id: guê2-zab4-粿汁
@@ -32786,7 +33380,8 @@ items:
   - headword: 糀
     status: no_reading
   - headword: 糊
-    status: staged
+    status: existing
+    entry_id: gou5-糊
   - headword: 糊塗
     status: existing
     entry_id: hu5-tu5-糊塗
@@ -32794,7 +33389,8 @@ items:
     status: existing
     entry_id: hu5-li2-hu5-tu5-糊裡糊塗
   - headword: 糍
-    status: staged
+    status: existing
+    entry_id: zi5-糍
   - headword: 糒
     status: no_reading
   - headword: 糕
@@ -32834,7 +33430,8 @@ items:
     status: existing
     entry_id: muê5-beng7-糜飯
   - headword: 糝
-    status: staged
+    status: existing
+    entry_id: siam1-糝
   - headword: 糞
     status: existing
     entry_id: bung3-糞
@@ -32845,11 +33442,14 @@ items:
     status: existing
     entry_id: bung3-gi1-糞箕
   - headword: 糟
-    status: staged
+    status: existing
+    entry_id: zao1-糟
   - headword: 糠
-    status: staged
+    status: existing
+    entry_id: kang1-糠
   - headword: 糧
-    status: staged
+    status: existing
+    entry_id: nion5-糧
   - headword: 糧油
     status: existing
     entry_id: nion5-iu5-糧油
@@ -32860,11 +33460,14 @@ items:
     status: existing
     entry_id: nion5-ziah8-糧食
   - headword: 糨
-    status: staged
+    status: existing
+    entry_id: zion3-糨
   - headword: 糯
-    status: staged
+    status: existing
+    entry_id: no3-糯
   - headword: 糯米
-    status: staged
+    status: existing
+    entry_id: no3-bhi2-糯米
   - headword: 糴
     status: existing
     entry_id: diah8-糴
@@ -32872,9 +33475,11 @@ items:
     status: existing
     entry_id: diah8-bhi2-糴米
   - headword: 糶
-    status: staged
+    status: existing
+    entry_id: tiê3-糶
   - headword: 糶米
-    status: staged
+    status: existing
+    entry_id: tiê3-bhi2-糶米
   - headword: 系
     status: existing
     entry_id: hi6-系
@@ -32903,7 +33508,8 @@ items:
     status: existing
     entry_id: giu6-din5-糾纏
   - headword: 紀
-    status: staged
+    status: existing
+    entry_id: gi2-紀
   - headword: 紀元
     status: existing
     entry_id: gi2-nguang5-紀元
@@ -32911,7 +33517,8 @@ items:
     status: existing
     entry_id: gi2-lug8-紀律
   - headword: 紀念
-    status: staged
+    status: existing
+    entry_id: gi2-liêm6-紀念
   - headword: 紀念碑
     status: existing
     entry_id: gi2-liam6-bi1-紀念碑
@@ -32922,7 +33529,8 @@ items:
     status: existing
     entry_id: gi2-log8-piang3-紀錄片
   - headword: 約
-    status: staged
+    status: existing
+    entry_id: iag4-約
   - headword: 約定
     status: existing
     entry_id: ioh4-dian7-約定
@@ -32939,7 +33547,8 @@ items:
     status: existing
     entry_id: ang5-紅
   - headword: 紅先生
-    status: staged
+    status: existing
+    entry_id: ang5-sing1-sên1-紅先生
   - headword: 紅包
     status: existing
     entry_id: ang5-bao1-紅包
@@ -33109,7 +33718,8 @@ items:
     status: existing
     entry_id: sung5-zui3-純粹
   - headword: 紗
-    status: staged
+    status: existing
+    entry_id: sê1-紗
   - headword: 紙
     status: existing
     entry_id: zua2-紙
@@ -33138,7 +33748,8 @@ items:
     status: existing
     entry_id: zua2-lui1-紙鐳
   - headword: 紙鷂
-    status: staged
+    status: existing
+    entry_id: zua2-iê7-紙鷂
   - headword: 級
     status: existing
     entry_id: kib4-級
@@ -33160,7 +33771,8 @@ items:
   - headword: 紜
     status: no_reading
   - headword: 素
-    status: staged
+    status: existing
+    entry_id: su3-素
   - headword: 素描
     status: existing
     entry_id: su3-miao5-素描
@@ -33216,7 +33828,8 @@ items:
     status: existing
     entry_id: zi2-mêg8-紫陌
   - headword: 紮
-    status: staged
+    status: existing
+    entry_id: zah4-紮
   - headword: 累
     status: no_reading
   - headword: 累計
@@ -33270,7 +33883,8 @@ items:
   - headword: 紳
     status: no_reading
   - headword: 紹
-    status: staged
+    status: existing
+    entry_id: siao6-紹
   - headword: 紺
     status: existing
     entry_id: gam1-紺
@@ -33324,7 +33938,8 @@ items:
     status: existing
     entry_id: zu1-ziang2-組長
   - headword: 結
-    status: staged
+    status: existing
+    entry_id: gag4-結
   - headword: 結伴
     status: existing
     entry_id: gag4-puan6-結伴
@@ -33423,7 +34038,8 @@ items:
     status: existing
     entry_id: gib4-iang2-給養
   - headword: 絨
-    status: staged
+    status: existing
+    entry_id: rong5-絨
   - headword: 絫
     status: no_reading
   - headword: 絬
@@ -33476,7 +34092,8 @@ items:
     status: existing
     entry_id: bang2-pion3-綁票
   - headword: 綏
-    status: staged
+    status: existing
+    entry_id: sui5-綏
   - headword: 經
     status: no_reading
   - headword: 經典
@@ -33539,9 +34156,11 @@ items:
     status: existing
     entry_id: gêng1-ngiam7-經驗
   - headword: 綜
-    status: staged
+    status: existing
+    entry_id: zong1-綜
   - headword: 綜合
-    status: staged
+    status: existing
+    entry_id: zong1-hab8-綜合
   - headword: 綟
     status: no_reading
   - headword: 綠
@@ -33572,7 +34191,8 @@ items:
     status: existing
     entry_id: diu5-deng7-綢緞
   - headword: 維
-    status: staged
+    status: existing
+    entry_id: rui6-維
   - headword: 維他命
     status: existing
     entry_id: rui5-ta1-mêng6-維他命
@@ -33640,7 +34260,8 @@ items:
     status: existing
     entry_id: mang6-iu5-網遊
   - headword: 綴
-    status: staged
+    status: existing
+    entry_id: duê3-綴
   - headword: 綴人走
     status: existing
     entry_id: duê3-nang5-zao2-綴人走
@@ -33653,7 +34274,8 @@ items:
     status: existing
     entry_id: ciag4-綽
   - headword: 綿
-    status: staged
+    status: existing
+    entry_id: miang5-綿
   - headword: 綿羊
     status: existing
     entry_id: min5-iên5-綿羊
@@ -33667,7 +34289,8 @@ items:
     status: existing
     entry_id: ze1-緇
   - headword: 緊
-    status: staged
+    status: existing
+    entry_id: ging2-緊
   - headword: 緊張
     status: existing
     entry_id: ging2-ziang1-緊張
@@ -33707,12 +34330,14 @@ items:
     status: existing
     entry_id: cib4-緝
   - headword: 緞
-    status: staged
+    status: existing
+    entry_id: deng7-緞
   - headword: 締
     status: existing
     entry_id: ti7-締
   - headword: 緣
-    status: staged
+    status: existing
+    entry_id: uang5-緣
   - headword: 緣分
     status: existing
     entry_id: uang5-hung7-緣分
@@ -33722,7 +34347,8 @@ items:
   - headword: 緧
     status: no_reading
   - headword: 編
-    status: staged
+    status: existing
+    entry_id: piang1-編
   - headword: 編制
     status: existing
     entry_id: piang1-zi3-編制
@@ -33742,14 +34368,17 @@ items:
     status: existing
     entry_id: piang1-zao6-編造
   - headword: 緩
-    status: staged
+    status: existing
+    entry_id: huêng2-緩
   - headword: 緩解
     status: existing
     entry_id: mang7-goi2-緩解
   - headword: 緬
-    status: staged
+    status: existing
+    entry_id: miang2-緬
   - headword: 緬懷
-    status: staged
+    status: existing
+    entry_id: miêng2-huai5-緬懷
   - headword: 緬甸
     status: existing
     entry_id: miêng2-diêng6-緬甸
@@ -33757,11 +34386,14 @@ items:
     status: existing
     entry_id: ui2-緯
   - headword: 練
-    status: staged
+    status: existing
+    entry_id: liang7-練
   - headword: 練江
-    status: staged
+    status: existing
+    entry_id: liang7-gang1-練江
   - headword: 練習
-    status: staged
+    status: existing
+    entry_id: liêng7-sib8-練習
   - headword: 縆
     status: existing
     entry_id: gêng1-縆
@@ -33787,12 +34419,14 @@ items:
   - headword: 縡
     status: no_reading
   - headword: 縣
-    status: staged
+    status: existing
+    entry_id: guin7-縣
   - headword: 縣長
     status: existing
     entry_id: guin7-ziang2-縣長
   - headword: 縫
-    status: staged
+    status: existing
+    entry_id: pong5-縫
   - headword: 縫隙
     status: existing
     entry_id: pang7-kiah4-縫隙
@@ -33809,7 +34443,8 @@ items:
     status: existing
     entry_id: lu2-縷
   - headword: 總
-    status: staged
+    status: existing
+    entry_id: zong2-總
   - headword: 總之
     status: existing
     entry_id: zong2-zi1-總之
@@ -33844,7 +34479,8 @@ items:
     status: existing
     entry_id: zêh4-績
   - headword: 繁
-    status: staged
+    status: existing
+    entry_id: huang5-繁
   - headword: 繁忙
     status: existing
     entry_id: huang5-mang5-繁忙
@@ -33890,9 +34526,11 @@ items:
     status: existing
     entry_id: hi6-繫
   - headword: 繭
-    status: staged
+    status: existing
+    entry_id: goin2-繭
   - headword: 繳
-    status: staged
+    status: existing
+    entry_id: giao2-繳
   - headword: 繳獲
     status: existing
     entry_id: giao2-uag8-繳獲
@@ -33930,18 +34568,23 @@ items:
     status: existing
     entry_id: êng1-纓
   - headword: 纛
-    status: staged
+    status: existing
+    entry_id: dog8-纛
   - headword: 纜
-    status: staged
+    status: existing
+    entry_id: lam2-纜
   - headword: 缶
-    status: staged
+    status: existing
+    entry_id: hui5-缶
   - headword: 缶鋪
     status: existing
     entry_id: hui5-pou3-缶鋪
   - headword: 缸
-    status: staged
+    status: existing
+    entry_id: geng1-缸
   - headword: 缺
-    status: staged
+    status: existing
+    entry_id: kuêh4-缺
   - headword: 缺乏
     status: existing
     entry_id: kuêh4-huag8-缺乏
@@ -33976,14 +34619,17 @@ items:
     status: existing
     entry_id: tam5-罈
   - headword: 罐
-    status: staged
+    status: existing
+    entry_id: guêng3-罐
   - headword: 罐頭
-    status: staged
+    status: existing
+    entry_id: guang3-tao5-罐頭
   - headword: 罔
     status: existing
     entry_id: bhuang2-罔
   - headword: 罕得
-    status: staged
+    status: existing
+    entry_id: hang2-dig4-罕得
   - headword: 罕見
     status: existing
     entry_id: hang2-giang3-罕見
@@ -34021,7 +34667,8 @@ items:
     status: existing
     entry_id: di3-sing1-置身
   - headword: 罰
-    status: staged
+    status: existing
+    entry_id: huêg8-罰
   - headword: 罰單
     status: existing
     entry_id: huag8-duan1-罰單
@@ -34085,7 +34732,8 @@ items:
     status: existing
     entry_id: pi5-羆
   - headword: 羊
-    status: staged
+    status: existing
+    entry_id: iên5-羊
   - headword: 羊城
     status: existing
     entry_id: iên5-sian5-羊城
@@ -34096,11 +34744,14 @@ items:
     status: existing
     entry_id: ion5-mo5-san1-羊毛衫
   - headword: 羊牯
-    status: staged
+    status: existing
+    entry_id: iên5-gou2-羊牯
   - headword: 羊肉
-    status: staged
+    status: existing
+    entry_id: iên5-nêg8-羊肉
   - headword: 羊蹶𤷕
-    status: staged
+    status: existing
+    entry_id: ion5-guêh4-cai2-羊蹶𤷕
   - headword: 羋
     status: existing
     entry_id: mi2-羋
@@ -34108,7 +34759,8 @@ items:
     status: existing
     entry_id: giang1-羌
   - headword: 美
-    status: staged
+    status: existing
+    entry_id: mui2-美
   - headword: 美名
     status: existing
     entry_id: mui2-mian5-美名
@@ -34179,7 +34831,8 @@ items:
     status: existing
     entry_id: kung5-zu1-群組
   - headword: 羨
-    status: staged
+    status: existing
+    entry_id: iang6-羨
   - headword: 羨慕
     status: existing
     entry_id: iang6-mo6-羨慕
@@ -34202,7 +34855,8 @@ items:
     status: existing
     entry_id: ngi6-ziang2-義診
   - headword: 羯
-    status: staged
+    status: existing
+    entry_id: giêg4-羯
   - headword: 羲
     status: existing
     entry_id: hi1-羲
@@ -34216,7 +34870,8 @@ items:
     status: existing
     entry_id: gên1-cai3-羹菜
   - headword: 羼
-    status: staged
+    status: existing
+    entry_id: cang3-羼
   - headword: 羼隊
     status: existing
     entry_id: cang6-dui7-羼隊
@@ -34239,7 +34894,8 @@ items:
     status: existing
     entry_id: ang1-zia2-翁姐
   - headword: 翅
-    status: staged
+    status: existing
+    entry_id: ti3-翅
   - headword: 翅膀
     status: existing
     entry_id: ti3-pang5-翅膀
@@ -34258,7 +34914,8 @@ items:
     status: existing
     entry_id: sib8-sog8-習俗
   - headword: 習慣
-    status: staged
+    status: existing
+    entry_id: sib8-guêng3-習慣
   - headword: 翔
     status: existing
     entry_id: siang5-翔
@@ -34283,7 +34940,8 @@ items:
     status: existing
     entry_id: hui1-cui3-翡翠
   - headword: 翦
-    status: staged
+    status: existing
+    entry_id: ziang2-翦
   - headword: 翩
     status: no_reading
   - headword: 翪
@@ -34291,14 +34949,17 @@ items:
   - headword: 翬
     status: no_reading
   - headword: 翰
-    status: staged
+    status: existing
+    entry_id: hang5-翰
   - headword: 翱
     status: existing
     entry_id: ngao5-翱
   - headword: 翳
-    status: staged
+    status: existing
+    entry_id: i3-翳
   - headword: 翹
-    status: staged
+    status: existing
+    entry_id: kiao5-翹
   - headword: 翹楚
     status: existing
     entry_id: kiao5-co2-翹楚
@@ -34312,7 +34973,8 @@ items:
     status: existing
     entry_id: huang1-cao2-翻草
   - headword: 翻譯
-    status: staged
+    status: existing
+    entry_id: huêng1-êg8-翻譯
   - headword: 翻車
     status: existing
     entry_id: huang1-cia1-翻車
@@ -34320,9 +34982,11 @@ items:
     status: existing
     entry_id: sig8-翼
   - headword: 耀
-    status: staged
+    status: existing
+    entry_id: iao6-耀
   - headword: 老
-    status: staged
+    status: existing
+    entry_id: lao6-老
   - headword: 老一輩
     status: existing
     entry_id: lao6-zêg8-buê3-老一輩
@@ -34360,7 +35024,8 @@ items:
     status: existing
     entry_id: lao6-pua5-老婆
   - headword: 老婆跋落溪——淒涼
-    status: staged
+    status: existing
+    entry_id: ci1-liang5-老婆跋落溪——淒涼
   - headword: 老媽
     status: existing
     entry_id: lao6-ma2-老媽
@@ -34377,11 +35042,14 @@ items:
     status: existing
     entry_id: lao6-gê1-老家
   - headword: 老實
-    status: staged
+    status: existing
+    entry_id: lao2-sig8-老實
   - headword: 老寫字
-    status: staged
+    status: existing
+    entry_id: lao6-sia2-ri7-老寫字
   - headword: 老師
-    status: staged
+    status: existing
+    entry_id: lao2-se1-老師
   - headword: 老年
     status: existing
     entry_id: lao6-ni5-老年
@@ -34419,7 +35087,8 @@ items:
     status: existing
     entry_id: lao6-huê1-gian3-老花鏡
   - headword: 老虎
-    status: staged
+    status: existing
+    entry_id: lao6-houn2-老虎
   - headword: 老虎母
     status: existing
     entry_id: lao6-houn2-bho2-老虎母
@@ -34430,7 +35099,8 @@ items:
     status: existing
     entry_id: lao6-de1-老豬
   - headword: 老闆
-    status: staged
+    status: existing
+    entry_id: lao6-bang2-老闆
   - headword: 老阿伯
     status: existing
     entry_id: lao6-a1-bêh4-老阿伯
@@ -34438,7 +35108,8 @@ items:
     status: existing
     entry_id: lao6-a1-m2-老阿姆
   - headword: 老鷹婆
-    status: staged
+    status: existing
+    entry_id: liao6-êng1-bo5-老鷹婆
   - headword: 老齡化
     status: existing
     entry_id: lao6-lêng5-huê3-老齡化
@@ -34458,7 +35129,8 @@ items:
     status: existing
     entry_id: kao2-meng7-考問
   - headword: 考場
-    status: staged
+    status: existing
+    entry_id: kao2-diên5-考場
   - headword: 考察
     status: existing
     entry_id: kao2-cag4-考察
@@ -34492,7 +35164,8 @@ items:
     status: existing
     entry_id: re5-cia2-而且
   - headword: 耍
-    status: staged
+    status: existing
+    entry_id: sua2-耍
   - headword: 耍法
     status: existing
     entry_id: seng2-huag4-耍法
@@ -34541,12 +35214,14 @@ items:
     status: existing
     entry_id: ho3-siang6-耗像
   - headword: 耗小影
-    status: staged
+    status: existing
+    entry_id: ho3-siou2-ian2-耗小影
   - headword: 耗材
     status: existing
     entry_id: ho3-cai5-耗材
   - headword: 耗相
-    status: staged
+    status: existing
+    entry_id: ho3-sion3-耗相
   - headword: 耗相機
     status: existing
     entry_id: ho3-sion3-gi1-耗相機
@@ -34597,17 +35272,20 @@ items:
     status: existing
     entry_id: ia5-lou7-sag4-lêng2-耶路撒冷
   - headword: 耽
-    status: staged
+    status: existing
+    entry_id: dam1-耽
   - headword: 耽誤
     status: existing
     entry_id: dam1-ghou7-耽誤
   - headword: 耿
-    status: staged
+    status: existing
+    entry_id: guang2-耿
   - headword: 聆聽
     status: existing
     entry_id: lêng5-tian1-聆聽
   - headword: 聊
-    status: staged
+    status: existing
+    entry_id: liao5-聊
   - headword: 聊天
     status: existing
     entry_id: liao5-tin1-聊天
@@ -34615,7 +35293,8 @@ items:
     status: existing
     entry_id: guêg4-聒
   - headword: 聖
-    status: staged
+    status: existing
+    entry_id: sian3-聖
   - headword: 聖堂
     status: existing
     entry_id: sêng3-deng5-聖堂
@@ -34653,7 +35332,8 @@ items:
     status: existing
     entry_id: sêng3-ti2-聖體
   - headword: 聘
-    status: staged
+    status: existing
+    entry_id: pêng3-聘
   - headword: 聘金
     status: existing
     entry_id: pian3-gim1-聘金
@@ -34696,7 +35376,8 @@ items:
   - headword: 聧
     status: no_reading
   - headword: 聯
-    status: staged
+    status: existing
+    entry_id: liêng5-聯
   - headword: 聯動
     status: existing
     entry_id: liang5-dong6-聯動
@@ -34707,7 +35388,8 @@ items:
     status: existing
     entry_id: liang5-mian5-聯名
   - headword: 聯絡
-    status: staged
+    status: existing
+    entry_id: liêng5-log8-聯絡
   - headword: 聯絡所
     status: existing
     entry_id: liang5-log8-so2-聯絡所
@@ -34724,7 +35406,8 @@ items:
     status: existing
     entry_id: cong1-mêng5-聰明
   - headword: 聲
-    status: staged
+    status: existing
+    entry_id: sêng1-聲
   - headword: 聲帶
     status: existing
     entry_id: sian1-dua3-聲帶
@@ -34780,7 +35463,8 @@ items:
     status: existing
     entry_id: zêh4-uang5-職員
   - headword: 職場
-    status: staged
+    status: existing
+    entry_id: zêh4-diên5-職場
   - headword: 職工
     status: existing
     entry_id: zêh4-gang1-職工
@@ -34791,7 +35475,8 @@ items:
     status: existing
     entry_id: zêh4-ngiab8-職業
   - headword: 職權
-    status: staged
+    status: existing
+    entry_id: zêh4-kuêng5-職權
   - headword: 職稱
     status: existing
     entry_id: zêh4-cêng1-職稱
@@ -34850,7 +35535,8 @@ items:
     status: existing
     entry_id: sog4-zên6-肅靜
   - headword: 肆
-    status: staged
+    status: existing
+    entry_id: se3-肆
   - headword: 肆意
     status: existing
     entry_id: se3-i3-肆意
@@ -34860,7 +35546,8 @@ items:
     status: existing
     entry_id: se3-ngiag8-肆虐
   - headword: 肇
-    status: staged
+    status: existing
+    entry_id: siao6-肇
   - headword: 肇事
     status: existing
     entry_id: siao6-se7-肇事
@@ -34880,11 +35567,14 @@ items:
     status: existing
     entry_id: nêg8-gui3-肉桂
   - headword: 肉眼
-    status: staged
+    status: existing
+    entry_id: nêg8-oin2-肉眼
   - headword: 肉粽
-    status: staged
+    status: existing
+    entry_id: nêg8-zang3-肉粽
   - headword: 肉脞
-    status: staged
+    status: existing
+    entry_id: nêg8-co3-肉脞
   - headword: 肉脞麵
     status: existing
     entry_id: bhah4-co3-mi7-肉脞麵
@@ -34910,15 +35600,19 @@ items:
     status: existing
     entry_id: gi1-nêg8-肌肉
   - headword: 肏
-    status: staged
+    status: existing
+    entry_id: cao3-肏
   - headword: 肖
-    status: staged
+    status: existing
+    entry_id: siao6-肖
   - headword: 肗
     status: no_reading
   - headword: 肘
-    status: staged
+    status: existing
+    entry_id: iu2-肘
   - headword: 肚
-    status: staged
+    status: existing
+    entry_id: dou6-肚
   - headword: 肚囝
     status: existing
     entry_id: dou2-gian2-肚囝
@@ -34929,7 +35623,8 @@ items:
     status: existing
     entry_id: dou2-pê3-肚帕
   - headword: 肚枵
-    status: staged
+    status: existing
+    entry_id: dou2-iou1-肚枵
   - headword: 肚絞
     status: existing
     entry_id: dou2-ga2-肚絞
@@ -34966,7 +35661,8 @@ items:
     status: existing
     entry_id: gou2-dang1-股東
   - headword: 股票
-    status: staged
+    status: existing
+    entry_id: gou2-piê3-股票
   - headword: 肢
     status: existing
     entry_id: zin1-肢
@@ -34983,7 +35679,8 @@ items:
     status: existing
     entry_id: bui5-puang3-肥胖
   - headword: 肩
-    status: staged
+    status: existing
+    entry_id: goin1-肩
   - headword: 肩胛
     status: existing
     entry_id: goin1-gah4-肩胛
@@ -34991,9 +35688,11 @@ items:
     status: existing
     entry_id: goin1-hu6-肩負
   - headword: 肩頭
-    status: staged
+    status: existing
+    entry_id: goin1-tao5-肩頭
   - headword: 肪
-    status: staged
+    status: existing
+    entry_id: huang2-肪
   - headword: 肫
     status: existing
     entry_id: dung1-肫
@@ -35045,7 +35744,8 @@ items:
   - headword: 胅
     status: no_reading
   - headword: 背
-    status: staged
+    status: existing
+    entry_id: buê3-背
   - headword: 背後
     status: existing
     entry_id: buê3-ao6-背後
@@ -35073,7 +35773,8 @@ items:
   - headword: 胒
     status: no_reading
   - headword: 胘
-    status: staged
+    status: existing
+    entry_id: geng6-胘
   - headword: 胚胎
     status: existing
     entry_id: puê1-to1-胚胎
@@ -35089,7 +35790,8 @@ items:
   - headword: 胟
     status: no_reading
   - headword: 胡
-    status: staged
+    status: existing
+    entry_id: hu5-胡
   - headword: 胡亂
     status: existing
     entry_id: hu5-luang6-胡亂
@@ -35099,7 +35801,8 @@ items:
     status: existing
     entry_id: hu5-se1-luang6-sion6-胡思亂想
   - headword: 胡椒
-    status: staged
+    status: existing
+    entry_id: hou5-zio1-胡椒
   - headword: 胡椒粉
     status: existing
     entry_id: hou5-zio1-hung2-胡椒粉
@@ -35110,7 +35813,8 @@ items:
     status: existing
     entry_id: hou5-ki5-胡蜞
   - headword: 胡蠅
-    status: staged
+    status: existing
+    entry_id: hou5-sing5-胡蠅
   - headword: 胡蠅屎
     status: existing
     entry_id: hou5-sêng5-sai2-胡蠅屎
@@ -35126,7 +35830,8 @@ items:
   - headword: 胦
     status: no_reading
   - headword: 胯
-    status: staged
+    status: existing
+    entry_id: kua3-胯
   - headword: 胰
     status: existing
     entry_id: i5-胰
@@ -35152,7 +35857,8 @@ items:
     status: existing
     entry_id: hêng1-tao5-胸頭
   - headword: 能
-    status: staged
+    status: existing
+    entry_id: lêng5-能
   - headword: 能力
     status: existing
     entry_id: lêng5-lag8-能力
@@ -35163,7 +35869,8 @@ items:
     status: existing
     entry_id: lêng5-gou3-能夠
   - headword: 能源
-    status: staged
+    status: existing
+    entry_id: lêng5-nguêng5-能源
   - headword: 能為
     status: existing
     entry_id: lêng5-ui5-能為
@@ -35186,14 +35893,16 @@ items:
     status: existing
     entry_id: mêh8-脈
   - headword: 脊
-    status: staged
+    status: existing
+    entry_id: zig4-脊
   - headword: 脊柱
     status: existing
     entry_id: zig4-tiao6-脊柱
   - headword: 脕
     status: no_reading
   - headword: 脖
-    status: staged
+    status: existing
+    entry_id: buag8-脖
   - headword: 脝
     status: no_reading
   - headword: 脠
@@ -35211,7 +35920,8 @@ items:
     status: existing
     entry_id: dung5-ki2-脣齒
   - headword: 脥肍
-    status: staged
+    status: existing
+    entry_id: gih4-gao1-脥肍
   - headword: 脦
     status: no_reading
   - headword: 脫
@@ -35233,32 +35943,39 @@ items:
     status: existing
     entry_id: tug4-huag4-脫髮
   - headword: 脬
-    status: staged
+    status: existing
+    entry_id: pa1-脬
   - headword: 脯
-    status: staged
+    status: existing
+    entry_id: pou2-脯
   - headword: 脰
     status: existing
     entry_id: dou6-脰
   - headword: 脹
-    status: staged
+    status: existing
+    entry_id: ziang3-脹
   - headword: 脾
-    status: staged
+    status: existing
+    entry_id: bi5-脾
   - headword: 腇
     status: no_reading
   - headword: 腈
-    status: staged
+    status: existing
+    entry_id: zian1-腈
   - headword: 腋
     status: existing
     entry_id: êg8-腋
   - headword: 腌
     status: no_reading
   - headword: 腎
-    status: staged
+    status: existing
+    entry_id: siang6-腎
   - headword: 腎子
     status: existing
     entry_id: siang6-zi2-腎子
   - headword: 腐
-    status: staged
+    status: existing
+    entry_id: hu1-腐
   - headword: 腐乳
     status: existing
     entry_id: hu7-ru2-腐乳
@@ -35287,7 +36004,8 @@ items:
     status: existing
     entry_id: hui1-腓
   - headword: 腔
-    status: staged
+    status: existing
+    entry_id: kiên1-腔
   - headword: 腔調
     status: existing
     entry_id: kiên1-diou7-腔調
@@ -35297,9 +36015,11 @@ items:
   - headword: 腝
     status: no_reading
   - headword: 腥
-    status: staged
+    status: existing
+    entry_id: cên1-腥
   - headword: 腦
-    status: staged
+    status: existing
+    entry_id: nao2-腦
   - headword: 腦卒中
     status: existing
     entry_id: nao2-zui6-dong3-腦卒中
@@ -35318,7 +36038,8 @@ items:
   - headword: 腨
     status: no_reading
   - headword: 腩
-    status: staged
+    status: existing
+    entry_id: lam2-腩
   - headword: 腫
     status: existing
     entry_id: zêng2-腫
@@ -35332,16 +36053,19 @@ items:
     status: existing
     entry_id: sai1-suan3-iam7-腮腺炎
   - headword: 腰
-    status: staged
+    status: existing
+    entry_id: iê1-腰
   - headword: 腰椎間盤突出
     status: existing
     entry_id: io1-zui1-gang1-buan1-dug8-cug4-腰椎間盤突出
   - headword: 腰骨
-    status: staged
+    status: existing
+    entry_id: iê1-gug4-腰骨
   - headword: 腲
     status: no_reading
   - headword: 腳
-    status: staged
+    status: existing
+    entry_id: giêh4-腳
   - headword: 腳手架
     status: existing
     entry_id: ka1-ciu2-gê3-腳手架
@@ -35358,7 +36082,8 @@ items:
     status: existing
     entry_id: deng5-hung2-腸粉
   - headword: 腹
-    status: staged
+    status: existing
+    entry_id: bag4-腹
   - headword: 腹內
     status: existing
     entry_id: bag4-lai6-腹內
@@ -35374,7 +36099,8 @@ items:
     status: existing
     entry_id: gêh4-膈
   - headword: 膊
-    status: staged
+    status: existing
+    entry_id: pag4-膊
   - headword: 膌
     status: no_reading
   - headword: 膏
@@ -35384,7 +36110,8 @@ items:
     status: existing
     entry_id: go1-big4-膏筆
   - headword: 膏藥
-    status: staged
+    status: existing
+    entry_id: go1-iêh8-膏藥
   - headword: 膚
     status: existing
     entry_id: hu1-膚
@@ -35409,12 +36136,14 @@ items:
   - headword: 膡
     status: no_reading
   - headword: 膣
-    status: staged
+    status: existing
+    entry_id: zi1-膣
   - headword: 膨脹
     status: existing
     entry_id: pên5-ziang3-膨脹
   - headword: 膩
-    status: staged
+    status: existing
+    entry_id: re6-膩
   - headword: 膫
     status: existing
     entry_id: la5-膫
@@ -35422,7 +36151,8 @@ items:
     status: existing
     entry_id: la5-poh4-膫粕
   - headword: 膳
-    status: staged
+    status: existing
+    entry_id: siêng6-膳
   - headword: 膷
     status: no_reading
   - headword: 膽
@@ -35435,18 +36165,23 @@ items:
     status: existing
     entry_id: dan2-zab4-膽汁
   - headword: 膿
-    status: staged
+    status: existing
+    entry_id: long5-膿
   - headword: 臀
-    status: staged
+    status: existing
+    entry_id: tung5-臀
   - headword: 臂
     status: existing
     entry_id: bi3-臂
   - headword: 臆
-    status: staged
+    status: existing
+    entry_id: êg8-臆
   - headword: 臉
-    status: staged
+    status: existing
+    entry_id: liang2-臉
   - headword: 臊
-    status: staged
+    status: existing
+    entry_id: cao3-臊
   - headword: 臊湯
     status: existing
     entry_id: co1-teng1-臊湯
@@ -35467,7 +36202,8 @@ items:
     status: existing
     entry_id: zang6-臟
   - headword: 臣
-    status: staged
+    status: existing
+    entry_id: cing5-臣
   - headword: 臥
     status: existing
     entry_id: o6-臥
@@ -35585,7 +36321,8 @@ items:
     status: existing
     entry_id: ze6-riang5-自燃
   - headword: 自由
-    status: staged
+    status: existing
+    entry_id: ze6-iu5-自由
   - headword: 自由港
     status: existing
     entry_id: ze6-iu5-gang2-自由港
@@ -35701,7 +36438,8 @@ items:
     status: existing
     entry_id: di3-ngam5-致癌
   - headword: 臺
-    status: staged
+    status: existing
+    entry_id: tai5-臺
   - headword: 臺北
     status: existing
     entry_id: tai5-bag4-臺北
@@ -35709,7 +36447,8 @@ items:
     status: existing
     entry_id: tai5-lam5-臺南
   - headword: 臺灣
-    status: staged
+    status: existing
+    entry_id: tai5-uêng1-臺灣
   - headword: 臺灣人
     status: existing
     entry_id: tai5-uang1-nang5-臺灣人
@@ -35717,7 +36456,8 @@ items:
     status: existing
     entry_id: zing1-臻
   - headword: 臼
-    status: staged
+    status: existing
+    entry_id: ku6-臼
   - headword: 臼齒
     status: existing
     entry_id: ku6-ki2-臼齒
@@ -35740,12 +36480,14 @@ items:
     status: existing
     entry_id: gu6-gu6-舅舅
   - headword: 與
-    status: staged
+    status: existing
+    entry_id: e2-與
   - headword: 與其
     status: existing
     entry_id: e2-ki5-與其
   - headword: 興
-    status: staged
+    status: existing
+    entry_id: hêng1-興
   - headword: 興衰
     status: existing
     entry_id: hêng1-suê1-興衰
@@ -35819,7 +36561,8 @@ items:
     status: existing
     entry_id: zih8-bhuê2-舌尾
   - headword: 舌苔
-    status: staged
+    status: existing
+    entry_id: zih8-tai1-舌苔
   - headword: 舌音
     status: existing
     entry_id: cih8-im1-舌音
@@ -35830,7 +36573,8 @@ items:
     status: existing
     entry_id: zi6-舐
   - headword: 舒
-    status: staged
+    status: existing
+    entry_id: ce1-舒
   - headword: 舒合
     status: existing
     entry_id: su1-gah4-舒合
@@ -35850,14 +36594,17 @@ items:
     status: existing
     entry_id: sung3-舜
   - headword: 舞
-    status: staged
+    status: existing
+    entry_id: bhu2-舞
   - headword: 舞弊
     status: existing
     entry_id: bhu2-bi7-舞弊
   - headword: 舞獅
-    status: staged
+    status: existing
+    entry_id: mong6-sai1-舞獅
   - headword: 舞虎獅
-    status: staged
+    status: existing
+    entry_id: mou6-houn2-sai1-舞虎獅
   - headword: 舞蹈
     status: existing
     entry_id: bhu2-dao6-舞蹈
@@ -35872,9 +36619,11 @@ items:
   - headword: 舨
     status: no_reading
   - headword: 航
-    status: staged
+    status: existing
+    entry_id: hang5-航
   - headword: 航班
-    status: staged
+    status: existing
+    entry_id: hang5-bang1-航班
   - headword: 航線
     status: existing
     entry_id: pang5-suan3-航線
@@ -35882,7 +36631,8 @@ items:
     status: existing
     entry_id: huang2-舫
   - headword: 般
-    status: staged
+    status: existing
+    entry_id: buan1-般
   - headword: 般若
     status: existing
     entry_id: bo1-ria2-般若
@@ -35893,7 +36643,8 @@ items:
     status: existing
     entry_id: dai6-gong1-舵工
   - headword: 舷
-    status: staged
+    status: existing
+    entry_id: hin5-舷
   - headword: 舸
     status: no_reading
   - headword: 船
@@ -35932,7 +36683,8 @@ items:
   - headword: 艓
     status: no_reading
   - headword: 艘
-    status: staged
+    status: existing
+    entry_id: sou2-艘
   - headword: 艙
     status: existing
     entry_id: ceng1-艙
@@ -35943,7 +36695,8 @@ items:
     status: existing
     entry_id: lam2-艦
   - headword: 艮
-    status: staged
+    status: existing
+    entry_id: geng3-艮
   - headword: 良
     status: existing
     entry_id: liang5-良
@@ -35988,12 +36741,14 @@ items:
   - headword: 艻
     status: no_reading
   - headword: 艾
-    status: staged
+    status: existing
+    entry_id: hian7-艾
   - headword: 艾滋病
     status: existing
     entry_id: ain3-ze1-bên7-艾滋病
   - headword: 艿
-    status: staged
+    status: existing
+    entry_id: ni1-艿
   - headword: 芋
     status: existing
     entry_id: ou7-芋
@@ -36001,14 +36756,16 @@ items:
     status: existing
     entry_id: ou7-ni5-芋泥
   - headword: 芍
-    status: staged
+    status: existing
+    entry_id: ziag4-芍
   - headword: 芍藥
     status: existing
     entry_id: ciag4-iag8-芍藥
   - headword: 芎
     status: no_reading
   - headword: 芒
-    status: staged
+    status: existing
+    entry_id: mang5-芒
   - headword: 芒光
     status: existing
     entry_id: mang5-guang1-芒光
@@ -36026,7 +36783,8 @@ items:
   - headword: 芛
     status: no_reading
   - headword: 芝
-    status: staged
+    status: existing
+    entry_id: ze1-芝
   - headword: 芝麻糊
     status: existing
     entry_id: ze1-mua5-gou5-芝麻糊
@@ -36034,18 +36792,23 @@ items:
     status: existing
     entry_id: ze1-mua5-zion3-芝麻醬
   - headword: 芥
-    status: staged
+    status: existing
+    entry_id: gai3-芥
   - headword: 芥藍
-    status: staged
+    status: existing
+    entry_id: kah4-na5-芥藍
   - headword: 芥藍菜
     status: existing
     entry_id: kag4-na5-cai3-芥藍菜
   - headword: 芥藍頭
-    status: staged
+    status: existing
+    entry_id: gah4-na5-tao5-芥藍頭
   - headword: 芫
-    status: staged
+    status: existing
+    entry_id: nguang5-芫
   - headword: 芫荽
-    status: staged
+    status: existing
+    entry_id: uang5-sui1-芫荽
   - headword: 芬
     status: existing
     entry_id: hung1-芬
@@ -36079,7 +36842,8 @@ items:
     status: existing
     entry_id: huê1-ho2-ghuêh8-in5-花好月圓
   - headword: 花娘
-    status: staged
+    status: existing
+    entry_id: huê1-niê5-花娘
   - headword: 花容月貌
     status: no_reading
   - headword: 花崗石
@@ -36098,7 +36862,8 @@ items:
     status: existing
     entry_id: huê1-dêng1-花燈
   - headword: 花瓶
-    status: staged
+    status: existing
+    entry_id: huê1-bang5-花瓶
   - headword: 花生油
     status: existing
     entry_id: huê1-sêng1-iu5-花生油
@@ -36133,7 +36898,8 @@ items:
     status: existing
     entry_id: huê1-lou7-zui2-花露水
   - headword: 芳
-    status: staged
+    status: existing
+    entry_id: pang1-芳
   - headword: 芳水
     status: existing
     entry_id: pang1-zui2-芳水
@@ -36141,7 +36907,8 @@ items:
     status: existing
     entry_id: pang1-iu5-芳油
   - headword: 芳飯
-    status: staged
+    status: existing
+    entry_id: pang1-bung7-芳飯
   - headword: 芳餅藥
     status: existing
     entry_id: pang1-bian2-ioh8-芳餅藥
@@ -36158,7 +36925,8 @@ items:
     status: existing
     entry_id: ung5-芸
   - headword: 芹
-    status: staged
+    status: existing
+    entry_id: keng5-芹
   - headword: 芹澎
     status: existing
     entry_id: keng5-pên5-芹澎
@@ -36166,7 +36934,8 @@ items:
     status: existing
     entry_id: keng5-pên5-dao2-芹澎島
   - headword: 芹菜
-    status: staged
+    status: existing
+    entry_id: keng5-cai3-芹菜
   - headword: 芻
     status: existing
     entry_id: cu1-芻
@@ -36182,9 +36951,11 @@ items:
     status: existing
     entry_id: uêng2-苑
   - headword: 苔
-    status: staged
+    status: existing
+    entry_id: ti5-苔
   - headword: 苗
-    status: staged
+    status: existing
+    entry_id: miou5-苗
   - headword: 苛
     status: existing
     entry_id: ko1-苛
@@ -36207,14 +36978,17 @@ items:
     status: existing
     entry_id: riag8-若
   - headword: 若久
-    status: staged
+    status: existing
+    entry_id: rioh8-gu2-若久
   - headword: 若干
     status: existing
     entry_id: riag8-gang1-若干
   - headword: 若是
-    status: staged
+    status: existing
+    entry_id: na7-si6-若是
   - headword: 若濟
-    status: staged
+    status: existing
+    entry_id: rioh8-zoi7-若濟
   - headword: 苦
     status: existing
     entry_id: kou2-苦
@@ -36282,7 +37056,8 @@ items:
     status: existing
     entry_id: gan1-苷
   - headword: 茂
-    status: staged
+    status: existing
+    entry_id: mou6-茂
   - headword: 茂名
     status: existing
     entry_id: mou6-mian5-茂名
@@ -36290,16 +37065,20 @@ items:
     status: existing
     entry_id: mou6-sêng6-茂盛
   - headword: 范
-    status: staged
+    status: existing
+    entry_id: huam6-范
   - headword: 茄
-    status: staged
+    status: existing
+    entry_id: gio5-茄
   - headword: 茅
     status: existing
     entry_id: mao5-茅
   - headword: 茉莉
-    status: staged
+    status: existing
+    entry_id: mag8-li6-茉莉
   - headword: 茉莉花
-    status: staged
+    status: existing
+    entry_id: bhag8-li6-huê1-茉莉花
   - headword: 茓
     status: no_reading
   - headword: 茜
@@ -36307,7 +37086,8 @@ items:
   - headword: 茤
     status: no_reading
   - headword: 茨
-    status: staged
+    status: existing
+    entry_id: ce5-茨
   - headword: 茫
     status: existing
     entry_id: mang5-茫
@@ -36317,12 +37097,14 @@ items:
   - headword: 茭
     status: no_reading
   - headword: 茲
-    status: staged
+    status: existing
+    entry_id: ze1-茲
   - headword: 茴
     status: existing
     entry_id: huê5-茴
   - headword: 茴香
-    status: staged
+    status: existing
+    entry_id: huê5-hiên1-茴香
   - headword: 茶
     status: existing
     entry_id: de5-茶
@@ -36411,7 +37193,8 @@ items:
     status: existing
     entry_id: cao2-gou1-草菇
   - headword: 草蓆
-    status: staged
+    status: existing
+    entry_id: cao2-ciêh8-草蓆
   - headword: 草藥
     status: existing
     entry_id: cao2-ioh8-草藥
@@ -36434,9 +37217,11 @@ items:
     status: existing
     entry_id: gêng1-gêg4-荊棘
   - headword: 荍
-    status: staged
+    status: existing
+    entry_id: kiao5-荍
   - headword: 荒
-    status: staged
+    status: existing
+    entry_id: huang1-荒
   - headword: 荒唐
     status: existing
     entry_id: huang1-tang5-荒唐
@@ -36456,24 +37241,29 @@ items:
     status: existing
     entry_id: huang1-ia2-荒野
   - headword: 荔
-    status: staged
+    status: existing
+    entry_id: noi7-荔
   - headword: 荔果
-    status: staged
+    status: existing
+    entry_id: noi7-guên2-荔果
   - headword: 荔枝
     status: existing
     entry_id: li6-gi1-荔枝
   - headword: 荷
-    status: staged
+    status: existing
+    entry_id: o5-荷
   - headword: 荷花
     status: existing
     entry_id: ho5-huê1-荷花
   - headword: 荷蘭薯
-    status: staged
+    status: existing
+    entry_id: ho5-lang1-ze5-荷蘭薯
   - headword: 荷蘭西
     status: existing
     entry_id: ho5-lang1-sê1-荷蘭西
   - headword: 荷蘭豆
-    status: staged
+    status: existing
+    entry_id: ho5-lang5-dao7-荷蘭豆
   - headword: 荹
     status: no_reading
   - headword: 荽
@@ -36486,7 +37276,8 @@ items:
     status: existing
     entry_id: li6-莉
   - headword: 莊
-    status: staged
+    status: existing
+    entry_id: zeng1-莊
   - headword: 莊嚴
     status: existing
     entry_id: zang1-ngiam5-莊嚴
@@ -36502,18 +37293,22 @@ items:
   - headword: 莙
     status: no_reading
   - headword: 莞
-    status: staged
+    status: existing
+    entry_id: guêng2-莞
   - headword: 莤
     status: no_reading
   - headword: 莧
-    status: staged
+    status: existing
+    entry_id: hoin7-莧
   - headword: 莧菜
-    status: staged
+    status: existing
+    entry_id: hoin7-cai3-莧菜
   - headword: 莪
     status: existing
     entry_id: ngo5-莪
   - headword: 莫
-    status: staged
+    status: existing
+    entry_id: mog8-莫
   - headword: 莫名其妙
     status: existing
     entry_id: mog8-mêng5-ki5-miou6-莫名其妙
@@ -36649,7 +37444,8 @@ items:
   - headword: 菪
     status: no_reading
   - headword: 華
-    status: staged
+    status: existing
+    entry_id: hua5-華
   - headword: 華人
     status: existing
     entry_id: hua5-ring5-華人
@@ -36660,7 +37456,8 @@ items:
     status: existing
     entry_id: hua5-iong5-華容
   - headword: 華美
-    status: staged
+    status: existing
+    entry_id: ê6-bhuê2-華美
   - headword: 華語
     status: existing
     entry_id: hua5-ghe2-華語
@@ -36671,12 +37468,14 @@ items:
     status: existing
     entry_id: gou1-菰
   - headword: 菱
-    status: staged
+    status: existing
+    entry_id: lêng5-菱
   - headword: 菱形
     status: existing
     entry_id: lêng5-hêng5-菱形
   - headword: 菱角
-    status: staged
+    status: existing
+    entry_id: noi5-gag4-菱角
   - headword: 菲律賓
     status: existing
     entry_id: hui1-lug8-bing1-菲律賓
@@ -36704,14 +37503,16 @@ items:
     status: existing
     entry_id: mêng5-萌
   - headword: 萍
-    status: staged
+    status: existing
+    entry_id: pêng5-萍
   - headword: 萎
     status: existing
     entry_id: ui1-萎
   - headword: 萪
     status: no_reading
   - headword: 萬
-    status: staged
+    status: existing
+    entry_id: bhuêng7-萬
   - headword: 萬一
     status: existing
     entry_id: bhuêng7-ig4-萬一
@@ -36722,7 +37523,8 @@ items:
     status: existing
     entry_id: bhuang7-si3-萬世
   - headword: 萬事如意
-    status: staged
+    status: existing
+    entry_id: bhuêng7-se7-ru5-i3-萬事如意
   - headword: 萬字夾
     status: existing
     entry_id: bhuêng7-ri7-ngiab8-萬字夾
@@ -36742,7 +37544,8 @@ items:
     status: existing
     entry_id: bhuang7-lêng5-萬能
   - headword: 萱
-    status: staged
+    status: existing
+    entry_id: suang1-萱
   - headword: 萵苣
     status: existing
     entry_id: o1-ge6-萵苣
@@ -36854,7 +37657,8 @@ items:
     status: existing
     entry_id: loh8-zung1-落船
   - headword: 落色
-    status: staged
+    status: existing
+    entry_id: lag4-sêg4-落色
   - headword: 落荒而逃
     status: existing
     entry_id: loh8-huang1-re5-do5-落荒而逃
@@ -36862,7 +37666,8 @@ items:
     status: existing
     entry_id: loh8-hioh8-落葉
   - headword: 落蘇
-    status: staged
+    status: existing
+    entry_id: loh8-sou1-落蘇
   - headword: 落課
     status: existing
     entry_id: loh8-kuê3-落課
@@ -36873,7 +37678,8 @@ items:
     status: existing
     entry_id: loh8-zai7-落載
   - headword: 落鄉
-    status: staged
+    status: existing
+    entry_id: loh8-hion1-落鄉
   - headword: 落阿孥
     status: existing
     entry_id: loh8-a1-nou5-落阿孥
@@ -36916,7 +37722,8 @@ items:
     status: existing
     entry_id: du3-zag4-kuang5-著作權
   - headword: 著傷
-    status: staged
+    status: existing
+    entry_id: diêh8-siên1-著傷
   - headword: 著力
     status: existing
     entry_id: dioh8-lag8-著力
@@ -36933,16 +37740,20 @@ items:
     status: existing
     entry_id: du3-ze1-著書
   - headword: 著棋
-    status: staged
+    status: existing
+    entry_id: diêh4-gi5-著棋
   - headword: 著火
-    status: staged
+    status: existing
+    entry_id: doh8-huê2-著火
   - headword: 著病
     status: existing
     entry_id: dioh8-bên7-著病
   - headword: 著痧
-    status: staged
+    status: existing
+    entry_id: diêh8-sua1-著痧
   - headword: 葚
-    status: staged
+    status: existing
+    entry_id: sim6-葚
   - headword: 葛
     status: existing
     entry_id: guah4-葛
@@ -36959,7 +37770,8 @@ items:
     status: existing
     entry_id: pu5-to5-ghê5-葡萄牙
   - headword: 董
-    status: staged
+    status: existing
+    entry_id: dang2-董
   - headword: 董事長
     status: existing
     entry_id: dong2-se7-ziang2-董事長
@@ -36980,7 +37792,8 @@ items:
   - headword: 葴
     status: no_reading
   - headword: 葵
-    status: staged
+    status: existing
+    entry_id: kui5-葵
   - headword: 葵扇
     status: existing
     entry_id: guê5-sin3-葵扇
@@ -36997,7 +37810,8 @@ items:
   - headword: 蒒
     status: staged
   - headword: 蒙
-    status: staged
+    status: existing
+    entry_id: mong5-蒙
   - headword: 蒙受
     status: existing
     entry_id: mong5-si6-蒙受
@@ -37051,7 +37865,8 @@ items:
   - headword: 蓁
     status: no_reading
   - headword: 蓄
-    status: staged
+    status: existing
+    entry_id: tiog4-蓄
   - headword: 蓄意
     status: existing
     entry_id: tiog4-i3-蓄意
@@ -37068,7 +37883,8 @@ items:
     status: existing
     entry_id: tiog4-diang6-di5-蓄電池
   - headword: 蓋
-    status: staged
+    status: existing
+    entry_id: gai3-蓋
   - headword: 蓑衣
     status: existing
     entry_id: sui1-i1-蓑衣
@@ -37082,7 +37898,8 @@ items:
     status: existing
     entry_id: pong5-buag8-蓬勃
   - headword: 蓮
-    status: staged
+    status: existing
+    entry_id: noin5-蓮
   - headword: 蓮下
     status: existing
     entry_id: noin5-ê6-蓮下
@@ -37090,9 +37907,11 @@ items:
     status: existing
     entry_id: noin5-huê1-蓮花
   - headword: 蓮茭
-    status: staged
+    status: existing
+    entry_id: noin5-gao6-蓮茭
   - headword: 蓮藕
-    status: staged
+    status: existing
+    entry_id: noin5-ngou2-蓮藕
   - headword: 蓮霧
     status: existing
     entry_id: liêng5-bhu7-蓮霧
@@ -37101,7 +37920,8 @@ items:
   - headword: 蓼
     status: no_reading
   - headword: 蔑
-    status: staged
+    status: existing
+    entry_id: mig8-蔑
   - headword: 蔓
     status: existing
     entry_id: bhuêng6-蔓
@@ -37121,12 +37941,14 @@ items:
     status: existing
     entry_id: zia3-poh4-蔗粕
   - headword: 蔚
-    status: staged
+    status: existing
+    entry_id: uê3-蔚
   - headword: 蔡
     status: existing
     entry_id: cua3-蔡
   - headword: 蔣
-    status: staged
+    status: existing
+    entry_id: ziên2-蔣
   - headword: 蔥
     status: existing
     entry_id: cang1-蔥
@@ -37134,7 +37956,8 @@ items:
     status: existing
     entry_id: cang1-zu1-蔥珠
   - headword: 蔫
-    status: staged
+    status: existing
+    entry_id: iêng1-蔫
   - headword: 蔬
     status: existing
     entry_id: so1-蔬
@@ -37142,7 +37965,8 @@ items:
     status: existing
     entry_id: so1-cai3-蔬菜
   - headword: 蔭
-    status: staged
+    status: existing
+    entry_id: im1-蔭
   - headword: 蔰
     status: no_reading
   - headword: 蔸
@@ -37151,12 +37975,14 @@ items:
   - headword: 蔻
     status: staged
   - headword: 蕉
-    status: staged
+    status: existing
+    entry_id: zio1-蕉
   - headword: 蕊
     status: existing
     entry_id: lui2-蕊
   - headword: 蕎
-    status: staged
+    status: existing
+    entry_id: kiao5-蕎
   - headword: 蕗
     status: no_reading
   - headword: 蕘
@@ -37169,7 +37995,8 @@ items:
     status: existing
     entry_id: dang6-蕩
   - headword: 蕭
-    status: staged
+    status: existing
+    entry_id: siao1-蕭
   - headword: 蕭灑
     status: no_reading
   - headword: 蕳砃
@@ -37219,7 +38046,8 @@ items:
     status: existing
     entry_id: mui5-薇
   - headword: 薊
-    status: staged
+    status: existing
+    entry_id: gi3-薊
   - headword: 薏
     status: existing
     entry_id: in3-薏
@@ -37227,22 +38055,28 @@ items:
     status: existing
     entry_id: in3-bhi2-薏米
   - headword: 薏米仁
-    status: staged
+    status: existing
+    entry_id: in3-bhi2-ring5-薏米仁
   - headword: 薑
-    status: staged
+    status: existing
+    entry_id: gion1-薑
   - headword: 薑母
-    status: staged
+    status: existing
+    entry_id: giên1-bho2-薑母
   - headword: 薘
     status: no_reading
   - headword: 薛
     status: existing
     entry_id: sih4-薛
   - headword: 薜
-    status: staged
+    status: existing
+    entry_id: pi3-薜
   - headword: 薟
-    status: staged
+    status: existing
+    entry_id: hiam1-薟
   - headword: 薟椒
-    status: staged
+    status: existing
+    entry_id: hiam1-ziê1-薟椒
   - headword: 薟椒醬
     status: existing
     entry_id: hiam1-zio1-zion3-薟椒醬
@@ -37253,7 +38087,8 @@ items:
     status: existing
     entry_id: sag4-薩
   - headword: 薪
-    status: staged
+    status: existing
+    entry_id: zing1-薪
   - headword: 薪火相傳
     status: existing
     entry_id: sêng1-huê2-siang1-tuang5-薪火相傳
@@ -37264,7 +38099,8 @@ items:
     status: existing
     entry_id: ze5-diou5-薯條
   - headword: 薰
-    status: staged
+    status: existing
+    entry_id: hung1-薰
   - headword: 薰吹
     status: existing
     entry_id: hung1-cuê1-薰吹
@@ -37299,7 +38135,8 @@ items:
     status: existing
     entry_id: hung1-cao2-薰草
   - headword: 薰蒂
-    status: staged
+    status: existing
+    entry_id: hung1-lih4-薰蒂
   - headword: 薰蟲
     status: existing
     entry_id: hung1-tang5-薰蟲
@@ -37313,7 +38150,8 @@ items:
     status: existing
     entry_id: pio5-薸
   - headword: 薹
-    status: staged
+    status: existing
+    entry_id: dai5-薹
   - headword: 薾
     status: no_reading
   - headword: 薿
@@ -37326,14 +38164,17 @@ items:
   - headword: 藋
     status: no_reading
   - headword: 藍
-    status: staged
+    status: existing
+    entry_id: lam5-藍
   - headword: 藍圖
     status: existing
     entry_id: nam5-dou5-藍圖
   - headword: 藍色
-    status: staged
+    status: existing
+    entry_id: lam5-sêg4-藍色
   - headword: 藏
-    status: staged
+    status: existing
+    entry_id: cang5-藏
   - headword: 藏族
     status: existing
     entry_id: zang6-zog8-藏族
@@ -37368,7 +38209,8 @@ items:
   - headword: 藞
     status: no_reading
   - headword: 藠
-    status: staged
+    status: existing
+    entry_id: gio6-藠
   - headword: 藤
     status: existing
     entry_id: ding5-藤
@@ -37376,9 +38218,11 @@ items:
     status: existing
     entry_id: dêng5-diao5-藤條
   - headword: 藤牌
-    status: staged
+    status: existing
+    entry_id: ding5-bai5-藤牌
   - headword: 藥
-    status: staged
+    status: existing
+    entry_id: ioh8-藥
   - headword: 藥品
     status: existing
     entry_id: ioh8-bing2-藥品
@@ -37391,7 +38235,8 @@ items:
     status: existing
     entry_id: ioh8-bang5-藥房
   - headword: 藥方
-    status: staged
+    status: existing
+    entry_id: iêh8-hng1-藥方
   - headword: 藥材鋪
     status: existing
     entry_id: ioh8-cai5-pou3-藥材鋪
@@ -37399,12 +38244,14 @@ items:
     status: existing
     entry_id: ioh8-zui2-藥水
   - headword: 藥片
-    status: staged
+    status: existing
+    entry_id: ioh8-piang3-藥片
   - headword: 藥粉
     status: existing
     entry_id: iêh8-hung2-藥粉
   - headword: 藥蜅蟬
-    status: staged
+    status: existing
+    entry_id: iêh8-bou6-sung5-藥蜅蟬
   - headword: 藥鋪
     status: existing
     entry_id: ioh8-pou3-藥鋪
@@ -37459,7 +38306,8 @@ items:
     status: existing
     entry_id: ping5-蘋
   - headword: 蘋果
-    status: staged
+    status: existing
+    entry_id: ping5-guê2-蘋果
   - headword: 蘑菇
     status: existing
     entry_id: mo5-gou1-蘑菇
@@ -37480,7 +38328,8 @@ items:
     status: existing
     entry_id: lang5-huê1-蘭花
   - headword: 蘸
-    status: staged
+    status: existing
+    entry_id: zam3-蘸
   - headword: 蘿
     status: existing
     entry_id: lo5-蘿
@@ -37490,7 +38339,8 @@ items:
     status: existing
     entry_id: houn1-虍
   - headword: 虎
-    status: staged
+    status: existing
+    entry_id: houn2-虎
   - headword: 虎耳草
     status: existing
     entry_id: houn2-hin6-cao2-虎耳草
@@ -37507,9 +38357,11 @@ items:
     status: existing
     entry_id: ngiag8-tai6-虐待
   - headword: 虔
-    status: staged
+    status: existing
+    entry_id: kiang5-虔
   - headword: 處
-    status: staged
+    status: existing
+    entry_id: cu2-處
   - headword: 處分
     status: existing
     entry_id: cu2-hung7-處分
@@ -37550,7 +38402,8 @@ items:
     status: existing
     entry_id: cu2-di3-處置
   - headword: 處罰
-    status: staged
+    status: existing
+    entry_id: cu2-huêg8-處罰
   - headword: 處處
     status: existing
     entry_id: cu3-cu3-處處
@@ -37584,7 +38437,8 @@ items:
     status: existing
     entry_id: ngo5-虞
   - headword: 號
-    status: staged
+    status: existing
+    entry_id: ho7-號
   - headword: 號名
     status: existing
     entry_id: ho7-mian5-號名
@@ -37614,7 +38468,8 @@ items:
   - headword: 虨
     status: no_reading
   - headword: 虹
-    status: staged
+    status: existing
+    entry_id: kêng6-虹
   - headword: 虺
     status: existing
     entry_id: hui2-虺
@@ -37646,7 +38501,8 @@ items:
   - headword: 蚮
     status: no_reading
   - headword: 蚯蚓
-    status: staged
+    status: existing
+    entry_id: gao6-ung2-蚯蚓
   - headword: 蚰
     status: existing
     entry_id: iu5-蚰
@@ -37656,9 +38512,11 @@ items:
   - headword: 蚶
     status: no_reading
   - headword: 蚺
-    status: staged
+    status: existing
+    entry_id: riam2-蚺
   - headword: 蚻
-    status: staged
+    status: existing
+    entry_id: zag4-蚻
   - headword: 蛀
     status: existing
     entry_id: zu3-蛀
@@ -37672,9 +38530,11 @@ items:
     status: existing
     entry_id: zu3-gag4-iên5-蛀角蛘
   - headword: 蛀齒
-    status: staged
+    status: existing
+    entry_id: zu3-ki2-蛀齒
   - headword: 蛆
-    status: staged
+    status: existing
+    entry_id: ce1-蛆
   - headword: 蛇
     status: existing
     entry_id: zua5-蛇
@@ -37684,7 +38544,8 @@ items:
   - headword: 蛈
     status: no_reading
   - headword: 蛋
-    status: staged
+    status: existing
+    entry_id: dang3-蛋
   - headword: 蛋糕
     status: existing
     entry_id: dang3-go1-蛋糕
@@ -37717,19 +38578,22 @@ items:
     status: existing
     entry_id: gab4-kiu2-蛤虯
   - headword: 蛤蟆
-    status: staged
+    status: existing
+    entry_id: gab4-bo5-蛤蟆
   - headword: 蛥
     status: no_reading
   - headword: 蛹
     status: existing
     entry_id: iong2-蛹
   - headword: 蛺蝶
-    status: staged
+    status: existing
+    entry_id: iab8-diab8-蛺蝶
   - headword: 蛾
     status: existing
     entry_id: ngo5-蛾
   - headword: 蜀
-    status: staged
+    status: existing
+    entry_id: zuag8-蜀
   - headword: 蜀爿……蜀爿……
     status: no_reading
   - headword: 蜂
@@ -37754,13 +38618,16 @@ items:
     status: existing
     entry_id: sing5-蜃
   - headword: 蜆
-    status: staged
+    status: existing
+    entry_id: hoin2-蜆
   - headword: 蜇
-    status: staged
+    status: existing
+    entry_id: diag4-蜇
   - headword: 蜈
     status: staged
   - headword: 蜈蚣
-    status: staged
+    status: existing
+    entry_id: ghê5-gang1-蜈蚣
   - headword: 蜈蜞
     status: existing
     entry_id: ghou5-ki5-蜈蜞
@@ -37789,9 +38656,11 @@ items:
     status: existing
     entry_id: di1-du1-mang6-蜘蛛網
   - headword: 蜜
-    status: staged
+    status: existing
+    entry_id: bhig8-蜜
   - headword: 蜜蜂
-    status: staged
+    status: existing
+    entry_id: bhig8-pang1-蜜蜂
   - headword: 蜣
     status: no_reading
   - headword: 蜺
@@ -37806,7 +38675,8 @@ items:
     status: existing
     entry_id: kuê1-dao2-蝌蚪
   - headword: 蝕
-    status: staged
+    status: existing
+    entry_id: sih8-蝕
   - headword: 蝕本
     status: existing
     entry_id: sih8-bung2-蝕本
@@ -37822,9 +38692,11 @@ items:
     status: existing
     entry_id: piang1-hog4-蝙蝠
   - headword: 蝠
-    status: staged
+    status: existing
+    entry_id: hog4-蝠
   - headword: 蝠婆
-    status: staged
+    status: existing
+    entry_id: big4-bo5-蝠婆
   - headword: 蝣
     status: existing
     entry_id: iu5-蝣
@@ -37850,7 +38722,8 @@ items:
     status: existing
     entry_id: hê5-goi5-蝦膎
   - headword: 蝦苗
-    status: staged
+    status: existing
+    entry_id: hê5-bhio5-蝦苗
   - headword: 蝨
     status: existing
     entry_id: sag4-蝨
@@ -37858,7 +38731,8 @@ items:
     status: existing
     entry_id: sag4-bho2-蝨母
   - headword: 蝨篦
-    status: staged
+    status: existing
+    entry_id: sag4-bêng3-蝨篦
   - headword: 蝮
     status: no_reading
   - headword: 蝴
@@ -37882,7 +38756,8 @@ items:
     status: existing
     entry_id: pang5-螃
   - headword: 融
-    status: staged
+    status: existing
+    entry_id: iong5-融
   - headword: 融入
     status: existing
     entry_id: iong5-rib8-融入
@@ -37893,14 +38768,16 @@ items:
     status: existing
     entry_id: iong5-huê6-guang3-tong1-融會貫通
   - headword: 螓
-    status: staged
+    status: existing
+    entry_id: cing5-螓
   - headword: 螠
     status: no_reading
   - headword: 螢
     status: existing
     entry_id: iong5-螢
   - headword: 螺
-    status: staged
+    status: existing
+    entry_id: lo5-螺
   - headword: 螺旋
     status: existing
     entry_id: lo5-suang5-螺旋
@@ -37908,7 +38785,8 @@ items:
     status: existing
     entry_id: lo5-si1-螺絲
   - headword: 螺絲批
-    status: staged
+    status: existing
+    entry_id: lo5-si1-poi1-螺絲批
   - headword: 螽
     status: no_reading
   - headword: 蟄
@@ -37928,11 +38806,14 @@ items:
   - headword: 蟟
     status: staged
   - headword: 蟟蛁
-    status: staged
+    status: existing
+    entry_id: liou6-ziou6-蟟蛁
   - headword: 蟧蜈
-    status: staged
+    status: existing
+    entry_id: la5-ia5-蟧蜈
   - headword: 蟬
-    status: staged
+    status: existing
+    entry_id: siam5-蟬
   - headword: 蟮蟲
     status: existing
     entry_id: sing5-nang5-蟮蟲
@@ -37966,7 +38847,8 @@ items:
     status: existing
     entry_id: siam5-su5-蟾蜍
   - headword: 蠅
-    status: staged
+    status: existing
+    entry_id: sêng5-蠅
   - headword: 蠍子
     status: existing
     entry_id: hiag4-ze2-蠍子
@@ -37974,7 +38856,8 @@ items:
     status: existing
     entry_id: mang2-蠓
   - headword: 蠓帳
-    status: staged
+    status: existing
+    entry_id: mang2-diên3-蠓帳
   - headword: 蠓罩
     status: existing
     entry_id: mang2-da3-蠓罩
@@ -38018,7 +38901,8 @@ items:
     status: existing
     entry_id: gu2-蠱
   - headword: 蠶
-    status: staged
+    status: existing
+    entry_id: coin5-蠶
   - headword: 蠶屎
     status: existing
     entry_id: cain5-sai2-蠶屎
@@ -38141,7 +39025,8 @@ items:
     status: existing
     entry_id: gian5-sai2-行駛
   - headword: 衍
-    status: staged
+    status: existing
+    entry_id: iêng6-衍
   - headword: 術
     status: existing
     entry_id: sug8-術
@@ -38188,7 +39073,8 @@ items:
     status: existing
     entry_id: uê6-sên1-衛生
   - headword: 衝
-    status: staged
+    status: existing
+    entry_id: cong1-衝
   - headword: 衝刺
     status: existing
     entry_id: cong1-ci3-衝刺
@@ -38217,12 +39103,14 @@ items:
     status: existing
     entry_id: cong1-hong1-衝鋒
   - headword: 衡
-    status: staged
+    status: existing
+    entry_id: huang5-衡
   - headword: 衡量
     status: existing
     entry_id: huang5-liang6-衡量
   - headword: 衣
-    status: staged
+    status: existing
+    entry_id: i1-衣
   - headword: 衣冠禽獸
     status: existing
     entry_id: i1-guang1-kim5-siu3-衣冠禽獸
@@ -38236,7 +39124,8 @@ items:
     status: existing
     entry_id: i1-gim2-iong5-gui1-衣錦榮歸
   - headword: 表
-    status: staged
+    status: existing
+    entry_id: biao2-表
   - headword: 表兄
     status: existing
     entry_id: bio2-hian1-表兄
@@ -38247,9 +39136,11 @@ items:
     status: existing
     entry_id: biao2-cêng5-表情
   - headword: 表態
-    status: staged
+    status: existing
+    entry_id: biou2-tai3-表態
   - headword: 表揚
-    status: staged
+    status: existing
+    entry_id: biou2-iang5-表揚
   - headword: 表明
     status: existing
     entry_id: biou2-mêng5-表明
@@ -38260,9 +39151,11 @@ items:
     status: existing
     entry_id: biao2-guêg4-表決
   - headword: 表演
-    status: staged
+    status: existing
+    entry_id: biou2-ing5-表演
   - headword: 表白
-    status: staged
+    status: existing
+    entry_id: biou2-bêh8-表白
   - headword: 表示
     status: existing
     entry_id: biao2-si7-表示
@@ -38302,7 +39195,8 @@ items:
     status: existing
     entry_id: san1-am6-nian2-衫頷領
   - headword: 衰
-    status: staged
+    status: existing
+    entry_id: suê1-衰
   - headword: 衰囝
     status: existing
     entry_id: suê1-gian2-衰囝
@@ -38315,9 +39209,11 @@ items:
     status: existing
     entry_id: kim1-衾
   - headword: 袁
-    status: staged
+    status: existing
+    entry_id: uang5-袁
   - headword: 袂
-    status: staged
+    status: existing
+    entry_id: muê6-袂
   - headword: 袈
     status: existing
     entry_id: gê1-袈
@@ -38356,7 +39252,8 @@ items:
   - headword: 袟
     status: no_reading
   - headword: 被
-    status: staged
+    status: existing
+    entry_id: puê6-被
   - headword: 被動
     status: existing
     entry_id: bi6-dong6-被動
@@ -38413,7 +39310,8 @@ items:
     status: existing
     entry_id: ru6-裕
   - headword: 裘
-    status: staged
+    status: existing
+    entry_id: hiun5-裘
   - headword: 裙
     status: existing
     entry_id: gung5-裙
@@ -38433,7 +39331,8 @@ items:
     status: existing
     entry_id: bou2-tiab4-補貼
   - headword: 裝
-    status: staged
+    status: existing
+    entry_id: zuang1-裝
   - headword: 裝修
     status: existing
     entry_id: zuang1-siu1-裝修
@@ -38479,7 +39378,8 @@ items:
     status: existing
     entry_id: lo2-ti2-裸體
   - headword: 裹
-    status: staged
+    status: existing
+    entry_id: go2-裹
   - headword: 製
     status: existing
     entry_id: zi3-製
@@ -38516,11 +39416,13 @@ items:
     status: existing
     entry_id: pao1-iang5-褒揚
   - headword: 褥
-    status: staged
+    status: existing
+    entry_id: rog8-褥
   - headword: 褩
     status: no_reading
   - headword: 褪
-    status: staged
+    status: existing
+    entry_id: teng3-褪
   - headword: 褪白白
     status: existing
     entry_id: teng3-bêh8-bêh8-褪白白
@@ -38534,7 +39436,8 @@ items:
     status: existing
     entry_id: to3-cia1-褪車
   - headword: 褫
-    status: staged
+    status: existing
+    entry_id: ci2-褫
   - headword: 褲
     status: existing
     entry_id: kou3-褲
@@ -38554,7 +39457,8 @@ items:
     status: existing
     entry_id: lao1-褸
   - headword: 褻
-    status: staged
+    status: existing
+    entry_id: siêg4-褻
   - headword: 褻瀆
     status: existing
     entry_id: siag4-dog8-褻瀆
@@ -38581,7 +39485,8 @@ items:
   - headword: 襦
     status: no_reading
   - headword: 襪
-    status: staged
+    status: existing
+    entry_id: bhuêh8-襪
   - headword: 襫
     status: existing
     entry_id: sêg4-襫
@@ -38604,7 +39509,8 @@ items:
     status: existing
     entry_id: pang3-襻
   - headword: 西
-    status: staged
+    status: existing
+    entry_id: sai1-西
   - headword: 西區
     status: existing
     entry_id: sai1-ku1-西區
@@ -38663,7 +39569,8 @@ items:
     status: existing
     entry_id: sai1-cang1-西餐
   - headword: 要
-    status: staged
+    status: existing
+    entry_id: iou1-要
   - headword: 要塞
     status: existing
     entry_id: iao3-sai3-要塞
@@ -38674,7 +39581,8 @@ items:
     status: existing
     entry_id: iao1-hiab8-要挾
   - headword: 要求
-    status: staged
+    status: existing
+    entry_id: iou1-kiu5-要求
   - headword: 要素
     status: existing
     entry_id: iao3-su3-要素
@@ -38685,12 +39593,14 @@ items:
     status: existing
     entry_id: iao3-diam2-要點
   - headword: 覃
-    status: staged
+    status: existing
+    entry_id: tam5-覃
   - headword: 覆
     status: existing
     entry_id: hog8-覆
   - headword: 見
-    status: staged
+    status: existing
+    entry_id: gin3-見
   - headword: 見利忘義
     status: existing
     entry_id: giang3-li6-bhuang5-ngi6-見利忘義
@@ -38698,7 +39608,8 @@ items:
     status: existing
     entry_id: giang3-i6-se1-ciang1-見異思遷
   - headword: 見證
-    status: staged
+    status: existing
+    entry_id: giang3-zêng3-見證
   - headword: 見面
     status: existing
     entry_id: gin3-ming7-見面
@@ -38747,7 +39658,8 @@ items:
     status: existing
     entry_id: gui1-sêng1-規身
   - headword: 覓
-    status: staged
+    status: existing
+    entry_id: mig8-覓
   - headword: 覕
     status: existing
     entry_id: bhih4-覕
@@ -38755,7 +39667,8 @@ items:
     status: existing
     entry_id: bhih4-sio1-cuê7-覕相揣
   - headword: 視
-    status: staged
+    status: existing
+    entry_id: si6-視
   - headword: 視為
     status: existing
     entry_id: si6-ui5-視為
@@ -38774,12 +39687,14 @@ items:
     status: existing
     entry_id: si6-ping5-視頻
   - headword: 親
-    status: staged
+    status: existing
+    entry_id: cing1-親
   - headword: 親人
     status: existing
     entry_id: cing1-nang5-親人
   - headword: 親像
-    status: staged
+    status: existing
+    entry_id: cing1-cion6-親像
   - headword: 親切
     status: existing
     entry_id: cing1-ciag4-親切
@@ -38834,7 +39749,8 @@ items:
     status: existing
     entry_id: gag4-覺
   - headword: 覺得
-    status: staged
+    status: existing
+    entry_id: gag4-dig4-覺得
   - headword: 覺悟
     status: existing
     entry_id: gag4-ngo6-覺悟
@@ -38842,14 +39758,17 @@ items:
     status: existing
     entry_id: gag4-cên2-覺醒
   - headword: 覽
-    status: staged
+    status: existing
+    entry_id: lam2-覽
   - headword: 觀
-    status: staged
+    status: existing
+    entry_id: guang1-觀
   - headword: 觀察
     status: existing
     entry_id: guang1-cag4-觀察
   - headword: 觀念
-    status: staged
+    status: existing
+    entry_id: guêng1-liêm6-觀念
   - headword: 觀看
     status: existing
     entry_id: guang1-toin2-觀看
@@ -38860,9 +39779,11 @@ items:
     status: existing
     entry_id: guang1-sion2-觀賞
   - headword: 觀音
-    status: staged
+    status: existing
+    entry_id: guêng1-im1-觀音
   - headword: 觀音娘
-    status: staged
+    status: existing
+    entry_id: guêng1-im1-niên5-觀音娘
   - headword: 觀顧
     status: existing
     entry_id: guêng1-gu2-觀顧
@@ -38964,7 +39885,8 @@ items:
     status: existing
     entry_id: cog4-gag4-觸角
   - headword: 觸電
-    status: staged
+    status: existing
+    entry_id: cog4-diêng6-觸電
   - headword: 言
     status: existing
     entry_id: ngang5-言
@@ -39002,7 +39924,8 @@ items:
     status: existing
     entry_id: hu6-im1-訃音
   - headword: 計
-    status: staged
+    status: existing
+    entry_id: goi3-計
   - headword: 計劃
     status: existing
     entry_id: goi3-uêh8-計劃
@@ -39064,7 +39987,8 @@ items:
     status: existing
     entry_id: hung3-si7-訓示
   - headword: 訓練
-    status: staged
+    status: existing
+    entry_id: hung3-liêng7-訓練
   - headword: 訓練場
     status: existing
     entry_id: hung3-liang7-dion5-訓練場
@@ -39093,9 +40017,11 @@ items:
     status: existing
     entry_id: gi3-sên3-記性
   - headword: 記憶
-    status: staged
+    status: existing
+    entry_id: gi3-i3-記憶
   - headword: 記池
-    status: staged
+    status: existing
+    entry_id: gi3-di5-記池
   - headword: 記者
     status: existing
     entry_id: gi3-zia2-記者
@@ -39115,7 +40041,8 @@ items:
     status: existing
     entry_id: song6-se1-訟師
   - headword: 訣
-    status: staged
+    status: existing
+    entry_id: guêg4-訣
   - headword: 訪
     status: existing
     entry_id: huang2-訪
@@ -39123,7 +40050,8 @@ items:
     status: existing
     entry_id: huang2-mung7-訪問
   - headword: 設
-    status: staged
+    status: existing
+    entry_id: siag4-設
   - headword: 設備
     status: existing
     entry_id: siag4-bi6-設備
@@ -39134,7 +40062,8 @@ items:
     status: existing
     entry_id: siag4-huag4-設法
   - headword: 設立
-    status: staged
+    status: existing
+    entry_id: siêg4-lib8-設立
   - headword: 設置
     status: existing
     entry_id: siag4-di3-設置
@@ -39154,17 +40083,20 @@ items:
     status: existing
     entry_id: he2-許
   - headword: 許個
-    status: staged
+    status: existing
+    entry_id: he2-gai7-許個
   - headword: 許可
     status: existing
     entry_id: he2-ko2-許可
   - headword: 許塊
-    status: staged
+    status: existing
+    entry_id: he2-go3-許塊
   - headword: 許多
     status: existing
     entry_id: he2-do1-許多
   - headword: 許底
-    status: staged
+    status: existing
+    entry_id: he2-doi2-許底
   - headword: 許撮
     status: existing
     entry_id: he2-coh4-許撮
@@ -39178,7 +40110,8 @@ items:
     status: existing
     entry_id: he2-tao5-許頭
   - headword: 許𫢗時
-    status: staged
+    status: existing
+    entry_id: he2-diang1-si5-許𫢗時
   - headword: 訴
     status: existing
     entry_id: su3-訴
@@ -39195,7 +40128,8 @@ items:
     status: existing
     entry_id: su3-suêh4-訴說
   - headword: 診
-    status: staged
+    status: existing
+    entry_id: ziang2-診
   - headword: 診所
     status: existing
     entry_id: ziang2-so2-診所
@@ -39231,19 +40165,23 @@ items:
   - headword: 詇
     status: no_reading
   - headword: 詈
-    status: staged
+    status: existing
+    entry_id: loi3-詈
   - headword: 詏
     status: existing
     entry_id: a3-詏
   - headword: 詐
-    status: staged
+    status: existing
+    entry_id: za3-詐
   - headword: 詐騙
     status: existing
     entry_id: za3-piang3-詐騙
   - headword: 詔
-    status: staged
+    status: existing
+    entry_id: ziao3-詔
   - headword: 詔安
-    status: staged
+    status: existing
+    entry_id: ziou3-ang1-詔安
   - headword: 評
     status: existing
     entry_id: pêng5-評
@@ -39351,7 +40289,8 @@ items:
     status: existing
     entry_id: gou3-bên7-詬病
   - headword: 詭
-    status: staged
+    status: existing
+    entry_id: gui2-詭
   - headword: 話
     status: existing
     entry_id: ue7-話
@@ -39417,7 +40356,8 @@ items:
     status: existing
     entry_id: ring7-ui5-認為
   - headword: 認真
-    status: staged
+    status: existing
+    entry_id: ring7-zing1-認真
   - headword: 認親
     status: existing
     entry_id: ring7-cing1-認親
@@ -39511,7 +40451,8 @@ items:
     status: existing
     entry_id: huê3-誨
   - headword: 說
-    status: staged
+    status: existing
+    entry_id: suêh4-說
   - headword: 說唱
     status: existing
     entry_id: suêh4-ciang3-說唱
@@ -39533,7 +40474,8 @@ items:
   - headword: 誮
     status: no_reading
   - headword: 誰
-    status: staged
+    status: existing
+    entry_id: sui5-誰
   - headword: 課
     status: existing
     entry_id: kuê3-課
@@ -39558,7 +40500,8 @@ items:
     status: existing
     entry_id: ngi3-誼
   - headword: 調
-    status: staged
+    status: existing
+    entry_id: tiao5-調
   - headword: 調侃
     status: existing
     entry_id: tiao5-kang2-調侃
@@ -39674,7 +40617,8 @@ items:
     status: existing
     entry_id: ze1-sung5-諮詢
   - headword: 諱
-    status: staged
+    status: existing
+    entry_id: hui3-諱
   - headword: 諶
     status: existing
     entry_id: sim5-諶
@@ -39691,12 +40635,14 @@ items:
     status: existing
     entry_id: zu1-do1-諸多
   - headword: 諸娘
-    status: staged
+    status: existing
+    entry_id: ze1-nio5-諸娘
   - headword: 諸娘人
     status: existing
     entry_id: ze1-nio5-nang5-諸娘人
   - headword: 諸娘囝
-    status: staged
+    status: existing
+    entry_id: ze1-niê5-gian2-諸娘囝
   - headword: 諸葛亮
     status: existing
     entry_id: zu1-guah4-liang6-諸葛亮
@@ -39707,7 +40653,8 @@ items:
     status: existing
     entry_id: nab8-諾
   - headword: 謀
-    status: staged
+    status: existing
+    entry_id: mou5-謀
   - headword: 謀取
     status: existing
     entry_id: mou5-cu2-謀取
@@ -39723,7 +40670,8 @@ items:
   - headword: 謈
     status: no_reading
   - headword: 謊
-    status: staged
+    status: existing
+    entry_id: huang2-謊
   - headword: 謊報
     status: existing
     entry_id: huang1-bo3-謊報
@@ -39755,7 +40703,8 @@ items:
     status: existing
     entry_id: kiam1-he1-謙虛
   - headword: 謚
-    status: staged
+    status: existing
+    entry_id: i3-謚
   - headword: 講
     status: existing
     entry_id: gang2-講
@@ -39778,12 +40727,14 @@ items:
     status: existing
     entry_id: gang2-lung6-講論
   - headword: 謝
-    status: staged
+    status: existing
+    entry_id: sia7-謝
   - headword: 謝意
     status: existing
     entry_id: sia7-i3-謝意
   - headword: 謠
-    status: staged
+    status: existing
+    entry_id: iao5-謠
   - headword: 謠言
     status: existing
     entry_id: iou5-ngang5-謠言
@@ -39807,7 +40758,8 @@ items:
     status: existing
     entry_id: geng2-謹
   - headword: 謹慎
-    status: staged
+    status: existing
+    entry_id: geng2-sim2-謹慎
   - headword: 謹防
     status: existing
     entry_id: geng2-huang5-謹防
@@ -39842,7 +40794,8 @@ items:
     status: existing
     entry_id: zêng3-ze1-證書
   - headword: 識
-    status: staged
+    status: existing
+    entry_id: sêg4-識
   - headword: 識別
     status: existing
     entry_id: sêg4-biag8-識別
@@ -39861,7 +40814,8 @@ items:
   - headword: 譥
     status: no_reading
   - headword: 警
-    status: staged
+    status: existing
+    entry_id: gêng6-警
   - headword: 警力
     status: existing
     entry_id: gêng6-lag8-警力
@@ -39908,7 +40862,8 @@ items:
     status: existing
     entry_id: ngi2-議
   - headword: 議員
-    status: staged
+    status: existing
+    entry_id: ngi2-uêng5-議員
   - headword: 議論
     status: existing
     entry_id: ngi2-lung6-議論
@@ -39916,7 +40871,8 @@ items:
     status: existing
     entry_id: ngi2-lung6-bhung5-議論文
   - headword: 譴
-    status: staged
+    status: existing
+    entry_id: kiang2-譴
   - headword: 譴責
     status: existing
     entry_id: kiang2-zêh4-譴責
@@ -39948,7 +40904,8 @@ items:
     status: existing
     entry_id: e6-ui5-譽為
   - headword: 讀
-    status: staged
+    status: existing
+    entry_id: tag8-讀
   - headword: 讀冊
     status: existing
     entry_id: tag8-cêh4-讀冊
@@ -39956,7 +40913,8 @@ items:
     status: existing
     entry_id: tag8-cu2-讀取
   - headword: 讀書
-    status: staged
+    status: existing
+    entry_id: tag8-ze1-讀書
   - headword: 讀書人
     status: existing
     entry_id: tag8-ze1-nang5-讀書人
@@ -39966,7 +40924,8 @@ items:
   - headword: 讄
     status: no_reading
   - headword: 變
-    status: staged
+    status: existing
+    entry_id: bin3-變
   - headword: 變化
     status: existing
     entry_id: biang3-huê3-變化
@@ -39989,7 +40948,8 @@ items:
     status: existing
     entry_id: biang3-sêng5-變成
   - headword: 變現
-    status: staged
+    status: existing
+    entry_id: biêng3-hing7-變現
   - headword: 變異
     status: existing
     entry_id: biang3-i6-變異
@@ -40009,7 +40969,8 @@ items:
     status: existing
     entry_id: cam5-讒
   - headword: 讓
-    status: staged
+    status: existing
+    entry_id: niên7-讓
   - headword: 讓座
     status: existing
     entry_id: riang6-zo7-讓座
@@ -40054,7 +41015,8 @@ items:
     status: existing
     entry_id: hag4-豁
   - headword: 豆
-    status: staged
+    status: existing
+    entry_id: dao7-豆
   - headword: 豆乾
     status: existing
     entry_id: dao7-guan1-豆乾
@@ -40104,7 +41066,8 @@ items:
     status: existing
     entry_id: dao7-hu7-za1-gang1-tian5-豆腐渣工程
   - headword: 豆腐漿
-    status: staged
+    status: existing
+    entry_id: dao7-hu7-zion1-豆腐漿
   - headword: 豆腐膜
     status: existing
     entry_id: dao7-hu7-moh8-豆腐膜
@@ -40127,9 +41090,11 @@ items:
     status: existing
     entry_id: dao7-tao5-豆頭
   - headword: 豈
-    status: staged
+    status: existing
+    entry_id: ka2-豈
   - headword: 豈有此理
-    status: staged
+    status: existing
+    entry_id: ki2-u6-ce2-li2-豈有此理
   - headword: 豉
     status: existing
     entry_id: si7-豉
@@ -40165,7 +41130,8 @@ items:
   - headword: 豗
     status: no_reading
   - headword: 象
-    status: staged
+    status: existing
+    entry_id: ciên6-象
   - headword: 象形
     status: existing
     entry_id: cion6-hêng5-象形
@@ -40176,7 +41142,8 @@ items:
     status: existing
     entry_id: siang6-dêng1-sên3-象徵性
   - headword: 象棋
-    status: staged
+    status: existing
+    entry_id: ciên6-gi5-象棋
   - headword: 象牙
     status: existing
     entry_id: cion6-ghê5-象牙
@@ -40200,7 +41167,8 @@ items:
     status: existing
     entry_id: hi1-豨
   - headword: 豪
-    status: staged
+    status: existing
+    entry_id: hao5-豪
   - headword: 豪情
     status: existing
     entry_id: hao5-cêng5-豪情
@@ -40232,9 +41200,11 @@ items:
     status: existing
     entry_id: de1-gian2-豬囝
   - headword: 豬寮
-    status: staged
+    status: existing
+    entry_id: de1-liao5-豬寮
   - headword: 豬尺
-    status: staged
+    status: existing
+    entry_id: de1-ciêh4-豬尺
   - headword: 豬排
     status: existing
     entry_id: de1-bai5-豬排
@@ -40245,7 +41215,8 @@ items:
     status: existing
     entry_id: de1-bho2-coin2-豬母筅
   - headword: 豬母𤷕
-    status: staged
+    status: existing
+    entry_id: de1-bho2-cai2-豬母𤷕
   - headword: 豬牢
     status: existing
     entry_id: de1-lo5-豬牢
@@ -40256,7 +41227,8 @@ items:
     status: existing
     entry_id: de1-huang1-豬番
   - headword: 豬肉
-    status: staged
+    status: existing
+    entry_id: de1-nêg8-豬肉
   - headword: 豬肚
     status: existing
     entry_id: de1-dou6-豬肚
@@ -40285,14 +41257,17 @@ items:
     status: existing
     entry_id: ba3-豹
   - headword: 豺
-    status: staged
+    status: existing
+    entry_id: cai5-豺
   - headword: 豺狗
     status: existing
     entry_id: cai5-gao2-豺狗
   - headword: 貂
-    status: staged
+    status: existing
+    entry_id: diou1-貂
   - headword: 貅
-    status: staged
+    status: existing
+    entry_id: hiun1-貅
   - headword: 貉
     status: existing
     entry_id: log8-貉
@@ -40300,15 +41275,20 @@ items:
     status: existing
     entry_id: mao6-貌
   - headword: 貓
-    status: staged
+    status: existing
+    entry_id: ngiao1-貓
   - headword: 貓囝
-    status: staged
+    status: existing
+    entry_id: ngiao1-gian2-貓囝
   - headword: 貓娘
-    status: staged
+    status: existing
+    entry_id: ngiou1-niê5-貓娘
   - headword: 貓母
-    status: staged
+    status: existing
+    entry_id: ngiou1-bho2-貓母
   - headword: 貓牯
-    status: staged
+    status: existing
+    entry_id: ngiou1-gou2-貓牯
   - headword: 貓腰
     status: existing
     entry_id: mao1-io1-貓腰
@@ -40316,11 +41296,14 @@ items:
     status: existing
     entry_id: ngiao1-tao5-ziao2-貓頭鳥
   - headword: 貓頭鷹
-    status: staged
+    status: existing
+    entry_id: ngiou1-tao5-êng1-貓頭鷹
   - headword: 貓鼠
-    status: staged
+    status: existing
+    entry_id: ngiao2-ce2-貓鼠
   - headword: 貝
-    status: staged
+    status: existing
+    entry_id: buê6-貝
   - headword: 貞
     status: existing
     entry_id: zêng1-貞
@@ -40369,7 +41352,8 @@ items:
     status: existing
     entry_id: cai5-bhu6-財務
   - headword: 財團
-    status: staged
+    status: existing
+    entry_id: cai5-tuang5-財團
   - headword: 財政
     status: existing
     entry_id: cai5-zêng3-財政
@@ -40383,12 +41367,14 @@ items:
     status: existing
     entry_id: cai5-suan2-財產
   - headword: 財神
-    status: staged
+    status: existing
+    entry_id: cai5-sing5-財神
   - headword: 貢
     status: existing
     entry_id: gong3-貢
   - headword: 貢獻
-    status: staged
+    status: existing
+    entry_id: gong3-hiang3-貢獻
   - headword: 貧
     status: existing
     entry_id: ping5-貧
@@ -40408,7 +41394,8 @@ items:
     status: existing
     entry_id: huê3-cia1-貨車
   - headword: 販
-    status: staged
+    status: existing
+    entry_id: huang3-販
   - headword: 販賣
     status: existing
     entry_id: huang3-bhoi7-販賣
@@ -40425,7 +41412,8 @@ items:
     status: existing
     entry_id: tam1-ziah8-貪食
   - headword: 貫
-    status: staged
+    status: existing
+    entry_id: guang3-貫
   - headword: 貫通
     status: existing
     entry_id: guang3-tong1-貫通
@@ -40462,7 +41450,8 @@ items:
   - headword: 貱
     status: no_reading
   - headword: 貲
-    status: staged
+    status: existing
+    entry_id: ze1-貲
   - headword: 貴
     status: existing
     entry_id: gui3-貴
