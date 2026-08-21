@@ -1502,3 +1502,17 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: riag8-gang1-若干
+    headword: 若干
+    readings:
+      - pengim: riag8 gang1
+    senses:
+      - pos: numeral
+        gloss_en: [several; a few; a certain number/amount of, how many (literary)]
+        gloss_zh: [若干]
+        note: Page splits this into an adverb sense ('how many', literary) and a determiner sense ('several/a few', formal); there is no exact determiner POS in our list, so it was mapped to numeral.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

@@ -8430,3 +8430,669 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: gi2-liam6-bi1-紀念碑
+    headword: 紀念碑
+    readings:
+      - pengim: gi2 liam6 bi1
+    senses:
+      - pos: noun
+        gloss_en: [monument, memorial tablet]
+        gloss_zh: [紀念碑]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-zab8-ri7-huê6-紅十字會
+    headword: 紅十字會
+    readings:
+      - pengim: ang5 zab8 ri7 huê6
+    senses:
+      - pos: proper-noun
+        gloss_en: [the Red Cross]
+        gloss_zh: [紅十字會]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-lêg8-dêng1-紅綠燈
+    headword: 紅綠燈
+    readings:
+      - pengim: ang5 lêg8 dêng1
+    senses:
+      - pos: noun
+        gloss_en: [traffic light, traffic signal]
+        gloss_zh: [紅綠燈]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: niu2-iêh4-紐約
+    headword: 紐約
+    readings:
+      - pengim: niu2 iêh4
+    senses:
+      - pos: proper-noun
+        gloss_en: [New York (state), New York City]
+        gloss_zh: [紐約]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-mêg8-紫陌
+    headword: 紫陌
+    readings:
+      - pengim: zi2 mêg8
+    senses:
+      - pos: noun
+        gloss_en: [road in the countryside near the capital]
+        gloss_zh: [紫陌]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zong1-diam2-終點
+    headword: 終點
+    readings:
+      - pengim: zong1 diam2
+    senses:
+      - pos: noun
+        gloss_en: [terminus, end point, destination]
+        gloss_zh: [終點]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-zi3-dêg8-ku1-經濟特區
+    headword: 經濟特區
+    readings:
+      - pengim: gêng1 zi3 dêg8 ku1
+    senses:
+      - pos: noun
+        gloss_en: [special economic zone]
+        gloss_zh: [經濟特區]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêg8-huê3-dua3-綠化帶
+    headword: 綠化帶
+    readings:
+      - pengim: lêg8 huê3 dua3
+    senses:
+      - pos: noun
+        gloss_en: [green belt]
+        gloss_zh: [綠化帶]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: miêng2-diêng6-緬甸
+    headword: 緬甸
+    readings:
+      - pengim: miêng2 diêng6
+    senses:
+      - pos: proper-noun
+        gloss_en: [Myanmar]
+        gloss_zh: [緬甸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zong2-bou6-總部
+    headword: 總部
+    readings:
+      - pengim: zong2 bou6
+    senses:
+      - pos: noun
+        gloss_en: [headquarters, head office]
+        gloss_zh: [總部]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui5-pou3-缶鋪
+    headword: 缶鋪
+    readings:
+      - pengim: hui5 pou3
+    senses:
+      - pos: noun
+        gloss_en: [ceramics store, pottery shop]
+        gloss_zh: [缶鋪]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: su2-署
+    headword: 署
+    readings:
+      - pengim: su2
+    senses:
+      - pos: noun
+        gloss_en: [office; bureau, a surname]
+        gloss_zh: [署]
+        note: 署 also carries verb senses ('to arrange', 'to sign', 'to act as deputy') under the same reading su2, so it is unclear which sense set is primary for standalone Teochew usage.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lo5-ou5-羅湖
+    headword: 羅湖
+    readings:
+      - pengim: lo5 ou5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Luohu (district of Shenzhen, Guangdong)", Lo Wu (area of Hong Kong)]
+        gloss_zh: [羅湖]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lo5-bhê2-ri7-羅馬字
+    headword: 羅馬字
+    readings:
+      - pengim: lo5 bhê2 ri7
+    senses:
+      - pos: noun
+        gloss_en: [the Latin alphabet; roman letters, romanization]
+        gloss_zh: [羅馬字]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iên5-sian5-羊城
+    headword: 羊城
+    readings:
+      - pengim: iên5 sian5
+    senses:
+      - pos: proper-noun
+        gloss_en: [City of the Rams (literary epithet for Guangzhou)]
+        gloss_zh: [廣州]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mui2-gog4-美國
+    headword: 美國
+    readings:
+      - pengim: mui2 gog4
+    senses:
+      - pos: proper-noun
+        gloss_en: [United States, America]
+        gloss_zh: [美國]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mui2-ziu1-美洲
+    headword: 美洲
+    readings:
+      - pengim: mui2 ziu1
+    senses:
+      - pos: proper-noun
+        gloss_en: [America, the Americas]
+        gloss_zh: [美洲]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao6-gung1-cu3-老君厝
+    headword: 老君厝
+    readings:
+      - pengim: lao6 gung1 cu3
+    senses:
+      - pos: noun
+        gloss_en: [hospital]
+        gloss_zh: [老君厝]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao6-ma2-gêng1-老媽宮
+    headword: 老媽宮
+    readings:
+      - pengim: lao6 ma2 gêng1
+    senses:
+      - pos: noun
+        gloss_en: [Mazu temple (temple of the sea goddess Mazu)]
+        gloss_zh: [老媽宮]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao6-gê1-老家
+    headword: 老家
+    readings:
+      - pengim: lao6 gê1
+    senses:
+      - pos: noun
+        gloss_en: [hometown; native place, family home]
+        gloss_zh: [老家]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao6-go1-老撾
+    headword: 老撾
+    readings:
+      - pengim: lao6 go1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Laos]
+        gloss_zh: [老撾]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ia5-lou7-sag4-lêng2-耶路撒冷
+    headword: 耶路撒冷
+    readings:
+      - pengim: ia5 lou7 sag4 lêng2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Jerusalem]
+        gloss_zh: [耶路撒冷]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng3-deng5-聖堂
+    headword: 聖堂
+    readings:
+      - pengim: sêng3 deng5
+    senses:
+      - pos: noun
+        gloss_en: [Confucian temple, church]
+        gloss_zh: [聖堂]
+        note: The page gives two unrelated senses (Confucian temple vs. Christian church) under the same reading with no indication which is the intended Teochew usage.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liang5-log8-so2-聯絡所
+    headword: 聯絡所
+    readings:
+      - pengim: liang5 log8 so2
+    senses:
+      - pos: noun
+        gloss_en: [community centre]
+        gloss_zh: [聯絡所]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêh4-hao6-職校
+    headword: 職校
+    readings:
+      - pengim: zêh4 hao6
+    senses:
+      - pos: noun
+        gloss_en: [vocational school (short for 職業學校)]
+        gloss_zh: [職業學校]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka1-ciu2-gê3-腳手架
+    headword: 腳手架
+    readings:
+      - pengim: ka1 ciu2 gê3
+    senses:
+      - pos: noun
+        gloss_en: [scaffolding]
+        gloss_zh: [腳手架]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: o6-sig4-臥室
+    headword: 臥室
+    readings:
+      - pengim: o6 sig4
+    senses:
+      - pos: noun
+        gloss_en: [bedroom]
+        gloss_zh: [臥室]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze6-iu5-gang2-自由港
+    headword: 自由港
+    readings:
+      - pengim: ze6 iu5 gang2
+    senses:
+      - pos: noun
+        gloss_en: [free port]
+        gloss_zh: [自由港]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tai5-bag4-臺北
+    headword: 臺北
+    readings:
+      - pengim: tai5 bag4
+    senses:
+      - pos: proper-noun
+        gloss_en: [Taipei]
+        gloss_zh: [臺北]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tai5-lam5-臺南
+    headword: 臺南
+    readings:
+      - pengim: tai5 lam5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Tainan]
+        gloss_zh: [臺南]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gu7-zi2-舊址
+    headword: 舊址
+    readings:
+      - pengim: gu7 zi2
+    senses:
+      - pos: noun
+        gloss_en: [old address, former site]
+        gloss_zh: [舊址]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sia3-舍
+    headword: 舍
+    readings:
+      - pengim: sia3
+    senses:
+      - pos: noun
+        gloss_en: [house, residence, dwelling]
+        gloss_zh: [舍, 住所]
+        note: The character page lists many disparate senses (house/residence, humble prefix before junior relatives, alternate form of 捨/赦, a historical distance unit) all sharing the same Teochew reading, so picking the single best standalone sense is uncertain.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu1-舟
+    headword: 舟
+    readings:
+      - pengim: ziu1
+    senses:
+      - pos: noun
+        gloss_en: [boat]
+        gloss_zh: [舟, 船]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sang1-bang2-舢板
+    headword: 舢板
+    readings:
+      - pengim: sang1 bang2
+    senses:
+      - pos: noun
+        gloss_en: [sampan, flat-bottomed wooden boat]
+        gloss_zh: [舢板]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang5-suan3-航線
+    headword: 航線
+    readings:
+      - pengim: pang5 suan3
+    senses:
+      - pos: noun
+        gloss_en: [shipping route, course of a ship or plane, air route]
+        gloss_zh: [航線]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang2-舫
+    headword: 舫
+    readings:
+      - pengim: huang2
+    senses:
+      - pos: noun
+        gloss_en: [boat with a deckhouse, two boats joined together]
+        gloss_zh: [舫]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dua6-舵
+    headword: 舵
+    readings:
+      - pengim: dua6
+    senses:
+      - pos: noun
+        gloss_en: [rudder, helm]
+        gloss_zh: [舵]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zung5-船
+    headword: 船
+    readings:
+      - pengim: zung5
+    senses:
+      - pos: noun
+        gloss_en: [ship, boat, vessel]
+        gloss_zh: [船]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zung5-u3-船塢
+    headword: 船塢
+    readings:
+      - pengim: zung5 u3
+    senses:
+      - pos: noun
+        gloss_en: [shipyard, dockyard]
+        gloss_zh: [船塢]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zung5-bhuê2-lao5-船尾樓
+    headword: 船尾樓
+    readings:
+      - pengim: zung5 bhuê2 lao5
+    senses:
+      - pos: noun
+        gloss_en: [ship cabin, stern cabin]
+        gloss_zh: [船尾樓]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zung5-zion2-船槳
+    headword: 船槳
+    readings:
+      - pengim: zung5 zion2
+    senses:
+      - pos: noun
+        gloss_en: [paddle, oar]
+        gloss_zh: [船槳]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung1-lang5-芬蘭
+    headword: 芬蘭
+    readings:
+      - pengim: hung1 lang5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Finland]
+        gloss_zh: [芬蘭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê1-pou2-花圃
+    headword: 花圃
+    readings:
+      - pengim: huê1 pou2
+    senses:
+      - pos: noun
+        gloss_en: [flowerbed, flower garden]
+        gloss_zh: [花圃]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê1-hng5-花園
+    headword: 花園
+    readings:
+      - pengim: huê1 hng5
+    senses:
+      - pos: noun
+        gloss_en: [garden, flower garden]
+        gloss_zh: [花園]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: keng5-pên5-芹澎
+    headword: 芹澎
+    readings:
+      - pengim: keng5 pên5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Qinpeng (an island near Nan'ao, Shantou, Guangdong)"]
+        gloss_zh: [芹澎]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: keng5-pên5-dao2-芹澎島
+    headword: 芹澎島
+    readings:
+      - pengim: keng5 pên5 dao2
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Qinpeng Island (an island near Nan'ao, Shantou, Guangdong)"]
+        gloss_zh: [芹澎島]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghê5-lang2-芽籠
+    headword: 芽籠
+    readings:
+      - pengim: ghê5 lang2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Geylang (a planning area in Singapore)]
+        gloss_zh: [芽籠]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uêng2-苑
+    headword: 苑
+    readings:
+      - pengim: uêng2
+    senses:
+      - pos: noun
+        gloss_en: [park; garden, preserve; enclosure]
+        gloss_zh: [苑]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êng1-gog4-英國
+    headword: 英國
+    readings:
+      - pengim: êng1 gog4
+    senses:
+      - pos: proper-noun
+        gloss_en: [United Kingdom, England]
+        gloss_zh: [英國]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êng1-bhung5-英文
+    headword: 英文
+    readings:
+      - pengim: êng1 bhung5
+    senses:
+      - pos: noun
+        gloss_en: [English language (especially written)]
+        gloss_zh: [英文]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êng1-ghe2-英語
+    headword: 英語
+    readings:
+      - pengim: êng1 ghe2
+    senses:
+      - pos: noun
+        gloss_en: [English language]
+        gloss_zh: [英語]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mou6-mian5-茂名
+    headword: 茂名
+    readings:
+      - pengim: mou6 mian5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Maoming (a prefecture-level city in Guangdong, China)"]
+        gloss_zh: [茂名]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dê5-lao5-茶樓
+    headword: 茶樓
+    readings:
+      - pengim: dê5 lao5
+    senses:
+      - pos: noun
+        gloss_en: [teahouse (multi-story)]
+        gloss_zh: [茶樓]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho5-lang1-sê1-荷蘭西
+    headword: 荷蘭西
+    readings:
+      - pengim: ho5 lang1 sê1
+    senses:
+      - pos: proper-noun
+        gloss_en: [France (obsolete Southern Min term)]
+        gloss_zh: [荷蘭西]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pu5-cang5-莆田
+    headword: 莆田
+    readings:
+      - pengim: pu5 cang5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Putian (a prefecture-level city in Fujian, China)"]
+        gloss_zh: [莆田]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

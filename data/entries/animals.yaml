@@ -1750,3 +1750,247 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: ang5-go1-li2-紅哥鯉
+    headword: 紅哥鯉
+    readings:
+      - pengim: ang5 go1 li2
+    senses:
+      - pos: noun
+        gloss_en: [golden threadfin bream]
+        gloss_zh: [紅哥鯉]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-huê2-hia6-紅火蟻
+    headword: 紅火蟻
+    readings:
+      - pengim: ang5 huê2 hia6
+    senses:
+      - pos: noun
+        gloss_en: [red imported fire ant, fire ant]
+        gloss_zh: [紅火蟻]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-mag8-dai1-紅目呆
+    headword: 紅目呆
+    readings:
+      - pengim: ang5 mag8 dai1
+    senses:
+      - pos: noun
+        gloss_en: [barracuda]
+        gloss_zh: [紅目呆]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-tao5-hoh8-紅頭鶴
+    headword: 紅頭鶴
+    readings:
+      - pengim: ang5 tao5 hoh8
+    senses:
+      - pos: noun
+        gloss_en: [red-crowned crane, Japanese crane]
+        gloss_zh: [紅頭鶴]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: min5-iên5-綿羊
+    headword: 綿羊
+    readings:
+      - pengim: min5 iên5
+    senses:
+      - pos: noun
+        gloss_en: [sheep]
+        gloss_zh: [綿羊]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pi5-羆
+    headword: 羆
+    readings:
+      - pengim: pi5
+    senses:
+      - pos: noun
+        gloss_en: [brown bear]
+        gloss_zh: [羆]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iên5-bho2-羊母
+    headword: 羊母
+    readings:
+      - pengim: iên5 bho2
+    senses:
+      - pos: noun
+        gloss_en: [ewe]
+        gloss_zh: [羊母]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-ion5-羚羊
+    headword: 羚羊
+    readings:
+      - pengim: lêng5 ion5
+    senses:
+      - pos: noun
+        gloss_en: [antelope]
+        gloss_zh: [羚羊]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di1-羝
+    headword: 羝
+    readings:
+      - pengim: di1
+    senses:
+      - pos: noun
+        gloss_en: [ram, buck (male sheep or goat)]
+        gloss_zh: [羝]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui1-翡
+    headword: 翡
+    readings:
+      - pengim: hui1
+    senses:
+      - pos: noun
+        gloss_en: ["a kind of red kingfisher (bound morpheme, mainly used in 翡翠)"]
+        gloss_zh: [翡]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao6-gao5-老猴
+    headword: 老猴
+    readings:
+      - pengim: lao6 gao5
+    senses:
+      - pos: noun
+        gloss_en: [monkey]
+        gloss_zh: [老猴]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao6-houn2-bho2-老虎母
+    headword: 老虎母
+    readings:
+      - pengim: lao6 houn2 bho2
+    senses:
+      - pos: noun
+        gloss_en: [tigress, shrew; vixen]
+        gloss_zh: [老虎母]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao6-de1-老豬
+    headword: 老豬
+    readings:
+      - pengim: lao6 de1
+    senses:
+      - pos: noun
+        gloss_en: [pig]
+        gloss_zh: [老豬]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou5-ki5-胡蜞
+    headword: 胡蜞
+    readings:
+      - pengim: hou5 ki5
+    senses:
+      - pos: noun
+        gloss_en: [leech]
+        gloss_zh: [胡蜞]
+        note: The sense is tagged Teochew but also carries an inconsistent qualifier 'Yongtai Eastern Min' (an unrelated Eastern Min subgroup), making the dialect labeling for this sense somewhat unclear.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao3-siêh8-bhui7-臭液蜚
+    headword: 臭液蜚
+    readings:
+      - pengim: cao3 siêh8 bhui7
+    senses:
+      - pos: noun
+        gloss_en: [stinkbug]
+        gloss_zh: [臭液蜚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kou2-noin6-ghu5-苦楝牛
+    headword: 苦楝牛
+    readings:
+      - pengim: kou2 noin6 ghu5
+    senses:
+      - pos: noun
+        gloss_en: [longhorn beetle; longicorn]
+        gloss_zh: [苦楝牛]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao2-gao5-草猴
+    headword: 草猴
+    readings:
+      - pengim: cao2 gao5
+    senses:
+      - pos: noun
+        gloss_en: [praying mantis]
+        gloss_zh: [草猴]
+        note: The praying-mantis sense is tagged Teochew but oddly qualified 'Taiwanese Hakka' on the same page, and a separate adjective sense ('frivolous, flighty') tagged Hokkien/Xiamen shares the same reading; the noun sense was judged the better match.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao2-mên2-草蜢
+    headword: 草蜢
+    readings:
+      - pengim: cao2 mên2
+    senses:
+      - pos: noun
+        gloss_en: [grasshopper, locust]
+        gloss_zh: [草蜢]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao2-oi5-dah8-草鞋踏
+    headword: 草鞋踏
+    readings:
+      - pengim: cao2 oi5 dah8
+    senses:
+      - pos: noun
+        gloss_en: [cobra]
+        gloss_zh: [草鞋踏]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao2-he5-草魚
+    headword: 草魚
+    readings:
+      - pengim: cao2 he5
+    senses:
+      - pos: noun
+        gloss_en: [grass carp]
+        gloss_zh: [草魚]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

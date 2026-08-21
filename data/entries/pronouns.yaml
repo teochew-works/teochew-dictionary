@@ -1013,3 +1013,43 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: ze6-自
+    headword: 自
+    readings:
+      - pengim: ze6
+    senses:
+      - pos: pronoun
+        gloss_en: [self; oneself; one's own, since; from]
+        gloss_zh: [自己, 自]
+        note: Character carries several distinct senses (reflexive 'self', adverbial 'certainly/personally', prepositional 'since/from') under one generic reading with no per-sense POS split; classified as a pronoun for the core reflexive meaning, which is the most productive as a bound morpheme in compounds.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze6-ua2-自我
+    headword: 自我
+    readings:
+      - pengim: ze6 ua2
+    senses:
+      - pos: pronoun
+        gloss_en: [self, oneself]
+        gloss_zh: [自我]
+        note: Wiktionary lists pronoun ('self/oneself'), adjective ('self-conscious'), and noun ('ego') senses all under the same reading; chose pronoun as the most representative sense given its heavy use as a reflexive prefix (自我介紹, 自我批評).
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze6-sing1-自身
+    headword: 自身
+    readings:
+      - pengim: ze6 sing1
+    senses:
+      - pos: pronoun
+        gloss_en: [self, oneself, one's own]
+        gloss_zh: [自身]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

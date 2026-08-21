@@ -1624,3 +1624,117 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: lu2-縷
+    headword: 縷
+    readings:
+      - pengim: lu2
+    senses:
+      - pos: classifier
+        gloss_en: ["classifier for wisps, threads, or strands"]
+        gloss_zh: [縷]
+        note: Page lists a noun sense (thread), an adjective sense (detailed/precise), and a classifier sense all under one undisambiguated reading; chose the classifier sense as most distinctive, though noun is also plausible.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zong2-zi1-總之
+    headword: 總之
+    readings:
+      - pengim: zong2 zi1
+    senses:
+      - pos: adverb
+        gloss_en: [in short, in a word, anyhow]
+        gloss_zh: [總之]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zia2-者
+    headword: 者
+    readings:
+      - pengim: zia2
+    senses:
+      - pos: suffix
+        gloss_en: [-er; -ist; one who...; person involved in]
+        gloss_zh: [者]
+        note: 者 carries many distinct senses at this reading (classical command/topicalizer particle, demonstrative 'this', agentive suffix, anaphoric marker, surname); the productive agentive suffix sense was chosen as most common but the specific sense intended for this reading is uncertain.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: re5-而
+    headword: 而
+    readings:
+      - pengim: re5
+    senses:
+      - pos: conjunction
+        gloss_en: [and; but; yet (connects clauses), and then]
+        gloss_zh: [而]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: re5-cia2-而且
+    headword: 而且
+    readings:
+      - pengim: re5 cia2
+    senses:
+      - pos: conjunction
+        gloss_en: [furthermore; moreover; in addition]
+        gloss_zh: [而且]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê3-ao6-背後
+    headword: 背後
+    readings:
+      - pengim: buê3 ao6
+    senses:
+      - pos: noun
+        gloss_en: [behind; at the back (of), secretly; behind someone's back]
+        gloss_zh: [背後]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-hou2-能否
+    headword: 能否
+    readings:
+      - pengim: lêng5 hou2
+    senses:
+      - pos: adverb
+        gloss_en: [whether or not, is it possible]
+        gloss_zh: [能否]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi3-至
+    headword: 至
+    readings:
+      - pengim: zi3
+    senses:
+      - pos: preposition
+        gloss_en: ["to; until (marking an endpoint, as in 'from...to...')", to reach; to arrive]
+        gloss_zh: [至]
+        note: This character carries several distinct senses (verb 'to reach', preposition 'to/until', adverb 'extreme') under the same reading, so the single best pos is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: e2-ki5-與其
+    headword: 與其
+    readings:
+      - pengim: e2 ki5
+    senses:
+      - pos: conjunction
+        gloss_en: [rather than]
+        gloss_zh: [與其]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
