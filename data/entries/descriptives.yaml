@@ -21357,3 +21357,913 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: hui3-se7-費事
+    headword: 費事
+    readings:
+      - pengim: hui3 se7
+      - pengim: hui3 su7
+    senses:
+      - pos: adjective
+        gloss_en: [troublesome; time-consuming, to take a lot of trouble]
+        gloss_zh: [費事]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang5-賢
+    headword: 賢
+    readings:
+      - pengim: hiang5
+      - pengim: hiêng5
+    senses:
+      - pos: adjective
+        gloss_en: [virtuous; wise; worthy, capable; able]
+        gloss_zh: [賢]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu3-bhi7-趣味
+    headword: 趣味
+    readings:
+      - pengim: cu3 bhi7
+      - pengim: cu3 bhi5
+    senses:
+      - pos: adjective
+        gloss_en: [interesting, delightful]
+        gloss_zh: [趣味, 有趣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Drafted using the adjectival sense tagged Southern Min ("interesting") rather than the plain noun sense, as more distinctively Teochew.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki1-蹊
+    headword: 蹊
+    readings:
+      - pengim: ki1
+    senses:
+      - pos: adjective
+        gloss_en: ["strange; odd (bound form, only used in 蹊蹺)"]
+        gloss_zh: [蹊]
+        note: 1 candidate reading from Wiktionary (out of 3 originally listed for 蹊) — genuine Chaozhou colloquial form not yet confirmed by a speaker. This reading (ki1) is tied to a separate sense — the bound morpheme used only in 蹊蹺 — from hi1/hi5's 'footpath' sense, so drafted as a separate entry.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki1-kiao1-蹊蹺
+    headword: 蹊蹺
+    readings:
+      - pengim: ki1 kiao1
+      - pengim: ki1 kiou1
+    senses:
+      - pos: adjective
+        gloss_en: [odd; queer; strange; fishy]
+        gloss_zh: [蹊蹺]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: neng2-riag8-軟弱
+    headword: 軟弱
+    readings:
+      - pengim: neng2 riag8
+    senses:
+      - pos: adjective
+        gloss_en: [weak; feeble; infirm]
+        gloss_zh: [軟弱]
+        note: 1 candidate reading from Wiktionary (out of 2 originally listed for 軟弱) — genuine Chaozhou colloquial form not yet confirmed by a speaker. The other candidate (neng2 nioh8) is attested only for a separate dialectal sense ('delicate, elegant, gentle'), drafted as a separate entry below.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: neng2-nioh8-軟弱
+    headword: 軟弱
+    readings:
+      - pengim: neng2 nioh8
+    senses:
+      - pos: adjective
+        gloss_en: [delicate; elegant; gentle; graceful]
+        gloss_zh: [軟弱]
+        note: 1 candidate reading from Wiktionary (out of 2 originally listed for 軟弱) — genuine Chaozhou colloquial form not yet confirmed by a speaker. This reading is tied to a separate dialectal sense ('delicate, elegant, gentle'), distinct from neng2 riag8's 'weak' sense, so drafted as a separate entry.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: king1-輕
+    headword: 輕
+    readings:
+      - pengim: king1
+      - pengim: kêng1
+    senses:
+      - pos: adjective
+        gloss_en: [light (of low weight), easy; simple; relaxed]
+        gloss_zh: [輕]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: king1-sang1-輕鬆
+    headword: 輕鬆
+    readings:
+      - pengim: king1 sang1
+      - pengim: kêng1 sang1
+    senses:
+      - pos: adjective
+        gloss_en: [relaxed; light in mood, to relax; to calm down]
+        gloss_zh: [輕鬆]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: luah4-辣
+    headword: 辣
+    readings:
+      - pengim: luah4
+      - pengim: luah8
+    senses:
+      - pos: adjective
+        gloss_en: [spicy, hot (of taste), pungent]
+        gloss_zh: [辣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiou1-迢
+    headword: 迢
+    readings:
+      - pengim: tiou1
+      - pengim: tiao1
+      - pengim: tiou5
+      - pengim: tiao5
+    senses:
+      - pos: adjective
+        gloss_en: [far, distant]
+        gloss_zh: [迢, 遙遠]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liao5-遼
+    headword: 遼
+    readings:
+      - pengim: liao5
+      - pengim: liou5
+    senses:
+      - pos: adjective
+        gloss_en: [distant; far]
+        gloss_zh: [遠]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziêng1-邅
+    headword: 邅
+    readings:
+      - pengim: ziêng1
+      - pengim: ziang1
+      - pengim: diêng1
+      - pengim: diang1
+    senses:
+      - pos: adjective
+        gloss_en: [difficult; arduous, to change direction]
+        gloss_zh: [邅]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: re2-邇
+    headword: 邇
+    readings:
+      - pengim: re2
+      - pengim: ru2
+      - pengim: ni2
+    senses:
+      - pos: adjective
+        gloss_en: [near; close]
+        gloss_zh: [近]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sia5-邪
+    headword: 邪
+    readings:
+      - pengim: sia5
+    senses:
+      - pos: adjective
+        gloss_en: [evil; wicked; depraved, unnatural; strange]
+        gloss_zh: [邪惡]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The second candidate (ia5) is attested only for a separate etymology block covering unrelated alternative-form senses (of 琅琊 and 耶), so it was drafted as its own sense-specific entry instead of merged here.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong6-iou3-重要
+    headword: 重要
+    readings:
+      - pengim: dong6 iou3
+      - pengim: dong6 iao3
+    senses:
+      - pos: adjective
+        gloss_en: [important, significant, major]
+        gloss_zh: [重要]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ia2-iên7-野樣
+    headword: 野樣
+    readings:
+      - pengim: ia2 iên7
+      - pengim: ia2 ion7
+    senses:
+      - pos: adjective
+        gloss_en: [ugly, unattractive, unsightly]
+        gloss_zh: [野樣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gim1-bug4-huang3-金不換
+    headword: 金不換
+    readings:
+      - pengim: gim1 bug4 huang3
+      - pengim: gim1 bug4 huêng3
+    senses:
+      - pos: idiom
+        gloss_en: [invaluable; priceless, cannot be exchanged even for gold]
+        gloss_zh: [金不換]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: co3-錯
+    headword: 錯
+    readings:
+      - pengim: co3
+      - pengim: cag4
+    senses:
+      - pos: adjective
+        gloss_en: [wrong, incorrect, mistaken]
+        gloss_zh: [錯]
+        note: "2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Both readings are attested on the page: co3 covers the common 'wrong/mistake' sense used here, while cag4 is a literary reading tied to more archaic senses (to inlay, to grind, disorderly) not reflected in this gloss."
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: oin5-閒
+    headword: 閒
+    readings:
+      - pengim: oin5
+      - pengim: ain5
+    senses:
+      - pos: adjective
+        gloss_en: [idle; not busy, free; leisurely]
+        gloss_zh: [閒]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ting5-陳
+    headword: 陳
+    readings:
+      - pengim: ting5
+      - pengim: cing5
+      - pengim: ding5
+    senses:
+      - pos: adjective
+        gloss_en: [old; ancient, stale]
+        gloss_zh: [陳]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Dropped 'dang5' as unattested for this general/literary sense block; it is confirmed only for the surname sense, drafted as a separate entry below.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiam2-險
+    headword: 險
+    readings:
+      - pengim: hiam2
+      - pengim: hiang2
+    senses:
+      - pos: adjective
+        gloss_en: [dangerous; risky, hazardous]
+        gloss_zh: [危險, 險]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiong5-雄
+    headword: 雄
+    readings:
+      - pengim: hiong5
+      - pengim: hêng5
+    senses:
+      - pos: adjective
+        gloss_en: [male (of animals), masculine; powerful]
+        gloss_zh: [雄]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nang5-難
+    headword: 難
+    readings:
+      - pengim: nang5
+      - pengim: lang5
+    senses:
+      - pos: adjective
+        gloss_en: [difficult; hard]
+        gloss_zh: [難]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the 'nang7/lang7' entry below because Wiktionary ties those tone-7 readings to a distinct sense/character reading (nàn, 'disaster; calamity') separate from this tone-5 sense (nán, 'difficult').
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lang5-miang2-難免
+    headword: 難免
+    readings:
+      - pengim: lang5 miang2
+      - pengim: nang5 miang2
+    senses:
+      - pos: adjective
+        gloss_en: [unavoidable, hard to avoid, bound to happen]
+        gloss_zh: [難免]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-ê6-零下
+    headword: 零下
+    readings:
+      - pengim: lêng5 ê6
+    senses:
+      - pos: adjective
+        gloss_en: [subzero, below zero]
+        gloss_zh: [零下]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into sense-specific entries because 零下 has two distinct senses on the source page ('subzero' and a Teochew-specific 'sometimes; occasionally'); only the lêng5 ê6 reading is attested for this 'subzero' sense, so the lang5 ê7 candidate was dropped from this entry.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diang6-dong6-電動
+    headword: 電動
+    readings:
+      - pengim: diang6 dong6
+      - pengim: diêng6 dong6
+    senses:
+      - pos: adjective
+        gloss_en: [electric-powered, electrically powered, electric]
+        gloss_zh: [電動]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng6-靚
+    headword: 靚
+    readings:
+      - pengim: zêng6
+      - pengim: liang6
+    senses:
+      - pos: adjective
+        gloss_en: [pretty; beautiful, good; fine]
+        gloss_zh: [靚]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rung7-韌
+    headword: 韌
+    readings:
+      - pengim: rung7
+      - pengim: rim2
+    senses:
+      - pos: adjective
+        gloss_en: [tough; strong; sturdy, chewy (of food)]
+        gloss_zh: [韌]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao6-韶
+    headword: 韶
+    readings:
+      - pengim: siao6
+      - pengim: siou6
+    senses:
+      - pos: adjective
+        gloss_en: [splendid; beautiful (literary)]
+        gloss_zh: [韶]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nguang5-頑
+    headword: 頑
+    readings:
+      - pengim: nguang5
+      - pengim: nguêng5
+    senses:
+      - pos: adjective
+        gloss_en: [stubborn; obstinate, naughty; mischievous]
+        gloss_zh: [頑]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ping5-頻
+    headword: 頻
+    readings:
+      - pengim: ping5
+      - pengim: pêng5
+    senses:
+      - pos: adjective
+        gloss_en: [frequent; incessant]
+        gloss_zh: [頻]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nguêng5-sêg4-顏色
+    headword: 顏色
+    readings:
+      - pengim: nguêng5 sêg4
+      - pengim: nguang5 sêg4
+    senses:
+      - pos: noun
+        gloss_en: [color]
+        gloss_zh: [顏色, 色彩]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zuang1-顓
+    headword: 顓
+    readings:
+      - pengim: zuang1
+      - pengim: zuêng1
+    senses:
+      - pos: adjective
+        gloss_en: [good, simple]
+        gloss_zh: [顓]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang2-顯
+    headword: 顯
+    readings:
+      - pengim: hiang2
+      - pengim: hiêng2
+    senses:
+      - pos: adjective
+        gloss_en: [apparent; obvious, prominent; conspicuous]
+        gloss_zh: [顯]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang2-mêng5-顯明
+    headword: 顯明
+    readings:
+      - pengim: hiang2 mêng5
+      - pengim: hiêng2 mêng5
+    senses:
+      - pos: adjective
+        gloss_en: [obvious, clear, evident]
+        gloss_zh: [顯明]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: e3-飫
+    headword: 飫
+    readings:
+      - pengim: e3
+      - pengim: u3
+    senses:
+      - pos: adjective
+        gloss_en: [full (from overeating), sick of food]
+        gloss_zh: [飫]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiêg4-餮
+    headword: 餮
+    readings:
+      - pengim: tiêg4
+      - pengim: tiag4
+      - pengim: têg4
+      - pengim: ziêng2
+      - pengim: ziang2
+    senses:
+      - pos: adjective
+        gloss_en: [gluttonous, greedy]
+        gloss_zh: [餮]
+        note: 5 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cam5-饞
+    headword: 饞
+    readings:
+      - pengim: cam5
+      - pengim: cang5
+    senses:
+      - pos: adjective
+        gloss_en: [gluttonous, greedy for food, craving]
+        gloss_zh: [饞]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiên1-香
+    headword: 香
+    readings:
+      - pengim: hiên1
+      - pengim: hion1
+      - pengim: hiang1
+      - pengim: pang1
+    senses:
+      - pos: adjective
+        gloss_en: [fragrant, aromatic, sweet-smelling]
+        gloss_zh: [香]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The pang1 reading reflects 香's use as a colloquial alternative form of 芳 with the same core meaning, so it is kept together with the other readings in one entry rather than split out.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ma2-hu1-馬虎
+    headword: 馬虎
+    readings:
+      - pengim: ma2 hu1
+      - pengim: ma1 hu1
+    senses:
+      - pos: adjective
+        gloss_en: [careless, sloppy, negligent]
+        gloss_zh: [馬虎]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giao1-驕
+    headword: 驕
+    readings:
+      - pengim: giao1
+      - pengim: giou1
+    senses:
+      - pos: adjective
+        gloss_en: [haughty, arrogant, prideful]
+        gloss_zh: [驕]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giao1-ngao6-驕傲
+    headword: 驕傲
+    readings:
+      - pengim: giao1 ngao6
+      - pengim: giou1 ngao6
+    senses:
+      - pos: adjective
+        gloss_en: [arrogant, conceited, proud]
+        gloss_zh: [驕傲]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giao1-zong3-驕縱
+    headword: 驕縱
+    readings:
+      - pengim: giao1 zong3
+      - pengim: giou1 zong3
+    senses:
+      - pos: adjective
+        gloss_en: [arrogant and wilful, spoiled and unruly]
+        gloss_zh: [驕縱]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-高
+    headword: 高
+    readings:
+      - pengim: gao1
+      - pengim: go1
+    senses:
+      - pos: adjective
+        gloss_en: [tall, high]
+        gloss_zh: [高]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The candidates guin5/guain5 were attested only in a separate sense block (colloquial alternative form of 懸, 'tall; high'), so they were drafted as a separate entry.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guin5-高
+    headword: 高
+    readings:
+      - pengim: guin5
+      - pengim: guain5
+    senses:
+      - pos: adjective
+        gloss_en: [tall, high]
+        gloss_zh: [懸]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This block is a distinct sense (colloquial alternative form of 懸, 'tall; high') from the literary gao1/go1 reading of 高, so it was drafted as a separate entry.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sang1-鬆
+    headword: 鬆
+    readings:
+      - pengim: sang1
+      - pengim: song1
+    senses:
+      - pos: adjective
+        gloss_en: [loose, relaxed]
+        gloss_zh: [鬆]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nao6-鬧
+    headword: 鬧
+    readings:
+      - pengim: nao6
+      - pengim: nao7
+      - pengim: lao7
+    senses:
+      - pos: adjective
+        gloss_en: [noisy, rowdy]
+        gloss_zh: [鬧]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao7-riag8-鬧熱
+    headword: 鬧熱
+    readings:
+      - pengim: lao7 riag8
+      - pengim: lao7 riêg8
+    senses:
+      - pos: adjective
+        gloss_en: [bustling, lively, noisy (festive)]
+        gloss_zh: [鬧熱]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cin1-鮮
+    headword: 鮮
+    readings:
+      - pengim: cin1
+      - pengim: siang1
+    senses:
+      - pos: adjective
+        gloss_en: [fresh, delicious]
+        gloss_zh: [鮮]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The candidate siang2 was attested only in separate sense blocks (rare; few / alt-of 巘 / alt-of 獻), so it was drafted as a separate entry.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang2-鮮
+    headword: 鮮
+    readings:
+      - pengim: siang2
+    senses:
+      - pos: adjective
+        gloss_en: [rare, few]
+        gloss_zh: [鮮]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This is a distinct sense (rare; few) from the main 'fresh; delicious' sense of 鮮, which uses different readings (cin1, siang1); drafted as a separate entry.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li6-麗
+    headword: 麗
+    readings:
+      - pengim: li6
+    senses:
+      - pos: adjective
+        gloss_en: [beautiful, lovely, elegant]
+        gloss_zh: [麗]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from a second candidate reading (li5) that Wiktionary ties to a distinct sense (used in place names such as 高麗 Goryeo).
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mua5-huêng5-麻煩
+    headword: 麻煩
+    readings:
+      - pengim: mua5 huêng5
+      - pengim: mua5 huang5
+      - pengim: mua5 huam5
+    senses:
+      - pos: adjective
+        gloss_en: [troublesome, bothersome, annoying]
+        gloss_zh: [麻煩]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liam1-黏
+    headword: 黏
+    readings:
+      - pengim: liam1
+      - pengim: niam1
+      - pengim: niang1
+      - pengim: liam5
+      - pengim: niam5
+      - pengim: niang5
+    senses:
+      - pos: adjective
+        gloss_en: [sticky, glutinous, to stick]
+        gloss_zh: [黏]
+        note: 6 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hêg4-黑
+    headword: 黑
+    readings:
+      - pengim: hêg4
+      - pengim: ou1
+    senses:
+      - pos: adjective
+        gloss_en: [black, dark]
+        gloss_zh: [黑]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci5-齊
+    headword: 齊
+    readings:
+      - pengim: ci5
+      - pengim: zoi5
+    senses:
+      - pos: adjective
+        gloss_en: [even; uniform, same; identical, complete]
+        gloss_zh: [齊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from a third candidate reading (zao5) that Wiktionary ties to a distinct Southern-Min-specific sense ('uniform; completely').
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang5-龐
+    headword: 龐
+    readings:
+      - pengim: pang5
+      - pengim: bong5
+    senses:
+      - pos: adjective
+        gloss_en: [huge, big]
+        gloss_zh: [龐]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin7-𠕇
+    headword: 𠕇
+    readings:
+      - pengim: doin7
+      - pengim: dain7
+    senses:
+      - pos: adjective
+        gloss_en: [hard, solid]
+        gloss_zh: [𠕇]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geg8-𫀸
+    headword: 𫀸
+    readings:
+      - pengim: geg8
+      - pengim: gêg8
+    senses:
+      - pos: adjective
+        gloss_en: [viscous, thick]
+        gloss_zh: [𫀸]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cioh4-𬓤
+    headword: 𬓤
+    readings:
+      - pengim: cioh4
+      - pengim: ciêh4
+    senses:
+      - pos: adjective
+        gloss_en: [dilute, thin (of liquids)]
+        gloss_zh: [𬓤]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
