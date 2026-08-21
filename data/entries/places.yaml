@@ -11508,3 +11508,391 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: bhê2-dêg4-mo7-馬德望
+    headword: 馬德望
+    readings:
+      - pengim: bhê2 dêg4 mo7
+    senses:
+      - pos: proper-noun
+        gloss_en: [Battambang (province of Cambodia), "Battambang (city, Cambodia)"]
+        gloss_zh: [馬德望]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ma1-da6-cu3-馬打厝
+    headword: 馬打厝
+    readings:
+      - pengim: ma1 da6 cu3
+    senses:
+      - pos: noun
+        gloss_en: [police station]
+        gloss_zh: [馬打厝]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ma1-da6-liao5-馬打寮
+    headword: 馬打寮
+    readings:
+      - pengim: ma1 da6 liao5
+    senses:
+      - pos: noun
+        gloss_en: [police station]
+        gloss_zh: [馬打寮]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhê2-lou7-馬路
+    headword: 馬路
+    readings:
+      - pengim: bhê2 lou7
+    senses:
+      - pos: noun
+        gloss_en: [road; street, paved road]
+        gloss_zh: [馬路]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhê2-cia1-lou7-馬車路
+    headword: 馬車路
+    readings:
+      - pengim: bhê2 cia1 lou7
+    senses:
+      - pos: noun
+        gloss_en: [road]
+        gloss_zh: [馬車路]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kai5-lao5-騎樓
+    headword: 騎樓
+    readings:
+      - pengim: kai5 lao5
+    senses:
+      - pos: noun
+        gloss_en: [arcade veranda (covered walkway formed by upper-floor overhang above ground-floor shops), balcony; terrace]
+        gloss_zh: [騎樓]
+        note: The page gives both a specific 'qilou architecture' sense and a more generic 'balcony/terrace' sense; the architectural sense is treated as primary.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iah8-驛
+    headword: 驛
+    readings:
+      - pengim: iah8
+    senses:
+      - pos: noun
+        gloss_en: [relay station (for post horses), station (train/bus)]
+        gloss_zh: [驛]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-dong1-高中
+    headword: 高中
+    readings:
+      - pengim: gao1 dong1
+    senses:
+      - pos: noun
+        gloss_en: [high school, senior high school]
+        gloss_zh: [高中]
+        note: A verb sense ('to pass an exam with high marks') is also attested under the same Teochew reading in the source data; the far more common noun sense 'high school' was chosen as primary.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-gê3-gio5-高架橋
+    headword: 高架橋
+    readings:
+      - pengim: gao1 gê3 gio5
+    senses:
+      - pos: noun
+        gloss_en: [viaduct, flyover; overpass]
+        gloss_zh: [高架橋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-hao6-高校
+    headword: 高校
+    readings:
+      - pengim: gao1 hao6
+    senses:
+      - pos: noun
+        gloss_en: [college; university (short for 高等學校)]
+        gloss_zh: [高校, 高等學校]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-miang5-高棉
+    headword: 高棉
+    readings:
+      - pengim: gao1 miang5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Cambodia, Khmer]
+        gloss_zh: [高棉, 柬埔寨]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-lao5-dai6-hê7-高樓大廈
+    headword: 高樓大廈
+    readings:
+      - pengim: gao1 lao5 dai6 hê7
+    senses:
+      - pos: phrase
+        gloss_en: [high-rise buildings; skyscrapers]
+        gloss_zh: [高樓大廈]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-sog4-gong1-lou7-高速公路
+    headword: 高速公路
+    readings:
+      - pengim: gao1 sog4 gong1 lou7
+    senses:
+      - pos: noun
+        gloss_en: [highway; expressway; freeway]
+        gloss_zh: [高速公路]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-tih4-高鐵
+    headword: 高鐵
+    readings:
+      - pengim: gao1 tih4
+    senses:
+      - pos: noun
+        gloss_en: [high-speed rail]
+        gloss_zh: [高鐵]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghui7-gog4-魏國
+    headword: 魏國
+    readings:
+      - pengim: ghui7 gog4
+    senses:
+      - pos: proper-noun
+        gloss_en: [Wei (ancient Chinese state during the Zhou dynasty), Liang (the same state after being raised to a kingdom)]
+        gloss_zh: [魏國]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: to5-sian5-鮀城
+    headword: 鮀城
+    readings:
+      - pengim: to5 sian5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Shantou (poetic/alternative name)]
+        gloss_zh: [汕頭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pong5-sian5-鵬城
+    headword: 鵬城
+    readings:
+      - pengim: pong5 sian5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Shenzhen (alternative/nickname)]
+        gloss_zh: [深圳]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hoh8-gang1-鶴崗
+    headword: 鶴崗
+    readings:
+      - pengim: hoh8 gang1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Hegang (a prefecture-level city of Heilongjiang, China)"]
+        gloss_zh: [鶴崗]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iam5-dian5-鹽埕
+    headword: 鹽埕
+    readings:
+      - pengim: iam5 dian5
+    senses:
+      - pos: noun
+        gloss_en: [saltern; saltworks; salt-drying yard]
+        gloss_zh: [鹽埕]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iam5-tiang5-鹽田
+    headword: 鹽田
+    readings:
+      - pengim: iam5 tiang5
+    senses:
+      - pos: noun
+        gloss_en: [salt pan, salt field, saltworks]
+        gloss_zh: [鹽田]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li6-gang1-麗江
+    headword: 麗江
+    readings:
+      - pengim: li6 gang1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Lijiang (prefecture-level city in Yunnan, China)"]
+        gloss_zh: [麗江]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: muan5-bo1-麻坡
+    headword: 麻坡
+    readings:
+      - pengim: muan5 bo1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Muar (city in Johor, Malaysia)"]
+        gloss_zh: [麻坡]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ng5-ho5-黃河
+    headword: 黃河
+    readings:
+      - pengim: ng5 ho5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Yellow River, Huang He]
+        gloss_zh: [黃河]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hêg4-lêng5-gang1-黑龍江
+    headword: 黑龍江
+    readings:
+      - pengim: hêg4 lêng5 gang1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Heilongjiang (province in northeastern China), Amur River]
+        gloss_zh: [黑龙江]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-deng5-齋堂
+    headword: 齋堂
+    readings:
+      - pengim: ze1 deng5
+    senses:
+      - pos: noun
+        gloss_en: [dining room in a Buddhist temple, Buddhist nunnery]
+        gloss_zh: [齋堂]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-gang1-龍崗
+    headword: 龍崗
+    readings:
+      - pengim: lêng5 gang1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Longgang (a district of Shenzhen, Guangdong, China)"]
+        gloss_zh: [龍崗]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-ou5-龍湖
+    headword: 龍湖
+    readings:
+      - pengim: lêng5 ou5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Longhu (a place name in China; districts/towns of Shantou, Chao'an/Chaozhou, and elsewhere)"]
+        gloss_zh: [龍湖]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-hua5-龍華
+    headword: 龍華
+    readings:
+      - pengim: lêng5 hua5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Longhua (a place name in China; e.g. a district of Shenzhen)]
+        gloss_zh: [龍華]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-mung5-gê3-龍門架
+    headword: 龍門架
+    readings:
+      - pengim: lêng5 mung5 gê3
+    senses:
+      - pos: noun
+        gloss_en: [gantry (steel-bar framework spanning an area)]
+        gloss_zh: [龍門架]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kam1-龕
+    headword: 龕
+    readings:
+      - pengim: kam1
+    senses:
+      - pos: noun
+        gloss_en: [shrine; niche]
+        gloss_zh: [龕]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-ng5-𨻧隍
+    headword: 𨻧隍
+    readings:
+      - pengim: liu5 ng5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Liuhuang (a town in Fengshun, Meizhou, Guangdong, China)"]
+        gloss_zh: [𨻧隍]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-ling5-𬎏琳
+    headword: 𬎏琳
+    readings:
+      - pengim: zi2 ling5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Zilin (a village in Chenghai district, Shantou, Guangdong, China)"]
+        gloss_zh: [𬎏琳]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

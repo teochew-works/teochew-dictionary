@@ -1125,3 +1125,17 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: ke5-𠍲
+    headword: 𠍲
+    readings:
+      - pengim: ke5
+    senses:
+      - pos: pronoun
+        gloss_en: [he; she; it (third-person pronoun)]
+        gloss_zh: [渠]
+        note: Page tags this sense as dialectal/literary rather than specifically colloquial Teochew, so it is unclear how common this form is in everyday spoken use versus the more standard 伊.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

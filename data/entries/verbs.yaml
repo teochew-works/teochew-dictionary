@@ -47821,3 +47821,959 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: hang5-迒
+    headword: 迒
+    readings:
+      - pengim: hang5
+    senses:
+      - pos: verb
+        gloss_en: [to step across, to stride]
+        gloss_zh: [迒]
+        note: The senses (step across/stride vs. ajar/crack of a door) are tagged specifically for Taiwanese-Hokkien/Xiamen/Zhangzhou/Quanzhou rather than explicitly Chaozhou/Teochew, though this pos block's teochew_sound confirms the hang5 reading applies here; the primary 'stride' sense was chosen.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziah8-loh8-食落
+    headword: 食落
+    readings:
+      - pengim: ziah8 loh8
+    senses:
+      - pos: verb
+        gloss_en: [to swallow food, to stomach food]
+        gloss_zh: [食落]
+        note: The only senses given are tagged Cantonese rather than Teochew/Southern Min, though this verb block's teochew_sound confirms the ziah8 loh8 reading for Teochew, so the meaning was assumed to carry over.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boh4-駁
+    headword: 駁
+    readings:
+      - pengim: boh4
+    senses:
+      - pos: verb
+        gloss_en: [to refute; to rebut, to connect]
+        gloss_zh: [駁]
+        note: Character page lists many unrelated senses (variegated horse fur, mixed/impure, to refute, to transport by barge, barge, suddenly, to connect (Cantonese), alternative form of a mythical beast) sharing the same reading with no Teochew-specific tag; 'to refute' and 'to connect' were picked as the most common verbal senses.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boh4-cui3-駁喙
+    headword: 駁喙
+    readings:
+      - pengim: boh4 cui3
+    senses:
+      - pos: verb
+        gloss_en: [to talk back, to answer back (to a parent or superior)]
+        gloss_zh: [駁喙]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boh4-cui3-駁嘴
+    headword: 駁嘴
+    readings:
+      - pengim: boh4 cui3
+    senses:
+      - pos: verb
+        gloss_en: [to talk back, to answer back, to argue]
+        gloss_zh: [駁嘴]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boh4-huê5-駁回
+    headword: 駁回
+    readings:
+      - pengim: boh4 huê5
+    senses:
+      - pos: verb
+        gloss_en: [to reject, to turn down, to overrule]
+        gloss_zh: [駁回]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boh4-cêg4-駁斥
+    headword: 駁斥
+    readings:
+      - pengim: boh4 cêg4
+    senses:
+      - pos: verb
+        gloss_en: [to refute, to denounce]
+        gloss_zh: [駁斥]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu6-駐
+    headword: 駐
+    readings:
+      - pengim: zu6
+    senses:
+      - pos: verb
+        gloss_en: [to be stationed, to be posted]
+        gloss_zh: [駐]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu6-siu2-駐守
+    headword: 駐守
+    readings:
+      - pengim: zu6 siu2
+    senses:
+      - pos: verb
+        gloss_en: [to garrison, to man a post, to defend]
+        gloss_zh: [駐守]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu6-liu5-駐留
+    headword: 駐留
+    readings:
+      - pengim: zu6 liu5
+    senses:
+      - pos: verb
+        gloss_en: [to stay, to remain]
+        gloss_zh: [駐留]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu6-zog4-駐足
+    headword: 駐足
+    readings:
+      - pengim: zu6 zog4
+    senses:
+      - pos: verb
+        gloss_en: [to stop walking, to halt]
+        gloss_zh: [駐足]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gê3-駕
+    headword: 駕
+    readings:
+      - pengim: gê3
+    senses:
+      - pos: verb
+        gloss_en: [to drive (a vehicle), to pilot, to harness]
+        gloss_zh: [駕]
+        note: This character has many senses on the page (harness, drive, historical 'carriage/emperor', classical 'day's journey', interjection); picked the modern common verb sense 'to drive/pilot'.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gê3-cia1-駕車
+    headword: 駕車
+    readings:
+      - pengim: gê3 cia1
+    senses:
+      - pos: verb
+        gloss_en: [to drive a vehicle]
+        gloss_zh: [駕車]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gê3-sai2-駕駛
+    headword: 駕駛
+    readings:
+      - pengim: gê3 sai2
+    senses:
+      - pos: verb
+        gloss_en: [to drive (a vehicle), to pilot]
+        gloss_zh: [駕駛]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai2-駛
+    headword: 駛
+    readings:
+      - pengim: sai2
+    senses:
+      - pos: verb
+        gloss_en: [to drive (a vehicle), to sail, to run quickly]
+        gloss_zh: [駛]
+        note: The character page lists several senses under the same reading (run quickly/gallop, drive a vehicle, and Cantonese/Hokkien alt-of 使); chose 'to drive' based on the parallel compound 駛車, but the primary Teochew sense is not explicitly disambiguated.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai2-cia1-駛車
+    headword: 駛車
+    readings:
+      - pengim: sai2 cia1
+    senses:
+      - pos: verb
+        gloss_en: [to drive (a vehicle)]
+        gloss_zh: [駛車]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: toh8-駝
+    headword: 駝
+    readings:
+      - pengim: toh8
+    senses:
+      - pos: verb
+        gloss_en: [to carry on the back, to be humpbacked, camel (bound morpheme)]
+        gloss_zh: [駝]
+        note: The character has three plausible senses at this reading (noun 'camel', adjective 'humpbacked', verb 'to carry on the back'); picked the verb sense as the most likely colloquial Teochew usage but the page does not disambiguate which applies to this specific reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai6-駭
+    headword: 駭
+    readings:
+      - pengim: hai6
+    senses:
+      - pos: verb
+        gloss_en: [to be startled; to be alarmed, to terrify; to frighten]
+        gloss_zh: [駭]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kia5-騎
+    headword: 騎
+    readings:
+      - pengim: kia5
+    senses:
+      - pos: verb
+        gloss_en: ["to ride (a horse, bicycle, etc.)", to sit astride]
+        gloss_zh: [騎]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kia5-cia1-騎車
+    headword: 騎車
+    readings:
+      - pengim: kia5 cia1
+    senses:
+      - pos: verb
+        gloss_en: [to cycle; to ride a bicycle]
+        gloss_zh: [騎車]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kia5-bhê2-騎馬
+    headword: 騎馬
+    readings:
+      - pengim: kia5 bhê2
+    senses:
+      - pos: verb
+        gloss_en: [to ride a horse; to be on horseback]
+        gloss_zh: [騎馬]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: piang3-nang5-騙人
+    headword: 騙人
+    readings:
+      - pengim: piang3 nang5
+    senses:
+      - pos: verb
+        gloss_en: [to deceive; to cheat; to scam]
+        gloss_zh: [騙人]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: piang3-cu2-騙取
+    headword: 騙取
+    readings:
+      - pengim: piang3 cu2
+    senses:
+      - pos: verb
+        gloss_en: [to obtain by deception; to defraud]
+        gloss_zh: [騙取]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-騰
+    headword: 騰
+    readings:
+      - pengim: têng5
+    senses:
+      - pos: verb
+        gloss_en: [to soar; to rise, to gallop; to prance]
+        gloss_zh: [騰]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-buê1-騰飛
+    headword: 騰飛
+    readings:
+      - pengim: têng5 buê1
+    senses:
+      - pos: verb
+        gloss_en: [to soar; to fly upwards rapidly, to advance rapidly; to take off (economically)]
+        gloss_zh: [騰飛]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sao1-riao2-騷擾
+    headword: 騷擾
+    readings:
+      - pengim: sao1 riao2
+    senses:
+      - pos: verb
+        gloss_en: [to harass, to annoy; to disturb]
+        gloss_zh: [騷擾]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ku1-驅
+    headword: 驅
+    readings:
+      - pengim: ku1
+    senses:
+      - pos: verb
+        gloss_en: [to drive (a horse or vehicle); to spur, to expel; to drive out]
+        gloss_zh: [驅]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiam7-siu1-驗收
+    headword: 驗收
+    readings:
+      - pengim: ngiam7 siu1
+    senses:
+      - pos: verb
+        gloss_en: [to inspect and approve (upon delivery), to check for acceptance]
+        gloss_zh: [驗收]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gian1-hi2-驚喜
+    headword: 驚喜
+    readings:
+      - pengim: gian1 hi2
+    senses:
+      - pos: verb
+        gloss_en: [to be pleasantly surprised, pleasant surprise]
+        gloss_zh: [驚喜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gian1-tang3-驚嘆
+    headword: 驚嘆
+    readings:
+      - pengim: gian1 tang3
+    senses:
+      - pos: verb
+        gloss_en: [to exclaim in admiration, to gasp in wonder]
+        gloss_zh: [驚嘆]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gian1-hêh4-驚嚇
+    headword: 驚嚇
+    readings:
+      - pengim: gian1 hêh4
+    senses:
+      - pos: verb
+        gloss_en: [to frighten, to scare]
+        gloss_zh: [驚嚇]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gug4-zih4-骨折
+    headword: 骨折
+    readings:
+      - pengim: gug4 zih4
+    senses:
+      - pos: verb
+        gloss_en: [to break a bone; to fracture]
+        gloss_zh: [骨折]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ti2-ngiam7-體驗
+    headword: 體驗
+    readings:
+      - pengim: ti2 ngiam7
+    senses:
+      - pos: verb
+        gloss_en: [to experience, to learn through experience]
+        gloss_zh: [體驗]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-kia6-高企
+    headword: 高企
+    readings:
+      - pengim: gao1 kia6
+    senses:
+      - pos: verb
+        gloss_en: [to remain high, to stay elevated (of price or value)]
+        gloss_zh: [高企]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-huag4-高發
+    headword: 高發
+    readings:
+      - pengim: gao1 huag4
+    senses:
+      - pos: verb
+        gloss_en: ["to occur frequently (of diseases, accidents)"]
+        gloss_zh: [高發]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dam3-髧
+    headword: 髧
+    readings:
+      - pengim: dam3
+    senses:
+      - pos: verb
+        gloss_en: [(of hair) to hang down; to droop, to suspend; to hang]
+        gloss_zh: [髧]
+        note: Two pos-blocks share the same Teochew reading (a literary 'hanging down (of hair)' sense and a Cantonese-tagged 'to suspend/hang' sense); merged into one verb gloss.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: song1-dong6-鬆動
+    headword: 鬆動
+    readings:
+      - pengim: song1 dong6
+    senses:
+      - pos: verb
+        gloss_en: [to loosen; to become loose, to relax; to ease up]
+        gloss_zh: [鬆動]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao3-he1-鬥墟
+    headword: 鬥墟
+    readings:
+      - pengim: dao3 he1
+    senses:
+      - pos: verb
+        gloss_en: [to go to a market; to go to a fair]
+        gloss_zh: [鬥墟]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nao7-se7-鬧事
+    headword: 鬧事
+    readings:
+      - pengim: nao7 se7
+    senses:
+      - pos: verb
+        gloss_en: [to cause trouble; to create a disturbance]
+        gloss_zh: [鬧事]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hong3-鬨
+    headword: 鬨
+    readings:
+      - pengim: hong3
+    senses:
+      - pos: verb
+        gloss_en: [to fight; to combat, to cause a commotion or disturbance]
+        gloss_zh: [鬨]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iog8-鬻
+    headword: 鬻
+    readings:
+      - pengim: iog8
+    senses:
+      - pos: verb
+        gloss_en: [to sell, to vend]
+        gloss_zh: [鬻, 賣]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iam3-魘
+    headword: 魘
+    readings:
+      - pengim: iam3
+    senses:
+      - pos: verb
+        gloss_en: [to have a nightmare, to feel pressure on the chest during sleep]
+        gloss_zh: [魘]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mêng5-鳴
+    headword: 鳴
+    readings:
+      - pengim: mêng5
+    senses:
+      - pos: verb
+        gloss_en: [to cry (of birds), to sound, to make a sound]
+        gloss_zh: [鳴, 叫]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mêng5-sia7-鳴謝
+    headword: 鳴謝
+    readings:
+      - pengim: mêng5 sia7
+    senses:
+      - pos: verb
+        gloss_en: [to express gratitude, to give thanks (formally)]
+        gloss_zh: [鳴謝, 致謝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dim1-鴆
+    headword: 鴆
+    readings:
+      - pengim: dim1
+    senses:
+      - pos: verb
+        gloss_en: [to poison, poison]
+        gloss_zh: [鴆]
+        note: The character page gives both a noun sense (the mythical poisonous zhen-bird, and 'poison' by extension) and a verb sense ('to poison'); the single Teochew reading doesn't disambiguate which is meant, so the verb sense was picked as primary.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mua5-bi3-麻痺
+    headword: 麻痺
+    readings:
+      - pengim: mua5 bi3
+    senses:
+      - pos: verb
+        gloss_en: [to be numb, to be paralysed, to lower one's guard]
+        gloss_zh: [麻痺]
+        note: Wiktionary splits this reading across verb, adjective, and noun blocks (plus an unrelated internet-slang phrase sense as alt of 媽屄), so the single best part of speech is uncertain.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mua5-zui3-麻醉
+    headword: 麻醉
+    readings:
+      - pengim: mua5 zui3
+    senses:
+      - pos: verb
+        gloss_en: [to anesthetize, to numb]
+        gloss_zh: [麻醉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mig8-默
+    headword: 默
+    readings:
+      - pengim: mig8
+    senses:
+      - pos: verb
+        gloss_en: [to be silent; to keep quiet]
+        gloss_zh: [默]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mig8-ai1-默哀
+    headword: 默哀
+    readings:
+      - pengim: mig8 ai1
+    senses:
+      - pos: verb
+        gloss_en: [to observe a moment of silence]
+        gloss_zh: [默哀]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mig8-sia2-默寫
+    headword: 默寫
+    readings:
+      - pengim: mig8 sia2
+    senses:
+      - pos: verb
+        gloss_en: [to write from memory, dictation (school exercise)]
+        gloss_zh: [默写]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mig8-ring7-默認
+    headword: 默認
+    readings:
+      - pengim: mig8 ring7
+    senses:
+      - pos: verb
+        gloss_en: [to acquiesce; to tacitly approve, (computing) default]
+        gloss_zh: [默认]
+        note: Page gives both a verb sense ('to tacitly agree') and a separate adjective/computing sense ('default'); picked the verb as primary but the computing sense may be equally or more common in modern usage.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diam2-mian5-點名
+    headword: 點名
+    readings:
+      - pengim: diam2 mian5
+    senses:
+      - pos: verb
+        gloss_en: [to call the roll, to name and criticize]
+        gloss_zh: [點名]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diam2-riang5-點燃
+    headword: 點燃
+    readings:
+      - pengim: diam2 riang5
+    senses:
+      - pos: verb
+        gloss_en: [to ignite; to light; to kindle]
+        gloss_zh: [點燃]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diam2-cai3-點菜
+    headword: 點菜
+    readings:
+      - pengim: diam2 cai3
+    senses:
+      - pos: verb
+        gloss_en: [to order dishes (at a restaurant)]
+        gloss_zh: [點菜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diam2-zang3-點讚
+    headword: 點讚
+    readings:
+      - pengim: diam2 zang3
+    senses:
+      - pos: verb
+        gloss_en: [to like (a social media post); to press "like"]
+        gloss_zh: [點讚]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kêng5-黥
+    headword: 黥
+    readings:
+      - pengim: kêng5
+    senses:
+      - pos: verb
+        gloss_en: [to tattoo the face (as ancient punishment), to tattoo]
+        gloss_zh: [黥]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dog8-黷
+    headword: 黷
+    readings:
+      - pengim: dog8
+    senses:
+      - pos: verb
+        gloss_en: [to tarnish; to defile, to act rashly or indiscriminately]
+        gloss_zh: [黷]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gou2-dong6-鼓動
+    headword: 鼓動
+    readings:
+      - pengim: gou2 dong6
+    senses:
+      - pos: verb
+        gloss_en: [to inspire; to urge, to instigate; to incite]
+        gloss_zh: [鼓動]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gou2-li6-鼓勵
+    headword: 鼓勵
+    readings:
+      - pengim: gou2 li6
+    senses:
+      - pos: verb
+        gloss_en: [to encourage]
+        gloss_zh: [鼓勵]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gou2-bhu2-鼓舞
+    headword: 鼓舞
+    readings:
+      - pengim: gou2 bhu2
+    senses:
+      - pos: verb
+        gloss_en: [to inspire; to invigorate; to boost morale]
+        gloss_zh: [鼓舞]
+        note: The dossier gives both a verb sense (to inspire/invigorate) and an adjective sense (inspiring/invigorating) for the same reading; verb was chosen as the primary entry.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-gai3-齋戒
+    headword: 齋戒
+    readings:
+      - pengim: ze1 gai3
+    senses:
+      - pos: verb
+        gloss_en: [to fast (for religious purposes)]
+        gloss_zh: [齋戒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zag4-齪
+    headword: 齪
+    readings:
+      - pengim: zag4
+    senses:
+      - pos: verb
+        gloss_en: [to disturb; to bother (someone) by being noisy, annoying; vexing]
+        gloss_zh: [齪]
+        note: Multiple dialect-tagged senses (Hokkien stative 'stuffy/vexed/annoying' meanings vs. the Teochew-specific verb 'to disturb by being noisy') make the primary sense and exact part of speech uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buh8-𠜙
+    headword: 𠜙
+    readings:
+      - pengim: buh8
+    senses:
+      - pos: verb
+        gloss_en: [to poke, to pierce, to stab]
+        gloss_zh: [刺, 戳]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: poi1-𠜱
+    headword: 𠜱
+    readings:
+      - pengim: poi1
+    senses:
+      - pos: verb
+        gloss_en: [to pare, to peel/slice with a blade]
+        gloss_zh: [批, 削]
+        note: The sense is tagged with the broad group 'Min' rather than specifically 'Teochew', though a confirmed Teochew reading is attested in this same block.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dui2-𠡒
+    headword: 𠡒
+    readings:
+      - pengim: dui2
+    senses:
+      - pos: verb
+        gloss_en: [to pull, to tug]
+        gloss_zh: [拉, 拖]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi2-𡧣
+    headword: 𡧣
+    readings:
+      - pengim: goi2
+    senses:
+      - pos: verb
+        gloss_en: [to forgive, to pardon, to indulge]
+        gloss_zh: [宥]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhug8-𢪱
+    headword: 𢪱
+    readings:
+      - pengim: bhug8
+    senses:
+      - pos: verb
+        gloss_en: [to beat with a stick, to whip]
+        gloss_zh: [𢪱]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cua7-𤆬
+    headword: 𤆬
+    readings:
+      - pengim: cua7
+    senses:
+      - pos: verb
+        gloss_en: [to lead; to guide, to marry (of a man)]
+        gloss_zh: [𤆬]
+        note: The page lists several dialect-restricted senses (lead/guide, cause, marry, raise, lure); the senses explicitly tagged Teochew are 'to cause someone to do something' and 'to marry (of a man)', while 'to lead/guide' is the broader general Min sense also given here.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cua7-bhou2-𤆬某
+    headword: 𤆬某
+    readings:
+      - pengim: cua7 bhou2
+    senses:
+      - pos: verb
+        gloss_en: [to take a wife, to marry (of a man)]
+        gloss_zh: [𤆬某]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nih4-𥍉
+    headword: 𥍉
+    readings:
+      - pengim: nih4
+    senses:
+      - pos: verb
+        gloss_en: [to blink, to wink]
+        gloss_zh: [𥍉]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nih4-mag8-𥍉目
+    headword: 𥍉目
+    readings:
+      - pengim: nih4 mag8
+    senses:
+      - pos: verb
+        gloss_en: [to blink, to wink, to wink at someone]
+        gloss_zh: [𥍉目]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-𧧸
+    headword: 𧧸
+    readings:
+      - pengim: bag4
+    senses:
+      - pos: verb
+        gloss_en: [to know (alternative form of 捌)]
+        gloss_zh: [捌]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tig4-𨑨
+    headword: 𨑨
+    readings:
+      - pengim: tig4
+    senses:
+      - pos: verb
+        gloss_en: ["to play (bound form, used in 𨑨迌)"]
+        gloss_zh: [𨑨]
+        note: The only Teochew-tagged sense is 'used in 𨑨迌' (a bound disyllabic compound meaning 'to play/have fun'); it is unclear whether the character carries independent meaning as glossed here.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gaoh4-𩛩
+    headword: 𩛩
+    readings:
+      - pengim: gaoh4
+    senses:
+      - pos: verb
+        gloss_en: [to wrap up; to stuff; to roll, to soak in liquid, to become moldy (from being wrapped)]
+        gloss_zh: [𩛩]
+        note: Several distinct senses (wrap/stuff, soak in liquid, become moldy from wrapping, generate interest) are all tagged Teochew under the same reading, so 'to wrap up' was chosen as the primary gloss but usage may vary by context.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bou7-𫜦
+    headword: 𫜦
+    readings:
+      - pengim: bou7
+    senses:
+      - pos: verb
+        gloss_en: [to chew (alternative form of 哺)]
+        gloss_zh: [哺]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh4-𬦰
+    headword: 𬦰
+    readings:
+      - pengim: bêh4
+    senses:
+      - pos: verb
+        gloss_en: [to climb, to get up (from sitting or lying down)]
+        gloss_zh: [𬦰]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soih4-𱟛
+    headword: 𱟛
+    readings:
+      - pengim: soih4
+    senses:
+      - pos: verb
+        gloss_en: [to love romantically, to long for]
+        gloss_zh: [𱟛]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

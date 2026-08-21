@@ -16674,3 +16674,619 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: ci5-mian5-馳名
+    headword: 馳名
+    readings:
+      - pengim: ci5 mian5
+    senses:
+      - pos: adjective
+        gloss_en: [famous; well-known, renowned]
+        gloss_zh: [馳名]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sung5-馴
+    headword: 馴
+    readings:
+      - pengim: sung5
+    senses:
+      - pos: adjective
+        gloss_en: [tame; docile, obedient]
+        gloss_zh: [馴]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: to5-buê3-駝背
+    headword: 駝背
+    readings:
+      - pengim: to5 buê3
+    senses:
+      - pos: adjective
+        gloss_en: [hunchbacked, stooped; bent over]
+        gloss_zh: [駝背]
+        note: Wiktionary lists 駝背 as adjective, noun, and verb senses all under the same reading; adjective ('hunchbacked') was chosen as the primary sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêng6-駢
+    headword: 駢
+    readings:
+      - pengim: bêng6
+    senses:
+      - pos: adjective
+        gloss_en: [parallel; side-by-side, antithetical (of prose or couplets)]
+        gloss_zh: [駢]
+        note: Classical literary character with both a noun sense ('two horses side-by-side') and an adjective sense ('parallel') under the same reading; it appears almost exclusively bound in compounds such as 駢文.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngai5-騃
+    headword: 騃
+    readings:
+      - pengim: ngai5
+    senses:
+      - pos: adjective
+        gloss_en: [stupid; foolish]
+        gloss_zh: [騃]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sao1-騷
+    headword: 騷
+    readings:
+      - pengim: sao1
+    senses:
+      - pos: adjective
+        gloss_en: [coquettish; flirty; provocative, to harass; to disturb]
+        gloss_zh: [騷]
+        note: The character carries many disparate senses under the same reading (harass, sad, poetry, coquettish, topolect-specific meanings); the coquettish/flirty sense was chosen as most likely active in Teochew given the related headword 騷婆.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gian1-song2-驚悚
+    headword: 驚悚
+    readings:
+      - pengim: gian1 song2
+    senses:
+      - pos: adjective
+        gloss_en: ["horror; thriller (of movies, novels)"]
+        gloss_zh: [驚悚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gian1-ian5-驚惶
+    headword: 驚惶
+    readings:
+      - pengim: gian1 ian5
+    senses:
+      - pos: adjective
+        gloss_en: [alarmed; frightened; panic-stricken]
+        gloss_zh: [驚惶]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gian1-ghia3-驚訝
+    headword: 驚訝
+    readings:
+      - pengim: gian1 ghia3
+    senses:
+      - pos: adjective
+        gloss_en: [surprised; astonished; amazed]
+        gloss_zh: [驚訝]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gian1-iam7-驚豔
+    headword: 驚豔
+    readings:
+      - pengim: gian1 iam7
+    senses:
+      - pos: adjective
+        gloss_en: [stunning; strikingly impressive (in beauty)]
+        gloss_zh: [驚豔]
+        note: The page gives both a verb sense ('to be amazed by beauty') and an adjective/neologism sense ('stunning') under the same reading; the adjective sense was chosen as the more common modern usage.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gian1-hiam2-驚險
+    headword: 驚險
+    readings:
+      - pengim: gian1 hiam2
+    senses:
+      - pos: adjective
+        gloss_en: [thrilling; breathtaking; astounding]
+        gloss_zh: [驚險]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang1-骯
+    headword: 骯
+    readings:
+      - pengim: ang1
+    senses:
+      - pos: prefix
+        gloss_en: ["dirty (bound morpheme, occurs only in 骯髒 'dirty')"]
+        gloss_zh: [骯髒]
+        note: Bound morpheme with no independent meaning outside the compound 骯髒; classified as prefix for lack of a better fitting part of speech.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zang1-luang6-髒亂
+    headword: 髒亂
+    readings:
+      - pengim: zang1 luang6
+    senses:
+      - pos: adjective
+        gloss_en: [dirty and messy]
+        gloss_zh: [髒亂]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-siang6-高尚
+    headword: 高尚
+    readings:
+      - pengim: gao1 siang6
+    senses:
+      - pos: adjective
+        gloss_en: [noble, morally upright, lofty]
+        gloss_zh: [高尚]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-hao7-高效
+    headword: 高效
+    readings:
+      - pengim: gao1 hao7
+    senses:
+      - pos: adjective
+        gloss_en: [highly efficient, highly effective]
+        gloss_zh: [高效]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-ngang1-高昂
+    headword: 高昂
+    readings:
+      - pengim: gao1 ngang1
+    senses:
+      - pos: adjective
+        gloss_en: [high-pitched, elated; in high spirits, costly; exorbitant]
+        gloss_zh: [高昂]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-kuê1-gi6-高科技
+    headword: 高科技
+    readings:
+      - pengim: gao1 kuê1 gi6
+    senses:
+      - pos: adjective
+        gloss_en: [high-tech; hi-tech]
+        gloss_zh: [高科技]
+        note: Wiktionary lists both an adjective sense (hi-tech) and a noun sense (advanced technology) under the same reading; chose adjective as the primary attributive use, but noun is equally defensible.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-hêng3-高興
+    headword: 高興
+    readings:
+      - pengim: gao1 hêng3
+    senses:
+      - pos: adjective
+        gloss_en: [glad; happy; pleased; delighted]
+        gloss_zh: [高興]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-sog4-高速
+    headword: 高速
+    readings:
+      - pengim: gao1 sog4
+    senses:
+      - pos: adjective
+        gloss_en: [high-speed]
+        gloss_zh: [高速]
+        note: Wiktionary lists both an adjective sense (high-speed) and a noun sense (high speed / abbreviation of 高速公路) under the same reading; chose the adjective sense as primary.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dam3-bhai7-髧眉
+    headword: 髧眉
+    readings:
+      - pengim: dam3 bhai7
+    senses:
+      - pos: adjective
+        gloss_en: [weak and useless; idiotic (offensive)]
+        gloss_zh: [髧眉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ug4-鬱
+    headword: 鬱
+    readings:
+      - pengim: ug4
+    senses:
+      - pos: adjective
+        gloss_en: [depressed; gloomy; melancholy, lush; dense (literary)]
+        gloss_zh: [鬱]
+        note: Extremely polysemous character page (over 20 senses spanning adjective, verb, and proper-noun uses under one reading); the common 'depressed/gloomy' sense was picked as primary.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lu2-魯
+    headword: 魯
+    readings:
+      - pengim: lu2
+    senses:
+      - pos: adjective
+        gloss_en: [stupid; dull, rude; crude]
+        gloss_zh: [魯]
+        note: The character carries several distinct senses under this same reading (surname, the ancient state of Lu, 'stupid/rude', bound morpheme in compounds like 魯肉飯) and it is unclear which is most salient as a standalone Teochew word, so the 'stupid; rude' adjective sense was picked as the most generally usable gloss.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cin1-mêng5-鮮明
+    headword: 鮮明
+    readings:
+      - pengim: cin1 mêng5
+    senses:
+      - pos: adjective
+        gloss_en: [bright; vivid (of colours), distinct; clear-cut]
+        gloss_zh: [鮮明]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cin1-iam7-鮮豔
+    headword: 鮮豔
+    readings:
+      - pengim: cin1 iam7
+    senses:
+      - pos: adjective
+        gloss_en: [bright; colourful; vivid]
+        gloss_zh: [鮮豔]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giam5-鹹
+    headword: 鹹
+    readings:
+      - pengim: giam5
+    senses:
+      - pos: adjective
+        gloss_en: [salty; briny]
+        gloss_zh: [鹹]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giam5-siab4-鹹澀
+    headword: 鹹澀
+    readings:
+      - pengim: giam5 siab4
+    senses:
+      - pos: adjective
+        gloss_en: [salty and bitter; salty and acerbic]
+        gloss_zh: [鹹澀]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mua5-麻
+    headword: 麻
+    readings:
+      - pengim: mua5
+    senses:
+      - pos: adjective
+        gloss_en: [numb, hemp; flax]
+        gloss_zh: [麻]
+        note: The character page lists divergent senses (numb/insensible vs. hemp/flax as a plant material, plus sesame and other meanings) all sharing the same reading, so it's unclear which is the primary sense for this headword.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ng5-sêg4-黃色
+    headword: 黃色
+    readings:
+      - pengim: ng5 sêg4
+    senses:
+      - pos: adjective
+        gloss_en: [yellow, pornographic (slang)]
+        gloss_zh: [黃色]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ng5-sng1-黃酸
+    headword: 黃酸
+    readings:
+      - pengim: ng5 sng1
+    senses:
+      - pos: adjective
+        gloss_en: [thin and sickly-looking]
+        gloss_zh: [黃酸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ti1-黐
+    headword: 黐
+    readings:
+      - pengim: ti1
+    senses:
+      - pos: adjective
+        gloss_en: [sticky]
+        gloss_zh: [黐]
+        note: The character carries several senses tagged mainly for Cantonese (stick, draw close, freeload); only the 'sticky' sense is also tagged for Southern Min/Teochew, so the exact Teochew meaning is somewhat uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hêg4-sim1-黑心
+    headword: 黑心
+    readings:
+      - pengim: hêg4 sim1
+    senses:
+      - pos: adjective
+        gloss_en: [black-hearted, unscrupulous, evil-intentioned]
+        gloss_zh: [黑心]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hêg4-am3-黑暗
+    headword: 黑暗
+    readings:
+      - pengim: hêg4 am3
+    senses:
+      - pos: adjective
+        gloss_en: [dark, unlighted, (fig.) corrupt]
+        gloss_zh: [黑暗]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hêg4-sêg4-黑色
+    headword: 黑色
+    readings:
+      - pengim: hêg4 sêg4
+    senses:
+      - pos: adjective
+        gloss_en: [black]
+        gloss_zh: [黑色]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: am3-黯
+    headword: 黯
+    readings:
+      - pengim: am3
+    senses:
+      - pos: adjective
+        gloss_en: [dim; dark]
+        gloss_zh: [黯]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ce2-gui2-sion3-鼠鬼相
+    headword: 鼠鬼相
+    readings:
+      - pengim: ce2 gui2 sion3
+    senses:
+      - pos: adjective
+        gloss_en: [stingy; miserly]
+        gloss_zh: [鼠鬼相]
+        note: The dossier gives both an adjective sense (stingy/miserly) and a noun sense (cheapskate/scrooge) for the same reading; adjective was chosen as the primary entry.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ce2-ce2-鼠鼠
+    headword: 鼠鼠
+    readings:
+      - pengim: ce2 ce2
+    senses:
+      - pos: adjective
+        gloss_en: [very small (of one's eyes)]
+        gloss_zh: [鼠鼠]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci5-cuang5-齊全
+    headword: 齊全
+    readings:
+      - pengim: ci5 cuang5
+    senses:
+      - pos: adjective
+        gloss_en: [complete, well-equipped, whole]
+        gloss_zh: [齊全]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang5-dai6-龐大
+    headword: 龐大
+    readings:
+      - pengim: pang5 dai6
+    senses:
+      - pos: adjective
+        gloss_en: [immense; huge; large in scale]
+        gloss_zh: [龐大]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gu1-guai3-龜怪
+    headword: 龜怪
+    readings:
+      - pengim: gu1 guai3
+    senses:
+      - pos: adjective
+        gloss_en: [eccentric; odd; strange]
+        gloss_zh: [龜怪]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhoi6-pai2-𠁞歹
+    headword: 𠁞歹
+    readings:
+      - pengim: bhoi6 pai2
+    senses:
+      - pos: adjective
+        gloss_en: [not bad, pretty good]
+        gloss_zh: [𣍐歹]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghao5-𠢕
+    headword: 𠢕
+    readings:
+      - pengim: ghao5
+    senses:
+      - pos: adjective
+        gloss_en: [capable; good at (something), skillfully; well, well-behaved]
+        gloss_zh: [會, 能幹]
+        note: Several closely related senses (capable/good-at, adverbial 'well', 'easily', 'well-behaved') are all attested under the same reading, and it is not fully clear which is the primary Teochew sense versus a secondary extension.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghao5-oi6-𠢕會
+    headword: 𠢕會
+    readings:
+      - pengim: ghao5 oi6
+    senses:
+      - pos: adjective
+        gloss_en: [capable, competent]
+        gloss_zh: [𠢕會]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lang6-ziao2-ming7-𡳞鳥面
+    headword: 𡳞鳥面
+    readings:
+      - pengim: lang6 ziao2 ming7
+    senses:
+      - pos: adjective
+        gloss_en: [stupid, foolish, unwise]
+        gloss_zh: [𡳞鳥面]
+        note: The only sense on the page is tagged Hokkien/Xiamen rather than explicitly Teochew, although a Teochew reading is attested for this word.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhoi6-mo2-𣍐孬
+    headword: 𣍐孬
+    readings:
+      - pengim: bhoi6 mo2
+    senses:
+      - pos: adjective
+        gloss_en: [not bad]
+        gloss_zh: [𣍐孬]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhoi6-pai2-𣍐歹
+    headword: 𣍐歹
+    readings:
+      - pengim: bhoi6 pai2
+    senses:
+      - pos: adjective
+        gloss_en: [not bad, pretty good]
+        gloss_zh: [𣍐歹]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang6-𤺪
+    headword: 𤺪
+    readings:
+      - pengim: siang6
+    senses:
+      - pos: adjective
+        gloss_en: [tired]
+        gloss_zh: [𤺪]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tio3-𦨖
+    headword: 𦨖
+    readings:
+      - pengim: tio3
+    senses:
+      - pos: adjective
+        gloss_en: [unsteady, tossing (of a boat)]
+        gloss_zh: [𦨖]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian2-𩟗
+    headword: 𩟗
+    readings:
+      - pengim: zian2
+    senses:
+      - pos: adjective
+        gloss_en: [tasteless; insipid (alternative form of 䭕/𬲕)]
+        gloss_zh: [䭕]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mui3-𱰸
+    headword: 𱰸
+    readings:
+      - pengim: mui3
+    senses:
+      - pos: adjective
+        gloss_en: [unafraid, fearless, not afraid]
+        gloss_zh: [𱰸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

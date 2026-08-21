@@ -6615,3 +6615,699 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: gao1-liang5-ziu2-高粱酒
+    headword: 高粱酒
+    readings:
+      - pengim: gao1 liang5 ziu2
+    senses:
+      - pos: noun
+        gloss_en: [kaoliang liquor (sorghum liquor)]
+        gloss_zh: [高粱酒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go1-lê6-cai3-高麗菜
+    headword: 高麗菜
+    readings:
+      - pengim: go1 lê6 cai3
+    senses:
+      - pos: noun
+        gloss_en: [cabbage]
+        gloss_zh: [高麗菜, 卷心菜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêg4-cai3-髮菜
+    headword: 髮菜
+    readings:
+      - pengim: huêg4 cai3
+    senses:
+      - pos: noun
+        gloss_en: ["hair moss (edible cyanobacterium, Nostoc flagelliforme)", fat choy]
+        gloss_zh: [髮菜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he5-in5-魚丸
+    headword: 魚丸
+    readings:
+      - pengim: he5 in5
+    senses:
+      - pos: noun
+        gloss_en: [fishball]
+        gloss_zh: [魚丸]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he5-neng6-魚卵
+    headword: 魚卵
+    readings:
+      - pengim: he5 neng6
+    senses:
+      - pos: noun
+        gloss_en: [fish roe, fish eggs]
+        gloss_zh: [魚卵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he5-in5-魚圓
+    headword: 魚圓
+    readings:
+      - pengim: he5 in5
+    senses:
+      - pos: noun
+        gloss_en: [fishball]
+        gloss_zh: [魚丸, 魚圓]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he5-cung1-魚春
+    headword: 魚春
+    readings:
+      - pengim: he5 cung1
+    senses:
+      - pos: noun
+        gloss_en: [fish roe]
+        gloss_zh: [魚春]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he5-zui2-魚水
+    headword: 魚水
+    readings:
+      - pengim: he5 zui2
+    senses:
+      - pos: noun
+        gloss_en: [fish sauce]
+        gloss_zh: [魚水]
+        note: The sense is tagged Cantonese/Guangzhou/Vietnam with a Cambodia qualifier even though it sits under the Teochew pronunciation section, so the dialect attribution for this specific reading is unclear.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he5-sên1-魚生
+    headword: 魚生
+    readings:
+      - pengim: he5 sên1
+    senses:
+      - pos: noun
+        gloss_en: [sashimi, yusheng (raw fish salad)]
+        gloss_zh: [魚生]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he5-ci3-魚翅
+    headword: 魚翅
+    readings:
+      - pengim: he5 ci3
+    senses:
+      - pos: noun
+        gloss_en: [shark fin]
+        gloss_zh: [魚翅]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he5-sig8-魚翼
+    headword: 魚翼
+    readings:
+      - pengim: he5 sig8
+    senses:
+      - pos: noun
+        gloss_en: [shark fin]
+        gloss_zh: [魚翼]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he5-dou6-魚肚
+    headword: 魚肚
+    readings:
+      - pengim: he5 dou6
+    senses:
+      - pos: noun
+        gloss_en: [fish maw]
+        gloss_zh: [魚肚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he5-cên1-cai3-魚腥菜
+    headword: 魚腥菜
+    readings:
+      - pengim: he5 cên1 cai3
+    senses:
+      - pos: noun
+        gloss_en: [basil (Ocimum basilicum)]
+        gloss_zh: [魚腥菜]
+        note: The literal name ("fish-smelling vegetable") more commonly denotes Houttuynia cordata (fishwort) in standard Chinese, so the Teochew-tagged "basil" gloss given by the source is worth double-checking.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he5-ga1-魚膠
+    headword: 魚膠
+    readings:
+      - pengim: he5 ga1
+    senses:
+      - pos: noun
+        gloss_en: [fish glue, isinglass, swim bladder]
+        gloss_zh: [魚膠]
+        note: The page lists three distinct senses (fish glue/isinglass, dialectal swim bladder, Hong Kong gelatin) under one shared pronunciation with no per-sense reading split, so which sense is the primary Teochew usage is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he5-lou7-魚露
+    headword: 魚露
+    readings:
+      - pengim: he5 lou7
+    senses:
+      - pos: noun
+        gloss_en: [fish sauce]
+        gloss_zh: [魚露]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gên2-鯁
+    headword: 鯁
+    readings:
+      - pengim: gên2
+    senses:
+      - pos: noun
+        gloss_en: [fishbone]
+        gloss_zh: [鯁]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao7-guê2-鱟粿
+    headword: 鱟粿
+    readings:
+      - pengim: hao7 guê2
+    senses:
+      - pos: noun
+        gloss_en: [hao kuih (a Chaoyang snack)]
+        gloss_zh: [鱟粿]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ah4-neng6-鴨卵
+    headword: 鴨卵
+    readings:
+      - pengim: ah4 neng6
+    senses:
+      - pos: noun
+        gloss_en: [duck egg, "(fig.) zero, goose egg"]
+        gloss_zh: [鴨卵, 鴨蛋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ah4-bho2-nim3-鴨母捻
+    headword: 鴨母捻
+    readings:
+      - pengim: ah4 bho2 nim3
+    senses:
+      - pos: noun
+        gloss_en: ["tangyuan (glutinous rice balls with filling, served in sweet soup)"]
+        gloss_zh: [鴨母捻, 湯圓]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ah4-zih8-鴨舌
+    headword: 鴨舌
+    readings:
+      - pengim: ah4 zih8
+    senses:
+      - pos: noun
+        gloss_en: [duck's tongue (as food), necktie (Teochew slang)]
+        gloss_zh: [鴨舌, 領帶]
+        note: Two distinct senses (duck tongue as food vs. a Teochew slang term for necktie) share the same reading, and it is unclear which is the primary/more common one.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou2-zui2-鹵水
+    headword: 鹵水
+    readings:
+      - pengim: lou2 zui2
+    senses:
+      - pos: noun
+        gloss_en: [brine, bittern]
+        gloss_zh: [鹵水]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giam5-neng6-鹹卵
+    headword: 鹹卵
+    readings:
+      - pengim: giam5 neng6
+    senses:
+      - pos: noun
+        gloss_en: [salted egg; salted duck egg]
+        gloss_zh: [鹹卵]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giam5-cai3-鹹菜
+    headword: 鹹菜
+    readings:
+      - pengim: giam5 cai3
+    senses:
+      - pos: noun
+        gloss_en: [salted/pickled vegetable, pickled mustard greens]
+        gloss_zh: [鹹菜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giam5-he5-鹹魚
+    headword: 鹹魚
+    readings:
+      - pengim: giam5 he5
+    senses:
+      - pos: noun
+        gloss_en: [salted fish]
+        gloss_zh: [鹹魚]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giam5-ah4-neng6-鹹鴨卵
+    headword: 鹹鴨卵
+    readings:
+      - pengim: giam5 ah4 neng6
+    senses:
+      - pos: noun
+        gloss_en: [salted duck egg]
+        gloss_zh: [鹹鴨卵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gin1-zang3-鹼粽
+    headword: 鹼粽
+    readings:
+      - pengim: gin1 zang3
+    senses:
+      - pos: noun
+        gloss_en: [alkaline zongzi (rice dumpling dessert)]
+        gloss_zh: [鹼粽]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêg8-geng1-鹿筋
+    headword: 鹿筋
+    readings:
+      - pengim: dêg8 geng1
+    senses:
+      - pos: noun
+        gloss_en: [deer sinew, deer tendon (culinary delicacy)]
+        gloss_zh: [鹿筋]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêg8-nêg8-鹿肉
+    headword: 鹿肉
+    readings:
+      - pengim: dêg8 nêg8
+    senses:
+      - pos: noun
+        gloss_en: [venison, deer meat]
+        gloss_zh: [鹿肉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhêh8-麥
+    headword: 麥
+    readings:
+      - pengim: bhêh8
+    senses:
+      - pos: noun
+        gloss_en: [wheat, barley, grain (cereal crop)]
+        gloss_zh: [麥]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhêh8-sên1-麥生
+    headword: 麥生
+    readings:
+      - pengim: bhêh8 sên1
+    senses:
+      - pos: noun
+        gloss_en: [maltose]
+        gloss_zh: [麥生]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhêh8-sên1-teng5-麥生糖
+    headword: 麥生糖
+    readings:
+      - pengim: bhêh8 sên1 teng5
+    senses:
+      - pos: noun
+        gloss_en: [maltose]
+        gloss_zh: [麥生糖]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhêh8-hung2-麥粉
+    headword: 麥粉
+    readings:
+      - pengim: bhêh8 hung2
+    senses:
+      - pos: noun
+        gloss_en: [flour, oatmeal]
+        gloss_zh: [麥粉]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhêh8-ziu2-麥酒
+    headword: 麥酒
+    readings:
+      - pengim: bhêh8 ziu2
+    senses:
+      - pos: noun
+        gloss_en: [ale, beer, wine from grain]
+        gloss_zh: [麥酒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhêh8-hu1-麥麩
+    headword: 麥麩
+    readings:
+      - pengim: bhêh8 hu1
+    senses:
+      - pos: noun
+        gloss_en: [wheat bran]
+        gloss_zh: [麥麩]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: min7-麵
+    headword: 麵
+    readings:
+      - pengim: min7
+    senses:
+      - pos: noun
+        gloss_en: [noodles, flour]
+        gloss_zh: [麵]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: min7-bao1-麵包
+    headword: 麵包
+    readings:
+      - pengim: min7 bao1
+    senses:
+      - pos: noun
+        gloss_en: [bread]
+        gloss_zh: [麵包]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: min7-huê1-麵灰
+    headword: 麵灰
+    readings:
+      - pengim: min7 huê1
+    senses:
+      - pos: noun
+        gloss_en: [flour]
+        gloss_zh: [麵灰]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: min7-ziang1-guê2-麵煎粿
+    headword: 麵煎粿
+    readings:
+      - pengim: min7 ziang1 guê2
+    senses:
+      - pos: noun
+        gloss_en: [mee chiang kueh, apam balik pancake]
+        gloss_zh: [麵煎粿]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: min7-hung2-麵粉
+    headword: 麵粉
+    readings:
+      - pengim: min7 hung2
+    senses:
+      - pos: noun
+        gloss_en: [flour]
+        gloss_zh: [麵粉]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: min7-coi3-麵粞
+    headword: 麵粞
+    readings:
+      - pengim: min7 coi3
+    senses:
+      - pos: noun
+        gloss_en: [wheat flour]
+        gloss_zh: [麵粞]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: min7-suan3-麵線
+    headword: 麵線
+    readings:
+      - pengim: min7 suan3
+    senses:
+      - pos: noun
+        gloss_en: [misua, thin wheat noodles]
+        gloss_zh: [麵線]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mi7-boh8-麵薄
+    headword: 麵薄
+    readings:
+      - pengim: mi7 boh8
+    senses:
+      - pos: noun
+        gloss_en: [mee pok, flat egg noodles]
+        gloss_zh: [麵薄]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mua5-iu5-麻油
+    headword: 麻油
+    readings:
+      - pengim: mua5 iu5
+    senses:
+      - pos: noun
+        gloss_en: [sesame oil]
+        gloss_zh: [麻油]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ng5-guê1-黃瓜
+    headword: 黃瓜
+    readings:
+      - pengim: ng5 guê1
+    senses:
+      - pos: noun
+        gloss_en: [cucumber]
+        gloss_zh: [黃瓜]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ng5-dao7-黃豆
+    headword: 黃豆
+    readings:
+      - pengim: ng5 dao7
+    senses:
+      - pos: noun
+        gloss_en: [soybean]
+        gloss_zh: [黃豆]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diam2-sim1-點心
+    headword: 點心
+    readings:
+      - pengim: diam2 sim1
+    senses:
+      - pos: noun
+        gloss_en: [snack; light refreshment, dim sum; pastry]
+        gloss_zh: [點心]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dian2-鼎
+    headword: 鼎
+    readings:
+      - pengim: dian2
+    senses:
+      - pos: noun
+        gloss_en: [pot; wok (cooking vessel), cauldron (archaic/ceremonial)]
+        gloss_zh: [鼎, 鍋]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dian2-kam3-鼎崁
+    headword: 鼎崁
+    readings:
+      - pengim: dian2 kam3
+    senses:
+      - pos: noun
+        gloss_en: [lid of a cooking pot]
+        gloss_zh: [鼎崁]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dian2-liu6-鼎溜
+    headword: 鼎溜
+    readings:
+      - pengim: dian2 liu6
+    senses:
+      - pos: noun
+        gloss_en: [spatula; slice (cooking utensil)]
+        gloss_zh: [鼎溜]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dian2-kain3-鼎蓋
+    headword: 鼎蓋
+    readings:
+      - pengim: dian2 kain3
+    senses:
+      - pos: noun
+        gloss_en: [lid of a cooking pot]
+        gloss_zh: [鼎蓋]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dian2-le1-鼎鑢
+    headword: 鼎鑢
+    readings:
+      - pengim: dian2 le1
+    senses:
+      - pos: noun
+        gloss_en: [spatula (cooking utensil)]
+        gloss_zh: [鼎鑢]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dian2-gam2-鼎𥴊
+    headword: 鼎𥴊
+    readings:
+      - pengim: dian2 gam2
+    senses:
+      - pos: noun
+        gloss_en: [lid of a cooking pot]
+        gloss_zh: [鼎𥴊]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ce2-guê1-鼠瓜
+    headword: 鼠瓜
+    readings:
+      - pengim: ce2 guê1
+    senses:
+      - pos: noun
+        gloss_en: [loofah]
+        gloss_zh: [鼠瓜]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ce2-kag4-guê2-鼠麴粿
+    headword: 鼠麴粿
+    readings:
+      - pengim: ce2 kag4 guê2
+    senses:
+      - pos: noun
+        gloss_en: [shuquguo (a type of kuih made with sweet dough)]
+        gloss_zh: [鼠麴粿]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-齋
+    headword: 齋
+    readings:
+      - pengim: ze1
+    senses:
+      - pos: noun
+        gloss_en: [vegetarian diet/food (esp. for religious reasons), fasting]
+        gloss_zh: [齋]
+        note: Character page lists many senses (vegetarian diet, fasting, solemn, religious ceremony, surname, etc.) under one shared Teochew reading, so the precise intended sense is not disambiguated.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi1-齏
+    headword: 齏
+    readings:
+      - pengim: zi1
+    senses:
+      - pos: noun
+        gloss_en: ["finely chopped condiments (ginger, garlic, etc.)", pickled vegetables]
+        gloss_zh: [齏]
+        note: Rare literary character with multiple senses (verb 'to pulverize' vs. noun 'minced condiments' vs. 'pickled vegetables') sharing one Teochew reading; the food-related noun sense was chosen as most dictionary-worthy but is not individually confirmed.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-hê5-龍蝦
+    headword: 龍蝦
+    readings:
+      - pengim: lêng5 hê5
+    senses:
+      - pos: noun
+        gloss_en: [lobster, spiny lobster]
+        gloss_zh: [龍蝦]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
