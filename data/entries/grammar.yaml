@@ -1828,3 +1828,135 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: zog4-足
+    headword: 足
+    readings:
+      - pengim: zog4
+    senses:
+      - pos: adverb
+        gloss_en: [very, quite, extremely]
+        gloss_zh: [足]
+        note: Character 足 carries several distinct senses at this same reading (foot/leg, enough/sufficient, and the Southern-Min colloquial intensifier 'very'); chose the intensifier sense as most relevant to spoken Teochew, but the body-part 'foot' sense is also a strong candidate.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng1-bin1-身邊
+    headword: 身邊
+    readings:
+      - pengim: sêng1 bin1
+    senses:
+      - pos: noun
+        gloss_en: [by one's side, on hand, with one]
+        gloss_zh: [身邊]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ga3-較
+    headword: 較
+    readings:
+      - pengim: ga3
+    senses:
+      - pos: adverb
+        gloss_en: [comparatively; more, than (marks a comparison)]
+        gloss_zh: [較]
+        note: 較 carries many senses under the same reading (verb 'to compare', adverb 'more/comparatively', comparison-marking 'than', adjective 'obvious', plus Hokkien-specific extensions); the comparative-adverb sense was chosen as primary though usage varies by context.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ga3-ui5-較為
+    headword: 較為
+    readings:
+      - pengim: ga3 ui5
+    senses:
+      - pos: adverb
+        gloss_en: [comparatively; relatively; fairly]
+        gloss_zh: [較為]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngeg4-迄
+    headword: 迄
+    readings:
+      - pengim: ngeg4
+    senses:
+      - pos: preposition
+        gloss_en: [until; up to]
+        gloss_zh: [迄]
+        note: The page gives three related literary senses (to reach/arrive, until/up to, as yet/finally) under this single reading; the preposition sense ('until') was picked as the most representative modern usage (as in 迄今).
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tao3-guê3-透過
+    headword: 透過
+    readings:
+      - pengim: tao3 guê3
+    senses:
+      - pos: preposition
+        gloss_en: [via; by means of, through]
+        gloss_zh: [透過]
+        note: Page lists both a general verb sense ('to permeate/go through') and a preposition sense ('via/by means of', tagged HK/Macau/Taiwan) under the same reading; chose the preposition sense as more common in everyday use.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tong1-guê3-通過
+    headword: 通過
+    readings:
+      - pengim: tong1 guê3
+    senses:
+      - pos: preposition
+        gloss_en: [through, via, by means of]
+        gloss_zh: [通過]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huan5-si6-還是
+    headword: 還是
+    readings:
+      - pengim: huan5 si6
+    senses:
+      - pos: adverb
+        gloss_en: [still, nevertheless; yet, or (in either/or questions)]
+        gloss_zh: [還是]
+        note: 還是 functions as both an adverb ("still / nevertheless") and a conjunction ("or"); the Teochew reading given covers both senses but only one pos could be selected.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bin1-tao5-邊頭
+    headword: 邊頭
+    readings:
+      - pengim: bin1 tao5
+    senses:
+      - pos: noun
+        gloss_en: [side, edge, border]
+        gloss_zh: [邊頭]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang1-鄲
+    headword: 鄲
+    readings:
+      - pengim: dang1
+    senses:
+      - pos: conjunction
+        gloss_en: [alternative form of 但 (but; only), "(bound character, used only in 邯鄲 Handan)"]
+        gloss_zh: [但]
+        note: "The character page gives two disparate senses under this reading: a bound morpheme used only in the place name 邯鄲, and an alternative form of 但 ('but'); drafted via the alt-of sense since it offers more definable content."
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

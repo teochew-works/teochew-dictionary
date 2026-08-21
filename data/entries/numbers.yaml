@@ -1528,3 +1528,29 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: hu6-ho7-負號
+    headword: 負號
+    readings:
+      - pengim: hu6 ho7
+    senses:
+      - pos: noun
+        gloss_en: [minus sign (−)]
+        gloss_zh: [負號]
+        note: Technical mathematical term; uncertain whether numbers.yaml or basics.yaml is the better category fit.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liang2-輛
+    headword: 輛
+    readings:
+      - pengim: liang2
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for wheeled vehicles]
+        gloss_zh: [輛]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

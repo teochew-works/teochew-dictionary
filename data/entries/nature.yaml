@@ -9373,3 +9373,227 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: nao2-瑙
+    headword: 瑙
+    readings:
+      - pengim: nao2
+    senses:
+      - pos: noun
+        gloss_en: ["agate (bound form, as in 瑪瑙)"]
+        gloss_zh: [瑙]
+        note: The page lists three unrelated compound senses for this reading (瑪瑙 'agate', 多瑙 'Danube', and an unglossed 錦瑙) without indicating which is primary; 'agate' was chosen as the most common.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cion6-ghê5-象牙
+    headword: 象牙
+    readings:
+      - pengim: cion6 ghê5
+    senses:
+      - pos: noun
+        gloss_en: [elephant tusk, ivory]
+        gloss_zh: [象牙]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gui3-gim1-sog8-貴金屬
+    headword: 貴金屬
+    readings:
+      - pengim: gui3 gim1 sog8
+    senses:
+      - pos: noun
+        gloss_en: [precious metal]
+        gloss_zh: [貴金屬]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciah4-dao6-赤道
+    headword: 赤道
+    readings:
+      - pengim: ciah4 dao6
+    senses:
+      - pos: noun
+        gloss_en: [equator, celestial equator]
+        gloss_zh: [赤道]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki2-huang1-起風
+    headword: 起風
+    readings:
+      - pengim: ki2 huang1
+    senses:
+      - pos: verb
+        gloss_en: [wind is picking up; to become windy]
+        gloss_zh: [起風]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: king1-tih4-輕鐵
+    headword: 輕鐵
+    readings:
+      - pengim: king1 tih4
+    senses:
+      - pos: noun
+        gloss_en: [aluminium; aluminum]
+        gloss_zh: [鋁, 輕鐵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-sia7-輻射
+    headword: 輻射
+    readings:
+      - pengim: bag4 sia7
+    senses:
+      - pos: noun
+        gloss_en: [radiation]
+        gloss_zh: [輻射]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: long5-zag4-muêh8-農作物
+    headword: 農作物
+    readings:
+      - pengim: long5 zag4 muêh8
+    senses:
+      - pos: noun
+        gloss_en: [crop, agricultural produce]
+        gloss_zh: [農作物]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: long5-ngiab8-農業
+    headword: 農業
+    readings:
+      - pengim: long5 ngiab8
+    senses:
+      - pos: noun
+        gloss_en: [agriculture, farming]
+        gloss_zh: [農業]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: long5-cang5-農田
+    headword: 農田
+    readings:
+      - pengim: long5 cang5
+    senses:
+      - pos: noun
+        gloss_en: [farmland, cropland]
+        gloss_zh: [農田]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: long5-gên1-農耕
+    headword: 農耕
+    readings:
+      - pengim: long5 gên1
+    senses:
+      - pos: noun
+        gloss_en: [farming, agriculture]
+        gloss_zh: [農耕]
+        note: The page lists both a verb sense ('to farm; to plow; to till') and a formal noun sense ('farming; agriculture') under the identical Teochew reading; the noun sense was chosen as primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngêg8-huang1-逆風
+    headword: 逆風
+    readings:
+      - pengim: ngêg8 huang1
+    senses:
+      - pos: noun
+        gloss_en: [headwind, adverse wind]
+        gloss_zh: [逆風]
+        note: Page has both a verb sense ('to go against the wind') and a noun sense ('headwind') under the identical Teochew reading; chose the noun as primary.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biêng1-gêng2-邊境
+    headword: 邊境
+    readings:
+      - pengim: biêng1 gêng2
+    senses:
+      - pos: noun
+        gloss_en: [border, frontier]
+        gloss_zh: [邊境]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biêng1-gai3-邊界
+    headword: 邊界
+    readings:
+      - pengim: biêng1 gai3
+    senses:
+      - pos: noun
+        gloss_en: [boundary, border, periphery]
+        gloss_zh: [邊界]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu2-zêng1-酒精
+    headword: 酒精
+    readings:
+      - pengim: ziu2 zêng1
+    senses:
+      - pos: noun
+        gloss_en: [alcohol, ethanol]
+        gloss_zh: [酒精]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuê5-酶
+    headword: 酶
+    readings:
+      - pengim: bhuê5
+    senses:
+      - pos: noun
+        gloss_en: [enzyme, -ase]
+        gloss_zh: [酶]
+        note: This reading covers both a modern 'enzyme' sense and an obsolete sense as an alternative form of 媒 ('yeast'); the modern biochemistry sense was chosen as more likely useful/intended.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-釉
+    headword: 釉
+    readings:
+      - pengim: iu5
+    senses:
+      - pos: noun
+        gloss_en: [glaze (ceramic)]
+        gloss_zh: [釉]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ia2-ghua7-野外
+    headword: 野外
+    readings:
+      - pengim: ia2 ghua7
+    senses:
+      - pos: noun
+        gloss_en: [open country, outdoors, wilderness]
+        gloss_zh: [野外]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

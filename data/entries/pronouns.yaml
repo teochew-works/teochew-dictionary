@@ -1077,3 +1077,51 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: zê2-這
+    headword: 這
+    readings:
+      - pengim: zê2
+    senses:
+      - pos: pronoun
+        gloss_en: [this; these]
+        gloss_zh: [這]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zê2-li2-這裡
+    headword: 這裡
+    readings:
+      - pengim: zê2 li2
+    senses:
+      - pos: pronoun
+        gloss_en: [here]
+        gloss_zh: [這裡]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: na2-那
+    headword: 那
+    readings:
+      - pengim: na2
+    senses:
+      - pos: pronoun
+        gloss_en: [that; those]
+        gloss_zh: [那]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: na2-li2-那裡
+    headword: 那裡
+    readings:
+      - pengim: na2 li2
+    senses:
+      - pos: pronoun
+        gloss_en: [there]
+        gloss_zh: [那裡]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

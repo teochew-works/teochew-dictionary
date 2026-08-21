@@ -2780,3 +2780,239 @@ entries:
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: si2-豕
+    headword: 豕
+    readings:
+      - pengim: si2
+    senses:
+      - pos: noun
+        gloss_en: [pig; boar]
+        gloss_zh: [豕, 豬]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hi1-豨
+    headword: 豨
+    readings:
+      - pengim: hi1
+    senses:
+      - pos: noun
+        gloss_en: [pig, hog, swine (archaic)]
+        gloss_zh: [豨]
+        note: The 'pig' sense is tagged obsolete and specific to Central/Northern Min dialects on the source page; unclear whether this classical meaning is genuinely current in Teochew despite the attested Teochew reading.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho5-de1-豪豬
+    headword: 豪豬
+    readings:
+      - pengim: ho5 de1
+    senses:
+      - pos: noun
+        gloss_en: [porcupine]
+        gloss_zh: [豪豬]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-go1-豬哥
+    headword: 豬哥
+    readings:
+      - pengim: de1 go1
+    senses:
+      - pos: noun
+        gloss_en: [boar (breeding boar), lecherous man (colloquial)]
+        gloss_zh: [豬哥]
+        note: Multiple senses share this Teochew reading across a noun block (breeding boar, lecherous man, male adulterer, Zhu Bajie, derogatory term for Moro Muslims) and an adjective block (lecherous); the base literal 'boar' sense was chosen but the colloquial 'womanizer' sense is equally well attested for Southern Min varieties.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-lang2-豬囊
+    headword: 豬囊
+    readings:
+      - pengim: de1 lang2
+    senses:
+      - pos: noun
+        gloss_en: [sow, female pig]
+        gloss_zh: [豬囊]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-gian2-豬囝
+    headword: 豬囝
+    readings:
+      - pengim: de1 gian2
+    senses:
+      - pos: noun
+        gloss_en: [piglet]
+        gloss_zh: [豬囝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-bho2-豬母
+    headword: 豬母
+    readings:
+      - pengim: de1 bho2
+    senses:
+      - pos: noun
+        gloss_en: [sow, female pig]
+        gloss_zh: [豬母]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-gou2-豬牯
+    headword: 豬牯
+    readings:
+      - pengim: de1 gou2
+    senses:
+      - pos: noun
+        gloss_en: [boar]
+        gloss_zh: [豬牯]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba3-豹
+    headword: 豹
+    readings:
+      - pengim: ba3
+    senses:
+      - pos: noun
+        gloss_en: [leopard, panther]
+        gloss_zh: [豹]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cai5-gao2-豺狗
+    headword: 豺狗
+    readings:
+      - pengim: cai5 gao2
+    senses:
+      - pos: noun
+        gloss_en: [dhole, wolf (dialectal)]
+        gloss_zh: [豺狗]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: log8-貉
+    headword: 貉
+    readings:
+      - pengim: log8
+    senses:
+      - pos: noun
+        gloss_en: [raccoon dog, tanuki]
+        gloss_zh: [貉]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiao1-tao5-ziao2-貓頭鳥
+    headword: 貓頭鳥
+    readings:
+      - pengim: ngiao1 tao5 ziao2
+    senses:
+      - pos: noun
+        gloss_en: [owl]
+        gloss_zh: [貓頭鳥, 貓頭鷹]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi6-hi3-贔屭
+    headword: 贔屭
+    readings:
+      - pengim: bi6 hi3
+    senses:
+      - pos: noun
+        gloss_en: [bixi (mythical turtle-like creature), stele-bearing tortoise]
+        gloss_zh: [贔屭]
+        note: Page has two blocks under the same reading, a noun sense (mythical turtle-like creature) and a literary adjective sense ('strenuous, with a lot of strength'); the noun sense was picked as primary.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka1-he5-跤魚
+    headword: 跤魚
+    readings:
+      - pengim: ka1 he5
+    senses:
+      - pos: noun
+        gloss_en: [soft-shell turtle]
+        gloss_zh: [跤魚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiao3-zao2-跳蚤
+    headword: 跳蚤
+    readings:
+      - pengim: tiao3 zao2
+    senses:
+      - pos: noun
+        gloss_en: [flea]
+        gloss_zh: [跳蚤]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ia2-siu3-野獸
+    headword: 野獸
+    readings:
+      - pengim: ia2 siu3
+    senses:
+      - pos: noun
+        gloss_en: [wild animal, wild beast]
+        gloss_zh: [野獸]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ia2-sên1-dong6-muêh8-野生動物
+    headword: 野生動物
+    readings:
+      - pengim: ia2 sên1 dong6 muêh8
+    senses:
+      - pos: noun
+        gloss_en: [wildlife, wild animal]
+        gloss_zh: [野生動物]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ia2-de1-野豬
+    headword: 野豬
+    readings:
+      - pengim: ia2 de1
+    senses:
+      - pos: noun
+        gloss_en: [wild boar]
+        gloss_zh: [野豬]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ia2-goi1-野雞
+    headword: 野雞
+    readings:
+      - pengim: ia2 goi1
+    senses:
+      - pos: noun
+        gloss_en: [pheasant, (slang) streetwalker]
+        gloss_zh: [野雞]
+        note: The same reading also heads a separate adjective block on the page meaning 'operating illegally/unlicensed' (e.g. 野雞大學); picked the noun sense (pheasant) as the primary meaning to draft.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

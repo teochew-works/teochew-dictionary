@@ -5429,3 +5429,449 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: dao7-hu7-moh8-豆腐膜
+    headword: 豆腐膜
+    readings:
+      - pengim: dao7 hu7 moh8
+    senses:
+      - pos: noun
+        gloss_en: [dried beancurd skin sticks, tofu skin rolls]
+        gloss_zh: [豆腐膜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao7-hu7-huê1-豆腐花
+    headword: 豆腐花
+    readings:
+      - pengim: dao7 hu7 huê1
+    senses:
+      - pos: noun
+        gloss_en: [tofu pudding, jellied tofu (douhua)]
+        gloss_zh: [豆腐花]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao7-huê1-豆花
+    headword: 豆花
+    readings:
+      - pengim: dao7 huê1
+    senses:
+      - pos: noun
+        gloss_en: [douhua; tofu pudding]
+        gloss_zh: [豆花]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao7-ghê5-豆芽
+    headword: 豆芽
+    readings:
+      - pengim: dao7 ghê5
+    senses:
+      - pos: noun
+        gloss_en: [bean sprouts]
+        gloss_zh: [豆芽]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao7-si7-豆豉
+    headword: 豆豉
+    readings:
+      - pengim: dao7 si7
+    senses:
+      - pos: noun
+        gloss_en: [douchi; fermented black soybeans]
+        gloss_zh: [豆豉]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao7-ziên3-豆醬
+    headword: 豆醬
+    readings:
+      - pengim: dao7 ziên3
+    senses:
+      - pos: noun
+        gloss_en: [fermented bean paste; miso]
+        gloss_zh: [豆醬]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao7-tao5-豆頭
+    headword: 豆頭
+    readings:
+      - pengim: dao7 tao5
+    senses:
+      - pos: noun
+        gloss_en: [soybean dregs; okara]
+        gloss_zh: [豆頭, 豆渣]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si7-豉
+    headword: 豉
+    readings:
+      - pengim: si7
+    senses:
+      - pos: noun
+        gloss_en: [fermented bean]
+        gloss_zh: [豉]
+        note: Listed on Wiktionary as obsolete standalone in Standard Chinese; in Teochew it functions mainly as a bound morpheme in compounds like 豆豉/豉油, so its standalone pos/usage is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si7-iu5-豉油
+    headword: 豉油
+    readings:
+      - pengim: si7 iu5
+    senses:
+      - pos: noun
+        gloss_en: [soy sauce]
+        gloss_zh: [豉油, 醬油]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang1-dao7-豌豆
+    headword: 豌豆
+    readings:
+      - pengim: uang1 dao7
+    senses:
+      - pos: noun
+        gloss_en: [pea (Pisum sativum)]
+        gloss_zh: [豌豆]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-san1-zang5-豬三層
+    headword: 豬三層
+    readings:
+      - pengim: de1 san1 zang5
+    senses:
+      - pos: noun
+        gloss_en: [pork belly, streaky pork]
+        gloss_zh: [豬三層]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-bai5-豬排
+    headword: 豬排
+    readings:
+      - pengim: de1 bai5
+    senses:
+      - pos: noun
+        gloss_en: [pork chop, cutlet]
+        gloss_zh: [豬排]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-huang1-豬番
+    headword: 豬番
+    readings:
+      - pengim: de1 huang1
+    senses:
+      - pos: noun
+        gloss_en: [pig intestines (food)]
+        gloss_zh: [豬番]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-dou6-豬肚
+    headword: 豬肚
+    readings:
+      - pengim: de1 dou6
+    senses:
+      - pos: noun
+        gloss_en: [pork tripe, pig stomach]
+        gloss_zh: [豬肚]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-guan1-豬肝
+    headword: 豬肝
+    readings:
+      - pengim: de1 guan1
+    senses:
+      - pos: noun
+        gloss_en: [pork liver]
+        gloss_zh: [豬肝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-zih8-豬舌
+    headword: 豬舌
+    readings:
+      - pengim: de1 zih8
+    senses:
+      - pos: noun
+        gloss_en: [pig tongue]
+        gloss_zh: [豬舌]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-huêh4-豬血
+    headword: 豬血
+    readings:
+      - pengim: de1 huêh4
+    senses:
+      - pos: noun
+        gloss_en: ["pig blood (liquid or solidified, as food)"]
+        gloss_zh: [豬血]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-ka1-豬跤
+    headword: 豬跤
+    readings:
+      - pengim: de1 ka1
+    senses:
+      - pos: noun
+        gloss_en: [pig's foot, pork trotter/leg]
+        gloss_zh: [豬跤, 豬腳]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-tao5-puê5-豬頭皮
+    headword: 豬頭皮
+    readings:
+      - pengim: de1 tao5 puê5
+    senses:
+      - pos: noun
+        gloss_en: [skin and meat of a pig's head]
+        gloss_zh: [豬頭皮]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki2-gug4-起骨
+    headword: 起骨
+    readings:
+      - pengim: ki2 gug4
+    senses:
+      - pos: verb
+        gloss_en: [to debone; to take out bones]
+        gloss_zh: [起骨]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guê3-ni5-bung7-過年飯
+    headword: 過年飯
+    readings:
+      - pengim: guê3 ni5 bung7
+    senses:
+      - pos: noun
+        gloss_en: [New Year's Eve reunion dinner]
+        gloss_zh: [過年飯]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puê3-liao7-配料
+    headword: 配料
+    readings:
+      - pengim: puê3 liao7
+    senses:
+      - pos: noun
+        gloss_en: [ingredient, seasoning; condiment]
+        gloss_zh: [配料]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu2-hu5-酒壺
+    headword: 酒壺
+    readings:
+      - pengim: ziu2 hu5
+    senses:
+      - pos: noun
+        gloss_en: [wine pot]
+        gloss_zh: [酒壺]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu2-cioh8-酒席
+    headword: 酒席
+    readings:
+      - pengim: ziu2 cioh8
+    senses:
+      - pos: noun
+        gloss_en: [feast, banquet]
+        gloss_zh: [酒席]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu2-zung1-酒樽
+    headword: 酒樽
+    readings:
+      - pengim: ziu2 zung1
+    senses:
+      - pos: noun
+        gloss_en: [wine bottle, goblet]
+        gloss_zh: [酒樽]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu2-bho2-酒母
+    headword: 酒母
+    readings:
+      - pengim: ziu2 bho2
+    senses:
+      - pos: noun
+        gloss_en: [distiller's yeast; brewer's yeast, leavening agent]
+        gloss_zh: [酒母]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu2-bian2-酒餅
+    headword: 酒餅
+    readings:
+      - pengim: ziu2 bian2
+    senses:
+      - pos: noun
+        gloss_en: [distiller's yeast; brewer's yeast]
+        gloss_zh: [酒餅]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: log8-酪
+    headword: 酪
+    readings:
+      - pengim: log8
+    senses:
+      - pos: noun
+        gloss_en: [junket; cheese, dairy paste]
+        gloss_zh: [酪]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gan3-酵
+    headword: 酵
+    readings:
+      - pengim: gan3
+    senses:
+      - pos: noun
+        gloss_en: [yeast]
+        gloss_zh: [酵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gan3-bho2-酵母
+    headword: 酵母
+    readings:
+      - pengim: gan3 bho2
+    senses:
+      - pos: noun
+        gloss_en: [yeast, leaven]
+        gloss_zh: [酵母]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: seng1-bao1-酸包
+    headword: 酸包
+    readings:
+      - pengim: seng1 bao1
+    senses:
+      - pos: noun
+        gloss_en: [bread]
+        gloss_zh: [酸包, 麵包]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: seng1-bhuê5-酸梅
+    headword: 酸梅
+    readings:
+      - pengim: seng1 bhuê5
+    senses:
+      - pos: noun
+        gloss_en: [dried sour plum, smoked ume]
+        gloss_zh: [酸梅]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: seng1-cai3-酸菜
+    headword: 酸菜
+    readings:
+      - pengim: seng1 cai3
+    senses:
+      - pos: noun
+        gloss_en: [pickled cabbage, pickled mustard greens]
+        gloss_zh: [酸菜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cou3-醋
+    headword: 醋
+    readings:
+      - pengim: cou3
+    senses:
+      - pos: noun
+        gloss_en: [vinegar]
+        gloss_zh: [醋]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziên3-iu5-醬油
+    headword: 醬油
+    readings:
+      - pengim: ziên3 iu5
+    senses:
+      - pos: noun
+        gloss_en: [soy sauce]
+        gloss_zh: [醬油]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion3-cên1-醬清
+    headword: 醬清
+    readings:
+      - pengim: zion3 cên1
+    senses:
+      - pos: noun
+        gloss_en: [light soy sauce]
+        gloss_zh: [醬清]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiam5-dê5-釅茶
+    headword: 釅茶
+    readings:
+      - pengim: ngiam5 dê5
+    senses:
+      - pos: noun
+        gloss_en: [strong tea]
+        gloss_zh: [釅茶]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

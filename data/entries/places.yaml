@@ -9744,3 +9744,781 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: dao7-hu7-za1-gang1-tian5-豆腐渣工程
+    headword: 豆腐渣工程
+    readings:
+      - pengim: dao7 hu7 za1 gang1 tian5
+    senses:
+      - pos: idiom
+        gloss_en: [tofu-dreg project, shoddily built construction project]
+        gloss_zh: [豆腐渣工程]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: e6-豫
+    headword: 豫
+    readings:
+      - pengim: e6
+    senses:
+      - pos: proper-noun
+        gloss_en: [Henan (abbreviation), short for 河南 (Hénán)]
+        gloss_zh: [河南]
+        note: This character carries several unrelated senses under the same reading (bound morpheme in 猶豫, I Ching hexagram name, archaic 'price-gouging', alternative form of 預); the common 'short for 河南 (Henan)' abbreviation sense was chosen via its alt_of, but it is unclear which sense the Teochew reading is actually meant to cover.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-lo5-豬牢
+    headword: 豬牢
+    readings:
+      - pengim: de1 lo5
+    senses:
+      - pos: noun
+        gloss_en: [pigsty, pigpen]
+        gloss_zh: [豬牢]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gui3-se6-貴嶼
+    headword: 貴嶼
+    readings:
+      - pengim: gui3 se6
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Guiyu (a town in Chaoyang district, Shantou, Guangdong)"]
+        gloss_zh: [貴嶼]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gui3-ziu1-貴州
+    headword: 貴州
+    readings:
+      - pengim: gui3 ziu1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Guizhou (a province in southwestern China)]
+        gloss_zh: [貴州]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gui3-gang2-貴港
+    headword: 貴港
+    readings:
+      - pengim: gui3 gang2
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Guigang (a prefecture-level city in Guangxi, China)"]
+        gloss_zh: [貴港]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cag8-dao3-賊竇
+    headword: 賊竇
+    readings:
+      - pengim: cag8 dao3
+    senses:
+      - pos: noun
+        gloss_en: [bandit lair, bandit hideout]
+        gloss_zh: [賊竇]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bing1-ziu1-賓州
+    headword: 賓州
+    readings:
+      - pengim: bing1 ziu1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Pennsylvania (U.S. state, abbreviation)", Bin Prefecture / Binzhou (historical Chinese place names)]
+        gloss_zh: [賓州, 賓夕法尼亞州]
+        note: The Teochew reading is shared by two unrelated Wiktionary senses (the Pennsylvania abbreviation vs. historical Chinese place names Bin Prefecture/Binzhou), and it is unclear which is intended.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai3-dion5-賽場
+    headword: 賽場
+    readings:
+      - pengim: sai3 dion5
+    senses:
+      - pos: noun
+        gloss_en: [stadium, racetrack, competition venue]
+        gloss_zh: [賽場]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong3-ziu1-贛州
+    headword: 贛州
+    readings:
+      - pengim: gong3 ziu1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Ganzhou (a prefecture-level city of Jiangxi, China)"]
+        gloss_zh: [贛州]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciah4-liao5-赤寮
+    headword: 赤寮
+    readings:
+      - pengim: ciah4 liao5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Chiliao/Gurao (a town in Chaoyang district, Shantou, Guangdong, China)"]
+        gloss_zh: [赤寮]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiao3-ci6-超市
+    headword: 超市
+    readings:
+      - pengim: tiao3 ci6
+    senses:
+      - pos: noun
+        gloss_en: [supermarket]
+        gloss_zh: [超市]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uag8-nam5-ghe2-越南語
+    headword: 越南語
+    readings:
+      - pengim: uag8 nam5 ghe2
+    senses:
+      - pos: noun
+        gloss_en: [Vietnamese (language)]
+        gloss_zh: [越南語]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zog4-giu5-dion5-足球場
+    headword: 足球場
+    readings:
+      - pengim: zog4 giu5 dion5
+    senses:
+      - pos: noun
+        gloss_en: [football field, football pitch, soccer field]
+        gloss_zh: [足球場]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pao2-dao6-跑道
+    headword: 跑道
+    readings:
+      - pengim: pao2 dao6
+    senses:
+      - pos: noun
+        gloss_en: [runway, airstrip, track]
+        gloss_zh: [跑道]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou7-kao2-路口
+    headword: 路口
+    readings:
+      - pengim: lou7 kao2
+    senses:
+      - pos: noun
+        gloss_en: [intersection, junction, crossing]
+        gloss_zh: [路口]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou7-gian2-路囝
+    headword: 路囝
+    readings:
+      - pengim: lou7 gian2
+    senses:
+      - pos: noun
+        gloss_en: [small pathway, narrow path]
+        gloss_zh: [路囝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou7-gin5-路墘
+    headword: 路墘
+    readings:
+      - pengim: lou7 gin5
+    senses:
+      - pos: noun
+        gloss_en: [roadside, side of the road]
+        gloss_zh: [路墘]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou7-gên3-路徑
+    headword: 路徑
+    readings:
+      - pengim: lou7 gên3
+    senses:
+      - pos: noun
+        gloss_en: [path, route, method; way]
+        gloss_zh: [路徑]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou7-biê1-路標
+    headword: 路標
+    readings:
+      - pengim: lou7 biê1
+    senses:
+      - pos: noun
+        gloss_en: [roadsign, signpost]
+        gloss_zh: [路標]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou7-deng7-路段
+    headword: 路段
+    readings:
+      - pengim: lou7 deng7
+    senses:
+      - pos: noun
+        gloss_en: [stretch of road, section of railway]
+        gloss_zh: [路段]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou7-kuang3-路況
+    headword: 路況
+    readings:
+      - pengim: lou7 kuang3
+    senses:
+      - pos: noun
+        gloss_en: [road conditions]
+        gloss_zh: [路況]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou7-dêng1-路燈
+    headword: 路燈
+    readings:
+      - pengim: lou7 dêng1
+    senses:
+      - pos: noun
+        gloss_en: [streetlight, streetlamp]
+        gloss_zh: [路燈]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou7-mang6-路網
+    headword: 路網
+    readings:
+      - pengim: lou7 mang6
+    senses:
+      - pos: noun
+        gloss_en: [road network]
+        gloss_zh: [路網]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou7-suan3-路線
+    headword: 路線
+    readings:
+      - pengim: lou7 suan3
+    senses:
+      - pos: noun
+        gloss_en: [route, itinerary, line]
+        gloss_zh: [路線]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou7-ming7-路面
+    headword: 路面
+    readings:
+      - pengim: lou7 ming7
+    senses:
+      - pos: noun
+        gloss_en: [road surface, pavement]
+        gloss_zh: [路面]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cia1-bang5-車房
+    headword: 車房
+    readings:
+      - pengim: cia1 bang5
+    senses:
+      - pos: noun
+        gloss_en: [garage]
+        gloss_zh: [車房]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cia1-goin1-車間
+    headword: 車間
+    readings:
+      - pengim: cia1 goin1
+    senses:
+      - pos: noun
+        gloss_en: [workshop; factory floor]
+        gloss_zh: [車間]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kui2-dao6-gao1-tong1-軌道交通
+    headword: 軌道交通
+    readings:
+      - pengim: kui2 dao6 gao1 tong1
+    senses:
+      - pos: noun
+        gloss_en: [rail transit]
+        gloss_zh: [軌道交通]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: poin7-gong1-sig4-辦公室
+    headword: 辦公室
+    readings:
+      - pengim: poin7 gong1 sig4
+    senses:
+      - pos: noun
+        gloss_en: [office]
+        gloss_zh: [辦公室]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gia1-bêh4-long5-迦百農
+    headword: 迦百農
+    readings:
+      - pengim: gia1 bêh4 long5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Capernaum]
+        gloss_zh: [迦百農]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mi5-gêng1-迷宮
+    headword: 迷宮
+    readings:
+      - pengim: mi5 gêng1
+    senses:
+      - pos: noun
+        gloss_en: [maze; labyrinth]
+        gloss_zh: [迷宮]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tong1-dao6-通道
+    headword: 通道
+    readings:
+      - pengim: tong1 dao6
+    senses:
+      - pos: noun
+        gloss_en: [passageway, passage, channel]
+        gloss_zh: [通道]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kui5-逵
+    headword: 逵
+    readings:
+      - pengim: kui5
+    senses:
+      - pos: noun
+        gloss_en: [thoroughfare; crossroads]
+        gloss_zh: [逵]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ung7-dong6-dion5-運動場
+    headword: 運動場
+    readings:
+      - pengim: ung7 dong6 dion5
+    senses:
+      - pos: noun
+        gloss_en: [sports field, sports ground]
+        gloss_zh: [運動場, 操場]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guê3-dao6-過道
+    headword: 過道
+    readings:
+      - pengim: guê3 dao6
+    senses:
+      - pos: noun
+        gloss_en: [corridor, passageway, aisle]
+        gloss_zh: [過道]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao6-lou7-道路
+    headword: 道路
+    readings:
+      - pengim: dao6 lou7
+    senses:
+      - pos: noun
+        gloss_en: [road, path; way]
+        gloss_zh: [道路]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dag8-ziu1-達州
+    headword: 達州
+    readings:
+      - pengim: dag8 ziu1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Dazhou (city in Sichuan)]
+        gloss_zh: [達州]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dag8-hao5-達濠
+    headword: 達濠
+    readings:
+      - pengim: dag8 hao5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Dahao (a subdistrict of Shantou, Guangdong)"]
+        gloss_zh: [達濠]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui5-giang6-違建
+    headword: 違建
+    readings:
+      - pengim: ui5 giang6
+    senses:
+      - pos: noun
+        gloss_en: [illegal building, unauthorized construction]
+        gloss_zh: [違建]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iang2-huang1-遠方
+    headword: 遠方
+    readings:
+      - pengim: iang2 huang1
+    senses:
+      - pos: noun
+        gloss_en: [far-away place, distant location]
+        gloss_zh: [遠方]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rui6-zi2-遺址
+    headword: 遺址
+    readings:
+      - pengim: rui6 zi2
+    senses:
+      - pos: noun
+        gloss_en: [ruins, historical site, archaeological site]
+        gloss_zh: [遺址]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rui6-ziah4-遺跡
+    headword: 遺跡
+    readings:
+      - pengim: rui6 ziah4
+    senses:
+      - pos: noun
+        gloss_en: [ruins, historical remains, trace]
+        gloss_zh: [遺跡]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liou5-lêng5-遼寧
+    headword: 遼寧
+    readings:
+      - pengim: liou5 lêng5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Liaoning (province in northeastern China)]
+        gloss_zh: [遼寧]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hian5-tai5-邢臺
+    headword: 邢臺
+    readings:
+      - pengim: hian5 tai5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Xingtai (a prefecture-level city in Hebei, China)"]
+        gloss_zh: [邢臺]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siou6-iang5-邵陽
+    headword: 邵陽
+    readings:
+      - pengim: siou6 iang5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Shaoyang (a city in Hunan, China)"]
+        gloss_zh: [邵陽]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê6-邶
+    headword: 邶
+    readings:
+      - pengim: buê6
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Bei (an ancient Chinese state south of present-day Tangyin, Henan)"]
+        gloss_zh: [邶]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao1-郊
+    headword: 郊
+    readings:
+      - pengim: gao1
+    senses:
+      - pos: noun
+        gloss_en: [suburbs; outskirts; open country]
+        gloss_zh: [郊]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gung6-郡
+    headword: 郡
+    readings:
+      - pengim: gung6
+    senses:
+      - pos: noun
+        gloss_en: [commandery; prefecture (historical Chinese administrative division), county]
+        gloss_zh: [郡]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dim1-郴
+    headword: 郴
+    readings:
+      - pengim: dim1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Chenzhou (a city in Hunan, China)"]
+        gloss_zh: [郴, 郴州]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-gêg8-郵局
+    headword: 郵局
+    readings:
+      - pengim: iu5 gêg8
+    senses:
+      - pos: noun
+        gloss_en: [post office]
+        gloss_zh: [郵局]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-dang5-郵筒
+    headword: 郵筒
+    readings:
+      - pengim: iu5 dang5
+    senses:
+      - pos: noun
+        gloss_en: [postbox, mailbox]
+        gloss_zh: [郵筒]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou1-sian5-都城
+    headword: 都城
+    readings:
+      - pengim: dou1 sian5
+    senses:
+      - pos: noun
+        gloss_en: [national capital, city wall (literary)]
+        gloss_zh: [都城]
+        note: The page also lists a proper-noun sense (Miyakonojō, a Japanese city) under the identical reading; the general 'national capital' sense was chosen as more useful/common.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou1-ci6-都市
+    headword: 都市
+    readings:
+      - pengim: dou1 ci6
+    senses:
+      - pos: noun
+        gloss_en: [city, metropolis]
+        gloss_zh: [都市]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngag8-鄂
+    headword: 鄂
+    readings:
+      - pengim: ngag8
+    senses:
+      - pos: proper-noun
+        gloss_en: [Hubei (abbreviation), a surname]
+        gloss_zh: [鄂]
+        note: Character carries several unrelated senses (ancient state name, Hubei abbreviation, forehead, tool for capturing animals, surname) all sharing this one reading; the most common modern uses were chosen.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puêng5-iang5-鄱陽
+    headword: 鄱陽
+    readings:
+      - pengim: puêng5 iang5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Poyang (lake and county in Jiangxi, China)"]
+        gloss_zh: [鄱陽]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puêng5-iang5-hu5-鄱陽湖
+    headword: 鄱陽湖
+    readings:
+      - pengim: puêng5 iang5 hu5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Poyang Lake]
+        gloss_zh: [鄱陽湖]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu2-ba1-酒吧
+    headword: 酒吧
+    readings:
+      - pengim: ziu2 ba1
+    senses:
+      - pos: noun
+        gloss_en: [bar, pub, tavern]
+        gloss_zh: [酒吧]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu2-gê1-酒家
+    headword: 酒家
+    readings:
+      - pengim: ziu2 gê1
+    senses:
+      - pos: noun
+        gloss_en: [restaurant, liquor store]
+        gloss_zh: [酒家]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu2-diam3-酒店
+    headword: 酒店
+    readings:
+      - pengim: ziu2 diam3
+    senses:
+      - pos: noun
+        gloss_en: [hotel, bar; pub]
+        gloss_zh: [酒店]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui1-in7-醫院
+    headword: 醫院
+    readings:
+      - pengim: ui1 in7
+    senses:
+      - pos: noun
+        gloss_en: [hospital]
+        gloss_zh: [醫院]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui1-guang2-醫館
+    headword: 醫館
+    readings:
+      - pengim: ui1 guang2
+    senses:
+      - pos: noun
+        gloss_en: [hospital (dated term)]
+        gloss_zh: [醫館]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li2-里
+    headword: 里
+    readings:
+      - pengim: li2
+    senses:
+      - pos: noun
+        gloss_en: ["li (unit of distance, ~0.5 km)", neighborhood, village]
+        gloss_zh: [里]
+        note: The character page lists many senses (unit of distance, neighbourhood, administrative village/urban unit, lane, surname, transcription particle) all under one reading with no sense-level disambiguation; the general distance/neighbourhood senses were chosen as most representative.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cong5-kêng3-重慶
+    headword: 重慶
+    readings:
+      - pengim: cong5 kêng3
+    senses:
+      - pos: proper-noun
+        gloss_en: [Chongqing (a municipality/city in China)]
+        gloss_zh: [重慶]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
