@@ -1053,3 +1053,27 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: he2-coh4-許撮
+    headword: 許撮
+    readings:
+      - pengim: he2 coh4
+    senses:
+      - pos: pronoun
+        gloss_en: [those]
+        gloss_zh: [許撮, 那些]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he2-tao5-許頭
+    headword: 許頭
+    readings:
+      - pengim: he2 tao5
+    senses:
+      - pos: pronoun
+        gloss_en: [there, that side; that place]
+        gloss_zh: [許頭, 那裡]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

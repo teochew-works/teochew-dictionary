@@ -1994,3 +1994,789 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: cai2-ah4-菜鴨
+    headword: 菜鴨
+    readings:
+      - pengim: cai2 ah4
+    senses:
+      - pos: noun
+        gloss_en: [domestic duck (raised for eating)]
+        gloss_zh: [菜鴨]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pu5-lo5-蒲牢
+    headword: 蒲牢
+    readings:
+      - pengim: pu5 lo5
+    senses:
+      - pos: noun
+        gloss_en: ["pulao (a mythical shore-dwelling dragon, often depicted atop bells)"]
+        gloss_zh: [蒲牢]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boh8-kag4-薄殼
+    headword: 薄殼
+    readings:
+      - pengim: boh8 kag4
+    senses:
+      - pos: noun
+        gloss_en: [Asian date mussel (Musculus senhousei), small edible mussel]
+        gloss_zh: [薄殼]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: houn2-tao5-pang1-虎頭蜂
+    headword: 虎頭蜂
+    readings:
+      - pengim: houn2 tao5 pang1
+    senses:
+      - pos: noun
+        gloss_en: [wasp, hornet]
+        gloss_zh: [虎頭蜂]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui2-虺
+    headword: 虺
+    readings:
+      - pengim: hui2
+    senses:
+      - pos: noun
+        gloss_en: [a kind of venomous snake (literary)]
+        gloss_zh: [虺]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ga1-虼
+    headword: 虼
+    readings:
+      - pengim: ga1
+    senses:
+      - pos: noun
+        gloss_en: [bound element occurring in 虼蚻 (cockroach) and 虼蚤 (flea)]
+        gloss_zh: [虼]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ga1-zao2-虼蚤
+    headword: 虼蚤
+    readings:
+      - pengim: ga1 zao2
+    senses:
+      - pos: noun
+        gloss_en: [flea]
+        gloss_zh: [虼蚤]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ga1-zuah8-虼蚻
+    headword: 虼蚻
+    readings:
+      - pengim: ga1 zuah8
+    senses:
+      - pos: noun
+        gloss_en: [cockroach]
+        gloss_zh: [虼蚻]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhung1-蚊
+    headword: 蚊
+    readings:
+      - pengim: bhung1
+    senses:
+      - pos: noun
+        gloss_en: [mosquito]
+        gloss_zh: [蚊]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghê5-蚜
+    headword: 蚜
+    readings:
+      - pengim: ghê5
+    senses:
+      - pos: noun
+        gloss_en: [aphid; plant louse]
+        gloss_zh: [蚜]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zao2-蚤
+    headword: 蚤
+    readings:
+      - pengim: zao2
+    senses:
+      - pos: noun
+        gloss_en: [flea]
+        gloss_zh: [蚤]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-蚰
+    headword: 蚰
+    readings:
+      - pengim: iu5
+    senses:
+      - pos: noun
+        gloss_en: [bound element in 蚰蜒 (house centipede)]
+        gloss_zh: [蚰]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: o5-蚵
+    headword: 蚵
+    readings:
+      - pengim: o5
+    senses:
+      - pos: noun
+        gloss_en: [oyster]
+        gloss_zh: [蚵]
+        note: The page tags this sense with an unusual mix of 'Southern Min / Taiwanese Mandarin' plus a 'Taiwanese Hakka' qualifier, so it is not fully certain this is the standard Teochew word for oyster rather than a Hokkien-specific one.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu3-gag4-iên5-蛀角蛘
+    headword: 蛀角蛘
+    readings:
+      - pengim: zu3 gag4 iên5
+    senses:
+      - pos: noun
+        gloss_en: [longhorn beetle; longicorn]
+        gloss_zh: [蛀角蛘]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê5-tang5-蛔蟲
+    headword: 蛔蟲
+    readings:
+      - pengim: huê5 tang5
+    senses:
+      - pos: noun
+        gloss_en: [roundworm; intestinal worm, (figuratively) a mind-reader]
+        gloss_zh: [蛔蟲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ua1-蛙
+    headword: 蛙
+    readings:
+      - pengim: ua1
+    senses:
+      - pos: noun
+        gloss_en: [frog]
+        gloss_zh: [蛙]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: du1-蛛
+    headword: 蛛
+    readings:
+      - pengim: du1
+    senses:
+      - pos: noun
+        gloss_en: [spider (bound form)]
+        gloss_zh: [蜘蛛]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gab4-蛤
+    headword: 蛤
+    readings:
+      - pengim: gab4
+    senses:
+      - pos: noun
+        gloss_en: [clam, frog/toad (dialectal)]
+        gloss_zh: [蛤]
+        note: The dossier lists several distinct senses (clam; dialectal frog/toad; internet-slang doubt interjection 'huh') all sharing the same gab4 reading, so the primary Teochew sense is uncertain; the general 'clam' sense was chosen as the base gloss.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gab4-bo5-蛤婆
+    headword: 蛤婆
+    readings:
+      - pengim: gab4 bo5
+    senses:
+      - pos: noun
+        gloss_en: [toad]
+        gloss_zh: [蛤婆, 蟾蜍]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gab4-guai1-蛤胿
+    headword: 蛤胿
+    readings:
+      - pengim: gab4 guai1
+    senses:
+      - pos: noun
+        gloss_en: [tadpole]
+        gloss_zh: [蛤胿, 蝌蚪]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gab4-kiu2-蛤虯
+    headword: 蛤虯
+    readings:
+      - pengim: gab4 kiu2
+    senses:
+      - pos: noun
+        gloss_en: [frog, small frog]
+        gloss_zh: [蛤虯, 青蛙]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong2-蛹
+    headword: 蛹
+    readings:
+      - pengim: iong2
+    senses:
+      - pos: noun
+        gloss_en: [pupa, chrysalis]
+        gloss_zh: [蛹]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngo5-蛾
+    headword: 蛾
+    readings:
+      - pengim: ngo5
+    senses:
+      - pos: noun
+        gloss_en: [moth]
+        gloss_zh: [蛾]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang1-蜂
+    headword: 蜂
+    readings:
+      - pengim: pang1
+    senses:
+      - pos: noun
+        gloss_en: [bee, wasp]
+        gloss_zh: [蜂, 蜜蜂]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang1-siu7-蜂岫
+    headword: 蜂岫
+    readings:
+      - pengim: pang1 siu7
+    senses:
+      - pos: noun
+        gloss_en: [honeycomb]
+        gloss_zh: [蜂巢, 蜂岫]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang1-dao3-蜂竇
+    headword: 蜂竇
+    readings:
+      - pengim: pang1 dao3
+    senses:
+      - pos: noun
+        gloss_en: [honeycomb, beehive]
+        gloss_zh: [蜂巢, 蜂竇]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang1-hê5-蜂蝦
+    headword: 蜂蝦
+    readings:
+      - pengim: pang1 hê5
+    senses:
+      - pos: noun
+        gloss_en: [silkworm chrysalis]
+        gloss_zh: [蜂蝦, 蠶蛹]
+        note: Two dialect-tagged senses share this reading ('silkworm chrysalis' tagged Southern Min broadly, vs. 'bee pupa' tagged specifically Taiwanese-Hokkien/Zhangzhou); chose the broader Southern Min sense as more plausibly the Teochew one.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing5-蜃
+    headword: 蜃
+    readings:
+      - pengim: sing5
+    senses:
+      - pos: noun
+        gloss_en: [large clam, large bivalve]
+        gloss_zh: [蜃]
+        note: The same reading covers both a literal 'large clam/shellfish' sense and a mythological 'shen' shapeshifting-monster sense; the literal sense was chosen as the base gloss but it's unclear which is more salient.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghou5-ki5-蜈蜞
+    headword: 蜈蜞
+    readings:
+      - pengim: ghou5 ki5
+    senses:
+      - pos: noun
+        gloss_en: [leech]
+        gloss_zh: [蜈蜞, 水蛭]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pu5-蜉
+    headword: 蜉
+    readings:
+      - pengim: pu5
+    senses:
+      - pos: noun
+        gloss_en: [mayfly (bound form), big ant (archaic)]
+        gloss_zh: [蜉蝣]
+        note: The character has no independent meaning and is only attested as a bound component in two unrelated compounds, 蜉蝣 (mayfly) and 蚍蜉 (a type of big ant), so its standalone gloss is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pu5-iu5-蜉蝣
+    headword: 蜉蝣
+    readings:
+      - pengim: pu5 iu5
+    senses:
+      - pos: noun
+        gloss_en: [mayfly]
+        gloss_zh: [蜉蝣]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: su5-蜍
+    headword: 蜍
+    readings:
+      - pengim: su5
+    senses:
+      - pos: noun
+        gloss_en: ["toad (bound form, as in 蟾蜍)"]
+        gloss_zh: [蟾蜍]
+        note: The character has no independent meaning and only appears as a bound component in 蟾蜍 (toad) or the obscure 蝳蜍, so the standalone gloss is an approximation.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di1-蜘
+    headword: 蜘
+    readings:
+      - pengim: di1
+    senses:
+      - pos: noun
+        gloss_en: ["spider (bound form, as in 蜘蛛)"]
+        gloss_zh: [蜘蛛]
+        note: This character has no independent meaning and appears in two unrelated compounds with equal prominence (蜘蛛 'spider' and 蜘蟟 'cicada'); the gloss here reflects only one of the two.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di1-du1-蜘蛛
+    headword: 蜘蛛
+    readings:
+      - pengim: di1 du1
+    senses:
+      - pos: noun
+        gloss_en: [spider]
+        gloss_zh: [蜘蛛]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di1-du1-mang6-蜘蛛網
+    headword: 蜘蛛網
+    readings:
+      - pengim: di1 du1 mang6
+    senses:
+      - pos: noun
+        gloss_en: [spiderweb, cobweb]
+        gloss_zh: [蜘蛛網]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-蜻
+    headword: 蜻
+    readings:
+      - pengim: cên1
+    senses:
+      - pos: noun
+        gloss_en: ["dragonfly (bound form, used in words for the dragonfly)"]
+        gloss_zh: [蜻蜓]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuê1-dao2-蝌蚪
+    headword: 蝌蚪
+    readings:
+      - pengim: kuê1 dao2
+    senses:
+      - pos: noun
+        gloss_en: [tadpole]
+        gloss_zh: [蝌蚪]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang5-蝗
+    headword: 蝗
+    readings:
+      - pengim: huang5
+    senses:
+      - pos: noun
+        gloss_en: [locust]
+        gloss_zh: [蝗蟲]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang5-tang5-蝗蟲
+    headword: 蝗蟲
+    readings:
+      - pengim: huang5 tang5
+    senses:
+      - pos: noun
+        gloss_en: [locust]
+        gloss_zh: [蝗蟲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: piang1-hog4-蝙蝠
+    headword: 蝙蝠
+    readings:
+      - pengim: piang1 hog4
+    senses:
+      - pos: noun
+        gloss_en: [bat (flying mammal)]
+        gloss_zh: [蝙蝠]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-蝣
+    headword: 蝣
+    readings:
+      - pengim: iu5
+    senses:
+      - pos: noun
+        gloss_en: [mayfly (short for 蜉蝣)]
+        gloss_zh: [蜉蝣]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hê5-蝦
+    headword: 蝦
+    readings:
+      - pengim: hê5
+    senses:
+      - pos: noun
+        gloss_en: [shrimp; prawn; lobster]
+        gloss_zh: [蝦]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sag4-蝨
+    headword: 蝨
+    readings:
+      - pengim: sag4
+    senses:
+      - pos: noun
+        gloss_en: [louse, parasite (figurative)]
+        gloss_zh: [蝨]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sag4-bho2-蝨母
+    headword: 蝨母
+    readings:
+      - pengim: sag4 bho2
+    senses:
+      - pos: noun
+        gloss_en: [louse]
+        gloss_zh: [蝨母]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu5-蝴
+    headword: 蝴
+    readings:
+      - pengim: hu5
+    senses:
+      - pos: noun
+        gloss_en: [butterfly (bound form)]
+        gloss_zh: [蝴蝶]
+        note: Bound character with no independent meaning of its own; the page states it is only used in the compound 蝴蝶 (butterfly).
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu5-diab8-蝴蝶
+    headword: 蝴蝶
+    readings:
+      - pengim: hu5 diab8
+    senses:
+      - pos: noun
+        gloss_en: [butterfly]
+        gloss_zh: [蝴蝶]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diab8-蝶
+    headword: 蝶
+    readings:
+      - pengim: diab8
+    senses:
+      - pos: noun
+        gloss_en: [butterfly]
+        gloss_zh: [蝶, 蝴蝶]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: o1-ghu5-蝸牛
+    headword: 蝸牛
+    readings:
+      - pengim: o1 ghu5
+    senses:
+      - pos: noun
+        gloss_en: [snail, land snail]
+        gloss_zh: [蝸牛]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang5-螃
+    headword: 螃
+    readings:
+      - pengim: pang5
+    senses:
+      - pos: noun
+        gloss_en: [crab (bound form)]
+        gloss_zh: [螃蟹]
+        note: Bound character with no independent meaning of its own; the page states it is only used in the compound 螃蟹 (crab), plus an obscure historical-dictionary sense of a toad-like creature.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong5-螢
+    headword: 螢
+    readings:
+      - pengim: iong5
+    senses:
+      - pos: noun
+        gloss_en: [firefly]
+        gloss_zh: [螢, 螢火蟲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêg4-sug4-蟋蟀
+    headword: 蟋蟀
+    readings:
+      - pengim: sêg4 sug4
+    senses:
+      - pos: noun
+        gloss_en: [cricket]
+        gloss_zh: [蟋蟀]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mang2-蟒
+    headword: 蟒
+    readings:
+      - pengim: mang2
+    senses:
+      - pos: noun
+        gloss_en: [python]
+        gloss_zh: [蟒, 蟒蛇]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mang2-zua5-蟒蛇
+    headword: 蟒蛇
+    readings:
+      - pengim: mang2 zua5
+    senses:
+      - pos: noun
+        gloss_en: [python, boa]
+        gloss_zh: [蟒蛇]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing5-nang5-蟮蟲
+    headword: 蟮蟲
+    readings:
+      - pengim: sing5 nang5
+    senses:
+      - pos: noun
+        gloss_en: [gecko, house lizard]
+        gloss_zh: [蟮蟲]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rim5-蟳
+    headword: 蟳
+    readings:
+      - pengim: rim5
+    senses:
+      - pos: noun
+        gloss_en: [swimming crab, crab]
+        gloss_zh: [蟳]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tang1-蟶
+    headword: 蟶
+    readings:
+      - pengim: tang1
+    senses:
+      - pos: noun
+        gloss_en: [razor clam]
+        gloss_zh: [蟶]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hoi6-蟹
+    headword: 蟹
+    readings:
+      - pengim: hoi6
+    senses:
+      - pos: noun
+        gloss_en: [crab]
+        gloss_zh: [蟹]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hia6-蟻
+    headword: 蟻
+    readings:
+      - pengim: hia6
+    senses:
+      - pos: noun
+        gloss_en: [ant]
+        gloss_zh: [蟻, 螞蟻]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hia6-gong1-蟻公
+    headword: 蟻公
+    readings:
+      - pengim: hia6 gong1
+    senses:
+      - pos: noun
+        gloss_en: [big ant, ant]
+        gloss_zh: [蟻公]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siam5-su5-蟾蜍
+    headword: 蟾蜍
+    readings:
+      - pengim: siam5 su5
+    senses:
+      - pos: noun
+        gloss_en: [toad]
+        gloss_zh: [蟾蜍]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiag4-ze2-蠍子
+    headword: 蠍子
+    readings:
+      - pengim: hiag4 ze2
+    senses:
+      - pos: noun
+        gloss_en: [scorpion]
+        gloss_zh: [蠍子]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mang2-蠓
+    headword: 蠓
+    readings:
+      - pengim: mang2
+    senses:
+      - pos: noun
+        gloss_en: [mosquito, midge]
+        gloss_zh: [蠓, 蚊子]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: o5-蠔
+    headword: 蠔
+    readings:
+      - pengim: o5
+    senses:
+      - pos: noun
+        gloss_en: [oyster]
+        gloss_zh: [蠔, 牡蠣]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cih8-蠘
+    headword: 蠘
+    readings:
+      - pengim: cih8
+    senses:
+      - pos: noun
+        gloss_en: [swimming crab]
+        gloss_zh: [蠘]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

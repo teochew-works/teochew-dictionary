@@ -8633,3 +8633,743 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: gang1-菅
+    headword: 菅
+    readings:
+      - pengim: gang1
+    senses:
+      - pos: noun
+        gloss_en: [a type of grass]
+        gloss_zh: [菅]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêg4-菊
+    headword: 菊
+    readings:
+      - pengim: gêg4
+    senses:
+      - pos: noun
+        gloss_en: [chrysanthemum]
+        gloss_zh: [菊]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêg4-huê1-菊花
+    headword: 菊花
+    readings:
+      - pengim: gêg4 huê1
+    senses:
+      - pos: noun
+        gloss_en: [chrysanthemum (flower)]
+        gloss_zh: [菊花]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kung2-菌
+    headword: 菌
+    readings:
+      - pengim: kung2
+    senses:
+      - pos: noun
+        gloss_en: [germ, bacterium, fungus]
+        gloss_zh: [菌]
+        note: Two etymology blocks share the same Teochew reading, one covering bacterium/germ/fungus and the other mushroom/toadstool (plus an alternative-form and surname sense); the fungus/germ senses were combined but which register applies in Teochew is unclear.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-菑
+    headword: 菑
+    readings:
+      - pengim: ze1
+    senses:
+      - pos: noun
+        gloss_en: [field cultivated for one year, cropfield]
+        gloss_zh: [菑]
+        note: The character has several unrelated senses (a one-year-old cropfield, an alternative form of 淄 referring to the Zi River, and a surname) sharing the same reading with no indication which applies to Teochew; the basic 'cropfield' meaning was chosen.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciang1-菖
+    headword: 菖
+    readings:
+      - pengim: ciang1
+    senses:
+      - pos: noun
+        gloss_en: [calamus (only used in 菖蒲)]
+        gloss_zh: [菖]
+        note: The page states the character is only used within the compound 菖蒲 (calamus/sweet flag); it has no independent standalone meaning, so the gloss reflects the compound's referent rather than a free-standing sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cai3-zai1-菜栽
+    headword: 菜栽
+    readings:
+      - pengim: cai3 zai1
+    senses:
+      - pos: noun
+        gloss_en: [vegetable seedling (grown in concentration)]
+        gloss_zh: [菜栽]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cai3-bhio5-菜苗
+    headword: 菜苗
+    readings:
+      - pengim: cai3 bhio5
+    senses:
+      - pos: noun
+        gloss_en: [vegetable seedling (grown in concentration)]
+        gloss_zh: [菜苗]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tou3-si1-zi2-菟絲子
+    headword: 菟絲子
+    readings:
+      - pengim: tou3 si1 zi2
+    senses:
+      - pos: noun
+        gloss_en: [dodder seed]
+        gloss_zh: [菟絲子]
+        note: Highly specialized traditional-Chinese-medicine term (dodder plant seed used as a medicinal ingredient); gloss is technical rather than everyday vocabulary.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gou1-菰
+    headword: 菰
+    readings:
+      - pengim: gou1
+    senses:
+      - pos: noun
+        gloss_en: [Manchurian wild rice (Zizania latifolia)]
+        gloss_zh: [菰]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngag8-萼
+    headword: 萼
+    readings:
+      - pengim: ngag8
+    senses:
+      - pos: noun
+        gloss_en: [calyx]
+        gloss_zh: [萼]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao3-sai2-cên1-落屎星
+    headword: 落屎星
+    readings:
+      - pengim: lao3 sai2 cên1
+    senses:
+      - pos: noun
+        gloss_en: [shooting star]
+        gloss_zh: [落屎星]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: loh8-hioh8-落葉
+    headword: 落葉
+    readings:
+      - pengim: loh8 hioh8
+    senses:
+      - pos: noun
+        gloss_en: [fallen leaves]
+        gloss_zh: [落葉]
+        note: The page lists three senses under the identical reading (noun 'fallen leaves', verb 'to lose leaves', adjective 'deciduous'); the noun sense was chosen as primary.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: loh8-hou6-落雨
+    headword: 落雨
+    readings:
+      - pengim: loh8 hou6
+    senses:
+      - pos: verb
+        gloss_en: [to rain]
+        gloss_zh: [落雨]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: loh8-soh4-落雪
+    headword: 落雪
+    readings:
+      - pengim: loh8 soh4
+    senses:
+      - pos: verb
+        gloss_en: [to snow]
+        gloss_zh: [落雪]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: loh8-pag8-落雹
+    headword: 落雹
+    readings:
+      - pengim: loh8 pag8
+    senses:
+      - pos: verb
+        gloss_en: [to hail]
+        gloss_zh: [落雹]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: loh8-seng1-落霜
+    headword: 落霜
+    readings:
+      - pengim: loh8 seng1
+    senses:
+      - pos: verb
+        gloss_en: [to have frost appear, to frost]
+        gloss_zh: [落霜]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: loh8-bhu7-落霧
+    headword: 落霧
+    readings:
+      - pengim: loh8 bhu7
+    senses:
+      - pos: verb
+        gloss_en: [to have fog or mist appear, to become foggy]
+        gloss_zh: [落霧]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guah4-葛
+    headword: 葛
+    readings:
+      - pengim: guah4
+    senses:
+      - pos: noun
+        gloss_en: [kudzu (Pueraria lobata), hemp cloth, surname Ge]
+        gloss_zh: [葛]
+        note: The character page bundles several senses (kudzu plant, hemp cloth, historical state name, surname, plus a Wu-dialect-only particle use) under the same Teochew reading; the plant/cloth/surname sense was chosen as most plausibly applicable to Teochew.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui2-葦
+    headword: 葦
+    readings:
+      - pengim: ui2
+    senses:
+      - pos: noun
+        gloss_en: [reed, rush]
+        gloss_zh: [葦]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu5-lu5-葫蘆
+    headword: 葫蘆
+    readings:
+      - pengim: hu5 lu5
+    senses:
+      - pos: noun
+        gloss_en: [bottle gourd, calabash]
+        gloss_zh: [葫蘆]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kui5-huê1-葵花
+    headword: 葵花
+    readings:
+      - pengim: kui5 huê1
+    senses:
+      - pos: noun
+        gloss_en: [sunflower]
+        gloss_zh: [葵花]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dih4-蒂
+    headword: 蒂
+    readings:
+      - pengim: dih4
+    senses:
+      - pos: noun
+        gloss_en: [stalk (of a flower or fruit), calyx]
+        gloss_zh: [蒂]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guai3-蒯
+    headword: 蒯
+    readings:
+      - pengim: guai3
+    senses:
+      - pos: noun
+        gloss_en: [a kind of grass (Cyperus/sedge), (also) a surname]
+        gloss_zh: [蒯]
+        note: Character has both an unrelated plant-name sense and a surname sense with no clear primary usage; the grass sense was chosen but this could alternately be filed under people.yaml as a surname.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pu5-蒲
+    headword: 蒲
+    readings:
+      - pengim: pu5
+    senses:
+      - pos: noun
+        gloss_en: [cattail, Typha]
+        gloss_zh: [蒲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng1-ki3-蒸汽
+    headword: 蒸汽
+    readings:
+      - pengim: zêng1 ki3
+    senses:
+      - pos: noun
+        gloss_en: [steam, water vapor]
+        gloss_zh: [蒸汽]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi1-蓖
+    headword: 蓖
+    readings:
+      - pengim: bi1
+    senses:
+      - pos: noun
+        gloss_en: ['castor (bound form, used only in 蓖麻 "castor oil plant")']
+        gloss_zh: [蓖]
+        note: This character is documented as a bound morpheme used only in 蓖麻 (castor oil plant); it has no independent standalone meaning.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: noin5-huê1-蓮花
+    headword: 蓮花
+    readings:
+      - pengim: noin5 huê1
+    senses:
+      - pos: noun
+        gloss_en: [lotus, water lily]
+        gloss_zh: [蓮花]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuêng6-蔓
+    headword: 蔓
+    readings:
+      - pengim: bhuêng6
+    senses:
+      - pos: noun
+        gloss_en: [vine; tendril; creeper]
+        gloss_zh: [蔓]
+        note: The character carries multiple senses (noun 'vine', verb 'to spread', and an unrelated surname) all under the same Teochew reading bhuêng6; the noun sense was chosen as the most concrete headword meaning.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao1-蔸
+    headword: 蔸
+    readings:
+      - pengim: dao1
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for plants (clump), root and stem of a plant]
+        gloss_zh: [蔸]
+        note: Both senses (a noun 'root/stem of a plant' and a classifier 'clump', for plants) are tagged only 'dialectal' with no indication which corresponds to the Teochew reading; the classifier sense was chosen as more distinctive but the noun sense is equally plausible.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lui2-蕊
+    headword: 蕊
+    readings:
+      - pengim: lui2
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for flowers, classifier for eyes]
+        gloss_zh: [蕊]
+        note: The classifier sense is tagged 'Hokkien, Teochew' (matching our target dialect) but also carries a qualifier 'Taiwanese Hakka', an internally inconsistent dialect label; other listed senses (stamen, flower bud) are general Chinese and less clearly tied to the given Teochew reading.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo7-ho3-薄荷
+    headword: 薄荷
+    readings:
+      - pengim: bo7 ho3
+    senses:
+      - pos: noun
+        gloss_en: [mint, peppermint]
+        gloss_zh: [薄荷]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo5-ho3-bian1-薄荷冰
+    headword: 薄荷冰
+    readings:
+      - pengim: bo5 ho3 bian1
+    senses:
+      - pos: noun
+        gloss_en: [menthol]
+        gloss_zh: [薄荷冰, 薄荷腦]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo5-ho3-iu5-薄荷油
+    headword: 薄荷油
+    readings:
+      - pengim: bo5 ho3 iu5
+    senses:
+      - pos: noun
+        gloss_en: [peppermint oil]
+        gloss_zh: [薄荷油]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bo7-ho3-nao2-薄荷腦
+    headword: 薄荷腦
+    readings:
+      - pengim: bo7 ho3 nao2
+    senses:
+      - pos: noun
+        gloss_en: [menthol]
+        gloss_zh: [薄荷腦]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mui5-薇
+    headword: 薇
+    readings:
+      - pengim: mui5
+    senses:
+      - pos: noun
+        gloss_en: [royal fern (Osmunda regalis), used in 薔薇 (rose)]
+        gloss_zh: [薇]
+        note: Two distinct senses (a fern species vs. the character used in the word for rose 薔薇) share this single reading with no clear indicator of which is more relevant to Teochew usage.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung1-cao2-薰草
+    headword: 薰草
+    readings:
+      - pengim: hung1 cao2
+    senses:
+      - pos: noun
+        gloss_en: [tobacco]
+        gloss_zh: [薰草]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pio5-薸
+    headword: 薸
+    readings:
+      - pengim: pio5
+    senses:
+      - pos: noun
+        gloss_en: [duckweed]
+        gloss_zh: [薸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ding5-藤
+    headword: 藤
+    readings:
+      - pengim: ding5
+    senses:
+      - pos: noun
+        gloss_en: [vine, rattan; cane]
+        gloss_zh: [藤]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêng5-diao5-藤條
+    headword: 藤條
+    readings:
+      - pengim: dêng5 diao5
+    senses:
+      - pos: noun
+        gloss_en: [rattan cane (often used for corporal punishment)]
+        gloss_zh: [藤條]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao3-藻
+    headword: 藻
+    readings:
+      - pengim: cao3
+    senses:
+      - pos: noun
+        gloss_en: [algae; seaweed]
+        gloss_zh: [藻]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kag4-藿
+    headword: 藿
+    readings:
+      - pengim: kag4
+    senses:
+      - pos: noun
+        gloss_en: [leaves of pulse plants (literary)]
+        gloss_zh: [藿]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lu5-蘆
+    headword: 蘆
+    readings:
+      - pengim: lu5
+    senses:
+      - pos: noun
+        gloss_en: [reed]
+        gloss_zh: [蘆]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sou1-蘇
+    headword: 蘇
+    readings:
+      - pengim: sou1
+    senses:
+      - pos: noun
+        gloss_en: [perilla (culinary herb), a surname (Su)]
+        gloss_zh: [蘇]
+        note: The character carries many unrelated senses (culinary herb, surname, short forms for Jiangsu/Suzhou/USSR/Scotland, an alternative form of 甦 'to revive'); the plant/surname senses were picked as the most plausible base meaning but this is uncertain without more context.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lang5-蘭
+    headword: 蘭
+    readings:
+      - pengim: lang5
+    senses:
+      - pos: noun
+        gloss_en: [orchid, a surname]
+        gloss_zh: [蘭]
+        note: Character carries several senses under this reading (orchid, surname, abbreviation for 蘭州/Lanzhou, alt form of 藍); 'orchid' chosen as the primary standalone meaning.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lang5-huê1-蘭花
+    headword: 蘭花
+    readings:
+      - pengim: lang5 huê1
+    senses:
+      - pos: noun
+        gloss_en: [orchid]
+        gloss_zh: [蘭花]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lo5-蘿
+    headword: 蘿
+    readings:
+      - pengim: lo5
+    senses:
+      - pos: noun
+        gloss_en: ["creeping or trailing plant (bound morpheme, e.g. in 蘿蔔 'radish')"]
+        gloss_zh: [蘿]
+        note: Character rarely stands alone as an independent word; mainly occurs as a bound morpheme in compounds.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: houn2-hin6-cao2-虎耳草
+    headword: 虎耳草
+    readings:
+      - pengim: houn2 hin6 cao2
+    senses:
+      - pos: noun
+        gloss_en: [saxifrage]
+        gloss_zh: [虎耳草]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu3-neng2-di7-處女地
+    headword: 處女地
+    readings:
+      - pengim: cu3 neng2 di7
+    senses:
+      - pos: noun
+        gloss_en: [virgin soil; virgin territory]
+        gloss_zh: [處女地]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu2-su2-處暑
+    headword: 處暑
+    readings:
+      - pengim: cu2 su2
+    senses:
+      - pos: proper-noun
+        gloss_en: ['Chushu, "End of Heat" (14th of the 24 solar terms)']
+        gloss_zh: [處暑]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang1-lah8-蜂蠟
+    headword: 蜂蠟
+    readings:
+      - pengim: pang1 lah8
+    senses:
+      - pos: noun
+        gloss_en: [beeswax]
+        gloss_zh: [蜂蠟]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu5-diab8-lang5-蝴蝶蘭
+    headword: 蝴蝶蘭
+    readings:
+      - pengim: hu5 diab8 lang5
+    senses:
+      - pos: noun
+        gloss_en: [moth orchid, Phalaenopsis]
+        gloss_zh: [蝴蝶蘭]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lah8-蠟
+    headword: 蠟
+    readings:
+      - pengim: lah8
+    senses:
+      - pos: noun
+        gloss_en: [wax, candle]
+        gloss_zh: [蠟]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lah8-zua2-蠟紙
+    headword: 蠟紙
+    readings:
+      - pengim: lah8 zua2
+    senses:
+      - pos: noun
+        gloss_en: [wax paper, stencil paper]
+        gloss_zh: [蠟紙]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cain5-sai2-蠶屎
+    headword: 蠶屎
+    readings:
+      - pengim: cain5 sai2
+    senses:
+      - pos: noun
+        gloss_en: [silkworm excrement; silkworm droppings]
+        gloss_zh: [蠶屎]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gian5-cên1-行星
+    headword: 行星
+    readings:
+      - pengim: gian5 cên1
+    senses:
+      - pos: noun
+        gloss_en: [planet]
+        gloss_zh: [行星]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uê6-cên1-衛星
+    headword: 衛星
+    readings:
+      - pengim: uê6 cên1
+    senses:
+      - pos: noun
+        gloss_en: [satellite; moon (astronomical)]
+        gloss_zh: [衛星]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai1-zioh4-rêg8-西照日
+    headword: 西照日
+    readings:
+      - pengim: sai1 zioh4 rêg8
+    senses:
+      - pos: noun
+        gloss_en: [setting sun, sunset]
+        gloss_zh: [西照日]
+        note: Page attests both a verb sense (of a room, to have western sun exposure) and a noun sense (setting sun/sunset) under the identical reading; chose the noun sense as primary.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gog4-谷
+    headword: 谷
+    readings:
+      - pengim: gog4
+    senses:
+      - pos: noun
+        gloss_en: [valley, gorge, ravine]
+        gloss_zh: [谷, 山谷]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
