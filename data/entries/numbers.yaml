@@ -1516,3 +1516,15 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: ho7-bhê2-號碼
+    headword: 號碼
+    readings:
+      - pengim: ho7 bhê2
+    senses:
+      - pos: noun
+        gloss_en: [number, code, digit]
+        gloss_zh: [號碼]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

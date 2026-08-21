@@ -13658,3 +13658,757 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: mang2-莽
+    headword: 莽
+    readings:
+      - pengim: mang2
+    senses:
+      - pos: adjective
+        gloss_en: [reckless, rash, rude]
+        gloss_zh: [莽]
+        note: The character has two etymology blocks (a general Chinese sense and a Sichuanese-specific sense) that share the same Teochew reading; the general descriptive 'reckless/rude' meaning was chosen but other senses (luxuriant growth, a toxic plant) are attested under the same reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hua5-li6-華麗
+    headword: 華麗
+    readings:
+      - pengim: hua5 li6
+    senses:
+      - pos: adjective
+        gloss_en: [gorgeous, splendid, resplendent]
+        gloss_zh: [華麗]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuang7-ziang6-萬丈
+    headword: 萬丈
+    readings:
+      - pengim: bhuang7 ziang6
+    senses:
+      - pos: adjective
+        gloss_en: [bottomless, "extremely long, deep, or high"]
+        gloss_zh: [萬丈]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuang7-lêng5-萬能
+    headword: 萬能
+    readings:
+      - pengim: bhuang7 lêng5
+    senses:
+      - pos: adjective
+        gloss_en: [all-powerful; omnipotent, all-purpose; universal]
+        gloss_zh: [萬能]
+        note: Wiktionary lists this as a noun, but the glosses ('all-powerful', 'all-purpose/universal') are used attributively/predicatively in Chinese, so it is reclassified here as an adjective.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: du3-mian5-著名
+    headword: 著名
+    readings:
+      - pengim: du3 mian5
+    senses:
+      - pos: adjective
+        gloss_en: [famous, well-known, renowned]
+        gloss_zh: [著名]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dioh8-gib4-著急
+    headword: 著急
+    readings:
+      - pengim: dioh8 gib4
+    senses:
+      - pos: adjective
+        gloss_en: [anxious, worried]
+        gloss_zh: [著急]
+        note: The page lists both a verb sense ('to worry') and an adjective sense ('anxious') under the identical reading; the adjective was chosen as primary since Teochew descriptives are conventionally tagged 'adjective' even when functioning as stative verbs.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang1-蒼
+    headword: 蒼
+    readings:
+      - pengim: cang1
+    senses:
+      - pos: adjective
+        gloss_en: [blue-green, grey; ashen]
+        gloss_zh: [蒼]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang1-bêh8-蒼白
+    headword: 蒼白
+    readings:
+      - pengim: cang1 bêh8
+    senses:
+      - pos: adjective
+        gloss_en: [pale, pallid; wan]
+        gloss_zh: [蒼白]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang1-mang5-蒼茫
+    headword: 蒼茫
+    readings:
+      - pengim: cang1 mang5
+    senses:
+      - pos: adjective
+        gloss_en: [vast and hazy, boundless; indistinct]
+        gloss_zh: [蒼茫]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiog4-i3-蓄意
+    headword: 蓄意
+    readings:
+      - pengim: tiog4 i3
+    senses:
+      - pos: adjective
+        gloss_en: [deliberate; premeditated]
+        gloss_zh: [蓄意]
+        note: Source lists both adjective and adverb senses under the same reading; adjective (premeditated) was chosen as primary though the word is also commonly used adverbially (deliberately).
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pong5-蓬
+    headword: 蓬
+    readings:
+      - pengim: pong5
+    senses:
+      - pos: adjective
+        gloss_en: [fluffy; disheveled, unkempt]
+        gloss_zh: [蓬]
+        note: Character carries several unrelated senses (plant names, a disheveled/fluffy adjective, a classifier for clumps, and a surname) all sharing this reading; the common colloquial adjective sense was chosen but usage may vary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pong5-buag8-蓬勃
+    headword: 蓬勃
+    readings:
+      - pengim: pong5 buag8
+    senses:
+      - pos: adjective
+        gloss_en: [flourishing, vigorous; thriving]
+        gloss_zh: [蓬勃]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boh8-riag8-薄弱
+    headword: 薄弱
+    readings:
+      - pengim: boh8 riag8
+    senses:
+      - pos: adjective
+        gloss_en: [weak, frail, "lacking (e.g. willpower, foundation)"]
+        gloss_zh: [薄弱]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ai2-藹
+    headword: 藹
+    readings:
+      - pengim: ai2
+    senses:
+      - pos: adjective
+        gloss_en: [amiable; kind; nice]
+        gloss_zh: [藹]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: su1-gu2-蘇古
+    headword: 蘇古
+    readings:
+      - pengim: su1 gu2
+    senses:
+      - pos: adjective
+        gloss_en: [silly, foolish]
+        gloss_zh: [蘇古]
+        note: "Wiktionary lists two distinct senses at this same reading: 'one quarter' (noun, Malaysia/Singapore usage from Malay 'suku') and 'silly, foolish' (adjective, explicitly tagged Teochew); the explicitly Teochew-tagged adjective sense was chosen."
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he1-虛
+    headword: 虛
+    readings:
+      - pengim: he1
+    senses:
+      - pos: adjective
+        gloss_en: [empty, hollow, "false"]
+        gloss_zh: [虛]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he1-gê2-虛假
+    headword: 虛假
+    readings:
+      - pengim: he1 gê2
+    senses:
+      - pos: adjective
+        gloss_en: [fake, "false"]
+        gloss_zh: [虛假]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he1-ngui6-虛偽
+    headword: 虛偽
+    readings:
+      - pengim: he1 ngui6
+    senses:
+      - pos: adjective
+        gloss_en: [hypocritical, fake, sham]
+        gloss_zh: [虛偽]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he1-huang3-虛幻
+    headword: 虛幻
+    readings:
+      - pengim: he1 huang3
+    senses:
+      - pos: adjective
+        gloss_en: [unreal, illusory, imaginary]
+        gloss_zh: [虛幻]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he1-riag8-虛弱
+    headword: 虛弱
+    readings:
+      - pengim: he1 riag8
+    senses:
+      - pos: adjective
+        gloss_en: [weak, feeble, frail]
+        gloss_zh: [虛弱]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he1-sim1-虛心
+    headword: 虛心
+    readings:
+      - pengim: he1 sim1
+    senses:
+      - pos: adjective
+        gloss_en: [modest, open-minded, humble]
+        gloss_zh: [虛心]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he1-ngi2-虛擬
+    headword: 虛擬
+    readings:
+      - pengim: he1 ngi2
+    senses:
+      - pos: adjective
+        gloss_en: [virtual, fictitious, hypothetical]
+        gloss_zh: [虛擬]
+        note: Page gives both a verb sense ('to fabricate/imagine') and an adjective sense ('virtual/fictitious/subjunctive') under the same Teochew reading; chose the more common modern adjective sense (virtual/hypothetical).
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu3-hug8-蛀核
+    headword: 蛀核
+    readings:
+      - pengim: zu3 hug8
+    senses:
+      - pos: adjective
+        gloss_en: [small-pitted (of fruit such as longan or lychee)]
+        gloss_zh: [蛀核]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cung2-蠢
+    headword: 蠢
+    readings:
+      - pengim: cung2
+    senses:
+      - pos: adjective
+        gloss_en: [stupid; foolish, clumsy; awkward]
+        gloss_zh: [蠢]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cong1-dong6-衝動
+    headword: 衝動
+    readings:
+      - pengim: cong1 dong6
+    senses:
+      - pos: adjective
+        gloss_en: [impulsive; impetuous]
+        gloss_zh: [衝動]
+        note: Page lists verb ('to act on impulse'), noun ('urge/impulse'), and adjective ('impulsive') senses for the same reading; the adjective sense was chosen as most commonly used in speech.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i1-guang1-kim5-siu3-衣冠禽獸
+    headword: 衣冠禽獸
+    readings:
+      - pengim: i1 guang1 kim5 siu3
+    senses:
+      - pos: idiom
+        gloss_en: [beast in human attire, immoral or despicable person]
+        gloss_zh: [衣冠禽獸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu3-diang1-袖珍
+    headword: 袖珍
+    readings:
+      - pengim: siu3 diang1
+    senses:
+      - pos: adjective
+        gloss_en: [pocket-size; pocket (attributive), miniature]
+        gloss_zh: [袖珍]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi6-dong6-被動
+    headword: 被動
+    readings:
+      - pengim: bi6 dong6
+    senses:
+      - pos: adjective
+        gloss_en: [passive]
+        gloss_zh: [被動]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ru6-裕
+    headword: 裕
+    readings:
+      - pengim: ru6
+    senses:
+      - pos: adjective
+        gloss_en: [abundant, rich, plentiful]
+        gloss_zh: [裕, 富裕]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lo2-裸
+    headword: 裸
+    readings:
+      - pengim: lo2
+    senses:
+      - pos: adjective
+        gloss_en: [bare; nude; naked]
+        gloss_zh: [裸]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lo2-lou7-裸露
+    headword: 裸露
+    readings:
+      - pengim: lo2 lou7
+    senses:
+      - pos: adjective
+        gloss_en: [exposed; bare; uncovered, naked]
+        gloss_zh: [裸露]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lo2-ti2-裸體
+    headword: 裸體
+    readings:
+      - pengim: lo2 ti2
+    senses:
+      - pos: adjective
+        gloss_en: [naked; nude, naked body]
+        gloss_zh: [裸體]
+        note: Attested with the same reading as both a stative verb/adjective ('to be naked') and a noun ('naked body'); adjective chosen as the primary sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hog4-zab8-複雜
+    headword: 複雜
+    readings:
+      - pengim: hog4 zab8
+    senses:
+      - pos: adjective
+        gloss_en: [complex; complicated]
+        gloss_zh: [複雜]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-襤
+    headword: 襤
+    readings:
+      - pengim: lam5
+    senses:
+      - pos: adjective
+        gloss_en: [ragged, tattered (as in 襤褸)]
+        gloss_zh: [襤褸]
+        note: Character is a bound morpheme only attested as part of 襤褸/褴褛 'ragged'; standalone part of speech and precise meaning are inferred rather than directly glossed on the page.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iou3-ging2-要緊
+    headword: 要緊
+    readings:
+      - pengim: iou3 ging2
+    senses:
+      - pos: adjective
+        gloss_en: [important, urgent, pressing]
+        gloss_zh: [要緊]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cing1-ciag4-親切
+    headword: 親切
+    readings:
+      - pengim: cing1 ciag4
+    senses:
+      - pos: adjective
+        gloss_en: [kind, cordial, amiable]
+        gloss_zh: [親切]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cing1-ain3-親愛
+    headword: 親愛
+    readings:
+      - pengim: cing1 ain3
+    senses:
+      - pos: adjective
+        gloss_en: [dear, beloved, cherished]
+        gloss_zh: [親愛]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cog4-mag8-gian1-sim1-觸目驚心
+    headword: 觸目驚心
+    readings:
+      - pengim: cog4 mag8 gian1 sim1
+    senses:
+      - pos: idiom
+        gloss_en: [shocking to behold, ghastly, bloodcurdling]
+        gloss_zh: [觸目驚心]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: to2-iam3-討厭
+    headword: 討厭
+    readings:
+      - pengim: to2 iam3
+    senses:
+      - pos: adjective
+        gloss_en: [annoying; troublesome; disagreeable]
+        gloss_zh: [討厭]
+        note: Page gives an equally common verb sense ('to dislike; to hate') alongside the adjective sense under the same reading; chose adjective as primary.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he2-do1-許多
+    headword: 許多
+    readings:
+      - pengim: he2 do1
+    senses:
+      - pos: adjective
+        gloss_en: [many, much; a lot of]
+        gloss_zh: [許多]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang5-詳
+    headword: 詳
+    readings:
+      - pengim: siang5
+    senses:
+      - pos: adjective
+        gloss_en: [detailed, thorough, complete]
+        gloss_zh: [詳]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang5-soi3-詳細
+    headword: 詳細
+    readings:
+      - pengim: siang5 soi3
+    senses:
+      - pos: adjective
+        gloss_en: [detailed, minute, thorough]
+        gloss_zh: [詳細]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê1-詼
+    headword: 詼
+    readings:
+      - pengim: huê1
+    senses:
+      - pos: adjective
+        gloss_en: [humorous, funny, teasing]
+        gloss_zh: [詼]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kua1-ziang1-誇張
+    headword: 誇張
+    readings:
+      - pengim: kua1 ziang1
+    senses:
+      - pos: adjective
+        gloss_en: [exaggerated; over-the-top, to exaggerate]
+        gloss_zh: [誇張]
+        note: Wiktionary lists this reading under verb ('to exaggerate'), adjective ('exaggerated/over-the-top'), and noun ('exaggeration') senses that are about equally common; adjective was chosen for its frequent predicative colloquial use.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng5-誠
+    headword: 誠
+    readings:
+      - pengim: sêng5
+    senses:
+      - pos: adjective
+        gloss_en: [sincere, honest, very (dialectal)]
+        gloss_zh: [誠]
+        note: The character's senses (sincere/honest adjective, truly/indeed adverb, and a Southern-Min-specific 'very' intensifier) all share the same single reading, so the single best part of speech is uncertain.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dung1-諄
+    headword: 諄
+    readings:
+      - pengim: dung1
+    senses:
+      - pos: adjective
+        gloss_en: [earnest, sincere]
+        gloss_zh: [諄]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngag8-諤
+    headword: 諤
+    readings:
+      - pengim: ngag8
+    senses:
+      - pos: adjective
+        gloss_en: [frank; outspoken (in speech)]
+        gloss_zh: [諤]
+        note: Wiktionary glosses it as a noun ('honest/frank speech', literary) but it functions descriptively (especially in reduplicated form 諤諤), so it is classified here as an adjective.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai5-諧
+    headword: 諧
+    readings:
+      - pengim: hai5
+    senses:
+      - pos: adjective
+        gloss_en: [harmonious; coordinated, humorous; witty]
+        gloss_zh: [諧]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu1-諸
+    headword: 諸
+    readings:
+      - pengim: zu1
+    senses:
+      - pos: adjective
+        gloss_en: [many; each; every; all (forming plurals)]
+        gloss_zh: [諸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu1-do1-諸多
+    headword: 諸多
+    readings:
+      - pengim: zu1 do1
+    senses:
+      - pos: adjective
+        gloss_en: [a considerable number of; many; much]
+        gloss_zh: [諸多]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiam1-謙
+    headword: 謙
+    readings:
+      - pengim: kiam1
+    senses:
+      - pos: adjective
+        gloss_en: [humble, modest]
+        gloss_zh: [謙]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiam1-bui1-謙卑
+    headword: 謙卑
+    readings:
+      - pengim: kiam1 bui1
+    senses:
+      - pos: adjective
+        gloss_en: [humble, modest, unassuming]
+        gloss_zh: [謙卑]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiam1-giong1-謙恭
+    headword: 謙恭
+    readings:
+      - pengim: kiam1 giong1
+    senses:
+      - pos: adjective
+        gloss_en: [modest and respectful, humble and deferential]
+        gloss_zh: [謙恭]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiam1-he1-謙虛
+    headword: 謙虛
+    readings:
+      - pengim: kiam1 he1
+    senses:
+      - pos: adjective
+        gloss_en: [humble, modest, unassuming]
+        gloss_zh: [謙虛]
+        note: Page gives both an adjective sense (humble/modest) and a verb sense (to make a modest remark) under the same reading; adjective chosen as the primary/default sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: niu6-謬
+    headword: 謬
+    readings:
+      - pengim: niu6
+    senses:
+      - pos: adjective
+        gloss_en: [false; wrong; erroneous]
+        gloss_zh: [謬]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geng2-謹
+    headword: 謹
+    readings:
+      - pengim: geng2
+    senses:
+      - pos: adjective
+        gloss_en: [prudent; cautious; careful]
+        gloss_zh: [謹]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biêng3-tai3-變態
+    headword: 變態
+    readings:
+      - pengim: biêng3 tai3
+    senses:
+      - pos: adjective
+        gloss_en: [perverted, abnormal, twisted (mentally)]
+        gloss_zh: [變態]
+        note: Wiktionary attests verb (metamorphose/be abnormal), noun (metamorphosis/pervert/weirdo), and adjective (perverted/insane) blocks all under the identical Teochew reading, so the single best POS is genuinely ambiguous; the common colloquial adjective sense was picked.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biang3-siang3-變相
+    headword: 變相
+    readings:
+      - pengim: biang3 siang3
+    senses:
+      - pos: adjective
+        gloss_en: [covert, disguised, in a concealed form]
+        gloss_zh: [變相]
+        note: Wiktionary attests adjective (covert/disguised), verb (physics 'phase change'), and noun (incl. a specialized Buddhist 'sutra painting' sense) blocks under the same Teochew reading; the more general adjective sense was picked.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang2-讜
+    headword: 讜
+    readings:
+      - pengim: dang2
+    senses:
+      - pos: adjective
+        gloss_en: [upright and candid (of speech), honest]
+        gloss_zh: [讜]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hag4-豁
+    headword: 豁
+    readings:
+      - pengim: hag4
+    senses:
+      - pos: adjective
+        gloss_en: [open; clear, open-minded; broad-minded]
+        gloss_zh: [豁, 豁達]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

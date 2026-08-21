@@ -1738,3 +1738,93 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: mog8-hui1-莫非
+    headword: 莫非
+    readings:
+      - pengim: mog8 hui1
+    senses:
+      - pos: adverb
+        gloss_en: [could it be that, is it possible that]
+        gloss_zh: [莫非]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuêng7-ig4-萬一
+    headword: 萬一
+    readings:
+      - pengim: bhuêng7 ig4
+    senses:
+      - pos: conjunction
+        gloss_en: [in case, if by chance, what if]
+        gloss_zh: [萬一]
+        note: 萬一 is attested with several parts of speech (adverb, conjunction, noun 'contingency', and a Hokkien numeral 'eleven thousand'); entry represents its most common everyday conjunction/adverb use.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba1-葩
+    headword: 葩
+    readings:
+      - pengim: ba1
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for lamps, "classifier for strung/clustered things (bunch, cluster, string)"]
+        gloss_zh: [葩]
+        note: The relevant classifier senses are tagged Hokkien on the source page rather than explicitly Teochew, though the reading itself is attested for Teochew, leaving some ambiguity about exact sense fit.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li2-ming7-裡面
+    headword: 裡面
+    readings:
+      - pengim: li2 ming7
+    senses:
+      - pos: noun
+        gloss_en: [inside, interior]
+        gloss_zh: [裡面]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai1-bai5-西爿
+    headword: 西爿
+    readings:
+      - pengim: sai1 bai5
+    senses:
+      - pos: noun
+        gloss_en: [west side, to the west]
+        gloss_zh: [西爿]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: se5-lui7-詞類
+    headword: 詞類
+    readings:
+      - pengim: se5 lui7
+    senses:
+      - pos: noun
+        gloss_en: [part of speech]
+        gloss_zh: [詞類]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pi3-ru5-譬如
+    headword: 譬如
+    readings:
+      - pengim: pi3 ru5
+    senses:
+      - pos: conjunction
+        gloss_en: [for example, for instance, such as]
+        gloss_zh: [譬如]
+        note: Wiktionary tags this as a verb ('to be similar to; for example') but its dominant modern usage functions as a discourse conjunction introducing examples, so it was classified as conjunction instead.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
