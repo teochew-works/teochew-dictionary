@@ -11896,3 +11896,933 @@ entries:
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: a1-dab4-cu3-亞答厝
+    headword: 亞答厝
+    readings:
+      - pengim: a1 dab4 cu3
+      - pengim: a1 dag4 cu3
+    senses:
+      - pos: noun
+        gloss_en: [thatched-roof house]
+        gloss_zh: [亞答厝]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ta1-hiên1-他鄉
+    headword: 他鄉
+    readings:
+      - pengim: ta1 hiên1
+      - pengim: ta1 hion1
+    senses:
+      - pos: noun
+        gloss_en: [foreign land; place away from one's native home]
+        gloss_zh: [他鄉]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang1-倉
+    headword: 倉
+    readings:
+      - pengim: cang1
+      - pengim: ceng1
+    senses:
+      - pos: noun
+        gloss_en: [granary, warehouse]
+        gloss_zh: [倉]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iêng6-兗
+    headword: 兗
+    readings:
+      - pengim: iêng6
+      - pengim: iang6
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Yan (used in 兗州, a place name)", surname Yan]
+        gloss_zh: [兗]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bag4-mung5-北門
+    headword: 北門
+    readings:
+      - pengim: bag4 mung5
+      - pengim: bag4 meng5
+    senses:
+      - pos: noun
+        gloss_en: [north gate (of a city wall)]
+        gloss_zh: [北門]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bing2-匾
+    headword: 匾
+    readings:
+      - pengim: bing2
+      - pengim: biang2
+      - pengim: biêng2
+    senses:
+      - pos: noun
+        gloss_en: [plaque; inscribed board]
+        gloss_zh: [匾]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ku1-區
+    headword: 區
+    readings:
+      - pengim: ku1
+    senses:
+      - pos: noun
+        gloss_en: [district; area; region]
+        gloss_zh: [區]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from a second ao1 entry below: this common 'district' sense is attested with ku1 only, while ao1 additionally applies to 區's surname/archaic 'measuring vessel' senses covered separately."
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-iên5-南洋
+    headword: 南洋
+    readings:
+      - pengim: lam5 iên5
+      - pengim: nam5 ion5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Nanyang; Southeast Asia (esp. the Malay Archipelago)]
+        gloss_zh: [南洋]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-o3-南澳
+    headword: 南澳
+    readings:
+      - pengim: lam5 o3
+      - pengim: nam5 o3
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Nan'ao (county of Shantou, Guangdong)"]
+        gloss_zh: [南澳]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pag4-muêh8-guêng2-博物館
+    headword: 博物館
+    readings:
+      - pengim: pag4 muêh8 guêng2
+      - pengim: pag4 muêh8 guang2
+    senses:
+      - pos: noun
+        gloss_en: [museum]
+        gloss_zh: [博物館]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing3-ni5-印尼
+    headword: 印尼
+    readings:
+      - pengim: ing3 ni5
+      - pengim: êng3 ni5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Indonesia]
+        gloss_zh: [印尼]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing3-ni5-bhung5-印尼文
+    headword: 印尼文
+    readings:
+      - pengim: ing3 ni5 bhung5
+      - pengim: êng3 ni5 bhung5
+    senses:
+      - pos: noun
+        gloss_en: [Indonesian (written language)]
+        gloss_zh: [印尼文]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba1-吧
+    headword: 吧
+    readings:
+      - pengim: ba1
+    senses:
+      - pos: noun
+        gloss_en: [bar (drinking establishment)]
+        gloss_zh: [吧, 酒吧]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This entry is split from the sentence-final particle sense of 吧, which attests only the ba7 reading.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: deng5-唐
+    headword: 唐
+    readings:
+      - pengim: deng5
+      - pengim: tang5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Tang (dynasty), China; Chinese, a surname]
+        gloss_zh: [唐]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang1-diên5-商場
+    headword: 商場
+    readings:
+      - pengim: siang1 diên5
+      - pengim: siang1 dion5
+    senses:
+      - pos: noun
+        gloss_en: [shopping mall, market, marketplace]
+        gloss_zh: [商場]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si3-cuêng1-四川
+    headword: 四川
+    readings:
+      - pengim: si3 cuêng1
+      - pengim: si3 cuang1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Sichuan (province in China)]
+        gloss_zh: [四川]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou5-ze1-guang2-圖書館
+    headword: 圖書館
+    readings:
+      - pengim: dou5 ze1 guang2
+      - pengim: dou5 ze1 guêng2
+      - pengim: dou5 zu1 guang2
+    senses:
+      - pos: noun
+        gloss_en: [library]
+        gloss_zh: [圖書館]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-piou1-地標
+    headword: 地標
+    readings:
+      - pengim: di7 piou1
+      - pengim: di7 piao1
+    senses:
+      - pos: noun
+        gloss_en: [landmark]
+        gloss_zh: [地標]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-坊
+    headword: 坊
+    readings:
+      - pengim: huang1
+      - pengim: huang2
+    senses:
+      - pos: noun
+        gloss_en: [lane; alley, workshop]
+        gloss_zh: [坊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ai1-ti5-o1-bêg4-埃提阿伯
+    headword: 埃提阿伯
+    readings:
+      - pengim: ai1 ti5 o1 bêg4
+      - pengim: ai1 ti5 a1 bêg4
+    senses:
+      - pos: proper-noun
+        gloss_en: [Ethiopia (dated term)]
+        gloss_zh: [埃提阿伯]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: deng5-堂
+    headword: 堂
+    readings:
+      - pengim: deng5
+      - pengim: tang5
+    senses:
+      - pos: noun
+        gloss_en: [hall; main room of a house, hall (in building names)]
+        gloss_zh: [堂]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dion5-場
+    headword: 場
+    readings:
+      - pengim: dion5
+      - pengim: diên5
+      - pengim: ciang5
+    senses:
+      - pos: noun
+        gloss_en: [open space; field; venue, market]
+        gloss_zh: [場]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diên5-so2-場所
+    headword: 場所
+    readings:
+      - pengim: diên5 so2
+      - pengim: dion5 so2
+    senses:
+      - pos: noun
+        gloss_en: [place; venue; location]
+        gloss_zh: [場所]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai3-塞
+    headword: 塞
+    readings:
+      - pengim: sai3
+    senses:
+      - pos: noun
+        gloss_en: [frontier fortress; strategic pass; border stronghold]
+        gloss_zh: [塞]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This reading corresponds to a distinct sense block ('fortress; frontier pass') separate from the tag4/sag4 block ('to block; to stuff'), so it is drafted as its own entry.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dai6-hag8-大學
+    headword: 大學
+    readings:
+      - pengim: dai6 hag8
+      - pengim: dua7 oh8
+    senses:
+      - pos: noun
+        gloss_en: [university; college]
+        gloss_zh: [大學]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dai6-liang5-大連
+    headword: 大連
+    readings:
+      - pengim: dai6 liang5
+      - pengim: dai6 liêng5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Dalian (city in Liaoning, China)"]
+        gloss_zh: [大連]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiang1-ang1-mung5-天安門
+    headword: 天安門
+    readings:
+      - pengim: tiang1 ang1 mung5
+      - pengim: tiêng1 ang1 mung5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Tiananmen (gate in Beijing, China)"]
+        gloss_zh: [天安門]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiang1-ang1-mung5-guang2-dion5-天安門廣場
+    headword: 天安門廣場
+    readings:
+      - pengim: tiang1 ang1 mung5 guang2 dion5
+      - pengim: tiêng1 ang1 mung5 guang2 diên5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Tiananmen Square (plaza in Beijing, China)"]
+        gloss_zh: [天安門廣場]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiêng1-zing1-天津
+    headword: 天津
+    readings:
+      - pengim: tiêng1 zing1
+      - pengim: tiang1 zing1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Tianjin (city in northern China)]
+        gloss_zh: [天津]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: oh8-deng5-學堂
+    headword: 學堂
+    readings:
+      - pengim: oh8 deng5
+      - pengim: hag8 deng5
+    senses:
+      - pos: noun
+        gloss_en: [school, old-style private school]
+        gloss_zh: [學堂]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang1-nam5-安南
+    headword: 安南
+    readings:
+      - pengim: ang1 nam5
+      - pengim: ang1 lam5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Annam, Vietnam (historical name)]
+        gloss_zh: [安南]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang1-nam5-uê7-安南話
+    headword: 安南話
+    readings:
+      - pengim: ang1 nam5 uê7
+      - pengim: ang1 lam5 uê7
+    senses:
+      - pos: noun
+        gloss_en: [Vietnamese language, Annamese language (dated)]
+        gloss_zh: [安南話]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kêh4-tian1-客廳
+    headword: 客廳
+    readings:
+      - pengim: kêh4 tian1
+      - pengim: kah4 tian1
+    senses:
+      - pos: noun
+        gloss_en: [living room, sitting room]
+        gloss_zh: [客廳]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sig4-室
+    headword: 室
+    readings:
+      - pengim: sig4
+      - pengim: sêg4
+    senses:
+      - pos: noun
+        gloss_en: [room; chamber]
+        gloss_zh: [室]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gê1-家
+    headword: 家
+    readings:
+      - pengim: gê1
+      - pengim: gia1
+    senses:
+      - pos: noun
+        gloss_en: [home, family; household]
+        gloss_zh: [家]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The candidates ga1 and kia1 were dropped from this entry because the dossier ties them to distinct bound-form senses ('only used in 家己', 'only used in 私家'/'大家') rather than the standalone word; those are drafted as separate sense-specific entries.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gê1-hiên1-家鄉
+    headword: 家鄉
+    readings:
+      - pengim: gê1 hiên1
+      - pengim: gê1 hion1
+    senses:
+      - pos: noun
+        gloss_en: [hometown, native land]
+        gloss_zh: [家鄉]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing5-宸
+    headword: 宸
+    readings:
+      - pengim: sing5
+      - pengim: sêng5
+    senses:
+      - pos: noun
+        gloss_en: [imperial palace, great mansion, eaves; roof]
+        gloss_zh: [宸]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sig8-lag8-實叻
+    headword: 實叻
+    readings:
+      - pengim: sig8 lag8
+      - pengim: sêg8 lag8
+    senses:
+      - pos: proper-noun
+        gloss_en: [Singapore (dated name)]
+        gloss_zh: [實叻]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liao5-寮
+    headword: 寮
+    readings:
+      - pengim: liao5
+      - pengim: liou5
+    senses:
+      - pos: noun
+        gloss_en: [hut; shack; small house, home]
+        gloss_zh: [寮]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liou5-gog4-寮國
+    headword: 寮國
+    readings:
+      - pengim: liou5 gog4
+      - pengim: liao5 gog4
+    senses:
+      - pos: proper-noun
+        gloss_en: [Laos]
+        gloss_zh: [寮國]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siou2-hag8-小學
+    headword: 小學
+    readings:
+      - pengim: siou2 hag8
+      - pengim: siao2 hag8
+    senses:
+      - pos: noun
+        gloss_en: [primary school; elementary school]
+        gloss_zh: [小學]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ping5-屏
+    headword: 屏
+    readings:
+      - pengim: ping5
+    senses:
+      - pos: noun
+        gloss_en: [screen, folding screen, screen wall]
+        gloss_zh: [屏]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The Wiktionary page ties ping5 and bing2 to two distinct sense groups (screen/wall vs. to abandon/discard), so this headword is split into two sense-specific entries here.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tung5-屯
+    headword: 屯
+    readings:
+      - pengim: tung5
+    senses:
+      - pos: noun
+        gloss_en: [village, hamlet]
+        gloss_zh: [屯]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Candidate dung1 dropped: in the dossier it is attested only for the bound, non-definable senses 屯邅 (zhūnzhān) and 屯留 (a place name), not for the general 'village/hamlet' sense."
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiêng3-峴
+    headword: 峴
+    readings:
+      - pengim: hiêng3
+      - pengim: hiang3
+    senses:
+      - pos: noun
+        gloss_en: [(used in the name of Mount Xian)]
+        gloss_zh: [峴]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci6-diên5-市場
+    headword: 市場
+    readings:
+      - pengim: ci6 diên5
+      - pengim: ci6 dion5
+    senses:
+      - pos: noun
+        gloss_en: [market; marketplace]
+        gloss_zh: [市場]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diêm3-pou3-店鋪
+    headword: 店鋪
+    readings:
+      - pengim: diêm3 pou3
+      - pengim: diam3 pou3
+    senses:
+      - pos: noun
+        gloss_en: [shop; store]
+        gloss_zh: [店鋪]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: têng5-庭
+    headword: 庭
+    readings:
+      - pengim: têng5
+      - pengim: dian5
+    senses:
+      - pos: noun
+        gloss_en: [courtyard, front yard]
+        gloss_zh: [庭]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sion1-廂
+    headword: 廂
+    readings:
+      - pengim: sion1
+      - pengim: siên1
+    senses:
+      - pos: noun
+        gloss_en: [wing; side room, side]
+        gloss_zh: [廂]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hê7-廈
+    headword: 廈
+    readings:
+      - pengim: hê7
+    senses:
+      - pos: noun
+        gloss_en: [mansion; large building]
+        gloss_zh: [廈]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The candidate ê6 was dropped for this general sense (mansion/large building) since the dossier attests ê6 only for the 廈門 (Xiamen) abbreviation sense, drafted as a separate entry.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hê7-廈-proper-noun
+    headword: 廈
+    readings:
+      - pengim: hê7
+      - pengim: ê6
+    senses:
+      - pos: proper-noun
+        gloss_en: [Xiamen (short for 廈門)]
+        gloss_zh: [廈門]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This entry covers only the sense used as a short form of 廈門 (Xiamen); the general 'mansion/large building' sense is drafted separately with reading hê7 only.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhio7-廟
+    headword: 廟
+    readings:
+      - pengim: bhio7
+      - pengim: bhiê7
+    senses:
+      - pos: noun
+        gloss_en: [temple; shrine]
+        gloss_zh: [廟]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang2-diên5-廣場
+    headword: 廣場
+    readings:
+      - pengim: guang2 diên5
+      - pengim: guang2 dion5
+    senses:
+      - pos: noun
+        gloss_en: [square; plaza, shopping mall]
+        gloss_zh: [廣場]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lu5-廬
+    headword: 廬
+    readings:
+      - pengim: lu5
+      - pengim: lou5
+    senses:
+      - pos: noun
+        gloss_en: [hut; simple cottage, lodge]
+        gloss_zh: [廬]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giêng6-dog4-建築
+    headword: 建築
+    readings:
+      - pengim: giêng6 dog4
+      - pengim: giang6 dog4
+    senses:
+      - pos: noun
+        gloss_en: [building; structure, architecture]
+        gloss_zh: [建築]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giêng6-dog4-muêh8-建築物
+    headword: 建築物
+    readings:
+      - pengim: giêng6 dog4 muêh8
+      - pengim: giang6 dog4 muêh8
+    senses:
+      - pos: noun
+        gloss_en: [building; structure; edifice]
+        gloss_zh: [建築物]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang5-goin1-房間
+    headword: 房間
+    readings:
+      - pengim: bang5 goin1
+      - pengim: bang5 gain1
+      - pengim: pang5 gêng1
+    senses:
+      - pos: noun
+        gloss_en: [room, bedroom]
+        gloss_zh: [房間]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziê1-bai5-招牌
+    headword: 招牌
+    readings:
+      - pengim: ziê1 bai5
+      - pengim: zio1 bai5
+    senses:
+      - pos: noun
+        gloss_en: [signboard; shop sign]
+        gloss_zh: [招牌]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gig4-iên5-揭陽
+    headword: 揭陽
+    readings:
+      - pengim: gig4 iên5
+      - pengim: gig4 ion5
+      - pengim: gêg4 ion5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Jieyang (a prefecture-level city in Guangdong, China)"]
+        gloss_zh: [揭陽]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao1-diên5-操場
+    headword: 操場
+    readings:
+      - pengim: cao1 diên5
+      - pengim: cao1 dion5
+    senses:
+      - pos: noun
+        gloss_en: [playground; sports ground]
+        gloss_zh: [操場]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gu7-hiên1-故鄉
+    headword: 故鄉
+    readings:
+      - pengim: gu7 hiên1
+      - pengim: gu7 hion1
+    senses:
+      - pos: noun
+        gloss_en: [hometown, native land]
+        gloss_zh: [故鄉]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-bang5-書房
+    headword: 書房
+    readings:
+      - pengim: ze1 bang5
+      - pengim: zu1 bang5
+    senses:
+      - pos: noun
+        gloss_en: [study (room), bookstore]
+        gloss_zh: [書房]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziou1-siêng2-朝鮮
+    headword: 朝鮮
+    readings:
+      - pengim: ziou1 siêng2
+      - pengim: ziao1 siang2
+      - pengim: ziao1 siang1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Korea, Joseon (historical Korean dynasty)]
+        gloss_zh: [朝鮮]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

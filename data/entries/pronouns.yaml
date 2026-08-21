@@ -1139,3 +1139,240 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: nai2-乃
+    headword: 乃
+    readings:
+      - pengim: nai2
+      - pengim: nai6
+    senses:
+      - pos: pronoun
+        gloss_en: [you; your (literary), then; hence (literary)]
+        gloss_zh: [乃]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mih4-se7-乜事
+    headword: 乜事
+    readings:
+      - pengim: mih4 se7
+      - pengim: mih4 su7
+    senses:
+      - pos: pronoun
+        gloss_en: [what matter; any matter, what's wrong]
+        gloss_zh: [乜事]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mih4-gai5-乜個
+    headword: 乜個
+    readings:
+      - pengim: mih4 gai5
+      - pengim: mêh4 gai5
+    senses:
+      - pos: pronoun
+        gloss_en: [what]
+        gloss_zh: [乜個]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: e5-予
+    headword: 予
+    readings:
+      - pengim: e5
+    senses:
+      - pos: pronoun
+        gloss_en: ["alternative form of 余 (I, me)"]
+        gloss_zh: [余]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This is a distinct Wiktionary sense block (obsolete, literary) from the main 'to give/allow' entry, which uses candidates e2 and hou7.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sim6-moh4-什麼
+    headword: 什麼
+    readings:
+      - pengim: sim6 moh4
+      - pengim: se6 moh4
+    senses:
+      - pos: pronoun
+        gloss_en: [what, something; anything]
+        gloss_zh: [什麼]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: riêh8-zoi7-偌濟
+    headword: 偌濟
+    readings:
+      - pengim: riêh8 zoi7
+      - pengim: rioh8 zoi7
+    senses:
+      - pos: pronoun
+        gloss_en: [how many; how much]
+        gloss_zh: [偌濟, 多少]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-go3-只塊
+    headword: 只塊
+    readings:
+      - pengim: zi2 go3
+      - pengim: zio2
+    senses:
+      - pos: pronoun
+        gloss_en: [here]
+        gloss_zh: [只塊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi2-boin5-只爿
+    headword: 只爿
+    readings:
+      - pengim: zi2 boin5
+      - pengim: zi2 bain5
+    senses:
+      - pos: pronoun
+        gloss_en: [this side]
+        gloss_zh: [只爿]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: na2-哪
+    headword: 哪
+    readings:
+      - pengim: na2
+      - pengim: na7
+      - pengim: na5
+      - pengim: la5
+    senses:
+      - pos: pronoun
+        gloss_en: [what; which; how (interrogative)]
+        gloss_zh: [哪]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dai6-gê1-大家
+    headword: 大家
+    readings:
+      - pengim: dai6 gê1
+    senses:
+      - pos: pronoun
+        gloss_en: [everyone; everybody; all of us]
+        gloss_zh: [大家]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into a separate entry from the noun sense below ('mother-in-law', readings da1 gê1/dua7 gê1), because the page ties these two readings to different pos blocks rather than duplicating them across all senses.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hi5-奚
+    headword: 奚
+    readings:
+      - pengim: hi5
+      - pengim: hi1
+    senses:
+      - pos: pronoun
+        gloss_en: [where? what? how? why? (literary interrogative)]
+        gloss_zh: [奚]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. A third candidate (ki5) was dropped because it is attested only for 奚's surname sense, not the sense drafted here.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ga1-gi7-家己
+    headword: 家己
+    readings:
+      - pengim: ga1 gi7
+      - pengim: ga1 di7
+    senses:
+      - pos: pronoun
+        gloss_en: [self; oneself]
+        gloss_zh: [自己]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi2-己
+    headword: 己
+    readings:
+      - pengim: gi2
+      - pengim: gi7
+    senses:
+      - pos: pronoun
+        gloss_en: [self; oneself, personal]
+        gloss_zh: [己]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. gi7 is attested specifically in the bound compound 家己 ("oneself"), while gi2 is the general reading used elsewhere; both share the same core "self" meaning so were kept as one entry.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: do3-帶
+    headword: 帶
+    readings:
+      - pengim: do3
+    senses:
+      - pos: pronoun
+        gloss_en: [place, where]
+        gloss_zh: [帶]
+        note: 1 candidate reading from Wiktionary (do3), split from the main 帶 entry — the dossier's Teochew Peng'im section attests do3 for this character, but the page ties that sense ('place; where') to Hainanese/Hokkien tags rather than Teochew explicitly; genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-底
+    headword: 底
+    readings:
+      - pengim: di7
+    senses:
+      - pos: pronoun
+        gloss_en: [which; what]
+        gloss_zh: [底]
+        note: 1 of 4 candidate readings from Wiktionary (di7), split from the main 底 entry — the dossier ties di7 specifically to a Min-literary 'which; what' sense, distinct from the core doi2/doin2/di2 readings — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-go3-底塊
+    headword: 底塊
+    readings:
+      - pengim: di7 go3
+    senses:
+      - pos: pronoun
+        gloss_en: [where, how (in rhetorical questions)]
+        gloss_zh: [底塊]
+        note: 1 of 2 candidate readings confirmed from Wiktionary (di7 go3); dio3 dropped as it does not appear anywhere in the dossier's teochew_sound data for this headword — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

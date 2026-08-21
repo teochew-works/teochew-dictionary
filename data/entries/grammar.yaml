@@ -2178,3 +2178,559 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: hia6-下
+    headword: 下
+    readings:
+      - pengim: hia6
+      - pengim: ê6
+    senses:
+      - pos: preposition
+        gloss_en: [under; below; beneath, lower; located below]
+        gloss_zh: [下]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. 下 has multiple distinct Teochew reading groups tied to different senses; this entry covers the locative sense 'under, below' (hia6, ê6), split from the readings for other senses of 下 drafted as separate entries.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ê6-boin5-下爿
+    headword: 下爿
+    readings:
+      - pengim: ê6 boin5
+      - pengim: ê6 bain5
+    senses:
+      - pos: noun
+        gloss_en: [below; beneath; underside]
+        gloss_zh: [下爿]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cian2-且
+    headword: 且
+    readings:
+      - pengim: cian2
+    senses:
+      - pos: adverb
+        gloss_en: [just; for the time being; first, moreover; also]
+        gloss_zh: [且]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into separate sense-specific entries: this entry covers the common adverbial/conjunctive senses (just; moreover) tied to reading cian2; the archaic reading zu1 (alternate form of 俎, chopping board) is drafted as a separate entry."
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bong6-並
+    headword: 並
+    readings:
+      - pengim: bong6
+      - pengim: bêng6
+    senses:
+      - pos: adverb
+        gloss_en: [and; moreover, simultaneously; at the same time, actually (used before a negative for emphasis)]
+        gloss_zh: [並]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu1-乎
+    headword: 乎
+    readings:
+      - pengim: hu1
+      - pengim: hu7
+    senses:
+      - pos: particle
+        gloss_en: [classical sentence-final interrogative particle, in; at (classical)]
+        gloss_zh: [乎]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in2-miêng2-以免
+    headword: 以免
+    readings:
+      - pengim: in2 miêng2
+      - pengim: in2 miang2
+    senses:
+      - pos: conjunction
+        gloss_en: [in order to avoid; so as not to; lest]
+        gloss_zh: [以免]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go6-個
+    headword: 個
+    readings:
+      - pengim: go6
+      - pengim: gai5
+      - pengim: gai7
+    senses:
+      - pos: classifier
+        gloss_en: [general classifier for people or things, (Teochew) to be]
+        gloss_zh: [個]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geng2-僅
+    headword: 僅
+    readings:
+      - pengim: geng2
+      - pengim: gêng2
+      - pengim: ging2
+    senses:
+      - pos: adverb
+        gloss_en: [only, merely]
+        gloss_zh: [僅]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lai6-doi2-內底
+    headword: 內底
+    readings:
+      - pengim: lai6 doi2
+      - pengim: lai6 doin2
+    senses:
+      - pos: noun
+        gloss_en: [inside, insole]
+        gloss_zh: [內底]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lai6-boin5-內爿
+    headword: 內爿
+    readings:
+      - pengim: lai6 boin5
+      - pengim: lai6 bain5
+    senses:
+      - pos: noun
+        gloss_en: [inside]
+        gloss_zh: [內爿]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang7-共
+    headword: 共
+    readings:
+      - pengim: gang7
+    senses:
+      - pos: preposition
+        gloss_en: [with, for, and]
+        gloss_zh: [共]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Dropped giong1 (originally listed as a candidate) because in the dossier it is attested only for senses labelled as alternative forms of unrelated characters (供/恭/宮/拱), not for the core 'with; together' sense of 共.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki5-dong1-其中
+    headword: 其中
+    readings:
+      - pengim: ki5 dong1
+      - pengim: ki5 dang1
+    senses:
+      - pos: adverb
+        gloss_en: [among (them), therein, in this]
+        gloss_zh: [其中]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhug4-勿
+    headword: 勿
+    readings:
+      - pengim: bhug4
+      - pengim: mug4
+    senses:
+      - pos: particle
+        gloss_en: [do not; don't (literary), not]
+        gloss_zh: [勿]
+        note: "2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from a shared dossier entry for 勿: the mai3 candidate is attested only for the separate Southern-Min imperative-negator sense (alternative form of 莫), drafted as its own entry below."
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mai3-勿
+    headword: 勿
+    readings:
+      - pengim: mai3
+    senses:
+      - pos: particle
+        gloss_en: [don't (imperative), alternative form of 莫]
+        gloss_zh: [莫]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from a shared dossier entry for 勿: bhug4/mug4 are attested only for the separate literary 'do not' sense, drafted as its own entry above."
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kao2-boin5-口爿
+    headword: 口爿
+    readings:
+      - pengim: kao2 boin5
+      - pengim: kao2 bain5
+    senses:
+      - pos: noun
+        gloss_en: [outside; exterior]
+        gloss_zh: [口爿]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang5-同
+    headword: 同
+    readings:
+      - pengim: dang5
+      - pengim: tong5
+    senses:
+      - pos: preposition
+        gloss_en: [with; and (indicating accompaniment)]
+        gloss_zh: [同]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang3-向
+    headword: 向
+    readings:
+      - pengim: hiang3
+      - pengim: nia3
+      - pengim: hian3
+    senses:
+      - pos: preposition
+        gloss_en: [towards; to, direction, to face]
+        gloss_zh: [向]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Of the 6 candidates given for 向, these 3 are attested for this general 'towards; direction' sense; the other 3 (hiên3, hion3, hio3) are attested only for the surname/place-name sense and have been drafted as a separate entry.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba7-吧
+    headword: 吧
+    readings:
+      - pengim: ba7
+    senses:
+      - pos: particle
+        gloss_en: ["sentence-final particle (suggestion, request)"]
+        gloss_zh: [吧]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Of the 2 candidates given, only ba7 is attested for this sentence-final particle sense; the other candidate, ba1, is attested only for the separate 'bar' noun sense and has been drafted as its own entry.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nê1-呢
+    headword: 呢
+    readings:
+      - pengim: nê1
+      - pengim: ni5
+    senses:
+      - pos: particle
+        gloss_en: [sentence-final particle (what about...?), sentence-final particle (continuation/pause)]
+        gloss_zh: [呢]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The primary sense selected here (reciprocal question particle, 'what about...?') is attested in the dossier only with the nê1 reading; ni5 is attested for several secondary senses on the same page (e.g. Cantonese 'this', woollen cloth) rather than this specific sense.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ung5-員
+    headword: 員
+    readings:
+      - pengim: ung5
+    senses:
+      - pos: particle
+        gloss_en: [grammatical particle; used in personal names]
+        gloss_zh: [員]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split out from the main 員 (uêng5/uang5) entry because the dossier ties this reading to a distinct grammatical-particle sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: m6-唔
+    headword: 唔
+    readings:
+      - pengim: m6
+      - pengim: m7
+    senses:
+      - pos: adverb
+        gloss_en: [not (negator), no]
+        gloss_zh: [唔, 不]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The page lists several senses under the same reading (negator, interjection of agreement/surprise, alt form of 嗯/寤); the negator sense explicitly tagged Teochew was chosen as most representative.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-嘍
+    headword: 嘍
+    readings:
+      - pengim: liu5
+      - pengim: lu1
+      - pengim: lo7
+    senses:
+      - pos: particle
+        gloss_en: [sentence-final particle equivalent to 了]
+        gloss_zh: [嘍, 了]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gu3-riêng5-固然
+    headword: 固然
+    readings:
+      - pengim: gu3 riêng5
+      - pengim: gu3 riang5
+    senses:
+      - pos: adverb
+        gloss_en: [admittedly; it is true that; undoubtedly]
+        gloss_zh: [固然]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zai6-sên1-iên7-在生樣
+    headword: 在生樣
+    readings:
+      - pengim: zai6 sên1 iên7
+      - pengim: zai6 sên1 ion7
+    senses:
+      - pos: adverb
+        gloss_en: [how]
+        gloss_zh: [在生樣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghua7-boin5-外爿
+    headword: 外爿
+    readings:
+      - pengim: ghua7 boin5
+      - pengim: ghua7 bain5
+    senses:
+      - pos: noun
+        gloss_en: [outside; exterior]
+        gloss_zh: [外爿]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ru5-gua2-如果
+    headword: 如果
+    readings:
+      - pengim: ru5 gua2
+      - pengim: ru5 guan2
+    senses:
+      - pos: conjunction
+        gloss_en: [if]
+        gloss_zh: [如果]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-封
+    headword: 封
+    readings:
+      - pengim: huang1
+      - pengim: hong1
+    senses:
+      - pos: classifier
+        gloss_en: ["classifier for letters, envelopes, sealed packets", to seal; to close]
+        gloss_zh: [封]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zang5-層
+    headword: 層
+    readings:
+      - pengim: zang5
+      - pengim: ing5
+      - pengim: êng5
+    senses:
+      - pos: classifier
+        gloss_en: [layer, storey (classifier)]
+        gloss_zh: [層]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doi2-boin5-底爿
+    headword: 底爿
+    readings:
+      - pengim: doi2 boin5
+      - pengim: doin2 bain5
+    senses:
+      - pos: particle
+        gloss_en: [inside]
+        gloss_zh: [底爿]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ao6-後
+    headword: 後
+    readings:
+      - pengim: ao6
+      - pengim: hao6
+    senses:
+      - pos: noun
+        gloss_en: [behind; rear; back, after; later]
+        gloss_zh: [後]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ao6-boin5-後爿
+    headword: 後爿
+    readings:
+      - pengim: ao6 boin5
+      - pengim: ao6 bain5
+    senses:
+      - pos: noun
+        gloss_en: [the back; the rear; behind]
+        gloss_zh: [後面]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bê2-把
+    headword: 把
+    readings:
+      - pengim: bê2
+      - pengim: ba2
+    senses:
+      - pos: classifier
+        gloss_en: ["classifier for handled objects (chairs, knives, umbrellas, etc.)", handle; grip]
+        gloss_zh: [把]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a1-抑
+    headword: 抑
+    readings:
+      - pengim: a1
+      - pengim: ag4
+    senses:
+      - pos: conjunction
+        gloss_en: [or (linking alternatives)]
+        gloss_zh: [或]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang3-ziou3-按照
+    headword: 按照
+    readings:
+      - pengim: ang3 ziou3
+      - pengim: ang3 ziao3
+    senses:
+      - pos: preposition
+        gloss_en: [according to; in accordance with]
+        gloss_zh: [按照]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiun1-攸
+    headword: 攸
+    readings:
+      - pengim: hiun1
+      - pengim: hiu1
+    senses:
+      - pos: particle
+        gloss_en: [place; whereat (classical), that which (cf. 所)]
+        gloss_zh: [攸]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i1-於
+    headword: 於
+    readings:
+      - pengim: i1
+      - pengim: e1
+      - pengim: u1
+    senses:
+      - pos: preposition
+        gloss_en: [in; at; on, than, from]
+        gloss_zh: [於]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Reading u1 is attested mainly alongside the character's secondary 'surname' sense rather than the main prepositional sense used here, but is included as a genuine reading for 於.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi3-riang5-既然
+    headword: 既然
+    readings:
+      - pengim: gi3 riang5
+      - pengim: gi3 riêng5
+    senses:
+      - pos: conjunction
+        gloss_en: [since; as; now that]
+        gloss_zh: [既然]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

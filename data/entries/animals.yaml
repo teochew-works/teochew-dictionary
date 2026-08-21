@@ -4554,3 +4554,64 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: uang5-凰
+    headword: 凰
+    readings:
+      - pengim: uang5
+      - pengim: huang5
+    senses:
+      - pos: noun
+        gloss_en: [female phoenix (fenghuang)]
+        gloss_zh: [凰]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mong5-哞
+    headword: 哞
+    readings:
+      - pengim: mong5
+      - pengim: mou5
+      - pengim: ma1
+    senses:
+      - pos: interjection
+        gloss_en: [moo! (sound of a cow)]
+        gloss_zh: [哞]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kêh4-ziao2-客鳥
+    headword: 客鳥
+    readings:
+      - pengim: kêh4 ziao2
+      - pengim: kêh4 ziou2
+    senses:
+      - pos: noun
+        gloss_en: [magpie]
+        gloss_zh: [客鳥]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhig8-bo5-密婆
+    headword: 密婆
+    readings:
+      - pengim: bhig8 bo5
+      - pengim: bhêg8 bo5
+    senses:
+      - pos: noun
+        gloss_en: [bat (flying mammal)]
+        gloss_zh: [密婆]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
