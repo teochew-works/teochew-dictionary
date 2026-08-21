@@ -4004,3 +4004,289 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: dab4-瘩
+    headword: 瘩
+    readings:
+      - pengim: dab4
+    senses:
+      - pos: noun
+        gloss_en: ["lump; pimple (bound form, as in 疙瘩)"]
+        gloss_zh: [瘩]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cion6-ghê5-zioh4-象牙質
+    headword: 象牙質
+    readings:
+      - pengim: cion6 ghê5 zioh4
+    senses:
+      - pos: noun
+        gloss_en: [dentin]
+        gloss_zh: [象牙質]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cion6-pin7-象鼻
+    headword: 象鼻
+    readings:
+      - pengim: cion6 pin7
+    senses:
+      - pos: noun
+        gloss_en: [elephant's trunk, proboscis]
+        gloss_zh: [象鼻]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka1-doin2-跤底
+    headword: 跤底
+    readings:
+      - pengim: ka1 doin2
+    senses:
+      - pos: noun
+        gloss_en: [sole of the foot]
+        gloss_zh: [跤底]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka1-ao6-neng6-跤後卵
+    headword: 跤後卵
+    readings:
+      - pengim: ka1 ao6 neng6
+    senses:
+      - pos: noun
+        gloss_en: [heel]
+        gloss_zh: [跤後卵]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka1-ao6-dên1-跤後蹬
+    headword: 跤後蹬
+    readings:
+      - pengim: ka1 ao6 dên1
+    senses:
+      - pos: noun
+        gloss_en: [heel]
+        gloss_zh: [跤後蹬]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka1-buan5-跤盤
+    headword: 跤盤
+    readings:
+      - pengim: ka1 buan5
+    senses:
+      - pos: noun
+        gloss_en: [instep, top of the foot]
+        gloss_zh: [跤盤]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka1-mag8-跤目
+    headword: 跤目
+    readings:
+      - pengim: ka1 mag8
+    senses:
+      - pos: noun
+        gloss_en: [anklebone, ankle]
+        gloss_zh: [跤目]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka1-deng5-dou2-跤腸肚
+    headword: 跤腸肚
+    readings:
+      - pengim: ka1 deng5 dou2
+    senses:
+      - pos: noun
+        gloss_en: [calf of the leg]
+        gloss_zh: [跤腸肚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka1-niam5-跤臁
+    headword: 跤臁
+    readings:
+      - pengim: ka1 niam5
+    senses:
+      - pos: noun
+        gloss_en: [tibia, shinbone]
+        gloss_zh: [跤臁]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka1-tao5-跤頭
+    headword: 跤頭
+    readings:
+      - pengim: ka1 tao5
+    senses:
+      - pos: noun
+        gloss_en: [knee, beside; at the side]
+        gloss_zh: [跤頭]
+        note: Two distinct senses ('knee' and 'beside/at the side') are both explicitly tagged Teochew under this same reading; 'knee' was taken as the primary sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ka1-tao5-u1-跤頭趺
+    headword: 跤頭趺
+    readings:
+      - pengim: ka1 tao5 u1
+    senses:
+      - pos: noun
+        gloss_en: [knee]
+        gloss_zh: [跤頭趺]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zong2-踵
+    headword: 踵
+    readings:
+      - pengim: zong2
+    senses:
+      - pos: noun
+        gloss_en: [heel]
+        gloss_zh: [踵, 腳跟]
+        note: The Teochew reading zong2 covers both a noun sense ('heel') and verb senses ('to follow', 'to visit') with no dialect tag distinguishing which applies in Teochew; the noun sense was chosen as primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doi5-蹄
+    headword: 蹄
+    readings:
+      - pengim: doi5
+    senses:
+      - pos: noun
+        gloss_en: [hoof, trotter (leg of pork)]
+        gloss_zh: [蹄]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing1-sim1-身心
+    headword: 身心
+    readings:
+      - pengim: sing1 sim1
+    senses:
+      - pos: noun
+        gloss_en: [body and mind, mental and physical qualities]
+        gloss_zh: [身心]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing1-ku1-身軀
+    headword: 身軀
+    readings:
+      - pengim: sing1 ku1
+    senses:
+      - pos: noun
+        gloss_en: [body, organism]
+        gloss_zh: [身軀]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing1-ti2-身體
+    headword: 身體
+    readings:
+      - pengim: sing1 ti2
+    senses:
+      - pos: noun
+        gloss_en: [body, health, physique]
+        gloss_zh: [身體]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing1-gao1-身高
+    headword: 身高
+    readings:
+      - pengim: sing1 gao1
+    senses:
+      - pos: noun
+        gloss_en: [height (of a person)]
+        gloss_zh: [身高]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ku1-軀
+    headword: 軀
+    readings:
+      - pengim: ku1
+    senses:
+      - pos: noun
+        gloss_en: [body (of a person), classifier for sets of clothing]
+        gloss_zh: [軀, 身軀]
+        note: Wiktionary lists both a general 'human body' noun sense and a Hokkien-specific classifier-for-clothing sense under the same ku1 reading; noun/body chosen as the primary pos but the classifier usage is also attested and common in Teochew.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geng6-si6-近視
+    headword: 近視
+    readings:
+      - pengim: geng6 si6
+    senses:
+      - pos: noun
+        gloss_en: [myopia, nearsightedness]
+        gloss_zh: [近視]
+        note: The page lists a noun sense ('myopia; nearsightedness') and an adjective sense ('myopic; near-sighted') under the identical reading; the noun was chosen as primary but the word is also commonly used predicatively/adjectivally.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rui6-ti2-遺體
+    headword: 遺體
+    readings:
+      - pengim: rui6 ti2
+    senses:
+      - pos: noun
+        gloss_en: [remains, body of the deceased]
+        gloss_zh: [遺體]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziu2-zêng1-uh4-酒盅窟
+    headword: 酒盅窟
+    readings:
+      - pengim: ziu2 zêng1 uh4
+    senses:
+      - pos: noun
+        gloss_en: [dimple (on the cheek)]
+        gloss_zh: [酒盅窟]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêng5-sung5-重巡
+    headword: 重巡
+    readings:
+      - pengim: dêng5 sung5
+    senses:
+      - pos: noun
+        gloss_en: [double eyelids]
+        gloss_zh: [重巡]
+        note: Two Wiktionary senses (Southern Min 'double eyelids' vs. an abbreviation for 重巡洋艦 'heavy cruiser') share the identical Teochew reading dêng5 sung5; the dialect-specific 'double eyelids' sense was chosen as more likely genuine Teochew vocabulary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
