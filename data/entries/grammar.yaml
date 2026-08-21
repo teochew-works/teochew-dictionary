@@ -2150,3 +2150,31 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: ma1-麼
+    headword: 麼
+    readings:
+      - pengim: ma1
+    senses:
+      - pos: particle
+        gloss_en: [question particle (like 嗎/吗), what]
+        gloss_zh: [嗎]
+        note: This reading is attested across several senses (interrogative particle equivalent to 嗎/吗, 'what' in some dialects, and unrelated 'tiny/surname') without a clear indication of which applies in Teochew.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: no7-𰇇
+    headword: 𰇇
+    readings:
+      - pengim: no7
+    senses:
+      - pos: particle
+        gloss_en: [particle expressing persuasion, urging particle]
+        gloss_zh: [𰇇]
+        note: Source gives only the terse gloss 'particle used to express persuasion' with no further context on register or comparison to other Teochew sentence-final particles, so the precise nuance is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

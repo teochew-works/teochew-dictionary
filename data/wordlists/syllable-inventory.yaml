@@ -78,6 +78,7 @@ items:
           - a1-ziu1-亞洲
           - a1-zê2-阿姐
           - a1-zêg4-阿叔
+          - a1-鴉
           - lao6-a1-bêh4-老阿伯
           - lao6-a1-m2-老阿姆
           - loh8-a1-nou5-落阿孥
@@ -213,6 +214,7 @@ items:
           - ab8-盒
           - bhag8-ab8-墨盒
           - big4-ab8-筆盒
+          - gug4-huê1-ab8-骨灰盒
           - loi2-ab8-禮盒
           - mang5-ab8-盲盒
       shantou:
@@ -278,11 +280,26 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ah4-bhi6-鴨咪
+          - ah4-bho2-ka1-鴨母跤
+          - ah4-bho2-nim3-鴨母捻
+          - ah4-bho2-鴨母
+          - ah4-cui3-siu3-鴨嘴獸
+          - ah4-gian2-pou1-鴨仔鋪
+          - ah4-gian2-鴨囝
           - ah4-gim1-押金
+          - ah4-gou2-鴨牯
+          - ah4-hêng5-鴨雄
+          - ah4-neng6-鴨卵
+          - ah4-ni6-鴨伲
+          - ah4-piêng3-gui2-鴉片鬼
           - ah4-ung7-押韻
+          - ah4-zih8-鴨舌
+          - ah4-鴨
           - bag4-gian1-ah4-北京鴨
           - cai2-ah4-菜鴨
           - di2-ah4-抵押
+          - giam5-ah4-neng6-鹹鴨卵
           - goi1-ah4-雞鴨
           - gong5-guê3-ziah4-ah4-戇過隻鴨
           - lah4-ah4-臘鴨
@@ -298,8 +315,22 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - ah4-bhi6-鴨咪
+          - ah4-bho2-ka1-鴨母跤
+          - ah4-bho2-nim3-鴨母捻
+          - ah4-bho2-鴨母
+          - ah4-cui3-siu3-鴨嘴獸
+          - ah4-gian2-pou1-鴨仔鋪
+          - ah4-gian2-鴨囝
           - ah4-gim1-押金
+          - ah4-gou2-鴨牯
+          - ah4-hêng5-鴨雄
+          - ah4-neng6-鴨卵
+          - ah4-ni6-鴨伲
+          - ah4-piêng3-gui2-鴉片鬼
           - ah4-ung7-押韻
+          - ah4-zih8-鴨舌
+          - giam5-ah4-neng6-鹹鴨卵
       shantou:
         status: unattested
   - syllable: ai1
@@ -324,6 +355,7 @@ items:
           - ai1-埃
           - bui1-ai1-悲哀
           - ding5-ai1-塵埃
+          - mig8-ai1-默哀
           - u1-hu7-ai1-zai7-嗚呼哀哉
           - zag4-ai1-sung6-biang3-節哀順變
         sandhi_attested_entries:
@@ -864,6 +896,7 @@ items:
           - am1-lo1-庵螺
           - am1-厂
           - am1-庵
+          - am1-鵪
           - ni5-gou1-am1-尼姑庵
         sandhi_attested_entries:
           - am1-bou1-庵埠
@@ -911,7 +944,9 @@ items:
           - am3-si7-暗示
           - am3-tao5-暗頭
           - am3-zên6-暗靜
+          - am3-黯
           - hung1-am3-昏暗
+          - hêg4-am3-黑暗
           - mê5-am3-tao5-暝暗頭
           - mê5-am3-暝暗
           - mêng5-zu1-am3-dao5-明珠暗投
@@ -1071,6 +1106,7 @@ items:
           - ang1-nguin5-安危
           - ang1-zia2-翁姐
           - ang1-翁
+          - ang1-骯
           - bo2-ang1-寶安
           - goi1-ang1-gian2-雞翁囝
           - goi1-ang1-雞翁
@@ -2175,6 +2211,7 @@ items:
           - bag4-北
           - bag4-幅
           - bag4-捌
+          - bag4-𧧸
           - boih4-八
           - dang1-bag4-東北
           - goi1-bag4-lai6-雞腹內
@@ -2360,6 +2397,7 @@ items:
           - gi5-bai5-sig4-棋牌室
           - giah4-bai5-揭牌
           - giam2-bai5-減排
+          - gug4-bai5-骨牌
           - ho7-bai5-號牌
           - mian5-bai5-名牌
           - pog4-kiog4-bai5-撲克牌
@@ -3009,6 +3047,7 @@ items:
           - gia1-bang1-加班
           - la5-bang1-朥肪
           - loh8-bang1-落班
+          - mo5-bang1-魔方
           - mê5-bang1-夜班
           - nian2-bang1-領班
           - sai1-bang1-ghê5-西班牙
@@ -3068,8 +3107,10 @@ items:
           - dao6-dêg4-bang2-gê3-道德綁架
           - di7-bang2-地板
           - gab4-bang2-夾板
+          - hêg4-bang2-黑板
           - kuai3-bang2-快板
           - kêg4-bang2-刻板
+          - lêng5-houn2-bang2-龍虎榜
           - sang1-bang2-舢板
           - si2-bang2-死板
           - uan3-bang2-案板
@@ -3131,6 +3172,7 @@ items:
           - bang5-suan2-房產
           - bang5-tao5-房頭
           - bang5-房
+          - bang5-馮
           - bên7-bang5-病房
           - cia1-bang5-車房
           - ciang2-bang5-廠房
@@ -3367,6 +3409,7 @@ items:
           - kao3-bao1-哭包
           - kiao5-bao1-僑胞
           - kua1-bao1-挎包
+          - min7-bao1-麵包
           - pah4-bao1-拍包
           - san1-bao1-to1-三胞胎
           - sang1-bao1-to1-雙胞胎
@@ -3442,6 +3485,7 @@ items:
           - bao6-bêg4-暴逼
           - bao6-dong6-暴動
           - bao6-guang1-曝光
+          - bao6-he5-鮑魚
           - bao6-hou6-暴雨
           - bao6-huag4-hou6-暴發戶
           - bao6-huang1-hou6-暴風雨
@@ -3451,6 +3495,7 @@ items:
           - bao6-liao7-爆料
           - bao6-tu5-暴徒
           - bao6-暴
+          - bao6-鮑
           - cou1-bao6-粗暴
           - gê1-bao6-家暴
           - gê1-têng5-bao6-lag8-家庭暴力
@@ -3479,6 +3524,7 @@ items:
           - bao6-bêg4-暴逼
           - bao6-dong6-暴動
           - bao6-guang1-曝光
+          - bao6-he5-鮑魚
           - bao6-hou6-暴雨
           - bao6-huag4-hou6-暴發戶
           - bao6-huang1-hou6-暴風雨
@@ -4219,6 +4265,7 @@ items:
           - bêh4-伯
           - bêh4-柏
           - bêh4-百
+          - bêh4-𬦰
           - ci1-go1-bêh4-痴哥伯
           - dua7-bêh4-cai3-大白菜
           - dua7-bêh4-大伯
@@ -4836,10 +4883,12 @@ items:
         status: attested
         attested_entries:
           - bêng6-bai5-並排
+          - bêng6-bhung5-駢文
           - bêng6-cia2-並且
           - bêng6-huag4-zêng3-併發症
           - bêng6-hui1-並非
           - bêng6-栟
+          - bêng6-駢
           - siang1-ti5-bêng6-lung6-相提並論
       shantou:
         status: unattested
@@ -4872,6 +4921,7 @@ items:
           - bêng5-lang5-憑欄
           - bêng5-zêng3-憑證
           - bêng6-bai5-並排
+          - bêng6-bhung5-駢文
           - bêng6-cia2-並且
           - bêng6-huag4-zêng3-併發症
           - bêng6-hui1-並非
@@ -5197,6 +5247,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bha5-lu2-麻汝
           - lê1-bha5-嚦峇
       shantou:
         status: unattested
@@ -5223,6 +5274,7 @@ items:
           - bha7-gian2-峇囝
           - bha7-li5-峇厘
         sandhi_attested_entries:
+          - bha5-lu2-麻汝
           - bha7-du2-礣砥
           - bha7-gian2-峇囝
           - bha7-li5-峇厘
@@ -5411,9 +5463,15 @@ items:
         status: unattested
       chaozhou:
         status: attested
+        attested_entries:
+          - dam3-bhai7-gian2-髧眉囝
+          - dam3-bhai7-ri5-髧眉兒
+          - dam3-bhai7-髧眉
         sandhi_attested_entries:
           - bhai5-mag8-眉目
           - bhai5-uang3-uang3-眉怨怨
+          - dam3-bhai7-gian2-髧眉囝
+          - dam3-bhai7-ri5-髧眉兒
       shantou:
         status: unattested
   - syllable: bhaib4
@@ -6661,10 +6719,24 @@ items:
           - bang1-bhê2-suan3-斑馬線
           - bang1-bhê2-斑馬
           - bhag8-bhê2-木馬
+          - bhê2-bhuê2-馬尾
+          - bhê2-bou3-馬布
           - bhê2-bug4-têng5-doi5-馬不停蹄
+          - bhê2-cia1-lou7-馬車路
+          - bhê2-cia1-馬車
+          - bhê2-dag8-馬達
+          - bhê2-doi5-馬蹄
+          - bhê2-dêg4-mo7-馬德望
+          - bhê2-gah4-馬甲
+          - bhê2-gao1-he5-馬鮫魚
           - bhê2-gian2-馬囝
+          - bhê2-hi3-馬戲
           - bhê2-lag8-馬力
+          - bhê2-lou7-馬路
+          - bhê2-pio1-馬票
+          - bhê2-soh4-馬索
           - bhê2-tao5-碼頭
+          - bhê2-zang1-馬鬃
           - bhê2-zi2-碼子
           - bhê2-碼
           - bo2-bhê2-寶馬
@@ -6673,9 +6745,13 @@ items:
           - du1-si1-bhê2-ziah4-蛛絲馬跡
           - hai2-bhê2-海馬
           - ho7-bhê2-號碼
+          - hu6-bhê2-駙馬
           - huag4-bhê2-砝碼
           - ki2-bhê2-起碼
+          - kia5-bhê2-騎馬
           - lo5-bhê2-ri7-羅馬字
+          - lêng5-bhê2-zêng1-sing5-龍馬精神
+          - ngiam7-zêng3-bhê2-驗證碼
           - no6-rui5-bhê2-兩維碼
           - ou1-zui1-bhê2-烏騅馬
           - sao3-bhê2-掃碼
@@ -6714,7 +6790,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - bhe5-bho2-馬母
       shantou:
         status: unattested
   - syllable: bhê5
@@ -6747,13 +6825,28 @@ items:
         status: attested
         sandhi_attested_entries:
           - bang1-bhê2-suan3-斑馬線
+          - bhê2-bhuê2-馬尾
+          - bhê2-bou3-馬布
           - bhê2-bug4-têng5-doi5-馬不停蹄
+          - bhê2-cia1-lou7-馬車路
+          - bhê2-cia1-馬車
+          - bhê2-dag8-馬達
+          - bhê2-doi5-馬蹄
+          - bhê2-dêg4-mo7-馬德望
+          - bhê2-gah4-馬甲
+          - bhê2-gao1-he5-馬鮫魚
           - bhê2-gian2-馬囝
+          - bhê2-hi3-馬戲
           - bhê2-lag8-馬力
+          - bhê2-lou7-馬路
+          - bhê2-pio1-馬票
+          - bhê2-soh4-馬索
           - bhê2-tao5-碼頭
+          - bhê2-zang1-馬鬃
           - bhê2-zi2-碼子
           - du1-si1-bhê2-ziah4-蛛絲馬跡
           - lo5-bhê2-ri7-羅馬字
+          - lêng5-bhê2-zêng1-sing5-龍馬精神
           - si1-bhê2-pou2-司馬浦
           - zam2-bhê2-do1-斬馬刀
           - zao2-bhê2-dêng1-走馬燈
@@ -6766,7 +6859,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - bhe5-bho2-馬母
       shantou:
         status: unattested
   - syllable: bhê7
@@ -6876,7 +6971,15 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - bhêh8-dang1-lao5-麥當勞
+          - bhêh8-hu1-麥麩
+          - bhêh8-hung2-麥粉
+          - bhêh8-kiog4-hong1-麥克風
+          - bhêh8-sên1-teng5-麥生糖
+          - bhêh8-sên1-麥生
+          - bhêh8-ziu2-麥酒
       shantou:
         status: unattested
   - syllable: bheh8
@@ -6898,6 +7001,14 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhêh8-dang1-lao5-麥當勞
+          - bhêh8-hu1-麥麩
+          - bhêh8-hung2-麥粉
+          - bhêh8-kiog4-hong1-麥克風
+          - bhêh8-sên1-teng5-麥生糖
+          - bhêh8-sên1-麥生
+          - bhêh8-ziu2-麥酒
+          - bhêh8-麥
           - dang1-bhêh8-丹麥
           - huang1-bhêh8-番麥
       shantou:
@@ -7667,6 +7778,8 @@ items:
         status: unattested
       chaozhou:
         status: attested
+        attested_entries:
+          - ah4-bhi6-鴨咪
         sandhi_attested_entries:
           - a1-bhi2-ba1-阿米巴
           - bhi2-bang1-米方
@@ -10938,6 +11051,7 @@ items:
         attested_entries:
           - bhio5-sia2-描寫
           - cai3-bhio5-菜苗
+          - he5-bhio5-魚苗
       shantou:
         status: unattested
   - syllable: bhio6
@@ -12886,6 +13000,10 @@ items:
         status: attested
         attested_entries:
           - a1-bho2-阿母
+          - ah4-bho2-ka1-鴨母跤
+          - ah4-bho2-nim3-鴨母捻
+          - ah4-bho2-鴨母
+          - bhe5-bho2-馬母
           - bho2-cing1-zoih4-母親節
           - bho2-cing1-母親
           - bho2-gian2-母囝
@@ -12916,6 +13034,7 @@ items:
           - kung5-tao5-bho2-拳頭母
           - lao6-bho2-老母
           - lao6-houn2-bho2-老虎母
+          - le5-bho2-驢母
           - ni1-bho2-奶母
           - ni5-go1-di2-bho2-尼哥底母
           - no6-bho2-gian2-兩母囝
@@ -13027,6 +13146,8 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - ah4-bho2-ka1-鴨母跤
+          - ah4-bho2-nim3-鴨母捻
           - bho2-cing1-zoih4-母親節
           - bho2-cing1-母親
           - bho2-gian2-母囝
@@ -13235,6 +13356,15 @@ items:
         status: unattested
       chaozhou:
         status: attested
+        attested_entries:
+          - bhoi6-dig4-𣍐得
+          - bhoi6-iao3-ging2-𣍐要緊
+          - bhoi6-mo2-𣍐孬
+          - bhoi6-pai2-𠁞歹
+          - bhoi6-pai2-𣍐歹
+          - bhoi6-sai2-𣍐使
+          - bhoi6-𠁞
+          - bhoi6-𣍐
         sandhi_attested_entries:
           - bhoi2-bhoi7-買賣
           - bhoi2-duan1-買單
@@ -13264,6 +13394,12 @@ items:
           - pah4-bhoi7-拍賣
           - siao2-bhoi7-bou6-小賣部
         sandhi_attested_entries:
+          - bhoi6-dig4-𣍐得
+          - bhoi6-iao3-ging2-𣍐要緊
+          - bhoi6-mo2-𣍐孬
+          - bhoi6-pai2-𠁞歹
+          - bhoi6-pai2-𣍐歹
+          - bhoi6-sai2-𣍐使
           - bhoi7-de1-gian2-賣豬囝
           - bhoi7-gog4-賣國
           - bhoi7-sing1-koi3-賣身契
@@ -14030,8 +14166,11 @@ items:
         status: attested
         attested_entries:
           - bhou2-duan1-牡丹
+          - bhou2-zê2-𡚸姐
           - bhou2-牡
           - bhou2-畝
+          - bhou2-𡚸
+          - cua7-bhou2-𤆬某
           - za1-bhou2-nang5-查某人
           - za1-bhou2-pêng5-iu2-查某朋友
       shantou:
@@ -14069,6 +14208,7 @@ items:
         status: attested
         sandhi_attested_entries:
           - bhou2-duan1-牡丹
+          - bhou2-zê2-𡚸姐
           - za1-bhou2-nang5-查某人
           - za1-bhou2-pêng5-iu2-查某朋友
       shantou:
@@ -14524,6 +14664,7 @@ items:
           - go1-bhu2-giah8-歌舞劇
           - go1-bhu2-sêng1-pêng5-歌舞昇平
           - go1-bhu2-歌舞
+          - gou2-bhu2-鼓舞
           - tiao3-bhu2-跳舞
           - uan1-bhu2-安撫
       shantou:
@@ -16134,6 +16275,7 @@ items:
           - bhuê2-sian1-尾聲
           - bhuê2-zoin2-尾指
           - bhuê2-尾
+          - bhê2-bhuê2-馬尾
           - ciu7-bhuê2-樹尾
           - cu3-bin1-tao5-bhuê2-厝邊頭尾
           - doin6-bhuê2-第尾
@@ -16211,6 +16353,7 @@ items:
           - bhuê5-莓
           - bhuê5-酶
           - bhuê5-霉
+          - bhuê5-黴
           - cao2-bhuê5-草莓
           - ion5-bhuê5-楊梅
           - mo7-bhuê5-zi2-guah4-望梅止渴
@@ -17143,7 +17286,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - bhug8-𢪱
       shantou:
         status: unattested
   - syllable: bhuh4
@@ -17837,6 +17982,7 @@ items:
           - bhung5-紋
           - bhung5-雯
           - bo1-bhung5-波紋
+          - bêng6-bhung5-駢文
           - cuang5-bhung5-全文
           - dong1-bhung5-中文
           - ga6-bhung5-ziag4-ri7-咬文嚼字
@@ -20001,6 +20147,7 @@ items:
           - ciu2-bi3-手臂
           - giah4-bi3-揭秘
           - hung1-bi3-分泌
+          - mua5-bi3-麻痺
           - on3-bi3-奧秘
           - sing5-bi3-huê3-神秘化
           - sing5-bi3-神秘
@@ -20022,6 +20169,7 @@ items:
           - bi5-琵
           - ghu5-bi5-牛螕
           - go1-bi5-羔丕
+          - hêg4-ming7-bi5-lu6-黑面琵鷺
           - siab4-bi5-澀脾
       shantou:
         status: unattested
@@ -20140,6 +20288,7 @@ items:
           - bi7-hou6-避雨
           - bi7-nang7-避難
           - bi7-su2-避暑
+          - hêg4-ming7-bi5-lu6-黑面琵鷺
           - ze6-bi6-zêng3-自閉症
       shantou:
         status: unattested
@@ -22725,7 +22874,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - bih4-鱉
       shantou:
         status: unattested
   - syllable: bih8
@@ -25620,6 +25771,7 @@ items:
           - huang1-bo1-風波
           - hui1-bo1-na2-koi3-siao3-liag8-斐波那契數列
           - im1-bo1-音波
+          - muan5-bo1-麻坡
           - mui5-bo1-lou5-微波爐
           - pung1-bo1-奔波
           - sia5-bo1-斜坡
@@ -25900,6 +26052,12 @@ items:
         status: attested
         attested_entries:
           - biêng6-boh4-辯駁
+          - boh4-cui3-駁喙
+          - boh4-cui3-駁嘴
+          - boh4-cêg4-駁斥
+          - boh4-huê5-駁回
+          - boh4-zung5-駁船
+          - boh4-駁
           - pang1-boh4-斑駁
         sandhi_attested_entries:
           - boh8-bian2-薄餅
@@ -25929,9 +26087,16 @@ items:
           - ciang2-boh8-淺薄
           - dam6-boh8-淡薄
           - ki3-si3-pang5-boh8-氣勢磅礴
+          - mi7-boh8-麵薄
           - ou5-boh8-湖泊
           - pang5-boh8-磅礴
           - teng5-cang1-boh8-bian2-糖蔥薄餅
+        sandhi_attested_entries:
+          - boh4-cui3-駁喙
+          - boh4-cui3-駁嘴
+          - boh4-cêg4-駁斥
+          - boh4-huê5-駁回
+          - boh4-zung5-駁船
       shantou:
         status: unattested
   - syllable: boi1
@@ -26882,6 +27047,7 @@ items:
         status: attested
         attested_entries:
           - am6-bou3-頷布
+          - bhê2-bou3-馬布
           - bou3-cang5-佈田
           - bou3-do7-布袋
           - bou3-oi5-布鞋
@@ -26964,6 +27130,7 @@ items:
           - bou7-diao7-步調
           - bou7-rib8-步入
           - bou7-步
+          - bou7-𫜦
           - co1-bou7-初步
           - cung3-bou7-nang5-gian5-寸步難行
           - dang5-bou7-同步
@@ -27416,6 +27583,9 @@ items:
         status: unattested
       chaozhou:
         status: attested
+        attested_entries:
+          - bu2-鵡
+          - êng1-bu2-鸚鵡
         sandhi_attested_entries:
           - bu3-di3-佈置
           - bu3-gui3-富貴
@@ -28300,6 +28470,7 @@ items:
         attested_entries:
           - di7-buan5-地盤
           - gi5-buan5-棋盤
+          - gug4-buan5-骨盤
           - huang1-hiang3-buan5-方向盤
           - ian5-buan5-營盤
           - iu1-buan5-U盤
@@ -29083,6 +29254,7 @@ items:
           - buê1-飛
           - si3-gai3-buê1-世界盃
           - sêng3-buê1-聖杯
+          - têng5-buê1-騰飛
         sandhi_attested_entries:
           - buê1-gi1-dion5-飛機場
           - buê1-gi1-se1-飛機師
@@ -29153,6 +29325,7 @@ items:
           - lao6-zêg8-buê3-老一輩
           - mung2-buê3-晚輩
           - soi3-buê3-細輩
+          - to5-buê3-駝背
           - ui5-buê3-違背
           - zou2-buê3-祖輩
           - zêg8-buê3-ze2-一輩子
@@ -30256,7 +30429,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - buh8-𠜙
       shantou:
         status: unattested
   - syllable: bui1
@@ -33214,6 +33389,7 @@ items:
           - cag8-dao3-賊竇
           - cag8-gian2-賊囝
           - cag8-gian2-鑿囝
+          - ce2-cag8-gian2-鼠賊囝
       shantou:
         status: unattested
   - syllable: cag8
@@ -33230,6 +33406,7 @@ items:
           - cag8-gian2-鑿囝
           - cag8-賊
           - cag8-鑿
+          - ce2-cag8-gian2-鼠賊囝
           - hai2-cag8-海賊
           - ou1-ming7-cag8-烏面賊
         sandhi_attested_entries:
@@ -33383,13 +33560,19 @@ items:
           - cai3-菜
           - cên1-cai3-huê1-青菜花
           - cên1-cai3-青菜
+          - diam2-cai3-點菜
           - doh8-cai3-擇菜
           - dua7-bêh4-cai3-大白菜
           - dua7-cai3-大菜
+          - giam5-cai3-鹹菜
+          - go1-lê6-cai3-高麗菜
           - gu2-cai3-guê2-韭菜粿
           - gu2-cai3-韭菜
           - gên1-cai3-羹菜
+          - he5-cên1-cai3-魚腥菜
+          - he5-zê1-cai3-魚齋菜
           - huê1-cai3-花菜
+          - huêg4-cai3-髮菜
           - iu5-cai3-油菜
           - kag4-na5-cai3-芥藍菜
           - seng1-cai3-酸菜
@@ -35024,9 +35207,17 @@ items:
         status: attested
         attested_entries:
           - bi2-ce2-彼此
+          - ce2-cag8-gian2-鼠賊囝
+          - ce2-ce2-鼠鼠
+          - ce2-gui2-sion3-鼠鬼相
+          - ce2-guê1-鼠瓜
+          - ce2-kag4-guê2-鼠麴粿
+          - ce2-mog8-鼠疫
+          - ce2-piou1-鼠標
           - ce2-si5-此時
           - ce2-zai6-此在
           - ce2-此
+          - ce2-鼠
           - dao5-ce2-gi6-ki3-投鼠忌器
           - de5-ce2-ze1-ghua7-除此之外
           - do1-ce2-多次
@@ -35154,6 +35345,13 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - ce2-cag8-gian2-鼠賊囝
+          - ce2-ce2-鼠鼠
+          - ce2-gui2-sion3-鼠鬼相
+          - ce2-guê1-鼠瓜
+          - ce2-kag4-guê2-鼠麴粿
+          - ce2-mog8-鼠疫
+          - ce2-piou1-鼠標
           - ce2-si5-此時
           - ce2-zai6-此在
           - dao5-ce2-gi6-ki3-投鼠忌器
@@ -35271,6 +35469,7 @@ items:
         status: attested
         attested_entries:
           - bai5-cêg4-排斥
+          - boh4-cêg4-駁斥
           - bêg4-cêg4-迫促
           - bêg4-cêg4-逼側
           - cing1-cêg4-親戚
@@ -35578,6 +35777,7 @@ items:
           - gim1-cên1-金星
           - giu3-cên1-救星
           - go1-cên1-歌星
+          - he5-cên1-cai3-魚腥菜
           - hui6-cên1-彗星
           - huê2-cên1-火星
           - lao3-sai2-cên1-落屎星
@@ -35651,6 +35851,7 @@ items:
           - cên1-ua1-青蛙
           - cên1-ziu1-星洲
           - cên1-zo7-星座
+          - he5-cên1-cai3-魚腥菜
           - mig8-cên1-nang5-陌生人
           - nang5-cên1-di7-bug4-sêg8-人生地不熟
           - ngou6-cên1-ang5-gi5-五星紅旗
@@ -36538,6 +36739,7 @@ items:
           - ci3-弒
           - ci3-試
           - cong1-ci3-衝刺
+          - he5-ci3-魚翅
           - kao2-ci3-口試
           - kao2-ci3-考試
           - mag8-ci3-mo5-目眥毛
@@ -36557,10 +36759,13 @@ items:
         attested_entries:
           - bung1-ci5-奔馳
           - ci5-ci5-遲遲
+          - ci5-cuang5-齊全
           - ci5-dung6-遲鈍
           - ci5-ghi5-遲疑
           - ci5-huêng2-遲緩
+          - ci5-mian5-馳名
           - ci5-mo6-遲暮
+          - ci5-sim1-hab8-lag8-齊心合力
           - ci5-篪
           - ci5-遲
           - liang5-iu2-bug4-ci5-良莠不齊
@@ -36623,10 +36828,13 @@ items:
           - ci7-飼
         sandhi_attested_entries:
           - ci5-ci5-遲遲
+          - ci5-cuang5-齊全
           - ci5-dung6-遲鈍
           - ci5-ghi5-遲疑
           - ci5-huêng2-遲緩
+          - ci5-mian5-馳名
           - ci5-mo6-遲暮
+          - ci5-sim1-hab8-lag8-齊心合力
           - ci6-gao1-市郊
           - ci6-iong5-市容
           - ci6-ku1-市區
@@ -36652,6 +36860,8 @@ items:
           - ba3-uang5-cia1-霸王車
           - bhuê2-bang1-cia1-尾班車
           - bhuê2-cia1-尾車
+          - bhê2-cia1-lou7-馬車路
+          - bhê2-cia1-馬車
           - bio1-cia1-飆車
           - cia1-bang5-車房
           - cia1-dua7-pao3-車大炮
@@ -36684,6 +36894,7 @@ items:
           - giu3-huê2-cia1-救火車
           - gong1-gao1-cia1-公交車
           - guah4-cia1-割車
+          - gê3-cia1-駕車
           - gêng6-cia1-警車
           - huan7-cia1-捍車
           - huang1-cia1-翻車
@@ -36697,11 +36908,13 @@ items:
           - ka1-dah8-cia1-跤踏車
           - ka2-cia1-卡車
           - ki3-cia1-汽車
+          - kia5-cia1-騎車
           - kui1-cia1-開車
           - kêh4-cia1-客車
           - liag8-cia1-列車
           - loh8-cia1-落車
           - lêng5-cia1-靈車
+          - ma1-da6-cia1-馬打車
           - mang6-ioh4-cia1-網約車
           - mo1-toh4-cia1-摩托車
           - mo5-do5-cia1-摩哆車
@@ -36711,6 +36924,7 @@ items:
           - pa1-cia1-拋車
           - sab8-cia1-剎車
           - sag4-cia1-塞車
+          - sai2-cia1-駛車
           - sai3-cia1-賽車
           - san1-lung5-cia1-三輪車
           - se1-gê1-cia1-私家車
@@ -36730,6 +36944,7 @@ items:
           - ziên6-cia1-上車
           - zou1-cia1-租車
         sandhi_attested_entries:
+          - bhê2-cia1-lou7-馬車路
           - cia1-bang5-車房
           - cia1-dua7-pao3-車大炮
           - cia1-gi6-車技
@@ -39894,6 +40109,7 @@ items:
           - cim5-rib8-侵入
           - cim5-ziam3-侵佔
           - cim5-尋
+          - cim5-鱘
           - dui1-cim5-追尋
           - nai6-nang5-cim5-bhi7-耐人尋味
           - rib8-cim5-入侵
@@ -39940,10 +40156,17 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - cin1-huê1-鮮花
+          - cin1-iam7-鮮豔
+          - cin1-mêng5-鮮明
           - cên1-cin1-生鮮
           - hai2-cin1-海鮮
           - lu2-giang3-bug4-cin1-屢見不鮮
           - sion5-cin1-嘗鮮
+        sandhi_attested_entries:
+          - cin1-huê1-鮮花
+          - cin1-iam7-鮮豔
+          - cin1-mêng5-鮮明
       shantou:
         status: unattested
   - syllable: cin2
@@ -39953,7 +40176,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - cin2-tian3-齒痛
       shantou:
         status: unattested
   - syllable: cin3
@@ -39983,7 +40208,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - cin2-tian3-齒痛
       shantou:
         status: unattested
   - syllable: cin7
@@ -41739,8 +41966,11 @@ items:
           - ciu1-瞅
           - ciu1-秋
           - ciu1-鞦
+          - ciu1-鬚
+          - ciu1-鰍
           - dong1-ciu1-中秋
           - dêng1-ciu1-登鞦
+          - hou5-ciu1-鬍鬚
           - lib8-ciu1-立秋
           - ti3-ciu1-剃鬚
           - zian1-ghuêh8-ciu1-ig4-正月初一
@@ -41821,6 +42051,7 @@ items:
           - ka1-ciu2-zoi7-跤手㩼
           - ka1-ciu2-跤手
           - ki2-ciu2-起手
+          - kia5-ciu2-騎手
           - kuê5-ciu2-瘸手
           - liah8-ciu2-掠手
           - nang5-ciu2-人手
@@ -41851,6 +42082,7 @@ items:
         status: attested
         attested_entries:
           - ciu3-ki2-漱齒
+          - ki2-ciu3-齒漱
       shantou:
         status: unattested
   - syllable: ciu5
@@ -42763,6 +42995,7 @@ items:
         attested_entries:
           - bhi2-coi3-米粞
           - coi3-粞
+          - min7-coi3-麵粞
           - zug8-coi3-秫粞
       shantou:
         status: unattested
@@ -44219,6 +44452,7 @@ items:
           - mou5-cu2-謀取
           - ngêng5-cu2-迎娶
           - pag4-cu2-博取
+          - piang3-cu2-騙取
           - tag8-cu2-讀取
           - uag8-cu2-獲取
           - za3-cu2-榨取
@@ -44298,6 +44532,7 @@ items:
           - ke3-cu3-去處
           - ki2-cu3-起厝
           - lao6-gung1-cu3-老君厝
+          - ma1-da6-cu3-馬打厝
           - miao6-cu3-huên5-sên1-妙趣橫生
           - puang3-cu3-判處
           - si3-cu3-四處
@@ -44415,8 +44650,11 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - cua7-bhou2-𤆬某
           - cua7-rio7-洩尿
+          - cua7-𤆬
         sandhi_attested_entries:
+          - cua7-bhou2-𤆬某
           - cua7-rio7-洩尿
       shantou:
         status: unattested
@@ -45154,6 +45392,7 @@ items:
         status: attested
         attested_entries:
           - bêh4-kuê1-cuang5-ze1-百科全書
+          - ci5-cuang5-齊全
           - cuang5-bhung5-全文
           - cuang5-bou6-全部
           - cuang5-gog4-nang5-dai6-全國人大
@@ -45874,7 +46113,10 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - cuê2-髓
+          - gug4-cuê2-骨髓
       shantou:
         status: unattested
   - syllable: cue3
@@ -47010,6 +47252,7 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - ah4-cui3-siu3-鴨嘴獸
           - cui3-dung5-喙脣
           - cui3-lêg8-翠綠
           - cui3-ngêng5-碎銀
@@ -47028,6 +47271,9 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ah4-cui3-siu3-鴨嘴獸
+          - boh4-cui3-駁喙
+          - boh4-cui3-駁嘴
           - cah4-cui3-插喙
           - cui3-dung5-喙脣
           - cui3-lêg8-翠綠
@@ -47650,6 +47896,7 @@ items:
           - cung1-zoih4-春節
           - cung1-春
           - cên1-cung1-青春
+          - he5-cung1-魚春
           - hê5-cung1-蝦春
           - lib8-cung1-立春
         sandhi_attested_entries:
@@ -49800,6 +50047,11 @@ items:
         status: unattested
       chaozhou:
         status: attested
+        attested_entries:
+          - ma1-da6-cia1-馬打車
+          - ma1-da6-cu3-馬打厝
+          - ma1-da6-liao5-馬打寮
+          - ma1-da6-馬打
         sandhi_attested_entries:
           - da2-bang3-打扮
           - da2-bou1-pêng5-iu2-丈夫朋友
@@ -49826,7 +50078,11 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - ma1-da6-cia1-馬打車
+          - ma1-da6-cu3-馬打厝
+          - ma1-da6-liao5-馬打寮
       shantou:
         status: unattested
   - syllable: dab4
@@ -49909,6 +50165,7 @@ items:
         status: attested
         attested_entries:
           - ag4-dag8-惡毒
+          - bhê2-dag8-馬達
           - biang2-dag8-貶值
           - biao2-dag8-表達
           - bên7-dag8-病毒
@@ -50047,6 +50304,7 @@ items:
         attested_entries:
           - dai3-玳
           - dai3-貸
+          - dai3-黛
           - gao1-dai3-交代
           - zioh4-dai3-借貸
           - zêh4-bho5-pang5-dai3-責無旁貸
@@ -50113,6 +50371,7 @@ items:
           - dai6-甙
           - dong1-gog4-dai6-lêg8-中國大陸
           - gai1-dai6-huêng1-hi2-皆大歡喜
+          - gao1-lao5-dai6-hê7-高樓大廈
           - ge6-dai6-巨大
           - ghêg8-huang5-dai6-di3-玉皇大帝
           - gia1-na2-dai6-加拿大
@@ -50124,6 +50383,7 @@ items:
           - kuag4-dai6-擴大
           - nang5-dai6-人大
           - pag4-dai6-zêng1-cim1-博大精深
+          - pang5-dai6-龐大
           - ui2-dai6-偉大
           - ziang2-dai6-長大
         sandhi_attested_entries:
@@ -50173,6 +50433,7 @@ items:
           - dai6-zêng3-大眾
           - dong1-gog4-dai6-lêg8-中國大陸
           - gai1-dai6-huêng1-hi2-皆大歡喜
+          - gao1-lao5-dai6-hê7-高樓大廈
           - ghêg8-huang5-dai6-di3-玉皇大帝
           - huang2-riang5-dai6-ngo6-恍然大悟
           - i3-dai6-li6-意大利
@@ -50603,7 +50864,11 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - dam3-bhai7-gian2-髧眉囝
+          - dam3-bhai7-ri5-髧眉兒
+          - dam3-bhai7-髧眉
       shantou:
         status: unattested
   - syllable: dam3
@@ -50613,7 +50878,12 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - dam3-bhai7-gian2-髧眉囝
+          - dam3-bhai7-ri5-髧眉兒
+          - dam3-bhai7-髧眉
+          - dam3-髧
       shantou:
         status: unattested
   - syllable: dam5
@@ -50811,6 +51081,7 @@ items:
           - am3-dang1-暗中
           - ang5-mo5-dang1-紅毛丹
           - bho5-dang1-sên1-u6-無中生有
+          - bhêh8-dang1-lao5-麥當勞
           - dang1-bag4-東北
           - dang1-bhêh8-丹麥
           - dang1-buan3-giu5-東半球
@@ -50853,6 +51124,7 @@ items:
           - ziah8-gang1-dang1-食蕳砃
         sandhi_attested_entries:
           - bho5-dang1-sên1-u6-無中生有
+          - bhêh8-dang1-lao5-麥當勞
           - dang1-bag4-東北
           - dang1-bhêh8-丹麥
           - dang1-buan3-giu5-東半球
@@ -50891,8 +51163,11 @@ items:
         status: attested
         attested_entries:
           - dang2-hao7-等候
+          - dang2-pai3-黨派
+          - dang2-siam1-黨參
           - dang2-党
           - dang2-讜
+          - dang2-黨
           - dong1-gog4-gang7-suan2-dang2-中國共產黨
           - gang7-suan2-dang2-共產黨
           - gog4-ming5-dang2-國民黨
@@ -50982,6 +51257,7 @@ items:
           - ing1-dang5-煙筒
           - iu5-dang5-郵筒
           - lui5-dang5-雷霆
+          - ng5-dang5-黃銅
           - ring7-dang5-認同
           - ru5-dang5-如同
           - san1-dang5-衫筒
@@ -51020,8 +51296,11 @@ items:
           - hui1-dang6-非但
           - iu5-dang6-遊蕩
           - kuang1-gê1-dang6-suan2-傾家蕩產
+          - ti2-dang6-體重
         sandhi_attested_entries:
           - dang2-hao7-等候
+          - dang2-pai3-黨派
+          - dang2-siam1-黨參
       shantou:
         status: unattested
   - syllable: dang7
@@ -51276,6 +51555,7 @@ items:
           - uan1-cuang5-dao2-安全島
           - ug4-dao2-熨斗
         sandhi_attested_entries:
+          - dao3-he1-鬥墟
           - rig8-dao3-bung7-日晝飯
       shantou:
         status: unattested
@@ -51289,6 +51569,7 @@ items:
         status: attested
         attested_entries:
           - cag8-dao3-賊竇
+          - dao3-he1-鬥墟
           - deng1-dao3-當晝
           - dui3-dao3-對晝
           - pang1-dao3-蜂竇
@@ -51324,6 +51605,7 @@ items:
           - dao5-ze1-投資
           - dao5-zu3-投注
           - dao5-投
+          - dao5-骰
           - mêng5-zu1-am3-dao5-明珠暗投
       shantou:
         status: unattested
@@ -51466,6 +51748,7 @@ items:
           - huang1-dao7-番豆
           - lêg8-dao7-suang3-綠豆爽
           - lêg8-dao7-綠豆
+          - ng5-dao7-黃豆
           - ou1-dao7-烏豆
           - tou5-dao7-塗豆
           - uang1-dao7-豌豆
@@ -52234,6 +52517,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhê2-dêg4-mo7-馬德望
           - dao6-dêg4-bang2-gê3-道德綁架
           - dêg4-be5-竹棚
           - dêg4-bho2-嫡母
@@ -52254,6 +52538,7 @@ items:
           - gong1-dêg4-公德
           - gong1-dêg4-功德
           - kêng2-dêg4-gi1-肯德基
+          - mua5-dêg4-麻竹
           - se1-dêg4-私德
           - sig4-dêg4-失德
           - suan1-dêg4-山竹
@@ -52267,10 +52552,13 @@ items:
           - dêg8-di7-特地
           - dêg8-diam2-特點
           - dêg8-dêng1-特徵
+          - dêg8-geng1-鹿筋
           - dêg8-hao7-特效
           - dêg8-ku1-特區
           - dêg8-mag8-直目
+          - dêg8-nêg8-鹿肉
           - dêg8-ring5-敵人
+          - dêg8-rong5-鹿茸
           - dêg8-siu2-值守
           - dêg8-su5-sên3-特殊性
           - dêg8-su5-特殊
@@ -52315,10 +52603,13 @@ items:
           - dêg8-di7-特地
           - dêg8-diam2-特點
           - dêg8-dêng1-特徵
+          - dêg8-geng1-鹿筋
           - dêg8-hao7-特效
           - dêg8-ku1-特區
           - dêg8-mag8-直目
+          - dêg8-nêg8-鹿肉
           - dêg8-ring5-敵人
+          - dêg8-rong5-鹿茸
           - dêg8-siu2-值守
           - dêg8-su5-sên3-特殊性
           - dêg8-su5-特殊
@@ -52336,7 +52627,9 @@ items:
           - dêg8-蟄
           - dêg8-軸
           - dêg8-迪
+          - dêg8-鹿
           - gong1-dêg8-公敵
+          - gêng1-dêg8-驚蟄
           - gêng1-zi3-dêg8-ku1-經濟特區
           - ki3-dêg8-汽笛
           - kêh4-se1-dêg8-喀斯特
@@ -52349,6 +52642,7 @@ items:
           - zian3-dêg8-正直
           - êng1-dêg8-mang6-英特網
         sandhi_attested_entries:
+          - bhê2-dêg4-mo7-馬德望
           - dao6-dêg4-bang2-gê3-道德綁架
           - dêg4-be5-竹棚
           - dêg4-bho2-嫡母
@@ -52968,6 +53262,7 @@ items:
           - sêng3-deng5-聖堂
           - tiang1-zu2-deng5-天主堂
           - tin1-deng5-天堂
+          - ze1-deng5-齋堂
       shantou:
         status: unattested
   - syllable: dêng5
@@ -53495,6 +53790,7 @@ items:
           - lang5-in2-di3-sing3-難以置信
           - li2-di3-理智
           - nang5-gang1-di3-lêng5-人工智能
+          - ng5-di3-黃帝
           - puê3-di3-配置
           - siag4-di3-設置
           - siang6-di3-上帝
@@ -53647,6 +53943,7 @@ items:
           - huang1-di7-荒地
           - huang5-di7-防治
           - huêg4-nguêng5-di7-發源地
+          - iam5-giam2-di7-鹽鹼地
           - ing1-di7-zi3-ngi5-因地制宜
           - ka1-dah8-sig8-di7-跤踏實地
           - lai6-di7-內地
@@ -54390,6 +54687,12 @@ items:
           - bêh4-hung1-diam2-百分點
           - ci3-diam2-試點
           - cug4-huag4-diam2-出發點
+          - diam2-cai3-點菜
+          - diam2-mian5-點名
+          - diam2-riang5-點燃
+          - diam2-sim1-點心
+          - diam2-zang3-點讚
+          - diam2-zêng1-點鐘
           - dian7-diam2-定點
           - dong6-diam2-重點
           - dêg8-diam2-特點
@@ -54470,7 +54773,14 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - diam2-cai3-點菜
+          - diam2-mian5-點名
+          - diam2-riang5-點燃
+          - diam2-sim1-點心
+          - diam2-zang3-點讚
+          - diam2-zêng1-點鐘
       shantou:
         status: unattested
   - syllable: diam7
@@ -54515,6 +54825,12 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - dian2-gam2-鼎𥴊
+          - dian2-kain3-鼎蓋
+          - dian2-kam3-鼎崁
+          - dian2-le1-鼎鑢
+          - dian2-liu6-鼎溜
+          - dian2-鼎
           - dua7-dian2-bung7-大鼎飯
           - loh8-dian2-落鼎
         sandhi_attested_entries:
@@ -54543,6 +54859,7 @@ items:
         status: attested
         attested_entries:
           - dian5-埕
+          - iam5-dian5-鹽埕
       shantou:
         status: unattested
   - syllable: dian6
@@ -54556,6 +54873,11 @@ items:
         attested_entries:
           - ngeng5-dian6-銀錠
         sandhi_attested_entries:
+          - dian2-gam2-鼎𥴊
+          - dian2-kain3-鼎蓋
+          - dian2-kam3-鼎崁
+          - dian2-le1-鼎鑢
+          - dian2-liu6-鼎溜
           - dua7-dian2-bung7-大鼎飯
       shantou:
         status: unattested
@@ -55036,6 +55358,7 @@ items:
           - bou7-diao7-步調
           - di1-diao7-低調
           - gag8-diao7-捔掉
+          - gao1-diao7-高調
           - huin2-diao7-毀掉
           - kiang5-diao7-強調
           - muêh8-diao7-物掉
@@ -56438,6 +56761,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhoi6-dig4-𣍐得
           - bug4-dig4-ki5-si2-不得其死
           - cu2-dig4-取得
           - dag8-dig4-值得
@@ -57000,6 +57324,7 @@ items:
         attested_entries:
           - dim1-琛
           - dim1-郴
+          - dim1-鴆
       shantou:
         status: unattested
   - syllable: dim2
@@ -58936,6 +59261,7 @@ items:
           - diu6-佇
           - diu6-粙
           - diu6-苧
+          - mua5-diu6-麻苧
           - mung2-diu6-晚稻
           - u2-diu6-宇宙
           - za2-guê3-diu6-早過稻
@@ -59663,6 +59989,7 @@ items:
           - gou2-do7-古代
           - hing7-do7-huê3-現代化
           - kou3-do7-褲袋
+          - mua5-do7-麻袋
           - ni5-do7-年代
           - riag8-zui2-do7-熱水袋
           - san1-do7-衫袋
@@ -59767,6 +60094,7 @@ items:
           - dog8-牘
           - dog8-犢
           - dog8-逐
+          - dog8-黷
           - dui1-dog8-追逐
           - gag4-dog8-角逐
           - gou1-dog8-zêng3-孤獨症
@@ -59882,6 +60210,7 @@ items:
         status: attested
         attested_entries:
           - bhê2-bug4-têng5-doi5-馬不停蹄
+          - bhê2-doi5-馬蹄
           - dab4-doi5-ka2-答題卡
           - dab4-doi5-答題
           - doi5-mag8-題目
@@ -60554,6 +60883,7 @@ items:
           - dong1-ui1-中醫
           - dong1-zuang2-zam6-中轉站
           - dong1-忠
+          - gao1-dong1-高中
           - guang1-dong1-關中
           - neng5-dong1-郎中
           - siu3-ghua7-hui6-dong1-秀外慧中
@@ -60700,6 +61030,7 @@ items:
           - ge2-dong6-舉重
           - gi1-dong6-機動
           - gian5-dong6-行動
+          - gou2-dong6-鼓動
           - gui3-dong6-貴重
           - gêg4-dong6-激動
           - gêng3-dong6-敬重
@@ -60720,6 +61051,7 @@ items:
           - pu5-dong6-浮動
           - siang3-dong6-煽動
           - sim1-dong6-心動
+          - song1-dong6-鬆動
           - tui1-dong6-推動
           - uah8-dong6-活動
           - ung7-dong6-dion5-運動場
@@ -61029,6 +61361,7 @@ items:
           - dou6-gao5-杜猴
           - dou6-杜
           - dou6-脰
+          - he5-dou6-魚肚
         sandhi_attested_entries:
           - dou2-ga2-肚絞
           - dou2-gian2-肚囝
@@ -61060,6 +61393,7 @@ items:
           - dou7-渡
           - dou7-鍍
           - gag4-dou7-角度
+          - gao1-dou7-高度
           - gia1-sog4-dou7-加速度
           - gog4-dou7-國度
           - guê3-dou7-過度
@@ -62479,6 +62813,7 @@ items:
           - hua6-bug4-duan1-gian5-禍不單行
           - huag8-duan1-罰單
           - hung1-siao3-duan1-分數單
+          - hêg4-mian5-duan1-黑名單
           - m6-duan1-zi2-唔單只
           - m6-duan1-唔單
           - mian5-duan1-名單
@@ -64327,6 +64662,8 @@ items:
         status: unattested
       chaozhou:
         status: attested
+        attested_entries:
+          - dui2-𠡒
         sandhi_attested_entries:
           - dui3-bi2-對比
           - dui3-ciu2-對手
@@ -67408,6 +67745,7 @@ items:
           - i5-hong1-êg8-sog8-移風易俗
           - ing5-êg8-演繹
           - iong5-êg8-溶液
+          - niam1-êg8-黏液
           - sig8-翼
           - siu5-êg8-di5-泅浴池
           - siu5-êg8-泅浴
@@ -67796,11 +68134,13 @@ items:
           - ki3-êng1-棄嬰
           - liang2-êng1-兩英
           - êng1-bhung5-英文
+          - êng1-bu2-鸚鵡
           - êng1-dêg8-mang6-英特網
           - êng1-dêng5-塕塵
           - êng1-dêng5-煙塵
           - êng1-ghe2-英語
           - êng1-go1-英歌
+          - êng1-go1-鸚哥
           - êng1-gog4-英國
           - êng1-hiong5-英雄
           - êng1-huê1-櫻花
@@ -67812,15 +68152,21 @@ items:
           - êng1-櫻
           - êng1-纓
           - êng1-英
+          - êng1-鶯
+          - êng1-鷹
+          - êng1-鸚
+          - êng1-𤭫
         sandhi_attested_entries:
           - ci3-guang2-êng1-ri5-試管嬰兒
           - ing1-ui5-因為
           - êng1-bhung5-英文
+          - êng1-bu2-鸚鵡
           - êng1-dêg8-mang6-英特網
           - êng1-dêng5-塕塵
           - êng1-dêng5-煙塵
           - êng1-ghe2-英語
           - êng1-go1-英歌
+          - êng1-go1-鸚哥
           - êng1-gog4-英國
           - êng1-hiong5-英雄
           - êng1-huê1-櫻花
@@ -68351,6 +68697,7 @@ items:
           - ga1-膠
           - ga1-虼
           - ga1-鉸
+          - he5-ga1-魚膠
           - hion1-kao2-ga1-香口膠
           - zi2-huêh4-ga1-bou3-止血膠布
         sandhi_attested_entries:
@@ -68519,6 +68866,7 @@ items:
           - gab4-guai1-蛤胿
           - gab4-kiu2-蛤虯
           - gab4-蛤
+          - gab4-鴿
       shantou:
         status: unattested
   - syllable: gab8
@@ -68686,6 +69034,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhê2-gah4-馬甲
           - bua3-gi1-gah4-簸箕甲
           - cuang1-suan1-gah4-穿山甲
           - gah4-gug4-bhung5-甲骨文
@@ -68817,6 +69166,7 @@ items:
           - si3-gai3-guang1-世界觀
           - si3-gai3-世界
           - têng2-gai3-懲戒
+          - ze1-gai3-齋戒
           - ze6-riang5-gai3-自然界
           - zou1-gai3-租界
       shantou:
@@ -69328,6 +69678,7 @@ items:
         attested_entries:
           - cêng5-gam2-情感
           - dang5-gam2-同感
+          - dian2-gam2-鼎𥴊
           - gam2-cog4-感觸
           - gam2-cêng5-感情
           - gam2-dong6-感動
@@ -69631,9 +69982,11 @@ items:
           - goi1-gang1-雞姦
           - hang5-gang1-韓江
           - hao5-gang1-濠江
+          - hoh8-gang1-鶴崗
           - huê1-gang1-zioh8-花崗石
           - huê1-gang1-灰工
           - huê1-gang1-花矸
+          - hêg4-lêng5-gang1-黑龍江
           - im1-gang1-陰間
           - io1-zui1-gang1-buan1-dug8-cug4-腰椎間盤突出
           - iong5-gang1-榕江
@@ -69645,9 +69998,11 @@ items:
           - kuê3-gang1-課間
           - lang5-gang1-欄杆
           - li2-gang1-理工
+          - li6-gang1-麗江
           - lung5-gang1-輪姦
           - lêng5-gang1-隆江
           - lêng5-gang1-零工
+          - lêng5-gang1-龍崗
           - nang5-gang1-di3-lêng5-人工智能
           - nang5-gang1-人工
           - nang5-gang1-人間
@@ -69816,6 +70171,7 @@ items:
           - gang3-幹
           - gang3-絳
           - gang3-諫
+          - gug4-gang3-骨幹
           - gui3-gang3-貴幹
           - hia6-gang3-下降
           - mêng5-gang3-明槓
@@ -70055,6 +70411,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhê2-gao1-he5-馬鮫魚
           - bou7-bou7-gao1-sêng1-步步高升
           - ci6-gao1-市郊
           - cong5-gao1-崇高
@@ -70063,21 +70420,47 @@ items:
           - dion3-he5-gao1-釣魚鉤
           - gao1-dah4-勾搭
           - gao1-dai3-交代
+          - gao1-diao7-高調
+          - gao1-dong1-高中
+          - gao1-dou7-高度
           - gao1-gag4-勾結
           - gao1-gai3-交界
+          - gao1-geng1-oi5-高跟鞋
           - gao1-gi2-鉤指
           - gao1-gui1-交規
+          - gao1-gê3-gio5-高架橋
           - gao1-gêng6-交警
+          - gao1-hao6-高校
+          - gao1-hao7-高效
+          - gao1-hong1-ki5-高峰期
+          - gao1-hong1-高峰
           - gao1-hu3-交付
+          - gao1-huag4-高發
+          - gao1-huêh4-iab4-高血壓
+          - gao1-hêng3-高興
           - gao1-in2-交椅
+          - gao1-kao2-高考
           - gao1-ki2-勾起
+          - gao1-kia6-高企
+          - gao1-kong1-高空
+          - gao1-kuê1-gi6-高科技
+          - gao1-lao5-dai6-hê7-高樓大廈
+          - gao1-liang5-ziu2-高粱酒
+          - gao1-liang5-高粱
           - gao1-liu5-交流
+          - gao1-miang5-高棉
+          - gao1-ngang1-高昂
+          - gao1-siang6-高尚
           - gao1-siao1-勾銷
+          - gao1-sog4-gong1-lou7-高速公路
+          - gao1-sog4-高速
+          - gao1-tih4-高鐵
           - gao1-tong1-gang1-gu6-交通工具
           - gao1-tong1-suan3-交通線
           - gao1-tong1-交通
           - gao1-tong1-溝通
           - gao1-uan7-交換
+          - gao1-ung1-高溫
           - gao1-zam1-鉤針
           - gao1-zi3-交際
           - gao1-êg8-交易
@@ -70111,25 +70494,52 @@ items:
           - zuê3-gao1-huag4-最高法
           - zuê3-gao1-最高
         sandhi_attested_entries:
+          - bhê2-gao1-he5-馬鮫魚
           - bou7-bou7-gao1-sêng1-步步高升
           - di7-gao1-iu5-地溝油
           - gao1-dah4-勾搭
           - gao1-dai3-交代
+          - gao1-diao7-高調
+          - gao1-dong1-高中
+          - gao1-dou7-高度
           - gao1-gag4-勾結
           - gao1-gai3-交界
+          - gao1-geng1-oi5-高跟鞋
           - gao1-gi2-鉤指
           - gao1-gui1-交規
+          - gao1-gê3-gio5-高架橋
           - gao1-gêng6-交警
+          - gao1-hao6-高校
+          - gao1-hao7-高效
+          - gao1-hong1-ki5-高峰期
+          - gao1-hong1-高峰
           - gao1-hu3-交付
+          - gao1-huag4-高發
+          - gao1-huêh4-iab4-高血壓
+          - gao1-hêng3-高興
           - gao1-in2-交椅
+          - gao1-kao2-高考
           - gao1-ki2-勾起
+          - gao1-kia6-高企
+          - gao1-kong1-高空
+          - gao1-kuê1-gi6-高科技
+          - gao1-lao5-dai6-hê7-高樓大廈
+          - gao1-liang5-ziu2-高粱酒
+          - gao1-liang5-高粱
           - gao1-liu5-交流
+          - gao1-miang5-高棉
+          - gao1-ngang1-高昂
+          - gao1-siang6-高尚
           - gao1-siao1-勾銷
+          - gao1-sog4-gong1-lou7-高速公路
+          - gao1-sog4-高速
+          - gao1-tih4-高鐵
           - gao1-tong1-gang1-gu6-交通工具
           - gao1-tong1-suan3-交通線
           - gao1-tong1-交通
           - gao1-tong1-溝通
           - gao1-uan7-交換
+          - gao1-ung1-高溫
           - gao1-zam1-鉤針
           - gao1-zi3-交際
           - gao1-êg8-交易
@@ -70385,6 +70795,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - gaoh4-𩛩
           - guê2-gaoh4-粿𩛩
       shantou:
         status: unattested
@@ -70955,10 +71366,15 @@ items:
           - zo3-gê2-做假
           - zuang1-gê2-裝假
         sandhi_attested_entries:
+          - gao1-gê3-gio5-高架橋
+          - gê3-cia1-駕車
           - gê3-dag8-guang1-價值觀
           - gê3-dag8-價值
           - gê3-gêh4-價格
           - gê3-hua6-嫁禍
+          - gê3-sai2-uang5-駕駛員
+          - gê3-sai2-zêng3-駕駛證
+          - gê3-sai2-駕駛
           - gê3-si3-架勢
           - gê3-siag4-架設
           - gê3-zeng1-嫁妝
@@ -70993,10 +71409,15 @@ items:
           - ca1-gê3-差價
           - dao6-dêg4-bang2-gê3-道德綁架
           - dian7-gê3-定價
+          - gao1-gê3-gio5-高架橋
+          - gê3-cia1-駕車
           - gê3-dag8-guang1-價值觀
           - gê3-dag8-價值
           - gê3-gêh4-價格
           - gê3-hua6-嫁禍
+          - gê3-sai2-uang5-駕駛員
+          - gê3-sai2-zêng3-駕駛證
+          - gê3-sai2-駕駛
           - gê3-si3-架勢
           - gê3-siag4-架設
           - gê3-zeng1-嫁妝
@@ -71005,10 +71426,12 @@ items:
           - gê3-嫁
           - gê3-架
           - gê3-稼
+          - gê3-駕
           - huê3-gê3-貨架
           - ka1-ciu2-gê3-腳手架
           - ki2-gê3-起價
           - kui1-gê3-開價
+          - lêng5-mung5-gê3-龍門架
           - nguang5-gê3-原價
           - niam5-gê3-廉價
           - pio3-gê3-票價
@@ -71273,6 +71696,7 @@ items:
           - gêh4-gêg8-格局
           - iu5-gêg8-郵局
           - lam5-gêg8-南極
+          - piang3-gêg8-騙局
           - siao1-gêg8-消極
           - tai3-gêg8-太極
           - ziang3-gêg8-戰局
@@ -71582,6 +72006,7 @@ items:
           - gên2-kai3-梗概
           - gên2-埂
           - gên2-梗
+          - gên2-鯁
         sandhi_attested_entries:
           - ciang5-gên3-dêg8-長頸鹿
           - gêng1-gên3-ngam5-宮頸癌
@@ -71735,6 +72160,8 @@ items:
           - bên7-geng1-病根
           - cang1-geng1-餐巾
           - ciu7-geng1-樹根
+          - dêg8-geng1-鹿筋
+          - gao1-geng1-oi5-高跟鞋
           - geng1-ge6-根據
           - geng1-gio7-ka1-扛轎跤
           - geng1-hong1-跟風
@@ -71757,6 +72184,7 @@ items:
           - zui2-geng1-水缸
         sandhi_attested_entries:
           - a1-geng1-têng5-阿根廷
+          - gao1-geng1-oi5-高跟鞋
           - geng1-ge6-根據
           - geng1-gio7-ka1-扛轎跤
           - geng1-hong1-跟風
@@ -71787,6 +72215,7 @@ items:
           - gêng1-bhio7-宮廟
           - gêng1-ciu2-經手
           - gêng1-duan6-經惰
+          - gêng1-dêg8-驚蟄
           - gêng1-gi2-經紀
           - gêng1-goi2-更改
           - gêng1-guê3-經過
@@ -71841,6 +72270,7 @@ items:
           - gêng1-bhio7-宮廟
           - gêng1-ciu2-經手
           - gêng1-duan6-經惰
+          - gêng1-dêg8-驚蟄
           - gêng1-gi2-經紀
           - gêng1-goi2-更改
           - gêng1-guê3-經過
@@ -73382,7 +73812,12 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - ghao5-nang5-𠢕人
+          - ghao5-oi6-𠢕會
+          - ghao5-za2-𠢕早
+          - ghao5-𠢕
       shantou:
         status: unattested
   - syllable: ghao6
@@ -73402,7 +73837,11 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - ghao5-nang5-𠢕人
+          - ghao5-oi6-𠢕會
+          - ghao5-za2-𠢕早
       shantou:
         status: unattested
   - syllable: ghaob4
@@ -74920,7 +75359,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - gian1-ghia3-驚訝
       shantou:
         status: unattested
   - syllable: ghia5
@@ -80054,6 +80495,10 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - gho5-gian2-鵝囝
+          - gho5-hêng5-鵝雄
+          - gho5-neng6-zioh8-鵝卵石
+          - gho5-鵝
           - gi6-gho5-企鵝
           - kia6-gho5-徛鵝
           - lou2-gho5-滷鵝
@@ -80082,6 +80527,9 @@ items:
           - gho7-餓
           - zoi7-gian2-gho7-si2-bê6-濟囝餓死爸
         sandhi_attested_entries:
+          - gho5-gian2-鵝囝
+          - gho5-hêng5-鵝雄
+          - gho5-neng6-zioh8-鵝卵石
           - zoi7-gian2-gho7-si2-bê6-濟囝餓死爸
       shantou:
         status: unattested
@@ -81510,6 +81958,7 @@ items:
           - ghu5-牛
           - huê2-ghu5-火牛
           - kou2-noin6-ghu5-苦楝牛
+          - ng5-ghu5-黃牛
           - o1-ghu5-蝸牛
           - sai1-ghu5-犀牛
           - zion2-ghu5-掌牛
@@ -84154,6 +84603,9 @@ items:
         status: attested
         attested_entries:
           - a1-ghui7-阿魏
+          - ghui7-gog4-魏國
+        sandhi_attested_entries:
+          - ghui7-gog4-魏國
       shantou:
         status: unattested
   - syllable: ghuib4
@@ -87010,6 +87462,7 @@ items:
           - ciang1-gi6-娼妓
           - dao5-ce2-gi6-ki3-投鼠忌器
           - ga1-gi6-nang5-家己儂
+          - gao1-kuê1-gi6-高科技
           - gi6-bên5-uan1-忌平安
           - gi6-gang1-技工
           - gi6-gho5-企鵝
@@ -87030,6 +87483,7 @@ items:
           - gi6-屨
           - gi6-忌
           - gi6-技
+          - gi6-驥
           - gim3-gi6-禁忌
           - gêng6-gi6-競技
           - hi1-gi6-希冀
@@ -87350,6 +87804,7 @@ items:
           - ian2-si6-giah8-影視劇
           - ka1-giah8-跤屐
           - liang5-sog8-giah8-連續劇
+          - nao7-giah8-鬧劇
           - soh4-giah8-雪屐
           - uag8-giah8-粵劇
         sandhi_attested_entries:
@@ -87852,7 +88307,9 @@ items:
           - giam2-sog4-減速
           - giam2-撿
           - giam2-減
+          - iam5-giam2-di7-鹽鹼地
           - sog4-giam2-縮減
+          - ti2-giam2-體檢
           - uan1-giam2-安檢
       shantou:
         status: unattested
@@ -87875,7 +88332,14 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - giam5-ah4-neng6-鹹鴨卵
+          - giam5-cai3-鹹菜
+          - giam5-he5-鹹魚
+          - giam5-neng6-鹹卵
+          - giam5-siab4-鹹澀
+          - giam5-鹹
       shantou:
         status: unattested
   - syllable: giam6
@@ -87894,6 +88358,7 @@ items:
           - giam2-king1-減輕
           - giam2-si6-檢視
           - giam2-sog4-減速
+          - iam5-giam2-di7-鹽鹼地
       shantou:
         status: unattested
   - syllable: giam7
@@ -87903,7 +88368,13 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - giam5-ah4-neng6-鹹鴨卵
+          - giam5-cai3-鹹菜
+          - giam5-he5-鹹魚
+          - giam5-neng6-鹹卵
+          - giam5-siab4-鹹澀
       shantou:
         status: unattested
   - syllable: gian1
@@ -87922,13 +88393,22 @@ items:
           - dan2-ziang3-sim1-gian1-膽戰心驚
           - dang1-gian1-東京
           - dua7-gian1-siou2-guai3-大驚小怪
+          - gian1-ghia3-驚訝
+          - gian1-hi2-驚喜
+          - gian1-hiam2-驚險
+          - gian1-hêh4-驚嚇
+          - gian1-iam7-驚豔
+          - gian1-ian5-驚惶
           - gian1-kiên1-京腔
           - gian1-sian5-京城
+          - gian1-song2-驚悚
+          - gian1-tang3-驚嘆
           - gian1-ze1-經書
           - gian1-京
           - gian1-驚
           - iah8-gian1-易經
           - lam5-gian1-南京
+          - ng5-gian1-黃麖
           - ngou6-gian1-五經
           - tai3-gian1-泰京
           - zing2-gian1-震驚
@@ -87936,8 +88416,16 @@ items:
           - bag4-gian1-ah4-北京鴨
           - cog4-mag8-gian1-sim1-觸目驚心
           - dua7-gian1-siou2-guai3-大驚小怪
+          - gian1-ghia3-驚訝
+          - gian1-hi2-驚喜
+          - gian1-hiam2-驚險
+          - gian1-hêh4-驚嚇
+          - gian1-iam7-驚豔
+          - gian1-ian5-驚惶
           - gian1-kiên1-京腔
           - gian1-sian5-京城
+          - gian1-song2-驚悚
+          - gian1-tang3-驚嘆
           - gian1-ze1-經書
       shantou:
         status: unattested
@@ -87950,6 +88438,8 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ah4-gian2-pou1-鴨仔鋪
+          - ah4-gian2-鴨囝
           - ang5-mo5-gian2-紅毛囝
           - ang5-sai6-gian2-紅柿囝
           - bag8-gian2-菝囝
@@ -87963,10 +88453,12 @@ items:
           - bê6-ri5-bho2-gian2-父兒母囝
           - cag8-gian2-賊囝
           - cag8-gian2-鑿囝
+          - ce2-cag8-gian2-鼠賊囝
           - cia1-gian2-車囝
           - cu3-gian2-厝囝
           - cên1-mê5-gian2-青盲囝
           - dai1-gian2-秮囝
+          - dam3-bhai7-gian2-髧眉囝
           - dao1-gian2-逗囝
           - de1-gian2-豬囝
           - di7-gian2-底囝
@@ -87978,6 +88470,7 @@ items:
           - duan1-ding1-gian2-單丁囝
           - duan6-gian2-惰囝
           - gao2-gian2-狗囝
+          - gho5-gian2-鵝囝
           - ghu5-gian2-kou3-牛囝褲
           - ghu5-gian2-牛囝
           - ghua7-sên2-gian2-外省囝
@@ -88014,6 +88507,7 @@ items:
           - koi3-gian2-契囝
           - kung3-gian2-困囝
           - kêh4-gian2-客囝
+          - lang6-ziao2-gian2-𡳞鳥囝
           - lao2-gian2-佬囝
           - loh8-gian2-落囝
           - lou7-gian2-路囝
@@ -88026,6 +88520,7 @@ items:
           - pa1-gu1-gian2-扒龜囝
           - pah4-tih4-gian2-拍鐵囝
           - pai2-gian2-歹囝
+          - piang3-gian2-騙囝
           - pua3-gê1-gian2-破家囝
           - puê6-gian2-被囝
           - rig8-bung2-gian2-日本囝
@@ -88160,6 +88655,7 @@ items:
           - sing3-gian6-信件
           - zêng3-gian6-證件
         sandhi_attested_entries:
+          - ah4-gian2-pou1-鴨仔鋪
           - ghu5-gian2-kou3-牛囝褲
           - gian2-ki5-假期
           - gian2-ri5-囝兒
@@ -90683,7 +91179,11 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - gin1-zang3-鹼粽
+        sandhi_attested_entries:
+          - gin1-zang3-鹼粽
       shantou:
         status: unattested
   - syllable: gin2
@@ -90792,6 +91292,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhoi6-iao3-ging2-𣍐要緊
           - ging2-gib4-緊急
           - ging2-ziang1-緊張
           - iou3-ging2-要緊
@@ -91043,6 +91544,7 @@ items:
         attested_entries:
           - ang5-mo5-gio5-紅毛茄
           - dua7-gio5-大橋
+          - gao1-gê3-gio5-高架橋
           - gio5-nion5-橋樑
           - lib8-gao1-gio5-立交橋
           - nang5-gian5-tiang1-gio5-人行天橋
@@ -93162,6 +93664,7 @@ items:
           - go1-kêg4-歌曲
           - go1-lim5-do1-zoin5-ze1-哥林多前書
           - go1-lim5-do1-哥林多
+          - go1-lê6-cai3-高麗菜
           - go1-se5-歌詞
           - go1-sian1-歌聲
           - go1-song6-歌頌
@@ -93183,6 +93686,7 @@ items:
           - zang3-mui2-go1-讚美歌
           - zioh8-go1-石膏
           - êng1-go1-英歌
+          - êng1-go1-鸚哥
         sandhi_attested_entries:
           - ang5-go1-li2-紅哥鯉
           - ci1-go1-bêh4-痴哥伯
@@ -93199,6 +93703,7 @@ items:
           - go1-kêg4-歌曲
           - go1-lim5-do1-zoin5-ze1-哥林多前書
           - go1-lim5-do1-哥林多
+          - go1-lê6-cai3-高麗菜
           - go1-se5-歌詞
           - go1-sian1-歌聲
           - go1-song6-歌頌
@@ -93362,6 +93867,7 @@ items:
           - ghua7-gog4-nang5-外國儂
           - ghua7-gog4-uê7-外國話
           - ghua7-gog4-外國
+          - ghui7-gog4-魏國
           - giu3-gog4-救國
           - giêng6-gog4-建國
           - gog4-bho2-國母
@@ -93412,6 +93918,7 @@ items:
           - ring5-ming5-gang7-hua5-gog4-人民共和國
           - sam1-gog4-三國
           - san1-suan1-gog4-uang5-三山國王
+          - song1-gog4-鬆國
           - tai3-gog4-泰國
           - tiang1-gog4-天國
           - ua2-si6-dong1-gog4-nang5-我是中國人
@@ -93571,6 +94078,7 @@ items:
           - goi1-tao5-hang7-bhuê2-街頭巷尾
           - goi1-tao5-街頭
           - goi1-tao5-雞頭
+          - goi1-têg4-鸂鶒
           - goi1-zab4-min7-雞汁麵
           - goi1-zêng1-雞精
           - goi1-街
@@ -93618,6 +94126,7 @@ items:
           - goi1-tao5-hang7-bhuê2-街頭巷尾
           - goi1-tao5-街頭
           - goi1-tao5-雞頭
+          - goi1-têg4-鸂鶒
           - goi1-zab4-min7-雞汁麵
           - goi1-zêng1-雞精
           - lim5-goi1-ziêh8-檐階石
@@ -93664,6 +94173,7 @@ items:
           - goi2-zuang1-改裝
           - goi2-改
           - goi2-解
+          - goi2-𡧣
           - gêng1-goi2-更改
           - hua5-goi2-和解
           - huê3-goi2-化解
@@ -93713,6 +94223,7 @@ items:
           - miou6-goi3-妙計
           - siag4-goi3-se1-設計師
           - siag4-goi3-設計
+          - ti2-ung1-goi3-體溫計
           - tong2-goi3-統計
           - ung1-dou7-goi3-溫度計
       shantou:
@@ -94351,6 +94862,7 @@ items:
           - ciu2-gong1-手公
           - cong1-gong1-充公
           - dai6-gong1-舵工
+          - gao1-sog4-gong1-lou7-高速公路
           - ghua7-gong1-外公
           - gong1-ang1-gêg8-公安局
           - gong1-ang1-公安
@@ -94444,6 +94956,7 @@ items:
           - êng7-gong1-用功
         sandhi_attested_entries:
           - bêh4-huê3-gong1-si1-百貨公司
+          - gao1-sog4-gong1-lou7-高速公路
           - gong1-ang1-gêg8-公安局
           - gong1-ang1-公安
           - gong1-bhung5-公文
@@ -94755,6 +95268,7 @@ items:
           - huê2-mê5-gou1-火暝蛄
           - lao2-gou1-bo5-老姑婆
           - lao6-gou1-老姑
+          - li2-gou1-鯉姑
           - mo5-gou1-蘑菇
           - ni5-gou1-am1-尼姑庵
           - ni5-gou1-尼姑
@@ -94784,6 +95298,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ah4-gou2-鴨牯
           - ca2-gou2-炒股
           - ciu2-gou2-手股
           - coin1-gou2-千古
@@ -94795,6 +95310,7 @@ items:
           - gang2-gou2-講古
           - gao2-gou2-狗牯
           - ghu5-gou2-牛牯
+          - gou2-bhu2-鼓舞
           - gou2-bhung5-古文
           - gou2-ci6-股市
           - gou2-dag8-估值
@@ -94802,11 +95318,13 @@ items:
           - gou2-diang2-古典
           - gou2-do7-古代
           - gou2-dong2-古董
+          - gou2-dong6-鼓動
           - gou2-goi3-估計
           - gou2-hah8-苟合
           - gou2-hong1-古風
           - gou2-hung7-股份
           - gou2-lao2-古老
+          - gou2-li6-鼓勵
           - gou2-nguang2-古玩
           - gou2-sag4-古剎
           - gou2-se7-古事
@@ -94817,11 +95335,13 @@ items:
           - gou2-牯
           - gou2-股
           - gou2-苟
+          - gou2-鼓
           - huang2-gou2-仿古
           - ian5-lo5-gou2-營鑼鼓
           - ka3-gou2-敲鼓
           - kao2-gou2-考古
           - lai6-mong5-gou2-內蒙古
+          - le5-gou2-驢牯
           - lo5-gou2-鑼鼓
           - mong5-gou2-蒙古
           - oh8-gou2-學古
@@ -94899,6 +95419,7 @@ items:
         attested_entries:
           - ko2-gou6-可靠
         sandhi_attested_entries:
+          - gou2-bhu2-鼓舞
           - gou2-bhung5-古文
           - gou2-ci6-股市
           - gou2-dag8-估值
@@ -94906,11 +95427,13 @@ items:
           - gou2-diang2-古典
           - gou2-do7-古代
           - gou2-dong2-古董
+          - gou2-dong6-鼓動
           - gou2-goi3-估計
           - gou2-hah8-苟合
           - gou2-hong1-古風
           - gou2-hung7-股份
           - gou2-lao2-古老
+          - gou2-li6-鼓勵
           - gou2-nguang2-古玩
           - gou2-sag4-古剎
           - gou2-se7-古事
@@ -95342,15 +95865,18 @@ items:
           - bho5-gu1-無辜
           - cung1-gu1-春龜
           - ghu5-sai2-gu1-牛屎龜
+          - gu1-guai3-龜怪
           - gu1-hu6-辜負
           - gu1-lao6-tao5-孤老頭
           - gu1-li5-咕喱
+          - gu1-龜
           - gu7-gu1-咕鴣
           - hê1-gu1-tiu1-痚呴抽
           - hê1-gu1-痚呴
           - pa1-gu1-gian2-扒龜囝
         sandhi_attested_entries:
           - ang5-gu1-guê2-紅龜粿
+          - gu1-guai3-龜怪
           - gu1-hu6-辜負
           - gu1-lao6-tao5-孤老頭
           - gu1-li5-咕喱
@@ -95758,6 +96284,7 @@ items:
         status: attested
         attested_entries:
           - dua7-gian1-siou2-guai3-大驚小怪
+          - gu1-guai3-龜怪
           - guai3-goi3-會計
           - guai3-lang6-怪𡳞
           - guai3-nang5-怪人
@@ -95767,6 +96294,7 @@ items:
           - guai3-怪
           - guai3-繪
           - guai3-蒯
+          - gui2-guai3-鬼怪
           - ki5-guai3-奇怪
           - lang5-guai3-難怪
           - zêh4-guai3-責怪
@@ -97304,6 +97832,7 @@ items:
         attested_entries:
           - bhag8-guê1-木瓜
           - bêh8-guê1-白瓜
+          - ce2-guê1-鼠瓜
           - ci3-guê1-刺瓜
           - dang1-guê1-冬瓜
           - diao3-guê1-吊瓜
@@ -97313,6 +97842,7 @@ items:
           - ha1-bhig8-guê1-哈密瓜
           - kou2-guê1-苦瓜
           - nam5-guê1-南瓜
+          - ng5-guê1-黃瓜
           - ni6-guê1-奶瓜
           - si1-guê1-西瓜
           - sung6-ding5-mong5-guê1-順藤摸瓜
@@ -97351,6 +97881,7 @@ items:
           - ca2-guê2-炒粿
           - cai3-tao5-guê2-菜頭粿
           - cao2-guê2-草粿
+          - ce2-kag4-guê2-鼠麴粿
           - cên1-guê2-生果
           - diam5-guê2-甜粿
           - ga6-pua3-guê2-咬破粿
@@ -97365,6 +97896,7 @@ items:
           - guê2-zion3-果醬
           - guê2-碻
           - hao7-guê2-效果
+          - hao7-guê2-鱟粿
           - hou6-guê2-雨果
           - hung2-guê2-粉粿
           - huê2-lêng5-guê2-火龍果
@@ -97372,6 +97904,7 @@ items:
           - iu5-za1-guê2-油炸粿
           - lo5-hang3-guê2-羅漢果
           - mang5-guê2-芒果
+          - min7-ziang1-guê2-麵煎粿
           - sung2-guê2-筍粿
           - sêg4-guê2-gêng2-cung5-碩果僅存
           - sêg4-guê2-碩果
@@ -98409,10 +98942,19 @@ items:
           - bung7-si5-gug4-飯匙骨
           - ga1-ziah4-gug4-尻脊骨
           - gah4-gug4-bhung5-甲骨文
+          - gug4-bai5-骨牌
+          - gug4-buan5-骨盤
+          - gug4-cuê2-骨髓
+          - gug4-gang3-骨幹
+          - gug4-huê1-ab8-骨灰盒
+          - gug4-huê1-骨灰
+          - gug4-ki3-骨氣
+          - gug4-zih4-骨折
           - gug4-骨
           - ki2-gug4-起骨
           - lou7-gug4-露骨
           - mih4-gug4-tao5-乜骨頭
+          - pian1-li5-gug4-𩩍籬骨
           - zim2-gug4-枕骨
           - zuan7-gug4-tao5-賤骨頭
         sandhi_attested_entries:
@@ -98447,6 +98989,14 @@ items:
         sandhi_attested_entries:
           - bhah4-gug4-dê5-肉骨茶
           - gah4-gug4-bhung5-甲骨文
+          - gug4-bai5-骨牌
+          - gug4-buan5-骨盤
+          - gug4-cuê2-骨髓
+          - gug4-gang3-骨幹
+          - gug4-huê1-ab8-骨灰盒
+          - gug4-huê1-骨灰
+          - gug4-ki3-骨氣
+          - gug4-zih4-骨折
           - mih4-gug4-tao5-乜骨頭
           - zuan7-gug4-tao5-賤骨頭
       shantou:
@@ -98561,12 +99111,17 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ah4-piêng3-gui2-鴉片鬼
           - ang5-mo5-gui2-紅毛鬼
           - bên7-gui2-病鬼
+          - ce2-gui2-sion3-鼠鬼相
           - ci1-go1-gui2-痴哥鬼
           - cên1-ki5-gui2-星期幾
           - doin6-gui2-第幾
+          - gui2-guai3-鬼怪
           - gui2-rig8-幾日
+          - gui2-sing5-鬼神
+          - gui2-鬼
           - hao3-ziah8-gui2-好食鬼
           - huang1-gian2-gui2-番囝鬼
           - huang1-gui2-番鬼
@@ -98624,6 +99179,7 @@ items:
           - gui3-桂
           - gui3-癸
           - gui3-貴
+          - gui3-鱖
           - log8-iang5-zua2-gui3-洛陽紙貴
           - nêg8-gui3-肉桂
           - sim1-u6-e5-gui3-心有餘悸
@@ -98649,7 +99205,10 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - ce2-gui2-sion3-鼠鬼相
+          - gui2-guai3-鬼怪
           - gui2-rig8-幾日
+          - gui2-sing5-鬼神
       shantou:
         status: unattested
   - syllable: gui7
@@ -99282,6 +99841,7 @@ items:
           - gung2-gung2-滾滾
           - gung2-zui2-滾水
           - gung2-滾
+          - gung2-鯀
       shantou:
         status: unattested
   - syllable: gung3
@@ -101396,6 +101956,7 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - ci5-sim1-hab8-lag8-齊心合力
           - hab8-suan1-峽山
       shantou:
         status: unattested
@@ -101408,6 +101969,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ci5-sim1-hab8-lag8-齊心合力
           - hab8-suan1-峽山
           - hab8-闔
           - sêg4-hab8-適合
@@ -101732,6 +102294,7 @@ items:
           - bêh8-tao5-hai5-lao2-白頭偕老
           - hai5-ze2-孩子
           - hai5-諧
+          - hai5-骸
           - ê6-hai5-下頦
       shantou:
         status: unattested
@@ -101752,6 +102315,7 @@ items:
           - hai6-zai6-獬豸
           - hai6-亥
           - hai6-薤
+          - hai6-駭
           - him5-hai6-ze2-熊孩子
           - ki3-hai6-器械
           - neng2-hai6-女孩
@@ -102509,6 +103073,7 @@ items:
           - hang5-寒
           - hang5-杭
           - hang5-珩
+          - hang5-迒
           - hang5-韓
           - kiog4-hang5-可汗
           - miang2-hang5-閔行
@@ -102738,6 +103303,7 @@ items:
           - hao1-cuang2-哮喘
           - hao1-哮
           - hao1-浩
+          - hao1-鴞
         sandhi_attested_entries:
           - hao1-cuang2-哮喘
       shantou:
@@ -102810,6 +103376,7 @@ items:
         status: attested
         attested_entries:
           - bho2-hao6-母校
+          - gao1-hao6-高校
           - hag8-hao6-學校
           - hao6-cao2-校草
           - hao6-gi5-校旗
@@ -102846,8 +103413,10 @@ items:
           - cêg4-hao7-斥候
           - dang2-hao7-等候
           - dêg8-hao7-特效
+          - gao1-hao7-高效
           - gong1-hao7-功效
           - hao7-guê2-效果
+          - hao7-guê2-鱟粿
           - hao7-huang2-效仿
           - hao7-iah4-效益
           - hao7-lag8-效力
@@ -102859,6 +103428,7 @@ items:
           - hao7-êng7-效用
           - hao7-候
           - hao7-效
+          - hao7-鱟
           - huê2-hao7-火候
           - ki3-hao7-氣候
           - meng7-hao7-問候
@@ -102890,6 +103460,7 @@ items:
           - hao6-ui1-校醫
           - hao6-ziang2-校長
           - hao7-guê2-效果
+          - hao7-guê2-鱟粿
           - hao7-huang2-效仿
           - hao7-iah4-效益
           - hao7-lag8-效力
@@ -103324,6 +103895,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - dao3-he1-鬥墟
           - he1-gou3-虛構
           - he1-gê2-虛假
           - he1-huang3-虛幻
@@ -103424,6 +103996,8 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bao6-he5-鮑魚
+          - bhê2-gao1-he5-馬鮫魚
           - bi2-mag8-he5-比目魚
           - boin1-he5-斑魚
           - ca2-riu5-he5-炒鰇魚
@@ -103434,18 +104008,45 @@ items:
           - dion3-he5-釣魚
           - do1-bo2-he5-多寶魚
           - dêng3-he5-sai1-ziao2-釘魚獅鳥
+          - giam5-he5-鹹魚
+          - he5-bhio5-魚苗
+          - he5-ci3-魚翅
+          - he5-cung1-魚春
+          - he5-cên1-cai3-魚腥菜
+          - he5-dou6-魚肚
+          - he5-ga1-魚膠
+          - he5-in5-魚丸
+          - he5-in5-魚圓
+          - he5-lang5-魚鱗
+          - he5-lou7-魚露
           - he5-ming5-漁民
+          - he5-neng6-魚卵
           - he5-ngiab8-漁業
+          - he5-ri5-魚兒
+          - he5-sig8-魚翼
+          - he5-sên1-魚生
+          - he5-zai1-魚栽
+          - he5-zui2-魚水
           - he5-zung5-漁船
+          - he5-zê1-cai3-魚齋菜
           - he5-漁
           - he5-魚
           - ka1-he5-跤魚
+          - kêng5-he5-鯨魚
           - liah8-he5-掠魚
+          - loi6-he5-鱧魚
           - mong5-he5-摸魚
+          - muan5-he5-鰻魚
+          - ngag8-he5-鱷魚
           - ou1-he5-烏魚
           - riag8-dua3-he5-熱帶魚
+          - riu5-he5-鰇魚
+          - siang6-he5-鱔魚
+          - song5-he5-鱅魚
           - sua1-dêng1-he5-沙丁魚
+          - sua1-he5-鯊魚
           - ua1-ua1-he5-娃娃魚
+          - zig4-he5-鯽魚
           - zui2-he5-水魚
       shantou:
         status: unattested
@@ -103467,6 +104068,7 @@ items:
           - hê5-rêng5-蝦仁
           - hê5-zo2-蝦棗
           - hê5-蝦
+          - lêng5-hê5-龍蝦
           - pang1-hê5-蜂蝦
           - sua1-hê5-沙蝦
       shantou:
@@ -103512,9 +104114,26 @@ items:
           - dion3-he5-gao1-釣魚鉤
           - dion3-he5-go1-釣魚篙
           - dêng3-he5-sai1-ziao2-釘魚獅鳥
+          - he5-bhio5-魚苗
+          - he5-ci3-魚翅
+          - he5-cung1-魚春
+          - he5-cên1-cai3-魚腥菜
+          - he5-dou6-魚肚
+          - he5-ga1-魚膠
+          - he5-in5-魚丸
+          - he5-in5-魚圓
+          - he5-lang5-魚鱗
+          - he5-lou7-魚露
           - he5-ming5-漁民
+          - he5-neng6-魚卵
           - he5-ngiab8-漁業
+          - he5-ri5-魚兒
+          - he5-sig8-魚翼
+          - he5-sên1-魚生
+          - he5-zai1-魚栽
+          - he5-zui2-魚水
           - he5-zung5-漁船
+          - he5-zê1-cai3-魚齋菜
       shantou:
         status: unattested
   - syllable: hê7
@@ -103529,6 +104148,7 @@ items:
           - dai6-hê7-大廈
           - dang1-tang5-hê7-cao2-冬蟲夏草
           - dong6-hê7-仲夏
+          - gao1-lao5-dai6-hê7-高樓大廈
           - hê7-ciou5-夏朝
           - hê7-tin1-夏天
           - hê7-ui1-i5-夏威夷
@@ -103614,9 +104234,19 @@ items:
           - gag4-hêg4-bên7-結核病
           - gi1-hêg4-稽核
           - hog4-hêg4-複核
+          - hêg4-am3-黑暗
+          - hêg4-bang2-黑板
+          - hêg4-kêh4-黑客
+          - hêg4-lêng5-gang1-黑龍江
+          - hêg4-mian5-duan1-黑名單
+          - hêg4-ming7-bi5-lu6-黑面琵鷺
           - hêg4-seng1-核酸
+          - hêg4-sia6-huê6-黑社會
           - hêg4-sig8-核實
           - hêg4-sim1-核心
+          - hêg4-sim1-黑心
+          - hêg4-suan2-黑產
+          - hêg4-sêg4-黑色
           - la1-hêg4-拉黑
           - nguang5-ze2-hêg4-原子核
           - sim2-hêg4-審核
@@ -103642,9 +104272,19 @@ items:
         status: attested
         sandhi_attested_entries:
           - gag4-hêg4-bên7-結核病
+          - hêg4-am3-黑暗
+          - hêg4-bang2-黑板
+          - hêg4-kêh4-黑客
+          - hêg4-lêng5-gang1-黑龍江
+          - hêg4-mian5-duan1-黑名單
+          - hêg4-ming7-bi5-lu6-黑面琵鷺
           - hêg4-seng1-核酸
+          - hêg4-sia6-huê6-黑社會
           - hêg4-sig8-核實
           - hêg4-sim1-核心
+          - hêg4-sim1-黑心
+          - hêg4-suan2-黑產
+          - hêg4-sêg4-黑色
       shantou:
         status: unattested
   - syllable: heh4
@@ -103666,6 +104306,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - gian1-hêh4-驚嚇
           - hiang2-hêh4-顯赫
           - hêh4-嚇
           - kiong2-hêh4-恐嚇
@@ -104066,6 +104707,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - gao1-hêng3-高興
           - hêng3-cu3-興趣
           - zo6-hêng3-助興
       shantou:
@@ -104091,6 +104733,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ah4-hêng5-鴨雄
           - bêg4-li6-hêng5-伯利恆
           - ciang5-bang1-hêng5-長方形
           - cion6-hêng5-象形
@@ -104098,8 +104741,10 @@ items:
           - diang2-hêng5-典型
           - eng2-hêng5-隱形
           - ge6-hêng5-巨型
+          - gho5-hêng5-鵝雄
           - gi1-hêng5-機型
           - giam2-hêng5-減刑
+          - huag4-hêng5-髮型
           - huêh4-hêng5-血型
           - hêng5-dion5-刑場
           - hêng5-gi1-眩機
@@ -104550,6 +105195,7 @@ items:
         attested_entries:
           - cong1-hi2-沖喜
           - gai1-dai6-huêng1-hi2-皆大歡喜
+          - gian1-hi2-驚喜
           - giong1-hi2-恭喜
           - hi2-bhung6-lag8-giang3-喜聞樂見
           - hi2-cug4-mo7-ghua7-喜出望外
@@ -104581,6 +105227,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhê2-hi3-馬戲
           - bi6-hi3-贔屭
           - dua7-hi3-大戲
           - ghua7-gang1-hi3-外江戲
@@ -104633,6 +105280,7 @@ items:
           - ngeng5-ho5-hi6-銀河系
           - pou2-hi6-譜系
           - tai3-iang5-hi6-太陽系
+          - ti2-hi6-體系
           - zêg8-hi6-liag8-一系列
         sandhi_attested_entries:
           - hi2-bhung6-lag8-giang3-喜聞樂見
@@ -105363,6 +106011,7 @@ items:
         attested_entries:
           - bi7-hiam2-避險
           - bo2-hiam2-保險
+          - gian1-hiam2-驚險
           - hiam2-cêng5-險情
           - hiam2-guê3-ti3-tao5-gian2-險過剃頭囝
           - hiam2-gêng2-險境
@@ -108856,6 +109505,7 @@ items:
           - kiao5-hion1-僑鄉
           - mang2-hion1-蠓香
           - se1-hion1-思鄉
+          - sia7-hion1-麝香
           - sian5-hion1-城鄉
         sandhi_attested_entries:
           - hion1-cou5-鄉愁
@@ -110405,6 +111055,7 @@ items:
           - ho5-zi2-何止
           - ho5-何
           - ho5-河
+          - ng5-ho5-黃河
           - ngeng5-ho5-hi6-銀河系
           - ngeng5-ho5-銀河
           - rim7-ho5-任何
@@ -110606,6 +111257,7 @@ items:
           - hog8-或
           - hog8-服
           - hog8-覆
+          - hog8-鰒
           - huang2-hog8-反復
           - huang2-hog8-反覆
           - huang5-hu6-hog8-防護服
@@ -110655,6 +111307,7 @@ items:
         attested_entries:
           - hoh4-sion3-翕相
         sandhi_attested_entries:
+          - hoh8-gang1-鶴崗
           - huang1-sian1-hoh8-li6-風聲鶴唳
       shantou:
         status: unattested
@@ -110668,6 +111321,8 @@ items:
         status: attested
         attested_entries:
           - ang5-tao5-hoh8-紅頭鶴
+          - hoh8-gang1-鶴崗
+          - hoh8-鶴
           - huang1-sian1-hoh8-li6-風聲鶴唳
         sandhi_attested_entries:
           - hoh4-sion3-翕相
@@ -111294,9 +111949,12 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhêh8-kiog4-hong1-麥克風
           - cag4-hong1-錯峰
           - cong1-hong1-衝鋒
           - cug4-hong1-tao5-出風頭
+          - gao1-hong1-ki5-高峰期
+          - gao1-hong1-高峰
           - geng1-hong1-跟風
           - gou2-hong1-古風
           - gu7-bou7-ze6-hong1-故步自封
@@ -111335,6 +111993,7 @@ items:
           - kai1-hong1-開封
           - lêg8-hong1-陸豐
           - pi1-hong1-披風
+          - toh8-hong1-駝峰
           - tuan3-dag8-hong1-碳達峰
           - ui1-hong1-威風
           - uê7-hong1-畫風
@@ -111342,6 +112001,7 @@ items:
           - zêng3-hong1-政風
         sandhi_attested_entries:
           - cug4-hong1-tao5-出風頭
+          - gao1-hong1-ki5-高峰期
           - hong1-bhi7-風味
           - hong1-bi6-封閉
           - hong1-bu3-豐富
@@ -111389,6 +112049,7 @@ items:
           - hong3-ceng3-諷刺
           - hong3-訌
           - hong3-諷
+          - hong3-鬨
       shantou:
         status: unattested
   - syllable: hong5
@@ -111409,6 +112070,7 @@ items:
           - hong5-zui2-洪水
           - hong5-弘
           - hong5-逢
+          - hong5-鴻
           - huang5-hong5-防洪
           - siab8-hong5-洩洪
           - suan1-hong5-山洪
@@ -111429,6 +112091,7 @@ items:
           - hong6-mêng6-奉命
           - hong6-俸
           - hong6-奉
+          - hong6-鳳
       shantou:
         status: unattested
   - syllable: hong7
@@ -111639,9 +112302,11 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - hou5-ciu1-鬍鬚
           - hou5-ki5-胡蜞
           - hou5-lai5-zian1-狐狸精
           - hou5-lai5-zoin2-狐狸指
+          - hou5-liu1-鰗鰡
           - hou5-sêng5-pah4-胡蠅拍
           - hou5-sêng5-sai2-胡蠅屎
           - hou5-zio1-hung2-胡椒粉
@@ -111717,9 +112382,11 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - hou5-ciu1-鬍鬚
           - hou5-ki5-胡蜞
           - hou5-lai5-zian1-狐狸精
           - hou5-lai5-zoin2-狐狸指
+          - hou5-liu1-鰗鰡
           - hou5-sêng5-pah4-胡蠅拍
           - hou5-sêng5-sai2-胡蠅屎
           - hou5-zio1-hung2-胡椒粉
@@ -111887,6 +112554,7 @@ items:
           - houn2-si6-dam1-dam1-虎視眈眈
           - houn2-tao5-pang1-虎頭蜂
           - lao6-houn2-bho2-老虎母
+          - lêng5-houn2-bang2-龍虎榜
           - ngên6-houn2-硬虎
           - si6-houn2-是否
           - zua2-lao6-houn2-紙老虎
@@ -111926,6 +112594,7 @@ items:
           - houn2-si6-dam1-dam1-虎視眈眈
           - houn2-tao5-pang1-虎頭蜂
           - lao6-houn2-bho2-老虎母
+          - lêng5-houn2-bang2-龍虎榜
       shantou:
         status: unattested
   - syllable: houn7
@@ -112168,6 +112837,7 @@ items:
         status: attested
         attested_entries:
           - ben7-hu1-病夫
+          - bhêh8-hu1-麥麩
           - cêng1-hu1-稱呼
           - da2-zio1-hu1-打招呼
           - dai6-hu1-大夫
@@ -112393,6 +113063,7 @@ items:
           - gua2-hu6-寡婦
           - hiah8-hu6-額駙
           - hu1-hu6-夫婦
+          - hu6-bhê2-駙馬
           - hu6-dan1-負擔
           - hu6-dong6-互動
           - hu6-gia1-附加
@@ -112510,6 +113181,7 @@ items:
           - hu5-tui1-扶梯
           - hu5-ziu3-符咒
           - hu5-zo6-扶助
+          - hu6-bhê2-駙馬
           - hu6-dan1-負擔
           - hu6-dong6-互動
           - hu6-gia1-附加
@@ -112625,6 +113297,7 @@ items:
           - hua5-樺
           - huang5-hua5-繁華
           - ka1-hua5-腳踝
+          - lêng5-hua5-龍華
           - pêng5-hua5-平和
           - ring5-ming5-gang7-hua5-gog4-人民共和國
           - siang5-hua5-祥和
@@ -112738,6 +113411,7 @@ items:
           - cug4-huag4-diam2-出發點
           - dug8-huag4-sên3-突發性
           - dug8-huag4-突發
+          - gao1-huag4-高發
           - gog4-zi3-huag4-in7-國際法院
           - gê2-huag4-假髮
           - gêg4-huag4-激發
@@ -112764,6 +113438,7 @@ items:
           - huag4-hing7-發現
           - huag4-huang3-發放
           - huag4-hui1-發揮
+          - huag4-hêng5-髮型
           - huag4-in7-法院
           - huag4-iog8-發育
           - huag4-ki2-發起
@@ -112837,6 +113512,7 @@ items:
           - kuêh4-huag8-缺乏
           - pi5-huag8-疲乏
           - siu6-huag8-受罰
+          - ti2-huag8-體罰
           - to2-huag8-討伐
           - zêh4-huag8-責罰
         sandhi_attested_entries:
@@ -112867,6 +113543,7 @@ items:
           - huag4-hing7-發現
           - huag4-huang3-發放
           - huag4-hui1-發揮
+          - huag4-hêng5-髮型
           - huag4-in7-法院
           - huag4-iog8-發育
           - huag4-ki2-發起
@@ -114728,11 +115405,14 @@ items:
           - bhuê5-huê1-梅花
           - cah4-huê1-插花
           - ciah4-huê1-刺花
+          - cin1-huê1-鮮花
           - cug4-huê1-hng5-出花園
           - cên1-cai3-huê1-青菜花
           - dao7-hu7-huê1-豆腐花
           - dao7-huê1-豆花
           - goi1-guê3-huê1-雞髻花
+          - gug4-huê1-ab8-骨灰盒
+          - gug4-huê1-骨灰
           - gui3-huê1-桂花
           - gêg4-huê1-dê5-菊花茶
           - gêg4-huê1-菊花
@@ -114765,12 +115445,14 @@ items:
           - huê1-詼
           - huê2-huê1-火花
           - i5-huê1-ziab4-bhag8-移花接木
+          - iam5-huê1-鹽花
           - iang5-huê1-洋灰
           - kui1-huê1-開花
           - kui5-huê1-葵花
           - la1-ba1-huê1-喇叭花
           - lang5-huê1-蘭花
           - lao6-huê1-gian3-老花鏡
+          - min7-huê1-麵灰
           - ngou2-huê1-boih4-mung5-五花八門
           - ngou2-si5-huê1-午時花
           - noin5-huê1-蓮花
@@ -114786,6 +115468,7 @@ items:
           - bhung5-huê1-san1-文化衫
           - bhuê5-huê1-dêg8-梅花鹿
           - cug4-huê1-hng5-出花園
+          - gug4-huê1-ab8-骨灰盒
           - gêg4-huê1-dê5-菊花茶
           - huê1-ang5-花紅
           - huê1-buah4-花缽
@@ -115049,6 +115732,7 @@ items:
         status: attested
         attested_entries:
           - bai5-huê5-排回
+          - boh4-huê5-駁回
           - bug4-kam1-huê5-siu2-不堪回首
           - huê5-bhung5-zam1-迴紋針
           - huê5-bi7-迴避
@@ -115119,6 +115803,7 @@ items:
           - huê6-ziang3-會戰
           - huê6-zong2-匯總
           - huê6-匯
+          - hêg4-sia6-huê6-黑社會
           - ia5-sou1-huê6-耶穌會
           - im1-ghaoh8-huê6-音樂會
           - ing5-ciang3-huê6-演唱會
@@ -115303,6 +115988,7 @@ items:
         status: attested
         attested_entries:
           - cug4-huêg4-出發
+          - huêg4-cai3-髮菜
           - huêg4-mêng5-發明
           - huêg4-nguêng5-di7-發源地
           - huêg4-nguêng5-發源
@@ -115333,6 +116019,7 @@ items:
         attested_entries:
           - sing1-ni5-huêg8-cai5-新年發財
         sandhi_attested_entries:
+          - huêg4-cai3-髮菜
           - huêg4-mêng5-發明
           - huêg4-nguêng5-di7-發源地
           - huêg4-nguêng5-發源
@@ -115365,6 +116052,7 @@ items:
           - cong1-huêh4-充血
           - cug4-huêh4-riag8-出血熱
           - de1-huêh4-豬血
+          - gao1-huêh4-iab4-高血壓
           - goi1-huêh4-雞血
           - hiang3-huêh4-獻血
           - huêh4-cuang5-血栓
@@ -115407,6 +116095,7 @@ items:
           - bai7-huêh4-zêng3-敗血症
           - bêh8-huêh4-bên7-白血病
           - cug4-huêh4-riag8-出血熱
+          - gao1-huêh4-iab4-高血壓
           - huêh4-cuang5-血栓
           - huêh4-giu5-血球
           - huêh4-guan7-血汗
@@ -116192,6 +116881,7 @@ items:
           - hug8-suan1-佛山
           - hug8-zou2-佛祖
           - hug8-佛
+          - lang6-hug8-𡳞核
           - riu5-hug8-柔佛
           - zu3-hug8-蛀核
         sandhi_attested_entries:
@@ -117064,11 +117754,14 @@ items:
           - hung1-氛
           - hung1-紛
           - hung1-芬
+          - hung1-鼢
           - ki3-hung1-氣氛
           - kiu5-hung1-求婚
           - la1-kib4-hung1-lui7-垃圾分類
           - li5-hung1-離婚
           - mang2-hung1-蠓薰
+          - ng5-hung1-黃昏
+          - pin7-hung1-鼻薰
           - si5-hung1-時分
           - sio1-hung1-燒薰
           - tong1-hung1-通婚
@@ -117142,6 +117835,7 @@ items:
         status: attested
         attested_entries:
           - bhi2-hung2-米粉
+          - bhêh8-hung2-麥粉
           - deng5-hung2-腸粉
           - goi1-hung2-雞粉
           - gong1-hung2-公憤
@@ -117156,7 +117850,9 @@ items:
           - hung2-粉
           - huê1-hung2-花粉
           - iêh8-hung2-藥粉
+          - ki2-hung2-齒粉
           - kib4-hung2-吸粉
+          - min7-hung2-麵粉
           - ngou2-hiang1-hung2-五香粉
           - ngou2-hung2-藕粉
           - soi2-san1-hung2-洗衫粉
@@ -117224,6 +117920,7 @@ items:
           - hung5-zioh8-雲石
           - hung5-痕
           - hung5-雲
+          - hung5-魂
           - liu5-zui2-gian5-hung5-流水行雲
           - lêng5-hung5-靈魂
           - ou1-hung5-烏雲
@@ -119484,6 +120181,7 @@ items:
           - i5-貽
           - soi3-i5-細姨
           - sên1-i5-生姨
+          - ze1-i5-齋姨
           - zua5-蛇
           - zuang2-i5-轉移
       shantou:
@@ -119666,6 +120364,7 @@ items:
         attested_entries:
           - biang3-iab4-ki3-變壓器
           - diang6-iab4-電壓
+          - gao1-huêh4-iab4-高血壓
           - huêh4-iab4-goi3-血壓計
           - huêh4-iab4-血壓
           - iab4-lag8-壓力
@@ -119708,6 +120407,7 @@ items:
           - iag4-riang5-躍然
           - iag4-籥
           - iag4-躍
+          - iag4-龠
           - tiao3-iag4-跳躍
           - uah8-iag4-活躍
           - zag4-iag4-節約
@@ -119764,6 +120464,7 @@ items:
         attested_entries:
           - bhuê2-iah8-尾蝶
           - iah8-gian1-易經
+          - iah8-驛
           - sig8-翼
         sandhi_attested_entries:
           - iah4-cu3-益處
@@ -120280,6 +120981,7 @@ items:
         status: attested
         attested_entries:
           - iam3-hag8-厭學
+          - iam3-魘
           - to2-iam3-討厭
       shantou:
         status: unattested
@@ -120294,6 +120996,10 @@ items:
         attested_entries:
           - bi1-iam5-悲蟬
           - ca5-bhi2-iu5-iam5-柴米油鹽
+          - iam5-dian5-鹽埕
+          - iam5-giam2-di7-鹽鹼地
+          - iam5-huê1-鹽花
+          - iam5-tiang5-鹽田
           - iam5-鹽
       shantou:
         status: unattested
@@ -120319,6 +121025,8 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - cin1-iam7-鮮豔
+          - gian1-iam7-驚豔
           - guan1-iam7-肝炎
           - hiang1-iam7-香豔
           - hui3-iam7-肺炎
@@ -120331,6 +121039,11 @@ items:
           - nao2-moh8-iam7-腦膜炎
           - sai1-suan3-iam7-腮腺炎
           - sing1-guang1-hui3-iam7-新冠肺炎
+        sandhi_attested_entries:
+          - iam5-dian5-鹽埕
+          - iam5-giam2-di7-鹽鹼地
+          - iam5-huê1-鹽花
+          - iam5-tiang5-鹽田
       shantou:
         status: unattested
   - syllable: ian1
@@ -120392,6 +121105,7 @@ items:
         attested_entries:
           - bian1-ian5-兵營
           - gang7-ian5-共贏
+          - gian1-ian5-驚惶
           - gêng1-ian5-經營
           - ian5-buan5-營盤
           - ian5-iang2-營養
@@ -120815,6 +121529,7 @@ items:
         attested_entries:
           - iao2-tiao2-sog4-neng2-窈窕淑女
         sandhi_attested_entries:
+          - bhoi6-iao3-ging2-𣍐要緊
           - iao3-diam2-要點
           - iao3-hai7-要害
           - iao3-sai3-要塞
@@ -120830,6 +121545,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhoi6-iao3-ging2-𣍐要緊
           - big4-iao3-必要
           - diah4-iao3-摘要
           - gang1-iao3-綱要
@@ -121570,6 +122286,7 @@ items:
           - dag8-iêh8-毒藥
           - huê2-iêh8-火藥
           - iêh8-hung2-藥粉
+          - ki2-iêh8-齒藥
         sandhi_attested_entries:
           - iêh4-huê6-約會
       shantou:
@@ -123025,6 +123742,8 @@ items:
           - cao3-in5-臭丸
           - cêng1-sim1-in5-清心丸
           - dua7-in5-大圓
+          - he5-in5-魚丸
+          - he5-in5-魚圓
           - huê1-ho2-ghuêh8-in5-花好月圓
           - in5-ceng5-圓床
           - in5-ghuêh8-圓月
@@ -123563,10 +124282,12 @@ items:
           - iog8-mo7-慾望
           - iog8-ring5-育人
           - iog8-育
+          - iog8-鬻
           - mog8-iog8-沐浴
           - ngi6-bhu6-ga3-iog8-義務教育
           - siu3-iog8-獸慾
           - sên1-iog8-生育
+          - ti2-iog8-體育
           - uêng6-iog8-孕育
           - zag4-iog8-節育
       shantou:
@@ -124172,7 +124893,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - uang1-ion1-鴛鴦
       shantou:
         status: unattested
   - syllable: ion2
@@ -125126,6 +125849,7 @@ items:
           - iu2-牖
           - iu2-誘
           - iu2-酉
+          - iu2-鮪
           - lam5-pêng5-iu2-男朋友
           - li6-iu2-利誘
           - liang5-iu2-bug4-ci5-良莠不齊
@@ -125214,9 +125938,11 @@ items:
           - iu5-郵
           - iu5-釉
           - iu5-鈾
+          - iu5-魷
           - ki3-iu5-汽油
           - li2-iu5-理由
           - mang6-iu5-網遊
+          - mua5-iu5-麻油
           - nai2-iu5-奶油
           - ngang5-lung6-ze6-iu5-言論自由
           - nguang5-iu5-原油
@@ -125280,6 +126006,7 @@ items:
         status: attested
         attested_entries:
           - iu7-zai3-又再
+          - iu7-鼬
         sandhi_attested_entries:
           - ca5-bhi2-iu5-iam5-柴米油鹽
           - gê1-iu5-zam6-加油站
@@ -125745,6 +126472,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ah4-bho2-ka1-鴨母跤
           - bag4-ciah4-ka1-剝赤跤
           - bên5-ka1-doin2-平跤底
           - ciah4-ka1-赤跤
@@ -125954,6 +126682,7 @@ items:
         status: attested
         attested_entries:
           - boh8-kag4-薄殼
+          - ce2-kag4-guê2-鼠麴粿
           - ghua7-kag4-外殼
           - hui1-kag4-揮霍
           - kag4-bo2-確保
@@ -125982,6 +126711,7 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - ce2-kag4-guê2-鼠麴粿
           - kag4-bo2-確保
           - kag4-kou2-刻苦
           - kag4-lang7-滀臻
@@ -126117,6 +126847,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - kai5-lao5-騎樓
           - kai5-nguang5-開源
       shantou:
         status: unattested
@@ -126142,6 +126873,7 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - kai5-lao5-騎樓
           - kai5-nguang5-開源
       shantou:
         status: unattested
@@ -126292,7 +127024,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - dian2-kain3-鼎蓋
       shantou:
         status: unattested
   - syllable: kain5
@@ -126560,6 +127294,7 @@ items:
           - kam1-cêng1-堪稱
           - kam1-gai1-堪該
           - kam1-堪
+          - kam1-龕
           - sing5-kam1-神龕
         sandhi_attested_entries:
           - bug4-kam1-huê5-siu2-不堪回首
@@ -126594,6 +127329,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - dian2-kam3-鼎崁
           - kam3-冚
           - kam3-崁
       shantou:
@@ -126737,6 +127473,8 @@ items:
           - kang1-牽
           - ki5-kang1-期刊
           - la1-kang1-拉空
+          - pin7-kang1-mo5-鼻空毛
+          - pin7-kang1-鼻空
           - suan1-kang1-山空
         sandhi_attested_entries:
           - kang1-giang6-康健
@@ -126749,6 +127487,7 @@ items:
           - kang1-tao5-牽頭
           - kang1-ui7-空位
           - kang1-zi3-牽制
+          - pin7-kang1-mo5-鼻空毛
       shantou:
         status: unattested
   - syllable: kang2
@@ -126981,6 +127720,7 @@ items:
         status: attested
         attested_entries:
           - kao1-cao2-薅草
+          - kao1-鬮
           - kioh4-kao1-抾鬮
         sandhi_attested_entries:
           - kao1-cao2-薅草
@@ -127007,6 +127747,7 @@ items:
           - dui3-kao2-對口
           - gam3-kao2-監考
           - gang2-kao2-港口
+          - gao1-kao2-高考
           - ghua7-kao2-外口
           - hang7-kao2-巷口
           - hion1-kao2-ga1-香口膠
@@ -127640,6 +128381,7 @@ items:
           - ke5-dao6-渠道
           - ke5-渠
           - ke5-璩
+          - ke5-𠍲
       shantou:
         status: unattested
   - syllable: kê5
@@ -127841,6 +128583,7 @@ items:
           - guê3-kêh4-過客
           - haon3-kêh4-好客
           - huang1-kêh4-番客
+          - hêg4-kêh4-黑客
           - iu5-kêh4-遊客
           - kêh4-cia1-客車
           - kêh4-diam3-客店
@@ -127859,6 +128602,7 @@ items:
           - kêh4-tao3-客套
           - kêh4-uê7-客話
           - kêh4-客
+          - lang6-pa1-kêh4-𡳞脬客
           - mai3-kêh4-ki3-莫客氣
           - miang2-kêh4-ki3-免客氣
           - pag4-kêh4-博客
@@ -128332,7 +129076,10 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - kêng5-he5-鯨魚
           - kêng5-莖
+          - kêng5-鯨
+          - kêng5-黥
       shantou:
         status: unattested
   - syllable: keng6
@@ -128384,7 +129131,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - kêng5-he5-鯨魚
       shantou:
         status: unattested
   - syllable: kenh4
@@ -128717,6 +129466,7 @@ items:
           - ki2-bhê2-起碼
           - ki2-ceng5-起床
           - ki2-ciu2-起手
+          - ki2-ciu3-齒漱
           - ki2-co1-起初
           - ki2-co2-起草
           - ki2-cu3-起厝
@@ -128727,13 +129477,18 @@ items:
           - ki2-gê3-起價
           - ki2-huag4-啟發
           - ki2-huang1-起風
+          - ki2-hung2-齒粉
           - ki2-huê2-起火
+          - ki2-iêh8-齒藥
           - ki2-lai5-起來
           - ki2-loh8-起落
+          - ki2-lung5-齒輪
           - ki2-mian5-起名
           - ki2-mou5-啟蒙
+          - ki2-ngeng5-齒齦
           - ki2-ngi6-起義
           - ki2-nguang5-起源
+          - ki2-sai2-齒屎
           - ki2-se7-啟事
           - ki2-si7-啟示
           - ki2-soin1-起先
@@ -128828,6 +129583,7 @@ items:
           - gi1-ki3-hag8-sib8-機器學習
           - gi1-ki3-nang5-機器人
           - gi1-ki3-機器
+          - gug4-ki3-骨氣
           - gêg4-ki3-激氣
           - hiang1-ki3-香氣
           - hog4-ki3-福氣
@@ -128926,6 +129682,7 @@ items:
           - diang2-ki5-展期
           - e2-ki5-與其
           - gang1-ki5-工期
+          - gao1-hong1-ki5-高峰期
           - ge1-ki5-居奇
           - geng6-ki5-近期
           - ghou5-ki5-蜈蜞
@@ -128965,6 +129722,7 @@ items:
           - ki5-沂
           - ki5-祈
           - ki5-祺
+          - ki5-麒
           - lah8-ki5-獵奇
           - li5-ki5-離奇
           - mian5-hu3-ki5-sig8-名副其實
@@ -128994,6 +129752,7 @@ items:
           - ki2-bhê2-起碼
           - ki2-ceng5-起床
           - ki2-ciu2-起手
+          - ki2-ciu3-齒漱
           - ki2-co1-起初
           - ki2-co2-起草
           - ki2-cu3-起厝
@@ -129004,13 +129763,18 @@ items:
           - ki2-gê3-起價
           - ki2-huag4-啟發
           - ki2-huang1-起風
+          - ki2-hung2-齒粉
           - ki2-huê2-起火
+          - ki2-iêh8-齒藥
           - ki2-lai5-起來
           - ki2-loh8-起落
+          - ki2-lung5-齒輪
           - ki2-mian5-起名
           - ki2-mou5-啟蒙
+          - ki2-ngeng5-齒齦
           - ki2-ngi6-起義
           - ki2-nguang5-起源
+          - ki2-sai2-齒屎
           - ki2-se7-啟事
           - ki2-si7-啟示
           - ki2-soin1-起先
@@ -129109,7 +129873,12 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - kia5-bhê2-騎馬
+          - kia5-cia1-騎車
+          - kia5-ciu2-騎手
+          - kia5-騎
       shantou:
         status: unattested
   - syllable: kia6
@@ -129122,6 +129891,7 @@ items:
         status: attested
         attested_entries:
           - duan1-kia6-nang5-單徛人
+          - gao1-kia6-高企
           - kia6-gho5-徛鵝
           - kia6-ki2-徛起
           - kia6-徛
@@ -129138,6 +129908,9 @@ items:
         status: attested
         sandhi_attested_entries:
           - duan1-kia6-nang5-單徛人
+          - kia5-bhê2-騎馬
+          - kia5-cia1-騎車
+          - kia5-ciu2-騎手
           - kia6-gho5-徛鵝
           - kia6-ki2-徛起
           - sang1-kia6-nang5-雙徛人
@@ -132533,6 +133306,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhêh8-kiog4-hong1-麥克風
           - coin1-kiog4-千克
           - gong1-kiog4-攻克
           - hao5-kiog4-毫克
@@ -132557,6 +133331,7 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - bhêh8-kiog4-hong1-麥克風
           - kiog4-hang5-可汗
           - kiog4-hog8-克服
           - o3-mig8-kiog4-rong5-奧密克戎
@@ -133890,7 +134665,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - kiu1-鳩
       shantou:
         status: unattested
   - syllable: kiu2
@@ -134551,6 +135328,7 @@ items:
           - ko2-u3-可惡
           - ko2-可
           - ko2-洘
+          - ko2-騍
           - ring7-ko2-認可
           - siu3-sêg4-ko2-cang1-秀色可餐
           - ziag4-ko2-即可
@@ -135335,6 +136113,7 @@ items:
         status: attested
         attested_entries:
           - cên1-kong1-星空
+          - gao1-kong1-高空
           - hiang5-kong1-懸空
           - kong1-bêh8-空白
           - kong1-dang1-空中
@@ -136166,7 +136945,11 @@ items:
           - ku1-樞
           - ku1-祛
           - ku1-軀
+          - ku1-駒
+          - ku1-驅
           - lam5-ku1-南區
+          - le5-ku1-ze2-驢駒子
+          - le5-ku1-驢駒
           - sai1-ku1-西區
           - sia6-ku1-社區
           - sian5-ku1-城區
@@ -136184,6 +136967,7 @@ items:
           - ku1-hog8-區域
           - ku1-liu5-拘留
           - ku1-niu2-樞紐
+          - le5-ku1-ze2-驢駒子
       shantou:
         status: unattested
   - syllable: ku2
@@ -137827,6 +138611,7 @@ items:
           - bung2-kuê1-sêng1-本科生
           - bung2-kuê1-本科
           - bêh4-kuê1-cuang5-ze1-百科全書
+          - gao1-kuê1-gi6-高科技
           - hag8-kuê1-學科
           - hu6-kuê1-婦科
           - kuê1-dao2-蝌蚪
@@ -137846,6 +138631,7 @@ items:
           - kuê1-恢
           - kuê1-盔
           - kuê1-科
+          - kuê1-魁
           - li2-kuê1-理科
           - ngang2-kuê1-眼科
           - tao5-kuê1-頭盔
@@ -137855,6 +138641,7 @@ items:
         sandhi_attested_entries:
           - bung2-kuê1-sêng1-本科生
           - bêh4-kuê1-cuang5-ze1-百科全書
+          - gao1-kuê1-gi6-高科技
           - kuê1-dao2-蝌蚪
           - kuê1-ge2-科舉
           - kuê1-gi6-科技
@@ -139564,6 +140351,7 @@ items:
           - kung1-mêng5-昆明
           - kung1-坤
           - kung1-昆
+          - kung1-鯤
         sandhi_attested_entries:
           - kung1-diang6-坤甸
           - kung1-mêng5-昆明
@@ -141829,6 +142617,7 @@ items:
           - bhê2-lag8-馬力
           - boih4-zab8-lag8-八十六
           - cai5-lag8-財力
+          - ci5-sim1-hab8-lag8-齊心合力
           - cuang5-lag8-全力
           - cug4-lag8-出力
           - cên1-ki5-lag8-星期六
@@ -141883,6 +142672,7 @@ items:
           - loh8-lag8-落力
           - lêng5-lag8-能力
           - miang2-mog8-lag8-免疫力
+          - muê6-lag8-魅力
           - nai6-lag8-耐力
           - nang5-lag8-cia1-人力車
           - nang5-lag8-ze1-nguang5-人力資源
@@ -141900,6 +142690,7 @@ items:
           - sion6-cion6-lag8-想像力
           - sên1-rig8-kuai3-lag8-生日快樂
           - sên1-suan2-lag8-生產力
+          - ti2-lag8-體力
           - u5-lag8-娛樂
           - ui1-lag8-威力
           - zab8-lag8-十六
@@ -142769,6 +143560,7 @@ items:
           - dêng1-lang5-燈籠
           - gang1-lang5-艱難
           - goi1-lang5-雞籠
+          - he5-lang5-魚鱗
           - hin6-lang5-耳聾
           - hu5-diab8-lang5-蝴蝶蘭
           - hung1-lang5-芬蘭
@@ -142824,9 +143616,15 @@ items:
           - i1-lang6-伊朗
           - lang6-bhuang6-浪漫
           - lang6-hiam2-浪險
+          - lang6-hug8-𡳞核
           - lang6-hui3-浪費
+          - lang6-pa1-kêh4-𡳞脬客
+          - lang6-pa1-𡳞脬
           - lang6-song6-朗誦
+          - lang6-ziao2-gian2-𡳞鳥囝
+          - lang6-ziao2-ming7-𡳞鳥面
           - lang6-朗
+          - lang6-𡳞
         sandhi_attested_entries:
           - goh4-lang2-ê6-胳囊下
       shantou:
@@ -142867,8 +143665,13 @@ items:
           - lang5-ê2-聾啞
           - lang6-bhuang6-浪漫
           - lang6-hiam2-浪險
+          - lang6-hug8-𡳞核
           - lang6-hui3-浪費
+          - lang6-pa1-kêh4-𡳞脬客
+          - lang6-pa1-𡳞脬
           - lang6-song6-朗誦
+          - lang6-ziao2-gian2-𡳞鳥囝
+          - lang6-ziao2-ming7-𡳞鳥面
           - se1-li2-lang5-ka2-斯里蘭卡
           - u1-lang5-pung5-zoih4-盂蘭盆節
       shantou:
@@ -143075,13 +143878,16 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhêh8-dang1-lao5-麥當勞
           - cên1-lao5-青樓
           - dê5-lao5-茶樓
           - ga3-hag8-lao5-教學樓
+          - gao1-lao5-dai6-hê7-高樓大廈
           - gong1-lao5-功勞
           - guan7-lao5-zab4-dih4-汗流汁滴
           - hao7-lao5-效勞
           - hui3-lao5-肺癆
+          - kai5-lao5-騎樓
           - keng5-lao5-勤勞
           - ko2-lao5-洘流
           - lao5-buan5-樓盤
@@ -143178,6 +143984,7 @@ items:
         sandhi_attested_entries:
           - bai3-lao6-ia5-拜老爺
           - cê5-lao7-bou2-kuêh4-查漏補缺
+          - gao1-lao5-dai6-hê7-高樓大廈
           - gu1-lao6-tao5-孤老頭
           - guan7-lao5-zab4-dih4-汗流汁滴
           - lao5-buan5-樓盤
@@ -143638,7 +144445,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - dian2-le1-鼎鑢
       shantou:
         status: unattested
   - syllable: lê1
@@ -143709,7 +144518,13 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - le5-bho2-驢母
+          - le5-gou2-驢牯
+          - le5-ku1-ze2-驢駒子
+          - le5-ku1-驢駒
+          - le5-驢
       shantou:
         status: unattested
   - syllable: lê5
@@ -143757,7 +144572,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - go1-lê6-cai3-高麗菜
       shantou:
         status: unattested
   - syllable: le7
@@ -143769,6 +144586,10 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - le5-bho2-驢母
+          - le5-gou2-驢牯
+          - le5-ku1-ze2-驢駒子
+          - le5-ku1-驢駒
           - le6-gian3-濾鏡
           - le6-song2-biê1-呂宋票
           - le6-song3-呂宋
@@ -143782,7 +144603,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - go1-lê6-cai3-高麗菜
       shantou:
         status: unattested
   - syllable: leb4
@@ -144361,21 +145184,27 @@ items:
           - giu2-lêng5-九龍
           - hia6-lêng5-瓦楞
           - huê2-lêng5-guê2-火龍果
+          - hêg4-lêng5-gang1-黑龍江
           - ki1-lêng5-欺凌
           - kiong2-lêng5-恐龍
           - ko2-lêng5-sên3-可能性
           - lao6-lêng5-huê3-老齡化
           - liou5-lêng5-遼寧
+          - lêng5-bhê2-zêng1-sing5-龍馬精神
           - lêng5-ci5-凌遲
           - lêng5-cia1-靈車
           - lêng5-gam2-靈感
           - lêng5-gang1-隆江
           - lêng5-gang1-零工
+          - lêng5-gang1-龍崗
           - lêng5-ghua7-另外
           - lêng5-gou3-能夠
           - lêng5-hng5-陵園
           - lêng5-hou2-能否
+          - lêng5-houn2-bang2-龍虎榜
+          - lêng5-hua5-龍華
           - lêng5-hung5-靈魂
+          - lêng5-hê5-龍蝦
           - lêng5-hê7-寧夏
           - lêng5-hêng5-菱形
           - lêng5-i6-靈異
@@ -144384,7 +145213,10 @@ items:
           - lêng5-liang6-能量
           - lêng5-long5-玲瓏
           - lêng5-miang2-靈敏
+          - lêng5-mung5-gê3-龍門架
           - lêng5-ngiam7-靈驗
+          - lêng5-ou5-龍湖
+          - lêng5-pao5-龍袍
           - lêng5-seng5-籠床
           - lêng5-sing5-凌晨
           - lêng5-tian1-聆聽
@@ -144401,6 +145233,8 @@ items:
           - lêng5-玲
           - lêng5-陵
           - lêng5-靈
+          - lêng5-齡
+          - lêng5-龍
           - mo7-ze2-sêng5-lêng5-望子成龍
           - nang5-gang1-di3-lêng5-人工智能
           - ni5-lêng5-年齡
@@ -144479,18 +145313,24 @@ items:
           - gig4-lêng5-gian2-吉靈囝
           - giu2-lêng5-sian5-九龍城
           - huê2-lêng5-guê2-火龍果
+          - hêg4-lêng5-gang1-黑龍江
           - ko2-lêng5-sên3-可能性
           - lao6-lêng5-huê3-老齡化
+          - lêng5-bhê2-zêng1-sing5-龍馬精神
           - lêng5-ci5-凌遲
           - lêng5-cia1-靈車
           - lêng5-gam2-靈感
           - lêng5-gang1-隆江
           - lêng5-gang1-零工
+          - lêng5-gang1-龍崗
           - lêng5-ghua7-另外
           - lêng5-gou3-能夠
           - lêng5-hng5-陵園
           - lêng5-hou2-能否
+          - lêng5-houn2-bang2-龍虎榜
+          - lêng5-hua5-龍華
           - lêng5-hung5-靈魂
+          - lêng5-hê5-龍蝦
           - lêng5-hê7-寧夏
           - lêng5-hêng5-菱形
           - lêng5-i6-靈異
@@ -144499,7 +145339,10 @@ items:
           - lêng5-liang6-能量
           - lêng5-long5-玲瓏
           - lêng5-miang2-靈敏
+          - lêng5-mung5-gê3-龍門架
           - lêng5-ngiam7-靈驗
+          - lêng5-ou5-龍湖
+          - lêng5-pao5-龍袍
           - lêng5-seng5-籠床
           - lêng5-sing5-凌晨
           - lêng5-tian1-聆聽
@@ -144856,6 +145699,7 @@ items:
           - li2-gian5-履行
           - li2-gian5-旅行
           - li2-goi2-理解
+          - li2-gou1-鯉姑
           - li2-guang2-旅館
           - li2-guang3-禮券
           - li2-hog8-禮服
@@ -144881,6 +145725,7 @@ items:
           - li2-李
           - li2-理
           - li2-里
+          - li2-鯉
           - liao7-li2-料理
           - ling5-li2-鄰里
           - loh8-li2-落理
@@ -144966,6 +145811,8 @@ items:
           - li5-離
           - liu5-li5-琉璃
           - lo1-li5-羅里
+          - pian1-li5-gug4-𩩍籬骨
+          - pian1-li5-𩩍籬
           - sên1-li5-si2-biêg8-生死離別
           - tiag4-li5-撤離
           - tug4-li5-脫離
@@ -144986,6 +145833,7 @@ items:
           - dog8-li6-逐利
           - giang3-li6-bhuang5-ngi6-見利忘義
           - gig4-li6-吉利
+          - gou2-li6-鼓勵
           - gui3-li6-瑰麗
           - hiang5-li6-炫麗
           - hog4-li6-in7-福利院
@@ -144998,6 +145846,7 @@ items:
           - iong5-li6-盈利
           - kuêng5-li6-權利
           - lai7-利
+          - li6-gang1-麗江
           - li6-gi1-荔枝
           - li6-gian5-厲行
           - li6-hai7-厲害
@@ -145044,6 +145893,7 @@ items:
           - li2-gian5-履行
           - li2-gian5-旅行
           - li2-goi2-理解
+          - li2-gou1-鯉姑
           - li2-guang2-旅館
           - li2-guang3-禮券
           - li2-hog8-禮服
@@ -145118,6 +145968,7 @@ items:
           - li5-ki5-離奇
           - li5-kui1-離開
           - li5-zêh4-離職
+          - li6-gang1-麗江
           - li6-gi1-荔枝
           - li6-gian5-厲行
           - li6-hai7-厲害
@@ -145135,6 +145986,7 @@ items:
           - li7-ngang5-例言
           - li7-ru5-例如
           - li7-zêng3-例證
+          - pian1-li5-gug4-𩩍籬骨
           - sên1-li5-si2-biêg8-生死離別
       shantou:
         status: unattested
@@ -145977,6 +146829,8 @@ items:
           - cung1-liang5-春聯
           - cêng1-liang5-清涼
           - dui3-liang5-對聯
+          - gao1-liang5-ziu2-高粱酒
+          - gao1-liang5-高粱
           - goi2-liang5-改良
           - gong1-su6-liang5-sog8-公序良俗
           - guang1-liang5-關聯
@@ -146053,6 +146907,7 @@ items:
           - siao3-liang6-數量
           - sig4-liang6-失聯
           - suan2-liang6-產量
+          - ti2-liang6-體量
           - zi3-liang6-劑量
           - zian3-lêng5-liang6-正能量
           - zio3-liang6-照亮
@@ -146091,6 +146946,7 @@ items:
         sandhi_attested_entries:
           - bug4-liang5-huang2-êng3-不良反應
           - dêng3-liang7-gêng1-釘鏈間
+          - gao1-liang5-ziu2-高粱酒
           - gong1-su6-liang5-sog8-公序良俗
           - hu6-liang6-mang6-互聯網
           - hung3-liang7-dion5-訓練場
@@ -146323,6 +147179,7 @@ items:
           - goi1-liao5-雞寮
           - liao5-kuah4-遼闊
           - liao5-tin1-聊天
+          - ma1-da6-liao5-馬打寮
           - ui1-liao5-醫療
           - ziang2-liao5-診療
       shantou:
@@ -148497,6 +149354,8 @@ items:
           - ling5-li2-鄰里
           - ling5-磷
           - ling5-鄰
+          - ling5-麟
+          - zi2-ling5-𬎏琳
       shantou:
         status: unattested
   - syllable: ling6
@@ -150063,6 +150922,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - hou5-liu1-鰗鰡
           - tou5-liu1-塗鰡
       shantou:
         status: unattested
@@ -150146,6 +151006,7 @@ items:
           - liu5-lou7-流露
           - liu5-mang5-流氓
           - liu5-ng5-硫黃
+          - liu5-ng5-𨻧隍
           - liu5-ngang5-留言
           - liu5-pai3-流派
           - liu5-seng1-硫酸
@@ -150169,6 +151030,7 @@ items:
           - sig4-liu5-失流
           - uang5-bug4-liu5-gian5-王不留行
           - zu2-liu5-主流
+          - zu6-liu5-駐留
           - zêg8-gi1-liu5-一枝流
           - zêng2-liu5-腫瘤
       shantou:
@@ -150181,6 +151043,8 @@ items:
         status: unattested
       chaozhou:
         status: attested
+        attested_entries:
+          - dian2-liu6-鼎溜
         sandhi_attested_entries:
           - liu2-ciu7-柳樹
           - liu2-ziu1-柳州
@@ -150218,6 +151082,7 @@ items:
           - liu5-lou7-流露
           - liu5-mang5-流氓
           - liu5-ng5-硫黃
+          - liu5-ng5-𨻧隍
           - liu5-ngang5-留言
           - liu5-pai3-流派
           - liu5-seng1-硫酸
@@ -150841,6 +151706,7 @@ items:
           - lo5-蘿
           - lo5-邏
           - lo5-鑼
+          - lo5-騾
           - ngiam5-lo5-uang5-閻羅王
           - ngiam5-lo5-閻羅
           - ngo5-lo5-se1-俄羅斯
@@ -150982,6 +151848,7 @@ items:
           - log8-貉
           - log8-酪
           - log8-錄
+          - log8-麓
           - mag8-log8-目錄
           - mang5-log8-忙碌
           - mang6-log8-網絡
@@ -151039,6 +151906,7 @@ items:
           - loh8-soh4-落雪
           - loh8-suan2-落產
           - loh8-sên3-落性
+          - loh8-toh8-駱駝
           - loh8-tou5-落塗
           - loh8-zai7-落載
           - loh8-zui2-落水
@@ -151103,6 +151971,7 @@ items:
           - loh8-soh4-落雪
           - loh8-suan2-落產
           - loh8-sên3-落性
+          - loh8-toh8-駱駝
           - loh8-tou5-落塗
           - loh8-zai7-落載
           - loh8-zui2-落水
@@ -151115,6 +151984,7 @@ items:
           - piao1-loh8-飄落
           - rig8-loh8-日落
           - sig4-loh8-失落
+          - ziah8-loh8-食落
       shantou:
         status: unattested
   - syllable: loi1
@@ -151178,6 +152048,8 @@ items:
         status: unattested
       chaozhou:
         status: attested
+        attested_entries:
+          - loi6-he5-鱧魚
         sandhi_attested_entries:
           - loi2-ab8-禮盒
           - loi2-bing2-禮品
@@ -151194,6 +152066,8 @@ items:
         status: attested
         attested_entries:
           - bung7-loi7-飯籬
+        sandhi_attested_entries:
+          - loi6-he5-鱧魚
       shantou:
         status: unattested
   - syllable: loib4
@@ -152011,6 +152885,7 @@ items:
           - lou2-gho5-滷鵝
           - lou2-nêg8-滷肉
           - lou2-zui2-滷水
+          - lou2-zui2-鹵水
       shantou:
         status: unattested
   - syllable: lou3
@@ -152034,7 +152909,10 @@ items:
         attested_entries:
           - co1-cug4-mao5-lou5-初出茅廬
           - hion1-lou5-香爐
+          - lou5-tung5-鸕鶉
+          - lou5-ze1-鸕鶿
           - lou5-爐
+          - lou5-鱸
           - mui5-bo1-lou5-微波爐
           - sai1-lou5-西臚
           - ui5-lou5-圍爐
@@ -152052,6 +152930,7 @@ items:
           - ciang2-lou6-淺陋
           - lou6-sib8-陋習
           - lou6-陋
+          - lou6-鹵
           - tiu2-lou6-醜陋
         sandhi_attested_entries:
           - lou2-ah4-滷鴨
@@ -152059,6 +152938,7 @@ items:
           - lou2-gho5-滷鵝
           - lou2-nêg8-滷肉
           - lou2-zui2-滷水
+          - lou2-zui2-鹵水
       shantou:
         status: unattested
   - syllable: lou7
@@ -152071,6 +152951,8 @@ items:
         status: attested
         attested_entries:
           - bho5-lou7-êng7-無路用
+          - bhê2-cia1-lou7-馬車路
+          - bhê2-lou7-馬路
           - buan3-lou7-半路
           - bug4-gui1-lou7-不歸路
           - bêh8-lou7-白露
@@ -152078,11 +152960,13 @@ items:
           - dao6-lou7-道路
           - do2-lou7-短路
           - dog4-lou7-築路
+          - gao1-sog4-gong1-lou7-高速公路
           - gian5-lou7-行路
           - goi1-lou7-街路
           - gong1-lou7-公路
           - guan5-lou7-寒露
           - guê3-lou7-過路
+          - he5-lou7-魚露
           - huang1-cang1-lou7-suah4-風餐露宿
           - huê1-lou7-zui2-花露水
           - huê2-cia1-lou7-火車路
@@ -152124,6 +153008,8 @@ items:
           - huê1-lou7-zui2-花露水
           - ia5-lou7-sag4-lêng2-耶路撒冷
           - ka1-lou7-li2-卡路里
+          - lou5-tung5-鸕鶉
+          - lou5-ze1-鸕鶿
           - lou6-sib8-陋習
           - lou7-biê1-路標
           - lou7-deng7-路段
@@ -152562,6 +153448,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bha5-lu2-麻汝
           - cou1-lu2-粗魯
           - hu1-lu2-俘虜
           - lu2-ce3-屢次
@@ -152571,6 +153458,7 @@ items:
           - lu2-屢
           - lu2-擄
           - lu2-縷
+          - lu2-魯
       shantou:
         status: unattested
   - syllable: lu3
@@ -152607,6 +153495,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - hêg4-ming7-bi5-lu6-黑面琵鷺
           - lu6-賂
         sandhi_attested_entries:
           - lu2-ce3-屢次
@@ -153424,6 +154313,7 @@ items:
           - riao2-luang6-擾亂
           - rui6-kiong2-tin1-ê6-bug4-luang6-唯恐天下不亂
           - zab8-luang6-雜亂
+          - zang1-luang6-髒亂
       shantou:
         status: unattested
   - syllable: luang7
@@ -155751,6 +156641,7 @@ items:
           - dim5-lung5-沉淪
           - dou7-lung5-渡輪
           - hug4-lung5-囫圇
+          - ki2-lung5-齒輪
           - lung5-bhuang5-淪亡
           - lung5-dou7-輪渡
           - lung5-dung1-倫敦
@@ -157941,6 +158832,16 @@ items:
         status: attested
         attested_entries:
           - la1-ma1-喇嘛
+          - ma1-da6-cia1-馬打車
+          - ma1-da6-cu3-馬打厝
+          - ma1-da6-liao5-馬打寮
+          - ma1-da6-馬打
+          - ma1-麼
+        sandhi_attested_entries:
+          - ma1-da6-cia1-馬打車
+          - ma1-da6-cu3-馬打厝
+          - ma1-da6-liao5-馬打寮
+          - ma1-da6-馬打
       shantou:
         status: unattested
   - syllable: ma2
@@ -158130,6 +159031,7 @@ items:
           - mi2-tai5-mag8-米篩目
           - mêng5-mag8-ziang1-dan2-明目張膽
           - mêng5-mag8-明目
+          - nih4-mag8-𥍉目
           - ou1-mag8-gian3-烏目鏡
           - sua1-mag8-沙目
           - zag4-mag8-節目
@@ -158195,6 +159097,7 @@ items:
           - ciag4-mai3-切勿
           - mai3-kêh4-ki3-莫客氣
           - mai3-ming7-莫面
+          - mai3-𲓖
       shantou:
         status: unattested
   - syllable: mai5
@@ -159153,6 +160056,7 @@ items:
           - mao5-bên7-毛病
           - mao5-矛
           - mao5-茅
+          - mao5-髦
           - mo5-毛
           - si5-mao5-時髦
       shantou:
@@ -159619,6 +160523,7 @@ items:
         status: attested
         attested_entries:
           - mê1-搣
+          - sua1-mê1-𬠋𧌊
       shantou:
         status: unattested
   - syllable: me2
@@ -160307,6 +161212,7 @@ items:
           - bhung5-mêng5-文明
           - biou2-mêng5-表明
           - ciang1-mêng5-昌明
+          - cin1-mêng5-鮮明
           - cong1-mêng5-聰明
           - cêng1-mêng5-zoih4-清明節
           - cêng1-mêng5-清明
@@ -160335,6 +161241,7 @@ items:
           - mêng5-mag8-明目
           - mêng5-mêng5-明明
           - mêng5-se5-名詞
+          - mêng5-sia7-鳴謝
           - mêng5-teng5-明糖
           - mêng5-tiang1-明天
           - mêng5-zu1-am3-dao5-明珠暗投
@@ -160344,6 +161251,7 @@ items:
           - mêng5-瞑
           - mêng5-萌
           - mêng5-銘
+          - mêng5-鳴
           - sian1-mêng5-聲明
           - sig4-mêng5-失明
           - sing5-mêng5-神明
@@ -160448,6 +161356,7 @@ items:
           - mêng5-mag8-明目
           - mêng5-mêng5-明明
           - mêng5-se5-名詞
+          - mêng5-sia7-鳴謝
           - mêng5-teng5-明糖
           - mêng5-tiang1-明天
           - mêng5-zu1-am3-dao5-明珠暗投
@@ -160812,6 +161721,7 @@ items:
         attested_entries:
           - dêng1-mi6-燈謎
           - mi6-謎
+          - mi6-𱍤
         sandhi_attested_entries:
           - mi2-tai5-mag8-米篩目
       shantou:
@@ -160826,6 +161736,7 @@ items:
         status: attested
         attested_entries:
           - bhah4-co3-mi7-肉脞麵
+          - mi7-boh8-麵薄
           - mi7-sog8-媚俗
           - mi7-媚
         sandhi_attested_entries:
@@ -160835,6 +161746,7 @@ items:
           - mi5-ou5-棉湖
           - mi5-sig4-迷失
           - mi5-sing3-迷信
+          - mi7-boh8-麵薄
           - mi7-sog8-媚俗
       shantou:
         status: unattested
@@ -161528,7 +162440,9 @@ items:
           - bhung6-mian5-聞名
           - bo3-mian5-報名
           - cao3-mian5-ziou1-du3-臭名昭著
+          - ci5-mian5-馳名
           - ciam1-mian5-簽名
+          - diam2-mian5-點名
           - du3-mian5-著名
           - gong1-mian5-功名
           - guang3-mian5-冠名
@@ -161538,6 +162452,7 @@ items:
           - ho7-mian5-號名
           - hog8-mian5-域名
           - huê1-mian5-花名
+          - hêg4-mian5-duan1-黑名單
           - ki2-mian5-起名
           - liang5-mian5-聯名
           - mang6-mian5-網名
@@ -161607,6 +162522,7 @@ items:
         sandhi_attested_entries:
           - cao3-mian5-ziou1-du3-臭名昭著
           - giu3-mian7-dao6-cao2-救命稻草
+          - hêg4-mian5-duan1-黑名單
           - mian5-bai5-名牌
           - mian5-bhuang6-名望
           - mian5-duan1-名單
@@ -161682,6 +162598,7 @@ items:
           - miang2-kêh4-ki3-免客氣
           - miang2-mog8-lag8-免疫力
           - miang2-pio3-免票
+          - miang2-鮸
       shantou:
         status: unattested
   - syllable: miang3
@@ -161703,6 +162620,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - gao1-miang5-高棉
           - miang5-ciang5-綿長
       shantou:
         status: unattested
@@ -163305,10 +164223,14 @@ items:
         sandhi_attested_entries:
           - a1-re2-ce5-hai2-mig8-bên7-阿爾茨海默病
           - ciam5-i5-mig8-huê3-潛移默化
+          - mig8-ai1-默哀
           - mig8-bi6-密閉
           - mig8-cên1-nang5-陌生人
           - mig8-cên1-陌生
           - mig8-huê2-滅火
+          - mig8-mig8-默默
+          - mig8-ring7-默認
+          - mig8-sia2-默寫
           - o3-mig8-kiog4-rong5-奧密克戎
       shantou:
         status: unattested
@@ -163329,11 +164251,16 @@ items:
           - gia1-mig8-加密
           - hiun1-mig8-幽默
           - huin2-mig8-毀滅
+          - mig8-ai1-默哀
           - mig8-bi6-密閉
           - mig8-cên1-nang5-陌生人
           - mig8-cên1-陌生
           - mig8-huê2-滅火
+          - mig8-mig8-默默
+          - mig8-ring7-默認
+          - mig8-sia2-默寫
           - mig8-滅
+          - mig8-默
           - ngiam5-mig8-嚴密
           - o3-mig8-kiog4-rong5-奧密克戎
           - pog4-mig8-撲滅
@@ -163964,12 +164891,25 @@ items:
           - goi1-zab4-min7-雞汁麵
           - kuai3-ziah8-min7-快食麵
           - loh8-min7-落麵
+          - min7-bao1-麵包
+          - min7-coi3-麵粞
+          - min7-hung2-麵粉
+          - min7-huê1-麵灰
+          - min7-suan3-麵線
+          - min7-ziang1-guê2-麵煎粿
+          - min7-麵
           - pao3-min7-泡麵
           - sa1-dê5-min7-沙茶麵
           - uan2-gian2-min7-碗囝麵
         sandhi_attested_entries:
           - min5-iên5-綿羊
           - min5-puê6-棉被
+          - min7-bao1-麵包
+          - min7-coi3-麵粞
+          - min7-hung2-麵粉
+          - min7-huê1-麵灰
+          - min7-suan3-麵線
+          - min7-ziang1-guê2-麵煎粿
           - si1-min5-puê6-絲棉被
       shantou:
         status: unattested
@@ -164101,7 +165041,9 @@ items:
           - huang1-ming7-方面
           - huê6-ming7-會面
           - huêng2-ming7-反面
+          - hêg4-ming7-bi5-lu6-黑面琵鷺
           - lai6-ming7-內面
+          - lang6-ziao2-ming7-𡳞鳥面
           - li2-ming7-裡面
           - lou7-ming7-路面
           - mai3-ming7-莫面
@@ -164138,6 +165080,7 @@ items:
           - ge1-ming5-ku1-居民區
           - gog4-ming5-dang2-國民黨
           - hiah8-ming7-sing5-額面神
+          - hêg4-ming7-bi5-lu6-黑面琵鷺
           - ming5-bang5-民房
           - ming5-gog4-民國
           - ming5-gêng6-民警
@@ -166305,6 +167248,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhoi6-mo2-𣍐孬
           - mo2-nang5-孬人
           - mo2-toin2-孬睇
           - nao2-mo2-腦孬
@@ -166350,6 +167294,7 @@ items:
           - ion5-mo5-san1-羊毛衫
           - loh8-mo5-落毛
           - mag8-ci3-mo5-目眥毛
+          - mo5-bang1-魔方
           - mo5-bêg4-毛筆
           - mo5-do5-cia1-摩哆車
           - mo5-gou1-蘑菇
@@ -166359,11 +167304,14 @@ items:
           - mo5-lah8-毛蠟
           - mo5-ngi2-模擬
           - mo5-san1-毛衫
+          - mo5-sug8-魔術
           - mo5-sui1-毛𩮴
           - mo5-sêg4-模式
           - mo5-摩
           - mo5-毛
           - mo5-謨
+          - mo5-魔
+          - pin7-kang1-mo5-鼻空毛
           - siu1-mo5-梳毛
           - sêng5-mo5-松毛
           - tao5-mo5-頭毛
@@ -166409,6 +167357,7 @@ items:
         status: attested
         attested_entries:
           - bho5-mo7-無望
+          - bhê2-dêg4-mo7-馬德望
           - gi6-mo7-冀望
           - hi1-mo7-希望
           - hi2-cug4-mo7-ghua7-喜出望外
@@ -166440,6 +167389,7 @@ items:
           - hi2-cug4-mo7-ghua7-喜出望外
           - ion5-mo5-san1-羊毛衫
           - kai1-mo6-sêg4-開幕式
+          - mo5-bang1-魔方
           - mo5-bêg4-毛筆
           - mo5-do5-cia1-摩哆車
           - mo5-gou1-蘑菇
@@ -166449,6 +167399,7 @@ items:
           - mo5-lah8-毛蠟
           - mo5-ngi2-模擬
           - mo5-san1-毛衫
+          - mo5-sug8-魔術
           - mo5-sui1-毛𩮴
           - mo5-sêg4-模式
           - mo6-zib8-募集
@@ -166509,6 +167460,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ce2-mog8-鼠疫
           - cug4-mog8-出沒
           - hua5-mog8-和睦
           - huang5-mog8-防疫
@@ -167974,6 +168926,14 @@ items:
           - buah8-mua5-ziaoh4-跋麻雀
           - cug4-mua5-出麻
           - iu5-mua5-油麻
+          - mua5-bi3-麻痺
+          - mua5-diu6-麻苧
+          - mua5-do7-麻袋
+          - mua5-dêg4-麻竹
+          - mua5-iu5-麻油
+          - mua5-ziaoh4-麻雀
+          - mua5-zui3-麻醉
+          - mua5-麻
           - ze1-mua5-gou5-芝麻糊
           - ze1-mua5-zion3-芝麻醬
       shantou:
@@ -168002,6 +168962,13 @@ items:
         status: attested
         sandhi_attested_entries:
           - buah8-mua5-ziaoh4-跋麻雀
+          - mua5-bi3-麻痺
+          - mua5-diu6-麻苧
+          - mua5-do7-麻袋
+          - mua5-dêg4-麻竹
+          - mua5-iu5-麻油
+          - mua5-ziaoh4-麻雀
+          - mua5-zui3-麻醉
           - ze1-mua5-gou5-芝麻糊
           - ze1-mua5-zion3-芝麻醬
       shantou:
@@ -168642,7 +169609,10 @@ items:
         attested_entries:
           - eng2-muan5-隱瞞
           - kou2-muan5-苦麻
+          - muan5-bo1-麻坡
+          - muan5-he5-鰻魚
           - muan5-瞞
+          - muan5-鰻
       shantou:
         status: unattested
   - syllable: muan6
@@ -168668,7 +169638,10 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - muan5-bo1-麻坡
+          - muan5-he5-鰻魚
       shantou:
         status: unattested
   - syllable: muanb4
@@ -169485,8 +170458,10 @@ items:
         status: attested
         attested_entries:
           - ain3-muê6-曖昧
+          - muê6-lag8-魅力
           - muê6-寐
           - muê6-昧
+          - muê6-魅
           - neng6-muê6-卵妹
           - ngo5-muê6-愚昧
           - sib8-gim1-bug4-muê6-拾金不昧
@@ -169521,6 +170496,7 @@ items:
         sandhi_attested_entries:
           - hêng1-suê1-muê5-têng3-io2-興衰糜聽舀
           - muê5-beng7-糜飯
+          - muê6-lag8-魅力
           - su3-muê6-pêng5-sên1-素昧平生
       shantou:
         status: unattested
@@ -170477,7 +171453,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - mui3-𱰸
       shantou:
         status: unattested
   - syllable: mui5
@@ -171143,6 +172121,7 @@ items:
           - hai2-mung5-海門
           - huag8-mung5-閥門
           - le2-mung5-你們
+          - lêng5-mung5-gê3-龍門架
           - mung5-diam3-門店
           - mung5-kam2-門檻
           - mung5-ki2-ho2-眠起好
@@ -171201,6 +172180,7 @@ items:
           - uê3-mung7-慰問
         sandhi_attested_entries:
           - bho5-nang5-mung7-zing1-無人問津
+          - lêng5-mung5-gê3-龍門架
           - mung5-diam3-門店
           - mung5-kam2-門檻
           - mung5-ki2-ho2-眠起好
@@ -174138,6 +175118,7 @@ items:
           - gag4-nang5-各人
           - gam1-hu6-nang5-監護人
           - gang1-gu6-nang5-工具人
+          - ghao5-nang5-𠢕人
           - ghua7-di7-nang5-外地人
           - ghua7-gog4-nang5-外國人
           - ghua7-gog4-nang5-外國儂
@@ -174216,6 +175197,7 @@ items:
           - nang5-儂
           - ou1-ming7-nang5-烏面人
           - pang5-riag8-bho5-nang5-旁若無人
+          - piang3-nang5-騙人
           - rig8-bung2-nang5-日本人
           - sang1-kia6-nang5-雙徛人
           - sang1-nang5-bang5-雙人房
@@ -174544,6 +175526,7 @@ items:
         status: attested
         attested_entries:
           - cing3-nao6-秤紐
+          - nao6-zêng1-鬧鐘
         sandhi_attested_entries:
           - nao2-bou6-腦部
           - nao2-mo2-腦孬
@@ -174562,6 +175545,12 @@ items:
         status: attested
         attested_entries:
           - hu5-nao7-胡鬧
+          - nao7-giah8-鬧劇
+          - nao7-se7-鬧事
+        sandhi_attested_entries:
+          - nao6-zêng1-鬧鐘
+          - nao7-giah8-鬧劇
+          - nao7-se7-鬧事
       shantou:
         status: unattested
   - syllable: naob4
@@ -175187,6 +176176,7 @@ items:
           - ang5-nêg8-bou5-紅肉蜅
           - ang5-nêg8-紅肉
           - bêh8-nêg8-白肉
+          - dêg8-nêg8-鹿肉
           - gao2-nêg8-狗肉
           - gi1-nêg8-肌肉
           - lou2-nêg8-滷肉
@@ -175667,7 +176657,12 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ah4-neng6-鴨卵
+          - gho5-neng6-zioh8-鵝卵石
+          - giam5-ah4-neng6-鹹鴨卵
+          - giam5-neng6-鹹卵
           - goi1-neng6-雞卵
+          - he5-neng6-魚卵
           - hê5-neng6-蝦卵
           - ka1-ao6-neng6-跤後卵
           - neng6-muê6-卵妹
@@ -175710,6 +176705,7 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - gho5-neng6-zioh8-鵝卵石
           - neng5-dong1-郎中
           - neng6-muê6-卵妹
           - neng6-ze2-卵子
@@ -176053,6 +177049,17 @@ items:
           - ghu5-ng5-牛黃
           - gim1-ng5-金黃
           - liu5-ng5-硫黃
+          - liu5-ng5-𨻧隍
+          - ng5-dang5-黃銅
+          - ng5-dao7-黃豆
+          - ng5-di3-黃帝
+          - ng5-ghu5-黃牛
+          - ng5-gian1-黃麖
+          - ng5-guê1-黃瓜
+          - ng5-ho5-黃河
+          - ng5-hung1-黃昏
+          - ng5-sng1-黃酸
+          - ng5-sêg4-黃色
           - ng5-黃
           - siab8-ng5-涉黃
       shantou:
@@ -176074,7 +177081,18 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - ng5-dang5-黃銅
+          - ng5-dao7-黃豆
+          - ng5-di3-黃帝
+          - ng5-ghu5-黃牛
+          - ng5-gian1-黃麖
+          - ng5-guê1-黃瓜
+          - ng5-ho5-黃河
+          - ng5-hung1-黃昏
+          - ng5-sng1-黃酸
+          - ng5-sêg4-黃色
       shantou:
         status: unattested
   - syllable: nga1
@@ -176171,6 +177189,7 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - ngag8-he5-鱷魚
           - ngag8-log8-嶽麓
       shantou:
         status: unattested
@@ -176183,6 +177202,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ngag8-he5-鱷魚
           - ngag8-log8-嶽麓
           - ngag8-噩
           - ngag8-岳
@@ -176191,6 +177211,7 @@ items:
           - ngag8-諤
           - ngag8-鄂
           - ngag8-顎
+          - ngag8-鱷
       shantou:
         status: unattested
   - syllable: ngah4
@@ -176257,6 +177278,7 @@ items:
           - ngai5-捱
           - ngai5-涯
           - ngai5-睚
+          - ngai5-騃
       shantou:
         status: unattested
   - syllable: ngai6
@@ -176859,6 +177881,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - gao1-ngang1-高昂
           - ngang1-昂
       shantou:
         status: unattested
@@ -177175,6 +178198,7 @@ items:
           - ngao5-淆
           - ngao5-爻
           - ngao5-翱
+          - ngao5-鰲
           - ziang1-ngao5-煎熬
       shantou:
         status: unattested
@@ -178222,6 +179246,7 @@ items:
         status: attested
         attested_entries:
           - gim1-ngeng5-zua2-金銀紙
+          - ki2-ngeng5-齒齦
           - ngeng5-dian6-銀錠
           - ngeng5-hang5-ka2-銀行卡
           - ngeng5-ho5-hi6-銀河系
@@ -178656,6 +179681,7 @@ items:
           - ngi5-儀
           - ngi5-宜
           - ngi5-霓
+          - ngi5-鯢
           - se7-ngi5-事宜
           - sim1-ngi5-心儀
           - suêng1-ngi5-狻猊
@@ -179447,8 +180473,11 @@ items:
           - gêng1-ngiam7-經驗
           - huê3-ngiam7-化驗
           - lêng5-ngiam7-靈驗
+          - ngiam7-siu1-驗收
+          - ngiam7-zêng3-bhê2-驗證碼
           - sig8-ngiam7-sig4-實驗室
           - sig8-ngiam7-實驗
+          - ti2-ngiam7-體驗
           - êng3-ngiam7-應驗
         sandhi_attested_entries:
           - ngiam5-dê5-釅茶
@@ -179464,6 +180493,8 @@ items:
           - ngiam5-sog4-sên3-嚴肅性
           - ngiam5-sog4-嚴肅
           - ngiam5-zung3-嚴峻
+          - ngiam7-siu1-驗收
+          - ngiam7-zêng3-bhê2-驗證碼
           - sig8-ngiam7-sig4-實驗室
       shantou:
         status: unattested
@@ -190863,6 +191894,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ah4-ni6-鴨伲
           - ao2-ni6-嘔奶
           - ci7-ni6-飼奶
           - ghu5-ni6-牛奶
@@ -191542,7 +192574,11 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - niam1-êg8-黏液
+        sandhi_attested_entries:
+          - niam1-êg8-黏液
       shantou:
         status: unattested
   - syllable: niam2
@@ -193364,7 +194400,10 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - nih4-mag8-𥍉目
+          - nih4-𥍉
       shantou:
         status: unattested
   - syllable: nih8
@@ -193374,7 +194413,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - nih4-mag8-𥍉目
       shantou:
         status: unattested
   - syllable: nii1
@@ -193864,7 +194905,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - ah4-bho2-nim3-鴨母捻
       shantou:
         status: unattested
   - syllable: nim5
@@ -196257,6 +197300,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - no7-𰇇
           - zêng3-no7-眾怒
         sandhi_attested_entries:
           - no5-ui1-挪威
@@ -202943,6 +203987,7 @@ items:
           - bou3-oi5-布鞋
           - cao2-oi5-dah8-草鞋踏
           - cao2-oi5-草鞋
+          - gao1-geng1-oi5-高跟鞋
           - giu5-oi5-球鞋
           - oi5-ciao1-鞋鍬
           - oi5-dua3-鞋帶
@@ -202965,6 +204010,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ghao5-oi6-𠢕會
           - oi6-dig4-會得
           - oi6-sai2-會使
           - oi6-噲
@@ -203858,6 +204904,7 @@ items:
           - gang1-ou5-江湖
           - iam2-sag4-ou5-堰塞湖
           - lo5-ou5-羅湖
+          - lêng5-ou5-龍湖
           - mi5-ou5-棉湖
           - ou5-bag4-湖北
           - ou5-boh8-湖泊
@@ -204305,10 +205352,13 @@ items:
         attested_entries:
           - dua7-lang6-pa1-大𡳞脬
           - hu5-lang6-pa1-扶𡳞脬
+          - lang6-pa1-kêh4-𡳞脬客
+          - lang6-pa1-𡳞脬
           - pa1-cia1-拋車
           - pa1-gian2-扒囝
           - pa1-gu1-gian2-扒龜囝
         sandhi_attested_entries:
+          - lang6-pa1-kêh4-𡳞脬客
           - pa1-cia1-拋車
           - pa1-gian2-扒囝
           - pa1-gu1-gian2-扒龜囝
@@ -204554,6 +205604,8 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhoi6-pai2-𠁞歹
+          - bhoi6-pai2-𣍐歹
           - pai2-gian2-歹囝
           - pai2-giu5-歹球
           - pai2-歹
@@ -204573,6 +205625,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - dang2-pai3-黨派
           - liu5-pai3-流派
           - pai3-biag8-派別
           - pai3-cug4-so2-派出所
@@ -205262,6 +206315,7 @@ items:
           - pang5-boh8-磅礴
           - pang5-bou3-篷布
           - pang5-bêh8-旁白
+          - pang5-dai6-龐大
           - pang5-guang1-旁觀
           - pang5-huang5-彷徨
           - pang5-mung2-傍晚
@@ -205309,6 +206363,7 @@ items:
           - pang5-boh8-磅礴
           - pang5-bou3-篷布
           - pang5-bêh8-旁白
+          - pang5-dai6-龐大
           - pang5-guang1-旁觀
           - pang5-huang5-彷徨
           - pang5-mung2-傍晚
@@ -205536,6 +206591,7 @@ items:
         status: attested
         attested_entries:
           - gi5-pao5-旗袍
+          - lêng5-pao5-龍袍
           - pao5-袍
       shantou:
         status: unattested
@@ -206158,6 +207214,7 @@ items:
           - ki3-pêg4-氣魄
           - pêg4-碧
           - pêg4-辟
+          - pêg4-魄
           - soh4-pêg4-雪碧
       shantou:
         status: unattested
@@ -207749,7 +208806,13 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - pian1-li5-gug4-𩩍籬骨
+          - pian1-li5-𩩍籬
+        sandhi_attested_entries:
+          - pian1-li5-gug4-𩩍籬骨
+          - pian1-li5-𩩍籬
       shantou:
         status: unattested
   - syllable: pian2
@@ -207870,8 +208933,14 @@ items:
         sandhi_attested_entries:
           - dan3-piang3-uê3-呾騙話
           - hung5-piang3-go1-雲片糕
+          - piang3-cu2-騙取
           - piang3-duang6-片段
+          - piang3-gian2-騙囝
+          - piang3-gêg8-騙局
           - piang3-huang3-變幻
+          - piang3-nang5-騙人
+          - piang3-sug8-騙術
+          - piang3-ze2-騙子
       shantou:
         status: unattested
   - syllable: piang3
@@ -207898,8 +208967,14 @@ items:
           - mian5-piang3-名片
           - mong5-piang3-矇騙
           - pah4-piang3-拍片
+          - piang3-cu2-騙取
           - piang3-duang6-片段
+          - piang3-gian2-騙囝
+          - piang3-gêg8-騙局
           - piang3-huang3-變幻
+          - piang3-nang5-騙人
+          - piang3-sug8-騙術
+          - piang3-ze2-騙子
           - pua3-hia6-piang3-破瓦片
           - sion3-piang3-相片
           - siu6-piang3-受騙
@@ -209133,6 +210208,7 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - ah4-piêng3-gui2-鴉片鬼
           - piêng3-bhuê2-片尾
       shantou:
         status: unattested
@@ -209155,6 +210231,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ah4-piêng3-gui2-鴉片鬼
           - piêng3-bhuê2-片尾
       shantou:
         status: unattested
@@ -210121,10 +211198,24 @@ items:
         attested_entries:
           - cion6-pin7-象鼻
           - lao5-pin7-zui2-流鼻水
+          - pin7-hung1-鼻薰
+          - pin7-kang1-mo5-鼻空毛
+          - pin7-kang1-鼻空
+          - pin7-sai2-鼻屎
+          - pin7-tao5-鼻頭
+          - pin7-uan1-鼻鞍
+          - pin7-zui2-鼻水
           - pin7-鼻
           - zam1-pin7-針鼻
         sandhi_attested_entries:
           - lao5-pin7-zui2-流鼻水
+          - pin7-hung1-鼻薰
+          - pin7-kang1-mo5-鼻空毛
+          - pin7-kang1-鼻空
+          - pin7-sai2-鼻屎
+          - pin7-tao5-鼻頭
+          - pin7-uan1-鼻鞍
+          - pin7-zui2-鼻水
       shantou:
         status: unattested
   - syllable: pinb4
@@ -210376,7 +211467,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - bhê2-pio1-馬票
       shantou:
         status: unattested
   - syllable: pio2
@@ -211319,6 +212412,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ce2-piou1-鼠標
           - piou1-iên5-guê3-hai2-漂洋過海
         sandhi_attested_entries:
           - piou1-iên5-guê3-hai2-漂洋過海
@@ -212532,6 +213626,7 @@ items:
           - poi1-pêng5-批評
           - poi1-zung2-批准
           - poi1-批
+          - poi1-𠜱
           - sim2-poi1-審批
           - uag8-poi1-獲批
         sandhi_attested_entries:
@@ -213207,7 +214302,9 @@ items:
         status: attested
         attested_entries:
           - pong5-buag8-蓬勃
+          - pong5-sian5-鵬城
           - pong5-蓬
+          - pong5-鵬
       shantou:
         status: unattested
   - syllable: pong6
@@ -213230,6 +214327,7 @@ items:
         status: attested
         sandhi_attested_entries:
           - pong5-buag8-蓬勃
+          - pong5-sian5-鵬城
       shantou:
         status: unattested
   - syllable: ponh4
@@ -213379,7 +214477,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - ah4-gian2-pou1-鴨仔鋪
       shantou:
         status: unattested
   - syllable: pou2
@@ -214077,6 +215177,7 @@ items:
           - lao6-pua5-老婆
           - no6-gong1-pua5-兩公婆
           - pua5-pua5-婆婆
+          - sao1-pua5-騷婆
           - zih4-sên1-pua5-接生婆
       shantou:
         status: unattested
@@ -221632,8 +222733,10 @@ items:
           - ci1-ri5-妻兒
           - ci3-guang2-êng1-ri5-試管嬰兒
           - cên1-ri5-星兒
+          - dam3-bhai7-ri5-髧眉兒
           - ghuêh8-ri5-月兒
           - gian2-ri5-囝兒
+          - he5-ri5-魚兒
           - huang1-ri5-風兒
           - huang6-ri5-患兒
           - iun3-ri5-hng5-幼兒園
@@ -221647,6 +222750,7 @@ items:
           - ri5-兒
           - sang1-sen1-ri5-雙生兒
           - toh4-ri5-so2-托兒所
+          - ziou2-ri5-鳥兒
           - êng1-ri5-嬰兒
       shantou:
         status: unattested
@@ -222605,6 +223709,7 @@ items:
         status: attested
         attested_entries:
           - ciao2-riang5-悄然
+          - diam2-riang5-點燃
           - ge1-riang5-居然
           - gong1-riang5-公然
           - gêng2-riang5-竟然
@@ -222634,6 +223739,7 @@ items:
           - ze6-riang5-自然
           - ze6-riang5-自燃
           - zoih8-riang5-截然
+          - zou6-riang5-驟然
           - zêg8-mag8-liao2-riang5-一目瞭然
       shantou:
         status: unattested
@@ -222840,6 +223946,7 @@ items:
           - kung3-riao2-困擾
           - riao2-luang6-擾亂
           - riao2-ming5-擾民
+          - sao1-riao2-騷擾
           - sên3-sao1-riao2-性騷擾
         sandhi_attested_entries:
           - riao3-hung6-擾混
@@ -225136,6 +226243,7 @@ items:
           - dui1-ring7-追認
           - gong1-ring7-公認
           - gêng1-ring7-bug4-hui3-供認不諱
+          - mig8-ring7-默認
           - ring7-cing1-認親
           - ring7-dang5-認同
           - ring7-dian7-認定
@@ -226744,6 +227852,7 @@ items:
         status: attested
         attested_entries:
           - ca2-riu5-he5-炒鰇魚
+          - riu5-he5-鰇魚
           - riu5-hug8-柔佛
           - riu5-rim2-柔韌
           - riu5-柔
@@ -226769,6 +227878,7 @@ items:
         status: attested
         sandhi_attested_entries:
           - ca2-riu5-he5-炒鰇魚
+          - riu5-he5-鰇魚
           - riu5-hug8-柔佛
           - riu5-rim2-柔韌
       shantou:
@@ -228060,6 +229170,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - dêg8-rong5-鹿茸
           - o3-mig8-kiog4-rong5-奧密克戎
           - rong5-riang5-仍然
           - rong5-戎
@@ -234197,6 +235308,7 @@ items:
           - ao3-sai2-漚屎
           - bang3-sai2-zua2-放屎紙
           - bang3-sai2-放屎
+          - bhoi6-sai2-𣍐使
           - buan3-tang2-sai2-半桶屎
           - cain5-sai2-蠶屎
           - cên1-sai2-星屎
@@ -234204,16 +235316,22 @@ items:
           - ghu5-sai2-hug8-牛屎核
           - ghu5-sai2-牛屎
           - gian5-sai2-行駛
+          - gê3-sai2-uang5-駕駛員
+          - gê3-sai2-zêng3-駕駛證
+          - gê3-sai2-駕駛
           - hin6-sai2-耳屎
           - hou5-sêng5-sai2-胡蠅屎
           - hung1-sai2-煙屎
           - hung1-sai2-薰屎
           - huê2-sai2-火屎
+          - ki2-sai2-齒屎
           - lao3-sai2-cên1-落屎星
           - lao3-sai2-落屎
           - mag8-sai2-目屎
           - mih4-sai2-乜屎
           - oi6-sai2-會使
+          - pin7-sai2-鼻屎
+          - sai2-cia1-駛車
           - sai2-dou2-屎肚
           - sai2-gang1-屎桶
           - sai2-gao1-屎溝
@@ -234227,6 +235345,7 @@ items:
           - sai2-zin5-使錢
           - sai2-êng7-使用
           - sai2-屎
+          - sai2-駛
           - tou5-tuan3-sai2-塗炭屎
           - ziag4-sai2-即使
           - ziah8-sai2-食屎
@@ -234300,7 +235419,10 @@ items:
           - bang3-sai2-zua2-放屎紙
           - ghu5-sai2-gu1-牛屎龜
           - ghu5-sai2-hug8-牛屎核
+          - gê3-sai2-uang5-駕駛員
+          - gê3-sai2-zêng3-駕駛證
           - lao3-sai2-cên1-落屎星
+          - sai2-cia1-駛車
           - sai2-dou2-屎肚
           - sai2-gang1-屎桶
           - sai2-gao1-屎溝
@@ -235276,11 +236398,16 @@ items:
         status: attested
         attested_entries:
           - sao1-iang6-瘙癢
+          - sao1-pua5-騷婆
+          - sao1-riao2-騷擾
           - sao1-sian1-颼聲
           - sao1-搔
+          - sao1-騷
           - sên3-sao1-riao2-性騷擾
         sandhi_attested_entries:
           - sao1-iang6-瘙癢
+          - sao1-pua5-騷婆
+          - sao1-riao2-騷擾
           - sao1-sian1-颼聲
           - sên3-sao1-riao2-性騷擾
       shantou:
@@ -236056,6 +237183,7 @@ items:
           - liao2-se7-了事
           - ming5-se7-民事
           - nang5-cêng5-si3-se7-人情世事
+          - nao7-se7-鬧事
           - nia2-se7-guang2-領事館
           - nian2-se7-領事
           - poin7-se7-辦事
@@ -236234,6 +237362,7 @@ items:
           - hung1-bu3-sêg4-分佈式
           - hung1-sêg4-分析
           - hung2-ang5-sêg4-粉紅色
+          - hêg4-sêg4-黑色
           - hêng5-sêg4-形式
           - i3-sêg4-意識
           - iang2-sêg4-養殖
@@ -236246,6 +237375,7 @@ items:
           - ming7-sêg4-面色
           - mo5-sêg4-模式
           - mê5-sêg4-暝色
+          - ng5-sêg4-黃色
           - ngi5-sêg4-儀式
           - ou1-sêg4-烏色
           - pou2-sêg4-剖析
@@ -236582,6 +237712,8 @@ items:
         status: attested
         attested_entries:
           - bho5-dang1-sên1-u6-無中生有
+          - bhêh8-sên1-teng5-麥生糖
+          - bhêh8-sên1-麥生
           - biag8-kai1-sên1-min7-別開生面
           - buan3-sên1-半生
           - ce3-sên1-次生
@@ -236600,6 +237732,7 @@ items:
           - hao6-sên1-gian2-後生囝
           - hao6-sên1-nang5-後生人
           - hao6-sên1-後生
+          - he5-sên1-魚生
           - hu2-hu2-ru5-sên1-栩栩如生
           - ia2-sên1-dong6-muêh8-野生動物
           - ia2-sên1-野生
@@ -236662,6 +237795,7 @@ items:
           - zêng3-sên1-眾生
         sandhi_attested_entries:
           - bho5-dang1-sên1-u6-無中生有
+          - bhêh8-sên1-teng5-麥生糖
           - biag8-kai1-sên1-min7-別開生面
           - cug4-sên1-rib8-si2-出生入死
           - gia3-sên1-tang5-寄生蟲
@@ -238176,6 +239310,7 @@ items:
         status: attested
         attested_entries:
           - bhio5-sia2-描寫
+          - mig8-sia2-默寫
           - piang1-sia2-編寫
           - sia2-ri7-寫字
           - sia2-寫
@@ -238243,6 +239378,7 @@ items:
         status: attested
         attested_entries:
           - gog4-gê1-sia6-huê6-zu2-ngi6-國家社會主義
+          - hêg4-sia6-huê6-黑社會
           - sia6-gao1-社交
           - sia6-huê6-zu2-ngi6-社會主義
           - sia6-huê6-社會
@@ -238269,7 +239405,9 @@ items:
           - gam2-sia7-感謝
           - iang3-sia7-映射
           - lui5-sia7-鐳射
+          - mêng5-sia7-鳴謝
           - sao3-sia7-掃射
+          - sia7-hion1-麝香
           - sia7-i3-謝意
           - sia7-kêg4-射擊
           - sia7-suan3-射線
@@ -238279,6 +239417,7 @@ items:
           - zu3-sia7-注射
         sandhi_attested_entries:
           - gog4-gê1-sia6-huê6-zu2-ngi6-國家社會主義
+          - hêg4-sia6-huê6-黑社會
           - sia5-ag4-邪惡
           - sia5-bo1-斜坡
           - sia5-ga3-邪教
@@ -238288,6 +239427,7 @@ items:
           - sia6-huê6-社會
           - sia6-ku1-社區
           - sia6-tuang5-社團
+          - sia7-hion1-麝香
           - sia7-i3-謝意
           - sia7-kêg4-射擊
           - sia7-suan3-射線
@@ -238303,6 +239443,7 @@ items:
         status: attested
         attested_entries:
           - cui3-siab4-喙澀
+          - giam5-siab4-鹹澀
           - siab4-bi5-澀脾
           - siab4-nêg8-澀肉
           - siab4-卌
@@ -238892,6 +240033,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - dang2-siam1-黨參
           - pê3-gim1-siam1-bên7-帕金森病
           - ring5-siam1-人參
         sandhi_attested_entries:
@@ -239073,6 +240215,7 @@ items:
           - hu2-sian5-府城
           - iong5-sian5-榕城
           - iên5-sian5-羊城
+          - pong5-sian5-鵬城
           - sian5-ci6-城市
           - sian5-guang2-城管
           - sian5-hion1-城鄉
@@ -239085,6 +240228,7 @@ items:
           - sên2-sian5-uê7-省城話
           - sên2-sian5-省城
           - ti5-sian5-提成
+          - to5-sian5-鮀城
           - ze1-sian5-書城
           - zêng3-zi3-sêng5-sian5-眾志成城
       shantou:
@@ -239341,6 +240485,7 @@ items:
           - cong5-siang6-崇尚
           - dou5-siang6-圖像
           - dui3-siang6-對象
+          - gao1-siang6-高尚
           - goi2-siang6-改善
           - gêng2-siang6-景象
           - hing7-siang6-現象
@@ -239364,12 +240509,14 @@ items:
           - siang6-gê1-上加
           - siang6-hai2-上海
           - siang6-hang6-象限
+          - siang6-he5-鱔魚
           - siang6-i3-善意
           - siang6-kuang2-善款
           - siang6-sian1-上聲
           - siang6-ze6-擅自
           - siang6-zi2-腎子
           - siang6-繕
+          - siang6-𤺪
           - siu1-siang6-修繕
           - tiu1-siang6-抽象
           - to2-siang6-妥善
@@ -239406,6 +240553,7 @@ items:
           - siang6-gê1-上加
           - siang6-hai2-上海
           - siang6-hang6-象限
+          - siang6-he5-鱔魚
           - siang6-i3-善意
           - siang6-kuang2-善款
           - siang6-sian1-上聲
@@ -241231,6 +242379,7 @@ items:
           - ciag4-sig8-切實
           - cong1-sig8-充實
           - goi1-sig8-雞翼
+          - he5-sig8-魚翼
           - hêg4-sig8-核實
           - ka1-dah8-sig8-di7-跤踏實地
           - kag4-sig8-確實
@@ -241784,6 +242933,7 @@ items:
           - bho5-sim1-無心
           - biag8-cug4-sim1-cai5-別出心裁
           - biang3-sim1-變心
+          - ci5-sim1-hab8-lag8-齊心合力
           - co1-sim1-初心
           - cog4-mag8-gian1-sim1-觸目驚心
           - cou1-sim1-粗心
@@ -241791,6 +242941,7 @@ items:
           - cêng1-sim1-in5-清心丸
           - dan2-ziang3-sim1-gian1-膽戰心驚
           - dang5-cêng5-sim1-同情心
+          - diam2-sim1-點心
           - dong1-sim1-中心
           - dong6-sim1-動心
           - gai3-sim1-戒心
@@ -241810,6 +242961,7 @@ items:
           - ho2-sim1-好心
           - hu6-sim1-負心
           - hêg4-sim1-核心
+          - hêg4-sim1-黑心
           - ia2-sim1-野心
           - kai1-sim1-開心
           - kong1-sim1-空心
@@ -241861,6 +243013,7 @@ items:
           - zêng1-sim1-精心
         sandhi_attested_entries:
           - biag8-cug4-sim1-cai5-別出心裁
+          - ci5-sim1-hab8-lag8-齊心合力
           - cu2-sim1-zêh4-le6-處心積慮
           - cêng1-sim1-in5-清心丸
           - dan2-ziang3-sim1-gian1-膽戰心驚
@@ -242270,8 +243423,10 @@ items:
           - ciu5-sing5-酬神
           - cên1-sing5-星辰
           - gou1-sing5-枯蠅
+          - gui2-sing5-鬼神
           - hiah8-ming7-sing5-額面神
           - loh8-sing5-落神
+          - lêng5-bhê2-zêng1-sing5-龍馬精神
           - lêng5-sing5-凌晨
           - neng2-sing5-女神
           - ngang2-sing5-眼神
@@ -243230,6 +244385,7 @@ items:
         status: attested
         attested_entries:
           - cao3-sion3-臭相
+          - ce2-gui2-sion3-鼠鬼相
           - dion1-ion7-dion1-sion3-張樣張相
           - ho3-sion3-gi1-耗相機
           - hoh4-sion3-翕相
@@ -244069,6 +245225,7 @@ items:
           - guh4-siu1-吸收
           - hong1-siu1-豐收
           - huê5-siu1-回收
+          - ngiam7-siu1-驗收
           - siu1-bou2-修補
           - siu1-ci2-羞恥
           - siu1-ci6-收市
@@ -244168,6 +245325,7 @@ items:
           - zam2-siu2-斬首
           - ze6-siu2-自首
           - zu6-siu2-聚首
+          - zu6-siu2-駐守
           - zung1-siu2-遵守
           - zuê6-kuê1-hua6-siu2-罪魁禍首
         sandhi_attested_entries:
@@ -244196,6 +245354,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ah4-cui3-siu3-鴨嘴獸
           - cên1-siu3-星宿
           - gim1-siu3-bhi2-金黍米
           - i1-guang1-kim5-siu3-衣冠禽獸
@@ -244796,7 +245955,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - ng5-sng1-黃酸
       shantou:
         status: unattested
   - syllable: sng2
@@ -245009,6 +246170,8 @@ items:
           - dim5-sog4-沉寂
           - gag4-sog4-結束
           - gam1-sog4-甘肅
+          - gao1-sog4-gong1-lou7-高速公路
+          - gao1-sog4-高速
           - gia1-sog4-dou7-加速度
           - gia1-sog4-加速
           - giam2-sog4-減速
@@ -245111,6 +246274,7 @@ items:
           - tong1-sog8-goi7-dong2-通俗易懂
           - tong1-sog8-通俗
         sandhi_attested_entries:
+          - gao1-sog4-gong1-lou7-高速公路
           - gia1-sog4-dou7-加速度
           - iao2-tiao2-sog4-neng2-窈窕淑女
           - ngiam5-sog4-sên3-嚴肅性
@@ -245143,6 +246307,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhê2-soh4-馬索
           - boih8-soh4-拔索
           - cao2-soh4-草索
           - dua7-soh4-大雪
@@ -245160,6 +246325,7 @@ items:
           - soh4-zui2-雪水
           - soh4-索
           - soh4-雪
+          - soh4-鱈
           - suan3-soh4-線索
           - tiao3-soh4-跳索
       shantou:
@@ -245372,7 +246538,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - soih4-𱟛
       shantou:
         status: unattested
   - syllable: soih8
@@ -245887,8 +247055,13 @@ items:
         status: attested
         attested_entries:
           - bang3-song1-放鬆
+          - song1-dong6-鬆動
+          - song1-gog4-鬆國
           - song1-崧
           - song1-嵩
+        sandhi_attested_entries:
+          - song1-dong6-鬆動
+          - song1-gog4-鬆國
       shantou:
         status: unattested
   - syllable: song2
@@ -245900,6 +247073,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - gian1-song2-驚悚
           - le6-song2-biê1-呂宋票
           - song2-iong3-慫恿
           - song2-lib8-聳立
@@ -245934,6 +247108,7 @@ items:
         status: attested
         attested_entries:
           - dua7-tao5-song5-大頭鱅
+          - song5-he5-鱅魚
           - song5-koi1-松溪
       shantou:
         status: unattested
@@ -245969,6 +247144,7 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - song5-he5-鱅魚
           - song5-koi1-松溪
           - song6-se1-訟師
       shantou:
@@ -246815,24 +247991,29 @@ items:
           - sua1-bou1-沙埔
           - sua1-buan5-沙盤
           - sua1-dêng1-he5-沙丁魚
+          - sua1-he5-鯊魚
           - sua1-hin6-沙耳
           - sua1-hê5-沙蝦
           - sua1-mag8-沙目
+          - sua1-mê1-𬠋𧌊
           - sua1-sab4-沙𧐔
           - sua1-tuan1-沙灘
           - sua1-uê1-muê5-砂鍋糜
           - sua1-uê1-砂鍋
           - sua1-沙
           - sua1-痧
+          - sua1-鯊
         sandhi_attested_entries:
           - cên1-sua1-lêg8-zui2-青山綠水
           - huang2-sua1-ou7-反沙芋
           - sua1-bou1-沙埔
           - sua1-buan5-沙盤
           - sua1-dêng1-he5-沙丁魚
+          - sua1-he5-鯊魚
           - sua1-hin6-沙耳
           - sua1-hê5-沙蝦
           - sua1-mag8-沙目
+          - sua1-mê1-𬠋𧌊
           - sua1-sab4-沙𧐔
           - sua1-tuan1-沙灘
           - sua1-uê1-muê5-砂鍋糜
@@ -247634,6 +248815,7 @@ items:
           - gang7-suan2-共產
           - gog4-suan2-國產
           - gê1-suan2-家產
+          - hêg4-suan2-黑產
           - kuang1-gê1-dang6-suan2-傾家蕩產
           - kuang3-suan2-擴散
           - liang6-suan2-量產
@@ -247712,6 +248894,7 @@ items:
           - kêg4-suan3-曲線
           - liu5-zui2-suan3-流水線
           - lou7-suan3-路線
+          - min7-suan3-麵線
           - nê5-suan3-涼傘
           - pang5-suan3-航線
           - pug4-gin3-pug4-suan3-不見不散
@@ -249584,7 +250767,9 @@ items:
           - gêng1-sug8-供述
           - hag8-sug8-學術
           - huang1-sug8-方術
+          - mo5-sug8-魔術
           - mui2-sug8-美術
+          - piang3-sug8-騙術
           - seng3-sug8-算術
           - su6-sug8-敘述
           - sug8-ghe2-術語
@@ -250385,6 +251570,8 @@ items:
           - sung5-荀
           - sung5-詢
           - sung5-醇
+          - sung5-馴
+          - sung5-鶉
           - ze1-sung5-諮詢
           - zung1-sung5-遵循
           - ê6-sung5-下旬
@@ -252702,6 +253889,7 @@ items:
           - tai3-太
           - tai3-態
           - tai3-泰
+          - ti2-tai3-體態
           - ze1-tai3-姿態
           - zuang6-tai3-狀態
       shantou:
@@ -253442,6 +254630,7 @@ items:
         status: attested
         attested_entries:
           - gam2-tang3-感嘆
+          - gian1-tang3-驚嘆
           - hêng1-tang3-胸膛
           - tang3-lui1-趁鐳
           - tang3-ziah8-趁食
@@ -253832,6 +255021,7 @@ items:
           - nou1-gian2-tao5-孥囝頭
           - pah4-tao5-ding7-拍頭陣
           - pai3-tao5-派頭
+          - pin7-tao5-鼻頭
           - pou3-tao5-鋪頭
           - pu5-tao5-浮頭
           - rig8-tao5-hou6-日頭雨
@@ -254541,6 +255731,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - goi1-têg4-鸂鶒
           - gêng6-têg4-警惕
           - tig4-to5-𨑨迌
           - têg4-lêng6-敕令
@@ -255030,6 +256221,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhêh8-sên1-teng5-麥生糖
           - bian1-teng5-冰糖
           - bêh8-teng5-白糖
           - huêh4-teng5-血糖
@@ -255065,6 +256257,7 @@ items:
           - gê1-têng5-家庭
           - huab4-têng5-法庭
           - kai1-têng5-開庭
+          - têng5-buê1-騰飛
           - têng5-cia1-dion5-停車場
           - têng5-cia1-ui7-停車位
           - têng5-cia1-停車
@@ -255086,6 +256279,7 @@ items:
           - têng5-澄
           - têng5-瞪
           - têng5-謄
+          - têng5-騰
           - ui5-têng5-違停
           - ziam6-têng5-暫停
       shantou:
@@ -255147,6 +256341,7 @@ items:
         sandhi_attested_entries:
           - bhê2-bug4-têng5-doi5-馬不停蹄
           - gê1-têng5-bao6-lag8-家庭暴力
+          - têng5-buê1-騰飛
           - têng5-cia1-dion5-停車場
           - têng5-cia1-ui7-停車位
           - têng5-cia1-停車
@@ -255451,7 +256646,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - ti1-黐
       shantou:
         status: unattested
   - syllable: ti2
@@ -255474,6 +256671,18 @@ items:
           - suan1-ti2-gug8-bo1-山體滑坡
           - suan1-ti2-山體
           - sêng3-ti2-聖體
+          - ti2-dang6-體重
+          - ti2-giam2-體檢
+          - ti2-hi6-體系
+          - ti2-huag8-體罰
+          - ti2-iog8-體育
+          - ti2-lag8-體力
+          - ti2-liang6-體量
+          - ti2-ngiam7-體驗
+          - ti2-tai3-體態
+          - ti2-ung1-goi3-體溫計
+          - ti2-ung1-體溫
+          - ti2-zioh4-體質
           - tiêng1-ti2-天體
           - zai3-ti2-載體
           - ze6-bhuê5-ti2-自媒體
@@ -255581,6 +256790,18 @@ items:
           - ti6-痔
         sandhi_attested_entries:
           - suan1-ti2-gug8-bo1-山體滑坡
+          - ti2-dang6-體重
+          - ti2-giam2-體檢
+          - ti2-hi6-體系
+          - ti2-huag8-體罰
+          - ti2-iog8-體育
+          - ti2-lag8-體力
+          - ti2-liang6-體量
+          - ti2-ngiam7-體驗
+          - ti2-tai3-體態
+          - ti2-ung1-goi3-體溫計
+          - ti2-ung1-體溫
+          - ti2-zioh4-體質
           - zêg8-ti2-gi1-一體機
       shantou:
         status: unattested
@@ -256362,6 +257583,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - cin2-tian3-齒痛
           - seng1-tian3-酸痛
           - sim1-tian3-心疼
           - tao5-tian3-頭疼
@@ -256518,6 +257740,7 @@ items:
         attested_entries:
           - su1-tiang3-舒暢
           - tiang3-tong1-暢通
+          - tiang3-鬯
       shantou:
         status: unattested
   - syllable: tiang5
@@ -256529,6 +257752,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - iam5-tiang5-鹽田
           - tiang5-bo3-填報
           - tiang5-bou2-填補
           - tiang5-cong1-填充
@@ -256797,6 +258021,7 @@ items:
           - tiao5-zag4-調節
           - tiao5-zi3-調劑
           - tiao5-zian2-調整
+          - tiao5-𤶃
       shantou:
         status: unattested
   - syllable: tiao6
@@ -258209,6 +259434,7 @@ items:
         attested_entries:
           - dê5-san1-ziu2-si3-tig4-to5-ri6-茶三酒四𨑨迌二
           - tig4-to5-𨑨迌
+          - tig4-𨑨
       shantou:
         status: unattested
   - syllable: tig8
@@ -258236,6 +259462,7 @@ items:
           - bêh8-tih4-白鐵
           - ce5-tih4-磁鐵
           - di7-tih4-地鐵
+          - gao1-tih4-高鐵
           - geng3-tih4-鋼鐵
           - king1-tih4-輕鐵
           - pah4-tih4-gian2-拍鐵囝
@@ -259168,7 +260395,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        attested_entries:
+          - tio3-𦨖
       shantou:
         status: unattested
   - syllable: tio5
@@ -261308,10 +262537,16 @@ items:
           - pu5-to5-guan1-葡萄乾
           - pu5-to5-葡萄
           - tig4-to5-𨑨迌
+          - to5-buê3-駝背
           - to5-lo5-陀螺
+          - to5-sian5-鮀城
           - to5-sêg4-桃色
+          - to5-ziao2-鴕鳥
           - to5-萄
           - to5-迌
+          - to5-鮀
+          - to5-鴕
+          - to5-鼉
           - êng1-to5-櫻桃
       shantou:
         status: unattested
@@ -261356,8 +262591,11 @@ items:
           - dê5-san1-ziu2-si3-tig4-to5-ri6-茶三酒四𨑨迌二
           - pu5-to5-ghê5-葡萄牙
           - pu5-to5-guan1-葡萄乾
+          - to5-buê3-駝背
           - to5-lo5-陀螺
+          - to5-sian5-鮀城
           - to5-sêg4-桃色
+          - to5-ziao2-鴕鳥
           - to6-ki3-唾棄
           - to6-êg8-唾液
       shantou:
@@ -261424,6 +262662,8 @@ items:
           - toh4-托
           - toh4-託
           - ui2-toh4-委託
+        sandhi_attested_entries:
+          - toh8-hong1-駝峰
       shantou:
         status: unattested
   - syllable: toh8
@@ -261435,7 +262675,10 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - loh8-toh8-駱駝
           - tag4-toh8-橐駝
+          - toh8-hong1-駝峰
+          - toh8-駝
         sandhi_attested_entries:
           - mo1-toh4-cia1-摩托車
           - toh4-guang2-託管
@@ -266222,6 +267465,7 @@ items:
         status: attested
         attested_entries:
           - hai2-tung5-海豚
+          - lou5-tung5-鸕鶉
       shantou:
         status: unattested
   - syllable: tung6
@@ -268308,6 +269552,7 @@ items:
           - u5-吾
           - u5-娛
           - u5-浯
+          - u5-鼯
       shantou:
         status: unattested
   - syllable: u6
@@ -269173,6 +270418,7 @@ items:
           - di7-uan1-治安
           - ge1-uan1-se1-nguin5-居安思危
           - gi6-bên5-uan1-忌平安
+          - pin7-uan1-鼻鞍
           - uan1-bhu2-安撫
           - uan1-ceng5-案床
           - uan1-cuang5-bho7-安全帽
@@ -269344,6 +270590,7 @@ items:
           - uang1-dao7-豌豆
           - uang1-iang5-汪洋
           - uang1-io1-彎腰
+          - uang1-ion1-鴛鴦
           - uang1-kug4-冤屈
           - uang1-汪
         sandhi_attested_entries:
@@ -269353,6 +270600,7 @@ items:
           - uang1-dao7-豌豆
           - uang1-iang5-汪洋
           - uang1-io1-彎腰
+          - uang1-ion1-鴛鴦
           - uang1-kug4-冤屈
       shantou:
         status: unattested
@@ -269425,6 +270673,7 @@ items:
           - dong6-uang5-動員
           - gog4-uang5-國王
           - gou3-uang5-僱員
+          - gê3-sai2-uang5-駕駛員
           - hag8-uang5-學員
           - ing5-uang5-演員
           - kuai3-di5-uang5-快遞員
@@ -271202,6 +272451,7 @@ items:
           - ug4-dao2-熨斗
           - ug4-兀
           - ug4-熨
+          - ug4-鬱
       shantou:
         status: unattested
   - syllable: ug8
@@ -272044,8 +273294,11 @@ items:
           - bao2-ung1-保溫
           - cêg4-ung1-測溫
           - gang3-ung1-降溫
+          - gao1-ung1-高溫
           - ki3-ung1-氣溫
           - sig4-ung1-室溫
+          - ti2-ung1-goi3-體溫計
+          - ti2-ung1-體溫
           - ung1-cung5-溫存
           - ung1-cêng5-溫情
           - ung1-dou7-biao2-溫度錶
@@ -272056,8 +273309,10 @@ items:
           - ung1-ziu1-溫州
           - ung1-氳
           - ung1-溫
+          - ung1-鰮
           - zui2-ung1-水溫
         sandhi_attested_entries:
+          - ti2-ung1-goi3-體溫計
           - ung1-cung5-溫存
           - ung1-cêng5-溫情
           - ung1-dou7-biao2-溫度錶
@@ -274199,6 +275454,7 @@ items:
         status: attested
         attested_entries:
           - cig4-za2-boih4-za2-七早八早
+          - ghao5-za2-𠢕早
           - gib8-za2-及早
           - gim1-hui1-za2-bi2-今非昔比
           - gou2-za2-古早
@@ -274570,6 +275826,7 @@ items:
           - zag4-zia2-作者
           - zag4-êng7-作用
           - zag4-鍘
+          - zag4-齪
           - zi3-zag4-製作
       shantou:
         status: unattested
@@ -274660,6 +275917,7 @@ items:
           - ciu7-zai1-樹栽
           - gam2-zai1-感知
           - gao3-zai1-告知
+          - he5-zai1-魚栽
           - hong5-zai1-洪災
           - huê2-zai1-火災
           - liang5-zai1-良知
@@ -275434,12 +276692,16 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - bhê2-zang1-馬鬃
+          - zang1-luang6-髒亂
           - zang1-ngiam5-莊嚴
           - zang1-sui1-棕蓑
           - zang1-sêg4-棕色
           - zang1-棕
           - zang1-罾
+          - zang1-鬃
         sandhi_attested_entries:
+          - zang1-luang6-髒亂
           - zang1-ngiam5-莊嚴
           - zang1-sui1-棕蓑
           - zang1-sêg4-棕色
@@ -275481,6 +276743,8 @@ items:
         status: attested
         attested_entries:
           - cêng1-zang3-稱讚
+          - diam2-zang3-點讚
+          - gin1-zang3-鹼粽
           - hiong5-sim1-zang3-zi3-雄心壯志
           - hiong5-zang3-雄壯
           - zang3-dang5-贊同
@@ -276308,6 +277572,7 @@ items:
           - gê1-ze1-家資
           - kao2-ze1-考書
           - ki2-su3-ze1-起訴書
+          - lou5-ze1-鸕鶿
           - lêng5-ze1-靈芝
           - muêh8-ze1-物資
           - nang5-lag8-ze1-nguang5-人力資源
@@ -276324,9 +277589,11 @@ items:
           - ze1-bung2-資本
           - ze1-ciam1-書籤
           - ze1-cêh4-書冊
+          - ze1-deng5-齋堂
           - ze1-diam3-書店
           - ze1-du5-書廚
           - ze1-du5-書櫥
+          - ze1-gai3-齋戒
           - ze1-gang1-之間
           - ze1-ghua7-之外
           - ze1-gi3-書記
@@ -276336,6 +277603,7 @@ items:
           - ze1-hiang1-書香
           - ze1-hu7-zia2-ia2-之乎者也
           - ze1-hui3-資費
+          - ze1-i5-齋姨
           - ze1-in7-書院
           - ze1-lêh8-資歷
           - ze1-mag8-書目
@@ -276365,6 +277633,7 @@ items:
           - ze1-緇
           - ze1-菑
           - ze1-資
+          - ze1-齋
           - zib8-ze1-集資
           - zo6-ze1-坐姿
           - zong2-ze1-gi3-總書記
@@ -276388,9 +277657,11 @@ items:
           - ze1-bung2-資本
           - ze1-ciam1-書籤
           - ze1-cêh4-書冊
+          - ze1-deng5-齋堂
           - ze1-diam3-書店
           - ze1-du5-書廚
           - ze1-du5-書櫥
+          - ze1-gai3-齋戒
           - ze1-gang1-之間
           - ze1-ghua7-之外
           - ze1-gi3-書記
@@ -276400,6 +277671,7 @@ items:
           - ze1-hiang1-書香
           - ze1-hu7-zia2-ia2-之乎者也
           - ze1-hui3-資費
+          - ze1-i5-齋姨
           - ze1-in7-書院
           - ze1-lêh8-資歷
           - ze1-mag8-書目
@@ -276435,8 +277707,11 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - he5-zê1-cai3-魚齋菜
           - ze1-zê1-書齋
           - ziah8-zê1-食齋
+        sandhi_attested_entries:
+          - he5-zê1-cai3-魚齋菜
       shantou:
         status: unattested
   - syllable: ze2
@@ -276468,6 +277743,7 @@ items:
           - kong2-hu1-ze2-孔夫子
           - kong2-ze2-孔子
           - lao6-ze2-老子
+          - le5-ku1-ze2-驢駒子
           - liab8-ze2-粒子
           - mo7-ze2-sêng5-lêng5-望子成龍
           - mui2-nam5-ze2-美男子
@@ -276477,6 +277753,7 @@ items:
           - ngui6-gung1-ze2-偽君子
           - pag8-ze2-雹子
           - pah4-ze2-拍子
+          - piang3-ze2-騙子
           - ri5-ze2-兒子
           - se1-sên1-ze2-私生子
           - siu3-ze2-袖子
@@ -276505,6 +277782,7 @@ items:
         status: attested
         attested_entries:
           - a1-zê2-阿姐
+          - bhou2-zê2-𡚸姐
           - di6-hian1-zê2-muê7-弟兄姐妹
           - hag8-zê2-學姐
           - kong1-zê2-空姐
@@ -277485,9 +278763,12 @@ items:
           - bhi7-zêng1-味精
           - ciang5-zêng1-長征
           - di5-zêng1-遞增
+          - diam2-zêng1-點鐘
           - goi1-zêng1-雞精
           - gêng6-zêng1-警鐘
           - hung1-zêng1-分鐘
+          - lêng5-bhê2-zêng1-sing5-龍馬精神
+          - nao6-zêng1-鬧鐘
           - ngang2-zêng1-眼睛
           - pag4-dai6-zêng1-cim1-博大精深
           - si5-zêng1-tui7-時鐘墜
@@ -277549,6 +278830,7 @@ items:
           - zêng1-鍾
           - zêng1-鐘
         sandhi_attested_entries:
+          - lêng5-bhê2-zêng1-sing5-龍馬精神
           - pag4-dai6-zêng1-cim1-博大精深
           - si5-zêng1-tui7-時鐘墜
           - siu6-zêng1-neng6-受精卵
@@ -277625,6 +278907,7 @@ items:
           - gian5-zêng3-ku1-liu5-行政拘留
           - gong1-zêng3-ze1-公證書
           - hua1-zêng3-cu2-tong2-嘩眾取寵
+          - ngiam7-zêng3-bhê2-驗證碼
           - zêng3-biang3-政變
           - zêng3-cang5-種塍
           - zêng3-cang5-種田
@@ -277707,6 +278990,7 @@ items:
           - gou1-dog8-zêng3-孤獨症
           - guang1-zêng3-觀眾
           - gê1-zêng3-家政
+          - gê3-sai2-zêng3-駕駛證
           - hua1-zêng3-cu2-tong2-嘩眾取寵
           - huang2-zêng3-反證
           - ing3-zêng3-印證
@@ -277717,6 +279001,7 @@ items:
           - mog8-zêng3-疫症
           - mêng5-zêng3-明證
           - ngam5-zêng3-癌症
+          - ngiam7-zêng3-bhê2-驗證碼
           - ngui6-zêng3-偽證
           - poin7-zêng3-辦證
           - ring7-zêng3-認證
@@ -278148,6 +279433,7 @@ items:
           - cao3-zi1-臭膣
           - nia2-nê1-go3-zi1-領奶塊膣
           - si3-zi1-四肢
+          - zi1-齏
           - zong2-zi1-總之
       shantou:
         status: unattested
@@ -278209,6 +279495,7 @@ items:
           - zi2-i3-旨意
           - zi2-ing2-指引
           - zi2-ka3-指教
+          - zi2-ling5-𬎏琳
           - zi2-lêng5-只能
           - zi2-muê7-姊妹
           - zi2-mêg8-紫陌
@@ -278400,6 +279687,7 @@ items:
           - zi2-i3-旨意
           - zi2-ing2-指引
           - zi2-ka3-指教
+          - zi2-ling5-𬎏琳
           - zi2-lêng5-只能
           - zi2-muê7-姊妹
           - zi2-mêg8-紫陌
@@ -278684,6 +279972,7 @@ items:
           - ziah8-kui1-食虧
           - ziah8-lao6-食老
           - ziah8-liao3-bhi2-食了米
+          - ziah8-loh8-食落
           - ziah8-mung5-ki2-食眠起
           - ziah8-muê5-食糜
           - ziah8-muêh8-食物
@@ -278748,6 +280037,7 @@ items:
           - ziah8-kui1-食虧
           - ziah8-lao6-食老
           - ziah8-liao3-bhi2-食了米
+          - ziah8-loh8-食落
           - ziah8-mung5-ki2-食眠起
           - ziah8-muê5-食糜
           - ziah8-muêh8-食物
@@ -279387,6 +280677,7 @@ items:
           - zian2-䭕
           - zian2-整
           - zian2-汫
+          - zian2-𩟗
         sandhi_attested_entries:
           - zian3-bang1-hêng5-正方形
           - zian3-boin5-正爿
@@ -279529,6 +280820,7 @@ items:
           - hui1-ziang1-徽章
           - kua1-ziang1-誇張
           - kuang3-ziang1-擴張
+          - min7-ziang1-guê2-麵煎粿
           - mêng5-mag8-ziang1-dan2-明目張膽
           - ngao1-ziang1-囂張
           - siu3-ziang1-袖章
@@ -279543,6 +280835,7 @@ items:
           - ziang1-漳
           - zu2-ziang1-主張
         sandhi_attested_entries:
+          - min7-ziang1-guê2-麵煎粿
           - mêng5-mag8-ziang1-dan2-明目張膽
           - ziang1-gung1-將軍
           - ziang1-hiang2-彰顯
@@ -279923,7 +281216,10 @@ items:
           - hao7-ziao2-候鳥
           - hung2-ziao2-粉鳥
           - in3-ziao2-燕鳥
+          - lang6-ziao2-gian2-𡳞鳥囝
+          - lang6-ziao2-ming7-𡳞鳥面
           - ngiao1-tao5-ziao2-貓頭鳥
+          - to5-ziao2-鴕鳥
           - ziao2-鳥
         sandhi_attested_entries:
           - ziao3-gu3-zia2-照顧者
@@ -279958,7 +281254,10 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - lang6-ziao2-gian2-𡳞鳥囝
+          - lang6-ziao2-ming7-𡳞鳥面
       shantou:
         status: unattested
   - syllable: ziao7
@@ -280021,6 +281320,7 @@ items:
         status: attested
         attested_entries:
           - buah8-mua5-ziaoh4-跋麻雀
+          - mua5-ziaoh4-麻雀
       shantou:
         status: unattested
   - syllable: ziaoh8
@@ -281447,6 +282747,7 @@ items:
           - si3-uê6-zu1-zig4-世衛組織
           - zig4-cou3-浙醋
           - zig4-gang1-浙江
+          - zig4-he5-鯽魚
           - zig4-tiao6-脊柱
           - zig4-浙
           - zig4-織
@@ -281464,6 +282765,7 @@ items:
         sandhi_attested_entries:
           - zig4-cou3-浙醋
           - zig4-gang1-浙江
+          - zig4-he5-鯽魚
           - zig4-tiao6-脊柱
       shantou:
         status: unattested
@@ -281480,6 +282782,7 @@ items:
           - co5-zih4-挫折
           - dig8-zih4-直接
           - dui3-zih4-對接
+          - gug4-zih4-骨折
           - ham5-zih4-銜接
           - liang5-zih4-連接
           - pah4-zih4-拍折
@@ -281509,6 +282812,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - ah4-zih8-鴨舌
           - de1-zih8-豬舌
           - dua7-zih8-大舌
           - huê2-zih8-火舌
@@ -282668,6 +283972,7 @@ items:
           - iong5-zioh4-溶質
           - sai1-zioh4-rêg8-西照日
           - sên3-zioh4-性質
+          - ti2-zioh4-體質
           - ze1-zioh4-資質
           - zioh4-dai3-借貸
           - zioh4-diao5-借條
@@ -282698,6 +284003,7 @@ items:
         attested_entries:
           - bo2-zioh8-寶石
           - gag4-zioh8-角石
+          - gho5-neng6-zioh8-鵝卵石
           - gim1-zioh8-金石
           - hung5-zioh8-雲石
           - huê1-gang1-zioh8-花崗石
@@ -283625,6 +284931,7 @@ items:
         status: attested
         attested_entries:
           - ziao2-鳥
+          - ziou2-ri5-鳥兒
       shantou:
         status: unattested
   - syllable: ziou3
@@ -283656,7 +284963,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - ziou2-ri5-鳥兒
       shantou:
         status: unattested
   - syllable: ziou7
@@ -284168,11 +285477,13 @@ items:
         attested_entries:
           - ang5-ziu2-紅酒
           - bhi2-ziu2-米酒
+          - bhêh8-ziu2-麥酒
           - bi5-ziu2-啤酒
           - bêh8-ziu2-白酒
           - diang2-ziu2-碘酒
           - do2-ziu2-倒酒
           - dê5-san1-ziu2-si3-tig4-to5-ri6-茶三酒四𨑨迌二
+          - gao1-liang5-ziu2-高粱酒
           - goi1-bhuê2-ziu2-雞尾酒
           - gêg4-ziu2-激酒
           - huê2-ziu2-火酒
@@ -285027,6 +286338,7 @@ items:
           - zog4-矚
           - zog4-祝
           - zog4-足
+          - zu6-zog4-駐足
         sandhi_attested_entries:
           - zog8-pou2-族譜
       shantou:
@@ -286190,6 +287502,9 @@ items:
         status: unattested
       chaozhou:
         status: attested
+        attested_entries:
+          - zou6-riang5-驟然
+          - zou6-驟
         sandhi_attested_entries:
           - ma2-zou2-bhiê7-媽祖廟
           - zou2-buê3-祖輩
@@ -286206,7 +287521,9 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: unattested
+        status: attested
+        sandhi_attested_entries:
+          - zou6-riang5-驟然
       shantou:
         status: unattested
   - syllable: zoub4
@@ -286814,15 +288131,19 @@ items:
           - zu6-hou6-住戶
           - zu6-huê6-聚會
           - zu6-in7-住院
+          - zu6-liu5-駐留
           - zu6-niam2-聚斂
           - zu6-siu2-聚首
+          - zu6-siu2-駐守
           - zu6-suan3-聚散
           - zu6-têh8-住宅
           - zu6-zi2-住址
           - zu6-ziao1-聚焦
           - zu6-zib8-sên3-聚集性
           - zu6-zib8-聚集
+          - zu6-zog4-駐足
           - zu6-聚
+          - zu6-駐
           - zêg4-zu6-積聚
         sandhi_attested_entries:
           - ain3-gog4-zu2-ngi6-愛國主義
@@ -286877,14 +288198,17 @@ items:
           - zu6-hou6-住戶
           - zu6-huê6-聚會
           - zu6-in7-住院
+          - zu6-liu5-駐留
           - zu6-niam2-聚斂
           - zu6-siu2-聚首
+          - zu6-siu2-駐守
           - zu6-suan3-聚散
           - zu6-têh8-住宅
           - zu6-zi2-住址
           - zu6-ziao1-聚焦
           - zu6-zib8-sên3-聚集性
           - zu6-zib8-聚集
+          - zu6-zog4-駐足
       shantou:
         status: unattested
   - syllable: zua1
@@ -289506,6 +290830,7 @@ items:
         attested_entries:
           - io1-zui1-gang1-buan1-dug8-cug4-腰椎間盤突出
           - ou1-zui1-bhê2-烏騅馬
+          - zui1-騅
         sandhi_attested_entries:
           - io1-zui1-gang1-buan1-dug8-cug4-腰椎間盤突出
           - ou1-zui1-bhê2-烏騅馬
@@ -289538,6 +290863,7 @@ items:
           - gung2-zui2-滾水
           - gêng1-zui2-供水
           - hai2-zui2-海水
+          - he5-zui2-魚水
           - hian5-zui2-燃水
           - hong5-zui2-洪水
           - huang1-zui2-風水
@@ -289558,12 +290884,14 @@ items:
           - log8-zui2-洛水
           - loh8-zui2-落水
           - lou2-zui2-滷水
+          - lou2-zui2-鹵水
           - lou7-zui2-露水
           - mag8-ioh8-zui2-目藥水
           - ni5-zui2-gang1-泥水工
           - ni5-zui2-ziang6-泥水匠
           - nêg8-zui2-溺水
           - pang1-zui2-芳水
+          - pin7-zui2-鼻水
           - riag8-zui2-bang5-熱水瓶
           - riag8-zui2-do7-熱水袋
           - ruah8-zui2-熱水
@@ -289646,6 +290974,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - mua5-zui3-麻醉
           - sung5-zui3-純粹
           - zui3-gê3-醉駕
           - zui3-醉
@@ -290361,6 +291690,7 @@ items:
           - zung3-俊
           - zung3-圳
           - zung3-竣
+          - zung3-駿
       shantou:
         status: unattested
   - syllable: zung5
@@ -290374,6 +291704,7 @@ items:
         attested_entries:
           - ang5-tao5-zung5-紅頭船
           - bhag8-zung5-木船
+          - boh4-zung5-駁船
           - bê5-lêng5-zung5-扒龍船
           - dou7-zung5-渡船
           - gian5-zung5-to2-hai2-san1-hung1-mian7-行船討海三分命

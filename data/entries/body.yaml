@@ -4614,3 +4614,493 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: bhê2-bhuê2-馬尾
+    headword: 馬尾
+    readings:
+      - pengim: bhê2 bhuê2
+    senses:
+      - pos: noun
+        gloss_en: [horse's tail, ponytail]
+        gloss_zh: [馬尾]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhê2-doi5-馬蹄
+    headword: 馬蹄
+    readings:
+      - pengim: bhê2 doi5
+    senses:
+      - pos: noun
+        gloss_en: [horse hoof]
+        gloss_zh: [馬蹄]
+        note: Page lists many distinct senses (horse hoof, archery target, inkstone shape, abbreviation for 馬蹄金, alternative name for agarwood/water shield, a kind of shaobing, a passage in Zhuangzi, water chestnut) all sharing the same reading; the literal 'horse hoof' sense was picked as most basic/central.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhê2-zang1-馬鬃
+    headword: 馬鬃
+    readings:
+      - pengim: bhê2 zang1
+    senses:
+      - pos: noun
+        gloss_en: [horse's mane]
+        gloss_zh: [馬鬃]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: toh8-hong1-駝峰
+    headword: 駝峰
+    readings:
+      - pengim: toh8 hong1
+    senses:
+      - pos: noun
+        gloss_en: [camel's hump, hump]
+        gloss_zh: [駝峰]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gug4-gang3-骨幹
+    headword: 骨幹
+    readings:
+      - pengim: gug4 gang3
+    senses:
+      - pos: noun
+        gloss_en: [backbone; mainstay; core, diaphysis (shaft of a long bone)]
+        gloss_zh: [骨幹]
+        note: Covers both the anatomical sense (diaphysis) and the more common figurative sense (backbone/core member); body.yaml chosen for the literal anatomical origin though the figurative sense may be more frequent in everyday use.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gug4-huê1-骨灰
+    headword: 骨灰
+    readings:
+      - pengim: gug4 huê1
+    senses:
+      - pos: noun
+        gloss_en: [ashes (cremated human remains), bone ash]
+        gloss_zh: [骨灰]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gug4-buan5-骨盤
+    headword: 骨盤
+    readings:
+      - pengim: gug4 buan5
+    senses:
+      - pos: noun
+        gloss_en: [pelvis]
+        gloss_zh: [骨盤]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gug4-cuê2-骨髓
+    headword: 骨髓
+    readings:
+      - pengim: gug4 cuê2
+    senses:
+      - pos: noun
+        gloss_en: [bone marrow]
+        gloss_zh: [骨髓]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hai5-骸
+    headword: 骸
+    readings:
+      - pengim: hai5
+    senses:
+      - pos: noun
+        gloss_en: [skeleton; bones (of a corpse), body]
+        gloss_zh: [骸]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cuê2-髓
+    headword: 髓
+    readings:
+      - pengim: cuê2
+    senses:
+      - pos: noun
+        gloss_en: [bone marrow, pith; medulla, essence]
+        gloss_zh: [髓]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ti2-lag8-體力
+    headword: 體力
+    readings:
+      - pengim: ti2 lag8
+    senses:
+      - pos: noun
+        gloss_en: [physical strength, energy, stamina]
+        gloss_zh: [體力]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ti2-tai3-體態
+    headword: 體態
+    readings:
+      - pengim: ti2 tai3
+    senses:
+      - pos: noun
+        gloss_en: [posture, figure, physique]
+        gloss_zh: [體態]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ti2-giam2-體檢
+    headword: 體檢
+    readings:
+      - pengim: ti2 giam2
+    senses:
+      - pos: noun
+        gloss_en: [physical examination, health check-up]
+        gloss_zh: [體檢]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ti2-ung1-體溫
+    headword: 體溫
+    readings:
+      - pengim: ti2 ung1
+    senses:
+      - pos: noun
+        gloss_en: [body temperature]
+        gloss_zh: [體溫]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ti2-zioh4-體質
+    headword: 體質
+    readings:
+      - pengim: ti2 zioh4
+    senses:
+      - pos: noun
+        gloss_en: [physique, constitution]
+        gloss_zh: [體質]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ti2-dang6-體重
+    headword: 體重
+    readings:
+      - pengim: ti2 dang6
+    senses:
+      - pos: noun
+        gloss_en: [body weight, weight]
+        gloss_zh: [體重]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mao5-髦
+    headword: 髦
+    readings:
+      - pengim: mao5
+    senses:
+      - pos: noun
+        gloss_en: [mane (of a horse), bangs (of children), outstanding person]
+        gloss_zh: [髦]
+        note: Character page lists several distinct literary senses (mane, bangs, outstanding person, child) under one Teochew reading; picked the hair-related senses as primary but the selection among senses is somewhat arbitrary.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huag4-hêng5-髮型
+    headword: 髮型
+    readings:
+      - pengim: huag4 hêng5
+    senses:
+      - pos: noun
+        gloss_en: [hairstyle, haircut]
+        gloss_zh: [髮型]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zang1-鬃
+    headword: 鬃
+    readings:
+      - pengim: zang1
+    senses:
+      - pos: noun
+        gloss_en: [mane, hair bun; coil of hair]
+        gloss_zh: [鬃]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou5-ciu1-鬍鬚
+    headword: 鬍鬚
+    readings:
+      - pengim: hou5 ciu1
+    senses:
+      - pos: noun
+        gloss_en: [beard, mustache, whiskers]
+        gloss_zh: [鬍鬚]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu1-鬚
+    headword: 鬚
+    readings:
+      - pengim: ciu1
+    senses:
+      - pos: noun
+        gloss_en: [beard; whisker, antenna; feeler]
+        gloss_zh: [鬚]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he5-lang5-魚鱗
+    headword: 魚鱗
+    readings:
+      - pengim: he5 lang5
+    senses:
+      - pos: noun
+        gloss_en: [fish scale]
+        gloss_zh: [魚鱗]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ah4-bho2-ka1-鴨母跤
+    headword: 鴨母跤
+    readings:
+      - pengim: ah4 bho2 ka1
+    senses:
+      - pos: noun
+        gloss_en: [flatfoot, pes planus]
+        gloss_zh: [鴨母跤, 扁平足]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: niam1-êg8-黏液
+    headword: 黏液
+    readings:
+      - pengim: niam1 êg8
+    senses:
+      - pos: noun
+        gloss_en: [mucus]
+        gloss_zh: [黏液]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pin7-sai2-鼻屎
+    headword: 鼻屎
+    readings:
+      - pengim: pin7 sai2
+    senses:
+      - pos: noun
+        gloss_en: [booger, dried nasal mucus]
+        gloss_zh: [鼻屎]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pin7-zui2-鼻水
+    headword: 鼻水
+    readings:
+      - pengim: pin7 zui2
+    senses:
+      - pos: noun
+        gloss_en: [nasal mucus, snot]
+        gloss_zh: [鼻水]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pin7-kang1-鼻空
+    headword: 鼻空
+    readings:
+      - pengim: pin7 kang1
+    senses:
+      - pos: noun
+        gloss_en: [nostril, nose]
+        gloss_zh: [鼻空]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pin7-kang1-mo5-鼻空毛
+    headword: 鼻空毛
+    readings:
+      - pengim: pin7 kang1 mo5
+    senses:
+      - pos: noun
+        gloss_en: [nose hair, nasal hair, vibrissa]
+        gloss_zh: [鼻空毛]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pin7-uan1-鼻鞍
+    headword: 鼻鞍
+    readings:
+      - pengim: pin7 uan1
+    senses:
+      - pos: noun
+        gloss_en: [bridge of the nose]
+        gloss_zh: [鼻鞍]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pin7-tao5-鼻頭
+    headword: 鼻頭
+    readings:
+      - pengim: pin7 tao5
+    senses:
+      - pos: noun
+        gloss_en: [tip of the nose, nose]
+        gloss_zh: [鼻頭]
+        note: Page lists several regional senses (tip of the nose; nose; protruding part of an object) with no sense explicitly tagged Teochew, so the exact scope intended for this reading is not fully confirmed.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki2-sai2-齒屎
+    headword: 齒屎
+    readings:
+      - pengim: ki2 sai2
+    senses:
+      - pos: noun
+        gloss_en: [dental plaque, food stuck between the teeth]
+        gloss_zh: [齒屎]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cin2-tian3-齒痛
+    headword: 齒痛
+    readings:
+      - pengim: cin2 tian3
+    senses:
+      - pos: noun
+        gloss_en: [toothache]
+        gloss_zh: [齒痛]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki2-ngeng5-齒齦
+    headword: 齒齦
+    readings:
+      - pengim: ki2 ngeng5
+    senses:
+      - pos: noun
+        gloss_en: [gum (flesh around teeth)]
+        gloss_zh: [齒齦]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lang6-𡳞
+    headword: 𡳞
+    readings:
+      - pengim: lang6
+    senses:
+      - pos: noun
+        gloss_en: [penis (vulgar), dick]
+        gloss_zh: [𡳞]
+        note: The entry lists several regionally-restricted senses (Cantonese/Hakka intensifier and suffix uses, a Hokkien-only intensifying particle); only the literal 'penis' sense carries the broad Min tag that clearly extends to Teochew, so it's unclear whether the other senses also apply.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lang6-hug8-𡳞核
+    headword: 𡳞核
+    readings:
+      - pengim: lang6 hug8
+    senses:
+      - pos: noun
+        gloss_en: [testicle]
+        gloss_zh: [𡳞核]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lang6-pa1-𡳞脬
+    headword: 𡳞脬
+    readings:
+      - pengim: lang6 pa1
+    senses:
+      - pos: noun
+        gloss_en: [scrotum]
+        gloss_zh: [𡳞脬]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lang6-ziao2-gian2-𡳞鳥囝
+    headword: 𡳞鳥囝
+    readings:
+      - pengim: lang6 ziao2 gian2
+    senses:
+      - pos: noun
+        gloss_en: [penis of a child]
+        gloss_zh: [𡳞鳥囝]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiao5-𤶃
+    headword: 𤶃
+    readings:
+      - pengim: tiao5
+    senses:
+      - pos: noun
+        gloss_en: [pimple, acne]
+        gloss_zh: [𤶃]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pian1-li5-𩩍籬
+    headword: 𩩍籬
+    readings:
+      - pengim: pian1 li5
+    senses:
+      - pos: noun
+        gloss_en: [rib]
+        gloss_zh: [𩩍籬]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pian1-li5-gug4-𩩍籬骨
+    headword: 𩩍籬骨
+    readings:
+      - pengim: pian1 li5 gug4
+    senses:
+      - pos: noun
+        gloss_en: [rib]
+        gloss_zh: [𩩍籬骨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
