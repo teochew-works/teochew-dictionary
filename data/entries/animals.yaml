@@ -3016,3 +3016,323 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: gim1-li2-金鯉
+    headword: 金鯉
+    readings:
+      - pengim: gim1 li2
+    senses:
+      - pos: noun
+        gloss_en: [goldfish]
+        gloss_zh: [金魚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêng3-he5-sai1-ziao2-釘魚獅鳥
+    headword: 釘魚獅鳥
+    readings:
+      - pengim: dêng3 he5 sai1 ziao2
+    senses:
+      - pos: noun
+        gloss_en: [kingfisher]
+        gloss_zh: [翠鳥]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: deng5-am6-dêg8-長頷鹿
+    headword: 長頷鹿
+    readings:
+      - pengim: deng5 am6 dêg8
+    senses:
+      - pos: noun
+        gloss_en: [giraffe]
+        gloss_zh: [長頷鹿, 長頸鹿]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciang5-gên3-dêg8-長頸鹿
+    headword: 長頸鹿
+    readings:
+      - pengim: ciang5 gên3 dêg8
+    senses:
+      - pos: noun
+        gloss_en: [giraffe]
+        gloss_zh: [長頸鹿]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iam1-goi1-閹雞
+    headword: 閹雞
+    readings:
+      - pengim: iam1 goi1
+    senses:
+      - pos: noun
+        gloss_en: [capon, castrated rooster]
+        gloss_zh: [閹雞]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a1-bhi2-ba1-阿米巴
+    headword: 阿米巴
+    readings:
+      - pengim: a1 bhi2 ba1
+    senses:
+      - pos: noun
+        gloss_en: [amoeba]
+        gloss_zh: [阿米巴, 變形蟲]
+        note: Technical biology term (amoeba/protozoan); no dedicated biology category exists, so it was filed under animals.yaml though it is not strictly an animal.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngang6-雁
+    headword: 雁
+    readings:
+      - pengim: ngang6
+    senses:
+      - pos: noun
+        gloss_en: [wild goose]
+        gloss_zh: [雁]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngang6-gho5-雁鵝
+    headword: 雁鵝
+    readings:
+      - pengim: ngang6 gho5
+    senses:
+      - pos: noun
+        gloss_en: [brown Chinese goose, swan goose (dialectal)]
+        gloss_zh: [雁鵝]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-gian2-雞仔
+    headword: 雞仔
+    readings:
+      - pengim: goi1 gian2
+    senses:
+      - pos: noun
+        gloss_en: [chick, young chicken]
+        gloss_zh: [雞仔]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-nua3-雞僆
+    headword: 雞僆
+    readings:
+      - pengim: goi1 nua3
+    senses:
+      - pos: noun
+        gloss_en: [pullet, young hen that has not yet laid eggs]
+        gloss_zh: [雞僆]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-gian2-雞囝
+    headword: 雞囝
+    readings:
+      - pengim: goi1 gian2
+    senses:
+      - pos: noun
+        gloss_en: [chick, chicken]
+        gloss_zh: [雞仔]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-bho2-雞母
+    headword: 雞母
+    readings:
+      - pengim: goi1 bho2
+    senses:
+      - pos: noun
+        gloss_en: [hen]
+        gloss_zh: [母雞]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-ang1-雞翁
+    headword: 雞翁
+    readings:
+      - pengim: goi1 ang1
+    senses:
+      - pos: noun
+        gloss_en: [rooster, cock]
+        gloss_zh: [公雞]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-ang1-gian2-雞翁囝
+    headword: 雞翁囝
+    readings:
+      - pengim: goi1 ang1 gian2
+    senses:
+      - pos: noun
+        gloss_en: [young rooster, cockerel]
+        gloss_zh: [雞翁囝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-iam2-雞閹
+    headword: 雞閹
+    readings:
+      - pengim: goi1 iam2
+    senses:
+      - pos: noun
+        gloss_en: [capon, castrated rooster]
+        gloss_zh: [閹雞]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-tao5-雞頭
+    headword: 雞頭
+    readings:
+      - pengim: goi1 tao5
+    senses:
+      - pos: noun
+        gloss_en: [chicken head, brothel procurer (dialectal slang)]
+        gloss_zh: [雞頭]
+        note: Page lists multiple senses sharing this reading — literal 'chicken head' plus a Cantonese/Teochew colloquial slang sense for a procurer/pimp — unclear which is primary for this Teochew reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-guê3-雞髻
+    headword: 雞髻
+    readings:
+      - pengim: goi1 guê3
+    senses:
+      - pos: noun
+        gloss_en: [cockscomb, rooster's crest]
+        gloss_zh: [雞冠]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-ah4-雞鴨
+    headword: 雞鴨
+    readings:
+      - pengim: goi1 ah4
+    senses:
+      - pos: noun
+        gloss_en: [chicken and duck, poultry]
+        gloss_zh: [雞鴨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou6-suan3-bên3-雨傘柄
+    headword: 雨傘柄
+    readings:
+      - pengim: hou6 suan3 bên3
+    senses:
+      - pos: noun
+        gloss_en: [many-banded krait (snake)]
+        gloss_zh: [銀環蛇]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ba3-uang5-lêng5-霸王龍
+    headword: 霸王龍
+    readings:
+      - pengim: ba3 uang5 lêng5
+    senses:
+      - pos: noun
+        gloss_en: [Tyrannosaurus rex]
+        gloss_zh: [霸王龍]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-ua1-青蛙
+    headword: 青蛙
+    readings:
+      - pengim: cên1 ua1
+    senses:
+      - pos: noun
+        gloss_en: [frog]
+        gloss_zh: [青蛙]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang2-bhuê2-zua5-響尾蛇
+    headword: 響尾蛇
+    readings:
+      - pengim: hiang2 bhuê2 zua5
+    senses:
+      - pos: noun
+        gloss_en: [rattlesnake]
+        gloss_zh: [響尾蛇]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê1-ziao2-飛鳥
+    headword: 飛鳥
+    readings:
+      - pengim: buê1 ziao2
+    senses:
+      - pos: noun
+        gloss_en: [flying bird, bird]
+        gloss_zh: [飛鳥]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bung7-si5-cêng3-飯匙銃
+    headword: 飯匙銃
+    readings:
+      - pengim: bung7 si5 cêng3
+    senses:
+      - pos: noun
+        gloss_en: [cobra]
+        gloss_zh: [眼鏡蛇]
+        note: The Wiktionary entry lists two senses under the same Teochew reading (cobra vs. Protobothrops mucrosquamatus, a different venomous snake); entry classified under the more widely attested 'cobra' sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tao1-tiêg4-饕餮
+    headword: 饕餮
+    readings:
+      - pengim: tao1 tiêg4
+    senses:
+      - pos: noun
+        gloss_en: [taotie (legendary gluttonous beast of Chinese mythology), (figurative) glutton; voracious eater]
+        gloss_zh: [饕餮]
+        note: Word covers a mythical-creature sense, a bronze-motif sense, and a figurative 'glutton/greedy person' sense; filed under animals.yaml for the mythical-beast sense since no category exactly covers mythology or figurative person-descriptions.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhê2-gian2-馬囝
+    headword: 馬囝
+    readings:
+      - pengim: bhê2 gian2
+    senses:
+      - pos: noun
+        gloss_en: [foal, pony]
+        gloss_zh: [馬囝, 馬駒]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

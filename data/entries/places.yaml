@@ -10522,3 +10522,989 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: gim1-tah4-金塔
+    headword: 金塔
+    readings:
+      - pengim: gim1 tah4
+    senses:
+      - pos: proper-noun
+        gloss_en: [Phnom Penh (capital of Cambodia)]
+        gloss_zh: [金邊, 金塔]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gim1-ri7-tah4-金字塔
+    headword: 金字塔
+    readings:
+      - pengim: gim1 ri7 tah4
+    senses:
+      - pos: noun
+        gloss_en: [pyramid]
+        gloss_zh: [金字塔]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gim1-pêng5-金平
+    headword: 金平
+    readings:
+      - pengim: gim1 pêng5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Jinping (district of Shantou, Guangdong)", Jinping (county in Yunnan)]
+        gloss_zh: [金平]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêng3-liang7-gêng1-釘鏈間
+    headword: 釘鏈間
+    readings:
+      - pengim: dêng3 liang7 gêng1
+    senses:
+      - pos: noun
+        gloss_en: [jail, prison]
+        gloss_zh: [監獄]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang5-lo5-uang1-銅鑼灣
+    headword: 銅鑼灣
+    readings:
+      - pengim: dang5 lo5 uang1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Causeway Bay (Hong Kong)]
+        gloss_zh: [銅鑼灣]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing1-鋅
+    headword: 鋅
+    readings:
+      - pengim: sing1
+    senses:
+      - pos: noun
+        gloss_en: [sink; wash basin]
+        gloss_zh: [鋅盆]
+        note: The given reading sing1 matches Etymology 3 (a loan from English 'sink'), where the character occurs only bound in the compound 鋅盆/锌盆 'wash basin'; it does not correspond to the common zinc/chemistry sense (Mandarin xīn), so a standalone gloss for the bare character is somewhat approximate.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pou3-tao5-鋪頭
+    headword: 鋪頭
+    readings:
+      - pengim: pou3 tao5
+    senses:
+      - pos: noun
+        gloss_en: [shop, store]
+        gloss_zh: [鋪頭, 店鋪]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: log8-im1-bên5-錄音棚
+    headword: 錄音棚
+    readings:
+      - pengim: log8 im1 bên5
+    senses:
+      - pos: noun
+        gloss_en: [recording studio]
+        gloss_zh: [錄音棚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ding3-gang1-鎮江
+    headword: 鎮江
+    readings:
+      - pengim: ding3 gang1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Zhenjiang (city in Jiangsu, China)"]
+        gloss_zh: [鎮江]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tih4-si1-mang6-鐵絲網
+    headword: 鐵絲網
+    readings:
+      - pengim: tih4 si1 mang6
+    senses:
+      - pos: noun
+        gloss_en: [wire netting; chicken wire, barbed wire]
+        gloss_zh: [鐵絲網]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tih4-lou7-鐵路
+    headword: 鐵路
+    readings:
+      - pengim: tih4 lou7
+    senses:
+      - pos: noun
+        gloss_en: [railway, railroad]
+        gloss_zh: [鐵路]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciang5-sian5-長城
+    headword: 長城
+    readings:
+      - pengim: ciang5 sian5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Great Wall of China]
+        gloss_zh: [長城, 萬里長城]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciang5-gang1-長江
+    headword: 長江
+    readings:
+      - pengim: ciang5 gang1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Yangtze River]
+        gloss_zh: [長江]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciang5-sa1-長沙
+    headword: 長沙
+    readings:
+      - pengim: ciang5 sa1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Changsha (city in Hunan, China)"]
+        gloss_zh: [長沙]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mung5-diam3-門店
+    headword: 門店
+    readings:
+      - pengim: mung5 diam3
+    senses:
+      - pos: noun
+        gloss_en: [shop, store, storefront]
+        gloss_zh: [門店, 商店]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mung5-kam2-門檻
+    headword: 門檻
+    readings:
+      - pengim: mung5 kam2
+    senses:
+      - pos: noun
+        gloss_en: [doorstep, threshold, sill]
+        gloss_zh: [門檻]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mung5-so2-門鎖
+    headword: 門鎖
+    readings:
+      - pengim: mung5 so2
+    senses:
+      - pos: noun
+        gloss_en: [door lock]
+        gloss_zh: [門鎖]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: miang2-hang5-閔行
+    headword: 閔行
+    readings:
+      - pengim: miang2 hang5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Minhang (district of Shanghai)]
+        gloss_zh: [閔行]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zah8-閘
+    headword: 閘
+    readings:
+      - pengim: zah8
+    senses:
+      - pos: noun
+        gloss_en: [floodgate, sluice gate, valve/switch]
+        gloss_zh: [閘, 水閘]
+        note: Multiple senses (floodgate/sluice, mechanical switch/brake, to block/dam) share the same Teochew reading zah8, and it is unclear which sense predominates in colloquial Teochew usage.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zah8-kao2-閘口
+    headword: 閘口
+    readings:
+      - pengim: zah8 kao2
+    senses:
+      - pos: noun
+        gloss_en: [sluice gate, gateway, boarding gate]
+        gloss_zh: [閘口]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goh4-gian2-閣仔
+    headword: 閣仔
+    readings:
+      - pengim: goh4 gian2
+    senses:
+      - pos: noun
+        gloss_en: [attic, loft]
+        gloss_zh: [閣仔, 閣樓]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gui1-goh4-閨閣
+    headword: 閨閣
+    readings:
+      - pengim: gui1 goh4
+    senses:
+      - pos: noun
+        gloss_en: [boudoir, lady's chamber]
+        gloss_zh: [閨閣, 閨房]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mang5-閩
+    headword: 閩
+    readings:
+      - pengim: mang5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Min (Chinese language branch), Fujian (abbreviation)]
+        gloss_zh: [閩]
+        note: Character carries several senses sharing this reading (ancient Min ethnic group, Min River, abbreviation for Fujian, Min language branch, and a surname); the place/language sense was picked as most broadly useful.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mang5-nam5-uê7-閩南話
+    headword: 閩南話
+    readings:
+      - pengim: mang5 nam5 uê7
+    senses:
+      - pos: noun
+        gloss_en: [Southern Min, Hokkien]
+        gloss_zh: [閩南話, 閩南語]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang1-dong1-關中
+    headword: 關中
+    readings:
+      - pengim: guang1 dong1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Guanzhong (region in Shaanxi, China)"]
+        gloss_zh: [關中]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang1-bou1-關埠
+    headword: 關埠
+    readings:
+      - pengim: guang1 bou1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Guanbu (town in Chaoyang District, Shantou)"]
+        gloss_zh: [關埠]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang1-sai1-關西
+    headword: 關西
+    readings:
+      - pengim: guang1 sai1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Kansai (region of Japan), area west of Hangu Pass (archaic)]
+        gloss_zh: [關西]
+        note: The page lists several distinct place senses sharing this reading (Kansai region of Japan, the ancient area west of Hangu Pass, a Taiwan township, etc.); it is unclear which specific referent the Teochew usage targets.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tag4-闥
+    headword: 闥
+    readings:
+      - pengim: tag4
+    senses:
+      - pos: noun
+        gloss_en: [small door; inner door, gate (literary)]
+        gloss_zh: [闥]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a1-ba3-阿壩
+    headword: 阿壩
+    readings:
+      - pengim: a1 ba3
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Ngawa (Aba) Tibetan and Qiang Autonomous Prefecture, Sichuan", Ngawa County]
+        gloss_zh: [阿壩]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a1-geng1-têng5-阿根廷
+    headword: 阿根廷
+    readings:
+      - pengim: a1 geng1 têng5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Argentina]
+        gloss_zh: [阿根廷]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi6-陛
+    headword: 陛
+    readings:
+      - pengim: bi6
+    senses:
+      - pos: noun
+        gloss_en: [(archaic) flight of steps, steps leading to a throne]
+        gloss_zh: [陛]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siam2-sai1-陝西
+    headword: 陝西
+    readings:
+      - pengim: siam2 sai1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Shaanxi (province of China)]
+        gloss_zh: [陝西]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in7-hao6-院校
+    headword: 院校
+    readings:
+      - pengim: in7 hao6
+    senses:
+      - pos: noun
+        gloss_en: [institution of higher education, universities and colleges]
+        gloss_zh: [院校]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang5-diam3-陳店
+    headword: 陳店
+    readings:
+      - pengim: dang5 diam3
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Chendian (town in Chaonan district, Shantou, Guangdong)"]
+        gloss_zh: [陳店]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-陵
+    headword: 陵
+    readings:
+      - pengim: lêng5
+    senses:
+      - pos: noun
+        gloss_en: [mound; hill, royal/imperial tomb]
+        gloss_zh: [陵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-hng5-陵園
+    headword: 陵園
+    readings:
+      - pengim: lêng5 hng5
+    senses:
+      - pos: noun
+        gloss_en: [cemetery, memorial park]
+        gloss_zh: [陵園]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêg8-hong1-陸豐
+    headword: 陸豐
+    readings:
+      - pengim: lêg8 hong1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Lufeng (city in Shanwei, Guangdong)"]
+        gloss_zh: [陸豐]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iang5-tai5-陽臺
+    headword: 陽臺
+    readings:
+      - pengim: iang5 tai5
+    senses:
+      - pos: noun
+        gloss_en: [balcony]
+        gloss_zh: [陽臺]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngo5-隅
+    headword: 隅
+    readings:
+      - pengim: ngo5
+    senses:
+      - pos: noun
+        gloss_en: [corner, nook, remote place]
+        gloss_zh: [隅]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-gang1-隆江
+    headword: 隆江
+    readings:
+      - pengim: lêng5 gang1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Longjiang (a town in Huilai, Jieyang, Guangdong, China)"]
+        gloss_zh: [隆江]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sui5-ciou5-隋朝
+    headword: 隋朝
+    readings:
+      - pengim: sui5 ciou5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Sui dynasty]
+        gloss_zh: [隋朝]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêh4-biah4-隔壁
+    headword: 隔壁
+    readings:
+      - pengim: gêh4 biah4
+    senses:
+      - pos: noun
+        gloss_en: [next door, neighbor]
+        gloss_zh: [隔壁]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sui7-dao6-隧道
+    headword: 隧道
+    readings:
+      - pengim: sui7 dao6
+    senses:
+      - pos: noun
+        gloss_en: [tunnel]
+        gloss_zh: [隧道]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng2-隴
+    headword: 隴
+    readings:
+      - pengim: lêng2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Gansu (old/short name for the province), mound; ridge; grave (variant of 壟)]
+        gloss_zh: [隴]
+        note: Character carries several senses under one reading (short name for Gansu province, mountain/county names, a literary variant of 壟 'mound/grave', a surname); the placename sense was picked as most salient but this is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zib8-ci6-集市
+    headword: 集市
+    readings:
+      - pengim: zib8 ci6
+    senses:
+      - pos: noun
+        gloss_en: [market, fair, bazaar]
+        gloss_zh: [集市]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sang1-nang5-ceng5-雙人床
+    headword: 雙人床
+    readings:
+      - pengim: sang1 nang5 ceng5
+    senses:
+      - pos: noun
+        gloss_en: [double bed]
+        gloss_zh: [雙人床]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sang1-nang5-bang5-雙人房
+    headword: 雙人房
+    readings:
+      - pengim: sang1 nang5 bang5
+    senses:
+      - pos: noun
+        gloss_en: [double room]
+        gloss_zh: [雙人房]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zab8-huê3-diam3-雜貨店
+    headword: 雜貨店
+    readings:
+      - pengim: zab8 huê3 diam3
+    senses:
+      - pos: noun
+        gloss_en: [grocery store, sundry shop, convenience store]
+        gloss_zh: [雜貨店]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zab8-huê3-pou3-雜貨鋪
+    headword: 雜貨鋪
+    readings:
+      - pengim: zab8 huê3 pou3
+    senses:
+      - pos: noun
+        gloss_en: [grocery store, sundry shop]
+        gloss_zh: [雜貨鋪, 雜貨店]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-si5-雞塒
+    headword: 雞塒
+    readings:
+      - pengim: goi1 si5
+    senses:
+      - pos: noun
+        gloss_en: [chicken coop, henhouse, roost]
+        gloss_zh: [雞窩]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-liao5-雞寮
+    headword: 雞寮
+    readings:
+      - pengim: goi1 liao5
+    senses:
+      - pos: noun
+        gloss_en: [henhouse, chicken coop]
+        gloss_zh: [雞窩]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-lang5-雞籠
+    headword: 雞籠
+    readings:
+      - pengim: goi1 lang5
+    senses:
+      - pos: noun
+        gloss_en: [chicken coop, henhouse]
+        gloss_zh: [雞籠]
+        note: The page lists the identical Teochew reading (goi1 lang5) for both this common-noun 'chicken coop' sense and a historical placename sense (Keelung, Taiwan); 'chicken coop' was chosen as more likely given the batch's chicken-vocabulary context.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung5-lam5-雲南
+    headword: 雲南
+    readings:
+      - pengim: hung5 lam5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Yunnan (province in southwestern China)]
+        gloss_zh: [雲南]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung5-o3-雲澳
+    headword: 雲澳
+    readings:
+      - pengim: hung5 o3
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Yun'ao (a town in Nan'ao, Shantou)"]
+        gloss_zh: [雲澳]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diang6-ciang2-電廠
+    headword: 電廠
+    readings:
+      - pengim: diang6 ciang2
+    senses:
+      - pos: noun
+        gloss_en: [power plant]
+        gloss_zh: [電廠]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diang6-bêh8-電白
+    headword: 電白
+    readings:
+      - pengim: diang6 bêh8
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Dianbai (district of Maoming, Guangdong, China)"]
+        gloss_zh: [電白]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diang6-suan3-guan1-電線杆
+    headword: 電線杆
+    readings:
+      - pengim: diang6 suan3 guan1
+    senses:
+      - pos: noun
+        gloss_en: [utility pole, telephone pole]
+        gloss_zh: [電線杆]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diang6-tai5-電臺
+    headword: 電臺
+    readings:
+      - pengim: diang6 tai5
+    senses:
+      - pos: noun
+        gloss_en: [radio station, broadcasting station]
+        gloss_zh: [電臺]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diang6-si6-tai5-電視臺
+    headword: 電視臺
+    readings:
+      - pengim: diang6 si6 tai5
+    senses:
+      - pos: noun
+        gloss_en: [television station]
+        gloss_zh: [電視臺]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-dao2-青島
+    headword: 青島
+    readings:
+      - pengim: cên1 dao2
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Qingdao (city in Shandong, China)"]
+        gloss_zh: [青島]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-lao5-青樓
+    headword: 青樓
+    readings:
+      - pengim: cên1 lao5
+    senses:
+      - pos: noun
+        gloss_en: [brothel (literary)]
+        gloss_zh: [青樓]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-hai2-青海
+    headword: 青海
+    readings:
+      - pengim: cên1 hai2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Qinghai (province of China), Qinghai Lake]
+        gloss_zh: [青海]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-ang5-huê2-青紅火
+    headword: 青紅火
+    readings:
+      - pengim: cên1 ang5 huê2
+    senses:
+      - pos: noun
+        gloss_en: [traffic light]
+        gloss_zh: [紅綠燈, 青紅燈]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-ang5-dêng1-青紅燈
+    headword: 青紅燈
+    readings:
+      - pengim: cên1 ang5 dêng1
+    senses:
+      - pos: noun
+        gloss_en: [traffic light]
+        gloss_zh: [紅綠燈]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui1-ziu1-非洲
+    headword: 非洲
+    readings:
+      - pengim: hui1 ziu1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Africa]
+        gloss_zh: [非洲]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: oi5-guin7-鞋櫃
+    headword: 鞋櫃
+    readings:
+      - pengim: oi5 guin7
+    senses:
+      - pos: noun
+        gloss_en: [shoe cabinet]
+        gloss_zh: [鞋櫃]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang5-韓
+    headword: 韓
+    readings:
+      - pengim: hang5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Korea (short form), surname Han]
+        gloss_zh: [韓]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang5-gog4-韓國
+    headword: 韓國
+    readings:
+      - pengim: hang5 gog4
+    senses:
+      - pos: proper-noun
+        gloss_en: [Korea, South Korea]
+        gloss_zh: [韓國]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang5-bhung5-韓文
+    headword: 韓文
+    readings:
+      - pengim: hang5 bhung5
+    senses:
+      - pos: noun
+        gloss_en: [Korean language, Hangul (Korean script)]
+        gloss_zh: [韓文]
+        note: The page gives two etymologies sharing this reading — a literary sense ('prose of Han Yu') and the common 'Korean language/Hangul' sense — and the more common modern sense was chosen as primary.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang5-gang1-韓江
+    headword: 韓江
+    readings:
+      - pengim: hang5 gang1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Han River (in Guangdong)]
+        gloss_zh: [韓江]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao6-guang1-韶關
+    headword: 韶關
+    readings:
+      - pengim: siao6 guang1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Shaoguan (prefecture-level city in Guangdong)]
+        gloss_zh: [韶關]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sung6-huê3-順化
+    headword: 順化
+    readings:
+      - pengim: sung6 huê3
+    senses:
+      - pos: proper-noun
+        gloss_en: [Hue (city in central Vietnam)]
+        gloss_zh: [順化, 顺化]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nia2-se7-guang2-領事館
+    headword: 領事館
+    readings:
+      - pengim: nia2 se7 guang2
+    senses:
+      - pos: noun
+        gloss_en: [consulate]
+        gloss_zh: [領事館]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nian2-tou2-領土
+    headword: 領土
+    readings:
+      - pengim: nian2 tou2
+    senses:
+      - pos: noun
+        gloss_en: [territory]
+        gloss_zh: [領土]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê1-gi1-dion5-飛機場
+    headword: 飛機場
+    readings:
+      - pengim: buê1 gi1 dion5
+    senses:
+      - pos: noun
+        gloss_en: [airport; airfield]
+        gloss_zh: [飛機場, 機場]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bung7-diam3-飯店
+    headword: 飯店
+    readings:
+      - pengim: bung7 diam3
+    senses:
+      - pos: noun
+        gloss_en: [hotel, restaurant]
+        gloss_zh: [飯店]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang1-tian1-餐廳
+    headword: 餐廳
+    readings:
+      - pengim: cang1 tian1
+    senses:
+      - pos: noun
+        gloss_en: [restaurant, dining hall, canteen]
+        gloss_zh: [餐廳]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu2-re2-首爾
+    headword: 首爾
+    readings:
+      - pengim: siu2 re2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Seoul (capital of South Korea)]
+        gloss_zh: [首爾]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu2-dou1-首都
+    headword: 首都
+    readings:
+      - pengim: siu2 dou1
+    senses:
+      - pos: noun
+        gloss_en: [capital; capital city (of a country)]
+        gloss_zh: [首都]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang1-gang2-香港
+    headword: 香港
+    readings:
+      - pengim: hiang1 gang2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Hong Kong]
+        gloss_zh: [香港]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kai1-hong1-開封
+    headword: 開封
+    readings:
+      - pengim: kai1 hong1
+    senses:
+      - pos: proper-noun
+        gloss_en: ["Kaifeng (city in Henan, China)"]
+        gloss_zh: [開封]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

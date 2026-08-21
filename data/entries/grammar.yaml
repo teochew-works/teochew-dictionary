@@ -1960,3 +1960,193 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: de5-liou3-除了
+    headword: 除了
+    readings:
+      - pengim: de5 liou3
+    senses:
+      - pos: preposition
+        gloss_en: [except; except for, besides; in addition to]
+        gloss_zh: [除了]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de5-ce2-ze1-ghua7-除此之外
+    headword: 除此之外
+    readings:
+      - pengim: de5 ce2 ze1 ghua7
+    senses:
+      - pos: conjunction
+        gloss_en: [apart from this, besides this; in addition to this]
+        gloss_zh: [除此之外]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de5-hui1-除非
+    headword: 除非
+    readings:
+      - pengim: de5 hui1
+    senses:
+      - pos: conjunction
+        gloss_en: [unless, only if, except]
+        gloss_zh: [除非]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sui5-dioh8-隨著
+    headword: 隨著
+    readings:
+      - pengim: sui5 dioh8
+    senses:
+      - pos: preposition
+        gloss_en: [along with; following; in the wake of; as]
+        gloss_zh: [隨著]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziah4-隻
+    headword: 隻
+    readings:
+      - pengim: ziah4
+    senses:
+      - pos: classifier
+        gloss_en: ["classifier for animals, birds, one of a pair, boats, etc.", measure word]
+        gloss_zh: [隻]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sui1-雖
+    headword: 雖
+    readings:
+      - pengim: sui1
+    senses:
+      - pos: conjunction
+        gloss_en: [although, even if, despite]
+        gloss_zh: [雖]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui1-非
+    headword: 非
+    readings:
+      - pengim: hui1
+    senses:
+      - pos: prefix
+        gloss_en: [not; non-, wrong; incorrect]
+        gloss_zh: [非]
+        note: Functions as a Classical-Chinese negative copula ('is not') and as a productive bound prefix in modern compounds (非常, 非法); no single part of speech captures both uses well.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui1-dang6-非但
+    headword: 非但
+    readings:
+      - pengim: hui1 dang6
+    senses:
+      - pos: conjunction
+        gloss_en: [not only]
+        gloss_zh: [非但, 不但]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming7-zoin5-面前
+    headword: 面前
+    readings:
+      - pengim: ming7 zoin5
+    senses:
+      - pos: noun
+        gloss_en: [in front of, before one's face, in one's presence]
+        gloss_zh: [面前]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming7-dêng2-面頂
+    headword: 面頂
+    readings:
+      - pengim: ming7 dêng2
+    senses:
+      - pos: noun
+        gloss_en: [on top, above]
+        gloss_zh: [面頂]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêng2-頂
+    headword: 頂
+    readings:
+      - pengim: dêng2
+    senses:
+      - pos: noun
+        gloss_en: [top; peak, on top of; above (locative)]
+        gloss_zh: [頂]
+        note: Wiktionary lists many senses (top of head, peak, to prop up/replace, classifier for hats, Southern Min locative 'above/before', Cantonese slang); the noun/locative sense most relevant to everyday Teochew was chosen, following the precedent set for 內, but the primary sense and part of speech remain approximate.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêng2-tao5-頂頭
+    headword: 頂頭
+    readings:
+      - pengim: dêng2 tao5
+    senses:
+      - pos: noun
+        gloss_en: [above; on top]
+        gloss_zh: [頂頭, 顶头]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang6-項
+    headword: 項
+    readings:
+      - pengim: hang6
+    senses:
+      - pos: classifier
+        gloss_en: ["classifier for items, tasks, clauses, or charges"]
+        gloss_zh: [項, 项]
+        note: This character carries many senses (nape of neck, item, classifier, sum of money, math term, legal count, surname); the general reading doesn't indicate which is the attested Teochew sense, so the common classifier use was chosen as most likely.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tao5-mêng7-zain5-頭面前
+    headword: 頭面前
+    readings:
+      - pengim: tao5 mêng7 zain5
+    senses:
+      - pos: noun
+        gloss_en: [in front, in front of one's face]
+        gloss_zh: [面前]
+        note: Narrow regional (Jieyang) attestation as a locative noun meaning 'in front'; low confidence on how widely this form is used versus the more common 頭前/面前.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu2-首
+    headword: 首
+    readings:
+      - pengim: siu2
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for songs and poems, head; chief; first; beginning]
+        gloss_zh: [首]
+        note: Highly polysemous character (archaic noun 'head', 'chief', 'first/beginning', and classifier for songs/poems all share this reading); classifier chosen as the most common standalone modern use.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

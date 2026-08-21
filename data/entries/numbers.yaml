@@ -1554,3 +1554,79 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: li5-bhi2-釐米
+    headword: 釐米
+    readings:
+      - pengim: li5 bhi2
+    senses:
+      - pos: classifier
+        gloss_en: [centimetre, centimeter (cm)]
+        gloss_zh: [釐米, 厘米]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êg4-鎰
+    headword: 鎰
+    readings:
+      - pengim: êg4
+    senses:
+      - pos: classifier
+        gloss_en: [ancient unit of weight (20 or 24 liang)]
+        gloss_zh: [鎰]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de5-siou3-除數
+    headword: 除數
+    readings:
+      - pengim: de5 siou3
+    senses:
+      - pos: noun
+        gloss_en: [divisor]
+        gloss_zh: [除數]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sang1-雙
+    headword: 雙
+    readings:
+      - pengim: sang1
+    senses:
+      - pos: classifier
+        gloss_en: [pair (classifier), two; double]
+        gloss_zh: [雙]
+        note: 雙 functions both as a classifier for pairs (e.g. shoes) and as an attributive numeral/adjective meaning 'two; double'; the single best pos for the standalone headword is uncertain.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tao5-zêg8-頭一
+    headword: 頭一
+    readings:
+      - pengim: tao5 zêg8
+    senses:
+      - pos: noun
+        gloss_en: [first, the first]
+        gloss_zh: [頭一, 第一]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li5-釐
+    headword: 釐
+    readings:
+      - pengim: li5
+    senses:
+      - pos: classifier
+        gloss_en: [centi- (unit prefix), "one-thousandth (old currency subdivision, mill)"]
+        gloss_zh: [釐, 厘]
+        note: The li5 reading covers several distinct measure-word senses (SI centi- prefix, old weight/currency subdivision, interest-rate unit, alt form of 嫠); the interest-rate sense was dropped since the audit found no figure in the source matched the draft, leaving the two more clearly attested senses.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
