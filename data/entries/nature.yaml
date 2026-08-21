@@ -9597,3 +9597,1121 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: gim1-sog8-金屬
+    headword: 金屬
+    readings:
+      - pengim: gim1 sog8
+    senses:
+      - pos: noun
+        gloss_en: [metal]
+        gloss_zh: [金屬]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gim1-cên1-金星
+    headword: 金星
+    readings:
+      - pengim: gim1 cên1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Venus (planet)]
+        gloss_zh: [金星]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gim1-ghêg8-金玉
+    headword: 金玉
+    readings:
+      - pengim: gim1 ghêg8
+    senses:
+      - pos: noun
+        gloss_en: [gold and jade, treasured/precious thing]
+        gloss_zh: [金玉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gim1-zioh8-金石
+    headword: 金石
+    readings:
+      - pengim: gim1 zioh8
+    senses:
+      - pos: noun
+        gloss_en: [metal and stone, inscriptions on ancient bronzes and stone tablets]
+        gloss_zh: [金石]
+        note: Several distinct senses (metal/stone, epigraphy, ancient musical instruments, figurative hardness/strength) share the one Teochew reading with no explicit per-sense mapping, so the chosen primary sense is a best guess based on listed order.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gim1-kuang3-金礦
+    headword: 金礦
+    readings:
+      - pengim: gim1 kuang3
+    senses:
+      - pos: noun
+        gloss_en: [gold mine]
+        gloss_zh: [金礦]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nab8-鈉
+    headword: 鈉
+    readings:
+      - pengim: nab8
+    senses:
+      - pos: noun
+        gloss_en: [sodium]
+        gloss_zh: [鈉]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gai3-鈣
+    headword: 鈣
+    readings:
+      - pengim: gai3
+    senses:
+      - pos: noun
+        gloss_en: [calcium]
+        gloss_zh: [鈣]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puê5-鈹
+    headword: 鈹
+    readings:
+      - pengim: puê5
+    senses:
+      - pos: noun
+        gloss_en: [beryllium]
+        gloss_zh: [鈹]
+        note: The character has two unrelated senses sharing this Teochew reading (chemical element beryllium vs. an ancient long-handled weapon / acupuncture needle); the chemistry sense was chosen as primary since it is the modern standard usage.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iu5-鈾
+    headword: 鈾
+    readings:
+      - pengim: iu5
+    senses:
+      - pos: noun
+        gloss_en: [uranium]
+        gloss_zh: [鈾]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êng5-suan3-鉛線
+    headword: 鉛線
+    readings:
+      - pengim: êng5 suan3
+    senses:
+      - pos: noun
+        gloss_en: [iron wire, wire]
+        gloss_zh: [鉛線, 鐵絲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngeng5-ho5-銀河
+    headword: 銀河
+    readings:
+      - pengim: ngeng5 ho5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Milky Way]
+        gloss_zh: [銀河]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngeng5-ho5-hi6-銀河系
+    headword: 銀河系
+    readings:
+      - pengim: ngeng5 ho5 hi6
+    senses:
+      - pos: proper-noun
+        gloss_en: [Milky Way galaxy, the Galaxy]
+        gloss_zh: [銀河系]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang5-銅
+    headword: 銅
+    readings:
+      - pengim: dang5
+    senses:
+      - pos: noun
+        gloss_en: [copper, bronze]
+        gloss_zh: [銅]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang5-lêg8-銅綠
+    headword: 銅綠
+    readings:
+      - pengim: dang5 lêg8
+    senses:
+      - pos: noun
+        gloss_en: [verdigris]
+        gloss_zh: [銅綠, 銅鏽]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang5-cên1-銅青
+    headword: 銅青
+    readings:
+      - pengim: dang5 cên1
+    senses:
+      - pos: noun
+        gloss_en: [verdigris]
+        gloss_zh: [銅青, 銅綠]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: le6-鋁
+    headword: 鋁
+    readings:
+      - pengim: le6
+    senses:
+      - pos: noun
+        gloss_en: [aluminium, aluminum]
+        gloss_zh: [鋁]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ge3-sug4-鋸屑
+    headword: 鋸屑
+    readings:
+      - pengim: ge3 sug4
+    senses:
+      - pos: noun
+        gloss_en: [sawdust]
+        gloss_zh: [鋸屑]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geng3-鋼
+    headword: 鋼
+    readings:
+      - pengim: geng3
+    senses:
+      - pos: noun
+        gloss_en: [steel]
+        gloss_zh: [鋼]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geng3-geng1-鋼筋
+    headword: 鋼筋
+    readings:
+      - pengim: geng3 geng1
+    senses:
+      - pos: noun
+        gloss_en: [rebar, steel reinforcement bar]
+        gloss_zh: [鋼筋]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geng3-tih4-鋼鐵
+    headword: 鋼鐵
+    readings:
+      - pengim: geng3 tih4
+    senses:
+      - pos: noun
+        gloss_en: [iron and steel, steel]
+        gloss_zh: [鋼鐵]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gim2-錦
+    headword: 錦
+    readings:
+      - pengim: gim2
+    senses:
+      - pos: noun
+        gloss_en: [brocade, fine polychrome silk fabric]
+        gloss_zh: [錦]
+        note: The character carries both a noun sense ('brocade') and adjective senses ('embroidered'; 'bright and beautiful') at the same reading; the noun sense was chosen as the core meaning.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siah4-錫
+    headword: 錫
+    readings:
+      - pengim: siah4
+    senses:
+      - pos: noun
+        gloss_en: [tin (metal)]
+        gloss_zh: [錫]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mêng2-錳
+    headword: 錳
+    readings:
+      - pengim: mêng2
+    senses:
+      - pos: noun
+        gloss_en: [manganese]
+        gloss_zh: [錳]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kai2-鍇
+    headword: 鍇
+    readings:
+      - pengim: kai2
+    senses:
+      - pos: noun
+        gloss_en: [fine iron, high-quality steel]
+        gloss_zh: [鍇]
+        note: The character mostly appears as a literary/name component meaning 'fine iron or steel'; it is unclear how often it is used as a standalone spoken word in Teochew.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mui2-鎂
+    headword: 鎂
+    readings:
+      - pengim: mui2
+    senses:
+      - pos: noun
+        gloss_en: [magnesium]
+        gloss_zh: [鎂]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ou1-鎢
+    headword: 鎢
+    readings:
+      - pengim: ou1
+    senses:
+      - pos: noun
+        gloss_en: [tungsten, wolfram]
+        gloss_zh: [鎢]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siu3-鏽
+    headword: 鏽
+    readings:
+      - pengim: siu3
+    senses:
+      - pos: noun
+        gloss_en: [rust]
+        gloss_zh: [鏽]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tih4-鐵
+    headword: 鐵
+    readings:
+      - pengim: tih4
+    senses:
+      - pos: noun
+        gloss_en: [iron (metal)]
+        gloss_zh: [鐵]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i3-鐿
+    headword: 鐿
+    readings:
+      - pengim: i3
+    senses:
+      - pos: noun
+        gloss_en: [ytterbium (chemical element)]
+        gloss_zh: [鐿]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu3-tih4-鑄鐵
+    headword: 鑄鐵
+    readings:
+      - pengim: zu3 tih4
+    senses:
+      - pos: noun
+        gloss_en: [cast iron, pig iron]
+        gloss_zh: [鑄鐵]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu6-阜
+    headword: 阜
+    readings:
+      - pengim: hu6
+    senses:
+      - pos: noun
+        gloss_en: [mound; hillock (literary), abundant (literary)]
+        gloss_zh: [阜]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: a1-ghui7-阿魏
+    headword: 阿魏
+    readings:
+      - pengim: a1 ghui7
+    senses:
+      - pos: noun
+        gloss_en: [asafoetida, Ferula (plant)]
+        gloss_zh: [阿魏]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi1-陂
+    headword: 陂
+    readings:
+      - pengim: bi1
+    senses:
+      - pos: noun
+        gloss_en: [hillside, pond, embankment]
+        gloss_zh: [陂]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang3-hou6-降雨
+    headword: 降雨
+    readings:
+      - pengim: gang3 hou6
+    senses:
+      - pos: noun
+        gloss_en: [rain, rainfall, precipitation]
+        gloss_zh: [降雨]
+        note: Wiktionary lists both a formal verb sense ('to rain') and a noun sense ('rain/rainfall') under the same reading gang3 hou6; the noun sense was chosen since 降雨 is most commonly used nominally (e.g. 降雨量).
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ding7-hou6-陣雨
+    headword: 陣雨
+    readings:
+      - pengim: ding7 hou6
+    senses:
+      - pos: noun
+        gloss_en: [rain shower, shower]
+        gloss_zh: [陣雨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: im1-tin1-陰天
+    headword: 陰天
+    readings:
+      - pengim: im1 tin1
+    senses:
+      - pos: noun
+        gloss_en: [overcast sky, cloudy day]
+        gloss_zh: [陰天]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: im1-ian2-陰影
+    headword: 陰影
+    readings:
+      - pengim: im1 ian2
+    senses:
+      - pos: noun
+        gloss_en: [shadow, psychological trauma; haunting memory]
+        gloss_zh: [陰影]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêg8-zion7-陸上
+    headword: 陸上
+    readings:
+      - pengim: lêg8 zion7
+    senses:
+      - pos: noun
+        gloss_en: [ashore, on land]
+        gloss_zh: [陸上]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêg8-di7-陸地
+    headword: 陸地
+    readings:
+      - pengim: lêg8 di7
+    senses:
+      - pos: noun
+        gloss_en: [dry land, landmass]
+        gloss_zh: [陸地]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iang5-guang1-陽光
+    headword: 陽光
+    readings:
+      - pengim: iang5 guang1
+    senses:
+      - pos: noun
+        gloss_en: [sunlight, sunshine, sunbeam]
+        gloss_zh: [陽光]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-guê3-huê1-雞髻花
+    headword: 雞髻花
+    readings:
+      - pengim: goi1 guê3 huê1
+    senses:
+      - pos: noun
+        gloss_en: [cockscomb flower (Celosia argentea var. cristata)]
+        gloss_zh: [雞冠花]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou6-kui3-雨季
+    headword: 雨季
+    readings:
+      - pengim: hou6 kui3
+    senses:
+      - pos: noun
+        gloss_en: [rainy season]
+        gloss_zh: [雨季]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou6-mui5-雨微
+    headword: 雨微
+    readings:
+      - pengim: hou6 mui5
+    senses:
+      - pos: noun
+        gloss_en: [drizzle, light rain]
+        gloss_zh: [雨微, 毛毛雨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou6-diam2-雨點
+    headword: 雨點
+    readings:
+      - pengim: hou6 diam2
+    senses:
+      - pos: noun
+        gloss_en: [raindrop]
+        gloss_zh: [雨點]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soh4-zui2-雪水
+    headword: 雪水
+    readings:
+      - pengim: soh4 zui2
+    senses:
+      - pos: noun
+        gloss_en: [melted snow, snow water]
+        gloss_zh: [雪水]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soh4-huê1-雪花
+    headword: 雪花
+    readings:
+      - pengim: soh4 huê1
+    senses:
+      - pos: noun
+        gloss_en: [snowflake, TV static/noise]
+        gloss_zh: [雪花]
+        note: Page lists both 'snowflake' and 'TV static/noise' senses without dialect-specific tagging, so it's unclear which sense(s) are actually attested in Teochew usage under this reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhung5-雯
+    headword: 雯
+    readings:
+      - pengim: bhung5
+    senses:
+      - pos: noun
+        gloss_en: [multicoloured clouds]
+        gloss_zh: [雯]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung5-cai2-雲彩
+    headword: 雲彩
+    readings:
+      - pengim: hung5 cai2
+    senses:
+      - pos: noun
+        gloss_en: [colourful clouds, sunset/sunrise clouds]
+        gloss_zh: [雲彩]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung5-zioh8-雲石
+    headword: 雲石
+    readings:
+      - pengim: hung5 zioh8
+    senses:
+      - pos: noun
+        gloss_en: [marble (stone)]
+        gloss_zh: [雲石, 大理石]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lui5-雷
+    headword: 雷
+    readings:
+      - pengim: lui5
+    senses:
+      - pos: noun
+        gloss_en: [thunder]
+        gloss_zh: [雷]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lui5-gong1-雷公
+    headword: 雷公
+    readings:
+      - pengim: lui5 gong1
+    senses:
+      - pos: noun
+        gloss_en: [god of thunder, thunder (dialectal)]
+        gloss_zh: [雷公]
+        note: The Teochew reading is attested for a dialect block that carries both a general "god of thunder (in mythology)" sense and a plain dialectal "thunder" sense, and it is unclear which is primary in Teochew usage.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lui5-hou6-雷雨
+    headword: 雷雨
+    readings:
+      - pengim: lui5 hou6
+    senses:
+      - pos: noun
+        gloss_en: [thunderstorm]
+        gloss_zh: [雷雨]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pag8-雹
+    headword: 雹
+    readings:
+      - pengim: pag8
+    senses:
+      - pos: noun
+        gloss_en: [hail]
+        gloss_zh: [雹, 冰雹]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pag8-ze2-雹子
+    headword: 雹子
+    readings:
+      - pengim: pag8 ze2
+    senses:
+      - pos: noun
+        gloss_en: [hailstone, hail]
+        gloss_zh: [雹子, 冰雹]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dab8-霅
+    headword: 霅
+    readings:
+      - pengim: dab8
+    senses:
+      - pos: verb
+        gloss_en: [to patter (of rain)]
+        gloss_zh: [霅]
+        note: Character has several etymologies with mixed verb/noun senses (quaking and lightning, use in a place name, pattering of rain); the Teochew-tagged 'pattering of rain' sense at dab8 was chosen but its precise part of speech is unclear from the source.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zing2-kib4-震級
+    headword: 震級
+    readings:
+      - pengim: zing2 kib4
+    senses:
+      - pos: noun
+        gloss_en: [earthquake magnitude, seismic magnitude]
+        gloss_zh: [震級]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pai3-霈
+    headword: 霈
+    readings:
+      - pengim: pai3
+    senses:
+      - pos: noun
+        gloss_en: [heavy rain, torrential rain]
+        gloss_zh: [霈]
+        note: Page lists multiple disparate senses (heavy/torrential rain, imperial grace/favor, arrogant) apparently sharing one reading without indicating which applies to Teochew pai3; the literal heavy-rain sense was chosen as most likely.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngi5-霓
+    headword: 霓
+    readings:
+      - pengim: ngi5
+    senses:
+      - pos: noun
+        gloss_en: [secondary rainbow]
+        gloss_zh: [霓]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lim5-霖
+    headword: 霖
+    readings:
+      - pengim: lim5
+    senses:
+      - pos: noun
+        gloss_en: [long spell of rain, continuous rain]
+        gloss_zh: [霖]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: seng1-霜
+    headword: 霜
+    readings:
+      - pengim: seng1
+    senses:
+      - pos: noun
+        gloss_en: [frost, ice (Southern Min)]
+        gloss_zh: [霜]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sang1-gang3-霜降
+    headword: 霜降
+    readings:
+      - pengim: sang1 gang3
+    senses:
+      - pos: proper-noun
+        gloss_en: [Frost's Descent (18th solar term), Shuangjiang]
+        gloss_zh: [霜降]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hia5-霞
+    headword: 霞
+    readings:
+      - pengim: hia5
+    senses:
+      - pos: noun
+        gloss_en: [rosy clouds; sunset/sunrise glow, mist; haze]
+        gloss_zh: [霞]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lou7-zui2-露水
+    headword: 露水
+    readings:
+      - pengim: lou7 zui2
+    senses:
+      - pos: noun
+        gloss_en: [dew]
+        gloss_zh: [露水]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-ze1-靈芝
+    headword: 靈芝
+    readings:
+      - pengim: lêng5 ze1
+    senses:
+      - pos: noun
+        gloss_en: [lingzhi mushroom (Ganoderma lucidum), reishi]
+        gloss_zh: [靈芝]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-tin1-青天
+    headword: 青天
+    readings:
+      - pengim: cên1 tin1
+    senses:
+      - pos: noun
+        gloss_en: [blue sky]
+        gloss_zh: [青天]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-sua1-lêg8-zui2-青山綠水
+    headword: 青山綠水
+    readings:
+      - pengim: cên1 sua1 lêg8 zui2
+    senses:
+      - pos: idiom
+        gloss_en: [green hills and clear waters, beautiful natural landscape]
+        gloss_zh: [青山綠水]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-ti5-青苔
+    headword: 青苔
+    readings:
+      - pengim: cên1 ti5
+    senses:
+      - pos: noun
+        gloss_en: [moss]
+        gloss_zh: [青苔]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-cao2-青草
+    headword: 青草
+    readings:
+      - pengim: cên1 cao2
+    senses:
+      - pos: noun
+        gloss_en: [grass, medicinal herbs (Southern Min)]
+        gloss_zh: [青草]
+        note: This reading corresponds to both the general sense 'grass' and a Southern-Min-specific sense 'medicinal herbs'; unclear which is primary in Teochew.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zên6-diêng6-靜電
+    headword: 靜電
+    readings:
+      - pengim: zên6 diêng6
+    senses:
+      - pos: noun
+        gloss_en: [static electricity]
+        gloss_zh: [靜電]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêg4-革
+    headword: 革
+    readings:
+      - pengim: gêg4
+    senses:
+      - pos: noun
+        gloss_en: [leather, animal hide]
+        gloss_zh: [革]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-guang1-風光
+    headword: 風光
+    readings:
+      - pengim: huang1 guang1
+    senses:
+      - pos: noun
+        gloss_en: [scenery, landscape, view]
+        gloss_zh: [風光]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-ri5-風兒
+    headword: 風兒
+    readings:
+      - pengim: huang1 ri5
+    senses:
+      - pos: noun
+        gloss_en: [breeze, wind]
+        gloss_zh: [風]
+        note: This is the Mandarin erhua diminutive form of 風 (wind); it is unclear whether the compound represents genuine colloquial Teochew usage or simply a citation-form reading of the Mandarin term.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-lag8-風力
+    headword: 風力
+    readings:
+      - pengim: huang1 lag8
+    senses:
+      - pos: noun
+        gloss_en: [wind force, wind power]
+        gloss_zh: [風力]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-kao2-風口
+    headword: 風口
+    readings:
+      - pengim: huang1 kao2
+    senses:
+      - pos: noun
+        gloss_en: [drafty spot, vent, air outlet]
+        gloss_zh: [風口]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-hiang3-風向
+    headword: 風向
+    readings:
+      - pengim: huang1 hiang3
+    senses:
+      - pos: noun
+        gloss_en: [wind direction, trend]
+        gloss_zh: [風向]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-dêng5-風塵
+    headword: 風塵
+    readings:
+      - pengim: huang1 dêng5
+    senses:
+      - pos: noun
+        gloss_en: [windblown dust, hardships of travel, vicissitudes of life]
+        gloss_zh: [風塵]
+        note: The entry lists several fairly divergent senses (literal windblown dust, hardships of war/travel, and an obsolete sense meaning 'prostitute') apparently under one reading, so the exact intended sense is uncertain.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-pêng5-lang6-zên6-風平浪靜
+    headword: 風平浪靜
+    readings:
+      - pengim: huang1 pêng5 lang6 zên6
+    senses:
+      - pos: idiom
+        gloss_en: [calm and peaceful, no waves]
+        gloss_zh: [風平浪靜]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-si5-hou6-風時雨
+    headword: 風時雨
+    readings:
+      - pengim: huang1 si5 hou6
+    senses:
+      - pos: noun
+        gloss_en: [rain shower, sun shower]
+        gloss_zh: [陣雨]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-gêng2-風景
+    headword: 風景
+    readings:
+      - pengim: huang1 gêng2
+    senses:
+      - pos: noun
+        gloss_en: [scenery, landscape, view]
+        gloss_zh: [風景]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-gêng2-suan3-風景線
+    headword: 風景線
+    readings:
+      - pengim: huang1 gêng2 suan3
+    senses:
+      - pos: noun
+        gloss_en: [scenic strip, notable scene or phenomenon]
+        gloss_zh: [風景線]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-bao6-風暴
+    headword: 風暴
+    readings:
+      - pengim: huang1 bao6
+    senses:
+      - pos: noun
+        gloss_en: [storm, tempest, windstorm]
+        gloss_zh: [風暴]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-zui2-風水
+    headword: 風水
+    readings:
+      - pengim: huang1 zui2
+    senses:
+      - pos: noun
+        gloss_en: [feng shui, geomancy, (literally) wind and water]
+        gloss_zh: [風水]
+        note: The page's dialect tagging is ambiguous about which sense (literal 'wind and water', the feng-shui geomancy system, or the Southern-Min-tagged 'tomb' sense) specifically corresponds to the given Teochew reading; feng shui, the dominant everyday meaning, is used here.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-lang6-風浪
+    headword: 風浪
+    readings:
+      - pengim: huang1 lang6
+    senses:
+      - pos: noun
+        gloss_en: [stormy waves, rough sea, storm]
+        gloss_zh: [風浪]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-êng2-風湧
+    headword: 風湧
+    readings:
+      - pengim: huang1 êng2
+    senses:
+      - pos: noun
+        gloss_en: [stormy waves, big waves]
+        gloss_zh: [風浪, 大浪]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-dio5-風潮
+    headword: 風潮
+    readings:
+      - pengim: huang1 dio5
+    senses:
+      - pos: noun
+        gloss_en: [storm, typhoon (Teochew term)]
+        gloss_zh: [颱風, 風潮]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-kêng1-hung5-dan6-風輕雲淡
+    headword: 風輕雲淡
+    readings:
+      - pengim: huang1 kêng1 hung5 dan6
+    senses:
+      - pos: idiom
+        gloss_en: ["fine weather (light breeze, thin clouds)", calm and untroubled]
+        gloss_zh: [風輕雲淡]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-hou6-風雨
+    headword: 風雨
+    readings:
+      - pengim: huang1 hou6
+    senses:
+      - pos: noun
+        gloss_en: [wind and rain; storm, hardship; trials]
+        gloss_zh: [風雨]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-diang6-風電
+    headword: 風電
+    readings:
+      - pengim: huang1 diang6
+    senses:
+      - pos: noun
+        gloss_en: [wind power, wind energy]
+        gloss_zh: [風電]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-tai1-風颱
+    headword: 風颱
+    readings:
+      - pengim: huang1 tai1
+    senses:
+      - pos: noun
+        gloss_en: [typhoon]
+        gloss_zh: [風颱, 颱風]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tai1-颱
+    headword: 颱
+    readings:
+      - pengim: tai1
+    senses:
+      - pos: noun
+        gloss_en: [typhoon]
+        gloss_zh: [颱]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: e5-zing2-餘震
+    headword: 餘震
+    readings:
+      - pengim: e5 zing2
+    senses:
+      - pos: noun
+        gloss_en: [aftershock]
+        gloss_zh: [餘震]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

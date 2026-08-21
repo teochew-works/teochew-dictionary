@@ -4290,3 +4290,327 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: gêh4-moh8-隔膜
+    headword: 隔膜
+    readings:
+      - pengim: gêh4 moh8
+    senses:
+      - pos: noun
+        gloss_en: [diaphragm; septum, estrangement; alienation]
+        gloss_zh: [隔膜]
+        note: Page lists two fairly distinct sense clusters (anatomical diaphragm/septum vs. interpersonal estrangement/unfamiliarity) under the same reading with no dialect-specific label to pick one as primary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sang1-ciu2-雙手
+    headword: 雙手
+    readings:
+      - pengim: sang1 ciu2
+    senses:
+      - pos: noun
+        gloss_en: [both hands]
+        gloss_zh: [雙手]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi1-bho2-puê5-雞母皮
+    headword: 雞母皮
+    readings:
+      - pengim: goi1 bho2 puê5
+    senses:
+      - pos: noun
+        gloss_en: [goosebumps]
+        gloss_zh: [雞皮疙瘩]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-guang1-ngang2-青光眼
+    headword: 青光眼
+    readings:
+      - pengim: cên1 guang1 ngang2
+    senses:
+      - pos: noun
+        gloss_en: [glaucoma]
+        gloss_zh: [青光眼]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cên1-si1-青絲
+    headword: 青絲
+    readings:
+      - pengim: cên1 si1
+    senses:
+      - pos: noun
+        gloss_en: [black hair (literary), green silk thread (literary)]
+        gloss_zh: [青丝]
+        note: Page lists many divergent literary senses (black hair, green thread, willow branches, girl in her prime, etc.) all sharing this reading; unclear which is most salient.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming7-puê5-面皮
+    headword: 面皮
+    readings:
+      - pengim: ming7 puê5
+    senses:
+      - pos: noun
+        gloss_en: [cheek, face; complexion, sense of shame (colloq.)]
+        gloss_zh: [面皮]
+        note: Page gives both a literal "cheek/complexion" sense and a figurative "shamelessness" sense (plus an unrelated homographic sense from 麵皮 meaning pasta wrapper) all associated with this reading; unclear which single sense is primary for this Teochew entry.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming7-sêg4-面色
+    headword: 面色
+    readings:
+      - pengim: ming7 sêg4
+    senses:
+      - pos: noun
+        gloss_en: [complexion, facial expression]
+        gloss_zh: [面色]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming7-mao6-面貌
+    headword: 面貌
+    readings:
+      - pengim: ming7 mao6
+    senses:
+      - pos: noun
+        gloss_en: [face; features, appearance; aspect]
+        gloss_zh: [面貌]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mêng7-pang5-面龐
+    headword: 面龐
+    readings:
+      - pengim: mêng7 pang5
+    senses:
+      - pos: noun
+        gloss_en: [face, facial contours]
+        gloss_zh: [面龐]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iab4-靨
+    headword: 靨
+    readings:
+      - pengim: iab4
+    senses:
+      - pos: noun
+        gloss_en: [dimple]
+        gloss_zh: [靨]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hi1-頤
+    headword: 頤
+    readings:
+      - pengim: hi1
+    senses:
+      - pos: noun
+        gloss_en: [chin, jaw, cheek]
+        gloss_zh: [頤]
+        note: Character carries several divergent senses (anatomical noun 'chin/jaw/cheek', verb 'to nourish/maintain health', I Ching hexagram name, surname) all under the same literary reading; the anatomical noun sense was chosen as most concrete but it is unclear which is primary in actual Teochew usage.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tao5-kag4-頭殼
+    headword: 頭殼
+    readings:
+      - pengim: tao5 kag4
+    senses:
+      - pos: noun
+        gloss_en: [head (of the body)]
+        gloss_zh: [頭]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tao5-nao2-頭腦
+    headword: 頭腦
+    readings:
+      - pengim: tao5 nao2
+    senses:
+      - pos: noun
+        gloss_en: [mind, brains, intellect]
+        gloss_zh: [頭腦]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tao5-dêng2-頭頂
+    headword: 頭頂
+    readings:
+      - pengim: tao5 dêng2
+    senses:
+      - pos: noun
+        gloss_en: [top of the head, crown]
+        gloss_zh: [頭頂]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tao5-lu5-頭顱
+    headword: 頭顱
+    readings:
+      - pengim: tao5 lu5
+    senses:
+      - pos: noun
+        gloss_en: [head, skull, cranium]
+        gloss_zh: [頭顱]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gieb4-頰
+    headword: 頰
+    readings:
+      - pengim: gieb4
+    senses:
+      - pos: noun
+        gloss_en: [cheek]
+        gloss_zh: [臉頰]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gên3-頸
+    headword: 頸
+    readings:
+      - pengim: gên3
+    senses:
+      - pos: noun
+        gloss_en: [neck]
+        gloss_zh: [頸, 脖子]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiah8-額
+    headword: 額
+    readings:
+      - pengim: hiah8
+    senses:
+      - pos: noun
+        gloss_en: [forehead, amount; quota]
+        gloss_zh: [額]
+        note: The hiah8 reading is shared by two senses of 額ドイ('forehead' and 'amount/quota'), both attested in Teochew compounds (額頭 for forehead, 額外 for extra amount), so it is unclear which is primary for the bare character.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiah8-ming7-sing5-額面神
+    headword: 額面神
+    readings:
+      - pengim: hiah8 ming7 sing5
+    senses:
+      - pos: noun
+        gloss_en: [forehead (Teochew)]
+        gloss_zh: [額面神, 前額]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiah8-tao5-額頭
+    headword: 額頭
+    readings:
+      - pengim: hiah8 tao5
+    senses:
+      - pos: noun
+        gloss_en: [forehead]
+        gloss_zh: [額頭]
+    frequency: 5
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngag8-顎
+    headword: 顎
+    readings:
+      - pengim: ngag8
+    senses:
+      - pos: noun
+        gloss_en: [jaw]
+        gloss_zh: [顎]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lu5-顱
+    headword: 顱
+    readings:
+      - pengim: lu5
+    senses:
+      - pos: noun
+        gloss_en: [skull, cranium]
+        gloss_zh: [顱, 頭顱]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-sib4-風濕
+    headword: 風濕
+    readings:
+      - pengim: huang1 sib4
+    senses:
+      - pos: noun
+        gloss_en: [rheumatism]
+        gloss_zh: [風濕]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê1-si1-飛絲
+    headword: 飛絲
+    readings:
+      - pengim: buê1 si1
+    senses:
+      - pos: noun
+        gloss_en: [oral blood blister]
+        gloss_zh: [飛絲]
+        note: Teochew pathology term for an oral blood blister; this is a rare, highly specialized medical usage and its best category (body/anatomy vs. general) is uncertain.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bung7-si5-gug4-飯匙骨
+    headword: 飯匙骨
+    readings:
+      - pengim: bung7 si5 gug4
+    senses:
+      - pos: noun
+        gloss_en: [shoulder blade, scapula]
+        gloss_zh: [肩胛骨]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang1-gang2-ka1-香港跤
+    headword: 香港跤
+    readings:
+      - pengim: hiang1 gang2 ka1
+    senses:
+      - pos: noun
+        gloss_en: [athlete's foot]
+        gloss_zh: [香港跤, 香港脚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
