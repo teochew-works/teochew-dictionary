@@ -1344,3 +1344,161 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: gui3-癸
+    headword: 癸
+    readings:
+      - pengim: gui3
+    senses:
+      - pos: noun
+        gloss_en: [tenth heavenly stem]
+        gloss_zh: [癸]
+        note: Character carries two unrelated senses (tenth heavenly stem vs. a surname) under the same reading; the heavenly-stem sense was chosen as primary, matching the convention used for the other heavenly-stem characters already in this dictionary.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh4-hung1-bêh4-百分百
+    headword: 百分百
+    readings:
+      - pengim: bêh4 hung1 bêh4
+    senses:
+      - pos: adverb
+        gloss_en: [one hundred percent, absolutely, totally]
+        gloss_zh: [百分百]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh4-hung1-diam2-百分點
+    headword: 百分點
+    readings:
+      - pengim: bêh4 hung1 diam2
+    senses:
+      - pos: noun
+        gloss_en: [percentage point]
+        gloss_zh: [百分點]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin6-cig4-第七
+    headword: 第七
+    readings:
+      - pengim: doin6 cig4
+    senses:
+      - pos: numeral
+        gloss_en: [seventh]
+        gloss_zh: [第七]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin6-san1-第三
+    headword: 第三
+    readings:
+      - pengim: doin6 san1
+    senses:
+      - pos: numeral
+        gloss_en: [third]
+        gloss_zh: [第三]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin6-gao2-第九
+    headword: 第九
+    readings:
+      - pengim: doin6 gao2
+    senses:
+      - pos: numeral
+        gloss_en: [ninth]
+        gloss_zh: [第九]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin6-ri6-第二
+    headword: 第二
+    readings:
+      - pengim: doin6 ri6
+    senses:
+      - pos: numeral
+        gloss_en: [second]
+        gloss_zh: [第二]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin6-ngou6-第五
+    headword: 第五
+    readings:
+      - pengim: doin6 ngou6
+    senses:
+      - pos: numeral
+        gloss_en: [fifth]
+        gloss_zh: [第五]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin6-boih4-第八
+    headword: 第八
+    readings:
+      - pengim: doin6 boih4
+    senses:
+      - pos: numeral
+        gloss_en: [eighth]
+        gloss_zh: [第八]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin6-lag8-第六
+    headword: 第六
+    readings:
+      - pengim: doin6 lag8
+    senses:
+      - pos: numeral
+        gloss_en: [sixth]
+        gloss_zh: [第六]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin6-zab8-第十
+    headword: 第十
+    readings:
+      - pengim: doin6 zab8
+    senses:
+      - pos: numeral
+        gloss_en: [tenth]
+        gloss_zh: [第十]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin6-si3-第四
+    headword: 第四
+    readings:
+      - pengim: doin6 si3
+    senses:
+      - pos: numeral
+        gloss_en: [fourth]
+        gloss_zh: [第四]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin6-gui2-第幾
+    headword: 第幾
+    readings:
+      - pengim: doin6 gui2
+    senses:
+      - pos: adjective
+        gloss_en: [what number; which (in a numbered series); how manyth]
+        gloss_zh: [第幾]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

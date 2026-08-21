@@ -1586,3 +1586,167 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: bêh8-houn2-白虎
+    headword: 白虎
+    readings:
+      - pengim: bêh8 houn2
+    senses:
+      - pos: proper-noun
+        gloss_en: [White Tiger (mythological guardian of the West)]
+        gloss_zh: [白虎]
+        note: This reading covers several unrelated senses (the mythological/constellation White Tiger, a place name, alternate names for lime and tofu, and a vulgar slang term); chose the primary mythological sense as most dictionary-worthy.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh8-hia6-白蟻
+    headword: 白蟻
+    readings:
+      - pengim: bêh8 hia6
+    senses:
+      - pos: noun
+        gloss_en: [termite, white ant]
+        gloss_zh: [白蟻]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing5-siu3-神獸
+    headword: 神獸
+    readings:
+      - pengim: sing5 siu3
+    senses:
+      - pos: noun
+        gloss_en: [mythological creature, sacred beast]
+        gloss_zh: [神獸]
+        note: Block mixes a general 'mythological creature' sense with Mainland-China Internet-slang senses (grass mud horse meme; llama/alpaca) under the same reading; used the general sense as headline gloss.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing5-lêng5-神龍
+    headword: 神龍
+    readings:
+      - pengim: sing5 lêng5
+    senses:
+      - pos: noun
+        gloss_en: [gecko]
+        gloss_zh: [神龍]
+        note: The only sense whose Teochew reading matches is 'gecko', but the source tags that sense as Taiwanese-Hokkien even though it sits in the Teochew pronunciation section, so the dialect labeling is inconsistent.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hog4-siu7-lo5-福壽螺
+    headword: 福壽螺
+    readings:
+      - pengim: hog4 siu7 lo5
+    senses:
+      - pos: noun
+        gloss_en: [channeled applesnail, golden apple snail]
+        gloss_zh: [福壽螺]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngo5-禺
+    headword: 禺
+    readings:
+      - pengim: ngo5
+    senses:
+      - pos: noun
+        gloss_en: [a kind of large monkey (archaic), a surname]
+        gloss_zh: [禺]
+        note: The character page lists several unrelated, mostly obsolete senses (monkey, area/district, time before noon, alt. form of 愚, alt. form of 偶, mountain name, surname) all sharing the identical Teochew reading with no way to tell which one is meant; the classical 'monkey' sense was picked as the character's core meaning.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kim5-禽
+    headword: 禽
+    readings:
+      - pengim: kim5
+    senses:
+      - pos: noun
+        gloss_en: [birds; fowl, birds and beasts (literary)]
+        gloss_zh: [禽]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kim5-siu3-禽獸
+    headword: 禽獸
+    readings:
+      - pengim: kim5 siu3
+    senses:
+      - pos: noun
+        gloss_en: [birds and animals, beast; creature, "beast (cruel person, figurative)"]
+        gloss_zh: [禽獸]
+    frequency: 4
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciu1-do1-he5-秋刀魚
+    headword: 秋刀魚
+    readings:
+      - pengim: ciu1 do1 he5
+    senses:
+      - pos: noun
+        gloss_en: [Pacific saury]
+        gloss_zh: [秋刀魚]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cuang1-suan1-gah4-穿山甲
+    headword: 穿山甲
+    readings:
+      - pengim: cuang1 suan1 gah4
+    senses:
+      - pos: noun
+        gloss_en: [pangolin]
+        gloss_zh: [穿山甲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bua3-gi1-gah4-簸箕甲
+    headword: 簸箕甲
+    readings:
+      - pengim: bua3 gi1 gah4
+    senses:
+      - pos: noun
+        gloss_en: [many-banded krait (Bungarus multicinctus)]
+        gloss_zh: [簸箕甲]
+    frequency: 1
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung2-ziao2-粉鳥
+    headword: 粉鳥
+    readings:
+      - pengim: hung2 ziao2
+    senses:
+      - pos: noun
+        gloss_en: [pigeon, dove]
+        gloss_zh: [粉鳥, 鴿子]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng1-sên1-精牲
+    headword: 精牲
+    readings:
+      - pengim: zêng1 sên1
+    senses:
+      - pos: noun
+        gloss_en: [domestic animal, beast; brute (derogatory)]
+        gloss_zh: [精牲]
+    frequency: 2
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
