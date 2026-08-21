@@ -14939,3 +14939,836 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: piao5-朴
+    headword: 朴
+    readings:
+      - pengim: piao5
+      - pengim: piou5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Park (Korean surname)]
+        gloss_zh: [朴]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the main 朴 entry (tree/bark sense, read poh4/pog4) because this reading is attested specifically for the Korean surname sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za1-bhou2-查某
+    headword: 查某
+    readings:
+      - pengim: za1 bhou2
+      - pengim: za1 mou2
+    senses:
+      - pos: noun
+        gloss_en: [woman, girl]
+        gloss_zh: [女人]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za1-bhou2-gian2-查某囝
+    headword: 查某囝
+    readings:
+      - pengim: za1 bhou2 gian2
+      - pengim: zao2 gian2
+    senses:
+      - pos: noun
+        gloss_en: [daughter, girl]
+        gloss_zh: [女兒]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biao2-殍
+    headword: 殍
+    readings:
+      - pengim: biao2
+      - pengim: biou2
+    senses:
+      - pos: noun
+        gloss_en: [corpse of a famine victim; one who starved to death]
+        gloss_zh: [殍, 餓殍]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hng1-殷
+    headword: 殷
+    readings:
+      - pengim: hng1
+      - pengim: heng1
+    senses:
+      - pos: proper-noun
+        gloss_en: [surname Yin, abundant; rich (literary)]
+        gloss_zh: [殷]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si6-氏
+    headword: 氏
+    readings:
+      - pengim: si6
+      - pengim: zin1
+    senses:
+      - pos: noun
+        gloss_en: [clan; lineage; surname]
+        gloss_zh: [氏]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming5-民
+    headword: 民
+    readings:
+      - pengim: ming5
+      - pengim: mêng5
+    senses:
+      - pos: noun
+        gloss_en: [people; citizens, folk; civilian]
+        gloss_zh: [民]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ki3-ziêh4-氣質
+    headword: 氣質
+    readings:
+      - pengim: ki3 ziêh4
+      - pengim: ki3 zioh4
+    senses:
+      - pos: noun
+        gloss_en: [temperament; disposition, aura; qualities]
+        gloss_zh: [氣質]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guan7-汗-proper-noun
+    headword: 汗
+    readings:
+      - pengim: guan7
+      - pengim: hang2
+      - pengim: hang5
+    senses:
+      - pos: proper-noun
+        gloss_en: ["short for 可汗 (khan, a ruler's title)", "a surname, Han"]
+        gloss_zh: [可汗, 汗]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This entry was split off from the far more common 'sweat' sense of 汗, which does not attest the hang5 reading.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diê5-ziu1-nang5-潮州人
+    headword: 潮州人
+    readings:
+      - pengim: diê5 ziu1 nang5
+      - pengim: dio5 ziu1 nang5
+    senses:
+      - pos: noun
+        gloss_en: [Teochew person, person from Chaozhou]
+        gloss_zh: [潮州人]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dio5-ziu1-nang5-潮州人，福建祖
+    headword: 潮州人，福建祖
+    readings:
+      - pengim: dio5 ziu1 nang5
+      - pengim: hog4 giang3 zou2
+    senses:
+      - pos: idiom
+        gloss_en: [Teochew people have Fujian ancestors]
+        gloss_zh: [潮州人，福建祖]
+        note: "2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Note: the two candidates are not alternate pronunciations of the same words but sequential syllable groups for the proverb's two halves (潮州人 / 福建祖)."
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diê5-suan1-nang5-潮汕人
+    headword: 潮汕人
+    readings:
+      - pengim: diê5 suan1 nang5
+      - pengim: dio5 suan1 nang5
+    senses:
+      - pos: noun
+        gloss_en: [Teochew person; person from the Chaoshan region]
+        gloss_zh: [潮汕人]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diê5-suan1-nang5-潮汕儂
+    headword: 潮汕儂
+    readings:
+      - pengim: diê5 suan1 nang5
+      - pengim: dio5 suan1 nang5
+    senses:
+      - pos: noun
+        gloss_en: [alternative form of 潮汕人 (Teochew person)]
+        gloss_zh: [潮汕人]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu6-父
+    headword: 父
+    readings:
+      - pengim: hu6
+      - pengim: bê6
+    senses:
+      - pos: noun
+        gloss_en: [father]
+        gloss_zh: [父]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Candidate reading hu2 was split into a separate entry as the dossier attests it only for a different, 'elderly man / surname' pos block.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu6-父-noun
+    headword: 父
+    readings:
+      - pengim: hu6
+      - pengim: hu2
+    senses:
+      - pos: noun
+        gloss_en: ["old man; elderly man (respectful, literary)"]
+        gloss_zh: [父]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Candidate reading bê6 was split into a separate entry as the dossier attests it only for the 'father' pos block.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bê6-爸
+    headword: 爸
+    readings:
+      - pengim: bê6
+      - pengim: ba1
+      - pengim: ba5
+    senses:
+      - pos: noun
+        gloss_en: [father; dad]
+        gloss_zh: [爸]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mou5-牟-proper-noun
+    headword: 牟
+    readings:
+      - pengim: mou5
+      - pengim: mong5
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname]
+        gloss_zh: [牟]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the main verb sense ('to seek') since this pos block additionally attests mong5.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiêng5-bhu2-suan1-hug4-zou2-玄武山佛祖
+    headword: 玄武山佛祖
+    readings:
+      - pengim: hiêng5 bhu2 suan1 hug4 zou2
+      - pengim: hiang5 bhu2 suan1 hug4 zou2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Xuan Wu (Taoist deity)]
+        gloss_zh: [玄武山佛祖]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang5-王
+    headword: 王
+    readings:
+      - pengim: uang5
+      - pengim: hêng5
+    senses:
+      - pos: noun
+        gloss_en: [king; monarch, a surname (Wang/Heng)]
+        gloss_zh: [王]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The dossier ties a third candidate, uang6, to a separate verbal sense (alternative form of 旺), which is drafted as a separate entry below.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pou2-甫
+    headword: 甫
+    readings:
+      - pengim: pou2
+    senses:
+      - pos: suffix
+        gloss_en: [honorific suffix after a man's courtesy name, courtesy name of a man]
+        gloss_zh: [甫]
+        note: 1 candidate reading from Wiktionary confirmed for this sense — genuine Chaozhou colloquial form not yet confirmed by a speaker. The candidate pu2 is attested only for a separate Teochew-specific sense of 甫, drafted as a separate entry.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-男
+    headword: 男
+    readings:
+      - pengim: lam5
+      - pengim: nam5
+    senses:
+      - pos: noun
+        gloss_en: [male; man]
+        gloss_zh: [男]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-番
+    headword: 番
+    readings:
+      - pengim: huang1
+      - pengim: huêng1
+      - pengim: hung1
+      - pengim: hang1
+    senses:
+      - pos: adjective
+        gloss_en: [foreign; barbarian (non-Han), foreigner]
+        gloss_zh: [番]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The candidates puan1/puang1 and po5 are attested only for unrelated surname/place-name senses of 番, drafted as separate entries.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puan1-番
+    headword: 番
+    readings:
+      - pengim: puan1
+      - pengim: puang1
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname, used in the place name 番禺 (Panyu)]
+        gloss_zh: [番]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the main 'foreign' sense of 番 since puan1/puang1 is attested only for this surname/Panyu-specific sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêng1-nang5-番人
+    headword: 番人
+    readings:
+      - pengim: huêng1 nang5
+      - pengim: huang1 nang5
+    senses:
+      - pos: noun
+        gloss_en: [foreigner]
+        gloss_zh: [番人]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-gian2-番仔
+    headword: 番仔
+    readings:
+      - pengim: huang1 gian2
+      - pengim: huêng1 gian2
+    senses:
+      - pos: noun
+        gloss_en: [foreigner; Westerner, native; aborigine (in a land of Chinese immigration)]
+        gloss_zh: [番仔]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêng1-nang5-番儂
+    headword: 番儂
+    readings:
+      - pengim: huêng1 nang5
+      - pengim: huang1 nang5
+    senses:
+      - pos: noun
+        gloss_en: [alternative form of 番人 (foreigner)]
+        gloss_zh: [番人]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siou2-gian2-痟囝
+    headword: 痟囝
+    readings:
+      - pengim: siou2 gian2
+      - pengim: siao2 gian2
+    senses:
+      - pos: noun
+        gloss_en: [lunatic, mad person]
+        gloss_zh: [痟囝]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh8-ring5-gian2-白仁囝
+    headword: 白仁囝
+    readings:
+      - pengim: bêh8 ring5 gian2
+      - pengim: bêh8 rêng5 gian2
+    senses:
+      - pos: noun
+        gloss_en: [stupid person, fool; idiot]
+        gloss_zh: [白仁囝]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang5-皇
+    headword: 皇
+    readings:
+      - pengim: uang5
+      - pengim: huang5
+    senses:
+      - pos: noun
+        gloss_en: [emperor, sovereign, royal; imperial]
+        gloss_zh: [皇]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gam3-監
+    headword: 監
+    readings:
+      - pengim: gam3
+    senses:
+      - pos: noun
+        gloss_en: [eunuch, supervisor; overseer (historical)]
+        gloss_zh: [監]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The original set of 3 candidates (gam1, gang1, gam3) was split into two sense-specific entries for 監; this entry covers the gam3 'jiàn' reading (eunuch; historical supervisor; alt. of 鑒 'mirror').
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lu5-盧
+    headword: 盧
+    readings:
+      - pengim: lu5
+      - pengim: lou5
+    senses:
+      - pos: proper-noun
+        gloss_en: [surname Lu/Lo]
+        gloss_zh: [盧]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zou2-soin1-祖先
+    headword: 祖先
+    readings:
+      - pengim: zou2 soin1
+      - pengim: zou2 sain1
+    senses:
+      - pos: noun
+        gloss_en: [ancestors, forebears; forefathers]
+        gloss_zh: [祖先]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zê3-祭
+    headword: 祭
+    readings:
+      - pengim: zê3
+      - pengim: zi3
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname, Zhai (a state during the Spring and Autumn period)]
+        gloss_zh: [祭]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Drafted as a separate entry from 祭's main 'to sacrifice/worship' verb sense because the dossier ties these readings to a distinct proper-noun sense block.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hog4-giêng3-nang5-福建人
+    headword: 福建人
+    readings:
+      - pengim: hog4 giêng3 nang5
+      - pengim: hog4 giang3 nang5
+    senses:
+      - pos: noun
+        gloss_en: [person from Fujian; Fujianese, Hokkien/Hoklo person (Southeast Asia)]
+        gloss_zh: [福建人]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hng1-禤
+    headword: 禤
+    readings:
+      - pengim: hng1
+      - pengim: heng1
+      - pengim: hêng1
+      - pengim: hing1
+      - pengim: hiêng1
+      - pengim: hiang1
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname]
+        gloss_zh: [禤]
+        note: 6 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang5-童
+    headword: 童
+    readings:
+      - pengim: dang5
+      - pengim: tong5
+    senses:
+      - pos: noun
+        gloss_en: [child, young servant]
+        gloss_zh: [童]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao2-se1-老師
+    headword: 老師
+    readings:
+      - pengim: lao2 se1
+      - pengim: lao2 su1
+    senses:
+      - pos: noun
+        gloss_en: [teacher]
+        gloss_zh: [老師]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao6-bang2-老闆
+    headword: 老闆
+    readings:
+      - pengim: lao6 bang2
+      - pengim: lao2 bang2
+    senses:
+      - pos: noun
+        gloss_en: [shop owner; business proprietor, boss; chief]
+        gloss_zh: [老闆]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao6-肖-proper-noun
+    headword: 肖
+    readings:
+      - pengim: siao6
+      - pengim: siou6
+      - pengim: siao1
+      - pengim: siou1
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname]
+        gloss_zh: [肖]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This headword was split into sense-specific entries because the surname sense uniquely attests all four candidate readings, while the general senses (resemble, zodiac) attest only siao6/siou6.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu5-胡
+    headword: 胡
+    readings:
+      - pengim: hu5
+      - pengim: ou5
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname (Hu)]
+        gloss_zh: [胡]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The character page carries many senses (barbarian, foreign, how/why, reckless, etc.); the surname sense was chosen as the clearest standalone everyday usage.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cing5-臣
+    headword: 臣
+    readings:
+      - pengim: cing5
+      - pengim: cêng5
+    senses:
+      - pos: noun
+        gloss_en: [minister; official (in feudal society), subject (of a monarch)]
+        gloss_zh: [臣, 臣子]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê1-niê5-花娘
+    headword: 花娘
+    readings:
+      - pengim: huê1 niê5
+      - pengim: huê1 nio5
+    senses:
+      - pos: noun
+        gloss_en: [female entertainer; courtesan, prostitute]
+        gloss_zh: [花娘]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huam6-范
+    headword: 范
+    readings:
+      - pengim: huam6
+      - pengim: huang6
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname (Fan)]
+        gloss_zh: [范]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang2-董
+    headword: 董
+    readings:
+      - pengim: dang2
+      - pengim: dong2
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname]
+        gloss_zh: [董]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ug4-蔚
+    headword: 蔚
+    readings:
+      - pengim: ug4
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname]
+        gloss_zh: [蔚]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This reading is tied to a distinct sense (surname/place-name usage), split out from the general adjective senses of 蔚.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziên2-蔣
+    headword: 蔣
+    readings:
+      - pengim: ziên2
+      - pengim: zion2
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname]
+        gloss_zh: [蔣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao1-蕭
+    headword: 蕭
+    readings:
+      - pengim: siao1
+      - pengim: siou1
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname (Xiao)]
+        gloss_zh: [蕭]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang5-袁
+    headword: 袁
+    readings:
+      - pengim: uang5
+      - pengim: uêng5
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname (Yuan)]
+        gloss_zh: [袁]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tam5-覃
+    headword: 覃
+    readings:
+      - pengim: tam5
+      - pengim: cing5
+    senses:
+      - pos: proper-noun
+        gloss_en: [a surname (Tan)]
+        gloss_zh: [覃]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The reading cing5 is attested only for the surname sense, while tam5 also covers a separate literary sense ('deep; profound'); this entry uses the surname sense common to both readings.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guêng1-im1-觀音
+    headword: 觀音
+    readings:
+      - pengim: guêng1 im1
+      - pengim: guang1 im1
+    senses:
+      - pos: proper-noun
+        gloss_en: [Guanyin, Bodhisattva/Goddess of Mercy]
+        gloss_zh: [觀音]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guêng1-im1-niên5-觀音娘
+    headword: 觀音娘
+    readings:
+      - pengim: guêng1 im1 niên5
+      - pengim: guang1 im1 nion5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Guanyin, the Goddess of Mercy]
+        gloss_zh: [觀音娘]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-nio5-諸娘
+    headword: 諸娘
+    readings:
+      - pengim: ze1 nio5
+      - pengim: ze1 niê5
+      - pengim: zu1 nio5
+    senses:
+      - pos: noun
+        gloss_en: [woman]
+        gloss_zh: [諸娘]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-niê5-gian2-諸娘囝
+    headword: 諸娘囝
+    readings:
+      - pengim: ze1 niê5 gian2
+      - pengim: ze1 nio5 gian2
+    senses:
+      - pos: noun
+        gloss_en: [girl, young woman, daughter]
+        gloss_zh: [諸娘囝]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngi2-uêng5-議員
+    headword: 議員
+    readings:
+      - pengim: ngi2 uêng5
+      - pengim: ngi2 uang5
+    senses:
+      - pos: noun
+        gloss_en: [member of parliament, legislator, councillor]
+        gloss_zh: [議員]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cai5-sing5-財神
+    headword: 財神
+    readings:
+      - pengim: cai5 sing5
+      - pengim: cai5 sêng5
+    senses:
+      - pos: noun
+        gloss_en: [god of wealth, Caishen]
+        gloss_zh: [財神]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

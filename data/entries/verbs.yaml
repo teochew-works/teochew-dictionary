@@ -53870,3 +53870,4120 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: riam2-染
+    headword: 染
+    readings:
+      - pengim: riam2
+      - pengim: ni2
+    senses:
+      - pos: verb
+        gloss_en: [to dye, to catch (a disease)]
+        gloss_zh: [染]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cê5-查
+    headword: 查
+    readings:
+      - pengim: cê5
+    senses:
+      - pos: verb
+        gloss_en: [to investigate, to check, to look into]
+        gloss_zh: [查]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The original list had 2 candidates (cê5, za1); the dossier ties za1 only to a separate dialectal 'I; me' sense of 查, so this entry keeps only cê5 and the other sense was drafted separately.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hao6-校-verb
+    headword: 校
+    readings:
+      - pengim: hao6
+      - pengim: ga3
+    senses:
+      - pos: verb
+        gloss_en: [to proofread, to check, to compare]
+        gloss_zh: [校對]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This entry was split out to cover the 'to proofread/check' sense of 校 (which attests both hao6 and ga3), separate from the far more common 'school' sense which only attests hao6.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêg4-植
+    headword: 植
+    readings:
+      - pengim: sêg4
+      - pengim: sig8
+      - pengim: sêg8
+    senses:
+      - pos: verb
+        gloss_en: [to plant; to cultivate, to establish]
+        gloss_zh: [植]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: piou1-zung2-huê3-標準化
+    headword: 標準化
+    readings:
+      - pengim: piou1 zung2 huê3
+      - pengim: piao1 zung2 huê3
+    senses:
+      - pos: verb
+        gloss_en: [to standardize]
+        gloss_zh: [標準化]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giam2-檢
+    headword: 檢
+    readings:
+      - pengim: giam2
+      - pengim: giang2
+    senses:
+      - pos: verb
+        gloss_en: [to check; to examine, to inspect]
+        gloss_zh: [檢查]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiam3-欠
+    headword: 欠
+    readings:
+      - pengim: kiam3
+      - pengim: kiêm3
+      - pengim: kiang3
+    senses:
+      - pos: verb
+        gloss_en: [to owe, to lack; be deficient]
+        gloss_zh: [欠]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iog8-欲
+    headword: 欲
+    readings:
+      - pengim: iog8
+    senses:
+      - pos: verb
+        gloss_en: [desire; wish, about to]
+        gloss_zh: [欲望]
+        note: "1 candidate reading from Wiktionary confirmed (iog8) — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into two sense-specific entries: iog8 attests this literary 'desire / about to' sense, while the candidate ain3 attests a separate colloquial sense (alternative form of 愛), drafted as a separate entry below."
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ain3-欲
+    headword: 欲
+    readings:
+      - pengim: ain3
+    senses:
+      - pos: verb
+        gloss_en: [to want; to need to (alternative form of 愛)]
+        gloss_zh: [愛]
+        note: "1 candidate reading from Wiktionary confirmed (ain3) — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into two sense-specific entries: ain3 attests this colloquial sense as an alternative form of 愛 (to want / need to / about to), while the candidate iog8 attests a separate literary sense, drafted as a separate entry above."
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêg4-殖
+    headword: 殖
+    readings:
+      - pengim: sêg4
+      - pengim: sig8
+    senses:
+      - pos: verb
+        gloss_en: [to breed; to reproduce; to multiply]
+        gloss_zh: [殖, 繁殖]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bing3-殯
+    headword: 殯
+    readings:
+      - pengim: bing3
+      - pengim: bing1
+      - pengim: bêng3
+      - pengim: bêng1
+    senses:
+      - pos: verb
+        gloss_en: [to encoffin a corpse; to lay in state before burial, to carry to burial]
+        gloss_zh: [殯, 殯葬]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ao1-毆
+    headword: 毆
+    readings:
+      - pengim: ao1
+      - pengim: ao2
+    senses:
+      - pos: verb
+        gloss_en: [to beat; to hit; to strike; to brawl]
+        gloss_zh: [毆, 毆打]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guag4-決
+    headword: 決
+    readings:
+      - pengim: guag4
+      - pengim: guêg4
+    senses:
+      - pos: verb
+        gloss_en: [to decide; to determine, to burst; to breach (of a dike)]
+        gloss_zh: [決]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cim3-沁
+    headword: 沁
+    readings:
+      - pengim: cim3
+      - pengim: sim2
+    senses:
+      - pos: verb
+        gloss_en: [to soak into; to seep in]
+        gloss_zh: [沁]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ag4-沃
+    headword: 沃
+    readings:
+      - pengim: ag4
+      - pengim: og4
+    senses:
+      - pos: verb
+        gloss_en: [to drench; to soak; to get wet (by rain), fertile; rich (soil)]
+        gloss_zh: [沃]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dim5-沉
+    headword: 沉
+    readings:
+      - pengim: dim5
+      - pengim: ding5
+      - pengim: tim7
+    senses:
+      - pos: verb
+        gloss_en: [to sink; to submerge, heavy; deep]
+        gloss_zh: [沉]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mog8-沒
+    headword: 沒
+    readings:
+      - pengim: mog8
+      - pengim: mug8
+    senses:
+      - pos: verb
+        gloss_en: [to sink; to submerge; to drown, not to have; without]
+        gloss_zh: [沒]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Reading mug8 is attested only for the 'to sink/submerge/drown' sense, not for the separate 'not to have' negation sense (which is attested only with mog8).
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu2-沮
+    headword: 沮
+    readings:
+      - pengim: zu2
+      - pengim: zu1
+    senses:
+      - pos: verb
+        gloss_en: [to stop; to prevent, disheartened; dejected]
+        gloss_zh: [沮]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Candidate reading zu6 is tied to a distinct sense ('moist; damp') and was drafted as a separate entry.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di7-liou5-治療
+    headword: 治療
+    readings:
+      - pengim: di7 liou5
+      - pengim: di7 liao5
+    senses:
+      - pos: verb
+        gloss_en: [to treat; to provide medical treatment]
+        gloss_zh: [治療]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diam1-沾
+    headword: 沾
+    readings:
+      - pengim: diam1
+      - pengim: diang1
+    senses:
+      - pos: verb
+        gloss_en: [to soak; to moisten, to touch; to come into contact with]
+        gloss_zh: [沾]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: du3-注
+    headword: 注
+    readings:
+      - pengim: du3
+      - pengim: zu3
+    senses:
+      - pos: verb
+        gloss_en: [to pour into; to fill, to concentrate; to pay attention]
+        gloss_zh: [注]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soi2-siang6-洗腎
+    headword: 洗腎
+    readings:
+      - pengim: soi2 siang6
+      - pengim: soi2 siêng6
+    senses:
+      - pos: verb
+        gloss_en: [to have dialysis]
+        gloss_zh: [洗腎]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soi2-ming7-洗面
+    headword: 洗面
+    readings:
+      - pengim: soi2 ming7
+      - pengim: soi2 mêng7
+    senses:
+      - pos: verb
+        gloss_en: [to wash one's face]
+        gloss_zh: [洗面]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siêb8-lao7-洩漏
+    headword: 洩漏
+    readings:
+      - pengim: siêb8 lao7
+      - pengim: siab8 lao7
+    senses:
+      - pos: verb
+        gloss_en: [to leak; to spill, to divulge; to let slip]
+        gloss_zh: [洩漏]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu5-tuang5-流傳
+    headword: 流傳
+    readings:
+      - pengim: liu5 tuang5
+      - pengim: liu5 tuêng5
+    senses:
+      - pos: verb
+        gloss_en: [to circulate; to spread, to hand down]
+        gloss_zh: [流傳]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êg8-浴
+    headword: 浴
+    readings:
+      - pengim: êg8
+      - pengim: iog8
+    senses:
+      - pos: verb
+        gloss_en: [to bathe; to take a bath]
+        gloss_zh: [浴]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao1-消
+    headword: 消
+    readings:
+      - pengim: siao1
+      - pengim: siou1
+    senses:
+      - pos: verb
+        gloss_en: [to disappear; to vanish, to eliminate]
+        gloss_zh: [消]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siou1-to3-消退
+    headword: 消退
+    readings:
+      - pengim: siou1 to3
+      - pengim: siao1 to3
+    senses:
+      - pos: verb
+        gloss_en: [to wane; to fade away, to subside; to regress]
+        gloss_zh: [消退]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam5-淋
+    headword: 淋
+    readings:
+      - pengim: lam5
+      - pengim: lim5
+    senses:
+      - pos: verb
+        gloss_en: [to drip; to pour, to drench; to soak]
+        gloss_zh: [淋]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tao5-淘
+    headword: 淘
+    readings:
+      - pengim: tao5
+      - pengim: do5
+    senses:
+      - pos: verb
+        gloss_en: ["to wash (rice, etc.) to remove impurities; to pan", to clean out; to dredge]
+        gloss_zh: [淘]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: im1-淹
+    headword: 淹
+    readings:
+      - pengim: im1
+      - pengim: iam1
+    senses:
+      - pos: verb
+        gloss_en: [to flood, to submerge, to drown]
+        gloss_zh: [淹]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tin1-添
+    headword: 添
+    readings:
+      - pengim: tin1
+      - pengim: tiam1
+      - pengim: tiang1
+    senses:
+      - pos: verb
+        gloss_en: [to add, to increase, to fill]
+        gloss_zh: [添]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: su2-湑
+    headword: 湑
+    readings:
+      - pengim: su2
+    senses:
+      - pos: verb
+        gloss_en: [to strain (wine); to filter out dregs, lush; luxuriant]
+        gloss_zh: [湑]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Dropped su1 from the candidates — it is attested only for a separate proper-noun sense (a river in Shaanxi) not covered by this entry.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu1-溜
+    headword: 溜
+    readings:
+      - pengim: liu1
+      - pengim: liu3
+    senses:
+      - pos: verb
+        gloss_en: [to slide; to glide; to slip, to sneak off; to escape]
+        gloss_zh: [溜]
+        note: "2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Wiktionary's page for 溜 splits into two distinct character-sense blocks with different reading sets: this entry covers liu1/liu3 (slide, glide, slip, sneak away); lao3 is attested only for a separate sense block (see other 溜 entry) and is not part of this word's reading."
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liu3-溜
+    headword: 溜
+    readings:
+      - pengim: liu3
+      - pengim: lao3
+    senses:
+      - pos: verb
+        gloss_en: [to drip; to flow downward, swift current; rapids]
+        gloss_zh: [溜]
+        note: "2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Wiktionary's page for 溜 splits into two distinct character-sense blocks with different reading sets: this entry covers liu3/lao3 (drip, flow downward, swift current); liu1 is attested only for a separate sense block (see other 溜 entry) and is not part of this word's reading."
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êg8-溢
+    headword: 溢
+    readings:
+      - pengim: êg8
+      - pengim: êg4
+    senses:
+      - pos: verb
+        gloss_en: [to overflow, to brim over]
+        gloss_zh: [溢]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ion5-溶
+    headword: 溶
+    readings:
+      - pengim: ion5
+      - pengim: iên5
+    senses:
+      - pos: verb
+        gloss_en: [to dissolve; to melt, soluble]
+        gloss_zh: [溶]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: din6-滇
+    headword: 滇
+    readings:
+      - pengim: din6
+    senses:
+      - pos: verb
+        gloss_en: [to rise (of water)]
+        gloss_zh: [滇]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. diang1/diêng1 are attested instead for a separate sense of 滇 ('full', drafted as its own entry) and are not part of this reading.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-滋
+    headword: 滋
+    readings:
+      - pengim: ze1
+      - pengim: zu1
+    senses:
+      - pos: verb
+        gloss_en: [to grow; to multiply, to increase]
+        gloss_zh: [滋]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: piou1-漂
+    headword: 漂
+    readings:
+      - pengim: piou1
+      - pengim: piao1
+    senses:
+      - pos: verb
+        gloss_en: [to float; to drift, to wander; to roam]
+        gloss_zh: [漂]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Wiktionary's page for 漂 splits into three distinct reading blocks by sense; this entry covers piou1/piao1 (float, drift, roam). biê3/bio3 (bleach, rinse) is drafted as a separate entry; piu3, tied only to obsolete senses and the bound form in 漂亮, was not drafted as its own entry for lack of independent definable content.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biê3-漂
+    headword: 漂
+    readings:
+      - pengim: biê3
+      - pengim: bio3
+    senses:
+      - pos: verb
+        gloss_en: [to bleach, to rinse]
+        gloss_zh: [漂]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Wiktionary's page for 漂 splits into three distinct reading blocks by sense; this entry covers biê3/bio3 (bleach, rinse), separate from piou1/piao1 (float, drift — see other 漂 entry) and piu3 (obsolete senses / bound form in 漂亮, not drafted separately).
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: piao1-boh8-漂泊
+    headword: 漂泊
+    readings:
+      - pengim: piao1 boh8
+      - pengim: piou1 boh8
+    senses:
+      - pos: verb
+        gloss_en: [to drift about; to float, to rove; to lead a wandering life]
+        gloss_zh: [漂泊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: log8-漉
+    headword: 漉
+    readings:
+      - pengim: log8
+      - pengim: log4
+    senses:
+      - pos: verb
+        gloss_en: [to seep through; to filter]
+        gloss_zh: [漉]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing5-演
+    headword: 演
+    readings:
+      - pengim: ing5
+      - pengim: êng5
+      - pengim: iang5
+    senses:
+      - pos: verb
+        gloss_en: [to perform; to act, to develop; to evolve]
+        gloss_zh: [演]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze3-漬
+    headword: 漬
+    readings:
+      - pengim: ze3
+      - pengim: zu3
+    senses:
+      - pos: verb
+        gloss_en: [to soak; to steep, to stain; to be soiled]
+        gloss_zh: [漬]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sog4-漱
+    headword: 漱
+    readings:
+      - pengim: sog4
+      - pengim: suag4
+      - pengim: ciu3
+    senses:
+      - pos: verb
+        gloss_en: [to gargle; to rinse (the mouth), to brush]
+        gloss_zh: [漱]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. ciu3 is attested specifically for the Teochew-specific 'to brush' sense, while sog4/suag4 also cover the general 'gargle/rinse' sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziam2-漸
+    headword: 漸
+    readings:
+      - pengim: ziam2
+    senses:
+      - pos: verb
+        gloss_en: [to soak; to moisten (classical)]
+        gloss_zh: [漸]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into a separate entry from ziam6, which the dossier attests for the modern 'gradually' sense of this character.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iang6-漾
+    headword: 漾
+    readings:
+      - pengim: iang6
+      - pengim: ion6
+      - pengim: iên6
+    senses:
+      - pos: verb
+        gloss_en: [to ripple; to undulate, to overflow, to sway]
+        gloss_zh: [漾]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêg8-濯
+    headword: 濯
+    readings:
+      - pengim: dêg8
+      - pengim: zuag8
+    senses:
+      - pos: verb
+        gloss_en: [to wash; to rinse, to cleanse]
+        gloss_zh: [濯]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bing1-瀕
+    headword: 瀕
+    readings:
+      - pengim: bing1
+      - pengim: ping5
+    senses:
+      - pos: verb
+        gloss_en: [to be close to; border on, to approach; be on the verge of]
+        gloss_zh: [瀕]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang3-灌
+    headword: 灌
+    readings:
+      - pengim: guang3
+      - pengim: guêng3
+    senses:
+      - pos: verb
+        gloss_en: [to pour, to fill (with liquid), to irrigate]
+        gloss_zh: [灌]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai3-灑
+    headword: 灑
+    readings:
+      - pengim: sai3
+      - pengim: soi2
+    senses:
+      - pos: verb
+        gloss_en: [to sprinkle, to splash]
+        gloss_zh: [灑]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê2-sio1-cu3-火燒厝
+    headword: 火燒厝
+    readings:
+      - pengim: huê2 sio1 cu3
+      - pengim: huê2 siê1 cu3
+    senses:
+      - pos: verb
+        gloss_en: [to be on fire (of a house)]
+        gloss_zh: [火燒厝]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang5-炫
+    headword: 炫
+    readings:
+      - pengim: hiang5
+      - pengim: hiêng5
+    senses:
+      - pos: verb
+        gloss_en: [to shine, to dazzle, to show off]
+        gloss_zh: [炫]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zan3-炸
+    headword: 炸
+    readings:
+      - pengim: zan3
+      - pengim: za3
+      - pengim: zah8
+    senses:
+      - pos: verb
+        gloss_en: [to deep-fry, to fry in oil]
+        gloss_zh: [炸]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. All three readings are attested together only for the 'to deep-fry' sense; the 'to explode/burst' sense attests only zan3 and za3.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ion5-烊
+    headword: 烊
+    readings:
+      - pengim: ion5
+      - pengim: iên5
+    senses:
+      - pos: verb
+        gloss_en: [to smelt, to melt]
+        gloss_zh: [烊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the reading pair iang5/iang6, which is attested only for the bound form used in 打烊 (see separate entry).
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iang6-烊
+    headword: 烊
+    readings:
+      - pengim: iang6
+      - pengim: iang5
+    senses:
+      - pos: verb
+        gloss_en: ["to close up (a shop) for the day (bound form, used in 打烊)"]
+        gloss_zh: [烊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the reading pair ion5/iên5, which is attested for the 'to smelt; to melt' sense (see separate entry); this reading pair is attested only for the bound form used in 打烊.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hong1-烘
+    headword: 烘
+    readings:
+      - pengim: hong1
+      - pengim: hong5
+    senses:
+      - pos: verb
+        gloss_en: [to bake; to roast, to dry by fire or heat]
+        gloss_zh: [烘]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: luah4-烙
+    headword: 烙
+    readings:
+      - pengim: luah4
+      - pengim: log8
+    senses:
+      - pos: verb
+        gloss_en: [to brand, to iron, to pan-fry]
+        gloss_zh: [烙]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: riêng5-然
+    headword: 然
+    readings:
+      - pengim: riêng5
+      - pengim: riang5
+    senses:
+      - pos: verb
+        gloss_en: [to resemble, to be like]
+        gloss_zh: [然]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziang1-煎
+    headword: 煎
+    readings:
+      - pengim: ziang1
+      - pengim: ziêng1
+    senses:
+      - pos: verb
+        gloss_en: [to pan-fry, to decoct (in water)]
+        gloss_zh: [煎]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze2-煑
+    headword: 煑
+    readings:
+      - pengim: ze2
+      - pengim: zu2
+    senses:
+      - pos: verb
+        gloss_en: [to boil, to cook]
+        gloss_zh: [煮]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. 煑 is an old/variant form of 煮.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu6-煦
+    headword: 煦
+    readings:
+      - pengim: hu6
+      - pengim: hu3
+    senses:
+      - pos: verb
+        gloss_en: [to apply a hot compress, to warm by contact]
+        gloss_zh: [煦]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zio3-照
+    headword: 照
+    readings:
+      - pengim: zio3
+      - pengim: ziê3
+      - pengim: ziao3
+      - pengim: ziou3
+      - pengim: cio7
+      - pengim: ciê7
+      - pengim: cion7
+      - pengim: ciên7
+    senses:
+      - pos: verb
+        gloss_en: [to shine upon, to illuminate, according to]
+        gloss_zh: [照]
+        note: 8 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Two more candidates, ziên3 and zion3, are attested only for a distinct Teochew grammatical-particle sense ('this; so; such') and are drafted as a separate entry below.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze2-煮
+    headword: 煮
+    readings:
+      - pengim: ze2
+      - pengim: zu2
+    senses:
+      - pos: verb
+        gloss_en: [to cook, to boil]
+        gloss_zh: [煮]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bao1-煲
+    headword: 煲
+    readings:
+      - pengim: bao1
+      - pengim: bu5
+    senses:
+      - pos: verb
+        gloss_en: [to boil, to cook (in a pot)]
+        gloss_zh: [煲]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung1-熏
+    headword: 熏
+    readings:
+      - pengim: hung1
+      - pengim: hang1
+    senses:
+      - pos: verb
+        gloss_en: [to be poisoned/suffocated by coal-gas fumes, to smoke; to cure with smoke]
+        gloss_zh: [熏]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngao5-熬
+    headword: 熬
+    readings:
+      - pengim: ngao5
+      - pengim: hao5
+    senses:
+      - pos: verb
+        gloss_en: [to stew; to simmer, to endure (hardship)]
+        gloss_zh: [熬]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: riang5-燃
+    headword: 燃
+    readings:
+      - pengim: riang5
+      - pengim: riêng5
+    senses:
+      - pos: verb
+        gloss_en: [to burn; to be alight, to ignite; to light]
+        gloss_zh: [燃]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Drafted as a separate sense-specific entry from the hian5 reading, which the dossier ties to a distinct Hokkien/Teochew colloquial sense (to burn wood/heat a liquid), not this literary burn/ignite sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hian5-燃
+    headword: 燃
+    readings:
+      - pengim: hian5
+    senses:
+      - pos: verb
+        gloss_en: ["to burn (wood, coal, etc.)", to heat up; to boil (a liquid)]
+        gloss_zh: [燃]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Drafted as a separate sense-specific entry from the riang5/riêng5 reading, which the dossier ties to a distinct literary sense (to burn/ignite/spark off), not this Hokkien/Teochew colloquial sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liao5-燎
+    headword: 燎
+    readings:
+      - pengim: liao5
+      - pengim: liou5
+    senses:
+      - pos: verb
+        gloss_en: [to burn; to scald]
+        gloss_zh: [燎]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siê1-huin2-燒毀
+    headword: 燒毀
+    readings:
+      - pengim: siê1 huin2
+      - pengim: sio1 huin2
+    senses:
+      - pos: verb
+        gloss_en: [to burn up; to burn down]
+        gloss_zh: [燒毀]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siê1-zui2-燒水
+    headword: 燒水
+    readings:
+      - pengim: siê1 zui2
+      - pengim: sio1 zui2
+    senses:
+      - pos: verb
+        gloss_en: [to boil water]
+        gloss_zh: [燒水]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sio1-ui1-燒衣
+    headword: 燒衣
+    readings:
+      - pengim: sio1 ui1
+      - pengim: siê1 ui1
+    senses:
+      - pos: verb
+        gloss_en: [to burn paper offerings (for ancestors)]
+        gloss_zh: [燒衣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siê1-hiên1-燒香
+    headword: 燒香
+    readings:
+      - pengim: siê1 hiên1
+      - pengim: sio1 hion1
+    senses:
+      - pos: verb
+        gloss_en: [to burn incense (before an altar)]
+        gloss_zh: [燒香]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bao6-爆
+    headword: 爆
+    readings:
+      - pengim: bao6
+      - pengim: pag8
+    senses:
+      - pos: verb
+        gloss_en: [to burst; to explode, to crackle (from fire)]
+        gloss_zh: [爆]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iag4-爍
+    headword: 爍
+    readings:
+      - pengim: iag4
+      - pengim: sih4
+    senses:
+      - pos: verb
+        gloss_en: [to glisten; to glimmer]
+        gloss_zh: [爍]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mou5-牟
+    headword: 牟
+    readings:
+      - pengim: mou5
+    senses:
+      - pos: verb
+        gloss_en: [to seek; to obtain (profit)]
+        gloss_zh: [牟]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Candidate reading mong5 was split into a separate entry as the dossier attests it only for a different, surname/place-name pos block.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kang1-gua3-牽掛
+    headword: 牽掛
+    readings:
+      - pengim: kang1 gua3
+      - pengim: kang1 kua3
+    senses:
+      - pos: verb
+        gloss_en: [to worry about; to be concerned about]
+        gloss_zh: [牽掛]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang6-犯
+    headword: 犯
+    readings:
+      - pengim: huang6
+      - pengim: huam6
+    senses:
+      - pos: verb
+        gloss_en: [to commit (a crime); to violate, to offend; to infringe on]
+        gloss_zh: [犯]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang6-zuê6-犯罪
+    headword: 犯罪
+    readings:
+      - pengim: huang6 zuê6
+      - pengim: huam6 zuê6
+    senses:
+      - pos: verb
+        gloss_en: [to commit a crime, to sin]
+        gloss_zh: [犯罪]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngeng5-狺
+    headword: 狺
+    readings:
+      - pengim: ngeng5
+      - pengim: ngêng5
+    senses:
+      - pos: verb
+        gloss_en: [to bark; to snarl (of a dog)]
+        gloss_zh: [狺]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiang3-獻
+    headword: 獻
+    readings:
+      - pengim: hiang3
+      - pengim: hiêng3
+    senses:
+      - pos: verb
+        gloss_en: [to offer; to present, to donate; to dedicate]
+        gloss_zh: [獻]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The dossier ties a third candidate, hêng3, to a separate 'rank odor' sense, which is drafted as a separate entry below.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zug4-率
+    headword: 率
+    readings:
+      - pengim: zug4
+      - pengim: sug4
+    senses:
+      - pos: verb
+        gloss_en: [to lead]
+        gloss_zh: [率]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The dossier ties a third candidate, lug8, to a separate 'rate; ratio' sense, which is drafted as a separate entry below.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang6-王
+    headword: 王
+    readings:
+      - pengim: uang6
+    senses:
+      - pos: verb
+        gloss_en: [to reign; to rule, alternative form of 旺 (flourishing; prosperous)]
+        gloss_zh: [旺]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This verbal sense (also an alternative form of 旺) is attested with a distinct tone-6 reading (uang6) from the main noun sense (uang5/hêng5), so it is drafted as a separate entry.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: nguêng2-玩
+    headword: 玩
+    readings:
+      - pengim: nguêng2
+      - pengim: nguang2
+    senses:
+      - pos: verb
+        gloss_en: [to play; to have fun, to play with; to toy with]
+        gloss_zh: [玩]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing1-甄
+    headword: 甄
+    readings:
+      - pengim: ing1
+      - pengim: êng1
+      - pengim: zing1
+      - pengim: zêng1
+    senses:
+      - pos: verb
+        gloss_en: [to examine; to select the best, to make pottery]
+        gloss_zh: [甄]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: log8-甪
+    headword: 甪
+    readings:
+      - pengim: log8
+      - pengim: lug4
+    senses:
+      - pos: verb
+        gloss_en: [to come loose; to fall off, to drop; to decrease (of prices)]
+        gloss_zh: [甪]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pou2-甫-verb
+    headword: 甫
+    readings:
+      - pengim: pou2
+      - pengim: pu2
+    senses:
+      - pos: verb
+        gloss_en: [to have sexual intercourse (vulgar)]
+        gloss_zh: [甫]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from a separate entry for 甫 (honorific name-suffix sense) since pu2 is attested only for this vulgar Teochew-specific sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi3-畀
+    headword: 畀
+    readings:
+      - pengim: bi3
+      - pengim: bi2
+    senses:
+      - pos: verb
+        gloss_en: [to give]
+        gloss_zh: [畀]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The English sense on the page is tagged Cantonese; only the Peng'im pronunciation is specifically attested for Teochew.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui3-畏
+    headword: 畏
+    readings:
+      - pengim: ui3
+      - pengim: uin3
+    senses:
+      - pos: verb
+        gloss_en: [to fear, to detest; to loathe]
+        gloss_zh: [畏]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao5-留
+    headword: 留
+    readings:
+      - pengim: lao5
+      - pengim: liu5
+    senses:
+      - pos: verb
+        gloss_en: [to stay; to remain, to keep; to retain]
+        gloss_zh: [留]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: big8-畢
+    headword: 畢
+    readings:
+      - pengim: big8
+      - pengim: biag8
+    senses:
+      - pos: verb
+        gloss_en: [to end; to finish, all; complete]
+        gloss_zh: [畢]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: big8-ngiab8-畢業
+    headword: 畢業
+    readings:
+      - pengim: big8 ngiab8
+      - pengim: biag8 ngiab8
+    senses:
+      - pos: verb
+        gloss_en: [to graduate; to finish school]
+        gloss_zh: [畢業]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uê7-畫
+    headword: 畫
+    readings:
+      - pengim: uê7
+      - pengim: uêh8
+    senses:
+      - pos: verb
+        gloss_en: [to draw; to paint, to mark a line; stroke (of a character)]
+        gloss_zh: [畫]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. uê⁷ is the general reading (to draw; painting) and uêh⁸ the checked-tone reading paired with the 'mark a line; stroke' sense.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: deng1-當
+    headword: 當
+    readings:
+      - pengim: deng1
+      - pengim: dang1
+    senses:
+      - pos: verb
+        gloss_en: [ought; should, to regard as; to treat as, just at (the time of)]
+        gloss_zh: [當]
+        note: "2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the 4 given candidates (deng1, deng3, dang3, dang1) into two sense-specific entries by tone: this entry covers the tone-1 senses (ought; to regard as; just at)."
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: deng3-當
+    headword: 當
+    readings:
+      - pengim: deng3
+      - pengim: dang3
+    senses:
+      - pos: verb
+        gloss_en: [to pawn, proper; suitable, trick; fraud]
+        gloss_zh: [當]
+        note: "2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the 4 given candidates (deng1, deng3, dang3, dang1) into two sense-specific entries by tone: this entry covers the tone-3 senses (to pawn; proper; trick)."
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tah8-疊
+    headword: 疊
+    readings:
+      - pengim: tah8
+      - pengim: tiab8
+    senses:
+      - pos: verb
+        gloss_en: [to fold; to stack, to pile up in layers]
+        gloss_zh: [疊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dong3-疼
+    headword: 疼
+    readings:
+      - pengim: dong3
+      - pengim: tian3
+    senses:
+      - pos: verb
+        gloss_en: [to love; to cherish, painful; sore]
+        gloss_zh: [疼]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liao5-療
+    headword: 療
+    readings:
+      - pengim: liao5
+      - pengim: liou5
+    senses:
+      - pos: verb
+        gloss_en: [to treat, to cure, to heal]
+        gloss_zh: [療]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêg4-發
+    headword: 發
+    readings:
+      - pengim: huêg4
+      - pengim: huag4
+      - pengim: biuh4
+      - pengim: baoh4
+    senses:
+      - pos: verb
+        gloss_en: [to issue, to emit, to develop]
+        gloss_zh: [發]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêg4-diêng2-發展
+    headword: 發展
+    readings:
+      - pengim: huêg4 diêng2
+      - pengim: huag4 diang2
+    senses:
+      - pos: verb
+        gloss_en: [to develop, to expand, to grow]
+        gloss_zh: [發展]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêg4-siê1-發燒
+    headword: 發燒
+    readings:
+      - pengim: huêg4 siê1
+      - pengim: huag4 sio1
+    senses:
+      - pos: verb
+        gloss_en: [to have a fever, to run a temperature]
+        gloss_zh: [發燒]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêg4-sên1-發生
+    headword: 發生
+    readings:
+      - pengim: huêg4 sên1
+      - pengim: huag4 sên1
+    senses:
+      - pos: verb
+        gloss_en: [to happen, to occur, to take place]
+        gloss_zh: [發生]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huag4-cai5-發財
+    headword: 發財
+    readings:
+      - pengim: huag4 cai5
+      - pengim: huêg4 cai5
+    senses:
+      - pos: verb
+        gloss_en: [to make a fortune, to get rich; to prosper]
+        gloss_zh: [發財]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: niou3-皺
+    headword: 皺
+    readings:
+      - pengim: niou3
+      - pengim: niao3
+      - pengim: zou3
+    senses:
+      - pos: verb
+        gloss_en: [to wrinkle; to crease, wrinkle; fold (n.)]
+        gloss_zh: [皺]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong5-盈
+    headword: 盈
+    readings:
+      - pengim: iong5
+      - pengim: uêng5
+      - pengim: uang5
+    senses:
+      - pos: verb
+        gloss_en: [to fill; to be full, to have a surplus; excess]
+        gloss_zh: [盈]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêng3-盯
+    headword: 盯
+    readings:
+      - pengim: dêng3
+      - pengim: dêng1
+    senses:
+      - pos: verb
+        gloss_en: [to stare at, to gaze at; to keep eyes on]
+        gloss_zh: [盯]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang3-相
+    headword: 相
+    readings:
+      - pengim: siang3
+      - pengim: sion3
+      - pengim: siên3
+    senses:
+      - pos: verb
+        gloss_en: [to believe, to look at; to examine appearance, looks; appearance]
+        gloss_zh: [相信]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The original set of 6 candidates (siang1, sio1, siê1, siang3, sion3, siên3) was split into two sense-specific entries for 相; this entry covers the tone-3 reading, including a Teochew-specific 'to believe' sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siang1-sing3-相信
+    headword: 相信
+    readings:
+      - pengim: siang1 sing3
+      - pengim: siang1 sêng3
+    senses:
+      - pos: verb
+        gloss_en: [to believe (in); to trust; to have faith (in)]
+        gloss_zh: [相信]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sio1-zioh4-mung7-相借問
+    headword: 相借問
+    readings:
+      - pengim: sio1 zioh4 mung7
+      - pengim: siê1 ziêh4 mng7
+    senses:
+      - pos: verb
+        gloss_en: [to greet one another; to exchange greetings]
+        gloss_zh: [相借問]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siê1-zim1-相唚
+    headword: 相唚
+    readings:
+      - pengim: siê1 zim1
+      - pengim: sio1 zim1
+    senses:
+      - pos: verb
+        gloss_en: [to kiss (each other)]
+        gloss_zh: [相唚]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siê1-mên7-相罵
+    headword: 相罵
+    readings:
+      - pengim: siê1 mên7
+      - pengim: sio1 mên7
+    senses:
+      - pos: verb
+        gloss_en: [to exchange insults; to quarrel; to argue]
+        gloss_zh: [相罵]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sio1-hu6-相輔
+    headword: 相輔
+    readings:
+      - pengim: sio1 hu6
+      - pengim: siê1 hu6
+    senses:
+      - pos: verb
+        gloss_en: [to help]
+        gloss_zh: [相輔]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: miang2-眄
+    headword: 眄
+    readings:
+      - pengim: miang2
+      - pengim: miêng2
+    senses:
+      - pos: verb
+        gloss_en: [to look sideways; to glance askance]
+        gloss_zh: [眄]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kang3-siên3-看相
+    headword: 看相
+    readings:
+      - pengim: kang3 siên3
+      - pengim: kang3 sion3
+    senses:
+      - pos: verb
+        gloss_en: [to look carefully, to gossip about others' faults]
+        gloss_zh: [看相]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming5-眠
+    headword: 眠
+    readings:
+      - pengim: ming5
+      - pengim: mêng5
+      - pengim: mung5
+    senses:
+      - pos: verb
+        gloss_en: [to sleep]
+        gloss_zh: [眠]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiêng5-zung5-眩船
+    headword: 眩船
+    readings:
+      - pengim: hiêng5 zung5
+      - pengim: hing5 zung5
+      - pengim: hêng5 zung5
+    senses:
+      - pos: verb
+        gloss_en: [to become seasick]
+        gloss_zh: [眩船]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiêng5-cia1-眩車
+    headword: 眩車
+    readings:
+      - pengim: hiêng5 cia1
+      - pengim: hing5 cia1
+      - pengim: hêng5 cia1
+    senses:
+      - pos: verb
+        gloss_en: [to become carsick]
+        gloss_zh: [眩車]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ti3-睇
+    headword: 睇
+    readings:
+      - pengim: ti3
+    senses:
+      - pos: verb
+        gloss_en: [to glance sideways; to look askance]
+        gloss_zh: [睇]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The dossier ties this reading to a separate literary sense block from the other three candidates (toin2/koin2/hoin2), so this was split into a separate sense-specific entry.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: toin2-睇
+    headword: 睇
+    readings:
+      - pengim: toin2
+      - pengim: koin2
+      - pengim: hoin2
+    senses:
+      - pos: verb
+        gloss_en: [to look; to see; to watch]
+        gloss_zh: [睇]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The dossier ties these readings to a separate sense block from the candidate ti3 (a literary 'glance sideways' sense), so this was split into a separate sense-specific entry.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: toin2-sion3-睇相
+    headword: 睇相
+    readings:
+      - pengim: toin2 sion3
+      - pengim: toin2 siên3
+    senses:
+      - pos: verb
+        gloss_en: [to practise physiognomy; to tell fortune by reading facial features]
+        gloss_zh: [睇相]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: toin2-dioh4-睇著
+    headword: 睇著
+    readings:
+      - pengim: toin2 dioh4
+      - pengim: hoin2 dioh4
+    senses:
+      - pos: verb
+        gloss_en: [to catch sight of, to see]
+        gloss_zh: [睇著]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: toin2-gin3-睇見
+    headword: 睇見
+    readings:
+      - pengim: toin2 gin3
+      - pengim: toin2 giang3
+    senses:
+      - pos: verb
+        gloss_en: [to see; to catch sight of]
+        gloss_zh: [睇見]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: miao5-瞄
+    headword: 瞄
+    readings:
+      - pengim: miao5
+      - pengim: miou5
+      - pengim: bhio5
+      - pengim: bhiê5
+    senses:
+      - pos: verb
+        gloss_en: [to aim; to take aim at, to glance at; to peek at]
+        gloss_zh: [瞄]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kab4-瞌
+    headword: 瞌
+    readings:
+      - pengim: kab4
+      - pengim: kag4
+      - pengim: koih4
+    senses:
+      - pos: verb
+        gloss_en: [to close one's eyes]
+        gloss_zh: [瞌]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciao5-瞧
+    headword: 瞧
+    readings:
+      - pengim: ciao5
+      - pengim: ciou5
+    senses:
+      - pos: verb
+        gloss_en: [to look; to see, to take a glance at]
+        gloss_zh: [瞧]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geng1-矜
+    headword: 矜
+    readings:
+      - pengim: geng1
+      - pengim: gêng1
+    senses:
+      - pos: verb
+        gloss_en: [to pity; to show sympathy for, to be self-important]
+        gloss_zh: [矜]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giou2-矯
+    headword: 矯
+    readings:
+      - pengim: giou2
+      - pengim: giao2
+    senses:
+      - pos: verb
+        gloss_en: [to correct; to rectify; to straighten out]
+        gloss_zh: [矯]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiêng2-研
+    headword: 研
+    readings:
+      - pengim: ngiêng2
+      - pengim: ngiang2
+      - pengim: ngiêng5
+      - pengim: ngiang5
+      - pengim: ngoin2
+    senses:
+      - pos: verb
+        gloss_en: [to grind; to rub, to research; to study]
+        gloss_zh: [研]
+        note: 5 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiêng5-giu3-研究
+    headword: 研究
+    readings:
+      - pengim: ngiêng5 giu3
+      - pengim: ngiang5 giu3
+    senses:
+      - pos: verb
+        gloss_en: [to research; to study; to investigate]
+        gloss_zh: [研究]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Same two readings are attested for both the verb and noun senses on the page, so one shared entry was drafted.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pua3-sion3-破相
+    headword: 破相
+    readings:
+      - pengim: pua3 sion3
+      - pengim: pua3 siên3
+    senses:
+      - pos: verb
+        gloss_en: [to be scarred/disfigured (of the face), to fall ill (Teochew), to not recover from an injury (Teochew)]
+        gloss_zh: [破相]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diêng2-碾
+    headword: 碾
+    readings:
+      - pengim: diêng2
+      - pengim: diang2
+    senses:
+      - pos: verb
+        gloss_en: [to grind; to crush, roller]
+        gloss_zh: [碾]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhua5-磨
+    headword: 磨
+    readings:
+      - pengim: bhua5
+    senses:
+      - pos: verb
+        gloss_en: [to grind; to sharpen, to rub; to wear down, to dawdle; to pester]
+        gloss_zh: [磨]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The candidate reading bho7 was dropped from this sense because the dossier ties it only to a separate 磨 sense (grinder/mill; to turn around; to approach), drafted as a separate entry.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zi3-祭
+    headword: 祭
+    readings:
+      - pengim: zi3
+    senses:
+      - pos: verb
+        gloss_en: [to make offerings to; to sacrifice to; to worship]
+        gloss_zh: [祭]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The candidate reading zê3 was dropped from this sense because the dossier ties it only to a separate 祭 proper-noun sense (ancient state name / surname), drafted as a separate entry.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siam6-禪
+    headword: 禪
+    readings:
+      - pengim: siam6
+      - pengim: siang6
+    senses:
+      - pos: verb
+        gloss_en: [to abdicate and pass the throne, to succeed; to replace]
+        gloss_zh: [禪]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Drafted as a separate entry from 禪's Buddhism-related 'chán' sense because the dossier ties this 'shàn' reading to a distinct sense block (to abdicate/succeed).
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng3-種
+    headword: 種
+    readings:
+      - pengim: zêng3
+    senses:
+      - pos: verb
+        gloss_en: [to plant; to grow; to cultivate]
+        gloss_zh: [種]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into two sense-specific entries: this verb sense ('to plant; to grow') is attested only with this reading, while a separate noun sense ('kind; type; seed') is attested only with readings zêng2/zong2."
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêng1-稱
+    headword: 稱
+    readings:
+      - pengim: cêng1
+    senses:
+      - pos: verb
+        gloss_en: [to call; to name, to weigh]
+        gloss_zh: [稱]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into two sense-specific entries: this verb sense ('to call; to name; to weigh') is attested only with this reading, while a separate sense ('to match; to fit; balanced') is attested only with reading cêng3."
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêh4-積
+    headword: 積
+    readings:
+      - pengim: zêh4
+      - pengim: zêg4
+    senses:
+      - pos: verb
+        gloss_en: [to accumulate, to store up, to amass]
+        gloss_zh: [積]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ceng1-穿
+    headword: 穿
+    readings:
+      - pengim: ceng1
+      - pengim: cuang1
+      - pengim: cuêng1
+      - pengim: cêng7
+    senses:
+      - pos: verb
+        gloss_en: [to wear (clothing), to put on, to pass through; to pierce]
+        gloss_zh: [穿]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. cêng7 is attested specifically for the colloquial 'to wear' sense, while the other three readings (ceng1, cuang1, cuêng1) cover the broader character senses (to penetrate, pass through, wear) and are duplicated across both pos blocks on the source page.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diag4-窒
+    headword: 窒
+    readings:
+      - pengim: diag4
+      - pengim: diêg4
+    senses:
+      - pos: verb
+        gloss_en: [to block up, to obstruct, to plug]
+        gloss_zh: [窒]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cuang3-竄
+    headword: 竄
+    readings:
+      - pengim: cuang3
+      - pengim: cuêng3
+    senses:
+      - pos: verb
+        gloss_en: [to flee, to abscond, to hide]
+        gloss_zh: [竄]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciab4-竊
+    headword: 竊
+    readings:
+      - pengim: ciab4
+      - pengim: ciag4
+    senses:
+      - pos: verb
+        gloss_en: [to steal, to pilfer]
+        gloss_zh: [竊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giêg8-竭
+    headword: 竭
+    readings:
+      - pengim: giêg8
+      - pengim: giag8
+    senses:
+      - pos: verb
+        gloss_en: [to exhaust; to use up, to dry up; to drain]
+        gloss_zh: [竭]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêng2-等
+    headword: 等
+    readings:
+      - pengim: dêng2
+      - pengim: dang2
+    senses:
+      - pos: verb
+        gloss_en: [to wait (for)]
+        gloss_zh: [等]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The literary 'rank/class' sense of 等 only attests the dêng2 reading in the dossier; this entry uses the 'to wait' sense, which is the block both candidate readings attach to.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciam1-簽
+    headword: 簽
+    readings:
+      - pengim: ciam1
+      - pengim: ciang1
+    senses:
+      - pos: verb
+        gloss_en: [to sign, to endorse]
+        gloss_zh: [簽, 簽署]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiu5-kuêng2-籌款
+    headword: 籌款
+    readings:
+      - pengim: tiu5 kuêng2
+      - pengim: tiu5 kuang2
+    senses:
+      - pos: verb
+        gloss_en: [to fundraise, to raise funds]
+        gloss_zh: [籌款, 募款]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lang2-籠
+    headword: 籠
+    readings:
+      - pengim: lang2
+      - pengim: long2
+    senses:
+      - pos: verb
+        gloss_en: [to cover; to envelop, to shroud]
+        gloss_zh: [籠, 籠罩]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from a single Wiktionary listing of 5 candidate readings because lang2/long2 attach to the verb senses (to cover, to envelop, to shroud) while lang5/long5/lêng5 attach to the distinct noun senses (basket, cage, steamer); each sense-specific entry lists only its own readings.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: u1-籲
+    headword: 籲
+    readings:
+      - pengim: u1
+      - pengim: ru6
+    senses:
+      - pos: verb
+        gloss_en: [to appeal, to plead, to call for]
+        gloss_zh: [籲, 呼籲]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liam1-粘
+    headword: 粘
+    readings:
+      - pengim: liam1
+      - pengim: niam1
+      - pengim: niang1
+      - pengim: liam5
+      - pengim: niam5
+      - pengim: niang5
+      - pengim: ziam1
+      - pengim: ziang1
+    senses:
+      - pos: verb
+        gloss_en: [to stick, to adhere]
+        gloss_zh: [粘, 黏]
+        note: 8 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siam1-糝
+    headword: 糝
+    readings:
+      - pengim: siam1
+      - pengim: siang1
+      - pengim: sam1
+      - pengim: sim1
+      - pengim: som1
+      - pengim: sam2
+    senses:
+      - pos: verb
+        gloss_en: [to sprinkle (powder)]
+        gloss_zh: [糝]
+        note: 6 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The reading sam2 is attested only alongside the verb sense 'to sprinkle' (and the related 'to gobble/devour' sense), while the separate noun sense 'crushed grain' is attested only with the five tone-1 readings; this entry follows the verb sense, which all six candidate readings share.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiê3-糶
+    headword: 糶
+    readings:
+      - pengim: tiê3
+      - pengim: tio3
+    senses:
+      - pos: verb
+        gloss_en: [to sell (grain)]
+        gloss_zh: [糶]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiê3-bhi2-糶米
+    headword: 糶米
+    readings:
+      - pengim: tiê3 bhi2
+      - pengim: tio3 bhi2
+    senses:
+      - pos: verb
+        gloss_en: [to sell rice]
+        gloss_zh: [糶米]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi2-liêm6-紀念
+    headword: 紀念
+    readings:
+      - pengim: gi2 liêm6
+      - pengim: gi2 niam6
+    senses:
+      - pos: verb
+        gloss_en: [to commemorate; to remember, souvenir; memento]
+        gloss_zh: [紀念]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iag4-約
+    headword: 約
+    readings:
+      - pengim: iag4
+      - pengim: ioh4
+      - pengim: iêh4
+    senses:
+      - pos: verb
+        gloss_en: [to make an appointment; to arrange, about; approximately, treaty; contract]
+        gloss_zh: [約]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zah4-紮
+    headword: 紮
+    readings:
+      - pengim: zah4
+      - pengim: zag4
+    senses:
+      - pos: verb
+        gloss_en: [to tie; to bind, to wrap up; to bundle]
+        gloss_zh: [紮]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao6-紹
+    headword: 紹
+    readings:
+      - pengim: siao6
+      - pengim: siou6
+    senses:
+      - pos: verb
+        gloss_en: [to continue; to carry on]
+        gloss_zh: [紹]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gag4-結
+    headword: 結
+    readings:
+      - pengim: gag4
+      - pengim: gig4
+    senses:
+      - pos: verb
+        gloss_en: [to tie; to bind; to join; to connect]
+        gloss_zh: [結]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sui5-綏
+    headword: 綏
+    readings:
+      - pengim: sui5
+      - pengim: sui1
+    senses:
+      - pos: verb
+        gloss_en: [to pacify; to placate]
+        gloss_zh: [綏]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zong1-綜
+    headword: 綜
+    readings:
+      - pengim: zong1
+      - pengim: zong3
+    senses:
+      - pos: verb
+        gloss_en: [to put together; to assemble, to synthesize]
+        gloss_zh: [綜]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rui6-維
+    headword: 維
+    readings:
+      - pengim: rui6
+      - pengim: rui5
+    senses:
+      - pos: verb
+        gloss_en: [to maintain; to preserve, to link; to connect]
+        gloss_zh: [維]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: duê3-綴
+    headword: 綴
+    readings:
+      - pengim: duê3
+      - pengim: cuag4
+      - pengim: cuêg4
+    senses:
+      - pos: verb
+        gloss_en: [to stitch up, to connect; to join, to decorate]
+        gloss_zh: [綴]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: piang1-編
+    headword: 編
+    readings:
+      - pengim: piang1
+      - pengim: piêng1
+    senses:
+      - pos: verb
+        gloss_en: [to compile; to edit, to weave; to braid]
+        gloss_zh: [編]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: miêng2-huai5-緬懷
+    headword: 緬懷
+    readings:
+      - pengim: miêng2 huai5
+      - pengim: miang2 huai5
+    senses:
+      - pos: verb
+        gloss_en: [to cherish the memory of, to reminisce]
+        gloss_zh: [緬懷]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liang7-練
+    headword: 練
+    readings:
+      - pengim: liang7
+      - pengim: liêng7
+    senses:
+      - pos: verb
+        gloss_en: [to practice, to train; to drill]
+        gloss_zh: [練]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liêng7-sib8-練習
+    headword: 練習
+    readings:
+      - pengim: liêng7 sib8
+      - pengim: liang7 sib8
+    senses:
+      - pos: verb
+        gloss_en: [to practice]
+        gloss_zh: [練習]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pong5-縫
+    headword: 縫
+    readings:
+      - pengim: pong5
+      - pengim: hong5
+    senses:
+      - pos: verb
+        gloss_en: [to sew, to mend; to patch]
+        gloss_zh: [縫]
+        note: '2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into separate sense-specific entries: this reading pair matches the verb sense "to sew; mend", distinct from the pang7 reading used for the noun sense "seam; crack".'
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giao2-繳
+    headword: 繳
+    readings:
+      - pengim: giao2
+      - pengim: giou2
+    senses:
+      - pos: verb
+        gloss_en: ["to pay; to hand over (money, dues)", to cooperate; to partner up (dialectal)]
+        gloss_zh: [繳]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuêh4-缺
+    headword: 缺
+    readings:
+      - pengim: kuêh4
+      - pengim: kih4
+    senses:
+      - pos: verb
+        gloss_en: [to lack; to be short of, incomplete; deficient]
+        gloss_zh: [缺]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêg8-罰
+    headword: 罰
+    readings:
+      - pengim: huêg8
+      - pengim: huag8
+    senses:
+      - pos: verb
+        gloss_en: [to punish; to fine; to penalize, punishment; penalty]
+        gloss_zh: [罰]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iang6-羨
+    headword: 羨
+    readings:
+      - pengim: iang6
+      - pengim: iêng6
+    senses:
+      - pos: verb
+        gloss_en: [to envy; to admire]
+        gloss_zh: [羨]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang3-羼
+    headword: 羼
+    readings:
+      - pengim: cang3
+      - pengim: cam3
+    senses:
+      - pos: verb
+        gloss_en: [to mix; to blend]
+        gloss_zh: [羼]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sib8-guêng3-習慣
+    headword: 習慣
+    readings:
+      - pengim: sib8 guêng3
+      - pengim: sib8 guang3
+    senses:
+      - pos: verb
+        gloss_en: [to be accustomed to; to be in the habit of, habit; custom]
+        gloss_zh: [習慣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziang2-翦
+    headword: 翦
+    readings:
+      - pengim: ziang2
+      - pengim: ziêng2
+    senses:
+      - pos: verb
+        gloss_en: [to cut; to clip (variant of 剪), to eliminate; to annihilate]
+        gloss_zh: [剪]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. A surname sense on the same page shares the identical readings and was not drafted separately.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i3-翳
+    headword: 翳
+    readings:
+      - pengim: i3
+      - pengim: e3
+    senses:
+      - pos: verb
+        gloss_en: [to hide; to conceal, to shade; to screen]
+        gloss_zh: [翳]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiao5-翹
+    headword: 翹
+    readings:
+      - pengim: kiao5
+      - pengim: kiou5
+    senses:
+      - pos: verb
+        gloss_en: [to lift; to raise, to stick up; to curl up; to turn upward]
+        gloss_zh: [翹]
+        note: 4 candidate readings from Wiktionary were tied to two distinct senses in the dossier, so this word was split into two sense-specific entries. This entry keeps the 2 readings (kiao5, kiou5) attached to the literary 'lift/raise' and colloquial 'stick up/curl up' senses — genuine Chaozhou colloquial form not yet confirmed by a speaker. See the separate 翹 entry for kiao3/kiou3, tied instead to the 'play truant' sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiao3-翹
+    headword: 翹
+    readings:
+      - pengim: kiao3
+      - pengim: kiou3
+    senses:
+      - pos: verb
+        gloss_en: [to play truant; to skip school; to sneak away]
+        gloss_zh: [翹課]
+        note: 4 candidate readings from Wiktionary were tied to two distinct senses in the dossier, so this word was split into two sense-specific entries. This entry keeps the 2 readings (kiao3, kiou3) attached to the colloquial 'play truant' sense — genuine Chaozhou colloquial form not yet confirmed by a speaker. See the separate 翹 entry for kiao5/kiou5, tied instead to the 'lift/raise; stick up' senses.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêng1-êg8-翻譯
+    headword: 翻譯
+    readings:
+      - pengim: huêng1 êg8
+      - pengim: huang1 êg8
+    senses:
+      - pos: verb
+        gloss_en: [to translate, translator; interpreter]
+        gloss_zh: [翻譯]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iao6-耀
+    headword: 耀
+    readings:
+      - pengim: iao6
+      - pengim: iou6
+    senses:
+      - pos: verb
+        gloss_en: [to shine brightly; to illuminate; to dazzle, glory; honor]
+        gloss_zh: [耀]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sua2-耍
+    headword: 耍
+    readings:
+      - pengim: sua2
+      - pengim: seng2
+    senses:
+      - pos: verb
+        gloss_en: [to play; to frolic; to amuse oneself]
+        gloss_zh: [耍]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho3-siou2-ian2-耗小影
+    headword: 耗小影
+    readings:
+      - pengim: ho3 siou2 ian2
+      - pengim: ho3 siao2 ian2
+    senses:
+      - pos: verb
+        gloss_en: [to take a picture; to photograph]
+        gloss_zh: [拍照]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho3-sion3-耗相
+    headword: 耗相
+    readings:
+      - pengim: ho3 sion3
+      - pengim: ho3 siên3
+    senses:
+      - pos: verb
+        gloss_en: [to take a picture; to photograph]
+        gloss_zh: [拍照]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dam1-耽
+    headword: 耽
+    readings:
+      - pengim: dam1
+      - pengim: dang1
+    senses:
+      - pos: verb
+        gloss_en: [to delay, to indulge in]
+        gloss_zh: [耽]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liao5-聊
+    headword: 聊
+    readings:
+      - pengim: liao5
+      - pengim: liou5
+    senses:
+      - pos: verb
+        gloss_en: [to chat, to rely on (formal)]
+        gloss_zh: [聊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pêng3-聘
+    headword: 聘
+    readings:
+      - pengim: pêng3
+      - pengim: pian3
+    senses:
+      - pos: verb
+        gloss_en: [to engage; to employ, to betroth]
+        gloss_zh: [聘]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liêng5-聯
+    headword: 聯
+    readings:
+      - pengim: liêng5
+      - pengim: liang5
+    senses:
+      - pos: verb
+        gloss_en: [to connect; to join, to associate; to ally]
+        gloss_zh: [聯]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liêng5-log8-聯絡
+    headword: 聯絡
+    readings:
+      - pengim: liêng5 log8
+      - pengim: liang5 log8
+    senses:
+      - pos: verb
+        gloss_en: [to contact; to get in touch with, liaison; connection]
+        gloss_zh: [聯絡]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao6-肇
+    headword: 肇
+    readings:
+      - pengim: siao6
+      - pengim: siou6
+    senses:
+      - pos: verb
+        gloss_en: [to cause, to commence; to begin]
+        gloss_zh: [肇]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cao3-肏
+    headword: 肏
+    readings:
+      - pengim: cao3
+      - pengim: coh8
+    senses:
+      - pos: verb
+        gloss_en: [to fuck (vulgar), expression of anger (vulgar interjection)]
+        gloss_zh: [肏]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. A third candidate reading, pu2, is attested only for a distinct Teochew-specific sense (alternative form of 甫) and was drafted as a separate entry.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pu2-肏
+    headword: 肏
+    readings:
+      - pengim: pu2
+    senses:
+      - pos: verb
+        gloss_en: [to fuck (vulgar); Teochew alternative form of 甫]
+        gloss_zh: [甫]
+        note: 1 candidate reading from Wiktionary (cao3, coh8 dropped as unattested for this sense) — genuine Chaozhou colloquial form not yet confirmed by a speaker. This headword was split into sense-specific entries because pu2 is attested only for the Teochew-specific alternative-form-of-甫 sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao6-肖
+    headword: 肖
+    readings:
+      - pengim: siao6
+      - pengim: siou6
+    senses:
+      - pos: verb
+        gloss_en: [to resemble, to be born in the year of (a zodiac animal)]
+        gloss_zh: [肖]
+        note: 2 candidate readings from Wiktionary (siao1, siou1 dropped as unattested for this sense) — genuine Chaozhou colloquial form not yet confirmed by a speaker. This headword was split into sense-specific entries because siao1/siou1 are attested only for the separate surname sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê3-背-verb
+    headword: 背
+    readings:
+      - pengim: buê3
+      - pengim: bi3
+    senses:
+      - pos: verb
+        gloss_en: [to carry on the back, to bear (responsibility); to shoulder]
+        gloss_zh: [背]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The dossier ties buê3/bi3 to this 'to carry' sense block, separate from the buê3/bu3 'back; backside' noun sense (see the other 背 entry).
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lêng5-能
+    headword: 能
+    readings:
+      - pengim: lêng5
+      - pengim: nêng5
+    senses:
+      - pos: verb
+        gloss_en: [can; to be able to]
+        gloss_zh: [能]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziang3-脹
+    headword: 脹
+    readings:
+      - pengim: ziang3
+      - pengim: dion3
+      - pengim: diên3
+    senses:
+      - pos: verb
+        gloss_en: [to swell; to expand; to bloat]
+        gloss_zh: [脹]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: êg8-臆
+    headword: 臆
+    readings:
+      - pengim: êg8
+      - pengim: êg4
+      - pengim: iêh4
+      - pengim: ioh4
+    senses:
+      - pos: verb
+        gloss_en: [to guess; to conjecture]
+        gloss_zh: [臆測, 猜]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. All four readings are attested together specifically under the Southern-Min 'to guess' verb sense.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: e6-與
+    headword: 與
+    readings:
+      - pengim: e6
+    senses:
+      - pos: verb
+        gloss_en: [to participate, to interfere]
+        gloss_zh: [參與]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The three original candidates (e2, e6, e7) map to three distinct senses/pos blocks in the source data, so this word was split into separate sense-specific entries, each keeping only its own attested reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhu2-舞
+    headword: 舞
+    readings:
+      - pengim: bhu2
+      - pengim: mong6
+      - pengim: mou6
+    senses:
+      - pos: verb
+        gloss_en: [to dance, to wield; to brandish, to fiddle with; to handle (colloquial)]
+        gloss_zh: [舞]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mong6-sai1-舞獅
+    headword: 舞獅
+    readings:
+      - pengim: mong6 sai1
+      - pengim: mou6 sai1
+    senses:
+      - pos: verb
+        gloss_en: [to perform a lion dance]
+        gloss_zh: [舞獅]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mou6-houn2-sai1-舞虎獅
+    headword: 舞虎獅
+    readings:
+      - pengim: mou6 houn2 sai1
+      - pengim: mong6 houn2 sai1
+    senses:
+      - pos: verb
+        gloss_en: [to perform a lion dance]
+        gloss_zh: [舞虎獅]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang5-航
+    headword: 航
+    readings:
+      - pengim: hang5
+      - pengim: pang5
+    senses:
+      - pos: verb
+        gloss_en: [to sail; to navigate, to fly (of aircraft)]
+        gloss_zh: [航]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: o5-荷
+    headword: 荷
+    readings:
+      - pengim: o5
+      - pengim: ho5
+      - pengim: ho3
+      - pengim: o6
+    senses:
+      - pos: verb
+        gloss_en: [to carry (a load on the shoulder); to bear, load; burden]
+        gloss_zh: [荷]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. 荷 has several etymology blocks on the page (lotus, mint-only, carry/burden, etc.); only the 'to carry; load; burden' block attests all four candidate readings together, so that sense was used.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lag4-sêg4-落色
+    headword: 落色
+    readings:
+      - pengim: lag4 sêg4
+      - pengim: loh8 sêg4
+    senses:
+      - pos: verb
+        gloss_en: [to fade; to lose color; to discolor]
+        gloss_zh: [落色, 褪色]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: loh8-hion1-落鄉
+    headword: 落鄉
+    readings:
+      - pengim: loh8 hion1
+      - pengim: loh8 hiên1
+    senses:
+      - pos: verb
+        gloss_en: [to go to the countryside]
+        gloss_zh: [下鄉]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diêh8-siên1-著傷
+    headword: 著傷
+    readings:
+      - pengim: diêh8 siên1
+      - pengim: dioh8 sion1
+    senses:
+      - pos: verb
+        gloss_en: [to be injured, to be wounded]
+        gloss_zh: [受傷]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diêh4-gi5-著棋
+    headword: 著棋
+    readings:
+      - pengim: diêh4 gi5
+      - pengim: dioh4 gi5
+    senses:
+      - pos: verb
+        gloss_en: [to play chess]
+        gloss_zh: [下棋]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doh8-huê2-著火
+    headword: 著火
+    readings:
+      - pengim: doh8 huê2
+      - pengim: dioh8 huê2
+    senses:
+      - pos: verb
+        gloss_en: [to catch fire]
+        gloss_zh: [著火]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diêh8-sua1-著痧
+    headword: 著痧
+    readings:
+      - pengim: diêh8 sua1
+      - pengim: dioh8 sua1
+    senses:
+      - pos: verb
+        gloss_en: [to suffer from heatstroke or sunstroke]
+        gloss_zh: [中暑]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mong5-蒙
+    headword: 蒙
+    readings:
+      - pengim: mong5
+      - pengim: mou5
+    senses:
+      - pos: verb
+        gloss_en: [to cover, to deceive, ignorant]
+        gloss_zh: [蒙]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiog4-蓄
+    headword: 蓄
+    readings:
+      - pengim: tiog4
+      - pengim: hag4
+    senses:
+      - pos: verb
+        gloss_en: [to store up; to save, to raise (animals)]
+        gloss_zh: [蓄]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gai3-蓋
+    headword: 蓋
+    readings:
+      - pengim: gai3
+      - pengim: gua3
+      - pengim: kam3
+      - pengim: koin3
+      - pengim: gah4
+    senses:
+      - pos: verb
+        gloss_en: [to cover, lid; cap]
+        gloss_zh: [蓋子, 遮蓋]
+        note: 5 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The candidate reading kab4 is tied to a distinct sense (alternative form of 匼 "to cover") in the dossier and was drafted as a separate entry.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kab4-蓋
+    headword: 蓋
+    readings:
+      - pengim: kab4
+    senses:
+      - pos: verb
+        gloss_en: [to cover (alternative form of 匼)]
+        gloss_zh: [匼]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This reading is tied to a distinct sense (alternative form of 匼 "to cover"), split out from the other 蓋 readings/senses.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mig8-蔑
+    headword: 蔑
+    readings:
+      - pengim: mig8
+      - pengim: mêg8
+      - pengim: mag4
+    senses:
+      - pos: verb
+        gloss_en: [to despise; to disdain, to belittle]
+        gloss_zh: [輕蔑]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: im3-蔭
+    headword: 蔭
+    readings:
+      - pengim: im3
+    senses:
+      - pos: verb
+        gloss_en: [to protect; to shelter, cool and shaded (without sunlight)]
+        gloss_zh: [庇蔭]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This reading is tied to a distinct sense (to protect; to shelter, cool and shaded), split out from the "shade of a tree" sense of 蔭.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cang5-藏
+    headword: 藏
+    readings:
+      - pengim: cang5
+    senses:
+      - pos: verb
+        gloss_en: [to hide; to conceal, to store]
+        gloss_zh: [藏]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The Wiktionary page ties this character's two readings to distinct senses: cang5 to the verb sense ('to hide; to store') drafted here, and zang6 to a separate noun sense ('storehouse; treasury; Tibet') drafted as a separate entry."
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zam3-蘸
+    headword: 蘸
+    readings:
+      - pengim: zam3
+      - pengim: ziao1
+      - pengim: ziou1
+    senses:
+      - pos: verb
+        gloss_en: ["to dip in; to submerge in (sauce, ink, etc.)"]
+        gloss_zh: [蘸]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu2-處
+    headword: 處
+    readings:
+      - pengim: cu2
+    senses:
+      - pos: verb
+        gloss_en: [to reside; to dwell, to deal with; to manage, to punish]
+        gloss_zh: [處]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into two sense-specific entries because the dossier ties each reading to a separate pos block: cu2 to the verb senses (reside/deal with/punish), cu3 to the noun senses (place/location/department)."
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cu2-huêg8-處罰
+    headword: 處罰
+    readings:
+      - pengim: cu2 huêg8
+      - pengim: cu2 huag8
+    senses:
+      - pos: verb
+        gloss_en: [to punish; to penalize]
+        gloss_zh: [處罰]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diag4-蜇
+    headword: 蜇
+    readings:
+      - pengim: diag4
+      - pengim: diêg4
+    senses:
+      - pos: verb
+        gloss_en: [to sting, to smart]
+        gloss_zh: [蜇]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sih8-蝕
+    headword: 蝕
+    readings:
+      - pengim: sih8
+      - pengim: ziah8
+    senses:
+      - pos: verb
+        gloss_en: [to corrode; to erode, to lose money (colloquial)]
+        gloss_zh: [蝕]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong5-融
+    headword: 融
+    readings:
+      - pengim: iong5
+      - pengim: ion5
+      - pengim: iên5
+    senses:
+      - pos: verb
+        gloss_en: [to melt, to blend; to fuse]
+        gloss_zh: [融]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iêng6-衍
+    headword: 衍
+    readings:
+      - pengim: iêng6
+      - pengim: iang6
+    senses:
+      - pos: verb
+        gloss_en: [to spread out; to extend; to develop, to overflow; to spill over]
+        gloss_zh: [衍]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cong1-衝
+    headword: 衝
+    readings:
+      - pengim: cong1
+    senses:
+      - pos: verb
+        gloss_en: [to rush; to charge; to dash, to collide; to clash]
+        gloss_zh: [衝]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into a separate entry because the dossier ties cong1 and cong3 to distinct pos/etymology blocks with different senses rather than a literary/colloquial pair of the same sense.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cong3-衝
+    headword: 衝
+    readings:
+      - pengim: cong3
+    senses:
+      - pos: verb
+        gloss_en: [to punch; to hit, to collide; to bump into, to rise; to gush out]
+        gloss_zh: [衝]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into a separate entry because the dossier ties cong1 and cong3 to distinct pos/etymology blocks with different (largely Hokkien-specific) senses rather than a literary/colloquial pair of the same sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang5-衡
+    headword: 衡
+    readings:
+      - pengim: huang5
+      - pengim: huêng5
+    senses:
+      - pos: verb
+        gloss_en: [to weigh; to measure, to judge]
+        gloss_zh: [衡]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biou2-tai3-表態
+    headword: 表態
+    readings:
+      - pengim: biou2 tai3
+      - pengim: biao2 tai3
+    senses:
+      - pos: verb
+        gloss_en: [to declare one's position; to say where one stands]
+        gloss_zh: [表態]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biou2-iang5-表揚
+    headword: 表揚
+    readings:
+      - pengim: biou2 iang5
+      - pengim: biao2 iang5
+    senses:
+      - pos: verb
+        gloss_en: [to commend; to praise]
+        gloss_zh: [表揚]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biou2-ing5-表演
+    headword: 表演
+    readings:
+      - pengim: biou2 ing5
+      - pengim: biao2 ing5
+      - pengim: biao2 êng5
+    senses:
+      - pos: verb
+        gloss_en: [to perform; to act, to demonstrate]
+        gloss_zh: [表演]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biou2-bêh8-表白
+    headword: 表白
+    readings:
+      - pengim: biou2 bêh8
+      - pengim: biao2 bêh8
+    senses:
+      - pos: verb
+        gloss_en: [to express clearly; to explain oneself, to confess one's feelings (esp. romantic)]
+        gloss_zh: [表白]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pi1-被
+    headword: 被
+    readings:
+      - pengim: pi1
+    senses:
+      - pos: verb
+        gloss_en: [to cover oneself; to drape over]
+        gloss_zh: [披]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into a separate entry because the dossier ties puê6, bi6, and pi1 to three distinct pos/etymology blocks with unrelated senses; this block is an alternative form of 披, obsolete on its own in Standard Chinese.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zuang1-裝
+    headword: 裝
+    readings:
+      - pengim: zuang1
+      - pengim: zeng1
+    senses:
+      - pos: verb
+        gloss_en: [to pack; to load; to fill, to pretend; to feign, to install; to assemble]
+        gloss_zh: [裝]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go2-裹
+    headword: 裹
+    readings:
+      - pengim: go2
+      - pengim: guê2
+    senses:
+      - pos: verb
+        gloss_en: [to wrap; to bind, to wrap up]
+        gloss_zh: [裹]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: teng3-褪
+    headword: 褪
+    readings:
+      - pengim: teng3
+    senses:
+      - pos: verb
+        gloss_en: [to take off (clothing)]
+        gloss_zh: [褪, 脫]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into sense-specific entries: the candidate reading to3 is attested only for a separate sense ('to fade; to shed feathers'), not this one."
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: to3-褪
+    headword: 褪
+    readings:
+      - pengim: to3
+    senses:
+      - pos: verb
+        gloss_en: [to fade; to discolor, to shed (feathers)]
+        gloss_zh: [褪色]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into sense-specific entries: the candidate reading teng3 is attested only for a separate sense ('to take off clothes'), not this one."
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci2-褫
+    headword: 褫
+    readings:
+      - pengim: ci2
+      - pengim: di7
+    senses:
+      - pos: verb
+        gloss_en: [to strip off; to deprive of, to snatch away]
+        gloss_zh: [褫, 剝奪]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iou1-要
+    headword: 要
+    readings:
+      - pengim: iou1
+      - pengim: iao1
+    senses:
+      - pos: verb
+        gloss_en: [to demand; to request, to force; to coerce]
+        gloss_zh: [要]
+        note: "2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into sense-specific entries: the candidate readings iou3/iao3 are attested only for a separate, far more common sense ('to want; will'), not this one."
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iou3-要
+    headword: 要
+    readings:
+      - pengim: iou3
+      - pengim: iao3
+    senses:
+      - pos: verb
+        gloss_en: [to want; to need, will; going to, must; should]
+        gloss_zh: [要]
+        note: "2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into sense-specific entries: the candidate readings iou1/iao1 are attested only for a separate, less common sense ('to demand; to request'), not this one."
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iou1-kiu5-要求
+    headword: 要求
+    readings:
+      - pengim: iou1 kiu5
+      - pengim: iao1 kiu5
+    senses:
+      - pos: verb
+        gloss_en: [to ask; to request; to demand]
+        gloss_zh: [要求]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gin3-見
+    headword: 見
+    readings:
+      - pengim: gin3
+      - pengim: giang3
+      - pengim: giêng3
+    senses:
+      - pos: verb
+        gloss_en: [to see, to meet]
+        gloss_zh: [見]
+        note: "3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into sense-specific entries: the candidate reading hing7 is attested only for a separate, obsolete sense (archaic form of 現, 'to appear'), not this one."
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hing7-見
+    headword: 見
+    readings:
+      - pengim: hing7
+    senses:
+      - pos: verb
+        gloss_en: ["to appear (archaic, = 現)"]
+        gloss_zh: [現]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into sense-specific entries: the candidate readings gin3/giang3/giêng3 are attested only for a separate, far more common sense ('to see'), not this one."
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giang3-zêng3-見證
+    headword: 見證
+    readings:
+      - pengim: giang3 zêng3
+      - pengim: giêng3 zêng3
+    senses:
+      - pos: verb
+        gloss_en: [to bear witness; to testify]
+        gloss_zh: [見證]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mig8-覓
+    headword: 覓
+    readings:
+      - pengim: mig8
+      - pengim: cuê7
+    senses:
+      - pos: verb
+        gloss_en: [to look for; to seek]
+        gloss_zh: [揣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Drafted as the Teochew-tagged sense 'alternative form of 揣' (to look for), the only block where both candidate readings appear together; other blocks on the page attest only mig8.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: si6-視
+    headword: 視
+    readings:
+      - pengim: si6
+      - pengim: si7
+    senses:
+      - pos: verb
+        gloss_en: [to watch; to look; to view]
+        gloss_zh: [視]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cing1-cion6-親像
+    headword: 親像
+    readings:
+      - pengim: cing1 cion6
+      - pengim: cing1 ciên6
+      - pengim: cêng1 cion6
+    senses:
+      - pos: verb
+        gloss_en: [to resemble; to be like, as if; to seem]
+        gloss_zh: [親像, 好像]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gag4-dig4-覺得
+    headword: 覺得
+    readings:
+      - pengim: gag4 dig4
+      - pengim: gag4 dêg4
+    senses:
+      - pos: verb
+        gloss_en: [to think; to believe, to feel; to sense]
+        gloss_zh: [覺得]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam2-覽
+    headword: 覽
+    readings:
+      - pengim: lam2
+      - pengim: nam2
+    senses:
+      - pos: verb
+        gloss_en: [to look at; to view, to read]
+        gloss_zh: [覽]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang1-觀
+    headword: 觀
+    readings:
+      - pengim: guang1
+      - pengim: guêng1
+    senses:
+      - pos: verb
+        gloss_en: [to observe; to watch; to view]
+        gloss_zh: [觀]
+        note: "2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into sense-specific entries: the candidate readings guang3/guêng3 are attested only for a separate tone-3 sense ('Taoist temple; watchtower'), not this one."
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cog4-diêng6-觸電
+    headword: 觸電
+    readings:
+      - pengim: cog4 diêng6
+      - pengim: cog4 diang6
+    senses:
+      - pos: verb
+        gloss_en: [to get an electric shock, to be electrocuted]
+        gloss_zh: [觸電]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: goi3-計
+    headword: 計
+    readings:
+      - pengim: goi3
+      - pengim: gi3
+    senses:
+      - pos: verb
+        gloss_en: [to calculate; to count, to plan; to scheme]
+        gloss_zh: [計]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung3-liêng7-訓練
+    headword: 訓練
+    readings:
+      - pengim: hung3 liêng7
+      - pengim: hung3 liang7
+    senses:
+      - pos: verb
+        gloss_en: [to train, to drill]
+        gloss_zh: [訓練]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siag4-設
+    headword: 設
+    readings:
+      - pengim: siag4
+      - pengim: siêg4
+    senses:
+      - pos: verb
+        gloss_en: [to set up; to establish, to arrange; to plan]
+        gloss_zh: [設]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siêg4-lib8-設立
+    headword: 設立
+    readings:
+      - pengim: siêg4 lib8
+      - pengim: siag4 lib8
+    senses:
+      - pos: verb
+        gloss_en: [to establish; to found; to set up]
+        gloss_zh: [設立]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziang2-診
+    headword: 診
+    readings:
+      - pengim: ziang2
+      - pengim: zêng2
+    senses:
+      - pos: verb
+        gloss_en: [to examine (a patient); to diagnose]
+        gloss_zh: [診]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: loi3-詈
+    headword: 詈
+    readings:
+      - pengim: loi3
+      - pengim: li3
+    senses:
+      - pos: verb
+        gloss_en: [to curse; to scold; to abuse verbally]
+        gloss_zh: [詈]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: za3-詐
+    headword: 詐
+    readings:
+      - pengim: za3
+      - pengim: dên3
+    senses:
+      - pos: verb
+        gloss_en: [to cheat; to defraud, to pretend; to feign]
+        gloss_zh: [詐]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suêh4-說
+    headword: 說
+    readings:
+      - pengim: suêh4
+    senses:
+      - pos: verb
+        gloss_en: [to say, to speak, to explain]
+        gloss_zh: [說]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The dossier ties the other 3 given candidates (suê3, ruag8, ruêg8) to distinct pos blocks with unrelated senses, so this headword was split into separate sense-specific entries.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: suê3-說
+    headword: 說
+    readings:
+      - pengim: suê3
+    senses:
+      - pos: verb
+        gloss_en: [to persuade, to canvass, to lobby]
+        gloss_zh: [說]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from 說's other senses because the dossier ties suê3 to a distinct pos block ('to persuade; to canvass') separate from suêh4 ('to say') and ruag8/ruêg8 (alt. form of 悅).
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tiao5-調
+    headword: 調
+    readings:
+      - pengim: tiao5
+      - pengim: tiou5
+      - pengim: diao7
+      - pengim: diou7
+    senses:
+      - pos: verb
+        gloss_en: [to adjust, to tune, to transfer]
+        gloss_zh: [調]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui3-諱
+    headword: 諱
+    readings:
+      - pengim: hui3
+      - pengim: hui2
+    senses:
+      - pos: verb
+        gloss_en: [to avoid mentioning, taboo]
+        gloss_zh: [諱]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mou5-謀
+    headword: 謀
+    readings:
+      - pengim: mou5
+      - pengim: mong5
+    senses:
+      - pos: verb
+        gloss_en: [to plan, to scheme, to plot]
+        gloss_zh: [謀]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêg4-識
+    headword: 識
+    readings:
+      - pengim: sêg4
+      - pengim: bag4
+    senses:
+      - pos: verb
+        gloss_en: [to know, to recognize]
+        gloss_zh: [識]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. bag4 is attested in the dossier as an alternative form of 捌 ('to know'), a colloquial doublet of the literary sêg4; both are drafted together under the shared 'to know' sense.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiang2-譴
+    headword: 譴
+    readings:
+      - pengim: kiang2
+      - pengim: kiêng2
+    senses:
+      - pos: verb
+        gloss_en: [to censure, to reprimand, to condemn]
+        gloss_zh: [譴, 譴責]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tag8-讀
+    headword: 讀
+    readings:
+      - pengim: tag8
+    senses:
+      - pos: verb
+        gloss_en: [to read, to study, to pronounce]
+        gloss_zh: [讀]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Dropped dao7 because the dossier ties it only to a distinct, narrower sense (a punctuation/clause term), drafted as a separate entry below.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: tag8-ze1-讀書
+    headword: 讀書
+    readings:
+      - pengim: tag8 ze1
+      - pengim: tag8 zu1
+    senses:
+      - pos: verb
+        gloss_en: [to study, to read books, to attend school]
+        gloss_zh: [讀書]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bin3-變
+    headword: 變
+    readings:
+      - pengim: bin3
+      - pengim: biêng3
+      - pengim: biang3
+    senses:
+      - pos: verb
+        gloss_en: [to change, to transform, to become]
+        gloss_zh: [變]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biêng3-hing7-變現
+    headword: 變現
+    readings:
+      - pengim: biêng3 hing7
+      - pengim: biang3 hing7
+    senses:
+      - pos: verb
+        gloss_en: [to monetize, to convert into cash]
+        gloss_zh: [變現]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: niên7-讓
+    headword: 讓
+    readings:
+      - pengim: niên7
+      - pengim: nion7
+      - pengim: riang6
+    senses:
+      - pos: verb
+        gloss_en: [to let; to allow, to yield; to give way]
+        gloss_zh: [讓]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gong3-hiang3-貢獻
+    headword: 貢獻
+    readings:
+      - pengim: gong3 hiang3
+      - pengim: gong3 hiêng3
+    senses:
+      - pos: verb
+        gloss_en: [to contribute, contribution]
+        gloss_zh: [貢獻]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The page has separate verb and noun blocks for this word, but both share the same readings, so a single entry covers both senses.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang3-販
+    headword: 販
+    readings:
+      - pengim: huang3
+      - pengim: huêng3
+    senses:
+      - pos: verb
+        gloss_en: [to deal in; to trade, peddler]
+        gloss_zh: [販]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-貲
+    headword: 貲
+    readings:
+      - pengim: ze1
+      - pengim: zu1
+    senses:
+      - pos: verb
+        gloss_en: [to fine, to estimate]
+        gloss_zh: [貲]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guêg4-dian7-決定
+    headword: 決定
+    readings:
+      - pengim: guêg4 dian7
+      - pengim: guag4 dian7
+    senses:
+      - pos: verb
+        gloss_en: [to decide; to determine]
+        gloss_zh: [決定]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong3-湧-verb
+    headword: 湧
+    readings:
+      - pengim: iong3
+      - pengim: êng2
+    senses:
+      - pos: verb
+        gloss_en: [to gush; to spring up (of water)]
+        gloss_zh: [湧]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from 湧's noun sense ('wave') into a separate verb entry; the dossier attests both readings for both senses.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhua5-磨-verb
+    headword: 磨
+    readings:
+      - pengim: bhua5
+      - pengim: bho7
+    senses:
+      - pos: verb
+        gloss_en: [to turn around, to approach (Teochew)]
+        gloss_zh: [磨]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Drafted as a separate entry from 磨's main 'to grind' sense (bhua5 alone) because the dossier ties bho7 only to this dialectal 'to turn around/approach' sense group.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

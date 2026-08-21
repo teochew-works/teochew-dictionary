@@ -4615,3 +4615,884 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: hai2-huê5-siên7-海和尚
+    headword: 海和尚
+    readings:
+      - pengim: hai2 huê5 siên7
+      - pengim: hai2 huê5 sion7
+    senses:
+      - pos: noun
+        gloss_en: [dolphin]
+        gloss_zh: [海和尚]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: him5-熊
+    headword: 熊
+    readings:
+      - pengim: him5
+      - pengim: hing5
+    senses:
+      - pos: noun
+        gloss_en: [bear]
+        gloss_zh: [熊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in3-燕
+    headword: 燕
+    readings:
+      - pengim: in3
+      - pengim: iang3
+      - pengim: iêng3
+    senses:
+      - pos: noun
+        gloss_en: [swallow (bird), swift (bird)]
+        gloss_zh: [燕]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Dropped Iang1 and Iêng1 (capitalized) as those readings apply only to the separate historical proper-noun sense (the ancient state of Yan), not the common noun 'swallow' sense drafted here.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ping2-牝
+    headword: 牝
+    readings:
+      - pengim: ping2
+      - pengim: pêng2
+    senses:
+      - pos: adjective
+        gloss_en: [female (of an animal)]
+        gloss_zh: [牝]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng1-牲
+    headword: 牲
+    readings:
+      - pengim: sêng1
+      - pengim: sên1
+    senses:
+      - pos: noun
+        gloss_en: [domestic animal; livestock, sacrificial animal]
+        gloss_zh: [牲]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiêng2-犬
+    headword: 犬
+    readings:
+      - pengim: kiêng2
+      - pengim: kiang2
+    senses:
+      - pos: noun
+        gloss_en: [dog (literary/formal)]
+        gloss_zh: [犬]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngang6-犴
+    headword: 犴
+    readings:
+      - pengim: ngang6
+    senses:
+      - pos: noun
+        gloss_en: [a kind of wild dog (northern China), jail; prison (archaic)]
+        gloss_zh: [犴]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Candidate readings gang1 and hang5 were split into a separate entry as the dossier attests them only for a different, 'moose' pos block.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngang6-犴-noun
+    headword: 犴
+    readings:
+      - pengim: ngang6
+      - pengim: gang1
+      - pengim: hang5
+    senses:
+      - pos: noun
+        gloss_en: [moose]
+        gloss_zh: [犴]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This 'moose' sense is tagged as a Mandarin/Northeastern regionalism on the source page and was split from the main wild-dog/jail sense, which attests only ngang6.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou5-狐
+    headword: 狐
+    readings:
+      - pengim: hou5
+      - pengim: hu5
+    senses:
+      - pos: noun
+        gloss_en: [fox, a surname]
+        gloss_zh: [狐]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou5-lai5-狐狸
+    headword: 狐狸
+    readings:
+      - pengim: hou5 lai5
+      - pengim: hu5 li5
+    senses:
+      - pos: noun
+        gloss_en: [fox, sly person; treacherous person]
+        gloss_zh: [狐狸]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li5-狸
+    headword: 狸
+    readings:
+      - pengim: li5
+      - pengim: lai5
+    senses:
+      - pos: noun
+        gloss_en: [leopard cat, raccoon dog]
+        gloss_zh: [狸]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang5-猿
+    headword: 猿
+    readings:
+      - pengim: uang5
+      - pengim: uêng5
+    senses:
+      - pos: noun
+        gloss_en: [ape]
+        gloss_zh: [猿]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziang1-獐
+    headword: 獐
+    readings:
+      - pengim: ziang1
+      - pengim: zion1
+      - pengim: ziên1
+    senses:
+      - pos: noun
+        gloss_en: [water deer]
+        gloss_zh: [獐]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mong5-獴
+    headword: 獴
+    readings:
+      - pengim: mong5
+      - pengim: mou5
+    senses:
+      - pos: noun
+        gloss_en: [mongoose]
+        gloss_zh: [獴]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêng1-獾
+    headword: 獾
+    readings:
+      - pengim: huêng1
+      - pengim: huang1
+      - pengim: guêng3
+      - pengim: guang3
+    senses:
+      - pos: noun
+        gloss_en: [badger]
+        gloss_zh: [獾]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao2-gao2-痟狗
+    headword: 痟狗
+    readings:
+      - pengim: siao2 gao2
+      - pengim: siou2 gao2
+    senses:
+      - pos: noun
+        gloss_en: [mad dog, rabid dog]
+        gloss_zh: [痟狗]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh8-liao6-si1-白鷺鷥
+    headword: 白鷺鷥
+    readings:
+      - pengim: bêh8 liao6 si1
+      - pengim: bêh8 liou6 si1
+    senses:
+      - pos: noun
+        gloss_en: [little egret (Egretta garzetta)]
+        gloss_zh: [白鷺鷥]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang5-sing1-sên1-紅先生
+    headword: 紅先生
+    readings:
+      - pengim: ang5 sing1 sên1
+      - pengim: ang5 sêng1 sên1
+    senses:
+      - pos: noun
+        gloss_en: [ladybird; ladybug]
+        gloss_zh: [紅先生]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iên5-羊
+    headword: 羊
+    readings:
+      - pengim: iên5
+      - pengim: ion5
+      - pengim: iang5
+    senses:
+      - pos: noun
+        gloss_en: [sheep; goat, Goat (zodiac sign)]
+        gloss_zh: [羊]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iên5-gou2-羊牯
+    headword: 羊牯
+    readings:
+      - pengim: iên5 gou2
+      - pengim: ion5 gou2
+    senses:
+      - pos: noun
+        gloss_en: [ram (male sheep)]
+        gloss_zh: [羊牯]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giêg4-羯
+    headword: 羯
+    readings:
+      - pengim: giêg4
+      - pengim: giag4
+    senses:
+      - pos: noun
+        gloss_en: [castrated male goat; wether]
+        gloss_zh: [羯]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lao6-houn2-老虎
+    headword: 老虎
+    readings:
+      - pengim: lao6 houn2
+      - pengim: liou6 houn2
+    senses:
+      - pos: noun
+        gloss_en: [tiger]
+        gloss_zh: [老虎]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liao6-êng1-bo5-老鷹婆
+    headword: 老鷹婆
+    readings:
+      - pengim: liao6 êng1 bo5
+      - pengim: liou6 êng1 bo5
+      - pengim: liao2 êng1 bo5
+      - pengim: liou2 êng1 bo5
+    senses:
+      - pos: noun
+        gloss_en: [eagle]
+        gloss_zh: [老鷹]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hou5-sing5-胡蠅
+    headword: 胡蠅
+    readings:
+      - pengim: hou5 sing5
+      - pengim: hou5 sêng5
+    senses:
+      - pos: noun
+        gloss_en: [fly (insect)]
+        gloss_zh: [蒼蠅]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iêh8-bou6-sung5-藥蜅蟬
+    headword: 藥蜅蟬
+    readings:
+      - pengim: iêh8 bou6 sung5
+      - pengim: iêh8 bou1 sung5
+      - pengim: ioh8 bou1 sung5
+      - pengim: io6 bou1 sung5
+    senses:
+      - pos: noun
+        gloss_en: [cicada]
+        gloss_zh: [藥蜅蟬]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: houn2-虎
+    headword: 虎
+    readings:
+      - pengim: houn2
+    senses:
+      - pos: noun
+        gloss_en: [tiger, Tiger (zodiac sign)]
+        gloss_zh: [虎]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The second candidate hu1 was dropped: in the dossier it appears only attached to Wiktionary's 'only used in 馬虎' and 'only used in 虎不拉' bound-compound cross-references, which give no independent definable sense for 虎 on its own."
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gao6-ung2-蚯蚓
+    headword: 蚯蚓
+    readings:
+      - pengim: gao6 ung2
+      - pengim: kiu1 ing2
+    senses:
+      - pos: noun
+        gloss_en: [earthworm]
+        gloss_zh: [蚯蚓]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: riam2-蚺
+    headword: 蚺
+    readings:
+      - pengim: riam2
+      - pengim: riam5
+    senses:
+      - pos: noun
+        gloss_en: [boa; python]
+        gloss_zh: [蚺]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zag4-蚻
+    headword: 蚻
+    readings:
+      - pengim: zag4
+    senses:
+      - pos: noun
+        gloss_en: [a type of small cicada]
+        gloss_zh: [蚻]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into two sense-specific entries because zuah8 is attested only for the unrelated 'cockroach' sense, not for this 'small cicada' sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zag4-蚻-noun
+    headword: 蚻
+    readings:
+      - pengim: zag4
+      - pengim: zuah8
+    senses:
+      - pos: noun
+        gloss_en: [cockroach]
+        gloss_zh: [蚻]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the unrelated 'small cicada' sense, which only attests zag4.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ce1-蛆
+    headword: 蛆
+    readings:
+      - pengim: ce1
+      - pengim: zu1
+    senses:
+      - pos: noun
+        gloss_en: [maggot]
+        gloss_zh: [蛆]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gab4-bo5-蛤蟆
+    headword: 蛤蟆
+    readings:
+      - pengim: gab4 bo5
+      - pengim: gab4 mo5
+    senses:
+      - pos: noun
+        gloss_en: [frog; toad, tadpole]
+        gloss_zh: [蛤蟆]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iab8-diab8-蛺蝶
+    headword: 蛺蝶
+    readings:
+      - pengim: iab8 diab8
+      - pengim: hiab8 diab8
+    senses:
+      - pos: noun
+        gloss_en: [butterfly, Nymphalidae (butterfly family)]
+        gloss_zh: [蛺蝶]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hoin2-蜆
+    headword: 蜆
+    readings:
+      - pengim: hoin2
+      - pengim: hain2
+    senses:
+      - pos: noun
+        gloss_en: [basket clam (Corbiculidae)]
+        gloss_zh: [蜆]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghê5-gang1-蜈蚣
+    headword: 蜈蚣
+    readings:
+      - pengim: ghê5 gang1
+      - pengim: ghou5 gang1
+    senses:
+      - pos: noun
+        gloss_en: [centipede]
+        gloss_zh: [蜈蚣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhig8-pang1-蜜蜂
+    headword: 蜜蜂
+    readings:
+      - pengim: bhig8 pang1
+      - pengim: bhêg8 pang1
+    senses:
+      - pos: noun
+        gloss_en: [bee, honeybee]
+        gloss_zh: [蜜蜂]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hog4-蝠
+    headword: 蝠
+    readings:
+      - pengim: hog4
+      - pengim: big4
+    senses:
+      - pos: noun
+        gloss_en: [bat (animal)]
+        gloss_zh: [蝠]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: big4-bo5-蝠婆
+    headword: 蝠婆
+    readings:
+      - pengim: big4 bo5
+      - pengim: big8 bo5
+    senses:
+      - pos: noun
+        gloss_en: [bat (animal)]
+        gloss_zh: [蝠婆]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hê5-bhio5-蝦苗
+    headword: 蝦苗
+    readings:
+      - pengim: hê5 bhio5
+      - pengim: hê5 bhiê5
+    senses:
+      - pos: noun
+        gloss_en: [small shrimp, shrimp fry]
+        gloss_zh: [蝦苗]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cing5-螓
+    headword: 螓
+    readings:
+      - pengim: cing5
+      - pengim: cêng5
+    senses:
+      - pos: noun
+        gloss_en: [housefly, small cicada (archaic)]
+        gloss_zh: [螓]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lo5-螺
+    headword: 螺
+    readings:
+      - pengim: lo5
+      - pengim: lo1
+    senses:
+      - pos: noun
+        gloss_en: [snail (aquatic)]
+        gloss_zh: [螺]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liou6-ziou6-蟟蛁
+    headword: 蟟蛁
+    readings:
+      - pengim: liou6 ziou6
+      - pengim: liao6 ziao6
+    senses:
+      - pos: noun
+        gloss_en: [Phaxas attenuatus (edible clam species)]
+        gloss_zh: [蟟蛁]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: la5-ia5-蟧蜈
+    headword: 蟧蜈
+    readings:
+      - pengim: la5 ia5
+      - pengim: la5 ghia5
+    senses:
+      - pos: noun
+        gloss_en: [giant crab spider (huntsman spider)]
+        gloss_zh: [蟧蜈]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siam5-蟬
+    headword: 蟬
+    readings:
+      - pengim: siam5
+      - pengim: siang5
+      - pengim: siêng5
+      - pengim: sung5
+    senses:
+      - pos: noun
+        gloss_en: [cicada]
+        gloss_zh: [蟬]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng5-蠅
+    headword: 蠅
+    readings:
+      - pengim: sêng5
+      - pengim: sing5
+    senses:
+      - pos: noun
+        gloss_en: [fly; housefly]
+        gloss_zh: [蠅]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: coin5-蠶
+    headword: 蠶
+    readings:
+      - pengim: coin5
+      - pengim: cain5
+    senses:
+      - pos: noun
+        gloss_en: [silkworm]
+        gloss_zh: [蠶]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciên6-象
+    headword: 象
+    readings:
+      - pengim: ciên6
+      - pengim: cion6
+      - pengim: siang6
+    senses:
+      - pos: noun
+        gloss_en: [elephant]
+        gloss_zh: [象]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cai5-豺
+    headword: 豺
+    readings:
+      - pengim: cai5
+      - pengim: sai6
+    senses:
+      - pos: noun
+        gloss_en: [dhole (Cuon alpinus), wild dog]
+        gloss_zh: [豺]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diou1-貂
+    headword: 貂
+    readings:
+      - pengim: diou1
+      - pengim: diao1
+    senses:
+      - pos: noun
+        gloss_en: [marten]
+        gloss_zh: [貂]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiun1-貅
+    headword: 貅
+    readings:
+      - pengim: hiun1
+      - pengim: hiu1
+    senses:
+      - pos: noun
+        gloss_en: [mythical panther-like creature (as in 貔貅)]
+        gloss_zh: [貅]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiao1-貓
+    headword: 貓
+    readings:
+      - pengim: ngiao1
+      - pengim: ngiou1
+      - pengim: bha5
+    senses:
+      - pos: noun
+        gloss_en: [cat]
+        gloss_zh: [貓]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Dropped mao1 — in the dossier it is attested only for other, non-'cat' senses of this headword (Mandarin-colloquial 'to bend', Mainland-China-colloquial 'modem', Hokkien 'wildcat/vicious woman'), not for the core cat sense drafted here.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiao1-gian2-貓囝
+    headword: 貓囝
+    readings:
+      - pengim: ngiao1 gian2
+      - pengim: ngiou1 gian2
+    senses:
+      - pos: noun
+        gloss_en: [kitten, cat]
+        gloss_zh: [貓囝]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiou1-niê5-貓娘
+    headword: 貓娘
+    readings:
+      - pengim: ngiou1 niê5
+      - pengim: ngiao1 nio5
+    senses:
+      - pos: noun
+        gloss_en: [female cat, tabby]
+        gloss_zh: [貓娘]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiou1-bho2-貓母
+    headword: 貓母
+    readings:
+      - pengim: ngiou1 bho2
+      - pengim: ngiao1 bho2
+    senses:
+      - pos: noun
+        gloss_en: [female cat, tabby]
+        gloss_zh: [貓母]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiou1-gou2-貓牯
+    headword: 貓牯
+    readings:
+      - pengim: ngiou1 gou2
+    senses:
+      - pos: noun
+        gloss_en: [male cat, tomcat]
+        gloss_zh: [貓牯]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiou1-tao5-êng1-貓頭鷹
+    headword: 貓頭鷹
+    readings:
+      - pengim: ngiou1 tao5 êng1
+      - pengim: ngiao1 tao5 êng1
+    senses:
+      - pos: noun
+        gloss_en: [owl]
+        gloss_zh: [貓頭鷹]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ngiao2-ce2-貓鼠
+    headword: 貓鼠
+    readings:
+      - pengim: ngiao2 ce2
+      - pengim: ngiou2 ce2
+      - pengim: ngiao2 cu2
+    senses:
+      - pos: noun
+        gloss_en: [mouse, rat]
+        gloss_zh: [貓鼠]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buê6-貝
+    headword: 貝
+    readings:
+      - pengim: buê6
+      - pengim: buê3
+    senses:
+      - pos: noun
+        gloss_en: [shellfish, cowrie]
+        gloss_zh: [貝]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

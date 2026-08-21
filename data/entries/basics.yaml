@@ -48935,3 +48935,3056 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: zab4-札
+    headword: 札
+    readings:
+      - pengim: zab4
+      - pengim: zag4
+    senses:
+      - pos: noun
+        gloss_en: [letter; note, correspondence]
+        gloss_zh: [札]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: do2-朵
+    headword: 朵
+    readings:
+      - pengim: do2
+      - pengim: do5
+      - pengim: to5
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for clusters of fruit]
+        gloss_zh: [朵]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang1-東
+    headword: 東
+    readings:
+      - pengim: dang1
+      - pengim: dong1
+    senses:
+      - pos: noun
+        gloss_en: [east, side]
+        gloss_zh: [東]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: su2-杵
+    headword: 杵
+    readings:
+      - pengim: su2
+    senses:
+      - pos: noun
+        gloss_en: [pestle, club for beating laundry]
+        gloss_zh: [杵]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Dropped te2 as a candidate because it is only attested for a separate 'alternative form of 悇' sense with no independent gloss data given, not for this pestle sense.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cuêng5-栓
+    headword: 栓
+    readings:
+      - pengim: cuêng5
+      - pengim: cuang5
+    senses:
+      - pos: noun
+        gloss_en: [peg, plug, bolt]
+        gloss_zh: [栓]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: du1-株
+    headword: 株
+    readings:
+      - pengim: du1
+      - pengim: zu1
+    senses:
+      - pos: classifier
+        gloss_en: [classifier for plants/trees]
+        gloss_zh: [株]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui5-桅
+    headword: 桅
+    readings:
+      - pengim: ui5
+      - pengim: ngui5
+    senses:
+      - pos: noun
+        gloss_en: [mast (of a ship)]
+        gloss_zh: [桅]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uan3-案
+    headword: 案
+    readings:
+      - pengim: uan3
+      - pengim: ang3
+    senses:
+      - pos: noun
+        gloss_en: [case (legal matter), file; record]
+        gloss_zh: [案]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ang3-gian6-案件
+    headword: 案件
+    readings:
+      - pengim: ang3 gian6
+      - pengim: uan3 gian6
+    senses:
+      - pos: noun
+        gloss_en: [case (legal matter), lawsuit]
+        gloss_zh: [案件]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diou5-gian6-條件
+    headword: 條件
+    readings:
+      - pengim: diou5 gian6
+      - pengim: diao5 gian6
+    senses:
+      - pos: noun
+        gloss_en: [condition; requirement, circumstances; situation]
+        gloss_zh: [條件]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huam6-梵
+    headword: 梵
+    readings:
+      - pengim: huam6
+      - pengim: huang6
+    senses:
+      - pos: adjective
+        gloss_en: [Buddhist; of Buddhism, Brahman (Hinduism); Sanskrit]
+        gloss_zh: [梵]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kai2-楷
+    headword: 楷
+    readings:
+      - pengim: kai2
+    senses:
+      - pos: noun
+        gloss_en: [model; standard, "regular script (楷書, in calligraphy)"]
+        gloss_zh: [楷]
+        note: 1 of 2 candidate readings confirmed from Wiktionary (kai2); gai1 dropped as it is attested only for the separate 'Chinese pistache tree' sense, drafted above as its own entry. Genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong5-榮
+    headword: 榮
+    readings:
+      - pengim: iong5
+      - pengim: uêng5
+    senses:
+      - pos: noun
+        gloss_en: [glory; honor, to flourish; to prosper]
+        gloss_zh: [榮]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cion1-槍
+    headword: 槍
+    readings:
+      - pengim: cion1
+      - pengim: ciên1
+    senses:
+      - pos: noun
+        gloss_en: [gun; firearm, spear; lance (historical)]
+        gloss_zh: [槍]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gang3-槓
+    headword: 槓
+    readings:
+      - pengim: gang3
+      - pengim: gong3
+    senses:
+      - pos: noun
+        gloss_en: [thick rod; pole, to cross out; strike out]
+        gloss_zh: [槓]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziên2-槳
+    headword: 槳
+    readings:
+      - pengim: ziên2
+      - pengim: zion2
+    senses:
+      - pos: noun
+        gloss_en: [oar; paddle]
+        gloss_zh: [槳]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zuang1-樁
+    headword: 樁
+    readings:
+      - pengim: zuang1
+      - pengim: zeng1
+    senses:
+      - pos: classifier
+        gloss_en: ["classifier for events, deals, cases", wooden pile; stake]
+        gloss_zh: [樁]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghaoh8-樂
+    headword: 樂
+    readings:
+      - pengim: ghaoh8
+      - pengim: ngaoh8
+    senses:
+      - pos: noun
+        gloss_en: [music; tune; melody]
+        gloss_zh: [樂]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from the headword's 3 given candidates because Wiktionary attests ghaoh8/ngaoh8 only in the 'music' (yuè) pronunciation block, separate from lag8 which belongs to a distinct 'joyful' (lè) sense block.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang5-樊
+    headword: 樊
+    readings:
+      - pengim: huang5
+      - pengim: huêng5
+    senses:
+      - pos: noun
+        gloss_en: [fence; hedge; cage (literary), a surname]
+        gloss_zh: [樊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biê1-標
+    headword: 標
+    readings:
+      - pengim: biê1
+      - pengim: bio1
+      - pengim: piou1
+      - pengim: piao1
+    senses:
+      - pos: noun
+        gloss_en: [mark; symbol; sign, standard; example, prize; award]
+        gloss_zh: [標]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: piou1-zung2-標準
+    headword: 標準
+    readings:
+      - pengim: piou1 zung2
+      - pengim: piao1 zung2
+    senses:
+      - pos: noun
+        gloss_en: [standard; criterion]
+        gloss_zh: [標準]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: piou1-doi5-標題
+    headword: 標題
+    readings:
+      - pengim: piou1 doi5
+      - pengim: piao1 doi5
+    senses:
+      - pos: noun
+        gloss_en: [title; heading, subject line (of an email)]
+        gloss_zh: [標題]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mo5-模
+    headword: 模
+    readings:
+      - pengim: mo5
+      - pengim: bhou5
+    senses:
+      - pos: noun
+        gloss_en: [mold; matrix; pattern, appearance]
+        gloss_zh: [模]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. bhou5 is attested only alongside the 'appearance/mold' sense block (not the 'model; to imitate' block), so that shared sense was used for the gloss.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mo5-iên7-模樣
+    headword: 模樣
+    readings:
+      - pengim: mo5 iên7
+      - pengim: mo5 ion7
+    senses:
+      - pos: noun
+        gloss_en: [looks; appearance, situation; circumstance]
+        gloss_zh: [模樣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iên7-樣
+    headword: 樣
+    readings:
+      - pengim: iên7
+      - pengim: ion7
+    senses:
+      - pos: noun
+        gloss_en: [appearance; form; look, kind; type; sort]
+        gloss_zh: [樣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang5-權
+    headword: 權
+    readings:
+      - pengim: kuang5
+      - pengim: kuêng5
+    senses:
+      - pos: noun
+        gloss_en: [power; authority, right; entitlement]
+        gloss_zh: [權]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuêng5-lag8-權力
+    headword: 權力
+    readings:
+      - pengim: kuêng5 lag8
+      - pengim: kuang5 lag8
+    senses:
+      - pos: noun
+        gloss_en: [power; authority]
+        gloss_zh: [權力]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kuang2-款
+    headword: 款
+    readings:
+      - pengim: kuang2
+      - pengim: kuêng2
+    senses:
+      - pos: classifier
+        gloss_en: [kind; sort; type, style; appearance]
+        gloss_zh: [款, 款式]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gua1-歌
+    headword: 歌
+    readings:
+      - pengim: gua1
+      - pengim: go1
+    senses:
+      - pos: noun
+        gloss_en: [song; tune]
+        gloss_zh: [歌, 歌曲]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zian3-ciu2-boin5-正手爿
+    headword: 正手爿
+    readings:
+      - pengim: zian3 ciu2 boin5
+      - pengim: zian3 ciu2 bain5
+    senses:
+      - pos: noun
+        gloss_en: [right side; the right]
+        gloss_zh: [正手爿, 右邊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê3-歲
+    headword: 歲
+    readings:
+      - pengim: huê3
+      - pengim: suê3
+    senses:
+      - pos: classifier
+        gloss_en: [year(s) old (age), year]
+        gloss_zh: [歲, 年]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pai2-sê3-歹勢
+    headword: 歹勢
+    readings:
+      - pengim: pai2 sê3
+      - pengim: pain2 sê3
+    senses:
+      - pos: interjection
+        gloss_en: [sorry; excuse me; pardon me, embarrassed; shy]
+        gloss_zh: [歹勢, 不好意思]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: deng7-段
+    headword: 段
+    readings:
+      - pengim: deng7
+      - pengim: duêng6
+      - pengim: duang6
+    senses:
+      - pos: classifier
+        gloss_en: [section; segment; piece, period (of time)]
+        gloss_zh: [段]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dag8-bing2-毒品
+    headword: 毒品
+    readings:
+      - pengim: dag8 bing2
+      - pengim: dah8 bing2
+      - pengim: dah8 bêng2
+    senses:
+      - pos: noun
+        gloss_en: [drug (illegal narcotic); narcotic substance]
+        gloss_zh: [毒品]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di1-氐
+    headword: 氐
+    readings:
+      - pengim: di1
+      - pengim: di2
+    senses:
+      - pos: noun
+        gloss_en: ["root; basis (of a tree, archaic)", basis; fundamental]
+        gloss_zh: [氐, 柢]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming5-sog8-民俗
+    headword: 民俗
+    readings:
+      - pengim: ming5 sog8
+      - pengim: mêng5 sog8
+    senses:
+      - pos: noun
+        gloss_en: [folklore; folk custom]
+        gloss_zh: [民俗]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kui3-氣
+    headword: 氣
+    readings:
+      - pengim: kui3
+      - pengim: ki3
+    senses:
+      - pos: noun
+        gloss_en: [air; breath, qi; vital energy]
+        gloss_zh: [氣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iong2-iêng2-永遠
+    headword: 永遠
+    readings:
+      - pengim: iong2 iêng2
+      - pengim: iong2 iang2
+      - pengim: uêng2 iang2
+    senses:
+      - pos: adverb
+        gloss_en: [forever; always; permanently, eternity]
+        gloss_zh: [永遠]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: le2-ho2-汝好
+    headword: 汝好
+    readings:
+      - pengim: le2 ho2
+      - pengim: lu2 ho2
+    senses:
+      - pos: interjection
+        gloss_en: [hello]
+        gloss_zh: [你好]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sua1-huag4-沙發
+    headword: 沙發
+    readings:
+      - pengim: sua1 huag4
+      - pengim: sua1 huêg4
+    senses:
+      - pos: noun
+        gloss_en: [sofa; couch]
+        gloss_zh: [沙發]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huab4-法
+    headword: 法
+    readings:
+      - pengim: huab4
+      - pengim: huag4
+    senses:
+      - pos: noun
+        gloss_en: [law; method; way]
+        gloss_zh: [法]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huag4-lug8-法律
+    headword: 法律
+    readings:
+      - pengim: huag4 lug8
+      - pengim: huah4 luh8
+    senses:
+      - pos: noun
+        gloss_en: [law]
+        gloss_zh: [法律]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: soi2-san1-boin2-洗衫板
+    headword: 洗衫板
+    readings:
+      - pengim: soi2 san1 boin2
+      - pengim: soi2 san1 bang2
+    senses:
+      - pos: noun
+        gloss_en: [washboard]
+        gloss_zh: [洗衫板]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. A secondary Cantonese-only sense ('flat-chested woman') was excluded as not applicable to Teochew.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêng1-ciou5-清朝
+    headword: 清朝
+    readings:
+      - pengim: cêng1 ciou5
+      - pengim: cêng1 ciao5
+    senses:
+      - pos: proper-noun
+        gloss_en: [Qing dynasty (1644-1911)]
+        gloss_zh: [清朝]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang3-ciou5-漢朝
+    headword: 漢朝
+    readings:
+      - pengim: hang3 ciou5
+      - pengim: hang3 ciao5
+    senses:
+      - pos: proper-noun
+        gloss_en: [the Han dynasty (202 BCE-220 CE)]
+        gloss_zh: [漢朝]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziam6-漸
+    headword: 漸
+    readings:
+      - pengim: ziam6
+    senses:
+      - pos: adverb
+        gloss_en: [gradually]
+        gloss_zh: [漸]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into a separate entry from ziam2, which the dossier attests only for a distinct classical/obsolete sense of this character ('to soak; to moisten').
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diê5-giah8-潮劇
+    headword: 潮劇
+    readings:
+      - pengim: diê5 giah8
+      - pengim: dio5 giah8
+    senses:
+      - pos: noun
+        gloss_en: [Teochew opera]
+        gloss_zh: [潮劇]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dio5-liu5-潮流
+    headword: 潮流
+    readings:
+      - pengim: dio5 liu5
+      - pengim: diê5 liu5
+    senses:
+      - pos: noun
+        gloss_en: [tide; tidal current, trend]
+        gloss_zh: [潮流]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ui5-sim6-moh4-為什麼
+    headword: 為什麼
+    readings:
+      - pengim: ui5 sim6 moh4
+      - pengim: ui5 sim6 mo7
+    senses:
+      - pos: adverb
+        gloss_en: [why, for what reason, how come]
+        gloss_zh: [為什麼]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bho5-riêh8-gu2-無偌久
+    headword: 無偌久
+    readings:
+      - pengim: bho5 riêh8 gu2
+      - pengim: bho5 rioh8 gu2
+    senses:
+      - pos: adverb
+        gloss_en: [soon, before long, after a while]
+        gloss_zh: [無偌久]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bho5-iao3-ging2-無要緊
+    headword: 無要緊
+    readings:
+      - pengim: bho5 iao3 ging2
+      - pengim: bho5 iou3 ging2
+    senses:
+      - pos: interjection
+        gloss_en: [no problem, it doesn't matter, never mind]
+        gloss_zh: [無要緊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bho5-biang3-無變
+    headword: 無變
+    readings:
+      - pengim: bho5 biang3
+      - pengim: bho5 biêng3
+    senses:
+      - pos: phrase
+        gloss_en: [there's nothing to be done, can't help it]
+        gloss_zh: [無變]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bho5-he5-無魚，蝦也好
+    headword: 無魚，蝦也好
+    readings:
+      - pengim: bho5 he5
+      - pengim: hê5 ia7 ho2
+    senses:
+      - pos: idiom
+        gloss_en: [better to have something than nothing, settle for what's available]
+        gloss_zh: [無魚，蝦也好]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The two given readings correspond to the two comma-separated halves of the proverb (無魚 / 蝦也好) rather than alternate pronunciations of the whole phrase.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing1-huê2-煙火
+    headword: 煙火
+    readings:
+      - pengim: ing1 huê2
+      - pengim: êng1 huê2
+    senses:
+      - pos: noun
+        gloss_en: [firework, sparkler]
+        gloss_zh: [煙火]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ing1-huê1-煙花
+    headword: 煙花
+    readings:
+      - pengim: ing1 huê1
+      - pengim: êng1 huê1
+    senses:
+      - pos: noun
+        gloss_en: [fireworks, gorgeous spring scenery]
+        gloss_zh: [煙花]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boin5-爿
+    headword: 爿
+    readings:
+      - pengim: boin5
+      - pengim: bain5
+      - pengim: puang5
+      - pengim: puêng5
+    senses:
+      - pos: classifier
+        gloss_en: ["classifier for shops, factories", thin slice; piece (of wood)]
+        gloss_zh: [爿]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: piang3-片
+    headword: 片
+    readings:
+      - pengim: piang3
+      - pengim: piêng3
+      - pengim: pin3
+    senses:
+      - pos: noun
+        gloss_en: [thin piece; slice; flake]
+        gloss_zh: [片]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang2-版
+    headword: 版
+    readings:
+      - pengim: bang2
+      - pengim: boin2
+      - pengim: bain2
+    senses:
+      - pos: noun
+        gloss_en: [edition; version, printing plate]
+        gloss_zh: [版]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zuang6-狀
+    headword: 狀
+    readings:
+      - pengim: zuang6
+      - pengim: zeng7
+      - pengim: zo6
+    senses:
+      - pos: noun
+        gloss_en: [shape; form, certificate, to describe]
+        gloss_zh: [狀]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lug8-率
+    headword: 率
+    readings:
+      - pengim: lug8
+    senses:
+      - pos: noun
+        gloss_en: [rate; frequency, ratio]
+        gloss_zh: [率]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This 'rate; ratio' sense is attested with a distinct reading (lug8) from the main 'to lead' sense (zug4/sug4), so it is drafted as a separate entry.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ghêg8-bug4-dog4-玉不琢，不成器
+    headword: 玉不琢，不成器
+    readings:
+      - pengim: ghêg8 bug4 dog4
+      - pengim: bug4 sêng1 ki3
+    senses:
+      - pos: idiom
+        gloss_en: [one must be trained/educated to succeed (lit. 'jade must be carved to become a vessel')]
+        gloss_zh: [玉不琢，不成器]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The two given candidates are not alternate pronunciations but the two comma-separated halves of one single reading for this proverb (split by the internal comma in the headword).
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ga3-珓
+    headword: 珓
+    readings:
+      - pengim: ga3
+      - pengim: gao1
+    senses:
+      - pos: noun
+        gloss_en: [moon blocks (divination device)]
+        gloss_zh: [珓]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hing7-do7-現代
+    headword: 現代
+    readings:
+      - pengim: hing7 do7
+      - pengim: hêng7 do7
+    senses:
+      - pos: noun
+        gloss_en: [modern times, modern; contemporary]
+        gloss_zh: [現代]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hing7-zai6-現在
+    headword: 現在
+    readings:
+      - pengim: hing7 zai6
+      - pengim: hêng7 zai6
+      - pengim: hiang7 zai6
+    senses:
+      - pos: noun
+        gloss_en: [now; the present time]
+        gloss_zh: [現在]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hing7-sig8-現實
+    headword: 現實
+    readings:
+      - pengim: hing7 sig8
+      - pengim: hiang7 sig8
+    senses:
+      - pos: noun
+        gloss_en: [reality, realistic; pragmatic]
+        gloss_zh: [現實]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang5-環
+    headword: 環
+    readings:
+      - pengim: huang5
+      - pengim: huêng5
+    senses:
+      - pos: noun
+        gloss_en: [ring; circle; hoop, link, to surround]
+        gloss_zh: [環]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: meng7-璺
+    headword: 璺
+    readings:
+      - pengim: meng7
+      - pengim: mung7
+    senses:
+      - pos: noun
+        gloss_en: [crack (especially in ceramics or glass)]
+        gloss_zh: [璺]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bang5-瓶
+    headword: 瓶
+    readings:
+      - pengim: bang5
+      - pengim: ping5
+    senses:
+      - pos: noun
+        gloss_en: [bottle; vase; jar; flask]
+        gloss_zh: [瓶]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sên1-siên3-生相
+    headword: 生相
+    readings:
+      - pengim: sên1 siên3
+      - pengim: sên1 sion3
+    senses:
+      - pos: noun
+        gloss_en: [Chinese zodiac sign]
+        gloss_zh: [生相]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: liag8-略
+    headword: 略
+    readings:
+      - pengim: liag8
+      - pengim: lioh8
+      - pengim: liêh8
+    senses:
+      - pos: adverb
+        gloss_en: [slightly; approximately, roughly]
+        gloss_zh: [略]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêng1-boin5-zin5-番爿錢，唐山福
+    headword: 番爿錢，唐山福
+    readings:
+      - pengim: huêng1 boin5 zin5
+      - pengim: deng5 suan1 hog4
+    senses:
+      - pos: idiom
+        gloss_en: [money earned in foreign lands will gain happiness in China (a saying about overseas remittances)]
+        gloss_zh: [番爿錢，唐山福]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The two readings are the pronunciations of the two halves of this saying (番爿錢 / 唐山福), read together as one phrase, not alternate readings of a single word.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêng1-cia1-番車
+    headword: 番車
+    readings:
+      - pengim: huêng1 cia1
+      - pengim: huang1 cia1
+    senses:
+      - pos: noun
+        gloss_en: [sewing machine]
+        gloss_zh: [番車]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huêng1-gang2-番鹼
+    headword: 番鹼
+    readings:
+      - pengim: huêng1 gang2
+      - pengim: huang1 gang2
+    senses:
+      - pos: noun
+        gloss_en: [soap]
+        gloss_zh: [番鹼]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: deng1-riêng5-當然
+    headword: 當然
+    readings:
+      - pengim: deng1 riêng5
+      - pengim: deng1 riang5
+    senses:
+      - pos: adverb
+        gloss_en: [of course; surely, naturally]
+        gloss_zh: [當然]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mog8-疫
+    headword: 疫
+    readings:
+      - pengim: mog8
+      - pengim: êg8
+    senses:
+      - pos: noun
+        gloss_en: [epidemic; plague]
+        gloss_zh: [疫]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mog8-miou5-疫苗
+    headword: 疫苗
+    readings:
+      - pengim: mog8 miou5
+      - pengim: mog8 miao5
+      - pengim: êg8 miao5
+    senses:
+      - pos: noun
+        gloss_en: [vaccine; inoculation]
+        gloss_zh: [疫苗]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: eng2-癮
+    headword: 癮
+    readings:
+      - pengim: eng2
+      - pengim: ing2
+      - pengim: êng2
+      - pengim: ngiêng3
+      - pengim: ngiang3
+    senses:
+      - pos: noun
+        gloss_en: [addiction, craving, urge]
+        gloss_zh: [癮]
+        note: 5 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huag4-diou5-發條
+    headword: 發條
+    readings:
+      - pengim: huag4 diou5
+      - pengim: huag4 diao5
+    senses:
+      - pos: noun
+        gloss_en: [mainspring, clockwork spring]
+        gloss_zh: [發條]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêg8-的
+    headword: 的
+    readings:
+      - pengim: dêg8
+    senses:
+      - pos: noun
+        gloss_en: [target; aim, standard; criterion]
+        gloss_zh: [的]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The original set of 4 candidates (dêg8, di1, di7, deg4) was split into three sense-specific entries for 的 since each ties to a distinct reading/sense cluster; this entry covers the literary dêg8 reading (target; aim; bright).
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: deg4-的
+    headword: 的
+    readings:
+      - pengim: deg4
+    senses:
+      - pos: noun
+        gloss_en: [taxi (short for 的士)]
+        gloss_zh: [的士]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The original set of 4 candidates (dêg8, di1, di7, deg4) was split into three sense-specific entries for 的; this entry covers the deg4 reading, an abbreviation of 的士 ('taxi').
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: di1-se6-的士
+    headword: 的士
+    readings:
+      - pengim: di1 se6
+      - pengim: dêg4 se6
+      - pengim: dêg4 si1
+    senses:
+      - pos: noun
+        gloss_en: [taxi, cab; taxicab]
+        gloss_zh: [的士]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sion3-gi1-相機
+    headword: 相機
+    readings:
+      - pengim: sion3 gi1
+      - pengim: siên3 gi1
+    senses:
+      - pos: noun
+        gloss_en: [camera]
+        gloss_zh: [相機]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zing1-真
+    headword: 真
+    readings:
+      - pengim: zing1
+      - pengim: zêng1
+    senses:
+      - pos: adverb
+        gloss_en: [really; truly; very]
+        gloss_zh: [真]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ming5-ceng5-眠床
+    headword: 眠床
+    readings:
+      - pengim: ming5 ceng5
+      - pengim: mêng5 ceng5
+    senses:
+      - pos: noun
+        gloss_en: [bed]
+        gloss_zh: [眠床]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mung5-ki2-眠起
+    headword: 眠起
+    readings:
+      - pengim: mung5 ki2
+      - pengim: ming5 ki2
+      - pengim: mêng5 ki2
+    senses:
+      - pos: noun
+        gloss_en: [morning, breakfast]
+        gloss_zh: [眠起]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mung5-ki2-za2-眠起早
+    headword: 眠起早
+    readings:
+      - pengim: mung5 ki2 za2
+      - pengim: ming5 ki2 za2
+      - pengim: mêng5 ki2 za2
+    senses:
+      - pos: noun
+        gloss_en: [early morning]
+        gloss_zh: [眠起早]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zai1-sêg4-知識
+    headword: 知識
+    readings:
+      - pengim: zai1 sêg4
+      - pengim: di3 sêg4
+    senses:
+      - pos: noun
+        gloss_en: [knowledge, intellect; intelligence]
+        gloss_zh: [知識]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ge2-矩
+    headword: 矩
+    readings:
+      - pengim: ge2
+      - pengim: gu2
+    senses:
+      - pos: noun
+        gloss_en: [rule; standard, carpenter's square]
+        gloss_zh: [矩]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huag8-矱
+    headword: 矱
+    readings:
+      - pengim: huag8
+      - pengim: uag8
+      - pengim: huêg8
+      - pengim: uêg8
+    senses:
+      - pos: noun
+        gloss_en: [measure; standard; criterion; law]
+        gloss_zh: [彠]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This character is an archaic alternative form of 彠/彟 (measure; standard; criterion; law), drafted here under that target meaning.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: giam5-siab4-石榴皮熬鹽——鹹澀
+    headword: 石榴皮熬鹽——鹹澀
+    readings:
+      - pengim: giam5 siab4
+    senses:
+      - pos: idiom
+        gloss_en: [to be stingy]
+        gloss_zh: [慳嗇, 小氣]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This reading covers only the idiom's punchline segment 鹹澀; the full saying's first half (石榴皮熬鹽) is separately given in the dossier as sioh8 liu5 puê5 ngao5 iam5.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huab4-砝
+    headword: 砝
+    readings:
+      - pengim: huab4
+      - pengim: huag4
+    senses:
+      - pos: noun
+        gloss_en: ["weight (counterweight used on a scale, as in 砝碼)"]
+        gloss_zh: [砝]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diam1-砧
+    headword: 砧
+    readings:
+      - pengim: diam1
+      - pengim: diang1
+    senses:
+      - pos: noun
+        gloss_en: [chopping block; cutting board, anvil]
+        gloss_zh: [砧]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dêh4-io1-zin5-硩腰錢
+    headword: 硩腰錢
+    readings:
+      - pengim: dêh4 io1 zin5
+    senses:
+      - pos: noun
+        gloss_en: [money given to children during Chinese New Year (Jieyang Teochew)]
+        gloss_zh: [硩腰錢]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: in7-硯
+    headword: 硯
+    readings:
+      - pengim: in7
+      - pengim: ngi7
+    senses:
+      - pos: noun
+        gloss_en: [inkstone]
+        gloss_zh: [硯]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pong3-piê6-碰鰾
+    headword: 碰鰾
+    readings:
+      - pengim: pong3 piê6
+      - pengim: pong3 pio6
+    senses:
+      - pos: noun
+        gloss_en: [firecracker]
+        gloss_zh: [碰鰾]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sing5-神
+    headword: 神
+    readings:
+      - pengim: sing5
+      - pengim: sêng5
+    senses:
+      - pos: noun
+        gloss_en: [god; deity; spirit, spirit; soul; mind]
+        gloss_zh: [神]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pio3-票
+    headword: 票
+    readings:
+      - pengim: pio3
+      - pengim: piê3
+    senses:
+      - pos: noun
+        gloss_en: [ticket; coupon, ballot; vote, bank note; bill]
+        gloss_zh: [票]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siam5-禪
+    headword: 禪
+    readings:
+      - pengim: siam5
+      - pengim: siêng5
+      - pengim: siang5
+    senses:
+      - pos: noun
+        gloss_en: [dhyana; meditation (Buddhism), Buddhist doctrine]
+        gloss_zh: [禪]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This is the Buddhism-related 'chán' sense; a separate 'to abdicate' sense (siam6/siang6) is drafted as a separate entry.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: loi2-禮
+    headword: 禮
+    readings:
+      - pengim: loi2
+      - pengim: li2
+    senses:
+      - pos: noun
+        gloss_en: [ritual; ceremony, etiquette; courtesy, gift; present]
+        gloss_zh: [禮]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: loi2-bai3-禮拜
+    headword: 禮拜
+    readings:
+      - pengim: loi2 bai3
+      - pengim: li2 bai3
+    senses:
+      - pos: noun
+        gloss_en: [week, Sunday; day off, religious service; worship]
+        gloss_zh: [禮拜]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: li2-muêh8-禮物
+    headword: 禮物
+    readings:
+      - pengim: li2 muêh8
+      - pengim: loi2 muêh8
+    senses:
+      - pos: noun
+        gloss_en: [gift, present]
+        gloss_zh: [禮物]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: loi2-mao6-禮貌
+    headword: 禮貌
+    readings:
+      - pengim: loi2 mao6
+      - pengim: li2 mao6
+    senses:
+      - pos: noun
+        gloss_en: [politeness, manners, courtesy]
+        gloss_zh: [禮貌]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: se1-se7-私事
+    headword: 私事
+    readings:
+      - pengim: se1 se7
+      - pengim: sai1 se7
+    senses:
+      - pos: noun
+        gloss_en: [private matter, private business]
+        gloss_zh: [私事]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai1-kia1-zin5-私奇錢
+    headword: 私奇錢
+    readings:
+      - pengim: sai1 kia1 zin5
+      - pengim: sai2 kia1 zin5
+    senses:
+      - pos: noun
+        gloss_en: [secret stash of money, private savings]
+        gloss_zh: [私奇錢]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sai1-kia1-私家
+    headword: 私家
+    readings:
+      - pengim: sai1 kia1
+    senses:
+      - pos: noun
+        gloss_en: [personal savings; secret stash of money, private; secret]
+        gloss_zh: [私家]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into two sense-specific entries: this Southern Min colloquial sense ('private; secret; personal savings') is attested only with this reading, while a separate sense ('private; not open to the public') is attested only with reading se1 gê1."
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: miao2-秒
+    headword: 秒
+    readings:
+      - pengim: miao2
+      - pengim: miou2
+    senses:
+      - pos: classifier
+        gloss_en: [second (unit of time)]
+        gloss_zh: [秒]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi3-mig8-秘密
+    headword: 秘密
+    readings:
+      - pengim: bi3 mig8
+      - pengim: bi3 mêg8
+    senses:
+      - pos: noun
+        gloss_en: [secret]
+        gloss_zh: [秘密]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: diag4-秩
+    headword: 秩
+    readings:
+      - pengim: diag4
+      - pengim: diêg4
+    senses:
+      - pos: noun
+        gloss_en: [order; sequence, rank]
+        gloss_zh: [秩]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciao2-稍
+    headword: 稍
+    readings:
+      - pengim: ciao2
+      - pengim: ciou2
+    senses:
+      - pos: adverb
+        gloss_en: [a little; slightly, rather]
+        gloss_zh: [稍]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng2-種
+    headword: 種
+    readings:
+      - pengim: zêng2
+      - pengim: zong2
+    senses:
+      - pos: noun
+        gloss_en: [kind; type; sort, seed; species]
+        gloss_zh: [種]
+        note: "2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into two sense-specific entries: this noun sense ('kind; type; seed') is attested only with these readings, while a separate verb sense ('to plant; to grow') is attested only with reading zêng3."
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kong1-空
+    headword: 空
+    readings:
+      - pengim: kong1
+      - pengim: kang3
+    senses:
+      - pos: noun
+        gloss_en: [free time; spare time, vacant; unoccupied, gap; interval]
+        gloss_zh: [空]
+        note: 3 candidate readings were extracted from Wiktionary for 空, but they split across two distinct pos/etymology blocks on the source page. This entry covers the 'free time; vacant; gap' sense, which attests 2 of the 3 candidates (kong1, kang3) — kang1 belongs to the other sense and is dropped here; see the separate entry for that sense. Genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kong1-tiou5-空調
+    headword: 空調
+    readings:
+      - pengim: kong1 tiou5
+      - pengim: kong1 tiao5
+    senses:
+      - pos: noun
+        gloss_en: [air conditioner, air conditioning]
+        gloss_zh: [空調]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiao3-竅
+    headword: 竅
+    readings:
+      - pengim: kiao3
+      - pengim: kiou3
+    senses:
+      - pos: noun
+        gloss_en: [knack; key (to a problem), hole; aperture]
+        gloss_zh: [竅]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zion1-章
+    headword: 章
+    readings:
+      - pengim: zion1
+      - pengim: ziên1
+      - pengim: ziang1
+    senses:
+      - pos: noun
+        gloss_en: [chapter; section, seal; stamp]
+        gloss_zh: [章]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: duêng1-端
+    headword: 端
+    readings:
+      - pengim: duêng1
+      - pengim: duang1
+    senses:
+      - pos: noun
+        gloss_en: [end; tip, beginning; start]
+        gloss_zh: [端]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: duêng1-ngou2-端午
+    headword: 端午
+    readings:
+      - pengim: duêng1 ngou2
+      - pengim: duang1 ngou2
+    senses:
+      - pos: proper-noun
+        gloss_en: [Dragon Boat Festival]
+        gloss_zh: [端午節]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go5-笱
+    headword: 笱
+    readings:
+      - pengim: go5
+      - pengim: gou2
+    senses:
+      - pos: noun
+        gloss_en: [bamboo basket for trapping fish]
+        gloss_zh: [笱]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: coin2-筅
+    headword: 筅
+    readings:
+      - pengim: coin2
+      - pengim: cain2
+    senses:
+      - pos: noun
+        gloss_en: [whisk broom made of thin bamboo strips, to clean using such a broom]
+        gloss_zh: [筅]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: big4-筆
+    headword: 筆
+    readings:
+      - pengim: big4
+      - pengim: bêg4
+    senses:
+      - pos: noun
+        gloss_en: [writing brush, pen; pencil]
+        gloss_zh: [筆]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: big4-tab4-筆錔
+    headword: 筆錔
+    readings:
+      - pengim: big4 tab4
+      - pengim: bêg4 tab4
+    senses:
+      - pos: noun
+        gloss_en: ["cap of a pen, pencil, or writing brush"]
+        gloss_zh: [筆錔]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dang5-筒
+    headword: 筒
+    readings:
+      - pengim: dang5
+      - pengim: dang6
+    senses:
+      - pos: noun
+        gloss_en: [tube; pipe, barrel; can; tin]
+        gloss_zh: [筒]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cêh4-策
+    headword: 策
+    readings:
+      - pengim: cêh4
+      - pengim: ciah4
+    senses:
+      - pos: noun
+        gloss_en: [plan; scheme; strategy, policy]
+        gloss_zh: [策]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang2-管
+    headword: 管
+    readings:
+      - pengim: guang2
+      - pengim: guêng2
+      - pengim: geng2
+      - pengim: gong2
+    senses:
+      - pos: noun
+        gloss_en: [tube; pipe, ladle]
+        gloss_zh: [管]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siên1-箱
+    headword: 箱
+    readings:
+      - pengim: siên1
+      - pengim: sion1
+    senses:
+      - pos: noun
+        gloss_en: [box; chest; trunk]
+        gloss_zh: [箱]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zag4-節
+    headword: 節
+    readings:
+      - pengim: zag4
+      - pengim: zoih4
+    senses:
+      - pos: noun
+        gloss_en: [festival; holiday, joint; segment]
+        gloss_zh: [節]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang6-範
+    headword: 範
+    readings:
+      - pengim: huang6
+      - pengim: huam6
+    senses:
+      - pos: noun
+        gloss_en: [model; pattern, rule; boundary]
+        gloss_zh: [範]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: piêng1-篇
+    headword: 篇
+    readings:
+      - pengim: piêng1
+      - pengim: piang1
+    senses:
+      - pos: classifier
+        gloss_en: ["classifier for pieces of writing: piece, article", piece of writing]
+        gloss_zh: [篇]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bi3-篦
+    headword: 篦
+    readings:
+      - pengim: bi3
+      - pengim: bing3
+      - pengim: bêng3
+    senses:
+      - pos: noun
+        gloss_en: [fine-tooth comb, to comb with a fine-tooth comb]
+        gloss_zh: [篦]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang5-篷
+    headword: 篷
+    readings:
+      - pengim: pang5
+      - pengim: pong5
+    senses:
+      - pos: noun
+        gloss_en: [awning, canopy, sail]
+        gloss_zh: [篷]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hu2-簠
+    headword: 簠
+    readings:
+      - pengim: hu2
+      - pengim: pou2
+    senses:
+      - pos: noun
+        gloss_en: [ancient bronze ritual vessel for grain offerings]
+        gloss_zh: [簠]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siao1-簫
+    headword: 簫
+    readings:
+      - pengim: siao1
+      - pengim: siou1
+    senses:
+      - pos: noun
+        gloss_en: [xiao (vertical bamboo flute), panpipes]
+        gloss_zh: [簫]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciam1-籤
+    headword: 籤
+    readings:
+      - pengim: ciam1
+      - pengim: ciang1
+    senses:
+      - pos: noun
+        gloss_en: [divination lot (drawn at a temple), slip; label; marker]
+        gloss_zh: [籤, 籤詩]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lo5-籮
+    headword: 籮
+    readings:
+      - pengim: lo5
+      - pengim: lua5
+    senses:
+      - pos: noun
+        gloss_en: [bamboo basket]
+        gloss_zh: [籮, 籮筐]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêng1-sing5-精神
+    headword: 精神
+    readings:
+      - pengim: zêng1 sing5
+      - pengim: zêng1 sêng5
+    senses:
+      - pos: noun
+        gloss_en: [spirit; energy; vigor, mind; state of mind]
+        gloss_zh: [精神]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gou5-糊
+    headword: 糊
+    readings:
+      - pengim: gou5
+      - pengim: hu5
+      - pengim: hou5
+    senses:
+      - pos: noun
+        gloss_en: [paste; glue, muddled; blurry (figurative)]
+        gloss_zh: [糊, 漿糊]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi2-紀
+    headword: 紀
+    readings:
+      - pengim: gi2
+      - pengim: gi3
+    senses:
+      - pos: noun
+        gloss_en: [rule; discipline, century]
+        gloss_zh: [紀]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zua2-iê7-紙鷂
+    headword: 紙鷂
+    readings:
+      - pengim: zua2 iê7
+      - pengim: zua2 io7
+    senses:
+      - pos: noun
+        gloss_en: [kite (toy)]
+        gloss_zh: [紙鷂]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang5-緣
+    headword: 緣
+    readings:
+      - pengim: uang5
+      - pengim: uêng5
+    senses:
+      - pos: noun
+        gloss_en: [fate; predestined relationship, edge; hem]
+        gloss_zh: [緣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: pang7-縫
+    headword: 縫
+    readings:
+      - pengim: pang7
+    senses:
+      - pos: noun
+        gloss_en: [seam; crack, gap; narrow opening]
+        gloss_zh: [縫]
+        note: '1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into separate sense-specific entries: this reading matches the noun sense "seam; crack; gap", distinct from the pong5/hong5 readings used for the verb sense "to sew".'
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zong2-總
+    headword: 總
+    readings:
+      - pengim: zong2
+      - pengim: zang2
+    senses:
+      - pos: adverb
+        gloss_en: [always, overall; in general]
+        gloss_zh: [總]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dog8-纛
+    headword: 纛
+    readings:
+      - pengim: dog8
+      - pengim: dao6
+      - pengim: dag8
+    senses:
+      - pos: noun
+        gloss_en: [large ceremonial army banner (historical), feather/hair banner on the imperial carriage (historical)]
+        gloss_zh: [纛]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lam2-纜
+    headword: 纜
+    readings:
+      - pengim: lam2
+      - pengim: nam2
+    senses:
+      - pos: noun
+        gloss_en: [cable; rope (esp. mooring rope), hawser]
+        gloss_zh: [纜]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hui5-缶
+    headword: 缶
+    readings:
+      - pengim: hui5
+      - pengim: hu2
+    senses:
+      - pos: noun
+        gloss_en: [earthen pot or jar (for storing drink), ancient percussion instrument]
+        gloss_zh: [缶]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: geng1-缸
+    headword: 缸
+    readings:
+      - pengim: geng1
+      - pengim: gang1
+    senses:
+      - pos: noun
+        gloss_en: ["vat; crock; jar (e.g. water vat, fish tank)", jar; vase]
+        gloss_zh: [缸]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The gang1 reading is attested specifically for the narrower Teochew-tagged "jar; vase" sense, while geng1 also covers the broader general vat/crock/tank senses.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guêng3-罐
+    headword: 罐
+    readings:
+      - pengim: guêng3
+      - pengim: guang3
+    senses:
+      - pos: noun
+        gloss_en: [can; jar; tin (container)]
+        gloss_zh: [罐]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang2-dig4-罕得
+    headword: 罕得
+    readings:
+      - pengim: hang2 dig4
+      - pengim: hang2 dêg4
+    senses:
+      - pos: adverb
+        gloss_en: [rarely; seldom]
+        gloss_zh: [罕得]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang5-翰
+    headword: 翰
+    readings:
+      - pengim: hang5
+      - pengim: hang7
+    senses:
+      - pos: noun
+        gloss_en: [writing brush; writing; literary work, letter of correspondence]
+        gloss_zh: [翰]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ci1-liang5-老婆跋落溪——淒涼
+    headword: 老婆跋落溪——淒涼
+    readings:
+      - pengim: ci1 liang5
+    senses:
+      - pos: idiom
+        gloss_en: ["bleak; miserable (xiehouyu: 'wife falls into the creek — pathetic')"]
+        gloss_zh: [淒涼]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This reading is the punchline half (淒涼) of the full xiehouyu; the dossier also lists a Peng'im reading for the full setup phrase (老婆跋落溪) but no additional candidate for that half was given here.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sêng1-聲
+    headword: 聲
+    readings:
+      - pengim: sêng1
+      - pengim: sian1
+    senses:
+      - pos: noun
+        gloss_en: [sound; noise; voice, tone]
+        gloss_zh: [聲, 聲音]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zêh4-kuêng5-職權
+    headword: 職權
+    readings:
+      - pengim: zêh4 kuêng5
+      - pengim: zêh4 kuang5
+    senses:
+      - pos: noun
+        gloss_en: [authority; powers]
+        gloss_zh: [職權]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gou2-piê3-股票
+    headword: 股票
+    readings:
+      - pengim: gou2 piê3
+      - pengim: gou2 pio3
+    senses:
+      - pos: noun
+        gloss_en: [share; stock]
+        gloss_zh: [股票]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: kiên1-腔
+    headword: 腔
+    readings:
+      - pengim: kiên1
+      - pengim: kion1
+    senses:
+      - pos: noun
+        gloss_en: [accent; tone of speech, cavity (anatomical)]
+        gloss_zh: [腔, 口音]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: go1-iêh8-膏藥
+    headword: 膏藥
+    readings:
+      - pengim: go1 iêh8
+      - pengim: go1 ioh8
+    senses:
+      - pos: noun
+        gloss_en: [herbal plaster; medicated patch; poultice]
+        gloss_zh: [膏藥]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze6-iu5-自由
+    headword: 自由
+    readings:
+      - pengim: ze6 iu5
+      - pengim: zu6 iu5
+    senses:
+      - pos: noun
+        gloss_en: [freedom; liberty, free; unconstrained]
+        gloss_zh: [自由]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hêng3-興
+    headword: 興
+    readings:
+      - pengim: hêng3
+    senses:
+      - pos: noun
+        gloss_en: [interest; desire; mood (for doing something), excitement]
+        gloss_zh: [興趣, 興致]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The two original candidates (hêng1, hêng3) map to two distinct senses/pos blocks in the source data, so this word was split into separate sense-specific entries, each keeping only its own attested reading.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hang5-bang1-航班
+    headword: 航班
+    readings:
+      - pengim: hang5 bang1
+      - pengim: pang5 bang1
+    senses:
+      - pos: noun
+        gloss_en: [flight (scheduled journey by airplane), scheduled voyage (by ship or ferry)]
+        gloss_zh: [航班]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: buan1-般
+    headword: 般
+    readings:
+      - pengim: buan1
+    senses:
+      - pos: suffix
+        gloss_en: [kind; sort; class, like; similar to]
+        gloss_zh: [般]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Dropped puag4 and bo1, which the dossier ties to a separate, narrower sense (般若/般涅槃, transliterated Buddhist terms) and which are drafted as a separate entry below.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puag4-般
+    headword: 般
+    readings:
+      - pengim: puag4
+      - pengim: bo1
+    senses:
+      - pos: prefix
+        gloss_en: ["used in 般若 (bōrě, Buddhist term for wisdom)", "used in 般涅槃 (bōnièpán, parinirvana)"]
+        gloss_zh: [般若]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. These readings are tied specifically to the Buddhist transliteration senses (般若/般涅槃) and were split out from the main 般 entry (buan1, 'kind; sort; like'), which the dossier does not associate with these readings.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hin5-舷
+    headword: 舷
+    readings:
+      - pengim: hin5
+      - pengim: gin5
+      - pengim: hiang5
+    senses:
+      - pos: noun
+        gloss_en: [side of a boat (port/starboard), side; edge]
+        gloss_zh: [舷]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ain3-艾
+    headword: 艾
+    readings:
+      - pengim: ain3
+    senses:
+      - pos: noun
+        gloss_en: [AIDS (short for 艾滋病)]
+        gloss_zh: [艾滋病]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This reading is tied specifically to the modern loanword sense 'AIDS' (used in 艾滋病) and was split out from the main 艾 entry (hian7/ngai6, 'mugwort'), which the dossier does not associate with this reading.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huê1-bang5-花瓶
+    headword: 花瓶
+    readings:
+      - pengim: huê1 bang5
+      - pengim: huê1 ping5
+    senses:
+      - pos: noun
+        gloss_en: [vase, '"vase": a person valued only for looks (derogatory)']
+        gloss_zh: [花瓶]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rioh8-gu2-若久
+    headword: 若久
+    readings:
+      - pengim: rioh8 gu2
+      - pengim: riêh8 gu2
+    senses:
+      - pos: adverb
+        gloss_en: [how long (of time)]
+        gloss_zh: [若久]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuêng7-se7-ru5-i3-萬事如意
+    headword: 萬事如意
+    readings:
+      - pengim: bhuêng7 se7 ru5 i3
+      - pengim: bhuang7 se7 ru5 i3
+    senses:
+      - pos: idiom
+        gloss_en: [may all your wishes come true; all the best]
+        gloss_zh: [萬事如意]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zing1-薪
+    headword: 薪
+    readings:
+      - pengim: zing1
+      - pengim: sing1
+    senses:
+      - pos: noun
+        gloss_en: [firewood, salary; wage]
+        gloss_zh: [薪]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung1-薰
+    headword: 薰
+    readings:
+      - pengim: hung1
+      - pengim: hng1
+      - pengim: heng1
+    senses:
+      - pos: noun
+        gloss_en: [cigarette, smoke]
+        gloss_zh: [薰]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hung1-lih4-薰蒂
+    headword: 薰蒂
+    readings:
+      - pengim: hung1 lih4
+      - pengim: hung1 dih4
+    senses:
+      - pos: noun
+        gloss_en: [cigarette butt]
+        gloss_zh: [薰蒂]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ding5-bai5-藤牌
+    headword: 藤牌
+    readings:
+      - pengim: ding5 bai5
+      - pengim: dêng5 bai5
+    senses:
+      - pos: noun
+        gloss_en: [rattan shield, shield]
+        gloss_zh: [藤牌]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ioh8-藥
+    headword: 藥
+    readings:
+      - pengim: ioh8
+      - pengim: iêh8
+      - pengim: iag8
+    senses:
+      - pos: noun
+        gloss_en: [medicine, drug]
+        gloss_zh: [藥]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iêh8-hng1-藥方
+    headword: 藥方
+    readings:
+      - pengim: iêh8 hng1
+      - pengim: ioh8 hng1
+    senses:
+      - pos: noun
+        gloss_en: [prescription, prescription paper]
+        gloss_zh: [藥方]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ioh8-piang3-藥片
+    headword: 藥片
+    readings:
+      - pengim: ioh8 piang3
+      - pengim: iêh8 piêng3
+    senses:
+      - pos: noun
+        gloss_en: [pill; tablet]
+        gloss_zh: [藥片]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ho7-號
+    headword: 號
+    readings:
+      - pengim: ho7
+      - pengim: hao1
+      - pengim: hao6
+    senses:
+      - pos: noun
+        gloss_en: [name; alias, number, mark; symbol]
+        gloss_zh: [號]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sag4-bêng3-蝨篦
+    headword: 蝨篦
+    readings:
+      - pengim: sag4 bêng3
+      - pengim: sag4 bing3
+    senses:
+      - pos: noun
+        gloss_en: [fine-tooth comb, nit comb]
+        gloss_zh: [蝨篦]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lo5-si1-poi1-螺絲批
+    headword: 螺絲批
+    readings:
+      - pengim: lo5 si1 poi1
+      - pengim: lo5 si1 boi1
+    senses:
+      - pos: noun
+        gloss_en: [screwdriver]
+        gloss_zh: [螺絲批]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: mang2-diên3-蠓帳
+    headword: 蠓帳
+    readings:
+      - pengim: mang2 diên3
+      - pengim: mang2 dion3
+    senses:
+      - pos: noun
+        gloss_en: [mosquito net]
+        gloss_zh: [蠓帳]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i1-衣
+    headword: 衣
+    readings:
+      - pengim: i1
+      - pengim: ui1
+    senses:
+      - pos: noun
+        gloss_en: [garment; clothes; clothing]
+        gloss_zh: [衣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: biao2-表
+    headword: 表
+    readings:
+      - pengim: biao2
+      - pengim: biou2
+      - pengim: bio2
+      - pengim: biê2
+    senses:
+      - pos: noun
+        gloss_en: [table; list; form]
+        gloss_zh: [表]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: muê6-袂
+    headword: 袂
+    readings:
+      - pengim: muê6
+      - pengim: mi6
+      - pengim: ng2
+    senses:
+      - pos: noun
+        gloss_en: [sleeve]
+        gloss_zh: [袂]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. All three are attested for the "sleeve" sense (muê6/mi6 directly, plus as an alternative form of 䘼 which also attests ng2); a separate, unrelated block (alt. of the Hokkien negator 𣍐/𫧃, no gloss given) sharing only the muê6/mi6 readings was not used.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: puê6-被
+    headword: 被
+    readings:
+      - pengim: puê6
+    senses:
+      - pos: noun
+        gloss_en: [quilt; blanket; bedding]
+        gloss_zh: [被]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into a separate entry because the dossier ties puê6, bi6, and pi1 to three distinct pos/etymology blocks with unrelated senses rather than a literary/colloquial pair of the same sense.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: hiun5-裘
+    headword: 裘
+    readings:
+      - pengim: hiun5
+      - pengim: kiu5
+    senses:
+      - pos: noun
+        gloss_en: [fur coat, padded/lined jacket]
+        gloss_zh: [裘]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rog8-褥
+    headword: 褥
+    readings:
+      - pengim: rog8
+      - pengim: riog8
+    senses:
+      - pos: noun
+        gloss_en: [mattress; cushion, bedding]
+        gloss_zh: [褥]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuêh8-襪
+    headword: 襪
+    readings:
+      - pengim: bhuêh8
+      - pengim: ghuêh8
+    senses:
+      - pos: noun
+        gloss_en: [sock; stocking]
+        gloss_zh: [襪子, 襪]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guêng1-liêm6-觀念
+    headword: 觀念
+    readings:
+      - pengim: guêng1 liêm6
+      - pengim: guang1 niam6
+    senses:
+      - pos: noun
+        gloss_en: [concept; notion; idea, ideology; views]
+        gloss_zh: [觀念]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi3-i3-記憶
+    headword: 記憶
+    readings:
+      - pengim: gi3 i3
+      - pengim: gi3 êg4
+      - pengim: gi3 êg8
+    senses:
+      - pos: noun
+        gloss_en: [memory; recollection, to remember]
+        gloss_zh: [記憶]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gi3-di5-記池
+    headword: 記池
+    readings:
+      - pengim: gi3 di5
+      - pengim: gin3 di5
+    senses:
+      - pos: noun
+        gloss_en: [memory, ability to remember]
+        gloss_zh: [記池]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guêg4-訣
+    headword: 訣
+    readings:
+      - pengim: guêg4
+      - pengim: guag4
+    senses:
+      - pos: noun
+        gloss_en: [knack; secret, trick of the trade]
+        gloss_zh: [訣]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he2-diang1-si5-許𫢗時
+    headword: 許𫢗時
+    readings:
+      - pengim: he2 diang1 si5
+      - pengim: hio2 diang1 si5
+    senses:
+      - pos: noun
+        gloss_en: [at that time; then, in the past]
+        gloss_zh: [許𫢗時]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ziao3-詔
+    headword: 詔
+    readings:
+      - pengim: ziao3
+      - pengim: ziou3
+      - pengim: riao3
+      - pengim: riou3
+    senses:
+      - pos: noun
+        gloss_en: [imperial decree, to decree; to proclaim]
+        gloss_zh: [詔]
+        note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang2-謊
+    headword: 謊
+    readings:
+      - pengim: huang2
+      - pengim: huang1
+    senses:
+      - pos: noun
+        gloss_en: [lie, untruth]
+        gloss_zh: [謊, 謊言]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: i3-謚
+    headword: 謚
+    readings:
+      - pengim: i3
+      - pengim: si7
+    senses:
+      - pos: noun
+        gloss_en: [posthumous name]
+        gloss_zh: [謚]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sia7-謝
+    headword: 謝
+    readings:
+      - pengim: sia7
+      - pengim: zia7
+    senses:
+      - pos: verb
+        gloss_en: [to thank, thanks]
+        gloss_zh: [謝, 多謝]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iao5-謠
+    headword: 謠
+    readings:
+      - pengim: iao5
+      - pengim: iou5
+    senses:
+      - pos: noun
+        gloss_en: [ballad, folk song, rumor]
+        gloss_zh: [謠, 謠言]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng6-警
+    headword: 警
+    readings:
+      - pengim: gêng6
+      - pengim: gêng2
+    senses:
+      - pos: verb
+        gloss_en: [to warn, to alert, police (abbr. of 警察)]
+        gloss_zh: [警]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dao7-讀
+    headword: 讀
+    readings:
+      - pengim: dao7
+    senses:
+      - pos: noun
+        gloss_en: [clause, "short pause in reading (punctuation mark, dòu)"]
+        gloss_zh: [讀]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from 讀's main 'to read/study' sense because the dossier ties dao7 to a distinct, narrower pos block (a punctuation/clause term); tag8 also appears there but is already covered by the primary 讀 entry ('to read').
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciên6-gi5-象棋
+    headword: 象棋
+    readings:
+      - pengim: ciên6 gi5
+      - pengim: cion6 gi5
+    senses:
+      - pos: noun
+        gloss_en: [xiangqi, Chinese chess]
+        gloss_zh: [象棋]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: de1-bho2-cai2-豬母𤷕
+    headword: 豬母𤷕
+    readings:
+      - pengim: de1 bho2 cai2
+      - pengim: de1 bho2 cain2
+    senses:
+      - pos: noun
+        gloss_en: [epilepsy]
+        gloss_zh: [豬母𤷕]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cai5-tuang5-財團
+    headword: 財團
+    readings:
+      - pengim: cai5 tuang5
+      - pengim: cai5 tuêng5
+    senses:
+      - pos: noun
+        gloss_en: [financial group, consortium]
+        gloss_zh: [財團]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guang3-貫
+    headword: 貫
+    readings:
+      - pengim: guang3
+      - pengim: guêng3
+    senses:
+      - pos: noun
+        gloss_en: [string of a thousand coins, one's native place]
+        gloss_zh: [貫]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: boin2-板
+    headword: 板
+    readings:
+      - pengim: boin2
+      - pengim: bain2
+      - pengim: bang2
+    senses:
+      - pos: noun
+        gloss_en: [plank; board]
+        gloss_zh: [板]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. (category/pos corrected from audit review.)
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: guêg4-dian7-決定-noun
+    headword: 決定
+    readings:
+      - pengim: guêg4 dian7
+      - pengim: guag4 dian7
+    senses:
+      - pos: noun
+        gloss_en: [decision]
+        gloss_zh: [決定]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from 決定's verb sense ('to decide') into a separate noun entry ('decision'); the dossier attests both senses under the same readings but as distinct pos blocks.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhua5-磨-noun
+    headword: 磨
+    readings:
+      - pengim: bhua5
+      - pengim: bho7
+    senses:
+      - pos: noun
+        gloss_en: [grinder; mill]
+        gloss_zh: [磨]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from 磨's 'to turn around; to approach' verb sense into a separate noun entry ('grinder; mill'), both tied to the same bho7-associated dossier block, distinct from the main 'to grind' sense (bhua5 alone, drafted separately).
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rong5-絨
+    headword: 絨
+    readings:
+      - pengim: rong5
+      - pengim: riong5
+    senses:
+      - pos: noun
+        gloss_en: [velvet, woolen or silk fabric]
+        gloss_zh: [絨]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. (category/pos corrected from audit review.)
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dou2-肚-noun
+    headword: 肚
+    readings:
+      - pengim: dou2
+    senses:
+      - pos: noun
+        gloss_en: [central part (of something)]
+        gloss_zh: [肚]
+        note: 1 candidate reading from Wiktionary (dou6 dropped — attested only in a separate etymology block with distinct literary senses) — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split from 肚's food sense ('tripe') into a separate entry for the more abstract 'central part' sense.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

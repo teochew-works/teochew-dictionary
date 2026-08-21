@@ -2233,3 +2233,109 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: diao5-條
+    headword: 條
+    readings:
+      - pengim: diao5
+      - pengim: diou5
+    senses:
+      - pos: classifier
+        gloss_en: ["classifier for long, thin objects (e.g. fish, ropes, rivers)", strip; twig]
+        gloss_zh: [條]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh4-hung1-ze1-百分之
+    headword: 百分之
+    readings:
+      - pengim: bêh4 hung1 ze1
+      - pengim: bêh4 hung1 zu1
+    senses:
+      - pos: noun
+        gloss_en: [percent]
+        gloss_zh: [百分之]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bêh4-bhuêng7-百萬
+    headword: 百萬
+    readings:
+      - pengim: bêh4 bhuêng7
+      - pengim: bêh4 bhuang7
+    senses:
+      - pos: noun
+        gloss_en: [million]
+        gloss_zh: [百萬]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: doin6-ig4-第一
+    headword: 第一
+    readings:
+      - pengim: doin6 ig4
+      - pengim: doin6 êg4
+    senses:
+      - pos: numeral
+        gloss_en: [first, number one]
+        gloss_zh: [第一]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: se3-肆
+    headword: 肆
+    readings:
+      - pengim: se3
+      - pengim: si3
+    senses:
+      - pos: numeral
+        gloss_en: ["four (formal/financial numeral, used to prevent forgery)"]
+        gloss_zh: [肆]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The dossier ties si3 only to this alt-of-四 numeral sense, so this headword was split into sense-specific entries; the other 肆 sense (shop/impudent) is drafted separately with only se3.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhuêng7-萬
+    headword: 萬
+    readings:
+      - pengim: bhuêng7
+      - pengim: bhuang7
+    senses:
+      - pos: numeral
+        gloss_en: ["ten thousand; 10,000", myriad; a great number]
+        gloss_zh: [萬]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zuag8-蜀-numeral
+    headword: 蜀
+    readings:
+      - pengim: zuag8
+      - pengim: zêg8
+      - pengim: zêh8
+    senses:
+      - pos: numeral
+        gloss_en: [one (Min dialectal alternative form of 一)]
+        gloss_zh: [一]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This headword's readings split across distinct pos blocks tied to different senses; this entry covers the Min dialectal alternative form of 一 ('one'), drafted separately from the historical 'Shu/Sichuan' sense above, which attests only one of the three candidates.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

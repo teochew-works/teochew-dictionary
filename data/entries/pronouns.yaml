@@ -1376,3 +1376,92 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: za1-查
+    headword: 查
+    readings:
+      - pengim: za1
+    senses:
+      - pos: pronoun
+        gloss_en: [I; me (dialectal)]
+        gloss_zh: [我]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The original list had 2 candidates (cê5, za1); the dossier ties cê5 only to the separate 'to investigate' sense of 查, so this entry was split out to cover the dialectal 'I; me' sense and keeps only za1.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rioh8-zoi7-若濟
+    headword: 若濟
+    readings:
+      - pengim: rioh8 zoi7
+      - pengim: riêh8 zoi7
+    senses:
+      - pos: pronoun
+        gloss_en: [how many, how much]
+        gloss_zh: [若濟]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ze1-茲
+    headword: 茲
+    readings:
+      - pengim: ze1
+      - pengim: zu1
+    senses:
+      - pos: pronoun
+        gloss_en: [this (literary)]
+        gloss_zh: [茲]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he2-gai7-許個
+    headword: 許個
+    readings:
+      - pengim: he2 gai7
+      - pengim: hu2 gai7
+    senses:
+      - pos: pronoun
+        gloss_en: [that; that one]
+        gloss_zh: [許個]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: he2-go3-許塊
+    headword: 許塊
+    readings:
+      - pengim: he2 go3
+      - pengim: hu2 go3
+    senses:
+      - pos: pronoun
+        gloss_en: [there]
+        gloss_zh: [許塊]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: sui5-誰
+    headword: 誰
+    readings:
+      - pengim: sui5
+      - pengim: diang5
+    senses:
+      - pos: pronoun
+        gloss_en: [who, whom]
+        gloss_zh: [誰]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
