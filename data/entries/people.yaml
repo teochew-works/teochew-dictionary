@@ -16153,3 +16153,18 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: so2-嫂
+    headword: 嫂
+    readings:
+      - pengim: so2
+      - pengim: sao2
+    senses:
+      - pos: noun
+        gloss_en: [sister-in-law (older brother's wife), friend's wife]
+        gloss_zh: [嫂]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

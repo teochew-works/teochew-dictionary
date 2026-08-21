@@ -19,77 +19,103 @@
 list: wiktionary-teochew-index
 items:
   - headword: A
-    status: staged
+    status: existing
+    entry_id: ê5-A
   - headword: APP
     status: no_reading
   - headword: B
-    status: staged
+    status: existing
+    entry_id: bhi5-B
   - headword: BGM
-    status: staged
+    status: existing
+    entry_id: bhi1-ri1-êm1-BGM
   - headword: Benz
-    status: staged
+    status: existing
+    entry_id: bêng5-si6-Benz
   - headword: B超
     status: existing
     entry_id: bhi1-tiao3-B超
   - headword: C
-    status: staged
+    status: existing
+    entry_id: si5-C
   - headword: C位
     status: existing
     entry_id: si1-ui7-C位
   - headword: D
-    status: staged
+    status: existing
+    entry_id: di5-D
   - headword: E
-    status: staged
+    status: existing
+    entry_id: i5-E
   - headword: F
-    status: staged
+    status: existing
+    entry_id: êh8-hu7-F
   - headword: G
     status: no_reading
   - headword: H
-    status: staged
+    status: existing
+    entry_id: êh8-cu7-H
   - headword: I
-    status: staged
+    status: existing
+    entry_id: ai5-I
   - headword: J
     status: no_reading
   - headword: K
-    status: staged
+    status: existing
+    entry_id: kê5-K
   - headword: L
-    status: staged
+    status: existing
+    entry_id: ê5-le7-L
   - headword: M
-    status: staged
+    status: existing
+    entry_id: êm5-M
   - headword: N
-    status: staged
+    status: existing
+    entry_id: êng5-N
   - headword: O
-    status: staged
+    status: existing
+    entry_id: ou5-O
   - headword: P
-    status: staged
+    status: existing
+    entry_id: pi1-P
   - headword: P圖
     status: existing
     entry_id: pi1-dou5-P圖
   - headword: Q
-    status: staged
+    status: existing
+    entry_id: kiu5-Q
   - headword: R
-    status: staged
+    status: existing
+    entry_id: a5-R
   - headword: S
-    status: staged
+    status: existing
+    entry_id: êh8-se7-S
   - headword: T
-    status: staged
+    status: existing
+    entry_id: ti5-T
   - headword: U
-    status: staged
+    status: existing
+    entry_id: iu5-U
   - headword: U盤
     status: existing
     entry_id: iu1-buan5-U盤
   - headword: V
-    status: staged
+    status: existing
+    entry_id: bhui5-V
   - headword: W
-    status: staged
+    status: existing
+    entry_id: dab8-liu7-W
   - headword: X
     status: no_reading
   - headword: Y
-    status: staged
+    status: existing
+    entry_id: uai5-Y
   - headword: Z
-    status: staged
+    status: existing
+    entry_id: rêh8-Z
   - headword: sih8 buh8 sah8 nah4
-    status: staged
+    status: existing
+    entry_id: sih8-buh8-sah8-nah4
   - headword: ⿰男戶
     status: existing
     entry_id: gou3-⿰男戶
@@ -12130,7 +12156,8 @@ items:
   - headword: 嫁禍於人
     status: no_reading
   - headword: 嫂
-    status: staged
+    status: existing
+    entry_id: so2-嫂
   - headword: 嫌
     status: existing
     entry_id: hiam5-嫌
