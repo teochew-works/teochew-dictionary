@@ -7311,3 +7311,325 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: san1-ziou2-三鳥
+    headword: 三鳥
+    readings:
+      - pengim: san1 ziou2
+      - pengim: san1 ziao2
+    senses:
+      - pos: noun
+        gloss_en: ["chicken, duck, and goose; poultry", "messengers; envoys (figurative, literary)"]
+        gloss_zh: [三鳥]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: zu1-且
+    headword: 且
+    readings:
+      - pengim: zu1
+    senses:
+      - pos: noun
+        gloss_en: [alternative form of 俎 (chopping board)]
+        gloss_zh: [俎]
+        note: "1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Split into separate sense-specific entries: this entry covers the archaic zu1 reading (alternate form of 俎, chopping board); the common adverbial/conjunctive senses (just; moreover) use reading cian2 and are drafted separately."
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: uang5-丸
+    headword: 丸
+    readings:
+      - pengim: uang5
+      - pengim: uêng5
+      - pengim: in5
+    senses:
+      - pos: noun
+        gloss_en: [small round object; ball; pellet, pill]
+        gloss_zh: [丸]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: dom6-丼
+    headword: 丼
+    readings:
+      - pengim: dom6
+      - pengim: dong6
+    senses:
+      - pos: noun
+        gloss_en: [donburi (Japanese rice bowl dish)]
+        gloss_zh: [丼]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: lag8-gio6-六藠
+    headword: 六藠
+    readings:
+      - pengim: lag8 gio6
+      - pengim: lag8 giê6
+    senses:
+      - pos: noun
+        gloss_en: [Chinese onion (Allium chinense)]
+        gloss_zh: [六藠]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cing3-zui2-凊水
+    headword: 凊水
+    readings:
+      - pengim: cing3 zui2
+      - pengim: cêng3 zui2
+    senses:
+      - pos: noun
+        gloss_en: [cold water, unboiled water]
+        gloss_zh: [凊水]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: cing3-cai3-凊菜
+    headword: 凊菜
+    readings:
+      - pengim: cing3 cai3
+      - pengim: cêng3 cai3
+    senses:
+      - pos: noun
+        gloss_en: [leftover food, leftovers]
+        gloss_zh: [凊菜]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ciah8-勺
+    headword: 勺
+    readings:
+      - pengim: ciah8
+      - pengim: siah8
+      - pengim: sioh8
+      - pengim: siêh8
+      - pengim: ziag4
+    senses:
+      - pos: noun
+        gloss_en: [spoon; ladle, scoop]
+        gloss_zh: [勺]
+        note: 5 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: neng6-ring5-卵仁
+    headword: 卵仁
+    readings:
+      - pengim: neng6 ring5
+      - pengim: neng6 rêng5
+    senses:
+      - pos: noun
+        gloss_en: [egg yolk]
+        gloss_zh: [卵仁]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siam1-參
+    headword: 參
+    readings:
+      - pengim: siam1
+      - pengim: siang1
+      - pengim: som1
+    senses:
+      - pos: noun
+        gloss_en: [ginseng, (short for) sea cucumber]
+        gloss_zh: [參, 人參]
+        note: 3 of 5 candidate readings from Wiktionary confirmed for this sense — genuine Chaozhou colloquial form not yet confirmed by a speaker. cam1 and cang1 are attested only for the distinct 'to participate; to join' sense of 參 and are drafted as a separate entry.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: bhi7-su3-味素
+    headword: 味素
+    readings:
+      - pengim: bhi7 su3
+    senses:
+      - pos: noun
+        gloss_en: [monosodium glutamate (MSG)]
+        gloss_zh: [味素, 味精]
+        note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Of the 2 candidates given, only bhi7 su3 is attested for this 'MSG' sense; the other candidate, bhi7 sou3, is attested only for the separate sense 'taste; smell; temperament' and has been drafted as its own entry.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gia1-hui1-咖啡
+    headword: 咖啡
+    readings:
+      - pengim: gia1 hui1
+      - pengim: go1 bi5
+      - pengim: gu1 bi5
+    senses:
+      - pos: noun
+        gloss_en: [coffee]
+        gloss_zh: [咖啡]
+        note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 5
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ni6-奶
+    headword: 奶
+    readings:
+      - pengim: ni6
+      - pengim: ni1
+      - pengim: nai2
+      - pengim: nê6
+      - pengim: nê1
+    senses:
+      - pos: noun
+        gloss_en: [milk; breast milk, grandmother (regional)]
+        gloss_zh: [奶]
+        note: 5 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ni6-hung2-奶粉
+    headword: 奶粉
+    readings:
+      - pengim: ni6 hung2
+      - pengim: nai2 hung2
+    senses:
+      - pos: noun
+        gloss_en: [milk powder; powdered milk]
+        gloss_zh: [奶粉]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: siou2-ziah8-小食
+    headword: 小食
+    readings:
+      - pengim: siou2 ziah8
+      - pengim: siao2 ziah8
+    senses:
+      - pos: noun
+        gloss_en: [snack; street food]
+        gloss_zh: [小食]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: iun3-mui2-ring5-幼美仁
+    headword: 幼美仁
+    readings:
+      - pengim: iun3 mui2 ring5
+      - pengim: iun3 mui2 rêng5
+    senses:
+      - pos: noun
+        gloss_en: [corn; maize]
+        gloss_zh: [幼美仁]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: gêng1-zio1-弓蕉
+    headword: 弓蕉
+    readings:
+      - pengim: gêng1 zio1
+      - pengim: gêng1 ziê1
+    senses:
+      - pos: noun
+        gloss_en: [banana]
+        gloss_zh: [弓蕉]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: huang1-biêng6-min7-方便麵
+    headword: 方便麵
+    readings:
+      - pengim: huang1 biêng6 min7
+      - pengim: huang1 biang6 min7
+    senses:
+      - pos: noun
+        gloss_en: [instant noodles]
+        gloss_zh: [方便麵]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: rig8-dao3-deng3-日晝頓
+    headword: 日晝頓
+    readings:
+      - pengim: rig8 dao3 deng3
+      - pengim: rêg8 dao3 deng3
+    senses:
+      - pos: noun
+        gloss_en: [lunch]
+        gloss_zh: [日晝頓]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 4
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ruêng2-lou5-暖爐
+    headword: 暖爐
+    readings:
+      - pengim: ruêng2 lou5
+      - pengim: ruang2 lou5
+    senses:
+      - pos: noun
+        gloss_en: [hot pot; steamboat, fireplace]
+        gloss_zh: [暖爐]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
+
+  - id: ring5-仁
+    headword: 仁
+    readings:
+      - pengim: ring5
+      - pengim: rêng5
+    senses:
+      - pos: noun
+        gloss_en: [kernel (of a nut or seed)]
+        gloss_zh: [仁]
+        note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
