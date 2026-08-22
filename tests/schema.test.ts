@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { entrySchema } from '../src/schema/entry.js'
+import { entrySchema, senseSchema } from '../src/schema/entry.js'
 import { emitAllSchemas } from '../src/schema/emit.js'
 
 /**
@@ -33,6 +33,32 @@ describe('entrySchema', () => {
 
   it('rejects a malformed retrieved date', () => {
     const result = entrySchema.safeParse(baseEntry({ retrieved: '28-07-2026' }))
+    expect(result.success).toBe(false)
+  })
+})
+
+describe('senseSchema', () => {
+  const baseSense = { pos: 'verb', gloss_en: ['to bite'] }
+
+  it('allows tags and alt_of to be omitted', () => {
+    const result = senseSchema.safeParse(baseSense)
+    expect(result.success).toBe(true)
+  })
+
+  it('accepts a sense-level tags array', () => {
+    const result = senseSchema.safeParse({ ...baseSense, tags: ['dialectal', 'figurative'] })
+    expect(result.success).toBe(true)
+    if (result.success) expect(result.data.tags).toEqual(['dialectal', 'figurative'])
+  })
+
+  it('accepts alt_of target headwords', () => {
+    const result = senseSchema.safeParse({ ...baseSense, alt_of: ['馬祖'] })
+    expect(result.success).toBe(true)
+    if (result.success) expect(result.data.alt_of).toEqual(['馬祖'])
+  })
+
+  it('rejects an empty string inside tags', () => {
+    const result = senseSchema.safeParse({ ...baseSense, tags: [''] })
     expect(result.success).toBe(false)
   })
 })

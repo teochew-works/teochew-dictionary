@@ -621,6 +621,71 @@ check` before opening the PR, same as any other change. One PR per batch,
 referencing #68 without closing it — it stays open until no `staged` items
 remain.
 
+### Wiktionary sense/usage tags (issue #102)
+
+`senses[].tags` (`src/schema/entry.ts`) is an open `string[]` of
+usage/register labels — `dialectal`, `figuratively`, `obsolete`,
+`abbreviation`, ... — and `senses[].alt_of` is the headword(s) a sense is an
+alternate form or abbreviation of, both sourced from wiktextract's per-sense
+`tags`/`alt_of` (`.cache/teochew-relevant.min.jsonl`, see #84). Both are
+per-sense, distinct from `entrySchema.tags` (entry-wide, topical:
+`placename`, `identity`, ...) and `readings[].register` (reading-level,
+reserved for 白讀/文讀 doublets of one character — see `numbers.yaml`'s
+header comment).
+
+**Filtering wiktextract's raw tags.** A sense's `tags` array mixes genuine
+usage/register signal with tags that describe *scope* rather than usage:
+this dictionary's own reading systems (`Teochew`, `Min-Nan`, `Peng'im`,
+`POJ`, `Sinological-IPA`), other Chinese topolects (`Cantonese`, `Wu`, ...),
+and — the reason a denylist doesn't work — individual Chinese place/county
+names, one per sense that happens to be geographically scoped. A single
+backfill run against the ~16k entries in `data/entries/` turned up over 130
+of them (`Guiyang`, `Chengdu`, `Zhuhai`, ...), a set that can't be fully
+enumerated. What separates the two groups reliably: every genuine tag
+observed was lowercase (`literary`, `verb-object`, `alt-of`, ...); every
+place/topolect/language/script tag was capitalized. So
+`mapWiktextractTags` (`src/importers/wiktionary-tags.ts`) filters on
+capitalization first, with a short exception list in each direction for the
+handful of cases that don't follow it (`Classical`/`Internet`/`TV` kept
+despite being capitalized; `traditional` and wiktextract's own
+`error-lua-timeout`-style extraction diagnostics dropped despite being
+lowercase). Not exhaustive by design — extend the exception sets as review
+of real data turns up more.
+
+**Forward-looking import.** `npm run import -- wiktionary [...]` now also
+looks up each headword in the local wiktextract cache and attaches
+tag/alt_of-only senses to the proposal (never a gloss — the importer still
+never fetches one, see above). `npm run import -- wiktionary
+--backfill-tags` re-derives tags/alt_of for every proposal already staged in
+`data/staging/wiktionary.yaml`, purely from the local cache — no live
+fetch, safe to re-run whenever the cache or the tag mapping changes.
+
+**Backfilling already-merged entries.** `npm run backfill:wiktionary-tags
+[-- --write]` (dry-run without `--write`) matches each entry's senses
+against the wiktextract cache and writes `tags`/`alt_of` directly into
+`data/entries/*.yaml` — deliberately not part of any importer (importers
+never write to `data/entries/`, see `src/importers/types.ts`), but a
+one-off maintenance script editing already-approved data, the same as the
+`retrieved`-date backfill did once before. The match has to be
+unambiguous — a single sense on both sides, or a wiktextract sense whose
+`pos` uniquely matches one of the entry's senses — and counts *every*
+wiktextract sense for that headword, tagged or not, when judging
+ambiguity: 壬 has four senses ("ninth heavenly stem" / "crafty" / "a
+surname" / a tagged eye-dialect spelling of 人), and an entry documenting
+only the first would look like an unambiguous 1-candidate match if the
+three untagged senses weren't counted — attaching a wrong tag from an
+unrelated sense. A wrong tag is worse than a missing one, so an ambiguous
+sense is skipped, not guessed.
+
+The script edits via `yaml` `Document` node ranges (byte offsets into the
+original file) rather than a parse→stringify round-trip: these files are
+hand-typed, not machine-generated, so `yaml`'s own stringifier doesn't
+reproduce them byte-for-byte — it rewraps folded scalars to its own line
+width, restyles flow collections (`[one, "1"]` → `[ one, "1" ]`), and drops
+blank-line grouping between entries. Splicing new `tags:`/`alt_of:` lines
+directly into the source string, at the exact offset a parsed node's range
+reports, keeps every byte the script doesn't touch untouched.
+
 ---
 
 ## Licensing
