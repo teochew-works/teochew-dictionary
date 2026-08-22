@@ -108,6 +108,13 @@ export const entrySchema = z.object({
   retrieved: z.string().regex(/^\d{4}-\d{2}-\d{2}$/u).optional(),
   /** Set when the entry is known to need a specialist's eye. */
   needs_review: z.boolean().optional(),
+  /**
+   * Set when the entry should not be shown in the web UI (list, search,
+   * flashcards) — e.g. content not yet ready for public display. The entry
+   * remains in the built dataset (dict.json/dict.sqlite) and stays reachable
+   * via the CLI.
+   */
+  hidden: z.boolean().optional(),
 })
 
 export const entryFileSchema = z.object({
