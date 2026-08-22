@@ -24,7 +24,17 @@ export function useDictionary(): DictionaryState {
         return res.json() as Promise<Dict>
       })
       .then((data) => {
-        if (!cancelled) setState({ data, loading: false, error: null })
+        // `hidden` entries stay in dict.json (still reachable via the CLI)
+        // but are filtered out of every web UI surface here, once, so list,
+        // search, and flashcards all agree without each needing to remember.
+        const entries = data.entries.filter((entry) => !entry.hidden)
+        const meta = {
+          ...data.meta,
+          entry_count: entries.length,
+          reading_count: entries.reduce((n, e) => n + e.readings.length, 0),
+        }
+        const visible = { ...data, entries, meta }
+        if (!cancelled) setState({ data: visible, loading: false, error: null })
       })
       .catch((err: unknown) => {
         if (!cancelled) {
