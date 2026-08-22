@@ -442,6 +442,8 @@ entries:
         gloss_en: [B-mode ultrasound, ultrasound scan]
         gloss_zh: [B超]
         note: B超 is a specialized medical/technical abbreviation (short for B型超聲檢查) with no clearly matching category file, so it was placed in the basics.yaml catch-all.
+        tags: [abbreviation, alt-of]
+        alt_of: [B型超聲檢查, B型超声检查]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -469,6 +471,7 @@ entries:
       - pos: noun
         gloss_en: [USB flash drive, USB stick]
         gloss_zh: [U盤]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -529,6 +532,7 @@ entries:
       - pos: idiom
         gloss_en: [to accomplish nothing, to be a total failure]
         gloss_zh: [一事无成]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -591,6 +595,7 @@ entries:
       - pos: idiom
         gloss_en: [question and answer, back-and-forth dialogue]
         gloss_zh: [一問一答]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -615,6 +620,7 @@ entries:
       - pos: idiom
         gloss_en: [as always, just as before]
         gloss_zh: [一如既往]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -699,6 +705,7 @@ entries:
       - pos: idiom
         gloss_en: [overnight; in a short time, a brief period]
         gloss_zh: [一朝一夕]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -735,6 +742,7 @@ entries:
       - pos: idiom
         gloss_en: [a lifetime, all one's life]
         gloss_zh: [一生一世]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -759,6 +767,7 @@ entries:
       - pos: idiom
         gloss_en: [at wit's end, unable to find a solution]
         gloss_zh: [一籌莫展]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -795,6 +804,7 @@ entries:
       - pos: noun
         gloss_en: [all one's life, a lifetime]
         gloss_zh: [一輩子]
+        tags: [colloquial]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -845,6 +855,7 @@ entries:
       - pos: noun
         gloss_en: [Ghost Festival, Zhongyuan Festival]
         gloss_zh: [七月半, 中元節]
+        tags: [regional]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -905,6 +916,7 @@ entries:
       - pos: idiom
         gloss_en: [in the middle of the night, late at night]
         gloss_zh: [三更半暝]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -929,6 +941,7 @@ entries:
       - pos: noun
         gloss_en: ["one's fundamental outlook (worldview, values, and philosophy of life)"]
         gloss_zh: [三觀]
+        tags: [neologism, slang]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1165,6 +1178,7 @@ entries:
       - pos: adverb
         gloss_en: [in a few days, shortly, soon]
         gloss_zh: [不日]
+        tags: [formal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1201,6 +1215,7 @@ entries:
       - pos: idiom
         gloss_en: [ill-gotten wealth, ill-gotten gains]
         gloss_zh: [不義之財]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1225,6 +1240,7 @@ entries:
       - pos: noun
         gloss_en: [eternal youth, immortality, agelessness]
         gloss_zh: [不老]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1313,6 +1329,7 @@ entries:
       - pos: noun
         gloss_en: [generation, era]
         gloss_zh: [世代]
+        tags: [literary]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1361,6 +1378,8 @@ entries:
       - pos: proper-noun
         gloss_en: [World Health Organization, WHO]
         gloss_zh: [世衛組織, 世界衛生組織]
+        tags: [abbreviation, alt-of]
+        alt_of: [世界衛生組織, 世界卫生组织]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1373,6 +1392,7 @@ entries:
       - pos: noun
         gloss_en: [the world, the human world]
         gloss_zh: [世間]
+        tags: [literary]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1633,6 +1653,7 @@ entries:
       - pos: idiom
         gloss_en: ["pedantic, archaic-sounding speech", grandiloquent or unintelligible talk full of classical particles]
         gloss_zh: [之乎者也]
+        tags: [idiomatic, metonymically]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1707,6 +1728,7 @@ entries:
       - pos: idiom
         gloss_en: [to exploit a weakness, to strike when unprepared]
         gloss_zh: [乘虛而入]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1746,6 +1768,7 @@ entries:
         gloss_en: ["996 work schedule (9am-9pm, six days a week)"]
         gloss_zh: [九九六, "996"]
         note: This is a modern internet-era neologism (from the Mandarin '996' labor-schedule slang); it is uncertain whether it is genuinely established Teochew colloquial vocabulary rather than a borrowed term read with literal digit pronunciations.
+        tags: [neologism, slang]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -1771,6 +1794,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Double Ninth Festival]
         gloss_zh: [重陽節]
+        tags: [dialectal]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1783,6 +1807,7 @@ entries:
       - pos: idiom
         gloss_en: [a drop in the bucket, an insignificant amount]
         gloss_zh: [九牛一毛]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1855,6 +1880,7 @@ entries:
       - pos: noun
         gloss_en: [matters, arrangements]
         gloss_zh: [事宜]
+        tags: [formal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1867,6 +1893,7 @@ entries:
       - pos: noun
         gloss_en: [fact, truth]
         gloss_zh: [事實]
+        tags: [countable, uncountable]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1977,6 +2004,7 @@ entries:
       - pos: noun
         gloss_en: ["second night watch (9-11pm, archaic)"]
         gloss_zh: [二更]
+        tags: [archaic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2061,6 +2089,8 @@ entries:
       - pos: proper-noun
         gloss_en: [Dragon Boat Festival]
         gloss_zh: [端午節]
+        tags: [alt-of, alternative, name]
+        alt_of: [端午節, 端午节]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2073,6 +2103,7 @@ entries:
       - pos: idiom
         gloss_en: [all corners of the world, far and wide, everywhere]
         gloss_zh: [五湖四海]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2147,6 +2178,8 @@ entries:
       - pos: noun
         gloss_en: [traffic regulations; traffic rules]
         gloss_zh: [交規, 交通規則]
+        tags: [abbreviation, alt-of]
+        alt_of: [交通規則, 交通规则]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2209,6 +2242,7 @@ entries:
       - pos: idiom
         gloss_en: [human nature, it's only natural, common human feeling]
         gloss_zh: [人之常情]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2295,6 +2329,7 @@ entries:
       - pos: idiom
         gloss_en: [unfamiliar with the place and people, stranger in a strange place]
         gloss_zh: [人生地不熟]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2367,6 +2402,7 @@ entries:
       - pos: idiom
         gloss_en: [times have changed, the present cannot compare to the past]
         gloss_zh: [今非昔比]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2495,6 +2531,7 @@ entries:
       - pos: idiom
         gloss_en: [people-oriented, people-centered, put people first]
         gloss_zh: [以人為本]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2531,6 +2568,7 @@ entries:
       - pos: idiom
         gloss_en: [to lead by example, to set an example]
         gloss_zh: [以身作則]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2784,6 +2822,7 @@ entries:
         gloss_en: [your head! (dismissive retort), as if!, yeah right]
         gloss_zh: [你個頭]
         note: The Wiktionary entry illustrates this dismissive-retort sense mainly with Cantonese examples even though a Teochew pronunciation is also listed, so it is not fully certain the definition applies identically in Teochew usage.
+        tags: [slang]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -2809,6 +2848,7 @@ entries:
       - pos: noun
         gloss_en: [mission, task, assignment]
         gloss_zh: [使命]
+        tags: [figuratively]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2834,6 +2874,7 @@ entries:
         gloss_en: [incoming letter]
         gloss_zh: [來信]
         note: The page gives both a verb-object sense ('to send/receive a letter') and a noun sense ('incoming letter') with roughly equal weight for the same reading, so the single best pos is somewhat uncertain.
+        tags: [countable]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -2933,6 +2974,7 @@ entries:
       - pos: noun
         gloss_en: [example question, sample problem]
         gloss_zh: [例題]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2960,6 +3002,8 @@ entries:
         gloss_en: ["reason; order (archaic, alt. form of 倫)"]
         gloss_zh: [倫]
         note: Entry defines it as an archaic alternate form of 倫 ('reason; order') but notes the character today is used mainly as a phonetic transcription element (e.g. 加侖 'gallon'), making the standalone gloss uncertain.
+        tags: [alt-of, alternative]
+        alt_of: [倫 /伦]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -2973,6 +3017,7 @@ entries:
       - pos: idiom
         gloss_en: [reluctant to part, loath to leave]
         gloss_zh: [依依不捨]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3097,6 +3142,7 @@ entries:
       - pos: noun
         gloss_en: [letter, correspondence]
         gloss_zh: [信件]
+        tags: [collective]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3279,6 +3325,7 @@ entries:
       - pos: phrase
         gloss_en: [excuse me (to preface a question); may I ask]
         gloss_zh: [借問]
+        tags: [honorific, polite]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3291,6 +3338,7 @@ entries:
       - pos: noun
         gloss_en: [IOU; loan receipt; promissory note]
         gloss_zh: [借條]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3585,6 +3633,7 @@ entries:
       - pos: noun
         gloss_en: [leaflet, flyer, handbill]
         gloss_zh: [傳單]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3711,6 +3760,7 @@ entries:
       - pos: idiom
         gloss_en: [to lose everything, to bring a family to ruin, to go bankrupt]
         gloss_zh: [傾家蕩產]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3735,6 +3785,7 @@ entries:
       - pos: noun
         gloss_en: [overseas remittance letter, letter with money sent home by an overseas Chinese]
         gloss_zh: [僑批]
+        tags: [historical]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3977,6 +4028,7 @@ entries:
       - pos: idiom
         gloss_en: [to turn a deaf ear]
         gloss_zh: [充耳不聞]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4051,6 +4103,7 @@ entries:
       - pos: idiom
         gloss_en: [to bring honor to one's ancestors, to bring glory to one's family]
         gloss_zh: [光宗耀祖]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4125,6 +4178,7 @@ entries:
       - pos: idiom
         gloss_en: ["when in Rome, do as the Romans do", follow local customs]
         gloss_zh: [入鄉隨俗]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4246,6 +4300,8 @@ entries:
         gloss_en: [National People's Congress (of China)]
         gloss_zh: [全國人大, 全國人民代表大會]
         note: Specialized political-institution abbreviation; no dedicated category exists for government-body proper nouns, so placement in basics.yaml is a rough fit.
+        tags: [abbreviation, alt-of]
+        alt_of: [全國人民代表大會, 全国人民代表大会]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -4285,6 +4341,7 @@ entries:
       - pos: adjective
         gloss_en: [all, entire, whole]
         gloss_zh: [全部]
+        tags: [attributive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4371,6 +4428,7 @@ entries:
       - pos: noun
         gloss_en: [Mid-Autumn Festival]
         gloss_zh: [八月中秋, 中秋節]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4395,6 +4453,7 @@ entries:
       - pos: noun
         gloss_en: [Mid-Autumn Festival]
         gloss_zh: [八月半, 中秋節]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4735,6 +4794,7 @@ entries:
       - pos: noun
         gloss_en: [open letter]
         gloss_zh: [公開信]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4812,6 +4872,7 @@ entries:
         gloss_en: [communist, communism (attributive)]
         gloss_zh: [共產]
         note: Wiktionary tags this as an attributive adjective but it also functions as a bound noun root ('communism'); no dedicated political-vocabulary category exists so it was filed under basics.yaml.
+        tags: [attributive]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -4839,6 +4900,7 @@ entries:
       - pos: noun
         gloss_en: [consensus, common understanding]
         gloss_zh: [共識]
+        tags: [usually]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4963,6 +5025,7 @@ entries:
       - pos: adverb
         gloss_en: [once again, once more]
         gloss_zh: [再度]
+        tags: [formal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4975,6 +5038,7 @@ entries:
       - pos: idiom
         gloss_en: [to make persistent efforts, to redouble one's efforts]
         gloss_zh: [再接再厲]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4988,6 +5052,7 @@ entries:
         gloss_en: [goodbye, see you again]
         gloss_zh: [再會, 再見]
         note: Wiktionary labels the 'goodbye' interjection sense as specific to Wu rather than general Chinese, while the dialect-unrestricted sense is the literal verb 'to meet again'; which sense the Teochew reading actually corresponds to is not fully clear from the page.
+        tags: [polite]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -5038,6 +5103,7 @@ entries:
         gloss_en: [coronavirus disease; COVID-19]
         gloss_zh: [冠病]
         note: This neologism is described as primarily used in Singapore/Malaysia Chinese; its currency specifically within other Teochew-speaking communities is uncertain.
+        tags: [informal, neologism]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -5203,6 +5269,7 @@ entries:
       - pos: idiom
         gloss_en: [to break one's promise, to contradict oneself]
         gloss_zh: [出爾反爾]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5215,6 +5282,7 @@ entries:
       - pos: idiom
         gloss_en: [to risk one's life, to brave death repeatedly]
         gloss_zh: [出生入死]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5227,6 +5295,7 @@ entries:
       - pos: noun
         gloss_en: [starting point]
         gloss_zh: [出發點]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5265,6 +5334,7 @@ entries:
       - pos: verb
         gloss_en: [to hold a funeral procession]
         gloss_zh: [出葬]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5361,6 +5431,7 @@ entries:
       - pos: noun
         gloss_en: [small knife, pocketknife]
         gloss_zh: [小刀]
+        tags: [countable]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5421,6 +5492,7 @@ entries:
       - pos: idiom
         gloss_en: [to grasp every minute, to make full use of one's time]
         gloss_zh: [分秒必爭]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5471,6 +5543,7 @@ entries:
       - pos: adverb
         gloss_en: [do not (under any circumstances), don't]
         gloss_zh: [切勿]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5595,6 +5668,7 @@ entries:
       - pos: idiom
         gloss_en: [green; inexperienced, to have just begun one's career]
         gloss_zh: [初出茅廬]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5667,6 +5741,7 @@ entries:
       - pos: idiom
         gloss_en: [to punish one as a warning to others, kill the chicken to scare the monkey]
         gloss_zh: [殺雞儆猴]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5679,6 +5754,7 @@ entries:
       - pos: idiom
         gloss_en: [worlds apart, as different as heaven and earth]
         gloss_zh: [判若雲泥]
+        tags: [idiomatic, literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5765,6 +5841,8 @@ entries:
       - pos: adverb
         gloss_en: [up to now, so far]
         gloss_zh: [到今]
+        tags: [alt-of, alternative]
+        alt_of: [到今]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5815,6 +5893,7 @@ entries:
       - pos: idiom
         gloss_en: [every household, numerous households]
         gloss_zh: [千家萬戶]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5881,6 +5960,7 @@ entries:
       - pos: noun
         gloss_en: [the hours of the horse (11am-1pm), noon period]
         gloss_zh: [午時]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5941,6 +6021,7 @@ entries:
       - pos: idiom
         gloss_en: [in the middle of the night, late at night]
         gloss_zh: [半暝三更, 半夜三更]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6049,6 +6130,7 @@ entries:
       - pos: noun
         gloss_en: [truck, lorry]
         gloss_zh: [卡車]
+        tags: [countable]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6195,6 +6277,7 @@ entries:
       - pos: adverb
         gloss_en: [immediately, at once]
         gloss_zh: [即時]
+        tags: [formal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6427,6 +6510,8 @@ entries:
       - pos: adverb
         gloss_en: [repeatedly, again and again, over and over]
         gloss_zh: [反復]
+        tags: [alt-of, alternative]
+        alt_of: [反覆]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6553,6 +6638,7 @@ entries:
       - pos: noun
         gloss_en: [feedback, response]
         gloss_zh: [反饋]
+        tags: [figuratively]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6665,6 +6751,7 @@ entries:
       - pos: noun
         gloss_en: [catchphrase, pet phrase, stock phrase]
         gloss_zh: [口頭禪]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6737,6 +6824,7 @@ entries:
       - pos: noun
         gloss_en: [cause, reason]
         gloss_zh: [前因]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7047,6 +7135,7 @@ entries:
       - pos: noun
         gloss_en: [punishment of cutting off the nose]
         gloss_zh: [劓]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7231,6 +7320,7 @@ entries:
       - pos: idiom
         gloss_en: [to rob the rich to aid the poor]
         gloss_zh: [劫富濟貧]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7293,6 +7383,8 @@ entries:
       - pos: noun
         gloss_en: [cane; walking stick]
         gloss_zh: [洞葛]
+        tags: [alt-of, alternative]
+        alt_of: [洞葛]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7663,6 +7755,7 @@ entries:
       - pos: noun
         gloss_en: [slow slicing (lingchi), death by a thousand cuts]
         gloss_zh: [凌遲]
+        tags: [historical]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7765,6 +7858,7 @@ entries:
       - pos: idiom
         gloss_en: [to complain endlessly of hardship, to moan and groan without stopping]
         gloss_zh: [叫苦不迭]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7815,6 +7909,7 @@ entries:
       - pos: idiom
         gloss_en: [commonplace, all too common, nothing out of the ordinary]
         gloss_zh: [司空見慣]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7852,6 +7947,7 @@ entries:
         gloss_en: [everywhere, all around]
         gloss_zh: [各處, 到處]
         note: Page lists an unlabeled noun sense ('each area/region', also a business sense 'each department') alongside a literary adverb sense ('everywhere') for the same reading; picked the more colloquial adverb sense but which one this peng'im specifically targets is unclear.
+        tags: [literary]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -7951,6 +8047,7 @@ entries:
       - pos: idiom
         gloss_en: [true to its name, to live up to one's reputation, well-deserved]
         gloss_zh: [名副其实]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8071,6 +8168,7 @@ entries:
       - pos: idiom
         gloss_en: [to fail an exam, to fall behind in a competition]
         gloss_zh: [名落孫山]
+        tags: [figuratively, idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8180,6 +8278,7 @@ entries:
         gloss_en: [Manila lottery (historical), Luzon lottery ticket]
         gloss_zh: [呂宋票]
         note: Historical/obsolete term for a 19th-century lottery game documented primarily in old Teochew (Swatow) missionary sources; modern currency and precise nuance are uncertain.
+        tags: [historical]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -8347,6 +8446,7 @@ entries:
       - pos: idiom
         gloss_en: [amiable and cheerful expression, "warm, pleasant countenance"]
         gloss_zh: [和顏悅色]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8385,6 +8485,7 @@ entries:
       - pos: idiom
         gloss_en: [to nitpick over wording, to be overly pedantic about phrasing]
         gloss_zh: [咬文嚼字]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8397,6 +8498,7 @@ entries:
       - pos: idiom
         gloss_en: [to grit one's teeth (in anger), to gnash one's teeth]
         gloss_zh: [咬牙切齒]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8461,6 +8563,7 @@ entries:
       - pos: noun
         gloss_en: [ultimatum (dated)]
         gloss_zh: [哀的美敦書, 最後通牒]
+        tags: [dated]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8473,6 +8576,7 @@ entries:
       - pos: idiom
         gloss_en: [land of wailing and despair, disaster victims everywhere]
         gloss_zh: [哀鴻遍野]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8521,6 +8625,7 @@ entries:
       - pos: idiom
         gloss_en: [to complain bitterly, to be full of complaints]
         gloss_zh: [哭爸哭母]
+        tags: [idiomatic, vulgar]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8533,6 +8638,7 @@ entries:
       - pos: idiom
         gloss_en: [dumbfounded, not knowing whether to laugh or cry]
         gloss_zh: [哭笑不得]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8558,6 +8664,7 @@ entries:
         gloss_en: [laughing sound (onomatopoeia)]
         gloss_zh: [唏唏]
         note: Wiktionary tags this reduplicated onomatopoeia (as in 笑唏唏, a Teochew-attested laughing sound) as a suffix, an unusual part-of-speech classification for what functions more like an adverb or interjection.
+        tags: [morpheme, onomatopoeic]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -8595,6 +8702,7 @@ entries:
       - pos: noun
         gloss_en: [much-coveted prize, something everyone wants a share of]
         gloss_zh: [唐僧肉]
+        tags: [figuratively]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8643,6 +8751,7 @@ entries:
       - pos: adjective
         gloss_en: [after-sales, postsales]
         gloss_zh: [售後]
+        tags: [attributive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8667,6 +8776,7 @@ entries:
       - pos: idiom
         gloss_en: [to wish for chaos, hoping the world falls into disorder]
         gloss_zh: [唯恐天下不亂]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8865,6 +8975,7 @@ entries:
       - pos: idiom
         gloss_en: [not knowing whether to laugh or cry, both ridiculous and distressing]
         gloss_zh: [啼笑皆非]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8949,6 +9060,7 @@ entries:
       - pos: idiom
         gloss_en: [to be pleasantly surprised, overjoyed by unexpected good news]
         gloss_zh: [喜出望外]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8973,6 +9085,7 @@ entries:
       - pos: idiom
         gloss_en: [well-received, to one's liking]
         gloss_zh: [喜聞樂見]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8997,6 +9110,7 @@ entries:
       - pos: noun
         gloss_en: [single person, solo, one-person]
         gloss_zh: [單人]
+        tags: [attributive, often]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9021,6 +9135,8 @@ entries:
       - pos: noun
         gloss_en: [SLR camera]
         gloss_zh: [單反]
+        tags: [abbreviation, alt-of]
+        alt_of: [單鏡頭反光相機]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9071,6 +9187,7 @@ entries:
       - pos: interjection
         gloss_en: [boo-hoo (sound of sobbing/crying)]
         gloss_zh: [嗚]
+        tags: [onomatopoeic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9084,6 +9201,7 @@ entries:
         gloss_en: [alas; alack]
         gloss_zh: [嗚呼]
         note: The page gives both an archaic interjection sense ('alas') and a euphemistic verb sense ('to die') for the same reading; the interjection sense was chosen as primary but either could apply.
+        tags: [archaic]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -9135,6 +9253,7 @@ entries:
       - pos: idiom
         gloss_en: [to please the crowd with claptrap; to pander for popularity]
         gloss_zh: [嘩眾取寵]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9281,6 +9400,7 @@ entries:
       - pos: noun
         gloss_en: [fourth night watch (roughly 1am-3am)]
         gloss_zh: [四更]
+        tags: [archaic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9305,6 +9425,7 @@ entries:
       - pos: noun
         gloss_en: [the world, everywhere]
         gloss_zh: [四海]
+        tags: [figuratively, literary]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9404,6 +9525,8 @@ entries:
         gloss_en: [Islam (alternative name for 回教)]
         gloss_zh: [回教]
         note: Rare, specialized reduplicated name for Islam; the page does not clearly mark this specific sense as Teochew-only, and its real-world frequency in spoken Teochew is uncertain.
+        tags: [alt-of, alternative, name]
+        alt_of: [回教]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -9429,6 +9552,7 @@ entries:
       - pos: idiom
         gloss_en: [to suit measures to local conditions, to formulate strategies according to local circumstances]
         gloss_zh: [因地制宜]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9441,6 +9565,7 @@ entries:
       - pos: idiom
         gloss_en: [to benefit from misfortune, a blessing in disguise]
         gloss_zh: [因禍得福]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9647,6 +9772,7 @@ entries:
       - pos: noun
         gloss_en: [apron]
         gloss_zh: [圍裙]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9773,6 +9899,7 @@ entries:
       - pos: noun
         gloss_en: [picture, photo, image]
         gloss_zh: [圖片]
+        tags: [countable]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10015,6 +10142,7 @@ entries:
       - pos: noun
         gloss_en: [grime, dirt (on skin)]
         gloss_zh: [垢圿]
+        tags: [dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10051,6 +10179,7 @@ entries:
       - pos: noun
         gloss_en: [domain name]
         gloss_zh: [域名]
+        tags: [Internet]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10233,6 +10362,7 @@ entries:
       - pos: noun
         gloss_en: [circumstances; situation (usually negative)]
         gloss_zh: [境遇]
+        tags: [negative, usually]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10293,6 +10423,8 @@ entries:
       - pos: noun
         gloss_en: [money given at Lunar New Year, New Year's gift money]
         gloss_zh: [壓歲錢]
+        tags: [alt-of, alternative, dialectal, name]
+        alt_of: [壓歲錢, 压岁钱]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10377,6 +10509,7 @@ entries:
       - pos: idiom
         gloss_en: [may you live as long as the Zhongnan Mountains, longevity wish]
         gloss_zh: [壽比南山]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10561,6 +10694,7 @@ entries:
       - pos: noun
         gloss_en: [foreign language]
         gloss_zh: [外語]
+        tags: [countable]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10599,6 +10733,7 @@ entries:
       - pos: phrase
         gloss_en: [please give me advice (humble), nice to meet you]
         gloss_zh: [多多指教]
+        tags: [humble]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10623,6 +10758,7 @@ entries:
       - pos: idiom
         gloss_en: [to meddle in others' business, nosy]
         gloss_zh: [多管閒事]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10635,6 +10771,7 @@ entries:
       - pos: idiom
         gloss_en: [dead of night; the still of night, quiet in the deep of night]
         gloss_zh: [夜深人靜]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10671,6 +10808,7 @@ entries:
       - pos: noun
         gloss_en: [whole day; all day long]
         gloss_zh: [整天]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10743,6 +10881,7 @@ entries:
       - pos: idiom
         gloss_en: [good luck and prosperity, very auspicious]
         gloss_zh: [大吉大利]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10779,6 +10918,7 @@ entries:
       - pos: noun
         gloss_en: [large bus, coach]
         gloss_zh: [大巴]
+        tags: [dialectal, informal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10875,6 +11015,7 @@ entries:
       - pos: idiom
         gloss_en: [every street and alley, throughout the city]
         gloss_zh: [大街小巷]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10911,6 +11052,7 @@ entries:
       - pos: idiom
         gloss_en: [to be greatly surprised, to be astonished, jaws drop in shock]
         gloss_zh: [大跌眼鏡]
+        tags: [figuratively, idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10935,6 +11077,7 @@ entries:
       - pos: idiom
         gloss_en: [to make a fuss over nothing, much ado about nothing, to overreact to a trivial matter]
         gloss_zh: [大驚小怪]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10971,6 +11114,7 @@ entries:
       - pos: interjection
         gloss_en: ["Oh, shit! (interjection of dismay)"]
         gloss_zh: [哭爸]
+        tags: [vulgar]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11025,6 +11169,7 @@ entries:
       - pos: idiom
         gloss_en: [to be far apart from one another, scattered to different places]
         gloss_zh: [天各一方]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11159,6 +11304,7 @@ entries:
       - pos: idiom
         gloss_en: [to regain something after losing it]
         gloss_zh: [失而復得]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11467,6 +11613,7 @@ entries:
       - pos: idiom
         gloss_en: [to have one's wish fulfilled, to get what one wanted]
         gloss_zh: [如願以償]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11517,6 +11664,7 @@ entries:
       - pos: idiom
         gloss_en: [full of wit and humor, delightfully amusing]
         gloss_zh: [妙趣橫生]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11715,6 +11863,7 @@ entries:
       - pos: noun
         gloss_en: [bullet, shot]
         gloss_zh: [子彈]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11787,6 +11936,7 @@ entries:
       - pos: noun
         gloss_en: [placard, public notice, handbill]
         gloss_zh: [字白]
+        tags: [dated]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11937,6 +12087,7 @@ entries:
       - pos: noun
         gloss_en: [semester, school term]
         gloss_zh: [學期]
+        tags: [countable]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12057,6 +12208,7 @@ entries:
       - pos: noun
         gloss_en: [safety helmet, hard hat]
         gloss_zh: [安全帽]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12093,6 +12245,7 @@ entries:
       - pos: idiom
         gloss_en: [to live in peace and work happily, content with one's lot]
         gloss_zh: [安居樂業]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12105,6 +12258,7 @@ entries:
       - pos: noun
         gloss_en: [first night watch (7-9pm)]
         gloss_zh: [安更, 初更]
+        tags: [archaic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12191,6 +12345,7 @@ entries:
       - pos: adjective
         gloss_en: [official, authoritative, government]
         gloss_zh: [官方]
+        tags: [attributive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12203,6 +12358,7 @@ entries:
       - pos: noun
         gloss_en: [official website]
         gloss_zh: [官網, 官方網站]
+        tags: [Internet]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12731,6 +12887,7 @@ entries:
       - pos: noun
         gloss_en: [future, in the future]
         gloss_zh: [將來, 未來]
+        tags: [future]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12889,6 +13046,7 @@ entries:
       - pos: noun
         gloss_en: [antithetical couplet, paired verses (e.g. for Spring Festival)]
         gloss_zh: [對聯]
+        tags: [rhetoric]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13001,6 +13159,7 @@ entries:
       - pos: idiom
         gloss_en: [to judge a matter on its own merits, "to discuss the issue itself, not the person"]
         gloss_zh: [就事論事]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13039,6 +13198,7 @@ entries:
       - pos: idiom
         gloss_en: [to hold a position without doing the work, to be a do-nothing official]
         gloss_zh: [尸位素餐]
+        tags: [derogatory, humble, idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13089,6 +13249,7 @@ entries:
       - pos: idiom
         gloss_en: [unwieldy; too powerful to control, the tail wagging the dog]
         gloss_zh: [尾大不掉]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13175,6 +13336,7 @@ entries:
       - pos: idiom
         gloss_en: [to be vigilant in times of peace, to think of danger in times of safety]
         gloss_zh: [居安思危]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13187,6 +13349,7 @@ entries:
       - pos: idiom
         gloss_en: [to harbor sinister intentions, unfathomable motives]
         gloss_zh: [居心叵測]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13263,6 +13426,7 @@ entries:
       - pos: noun
         gloss_en: [barrier, protective screen]
         gloss_zh: [屏障]
+        tags: [figuratively, literally]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13275,6 +13439,7 @@ entries:
       - pos: noun
         gloss_en: [clogs, wooden shoes]
         gloss_zh: [屐]
+        tags: [Classical]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13361,6 +13526,7 @@ entries:
       - pos: idiom
         gloss_en: [persists despite repeated bans, rampant despite repeated prohibition]
         gloss_zh: [屢禁不止]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13373,6 +13539,7 @@ entries:
       - pos: idiom
         gloss_en: [common occurrence, nothing new, far from rare]
         gloss_zh: [屢見不鮮]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13385,6 +13552,7 @@ entries:
       - pos: idiom
         gloss_en: [to emerge in an endless stream, to come thick and fast]
         gloss_zh: [層出不窮]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13461,6 +13629,7 @@ entries:
       - pos: idiom
         gloss_en: [solemn pledge of love, vow of eternal love]
         gloss_zh: [山盟海誓]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13485,6 +13654,7 @@ entries:
       - pos: idiom
         gloss_en: [flowing past in an endless stream (of traffic/people)]
         gloss_zh: [川流不息]
+        tags: [idiomatic, usually]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13697,6 +13867,7 @@ entries:
       - pos: noun
         gloss_en: [huge amount, immense sum]
         gloss_zh: [巨額]
+        tags: [attributive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13819,6 +13990,7 @@ entries:
       - pos: noun
         gloss_en: [bus]
         gloss_zh: [巴士]
+        tags: [regional]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14200,6 +14372,7 @@ entries:
         gloss_en: [balance, equilibrium]
         gloss_zh: [平衡]
         note: The page gives this word as noun ('balance/equilibrium'), adjective ('balanced'), and verb ('to balance') with equal prominence; the noun sense was chosen as primary but the verb usage is equally common.
+        tags: [figuratively]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -14225,6 +14398,7 @@ entries:
       - pos: idiom
         gloss_en: [abundance every year (auspicious New Year greeting)]
         gloss_zh: [年年有餘]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14537,6 +14711,7 @@ entries:
       - pos: noun
         gloss_en: [mattress]
         gloss_zh: [床褥]
+        tags: [regional]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14863,6 +15038,7 @@ entries:
       - pos: idiom
         gloss_en: [to behave affectedly, to put on an act, to show off]
         gloss_zh: [張樣張相]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14925,6 +15101,7 @@ entries:
       - pos: noun
         gloss_en: [pop-up window, pop-up (internet)]
         gloss_zh: [彈窗]
+        tags: [Internet]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -15107,6 +15284,7 @@ entries:
       - pos: noun
         gloss_en: [film and TV drama]
         gloss_zh: [影視劇]
+        tags: [countable]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -15369,6 +15547,7 @@ entries:
       - pos: idiom
         gloss_en: [to keep on the straight and narrow, to obey rules and laws]
         gloss_zh: [循規蹈矩]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -15731,6 +15910,7 @@ entries:
       - pos: noun
         gloss_en: [express package, express parcel]
         gloss_zh: [快件]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -15779,6 +15959,7 @@ entries:
       - pos: idiom
         gloss_en: [to keep in mind constantly, to never forget]
         gloss_zh: [念念不忘]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -15915,6 +16096,7 @@ entries:
       - pos: idiom
         gloss_en: [to suddenly realize, to suddenly understand]
         gloss_zh: [恍然大悟]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16025,6 +16207,7 @@ entries:
       - pos: idiom
         gloss_en: [closely linked, interrelated]
         gloss_zh: [息息相關]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16169,6 +16352,7 @@ entries:
       - pos: noun
         gloss_en: [love letter]
         gloss_zh: [情書]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16181,6 +16365,7 @@ entries:
       - pos: noun
         gloss_en: [love song]
         gloss_zh: [情歌]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16339,6 +16524,7 @@ entries:
       - pos: idiom
         gloss_en: [to indulge in fantastical thoughts, to daydream]
         gloss_zh: [想入非非]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16351,6 +16537,7 @@ entries:
       - pos: idiom
         gloss_en: [to think of a way, to try everything possible]
         gloss_zh: [想方設法]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16555,6 +16742,7 @@ entries:
       - pos: noun
         gloss_en: [AIDS]
         gloss_zh: [愛滋病, 艾滋病]
+        tags: [dated, proscribed]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16605,6 +16793,7 @@ entries:
       - pos: idiom
         gloss_en: [can't thank (someone) enough, extremely grateful]
         gloss_zh: [感激不盡]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16678,6 +16867,7 @@ entries:
         gloss_en: [goodbye; take care (said to someone leaving)]
         gloss_zh: [慢走]
         note: The single Teochew reading given covers both a verb sense ('to walk/drive slowly') and a Hokkien/Teochew-specific farewell interjection; the interjection sense was chosen as the more distinctive dialectal meaning, but the page does not disambiguate which sense the reading is tied to.
+        tags: [polite]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -16753,6 +16943,7 @@ entries:
       - pos: idiom
         gloss_en: [to have everything one needs, comprehensive, all-inclusive]
         gloss_zh: [應有盡有]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16779,6 +16970,7 @@ entries:
       - pos: idiom
         gloss_en: [to punish one as a warning to others, to make an example of someone]
         gloss_zh: [懲一儆百]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16935,6 +17127,7 @@ entries:
       - pos: noun
         gloss_en: [ring, finger ring]
         gloss_zh: [戒指]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17057,6 +17250,7 @@ entries:
       - pos: noun
         gloss_en: [warship, war junk]
         gloss_zh: [戰船]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17477,6 +17671,7 @@ entries:
       - pos: noun
         gloss_en: [safety pin]
         gloss_zh: [扣針, 別針]
+        tags: [regional]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17623,6 +17818,7 @@ entries:
       - pos: idiom
         gloss_en: [to hesitate to act against wrongdoing for fear of collateral harm, spare the rat to save the dishes]
         gloss_zh: [投鼠忌器]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17660,6 +17856,7 @@ entries:
         gloss_en: [anti-Japanese, to resist Japan]
         gloss_zh: [抗日]
         note: Wiktionary lists both a verb sense ('to resist Japan') and an adjective sense ('anti-Japanese, attributive') for this reading; adjective was chosen as the more common attributive usage but the pos is genuinely dual.
+        tags: [intransitive]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -17895,6 +18092,7 @@ entries:
       - pos: noun
         gloss_en: [slippers]
         gloss_zh: [拖鞋]
+        tags: [countable]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18053,6 +18251,7 @@ entries:
       - pos: idiom
         gloss_en: [to return lost valuables, not to pocket what one finds]
         gloss_zh: [拾金不昧]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18077,6 +18276,7 @@ entries:
       - pos: noun
         gloss_en: [compass]
         gloss_zh: [指南針]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18227,6 +18427,7 @@ entries:
       - pos: idiom
         gloss_en: [to overcome all difficulties, to surmount every obstacle]
         gloss_zh: [排除萬難]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18251,6 +18452,7 @@ entries:
       - pos: noun
         gloss_en: [relay race]
         gloss_zh: [接力賽]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18277,6 +18479,7 @@ entries:
       - pos: noun
         gloss_en: [hair clippers]
         gloss_zh: [推剪]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18316,6 +18519,7 @@ entries:
         gloss_en: [commission, cut (of a sum of money)]
         gloss_zh: [提成, 抽成]
         note: Page gives both a verb sense ('to deduct a percentage') and a noun sense ('commission/cut') for the same reading; noun was chosen as the more common everyday usage.
+        tags: [intransitive]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -18353,6 +18557,7 @@ entries:
       - pos: noun
         gloss_en: [illustration, plate (in a book)]
         gloss_zh: [插圖]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18563,6 +18768,7 @@ entries:
       - pos: noun
         gloss_en: [radio, radio set]
         gloss_zh: [收音機]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18589,6 +18795,7 @@ entries:
       - pos: noun
         gloss_en: [offensive (military or sports)]
         gloss_zh: [攻勢]
+        tags: [offensive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18735,6 +18942,7 @@ entries:
       - pos: idiom
         gloss_en: [to be stuck in old ways, unwilling to improve; complacent]
         gloss_zh: [故步自封]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18834,6 +19042,7 @@ entries:
         gloss_en: [Help!, to save one's life]
         gloss_zh: [救命]
         note: Wiktionary lists both a verb sense ('to save a life') and an interjection sense ('Help!'); interjection was chosen as the dominant colloquial usage but the verb sense is equally valid.
+        tags: [intransitive]
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -18848,6 +19057,7 @@ entries:
         gloss_en: [last resort, straw to clutch at]
         gloss_zh: [救命稻草]
         note: Grammatically a noun phrase but functions as a fixed figurative idiom, so pos could arguably be tagged 'noun' instead of 'idiom'.
+        tags: [figuratively]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -18911,6 +19121,7 @@ entries:
       - pos: noun
         gloss_en: [imperial edict, to issue an edict]
         gloss_zh: [敕令]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19380,6 +19591,7 @@ entries:
         gloss_en: [anti-cavalry sword (historical)]
         gloss_zh: [斬馬刀]
         note: No category file precisely covers historical weapon/object nouns, so it was placed in basics.yaml as the fallback catch-all.
+        tags: [historical]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -19441,6 +19653,7 @@ entries:
       - pos: phrase
         gloss_en: [Happy Chinese New Year (Teochew greeting)]
         gloss_zh: [新正如意]
+        tags: [regional]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19635,6 +19848,7 @@ entries:
       - pos: idiom
         gloss_en: [to act as if no one else were present, to behave without regard for others]
         gloss_zh: [旁若無人]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19746,6 +19960,7 @@ entries:
         gloss_en: [already existing, established]
         gloss_zh: [既有]
         note: Page gives both a verb sense ('to originally have') and an adjective sense ('existing; established') without reading-specific disambiguation; adjective chosen as the more common attributive usage.
+        tags: [attributive]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -19771,6 +19986,7 @@ entries:
       - pos: adverb
         gloss_en: [daily, every day]
         gloss_zh: [日日]
+        tags: [dialectal, formal, literary]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19885,6 +20101,7 @@ entries:
       - pos: noun
         gloss_en: [early period, early phase]
         gloss_zh: [早期]
+        tags: [attributive, often]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19971,6 +20188,7 @@ entries:
       - pos: idiom
         gloss_en: [brazenly, flagrantly, openly and without restraint]
         gloss_zh: [明目張膽]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20007,6 +20225,7 @@ entries:
       - pos: noun
         gloss_en: [the old days, the past]
         gloss_zh: [昔年]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20237,6 +20456,7 @@ entries:
       - pos: noun
         gloss_en: [time; moment (literary)]
         gloss_zh: [時分]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20665,6 +20885,7 @@ entries:
       - pos: noun
         gloss_en: [sound of a horn at daybreak]
         gloss_zh: [曉角]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20701,6 +20922,7 @@ entries:
       - pos: noun
         gloss_en: [book, booklet]
         gloss_zh: [書冊, 書]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20713,6 +20935,7 @@ entries:
       - pos: noun
         gloss_en: [schoolbag, backpack]
         gloss_zh: [書包]
+        tags: [countable]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20737,6 +20960,7 @@ entries:
       - pos: noun
         gloss_en: [book]
         gloss_zh: [書本, 書]
+        tags: [collective]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20773,6 +20997,7 @@ entries:
       - pos: noun
         gloss_en: [books, written works]
         gloss_zh: [書籍]
+        tags: [collective]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20797,6 +21022,7 @@ entries:
       - pos: noun
         gloss_en: [tuition fee paid to a teacher (historical Teochew)]
         gloss_zh: [書金]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20898,6 +21124,7 @@ entries:
         gloss_en: [long month (30-day lunar month)]
         gloss_zh: [月大]
         note: Technical calendrical term (a lunar month with 30 days, as opposed to a 'short month'); gloss is simplified from a terse dialectal definition.
+        tags: [dialectal]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -20911,6 +21138,7 @@ entries:
       - pos: noun
         gloss_en: [end of the month]
         gloss_zh: [月尾, 月底]
+        tags: [dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21069,6 +21297,7 @@ entries:
       - pos: idiom
         gloss_en: [to hope one's child will succeed in life]
         gloss_zh: [望子成龍]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21081,6 +21310,7 @@ entries:
       - pos: idiom
         gloss_en: [to console oneself with false hopes, to quench one's thirst by thinking of plums]
         gloss_zh: [望梅止渴]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21217,6 +21447,7 @@ entries:
       - pos: noun
         gloss_en: [future, upcoming]
         gloss_zh: [未來]
+        tags: [future]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21241,6 +21472,7 @@ entries:
       - pos: adverb
         gloss_en: [never, not yet, not once]
         gloss_zh: [未曾]
+        tags: [literary]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21413,6 +21645,7 @@ entries:
       - pos: noun
         gloss_en: [pillow]
         gloss_zh: [枕頭]
+        tags: [countable]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21553,6 +21786,8 @@ entries:
       - pos: idiom
         gloss_en: ["daily necessities (lit. firewood, rice, oil, salt)", the mundane necessities of life]
         gloss_zh: [柴米油鹽]
+        tags: [alt-of, alternative, idiomatic]
+        alt_of: [柴米油鹽醬醋茶 /柴米油盐酱醋茶]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21715,6 +21950,7 @@ entries:
       - pos: noun
         gloss_en: [magistrate's bench (historical)]
         gloss_zh: [案床]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21973,6 +22209,7 @@ entries:
       - pos: noun
         gloss_en: [coffin, inner coffin]
         gloss_zh: [棺]
+        tags: [in-compounds]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22073,6 +22310,7 @@ entries:
       - pos: noun
         gloss_en: [form of business operation, business model]
         gloss_zh: [業態]
+        tags: [form-of]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22123,6 +22361,7 @@ entries:
       - pos: noun
         gloss_en: [concept, notion, idea]
         gloss_zh: [概念]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22161,6 +22400,7 @@ entries:
       - pos: idiom
         gloss_en: [to have one's name on the list (of successful candidates)]
         gloss_zh: [榜上有名]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22233,6 +22473,7 @@ entries:
       - pos: noun
         gloss_en: [musical instrument]
         gloss_zh: [樂器]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22317,6 +22558,7 @@ entries:
       - pos: noun
         gloss_en: [hub, pivot, key position]
         gloss_zh: [樞紐]
+        tags: [figuratively]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22441,6 +22683,7 @@ entries:
       - pos: noun
         gloss_en: [robot]
         gloss_zh: [機器人]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22637,6 +22880,7 @@ entries:
       - pos: noun
         gloss_en: [mast, yardarm]
         gloss_zh: [檣, 桅杆]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22759,6 +23003,7 @@ entries:
       - pos: adverb
         gloss_en: [joyfully, gladly, readily]
         gloss_zh: [欣然]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22843,6 +23088,7 @@ entries:
       - pos: idiom
         gloss_en: [peace and prosperity (depicted through singing and dancing)]
         gloss_zh: [歌舞昇平]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23001,6 +23247,7 @@ entries:
       - pos: noun
         gloss_en: [positive energy; positivity]
         gloss_zh: [正能量]
+        tags: [bureaucratese, neologism]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23063,6 +23310,7 @@ entries:
       - pos: idiom
         gloss_en: [to advance step by step, to get promoted steadily]
         gloss_zh: [步步高升]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23173,6 +23421,7 @@ entries:
       - pos: idiom
         gloss_en: [eager to return home, heart set on going home like an arrow]
         gloss_zh: [歸心似箭]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23197,6 +23446,7 @@ entries:
       - pos: idiom
         gloss_en: [ultimately, when all is said and done, in the final analysis]
         gloss_zh: [歸根結底, 說到底]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23336,6 +23586,7 @@ entries:
         gloss_en: [pig-butchering scam, romance scam]
         gloss_zh: [殺豬盤]
         note: This is a modern slang/neologism (labeled slang/neologism on the page); it's uncertain how established or frequent this borrowed term is in everyday spoken Teochew.
+        tags: [neologism, slang]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -23831,6 +24082,7 @@ entries:
       - pos: idiom
         gloss_en: [packed solid, extremely crowded, impenetrable]
         gloss_zh: [水洩不通]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23979,6 +24231,7 @@ entries:
       - pos: noun
         gloss_en: [oil painting]
         gloss_zh: [油畫]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24185,6 +24438,7 @@ entries:
       - pos: idiom
         gloss_en: [(of a literary work) to be all the rage for a time; immensely popular]
         gloss_zh: [洛陽紙貴]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24235,6 +24489,7 @@ entries:
       - pos: noun
         gloss_en: [faction, branch, denomination]
         gloss_zh: [派別]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24355,6 +24610,7 @@ entries:
       - pos: noun
         gloss_en: [contact tracing, epidemiological investigation]
         gloss_zh: [流調]
+        tags: [neologism]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24511,6 +24767,7 @@ entries:
       - pos: noun
         gloss_en: [fire engine, fire truck]
         gloss_zh: [消防車]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24585,6 +24842,7 @@ entries:
       - pos: noun
         gloss_en: [water purifier]
         gloss_zh: [淨水器]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24609,6 +24867,7 @@ entries:
       - pos: idiom
         gloss_en: [to dabble without deep study, to stop after a superficial taste of something]
         gloss_zh: [淺嘗輒止]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24719,6 +24978,7 @@ entries:
       - pos: noun
         gloss_en: [ferry, ferryboat]
         gloss_zh: [渡輪]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24791,6 +25051,7 @@ entries:
       - pos: idiom
         gloss_en: [continuously; like a steady stream]
         gloss_zh: [源源不斷]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24803,6 +25064,7 @@ entries:
       - pos: idiom
         gloss_en: [having a long and rich history]
         gloss_zh: [源遠流長]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24887,6 +25149,7 @@ entries:
       - pos: noun
         gloss_en: [fishing boat]
         gloss_zh: [漁船]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24899,6 +25162,7 @@ entries:
       - pos: idiom
         gloss_en: [to sail across the sea to a foreign land, to travel far abroad]
         gloss_zh: [漂洋過海]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24995,6 +25259,7 @@ entries:
       - pos: idiom
         gloss_en: [to influence subtly and imperceptibly, to change through unnoticed influence]
         gloss_zh: [潛移默化]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25055,6 +25320,7 @@ entries:
       - pos: idiom
         gloss_en: [unable to make ends meet, in dire financial circumstances]
         gloss_zh: [濟囝餓死爸]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25336,6 +25602,7 @@ entries:
         gloss_en: [fine; penalty]
         gloss_zh: [烏公]
         note: Sense is tagged as Malaysia/Singapore dialectal usage rather than specifically Teochew, so its currency in Teochew proper is uncertain.
+        tags: [dialectal]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -25373,6 +25640,7 @@ entries:
       - pos: noun
         gloss_en: [nonexistent person or thing; naught; nothing]
         gloss_zh: [烏有]
+        tags: [figuratively, literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25425,6 +25693,7 @@ entries:
       - pos: idiom
         gloss_en: [burning of books and burying of scholars (Qin dynasty event), ruthless suppression of scholarship or dissent]
         gloss_zh: [焚書坑儒]
+        tags: [also, figuratively, historical, idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25449,6 +25718,7 @@ entries:
       - pos: idiom
         gloss_en: [nobody is interested, unpopular, unattractive]
         gloss_zh: [無人問津]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25461,6 +25731,7 @@ entries:
       - pos: noun
         gloss_en: [drone, unmanned aerial vehicle]
         gloss_zh: [無人機]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25473,6 +25744,7 @@ entries:
       - pos: idiom
         gloss_en: [not entirely blameworthy, understandable, excusable]
         gloss_zh: [無可厚非]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25497,6 +25769,7 @@ entries:
       - pos: idiom
         gloss_en: [hopeless, incurable, beyond help]
         gloss_zh: [無可救藥]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25587,6 +25860,7 @@ entries:
       - pos: idiom
         gloss_en: [ubiquitous; omnipresent, to be everywhere]
         gloss_zh: [無處不在]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25599,6 +25873,7 @@ entries:
       - pos: phrase
         gloss_en: [in any case; at any rate, no matter what]
         gloss_zh: [無論如何]
+        tags: [idiomatic]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25647,6 +25922,7 @@ entries:
       - pos: idiom
         gloss_en: [to disappear without a trace]
         gloss_zh: [無魂無影]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25673,6 +25949,7 @@ entries:
       - pos: phrase
         gloss_en: [brand new, changed beyond recognition]
         gloss_zh: [煥然一新]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25685,6 +25962,7 @@ entries:
       - pos: noun
         gloss_en: [mirror that reveals evil spirits (fig.), something that exposes the truth]
         gloss_zh: [照妖鏡]
+        tags: [figuratively]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25735,6 +26013,7 @@ entries:
       - pos: noun
         gloss_en: [trending search, popular search query]
         gloss_zh: [熱搜]
+        tags: [Internet]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25891,6 +26170,7 @@ entries:
       - pos: idiom
         gloss_en: [waning lights, "dim, scattered lights (as a crowd thins)"]
         gloss_zh: [燈火闌珊]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26451,6 +26731,7 @@ entries:
       - pos: idiom
         gloss_en: ["a cornered dog will jump the wall; desperation drives one to take bold, reckless action"]
         gloss_zh: [狗急跳牆]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26601,6 +26882,7 @@ entries:
       - pos: noun
         gloss_en: [medal]
         gloss_zh: [獎牌]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26637,6 +26919,7 @@ entries:
       - pos: idiom
         gloss_en: [to have a unique style, distinctively original]
         gloss_zh: [獨具一格]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26712,6 +26995,7 @@ entries:
         gloss_en: [tinkling sound of jade (onomatopoeic)]
         gloss_zh: [玲]
         note: Bound onomatopoeic character mainly seen in compounds like 玲瓏 or as a name element; standalone usage is unclear.
+        tags: [onomatopoeic]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -26877,6 +27161,7 @@ entries:
       - pos: noun
         gloss_en: [cash; ready money]
         gloss_zh: [現錢, 現金]
+        tags: [colloquial]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26925,6 +27210,7 @@ entries:
       - pos: noun
         gloss_en: [sneakers; trainers; athletic shoes]
         gloss_zh: [球鞋]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27207,6 +27493,7 @@ entries:
       - pos: noun
         gloss_en: [imperial seal; royal seal]
         gloss_zh: [璽]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27232,6 +27519,7 @@ entries:
         gloss_en: [glycoside]
         gloss_zh: [甙, 糖苷]
         note: Highly technical, dated chemistry term with no clearly better-fitting category.
+        tags: [dated]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -27259,6 +27547,7 @@ entries:
       - pos: idiom
         gloss_en: [sweet words and honeyed phrases, cajolery]
         gloss_zh: [甜言蜜語]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27319,6 +27608,7 @@ entries:
       - pos: idiom
         gloss_en: [a moment of death and passing, when life departs]
         gloss_zh: [生死離別]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27489,6 +27779,7 @@ entries:
       - pos: phrase
         gloss_en: [fuck you, fuck your mother]
         gloss_zh: [甫母]
+        tags: [offensive, vulgar]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27577,6 +27868,8 @@ entries:
       - pos: noun
         gloss_en: [dustpan]
         gloss_zh: [糞斗]
+        tags: [alt-of, alternative]
+        alt_of: [糞斗 /粪斗]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27589,6 +27882,8 @@ entries:
       - pos: noun
         gloss_en: [dustpan]
         gloss_zh: [糞箕]
+        tags: [alt-of, alternative]
+        alt_of: [糞箕 /粪箕]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27759,6 +28054,7 @@ entries:
       - pos: noun
         gloss_en: [the same day; that very day]
         gloss_zh: [當日]
+        tags: [formal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27867,6 +28163,7 @@ entries:
       - pos: idiom
         gloss_en: [to turn to anyone for help when desperate, to try anything in a desperate plight]
         gloss_zh: [病急亂投醫]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27989,6 +28286,7 @@ entries:
       - pos: noun
         gloss_en: [generator]
         gloss_zh: [發電機]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28065,6 +28363,7 @@ entries:
       - pos: idiom
         gloss_en: [to win every battle, to be ever-victorious]
         gloss_zh: [百戰百勝]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28101,6 +28400,7 @@ entries:
       - pos: noun
         gloss_en: [pleated skirt]
         gloss_zh: [百褶裙]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28151,6 +28451,7 @@ entries:
       - pos: idiom
         gloss_en: [everyone is happy, to everyone's delight and satisfaction]
         gloss_zh: [皆大歡喜]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28163,6 +28464,7 @@ entries:
       - pos: noun
         gloss_en: [rubber ball, ball]
         gloss_zh: [皮球]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28469,6 +28771,7 @@ entries:
       - pos: noun
         gloss_en: [blind box, mystery box]
         gloss_zh: [盲盒]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28508,6 +28811,7 @@ entries:
         gloss_en: [straight line]
         gloss_zh: [直線]
         note: The same reading is also attested for an attributive-adjective block ('straight; direct; steep'); noun was chosen as the primary dictionary sense but both are valid.
+        tags: [countable]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -28547,6 +28851,7 @@ entries:
       - pos: idiom
         gloss_en: [to depend on each other for survival, to rely on one another for life]
         gloss_zh: [相依為命]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28585,6 +28890,7 @@ entries:
       - pos: idiom
         gloss_en: [to discuss disparate things as if equal, to mention in the same breath]
         gloss_zh: [相提並論]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28597,6 +28903,7 @@ entries:
       - pos: noun
         gloss_en: [photo, photograph]
         gloss_zh: [相片]
+        tags: [colloquial]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28737,6 +29044,7 @@ entries:
       - pos: phrase
         gloss_en: [a thorn in one's side; an eyesore; someone hated]
         gloss_zh: [眼中釘]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28773,6 +29081,7 @@ entries:
       - pos: noun
         gloss_en: [field of vision; horizon; scope of knowledge]
         gloss_zh: [眼界]
+        tags: [figuratively, literally]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28785,6 +29094,7 @@ entries:
       - pos: idiom
         gloss_en: [unity is strength (idiom), the will of the masses forms a fortress]
         gloss_zh: [眾志成城]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28809,6 +29119,7 @@ entries:
       - pos: idiom
         gloss_en: [as everyone knows, well-known, common knowledge]
         gloss_zh: [眾所周知]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28949,6 +29260,7 @@ entries:
       - pos: idiom
         gloss_en: [to know the enemy and know yourself]
         gloss_zh: [知彼知己]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29023,6 +29335,7 @@ entries:
       - pos: noun
         gloss_en: [coin]
         gloss_zh: [硬幣]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29111,6 +29424,7 @@ entries:
       - pos: idiom
         gloss_en: [sole survivor; last of its kind, rare few remaining]
         gloss_zh: [碩果僅存]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29253,6 +29567,7 @@ entries:
       - pos: noun
         gloss_en: [sacrificial prayer text; ritual eulogy]
         gloss_zh: [祝文]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29411,6 +29726,7 @@ entries:
       - pos: idiom
         gloss_en: [misfortunes never come singly, it never rains but it pours]
         gloss_zh: [禍不單行]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29461,6 +29777,7 @@ entries:
       - pos: idiom
         gloss_en: [goodness is rewarded and wickedness is punished]
         gloss_zh: [福善禍淫]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29499,6 +29816,7 @@ entries:
       - pos: noun
         gloss_en: [welfare, well-being]
         gloss_zh: [福祉]
+        tags: [formal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29547,6 +29865,7 @@ entries:
       - pos: noun
         gloss_en: [gift, present]
         gloss_zh: [禮品]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29583,6 +29902,7 @@ entries:
       - pos: noun
         gloss_en: [formalwear, full dress, ceremonial attire]
         gloss_zh: [禮服]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29607,6 +29927,7 @@ entries:
       - pos: noun
         gloss_en: [gift box]
         gloss_zh: [禮盒]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29743,6 +30064,7 @@ entries:
       - pos: noun
         gloss_en: [science]
         gloss_zh: [科學]
+        tags: [uncountable]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29779,6 +30101,7 @@ entries:
       - pos: noun
         gloss_en: [science fiction film, sci-fi movie]
         gloss_zh: [科幻片]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29841,6 +30164,7 @@ entries:
       - pos: noun
         gloss_en: [Chinese imperial examination]
         gloss_zh: [科舉]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29889,6 +30213,7 @@ entries:
       - pos: noun
         gloss_en: [rent (payment for use of property), colloquial word for rent]
         gloss_zh: [租金]
+        tags: [colloquial]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29949,6 +30274,7 @@ entries:
       - pos: idiom
         gloss_en: [to change prevailing habits and customs; to transform social traditions]
         gloss_zh: [移風易俗]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30121,6 +30447,7 @@ entries:
       - pos: noun
         gloss_en: [building blocks (children's toy)]
         gloss_zh: [積木]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30387,6 +30714,7 @@ entries:
       - pos: noun
         gloss_en: [nursery rhyme, children's song]
         gloss_zh: [童謠]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30521,6 +30849,7 @@ entries:
       - pos: adverb
         gloss_en: [immediately, at once, right away]
         gloss_zh: [第一時間]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30829,6 +31158,7 @@ entries:
       - pos: idiom
         gloss_en: [my condolences (said to console the bereaved)]
         gloss_zh: [節哀順變]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30841,6 +31171,7 @@ entries:
       - pos: idiom
         gloss_en: [new complications arise from an already-existing problem]
         gloss_zh: [節外生枝]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30953,6 +31284,7 @@ entries:
       - pos: noun
         gloss_en: [bamboo transverse flute (used in Chinese court music)]
         gloss_zh: [篪]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30991,6 +31323,7 @@ entries:
       - pos: noun
         gloss_en: [gui (ancient bronze ritual food vessel)]
         gloss_zh: [簋]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -31139,6 +31472,7 @@ entries:
       - pos: noun
         gloss_en: [basket for catching fish (obsolete)]
         gloss_zh: [籗]
+        tags: [obsolete]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -31201,6 +31535,7 @@ entries:
       - pos: idiom
         gloss_en: [to live simply; plain food and a modest life]
         gloss_zh: [粗茶淡飯]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -31263,6 +31598,7 @@ entries:
       - pos: noun
         gloss_en: [absolute sincerity; good faith]
         gloss_zh: [精誠]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -31770,6 +32106,7 @@ entries:
         gloss_en: [one after another, in succession]
         gloss_zh: [紛紛]
         note: Wiktionary lists both an adjective sense ('numerous and confused, in droves') and an adverb sense ('one after another') under the identical Teochew reading hung1 hung1; adverb was chosen as primary.
+        tags: [ideophonic]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -31783,6 +32120,7 @@ entries:
       - pos: idiom
         gloss_en: [to be strangers to each other, to have never met before]
         gloss_zh: [素昧平生]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -31795,6 +32133,7 @@ entries:
       - pos: idiom
         gloss_en: [to have never met before]
         gloss_zh: [素未謀面]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -31883,6 +32222,7 @@ entries:
       - pos: noun
         gloss_en: [the whole day, all day long, all the time]
         gloss_zh: [終日]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -31919,6 +32259,7 @@ entries:
       - pos: adverb
         gloss_en: [eventually, one day, sooner or later]
         gloss_zh: [終須]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32141,6 +32482,7 @@ entries:
       - pos: noun
         gloss_en: [experience]
         gloss_zh: [經驗]
+        tags: [countable, uncountable]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32153,6 +32495,7 @@ entries:
       - pos: noun
         gloss_en: [vitamin]
         gloss_zh: [維他命, 維生素]
+        tags: [dated, dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32263,6 +32606,7 @@ entries:
       - pos: noun
         gloss_en: [website, site]
         gloss_zh: [網站]
+        tags: [Internet]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32275,6 +32619,8 @@ entries:
       - pos: noun
         gloss_en: [ride-hailing car, "car hailed via app (e.g. Didi, Uber)"]
         gloss_zh: [網約車, 網絡預約出租汽車]
+        tags: [abbreviation, alt-of, neologism]
+        alt_of: [網絡預約出租汽車, 网络预约出租汽车]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32323,6 +32669,8 @@ entries:
       - pos: noun
         gloss_en: [online game, internet game]
         gloss_zh: [網遊, 網絡遊戲]
+        tags: [abbreviation, alt-of]
+        alt_of: [網絡遊戲, 网络游戏]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32657,6 +33005,7 @@ entries:
       - pos: noun
         gloss_en: [fine, infringement notice, ticket]
         gloss_zh: [罰單]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32926,6 +33275,7 @@ entries:
         gloss_en: [senile dementia; Alzheimer's disease]
         gloss_zh: [老年痴呆症]
         note: Technical medical term (marked 'proscribed' on the source page); no dedicated medical/health category exists in the given list, so filed under the basics catch-all.
+        tags: [proscribed]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -33011,6 +33361,7 @@ entries:
       - pos: idiom
         gloss_en: [thought-provoking; to give food for thought]
         gloss_zh: [耐人尋味]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33059,6 +33410,7 @@ entries:
       - pos: idiom
         gloss_en: [familiar from having heard it many times, well-known; able to recite from memory]
         gloss_zh: [耳熟能详]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33083,6 +33435,7 @@ entries:
       - pos: noun
         gloss_en: [imperial edict]
         gloss_zh: [聖旨]
+        tags: [historical]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33337,6 +33690,7 @@ entries:
       - pos: noun
         gloss_en: [position, post, office]
         gloss_zh: [職位]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33413,6 +33767,7 @@ entries:
       - pos: idiom
         gloss_en: [to feel deep respect and admiration]
         gloss_zh: [肅然起敬]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33449,6 +33804,8 @@ entries:
       - pos: noun
         gloss_en: [stock market]
         gloss_zh: [股市, 股票市場]
+        tags: [abbreviation, alt-of]
+        alt_of: [股票市場, 股票市场]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33535,6 +33892,7 @@ entries:
       - pos: noun
         gloss_en: [skill, talent, ability]
         gloss_zh: [能為]
+        tags: [dialectal, literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33723,6 +34081,7 @@ entries:
       - pos: noun
         gloss_en: [we-media, self-media (independent online content producer not officially registered as a news outlet)]
         gloss_zh: [自媒體]
+        tags: [neologism]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33747,6 +34106,7 @@ entries:
       - pos: idiom
         gloss_en: [to deceive oneself as well as others, to fool oneself and others]
         gloss_zh: [自欺欺人]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33807,6 +34167,7 @@ entries:
       - pos: noun
         gloss_en: [autism (neurological disorder)]
         gloss_zh: [自閉症]
+        tags: [proscribed]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33831,6 +34192,7 @@ entries:
       - pos: noun
         gloss_en: [lousy chess move, bad move (in chess/games)]
         gloss_zh: [臭棋]
+        tags: [colloquial]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33907,6 +34269,7 @@ entries:
       - pos: idiom
         gloss_en: [to learn by analogy, to infer other cases from one instance]
         gloss_zh: [舉一反三]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34129,6 +34492,7 @@ entries:
       - pos: idiom
         gloss_en: [mixed good and bad; of uneven quality]
         gloss_zh: [良莠不齊]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34245,6 +34609,7 @@ entries:
       - pos: idiom
         gloss_en: [blooming flowers and full moon (idiom for perfect conjugal bliss), marital happiness]
         gloss_zh: [花好月圓]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34383,6 +34748,7 @@ entries:
       - pos: noun
         gloss_en: [sea of bitterness; ocean of suffering (figurative for this weary world)]
         gloss_zh: [苦海]
+        tags: [figuratively]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34529,6 +34895,7 @@ entries:
       - pos: idiom
         gloss_en: [baffling, inexplicable, puzzling]
         gloss_zh: [莫名其妙]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34589,6 +34956,7 @@ entries:
       - pos: noun
         gloss_en: [ten thousand generations, forever]
         gloss_zh: [萬世]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34613,6 +34981,7 @@ entries:
       - pos: idiom
         gloss_en: [a myriad twinkling lights (of a city)]
         gloss_zh: [萬家燈火]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34663,6 +35032,7 @@ entries:
       - pos: idiom
         gloss_en: [to flee in defeat, to run away after being defeated]
         gloss_zh: [落荒而逃]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34713,6 +35083,7 @@ entries:
       - pos: noun
         gloss_en: [storage battery, rechargeable battery]
         gloss_zh: [蓄電池]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34751,6 +35122,7 @@ entries:
       - pos: idiom
         gloss_en: [to pass down tradition/knowledge from generation to generation]
         gloss_zh: [薪火相傳]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34823,6 +35195,7 @@ entries:
       - pos: noun
         gloss_en: [cigarette ash]
         gloss_zh: [薰屎]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34980,6 +35353,7 @@ entries:
         gloss_en: [engine (dated Teochew slang)]
         gloss_zh: [藥鬼]
         note: Wiktionary hedges this sense with tags like 'dated' and 'possibly', so the 'engine' gloss for this reading is uncertain.
+        tags: [dated, possibly]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -35018,6 +35392,7 @@ entries:
         gloss_en: [rangaku (Japanese study of Western learning)]
         gloss_zh: [蘭學]
         note: Narrow historical/specialized term (Edo-period Japanese study of Western knowledge); uncertain how commonly it is actually used in Teochew speech.
+        tags: [historical]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -35133,6 +35508,7 @@ entries:
       - pos: idiom
         gloss_en: [clue, trace, tiny hint]
         gloss_zh: [蛛絲馬跡, 線索]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35145,6 +35521,7 @@ entries:
       - pos: idiom
         gloss_en: [to gain a thorough understanding by integrating different knowledge, to master thoroughly]
         gloss_zh: [融會貫通]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35195,6 +35572,7 @@ entries:
       - pos: noun
         gloss_en: [sweat and toil; hard work]
         gloss_zh: [血汗]
+        tags: [figuratively]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35333,6 +35711,7 @@ entries:
       - pos: idiom
         gloss_en: [streets and lanes, every corner of the city]
         gloss_zh: [街頭巷尾]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35383,6 +35762,7 @@ entries:
       - pos: idiom
         gloss_en: [to return home a success, to return home in glory]
         gloss_zh: [衣錦還鄉]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35407,6 +35787,7 @@ entries:
       - pos: noun
         gloss_en: [form, table]
         gloss_zh: [表格]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35706,6 +36087,7 @@ entries:
         gloss_en: [crack, crevice]
         gloss_zh: [裂縫, 裂痕]
         note: Page gives both a noun sense (crack/crevice) and a verb sense (to crack/split) under the same reading; noun chosen as the primary lexical entry.
+        tags: [countable]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -36017,6 +36399,7 @@ entries:
       - pos: idiom
         gloss_en: [to forget one's principles for personal gain]
         gloss_zh: [見利忘義]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36029,6 +36412,7 @@ entries:
       - pos: idiom
         gloss_en: [to change one's mind at the sight of something new, fickle]
         gloss_zh: [見異思遷]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36409,6 +36793,7 @@ entries:
       - pos: noun
         gloss_en: [obituary, death notice]
         gloss_zh: [訃音]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36535,6 +36920,7 @@ entries:
       - pos: idiom
         gloss_en: [to put oneself in someone's shoes, to empathize]
         gloss_zh: [設身處地]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36734,6 +37120,7 @@ entries:
         gloss_en: [damn (it)!]
         gloss_zh: [該死]
         note: Verb ('to deserve death/an adverse outcome'), adjective ('damn; wretched; stupid'), and interjection ('damn it!') senses share the same reading; the interjection sense was chosen as the most common colloquial usage.
+        tags: [colloquial]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -36945,6 +37332,7 @@ entries:
       - pos: noun
         gloss_en: [student desk, school desk]
         gloss_zh: [課桌]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37007,6 +37395,7 @@ entries:
       - pos: verb
         gloss_en: [excuse me, may I ask?]
         gloss_zh: [請問]
+        tags: [honorific, polite]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37031,6 +37420,7 @@ entries:
       - pos: noun
         gloss_en: [logic (as a field of study)]
         gloss_zh: [論理學]
+        tags: [obsolete]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37179,6 +37569,7 @@ entries:
       - pos: noun
         gloss_en: [evidence; proof]
         gloss_zh: [證據]
+        tags: [countable, uncountable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37253,6 +37644,7 @@ entries:
       - pos: noun
         gloss_en: [alarm bell, tocsin, warning bell]
         gloss_zh: [警鐘]
+        tags: [figuratively]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37265,6 +37657,7 @@ entries:
       - pos: noun
         gloss_en: [analogy, metaphor, figure of speech, simile]
         gloss_zh: [譬喻]
+        tags: [rhetoric]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37289,6 +37682,7 @@ entries:
       - pos: noun
         gloss_en: [passport]
         gloss_zh: [護照]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37497,6 +37891,7 @@ entries:
       - pos: noun
         gloss_en: [ivory tower]
         gloss_zh: [象牙塔]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37793,6 +38188,7 @@ entries:
       - pos: idiom
         gloss_en: [to bear an unshirkable responsibility]
         gloss_zh: [責無旁貸]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37805,6 +38201,7 @@ entries:
       - pos: noun
         gloss_en: [your business (honorific), what brings you here]
         gloss_zh: [貴幹]
+        tags: [honorific]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37843,6 +38240,7 @@ entries:
       - pos: noun
         gloss_en: [greeting card]
         gloss_zh: [賀卡]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38017,6 +38415,7 @@ entries:
       - pos: noun
         gloss_en: [indenture for the sale of oneself or a family member, bill of indentured servitude]
         gloss_zh: [賣身契]
+        tags: [archaic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38313,6 +38712,7 @@ entries:
       - pos: noun
         gloss_en: [distance, to be apart from]
         gloss_zh: [距離]
+        tags: [figuratively, literally]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38423,6 +38823,7 @@ entries:
       - pos: noun
         gloss_en: [sound of footsteps]
         gloss_zh: [跫]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38689,6 +39090,7 @@ entries:
       - pos: noun
         gloss_en: [vehicle; car (collective term)]
         gloss_zh: [車輛]
+        tags: [collective]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38787,6 +39189,7 @@ entries:
       - pos: noun
         gloss_en: [military and civilians]
         gloss_zh: [軍民]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38799,6 +39202,8 @@ entries:
       - pos: noun
         gloss_en: [military exercise (abbreviation of 軍事演習)]
         gloss_zh: [軍演, 軍事演習]
+        tags: [abbreviation, alt-of]
+        alt_of: [軍事演習, 军事演习]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38823,6 +39228,7 @@ entries:
       - pos: noun
         gloss_en: [army; troops; military forces]
         gloss_zh: [軍隊]
+        tags: [collective]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38950,6 +39356,7 @@ entries:
         gloss_en: [wheel]
         gloss_zh: [輪]
         note: The character covers many senses under one reading (wheel; edge/rim; to take turns; classifier for rounds/cycles; short forms of 輪船 and 輪姦), so picking a single primary sense/POS is uncertain.
+        tags: [in-compounds]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -39067,6 +39474,7 @@ entries:
       - pos: noun
         gloss_en: [field/arena of public opinion]
         gloss_zh: [輿論場]
+        tags: [neologism]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39118,6 +39526,7 @@ entries:
         gloss_en: [form, characteristics]
         gloss_zh: [辦頭]
         note: Wiktionary's own gloss ('form, characteristics of something') is vague and marked dated/Teochew-specific, so the precise modern usage is uncertain.
+        tags: [dated]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -39181,6 +39590,7 @@ entries:
       - pos: adverb
         gloss_en: [recently, in recent days]
         gloss_zh: [近日]
+        tags: [literary]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39205,6 +39615,7 @@ entries:
       - pos: idiom
         gloss_en: [impatient, in a hurry, itching to get on with it]
         gloss_zh: [迫不及待]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39217,6 +39628,7 @@ entries:
       - pos: noun
         gloss_en: [paper clip]
         gloss_zh: [迴紋針]
+        tags: [regional]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39353,6 +39765,7 @@ entries:
       - pos: idiom
         gloss_en: [easy to understand, accessible (of writing or speech)]
         gloss_zh: [通俗易懂]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39401,6 +39814,7 @@ entries:
       - pos: idiom
         gloss_en: [to act quickly to achieve a swift victory, blitzkrieg strategy]
         gloss_zh: [速戰速決]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39704,6 +40118,7 @@ entries:
         gloss_en: [the past, formerly]
         gloss_zh: [過去]
         note: Also very commonly used as a verb meaning 'to go over/pass by' or euphemistically 'to die'; only the noun sense 'the past' is recorded here.
+        tags: [past]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -39817,6 +40232,7 @@ entries:
       - pos: idiom
         gloss_en: [moral blackmail, to hijack morality to condemn someone]
         gloss_zh: [道德綁架]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40223,6 +40639,7 @@ entries:
       - pos: idiom
         gloss_en: [to rally one's forces after a defeat; to regroup and start over]
         gloss_zh: [重整旗鼓]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40235,6 +40652,7 @@ entries:
       - pos: idiom
         gloss_en: [favoring boys over girls; valuing men over women]
         gloss_zh: [重男輕女]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40259,6 +40677,7 @@ entries:
       - pos: idiom
         gloss_en: [to regain freedom; to see daylight again after oppression]
         gloss_zh: [重見天日]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40369,6 +40788,7 @@ entries:
       - pos: idiom
         gloss_en: [golden rule, inviolable law or principle]
         gloss_zh: [金科玉律]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40561,6 +40981,7 @@ entries:
       - pos: noun
         gloss_en: [ornamental forked hairpin, hairpin]
         gloss_zh: [釵]
+        tags: [dated]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40841,6 +41262,7 @@ entries:
       - pos: noun
         gloss_en: [hoe (tool)]
         gloss_zh: [鋤頭]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40937,6 +41359,7 @@ entries:
       - pos: noun
         gloss_en: ["silk brocade bag (historical, for storing valuables or documents)"]
         gloss_zh: [錦囊]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41051,6 +41474,7 @@ entries:
       - pos: noun
         gloss_en: [lock (device)]
         gloss_zh: [鎖頭, 鎖]
+        tags: [regional]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41161,6 +41585,8 @@ entries:
       - pos: noun
         gloss_en: [laser]
         gloss_zh: [鐳射, 雷射]
+        tags: [alt-of, alternative]
+        alt_of: [雷射]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41185,6 +41611,7 @@ entries:
       - pos: noun
         gloss_en: [iron fist (figurative)]
         gloss_zh: [鐵腕]
+        tags: [figuratively]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41197,6 +41624,7 @@ entries:
       - pos: noun
         gloss_en: [hammer]
         gloss_zh: [鐵錘]
+        tags: [dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41246,6 +41674,7 @@ entries:
         gloss_en: [clang; ringing sound (as of a bell)]
         gloss_zh: [鑶]
         note: This is an onomatopoeia for a bell-like ringing sound; the fixed part-of-speech list has no onomatopoeia category, so 'interjection' was used as the closest approximation.
+        tags: [onomatopoeic]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -41331,6 +41760,7 @@ entries:
       - pos: adverb
         gloss_en: [in any case, no matter what, at any rate]
         gloss_zh: [長短]
+        tags: [literary]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41369,6 +41799,7 @@ entries:
       - pos: noun
         gloss_en: [admission ticket, entrance ticket]
         gloss_zh: [門票]
+        tags: [countable]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41505,6 +41936,7 @@ entries:
       - pos: idiom
         gloss_en: [too numerous/varied to guard against all of them, impossible to defend against everything]
         gloss_zh: [防不勝防]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41517,6 +41949,7 @@ entries:
       - pos: idiom
         gloss_en: [to take precautions before disaster strikes, to prevent trouble before it happens]
         gloss_zh: [防患於未然]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41553,6 +41986,7 @@ entries:
       - pos: interjection
         gloss_en: [achoo (sound of a sneeze)]
         gloss_zh: [阿嗤]
+        tags: [onomatopoeic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41631,6 +42065,7 @@ entries:
       - pos: idiom
         gloss_en: [to feign refinement, to pose as a lover of culture despite ignorance]
         gloss_zh: [附庸風雅]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41827,6 +42262,7 @@ entries:
       - pos: noun
         gloss_en: [circumstances; lot in life, opportunity; fate]
         gloss_zh: [際遇]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42021,6 +42457,7 @@ entries:
       - pos: idiom
         gloss_en: [great ambitions and lofty aspirations]
         gloss_zh: [雄心壯志]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42060,6 +42497,7 @@ entries:
         gloss_en: [sculpture, statue]
         gloss_zh: [雕塑]
         note: The page gives both a verb sense ('to carve; to sculpt') and a noun sense ('statue; sculpture') at the same reading; picked the noun sense as more standalone-typical but pos is not fully certain.
+        tags: [countable]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -42074,6 +42512,8 @@ entries:
         gloss_en: [Double First Class (Chinese university initiative), top-tier university plan]
         gloss_zh: [雙一流]
         note: Specialized proper noun for a Chinese higher-education policy (short for 世界一流大學、一流學科); category placement and everyday relevance are uncertain.
+        tags: [abbreviation, alt-of]
+        alt_of: [世界一流大學、一流學科, 世界一流大学、一流学科]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -42087,6 +42527,8 @@ entries:
       - pos: proper-noun
         gloss_en: [Singles' Day, Double Eleven (November 11 shopping festival)]
         gloss_zh: [雙十一, 光棍節]
+        tags: [alt-of, alternative, name]
+        alt_of: [光棍節, 光棍节]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42209,6 +42651,7 @@ entries:
       - pos: noun
         gloss_en: [feather duster]
         gloss_zh: [雞毛撣子]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42455,6 +42898,8 @@ entries:
       - pos: noun
         gloss_en: [e-commerce]
         gloss_zh: [電商, 電子商務]
+        tags: [abbreviation, alt-of]
+        alt_of: [電子商務, 电子商务]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42529,6 +42974,7 @@ entries:
       - pos: noun
         gloss_en: [battery]
         gloss_zh: [電池]
+        tags: [countable]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42860,6 +43306,8 @@ entries:
         gloss_en: [intangible cultural heritage]
         gloss_zh: [非遺, 非物質文化遺產]
         note: This is a short form for 非物質文化遺產 (intangible cultural heritage), a specific administrative/cultural designation term rather than everyday vocabulary.
+        tags: [abbreviation, alt-of]
+        alt_of: [非物質文化遺產, 非物质文化遗产]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -43067,6 +43515,7 @@ entries:
       - pos: noun
         gloss_en: [swing (hanging seat)]
         gloss_zh: [鞦]
+        tags: [dialectal, in-compounds]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43103,6 +43552,7 @@ entries:
       - pos: noun
         gloss_en: [swing (hanging seat)]
         gloss_zh: [韆]
+        tags: [in-compounds]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43213,6 +43663,7 @@ entries:
       - pos: idiom
         gloss_en: [to go along with the prevailing situation, to take advantage of the momentum]
         gloss_zh: [順水推舟]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43225,6 +43676,7 @@ entries:
       - pos: idiom
         gloss_en: [to follow the clues to get to the bottom of a matter, to trace something to its source]
         gloss_zh: [順藤摸瓜]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43297,6 +43749,7 @@ entries:
       - pos: interjection
         gloss_en: [your mother's cunt (vulgar insult)]
         gloss_zh: [領奶塊膣]
+        tags: [offensive, vulgar]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43445,6 +43898,7 @@ entries:
       - pos: noun
         gloss_en: [channel (TV/radio)]
         gloss_zh: [頻道]
+        tags: [TV]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43655,6 +44109,7 @@ entries:
       - pos: noun
         gloss_en: [disturbance, dispute, crisis]
         gloss_zh: [風波]
+        tags: [figuratively]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43667,6 +44122,7 @@ entries:
       - pos: idiom
         gloss_en: [clean and upright (of a social or political environment)]
         gloss_zh: [風清氣正]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43715,6 +44171,7 @@ entries:
       - pos: idiom
         gloss_en: [extremely nervous, to panic at the slightest alarm]
         gloss_zh: [風聲鶴唳]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43777,6 +44234,7 @@ entries:
       - pos: idiom
         gloss_en: [to rough it while traveling, to bivouac; sleep out in the open, to endure the hardships of travel]
         gloss_zh: [風餐露宿]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43839,6 +44297,7 @@ entries:
       - pos: noun
         gloss_en: [fan community, fandom]
         gloss_zh: [飯圈]
+        tags: [neologism, slang]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43999,6 +44458,7 @@ entries:
       - pos: noun
         gloss_en: [horsepower]
         gloss_zh: [馬力]
+        tags: [figuratively, literally]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44097,6 +44557,7 @@ entries:
       - pos: noun
         gloss_en: [horse-drawn carriage]
         gloss_zh: [馬車]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44146,6 +44607,7 @@ entries:
         gloss_en: ["pianwen (a rhythmical, ornate parallel-prose literary style)"]
         gloss_zh: [駢文]
         note: Specialized classical-Chinese literature term with no clearly fitting category, placed in the catch-all file.
+        tags: [countable]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -44159,6 +44621,7 @@ entries:
       - pos: noun
         gloss_en: [scam; fraud; hoax]
         gloss_zh: [騙局]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44209,6 +44672,7 @@ entries:
       - pos: adverb
         gloss_en: [suddenly, abruptly]
         gloss_zh: [驟然, 突然]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44395,6 +44859,7 @@ entries:
       - pos: noun
         gloss_en: [high heels; high-heeled shoes]
         gloss_zh: [高跟鞋]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44421,6 +44886,7 @@ entries:
       - pos: noun
         gloss_en: [farce, slapstick]
         gloss_zh: [鬧劇]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44706,6 +45172,8 @@ entries:
         gloss_en: [illegal/black-market industry (abbr. of 黑色產業)]
         gloss_zh: [黑產, 黑色產業]
         note: Modern internet-slang abbreviation for 'black industry'; unclear how established this borrowing is in everyday spoken Teochew versus written Mandarin usage.
+        tags: [abbreviation, alt-of]
+        alt_of: [黑色產業, 黑色产业]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -44841,6 +45309,7 @@ entries:
       - pos: idiom
         gloss_en: [to unite and work towards a common goal, to work together with one mind]
         gloss_zh: [齊心合力]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44877,6 +45346,7 @@ entries:
       - pos: noun
         gloss_en: [dental medicine (archaic)]
         gloss_zh: [齒藥]
+        tags: [archaic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44937,6 +45407,7 @@ entries:
       - pos: idiom
         gloss_en: ["vigorous and energetic, especially remaining so in old age; strong as an ox"]
         gloss_zh: [龍馬精神]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45049,6 +45520,8 @@ entries:
       - pos: adverb
         gloss_en: [do not, don't, must not]
         gloss_zh: [莫]
+        tags: [alt-of, alternative]
+        alt_of: [莫]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45062,6 +45535,8 @@ entries:
         gloss_en: [cannot; will not (alternative form of 𣍐)]
         gloss_zh: [𣍐]
         note: The dossier tags this headword as an alt_of pointer to 𣍐/𫧃 rather than an independently defined word; drafted as a variant form pointing to the same core sense as 𣍐.
+        tags: [alt-of, alternative]
+        alt_of: [𣍐 /𫧃]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -45077,6 +45552,7 @@ entries:
         gloss_en: [love at first sight, to fall in love at first sight]
         gloss_zh: [一見鍾情]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [idiomatic]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -45241,6 +45717,7 @@ entries:
         gloss_en: [in the whole world; on earth]
         gloss_zh: [世上]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [formal]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -45790,6 +46267,7 @@ entries:
         gloss_en: [tradition]
         gloss_zh: [傳統]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [countable, uncountable]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -45986,6 +46464,7 @@ entries:
         gloss_en: [to be insincere]
         gloss_zh: [六月大菜——假有心]
         note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This is a two-part xiehouyu (歇後語); the given candidate matches only the punchline clause (假有心) in the dossier's Peng'im data, not the setup clause (六月大菜).
+        tags: [idiomatic]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -46047,6 +46526,7 @@ entries:
         gloss_en: [goodbye, see you later]
         gloss_zh: [再見]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [polite]
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -46094,6 +46574,7 @@ entries:
         gloss_en: [in all things; no matter what]
         gloss_zh: [凡事]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [literary]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -46303,6 +46784,7 @@ entries:
         gloss_en: ["six of one, half a dozen of the other; not much difference between the two"]
         gloss_zh: [半斤八兩]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [derogatory, idiomatic]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -46410,6 +46892,7 @@ entries:
         gloss_en: [cause; reason]
         gloss_zh: [原因]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [countable]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -46664,6 +47147,8 @@ entries:
         gloss_en: [now; then; in that case]
         gloss_zh: [今]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [alt-of, alternative]
+        alt_of: [今]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -46758,6 +47243,7 @@ entries:
         gloss_en: [suona (woodwind instrument)]
         gloss_zh: [啲咑, 嗩吶]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. No category in the list fits a musical-instrument noun well, so it was placed in the basics.yaml catch-all.
+        tags: [dialectal]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -47133,6 +47619,7 @@ entries:
         gloss_en: [damn it!; good grief!]
         gloss_zh: [夭壽]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [vulgar]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -47298,6 +47785,7 @@ entries:
         gloss_en: [something is amiss with what was said]
         gloss_zh: [客廳吊草蓆——唔是畫]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The two candidates are the two halves of this xiehouyu (setup + punchline), not literary/colloquial variants of one form.
+        tags: [idiomatic]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -47828,6 +48316,7 @@ entries:
         gloss_en: [ungrateful, to bite the hand that feeds one]
         gloss_zh: [忘恩負義]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [idiomatic]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -47980,6 +48469,7 @@ entries:
         gloss_en: [to have unrealistic expectations; to want to have one's cake and eat it too]
         gloss_zh: [愛便，愛鮮，愛大粒奶]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. These three readings correspond to the idiom's three clauses (愛便／愛鮮／愛大粒奶) rather than alternate literary/colloquial pronunciations of a single word; all three are attested in the source data and are kept together since they form one fixed idiom.
+        tags: [idiomatic]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -48131,6 +48621,7 @@ entries:
         gloss_en: [bye-bye; goodbye (informal)]
         gloss_zh: [拜拜, 再見]
         note: 5 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The same readings are attested identically for both an interjection sense ('bye-bye') and a verb sense ('to say goodbye'), so they were combined into one entry using the interjection sense as primary.
+        tags: [informal]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -48421,6 +48912,7 @@ entries:
         gloss_en: [every day; daily]
         gloss_zh: [日逐]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Wiktionary tags this sense as dated.
+        tags: [dated]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -48451,6 +48943,7 @@ entries:
         gloss_en: [postcard]
         gloss_zh: [明信片]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [countable]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -48887,6 +49380,7 @@ entries:
         gloss_en: [come on!; go for it!]
         gloss_zh: [加油]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [intransitive]
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -50005,6 +50499,7 @@ entries:
         gloss_en: [money earned in foreign lands will gain happiness in China (a saying about overseas remittances)]
         gloss_zh: [番爿錢，唐山福]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The two readings are the pronunciations of the two halves of this saying (番爿錢 / 唐山福), read together as one phrase, not alternate readings of a single word.
+        tags: [historical]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -50203,6 +50698,7 @@ entries:
         gloss_en: [bed]
         gloss_zh: [眠床]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [literary]
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -50282,6 +50778,8 @@ entries:
         gloss_en: [measure; standard; criterion; law]
         gloss_zh: [彠]
         note: 4 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This character is an archaic alternative form of 彠/彟 (measure; standard; criterion; law), drafted here under that target meaning.
+        tags: [alt-of, alternative, archaic]
+        alt_of: [彠 /彟]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -50296,6 +50794,7 @@ entries:
         gloss_en: [to be stingy]
         gloss_zh: [慳嗇, 小氣]
         note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This reading covers only the idiom's punchline segment 鹹澀; the full saying's first half (石榴皮熬鹽) is separately given in the dossier as sioh8 liu5 puê5 ngao5 iam5.
+        tags: [idiomatic]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -50476,6 +50975,7 @@ entries:
         gloss_en: [politeness, manners, courtesy]
         gloss_zh: [禮貌]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [uncountable]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -50899,6 +51399,7 @@ entries:
         gloss_en: [ancient bronze ritual vessel for grain offerings]
         gloss_zh: [簠]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [historical]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -51005,6 +51506,7 @@ entries:
         gloss_en: [kite (toy)]
         gloss_zh: [紙鷂]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -51169,6 +51671,7 @@ entries:
         gloss_en: ["bleak; miserable (xiehouyu: 'wife falls into the creek — pathetic')"]
         gloss_zh: [淒涼]
         note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. This reading is the punchline half (淒涼) of the full xiehouyu; the dossier also lists a Peng'im reading for the full setup phrase (老婆跋落溪) but no additional candidate for that half was given here.
+        tags: [idiomatic]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -51392,6 +51895,7 @@ entries:
         gloss_en: [may all your wishes come true; all the best]
         gloss_zh: [萬事如意]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [idiomatic]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -51999,6 +52503,7 @@ entries:
         gloss_en: [loan, to lend/borrow money]
         gloss_zh: [貸款]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [countable]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -52313,6 +52818,7 @@ entries:
         gloss_en: [in broad daylight]
         gloss_zh: [光天化日, 大白天]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [idiomatic]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -52407,6 +52913,7 @@ entries:
         gloss_en: [postage stamp]
         gloss_zh: [郵票]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [countable]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -53057,6 +53564,7 @@ entries:
         gloss_en: [movie, film]
         gloss_zh: [電戲]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. Dated Teochew term for 'movie', per the dossier's Bangkok/Cantonese/Teochew tag.
+        tags: [dated]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -53117,6 +53625,7 @@ entries:
         gloss_en: [computer]
         gloss_zh: [電腦]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [countable]
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -53239,6 +53748,7 @@ entries:
         gloss_en: [music]
         gloss_zh: [音樂]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [countable, uncountable]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -53461,6 +53971,7 @@ entries:
       - pos: noun
         gloss_en: ["the Latin letter A (as used in Chinese, e.g. for spelling loanwords/abbreviations)"]
         gloss_zh: [A]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53509,6 +54020,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter C (as used in Chinese)]
         gloss_zh: [C]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53521,6 +54033,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter D (as used in Chinese)]
         gloss_zh: [D]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53533,6 +54046,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter E (as used in Chinese)]
         gloss_zh: [E]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53545,6 +54059,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter F (as used in Chinese)]
         gloss_zh: [F]
+        tags: [uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53557,6 +54072,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter H (as used in Chinese)]
         gloss_zh: [H]
+        tags: [neologism, slang]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53569,6 +54085,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter I (as used in Chinese)]
         gloss_zh: [I]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53593,6 +54110,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter L (as used in Chinese)]
         gloss_zh: [L]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53605,6 +54123,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter M (as used in Chinese)]
         gloss_zh: [M]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53617,6 +54136,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter N (as used in Chinese)]
         gloss_zh: [N]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53629,6 +54149,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter O (as used in Chinese)]
         gloss_zh: [O]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53641,6 +54162,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter P (as used in Chinese)]
         gloss_zh: [P]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53653,6 +54175,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter Q (as used in Chinese)]
         gloss_zh: [Q]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53665,6 +54188,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter R (as used in Chinese)]
         gloss_zh: [R]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53677,6 +54201,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter S (as used in Chinese)]
         gloss_zh: [S]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53689,6 +54214,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter T (as used in Chinese)]
         gloss_zh: [T]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53701,6 +54227,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter U (as used in Chinese)]
         gloss_zh: [U]
+        tags: [informal, letter, slang, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53713,6 +54240,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter V (as used in Chinese)]
         gloss_zh: [V]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53725,6 +54253,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter W (as used in Chinese)]
         gloss_zh: [W]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53737,6 +54266,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter Y (as used in Chinese)]
         gloss_zh: [Y]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -53749,6 +54279,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter Z (as used in Chinese)]
         gloss_zh: [Z]
+        tags: [letter, uppercase]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'

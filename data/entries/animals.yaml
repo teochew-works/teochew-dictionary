@@ -103,6 +103,7 @@ entries:
       - pos: noun
         gloss_en: [jellyfish]
         gloss_zh: [水母]
+        tags: [dialectal, literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -617,6 +618,7 @@ entries:
       - pos: noun
         gloss_en: [northern snakehead (fish)]
         gloss_zh: [斑魚]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -853,6 +855,7 @@ entries:
       - pos: noun
         gloss_en: [dolphin (dialectal)]
         gloss_zh: [海豬, 海豚]
+        tags: [dialectal]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -928,6 +931,7 @@ entries:
         gloss_en: [black piebald steed (esp. the one ridden by Xiang Yu)]
         gloss_zh: [烏騅馬]
         note: Ambiguous whether this denotes a generic black-piebald-horse type or specifically the proper name of Xiang Yu's own steed.
+        tags: [historical, literary]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -1189,6 +1193,7 @@ entries:
       - pos: noun
         gloss_en: [female dog, bitch]
         gloss_zh: [狗母]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1819,6 +1824,7 @@ entries:
       - pos: noun
         gloss_en: [brown bear]
         gloss_zh: [羆]
+        tags: [archaic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1855,6 +1861,7 @@ entries:
       - pos: noun
         gloss_en: [ram, buck (male sheep or goat)]
         gloss_zh: [羝]
+        tags: [in-compounds, literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2497,6 +2504,8 @@ entries:
       - pos: noun
         gloss_en: [mayfly (short for 蜉蝣)]
         gloss_zh: [蜉蝣]
+        tags: [abbreviation, alt-of]
+        alt_of: [蜉蝣]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2777,6 +2786,7 @@ entries:
       - pos: noun
         gloss_en: [swimming crab]
         gloss_zh: [蠘]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2789,6 +2799,7 @@ entries:
       - pos: noun
         gloss_en: [pig; boar]
         gloss_zh: [豕, 豬]
+        tags: [obsolete]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2802,6 +2813,7 @@ entries:
         gloss_en: [pig, hog, swine (archaic)]
         gloss_zh: [豨]
         note: The 'pig' sense is tagged obsolete and specific to Central/Northern Min dialects on the source page; unclear whether this classical meaning is genuinely current in Teochew despite the attested Teochew reading.
+        tags: [obsolete]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -2877,6 +2889,7 @@ entries:
       - pos: noun
         gloss_en: [boar]
         gloss_zh: [豬牯]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2925,6 +2938,7 @@ entries:
       - pos: noun
         gloss_en: [owl]
         gloss_zh: [貓頭鳥, 貓頭鷹]
+        tags: [dialectal, including]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2963,6 +2977,7 @@ entries:
       - pos: noun
         gloss_en: [flea]
         gloss_zh: [跳蚤]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3709,6 +3724,7 @@ entries:
       - pos: noun
         gloss_en: [whale]
         gloss_zh: [鯨魚]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3733,6 +3749,7 @@ entries:
       - pos: noun
         gloss_en: [squid]
         gloss_zh: [鰇魚]
+        tags: [literary]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4305,6 +4322,7 @@ entries:
       - pos: noun
         gloss_en: [a purple water bird similar to but larger than a mandarin duck]
         gloss_zh: [鸂鶒]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4353,6 +4371,7 @@ entries:
       - pos: noun
         gloss_en: [parrot; parakeet (colloquial)]
         gloss_zh: [鸚哥]
+        tags: [colloquial]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4441,6 +4460,7 @@ entries:
       - pos: noun
         gloss_en: [Reeves's muntjac, Chinese muntjac]
         gloss_zh: [黃麖]
+        tags: [dialectal]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4581,6 +4601,7 @@ entries:
         gloss_en: [moo! (sound of a cow)]
         gloss_zh: [哞]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [onomatopoeic]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -4702,6 +4723,7 @@ entries:
         gloss_en: [dog (literary/formal)]
         gloss_zh: [犬]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal, formal, in-compounds]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -5477,6 +5499,7 @@ entries:
         gloss_en: [mouse, rat]
         gloss_zh: [貓鼠]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal]
     frequency: 4
     needs_review: true
     sources: [wiktionary]

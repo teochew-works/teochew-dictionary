@@ -437,6 +437,7 @@ entries:
           - hanzi: 嗍血
             pengim: suh4 huêh4
             en: to suck blood
+        tags: [dialectal, literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-07-28'
@@ -1172,6 +1173,7 @@ entries:
           - hanzi: 水結冰
             pengim: zui2 gag4 bian1
             en: The water freezes.
+        tags: [intransitive]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -1238,6 +1240,7 @@ entries:
       - pos: verb
         gloss_en: [to photoshop, to digitally edit a photo]
         gloss_zh: [P圖]
+        tags: [Internet, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1251,6 +1254,7 @@ entries:
         gloss_en: [to chew, to masticate]
         gloss_zh: [嚼]
         note: Classical/technical character used mainly in the pharmacological compound 㕮咀 (to prepare medicine by chewing/cutting); the page lists overlapping senses (chew, dwell on, Chinese-medicine term) without clearly separating them.
+        tags: [no-gloss]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -1264,6 +1268,7 @@ entries:
       - pos: verb
         gloss_en: [to spurt, to blow out, to puff out]
         gloss_zh: [噴]
+        tags: [no-gloss]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1338,6 +1343,8 @@ entries:
       - pos: verb
         gloss_en: [to argue, to dispute, to quarrel]
         gloss_zh: [詏, 爭論]
+        tags: [alt-of, alternative]
+        alt_of: [詏 /𬣦]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1350,6 +1357,7 @@ entries:
       - pos: idiom
         gloss_en: [to progress rapidly, to advance by leaps and bounds]
         gloss_zh: [一日千里]
+        tags: [figuratively, idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1410,6 +1418,7 @@ entries:
       - pos: verb
         gloss_en: [to upload]
         gloss_zh: [上傳]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1568,6 +1577,7 @@ entries:
       - pos: verb
         gloss_en: [to be fooled, to be duped, to be taken in]
         gloss_zh: [上當]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1788,6 +1798,7 @@ entries:
       - pos: idiom
         gloss_en: [cannot bear to look back on, too painful to recall]
         gloss_zh: [不堪回首]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1801,6 +1812,7 @@ entries:
         gloss_en: [to die suddenly/violently, to not die a natural death]
         gloss_zh: [不得其死]
         note: This is a rare classical set phrase (from the Analects, meaning to fail to die a natural death) glossed on the page in modern colloquial terms as "to die suddenly for no reason"; its currency and precise nuance in everyday Teochew are uncertain.
+        tags: [colloquial]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -1826,6 +1838,7 @@ entries:
       - pos: verb
         gloss_en: [to be unable to endure, to give way from exhaustion]
         gloss_zh: [不支]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1876,6 +1889,7 @@ entries:
       - pos: verb
         gloss_en: [to abandon, to discard, to throw away]
         gloss_zh: [丟棄]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1912,6 +1926,7 @@ entries:
       - pos: verb
         gloss_en: [to suffer heatstroke, heatstroke, sunstroke]
         gloss_zh: [中暑]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1948,6 +1963,7 @@ entries:
       - pos: verb
         gloss_en: [to lead, to guide, to dominate]
         gloss_zh: [主導]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1986,6 +2002,7 @@ entries:
       - pos: verb
         gloss_en: [to host (an event), to sponsor; to organize]
         gloss_zh: [主辦]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2094,6 +2111,7 @@ entries:
       - pos: verb
         gloss_en: [(of an incident) to occur, to come to light, to happen]
         gloss_zh: [事發]
+        tags: [impersonal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2498,6 +2516,7 @@ entries:
       - pos: verb
         gloss_en: [to pay a sum of money; to make payment]
         gloss_zh: [付款]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2522,6 +2541,7 @@ entries:
       - pos: verb
         gloss_en: [to pay (money)]
         gloss_zh: [付錢]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2709,6 +2729,7 @@ entries:
         gloss_en: [to begin, to start, beginning (of a period)]
         gloss_zh: [伊始]
         note: The page lists 伊始 as both a literary verb ('to begin/start') and a noun ('beginning'); it was classified as a verb, though it is also commonly used nominally, e.g. 開學伊始.
+        tags: [literary]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -2722,6 +2743,7 @@ entries:
       - pos: verb
         gloss_en: [to be executed, to be put to death]
         gloss_zh: [伏法]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2760,6 +2782,7 @@ entries:
       - pos: verb
         gloss_en: [to suspend schooling, to defer study]
         gloss_zh: [休學]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2872,6 +2895,7 @@ entries:
       - pos: verb
         gloss_en: [to accompany, to follow, along with]
         gloss_zh: [伴隨]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3092,6 +3116,8 @@ entries:
       - pos: verb
         gloss_en: [to farm; to work the fields]
         gloss_zh: [作塍, 作田]
+        tags: [alt-of, alternative]
+        alt_of: [作田]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3152,6 +3178,7 @@ entries:
       - pos: verb
         gloss_en: [to commit a crime, to commit an offense]
         gloss_zh: [作案]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3212,6 +3239,8 @@ entries:
       - pos: verb
         gloss_en: ["to wear (a badge, medal, or accessory)"]
         gloss_zh: [佩戴, 佩帶]
+        tags: [alt-of, alternative]
+        alt_of: [佩戴]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3298,6 +3327,7 @@ entries:
       - pos: verb
         gloss_en: [to spend money]
         gloss_zh: [使錢]
+        tags: [literary]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3360,6 +3390,7 @@ entries:
       - pos: verb
         gloss_en: [to invade, "to strike (of an enemy, storm, etc.)"]
         gloss_zh: [來襲]
+        tags: [usually]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3372,6 +3403,7 @@ entries:
       - pos: verb
         gloss_en: [to carry out routinely, routine (as scheduled)]
         gloss_zh: [例行]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3422,6 +3454,7 @@ entries:
       - pos: idiom
         gloss_en: [to confess everything, to make a full confession, to plead guilty]
         gloss_zh: [供認不諱]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3532,6 +3565,7 @@ entries:
       - pos: verb
         gloss_en: [to invade, to trespass, to intrude]
         gloss_zh: [侵入]
+        tags: [figuratively, transitive, usually]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3580,6 +3614,7 @@ entries:
       - pos: verb
         gloss_en: [to invade, to commit aggression]
         gloss_zh: [侵略]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3708,6 +3743,7 @@ entries:
       - pos: verb
         gloss_en: [to keep secret, to maintain confidentiality]
         gloss_zh: [保密]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3756,6 +3792,7 @@ entries:
       - pos: verb
         gloss_en: [to keep warm, to insulate]
         gloss_zh: [保溫]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3856,6 +3893,7 @@ entries:
       - pos: verb
         gloss_en: [to protect, to safeguard]
         gloss_zh: [保護]
+        tags: [transitive]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4150,6 +4188,7 @@ entries:
       - pos: verb
         gloss_en: [to rely heavily on; to count on]
         gloss_zh: [倚重]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4162,6 +4201,7 @@ entries:
       - pos: verb
         gloss_en: [to borrow or lend money]
         gloss_zh: [借貸]
+        tags: [intransitive, transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4186,6 +4226,7 @@ entries:
       - pos: verb
         gloss_en: [to use for reference; to learn from]
         gloss_zh: [借鑒]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4260,6 +4301,7 @@ entries:
       - pos: verb
         gloss_en: [to be on duty, to work a shift]
         gloss_zh: [值班]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4370,6 +4412,7 @@ entries:
       - pos: verb
         gloss_en: [to perform Buddhist/Taoist rites for the dead]
         gloss_zh: [做功德]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4454,6 +4497,7 @@ entries:
       - pos: verb
         gloss_en: [to do business, to trade]
         gloss_zh: [做生意]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4478,6 +4522,7 @@ entries:
       - pos: verb
         gloss_en: [to cook]
         gloss_zh: [做菜]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4502,6 +4547,7 @@ entries:
       - pos: verb
         gloss_en: [to stop work, to shut down]
         gloss_zh: [停工]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4550,6 +4596,7 @@ entries:
       - pos: verb
         gloss_en: [to have a water outage, to lose water supply]
         gloss_zh: [停水]
+        tags: [impersonal, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4610,6 +4657,7 @@ entries:
       - pos: verb
         gloss_en: [to have a power outage, to lose power]
         gloss_zh: [停電]
+        tags: [impersonal, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4622,6 +4670,7 @@ entries:
       - pos: verb
         gloss_en: [to roll over, to tumble]
         gloss_zh: [側翻]
+        tags: [intransitive]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4660,6 +4709,7 @@ entries:
       - pos: verb
         gloss_en: [to solve (a case), to crack (a case)]
         gloss_zh: [偵破]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4672,6 +4722,7 @@ entries:
       - pos: verb
         gloss_en: [to investigate and handle (a case)]
         gloss_zh: [偵辦]
+        tags: [transitive]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4820,6 +4871,7 @@ entries:
       - pos: verb
         gloss_en: [to pressure someone to get married]
         gloss_zh: [催婚]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4868,6 +4920,7 @@ entries:
       - pos: verb
         gloss_en: [to conduct, "to transmit (electricity, heat)"]
         gloss_zh: [傳導]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4942,6 +4995,7 @@ entries:
       - pos: verb
         gloss_en: [to convey, to pass on, to communicate]
         gloss_zh: [傳達]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5054,6 +5108,7 @@ entries:
       - pos: verb
         gloss_en: [to give preferential treatment, to treat favorably]
         gloss_zh: [優待]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5126,6 +5181,7 @@ entries:
       - pos: verb
         gloss_en: [to permit, to allow]
         gloss_zh: [允許]
+        tags: [figuratively, transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5150,6 +5206,7 @@ entries:
       - pos: verb
         gloss_en: [to recharge, to top up (a card)]
         gloss_zh: [充值]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5162,6 +5219,7 @@ entries:
       - pos: verb
         gloss_en: [to confiscate, to expropriate]
         gloss_zh: [充公]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5174,6 +5232,7 @@ entries:
       - pos: verb
         gloss_en: [to flood (a market), to fill (derogatory)]
         gloss_zh: [充斥]
+        tags: [derogatory]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5234,6 +5293,7 @@ entries:
       - pos: verb
         gloss_en: [to allay one's hunger, to satisfy hunger]
         gloss_zh: [充飢]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5246,6 +5306,7 @@ entries:
       - pos: verb
         gloss_en: ["to arrive (honorific, of a guest)", to patronize]
         gloss_zh: [光臨]
+        tags: [honorific, polite]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5346,6 +5407,7 @@ entries:
       - pos: verb
         gloss_en: [to invade, to intrude]
         gloss_zh: [入侵]
+        tags: [figuratively, usually]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5358,6 +5420,7 @@ entries:
       - pos: verb
         gloss_en: [to enter a country, to enter a region]
         gloss_zh: [入境]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5590,6 +5653,7 @@ entries:
       - pos: verb
         gloss_en: [to hope for, to long for]
         gloss_zh: [冀望]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5690,6 +5754,7 @@ entries:
       - pos: verb
         gloss_en: ["to give a name to (an event/competition, as a sponsor)"]
         gloss_zh: [冠名]
+        tags: [often, usually]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5800,6 +5865,7 @@ entries:
       - pos: verb
         gloss_en: [to have an accident, to meet with a mishap]
         gloss_zh: [出事]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5812,6 +5878,7 @@ entries:
       - pos: idiom
         gloss_en: [to stand out, to be outstanding, to excel]
         gloss_zh: [出人頭地]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5836,6 +5903,7 @@ entries:
       - pos: verb
         gloss_en: [to dispatch troops, to send troops]
         gloss_zh: [出兵]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5908,6 +5976,7 @@ entries:
       - pos: verb
         gloss_en: [to go abroad, to leave the country]
         gloss_zh: [出國]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5920,6 +5989,7 @@ entries:
       - pos: verb
         gloss_en: [to leave a country/region, to exit through border control]
         gloss_zh: [出境]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5932,6 +6002,7 @@ entries:
       - pos: idiom
         gloss_en: [to win by surprise, to prevail through an unexpected move]
         gloss_zh: [出奇制勝]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5944,6 +6015,7 @@ entries:
       - pos: verb
         gloss_en: [to become a monk or nun, to leave home for religious life]
         gloss_zh: [出家]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5970,6 +6042,7 @@ entries:
       - pos: verb
         gloss_en: [to go on a business trip, to travel for work]
         gloss_zh: [出差]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5994,6 +6067,7 @@ entries:
       - pos: verb
         gloss_en: [to appear in court]
         gloss_zh: [出庭]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6020,6 +6094,7 @@ entries:
       - pos: verb
         gloss_en: [to defecate (euphemistic), to go to the toilet]
         gloss_zh: [出恭]
+        tags: [euphemistic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6068,6 +6143,7 @@ entries:
       - pos: verb
         gloss_en: [to appear and disappear, to roam about, to haunt]
         gloss_zh: [出沒]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6116,6 +6192,7 @@ entries:
       - pos: verb
         gloss_en: [to publish]
         gloss_zh: [出版]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6190,6 +6267,7 @@ entries:
       - pos: verb
         gloss_en: [to be released from prison, to get out of jail]
         gloss_zh: [出監]
+        tags: [dated]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6334,6 +6412,7 @@ entries:
       - pos: verb
         gloss_en: [to seek the limelight, to show off]
         gloss_zh: [出風頭]
+        tags: [idiomatic, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6346,6 +6425,7 @@ entries:
       - pos: verb
         gloss_en: [to have measles]
         gloss_zh: [出麻]
+        tags: [dialectal]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6370,6 +6450,7 @@ entries:
       - pos: verb
         gloss_en: [to be distributed, to be dispersed, distribution]
         gloss_zh: [分佈]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6490,6 +6571,7 @@ entries:
       - pos: verb
         gloss_en: [to separate, to part]
         gloss_zh: [分開]
+        tags: [ergative]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6502,6 +6584,7 @@ entries:
       - pos: verb
         gloss_en: [to classify, to categorize, to sort]
         gloss_zh: [分類]
+        tags: [transitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6526,6 +6609,7 @@ entries:
       - pos: verb
         gloss_en: [to publish an article]
         gloss_zh: [刊文]
+        tags: [intransitive]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6538,6 +6622,7 @@ entries:
       - pos: verb
         gloss_en: [to publish (an article)]
         gloss_zh: [刊登]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6562,6 +6647,8 @@ entries:
       - pos: verb
         gloss_en: [to detain on criminal charges]
         gloss_zh: [刑拘]
+        tags: [abbreviation, alt-of]
+        alt_of: [刑事拘留]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6612,6 +6699,7 @@ entries:
       - pos: verb
         gloss_en: [to sentence, to convict]
         gloss_zh: [判刑]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6624,6 +6712,7 @@ entries:
       - pos: verb
         gloss_en: [to differentiate, to distinguish]
         gloss_zh: [判別]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6684,6 +6773,7 @@ entries:
       - pos: idiom
         gloss_en: [to think outside the box, unconventional, original]
         gloss_zh: [別出心裁]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6696,6 +6786,7 @@ entries:
       - pos: idiom
         gloss_en: [to break new ground, to forge a new path]
         gloss_zh: [別開生面]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6744,6 +6835,7 @@ entries:
       - pos: verb
         gloss_en: [to delete, to expunge, to remove]
         gloss_zh: [刪除]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6816,6 +6908,7 @@ entries:
       - pos: verb
         gloss_en: [to restrict, to limit, to inhibit]
         gloss_zh: [制約]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7002,6 +7095,7 @@ entries:
       - pos: verb
         gloss_en: [to thump, "to pound (onomatopoeia, e.g. of a heartbeat)"]
         gloss_zh: [卜卜跳]
+        tags: [onomatopoeic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7320,6 +7414,7 @@ entries:
       - pos: verb
         gloss_en: [to pass (a test/exam), to meet the minimum standard]
         gloss_zh: [及格]
+        tags: [intransitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7560,6 +7655,7 @@ entries:
       - pos: verb
         gloss_en: [to withdraw money (from a bank)]
         gloss_zh: [取款]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7596,6 +7692,7 @@ entries:
       - pos: verb
         gloss_en: [to obtain evidence, to gather evidence]
         gloss_zh: [取證]
+        tags: [intransitive]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7704,6 +7801,7 @@ entries:
       - pos: verb
         gloss_en: [to accept a bribe, to take bribes]
         gloss_zh: [受賄]
+        tags: [intransitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7716,6 +7814,7 @@ entries:
       - pos: verb
         gloss_en: [to be blocked, to be obstructed]
         gloss_zh: [受阻]
+        tags: [intransitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7802,6 +7901,7 @@ entries:
       - pos: verb
         gloss_en: [to flood a message board, to spam (a screen/feed)]
         gloss_zh: [刷屏]
+        tags: [Internet]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7924,6 +8024,7 @@ entries:
       - pos: verb
         gloss_en: [to come (here)]
         gloss_zh: [前來]
+        tags: [formal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7948,6 +8049,7 @@ entries:
       - pos: verb
         gloss_en: [to move forward; to advance]
         gloss_zh: [前行]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8008,6 +8110,7 @@ entries:
       - pos: verb
         gloss_en: [to exploit]
         gloss_zh: [剝削]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8056,6 +8159,7 @@ entries:
       - pos: verb
         gloss_en: [to edit (film/video), to montage]
         gloss_zh: [剪輯]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8092,6 +8196,7 @@ entries:
       - pos: verb
         gloss_en: [to give up, to part with]
         gloss_zh: [割捨]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8104,6 +8209,7 @@ entries:
       - pos: verb
         gloss_en: [to cede (territory)]
         gloss_zh: [割讓]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8266,6 +8372,7 @@ entries:
       - pos: verb
         gloss_en: [to crown, to invest as monarch]
         gloss_zh: [加冕]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8362,6 +8469,7 @@ entries:
       - pos: verb
         gloss_en: [to work overtime, to work late]
         gloss_zh: [加班]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8458,6 +8566,7 @@ entries:
       - pos: verb
         gloss_en: [to work hard, to strive, hard-working]
         gloss_zh: [努力]
+        tags: [verb-object]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8520,6 +8629,7 @@ entries:
       - pos: verb
         gloss_en: [to be visibly moved, to be emotionally touched]
         gloss_zh: [動容]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8532,6 +8642,7 @@ entries:
       - pos: verb
         gloss_en: [to be moved (emotionally), to be tempted, to be swayed]
         gloss_zh: [動心]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8556,6 +8667,7 @@ entries:
       - pos: idiom
         gloss_en: [to come to blows, to engage in physical fighting]
         gloss_zh: [動跤動手]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8878,6 +8990,7 @@ entries:
       - pos: verb
         gloss_en: [to put on makeup, to apply makeup]
         gloss_zh: [化妝]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8902,6 +9015,7 @@ entries:
       - pos: verb
         gloss_en: [to run a lab test, to test (a sample)]
         gloss_zh: [化驗]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8982,6 +9096,7 @@ entries:
       - pos: verb
         gloss_en: [to call someone by name, to greet someone by name]
         gloss_zh: [叫人]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9107,6 +9222,7 @@ entries:
         gloss_en: [to be unfathomable, unpredictable (of intentions)]
         gloss_zh: [叵測]
         note: Tagged as a verb on Wiktionary but functions adjectivally in common usage (e.g. 居心叵測), so the part-of-speech classification is not fully clear-cut.
+        tags: [derogatory, intransitive, literary]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -9260,6 +9376,7 @@ entries:
       - pos: verb
         gloss_en: [to agree, to consent]
         gloss_zh: [同意]
+        tags: [transitive]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9321,6 +9438,7 @@ entries:
         gloss_en: [to move forward, to advance, forward]
         gloss_zh: [向前]
         note: Wiktionary lists both a general adverb sense ("forward; ahead") and a Hokkien-specific verb sense ("to move/face forward") for the same reading; Teochew, as a sibling Southern Min variety, likely leans verbal but this is not confirmed on the page.
+        tags: [rhetoric]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -9408,6 +9526,7 @@ entries:
       - pos: idiom
         gloss_en: [to endure hardship, to suffer untold hardships]
         gloss_zh: [含辛茹苦]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9420,6 +9539,7 @@ entries:
       - pos: verb
         gloss_en: [to absorb, to extract, to learn from (mistakes)]
         gloss_zh: [吸取]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9432,6 +9552,7 @@ entries:
       - pos: verb
         gloss_en: [to attract, to entice, to draw]
         gloss_zh: [吸引]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9456,6 +9577,7 @@ entries:
       - pos: verb
         gloss_en: [to take drugs, to use narcotics]
         gloss_zh: [吸毒]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9468,6 +9590,7 @@ entries:
       - pos: verb
         gloss_en: [to attract fans, to attract followers]
         gloss_zh: [吸粉]
+        tags: [neologism, slang]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9556,6 +9679,7 @@ entries:
       - pos: verb
         gloss_en: [to be solved (of a criminal case), to be cracked]
         gloss_zh: [告破]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9642,6 +9766,7 @@ entries:
       - pos: verb
         gloss_en: [to call (someone), to shout to, to summon]
         gloss_zh: [呼喚]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9692,6 +9817,7 @@ entries:
       - pos: verb
         gloss_en: [to brag, to boast, to talk big]
         gloss_zh: [呾卵話, 吹牛]
+        tags: [verb-object, vulgar]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9740,6 +9866,7 @@ entries:
       - pos: verb
         gloss_en: [to joke, to kid, to make a joke]
         gloss_zh: [呾笑話, 開玩笑]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9776,6 +9903,7 @@ entries:
       - pos: verb
         gloss_en: [to lie, to tell a lie]
         gloss_zh: [呾騙話, 說謊]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9824,6 +9952,7 @@ entries:
       - pos: verb
         gloss_en: [to make a marriage alliance for peace, to pacify via royal marriage]
         gloss_zh: [和親]
+        tags: [historical]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9922,6 +10051,7 @@ entries:
       - pos: verb
         gloss_en: [to bid up (a price), to price-gouge]
         gloss_zh: [哄抬]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10144,6 +10274,7 @@ entries:
       - pos: verb
         gloss_en: [to enlighten, to inspire, to stimulate]
         gloss_zh: [啟發]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10400,6 +10531,7 @@ entries:
       - pos: verb
         gloss_en: [to spit up milk (of a baby)]
         gloss_zh: [嘔奶]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10498,6 +10630,7 @@ entries:
       - pos: verb
         gloss_en: [to think highly of, to regard favorably (a subordinate)]
         gloss_zh: [器重]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10562,6 +10695,7 @@ entries:
       - pos: verb
         gloss_en: [to strictly control]
         gloss_zh: [嚴控]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10841,6 +10975,7 @@ entries:
         gloss_en: [to be constrained by, to be limited by]
         gloss_zh: [囿]
         note: The page shows both a literary noun sense ('park', an enclosed royal garden) and a verb sense ('to be constrained/limited by', as in 囿於); the verb sense was chosen as more commonly used but the exact sense matching the given reading is not fully clear from the fetched content.
+        tags: [literary]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -10974,6 +11109,7 @@ entries:
       - pos: verb
         gloss_en: [to care about, to mind, to pay attention to]
         gloss_zh: [在意]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11022,6 +11158,7 @@ entries:
       - pos: verb
         gloss_en: [to do postpartum confinement, to observe the 'sitting month' after childbirth]
         gloss_zh: [坐月子]
+        tags: [dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11047,6 +11184,7 @@ entries:
         gloss_en: [to travel by boat, to take a ship]
         gloss_zh: [坐船]
         note: The single Teochew reading given is shared on the page by two distinct senses -- the general verb 'to take a ship/boat' and a Hakka/Teochew-specific noun sense naming the character component 辶 -- the more broadly useful verb sense was chosen as primary.
+        tags: [verb-object]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -11240,6 +11378,7 @@ entries:
       - pos: idiom
         gloss_en: [to persevere untiringly, to keep going without let-up]
         gloss_zh: [堅持不懈]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11264,6 +11403,7 @@ entries:
       - pos: verb
         gloss_en: [can be called, one can say that, can be described as]
         gloss_zh: [堪稱]
+        tags: [formal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11300,6 +11440,7 @@ entries:
       - pos: verb
         gloss_en: [to avenge, to take revenge]
         gloss_zh: [報仇]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11324,6 +11465,7 @@ entries:
       - pos: verb
         gloss_en: [to quote a price, to give a quotation]
         gloss_zh: [報價]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11336,6 +11478,7 @@ entries:
       - pos: verb
         gloss_en: [to report for duty, to check in, to register]
         gloss_zh: [報到]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11348,6 +11491,7 @@ entries:
       - pos: verb
         gloss_en: [to sign up, to register, to enroll]
         gloss_zh: [報名]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11384,6 +11528,7 @@ entries:
       - pos: verb
         gloss_en: [to repay a kindness]
         gloss_zh: [報恩]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11396,6 +11541,7 @@ entries:
       - pos: verb
         gloss_en: [to report a crime to the police]
         gloss_zh: [報案]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11408,6 +11554,7 @@ entries:
       - pos: verb
         gloss_en: [to inform, to notify]
         gloss_zh: [報知]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11420,6 +11567,7 @@ entries:
       - pos: verb
         gloss_en: [to repay a favor, to requite, to pay back]
         gloss_zh: [報答]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11552,6 +11700,7 @@ entries:
       - pos: verb
         gloss_en: [to be jammed with traffic, to have a traffic jam]
         gloss_zh: [塞車, 堵車]
+        tags: [dialectal, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11700,6 +11849,7 @@ entries:
       - pos: verb
         gloss_en: [to add, to augment, to increase]
         gloss_zh: [增添]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11736,6 +11886,7 @@ entries:
       - pos: verb
         gloss_en: [to grow, to increase]
         gloss_zh: [增長]
+        tags: [intransitive, transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11762,6 +11913,7 @@ entries:
       - pos: verb
         gloss_en: [to suppress, to repress, to inhibit]
         gloss_zh: [壓制]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11834,6 +11986,7 @@ entries:
       - pos: verb
         gloss_en: [to dream of; to dream about]
         gloss_zh: [夢見, 夢到]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11939,6 +12092,7 @@ entries:
         gloss_en: [to commit a moral fault or transgression, to act wickedly/dishonorably]
         gloss_zh: [失德]
         note: Page gives both a literary noun/verb sense ('fault; to err') and a separate adjective sense ('wicked, immoral') labeled Cantonese/Southern Min, with a single unified pronunciation section that doesn't map senses to specific dialect readings, so it's unclear which sense(s) the Teochew reading covers.
+        tags: [literary]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -11964,6 +12118,7 @@ entries:
       - pos: verb
         gloss_en: [to lose control]
         gloss_zh: [失控]
+        tags: [intransitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12026,6 +12181,7 @@ entries:
       - pos: verb
         gloss_en: [to fail to keep an appointment, to break a promise]
         gloss_zh: [失約]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12074,6 +12230,7 @@ entries:
       - pos: verb
         gloss_en: [to go missing, to disappear, to vanish]
         gloss_zh: [失蹤]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12110,6 +12267,7 @@ entries:
       - pos: verb
         gloss_en: [to receive orders, to obey orders]
         gloss_zh: [奉命]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12148,6 +12306,7 @@ entries:
       - pos: verb
         gloss_en: [to be effective, to show results, to work (succeed)]
         gloss_zh: [奏效]
+        tags: [intransitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12199,6 +12358,7 @@ entries:
         gloss_en: [to run quickly, to speed, to gallop]
         gloss_zh: [奔馳]
         note: Page also lists a separate proper-noun sense ('Mercedes-Benz') for this headword; the general verb sense was chosen as the dictionary meaning.
+        tags: [usually]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -12250,6 +12410,7 @@ entries:
       - pos: verb
         gloss_en: [to struggle, to strive, to fight for]
         gloss_zh: [奮鬥]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12262,6 +12423,7 @@ entries:
       - pos: verb
         gloss_en: [to crave fame/recognition, to be vain about one's reputation]
         gloss_zh: [好名]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12322,6 +12484,7 @@ entries:
       - pos: verb
         gloss_en: [to use the toilet, to go to the bathroom]
         gloss_zh: [如廁, 上廁所]
+        tags: [formal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12482,6 +12645,7 @@ entries:
       - pos: verb
         gloss_en: [to threaten, to intimidate, to menace]
         gloss_zh: [威脅]
+        tags: [figuratively, literally]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12554,6 +12718,7 @@ entries:
       - pos: verb
         gloss_en: [to shift blame onto others, to pass the buck]
         gloss_zh: [嫁禍]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12654,6 +12819,7 @@ entries:
       - pos: idiom
         gloss_en: [to go all out, to stake everything on one attempt, to put all one's eggs in one basket]
         gloss_zh: [孤注一擲]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12716,6 +12882,7 @@ entries:
       - pos: verb
         gloss_en: [to learn to drive]
         gloss_zh: [學車]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12740,6 +12907,7 @@ entries:
       - pos: verb
         gloss_en: [to remain a widow, to live in widowhood]
         gloss_zh: [守寡]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12922,6 +13090,7 @@ entries:
       - pos: verb
         gloss_en: [to resemble, to be just like, as if]
         gloss_zh: [宛如]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12982,6 +13151,7 @@ entries:
       - pos: verb
         gloss_en: [to declare war]
         gloss_zh: [宣戰]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13440,6 +13610,7 @@ entries:
       - pos: verb
         gloss_en: [to examine and revise]
         gloss_zh: [審訂]
+        tags: [transitive]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13464,6 +13635,7 @@ entries:
       - pos: verb
         gloss_en: [to deliberate, to review]
         gloss_zh: [審議]
+        tags: [transitive]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13586,6 +13758,7 @@ entries:
       - pos: verb
         gloss_en: [to concentrate, to be attentive, to be absorbed]
         gloss_zh: [專心]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13612,6 +13785,7 @@ entries:
       - pos: verb
         gloss_en: [to respect, to honor, to hold in high esteem]
         gloss_zh: [尊敬]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13822,6 +13996,7 @@ entries:
       - pos: verb
         gloss_en: [to navigate, "navigation (system, e.g. GPS)"]
         gloss_zh: [導航]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13834,6 +14009,7 @@ entries:
       - pos: verb
         gloss_en: [to chat awkwardly]
         gloss_zh: [尬聊]
+        tags: [neologism, slang]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14284,6 +14460,7 @@ entries:
       - pos: verb
         gloss_en: [to hope, to wish]
         gloss_zh: [希冀]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14320,6 +14497,7 @@ entries:
       - pos: verb
         gloss_en: [to drive, to spur on, to provide impetus]
         gloss_zh: [帶動]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14344,6 +14522,7 @@ entries:
       - pos: verb
         gloss_en: [to take the lead, to set an example]
         gloss_zh: [帶頭]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14434,6 +14613,7 @@ entries:
       - pos: verb
         gloss_en: [to give up, to let it rest, to stop pursuing]
         gloss_zh: [干休, 罷休]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14572,6 +14752,7 @@ entries:
       - pos: verb
         gloss_en: [to extend, to stretch, to spread]
         gloss_zh: [延伸]
+        tags: [figuratively]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14632,6 +14813,7 @@ entries:
       - pos: verb
         gloss_en: [to found a country, to establish a nation]
         gloss_zh: [建國]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14732,6 +14914,7 @@ entries:
       - pos: verb
         gloss_en: [to troll, to provoke an argument online]
         gloss_zh: [引戰]
+        tags: [Internet, neologism]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14768,6 +14951,7 @@ entries:
       - pos: verb
         gloss_en: [to lure, to entice, to seduce]
         gloss_zh: [引誘]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14792,6 +14976,7 @@ entries:
       - pos: verb
         gloss_en: [to promote, to carry forward (a tradition or value)]
         gloss_zh: [弘揚]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14866,6 +15051,7 @@ entries:
       - pos: verb
         gloss_en: [to emphasize, to stress, to highlight]
         gloss_zh: [強調]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14890,6 +15076,7 @@ entries:
       - pos: verb
         gloss_en: [to play the qin, to play a stringed or keyboard instrument]
         gloss_zh: [彈琴]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -15076,6 +15263,7 @@ entries:
       - pos: verb
         gloss_en: [to offend]
         gloss_zh: [得失, 冒犯]
+        tags: [dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -15162,6 +15350,7 @@ entries:
       - pos: verb
         gloss_en: [to come back to life, to revive, to resurrect]
         gloss_zh: [復活]
+        tags: [ergative]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -15608,6 +15797,7 @@ entries:
       - pos: verb
         gloss_en: [to threaten, to intimidate]
         gloss_zh: [恐嚇]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -15782,6 +15972,7 @@ entries:
       - pos: verb
         gloss_en: [to regret, to repent]
         gloss_zh: [悔]
+        tags: [in-compounds, literary]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -15906,6 +16097,7 @@ entries:
       - pos: verb
         gloss_en: [to remember, to recall, to think of]
         gloss_zh: [想起]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16002,6 +16194,7 @@ entries:
       - pos: verb
         gloss_en: [to love one's country, to be patriotic]
         gloss_zh: [愛國]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16052,6 +16245,7 @@ entries:
       - pos: verb
         gloss_en: [to feel, to sense]
         gloss_zh: [感到]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16064,6 +16258,7 @@ entries:
       - pos: verb
         gloss_en: [to move (emotionally), to touch]
         gloss_zh: [感動]
+        tags: [ergative]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16347,6 +16542,7 @@ entries:
         gloss_en: [to hate, to detest]
         gloss_zh: [憎]
         note: Wiktionary labels this sense 'literary or Cantonese'; its specific applicability to Teochew usage is not confirmed by the page despite the validated Teochew reading.
+        tags: [literary]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -16386,6 +16582,7 @@ entries:
       - pos: verb
         gloss_en: [to lean on a railing]
         gloss_zh: [憑欄]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16410,6 +16607,7 @@ entries:
       - pos: verb
         gloss_en: [to rest]
         gloss_zh: [憩]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16968,6 +17166,7 @@ entries:
       - pos: verb
         gloss_en: [to take a screenshot, screenshot; screen capture]
         gloss_zh: [截圖]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16980,6 +17179,7 @@ entries:
       - pos: verb
         gloss_en: [to intercept and attack]
         gloss_zh: [截擊]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17016,6 +17216,7 @@ entries:
       - pos: verb
         gloss_en: [to amputate]
         gloss_zh: [截肢]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17054,6 +17255,7 @@ entries:
       - pos: verb
         gloss_en: [to bail out water, to scoop water]
         gloss_zh: [戽]
+        tags: [no-gloss]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17078,6 +17280,7 @@ entries:
       - pos: verb
         gloss_en: [to gather together, to crowd together]
         gloss_zh: [扎堆]
+        tags: [colloquial]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17128,6 +17331,7 @@ entries:
       - pos: verb
         gloss_en: [to race dragon boats, to paddle a dragon boat]
         gloss_zh: [扒龍船]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17164,6 +17368,7 @@ entries:
       - pos: verb
         gloss_en: [to move (emotionally), to touch, to stir]
         gloss_zh: [打動]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17176,6 +17381,7 @@ entries:
       - pos: verb
         gloss_en: [to type]
         gloss_zh: [打字]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17250,6 +17456,7 @@ entries:
       - pos: verb
         gloss_en: [to close up shop, to close for the night]
         gloss_zh: [打烊]
+        tags: [regional, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17398,6 +17605,7 @@ entries:
       - pos: verb
         gloss_en: [to play (a role), to act as]
         gloss_zh: [扮演]
+        tags: [figuratively, literally, transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17446,6 +17654,7 @@ entries:
       - pos: verb
         gloss_en: [to brownnose, to suck up, to kiss ass (vulgar)]
         gloss_zh: [扶𡳞脬, 拍馬屁]
+        tags: [figuratively, verb-object, vulgar]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17652,6 +17861,7 @@ entries:
       - pos: verb
         gloss_en: [to capture, to arrest, to seize]
         gloss_zh: [抓獲]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17700,6 +17910,7 @@ entries:
       - pos: verb
         gloss_en: [to insert coins, to insert money (into a machine)]
         gloss_zh: [投幣]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17750,6 +17961,7 @@ entries:
       - pos: verb
         gloss_en: [to vote, to cast a ballot]
         gloss_zh: [投票]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17834,6 +18046,7 @@ entries:
       - pos: verb
         gloss_en: [to go into service, to be commissioned (of infrastructure)]
         gloss_zh: [投運]
+        tags: [intransitive]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17906,6 +18119,7 @@ entries:
       - pos: verb
         gloss_en: [to resist and guard against]
         gloss_zh: [抗禦]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18028,6 +18242,7 @@ entries:
       - pos: verb
         gloss_en: [to resist, to withstand]
         gloss_zh: [抵禦]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18064,6 +18279,7 @@ entries:
       - pos: verb
         gloss_en: [to defame, to discredit, to smear (someone's reputation)]
         gloss_zh: [抹黑]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18212,6 +18428,7 @@ entries:
       - pos: verb
         gloss_en: [to have a prescription filled]
         gloss_zh: [拆藥]
+        tags: [verb-object]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18260,6 +18477,7 @@ entries:
       - pos: verb
         gloss_en: [to max out, to maximize]
         gloss_zh: [拉滿]
+        tags: [informal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18296,6 +18514,7 @@ entries:
       - pos: verb
         gloss_en: [to blacklist, "to block (a contact, user, etc.)"]
         gloss_zh: [拉黑]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18514,6 +18733,7 @@ entries:
       - pos: verb
         gloss_en: [to shoot (film), to take a photo, to film]
         gloss_zh: [拍攝]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18772,6 +18992,7 @@ entries:
       - pos: verb
         gloss_en: [to play tug of war]
         gloss_zh: [拔河]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18784,6 +19005,7 @@ entries:
       - pos: verb
         gloss_en: [to do fire cupping therapy]
         gloss_zh: [拔火罐]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18954,6 +19176,7 @@ entries:
       - pos: verb
         gloss_en: [to pay a New Year visit, to wish someone a happy new year]
         gloss_zh: [拜年]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18966,6 +19189,7 @@ entries:
       - pos: verb
         gloss_en: [to worship the gods, to pray to deities/idols]
         gloss_zh: [拜老爺]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18990,6 +19214,7 @@ entries:
       - pos: verb
         gloss_en: [to clasp hands in greeting, cupped-hand salute]
         gloss_zh: [拱手]
+        tags: [literally, literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19002,6 +19227,7 @@ entries:
       - pos: idiom
         gloss_en: [to punch and kick, to beat up]
         gloss_zh: [拳打腳踢]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19014,6 +19240,7 @@ entries:
       - pos: verb
         gloss_en: [to copy, copy]
         gloss_zh: [拷貝, 複製]
+        tags: [transitive, usually]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19184,6 +19411,7 @@ entries:
       - pos: verb
         gloss_en: [to give advice, to comment (polite)]
         gloss_zh: [指教]
+        tags: [polite]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19208,6 +19436,7 @@ entries:
       - pos: verb
         gloss_en: [to criticize, to blame]
         gloss_zh: [指責]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19270,6 +19499,7 @@ entries:
       - pos: verb
         gloss_en: [to select, to choose, to pick]
         gloss_zh: [挑選]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19378,6 +19608,7 @@ entries:
       - pos: idiom
         gloss_en: [to step forward bravely, to come to the rescue in a crisis]
         gloss_zh: [挺身而出]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19402,6 +19633,7 @@ entries:
       - pos: verb
         gloss_en: [to save; to recover, to reverse (a situation)]
         gloss_zh: [挽回]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19414,6 +19646,7 @@ entries:
       - pos: verb
         gloss_en: [to save; to rescue, to remedy]
         gloss_zh: [挽救]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19512,6 +19745,7 @@ entries:
       - pos: verb
         gloss_en: [to take someone's pulse]
         gloss_zh: [捍脈]
+        tags: [verb-object]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19536,6 +19770,7 @@ entries:
       - pos: verb
         gloss_en: [to drive (a vehicle)]
         gloss_zh: [捍車]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19976,6 +20211,7 @@ entries:
       - pos: verb
         gloss_en: [to drain water]
         gloss_zh: [排水]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20086,6 +20322,7 @@ entries:
       - pos: verb
         gloss_en: [to pay respects at an ancestor's grave, to tend a grave (tomb-sweeping)]
         gloss_zh: [掛紙]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20320,6 +20557,7 @@ entries:
       - pos: verb
         gloss_en: [to receive a call, to receive a report]
         gloss_zh: [接報]
+        tags: [usually]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20491,6 +20729,7 @@ entries:
         gloss_en: [to manipulate online comments, to censor comments]
         gloss_zh: [控評]
         note: Niche Mainland Chinese internet/social-media slang term for comment-section manipulation; its currency and frequency in everyday Teochew speech is uncertain.
+        tags: [Internet]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -20564,6 +20803,7 @@ entries:
       - pos: verb
         gloss_en: [to push (send a notification), push notification]
         gloss_zh: [推送]
+        tags: [Internet]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20748,6 +20988,7 @@ entries:
       - pos: verb
         gloss_en: [to extract and purify, to refine]
         gloss_zh: [提煉]
+        tags: [figuratively, literally]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20870,6 +21111,7 @@ entries:
       - pos: verb
         gloss_en: [to transplant rice seedlings, to plant rice]
         gloss_zh: [插秧]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20944,6 +21186,7 @@ entries:
       - pos: verb
         gloss_en: [to change clothes]
         gloss_zh: [換衫]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21128,6 +21371,7 @@ entries:
       - pos: verb
         gloss_en: [to damage, to cause destruction to, to harm]
         gloss_zh: [損壞]
+        tags: [ergative]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21202,6 +21446,7 @@ entries:
       - pos: verb
         gloss_en: [to smash up, to demolish, to destroy]
         gloss_zh: [搗毀]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21326,6 +21571,7 @@ entries:
       - pos: verb
         gloss_en: [to ride (a vehicle), "to travel by (train, plane, etc.)"]
         gloss_zh: [搭乘]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21362,6 +21608,7 @@ entries:
       - pos: verb
         gloss_en: [to build; to put up; to erect]
         gloss_zh: [搭設]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21462,6 +21709,7 @@ entries:
       - pos: verb
         gloss_en: [to make an excerpt (of an official document)]
         gloss_zh: [摘由]
+        tags: [verb-object]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21548,6 +21796,7 @@ entries:
       - pos: verb
         gloss_en: [to nitpick over word choice, to split hairs over wording]
         gloss_zh: [摳字眼]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21610,6 +21859,7 @@ entries:
       - pos: verb
         gloss_en: [to dismiss from office, to discharge from post]
         gloss_zh: [撤職]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21658,6 +21908,7 @@ entries:
       - pos: verb
         gloss_en: [to allocate funds, to appropriate money]
         gloss_zh: [撥款]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21754,6 +22005,7 @@ entries:
       - pos: verb
         gloss_en: [to broadcast, to air]
         gloss_zh: [播出]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21766,6 +22018,7 @@ entries:
       - pos: verb
         gloss_en: [to broadcast (on radio), to transmit]
         gloss_zh: [播音]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21790,6 +22043,7 @@ entries:
       - pos: verb
         gloss_en: [to exterminate, to stamp out, to extinguish]
         gloss_zh: [撲滅]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21838,6 +22092,7 @@ entries:
       - pos: verb
         gloss_en: [to be congested (traffic), to be jammed up]
         gloss_zh: [擁堵]
+        tags: [especially]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21862,6 +22117,7 @@ entries:
       - pos: verb
         gloss_en: [to support, to uphold, to endorse]
         gloss_zh: [擁護]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22178,6 +22434,7 @@ entries:
       - pos: verb
         gloss_en: [to disturb the people, to be a nuisance to residents]
         gloss_zh: [擾民]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22350,6 +22607,7 @@ entries:
       - pos: verb
         gloss_en: [to pay, to pay for]
         gloss_zh: [支付]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22422,6 +22680,7 @@ entries:
       - pos: verb
         gloss_en: [to receive, to accept]
         gloss_zh: [收受]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22544,6 +22803,7 @@ entries:
       - pos: verb
         gloss_en: [to rebuild, to convert (a building), to renovate]
         gloss_zh: [改建]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22604,6 +22864,7 @@ entries:
       - pos: verb
         gloss_en: [to change profession, to switch careers]
         gloss_zh: [改行]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22688,6 +22949,7 @@ entries:
       - pos: verb
         gloss_en: [to attack and occupy, to seize control of]
         gloss_zh: [攻佔]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22760,6 +23022,7 @@ entries:
       - pos: verb
         gloss_en: [to have time off, to go on holiday, to go on vacation]
         gloss_zh: [放假]
+        tags: [verb-object]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22796,6 +23059,7 @@ entries:
       - pos: verb
         gloss_en: [to defecate, to poop]
         gloss_zh: [放屎]
+        tags: [dialectal, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22844,6 +23108,7 @@ entries:
       - pos: verb
         gloss_en: [to set fire, to commit arson]
         gloss_zh: [放火]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22868,6 +23133,7 @@ entries:
       - pos: verb
         gloss_en: [to place, to put, to set aside]
         gloss_zh: [放置]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22894,6 +23160,7 @@ entries:
       - pos: verb
         gloss_en: [to relax, to loosen]
         gloss_zh: [放鬆]
+        tags: [intransitive, transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22982,6 +23249,7 @@ entries:
       - pos: verb
         gloss_en: [to save someone's life, to rescue]
         gloss_zh: [救人]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23006,6 +23274,7 @@ entries:
       - pos: verb
         gloss_en: [to save the nation]
         gloss_zh: [救國]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23018,6 +23287,7 @@ entries:
       - pos: verb
         gloss_en: [to help in an emergency, to provide emergency assistance]
         gloss_zh: [救急]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23154,6 +23424,7 @@ entries:
       - pos: verb
         gloss_en: [to teach, to instruct, to guide]
         gloss_zh: [教示]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23342,6 +23613,7 @@ entries:
       - pos: verb
         gloss_en: [to make a phone call]
         gloss_zh: [打電話]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23428,6 +23700,7 @@ entries:
       - pos: verb
         gloss_en: [to rectify; to consolidate; to straighten out]
         gloss_zh: [整頓]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23526,6 +23799,7 @@ entries:
       - pos: verb
         gloss_en: [to hack, to chop]
         gloss_zh: [斫]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23574,6 +23848,7 @@ entries:
       - pos: verb
         gloss_en: [to behead, to decapitate]
         gloss_zh: [斬頭]
+        tags: [dialectal]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23586,6 +23861,7 @@ entries:
       - pos: verb
         gloss_en: [to behead, to decapitate]
         gloss_zh: [斬首]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23598,6 +23874,7 @@ entries:
       - pos: verb
         gloss_en: [to add (something new), to newly increase]
         gloss_zh: [新增]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23624,6 +23901,7 @@ entries:
       - pos: verb
         gloss_en: [to lose power, to have a power outage]
         gloss_zh: [斷電]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23686,6 +23964,7 @@ entries:
       - pos: verb
         gloss_en: [to baptize]
         gloss_zh: [施洗]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23889,6 +24168,7 @@ entries:
         gloss_en: [to popularize legal knowledge, legal-awareness campaign]
         gloss_zh: [普法]
         note: The page has two etymologies for 普法 (verb 'popularize legal knowledge' vs. proper noun 'Franco-Prussian'); the Teochew reading is not explicitly tied to either, so the more common verb sense was chosen.
+        tags: [verb-object]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -23962,6 +24242,7 @@ entries:
       - pos: verb
         gloss_en: [to pause, to suspend, to halt]
         gloss_zh: [暫停]
+        tags: [ergative]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24022,6 +24303,7 @@ entries:
       - pos: verb
         gloss_en: [to alter, to change, to modify]
         gloss_zh: [更改]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24167,6 +24449,7 @@ entries:
         gloss_en: [to have or not have (interrogative), is there?]
         gloss_zh: [有無]
         note: Page gives both a noun sense ('existence; presence or absence') and a literary/Min interrogative verb sense ('to have or not have; is there?'); the verb sense was chosen as it best matches colloquial Min/Teochew usage, but the noun sense is also plausible.
+        tags: [interrogative, literary]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -24252,6 +24535,7 @@ entries:
       - pos: verb
         gloss_en: [to hope; to wish]
         gloss_zh: [期冀]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24288,6 +24572,7 @@ entries:
       - pos: verb
         gloss_en: [to look forward to, to long for]
         gloss_zh: [期盼]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24312,6 +24597,7 @@ entries:
       - pos: idiom
         gloss_en: [to predict accurately, to foretell, to have foresight]
         gloss_zh: [未卜先知]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24336,6 +24622,7 @@ entries:
       - pos: verb
         gloss_en: [to plant (crops), to grow by sowing seeds]
         gloss_zh: [播種]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24396,6 +24683,7 @@ entries:
       - pos: verb
         gloss_en: [to check and confiscate, to track down]
         gloss_zh: [查扣]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24480,6 +24768,7 @@ entries:
       - pos: verb
         gloss_en: [to examine and verify, to inspect]
         gloss_zh: [查驗]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24564,6 +24853,7 @@ entries:
       - pos: verb
         gloss_en: [to comb one's hair]
         gloss_zh: [梳頭]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24626,6 +24916,7 @@ entries:
       - pos: verb
         gloss_en: [to summarize, to sum up, to generalize]
         gloss_zh: [概括]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24747,6 +25038,7 @@ entries:
         gloss_en: [to imitate, to simulate]
         gloss_zh: [模擬]
         note: Wiktionary gives one Teochew reading for the whole entry, which covers both a verb sense ("to imitate/simulate") and an unrelated adjective sense ("analog"); verb was chosen as the more common usage.
+        tags: [transitive]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -24796,6 +25088,7 @@ entries:
       - pos: verb
         gloss_en: [to inspect, to examine]
         gloss_zh: [檢視]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24808,6 +25101,7 @@ entries:
       - pos: verb
         gloss_en: [to cut in line, to jump the queue]
         gloss_zh: [櫼隊, 插隊]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24894,6 +25188,7 @@ entries:
       - pos: verb
         gloss_en: [to bully, to push around, to pick on]
         gloss_zh: [欺負]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24906,6 +25201,7 @@ entries:
       - pos: verb
         gloss_en: [to deceive, to cheat, to swindle]
         gloss_zh: [欺騙]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24994,6 +25290,7 @@ entries:
       - pos: verb
         gloss_en: [to extol, to praise (often in song)]
         gloss_zh: [歌頌]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25042,6 +25339,7 @@ entries:
       - pos: verb
         gloss_en: [to stop bleeding, to staunch blood]
         gloss_zh: [止血]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25078,6 +25376,7 @@ entries:
       - pos: verb
         gloss_en: [to step into, to enter, to walk into]
         gloss_zh: [步入, 走進]
+        tags: [figuratively]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25128,6 +25427,7 @@ entries:
       - pos: verb
         gloss_en: [to return home]
         gloss_zh: [歸家, 回家]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25152,6 +25452,7 @@ entries:
       - pos: verb
         gloss_en: [to die, death]
         gloss_zh: [死亡]
+        tags: [formal]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25272,6 +25573,7 @@ entries:
       - pos: verb
         gloss_en: [to kill someone, to murder]
         gloss_zh: [殺人]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25296,6 +25598,7 @@ entries:
       - pos: verb
         gloss_en: [to kill]
         gloss_zh: [殺死]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25308,6 +25611,7 @@ entries:
       - pos: verb
         gloss_en: [to kill living beings, to take life (esp. in a Buddhist context)]
         gloss_zh: [殺生]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25320,6 +25624,7 @@ entries:
       - pos: verb
         gloss_en: [to disinfect, to sterilize]
         gloss_zh: [殺菌]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25368,6 +25673,7 @@ entries:
       - pos: verb
         gloss_en: [to breach a contract, to break an agreement]
         gloss_zh: [毀約]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25460,6 +25766,7 @@ entries:
       - pos: verb
         gloss_en: [to compete in a martial arts contest]
         gloss_zh: [比武]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25618,6 +25925,7 @@ entries:
       - pos: verb
         gloss_en: [to pollute, to contaminate]
         gloss_zh: [污染]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25779,6 +26087,8 @@ entries:
         gloss_en: [to hide, to hide away]
         gloss_zh: [覕]
         note: 沕 is a Teochew-specific alternative character form of 覕 (bhih4, 'to hide'); the gloss is drawn from 覕's own entry since 沕's page only states it is an alternative form without spelling out the definition.
+        tags: [alt-of, alternative]
+        alt_of: [覕 /𰴕]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -25805,6 +26115,7 @@ entries:
         gloss_en: [to arrange a warding-off wedding, to marry off to ward off death/illness]
         gloss_zh: [沖喜]
         note: Refers to a specific dated folk custom (arranging a wedding for a gravely ill relative to try to ward off death); rare and culturally specific with no simple modern equivalent.
+        tags: [dated]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -26052,6 +26363,7 @@ entries:
       - pos: verb
         gloss_en: [to emphasize, to attach importance to]
         gloss_zh: [注重]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26152,6 +26464,7 @@ entries:
       - pos: verb
         gloss_en: [to wash clothes, to do the laundry]
         gloss_zh: [洗衫]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26164,6 +26477,7 @@ entries:
       - pos: verb
         gloss_en: [to take a bath, to take a shower]
         gloss_zh: [洗身, 洗澡]
+        tags: [dialectal]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26176,6 +26490,7 @@ entries:
       - pos: verb
         gloss_en: [to wash a car]
         gloss_zh: [洗車]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26200,6 +26515,7 @@ entries:
       - pos: verb
         gloss_en: [to wash one's hair]
         gloss_zh: [洗頭]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26248,6 +26564,7 @@ entries:
       - pos: verb
         gloss_en: [to leak exam questions]
         gloss_zh: [洩題]
+        tags: [intransitive, verb-object]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26286,6 +26603,7 @@ entries:
       - pos: verb
         gloss_en: [to dispatch, to send (on a mission), to deploy]
         gloss_zh: [派遣]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26322,6 +26640,7 @@ entries:
       - pos: verb
         gloss_en: [to shed tears, to cry]
         gloss_zh: [流目汁, 流眼淚]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26358,6 +26677,7 @@ entries:
       - pos: verb
         gloss_en: [to have a runny nose]
         gloss_zh: [流鼻水]
+        tags: [regional, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26482,6 +26802,7 @@ entries:
       - pos: verb
         gloss_en: [to disappear, to vanish]
         gloss_zh: [消失]
+        tags: [intransitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26494,6 +26815,7 @@ entries:
       - pos: verb
         gloss_en: [to clean and disinfect]
         gloss_zh: [消殺]
+        tags: [neologism]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26506,6 +26828,7 @@ entries:
       - pos: verb
         gloss_en: [to disinfect, to sterilize]
         gloss_zh: [消毒]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26530,6 +26853,7 @@ entries:
       - pos: verb
         gloss_en: [to consume, to deplete; use up]
         gloss_zh: [消耗]
+        tags: [intransitive, transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26640,6 +26964,7 @@ entries:
       - pos: verb
         gloss_en: [to be involved in fraud]
         gloss_zh: [涉詐]
+        tags: [intransitive]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26652,6 +26977,7 @@ entries:
       - pos: verb
         gloss_en: [to be involved in pornography/vice, to be involved in sex work]
         gloss_zh: [涉黃]
+        tags: [intransitive]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26689,6 +27015,8 @@ entries:
         gloss_en: [to take a shower, to bathe]
         gloss_zh: [淙浴, 灇浴]
         note: The page defines 淙浴 only as an alternative form of 灇浴, illustrated with a nursery-rhyme example, so its currency as an everyday adult Teochew verb for 'to shower' versus a more childish/archaic register is uncertain.
+        tags: [alt-of, alternative]
+        alt_of: [灇浴]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -26762,6 +27090,7 @@ entries:
       - pos: verb
         gloss_en: [to fall into enemy hands; to be occupied]
         gloss_zh: [淪陷]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26860,6 +27189,7 @@ entries:
       - pos: verb
         gloss_en: [to have a baby (esp. a son) born into the family]
         gloss_zh: [添丁]
+        tags: [dated]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26897,6 +27227,7 @@ entries:
         gloss_en: [to serve rice into a bowl, to add more rice]
         gloss_zh: [添飯]
         note: The page labels this sense as Hakka/Xiamen/Zhangzhou/Taiwanese Hokkien rather than explicitly Teochew, although the pronunciation block does give the matching Teochew reading tin1 bung7 for this same sense.
+        tags: [verb-object]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -26970,6 +27301,7 @@ entries:
       - pos: verb
         gloss_en: [to cut emissions, to reduce pollution discharge]
         gloss_zh: [減排]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26994,6 +27326,7 @@ entries:
       - pos: verb
         gloss_en: [to slow down, to decelerate]
         gloss_zh: [減速]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27162,6 +27495,7 @@ entries:
       - pos: verb
         gloss_en: [to spit up milk (of a baby)]
         gloss_zh: [溢奶]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27374,6 +27708,7 @@ entries:
       - pos: verb
         gloss_en: [to satisfy; to meet needs, content; satisfied]
         gloss_zh: [滿足]
+        tags: [ergative]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27520,6 +27855,7 @@ entries:
       - pos: verb
         gloss_en: [to rise in price, to increase (of prices)]
         gloss_zh: [漲價]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27706,6 +28042,7 @@ entries:
       - pos: verb
         gloss_en: [to have diarrhea]
         gloss_zh: [瀉肚]
+        tags: [colloquial]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27780,6 +28117,7 @@ entries:
       - pos: verb
         gloss_en: [to burn (skin), burn injury]
         gloss_zh: [灼傷]
+        tags: [usually]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27828,6 +28166,7 @@ entries:
       - pos: verb
         gloss_en: [to speculate on the stock market; to trade stocks]
         gloss_zh: [炒股]
+        tags: [intransitive, verb-object]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27888,6 +28227,7 @@ entries:
       - pos: verb
         gloss_en: [to boil water]
         gloss_zh: [炰水, 燒水]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28156,6 +28496,7 @@ entries:
       - pos: verb
         gloss_en: [need not, there is no need to]
         gloss_zh: [無需]
+        tags: [formal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28180,6 +28521,8 @@ entries:
       - pos: verb
         gloss_en: [to burn, to light (a fire)]
         gloss_zh: [燃]
+        tags: [alt-of, alternative]
+        alt_of: [燃]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28204,6 +28547,7 @@ entries:
       - pos: verb
         gloss_en: [to illuminate, to light up]
         gloss_zh: [照亮]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28303,6 +28647,7 @@ entries:
         gloss_en: [to make soup, to simmer soup]
         gloss_zh: [煲湯]
         note: Also attested as a noun sense ('cooked soup') at the same reading; the verb sense was chosen as primary.
+        tags: [intransitive, verb-object]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -28316,6 +28661,7 @@ entries:
       - pos: verb
         gloss_en: [to decoct medicine, to brew herbal medicine]
         gloss_zh: [煲藥]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28328,6 +28674,7 @@ entries:
       - pos: verb
         gloss_en: [to talk on the phone for hours, to have a long phone chat]
         gloss_zh: [煲電話糜]
+        tags: [idiomatic, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28352,6 +28699,7 @@ entries:
       - pos: verb
         gloss_en: [to incite, to instigate; provoke]
         gloss_zh: [煽動]
+        tags: [formal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28376,6 +28724,7 @@ entries:
       - pos: verb
         gloss_en: [to know very well, to be well acquainted with]
         gloss_zh: [熟知]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28464,6 +28813,7 @@ entries:
       - pos: verb
         gloss_en: [to boil water]
         gloss_zh: [燃水]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28589,6 +28939,7 @@ entries:
         gloss_en: [to expose (in the media), to leak (insider information), to tip off]
         gloss_zh: [爆料]
         note: Equally common as a noun ('scoop/exposé') and a verb ('to leak/expose'); verb chosen as primary.
+        tags: [intransitive, verb-object]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -28628,6 +28979,7 @@ entries:
       - pos: verb
         gloss_en: [to climb a mountain, to hike, to mountaineer]
         gloss_zh: [爬山]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28704,6 +29056,7 @@ entries:
       - pos: verb
         gloss_en: [to contend for, to compete for, to scramble for]
         gloss_zh: [爭奪]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28862,6 +29215,7 @@ entries:
       - pos: verb
         gloss_en: [to reward troops with food and drink, to feast soldiers]
         gloss_zh: [犒賞]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28900,6 +29254,7 @@ entries:
       - pos: verb
         gloss_en: [to break the law; to commit a crime]
         gloss_zh: [犯法]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28924,6 +29279,7 @@ entries:
       - pos: verb
         gloss_en: [to sue; to bring a lawsuit against someone]
         gloss_zh: [狀告]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29060,6 +29416,7 @@ entries:
       - pos: verb
         gloss_en: [to innovate, to create independently]
         gloss_zh: [獨創]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29216,6 +29573,7 @@ entries:
       - pos: verb
         gloss_en: [to donate blood]
         gloss_zh: [獻血]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29384,6 +29742,7 @@ entries:
       - pos: verb
         gloss_en: [to divide up, to partition, to carve up]
         gloss_zh: [瓜分]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29422,6 +29781,7 @@ entries:
       - pos: verb
         gloss_en: [to lay eggs]
         gloss_zh: [生卵, 下蛋]
+        tags: [dialectal, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29586,6 +29946,7 @@ entries:
       - pos: verb
         gloss_en: [to produce, to engender, to come into being]
         gloss_zh: [產生]
+        tags: [intransitive, transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29598,6 +29959,7 @@ entries:
       - pos: verb
         gloss_en: [to revive, to regain consciousness]
         gloss_zh: [甦]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29634,6 +29996,7 @@ entries:
       - pos: verb
         gloss_en: [to use a drug, to apply medication]
         gloss_zh: [用藥]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29674,6 +30037,7 @@ entries:
       - pos: verb
         gloss_en: [to report (to authorities), to declare (to customs), to apply (for a program)]
         gloss_zh: [申報]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29868,6 +30232,7 @@ entries:
       - pos: verb
         gloss_en: ["to speed along, to run at great speed"]
         gloss_zh: [疾馳]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29942,6 +30307,7 @@ entries:
       - pos: verb
         gloss_en: [to hate deeply, to abhor]
         gloss_zh: [痛恨]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30074,6 +30440,7 @@ entries:
       - pos: verb
         gloss_en: [to apply one's force, to exert effort]
         gloss_zh: [發力]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30194,6 +30561,7 @@ entries:
       - pos: verb
         gloss_en: [to originate, to rise (of a river)]
         gloss_zh: [發源]
+        tags: [figuratively]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30378,6 +30746,7 @@ entries:
       - pos: verb
         gloss_en: [to make fraudulent charges, to use a stolen bank card]
         gloss_zh: [盜刷]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30455,6 +30824,7 @@ entries:
         gloss_en: [to monitor, to keep under surveillance, to supervise]
         gloss_zh: [監控]
         note: The same reading covers both a verb sense ('to monitor/surveil') and a noun sense (short for surveillance camera / surveillance footage); the verb sense was chosen as primary.
+        tags: [transitive]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -30556,6 +30926,7 @@ entries:
       - pos: verb
         gloss_en: [to interrogate and inspect, to check (e.g. at a checkpoint)]
         gloss_zh: [盤查]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30654,6 +31025,7 @@ entries:
       - pos: verb
         gloss_en: [to bid each other farewell, to part ways]
         gloss_zh: [相別]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30692,6 +31064,7 @@ entries:
       - pos: verb
         gloss_en: [to help, to assist]
         gloss_zh: [相幫]
+        tags: [dialectal]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30803,6 +31176,7 @@ entries:
         gloss_en: [to argue, to dispute]
         gloss_zh: [相聲]
         note: The dossier gives only a Hakka-tagged 'to argue/dispute' sense with no explicit Teochew tag or Teochew pronunciation listed for this block, so its fit to the confirmed Teochew reading is uncertain.
+        tags: [dialectal]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -30888,6 +31262,7 @@ entries:
       - pos: verb
         gloss_en: [to extend an invitation, to invite]
         gloss_zh: [相邀, 邀請]
+        tags: [formal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30974,6 +31349,7 @@ entries:
       - pos: verb
         gloss_en: [to get airsick; to suffer from airsickness]
         gloss_zh: [眩機]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -31130,6 +31506,7 @@ entries:
       - pos: verb
         gloss_en: [to look]
         gloss_zh: [瞅]
+        tags: [colloquial]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -31408,6 +31785,7 @@ entries:
       - pos: verb
         gloss_en: [to be damaged, to be worn, to be torn]
         gloss_zh: [破損]
+        tags: [intransitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -31420,6 +31798,7 @@ entries:
       - pos: verb
         gloss_en: [to solve a case]
         gloss_zh: [破案]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -31602,6 +31981,7 @@ entries:
       - pos: verb
         gloss_en: [to stage a fake accident to extort compensation]
         gloss_zh: [碰瓷]
+        tags: [colloquial]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32088,6 +32468,7 @@ entries:
       - pos: verb
         gloss_en: [to rent a car; to hire a vehicle]
         gloss_zh: [租車]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32140,6 +32521,7 @@ entries:
       - pos: verb
         gloss_en: [to plant crops; to farm]
         gloss_zh: [種作, 耕種]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32152,6 +32534,8 @@ entries:
       - pos: verb
         gloss_en: [to work the land; to farm (alternative form of 種田)]
         gloss_zh: [種田]
+        tags: [alt-of, alternative]
+        alt_of: [種田 /种田]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32224,6 +32608,7 @@ entries:
       - pos: verb
         gloss_en: [to praise; to compliment; to commend]
         gloss_zh: [稱讚, 讚揚]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32384,6 +32769,7 @@ entries:
       - pos: verb
         gloss_en: [to put on clothes; to get dressed]
         gloss_zh: [穿衫]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32812,6 +33198,7 @@ entries:
       - pos: verb
         gloss_en: [to practice birth control; contraception]
         gloss_zh: [節育]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32824,6 +33211,7 @@ entries:
       - pos: verb
         gloss_en: [to save energy; to conserve energy]
         gloss_zh: [節能]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32872,6 +33260,7 @@ entries:
       - pos: verb
         gloss_en: [to pour tea]
         gloss_zh: [篩茶]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32921,6 +33310,7 @@ entries:
         gloss_en: [to sign one's name, to autograph]
         gloss_zh: [簽名]
         note: The page gives both a verb sense ('to sign one's name') and a noun sense ('signature') under the identical Teochew reading, so the intended part of speech here is a judgment call.
+        tags: [verb-object]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -32958,6 +33348,7 @@ entries:
       - pos: verb
         gloss_en: ["to sign (a contract, agreement, etc.)"]
         gloss_zh: [簽署]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33068,6 +33459,7 @@ entries:
       - pos: verb
         gloss_en: [to collect, to raise (funds)]
         gloss_zh: [籌集]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33106,6 +33498,7 @@ entries:
       - pos: verb
         gloss_en: [to buy rice]
         gloss_zh: [糴米]
+        tags: [dialectal, literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33118,6 +33511,7 @@ entries:
       - pos: idiom
         gloss_en: [to keep on improving, to constantly improve]
         gloss_zh: [精益求精]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33364,6 +33758,7 @@ entries:
       - pos: verb
         gloss_en: [to form a group, to organise a delegation]
         gloss_zh: [組團]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33376,6 +33771,7 @@ entries:
       - pos: verb
         gloss_en: [to set up, to establish]
         gloss_zh: [組建]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33426,6 +33822,7 @@ entries:
       - pos: verb
         gloss_en: [to team up, to gang up, to join together]
         gloss_zh: [結夥]
+        tags: [derogatory]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33438,6 +33835,7 @@ entries:
       - pos: verb
         gloss_en: [to get married, to marry]
         gloss_zh: [結婚]
+        tags: [intransitive, verb-object]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33534,6 +33932,7 @@ entries:
       - pos: verb
         gloss_en: [to pay a bill, to settle an account]
         gloss_zh: [結賬]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33698,6 +34097,7 @@ entries:
       - pos: verb
         gloss_en: [to kidnap for ransom]
         gloss_zh: [綁票]
+        tags: [intransitive, verb-object]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33711,6 +34111,7 @@ entries:
         gloss_en: [to weave cloth]
         gloss_zh: [經布]
         note: The source tags this sense Hokkien/Teochew and dated but also carries a raw_tag 'in Shanghainese', an internally inconsistent dialect label on the source page; treated as a genuine but archaic Teochew sense per the given reading.
+        tags: [dated]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -33834,6 +34235,7 @@ entries:
       - pos: verb
         gloss_en: [to cyberbully]
         gloss_zh: [網暴, 網絡暴力]
+        tags: [neologism]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33958,6 +34360,7 @@ entries:
       - pos: verb
         gloss_en: [to alleviate, to relieve, to ease]
         gloss_zh: [緩解]
+        tags: [intransitive, transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34102,6 +34505,7 @@ entries:
       - pos: verb
         gloss_en: [to draw, to draft]
         gloss_zh: [繪製]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34126,6 +34530,7 @@ entries:
       - pos: verb
         gloss_en: [to capture, to seize]
         gloss_zh: [繳獲]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34138,6 +34543,7 @@ entries:
       - pos: verb
         gloss_en: [to pay a fee]
         gloss_zh: [繳費]
+        tags: [intransitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34372,6 +34778,7 @@ entries:
       - pos: verb
         gloss_en: [to go on strike, to strike]
         gloss_zh: [罷工]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34384,6 +34791,7 @@ entries:
       - pos: verb
         gloss_en: [to boycott class, to go on a student or teacher strike]
         gloss_zh: [罷課]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34554,6 +34962,7 @@ entries:
       - pos: verb
         gloss_en: [to age; to become older (of a population)]
         gloss_zh: [老齡化]
+        tags: [usually]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34626,6 +35035,7 @@ entries:
       - pos: verb
         gloss_en: [to take a test, to sit an exam]
         gloss_zh: [考書]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34728,6 +35138,7 @@ entries:
       - pos: verb
         gloss_en: [to take a picture, to photograph]
         gloss_zh: [耗像]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34764,6 +35175,7 @@ entries:
       - pos: verb
         gloss_en: [to listen (literary), to listen carefully]
         gloss_zh: [聆聽]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34776,6 +35188,7 @@ entries:
       - pos: verb
         gloss_en: [to chat]
         gloss_zh: [聊天]
+        tags: [verb-object]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34848,6 +35261,7 @@ entries:
       - pos: verb
         gloss_en: [to gather, to assemble, to collect]
         gloss_zh: [聚集]
+        tags: [ergative]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34872,6 +35286,7 @@ entries:
       - pos: verb
         gloss_en: [to gather, to reunite]
         gloss_zh: [聚首]
+        tags: [formal, usually]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35022,6 +35437,7 @@ entries:
       - pos: verb
         gloss_en: [to listen to and believe]
         gloss_zh: [聽信]
+        tags: [archaic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35070,6 +35486,7 @@ entries:
       - pos: verb
         gloss_en: [to hear]
         gloss_zh: [聽見]
+        tags: [transitive]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35146,6 +35563,7 @@ entries:
       - pos: verb
         gloss_en: [to cause an accident, to cause trouble]
         gloss_zh: [肇事]
+        tags: [intransitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35158,6 +35576,7 @@ entries:
       - pos: verb
         gloss_en: [to shoulder, to take on; to undertake, to bear (responsibility)]
         gloss_zh: [肩負, 承擔]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35194,6 +35613,7 @@ entries:
       - pos: verb
         gloss_en: [to educate people]
         gloss_zh: [育人]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35256,6 +35676,7 @@ entries:
       - pos: idiom
         gloss_en: ["to fabricate (stories, etc.)", to cook up (a story)]
         gloss_zh: [胡編亂造]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35318,6 +35739,7 @@ entries:
       - pos: verb
         gloss_en: [to coerce, to compel]
         gloss_zh: [脅迫]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35366,6 +35788,7 @@ entries:
       - pos: verb
         gloss_en: [to escape danger, to come out alive]
         gloss_zh: [脫險]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35662,6 +36085,7 @@ entries:
       - pos: idiom
         gloss_en: [to strive for self-improvement, self-reliance and self-strengthening]
         gloss_zh: [自立自強]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35686,6 +36110,7 @@ entries:
       - pos: verb
         gloss_en: [to make by oneself, homemade, self-made]
         gloss_zh: [自製]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35748,6 +36173,7 @@ entries:
       - pos: verb
         gloss_en: [to turn oneself in, to surrender (to authorities)]
         gloss_zh: [自首]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35884,6 +36310,7 @@ entries:
       - pos: verb
         gloss_en: [to give an example]
         gloss_zh: [舉例]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35994,6 +36421,7 @@ entries:
       - pos: verb
         gloss_en: [to severely criticize; to castigate; to blame harshly]
         gloss_zh: [苛責]
+        tags: [transitive]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36282,6 +36710,7 @@ entries:
       - pos: verb
         gloss_en: [to shave one's head (take the tonsure), to become a monk or nun]
         gloss_zh: [落毛]
+        tags: [especially]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36404,6 +36833,7 @@ entries:
       - pos: verb
         gloss_en: [to act as if possessed by a spirit, to claim to be bewitched]
         gloss_zh: [落神]
+        tags: [verb-object]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36416,6 +36846,7 @@ entries:
       - pos: verb
         gloss_en: [to sow seeds]
         gloss_zh: [落種]
+        tags: [dialectal, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36428,6 +36859,7 @@ entries:
       - pos: verb
         gloss_en: [to act as if possessed by a spirit, to claim to be bewitched]
         gloss_zh: [落老爺]
+        tags: [verb-object]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36466,6 +36898,7 @@ entries:
       - pos: verb
         gloss_en: [to let one's shoulders droop smoothly]
         gloss_zh: [落肩]
+        tags: [verb-object]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36589,6 +37022,7 @@ entries:
         gloss_en: [to write a book]
         gloss_zh: [著書]
         note: The page lists two senses under the identical reading (verb 'to write a book' and noun 'written work'); the verb sense was chosen as primary.
+        tags: [literary]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -36662,6 +37096,7 @@ entries:
       - pos: verb
         gloss_en: [to store water, to impound water]
         gloss_zh: [蓄水]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36686,6 +37121,7 @@ entries:
       - pos: verb
         gloss_en: [to spread, to extend]
         gloss_zh: [蔓延]
+        tags: [figuratively, usually]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36776,6 +37212,7 @@ entries:
       - pos: idiom
         gloss_en: [to glare like a tiger eyeing its prey, to eye covetously]
         gloss_zh: [虎視眈眈]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36828,6 +37265,7 @@ entries:
       - pos: idiom
         gloss_en: [to scheme for a long time; to conspire persistently]
         gloss_zh: [處心積慮]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37081,6 +37519,7 @@ entries:
         gloss_en: [to play chess]
         gloss_zh: [行棋]
         note: Wiktionary tags this sense as literary Min but qualifies it as Taiwanese Hakka, so its attestation as genuine colloquial Teochew usage is uncertain.
+        tags: [literary]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -37130,6 +37569,7 @@ entries:
       - pos: verb
         gloss_en: [to bribe]
         gloss_zh: [行賄]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37142,6 +37582,7 @@ entries:
       - pos: verb
         gloss_en: [to walk, to go on foot]
         gloss_zh: [行路]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37166,6 +37607,7 @@ entries:
       - pos: verb
         gloss_en: [to practise medicine]
         gloss_zh: [行醫]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37178,6 +37620,7 @@ entries:
       - pos: verb
         gloss_en: [to travel along a route (of vehicles/boats), to drive, to go]
         gloss_zh: [行駛]
+        tags: [usually]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37254,6 +37697,8 @@ entries:
       - pos: verb
         gloss_en: [to take a shower, to take a bath]
         gloss_zh: [沖涼]
+        tags: [alt-of, misspelling]
+        alt_of: [沖涼 /冲凉]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37266,6 +37711,7 @@ entries:
       - pos: verb
         gloss_en: [to clash, to conflict, to collide]
         gloss_zh: [衝突]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37314,6 +37760,7 @@ entries:
       - pos: verb
         gloss_en: [to commend, to honor, to cite]
         gloss_zh: [表彰]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37326,6 +37773,7 @@ entries:
       - pos: verb
         gloss_en: [to make clear, to state clearly, to make known]
         gloss_zh: [表明]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37388,6 +37836,7 @@ entries:
       - pos: idiom
         gloss_en: [to stand by and watch; to remain a passive observer, to do nothing while others struggle]
         gloss_zh: [袖手旁觀]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37426,6 +37875,7 @@ entries:
       - pos: verb
         gloss_en: [to lay off employees, to downsize, to cut staff]
         gloss_zh: [裁員]
+        tags: [intransitive, transitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37462,6 +37912,7 @@ entries:
       - pos: verb
         gloss_en: [to split, to burst open]
         gloss_zh: [裂開]
+        tags: [intransitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37546,6 +37997,7 @@ entries:
       - pos: verb
         gloss_en: [to load]
         gloss_zh: [裝載]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37716,6 +38168,7 @@ entries:
       - pos: verb
         gloss_en: [to reverse a car, to back up a vehicle]
         gloss_zh: [褪車]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37768,6 +38221,7 @@ entries:
       - pos: verb
         gloss_en: [to attack, to raid]
         gloss_zh: [襲擊]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37832,6 +38286,7 @@ entries:
       - pos: verb
         gloss_en: [to meet, to see (someone)]
         gloss_zh: [見面]
+        tags: [verb-object]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37868,6 +38323,7 @@ entries:
       - pos: verb
         gloss_en: [to play hide-and-seek]
         gloss_zh: [覕相揣]
+        tags: [dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37893,6 +38349,7 @@ entries:
         gloss_en: [to covet, to eye greedily, to have designs on]
         gloss_zh: [覬覦]
         note: A literary word with both a verb sense ('to covet') and a noun sense ('presumptuous desire') under the same reading; chose the verb sense as primary.
+        tags: [literary]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -38060,6 +38517,7 @@ entries:
       - pos: verb
         gloss_en: [to rescue, to deliver from]
         gloss_zh: [解救]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38218,6 +38676,7 @@ entries:
       - pos: verb
         gloss_en: [to offend, to violate, to go against]
         gloss_zh: [觸犯]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38266,6 +38725,7 @@ entries:
       - pos: verb
         gloss_en: ["to conclude (an agreement, contract, treaty)", to establish]
         gloss_zh: [訂立]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38290,6 +38750,7 @@ entries:
       - pos: verb
         gloss_en: [to order goods]
         gloss_zh: [訂貨]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38340,6 +38801,7 @@ entries:
       - pos: verb
         gloss_en: [to subdue by armed force; to send troops to suppress; to wage a punitive expedition]
         gloss_zh: [討伐]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38780,6 +39242,7 @@ entries:
       - pos: verb
         gloss_en: [to take someone's pulse]
         gloss_zh: [診脈, 把脈]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38880,6 +39343,7 @@ entries:
       - pos: verb
         gloss_en: [to assess, to evaluate]
         gloss_zh: [評估]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39002,6 +39466,7 @@ entries:
       - pos: verb
         gloss_en: [to inquire, to ask about, to query]
         gloss_zh: [詢問]
+        tags: [ditransitive, transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39064,6 +39529,7 @@ entries:
       - pos: verb
         gloss_en: [to try out, to pilot, to test]
         gloss_zh: [試行]
+        tags: [ergative]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39076,6 +39542,7 @@ entries:
       - pos: verb
         gloss_en: [to do by trial and error]
         gloss_zh: [試錯]
+        tags: [neologism]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39102,6 +39569,7 @@ entries:
       - pos: verb
         gloss_en: [to denounce, to castigate, to criticize]
         gloss_zh: [詬病]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39152,6 +39620,7 @@ entries:
       - pos: verb
         gloss_en: [to praise, to compliment, to commend]
         gloss_zh: [誇獎]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39236,6 +39705,7 @@ entries:
       - pos: verb
         gloss_en: [to claim as one's own]
         gloss_zh: [認領]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39322,6 +39792,7 @@ entries:
       - pos: verb
         gloss_en: [to inveigle, to trick, to cajole]
         gloss_zh: [誘騙]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39514,6 +39985,7 @@ entries:
       - pos: verb
         gloss_en: [to adjust, to regulate, to revise]
         gloss_zh: [調整]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39660,6 +40132,7 @@ entries:
       - pos: verb
         gloss_en: [to ask for advice, to consult]
         gloss_zh: [請教]
+        tags: [honorific, polite]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39952,6 +40425,7 @@ entries:
       - pos: verb
         gloss_en: [to lecture, to instruct, to teach]
         gloss_zh: [講授]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40272,6 +40746,7 @@ entries:
       - pos: verb
         gloss_en: [to change, to vary]
         gloss_zh: [變化]
+        tags: [intransitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40308,6 +40783,7 @@ entries:
       - pos: verb
         gloss_en: [to become unfaithful, to fall out of love]
         gloss_zh: [變心]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40344,6 +40820,7 @@ entries:
       - pos: verb
         gloss_en: [to switch lanes (driving)]
         gloss_zh: [變道]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40516,6 +40993,7 @@ entries:
       - pos: verb
         gloss_en: [to have a bumper harvest; to reap a bountiful crop]
         gloss_zh: [豐收]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40542,6 +41020,7 @@ entries:
       - pos: verb
         gloss_en: [to bend over, to stoop]
         gloss_zh: [貓腰]
+        tags: [colloquial]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40568,6 +41047,7 @@ entries:
       - pos: verb
         gloss_en: [to owe a debt, to be in debt]
         gloss_zh: [負債]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40580,6 +41060,7 @@ entries:
       - pos: verb
         gloss_en: [to betray someone's trust/love]
         gloss_zh: [負心]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40756,6 +41237,7 @@ entries:
       - pos: verb
         gloss_en: [to exert great effort; to strain; to be strenuous]
         gloss_zh: [費力]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40840,6 +41322,7 @@ entries:
       - pos: verb
         gloss_en: [to betray one's country, to commit treason]
         gloss_zh: [賣國]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40852,6 +41335,7 @@ entries:
       - pos: verb
         gloss_en: [to sell someone into indentured servitude or forced labour]
         gloss_zh: [賣豬囝]
+        tags: [verb-object]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40926,6 +41410,7 @@ entries:
       - pos: verb
         gloss_en: [to act rashly out of spite; to sulk]
         gloss_zh: [賭氣]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40950,6 +41435,7 @@ entries:
       - pos: verb
         gloss_en: [to shop; to go shopping]
         gloss_zh: [購物]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40974,6 +41460,7 @@ entries:
       - pos: verb
         gloss_en: [to purchase; to buy]
         gloss_zh: [購買]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41159,6 +41646,7 @@ entries:
         gloss_en: [to move towards, to head for, to progress towards]
         gloss_zh: [走向]
         note: The page gives both a noun sense ('direction/trend', or geological 'strike') and a verb sense ('to move towards') under the same reading; the verb sense was chosen as more representative but which is primary in Teochew is uncertain.
+        tags: [figuratively]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -41250,6 +41738,7 @@ entries:
       - pos: verb
         gloss_en: [to enter, to walk into]
         gloss_zh: [走進]
+        tags: [figuratively]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41314,6 +41803,7 @@ entries:
       - pos: verb
         gloss_en: [to build a house]
         gloss_zh: [起厝]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41338,6 +41828,7 @@ entries:
       - pos: verb
         gloss_en: [to get up, to get out of bed, to wake up]
         gloss_zh: [起床]
+        tags: [intransitive, verb-object]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41448,6 +41939,7 @@ entries:
       - pos: verb
         gloss_en: [to earn money; to make money]
         gloss_zh: [趁錢, 賺錢]
+        tags: [dialectal, obsolete]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41460,6 +41952,7 @@ entries:
       - pos: verb
         gloss_en: [to earn money; to make money]
         gloss_zh: [趁鐳, 賺錢]
+        tags: [especially]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41520,6 +42013,7 @@ entries:
       - pos: verb
         gloss_en: [to overtake (another vehicle)]
         gloss_zh: [超車]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41532,6 +42026,7 @@ entries:
       - pos: verb
         gloss_en: [to overload]
         gloss_zh: [超載]
+        tags: [usually]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41556,6 +42051,7 @@ entries:
       - pos: verb
         gloss_en: [to exceed, to surpass, to overtake]
         gloss_zh: [超過]
+        tags: [figuratively, transitive]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41688,6 +42184,7 @@ entries:
       - pos: verb
         gloss_en: [to play mahjong]
         gloss_zh: [跋麻雀]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41774,6 +42271,7 @@ entries:
       - pos: verb
         gloss_en: [to step across, to go beyond, to span]
         gloss_zh: [跨越]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41848,6 +42346,7 @@ entries:
       - pos: verb
         gloss_en: [to dance]
         gloss_zh: [跳舞]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42070,6 +42569,7 @@ entries:
       - pos: verb
         gloss_en: [to die (usually from unnatural causes)]
         gloss_zh: [身亡]
+        tags: [formal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42094,6 +42594,7 @@ entries:
       - pos: verb
         gloss_en: [to play hide and seek]
         gloss_zh: [躲貓貓, 捉迷藏]
+        tags: [regional]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42206,6 +42707,7 @@ entries:
       - pos: verb
         gloss_en: [to drop out of school, to discontinue one's studies]
         gloss_zh: [輟學]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42218,6 +42720,7 @@ entries:
       - pos: verb
         gloss_en: [to take turns being on duty, to be on rotating duty]
         gloss_zh: [輪值]
+        tags: [also, attributive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42330,6 +42833,7 @@ entries:
       - pos: verb
         gloss_en: [to come back, to return]
         gloss_zh: [轉來, 返來]
+        tags: [dialectal, regional]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42416,6 +42920,7 @@ entries:
       - pos: verb
         gloss_en: [to change, to transform, to shift]
         gloss_zh: [轉變]
+        tags: [ergative]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42490,6 +42995,7 @@ entries:
       - pos: verb
         gloss_en: [to roar, to rumble]
         gloss_zh: [轟鳴]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42528,6 +43034,7 @@ entries:
       - pos: verb
         gloss_en: [to do things; to handle affairs; to get something done]
         gloss_zh: [辦事]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42588,6 +43095,7 @@ entries:
       - pos: verb
         gloss_en: [to apply for an ID document]
         gloss_zh: [辦證]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42612,6 +43120,7 @@ entries:
       - pos: verb
         gloss_en: [to resign]
         gloss_zh: [辭職]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42712,6 +43221,7 @@ entries:
       - pos: verb
         gloss_en: [to meet the enemy in battle]
         gloss_zh: [迎戰]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42908,6 +43418,7 @@ entries:
       - pos: verb
         gloss_en: [to pursue, to search for, to track down]
         gloss_zh: [追尋]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42956,6 +43467,7 @@ entries:
       - pos: verb
         gloss_en: [to chase after a popular person or thing, to fawn over]
         gloss_zh: [追捧]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42968,6 +43480,7 @@ entries:
       - pos: verb
         gloss_en: [to idolize a celebrity, to be a fan chasing after a star]
         gloss_zh: [追星]
+        tags: [neologism]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43140,6 +43653,7 @@ entries:
       - pos: verb
         gloss_en: [to drop out of school, to quit school]
         gloss_zh: [退學]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43164,6 +43678,7 @@ entries:
       - pos: verb
         gloss_en: [to return goods, to send back merchandise]
         gloss_zh: [退貨]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43200,6 +43715,7 @@ entries:
       - pos: verb
         gloss_en: [to give a gift]
         gloss_zh: [送禮]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43260,6 +43776,7 @@ entries:
       - pos: verb
         gloss_en: [to flee, to go into exile]
         gloss_zh: [逃亡]
+        tags: [intransitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43272,6 +43789,7 @@ entries:
       - pos: verb
         gloss_en: [to play truant, to skip school]
         gloss_zh: [逃學]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43284,6 +43802,7 @@ entries:
       - pos: verb
         gloss_en: [to flee for one's life, to escape (danger)]
         gloss_zh: [逃生]
+        tags: [intransitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43434,6 +43953,7 @@ entries:
       - pos: verb
         gloss_en: [to pursue profit]
         gloss_zh: [逐利]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43494,6 +44014,7 @@ entries:
       - pos: verb
         gloss_en: [to notify, to inform]
         gloss_zh: [通知]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43570,6 +44091,7 @@ entries:
       - pos: verb
         gloss_en: [to achieve (a goal) quickly, crash (course)]
         gloss_zh: [速成]
+        tags: [attributive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43668,6 +44190,7 @@ entries:
       - pos: verb
         gloss_en: [to link; to join; to connect]
         gloss_zh: [連接]
+        tags: [intransitive, transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43900,6 +44423,7 @@ entries:
       - pos: verb
         gloss_en: [to transport]
         gloss_zh: [運輸]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43912,6 +44436,7 @@ entries:
       - pos: verb
         gloss_en: [to transport, to convey, to carry]
         gloss_zh: [運送]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43951,6 +44476,7 @@ entries:
         gloss_en: [to celebrate the Chinese New Year, to spend the New Year]
         gloss_zh: [過年]
         note: Also commonly used as a noun for 'Chinese New Year' itself, and colloquially to mean 'next year'; the verb sense was chosen as primary.
+        tags: [verb-object]
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -44078,6 +44604,7 @@ entries:
       - pos: verb
         gloss_en: [to apologize]
         gloss_zh: [道歉]
+        tags: [intransitive, verb-object]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44188,6 +44715,7 @@ entries:
       - pos: verb
         gloss_en: [to violate regulations, to break the rules]
         gloss_zh: [違章]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44336,6 +44864,7 @@ entries:
       - pos: verb
         gloss_en: [to suffer, to undergo, to be subjected to]
         gloss_zh: [遭受]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44348,6 +44877,7 @@ entries:
       - pos: verb
         gloss_en: [to meet with disaster, to suffer a calamity]
         gloss_zh: [遭殃]
+        tags: [intransitive, verb-object]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44434,6 +44964,7 @@ entries:
       - pos: verb
         gloss_en: [to abide by, to follow, to comply with]
         gloss_zh: [遵循]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44446,6 +44977,7 @@ entries:
       - pos: verb
         gloss_en: [to migrate, to move (residence)]
         gloss_zh: [遷徙, 搬遷]
+        tags: [ergative]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44458,6 +44990,7 @@ entries:
       - pos: verb
         gloss_en: [to register for classes, to choose courses]
         gloss_zh: [選課]
+        tags: [intransitive, verb-object]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44568,6 +45101,7 @@ entries:
       - pos: verb
         gloss_en: [to avoid danger, to hedge risk]
         gloss_zh: [避險]
+        tags: [formal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44580,6 +45114,7 @@ entries:
       - pos: verb
         gloss_en: [to take refuge, to seek asylum]
         gloss_zh: [避難]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44592,6 +45127,7 @@ entries:
       - pos: verb
         gloss_en: [to take shelter from the rain]
         gloss_zh: [避雨]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44690,6 +45226,7 @@ entries:
       - pos: verb
         gloss_en: [to deploy, "to arrange; to lay out (plans, forces)"]
         gloss_zh: [部署]
+        tags: [figuratively]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44774,6 +45311,7 @@ entries:
       - pos: verb
         gloss_en: [to distribute electricity]
         gloss_zh: [配電]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44786,6 +45324,7 @@ entries:
       - pos: verb
         gloss_en: [to drink and drive, drink-driving]
         gloss_zh: [酒驾]
+        tags: [intransitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44962,6 +45501,7 @@ entries:
       - pos: verb
         gloss_en: [to release, to set free, to liberate]
         gloss_zh: [釋放]
+        tags: [figuratively, literally]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45022,6 +45562,7 @@ entries:
       - pos: verb
         gloss_en: [to reaffirm; to reiterate; to restate]
         gloss_zh: [重申]
+        tags: [reason, transitive, usually]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45192,6 +45733,7 @@ entries:
       - pos: verb
         gloss_en: [to destroy (by burning), to incinerate]
         gloss_zh: [銷毀, 燒毀]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45216,6 +45758,7 @@ entries:
       - pos: idiom
         gloss_en: [to act recklessly out of desperation, to take a desperate gamble]
         gloss_zh: [鋌而走險]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45252,6 +45795,7 @@ entries:
       - pos: verb
         gloss_en: [to key in, to input]
         gloss_zh: [錄入, 輸入]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45301,6 +45845,7 @@ entries:
         gloss_en: [to record (sound), recording]
         gloss_zh: [錄音]
         note: The page has both a verb sense ('to record sound') and a noun sense ('sound recording') under the same reading; verb chosen as the primary sense since it heads the entry.
+        tags: [intransitive, verb-object]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -45314,6 +45859,7 @@ entries:
       - pos: verb
         gloss_en: [to dislocate, to misalign, to misplace]
         gloss_zh: [錯位]
+        tags: [figuratively]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45388,6 +45934,7 @@ entries:
       - pos: verb
         gloss_en: [to relieve pain, to ease pain]
         gloss_zh: [鎮痛, 止痛]
+        tags: [intransitive, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45490,6 +46037,7 @@ entries:
       - pos: idiom
         gloss_en: ["to make a long, arduous trek", long journey]
         gloss_zh: [長途跋涉]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45708,6 +46256,7 @@ entries:
       - pos: verb
         gloss_en: [to hold or attend a meeting]
         gloss_zh: [開會]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45744,6 +46293,7 @@ entries:
       - pos: verb
         gloss_en: [to turn on a light]
         gloss_zh: [開燈]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45792,6 +46342,7 @@ entries:
       - pos: verb
         gloss_en: [to prescribe medicine, to write a prescription]
         gloss_zh: [開藥]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45962,6 +46513,7 @@ entries:
       - pos: verb
         gloss_en: [to care about, to be concerned about]
         gloss_zh: [關心]
+        tags: [transitive]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46034,6 +46586,7 @@ entries:
       - pos: verb
         gloss_en: [to prevent]
         gloss_zh: [防止]
+        tags: [transitive]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46046,6 +46599,7 @@ entries:
       - pos: verb
         gloss_en: [to prevent and treat/cure, "prevention and control (of disease, pests)"]
         gloss_zh: [防治]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46058,6 +46612,7 @@ entries:
       - pos: verb
         gloss_en: [to prevent flooding; flood control]
         gloss_zh: [防洪]
+        tags: [intransitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46070,6 +46625,7 @@ entries:
       - pos: verb
         gloss_en: [to prevent epidemics; epidemic prevention]
         gloss_zh: [防疫]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46202,6 +46758,7 @@ entries:
       - pos: verb
         gloss_en: [to reduce, to lower, to decrease]
         gloss_zh: [降低]
+        tags: [ergative]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46412,6 +46969,7 @@ entries:
       - pos: verb
         gloss_en: [to block off, to cut off, to separate]
         gloss_zh: [隔斷]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46534,6 +47092,7 @@ entries:
       - pos: verb
         gloss_en: [to assemble, to gather, to muster]
         gloss_zh: [集合]
+        tags: [ergative]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46546,6 +47105,7 @@ entries:
       - pos: verb
         gloss_en: [to mass (troops), to assemble, to muster]
         gloss_zh: [集結]
+        tags: [ergative]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46658,6 +47218,7 @@ entries:
       - pos: verb
         gloss_en: [to divorce]
         gloss_zh: [離婚]
+        tags: [intransitive, verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46682,6 +47243,7 @@ entries:
       - pos: verb
         gloss_en: [to leave one's job, to resign]
         gloss_zh: [離職]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46718,6 +47280,7 @@ entries:
       - pos: verb
         gloss_en: [to thunder]
         gloss_zh: [雷霆, 打雷]
+        tags: [Internet]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46730,6 +47293,7 @@ entries:
       - pos: verb
         gloss_en: [to thunder, to rumble with thunder]
         gloss_zh: [雷響, 打雷]
+        tags: [dialectal, literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46806,6 +47370,7 @@ entries:
       - pos: verb
         gloss_en: [to bully, to intimidate]
         gloss_zh: [霸凌, 欺凌]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46892,6 +47457,7 @@ entries:
       - pos: verb
         gloss_en: [to dismiss, to discharge (from a position)]
         gloss_zh: [革職]
+        tags: [formal, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47108,6 +47674,7 @@ entries:
       - pos: verb
         gloss_en: [to award a prize, to present an award/medal/certificate]
         gloss_zh: [頒獎]
+        tags: [intransitive, verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47134,6 +47701,7 @@ entries:
       - pos: verb
         gloss_en: [to comprehend, to grasp, to realize]
         gloss_zh: [領悟]
+        tags: [transitive]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47170,6 +47738,7 @@ entries:
       - pos: verb
         gloss_en: [to be baptized, to receive baptism]
         gloss_zh: [領洗]
+        tags: [verb-object]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47182,6 +47751,7 @@ entries:
       - pos: verb
         gloss_en: [to appreciate, to experience, to understand]
         gloss_zh: [領略]
+        tags: [transitive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47280,6 +47850,7 @@ entries:
       - pos: verb
         gloss_en: [to flutter down; drift and fall gently]
         gloss_zh: [飄落]
+        tags: [usually]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47292,6 +47863,7 @@ entries:
       - pos: verb
         gloss_en: [to drag race, to joyride; speed recklessly]
         gloss_zh: [飆車]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47316,6 +47888,7 @@ entries:
       - pos: verb
         gloss_en: [to suckle, to breastfeed / suck milk]
         gloss_zh: [食奶]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47460,6 +48033,7 @@ entries:
       - pos: verb
         gloss_en: [to graze, to browse]
         gloss_zh: [吃草]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47473,6 +48047,7 @@ entries:
         gloss_en: [to act westernized (of an ethnic Chinese person), to not speak Chinese]
         gloss_zh: [食蕳砃]
         note: The definition is documented mainly for Malaysian/Singapore Hokkien ethnic-identity slang; whether the same nuance fully applies to Teochew usage is uncertain despite the attested Teochew reading.
+        tags: [verb-object]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -47486,6 +48061,7 @@ entries:
       - pos: verb
         gloss_en: [to smoke (tobacco)]
         gloss_zh: [食薰, 抽菸]
+        tags: [dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47522,6 +48098,7 @@ entries:
       - pos: verb
         gloss_en: [to have nothing to eat, to go hungry]
         gloss_zh: [喝西北風]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47594,6 +48171,7 @@ entries:
       - pos: verb
         gloss_en: [to order (in official documents), to direct]
         gloss_zh: [飭令, 命令]
+        tags: [dated]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47656,6 +48234,7 @@ entries:
       - pos: verb
         gloss_en: [to saturate, to be saturated]
         gloss_zh: [飽和]
+        tags: [figuratively, literally]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47682,6 +48261,7 @@ entries:
       - pos: verb
         gloss_en: [to play (a role), to act as]
         gloss_zh: [飾演, 扮演]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47694,6 +48274,7 @@ entries:
       - pos: verb
         gloss_en: [to form (a habit), to cultivate, to develop]
         gloss_zh: [養成]
+        tags: [transitive]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47818,6 +48399,7 @@ entries:
       - pos: idiom
         gloss_en: [non-stop, without stopping, constantly on the go]
         gloss_zh: [馬不停蹄]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47956,6 +48538,7 @@ entries:
       - pos: verb
         gloss_en: [to stop walking, to halt]
         gloss_zh: [駐足]
+        tags: [formal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47982,6 +48565,7 @@ entries:
       - pos: verb
         gloss_en: [to drive a vehicle]
         gloss_zh: [駕車]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -48020,6 +48604,7 @@ entries:
       - pos: verb
         gloss_en: [to drive (a vehicle)]
         gloss_zh: [駛車]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -48070,6 +48655,7 @@ entries:
       - pos: verb
         gloss_en: [to cycle; to ride a bicycle]
         gloss_zh: [騎車]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -48094,6 +48680,7 @@ entries:
       - pos: verb
         gloss_en: [to deceive; to cheat; to scam]
         gloss_zh: [騙人]
+        tags: [verb-object]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -48250,6 +48837,7 @@ entries:
       - pos: verb
         gloss_en: ["to occur frequently (of diseases, accidents)"]
         gloss_zh: [高發]
+        tags: [attributive, often, usually]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -48636,6 +49224,8 @@ entries:
       - pos: verb
         gloss_en: [to forgive, to pardon, to indulge]
         gloss_zh: [宥]
+        tags: [alt-of, alternative]
+        alt_of: [宥]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -48710,6 +49300,8 @@ entries:
       - pos: verb
         gloss_en: [to know (alternative form of 捌)]
         gloss_zh: [捌]
+        tags: [alt-of, alternative]
+        alt_of: [捌]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -48750,6 +49342,8 @@ entries:
       - pos: verb
         gloss_en: [to chew (alternative form of 哺)]
         gloss_zh: [哺]
+        tags: [alt-of, alternative]
+        alt_of: [哺]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -48863,6 +49457,7 @@ entries:
         gloss_en: [to attend class]
         gloss_zh: [上課]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [intransitive, verb-object]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -48922,6 +49517,7 @@ entries:
         gloss_en: [to interrupt; to break off; to discontinue]
         gloss_zh: [中斷]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [ergative]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -49434,6 +50030,7 @@ entries:
         gloss_en: [to perform mourning rituals every seven days after death (until the 49th day)]
         gloss_zh: [做七]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [verb-object]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -49449,6 +50046,7 @@ entries:
         gloss_en: [to work out; to exercise; to keep fit]
         gloss_zh: [健身]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [verb-object]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -49481,6 +50079,7 @@ entries:
         gloss_en: [to propagate, to disseminate, to spread]
         gloss_zh: [傳播]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [transitive]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -49820,6 +50419,7 @@ entries:
         gloss_en: [to cut off the feet (a historical form of corporal punishment)]
         gloss_zh: [刖]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [historical]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -50173,6 +50773,7 @@ entries:
         gloss_en: [to be injured; to be wounded]
         gloss_zh: [受傷]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [figuratively, literally]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -50433,6 +51034,7 @@ entries:
         gloss_en: [to joke; to kid around]
         gloss_zh: [呾耍笑]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [verb-object]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -51292,6 +51894,7 @@ entries:
         gloss_en: [to realize; to achieve; to come true]
         gloss_zh: [實現]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [transitive]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -51307,6 +51910,7 @@ entries:
         gloss_en: [to write a letter]
         gloss_zh: [寫信]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [verb-object]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -51532,6 +52136,7 @@ entries:
         gloss_en: [to establish; to set up]
         gloss_zh: [建立]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [transitive]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -52410,6 +53015,7 @@ entries:
         gloss_en: [to engage in a lawsuit; to sue somebody]
         gloss_zh: [打官司]
         note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [verb-object]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -52440,6 +53046,7 @@ entries:
         gloss_en: [to make a telephone call]
         gloss_zh: [打電話]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [verb-object]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -53227,6 +53834,7 @@ entries:
         gloss_en: [to worry; to feel anxious]
         gloss_zh: [擔心]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [intransitive, transitive, verb-object]
     frequency: 5
     needs_review: true
     sources: [wiktionary]
@@ -53408,6 +54016,7 @@ entries:
         gloss_en: [to urinate]
         gloss_zh: [放尿]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -53438,6 +54047,7 @@ entries:
         gloss_en: [to rescue, to come to the aid of]
         gloss_zh: [救援]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [transitive]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -53667,6 +54277,7 @@ entries:
         gloss_en: [to sunbathe; to bask in the sun]
         gloss_zh: [曝日]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [verb-object]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -54198,6 +54809,7 @@ entries:
         gloss_en: [to have dialysis]
         gloss_zh: [洗腎]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [colloquial, verb-object]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -54243,6 +54855,7 @@ entries:
         gloss_en: [to circulate; to spread, to hand down]
         gloss_zh: [流傳]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [usually]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -54970,6 +55583,7 @@ entries:
         gloss_en: [to boil water]
         gloss_zh: [燒水]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [verb-object]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -54985,6 +55599,7 @@ entries:
         gloss_en: [to burn paper offerings (for ancestors)]
         gloss_zh: [燒衣]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [verb-object]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -55713,6 +56328,7 @@ entries:
         gloss_en: [to practise physiognomy; to tell fortune by reading facial features]
         gloss_zh: [睇相]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [verb-object]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -56192,6 +56808,7 @@ entries:
         gloss_en: [to sell rice]
         gloss_zh: [糶米]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal, literary]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -56948,6 +57565,7 @@ entries:
         gloss_en: [to go to the countryside]
         gloss_zh: [下鄉]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [verb-object]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -56978,6 +57596,7 @@ entries:
         gloss_en: [to play chess]
         gloss_zh: [下棋]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -57008,6 +57627,7 @@ entries:
         gloss_en: [to suffer from heatstroke or sunstroke]
         gloss_zh: [中暑]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -57278,6 +57898,7 @@ entries:
         gloss_en: [to declare one's position; to say where one stands]
         gloss_zh: [表態]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [intransitive, verb-object]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -57697,6 +58318,7 @@ entries:
         gloss_en: [to curse; to scold; to abuse verbally]
         gloss_zh: [詈]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [literary]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -57877,6 +58499,7 @@ entries:
         gloss_en: [to monetize, to convert into cash]
         gloss_zh: [變現]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [intransitive, neologism, verb-object]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -58292,6 +58915,8 @@ entries:
         gloss_en: [to play; to have fun]
         gloss_zh: [𨑨迌]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [alt-of, alternative]
+        alt_of: [𨑨迌]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -58621,6 +59246,7 @@ entries:
         gloss_en: [to go abroad (esp. to Southeast Asia); to emigrate overseas]
         gloss_zh: [過番]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dated]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -58820,6 +59446,7 @@ entries:
         gloss_en: [to have savory dishes with one's rice]
         gloss_zh: [配飯]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [verb-object]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -58835,6 +59462,7 @@ entries:
         gloss_en: [to repeat the same mistake, to make the same error again]
         gloss_zh: [重蹈覆轍]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [verb-object]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -58999,6 +59627,7 @@ entries:
         gloss_en: [to engrave]
         gloss_zh: [鎪]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [regional]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -59136,6 +59765,7 @@ entries:
         gloss_en: [to joke, to kid around]
         gloss_zh: [開玩笑]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [intransitive, verb-object]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -59632,6 +60262,7 @@ entries:
         gloss_en: [to frown, to knit one's brows]
         gloss_zh: [顰]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [literary]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -59662,6 +60293,7 @@ entries:
         gloss_en: [to take medicine, to take medication]
         gloss_zh: [食藥]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal, verb-object]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -59753,6 +60385,7 @@ entries:
         gloss_en: [to be afraid, to be alarmed, to fear]
         gloss_zh: [驚畏]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. The dossier also shows a Teochew-specific adverbial sense ('perhaps; I'm afraid that') sharing the same readings; only the base verb sense is drafted here.
+        tags: [literary]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -59783,6 +60416,7 @@ entries:
         gloss_en: [to quarrel]
         gloss_zh: [鬩]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [literary]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
