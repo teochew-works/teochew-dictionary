@@ -80,6 +80,7 @@ export interface EnrichedEntry {
   sources: string[]
   retrieved?: string
   needs_review?: boolean
+  hidden?: boolean
   /** Every string a user might reasonably type to find this entry. */
   search_keys: string[]
   licence: string
