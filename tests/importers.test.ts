@@ -2,7 +2,15 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { parseCedict } from '../src/importers/cedict.js'
 import { parsePronunciationHtml } from '../src/importers/learnteochew.js'
-import { extractTeochewReadings, fetchWikitextResult, importWiktionary } from '../src/importers/wiktionary.js'
+import {
+  backfillStagedTags,
+  extractTeochewReadings,
+  fetchWikitextResult,
+  importWiktionary,
+  proposeSensesFromWiktextract,
+} from '../src/importers/wiktionary.js'
+import type { WiktextractRecord } from '../src/importers/wiktextract.js'
+import type { Proposal } from '../src/importers/types.js'
 
 describe('parseCedict', () => {
   const sample = [
@@ -68,7 +76,7 @@ describe('importWiktionary', () => {
     無此字: '',
   }
   const fetchPage = async (title: string) => pages[title] ?? null
-  const opts = { delayMs: 0, fetchPage }
+  const opts = { delayMs: 0, fetchPage, wiktextractIndex: new Map<string, WiktextractRecord[]>() }
 
   it('proposes only well-formed readings', async () => {
     const r = await importWiktionary(['潮州', '食'], '2026-07-25', opts)
@@ -91,6 +99,107 @@ describe('importWiktionary', () => {
   it('stamps provenance on every proposal', async () => {
     const r = await importWiktionary(['潮州'], '2026-07-25', opts)
     expect(r.proposals[0]).toMatchObject({ source: 'wiktionary', retrieved: '2026-07-25' })
+  })
+
+  it('attaches tag/alt_of senses from the wiktextract index alongside the fetched reading', async () => {
+    const index = new Map<string, WiktextractRecord[]>([
+      [
+        '潮州',
+        [
+          {
+            word: '潮州',
+            pos: 'proper noun',
+            senses: [{ glosses: ['a city'], tags: ['historical'] }],
+          },
+        ],
+      ],
+    ])
+    const r = await importWiktionary(['潮州'], '2026-07-25', { ...opts, wiktextractIndex: index })
+    expect(r.proposals[0]?.senses).toEqual([{ pos: 'proper noun', tags: ['historical'] }])
+  })
+
+  it('omits senses entirely when the wiktextract index has nothing taggable', async () => {
+    const r = await importWiktionary(['潮州'], '2026-07-25', opts)
+    expect(r.proposals[0]?.senses).toBeUndefined()
+  })
+})
+
+describe('proposeSensesFromWiktextract', () => {
+  it('carries pos, mapped tags, and alt_of target words', () => {
+    const index = new Map<string, WiktextractRecord[]>([
+      [
+        '馬',
+        [
+          {
+            word: '馬',
+            pos: 'character',
+            senses: [
+              {
+                glosses: ['short for 馬祖／马祖 (Mǎzǔ, "Matsu")'],
+                tags: ['abbreviation', 'alt-of'],
+                alt_of: [{ word: '馬祖', extra: 'Mǎzǔ, "Matsu"' }],
+              },
+            ],
+          },
+        ],
+      ],
+    ])
+    expect(proposeSensesFromWiktextract('馬', index)).toEqual([
+      { pos: 'character', tags: ['abbreviation', 'alt-of'], alt_of: ['馬祖'] },
+    ])
+  })
+
+  it('drops senses that carry no usage signal once noise tags are filtered out', () => {
+    const index = new Map<string, WiktextractRecord[]>([
+      ['犬', [{ word: '犬', senses: [{ glosses: ['dog'], tags: ['Cantonese', 'Sichuanese'] }] }]],
+    ])
+    expect(proposeSensesFromWiktextract('犬', index)).toEqual([])
+  })
+
+  it('collects senses across every record for a multi-section headword', () => {
+    const index = new Map<string, WiktextractRecord[]>([
+      [
+        '本土',
+        [
+          { word: '本土', pos: 'noun', senses: [{ glosses: ['native land'], tags: ['literary'] }] },
+          { word: '本土', pos: 'adj', senses: [{ glosses: ['local'], tags: ['colloquial'] }] },
+        ],
+      ],
+    ])
+    expect(proposeSensesFromWiktextract('本土', index)).toEqual([
+      { pos: 'noun', tags: ['literary'] },
+      { pos: 'adj', tags: ['colloquial'] },
+    ])
+  })
+
+  it('returns nothing for a headword absent from the index', () => {
+    expect(proposeSensesFromWiktextract('不存在', new Map())).toEqual([])
+  })
+})
+
+describe('backfillStagedTags', () => {
+  function stagedProposal(headword: string): Proposal {
+    return { headword, readings: [{ pengim: 'ê5', variety: 'chaozhou' }], source: 'wiktionary', retrieved: '2026-08-16', flags: [] }
+  }
+
+  it('attaches senses only to proposals with matching wiktextract data', () => {
+    const index = new Map<string, WiktextractRecord[]>([
+      ['馬', [{ word: '馬', senses: [{ glosses: ['horse'], tags: ['literary'] }] }]],
+    ])
+    const proposals = [stagedProposal('馬'), stagedProposal('我')]
+
+    const backfilled = backfillStagedTags(proposals, { wiktextractIndex: index })
+
+    expect(backfilled[0]?.senses).toEqual([{ tags: ['literary'] }])
+    expect(backfilled[1]?.senses).toBeUndefined()
+  })
+
+  it('leaves every other field of the proposal untouched', () => {
+    const index = new Map<string, WiktextractRecord[]>([
+      ['馬', [{ word: '馬', senses: [{ glosses: ['horse'], tags: ['literary'] }] }]],
+    ])
+    const [backfilled] = backfillStagedTags([stagedProposal('馬')], { wiktextractIndex: index })
+    expect(backfilled).toMatchObject({ headword: '馬', readings: [{ pengim: 'ê5', variety: 'chaozhou' }], flags: [] })
   })
 })
 

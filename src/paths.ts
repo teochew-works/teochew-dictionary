@@ -31,3 +31,5 @@ export const DIST_DIR = join(ROOT, 'dist')
 export const CACHE_DIR = join(ROOT, '.cache')
 /** Raw Wiktionary wikitext, one file per headword (issue #79). */
 export const WIKTIONARY_PAGE_CACHE_DIR = join(CACHE_DIR, 'wiktionary-pages')
+/** Trimmed wiktextract dump, keyed by headword (issue #84). Populated manually — see README. */
+export const WIKTEXTRACT_MIN_FILE = join(CACHE_DIR, 'teochew-relevant.min.jsonl')

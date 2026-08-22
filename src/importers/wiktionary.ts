@@ -5,7 +5,10 @@ import {
   type ImportResult,
   type Proposal,
   type ProposedReading,
+  type ProposedSense,
 } from './types.js'
+import { loadWiktextractIndex, type WiktextractRecord } from './wiktextract.js'
+import { extractAltOf, mapWiktextractTags } from './wiktionary-tags.js'
 
 /**
  * Wiktionary importer — the one open source that actually carries Teochew
@@ -143,11 +146,40 @@ async function fetchWikitext(title: string): Promise<string | null> {
   return result.status === 'ok' ? result.wikitext : null
 }
 
+/**
+ * Builds tag/alt-of-only senses for a headword from the wiktextract index
+ * (issue #84/#102) — never a gloss: the importer never fetches one (licence
+ * hygiene, see the module doc comment above), so a proposed sense here always
+ * omits `gloss_en` and exists purely to carry `tags`/`alt_of` signal for
+ * whoever hand-merges the proposal.
+ */
+export function proposeSensesFromWiktextract(
+  headword: string,
+  index: Map<string, WiktextractRecord[]>,
+): ProposedSense[] {
+  const proposed: ProposedSense[] = []
+  for (const record of index.get(headword) ?? []) {
+    for (const sense of record.senses ?? []) {
+      const tags = mapWiktextractTags(sense.tags)
+      const alt_of = extractAltOf(sense.alt_of)
+      if (tags.length === 0 && alt_of.length === 0) continue
+      proposed.push({
+        ...(record.pos ? { pos: record.pos } : {}),
+        ...(tags.length > 0 ? { tags } : {}),
+        ...(alt_of.length > 0 ? { alt_of } : {}),
+      })
+    }
+  }
+  return proposed
+}
+
 export interface WiktionaryOptions {
   /** Milliseconds between requests. Wiktionary asks clients to be gentle. */
   delayMs?: number
   /** Injectable for tests and for running against a local dump. */
   fetchPage?: (title: string) => Promise<string | null>
+  /** Injectable for tests; defaults to loading `.cache/teochew-relevant.min.jsonl` once, lazily. */
+  wiktextractIndex?: Map<string, WiktextractRecord[]>
 }
 
 export async function importWiktionary(
@@ -155,7 +187,7 @@ export async function importWiktionary(
   retrieved: string,
   options: WiktionaryOptions = {},
 ): Promise<ImportResult> {
-  const { delayMs = 200, fetchPage = fetchWikitext } = options
+  const { delayMs = 200, fetchPage = fetchWikitext, wiktextractIndex = loadWiktextractIndex() } = options
 
   const proposals: Proposal[] = []
   const misses: string[] = []
@@ -197,7 +229,16 @@ export async function importWiktionary(
       flags.push(`${readings.length} readings found — confirm which are genuine variants`)
     }
 
-    proposals.push({ headword, readings, source: 'wiktionary', retrieved, flags })
+    const senses = proposeSensesFromWiktextract(headword, wiktextractIndex)
+
+    proposals.push({
+      headword,
+      readings,
+      ...(senses.length > 0 ? { senses } : {}),
+      source: 'wiktionary',
+      retrieved,
+      flags,
+    })
   }
 
   return {
@@ -210,4 +251,23 @@ export async function importWiktionary(
       'Wiktionary is CC-BY-SA-4.0 — merging binds the dataset to share-alike',
     ],
   }
+}
+
+export interface BackfillTagsOptions {
+  /** Injectable for tests; defaults to loading `.cache/teochew-relevant.min.jsonl` once, lazily. */
+  wiktextractIndex?: Map<string, WiktextractRecord[]>
+}
+
+/**
+ * Re-derives `tags`/`alt_of` senses for already-staged proposals (issue
+ * #102's backfill of the ~15,845 proposals in data/staging/wiktionary.yaml)
+ * purely from the local wiktextract cache — no live fetch, so it's cheap to
+ * re-run as the cache or the tag mapping in ./wiktionary-tags.js changes.
+ */
+export function backfillStagedTags(proposals: Proposal[], options: BackfillTagsOptions = {}): Proposal[] {
+  const { wiktextractIndex = loadWiktextractIndex() } = options
+  return proposals.map((proposal) => {
+    const senses = proposeSensesFromWiktextract(proposal.headword, wiktextractIndex)
+    return senses.length > 0 ? { ...proposal, senses } : proposal
+  })
 }
