@@ -580,6 +580,7 @@ entries:
       - pos: noun
         gloss_en: [corn, maize]
         gloss_zh: [包穀, 玉米]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -592,6 +593,7 @@ entries:
       - pos: noun
         gloss_en: [cabbage]
         gloss_zh: [包菜, 高麗菜]
+        tags: [regional]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -668,6 +670,7 @@ entries:
       - pos: noun
         gloss_en: [cucumber]
         gloss_zh: [吊瓜]
+        tags: [dialectal]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1122,6 +1125,7 @@ entries:
       - pos: noun
         gloss_en: [char siu; barbecued pork]
         gloss_zh: [插燒, 叉燒]
+        tags: [dated, dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1304,6 +1308,7 @@ entries:
       - pos: noun
         gloss_en: [lard; fat; tallow]
         gloss_zh: [朥]
+        tags: [dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1572,6 +1577,7 @@ entries:
       - pos: noun
         gloss_en: [ladle]
         gloss_zh: [桸]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2354,6 +2360,7 @@ entries:
       - pos: noun
         gloss_en: [nutrition, nourishment, nutrients]
         gloss_zh: [營養]
+        tags: [figuratively, literally]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2618,6 +2625,7 @@ entries:
       - pos: noun
         gloss_en: [corn, maize]
         gloss_zh: [番麥, 玉米]
+        tags: [dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2726,6 +2734,7 @@ entries:
       - pos: noun
         gloss_en: [soybean (yellow)]
         gloss_zh: [白豆]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2750,6 +2759,7 @@ entries:
       - pos: noun
         gloss_en: [century egg, preserved egg]
         gloss_zh: [皮蛋]
+        tags: [dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2846,6 +2856,7 @@ entries:
       - pos: noun
         gloss_en: [tableware, bowl and chopsticks]
         gloss_zh: [碗箸]
+        tags: [archaic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3700,6 +3711,7 @@ entries:
       - pos: noun
         gloss_en: [bread]
         gloss_zh: [羅啲]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3736,6 +3748,8 @@ entries:
       - pos: noun
         gloss_en: [coffee (Singapore Teochew term)]
         gloss_zh: [咖啡]
+        tags: [alt-of, alternative, name]
+        alt_of: [咖啡]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4534,6 +4548,7 @@ entries:
       - pos: noun
         gloss_en: [spinach]
         gloss_zh: [菠薐, 菠菜]
+        tags: [archaic, dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4620,6 +4635,7 @@ entries:
       - pos: verb
         gloss_en: [to put noodles into the pot]
         gloss_zh: [落麵]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4632,6 +4648,7 @@ entries:
       - pos: verb
         gloss_en: [to put into the pot for cooking]
         gloss_zh: [落鼎]
+        tags: [verb-object]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5016,6 +5033,7 @@ entries:
       - pos: noun
         gloss_en: [cake]
         gloss_zh: [蛋糕]
+        tags: [countable]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5112,6 +5130,8 @@ entries:
       - pos: noun
         gloss_en: [caterpillar fungus, cordyceps]
         gloss_zh: [冬蟲夏草]
+        tags: [abbreviation, alt-of]
+        alt_of: [冬蟲夏草, 冬虫夏草]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5208,6 +5228,7 @@ entries:
       - pos: noun
         gloss_en: [tomato]
         gloss_zh: [西紅柿]
+        tags: [especially]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5268,6 +5289,8 @@ entries:
       - pos: noun
         gloss_en: [fried tofu puff, deep-fried tofu]
         gloss_zh: [豆腐泡, 豆卜]
+        tags: [alt-of, alternative, name, regional]
+        alt_of: [豆腐泡]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5752,6 +5775,7 @@ entries:
       - pos: noun
         gloss_en: [distiller's yeast; brewer's yeast]
         gloss_zh: [酒餅]
+        tags: [regional]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5860,6 +5884,7 @@ entries:
       - pos: noun
         gloss_en: [light soy sauce]
         gloss_zh: [醬清]
+        tags: [regional]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5992,6 +6017,7 @@ entries:
       - pos: noun
         gloss_en: [chicken egg, egg]
         gloss_zh: [雞卵]
+        tags: [dialectal, literary]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6196,6 +6222,7 @@ entries:
       - pos: noun
         gloss_en: [dine and dash, eating a meal without paying the bill]
         gloss_zh: [霸王餐]
+        tags: [figuratively]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6332,6 +6359,7 @@ entries:
       - pos: verb
         gloss_en: [to drink tea, to have some tea]
         gloss_zh: [飲茶, 喝茶]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6636,6 +6664,7 @@ entries:
       - pos: noun
         gloss_en: [cabbage]
         gloss_zh: [高麗菜, 卷心菜]
+        tags: [regional]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6920,6 +6949,7 @@ entries:
       - pos: noun
         gloss_en: [salted duck egg]
         gloss_zh: [鹹鴨卵]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7878,6 +7908,7 @@ entries:
         gloss_en: [olive]
         gloss_zh: [橄欖]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal, in-compounds]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -8014,6 +8045,7 @@ entries:
         gloss_en: [small melon]
         gloss_zh: [瓞]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [literary]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -8044,6 +8076,7 @@ entries:
         gloss_en: [pineapple]
         gloss_zh: [番梨]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -8287,6 +8320,7 @@ entries:
         gloss_en: [lean meat (esp. pork)]
         gloss_zh: [精肉, 瘦肉]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [colloquial]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -8618,6 +8652,7 @@ entries:
         gloss_en: [kohlrabi]
         gloss_zh: [芥藍頭]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -8951,6 +8986,7 @@ entries:
         gloss_en: [chili pepper, red pepper]
         gloss_zh: [薟椒]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -9042,6 +9078,7 @@ entries:
         gloss_en: [soy milk]
         gloss_zh: [豆腐漿]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -9271,6 +9308,7 @@ entries:
         gloss_en: [ice popsicle, ice lolly]
         gloss_zh: [雪條]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -9317,6 +9355,7 @@ entries:
         gloss_en: [rice crust, crust of cooked rice]
         gloss_zh: [飯疕]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal]
     frequency: 2
     needs_review: true
     sources: [wiktionary]

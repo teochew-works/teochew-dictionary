@@ -36,6 +36,7 @@ entries:
           - hanzi: 去樹林
             pengim: ke3 ciu7 lim5
             en: go to the forest
+        tags: [collective]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -77,6 +78,7 @@ entries:
           - hanzi: 食生果
             pengim: ziah8 cên1 guê2
             en: eat fruit
+        tags: [literary]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -946,6 +948,7 @@ entries:
       - pos: verb
         gloss_en: [for a rainbow to appear]
         gloss_zh: [出虹]
+        tags: [verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1554,6 +1557,7 @@ entries:
       - pos: noun
         gloss_en: [mound, small hill]
         gloss_zh: [堖]
+        tags: [dialectal]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1902,6 +1906,7 @@ entries:
       - pos: idiom
         gloss_en: [wind and waves; great storms, "(fig.) turmoil, hardship"]
         gloss_zh: [大風大浪]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1955,6 +1960,7 @@ entries:
         gloss_en: [sunny day, clear weather]
         gloss_zh: [天晴, 晴天]
         note: Wiktionary marks this sense as primarily Cantonese/Hakka usage and notes Teochew normally prefers 天時好 for 'sunny day', so how current this term actually is in colloquial Teochew is uncertain despite having a confirmed reading.
+        tags: [dialectal, literary]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -2081,6 +2087,7 @@ entries:
         gloss_en: [plywood, board for clamping, splint]
         gloss_zh: [夾板]
         note: The page has two etymologies (general 'plywood/splint' vs a Hokkien-specific historical 'sailboat' sense); it is unclear which etymology's pronunciation table this reading belongs to, so the more common general sense was chosen.
+        tags: [historical]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -2558,6 +2565,7 @@ entries:
       - pos: noun
         gloss_en: [island(s); islet]
         gloss_zh: [島嶼]
+        tags: [collective]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2597,6 +2605,7 @@ entries:
         gloss_en: ["bend or curve (of a mountain or river, esp. in place names)"]
         gloss_zh: [崴]
         note: The page gives two Mandarin readings (wēi, adjective with an incomplete/rfdef gloss; wǎi/wēi, noun 'curve in a mountain or river' and verb 'to sprain'), and the Teochew peng'im ui1 doesn't clearly map to one; the 'to sprain' sense is separately covered by 崴著 (uai2 dioh4), so the landform noun sense was picked here.
+        tags: [no-gloss]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -2774,6 +2783,7 @@ entries:
       - pos: noun
         gloss_en: [colorful clouds, vibrant clouds]
         gloss_zh: [彩雲]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3470,6 +3480,7 @@ entries:
       - pos: noun
         gloss_en: [night scenery, nightscape]
         gloss_zh: [暝色]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3824,6 +3835,7 @@ entries:
       - pos: noun
         gloss_en: [pine needle]
         gloss_zh: [松毛, 松針]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4544,6 +4556,8 @@ entries:
       - pos: noun
         gloss_en: [atmospheric pressure, air pressure]
         gloss_zh: [氣壓]
+        tags: [abbreviation, alt-of]
+        alt_of: [大氣壓, 大气压]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5044,6 +5058,7 @@ entries:
       - pos: noun
         gloss_en: [river]
         gloss_zh: [河流]
+        tags: [collective]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5118,6 +5133,7 @@ entries:
       - pos: noun
         gloss_en: [coastal, along the coast]
         gloss_zh: [沿海]
+        tags: [attributive, often]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5262,6 +5278,7 @@ entries:
       - pos: noun
         gloss_en: [cement]
         gloss_zh: [洋灰, 水泥]
+        tags: [dated, dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5468,6 +5485,7 @@ entries:
       - pos: noun
         gloss_en: [island]
         gloss_zh: [海島]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5588,6 +5606,7 @@ entries:
       - pos: noun
         gloss_en: [seashore, coast]
         gloss_zh: [海瀕, 海濱]
+        tags: [archaic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5788,6 +5807,7 @@ entries:
       - pos: noun
         gloss_en: [lake]
         gloss_zh: [湖泊]
+        tags: [collective]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6138,6 +6158,7 @@ entries:
       - pos: noun
         gloss_en: [seashore, coast]
         gloss_zh: [瀕海]
+        tags: [rare]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6799,6 +6820,7 @@ entries:
         gloss_en: [horizontal top piece of a jade pendant (historical)]
         gloss_zh: [珩]
         note: Rare historical/literary bound character, now mainly seen in personal names.
+        tags: [historical]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -6826,6 +6848,7 @@ entries:
       - pos: noun
         gloss_en: [treasure; gem (literary)]
         gloss_zh: [琛]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7066,6 +7089,7 @@ entries:
       - pos: noun
         gloss_en: [place of origin, birthplace, source]
         gloss_zh: [發源地]
+        tags: [also, figuratively]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8094,6 +8118,7 @@ entries:
       - pos: noun
         gloss_en: [thick rope]
         gloss_zh: [縆]
+        tags: [archaic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8300,6 +8325,7 @@ entries:
       - pos: noun
         gloss_en: ["Grain in Ear (9th of the 24 solar terms, around June 5-7)"]
         gloss_zh: [芒種]
+        tags: [archaic, no-gloss]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8808,6 +8834,7 @@ entries:
       - pos: verb
         gloss_en: [to rain]
         gloss_zh: [落雨]
+        tags: [dialectal, literary]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8820,6 +8847,7 @@ entries:
       - pos: verb
         gloss_en: [to snow]
         gloss_zh: [落雪]
+        tags: [dialectal, literary, verb-object]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8844,6 +8872,7 @@ entries:
       - pos: verb
         gloss_en: [to have frost appear, to frost]
         gloss_zh: [落霜]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9158,6 +9187,7 @@ entries:
       - pos: noun
         gloss_en: [leaves of pulse plants (literary)]
         gloss_zh: [藿]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9505,6 +9535,7 @@ entries:
         gloss_en: [farming, agriculture]
         gloss_zh: [農耕]
         note: The page lists both a verb sense ('to farm; to plow; to till') and a formal noun sense ('farming; agriculture') under the identical Teochew reading; the noun sense was chosen as primary.
+        tags: [formal]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -9544,6 +9575,7 @@ entries:
       - pos: noun
         gloss_en: [boundary, border, periphery]
         gloss_zh: [邊界]
+        tags: [figuratively, literally]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9889,6 +9921,7 @@ entries:
         gloss_en: [fine iron, high-quality steel]
         gloss_zh: [鍇]
         note: The character mostly appears as a literary/name component meaning 'fine iron or steel'; it is unclear how often it is used as a standalone spoken word in Teochew.
+        tags: [literary]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -10011,6 +10044,7 @@ entries:
         gloss_en: [rain, rainfall, precipitation]
         gloss_zh: [降雨]
         note: Wiktionary lists both a formal verb sense ('to rain') and a noun sense ('rain/rainfall') under the same reading gang3 hou6; the noun sense was chosen since 降雨 is most commonly used nominally (e.g. 降雨量).
+        tags: [intransitive]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -10256,6 +10290,7 @@ entries:
       - pos: noun
         gloss_en: [hailstone, hail]
         gloss_zh: [雹子, 冰雹]
+        tags: [colloquial]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10282,6 +10317,8 @@ entries:
       - pos: noun
         gloss_en: [earthquake magnitude, seismic magnitude]
         gloss_zh: [震級]
+        tags: [abbreviation, alt-of]
+        alt_of: [地震震級, 地震震级]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10320,6 +10357,7 @@ entries:
       - pos: noun
         gloss_en: [long spell of rain, continuous rain]
         gloss_zh: [霖]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10404,6 +10442,7 @@ entries:
       - pos: idiom
         gloss_en: [green hills and clear waters, beautiful natural landscape]
         gloss_zh: [青山綠水]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10652,6 +10691,7 @@ entries:
       - pos: idiom
         gloss_en: ["fine weather (light breeze, thin clouds)", calm and untroubled]
         gloss_zh: [風輕雲淡]
+        tags: [idiomatic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10688,6 +10728,7 @@ entries:
       - pos: noun
         gloss_en: [typhoon]
         gloss_zh: [風颱, 颱風]
+        tags: [dialectal, including]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10712,6 +10753,7 @@ entries:
       - pos: noun
         gloss_en: [aftershock]
         gloss_zh: [餘震]
+        tags: [also, figuratively]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11107,6 +11149,7 @@ entries:
         gloss_en: [atom]
         gloss_zh: [原子]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [countable]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -11274,6 +11317,7 @@ entries:
         gloss_en: [far corners of the world; distant lands]
         gloss_zh: [天涯]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [literary]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -11529,6 +11573,7 @@ entries:
         gloss_en: [sun (honorific term)]
         gloss_zh: [日頭公]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dated, honorific]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -11589,6 +11634,7 @@ entries:
         gloss_en: [moon]
         gloss_zh: [月娘]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [colloquial, dialectal]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -12178,6 +12224,7 @@ entries:
         gloss_en: [maritime; at sea; on the sea]
         gloss_zh: [海上]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [attributive]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -12254,6 +12301,7 @@ entries:
         gloss_en: [bank, shore]
         gloss_zh: [湄, 岸]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [literary]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -13228,6 +13276,8 @@ entries:
         gloss_en: [mallow (plant)]
         gloss_zh: [錦葵]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [alt-of, alternative, name]
+        alt_of: [錦葵, 锦葵]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -13546,6 +13596,7 @@ entries:
         gloss_en: [lightning]
         gloss_zh: [閃電]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [countable]
     frequency: 4
     needs_review: true
     sources: [wiktionary]

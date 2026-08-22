@@ -227,6 +227,7 @@ entries:
       - pos: conjunction
         gloss_en: [(literary) even; to the extent that, going so far as to]
         gloss_zh: [乃至, 甚至]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -595,6 +596,7 @@ entries:
       - pos: conjunction
         gloss_en: [furthermore, moreover, besides]
         gloss_zh: [兼之]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -863,6 +865,7 @@ entries:
       - pos: particle
         gloss_en: [cannot]
         gloss_zh: [唔住]
+        tags: [idiomatic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1013,6 +1016,7 @@ entries:
       - pos: noun
         gloss_en: [outside (colloquial), exterior]
         gloss_zh: [外頭]
+        tags: [colloquial]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1081,6 +1085,7 @@ entries:
       - pos: conjunction
         gloss_en: [even if, granted that]
         gloss_zh: [就算]
+        tags: [colloquial]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1294,6 +1299,7 @@ entries:
         gloss_en: [object-fronting marker (formal), disposal preposition]
         gloss_zh: [把將]
         note: Wiktionary describes this only briefly as a formal/literary Teochew object-fronting preposition (parallel to Mandarin 把); its precise colloquial usage and register are hard to fully verify from the page.
+        tags: [formal]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -1307,6 +1313,7 @@ entries:
       - pos: conjunction
         gloss_en: [or]
         gloss_zh: [抑是, 或]
+        tags: [literary]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1469,6 +1476,7 @@ entries:
       - pos: adverb
         gloss_en: [why; for what reason]
         gloss_zh: [為何]
+        tags: [formal, literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2836,6 +2844,8 @@ entries:
         gloss_en: ["alternative form of 爿 (classifier for shops, businesses, etc.)"]
         gloss_zh: [爿]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [alt-of, alternative]
+        alt_of: [爿]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -3150,6 +3160,7 @@ entries:
         gloss_en: [in front; ahead]
         gloss_zh: [頭前, 前面]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dialectal]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
