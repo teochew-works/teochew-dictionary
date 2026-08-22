@@ -1,7 +1,7 @@
 import { existsSync } from 'node:fs'
 
 import { importCedict } from '../importers/cedict.js'
-import { importWiktionary } from '../importers/wiktionary.js'
+import { backfillStagedTags, importWiktionary } from '../importers/wiktionary.js'
 import { mergeImportResults, readStaging, writeStaging } from '../importers/staging.js'
 import { loadEntries } from '../data/load.js'
 import { loadWiktionaryWordlist, writeWiktionaryWordlist } from '../data/wiktionary-wordlist.js'
@@ -19,6 +19,10 @@ import { loadWiktionaryWordlist, writeWiktionaryWordlist } from '../data/wiktion
  *                                   each processed headword's status instead of
  *                                   overwriting, so repeated chunked runs are
  *                                   resumable.
+ *   wiktionary --backfill-tags      re-derive tags/alt_of for every proposal
+ *                                   already in data/staging/wiktionary.yaml
+ *                                   from the local wiktextract cache (issue
+ *                                   #102) — no live fetch, no headwords needed.
  *
  * Both write to data/staging/ for review; neither touches data/entries/.
  */
@@ -29,6 +33,8 @@ const USAGE = `usage:
   npm run import -- wiktionary --from-wordlist [--limit=N] [--delay=MS]
                                                 (to_fetch items from
                                                  data/wordlists/wiktionary-teochew-index.yaml)
+  npm run import -- wiktionary --backfill-tags (re-derive tags/alt_of for
+                                                 already-staged proposals)
 
 Both write proposals to data/staging/ for human review. Neither modifies data/entries/.`
 
@@ -65,6 +71,27 @@ switch (source) {
   case 'wiktionary': {
     const flags = rest.filter((a) => a.startsWith('--'))
     const explicitHeadwords = rest.filter((a) => !a.startsWith('--'))
+
+    if (flags.includes('--backfill-tags')) {
+      const staged = readStaging('wiktionary')
+      if (!staged) {
+        console.error('wiktionary --backfill-tags: no data/staging/wiktionary.yaml to backfill')
+        process.exit(1)
+      }
+      const before = staged.proposals.filter((p) => (p.senses?.length ?? 0) > 0).length
+      const proposals = backfillStagedTags(staged.proposals)
+      const after = proposals.filter((p) => (p.senses?.length ?? 0) > 0).length
+      const out = writeStaging({
+        source: 'wiktionary',
+        proposals,
+        misses: staged.misses,
+        notes: [`backfilled tags/alt_of from the wiktextract cache: ${after} of ${proposals.length} proposal(s) now tagged (${after - before} newly)`],
+      })
+      console.log(`backfilled tags → ${out}`)
+      console.log(`${after} of ${proposals.length} proposal(s) now carry tags/alt_of (${after - before} newly tagged)`)
+      break
+    }
+
     const fromWordlist = flags.includes('--from-wordlist')
     const limitFlag = flags.find((f) => f.startsWith('--limit='))
     const delayFlag = flags.find((f) => f.startsWith('--delay='))

@@ -215,6 +215,7 @@ entries:
       - pos: noun
         gloss_en: [road of no return, point of no return]
         gloss_zh: [不歸路]
+        tags: [figuratively]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -277,6 +278,7 @@ entries:
       - pos: noun
         gloss_en: [primary and secondary schools]
         gloss_zh: [中小學]
+        tags: [countable, in-plural]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -435,6 +437,7 @@ entries:
       - pos: noun
         gloss_en: [manhole cover]
         gloss_zh: [井蓋]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -447,6 +450,7 @@ entries:
       - pos: adjective
         gloss_en: [Asia-Pacific]
         gloss_zh: [亞太]
+        tags: [attributive]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -511,6 +515,7 @@ entries:
       - pos: noun
         gloss_en: [capital city]
         gloss_zh: [京城]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -645,6 +650,7 @@ entries:
       - pos: noun
         gloss_en: [residence, dwelling, house]
         gloss_zh: [住宅]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -657,6 +663,7 @@ entries:
       - pos: noun
         gloss_en: [housing, residence]
         gloss_zh: [住房]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -803,6 +810,7 @@ entries:
       - pos: noun
         gloss_en: [rockery, rock garden]
         gloss_zh: [假山]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -953,6 +961,7 @@ entries:
       - pos: noun
         gloss_en: [public cemetery]
         gloss_zh: [公司山]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1303,6 +1312,8 @@ entries:
       - pos: noun
         gloss_en: [hermitage; nunnery (used in place names)]
         gloss_zh: [庵]
+        tags: [alt-of, alternative]
+        alt_of: [庵]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1459,6 +1470,7 @@ entries:
       - pos: noun
         gloss_en: [barbershop, hairdresser's]
         gloss_zh: [剃頭鋪, 理髮店]
+        tags: [regional]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1695,6 +1707,7 @@ entries:
       - pos: proper-noun
         gloss_en: ["Singapore (dated, regional term)"]
         gloss_zh: [新加坡]
+        tags: [dated, regional]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1719,6 +1732,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Batavia (old name for Jakarta)]
         gloss_zh: [吧城]
+        tags: [dialectal, historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1855,6 +1869,7 @@ entries:
       - pos: noun
         gloss_en: [supermarket, department store]
         gloss_zh: [商超]
+        tags: [neologism]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2455,6 +2470,7 @@ entries:
       - pos: noun
         gloss_en: [newspaper office, newspaper publisher]
         gloss_zh: [報館]
+        tags: [dated]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2869,6 +2885,7 @@ entries:
       - pos: noun
         gloss_en: [dam]
         gloss_zh: [大壩]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3103,6 +3120,7 @@ entries:
       - pos: noun
         gloss_en: [Imperial Ancestral Temple]
         gloss_zh: [太廟]
+        tags: [archaic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3177,6 +3195,7 @@ entries:
       - pos: noun
         gloss_en: [school]
         gloss_zh: [學校]
+        tags: [countable]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3273,6 +3292,7 @@ entries:
       - pos: noun
         gloss_en: [inn, tavern, roadhouse]
         gloss_zh: [客店]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3371,6 +3391,7 @@ entries:
       - pos: noun
         gloss_en: [laboratory, lab]
         gloss_zh: [實驗室]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3431,6 +3452,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Taiwan ("Treasure Island"), Formosa]
         gloss_zh: [寶島]
+        tags: [figuratively]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3739,6 +3761,7 @@ entries:
       - pos: noun
         gloss_en: [factory, plant, works]
         gloss_zh: [工廠]
+        tags: [countable]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3787,6 +3810,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Babylon]
         gloss_zh: [巴比倫]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4034,6 +4058,7 @@ entries:
         gloss_en: [prefectural seat; prefectural capital]
         gloss_zh: [府城]
         note: The entry mixes a common-noun sense ('prefectural seat') with proper-noun senses (e.g. an alternate name for Tainan and several unrelated place names), so it is unclear which reading is intended here.
+        tags: [historical]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -4155,6 +4180,7 @@ entries:
       - pos: noun
         gloss_en: [granary, storehouse]
         gloss_zh: [廒]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4217,6 +4243,7 @@ entries:
       - pos: noun
         gloss_en: [factory building, workshop]
         gloss_zh: [廠房]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4241,6 +4268,8 @@ entries:
       - pos: noun
         gloss_en: [Guangzhou dialect, Guangzhou Cantonese]
         gloss_zh: [廣州話]
+        tags: [alt-of, dialectal]
+        alt_of: [Cantonese]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4365,6 +4394,7 @@ entries:
       - pos: noun
         gloss_en: [cinema, movie theater]
         gloss_zh: [影院]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4425,6 +4455,7 @@ entries:
       - pos: noun
         gloss_en: [fast food restaurant]
         gloss_zh: [快餐店]
+        tags: [countable]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4521,6 +4552,7 @@ entries:
       - pos: noun
         gloss_en: [open-air stage (for opera)]
         gloss_zh: [戲棚]
+        tags: [regional]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4593,6 +4625,7 @@ entries:
       - pos: noun
         gloss_en: [daycare center, nursery, creche]
         gloss_zh: [托兒所]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4629,6 +4662,7 @@ entries:
       - pos: noun
         gloss_en: [letter and remittance agency, overseas mail office (dated)]
         gloss_zh: [批館]
+        tags: [dated]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4833,6 +4867,7 @@ entries:
       - pos: noun
         gloss_en: [classroom building, school building]
         gloss_zh: [教學樓]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4845,6 +4880,7 @@ entries:
       - pos: noun
         gloss_en: [classroom]
         gloss_zh: [教室]
+        tags: [countable]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4895,6 +4931,7 @@ entries:
       - pos: noun
         gloss_en: [cable-stayed bridge]
         gloss_zh: [斜拉橋]
+        tags: [countable]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5027,6 +5064,7 @@ entries:
       - pos: noun
         gloss_en: [Japanese language]
         gloss_zh: [日本話]
+        tags: [informal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5185,6 +5223,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Siam (historical name for Thailand)]
         gloss_zh: [暹羅]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5209,6 +5248,7 @@ entries:
       - pos: noun
         gloss_en: [bookshop, bookstore]
         gloss_zh: [書店]
+        tags: [countable]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5260,6 +5300,8 @@ entries:
         gloss_en: [Supreme People's Court (of the PRC)]
         gloss_zh: [最高人民法院]
         note: Highly specialized legal/political institution name (short for 中華人民共和國最高人民法院); category and frequency are rough estimates for a niche term.
+        tags: [abbreviation, alt-of]
+        alt_of: [中華人民共和國最高人民法院, 中华人民共和国最高人民法院]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -5321,6 +5363,7 @@ entries:
       - pos: noun
         gloss_en: [village, hamlet]
         gloss_zh: [村莊]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5395,6 +5438,7 @@ entries:
       - pos: noun
         gloss_en: [toilet, restroom]
         gloss_zh: [東司]
+        tags: [dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5813,6 +5857,7 @@ entries:
       - pos: noun
         gloss_en: [doorstep, stone step or platform under the eaves]
         gloss_zh: [檐階石]
+        tags: [dated]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5923,6 +5968,7 @@ entries:
       - pos: noun
         gloss_en: [walkway, footpath, sidewalk]
         gloss_zh: [步道]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6275,6 +6321,7 @@ entries:
       - pos: noun
         gloss_en: [oil well]
         gloss_zh: [油井]
+        tags: [countable]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6717,6 +6764,7 @@ entries:
       - pos: noun
         gloss_en: [women's chambers, boudoir, inner chambers (archaic)]
         gloss_zh: [深閨]
+        tags: [archaic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7137,6 +7185,7 @@ entries:
       - pos: noun
         gloss_en: [railway, railroad]
         gloss_zh: [火車路]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7161,6 +7210,7 @@ entries:
       - pos: noun
         gloss_en: [kitchen]
         gloss_zh: [灶下]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7173,6 +7223,7 @@ entries:
       - pos: noun
         gloss_en: [kitchen]
         gloss_zh: [灶前]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7281,6 +7332,7 @@ entries:
       - pos: noun
         gloss_en: [lighthouse]
         gloss_zh: [燈塔]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7293,6 +7345,7 @@ entries:
       - pos: noun
         gloss_en: [military camp, barracks]
         gloss_zh: [營盤]
+        tags: [dated]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7589,6 +7642,7 @@ entries:
       - pos: noun
         gloss_en: [foreign language (usually Western)]
         gloss_zh: [番話, 外國話]
+        tags: [dated]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7697,6 +7751,7 @@ entries:
       - pos: noun
         gloss_en: [Venetian blinds, shutters]
         gloss_zh: [百葉窗]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7733,6 +7788,7 @@ entries:
       - pos: noun
         gloss_en: [municipality directly under the central government]
         gloss_zh: [直轄市]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7772,6 +7828,8 @@ entries:
         gloss_en: [Guangzhou dialect of Cantonese, Cantonese (dated/dialectal term)]
         gloss_zh: [省城話, 廣州話]
         note: The entry is tagged both Teochew and Cantonese/Guangzhou with a 'Huicheng dialect' qualifier, so the exact dialect scope of this dated alt-of-Cantonese term is unclear.
+        tags: [alt-of, dated, dialectal]
+        alt_of: [Cantonese]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -7809,6 +7867,7 @@ entries:
       - pos: noun
         gloss_en: [stone tablet, stele]
         gloss_zh: [石碑]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8115,6 +8174,7 @@ entries:
       - pos: noun
         gloss_en: [concession (territory)]
         gloss_zh: [租界]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8289,6 +8349,7 @@ entries:
       - pos: noun
         gloss_en: [hideout; den; lair (for illegal activity)]
         gloss_zh: [窩點]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8487,6 +8548,7 @@ entries:
       - pos: noun
         gloss_en: [road in the countryside near the capital]
         gloss_zh: [紫陌]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8609,6 +8671,7 @@ entries:
       - pos: proper-noun
         gloss_en: [City of the Rams (literary epithet for Guangzhou)]
         gloss_zh: [廣州]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8731,6 +8794,8 @@ entries:
       - pos: noun
         gloss_en: [vocational school (short for 職業學校)]
         gloss_zh: [職業學校]
+        tags: [abbreviation, alt-of, countable]
+        alt_of: [職業學校, 职业学校]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9045,6 +9110,7 @@ entries:
       - pos: noun
         gloss_en: [English language]
         gloss_zh: [英語]
+        tags: [uncountable]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9081,6 +9147,7 @@ entries:
       - pos: proper-noun
         gloss_en: [France (obsolete Southern Min term)]
         gloss_zh: [荷蘭西]
+        tags: [obsolete]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9297,6 +9364,7 @@ entries:
       - pos: noun
         gloss_en: [shop selling traditional Chinese medicine materials]
         gloss_zh: [藥材鋪]
+        tags: [dialectal, including]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9321,6 +9389,7 @@ entries:
       - pos: noun
         gloss_en: [Soviet area, "Soviet-controlled region (historical, Chinese Soviet Republic)"]
         gloss_zh: [蘇區]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9481,6 +9550,7 @@ entries:
       - pos: noun
         gloss_en: [street; road; avenue]
         gloss_zh: [街路]
+        tags: [archaic, dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9641,6 +9711,7 @@ entries:
       - pos: proper-noun
         gloss_en: ["Kakchioh (a historical promontory/district in Shantou, Guangdong)"]
         gloss_zh: [角石]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9753,6 +9824,7 @@ entries:
       - pos: idiom
         gloss_en: [tofu-dreg project, shoddily built construction project]
         gloss_zh: [豆腐渣工程]
+        tags: [figuratively]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9877,6 +9949,7 @@ entries:
       - pos: proper-noun
         gloss_en: ["Chiliao/Gurao (a town in Chaoyang district, Shantou, Guangdong, China)"]
         gloss_zh: [赤寮]
+        tags: [historical]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10081,6 +10154,7 @@ entries:
       - pos: noun
         gloss_en: [workshop; factory floor]
         gloss_zh: [車間]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10153,6 +10227,7 @@ entries:
       - pos: noun
         gloss_en: [thoroughfare; crossroads]
         gloss_zh: [逵]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10177,6 +10252,7 @@ entries:
       - pos: noun
         gloss_en: [corridor, passageway, aisle]
         gloss_zh: [過道]
+        tags: [countable]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10249,6 +10325,7 @@ entries:
       - pos: noun
         gloss_en: [ruins, historical site, archaeological site]
         gloss_zh: [遺址]
+        tags: [countable]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10309,6 +10386,7 @@ entries:
       - pos: proper-noun
         gloss_en: ["Bei (an ancient Chinese state south of present-day Tangyin, Henan)"]
         gloss_zh: [邶]
+        tags: [historical]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10493,6 +10571,7 @@ entries:
       - pos: noun
         gloss_en: [hospital (dated term)]
         gloss_zh: [醫館]
+        tags: [dated]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10605,6 +10684,7 @@ entries:
       - pos: noun
         gloss_en: [shop, store]
         gloss_zh: [鋪頭, 店鋪]
+        tags: [literary]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11129,6 +11209,7 @@ entries:
       - pos: noun
         gloss_en: [chicken coop, henhouse, roost]
         gloss_zh: [雞窩]
+        tags: [dialectal, literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11263,6 +11344,7 @@ entries:
       - pos: noun
         gloss_en: [brothel (literary)]
         gloss_zh: [青樓]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11641,6 +11723,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Cambodia, Khmer]
         gloss_zh: [高棉, 柬埔寨]
+        tags: [dated, regional]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11653,6 +11736,7 @@ entries:
       - pos: phrase
         gloss_en: [high-rise buildings; skyscrapers]
         gloss_zh: [高樓大廈]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11701,6 +11785,8 @@ entries:
       - pos: proper-noun
         gloss_en: [Shantou (poetic/alternative name)]
         gloss_zh: [汕頭]
+        tags: [alt-of, alternative, name, poetic]
+        alt_of: [汕頭, 汕头]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11713,6 +11799,8 @@ entries:
       - pos: proper-noun
         gloss_en: [Shenzhen (alternative/nickname)]
         gloss_zh: [深圳]
+        tags: [alt-of, alternative, name]
+        alt_of: [深圳]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11967,6 +12055,7 @@ entries:
         gloss_en: [north gate (of a city wall)]
         gloss_zh: [北門]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [archaic]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -12042,6 +12131,7 @@ entries:
         gloss_en: [museum]
         gloss_zh: [博物館]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [countable]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -12072,6 +12162,7 @@ entries:
         gloss_en: [Indonesian (written language)]
         gloss_zh: [印尼文]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [literary]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -12192,6 +12283,7 @@ entries:
         gloss_en: [Ethiopia (dated term)]
         gloss_zh: [埃提阿伯]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dated]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -12372,6 +12464,7 @@ entries:
         gloss_en: [Vietnamese language, Annamese language (dated)]
         gloss_zh: [安南話]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dated]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -12462,6 +12555,7 @@ entries:
         gloss_en: [Singapore (dated name)]
         gloss_zh: [實叻]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dated]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -12492,6 +12586,7 @@ entries:
         gloss_en: [Laos]
         gloss_zh: [寮國]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dated]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -12714,6 +12809,7 @@ entries:
         gloss_en: [building; structure; edifice]
         gloss_zh: [建築物]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [countable]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -13409,6 +13505,7 @@ entries:
         gloss_en: [foreign country]
         gloss_zh: [番邦]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dated]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -13424,6 +13521,8 @@ entries:
         gloss_en: ["Anhui (province), abbreviation"]
         gloss_zh: [安徽]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [alt-of, alternative, name]
+        alt_of: [安徽]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -13454,6 +13553,7 @@ entries:
         gloss_en: ["Singapore (dated, regional Teochew name)"]
         gloss_zh: [石叻, 新加坡]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [dated, regional]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -14386,6 +14486,7 @@ entries:
         gloss_en: [school (historical)]
         gloss_zh: [學校]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [historical]
     frequency: 1
     needs_review: true
     sources: [wiktionary]

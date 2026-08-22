@@ -81,6 +81,10 @@ export const senseSchema = z.object({
   gloss_en: z.array(z.string().min(1)).min(1),
   gloss_zh: z.array(z.string().min(1)).optional(),
   note: z.string().optional(),
+  /** Usage/register labels for this sense (e.g. `dialectal`, `figurative`, `obsolete`). Open-ended, unlike `entrySchema.tags`'s entry-wide topical labels. */
+  tags: z.array(z.string().min(1)).optional(),
+  /** Headword(s) this sense is an alternate form/abbreviation of, e.g. `alt_of: [馬祖]` for a short-for sense. */
+  alt_of: z.array(z.string().min(1)).optional(),
   examples: z.array(exampleSchema).optional(),
 })
 

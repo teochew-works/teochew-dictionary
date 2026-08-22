@@ -146,6 +146,7 @@ entries:
           - hanzi: 我頭毛
             pengim: ua2 tao5 mo5
             en: my hair
+        tags: [dialectal, literary]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-07-28'
@@ -471,6 +472,7 @@ entries:
       - pos: noun
         gloss_en: [chin]
         gloss_zh: [下頦]
+        tags: [formal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -521,6 +523,7 @@ entries:
       - pos: idiom
         gloss_en: [the internal organs, five viscera and six bowels]
         gloss_zh: [五臟六腑]
+        tags: [idiomatic]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -546,6 +549,7 @@ entries:
         gloss_en: ["personal (of freedom, safety, attacks, etc.)", bodily; of the human body]
         gloss_zh: [人身]
         note: Wiktionary lists both an adjective sense ('personal', attributive, as in 人身自由/人身攻擊) and a literary noun sense ('the human body') under the same Teochew reading nang5 sing1; the adjective sense was chosen as primary since it is the more common usage pattern.
+        tags: [attributive]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -993,6 +997,7 @@ entries:
       - pos: noun
         gloss_en: [hernia (vulgar), scrotal hernia]
         gloss_zh: [大𡳞脬]
+        tags: [vulgar]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1147,6 +1152,7 @@ entries:
       - pos: noun
         gloss_en: [little finger, pinky]
         gloss_zh: [小指]
+        tags: [dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1159,6 +1165,7 @@ entries:
       - pos: noun
         gloss_en: [urinary bladder]
         gloss_zh: [膀胱]
+        tags: [colloquial, dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1223,6 +1230,7 @@ entries:
       - pos: noun
         gloss_en: [belly, abdomen]
         gloss_zh: [屎肚]
+        tags: [dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1301,6 +1309,7 @@ entries:
       - pos: noun
         gloss_en: [thumb]
         gloss_zh: [拇指]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2009,6 +2018,7 @@ entries:
       - pos: noun
         gloss_en: [hospital ward, sickroom]
         gloss_zh: [病房]
+        tags: [countable]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2215,6 +2225,7 @@ entries:
       - pos: noun
         gloss_en: [plague]
         gloss_zh: [瘟瘴]
+        tags: [dated]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2659,6 +2670,7 @@ entries:
       - pos: noun
         gloss_en: [eyes (literary)]
         gloss_zh: [眼簾]
+        tags: [literary]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2797,6 +2809,7 @@ entries:
       - pos: noun
         gloss_en: ["acute febrile illness (heatstroke, cholera, measles, etc.)", sha (TCM ailment)]
         gloss_zh: [痧]
+        tags: [dialectal]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3153,6 +3166,7 @@ entries:
       - pos: noun
         gloss_en: [pulmonary tuberculosis]
         gloss_zh: [肺癆]
+        tags: [regional]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3440,6 +3454,7 @@ entries:
         gloss_en: [lips and teeth, closely interdependent (figurative)]
         gloss_zh: [脣齒]
         note: Page lists both a literal noun sense (lips and teeth) and a distinct figurative adjective sense (interdependent) at the same reading; picked the literal noun as primary.
+        tags: [literally]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -3467,6 +3482,7 @@ entries:
       - pos: noun
         gloss_en: [neck]
         gloss_zh: [脰]
+        tags: [dialectal, literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3539,6 +3555,7 @@ entries:
       - pos: noun
         gloss_en: [stroke, apoplexy]
         gloss_zh: [腦卒中, 中風]
+        tags: [formal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3845,6 +3862,7 @@ entries:
       - pos: noun
         gloss_en: [hymen]
         gloss_zh: [處女膜]
+        tags: [proscribed]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4325,6 +4343,7 @@ entries:
       - pos: noun
         gloss_en: [goosebumps]
         gloss_zh: [雞皮疙瘩]
+        tags: [dialectal]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4413,6 +4432,7 @@ entries:
       - pos: noun
         gloss_en: [dimple]
         gloss_zh: [靨]
+        tags: [literary]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4917,6 +4937,7 @@ entries:
       - pos: noun
         gloss_en: [booger, dried nasal mucus]
         gloss_zh: [鼻屎]
+        tags: [colloquial]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4929,6 +4950,7 @@ entries:
       - pos: noun
         gloss_en: [nasal mucus, snot]
         gloss_zh: [鼻水]
+        tags: [regional]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6164,6 +6186,7 @@ entries:
         gloss_en: [tooth decay; dental caries, decayed tooth]
         gloss_zh: [蛀齒]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        tags: [regional]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
