@@ -7,7 +7,315 @@
 audio:
   id: chaozhou
   variety: chaozhou
-clips: {}
+clips:
+  {
+    du2:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/du2.wav,
+        confidence: low,
+        sources: [ lingualibre ],
+        speaker: Assassas77,
+        recorded: 2021-09-21,
+        checksum: sha256:4cd389fd85b61644e49886e56a43967c1b115bf8c0e39749c501d9283a003099
+      },
+    dua7:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dua7.wav,
+        confidence: low,
+        sources: [ lingualibre ],
+        speaker: Assassas77,
+        recorded: 2021-09-21,
+        checksum: sha256:9b184db3f7206f66d42139846d58596c051d59ac3252e2cac82f4adcb830b5db
+      },
+    iam5:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/iam5.wav,
+        confidence: low,
+        sources: [ lingualibre ],
+        speaker: Assassas77,
+        recorded: 2023-05-12,
+        checksum: sha256:0a0ac2e75a55cf2e6f03d8e1ff0c46e53fd00d06d06a8c4a16a5b5c6a097ce8a
+      },
+    iu5:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/iu5.wav,
+        confidence: low,
+        sources: [ lingualibre ],
+        speaker: Assassas77,
+        recorded: 2023-05-12,
+        checksum: sha256:a8936d55b7739c2f43a10ff02e233a166c02e6824a462537cf0908da0cfec513
+      },
+    pin7:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/pin7.wav,
+        confidence: low,
+        sources: [ lingualibre ],
+        speaker: Assassas77,
+        recorded: 2021-09-21,
+        checksum: sha256:0339266446952f622b9ca294882975805c5cafabd080c09e1c09a08a256c0ceb
+      },
+    ghu5:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/ghu5.wav,
+        confidence: low,
+        sources: [ lingualibre ],
+        speaker: Assassas77,
+        recorded: 2021-09-21,
+        checksum: sha256:b45905658c20ab19b4e4dc0c8f1834a5a466fb7d172a798f5d4c3aaf206ce497
+      },
+    bang5:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/bang5.wav,
+        confidence: low,
+        sources: [ lingualibre-ccby4 ],
+        speaker: Kitkatmaw,
+        recorded: 2023-05-12,
+        checksum: sha256:16a1b97c2f060ef8d0617325a2bad9aef7bc4d3d5d5c8e43360c31bfaf2af4a0
+      },
+    bhue7:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/bhue7.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Youvalentine,
+        recorded: 2023-05-14,
+        checksum: sha256:071622bae53ef23b4502495b733531c4030245541860abec363c45267dc0d86c
+      },
+    tu5:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/tu5.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Youvalentine,
+        recorded: 2023-05-14,
+        checksum: sha256:20ec09c39185534e979709003bb94ac7d42033ad137c0d81d9c05d6c36628d36
+      },
+    uan2:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/uan2.wav,
+        confidence: low,
+        sources: [ lingualibre-ccby4 ],
+        speaker: Kitkatmaw,
+        recorded: 2023-05-12,
+        checksum: sha256:4123d2d2fd74509d247bd87ea8261576df7ab3d1179236c43dea5370488d60e3
+      },
+    dah4:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dah4.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Apsaltini,
+        recorded: 2023-05-12,
+        checksum: sha256:239beecb5ba86a1b14e96e35568d3c769cdee4fb9f6f727f1fc625837da47794
+      },
+    buan5:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/buan5.wav,
+        confidence: low,
+        sources: [ lingualibre-ccby4 ],
+        speaker: Kitkatmaw,
+        recorded: 2023-05-12,
+        checksum: sha256:da29b5ad3dd8ce243f98c33062e6742a8867be5686f4d6661f6434b1e78160e5
+      },
+    dang2:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dang2.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Apsaltini,
+        recorded: 2023-05-12,
+        checksum: sha256:043cbf5fdcbe17d6a87b9167e2afc2aea54395ec10c4113845bffb82909ecfa3
+      },
+    dian2:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dian2.wav,
+        confidence: low,
+        sources: [ lingualibre-ccby4 ],
+        speaker: Kitkatmaw,
+        recorded: 2023-05-12,
+        checksum: sha256:74af01c81ed61c4195ce33809294c32be17b4e3bc1829dd16d101da91224698e
+      },
+    do1:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/do1.wav,
+        confidence: low,
+        sources: [ lingualibre-ccby4 ],
+        speaker: Kitkatmaw,
+        recorded: 2023-05-12,
+        checksum: sha256:7170985e59abc90a11f253e190745dc50361cbbbd2add2687d4f27301fd37db4
+      },
+    dou2:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dou2.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Youvalentine,
+        recorded: 2023-05-14,
+        checksum: sha256:d4f1d59b7de4b0bb41060c714a467767aba0c80a226ce0a7dd6b82111433e4e8
+      },
+    gao3:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/gao3.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Apsaltini,
+        recorded: 2023-05-12,
+        checksum: sha256:e1506ee97c71e13252cf70e87e0c0efd0b25a6b14ae68ba511331a0ea2e75d25
+      },
+    gian3:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/gian3.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Youvalentine,
+        recorded: 2023-05-12,
+        checksum: sha256:f3b70aba26ada1003484482c452a40643fadb07e548f180b1f39059dcdd4832c
+      },
+    giao1:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/giao1.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Apsaltini,
+        recorded: 2023-05-12,
+        checksum: sha256:7ff8dd9085f75a222ca936486396af5f33d58b874f2ce79020f51d6d5aed52b8
+      },
+    ging2:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/ging2.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Youvalentine,
+        recorded: 2023-05-14,
+        checksum: sha256:5781365d270140ca0dc78d3756a8be354fd6523e404e5edd2a5162204c754397
+      },
+    gu2:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/gu2.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Youvalentine,
+        recorded: 2023-05-14,
+        checksum: sha256:13e517fce300894c375a4ba2e7e091e9b44c30989ea688954da3c4fedddaf741
+      },
+    gu7:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/gu7.wav,
+        confidence: low,
+        sources: [ lingualibre-ccby4 ],
+        speaker: JiahongG,
+        recorded: 2023-05-12,
+        checksum: sha256:6f7cb973e446f4c04c02fb0c6ccd94582448c1234a290904ae339132b6cbc9d0
+      },
+    in6:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/in6.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Youvalentine,
+        recorded: 2023-05-12,
+        checksum: sha256:3ef273fd91f12671e58af39459c1a5603ec1c81f025975bf919c5be3e585e8e7
+      },
+    ki2:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/ki2.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Youvalentine,
+        recorded: 2023-05-12,
+        checksum: sha256:f5844bfce8242e6e91a72dfa9bbde7209df7e17f5b5d4aee47cb5865977025fa
+      },
+    lai5:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/lai5.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Apsaltini,
+        recorded: 2023-05-12,
+        checksum: sha256:b01f2db1078e0eb903e099bbb88af4fd14944ba2abea9e12eafd75a70be92451
+      },
+    lai6:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/lai6.wav,
+        confidence: low,
+        sources: [ lingualibre-ccby4 ],
+        speaker: Kitkatmaw,
+        recorded: 2023-05-12,
+        checksum: sha256:b93a9eb4d362bdbaf433e33f0295deb50897aa16361bdb7aeebd04db870e4f31
+      },
+    loh8:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/loh8.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Youvalentine,
+        recorded: 2023-05-12,
+        checksum: sha256:cd8afe7a8d065ab91340dc4088aa328044b9e2c44840727d36bae03d152b8213
+      },
+    ngo6:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/ngo6.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Apsaltini,
+        recorded: 2023-05-12,
+        checksum: sha256:4d225dd4fa3ef72135536d6ff509815e078e600b46c69e59510c6d3367d58941
+      },
+    ni6:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/ni6.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Youvalentine,
+        recorded: 2023-05-14,
+        checksum: sha256:b660638baa8b1c00b93c5e55105646a817352b76c4837b28bb69c4f250985668
+      },
+    puan6:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/puan6.wav,
+        confidence: low,
+        sources: [ lingualibre-cc0 ],
+        speaker: Apsaltini,
+        recorded: 2023-05-12,
+        checksum: sha256:9293498ef4fac57fbfb6377b436ab36b60682e410c0edce63b268271847ce468
+      },
+    sing1:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/sing1.wav,
+        confidence: low,
+        sources: [ lingualibre-ccby4 ],
+        speaker: JiahongG,
+        recorded: 2023-05-12,
+        checksum: sha256:c08aac3074b94174b8e29777b7f60ac6427cdcb5576b93c1641ad474f3cd666c
+      },
+    suang2:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/suang2.wav,
+        confidence: low,
+        sources: [ lingualibre-ccby4 ],
+        speaker: JiahongG,
+        recorded: 2023-05-12,
+        checksum: sha256:90911efb68db5e22ae9e6c14f99f8adc705f565b9db6945edb1ed19fa9e1197b
+      },
+    guen1:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/guen1.wav,
+        confidence: low,
+        sources: [ lingualibre ],
+        speaker: Assassas77,
+        recorded: 2021-09-21,
+        checksum: sha256:46a1b218991841df0add0dec76295d5ece66b333070fe19d28eef1ee4c541bfc
+      },
+    no6:
+      {
+        url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/no6.wav,
+        confidence: low,
+        sources: [ lingualibre ],
+        speaker: Assassas77,
+        recorded: 2021-09-21,
+        checksum: sha256:e4513c7a9a341470a16d475e3ed68d195eb5e578a09c67c2372d59eca440594b
+      }
+  }
 wordClips:
   dao7 suang2:
     url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dao7-suang2.wav
