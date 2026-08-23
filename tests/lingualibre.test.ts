@@ -61,7 +61,8 @@ describe('extractPengimPrefix', () => {
 const AUSTIN_TITLE = 'File:LL-Q36759-Austin_Zhang-bhua5.wav'
 const DOULAISUNG_TITLE = "File:LL-Q36759-Doulaisung-bhi7 jui2 沬水 -nager (sous l'eau)-.wav"
 const CHAOZHOU_WORD_TITLE = 'File:LL-Q36759-Someone2-dio5 ziu1 潮州.wav'
-const MISMATCH_LICENCE_TITLE = 'File:LL-Q36759-Someone-dio5.wav'
+const MISMATCH_LICENCE_TITLE = 'File:LL-Q36759-Someone-dio5 ziu1;.wav'
+const ANG7_TITLE = 'File:LL-Q36759-NonoDarko-ang7 chai2 tao5;.wav'
 const OLD_CONVENTION_TITLE = 'File:zh-nan-czhu-someword.ogg'
 const MISSING_INFO_TITLE = 'File:LL-Q36759-Ghost-ziu1.wav'
 const UNPARSEABLE_TITLE = 'File:LL-Q36759-Someone-notpengim.wav'
@@ -73,6 +74,7 @@ describe('importLinguaLibre', () => {
       DOULAISUNG_TITLE,
       CHAOZHOU_WORD_TITLE,
       MISMATCH_LICENCE_TITLE,
+      ANG7_TITLE,
       MISSING_INFO_TITLE,
       UNPARSEABLE_TITLE,
     ],
@@ -104,10 +106,16 @@ describe('importLinguaLibre', () => {
       timestamp: '2026-02-15T00:00:00Z',
     },
     [MISMATCH_LICENCE_TITLE]: {
-      url: 'https://upload.wikimedia.org/wikipedia/commons/z/zz/LL-Q36759-Someone-dio5.wav',
+      url: 'https://upload.wikimedia.org/wikipedia/commons/z/zz/LL-Q36759-Someone-dio5-ziu1.wav',
       licence: 'CC BY 4.0',
       user: 'Someone',
       timestamp: '2026-03-01T00:00:00Z',
+    },
+    [ANG7_TITLE]: {
+      url: 'https://upload.wikimedia.org/wikipedia/commons/a/aa/LL-Q36759-NonoDarko-ang7.wav',
+      licence: 'CC BY-SA 4.0',
+      user: 'NonoDarko',
+      timestamp: '2026-03-10T00:00:00Z',
     },
     [UNPARSEABLE_TITLE]: {
       url: 'https://upload.wikimedia.org/wikipedia/commons/w/ww/LL-Q36759-Someone-notpengim.wav',
@@ -148,6 +156,7 @@ describe('importLinguaLibre', () => {
       hanzi: '沬水',
       accentNote: 'Puning-Chaoyang mixed accent',
     })
+    expect(p?.flags?.some((f) => f.includes('may be incomplete') && f.includes('jui2'))).toBe(true)
   })
 
   it('proposes a multi-syllable clip destined for `wordClips`, carrying hanzi through', async () => {
@@ -159,6 +168,7 @@ describe('importLinguaLibre', () => {
       hanzi: '潮州',
       speaker: 'Someone2',
     })
+    expect(p?.flags).toBeUndefined()
   })
 
   it('dedupes a file listed under both the subcategory and the parent category', async () => {
@@ -171,6 +181,21 @@ describe('importLinguaLibre', () => {
     const p = r.proposals.find((p) => p.commonsTitle === MISMATCH_LICENCE_TITLE)
     expect(p?.licence).toBe('CC BY 4.0')
     expect(p?.flags?.[0]).toContain('expected CC-BY-SA-4.0')
+  })
+
+  it('carries both a licence-mismatch flag and an incomplete-transcription flag when both apply', async () => {
+    const r = await importLinguaLibre(opts)
+    const p = r.proposals.find((p) => p.commonsTitle === MISMATCH_LICENCE_TITLE)
+    expect(p?.pengim).toBe('dio5')
+    expect(p?.flags).toHaveLength(2)
+    expect(p?.flags?.some((f) => f.includes('may be incomplete') && f.includes('ziu1'))).toBe(true)
+  })
+
+  it('flags multiple dropped tokens, joined, even though extractPengimPrefix bailed at the first one', async () => {
+    const r = await importLinguaLibre(opts)
+    const p = r.proposals.find((p) => p.commonsTitle === ANG7_TITLE)
+    expect(p?.pengim).toBe('ang7')
+    expect(p?.flags?.some((f) => f.includes('chai2') && f.includes('tao5'))).toBe(true)
   })
 
   it('misses a file using the older zh-nan-czhu naming convention rather than guessing', async () => {
@@ -196,5 +221,10 @@ describe('importLinguaLibre', () => {
   it('summarises single- vs. multi-syllable counts in notes', async () => {
     const r = await importLinguaLibre(opts)
     expect(r.notes.join(' ')).toMatch(/single-syllable.*multi-syllable/u)
+  })
+
+  it('summarises possibly-incomplete transcriptions in notes', async () => {
+    const r = await importLinguaLibre(opts)
+    expect(r.notes.join(' ')).toMatch(/possibly incomplete/u)
   })
 })
