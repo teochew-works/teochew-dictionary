@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { createSearchIndex, search } from '../search/searchIndex'
 import { groupEntries, isGrouped, sortFlat } from '../search/sortEntries'
 import type { SortMode, ToneSource } from '../search/sortEntries'
+import { hasAudio } from '../search/filters'
 import { EntryList } from '../components/EntryList'
 import { EntryTree } from '../components/EntryTree'
 import { EntryDetail } from '../components/EntryDetail'
@@ -39,15 +40,26 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
   const [query, setQuery] = useState('')
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [showLicence, setShowLicence] = useState(readShowLicence)
+  // Deliberately not persisted, unlike showLicence: this narrows which entries
+  // exist as far as the UI is concerned, and coming back to a dictionary that
+  // silently hides almost everything is worse than re-ticking a box. Same
+  // reasoning as sortMode and the query itself.
+  const [audioOnly, setAudioOnly] = useState(false)
   const [sortMode, setSortMode] = useState<SortMode>('relevance')
   const [toneSource, setToneSource] = useState<ToneSource>('citation')
 
   const index = useMemo(() => createSearchIndex(entries), [entries])
   const isSearching = query.trim() !== ''
-  const results = useMemo(
+  const matches = useMemo(
     () => (isSearching ? search(index, query) : entries),
     [index, query, entries, isSearching],
   )
+  const results = useMemo(() => (audioOnly ? matches.filter(hasAudio) : matches), [matches, audioOnly])
+
+  // Distinguishes "your search found nothing with a recording" from "this
+  // dictionary has no recordings at all", which is the case for every entry
+  // today — without it the filter just looks broken.
+  const anyAudio = useMemo(() => entries.some(hasAudio), [entries])
 
   // "Relevance" only means something while a query is active — Fuse hands back
   // its hits best-first and we keep that order. With no query there is no
@@ -83,14 +95,20 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
           onChange={(e) => setQuery(e.target.value)}
           aria-label="Search the dictionary"
         />
-        <label className="dictionary-view__licence-toggle">
-          <input
-            type="checkbox"
-            checked={showLicence}
-            onChange={(e) => toggleShowLicence(e.target.checked)}
-          />
-          Show licensing info
-        </label>
+        <div className="dictionary-view__toggles">
+          <label className="dictionary-view__toggle">
+            <input
+              type="checkbox"
+              checked={showLicence}
+              onChange={(e) => toggleShowLicence(e.target.checked)}
+            />
+            Show licensing info
+          </label>
+          <label className="dictionary-view__toggle">
+            <input type="checkbox" checked={audioOnly} onChange={(e) => setAudioOnly(e.target.checked)} />
+            Only entries with audio
+          </label>
+        </div>
         <div className="dictionary-view__controls">
           <select
             className="dictionary-view__sort"
@@ -116,7 +134,11 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
             </select>
           )}
         </div>
-        {isFlat ? (
+        {audioOnly && results.length === 0 ? (
+          <p className="entry-list__empty">
+            {anyAudio ? 'No matches with a recording.' : 'No recordings in the dictionary yet.'}
+          </p>
+        ) : isFlat ? (
           <EntryList entries={sortedEntries} selectedId={selectedId} onSelect={setSelectedId} />
         ) : (
           <EntryTree groups={groups} selectedId={selectedId} onSelect={setSelectedId} isSearching={isSearching} />
