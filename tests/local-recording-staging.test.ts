@@ -7,6 +7,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 
 import {
   appendLocalRecordingProposal,
+  findLocalRecordingProposals,
   readLocalRecordingStaging,
   removeLocalRecordingProposal,
 } from '../src/importers/local-recording-staging.js'
@@ -89,5 +90,38 @@ describe('local-recording-staging', () => {
   it('is a no-op when nothing has been staged yet', () => {
     expect(() => removeLocalRecordingProposal(0, stagingDir)).not.toThrow()
     expect(existsSync(join(stagingDir, 'teochew-dictionary-audio.yaml'))).toBe(false)
+  })
+
+  describe('findLocalRecordingProposals', () => {
+    it('returns an empty array when nothing has been staged yet', () => {
+      expect(findLocalRecordingProposals('dio5', 'chaozhou', stagingDir)).toEqual([])
+    })
+
+    it('returns an empty array when nothing matches the pengim+variety pair', () => {
+      appendLocalRecordingProposal(proposal({ pengim: 'ang1' }), stagingDir)
+      expect(findLocalRecordingProposals('dio5', 'chaozhou', stagingDir)).toEqual([])
+    })
+
+    it('finds a proposal matching both pengim and variety', () => {
+      appendLocalRecordingProposal(proposal({ pengim: 'ang1' }), stagingDir)
+      appendLocalRecordingProposal(proposal({ pengim: 'dio5', variety: 'chaozhou' }), stagingDir)
+
+      const found = findLocalRecordingProposals('dio5', 'chaozhou', stagingDir)
+      expect(found).toEqual([{ index: 1, proposal: proposal({ pengim: 'dio5', variety: 'chaozhou' }) }])
+    })
+
+    it('does not match a proposal with the same pengim but a different variety', () => {
+      appendLocalRecordingProposal(proposal({ pengim: 'dio5', variety: 'chaoyang' }), stagingDir)
+      expect(findLocalRecordingProposals('dio5', 'chaozhou', stagingDir)).toEqual([])
+    })
+
+    it('returns multiple matches sorted by descending index', () => {
+      appendLocalRecordingProposal(proposal({ pengim: 'dio5', variety: 'chaozhou' }), stagingDir) // index 0
+      appendLocalRecordingProposal(proposal({ pengim: 'ang1', variety: 'chaozhou' }), stagingDir) // index 1
+      appendLocalRecordingProposal(proposal({ pengim: 'dio5', variety: 'chaozhou' }), stagingDir) // index 2
+
+      const found = findLocalRecordingProposals('dio5', 'chaozhou', stagingDir)
+      expect(found.map((f) => f.index)).toEqual([2, 0])
+    })
   })
 })
