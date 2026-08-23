@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react'
 
+/** Duplicated from the server-side `PublishedClip` in web/vite-plugins/local-recordings-handlers.ts — web/ has no access to the root project's types. */
+export interface PublishedClip {
+  url: string
+  speaker?: string
+}
+
 export interface LocalRecordingsStatus {
-  published: Set<string>
+  published: Map<string, PublishedClip>
   pending: Set<string>
 }
 
 interface StatusResponse {
-  published?: string[]
+  published?: Record<string, PublishedClip>
   pending?: string[]
 }
 
@@ -29,7 +35,7 @@ export function useLocalRecordingsStatus(): LocalRecordingsStatus | null {
       .then((res) => (res.ok ? (res.json() as Promise<StatusResponse>) : null))
       .then((data) => {
         if (cancelled || !data) return
-        setStatus({ published: new Set(data.published ?? []), pending: new Set(data.pending ?? []) })
+        setStatus({ published: new Map(Object.entries(data.published ?? {})), pending: new Set(data.pending ?? []) })
       })
       .catch(() => {
         // Dev-only convenience data — if it's unavailable, rows just render without a badge.
