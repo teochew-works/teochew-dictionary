@@ -37,10 +37,20 @@ export function resolveProposal(arg: string, proposals: AudioClipProposal[]): Au
  * extension `sourcePathOrUrl` ends in (falling back to `.wav`). Shared by
  * `assetFilename` below and `local-recording-rehost.ts`'s equivalent, which
  * derives a filename from a local file path rather than a Commons URL.
+ *
+ * Pengim keys can carry diacritics (e.g. `ê`) that `\w` in `phonology.ts`'s
+ * `GITHUB_RELEASE_ASSET_URL` regex doesn't match — NFD-decompose and strip
+ * combining marks so the resulting filename (and the release URL built from
+ * it) stays within that ASCII-only pattern.
  */
 export function slugAssetFilename(key: string, sourcePathOrUrl: string): string {
   const ext = sourcePathOrUrl.match(/\.[a-zA-Z0-9]+$/u)?.[0]?.toLowerCase() ?? '.wav'
-  const slug = key.trim().toLowerCase().replace(/\s+/gu, '-')
+  const slug = key
+    .trim()
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(new RegExp('[\\u0300-\\u036f]', 'gu'), '')
+    .replace(/\s+/gu, '-')
   return `${slug}${ext}`
 }
 
