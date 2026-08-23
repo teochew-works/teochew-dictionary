@@ -70,7 +70,9 @@ describe('rehostClip', () => {
       tmpDir,
     })
 
-    expect(ghCalls).toEqual([['release', 'upload', 'audio-lingualibre-test', join(tmpDir, 'dio5-ziu1.wav')]])
+    expect(ghCalls).toEqual([
+      ['release', 'upload', 'audio-lingualibre-test', join(tmpDir, 'dio5-ziu1.wav'), '--clobber'],
+    ])
     expect(result.url).toBe(
       `https://github.com/${GITHUB_REPO}/releases/download/audio-lingualibre-test/dio5-ziu1.wav`,
     )
