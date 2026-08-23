@@ -53,6 +53,7 @@ entries:
             note: Teochew uses 食 for drinking tea, not 啉.
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: zui2-水
     headword: 水
@@ -68,6 +69,7 @@ entries:
             en: to drink water
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: he5-魚
     headword: 魚
@@ -83,6 +85,7 @@ entries:
             en: to eat fish
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: neg8-肉
     headword: 肉
@@ -114,6 +117,7 @@ entries:
             note: 食菜 idiomatically means "to be vegetarian" (esp. for Buddhist reasons), not just "to eat vegetables".
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: gue2-粿
     headword: 粿
@@ -148,6 +152,7 @@ entries:
     frequency: 4
     needs_review: true
     sources: [seed]
+    level: A2
 
   - id: tng5-糖
     headword: 糖
@@ -163,6 +168,7 @@ entries:
             en: to eat sweets
     frequency: 4
     sources: [seed]
+    level: A2
 
   - id: iam5-鹽
     headword: 鹽
@@ -178,6 +184,7 @@ entries:
             en: salt water, brine
     frequency: 4
     sources: [seed]
+    level: B1
 
   - id: de1-豬
     headword: 豬
@@ -193,6 +200,7 @@ entries:
             en: pork (lit. "pig meat")
     frequency: 4
     sources: [seed]
+    level: B1
 
   - id: goi1-雞
     headword: 雞
@@ -710,6 +718,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gia1-咖
     headword: 咖
@@ -784,6 +793,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: di7-gao1-iu5-地溝油
     headword: 地溝油
@@ -844,6 +854,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ghua7-bhoi7-外賣
     headword: 外賣
@@ -1473,6 +1484,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: guê2-zion3-果醬
     headword: 果醬
@@ -1594,6 +1606,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zo2-棗
     headword: 棗
@@ -1678,6 +1691,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: suain7-檨
     headword: 檨
@@ -1714,6 +1728,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: zui2-sên1-水生
     headword: 水生
@@ -1924,6 +1939,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: liang5-dê5-涼茶
     headword: 涼茶
@@ -1962,6 +1978,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: teng1-si5-湯匙
     headword: 湯匙
@@ -1986,6 +2003,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: lou2-bhi7-滷味
     headword: 滷味
@@ -2366,6 +2384,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ghu5-ni6-牛奶
     headword: 牛奶
@@ -2378,6 +2397,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ghu5-bai5-牛排
     headword: 牛排
@@ -2815,6 +2835,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: uan2-gong1-碗公
     headword: 碗公
@@ -2900,6 +2921,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zug8-秫
     headword: 秫
@@ -3412,6 +3434,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ang5-sai6-紅柿
     headword: 紅柿
@@ -4484,6 +4507,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: cai3-na5-ze2-菜籃子
     headword: 菜籃子
@@ -4683,6 +4707,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: pu5-to5-guan1-葡萄乾
     headword: 葡萄乾
@@ -4843,6 +4868,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gang1-dang1-蕳砃
     headword: 蕳砃
@@ -5042,6 +5068,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: pang1-bhig8-蜂蜜
     headword: 蜂蜜
@@ -5224,6 +5251,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: sai1-ang5-sai6-西紅柿
     headword: 西紅柿
@@ -5237,6 +5265,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: sai1-bian2-西餅
     headword: 西餅
@@ -5397,6 +5426,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: dao7-hu7-guan1-豆腐乾
     headword: 豆腐乾
@@ -5869,6 +5899,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ziên3-iu5-醬油
     headword: 醬油
@@ -5881,6 +5912,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zion3-cên1-醬清
     headword: 醬清
@@ -5954,6 +5986,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: uê1-doi2-鍋底
     headword: 鍋底
@@ -6196,6 +6229,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: seng1-gi1-霜枝
     headword: 霜枝
@@ -6319,6 +6353,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: buê1-lêng5-飛龍
     headword: 飛龍
@@ -6345,6 +6380,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ziah8-muêh8-食物
     headword: 食物
@@ -6357,6 +6393,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ziah8-dê5-食茶
     headword: 食茶
@@ -6504,6 +6541,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: im2-êng7-zui2-飲用水
     headword: 飲用水
@@ -6540,6 +6578,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bian2-餅
     headword: 餅
@@ -6564,6 +6603,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: cang1-餐
     headword: 餐
@@ -7092,6 +7132,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: min7-huê1-麵灰
     headword: 麵灰
@@ -7188,6 +7229,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ng5-dao7-黃豆
     headword: 黃豆
@@ -7212,6 +7254,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: dian2-鼎
     headword: 鼎
@@ -7393,6 +7436,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dom6-丼
     headword: 丼
@@ -7532,6 +7576,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ni6-奶
     headword: 奶
@@ -7793,6 +7838,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zio1-椒
     headword: 椒
@@ -8317,6 +8363,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zian1-nêg8-精肉
     headword: 精肉
@@ -8439,6 +8486,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: iên5-nêg8-羊肉
     headword: 羊肉
@@ -8456,6 +8504,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: nêg8-oin2-肉眼
     headword: 肉眼
@@ -9030,6 +9079,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: dang3-蛋
     headword: 蛋
@@ -9291,6 +9341,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: goi1-dang3-雞蛋-noun
     headword: 雞蛋
@@ -9306,6 +9357,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: soh4-diou5-雪條
     headword: 雪條
@@ -9399,6 +9451,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hiên1-ng5-香櫞
     headword: 香櫞
