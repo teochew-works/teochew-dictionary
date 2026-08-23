@@ -39,11 +39,17 @@
   color: var(--color-fg);
 }
 
-.dictionary-view__licence-toggle {
+.dictionary-view__toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  margin: 0 0.75rem 0.75rem;
+}
+
+.dictionary-view__toggle {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  margin: 0 0.75rem 0.75rem;
   color: var(--color-muted);
   font-size: 0.85rem;
 }

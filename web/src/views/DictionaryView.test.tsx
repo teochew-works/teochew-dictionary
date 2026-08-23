@@ -206,3 +206,78 @@ describe('DictionaryView grouped sort modes', () => {
     expect(groupLabels()).toEqual(['A1'])
   })
 })
+
+describe('DictionaryView audio filter', () => {
+  const CLIP: AudioReference = {
+    key: 'bhog8',
+    url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou/bhog8.opus',
+    confidence: 'high',
+    licence: 'CC-BY-4.0',
+    attributions: ['Teochew Dictionary audio (CC-BY-4.0)'],
+  }
+
+  /** The same entry, given a whole-word recording. */
+  function withClip(entry: EnrichedEntry): EnrichedEntry {
+    return { ...entry, readings: [{ ...entry.readings[0]!, wordAudio: CLIP }] }
+  }
+
+  const RECORDED = withClip(makeEntry({ id: 'a1', headword: '木', gloss: ['wood'], keys: ['木', 'wood'], level: 'A1' }))
+  const SILENT = makeEntry({ id: 'b2', headword: '柴', gloss: ['firewood'], keys: ['柴', 'firewood'], level: 'B2' })
+
+  function headwords(): string[] {
+    return [...document.querySelectorAll('.entry-list__headword')].map((n) => n.textContent ?? '')
+  }
+
+  afterEach(cleanup)
+
+  it('is off by default, listing entries with and without recordings alike', () => {
+    render(<DictionaryView entries={[RECORDED, SILENT]} />)
+    expect(screen.getByLabelText('Only entries with audio')).not.toBeChecked()
+    expect(headwords()).toEqual(['木', '柴'])
+  })
+
+  it('narrows the list to entries that have a recording, and restores it when unticked', () => {
+    render(<DictionaryView entries={[RECORDED, SILENT]} />)
+    const toggle = screen.getByLabelText('Only entries with audio')
+
+    fireEvent.click(toggle)
+    expect(headwords()).toEqual(['木'])
+
+    fireEvent.click(toggle)
+    expect(headwords()).toEqual(['木', '柴'])
+  })
+
+  it('applies in grouped sort modes too, not just the flat list', () => {
+    render(<DictionaryView entries={[RECORDED, SILENT]} />)
+    fireEvent.change(screen.getByLabelText('Sort dictionary by'), { target: { value: 'level' } })
+    fireEvent.click(screen.getByLabelText('Only entries with audio'))
+
+    expect([...document.querySelectorAll('.entry-tree__label')].map((n) => n.textContent)).toEqual(['A1'])
+    expect(headwords()).toEqual(['木'])
+  })
+
+  it('says the dictionary has no recordings rather than "No matches" when none exist at all', () => {
+    render(<DictionaryView entries={[SILENT]} />)
+    fireEvent.click(screen.getByLabelText('Only entries with audio'))
+
+    expect(screen.getByText('No recordings in the dictionary yet.')).toBeInTheDocument()
+    expect(screen.queryByText('No matches.')).not.toBeInTheDocument()
+  })
+
+  it('distinguishes a search that excluded every recording from an empty dataset', () => {
+    render(<DictionaryView entries={[RECORDED, SILENT]} />)
+    fireEvent.click(screen.getByLabelText('Only entries with audio'))
+    fireEvent.change(screen.getByLabelText('Search the dictionary'), { target: { value: 'firewood' } })
+
+    expect(screen.getByText('No matches with a recording.')).toBeInTheDocument()
+  })
+
+  it('keeps a selected entry readable after the filter hides it from the list', () => {
+    render(<DictionaryView entries={[RECORDED, SILENT]} />)
+    fireEvent.click(screen.getByText('柴'))
+    fireEvent.click(screen.getByLabelText('Only entries with audio'))
+
+    expect(headwords()).toEqual(['木'])
+    expect(screen.getByRole('heading', { name: '柴' })).toBeInTheDocument()
+  })
+})

@@ -102,9 +102,16 @@ reappear as new (DevTools → Application → IndexedDB →
   - **Custom buttons, not `<audio controls>`.** A three-syllable reading would
     otherwise render four full-width native players.
 
+  An "Only entries with audio" checkbox filters the list to entries that have
+  a clip (`src/search/filters.ts`), applied after search and before
+  sorting/grouping so it works in every sort mode. It is not persisted, unlike
+  the licensing toggle: returning to a dictionary that silently hides almost
+  everything is worse than re-ticking a box.
+
   No clip exists yet: `data/phonology/audio/*.yaml` is still unwritten
   (issues #36/#37, and the #106 merge follow-on), so every `audio`/`wordAudio`
-  slot resolves to `null` and this renders nothing at all today.
+  slot resolves to `null`, the players render nothing, and the filter reports
+  "No recordings in the dictionary yet" rather than a bare "No matches".
 - `dist/dict.json` is fetched at runtime as a static asset (via
   `scripts/sync-data.mjs`, not bundled as a JS import), so the dataset can
   grow without bloating the JS bundle.
