@@ -3,6 +3,19 @@ import type { EnrichedEntry, Level, PartOfSpeech } from '../types/dict'
 export type SortMode = 'relevance' | 'headword' | 'english' | 'tone' | 'category' | 'level'
 export type ToneSource = 'citation' | 'sandhi'
 
+/**
+ * The modes that render a grouped tree rather than a flat list. Kept as a
+ * predicate — and its own type, matching `groupEntries`'s own `mode`
+ * parameter below — so a caller and `groupEntries` can't drift apart on which
+ * modes are "grouped" (see DictionaryView.tsx's `isFlat`/`sortedEntries`/
+ * `groups`).
+ */
+export type GroupedSortMode = 'tone' | 'category' | 'level'
+
+export function isGrouped(mode: SortMode): mode is GroupedSortMode {
+  return mode === 'tone' || mode === 'category' || mode === 'level'
+}
+
 const LEVEL_ORDER: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
 
 export interface EntryGroup {
@@ -94,7 +107,7 @@ function levelGroupKey(entry: EnrichedEntry): { key: string; label: string } {
  */
 export function groupEntries(
   entries: EnrichedEntry[],
-  mode: 'tone' | 'category' | 'level',
+  mode: GroupedSortMode,
   toneSource: ToneSource = 'citation',
 ): EntryGroup[] {
   const groups = new Map<string, EntryGroup>()

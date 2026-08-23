@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { createSearchIndex, search } from '../search/searchIndex'
-import { groupEntries, sortFlat } from '../search/sortEntries'
+import { groupEntries, isGrouped, sortFlat } from '../search/sortEntries'
 import type { SortMode, ToneSource } from '../search/sortEntries'
 import { EntryList } from '../components/EntryList'
 import { EntryTree } from '../components/EntryTree'
@@ -24,17 +24,6 @@ function writeShowLicence(value: boolean): void {
   } catch {
     // localStorage unavailable (e.g. private browsing) — toggle still works, just doesn't persist.
   }
-}
-
-/**
- * The modes that render a grouped tree rather than a flat list. Kept as a
- * predicate so adding a mode is a one-line change here rather than a
- * disjunction repeated at every branch.
- */
-type GroupedSortMode = 'tone' | 'category' | 'level'
-
-function isGrouped(mode: SortMode): mode is GroupedSortMode {
-  return mode === 'tone' || mode === 'category' || mode === 'level'
 }
 
 const SORT_MODE_LABELS: Record<SortMode, string> = {
