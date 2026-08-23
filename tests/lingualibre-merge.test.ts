@@ -8,6 +8,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { GITHUB_REPO } from '../src/schema/phonology.js'
 import { licenceSourceId, mergeLinguaLibreClip } from '../src/importers/lingualibre-merge.js'
 import type { AudioClipProposal } from '../src/importers/audio-types.js'
+import type { Source } from '../src/schema/entry.js'
 
 function proposal(overrides: Partial<AudioClipProposal> = {}): AudioClipProposal {
   return {
@@ -21,27 +22,49 @@ function proposal(overrides: Partial<AudioClipProposal> = {}): AudioClipProposal
   }
 }
 
+function source(id: string, licence: string): Source {
+  return { id, name: id, kind: 'import', licence }
+}
+
+// A fixture standing in for data/sources.yaml's real lingualibre* entries —
+// keeps these tests independent of the shipped dataset (see tests/licence.test.ts).
+const SOURCES: Source[] = [
+  source('lingualibre', 'CC-BY-SA-4.0'),
+  source('lingualibre-ccby4', 'CC-BY-4.0'),
+  source('lingualibre-cc0', 'CC0'),
+]
+
 describe('licenceSourceId', () => {
   it('maps the category default to lingualibre', () => {
-    expect(licenceSourceId('CC-BY-SA-4.0')).toBe('lingualibre')
+    expect(licenceSourceId('CC-BY-SA-4.0', SOURCES)).toBe('lingualibre')
   })
 
   it('normalises spacing/case before matching', () => {
-    expect(licenceSourceId('cc by-sa 4.0')).toBe('lingualibre')
-    expect(licenceSourceId('CC BY 4.0')).toBe('lingualibre-ccby4')
+    expect(licenceSourceId('cc by-sa 4.0', SOURCES)).toBe('lingualibre')
+    expect(licenceSourceId('CC BY 4.0', SOURCES)).toBe('lingualibre-ccby4')
   })
 
   it('maps CC-BY-4.0 to lingualibre-ccby4', () => {
-    expect(licenceSourceId('CC-BY-4.0')).toBe('lingualibre-ccby4')
+    expect(licenceSourceId('CC-BY-4.0', SOURCES)).toBe('lingualibre-ccby4')
   })
 
   it('maps CC0 to lingualibre-cc0', () => {
-    expect(licenceSourceId('CC0')).toBe('lingualibre-cc0')
+    expect(licenceSourceId('CC0', SOURCES)).toBe('lingualibre-cc0')
   })
 
   it('returns null for an unrecognised licence', () => {
-    expect(licenceSourceId('All Rights Reserved')).toBeNull()
-    expect(licenceSourceId('unknown')).toBeNull()
+    expect(licenceSourceId('All Rights Reserved', SOURCES)).toBeNull()
+    expect(licenceSourceId('unknown', SOURCES)).toBeNull()
+  })
+
+  it('is data-driven: a new lingualibre* source with a matching licence is picked up with no code change', () => {
+    const withNewVariant = [...SOURCES, source('lingualibre-ccbyncsa4', 'CC-BY-NC-SA-4.0')]
+    expect(licenceSourceId('CC-BY-NC-SA-4.0', withNewVariant)).toBe('lingualibre-ccbyncsa4')
+  })
+
+  it('never matches a non-lingualibre source even if its licence string matches', () => {
+    const withUnrelated = [...SOURCES, source('unihan', 'Unicode-DFS-2016')]
+    expect(licenceSourceId('Unicode-DFS-2016', withUnrelated)).toBeNull()
   })
 })
 
@@ -60,6 +83,7 @@ describe('mergeLinguaLibreClip', () => {
     fetchBytes: async () => Buffer.from('fake audio bytes'),
     releaseExists: () => true,
     runGh: () => {},
+    sources: SOURCES,
   }
 
   it('creates a new variety file and adds a single-syllable clip under clips', async () => {
@@ -178,5 +202,41 @@ describe('mergeLinguaLibreClip', () => {
     })
     const written = parseYaml(readFileSync(result.path, 'utf8'))
     expect(written.clips.dio5.confidence).toBe('medium')
+  })
+
+  it('does not mistake a pengim key matching an Object.prototype member name for an existing clip', async () => {
+    // Plain bracket access (`existingBucket[key]`) would return the inherited
+    // Object.prototype.constructor here and wrongly refuse as "already
+    // merged" — this key was never actually written.
+    const result = await mergeLinguaLibreClip(proposal({ pengim: 'constructor' }), {
+      variety: 'chaozhou',
+      audioDir,
+      ...rehostOptions,
+    })
+    expect(result.key).toBe('constructor')
+  })
+
+  it('preserves a hand-written comment when merging a second clip into an existing file', async () => {
+    // audioFileHeader's own text invites hand-editing an existing file —
+    // round-tripping through a plain object would silently drop this.
+    const path = join(audioDir, 'chaozhou.yaml')
+    const handComment = '# hand note: existing1 is a Chaoyang-accented recording, verify before reuse'
+    writeFileSync(
+      path,
+      `${handComment}\n${stringify({
+        audio: { id: 'chaozhou', variety: 'chaozhou' },
+        clips: {
+          existing1: {
+            url: `https://github.com/${GITHUB_REPO}/releases/download/audio-lingualibre/existing1.wav`,
+            confidence: 'high',
+            sources: ['lingualibre'],
+            checksum: `sha256:${'a'.repeat(64)}`,
+          },
+        },
+      })}`,
+    )
+
+    await mergeLinguaLibreClip(proposal(), { variety: 'chaozhou', audioDir, ...rehostOptions })
+    expect(readFileSync(path, 'utf8')).toContain(handComment)
   })
 })

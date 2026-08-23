@@ -40,9 +40,14 @@ function loadRequiredFile<T>(path: string, schema: { parse: (v: unknown) => T },
  * Parse `path` with `schema`, or `null` if it doesn't exist. Unlike
  * `loadRequiredFile`, a missing file is expected steady state here, not an
  * error — but a file that exists and fails to parse/validate still throws,
- * so a malformed file is never mistaken for a merely-absent one.
+ * so a malformed file is never mistaken for a merely-absent one. Exported
+ * (unlike `loadRequiredFile`/`parseFile`) since it's already generic over any
+ * `path`/`schema` pair — see `mergeLinguaLibreClip` in
+ * `../importers/lingualibre-merge.js`, which needs the same "parse-or-null"
+ * behaviour against a test-injectable directory `loadAudioIfExists` can't
+ * parameterise.
  */
-function loadOptionalFile<T>(path: string, schema: { parse: (v: unknown) => T }): T | null {
+export function loadOptionalFile<T>(path: string, schema: { parse: (v: unknown) => T }): T | null {
   return existsSync(path) ? parseFile(path, schema) : null
 }
 

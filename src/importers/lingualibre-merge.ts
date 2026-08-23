@@ -1,9 +1,12 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { parse as parseYaml, stringify } from 'yaml'
+import { parseDocument, stringify } from 'yaml'
 
+import { loadSources } from '../data/load.js'
 import { AUDIO_METADATA_DIR } from '../paths.js'
+import { loadOptionalFile } from '../phonology/load.js'
 import { audioSchema, CONFIDENCE, type Audio } from '../schema/phonology.js'
+import type { Source } from '../schema/entry.js'
 import type { AudioClipProposal } from './audio-types.js'
 import { rehostClip, resolveProposal, type RehostOptions } from './lingualibre-rehost.js'
 
@@ -26,29 +29,25 @@ export { resolveProposal }
  * CC-BY-SA-4.0, but a per-file Commons `imageinfo` licence can report
  * CC-BY-4.0 or CC0 instead (`normaliseLicence` in `./lingualibre.js` only
  * canonicalises the expected value, so these arrive as the raw strings
- * Commons reports). Each gets its own source id rather than being folded
- * into `lingualibre`, so a merged clip's `sources` never overstates — or
- * understates — the licence obligation a specific file actually carries.
- * Returns `null` for anything else, which callers must refuse to merge
- * rather than guess.
+ * Commons reports). Each gets its own source id (`lingualibre`,
+ * `lingualibre-ccby4`, `lingualibre-cc0`, …) rather than being folded into
+ * one, so a merged clip's `sources` never overstates — or understates — the
+ * licence obligation a specific file actually carries.
+ *
+ * Looked up against `sources` (the caller passes `loadSources()`) rather than
+ * a hardcoded table, so covering a new Commons-reported licence variant is a
+ * `data/sources.yaml` addition, not a code change here — and so this stays a
+ * pure lookup a test can exercise against a small fixture list. Returns
+ * `null` when no `lingualibre*` source's own `licence` matches, which callers
+ * must refuse to merge rather than guess.
  */
-export function licenceSourceId(licence: string): string | null {
+export function licenceSourceId(licence: string, sources: Source[]): string | null {
   const normalised = licence.trim().toUpperCase().replace(/\s+/gu, '-')
-  switch (normalised) {
-    case 'CC-BY-SA-4.0':
-      return 'lingualibre'
-    case 'CC-BY-4.0':
-      return 'lingualibre-ccby4'
-    case 'CC0':
-      return 'lingualibre-cc0'
-    default:
-      return null
-  }
+  return sources.find((s) => s.id.startsWith('lingualibre') && s.licence === normalised)?.id ?? null
 }
 
 function loadAudioFile(path: string): Audio | null {
-  if (!existsSync(path)) return null
-  return audioSchema.parse(parseYaml(readFileSync(path, 'utf8')))
+  return loadOptionalFile(path, audioSchema)
 }
 
 function audioFileHeader(variety: string): string {
@@ -70,6 +69,8 @@ export interface MergeOptions extends RehostOptions {
   force?: boolean
   /** Injectable for tests — avoids writing into the real data/phonology/audio/. */
   audioDir?: string
+  /** Injectable for tests — avoids depending on the real data/sources.yaml; defaults to `loadSources()`. */
+  sources?: Source[]
 }
 
 export interface MergeResult {
@@ -93,9 +94,16 @@ export interface MergeResult {
  * duplicate candidates.
  */
 export async function mergeLinguaLibreClip(proposal: AudioClipProposal, options: MergeOptions): Promise<MergeResult> {
-  const { variety, confidence = 'high', force = false, audioDir = AUDIO_METADATA_DIR, ...rehostOptions } = options
+  const {
+    variety,
+    confidence = 'high',
+    force = false,
+    audioDir = AUDIO_METADATA_DIR,
+    sources = loadSources(),
+    ...rehostOptions
+  } = options
 
-  const sourceId = licenceSourceId(proposal.licence)
+  const sourceId = licenceSourceId(proposal.licence, sources)
   if (!sourceId) {
     throw new Error(
       `'${proposal.commonsTitle}' reports licence '${proposal.licence}', which has no data/sources.yaml ` +
@@ -110,7 +118,7 @@ export async function mergeLinguaLibreClip(proposal: AudioClipProposal, options:
   const audio: Audio = loadAudioFile(path) ?? { audio: { id: variety, variety }, clips: {}, wordClips: {} }
 
   const existingBucket = audio[bucket] ?? {}
-  if (existingBucket[key] && !force) {
+  if (Object.hasOwn(existingBucket, key) && !force) {
     throw new Error(`'${key}' already has a clip in ${bucket} for '${variety}' (${path}) — pass --force to overwrite`)
   }
 
@@ -131,7 +139,20 @@ export async function mergeLinguaLibreClip(proposal: AudioClipProposal, options:
   })
 
   mkdirSync(audioDir, { recursive: true })
-  writeFileSync(path, audioFileHeader(variety) + stringify(updated))
+
+  // Round-tripping an *existing* file through a plain object and `stringify`
+  // would silently drop any hand-written comments (audioFileHeader's own text
+  // invites editing a clip by hand) — parseDocument/setIn mutate just the one
+  // clip in place, leaving the rest of the document, comments included,
+  // untouched. A brand-new file has no comments to lose, so it's built fresh
+  // with the generated header as before.
+  if (existsSync(path)) {
+    const doc = parseDocument(readFileSync(path, 'utf8'))
+    doc.setIn([bucket, key], updated[bucket]![key])
+    writeFileSync(path, doc.toString())
+  } else {
+    writeFileSync(path, audioFileHeader(variety) + stringify(updated))
+  }
 
   return { path, variety, key, bucket, sourceId, url, checksum }
 }
