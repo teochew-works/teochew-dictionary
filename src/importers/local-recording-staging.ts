@@ -61,6 +61,26 @@ export function readLocalRecordingStaging(stagingDir: string = STAGING_DIR): { p
   return { proposals: raw.proposals ?? [] }
 }
 
+/**
+ * Every currently-staged proposal for one pengim+variety pair, sorted by
+ * descending index. Descending order matters for a caller (saveRecording)
+ * that deletes every match: removeLocalRecordingProposal splices the YAML
+ * sequence, so deleting a lower index first would shift later indices down
+ * and corrupt any indices computed earlier in the same pass.
+ */
+export function findLocalRecordingProposals(
+  pengim: string,
+  variety: string,
+  stagingDir: string = STAGING_DIR,
+): { index: number; proposal: LocalRecordingProposal }[] {
+  const staged = readLocalRecordingStaging(stagingDir)
+  if (!staged) return []
+  return staged.proposals
+    .map((proposal, index) => ({ index, proposal }))
+    .filter(({ proposal }) => proposal.pengim === pengim && proposal.variety === variety)
+    .sort((a, b) => b.index - a.index)
+}
+
 /** Removes one proposal by its array index — called once its clip has been merged. */
 export function removeLocalRecordingProposal(index: number, stagingDir: string = STAGING_DIR): void {
   const path = stagingPath(stagingDir)
