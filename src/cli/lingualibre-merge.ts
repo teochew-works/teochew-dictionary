@@ -23,10 +23,24 @@ const flags = args.filter((a) => a.startsWith('--'))
 const positional = args.filter((a) => !a.startsWith('--'))
 const flagValue = (name: string): string | undefined => flags.find((f) => f.startsWith(`--${name}=`))?.slice(name.length + 3)
 
+/**
+ * A boolean flag accepts a bare `--name` (true) or an explicit
+ * `--name=true`/`--name=false`; anything else (e.g. `--name=yes`) is a usage
+ * error rather than being silently treated as false.
+ */
+function boolFlag(name: string): boolean {
+  if (flags.includes(`--${name}`)) return true
+  const value = flagValue(name)
+  if (value === undefined || value === 'false') return false
+  if (value === 'true') return true
+  console.error(`--${name} takes no value, or 'true'/'false' (got '--${name}=${value}')`)
+  process.exit(2)
+}
+
 const variety = flagValue('variety')
 const confidenceFlag = flagValue('confidence')
 const tag = flagValue('tag')
-const force = flags.includes('--force')
+const force = boolFlag('force')
 
 if (positional.length !== 1 || !variety) {
   console.error(USAGE)
@@ -39,7 +53,7 @@ if (!varieties.includes(variety)) {
   process.exit(2)
 }
 
-if (confidenceFlag && !(CONFIDENCE as readonly string[]).includes(confidenceFlag)) {
+if (confidenceFlag !== undefined && !(CONFIDENCE as readonly string[]).includes(confidenceFlag)) {
   console.error(`--confidence must be one of ${CONFIDENCE.join(', ')} (got '${confidenceFlag}')`)
   process.exit(2)
 }
