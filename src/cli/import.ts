@@ -2,7 +2,9 @@ import { existsSync } from 'node:fs'
 
 import { importCedict } from '../importers/cedict.js'
 import { backfillStagedTags, importWiktionary } from '../importers/wiktionary.js'
+import { importLinguaLibre } from '../importers/lingualibre.js'
 import { mergeImportResults, readStaging, writeStaging } from '../importers/staging.js'
+import { writeAudioStaging } from '../importers/audio-staging.js'
 import { loadEntries } from '../data/load.js'
 import { loadWiktionaryWordlist, writeWiktionaryWordlist } from '../data/wiktionary-wordlist.js'
 
@@ -24,8 +26,16 @@ import { loadWiktionaryWordlist, writeWiktionaryWordlist } from '../data/wiktion
  *                                   data/staging/wiktionary.yaml from the
  *                                   local wiktextract cache (issue #102,
  *                                   #105) — no live fetch, no headwords needed.
+ *   lingualibre [--limit=N] [--delay=MS]
+ *                                   fetch every Teochew pronunciation file
+ *                                   from Wikimedia Commons/Lingua Libre
+ *                                   (issue #106) and stage clip proposals —
+ *                                   no wordlist/cache step needed, Commons'
+ *                                   category listing already enumerates the
+ *                                   whole corpus.
  *
- * Both write to data/staging/ for review; neither touches data/entries/.
+ * All three write to data/staging/ for review; none touches data/entries/ or
+ * data/phonology/audio/.
  */
 
 const USAGE = `usage:
@@ -36,8 +46,12 @@ const USAGE = `usage:
                                                  data/wordlists/wiktionary-teochew-index.yaml)
   npm run import -- wiktionary --backfill-tags (re-derive tags/topics/alt_of
                                                  for already-staged proposals)
+  npm run import -- lingualibre [--limit=N] [--delay=MS]
+                                                (fetch Commons/Lingua Libre
+                                                 audio clip proposals)
 
-Both write proposals to data/staging/ for human review. Neither modifies data/entries/.`
+All three write proposals to data/staging/ for human review. None modifies
+data/entries/ or data/phonology/audio/.`
 
 // Importers stamp proposals with the date they ran, so provenance stays honest
 // when a staged file sits unmerged for a while.
@@ -145,6 +159,22 @@ switch (source) {
       const remaining = updated.filter((i) => i.status === 'to_fetch').length
       console.log(`  ${remaining} to_fetch item(s) remaining in the wordlist`)
     }
+    break
+  }
+
+  case 'lingualibre': {
+    const flags = rest.filter((a) => a.startsWith('--'))
+    const limitFlag = flags.find((f) => f.startsWith('--limit='))
+    const delayFlag = flags.find((f) => f.startsWith('--delay='))
+    const limit = limitFlag ? Number(limitFlag.slice('--limit='.length)) : undefined
+    const delayMs = delayFlag ? Number(delayFlag.slice('--delay='.length)) : undefined
+
+    console.log('fetching Teochew pronunciation files from Wikimedia Commons/Lingua Libre…')
+    const result = await importLinguaLibre({ delayMs, limit })
+    const out = writeAudioStaging(result)
+    console.log(`${result.proposals.length} proposal(s) → ${out}`)
+    for (const n of result.notes) console.log(`  ${n}`)
+    if (result.misses.length > 0) console.log(`  ${result.misses.length} file(s) could not be staged — see notes above`)
     break
   }
 
