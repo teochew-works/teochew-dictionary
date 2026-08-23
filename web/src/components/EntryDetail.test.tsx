@@ -52,4 +52,14 @@ describe('EntryDetail', () => {
     expect(screen.getByRole('link', { name: 'CC-BY-SA-4.0' })).toBeInTheDocument()
     expect(screen.queryByRole('list')).not.toBeInTheDocument()
   })
+
+  it('shows a level badge when the entry has a level', () => {
+    render(<EntryDetail entry={{ ...ENTRY, level: 'A2' }} showLicence={false} />)
+    expect(screen.getByText('A2')).toBeInTheDocument()
+  })
+
+  it('omits the level badge when the entry has no level', () => {
+    render(<EntryDetail entry={ENTRY} showLicence={false} />)
+    expect(screen.queryByText(/^[ABC][12]$/)).not.toBeInTheDocument()
+  })
 })

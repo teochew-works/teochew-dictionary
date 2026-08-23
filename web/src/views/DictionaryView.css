@@ -197,9 +197,27 @@
   padding-left: 1.25rem;
 }
 
+.entry-detail__title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
 .entry-detail__header h2 {
   margin: 0 0 0.25rem;
   font-size: 1.75rem;
+}
+
+.level-badge {
+  display: inline-block;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .entry-detail__variants,
