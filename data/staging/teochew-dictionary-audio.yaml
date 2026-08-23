@@ -1,0 +1,17 @@
+# Locally-recorded clip proposals — NOT part of the dataset.
+#
+# Appended one at a time by the Sounds tab's dev-only record control
+# (data/phonology/REVIEW.md § 17). Review each proposal — listen to the
+# clip at its `localPath`, check the pengim key and speaker id — then run
+# `npm run merge:local-recording -- <index> --variety=<id>`: re-hosts the
+# bytes to a GitHub Release and writes the clip straight into
+# data/phonology/audio/<variety>.yaml.
+source: teochew-dictionary-audio
+proposals:
+  - pengim: dong1
+    syllableCount: 1
+    localPath: data/staging/recordings/chaozhou/dong1__jky__81c2f112-dc26-49e5-be7e-c88b7ab8f2d7.webm
+    speaker: jky
+    recordedDate: 2026-08-23
+    consentAcknowledged: true
+    variety: chaozhou
