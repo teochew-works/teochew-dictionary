@@ -245,6 +245,13 @@ export function extractTranscription(title: string, uploader: string): string | 
  * character class — trailing hanzi/gloss text (see module doc comment)
  * reliably fails to parse and so is left in the (discarded) remainder.
  * Returns null when even the first token fails to parse.
+ *
+ * This function only distinguishes "parses" from "doesn't parse" — it does
+ * not judge whether a discarded remainder is genuine annotation or a real
+ * syllable this project's scheme just can't parse (see the module doc
+ * comment and issue #123). That judgment happens in the caller, via
+ * `findDroppedPengimTokens`, using a looser heuristic than `tryParsePengim`
+ * on purpose.
  */
 export function extractPengimPrefix(transcription: string): { pengim: string; syllableCount: number } | null {
   const tokens = transcription.trim().split(/\s+/u).filter(Boolean)
@@ -262,6 +269,20 @@ export function extractPengimPrefix(transcription: string): { pengim: string; sy
 /** First run of CJK ideographs in the transcription's post-Peng'im remainder, if any. */
 function extractHanzi(remainder: string): string | undefined {
   return remainder.match(/[㐀-䶿一-鿿]+/u)?.[0]
+}
+
+// Deliberately doesn't match e.g. 'li5(7)' (a parenthetical alt-tone
+// annotation seen in a few corpus filenames) — that's the issue #123
+// heuristic as specified, not a gap introduced here.
+const LOOKS_LIKE_PENGIM_TOKEN = /^[a-zê]+[1-8][;,.:]?$/iu
+
+/** Tokens in the discarded remainder that still look like real Peng'im syllables, not annotation. */
+function findDroppedPengimTokens(remainder: string): string[] {
+  return remainder
+    .trim()
+    .split(/\s+/u)
+    .filter(Boolean)
+    .filter((tok) => LOOKS_LIKE_PENGIM_TOKEN.test(tok))
 }
 
 /** Commons reports e.g. "CC BY-SA 4.0" — normalise to this project's licence-id spelling. */
@@ -301,6 +322,7 @@ export async function importLinguaLibre(options: LinguaLibreOptions = {}): Promi
   let unknownFilenamePattern = 0
   let unparsedTranscription = 0
   let licenceMismatches = 0
+  let possiblyIncomplete = 0
 
   for (const title of titles) {
     const fileInfo = info.get(title)
@@ -337,6 +359,14 @@ export async function importLinguaLibre(options: LinguaLibreOptions = {}): Promi
       )
     }
 
+    const droppedTokens = findDroppedPengimTokens(remainder)
+    if (droppedTokens.length > 0) {
+      possiblyIncomplete += 1
+      flags.push(
+        `transcription may be incomplete — '${droppedTokens.join(' ')}' after '${extracted.pengim}' still looks like Peng'im, not annotation — verify before merging`,
+      )
+    }
+
     proposals.push({
       pengim: extracted.pengim,
       syllableCount: extracted.syllableCount,
@@ -363,6 +393,7 @@ export async function importLinguaLibre(options: LinguaLibreOptions = {}): Promi
       `resolved ${proposals.length} proposal(s): ${singleSyllable} single-syllable (→ clips), ${multiSyllable} multi-syllable (→ wordClips)`,
       `${misses.length} miss(es): ${unknownFilenamePattern} unrecognised filename pattern, ${unparsedTranscription} transcription did not parse as Peng'im, ${missingInfo} missing imageinfo`,
       `${licenceMismatches} proposal(s) flagged for a licence mismatch — verify manually before merging`,
+      `${possiblyIncomplete} proposal(s) flagged as possibly incomplete — a dropped token still looks like Peng'im, verify manually before merging`,
       'Lingua Libre / Commons audio is CC-BY-SA-4.0 — merging binds the dataset to share-alike, same as wiktionary',
     ],
   }
