@@ -127,6 +127,18 @@ reappear as new (DevTools → Application → IndexedDB →
   `SoundsView` groups the list alphabetically by Peng'im initial with a jump
   nav, and filters client-side by Peng'im, IPA, or example text.
 
+  Each sound also carries an `occurrences` count (issue #129): its total
+  citation-form plus tone-sandhi-surface occurrence count across the whole
+  dictionary — a corpus-derived, per-syllable raw count, distinct from a
+  headword's own curated `frequency` (curriculum-commonness) field. Because
+  it folds in sandhi, a syllable that's only ever attested as a tone-sandhi
+  surface (never spoken in citation form) still gets a `Sound` row, with an
+  `occurrences` count but no examples. An "A–Z" / "Frequency" toggle in the
+  Sounds tab switches between the alphabetical, letter-grouped view above and
+  a flat list ranked by `occurrences` descending (ties broken alphabetically)
+  — the letter jump nav only applies to the alphabetical view, since
+  frequency order isn't alphabetically contiguous.
+
 ## Deployment
 
 `.github/workflows/deploy.yml` builds and publishes `web/dist` to GitHub
