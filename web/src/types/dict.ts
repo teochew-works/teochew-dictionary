@@ -30,6 +30,8 @@ export type PartOfSpeech =
 
 export type Confidence = 'high' | 'medium' | 'low'
 
+export type Level = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2'
+
 export interface Example {
   hanzi: string
   pengim: string
@@ -80,6 +82,7 @@ export interface EnrichedEntry {
   senses: Sense[]
   tags?: string[]
   frequency?: number
+  level?: Level
   sources: string[]
   retrieved?: string
   needs_review?: boolean
