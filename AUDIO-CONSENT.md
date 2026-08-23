@@ -35,3 +35,15 @@ already establishes for the dataset.
 4. A speaker may ask for their future, not-yet-recorded contributions to
    stop at any time. Clips already published stay under CC-BY-4.0, per the
    irrevocability note above.
+
+## Scope: this process is for clips recorded *by this project*
+
+This process governs recordings made for this project specifically, backed
+by the `teochew-dictionary-audio` source in `data/sources.yaml`. It does not
+apply to audio imported from an existing outside corpus — e.g. the Lingua
+Libre/Wikimedia Commons import (issue #106, `data/phonology/REVIEW.md` §
+16), backed by the `lingualibre` source. Those speakers already gave consent
+through Commons' own upload flow when they published under CC-BY-SA-4.0, and
+their `speaker` field records their real Commons/Wikimedia username, not a
+project-assigned pseudonym. Don't assume every clip's `speaker` field went
+through the pseudonym/opt-out process above — check which source it cites.
