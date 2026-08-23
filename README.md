@@ -803,12 +803,27 @@ hanzi and an accent note when Commons provides them, and the Commons
 uploader's username as `speaker` — a real identity, not this project's own
 pseudonym convention (see `AUDIO-CONSENT.md`'s scoping note).
 
-Staging only — this importer does not classify a clip's variety/accent fit,
-re-host its bytes, or merge it into `data/phonology/audio/*.yaml`. Once a
-clip is worth keeping, `npm run rehost:lingualibre -- <index-or-
-commonsTitle>` downloads it, checksums it, and uploads it as a GitHub
-Release asset, printing the `url`/`checksum` pair to hand-write into the
-right variety file.
+Staging only — this importer does not classify a clip's variety/accent fit.
+Once a clip is worth keeping:
+
+```bash
+npm run merge:lingualibre -- <index-or-commonsTitle> --variety=<id>
+```
+
+re-hosts it as a GitHub Release asset and writes it straight into
+`data/phonology/audio/<variety>.yaml` (`clips` or `wordClips`, per
+`syllableCount`) — `--variety` has no default, since judging accent fit stays
+a human call. `--force` overwrites an already-merged key; otherwise a repeat
+run refuses rather than silently clobbering a clip already chosen among
+duplicate candidates. `npm run rehost:lingualibre -- <index-or-commonsTitle>`
+still exists underneath for the bytes-only step (checksum + upload, no YAML
+write) if you want to hand-write the entry yourself.
+
+A clip's `sources` cites whichever of `lingualibre` / `lingualibre-ccby4` /
+`lingualibre-cc0` matches its own Commons-reported licence — the category
+defaults to CC-BY-SA-4.0, but a meaningful share of files report CC-BY-4.0 or
+CC0 instead, and merging always cites the file's actual licence rather than
+assuming the category default (see `data/phonology/REVIEW.md` § 16).
 
 ---
 
@@ -825,6 +840,9 @@ reusing one licence for everything.**
 | `data/` — entries citing a share-alike source | CC-BY-SA-4.0 | [`LICENSE-DATA-CC-BY-SA-4.0`](LICENSE-DATA-CC-BY-SA-4.0) |
 | `data/` — attribution owed to `unihan` | Unicode-DFS-2016 | [`LICENSE-DATA-UNICODE-DFS-2016`](LICENSE-DATA-UNICODE-DFS-2016) |
 | `data/phonology/audio/` — original recordings | CC-BY-4.0 | [`LICENSE-DATA-CC-BY-4.0`](LICENSE-DATA-CC-BY-4.0) |
+| `data/phonology/audio/` — Lingua Libre imports (`lingualibre`) | CC-BY-SA-4.0 | [`LICENSE-DATA-CC-BY-SA-4.0`](LICENSE-DATA-CC-BY-SA-4.0) |
+| `data/phonology/audio/` — Lingua Libre imports (`lingualibre-ccby4`) | CC-BY-4.0 | [`LICENSE-DATA-CC-BY-4.0`](LICENSE-DATA-CC-BY-4.0) |
+| `data/phonology/audio/` — Lingua Libre imports (`lingualibre-cc0`) | CC0 | [`LICENSE-DATA-CC0`](LICENSE-DATA-CC0) |
 
 The data licence is CC-BY-4.0, not BSD-3-Clause, on purpose: a software
 licence's "redistributions of source code / in binary form" language doesn't
@@ -878,9 +896,13 @@ than something a script does by accident.
 
 **Audio clips follow the same rule.** A clip's `licence` (`AudioReference` in
 `dist/dict.json`) derives from its `sources` exactly like an entry's, via the
-`teochew-dictionary-audio` id in `data/sources.yaml` — a recorded performance
-is copyrightable separately from the phonological fact it captures, so it
-needs its own provenance, not a free ride on the entry it's attached to.
+`teochew-dictionary-audio` id in `data/sources.yaml` (original recordings) or
+whichever of `lingualibre` / `lingualibre-ccby4` / `lingualibre-cc0` matches
+an imported clip's own reported licence — a recorded performance is
+copyrightable separately from the phonological fact it captures, so it needs
+its own provenance, not a free ride on the entry it's attached to. A clip's
+licence can therefore differ from its own entry's, and from other clips on
+the same entry.
 Per-clip speaker credit lives in the clip's own `speaker` field in
 `data/phonology/audio/*.yaml` (a pseudonymous identifier), not the
 `attributions` array, since every clip cites the one CC-BY-4.0 source —
@@ -929,6 +951,7 @@ are, so `check` stays fast, offline, and CI-safe.
 | `npm run xref -- <source>` | refresh a cached external phonology chart |
 | `npm run audio:verify` | fetch every audio clip and verify its checksum |
 | `npm run rehost:lingualibre -- <index-or-title>` | re-host a staged Lingua Libre clip as a GitHub Release asset (issue #106) |
+| `npm run merge:lingualibre -- <index-or-title> --variety=<id>` | re-host and merge a staged Lingua Libre clip into `data/phonology/audio/<variety>.yaml` (issue #106) |
 | `npm run schema` | emit the JSON Schemas alone |
 | `npm run backfill:mandarin-level -- <path> [-- --write]` | derive `level` from an HSK cognate match (issue #110) |
 | `npm test` | unit tests + dataset guards |
