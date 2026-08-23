@@ -786,6 +786,30 @@ Phrase/idiom-level tiering and the other two signals from issue #110
 (Hokkien-cognate via Taiwan's GTPT/MOE material, Teochew-internal corpus
 frequency) are follow-up work, not covered here.
 
+### Importing Lingua Libre/Commons audio (issue #106)
+
+```bash
+npm run import -- lingualibre
+```
+
+Wikimedia Commons hosts a large CC-BY-SA-4.0 corpus of Teochew word/phrase
+pronunciation recordings via the Lingua Libre project. Unlike Wiktionary,
+Commons' category listing enumerates the whole corpus exactly, so there's no
+search/wordlist/cache split — one command fetches every file's metadata and
+writes `data/staging/lingualibre.yaml`. Each staged proposal carries a
+recovered Peng'im transcription, `syllableCount` (1 → destined for a
+variety's `clips`; 2+ → `wordClips`, see `data/phonology/REVIEW.md` § 16),
+hanzi and an accent note when Commons provides them, and the Commons
+uploader's username as `speaker` — a real identity, not this project's own
+pseudonym convention (see `AUDIO-CONSENT.md`'s scoping note).
+
+Staging only — this importer does not classify a clip's variety/accent fit,
+re-host its bytes, or merge it into `data/phonology/audio/*.yaml`. Once a
+clip is worth keeping, `npm run rehost:lingualibre -- <index-or-
+commonsTitle>` downloads it, checksums it, and uploads it as a GitHub
+Release asset, printing the `url`/`checksum` pair to hand-write into the
+right variety file.
+
 ---
 
 ## Licensing
@@ -904,6 +928,7 @@ are, so `check` stays fast, offline, and CI-safe.
 | `npm run cache:wiktionary` | sync Wiktionary wikitext into `.cache/wiktionary-pages/` (issue #79) |
 | `npm run xref -- <source>` | refresh a cached external phonology chart |
 | `npm run audio:verify` | fetch every audio clip and verify its checksum |
+| `npm run rehost:lingualibre -- <index-or-title>` | re-host a staged Lingua Libre clip as a GitHub Release asset (issue #106) |
 | `npm run schema` | emit the JSON Schemas alone |
 | `npm run backfill:mandarin-level -- <path> [-- --write]` | derive `level` from an HSK cognate match (issue #110) |
 | `npm test` | unit tests + dataset guards |
