@@ -1,5 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useSounds } from '../hooks/useSounds'
+import { useLocalRecordingsStatus } from '../hooks/useLocalRecordingsStatus'
+import { RecordClipButton, type RecordStatus } from '../components/RecordClipButton'
 import type { Sound } from '../types/sounds'
 import './SoundsView.css'
 
@@ -36,6 +38,16 @@ function matchesQuery(sound: Sound, query: string): boolean {
 export function SoundsView() {
   const { data, loading, error } = useSounds()
   const [query, setQuery] = useState('')
+
+  // Dev-only (see RecordClipButton); the hook itself no-ops in production.
+  const localRecordings = useLocalRecordingsStatus()
+  const [justSaved, setJustSaved] = useState<Set<string>>(() => new Set())
+  const recordStatus = (pengim: string): RecordStatus => {
+    if (localRecordings?.published.has(pengim)) return 'published'
+    if (justSaved.has(pengim) || localRecordings?.pending.has(pengim)) return 'pending'
+    return 'none'
+  }
+  const markSaved = (pengim: string) => setJustSaved((prev) => new Set(prev).add(pengim))
 
   const allLetters = useMemo(() => groupByLetter(data?.sounds ?? []).map((g) => g.letter), [data])
 
@@ -116,6 +128,9 @@ export function SoundsView() {
                       </span>
                     ))}
                   </span>
+                  {import.meta.env.DEV && (
+                    <RecordClipButton pengim={sound.pengim} status={recordStatus(sound.pengim)} onSaved={markSaved} />
+                  )}
                 </li>
               ))}
             </ul>
