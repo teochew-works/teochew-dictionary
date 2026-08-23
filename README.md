@@ -184,6 +184,7 @@ Add to the appropriate file in `data/entries/`, then run `npm run validate`.
           pengim: ang5 to5 guê2
           en: red peach-shaped rice cake
   frequency: 5                   # 1 rare … 5 core everyday
+  level: A2                      # CEFR proficiency tier A1–C2, optional (issue #110)
   sources: [seed]                # must resolve against data/sources.yaml
 ```
 
@@ -742,6 +743,49 @@ already-merged entries in `data/entries/*.yaml` the same way it writes
 `tags:`/`alt_of:` (`src/importers/entry-tag-matching.ts`,
 `src/cli/backfill-wiktionary-tags.ts`).
 
+### CEFR proficiency `level`, Mandarin-cognate signal (issue #110)
+
+`entrySchema.level` (`src/schema/entry.ts`) is a CEFR A1–C2 tier, distinct
+from `frequency`: it tracks curriculum difficulty rather than corpus
+commonness, so a common word can be late-taught and a rare one early-taught.
+No ready-made graded system exists for Teochew, so this project derives one
+instead of importing one — starting with the one signal that has usable
+open material today: shared-hanzi cognacy with Mandarin HSK vocabulary.
+
+`npm run backfill:mandarin-level -- <path/to/complete.json> [-- --write]`
+matches each entry's headword/variants against a local copy of
+[`drkameleon/complete-hsk-vocabulary`](https://github.com/drkameleon/complete-hsk-vocabulary)'s
+`complete.json` (`data/sources.yaml`'s `hsk-vocabulary` id, `kind:
+reference` — the band is consulted to derive `level`, never reproduced, so
+no entry cites it in `sources:`) and writes `level:` directly onto
+already-merged entries in `data/entries/*.yaml`, the same
+dry-run-by-default, byte-offset-splice, only-fill-if-absent script shape as
+`backfill:wiktionary-tags` (`src/cli/backfill-mandarin-level.ts`; matching
+logic lives separately in `src/importers/mandarin-cognate-level.ts` so it's
+unit-testable).
+
+Two deliberate limitations, both because guessing is worse than an entry
+staying untiered:
+
+- **Exact whole-headword hanzi match only** — no character-level
+  decomposition. A Teochew multi-character headword that doesn't line up
+  with HSK's own word boundaries is left unmatched.
+- **Crosswalk covers HSK 2.0's `old-1`–`old-6` bands only**, mapped
+  `old-1`/`old-2`→A1, `old-3`→A2, `old-4`→B1, `old-5`→B2, `old-6`→C1 — the
+  correspondence most commonly cited for HSK 2.0. HSK 3.0's `new-N` bands
+  (1–9) are deliberately NOT crosswalked: China's Center for Language
+  Education and Cooperation describes only its three coarse stages
+  (elementary/intermediate/advanced) as corresponding to CEFR's A/B/C and
+  has published no official level-by-level table, so a word with only a
+  `new-N` band is left unmatched rather than mapped off an invented table.
+  No `old-N` band reaches C2 either — a C2 `level` can only come from a
+  future issue #110 signal (Hokkien-cognate, Teochew-corpus mining) or a
+  human's hand edit.
+
+Phrase/idiom-level tiering and the other two signals from issue #110
+(Hokkien-cognate via Taiwan's GTPT/MOE material, Teochew-internal corpus
+frequency) are follow-up work, not covered here.
+
 ---
 
 ## Licensing
@@ -861,6 +905,7 @@ are, so `check` stays fast, offline, and CI-safe.
 | `npm run xref -- <source>` | refresh a cached external phonology chart |
 | `npm run audio:verify` | fetch every audio clip and verify its checksum |
 | `npm run schema` | emit the JSON Schemas alone |
+| `npm run backfill:mandarin-level -- <path> [-- --write]` | derive `level` from an HSK cognate match (issue #110) |
 | `npm test` | unit tests + dataset guards |
 | `npm run check` | typecheck + test + validate |
 

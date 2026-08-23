@@ -18,6 +18,7 @@
     "build": "tsx src/cli/build.ts",
     "import": "tsx src/cli/import.ts",
     "backfill:wiktionary-tags": "tsx src/cli/backfill-wiktionary-tags.ts",
+    "backfill:mandarin-level": "tsx src/cli/backfill-mandarin-level.ts",
     "inventory": "tsx src/cli/inventory.ts",
     "wordlist:wiktionary": "tsx src/cli/wiktionary-index.ts",
     "batch:wiktionary": "tsx src/cli/wiktionary-batch.ts",
