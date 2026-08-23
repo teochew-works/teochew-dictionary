@@ -1419,6 +1419,7 @@ entries:
         gloss_en: [to upload]
         gloss_zh: [上傳]
         tags: [transitive]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1640,6 +1641,7 @@ entries:
       - pos: verb
         gloss_en: [to appeal (a judicial case)]
         gloss_zh: [上訴]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1927,6 +1929,7 @@ entries:
         gloss_en: [to suffer heatstroke, heatstroke, sunstroke]
         gloss_zh: [中暑]
         tags: [verb-object]
+        topics: [medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2769,6 +2772,7 @@ entries:
         gloss_en: [to go into shock, shock (medical condition)]
         gloss_zh: [休克]
         note: 休克 functions as both a noun (the medical condition 'shock') and a verb ('to go into shock'); classified as a verb, though the noun use is also common, e.g. 過敏性休克.
+        topics: [medicine, sciences]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -3166,6 +3170,7 @@ entries:
       - pos: verb
         gloss_en: [to compose music, to write music]
         gloss_zh: [作曲]
+        topics: [entertainment, lifestyle, music]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3566,6 +3571,7 @@ entries:
         gloss_en: [to invade, to trespass, to intrude]
         gloss_zh: [侵入]
         tags: [figuratively, transitive, usually]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4413,6 +4419,7 @@ entries:
         gloss_en: [to perform Buddhist/Taoist rites for the dead]
         gloss_zh: [做功德]
         tags: [verb-object]
+        topics: [lifestyle, religion]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4896,6 +4903,7 @@ entries:
       - pos: verb
         gloss_en: [to accelerate ripening (of fruit)]
         gloss_zh: [催熟]
+        topics: [agriculture, business, lifestyle]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5269,6 +5277,7 @@ entries:
       - pos: verb
         gloss_en: [to be congested (medical), to be hyperemic]
         gloss_zh: [充血]
+        topics: [medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5531,6 +5540,7 @@ entries:
       - pos: verb
         gloss_en: [to notarize, to certify (a document)]
         gloss_zh: [公證]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5544,6 +5554,7 @@ entries:
         gloss_en: [to revolve (astronomy), to orbit]
         gloss_zh: [公轉]
         note: Highly technical astronomical term (a planet revolving around another body); confident in the gloss but it is a specialized register word.
+        topics: [astronomy, natural-sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -6016,6 +6027,7 @@ entries:
         gloss_en: [to become a monk or nun, to leave home for religious life]
         gloss_zh: [出家]
         tags: [intransitive, verb-object]
+        topics: [Buddhism, lifestyle, religion]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6426,6 +6438,7 @@ entries:
         gloss_en: [to have measles]
         gloss_zh: [出麻]
         tags: [dialectal]
+        topics: [medicine, pathology, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6700,6 +6713,7 @@ entries:
         gloss_en: [to sentence, to convict]
         gloss_zh: [判刑]
         tags: [verb-object]
+        topics: [law]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7950,6 +7964,7 @@ entries:
       - pos: verb
         gloss_en: [to shorten trouser legs (by cutting/hemming)]
         gloss_zh: [剁褲跤]
+        topics: [business, manufacturing, sewing, textiles]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9016,6 +9031,7 @@ entries:
         gloss_en: [to run a lab test, to test (a sample)]
         gloss_zh: [化驗]
         tags: [transitive]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9251,6 +9267,7 @@ entries:
         gloss_en: [to adjust a character's pronunciation to fit a rhyme (when reading classical verse)]
         gloss_zh: [叶韻]
         note: Highly specialized traditional philology/poetics term, unlikely to be common spoken vocabulary despite having a confirmed Teochew reading.
+        topics: [human-sciences, linguistics, phonetics, phonology, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -9680,6 +9697,7 @@ entries:
         gloss_en: [to be solved (of a criminal case), to be cracked]
         gloss_zh: [告破]
         tags: [intransitive]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10507,6 +10525,7 @@ entries:
       - pos: verb
         gloss_en: [to vomit]
         gloss_zh: [嘔吐]
+        topics: [medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10519,6 +10538,7 @@ entries:
       - pos: verb
         gloss_en: [to vomit; to retch]
         gloss_zh: [嘔噦]
+        topics: [medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11049,6 +11069,7 @@ entries:
       - pos: verb
         gloss_en: [to group-buy, to purchase as a group]
         gloss_zh: [團購]
+        topics: [business]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11134,6 +11155,7 @@ entries:
       - pos: verb
         gloss_en: [to be currently enrolled/studying (at a school)]
         gloss_zh: [在讀]
+        topics: [education]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11258,6 +11280,7 @@ entries:
       - pos: verb
         gloss_en: ["to be on duty (of military, police, or security personnel)"]
         gloss_zh: [執勤]
+        topics: [law-enforcement, police]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11926,6 +11949,7 @@ entries:
       - pos: verb
         gloss_en: [to become necrotic, to necrose]
         gloss_zh: [壞死]
+        topics: [medicine, pathology, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12156,6 +12180,7 @@ entries:
         gloss_en: [(electrical engineering) to lose a current/flow]
         gloss_zh: [失流]
         note: This is a technical engineering term (e.g. loss-of-flow accidents); the page's second sense is left untranslated, so coverage may be incomplete.
+        topics: [business, electrical-engineering, electricity, electromagnetism, energy, engineering, natural-sciences, physical-sciences, physics]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -12359,6 +12384,7 @@ entries:
         gloss_zh: [奔馳]
         note: Page also lists a separate proper-noun sense ('Mercedes-Benz') for this headword; the general verb sense was chosen as the dictionary meaning.
         tags: [usually]
+        topics: [hobbies, horses, lifestyle, pets, sports]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -13115,6 +13141,7 @@ entries:
       - pos: verb
         gloss_en: [to pronounce judgment, to sentence]
         gloss_zh: [宣判]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13523,6 +13550,7 @@ entries:
         gloss_en: [to try (in court), trial]
         gloss_zh: [審判]
         note: Wiktionary lists both a verb sense ('to bring to trial') and a noun sense ('trial'); the part of speech chosen (verb) is uncertain since the noun usage is equally common.
+        topics: [law]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -13536,6 +13564,7 @@ entries:
       - pos: verb
         gloss_en: [to interrogate, to question]
         gloss_zh: [審問]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13623,6 +13652,7 @@ entries:
       - pos: verb
         gloss_en: [to interrogate, to try (in court)]
         gloss_zh: [審訊]
+        topics: [law]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13874,6 +13904,7 @@ entries:
       - pos: verb
         gloss_en: [to use antithesis (in poetry), to form parallel couplets]
         gloss_zh: [對仗]
+        topics: [communications, journalism, literature, media, poetry, publishing, writing]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -15077,6 +15108,7 @@ entries:
         gloss_en: [to play the qin, to play a stringed or keyboard instrument]
         gloss_zh: [彈琴]
         tags: [intransitive, verb-object]
+        topics: [entertainment, lifestyle, music]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17167,6 +17199,7 @@ entries:
         gloss_en: [to take a screenshot, screenshot; screen capture]
         gloss_zh: [截圖]
         tags: [intransitive, verb-object]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17217,6 +17250,7 @@ entries:
         gloss_en: [to amputate]
         gloss_zh: [截肢]
         tags: [intransitive, verb-object]
+        topics: [medicine, sciences, surgery]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18107,6 +18141,7 @@ entries:
       - pos: verb
         gloss_en: [to fight cancer, anticancer]
         gloss_zh: [抗癌]
+        topics: [medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18230,6 +18265,7 @@ entries:
       - pos: verb
         gloss_en: [to mortgage, to put up as collateral]
         gloss_zh: [抵押]
+        topics: [business, finance]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18429,6 +18465,7 @@ entries:
         gloss_en: [to have a prescription filled]
         gloss_zh: [拆藥]
         tags: [verb-object]
+        topics: [medicine, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18613,6 +18650,7 @@ entries:
       - pos: verb
         gloss_en: [to burp, to belch]
         gloss_zh: [打呃]
+        topics: [medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18858,6 +18896,7 @@ entries:
       - pos: verb
         gloss_en: [to take a pulse]
         gloss_zh: [拍脈, 把脈]
+        topics: [medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18993,6 +19032,7 @@ entries:
         gloss_en: [to play tug of war]
         gloss_zh: [拔河]
         tags: [intransitive, verb-object]
+        topics: [games]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19006,6 +19046,7 @@ entries:
         gloss_en: [to do fire cupping therapy]
         gloss_zh: [拔火罐]
         tags: [verb-object]
+        topics: [medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19018,6 +19059,7 @@ entries:
       - pos: verb
         gloss_en: [to play tug of war]
         gloss_zh: [拔索]
+        topics: [games]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19746,6 +19788,7 @@ entries:
         gloss_en: [to take someone's pulse]
         gloss_zh: [捍脈]
         tags: [verb-object]
+        topics: [medicine, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20005,6 +20048,7 @@ entries:
       - pos: verb
         gloss_en: [to scan a QR code]
         gloss_zh: [掃碼]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20127,6 +20171,7 @@ entries:
       - pos: verb
         gloss_en: [to typeset and print]
         gloss_zh: [排印]
+        topics: [media, printing, publishing, typography]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20779,6 +20824,7 @@ entries:
       - pos: verb
         gloss_en: [to massage (Chinese medicine), tui na]
         gloss_zh: [推拿]
+        topics: [medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20804,6 +20850,7 @@ entries:
         gloss_en: [to push (send a notification), push notification]
         gloss_zh: [推送]
         tags: [Internet]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21099,6 +21146,7 @@ entries:
       - pos: verb
         gloss_en: [to join a class mid-course, to transfer in as a student]
         gloss_zh: [插班]
+        topics: [education]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21685,6 +21733,7 @@ entries:
       - pos: verb
         gloss_en: [to false-start (in a race)]
         gloss_zh: [搶跑]
+        topics: [hobbies, lifestyle, sports]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22828,6 +22877,7 @@ entries:
       - pos: verb
         gloss_en: [to modify a train ticket, to change a ticket endorsement]
         gloss_zh: [改簽]
+        topics: [rail-transport, railways, transport]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23186,6 +23236,7 @@ entries:
         gloss_en: [to commit intentional homicide, to murder]
         gloss_zh: [故意殺人]
         note: This is a narrow legal term explicitly labeled '(law, Mainland China)' on Wiktionary, so it is a specialized rather than everyday expression.
+        topics: [law]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -23775,6 +23826,7 @@ entries:
       - pos: verb
         gloss_en: [to mediate, to settle differences]
         gloss_zh: [斡旋]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23965,6 +24017,7 @@ entries:
         gloss_en: [to baptize]
         gloss_zh: [施洗]
         tags: [intransitive, verb-object]
+        topics: [Christianity]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24077,6 +24130,7 @@ entries:
       - pos: verb
         gloss_en: [to faint, to swoon, to lose consciousness]
         gloss_zh: [昏厥]
+        topics: [medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -25817,6 +25871,7 @@ entries:
       - pos: verb
         gloss_en: [to oxidize]
         gloss_zh: [氧化]
+        topics: [chemistry, natural-sciences, physical-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26714,6 +26769,7 @@ entries:
       - pos: verb
         gloss_en: [to have excessive internal heat (TCM), to be inflamed]
         gloss_zh: [浮火]
+        topics: [medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26940,6 +26996,7 @@ entries:
       - pos: verb
         gloss_en: [to be suspected of (a crime)]
         gloss_zh: [涉嫌]
+        topics: [law]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27289,6 +27346,7 @@ entries:
       - pos: verb
         gloss_en: [to reduce a sentence, to commute a sentence]
         gloss_zh: [減刑]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27534,6 +27592,7 @@ entries:
       - pos: verb
         gloss_en: [to dissolve]
         gloss_zh: [溶解]
+        topics: [chemistry, natural-sciences, physical-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28167,6 +28226,7 @@ entries:
         gloss_en: [to speculate on the stock market; to trade stocks]
         gloss_zh: [炒股]
         tags: [intransitive, verb-object]
+        topics: [business, finance, stock-market]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28662,6 +28722,7 @@ entries:
         gloss_en: [to decoct medicine, to brew herbal medicine]
         gloss_zh: [煲藥]
         tags: [verb-object]
+        topics: [medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28700,6 +28761,7 @@ entries:
         gloss_en: [to incite, to instigate; provoke]
         gloss_zh: [煽動]
         tags: [formal]
+        topics: [law]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29255,6 +29317,7 @@ entries:
         gloss_en: [to break the law; to commit a crime]
         gloss_zh: [犯法]
         tags: [verb-object]
+        topics: [law]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -29465,6 +29528,7 @@ entries:
       - pos: verb
         gloss_en: [to receive a sentence, to be sentenced]
         gloss_zh: [獲刑]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30122,6 +30186,7 @@ entries:
       - pos: verb
         gloss_en: [to keep under medical observation]
         gloss_zh: [留觀]
+        topics: [medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30612,6 +30677,7 @@ entries:
       - pos: verb
         gloss_en: [to fall ill, onset of a disease]
         gloss_zh: [發病]
+        topics: [medicine, pathology, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -30759,6 +30825,7 @@ entries:
       - pos: verb
         gloss_en: [to have night sweats, to sweat copiously]
         gloss_zh: [盜汗]
+        topics: [medicine, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32006,6 +32073,7 @@ entries:
       - pos: verb
         gloss_en: [to make a definitive diagnosis; to diagnose]
         gloss_zh: [確診]
+        topics: [medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32560,6 +32628,7 @@ entries:
       - pos: verb
         gloss_en: [to vaccinate against smallpox]
         gloss_zh: [種痘]
+        topics: [immunology, medicine, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32647,6 +32716,7 @@ entries:
       - pos: verb
         gloss_en: [to audit, to examine (accounts/records)]
         gloss_zh: [稽核]
+        topics: [business, finance]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33473,6 +33543,7 @@ entries:
         gloss_en: [to refine, to purify]
         gloss_zh: [精煉]
         note: The page also lists an adjectival sense (refined/polished, or alt. form of 精練 'concise') under the same reading, so it is unclear whether verb or adjective is the primary pos.
+        topics: [engineering, metallurgy, natural-sciences, physical-sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -35937,6 +36008,7 @@ entries:
       - pos: verb
         gloss_en: [to square (a number); to be multiplied by itself]
         gloss_zh: [自乘]
+        topics: [arithmetic]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36149,6 +36221,7 @@ entries:
       - pos: verb
         gloss_en: [to rotate (on its axis), to spin]
         gloss_zh: [自轉]
+        topics: [astronomy, natural-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36174,6 +36247,7 @@ entries:
         gloss_en: [to turn oneself in, to surrender (to authorities)]
         gloss_zh: [自首]
         tags: [intransitive]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -36737,6 +36811,7 @@ entries:
       - pos: verb
         gloss_en: [to place a bet, to make a bet]
         gloss_zh: [落注]
+        topics: [gambling, games]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37084,6 +37159,7 @@ entries:
       - pos: verb
         gloss_en: [to distill]
         gloss_zh: [蒸餾]
+        topics: [chemistry, natural-sciences, physical-sciences, physics]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38638,6 +38714,7 @@ entries:
       - pos: verb
         gloss_en: [to unlock]
         gloss_zh: [解鎖]
+        topics: [communications, computing, electrical-engineering, engineering, mathematics, natural-sciences, physical-sciences, sciences, telecommunications]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39206,6 +39283,7 @@ entries:
       - pos: verb
         gloss_en: [to diagnose]
         gloss_zh: [診斷]
+        topics: [medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39243,6 +39321,7 @@ entries:
         gloss_en: [to take someone's pulse]
         gloss_zh: [診脈, 把脈]
         tags: [intransitive, verb-object]
+        topics: [medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39693,6 +39772,7 @@ entries:
       - pos: verb
         gloss_en: [to authenticate, to certify, to authorize]
         gloss_zh: [認證]
+        topics: [business, law]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40048,6 +40128,7 @@ entries:
       - pos: verb
         gloss_en: [to mediate, to settle a dispute]
         gloss_zh: [調解]
+        topics: [law]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40734,6 +40815,7 @@ entries:
       - pos: verb
         gloss_en: [to read (into memory), to load (data)]
         gloss_zh: [讀取]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41210,6 +41292,7 @@ entries:
         gloss_en: [to symbolically buy water for washing the deceased (funeral custom)]
         gloss_zh: [買水]
         note: Highly specific funeral-ritual term whose exact Teochew usage and currency are hard to verify from the Wiktionary gloss alone.
+        topics: [lifestyle, religion]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -41977,6 +42060,7 @@ entries:
       - pos: verb
         gloss_en: [to superconduct]
         gloss_zh: [超導]
+        topics: [natural-sciences, physical-sciences, physics]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42148,6 +42232,7 @@ entries:
       - pos: verb
         gloss_en: [to divine using moon blocks]
         gloss_zh: [跋杯]
+        topics: [lifestyle, religion]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42371,6 +42456,7 @@ entries:
       - pos: verb
         gloss_en: [to do the long jump, long jump (sport)]
         gloss_zh: [跳遠]
+        topics: [athletics, hobbies, lifestyle, sports]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42708,6 +42794,7 @@ entries:
         gloss_en: [to drop out of school, to discontinue one's studies]
         gloss_zh: [輟學]
         tags: [intransitive, verb-object]
+        topics: [education]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42908,6 +42995,7 @@ entries:
       - pos: verb
         gloss_en: [to refer to a medical specialist]
         gloss_zh: [轉診]
+        topics: [medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42933,6 +43021,7 @@ entries:
       - pos: verb
         gloss_en: ["to transfer (ownership, rights, property)"]
         gloss_zh: [轉讓]
+        topics: [business, engineering, finance, law, natural-sciences, physical-sciences, technology]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43133,6 +43222,7 @@ entries:
       - pos: verb
         gloss_en: [to argue (in court), to plead]
         gloss_zh: [辯稱]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43603,6 +43693,7 @@ entries:
       - pos: verb
         gloss_en: [to be discharged from military service, to retire (from the military)]
         gloss_zh: [退伍]
+        topics: [government, military, politics, war]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44503,6 +44594,7 @@ entries:
         gloss_en: [to be allergic, to have an allergy]
         gloss_zh: [過敏]
         note: Also commonly used as an adjective meaning 'oversensitive/touchy'; the medical verb sense 'to be allergic' is recorded here.
+        topics: [medicine, sciences]
     frequency: 4
     needs_review: true
     sources: [wiktionary]
@@ -44991,6 +45083,7 @@ entries:
         gloss_en: [to register for classes, to choose courses]
         gloss_zh: [選課]
         tags: [intransitive, verb-object]
+        topics: [education]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45178,6 +45271,7 @@ entries:
       - pos: verb
         gloss_en: [to return to secular life (of a monk or nun), to disrobe]
         gloss_zh: [還俗]
+        topics: [lifestyle, religion]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45227,6 +45321,7 @@ entries:
         gloss_en: [to deploy, "to arrange; to lay out (plans, forces)"]
         gloss_zh: [部署]
         tags: [figuratively]
+        topics: [government, military, politics, war]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45325,6 +45420,7 @@ entries:
         gloss_en: [to drink and drive, drink-driving]
         gloss_zh: [酒驾]
         tags: [intransitive]
+        topics: [automotive, law, transport, vehicles]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45538,6 +45634,7 @@ entries:
       - pos: verb
         gloss_en: [to commit bigamy]
         gloss_zh: [重婚]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45860,6 +45957,7 @@ entries:
         gloss_en: [to dislocate, to misalign, to misplace]
         gloss_zh: [錯位]
         tags: [figuratively]
+        topics: [medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46208,6 +46306,7 @@ entries:
       - pos: verb
         gloss_en: [to open court, to start a court session]
         gloss_zh: [開庭]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46600,6 +46699,7 @@ entries:
         gloss_en: [to prevent and treat/cure, "prevention and control (of disease, pests)"]
         gloss_zh: [防治]
         tags: [transitive]
+        topics: [medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -47739,6 +47839,7 @@ entries:
         gloss_en: [to be baptized, to receive baptism]
         gloss_zh: [領洗]
         tags: [verb-object]
+        topics: [Catholicism, Christianity]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -51244,6 +51345,7 @@ entries:
         gloss_en: [to peck]
         gloss_zh: [啄]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [business, gambling, games]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -53016,6 +53118,7 @@ entries:
         gloss_zh: [打官司]
         note: 1 candidate reading from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
         tags: [verb-object]
+        topics: [law]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -54810,6 +54913,7 @@ entries:
         gloss_zh: [洗腎]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
         tags: [colloquial, verb-object]
+        topics: [medicine, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -57628,6 +57732,7 @@ entries:
         gloss_zh: [中暑]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
         tags: [dialectal]
+        topics: [medicine, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -58303,6 +58408,7 @@ entries:
         gloss_en: [to examine (a patient); to diagnose]
         gloss_zh: [診]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [medicine, sciences]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -60172,6 +60278,7 @@ entries:
         gloss_en: [to feel dizzy, to be giddy]
         gloss_zh: [頭眩]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [medicine, sciences]
     frequency: 3
     needs_review: true
     sources: [wiktionary]

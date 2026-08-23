@@ -564,6 +564,7 @@ entries:
         gloss_en: [complication (medical)]
         gloss_zh: [併發症]
         note: No dedicated medical/health category exists in the category list, so body.yaml was chosen as the closest topical fit for this clinical term.
+        topics: [medicine, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -629,6 +630,7 @@ entries:
       - pos: noun
         gloss_en: [immunity]
         gloss_zh: [免疫力]
+        topics: [immunology, medicine, sciences]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -665,6 +667,7 @@ entries:
       - pos: noun
         gloss_en: [chilblain, frostbite sore]
         gloss_zh: [凍瘡]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -678,6 +681,7 @@ entries:
         gloss_en: [hemorrhagic fever]
         gloss_zh: [出血熱]
         note: Specialized pathology term; no category file cleanly fits a disease name, so body.yaml was chosen as the closest match.
+        topics: [medicine, pathology, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -791,6 +795,7 @@ entries:
       - pos: noun
         gloss_en: [respiratory tract, airway]
         gloss_zh: [呼吸道]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -803,6 +808,7 @@ entries:
       - pos: noun
         gloss_en: [asthma]
         gloss_zh: [哮喘]
+        topics: [medicine, pathology, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -913,6 +919,7 @@ entries:
       - pos: noun
         gloss_en: [organ (biology)]
         gloss_zh: [器官]
+        topics: [biology, medicine, natural-sciences, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -937,6 +944,7 @@ entries:
       - pos: noun
         gloss_en: [fontanelle, soft spot on an infant's skull]
         gloss_zh: [囟]
+        topics: [anatomy, medicine, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -985,6 +993,7 @@ entries:
       - pos: noun
         gloss_en: [goiter]
         gloss_zh: [大頷胿]
+        topics: [medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -998,6 +1007,7 @@ entries:
         gloss_en: [hernia (vulgar), scrotal hernia]
         gloss_zh: [大𡳞脬]
         tags: [vulgar]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1054,6 +1064,7 @@ entries:
       - pos: noun
         gloss_en: [cervical cancer]
         gloss_zh: [宮頸癌]
+        topics: [medicine, oncology, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1178,6 +1189,7 @@ entries:
       - pos: noun
         gloss_en: [urethra]
         gloss_zh: [尿道]
+        topics: [anatomy, medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1360,6 +1372,7 @@ entries:
       - pos: noun
         gloss_en: [palm (of the hand)]
         gloss_zh: [手掌]
+        topics: [anatomy, medicine, sciences]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1598,6 +1611,7 @@ entries:
       - pos: noun
         gloss_en: [occipital bone]
         gloss_zh: [枕骨]
+        topics: [anatomy, medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1686,6 +1700,7 @@ entries:
       - pos: noun
         gloss_en: [trachea, windpipe]
         gloss_zh: [氣管]
+        topics: [anatomy, medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1770,6 +1785,7 @@ entries:
       - pos: noun
         gloss_en: [hormone]
         gloss_zh: [激素]
+        topics: [medicine, physiology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1796,6 +1812,7 @@ entries:
       - pos: noun
         gloss_en: [burn (injury)]
         gloss_zh: [燒傷]
+        topics: [medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1892,6 +1909,7 @@ entries:
       - pos: noun
         gloss_en: [diabetes mellitus, diabetes]
         gloss_zh: [甜尿病, 糖尿病]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1904,6 +1922,7 @@ entries:
       - pos: noun
         gloss_en: [hernia]
         gloss_zh: [疝]
+        topics: [medicine, pathology, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1941,6 +1960,7 @@ entries:
         gloss_en: [infantile malnutrition (from digestive disturbances or intestinal parasites), pediatric malnutrition syndrome]
         gloss_zh: [疳積]
         note: Specialized traditional-medicine/pediatric term; no dedicated disease/medical category exists so body.yaml was chosen as the closest fit.
+        topics: [medicine, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -1981,6 +2001,7 @@ entries:
         gloss_en: ["pathogenic bacteria, germs"]
         gloss_zh: [病原菌]
         note: Specialized medical/pathology term; no dedicated science/medical category exists so body.yaml was chosen as the closest fit.
+        topics: [immunology, medicine, pathology, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -2006,6 +2027,7 @@ entries:
       - pos: noun
         gloss_en: [condition of an illness, state of a patient's illness]
         gloss_zh: [病情]
+        topics: [medicine, sciences]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2103,6 +2125,7 @@ entries:
       - pos: noun
         gloss_en: [symptom (of an illness)]
         gloss_zh: [症狀]
+        topics: [medicine, sciences]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2301,6 +2324,7 @@ entries:
         gloss_en: [carcinogenesis; cancerization]
         gloss_zh: [癌變]
         note: Highly technical medical/oncology term rarely used outside clinical contexts.
+        topics: [medicine, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -2352,6 +2376,7 @@ entries:
       - pos: noun
         gloss_en: [cataract]
         gloss_zh: [白內障]
+        topics: [medicine, ophthalmology, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2378,6 +2403,7 @@ entries:
       - pos: noun
         gloss_en: [leukemia]
         gloss_zh: [白血病]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2426,6 +2452,7 @@ entries:
       - pos: noun
         gloss_en: [eyeball]
         gloss_zh: [目仁]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2464,6 +2491,7 @@ entries:
       - pos: noun
         gloss_en: [stye, hordeolum]
         gloss_zh: [目狗針]
+        topics: [medicine, ophthalmology, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2538,6 +2566,7 @@ entries:
       - pos: noun
         gloss_en: [stye, hordeolum]
         gloss_zh: [目針]
+        topics: [medicine, ophthalmology, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2562,6 +2591,7 @@ entries:
       - pos: noun
         gloss_en: [appendicitis]
         gloss_zh: [盲腸炎]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2749,6 +2779,7 @@ entries:
       - pos: noun
         gloss_en: [pupil (of the eye)]
         gloss_zh: [瞳孔]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2761,6 +2792,7 @@ entries:
       - pos: noun
         gloss_en: [neuron]
         gloss_zh: [神經元]
+        topics: [medicine, neurology, neuroscience, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2785,6 +2817,7 @@ entries:
       - pos: noun
         gloss_en: [schizophrenia]
         gloss_zh: [精神分裂症]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2797,6 +2830,7 @@ entries:
       - pos: noun
         gloss_en: [diabetes mellitus; diabetes]
         gloss_zh: [糖尿病]
+        topics: [medicine, pathology, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2810,6 +2844,7 @@ entries:
         gloss_en: ["acute febrile illness (heatstroke, cholera, measles, etc.)", sha (TCM ailment)]
         gloss_zh: [痧]
         tags: [dialectal]
+        topics: [medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2834,6 +2869,7 @@ entries:
       - pos: noun
         gloss_en: [tuberculosis]
         gloss_zh: [結核病]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2992,6 +3028,7 @@ entries:
       - pos: noun
         gloss_en: [muscle]
         gloss_zh: [肌肉]
+        topics: [anatomy, medicine, sciences]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3054,6 +3091,7 @@ entries:
       - pos: noun
         gloss_en: [hepatitis]
         gloss_zh: [肝炎]
+        topics: [medicine, pathology, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3092,6 +3130,7 @@ entries:
       - pos: noun
         gloss_en: [limb]
         gloss_zh: [肢]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3154,6 +3193,7 @@ entries:
       - pos: noun
         gloss_en: [pneumonia]
         gloss_zh: [肺炎]
+        topics: [medicine, pathology, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3167,6 +3207,7 @@ entries:
         gloss_en: [pulmonary tuberculosis]
         gloss_zh: [肺癆]
         tags: [regional]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3243,6 +3284,7 @@ entries:
       - pos: noun
         gloss_en: [placenta]
         gloss_zh: [胎盤]
+        topics: [anatomy, medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3293,6 +3335,7 @@ entries:
       - pos: noun
         gloss_en: [afterbirth]
         gloss_zh: [胞衣]
+        topics: [medicine, obstetrics, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3305,6 +3348,7 @@ entries:
       - pos: noun
         gloss_en: [freckle]
         gloss_zh: [胡蠅屎]
+        topics: [dermatology, medicine, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3329,6 +3373,7 @@ entries:
       - pos: noun
         gloss_en: [insulin]
         gloss_zh: [胰島素]
+        topics: [biochemistry, biology, chemistry, microbiology, natural-sciences, physical-sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3429,6 +3474,7 @@ entries:
       - pos: noun
         gloss_en: [spine, spinal column, backbone]
         gloss_zh: [脊柱, 脊椎]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3556,6 +3602,7 @@ entries:
         gloss_en: [stroke, apoplexy]
         gloss_zh: [腦卒中, 中風]
         tags: [formal]
+        topics: [medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3580,6 +3627,7 @@ entries:
       - pos: noun
         gloss_en: [meningitis]
         gloss_zh: [腦膜炎]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3592,6 +3640,7 @@ entries:
       - pos: noun
         gloss_en: [brain]
         gloss_zh: [腦部]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3628,6 +3677,7 @@ entries:
       - pos: noun
         gloss_en: [mumps, parotitis]
         gloss_zh: [腮腺炎]
+        topics: [medicine, pathology, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3640,6 +3690,7 @@ entries:
       - pos: noun
         gloss_en: [lumbar disc herniation]
         gloss_zh: [腰椎間盤突出]
+        topics: [medicine, pathology, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3664,6 +3715,7 @@ entries:
       - pos: noun
         gloss_en: [gland]
         gloss_zh: [腺]
+        topics: [anatomy, medicine, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3738,6 +3790,7 @@ entries:
       - pos: noun
         gloss_en: [knee]
         gloss_zh: [膝]
+        topics: [anatomy, medicine, sciences]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3764,6 +3817,7 @@ entries:
       - pos: noun
         gloss_en: [bile, gall]
         gloss_zh: [膽汁]
+        topics: [biochemistry, biology, chemistry, microbiology, natural-sciences, physical-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3776,6 +3830,7 @@ entries:
       - pos: noun
         gloss_en: [arm]
         gloss_zh: [臂]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3850,6 +3905,7 @@ entries:
       - pos: noun
         gloss_en: [temple (of the head)]
         gloss_zh: [草眼]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3863,6 +3919,7 @@ entries:
         gloss_en: [hymen]
         gloss_zh: [處女膜]
         tags: [proscribed]
+        topics: [anatomy, medicine, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3887,6 +3944,7 @@ entries:
       - pos: noun
         gloss_en: [blood type]
         gloss_zh: [血型]
+        topics: [biology, natural-sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3899,6 +3957,7 @@ entries:
       - pos: noun
         gloss_en: [blood pressure]
         gloss_zh: [血壓]
+        topics: [medicine, pathology, sciences]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3923,6 +3982,7 @@ entries:
       - pos: noun
         gloss_en: [thrombus; blood clot]
         gloss_zh: [血栓]
+        topics: [hematology, medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3947,6 +4007,7 @@ entries:
       - pos: noun
         gloss_en: [blood cell]
         gloss_zh: [血球]
+        topics: [biology, cytology, hematology, medicine, natural-sciences, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3971,6 +4032,7 @@ entries:
       - pos: noun
         gloss_en: [blood sugar; glucose]
         gloss_zh: [血糖]
+        topics: [medicine, physiology, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4079,6 +4141,7 @@ entries:
       - pos: noun
         gloss_en: [heel]
         gloss_zh: [跤後卵]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4091,6 +4154,7 @@ entries:
       - pos: noun
         gloss_en: [heel]
         gloss_zh: [跤後蹬]
+        topics: [anatomy, medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4139,6 +4203,7 @@ entries:
       - pos: noun
         gloss_en: [tibia, shinbone]
         gloss_zh: [跤臁]
+        topics: [anatomy, medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4215,6 +4280,7 @@ entries:
       - pos: noun
         gloss_en: [body, organism]
         gloss_zh: [身軀]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4266,6 +4332,7 @@ entries:
         gloss_en: [myopia, nearsightedness]
         gloss_zh: [近視]
         note: The page lists a noun sense ('myopia; nearsightedness') and an adjective sense ('myopic; near-sighted') under the identical reading; the noun was chosen as primary but the word is also commonly used predicatively/adjectivally.
+        topics: [medicine, pathology, sciences]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -4356,6 +4423,7 @@ entries:
       - pos: noun
         gloss_en: [glaucoma]
         gloss_zh: [青光眼]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4507,6 +4575,7 @@ entries:
       - pos: noun
         gloss_en: [cheek]
         gloss_zh: [臉頰]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4557,6 +4626,7 @@ entries:
       - pos: noun
         gloss_en: [forehead]
         gloss_zh: [額頭]
+        topics: [anatomy, medicine, sciences]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4593,6 +4663,7 @@ entries:
       - pos: noun
         gloss_en: [rheumatism]
         gloss_zh: [風濕]
+        topics: [medicine, pathology, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4619,6 +4690,7 @@ entries:
       - pos: noun
         gloss_en: [shoulder blade, scapula]
         gloss_zh: [肩胛骨]
+        topics: [anatomy, medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4719,6 +4791,7 @@ entries:
       - pos: noun
         gloss_en: [pelvis]
         gloss_zh: [骨盤]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4731,6 +4804,7 @@ entries:
       - pos: noun
         gloss_en: [bone marrow]
         gloss_zh: [骨髓]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4901,6 +4975,7 @@ entries:
       - pos: noun
         gloss_en: [fish scale]
         gloss_zh: [魚鱗]
+        topics: [biology, fish, ichthyology, natural-sciences, zoology]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4975,6 +5050,7 @@ entries:
       - pos: noun
         gloss_en: [nose hair, nasal hair, vibrissa]
         gloss_zh: [鼻空毛]
+        topics: [anatomy, medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5111,6 +5187,7 @@ entries:
       - pos: noun
         gloss_en: [rib]
         gloss_zh: [𩩍籬]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5123,6 +5200,7 @@ entries:
       - pos: noun
         gloss_en: [rib]
         gloss_zh: [𩩍籬骨]
+        topics: [anatomy, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5197,6 +5275,7 @@ entries:
         gloss_en: [cold, common cold]
         gloss_zh: [傷風]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [medicine, pathology, sciences]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -6322,6 +6401,7 @@ entries:
         gloss_en: [fontanelle]
         gloss_zh: [額囟]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [anatomy, medicine, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -6399,6 +6479,7 @@ entries:
         gloss_en: [hip]
         gloss_zh: [髖]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [anatomy, medicine, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]

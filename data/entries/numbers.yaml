@@ -1281,6 +1281,7 @@ entries:
       - pos: noun
         gloss_en: [sequence (mathematics); numerical progression]
         gloss_zh: [數列]
+        topics: [mathematics, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1331,6 +1332,7 @@ entries:
       - pos: noun
         gloss_en: [Arabic numeral]
         gloss_zh: [阿拉伯数字]
+        topics: [arithmetic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1343,6 +1345,7 @@ entries:
       - pos: noun
         gloss_en: [Arabic numeral]
         gloss_zh: [阿拉伯数字]
+        topics: [arithmetic]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1868,6 +1871,7 @@ entries:
         gloss_en: [multiplication]
         gloss_zh: [乘法]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [arithmetic]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
