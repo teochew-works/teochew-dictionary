@@ -14,6 +14,7 @@ function makeReading(overrides: Partial<EnrichedReading> = {}): EnrichedReading 
     pengim_toneless: 'dio ziu',
     syllable_count: 2,
     audio: [null, null],
+    wordAudio: null,
     ...overrides,
   }
 }

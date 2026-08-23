@@ -18,6 +18,7 @@ function makeEntry(overrides: Partial<EnrichedEntry>): EnrichedEntry {
         pengim_toneless: 'dio ziu',
         syllable_count: 2,
         audio: [null, null],
+        wordAudio: null,
       },
     ],
     senses: [{ pos: 'proper-noun', gloss_en: ['Chaozhou', 'Teochew'] }],
