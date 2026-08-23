@@ -1,5 +1,5 @@
-import { afterEach, describe, expect, it, vi } from 'vitest'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { SoundsView } from './SoundsView'
 import type { SoundsData } from '../types/sounds'
 
@@ -34,6 +34,18 @@ function stubFetch(data: SoundsData) {
   vi.stubGlobal(
     'fetch',
     vi.fn(() => Promise.resolve(new Response(JSON.stringify(data), { status: 200 }))),
+  )
+}
+
+/** Branches on request URL so /api/local-recordings gets its own realistic response, distinct from sounds.json. */
+function stubFetchWithLocalRecordings(data: SoundsData, localRecordings: { published?: Record<string, unknown>; pending?: string[] }) {
+  vi.stubGlobal(
+    'fetch',
+    vi.fn((input: RequestInfo | URL) => {
+      const url = typeof input === 'string' ? input : input.toString()
+      const body = url.includes('/api/local-recordings') ? localRecordings : data
+      return Promise.resolve(new Response(JSON.stringify(body), { status: 200 }))
+    }),
   )
 }
 
@@ -106,5 +118,80 @@ describe('SoundsView', () => {
     expect(screen.getByLabelText('Jump to initial')).toBeInTheDocument()
     const pengims = [...container.querySelectorAll('.sound-row__pengim')].map((el) => el.textContent)
     expect(pengims).toEqual(['a1', 'ai3', 'bho5'])
+  })
+})
+
+describe('SoundsView play button (issue #132)', () => {
+  // jsdom implements neither, and calling them unstubbed emits a jsdomError.
+  let play: ReturnType<typeof vi.spyOn>
+  let pause: ReturnType<typeof vi.spyOn>
+
+  beforeEach(() => {
+    play = vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined)
+    pause = vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
+  })
+
+  afterEach(() => {
+    cleanup()
+    vi.restoreAllMocks()
+    vi.unstubAllGlobals()
+  })
+
+  it('labels the play button with the speaker for a published clip', async () => {
+    stubFetchWithLocalRecordings(FIXTURE, {
+      published: { a1: { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1.wav', speaker: 'speaker-1' } },
+    })
+    render(<SoundsView />)
+
+    expect(await screen.findByRole('button', { name: 'Play recording by speaker-1' })).toHaveTextContent('speaker-1')
+  })
+
+  it('falls back to a generic "Play" label when the clip has no speaker', async () => {
+    stubFetchWithLocalRecordings(FIXTURE, {
+      published: { a1: { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1.wav' } },
+    })
+    render(<SoundsView />)
+
+    expect(await screen.findByRole('button', { name: 'Play recording' })).toHaveTextContent('Play')
+  })
+
+  it('shows no play button for a row with no published clip', async () => {
+    stubFetchWithLocalRecordings(FIXTURE, { published: {} })
+    render(<SoundsView />)
+
+    await screen.findByText('a³³')
+    expect(screen.queryByRole('button', { name: /^Play recording/ })).not.toBeInTheDocument()
+  })
+
+  it('plays the clip and marks the button as pressed', async () => {
+    stubFetchWithLocalRecordings(FIXTURE, {
+      published: { a1: { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1.wav', speaker: 'speaker-1' } },
+    })
+    render(<SoundsView />)
+    const button = await screen.findByRole('button', { name: 'Play recording by speaker-1' })
+
+    fireEvent.click(button)
+
+    expect(play).toHaveBeenCalledTimes(1)
+    expect(button).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  it('stops the first clip when a second row is played', async () => {
+    stubFetchWithLocalRecordings(FIXTURE, {
+      published: {
+        a1: { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1.wav', speaker: 'speaker-1' },
+        ai3: { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/ai3.wav', speaker: 'speaker-2' },
+      },
+    })
+    render(<SoundsView />)
+    const first = await screen.findByRole('button', { name: 'Play recording by speaker-1' })
+    const second = await screen.findByRole('button', { name: 'Play recording by speaker-2' })
+
+    fireEvent.click(first)
+    fireEvent.click(second)
+
+    expect(pause).toHaveBeenCalled()
+    expect(first).toHaveAttribute('aria-pressed', 'false')
+    expect(second).toHaveAttribute('aria-pressed', 'true')
   })
 })

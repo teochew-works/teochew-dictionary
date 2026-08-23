@@ -136,7 +136,10 @@
 }
 
 .sound-row:has(.sound-row__count) {
-  grid-template-columns: 6rem 6rem 4rem 1fr;
+  /* Same trailing `auto` reservation as the base rule above — without it, the
+     dev-only controls (a 5th grid child) fall onto an implicit second row
+     instead of staying in their own trailing column. */
+  grid-template-columns: 6rem 6rem 4rem 1fr auto;
 }
 
 .sound-row__count {
@@ -205,6 +208,32 @@
 }
 
 /* Dev-only record control (issue #128) — see web/src/components/RecordClipButton.tsx. */
+
+.sound-row__dev-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.sound-row__play {
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-fg);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.sound-row__play:hover {
+  border-color: var(--color-accent);
+}
+
+.sound-row__play--playing {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
 
 .record-clip {
   display: inline-flex;
