@@ -2,9 +2,10 @@ import { useState } from 'react'
 import { useDictionary } from './hooks/useDictionary'
 import { DictionaryView } from './views/DictionaryView'
 import { FlashcardsView } from './views/FlashcardsView'
+import { SoundsView } from './views/SoundsView'
 import './App.css'
 
-type Tab = 'dictionary' | 'flashcards'
+type Tab = 'dictionary' | 'flashcards' | 'sounds'
 
 export function App() {
   const { data, loading, error } = useDictionary()
@@ -29,12 +30,22 @@ export function App() {
           >
             Flashcards
           </button>
+          <button
+            type="button"
+            className={tab === 'sounds' ? 'app__tab app__tab--active' : 'app__tab'}
+            onClick={() => setTab('sounds')}
+          >
+            Sounds
+          </button>
         </nav>
       </header>
 
       <main className="app__main">
-        {loading && <p className="app__status">Loading dictionary…</p>}
-        {error && (
+        {/* Sounds has its own data source (dist/sounds.json via useSounds inside
+            SoundsView) and doesn't depend on dict.json, so it isn't gated behind
+            the dictionary's loading/error state below. */}
+        {tab !== 'sounds' && loading && <p className="app__status">Loading dictionary…</p>}
+        {tab !== 'sounds' && error && (
           <p className="app__status app__status--error">
             Couldn't load the dictionary ({error}). If you're running this locally, make sure you've run{' '}
             <code>npm run build</code> in the repo root first.
@@ -42,6 +53,7 @@ export function App() {
         )}
         {data && tab === 'dictionary' && <DictionaryView entries={data.entries} />}
         {data && tab === 'flashcards' && <FlashcardsView entries={data.entries} />}
+        {tab === 'sounds' && <SoundsView />}
       </main>
     </div>
   )

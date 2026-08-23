@@ -1,7 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { App } from './App'
 import type { Dict } from './types/dict'
+import type { SoundsData } from './types/sounds'
 
 const FIXTURE: Dict = {
   meta: { generated_from: 'data/', entry_count: 1, reading_count: 1, varieties: [], sources: [] },
@@ -72,5 +73,38 @@ describe('App with a hidden entry', () => {
     render(<App />)
     expect(await screen.findByText('潮州')).toBeInTheDocument()
     expect(screen.queryByText('隱藏詞')).not.toBeInTheDocument()
+  })
+})
+
+describe('App Sounds tab', () => {
+  const SOUNDS_FIXTURE: SoundsData = {
+    variety: 'chaozhou',
+    sounds: [{ pengim: 'dio5', ipa: 'tie⁵⁵', examples: [{ headword: '潮', pengim: 'dio5', gloss: 'tide' }] }],
+  }
+
+  beforeEach(() => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((input: RequestInfo | URL) => {
+        const url = String(input)
+        const body = url.includes('sounds.json') ? SOUNDS_FIXTURE : FIXTURE
+        return Promise.resolve(new Response(JSON.stringify(body), { status: 200 }))
+      }),
+    )
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
+  it('fetches and shows the sound inventory only once the Sounds tab is selected', async () => {
+    render(<App />)
+    await screen.findByText('潮州')
+    expect(screen.queryByText('tie⁵⁵')).not.toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Sounds' }))
+
+    expect(await screen.findByText('tie⁵⁵')).toBeInTheDocument()
+    expect(screen.getAllByText('dio5').length).toBeGreaterThan(0)
   })
 })
