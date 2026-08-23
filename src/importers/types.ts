@@ -1,5 +1,16 @@
-/** Shared across every importer that fetches from a live site. */
-export const IMPORTER_USER_AGENT = 'teochew-dictionary importer (github; contact via repo)'
+/**
+ * Shared across every importer that fetches from a live site.
+ *
+ * Must carry a real, dereferenceable contact URL, not just a vague pointer
+ * like "contact via repo" — Wikimedia's User-Agent policy
+ * (https://foundation.wikimedia.org/wiki/Policy:Wikimedia_Foundation_User-Agent_Policy)
+ * blocks non-compliant clients, and the block does not expire on a
+ * `retry-after` timer the way a normal rate limit does. Confirmed live: the
+ * old string got a 429 on every request to upload.wikimedia.org regardless
+ * of how long the caller waited, while this exact URL got 200 immediately.
+ */
+export const IMPORTER_USER_AGENT =
+  'teochew-dictionary-importer/1.0 (https://github.com/teochew-works/teochew-dictionary)'
 
 export interface RetryOptions {
   /** Retries on 429 before giving up. */

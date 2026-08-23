@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
 import { GITHUB_REPO } from '../schema/phonology.js'
-import { IMPORTER_USER_AGENT } from './types.js'
+import { fetchWithRetry, IMPORTER_USER_AGENT } from './types.js'
 import type { AudioClipProposal } from './audio-types.js'
 
 /**
@@ -39,8 +39,15 @@ export function assetFilename(proposal: AudioClipProposal): string {
   return `${slug}${ext}`
 }
 
+/**
+ * Unlike the Commons API calls in lingualibre.ts, this hits
+ * upload.wikimedia.org directly for the clip bytes themselves — the actual
+ * bulk transfer, and previously the one path in this importer with no 429
+ * handling at all. Routed through fetchWithRetry for the same reason those
+ * calls are: Wikimedia's edge limiter applies here too, not just to api.php.
+ */
 async function defaultFetchBytes(url: string): Promise<Buffer> {
-  const res = await fetch(url, { headers: { 'user-agent': IMPORTER_USER_AGENT } })
+  const res = await fetchWithRetry(url, { headers: { 'user-agent': IMPORTER_USER_AGENT } })
   if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`)
   return Buffer.from(await res.arrayBuffer())
 }
