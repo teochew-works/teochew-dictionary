@@ -20,6 +20,7 @@ function makeEntry(id: string, headword: string): EnrichedEntry {
         pengim_toneless: 'a',
         syllable_count: 1,
         audio: [null],
+        wordAudio: null,
       },
     ],
     senses: [{ pos: 'noun', gloss_en: ['gloss'] }],
