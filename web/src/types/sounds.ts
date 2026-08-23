@@ -14,6 +14,13 @@ export interface SoundExample {
 export interface Sound {
   pengim: string
   ipa: string
+  /**
+   * Dictionary-wide occurrence count: citation-form occurrences plus
+   * tone-sandhi surface occurrences, summed. Distinct from a headword's
+   * `frequency` (curriculum-commonness band) — this is a corpus-derived,
+   * per-syllable raw count.
+   */
+  occurrences: number
   examples: SoundExample[]
 }
 

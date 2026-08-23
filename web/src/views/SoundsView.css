@@ -38,6 +38,25 @@
   font-variant-numeric: tabular-nums;
 }
 
+.sounds-view__sort {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.sounds-view__sort-button {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-fg);
+}
+
+.sounds-view__sort-button--active {
+  background: var(--color-accent);
+  color: var(--color-accent-fg);
+  border-color: var(--color-accent);
+}
+
 .sounds-view__alphabet {
   display: flex;
   flex-wrap: wrap;
@@ -114,6 +133,16 @@
   align-items: baseline;
   padding: 0.5rem 0.25rem;
   border-bottom: 1px solid var(--color-border);
+}
+
+.sound-row:has(.sound-row__count) {
+  grid-template-columns: 6rem 6rem 4rem 1fr;
+}
+
+.sound-row__count {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .sound-row:nth-child(even) {

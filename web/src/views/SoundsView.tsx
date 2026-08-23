@@ -10,11 +10,15 @@ interface LetterGroup {
   sounds: Sound[]
 }
 
+type SoundSortMode = 'alphabetical' | 'frequency'
+
 /**
  * Buckets consecutive sounds sharing a Peng'im initial letter. Relies on
  * `sounds` already being sorted alphabetically by Peng'im (guaranteed by
  * `src/build/sounds.ts`) rather than hard-coding the set of initials, so a
- * future change to the orthography's initials can't leave this stale.
+ * future change to the orthography's initials can't leave this stale. Only
+ * meaningful in alphabetical sort mode — frequency order isn't alphabetically
+ * contiguous, so it renders as one flat ranked list instead (see `SoundsView`).
  */
 function groupByLetter(sounds: Sound[]): LetterGroup[] {
   const groups: LetterGroup[] = []
@@ -27,6 +31,12 @@ function groupByLetter(sounds: Sound[]): LetterGroup[] {
   return groups
 }
 
+/** Most occurrences first; ties broken alphabetically for a stable order. */
+function byFrequencyDesc(a: Sound, b: Sound): number {
+  if (a.occurrences !== b.occurrences) return b.occurrences - a.occurrences
+  return a.pengim < b.pengim ? -1 : a.pengim > b.pengim ? 1 : 0
+}
+
 function matchesQuery(sound: Sound, query: string): boolean {
   if (!query) return true
   const haystack = [sound.pengim, sound.ipa, ...sound.examples.flatMap((e) => [e.headword, e.pengim, e.gloss])]
@@ -35,9 +45,48 @@ function matchesQuery(sound: Sound, query: string): boolean {
   return haystack.includes(query)
 }
 
+function SoundRow({
+  sound,
+  showCount,
+  recordStatus,
+  onSaved,
+}: {
+  sound: Sound
+  showCount: boolean
+  recordStatus: RecordStatus
+  onSaved: (pengim: string) => void
+}) {
+  return (
+    <li className="sound-row">
+      <span className="sound-row__ipa">{sound.ipa}</span>
+      <span className="sound-row__pengim">{sound.pengim}</span>
+      {showCount && <span className="sound-row__count">{sound.occurrences}×</span>}
+      <span className="sound-row__examples">
+        {sound.examples.length === 0 && <span className="sound-row__no-examples">no isolated example yet</span>}
+        {/* Index, not a text-derived key: two senses of the same word (same
+            headword + pengim, different gloss) can both appear as examples
+            for one sound, and this list is never reordered or filtered
+            independently. */}
+        {sound.examples.map((example, i) => (
+          <span key={i} className="sound-row__example">
+            <span className="sound-row__example-hanzi">{example.headword}</span>
+            <span className="sound-row__example-pengim">{example.pengim}</span>
+            <span className="sound-row__example-gloss">{example.gloss}</span>
+          </span>
+        ))}
+      </span>
+      {import.meta.env.DEV && <RecordClipButton pengim={sound.pengim} status={recordStatus} onSaved={onSaved} />}
+    </li>
+  )
+}
+
 export function SoundsView() {
   const { data, loading, error } = useSounds()
   const [query, setQuery] = useState('')
+  // Deliberately not persisted: mirrors DictionaryView's sortMode, which
+  // reorders what's on screen rather than hiding it, so resetting on revisit
+  // is safer than silently surprising the user with a stale sort.
+  const [sortMode, setSortMode] = useState<SoundSortMode>('alphabetical')
 
   // Dev-only (see RecordClipButton); the hook itself no-ops in production.
   const localRecordings = useLocalRecordingsStatus()
@@ -51,11 +100,17 @@ export function SoundsView() {
 
   const allLetters = useMemo(() => groupByLetter(data?.sounds ?? []).map((g) => g.letter), [data])
 
-  const groups = useMemo(() => {
+  const filtered = useMemo(() => {
     if (!data) return []
     const q = query.trim().toLowerCase()
-    return groupByLetter(data.sounds.filter((s) => matchesQuery(s, q)))
+    return data.sounds.filter((s) => matchesQuery(s, q))
   }, [data, query])
+
+  const groups = useMemo(() => (sortMode === 'alphabetical' ? groupByLetter(filtered) : []), [filtered, sortMode])
+  const ranked = useMemo(
+    () => (sortMode === 'frequency' ? [...filtered].sort(byFrequencyDesc) : []),
+    [filtered, sortMode],
+  )
 
   if (loading) return <p className="sounds-view__status">Loading sound inventory…</p>
   if (error) {
@@ -64,7 +119,7 @@ export function SoundsView() {
   if (!data) return null
 
   const activeLetters = new Set(groups.map((g) => g.letter))
-  const shownCount = groups.reduce((n, g) => n + g.sounds.length, 0)
+  const shownCount = filtered.length
 
   return (
     <div className="sounds-view">
@@ -77,65 +132,83 @@ export function SoundsView() {
           onChange={(e) => setQuery(e.target.value)}
           aria-label="Search the sound inventory"
         />
+        <div className="sounds-view__sort" role="group" aria-label="Sort sounds by">
+          <button
+            type="button"
+            className={sortMode === 'alphabetical' ? 'sounds-view__sort-button sounds-view__sort-button--active' : 'sounds-view__sort-button'}
+            onClick={() => setSortMode('alphabetical')}
+          >
+            A–Z
+          </button>
+          <button
+            type="button"
+            className={sortMode === 'frequency' ? 'sounds-view__sort-button sounds-view__sort-button--active' : 'sounds-view__sort-button'}
+            onClick={() => setSortMode('frequency')}
+          >
+            Frequency
+          </button>
+        </div>
         <span className="sounds-view__count">
           {shownCount} / {data.sounds.length} sounds
         </span>
       </div>
 
-      <nav className="sounds-view__alphabet" aria-label="Jump to initial">
-        {allLetters.map((letter) => {
-          const active = activeLetters.has(letter)
-          return (
-            <a
-              key={letter}
-              href={`#sound-group-${letter}`}
-              className={active ? 'sounds-view__letter' : 'sounds-view__letter sounds-view__letter--empty'}
-              aria-disabled={!active}
-              tabIndex={active ? 0 : -1}
-            >
-              {letter}
-            </a>
-          )
-        })}
-      </nav>
+      {sortMode === 'alphabetical' && (
+        <nav className="sounds-view__alphabet" aria-label="Jump to initial">
+          {allLetters.map((letter) => {
+            const active = activeLetters.has(letter)
+            return (
+              <a
+                key={letter}
+                href={`#sound-group-${letter}`}
+                className={active ? 'sounds-view__letter' : 'sounds-view__letter sounds-view__letter--empty'}
+                aria-disabled={!active}
+                tabIndex={active ? 0 : -1}
+              >
+                {letter}
+              </a>
+            )
+          })}
+        </nav>
+      )}
 
       <div className="sounds-view__list">
-        {groups.length === 0 && <p className="sounds-view__empty">No sounds match "{query.trim()}".</p>}
-        {groups.map(({ letter, sounds }) => (
-          <section key={letter} id={`sound-group-${letter}`} className="sounds-view__group">
-            <h2 className="sounds-view__group-heading">
-              {letter}
-              <span className="sounds-view__group-count">{sounds.length}</span>
-            </h2>
-            <ul className="sounds-view__rows">
-              {sounds.map((sound) => (
-                <li key={sound.pengim} className="sound-row">
-                  <span className="sound-row__ipa">{sound.ipa}</span>
-                  <span className="sound-row__pengim">{sound.pengim}</span>
-                  <span className="sound-row__examples">
-                    {sound.examples.length === 0 && (
-                      <span className="sound-row__no-examples">no isolated example yet</span>
-                    )}
-                    {/* Index, not a text-derived key: two senses of the same
-                        word (same headword + pengim, different gloss) can
-                        both appear as examples for one sound, and this list
-                        is never reordered or filtered independently. */}
-                    {sound.examples.map((example, i) => (
-                      <span key={i} className="sound-row__example">
-                        <span className="sound-row__example-hanzi">{example.headword}</span>
-                        <span className="sound-row__example-pengim">{example.pengim}</span>
-                        <span className="sound-row__example-gloss">{example.gloss}</span>
-                      </span>
-                    ))}
-                  </span>
-                  {import.meta.env.DEV && (
-                    <RecordClipButton pengim={sound.pengim} status={recordStatus(sound.pengim)} onSaved={markSaved} />
-                  )}
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
+        {shownCount === 0 && <p className="sounds-view__empty">No sounds match "{query.trim()}".</p>}
+
+        {sortMode === 'alphabetical' &&
+          groups.map(({ letter, sounds }) => (
+            <section key={letter} id={`sound-group-${letter}`} className="sounds-view__group">
+              <h2 className="sounds-view__group-heading">
+                {letter}
+                <span className="sounds-view__group-count">{sounds.length}</span>
+              </h2>
+              <ul className="sounds-view__rows">
+                {sounds.map((sound) => (
+                  <SoundRow
+                    key={sound.pengim}
+                    sound={sound}
+                    showCount={false}
+                    recordStatus={recordStatus(sound.pengim)}
+                    onSaved={markSaved}
+                  />
+                ))}
+              </ul>
+            </section>
+          ))}
+
+        {sortMode === 'frequency' && ranked.length > 0 && (
+          <ul className="sounds-view__rows">
+            {ranked.map((sound) => (
+              <SoundRow
+                key={sound.pengim}
+                sound={sound}
+                showCount
+                recordStatus={recordStatus(sound.pengim)}
+                onSaved={markSaved}
+              />
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   )
