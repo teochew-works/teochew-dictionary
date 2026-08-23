@@ -1,4 +1,5 @@
 import type { EnrichedEntry } from '../types/dict'
+import { LevelBadge } from './LevelBadge'
 
 export function EntryRow({
   entry,
@@ -18,6 +19,7 @@ export function EntryRow({
       onClick={() => onSelect(entry.id)}
     >
       <span className="entry-list__headword">{entry.headword}</span>
+      {entry.level && <LevelBadge level={entry.level} />}
       {reading && <span className="entry-list__pengim">{reading.pengim}</span>}
       {gloss && <span className="entry-list__gloss">{gloss}</span>}
     </button>

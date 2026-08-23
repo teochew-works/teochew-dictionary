@@ -1,4 +1,5 @@
 import type { EnrichedEntry } from '../types/dict'
+import { LevelBadge } from './LevelBadge'
 
 // Entry-level licence is only ever CC-BY-4.0 or CC-BY-SA-4.0 in practice (see
 // src/data/licence.ts) — link each to its LICENSE-DATA-* file at the repo root.
@@ -17,7 +18,10 @@ export function EntryDetail({ entry, showLicence }: { entry: EnrichedEntry; show
   return (
     <article className="entry-detail">
       <header className="entry-detail__header">
-        <h2>{entry.headword}</h2>
+        <div className="entry-detail__title-row">
+          <h2>{entry.headword}</h2>
+          {entry.level && <LevelBadge level={entry.level} />}
+        </div>
         {entry.variants && entry.variants.length > 0 && (
           <p className="entry-detail__variants">also written {entry.variants.join(', ')}</p>
         )}
