@@ -14,13 +14,64 @@ export function createSearchIndex(entries: EnrichedEntry[]): Fuse<EnrichedEntry>
       { name: 'headword', weight: 3 },
       { name: 'search_keys', weight: 1 },
     ],
-    threshold: 0.35,
+    // Fuse allows roughly `threshold * query.length` character errors, so a
+    // loose threshold is punishing for the short queries people actually type:
+    // at 0.35 a 4-char query got one free error anywhere in a key, and "wood"
+    // returned 383 of 16k entries — 340 of which contained no "wood" at all,
+    // having matched via "blood", "flood", "good", "food"… 0.2 keeps short
+    // queries to literal matches while still absorbing typos in the longer
+    // Peng'im/POJ strings ("diozui" still finds 潮州, "vegtable" still finds 菜).
+    threshold: 0.2,
     ignoreLocation: true,
   })
+}
+
+/**
+ * How literally an entry matches, best tier first. Fuse scores a substring hit
+ * the same wherever it lands, so "eat" ranked 肉醬 ("meat paste"), 暖氣
+ * ("heating") and 中暑 ("to suffer heatstroke") above 食 ("to eat") — which
+ * sat at #183 of 411. Bucketing by literalness and keeping Fuse's order within
+ * a bucket lifts whole-word matches above merely-embedded ones.
+ */
+const TIER_EXACT = 0
+const TIER_WHOLE_WORD = 1
+const TIER_SUBSTRING = 2
+const TIER_FUZZY = 3
+
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/gu, '\\$&')
+}
+
+/**
+ * Matches `query` delimited by non-alphanumerics rather than using `\b`, which
+ * is ASCII-word-based and so treats every boundary inside a hanzi key as a
+ * word boundary.
+ */
+function wholeWordPattern(query: string): RegExp {
+  return new RegExp(`(^|[^\\p{L}\\p{N}])${escapeRegExp(query)}($|[^\\p{L}\\p{N}])`, 'u')
+}
+
+function matchTier(entry: EnrichedEntry, needle: string, wholeWord: RegExp): number {
+  let substring = false
+  for (const key of entry.search_keys) {
+    const k = key.toLowerCase()
+    if (k === needle) return TIER_EXACT
+    if (!substring && k.includes(needle)) substring = true
+  }
+  if (!substring) return TIER_FUZZY
+  return entry.search_keys.some((k) => wholeWord.test(k.toLowerCase())) ? TIER_WHOLE_WORD : TIER_SUBSTRING
 }
 
 export function search(index: Fuse<EnrichedEntry>, query: string): EnrichedEntry[] {
   const trimmed = query.trim()
   if (!trimmed) return []
-  return index.search(trimmed).map((result) => result.item)
+
+  const needle = trimmed.toLowerCase()
+  const wholeWord = wholeWordPattern(needle)
+
+  return index
+    .search(trimmed)
+    .map((result, rank) => ({ entry: result.item, rank, tier: matchTier(result.item, needle, wholeWord) }))
+    .sort((a, b) => a.tier - b.tier || a.rank - b.rank)
+    .map((scored) => scored.entry)
 }

@@ -1,6 +1,6 @@
 import type { EnrichedEntry, Level, PartOfSpeech } from '../types/dict'
 
-export type SortMode = 'headword' | 'english' | 'tone' | 'category' | 'level'
+export type SortMode = 'relevance' | 'headword' | 'english' | 'tone' | 'category' | 'level'
 export type ToneSource = 'citation' | 'sandhi'
 
 const LEVEL_ORDER: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
@@ -50,8 +50,16 @@ function capitalize(s: string): string {
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
-/** Sorts a flat copy of `entries` by headword or first English gloss. */
-export function sortFlat(entries: EnrichedEntry[], mode: 'headword' | 'english'): EnrichedEntry[] {
+/**
+ * Sorts a flat copy of `entries` by headword or first English gloss.
+ *
+ * `relevance` is the pass-through mode: it returns `entries` in the order it
+ * was handed them, which for a search is Fuse's score order. Re-sorting a
+ * result set by headword throws that ranking away — searching "wood" used to
+ * bury 木材/木 around position 150 of a few hundred alphabetised matches.
+ */
+export function sortFlat(entries: EnrichedEntry[], mode: 'relevance' | 'headword' | 'english'): EnrichedEntry[] {
+  if (mode === 'relevance') return [...entries]
   const keyFor = mode === 'headword' ? (e: EnrichedEntry) => e.headword : (e: EnrichedEntry) => e.senses[0]?.gloss_en[0] ?? ''
   return [...entries].sort((a, b) => collator.compare(keyFor(a), keyFor(b)))
 }
