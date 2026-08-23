@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 export interface AudioPlayer {
-  /** The url currently playing, or null when nothing is. */
-  playingUrl: string | null
-  /** Play `url`, stopping whatever was playing; playing the current url again stops it. */
-  play: (url: string) => void
+  /** The id of the clip currently playing, or null when nothing is. */
+  playingId: string | null
+  /** Play `url` under `id`, stopping whatever was playing; playing the current id again stops it. */
+  play: (id: string, url: string) => void
 }
 
 /**
@@ -13,6 +13,11 @@ export interface AudioPlayer {
  * over each other — a real hazard on a multi-syllable reading, which can offer
  * a whole-word clip plus one button per syllable.
  *
+ * Playback is tracked by caller-supplied `id`, not by `url`: a reduplicated
+ * reading (mang7 mang7) or a word clip that happens to reuse a syllable's
+ * recording can point two distinct buttons at the same url, and keying on url
+ * alone would make those buttons indistinguishable to this hook.
+ *
  * The element is created on first play, not on mount: almost every entry has
  * no clip at all today (data/phonology/audio/*.yaml doesn't exist yet — see
  * issues #36/#37), so the common render constructs nothing.
@@ -20,7 +25,7 @@ export interface AudioPlayer {
 export function useAudioPlayer(): AudioPlayer {
   const elementRef = useRef<HTMLAudioElement | null>(null)
   const requestIdRef = useRef(0)
-  const [playingUrl, setPlayingUrl] = useState<string | null>(null)
+  const [playingId, setPlayingId] = useState<string | null>(null)
 
   useEffect(() => {
     return () => {
@@ -29,13 +34,13 @@ export function useAudioPlayer(): AudioPlayer {
   }, [])
 
   const play = useCallback(
-    (url: string) => {
+    (id: string, url: string) => {
       const element = elementRef.current ?? new Audio()
       elementRef.current = element
 
       element.pause()
-      if (url === playingUrl) {
-        setPlayingUrl(null)
+      if (id === playingId) {
+        setPlayingId(null)
         return
       }
 
@@ -45,7 +50,7 @@ export function useAudioPlayer(): AudioPlayer {
       // clip's state once a later call has already moved past it.
       const requestId = ++requestIdRef.current
       const stopIfCurrent = () => {
-        if (requestIdRef.current === requestId) setPlayingUrl(null)
+        if (requestIdRef.current === requestId) setPlayingId(null)
       }
       element.onended = stopIfCurrent
       // A clip url is a pinned GitHub Release asset (data/phonology/REVIEW.md
@@ -56,10 +61,10 @@ export function useAudioPlayer(): AudioPlayer {
 
       element.src = url
       void Promise.resolve(element.play()).catch(stopIfCurrent)
-      setPlayingUrl(url)
+      setPlayingId(id)
     },
-    [playingUrl],
+    [playingId],
   )
 
-  return { playingUrl, play }
+  return { playingId, play }
 }
