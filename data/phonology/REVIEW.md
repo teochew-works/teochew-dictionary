@@ -787,6 +787,129 @@ phonology-side schemas this issue asked about and is left unemitted. The
 named in the issue as separate, likely-larger work and remains so; unchanged
 by this decision.
 
+## 16. Importing Lingua Libre/Commons audio — schema, hosting, consent · issue #106
+
+**Background.** #106 found that Wikimedia Commons hosts ~2,138 CC-BY-SA-4.0
+Teochew pronunciation recordings via the Lingua Libre project
+(`Category:Teochew_pronunciation`), filename pattern
+`LL-Q36759-<uploader>-<transcription>.wav`. Most are whole-word/phrase
+recordings (e.g. `bhi7 jui2`), not the single-syllable unit `audioClip`
+(§11) is keyed to — a real schema gap, not something a `sources.yaml` row
+alone can paper over.
+
+**Decision: a new `wordClips` map, not a repurposed `clips`.**
+`audioSchema` (`src/schema/phonology.ts`) gains `wordClips:
+z.record(audioClip).optional()`, keyed by a reading's full space-joined
+pengim string (e.g. `bhi7 jui2`) instead of one syllable, reusing
+`audioClip`'s shape verbatim — no new clip-level fields. Same reasoning as
+§11, cutting the same direction: a word-level recording has real
+connected-speech coarticulation/sandhi that a per-syllable clip can't
+represent, so a genuine word recording is kept intact rather than sliced or
+folded into `clips`. No inheritance, no compositional fallback, exact-string
+keying — the same rules `clips` already follows: a reading either has a
+word clip or it doesn't, and a citation-form key does not satisfy a
+sandhi-surface reading (§14) or vice versa.
+
+**Rejected: single-syllable-only import.** Discarding every multi-syllable
+transcription would need no schema change, but throws away most of the
+corpus for no linguistic reason — a word-level recording is *better*
+evidence than a syllable clip, not worse. **Rejected: deferring the schema
+call.** Staging proposals without deciding where multi-syllable clips
+eventually live would just move this decision to the merge step without
+resolving anything now, and the issue's own open questions asked for an
+actual call, not a deferral.
+
+**Wiring.** `src/build/enrich.ts` gains `deriveReadingWordAudio` (parallel
+to `deriveReadingAudio`) and `EnrichedReading.wordAudio: AudioReference |
+null`. `AudioReference.syllable` is renamed to `.key` throughout (`enrich.ts`,
+`web/src/types/dict.ts`, `src/cli/lookup.ts`) — a field named `syllable`
+holding a multi-syllable string would be actively misleading. `checkAudio`
+(`src/validate/index.ts`) gains a parallel loop over `wordClips`: the key
+must itself parse as Peng'im (via `tryParsePengim`, the same parser
+`extractPengimPrefix` below trusts), must be more than one syllable (a
+single-syllable key belongs in `clips`, which already has an unambiguous
+home for it), and every syllable it parses to must be legal per the same
+generated inventory `clips` checks against.
+
+**New `lingualibre` source, `kind: import`, `licence: CC-BY-SA-4.0`** in
+`data/sources.yaml`, modeled directly on `wiktionary`. No new
+`LICENSE-DATA-*` file — CC-BY-SA-4.0 already has one (shared with
+`wiktionary`/`cedict`) and is already classified `share-alike` in
+`src/data/licence.ts`.
+
+**Decision: re-host on this project's own GitHub Releases, not link to
+Commons directly.** Keeps `audioClip.url`'s existing GitHub-Releases-only
+regex (§12) and the `npm run audio:verify` checksum pipeline as the single
+code path for every clip regardless of origin — no schema loosening to
+accept a second URL shape, no new "is this clip's host still up" failure
+mode to reason about. Tradeoff accepted: bytes get downloaded and
+re-uploaded rather than referenced in place. CC-BY-SA-4.0 explicitly permits
+this (share-alike requires attribution + same-licence redistribution, not
+"hosted at the original URL"). `src/importers/lingualibre-rehost.ts`
+(`npm run rehost:lingualibre`) does the download/checksum/`gh release
+upload` mechanics per clip, uploading to a new `audio-lingualibre` release
+tag — deliberately per-clip, not run over the whole staged corpus by this
+change: re-hosting is only worth the effort once a human has decided a
+clip is worth keeping (right variety/accent, transcription matches a real
+entry), which is the deferred merge step below.
+
+**Consent differs from `AUDIO-CONSENT.md` — scoped explicitly, not left
+implicit.** That file's pseudonym/opt-out process governs clips recorded
+*by this project*. A Lingua Libre clip's consent already happened through
+Commons' own upload flow: `speaker` on an imported clip holds the
+contributor's real Commons/Wikimedia username, not a project-assigned
+pseudonym, and this project can only stop importing more from a given
+contributor, never affect what's already public on Commons. `AUDIO-
+CONSENT.md` gained a short addendum saying so, and the `lingualibre`
+`sources.yaml` entry's own note repeats it — a future reader shouldn't
+assume every clip's `speaker` field went through this file's process.
+
+**Importer stays mechanical; classification is out of scope.**
+`src/importers/lingualibre.ts` (`npm run import -- lingualibre`) enumerates
+the Commons category (`list=categorymembers` — an exact enumeration, unlike
+Wiktionary's CirrusSearch-bounded search, so there's no wordlist/cache split
+needed, one fetch pass covers the whole corpus), batch-fetches `imageinfo`
+per file, and recovers a Peng'im transcription from the filename. The
+uploader segment is taken from `imageinfo.user` (authoritative) rather than
+split from the filename's first hyphen, since a username can itself contain
+a hyphen. `extractPengimPrefix` finds the longest whitespace-token prefix
+that parses via `tryParsePengim`, rather than guessing a character class —
+real transcriptions carry trailing hanzi/gloss text (e.g. the issue's own
+`bhi7 jui2 沬水 -nager (sous l'eau)-` example), and in testing against that
+exact example, `jui2` itself turned out to have no recognised nucleus in
+this project's Peng'im scheme, so only `bhi7` resolves — a genuine
+scheme/corpus mismatch surfaced by building this, not a parser bug, and
+exactly the kind of thing a human reviewing staged proposals needs to see
+rather than have silently discarded. The importer does not guess
+variety (Chaozhou/Shantou/Chaoyang) or judge accent fit — Commons'
+`extmetadata.ImageDescription`, when present (e.g. "Puning-Chaoyang mixed
+accent"), is carried through as `accentNote` for a human to read at merge
+time, unclassified. A licence-metadata mismatch is flagged, not silently
+dropped — the proposal still stages, so a reviewer sees exactly what's
+questionable about it rather than losing it from the corpus count entirely.
+
+**New staging shape, not the entry-shaped `Proposal`.** `Proposal`/
+`ProposedReading`/`ProposedSense` (`src/importers/types.ts`) model a
+proposed dictionary entry and have no room for a clip's fields (Commons
+URL, speaker, accent note, syllable count). `src/importers/audio-types.ts`
+adds a parallel `AudioClipProposal`/`AudioImportResult`, and
+`src/importers/audio-staging.ts` a parallel `writeAudioStaging`/
+`readAudioStaging`, targeting the same `data/staging/<source>.yaml`
+location/filename convention `writeStaging` uses but a different internal
+shape — the header comment `writeAudioStaging` writes says so explicitly,
+so a reviewer isn't confused by the difference from `data/staging/
+wiktionary.yaml`.
+
+**Explicitly out of scope, this change.** Running the importer against the
+full corpus and merging results into `data/phonology/audio/*.yaml` — the
+per-clip accent/variety judgment call #106 itself flags as needing a
+human — is a separate follow-on, mirroring how #68 (hand-merging staged
+Wiktionary proposals) stayed separate from the Wiktionary importer itself.
+Bulk re-hosting is likewise not run here; the rehost CLI is built but
+invoked per-clip, at merge time. No web UI renders `wordAudio` — same as
+per-syllable `audio`, already out of scope for v1 (`web/src/components/
+EntryDetail.tsx`).
+
 ## Individual entries flagged `needs_review`
 
 Run `npm run validate` for the current count. As of writing:
