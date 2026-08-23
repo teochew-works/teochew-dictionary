@@ -19,6 +19,7 @@ export interface AudioPlayer {
  */
 export function useAudioPlayer(): AudioPlayer {
   const elementRef = useRef<HTMLAudioElement | null>(null)
+  const requestIdRef = useRef(0)
   const [playingUrl, setPlayingUrl] = useState<string | null>(null)
 
   useEffect(() => {
@@ -38,15 +39,23 @@ export function useAudioPlayer(): AudioPlayer {
         return
       }
 
-      element.onended = () => setPlayingUrl(null)
+      // Reusing the element to switch clips aborts any in-flight play()
+      // request for the previous clip, which rejects its promise — a request
+      // id guards onended/onerror/that rejection from clearing the *new*
+      // clip's state once a later call has already moved past it.
+      const requestId = ++requestIdRef.current
+      const stopIfCurrent = () => {
+        if (requestIdRef.current === requestId) setPlayingUrl(null)
+      }
+      element.onended = stopIfCurrent
       // A clip url is a pinned GitHub Release asset (data/phonology/REVIEW.md
       // § 12), so it can 404 if a release is retagged. Clear the playing state
       // either way, so a dead url leaves the button un-stuck rather than
       // rejecting unhandled.
-      element.onerror = () => setPlayingUrl(null)
+      element.onerror = stopIfCurrent
 
       element.src = url
-      void Promise.resolve(element.play()).catch(() => setPlayingUrl(null))
+      void Promise.resolve(element.play()).catch(stopIfCurrent)
       setPlayingUrl(url)
     },
     [playingUrl],

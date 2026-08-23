@@ -180,6 +180,25 @@ describe('EntryDetail audio', () => {
     expect(word).toHaveAttribute('aria-pressed', 'false')
   })
 
+  it('does not let an interrupted clip abandon the clip switched to after it', async () => {
+    // Switching clips reuses the same <audio> element, which aborts the
+    // first clip's in-flight play() request and rejects its promise — that
+    // rejection must not clobber the second clip's state once it's current.
+    let rejectFirst: (reason: unknown) => void = () => {}
+    play.mockImplementationOnce(() => new Promise((_resolve, reject) => (rejectFirst = reject)))
+
+    render(<EntryDetail entry={WITH_AUDIO} showLicence={false} />)
+    const word = screen.getByRole('button', { name: 'Play whole-word recording of dio5 ziu1' })
+    const syllable = screen.getByRole('button', { name: 'Play recording of syllable dio5' })
+
+    fireEvent.click(word)
+    fireEvent.click(syllable)
+    rejectFirst(new DOMException('interrupted', 'AbortError'))
+    await Promise.resolve().then().then()
+
+    expect(syllable).toHaveAttribute('aria-pressed', 'true')
+  })
+
   it('hides clip licence and attributions when showLicence is false', () => {
     render(<EntryDetail entry={WITH_AUDIO} showLicence={false} />)
     expect(screen.queryByText(/Audio clips:/)).not.toBeInTheDocument()
