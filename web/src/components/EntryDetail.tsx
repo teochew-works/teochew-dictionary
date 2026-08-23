@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
 import { ReadingAudio } from './ReadingAudio'
 import type { EnrichedEntry } from '../types/dict'
@@ -62,7 +63,11 @@ function LicenceLink({ licence }: { licence: string }) {
  */
 export function EntryDetail({ entry, showLicence }: { entry: EnrichedEntry; showLicence: boolean }) {
   const { playingId, play } = useAudioPlayer()
-  const credits = clipCredits(entry)
+  // Gated/memoized rather than computed unconditionally: showLicence is off
+  // by default, and playingId changes on every clip click — without this,
+  // clipCredits would re-walk every reading's clips on every play/pause even
+  // though its result is thrown away or unchanged.
+  const credits = useMemo(() => (showLicence ? clipCredits(entry) : []), [entry, showLicence])
 
   return (
     <article className="entry-detail">
