@@ -1,8 +1,9 @@
 # Teochew Dictionary — Web UI
 
 A static, backend-free web app for the [Teochew Dictionary](../README.md):
-a searchable dictionary browser and a flashcard/SRS trainer, built on top of
-the root project's `dist/dict.json`.
+a searchable dictionary browser, a flashcard/SRS trainer, and a browsable
+sound inventory, built on top of the root project's `dist/dict.json` and
+`dist/sounds.json`.
 
 This is its own npm project — independent `package.json`, buildable without
 touching the root CLI tooling's build/test pipeline.
@@ -16,12 +17,13 @@ touching the root CLI tooling's build/test pipeline.
 
   ```bash
   npm install
-  npm run build     # → dist/dict.json
+  npm run build     # → dist/dict.json, dist/sounds.json
   ```
 
-  `web/`'s `predev`/`prebuild` scripts copy `dist/dict.json` into
-  `web/public/data/` automatically, but they only *copy* — they don't
-  *build* it. If `dist/dict.json` doesn't exist yet, they fail with:
+  `web/`'s `predev`/`prebuild` scripts copy `dist/dict.json` and
+  `dist/sounds.json` into `web/public/data/` automatically, but they only
+  *copy* — they don't *build* them. If either doesn't exist yet, they fail
+  with:
 
   ```
   no dictionary at <repo>/dist/dict.json — run `npm run build` in the repo root first
@@ -70,9 +72,9 @@ reappear as new (DevTools → Application → IndexedDB →
 
 ## Architecture
 
-- Vite + React + TypeScript, no router — Dictionary and Flashcards are two
-  in-app views; the dictionary's entry detail is a master-detail pane, not a
-  separate route.
+- Vite + React + TypeScript, no router — Dictionary, Flashcards, and Sounds
+  are in-app views, not separate routes; the dictionary's entry detail is a
+  master-detail pane within its own view.
 - Search: [Fuse.js](https://www.fusejs.io/) over each entry's precomputed
   `search_keys` (headword, Peng'im with/without tones, POJ with/without
   diacritics, English glosses — see `src/build/enrich.ts` at the repo root).
@@ -113,9 +115,17 @@ reappear as new (DevTools → Application → IndexedDB →
   (issues #36/#37, and the #106 merge follow-on), so every `audio`/`wordAudio`
   slot resolves to `null`, the players render nothing, and the filter reports
   "No recordings in the dictionary yet" rather than a bare "No matches".
-- `dist/dict.json` is fetched at runtime as a static asset (via
-  `scripts/sync-data.mjs`, not bundled as a JS import), so the dataset can
-  grow without bloating the JS bundle.
+- `dist/dict.json` and `dist/sounds.json` are fetched at runtime as static
+  assets (via `scripts/sync-data.mjs`, not bundled as a JS import), so the
+  dataset can grow without bloating the JS bundle.
+- Sounds (issue #124): every Peng'im syllable actually attested by a
+  Chaozhou-variety headword reading, with its IPA and up to 3 example words —
+  precomputed at build time by `src/build/sounds.ts` at the repo root (reuses
+  the same attestation logic as `npm run inventory`'s syllable-inventory.yaml
+  and the same IPA derivation as `src/build/enrich.ts`), rather than
+  re-deriving Peng'im parsing or IPA composition in the browser.
+  `SoundsView` groups the list alphabetically by Peng'im initial with a jump
+  nav, and filters client-side by Peng'im, IPA, or example text.
 
 ## Deployment
 
