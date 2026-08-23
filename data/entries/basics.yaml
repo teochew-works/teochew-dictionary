@@ -54,6 +54,7 @@ entries:
             en: a hot day
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: gueh8-月
     headword: 月
@@ -69,6 +70,7 @@ entries:
             en: new moon
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: ni5-年
     headword: 年
@@ -84,6 +86,7 @@ entries:
             en: every year, year after year
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: sing1-ni5-新年
     headword: 新年
@@ -145,6 +148,7 @@ entries:
             en: to read a book
     frequency: 4
     sources: [seed]
+    level: A1
 
   - id: ri7-字
     headword: 字
@@ -160,6 +164,7 @@ entries:
             en: large characters, large print
     frequency: 4
     sources: [seed]
+    level: A1
 
   - id: ng5-黃
     headword: 黃
@@ -178,6 +183,7 @@ entries:
         gloss_zh: [黃（姓）]
     frequency: 4
     sources: [seed]
+    level: A2
 
   - id: do1-sia7-多謝
     headword: 多謝
@@ -208,6 +214,7 @@ entries:
             en: I'm full.
     frequency: 4
     sources: [seed]
+    level: A2
 
   - id: bhue7-未
     headword: 未
@@ -329,6 +336,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: zêg8-dig8-一直
     headword: 一直
@@ -341,6 +349,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: zêg8-ki2-一起
     headword: 一起
@@ -357,6 +366,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ê6-ngou2-下午
     headword: 下午
@@ -369,6 +379,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: dong1-ngou2-中午
     headword: 中午
@@ -381,6 +392,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: dong1-bhung5-中文
     headword: 中文
@@ -393,6 +405,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: dong1-sim1-中心
     headword: 中心
@@ -405,6 +418,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zu2-i3-主意
     headword: 主意
@@ -417,6 +431,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: si3-gai3-世界
     headword: 世界
@@ -429,6 +444,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   # The following entries were merged from the Wiktionary index sweep
   # (issue #68).
@@ -549,6 +565,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zêg8-kao2-ki3-一口氣
     headword: 一口氣
@@ -625,6 +642,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zêg8-dou7-一度
     headword: 一度
@@ -637,6 +655,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zêg8-lug8-一律
     headword: 一律
@@ -649,6 +668,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zêg8-coh4-一撮
     headword: 一撮
@@ -809,6 +829,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zêg8-bou6-一部
     headword: 一部
@@ -958,6 +979,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: san1-gag4-hêng5-三角形
     headword: 三角形
@@ -1172,6 +1194,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bug4-rig8-不日
     headword: 不日
@@ -1197,6 +1220,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bug4-gim1-不禁
     headword: 不禁
@@ -1209,6 +1233,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bug4-ngi6-ze1-cai5-不義之財
     headword: 不義之財
@@ -1287,6 +1312,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: cian2-bhuê7-且未
     headword: 且未
@@ -1336,6 +1362,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si3-gai3-buê1-世界盃
     headword: 世界盃
@@ -1360,6 +1387,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si3-gi2-世紀
     headword: 世紀
@@ -1372,6 +1400,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: si3-uê6-zu1-zig4-世衛組織
     headword: 世衛組織
@@ -1575,6 +1604,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zu2-liu5-主流
     headword: 主流
@@ -1587,6 +1617,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zu2-suan3-主線
     headword: 主線
@@ -1636,6 +1667,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zu2-ti2-主體
     headword: 主體
@@ -1711,6 +1743,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: sêng5-bang1-乘方
     headword: 乘方
@@ -1762,6 +1795,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gao2-gao2-lag8-九九六
     headword: 九九六
@@ -1839,6 +1873,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: luang6-siang6-亂象
     headword: 亂象
@@ -1863,6 +1898,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: se7-bhu6-事務
     headword: 事務
@@ -1875,6 +1911,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: se7-ngi5-事宜
     headword: 事宜
@@ -1901,6 +1938,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: se7-tai3-事態
     headword: 事態
@@ -1913,6 +1951,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: se7-gu3-事故
     headword: 事故
@@ -1925,6 +1964,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: se6-ngiab8-事業
     headword: 事業
@@ -1937,6 +1977,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: se7-ziah4-事蹟
     headword: 事蹟
@@ -1961,6 +2002,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: rih8-gao2-mê5-二九暝
     headword: 二九暝
@@ -2036,6 +2078,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: hu6-liang6-mang6-互聯網
     headword: 互聯網
@@ -2049,6 +2092,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ngou6-cên1-ang5-gi5-五星紅旗
     headword: 五星紅旗
@@ -2162,6 +2206,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gao1-in2-交椅
     headword: 交椅
@@ -2200,6 +2245,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gao1-tong1-gang1-gu6-交通工具
     headword: 交通工具
@@ -2325,6 +2371,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: nang5-cên1-di7-bug4-sêg8-人生地不熟
     headword: 人生地不熟
@@ -2362,6 +2409,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ring5-lui7-hag8-人類學
     headword: 人類學
@@ -2438,6 +2486,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gian2-仔
     headword: 仔
@@ -2476,6 +2525,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: toi3-siao3-hag8-代數學
     headword: 代數學
@@ -2505,6 +2555,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: toi3-biao2-zag4-代表作
     headword: 代表作
@@ -2554,6 +2605,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: in2-ao6-以後
     headword: 以後
@@ -2566,6 +2618,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: in2-sing1-zag4-zêg4-以身作則
     headword: 以身作則
@@ -2603,6 +2656,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: hung7-hiah8-份額
     headword: 份額
@@ -2627,6 +2681,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gi6-liang2-伎倆
     headword: 伎倆
@@ -2663,6 +2718,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bu3-gêg8-佈局
     headword: 佈局
@@ -2675,6 +2731,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zo2-zêng3-佐證
     headword: 佐證
@@ -2771,6 +2828,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zag4-uan3-gang1-gu6-作案工具
     headword: 作案工具
@@ -2796,6 +2854,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: zag4-êng7-作用
     headword: 作用
@@ -2808,6 +2867,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: zag4-hong1-作風
     headword: 作風
@@ -2820,6 +2880,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: le2-gai5-tao5-你個頭
     headword: 你個頭
@@ -2860,6 +2921,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sai2-mêng6-gam2-使命感
     headword: 使命感
@@ -2899,6 +2961,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: li7-例
     headword: 例
@@ -2937,6 +3000,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: li7-huê6-例會
     headword: 例會
@@ -3041,6 +3105,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: i1-riang5-依然
     headword: 依然
@@ -3053,6 +3118,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: i1-gu7-依舊
     headword: 依舊
@@ -3065,6 +3131,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: biang6-i1-便衣
     headword: 便衣
@@ -3104,6 +3171,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bao2-giang6-bing2-保健品
     headword: 保健品
@@ -3142,6 +3210,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: sing3-gian6-信件
     headword: 信件
@@ -3167,6 +3236,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sing3-sêg4-信息
     headword: 信息
@@ -3179,6 +3249,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: sing3-êng7-ka2-信用卡
     headword: 信用卡
@@ -3191,6 +3262,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: sing3-dang5-信筒
     headword: 信筒
@@ -3215,6 +3287,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: siu1-se5-修辭
     headword: 修辭
@@ -3278,6 +3351,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hong6-俸
     headword: 俸
@@ -3560,6 +3634,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ngui6-zêng3-偽證
     headword: 偽證
@@ -3585,6 +3660,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: giag8-zag4-傑作
     headword: 傑作
@@ -3609,6 +3685,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: bi6-bhuang5-log8-備忘錄
     headword: 備忘錄
@@ -3621,6 +3698,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bi6-kao2-備考
     headword: 備考
@@ -3648,6 +3726,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: tuang5-riam2-bên7-傳染病
     headword: 傳染病
@@ -3673,6 +3752,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: tuang5-sang3-dua3-傳送帶
     headword: 傳送帶
@@ -3712,6 +3792,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zê3-bhu6-債務
     headword: 債務
@@ -3765,6 +3846,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kuang1-gê1-dang6-suan2-傾家蕩產
     headword: 傾家蕩產
@@ -3839,6 +3921,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gê3-dag8-guang1-價值觀
     headword: 價值觀
@@ -3863,6 +3946,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gê3-zin5-價錢
     headword: 價錢
@@ -3901,6 +3985,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: i1-huag4-依法
     headword: 依法
@@ -3943,6 +4028,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: iu1-si3-優勢
     headword: 優勢
@@ -3955,6 +4041,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: iu1-hui6-優惠
     headword: 優惠
@@ -3969,6 +4056,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: iu1-sên1-hag8-優生學
     headword: 優生學
@@ -3993,6 +4081,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ngiam2-riang5-儼然
     headword: 儼然
@@ -4033,6 +4122,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: cong1-re2-bug4-bhung6-充耳不聞
     headword: 充耳不聞
@@ -4058,6 +4148,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: cong1-diang6-suan3-充電線
     headword: 充電線
@@ -4136,6 +4227,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: miang2-kêh4-ki3-免客氣
     headword: 免客氣
@@ -4221,6 +4313,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: lai6-mo6-內幕
     headword: 內幕
@@ -4233,6 +4326,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: lai6-sim1-內心
     headword: 內心
@@ -4257,6 +4351,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: lai6-kou3-內褲
     headword: 內褲
@@ -4361,6 +4456,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: no6-rui5-bhê2-兩維碼
     headword: 兩維碼
@@ -4558,6 +4654,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gong1-ham5-公函
     headword: 公函
@@ -4582,6 +4679,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: gong1-gao3-公告
     headword: 公告
@@ -4596,6 +4694,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gong1-pêng5-sên3-公平性
     headword: 公平性
@@ -4635,6 +4734,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gong1-dêg4-公德
     headword: 公德
@@ -4719,6 +4819,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gong1-li2-公理
     headword: 公理
@@ -4881,6 +4982,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gang7-suan2-共產
     headword: 共產
@@ -4948,6 +5050,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gu6-具
     headword: 具
@@ -4986,6 +5089,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: pan3-hin5-冇弦
     headword: 冇弦
@@ -5013,6 +5117,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zai3-再
     headword: 再
@@ -5025,6 +5130,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: zai3-san1-再三
     headword: 再三
@@ -5037,6 +5143,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zai3-dou7-再度
     headword: 再度
@@ -5063,6 +5170,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zai3-huê6-再會
     headword: 再會
@@ -5204,6 +5312,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ngêng5-zu6-lag8-凝聚力
     headword: 凝聚力
@@ -5333,6 +5442,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: cug4-huê1-hng5-出花園
     headword: 出花園
@@ -5397,6 +5507,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cug4-sing1-出身
     headword: 出身
@@ -5409,6 +5520,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: do1-刀
     headword: 刀
@@ -5421,6 +5533,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: do1-kao2-刀口
     headword: 刀口
@@ -5545,6 +5658,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hung1-zêng1-分鐘
     headword: 分鐘
@@ -5557,6 +5671,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ciag4-mai3-切勿
     headword: 切勿
@@ -5833,6 +5948,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: li6-iah4-利益
     headword: 利益
@@ -5845,6 +5961,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gao3-dan1-到今
     headword: 到今
@@ -5897,6 +6014,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zi3-hog8-制服
     headword: 制服
@@ -5909,6 +6027,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: coin1-gê1-bhuang7-hou6-千家萬戶
     headword: 千家萬戶
@@ -6099,6 +6218,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hiab8-ngi2-協議
     headword: 協議
@@ -6111,6 +6231,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: pag4-kêh4-博客
     headword: 博客
@@ -6160,6 +6281,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ka1-tong1-卡通
     headword: 卡通
@@ -6172,6 +6294,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: guê3-卦
     headword: 卦
@@ -6220,6 +6343,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: nguin5-hai7-sên3-危害性
     headword: 危害性
@@ -6244,6 +6368,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: nguin5-hiam2-sên3-危險性
     headword: 危險性
@@ -6294,6 +6419,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ziag4-si5-即時
     headword: 即時
@@ -6355,6 +6481,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: nguang5-hêng5-原型
     headword: 原型
@@ -6416,6 +6543,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: nguang5-zuê6-原罪
     headword: 原罪
@@ -6493,6 +6621,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gib8-si5-及時
     headword: 及時
@@ -6505,6 +6634,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: huang2-dui3-dang2-反對黨
     headword: 反對黨
@@ -6544,6 +6674,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: huang2-kiong2-反恐
     headword: 反恐
@@ -6608,6 +6739,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: huang2-hog8-反覆
     headword: 反覆
@@ -6622,6 +6754,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: huang2-zêng3-反證
     headword: 反證
@@ -6660,6 +6793,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: huang2-kui6-反饋
     headword: 反饋
@@ -6674,6 +6808,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zang5-叢
     headword: 叢
@@ -6688,6 +6823,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kao3-gêng1-口供
     headword: 口供
@@ -6762,6 +6898,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kao2-tao5-口頭
     headword: 口頭
@@ -6774,6 +6911,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kao2-tao5-siam5-口頭禪
     headword: 口頭禪
@@ -6811,6 +6949,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gou2-bhung5-古文
     headword: 古文
@@ -6898,6 +7037,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zoin5-rig8-前日
     headword: 前日
@@ -6987,6 +7127,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: ziang2-zua2-剪紙
     headword: 剪紙
@@ -7013,6 +7154,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hu3-zag4-êng7-副作用
     headword: 副作用
@@ -7025,6 +7167,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hu3-bung2-副本
     headword: 副本
@@ -7124,6 +7267,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: giah8-bung2-suah4-劇本殺
     headword: 劇本殺
@@ -7209,6 +7353,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gong1-功
     headword: 功
@@ -7233,6 +7378,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gong1-mian5-功名
     headword: 功名
@@ -7259,6 +7405,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gong1-dêg4-功德
     headword: 功德
@@ -7283,6 +7430,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gong1-zêh4-功績
     headword: 功績
@@ -7307,6 +7455,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gia1-sog4-dou7-加速度
     headword: 加速度
@@ -7385,6 +7534,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: dong6-tai3-動態
     headword: 動態
@@ -7397,6 +7547,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dong6-bhuang6-動漫
     headword: 動漫
@@ -7499,6 +7650,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: lao5-dong6-zoih4-勞動節
     headword: 勞動節
@@ -7537,6 +7689,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si3-big4-勢必
     headword: 勢必
@@ -7549,6 +7702,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si3-tao5-勢頭
     headword: 勢頭
@@ -7611,6 +7765,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: huê3-sing1-化身
     headword: 化身
@@ -7719,6 +7874,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: zab8-ri7-gê3-十字架
     headword: 十字架
@@ -7822,6 +7978,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gou2-hong1-古風
     headword: 古風
@@ -7935,6 +8092,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si1-kong1-giang3-guang3-司空見慣
     headword: 司空見慣
@@ -7999,6 +8157,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gab4-bhuang7-合萬
     headword: 合萬
@@ -8047,6 +8206,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: dang5-di7-同治
     headword: 同治
@@ -8086,6 +8246,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: mian5-duan1-名單
     headword: 名單
@@ -8110,6 +8271,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: mian5-bhuang6-名望
     headword: 名望
@@ -8146,6 +8308,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: mian5-bai5-名牌
     headword: 名牌
@@ -8158,6 +8321,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: mian5-pou6-名簿
     headword: 名簿
@@ -8231,6 +8395,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: mian5-e6-kuang5-名譽權
     headword: 名譽權
@@ -8280,6 +8445,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hiang3-lai5-向來
     headword: 向來
@@ -8292,6 +8458,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hiang3-sim1-lag8-向心力
     headword: 向心力
@@ -8343,6 +8510,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ziu1-ciou5-周朝
     headword: 周朝
@@ -8425,6 +8593,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: mian7-ung7-命運
     headword: 命運
@@ -8437,6 +8606,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hua5-pêng5-和平
     headword: 和平
@@ -8449,6 +8619,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hua5-hin5-和弦
     headword: 和弦
@@ -8541,6 +8712,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ham5-咸
     headword: 咸
@@ -8555,6 +8727,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ham5-hong1-咸豐
     headword: 咸豐
@@ -8643,6 +8816,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: go1-lim5-do1-zoin5-ze1-哥林多前書
     headword: 哥林多前書
@@ -8694,6 +8868,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hi1-hi1-唏唏
     headword: 唏唏
@@ -8870,6 +9045,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: siang1-huê6-商會
     headword: 商會
@@ -8906,6 +9082,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: siang1-gi1-商機
     headword: 商機
@@ -8930,6 +9107,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: mung7-doi5-問題
     headword: 問題
@@ -8942,6 +9120,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ê2-lêng1-啞鈴
     headword: 啞鈴
@@ -8966,6 +9145,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ki2-si7-啟示
     headword: 啟示
@@ -8980,6 +9160,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ngam1-ngam1-啱啱
     headword: 啱啱
@@ -9079,6 +9260,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hi2-se7-喜事
     headword: 喜事
@@ -9129,6 +9311,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: seng1-se7-喪事
     headword: 喪事
@@ -9166,6 +9349,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: duan1-huang2-單反
     headword: 單反
@@ -9370,6 +9554,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hêh4-嚇
     headword: 嚇
@@ -9382,6 +9567,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ngiam5-sog4-sên3-嚴肅性
     headword: 嚴肅性
@@ -9623,6 +9809,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: kung3-gian2-困囝
     headword: 困囝
@@ -9933,6 +10120,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dou5-piang3-圖片
     headword: 圖片
@@ -10042,6 +10230,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: di7-dou5-地圖
     headword: 地圖
@@ -10054,6 +10243,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: di7-tua1-地拖
     headword: 地拖
@@ -10078,6 +10268,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: di7-ghêg8-地獄
     headword: 地獄
@@ -10289,6 +10480,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gi1-gim1-基金
     headword: 基金
@@ -10301,6 +10493,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bo3-zua2-報紙
     headword: 報紙
@@ -10313,6 +10506,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: bo3-ciu5-報酬
     headword: 報酬
@@ -10325,6 +10519,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dion5-gêng2-場景
     headword: 場景
@@ -10349,6 +10544,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: du2-du2-堵堵
     headword: 堵堵
@@ -10458,6 +10654,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: dêh4-io1-壓腰
     headword: 壓腰
@@ -10545,6 +10742,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: siu7-bi2-nam5-suan1-壽比南山
     headword: 壽比南山
@@ -10572,6 +10770,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: hê7-tin1-夏天
     headword: 夏天
@@ -10608,6 +10807,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ghua7-huê6-外匯
     headword: 外匯
@@ -10718,6 +10918,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ghua7-bio2-外表
     headword: 外表
@@ -10730,6 +10931,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ghua7-ghe2-外語
     headword: 外語
@@ -10869,6 +11071,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: mang7-dang1-夢中
     headword: 夢中
@@ -11039,6 +11242,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: dai6-ioh4-大約
     headword: 大約
@@ -11051,6 +11255,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: dua7-goi1-sio2-hang7-大街小巷
     headword: 大街小巷
@@ -11243,6 +11448,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: tiang1-gêng1-天宮
     headword: 天宮
@@ -11329,6 +11535,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: tai3-gêg8-太極
     headword: 太極
@@ -11366,6 +11573,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ki5-ziah4-奇跡
     headword: 奇跡
@@ -11378,6 +11586,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: nai6-ho2-奈何
     headword: 奈何
@@ -11444,6 +11653,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: tao3-lou7-套路
     headword: 套路
@@ -11578,6 +11788,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ru5-gim1-如今
     headword: 如今
@@ -11590,6 +11801,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ru5-ho5-如何
     headword: 如何
@@ -11602,6 +11814,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ru5-mang7-huang1-cên2-如夢方醒
     headword: 如夢方醒
@@ -11738,6 +11951,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gou1-cian2-姑且
     headword: 姑且
@@ -11750,6 +11964,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ze1-姿
     headword: 姿
@@ -11774,6 +11989,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ui1-威
     headword: 威
@@ -11800,6 +12016,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ui1-bhuang6-威望
     headword: 威望
@@ -11812,6 +12029,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ui1-hong1-威風
     headword: 威風
@@ -11826,6 +12044,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: u5-lag8-娛樂
     headword: 娛樂
@@ -11838,6 +12057,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hu6-kuê1-婦科
     headword: 婦科
@@ -11865,6 +12085,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bhuê5-ti2-媒體
     headword: 媒體
@@ -11877,6 +12098,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gê3-zeng1-嫁妝
     headword: 嫁妝
@@ -11901,6 +12123,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ze2-tang5-子彈
     headword: 子彈
@@ -11914,6 +12137,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kong2-孔
     headword: 孔
@@ -11926,6 +12150,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kong2-mêng5-dêng1-孔明燈
     headword: 孔明燈
@@ -11950,6 +12175,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ri7-ion7-字樣
     headword: 字樣
@@ -11974,6 +12200,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ri7-bêh8-字白
     headword: 字白
@@ -12039,6 +12266,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: hag8-ui7-學位
     headword: 學位
@@ -12051,6 +12279,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hag8-lag8-學力
     headword: 學力
@@ -12089,6 +12318,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hag8-se6-學士
     headword: 學士
@@ -12138,6 +12368,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hag8-ngiab8-學業
     headword: 學業
@@ -12162,6 +12393,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hag8-kuê1-學科
     headword: 學科
@@ -12198,6 +12430,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hag8-sêg4-學識
     headword: 學識
@@ -12297,6 +12530,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ang1-gên1-安更
     headword: 安更
@@ -12372,6 +12606,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zong1-zi2-宗旨
     headword: 宗旨
@@ -12384,6 +12619,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: guan1-huang1-官方
     headword: 官方
@@ -12397,6 +12633,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: guan1-mang6-官網
     headword: 官網
@@ -12434,6 +12671,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dian7-dioh8-定著
     headword: 定著
@@ -12594,6 +12832,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gê1-gog4-家國
     headword: 家國
@@ -12800,6 +13039,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: sig8-zi3-zion6-實際上
     headword: 實際上
@@ -12824,6 +13064,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bo2-寶
     headword: 寶
@@ -12942,6 +13183,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: zuang1-li6-專利
     headword: 專利
@@ -12954,6 +13196,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zuang1-ain3-專愛
     headword: 專愛
@@ -12992,6 +13235,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: zuang1-lang5-專欄
     headword: 專欄
@@ -13016,6 +13260,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zuang1-hang6-專項
     headword: 專項
@@ -13040,6 +13285,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dui3-m6-zu6-對唔住
     headword: 對唔住
@@ -13102,6 +13348,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dui3-ho7-rib8-zo7-對號入座
     headword: 對號入座
@@ -13165,6 +13412,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ziê2-siou3-少數
     headword: 少數
@@ -13203,6 +13451,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ziu6-se7-lung6-se7-就事論事
     headword: 就事論事
@@ -13242,6 +13491,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si1-ui7-su3-cang1-尸位素餐
     headword: 尸位素餐
@@ -13381,6 +13631,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ge1-uan1-se1-nguin5-居安思危
     headword: 居安思危
@@ -13419,6 +13670,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gai3-si5-屆時
     headword: 屆時
@@ -13484,6 +13736,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: giah8-屐
     headword: 屐
@@ -13571,6 +13824,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: lu2-gim3-bug4-zi2-屢禁不止
     headword: 屢禁不止
@@ -13610,6 +13864,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zang5-ce3-層次
     headword: 層次
@@ -13622,6 +13877,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zang5-ming7-層面
     headword: 層面
@@ -13699,6 +13955,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cuang1-liu5-bug4-sêg4-川流不息
     headword: 川流不息
@@ -13712,6 +13969,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gang1-zag4-hog8-工作服
     headword: 工作服
@@ -13748,6 +14006,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gang1-hu1-工夫
     headword: 工夫
@@ -13762,6 +14021,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gong1-cê5-工尺
     headword: 工尺
@@ -13828,6 +14088,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gang1-dio5-工潮
     headword: 工潮
@@ -13876,6 +14137,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gang1-zin5-工錢
     headword: 工錢
@@ -13914,6 +14176,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ge6-hiah8-巨額
     headword: 巨額
@@ -13939,6 +14202,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ca1-gê3-差價
     headword: 差價
@@ -13975,6 +14239,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ca1-co3-差錯
     headword: 差錯
@@ -14011,6 +14276,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: zi6-巳
     headword: 巳
@@ -14264,6 +14530,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bho7-帽
     headword: 帽
@@ -14288,6 +14555,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: bag4-dou7-幅度
     headword: 幅度
@@ -14300,6 +14568,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: mo6-幕
     headword: 幕
@@ -14375,6 +14644,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: pêng5-huang1-gong1-li2-平方公里
     headword: 平方公里
@@ -14411,6 +14681,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: bên5-gian5-suan3-平行線
     headword: 平行線
@@ -14438,6 +14709,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ni5-do7-年代
     headword: 年代
@@ -14450,6 +14722,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ni5-ni5-u6-e5-年年有餘
     headword: 年年有餘
@@ -14487,6 +14760,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ni5-huê3-年歲
     headword: 年歲
@@ -14525,6 +14799,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ni5-kib4-年級
     headword: 年級
@@ -14537,6 +14812,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: ni5-ho7-年號
     headword: 年號
@@ -14623,6 +14899,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: huang3-siang2-幻想
     headword: 幻想
@@ -14635,6 +14912,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hung1-sê1-婚紗
     headword: 婚紗
@@ -14675,6 +14953,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: gi1-ho5-幾何
     headword: 幾何
@@ -14740,6 +15019,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ceng5-bou3-床布
     headword: 床布
@@ -14901,6 +15181,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: zo7-ui7-座位
     headword: 座位
@@ -14913,6 +15194,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: zo7-in2-座椅
     headword: 座椅
@@ -14973,6 +15255,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: guang2-gao3-廣告
     headword: 廣告
@@ -14985,6 +15268,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: guang2-diang6-廣電
     headword: 廣電
@@ -15065,6 +15349,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hin5-suan3-弦線
     headword: 弦線
@@ -15154,6 +15439,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: tang5-têng1-彈窗
     headword: 彈窗
@@ -15204,6 +15490,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hêng5-sêg4-形式
     headword: 形式
@@ -15216,6 +15503,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hêng5-tai3-形態
     headword: 形態
@@ -15228,6 +15516,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hêng5-zuang6-形狀
     headword: 形狀
@@ -15240,6 +15529,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hêng5-siang6-形象
     headword: 形象
@@ -15252,6 +15542,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: cai2-彩
     headword: 彩
@@ -15278,6 +15569,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cai2-tao5-彩頭
     headword: 彩頭
@@ -15363,6 +15655,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hiah8-役
     headword: 役
@@ -15403,6 +15696,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: uang2-si5-往時
     headword: 往時
@@ -15427,6 +15721,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: heng2-很
     headword: 很
@@ -15441,6 +15736,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: lug8-律
     headword: 律
@@ -15467,6 +15763,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ao6-gai5-ghuêh8-後個月
     headword: 後個月
@@ -15503,6 +15800,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ao6-si6-gian3-後視鏡
     headword: 後視鏡
@@ -15565,6 +15863,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: cong5-zoin5-從前
     headword: 從前
@@ -15577,6 +15876,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: cong5-bhuê7-從未
     headword: 從未
@@ -15750,6 +16050,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: sim1-tai3-心態
     headword: 心態
@@ -15762,6 +16063,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sim1-zui2-心水
     headword: 心水
@@ -15788,6 +16090,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: sim1-li2-hag8-心理學
     headword: 心理學
@@ -15888,6 +16191,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bêg4-hung5-必痕
     headword: 必痕
@@ -15938,6 +16242,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zi3-nguang6-志願
     headword: 志願
@@ -16064,6 +16369,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: se1-rui5-思維
     headword: 思維
@@ -16076,6 +16382,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: se1-lou7-思路
     headword: 思路
@@ -16127,6 +16434,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: sên3-gian5-ui5-性行為
     headword: 性行為
@@ -16151,6 +16459,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: huang2-riang5-dai6-ngo6-恍然大悟
     headword: 恍然大悟
@@ -16164,6 +16473,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kiong2-pan3-恐怕
     headword: 恐怕
@@ -16176,6 +16486,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: kiong2-huang1-恐慌
     headword: 恐慌
@@ -16299,6 +16610,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kab4-kab4-恰恰
     headword: 恰恰
@@ -16373,6 +16685,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cêng5-gam2-情感
     headword: 情感
@@ -16409,6 +16722,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: cêng5-ze1-情書
     headword: 情書
@@ -16447,6 +16761,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: cêng5-li2-情理
     headword: 情理
@@ -16459,6 +16774,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cêng5-zag4-情節
     headword: 情節
@@ -16471,6 +16787,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cêng5-su2-情緒
     headword: 情緒
@@ -16483,6 +16800,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: cêng5-uang5-情緣
     headword: 情緣
@@ -16607,6 +16925,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sion6-huag4-想法
     headword: 想法
@@ -16631,6 +16950,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ru2-lai5-ru2-愈來愈
     headword: 愈來愈
@@ -16679,6 +16999,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: i3-bhi7-意味
     headword: 意味
@@ -16715,6 +17036,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: i3-se3-意思
     headword: 意思
@@ -16727,6 +17049,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: i3-ki3-意氣
     headword: 意氣
@@ -16751,6 +17074,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: i3-sêg4-意識
     headword: 意識
@@ -16763,6 +17087,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ain3-gog4-zu2-ngi6-愛國主義
     headword: 愛國主義
@@ -16787,6 +17112,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ain3-cêng5-愛情
     headword: 愛情
@@ -16799,6 +17125,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ain3-ze1-bên7-愛滋病
     headword: 愛滋病
@@ -16826,6 +17153,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: gam2-cêng5-感情
     headword: 感情
@@ -16838,6 +17166,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gam2-êng3-感應
     headword: 感應
@@ -16911,6 +17240,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: mang7-ao6-慢後
     headword: 慢後
@@ -16950,6 +17280,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: iog8-mo7-慾望
     headword: 慾望
@@ -16962,6 +17293,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bêng5-zêng3-憑證
     headword: 憑證
@@ -17000,6 +17332,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: êng3-u6-zing6-u6-應有盡有
     headword: 應有盡有
@@ -17027,6 +17360,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: têng2-zêg8-gêng6-bêh4-懲一儆百
     headword: 懲一儆百
@@ -17088,6 +17422,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sêng5-bung2-成本
     headword: 成本
@@ -17101,6 +17436,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sêng5-guên2-成果
     headword: 成果
@@ -17113,6 +17449,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: sêng5-zêh4-成績
     headword: 成績
@@ -17125,6 +17462,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: sêng5-ghe2-成語
     headword: 成語
@@ -17137,6 +17475,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ua2-ain3-le2-我愛汝
     headword: 我愛汝
@@ -17198,6 +17537,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hog8-he2-或許
     headword: 或許
@@ -17210,6 +17550,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dêng2-戥
     headword: 戥
@@ -17284,6 +17625,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ziang3-liag8-戰略
     headword: 戰略
@@ -17296,6 +17638,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ziang3-suan3-戰線
     headword: 戰線
@@ -17437,6 +17780,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: so2-hui3-所費
     headword: 所費
@@ -17461,6 +17805,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ciu2-long5-手囊
     headword: 手囊
@@ -17487,6 +17832,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ciu2-gang1-手工
     headword: 手工
@@ -17499,6 +17845,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ciu2-bou3-手布
     headword: 手布
@@ -17548,6 +17895,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ciu2-gi1-ka2-手機卡
     headword: 手機卡
@@ -17620,6 +17968,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ciu2-sog8-hui3-手續費
     headword: 手續費
@@ -17644,6 +17993,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ciu2-sug8-tai5-手術臺
     headword: 手術臺
@@ -17781,6 +18131,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: poi1-dan1-批擔
     headword: 批擔
@@ -17829,6 +18180,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gi6-lêng5-技能
     headword: 技能
@@ -17841,6 +18193,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gi6-ghoi7-技藝
     headword: 技藝
@@ -17865,6 +18218,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ag4-ug4-zêng3-抑鬱症
     headword: 抑鬱症
@@ -17983,6 +18337,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: pao6-hu6-抱負
     headword: 抱負
@@ -17995,6 +18350,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ah4-gim1-押金
     headword: 押金
@@ -18007,6 +18363,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: tiu1-zui2-gi1-抽水機
     headword: 抽水機
@@ -18353,6 +18710,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zi2-hui1-bang6-指揮棒
     headword: 指揮棒
@@ -18427,6 +18785,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ziab8-bo3-捷報
     headword: 捷報
@@ -18491,6 +18850,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bai5-de5-bhuang7-nang5-排除萬難
     headword: 排除萬難
@@ -18543,6 +18903,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: tui1-ziang2-推剪
     headword: 推剪
@@ -18582,6 +18943,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ti5-sian5-提成
     headword: 提成
@@ -18682,6 +19044,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: diah4-gi3-摘記
     headword: 摘記
@@ -18732,6 +19095,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bua3-im1-giah8-播音劇
     headword: 播音劇
@@ -18780,6 +19144,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: long2-攏
     headword: 攏
@@ -18820,6 +19185,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: siu1-rib8-收入
     headword: 收入
@@ -18833,6 +19199,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: siu1-im1-gi1-收音機
     headword: 收音機
@@ -18846,6 +19213,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: goi2-gêg4-kai1-huang3-改革開放
     headword: 改革開放
@@ -18910,6 +19278,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zêng3-di7-政治
     headword: 政治
@@ -18922,6 +19291,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zêng3-di7-hag8-政治學
     headword: 政治學
@@ -18946,6 +19316,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zêng3-zêh4-政績
     headword: 政績
@@ -18997,6 +19368,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: gu3-i3-故意
     headword: 故意
@@ -19009,6 +19381,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gu7-bou7-ze6-hong1-故步自封
     headword: 故步自封
@@ -19034,6 +19407,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hao7-lag8-效力
     headword: 效力
@@ -19072,6 +19446,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: hao7-lug8-效率
     headword: 效率
@@ -19084,6 +19459,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hao7-êng7-效用
     headword: 效用
@@ -19108,6 +19484,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: giu3-mian7-救命
     headword: 救命
@@ -19174,6 +19551,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: têg4-敕
     headword: 敕
@@ -19252,6 +19630,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ga3-iog8-教育
     headword: 教育
@@ -19264,6 +19643,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ga3-iog8-bou6-教育部
     headword: 教育部
@@ -19300,6 +19680,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: suan3-zua2-散紙
     headword: 散紙
@@ -19336,6 +19717,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: siao3-bhuê2-數尾
     headword: 數尾
@@ -19360,6 +19742,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: siao3-lou7-數路
     headword: 數路
@@ -19385,6 +19768,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: bhung5-文
     headword: 文
@@ -19411,6 +19795,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bhung5-huê3-文化
     headword: 文化
@@ -19423,6 +19808,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: bhung5-huê1-san1-文化衫
     headword: 文化衫
@@ -19483,6 +19869,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bhung5-mêng5-文明
     headword: 文明
@@ -19497,6 +19884,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bhung5-ze1-文書
     headword: 文書
@@ -19535,6 +19923,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bhung5-hiang3-文獻
     headword: 文獻
@@ -19547,6 +19936,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bhung5-li2-文理
     headword: 文理
@@ -19749,6 +20139,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: sing1-bhung6-zua2-新聞紙
     headword: 新聞紙
@@ -19785,6 +20176,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bang1-do1-方刀
     headword: 方刀
@@ -19809,6 +20201,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: huang1-hiang3-buan5-方向盤
     headword: 方向盤
@@ -19833,6 +20226,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: huang1-uan3-方案
     headword: 方案
@@ -19845,6 +20239,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: huang1-huab4-方法
     headword: 方法
@@ -19857,6 +20252,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: huang1-sug8-方術
     headword: 方術
@@ -19883,6 +20279,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: huang1-zam1-方針
     headword: 方針
@@ -19895,6 +20292,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: huang1-ming7-方面
     headword: 方面
@@ -19907,6 +20305,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: pang5-bêh8-旁白
     headword: 旁白
@@ -19980,6 +20379,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: liu5-旒
     headword: 旒
@@ -20030,6 +20430,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gi3-u6-既有
     headword: 既有
@@ -20108,6 +20509,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: rig8-gui1-日規
     headword: 日規
@@ -20209,6 +20611,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: mê5-ni5-明年
     headword: 明年
@@ -20233,6 +20636,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: mêng5-gang3-明槓
     headword: 明槓
@@ -20322,6 +20726,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: cên1-ki5-ig4-星期一
     headword: 星期一
@@ -20468,6 +20873,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si5-時
     headword: 時
@@ -20504,6 +20910,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: si5-hao7-時候
     headword: 時候
@@ -20516,6 +20923,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: si5-guang1-時光
     headword: 時光
@@ -20528,6 +20936,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si5-hung1-時分
     headword: 時分
@@ -20555,6 +20964,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: si5-si3-時勢
     headword: 時勢
@@ -20581,6 +20991,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: si5-sion5-時常
     headword: 時常
@@ -20593,6 +21004,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si5-si5-時時
     headword: 時時
@@ -20617,6 +21029,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: si5-kong1-時空
     headword: 時空
@@ -20641,6 +21054,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si5-sing5-時辰
     headword: 時辰
@@ -20713,6 +21127,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: si5-zung7-時陣
     headword: 時陣
@@ -20799,6 +21214,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: di3-lag8-ziang3-ghai7-智力障礙
     headword: 智力障礙
@@ -20823,6 +21239,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: su2-ki5-暑期
     headword: 暑期
@@ -20946,6 +21363,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bao6-hêng6-暴行
     headword: 暴行
@@ -21083,6 +21501,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ze1-ciam1-書籤
     headword: 書籤
@@ -21132,6 +21551,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zuê3-co1-最初
     headword: 最初
@@ -21146,6 +21566,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zuê3-geng6-最近
     headword: 最近
@@ -21160,6 +21581,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: huê6-uê7-會話
     headword: 會話
@@ -21184,6 +21606,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: ghuêh8-lai6-月內
     headword: 月內
@@ -21335,6 +21758,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: suag4-朔
     headword: 朔
@@ -21484,6 +21908,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bhag8-ngou2-木偶
     headword: 木偶
@@ -21535,6 +21960,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bhue7-si6-未是
     headword: 未是
@@ -21574,6 +22000,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bung2-ui7-本位
     headword: 本位
@@ -21612,6 +22039,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: beng2-dêng2-本等
     headword: 本等
@@ -21636,6 +22064,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bung2-zin5-本錢
     headword: 本錢
@@ -21648,6 +22077,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bung2-nia2-本領
     headword: 本領
@@ -21660,6 +22090,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bê5-朳
     headword: 朳
@@ -21684,6 +22115,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ziang6-杖
     headword: 杖
@@ -21733,6 +22165,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zim2-tao5-long5-枕頭囊
     headword: 枕頭囊
@@ -21923,6 +22356,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hêg4-seng1-核酸
     headword: 核酸
@@ -21947,6 +22381,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gêh4-格
     headword: 格
@@ -21973,6 +22408,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gêh4-sêg4-格式
     headword: 格式
@@ -21985,6 +22421,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: to5-sêg4-桃色
     headword: 桃色
@@ -22025,6 +22462,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: uan1-ceng5-案床
     headword: 案床
@@ -22136,6 +22574,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: so1-梭
     headword: 梭
@@ -22246,6 +22685,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bang6-giu5-棒球
     headword: 棒球
@@ -22284,6 +22724,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: guan1-棺
     headword: 棺
@@ -22386,6 +22827,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ngiab8-tai3-業態
     headword: 業態
@@ -22413,6 +22855,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: gêg8-dou7-極度
     headword: 極度
@@ -22450,6 +22893,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: kai3-lug8-概率
     headword: 概率
@@ -22501,6 +22945,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sung2-榫
     headword: 榫
@@ -22586,6 +23031,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: biê1-zi3-標誌
     headword: 標誌
@@ -22598,6 +23044,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: biê1-ghe2-標語
     headword: 標語
@@ -22659,6 +23106,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: iên7-ze2-樣子
     headword: 樣子
@@ -22671,6 +23119,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ion7-mao6-樣貌
     headword: 樣貌
@@ -22759,6 +23208,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gi1-ki3-nang5-機器人
     headword: 機器人
@@ -22808,6 +23258,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: gi1-hai6-機械
     headword: 機械
@@ -22820,6 +23271,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gi1-gou3-機構
     headword: 機構
@@ -22832,6 +23284,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gi1-iu3-機油
     headword: 機油
@@ -22868,6 +23321,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gi1-guang1-機關
     headword: 機關
@@ -22882,6 +23336,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cion6-puê5-橡皮
     headword: 橡皮
@@ -22894,6 +23349,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: to2-in5-橢圓
     headword: 橢圓
@@ -22906,6 +23362,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: to2-in5-gi1-橢圓機
     headword: 橢圓機
@@ -22944,6 +23401,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dang3-ce3-檔次
     headword: 檔次
@@ -22956,6 +23414,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ciang5-檣
     headword: 檣
@@ -22993,6 +23452,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kuêng5-li6-權利
     headword: 權利
@@ -23005,6 +23465,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: kuang5-ui1-權威
     headword: 權威
@@ -23017,6 +23478,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kuang5-bên3-權柄
     headword: 權柄
@@ -23041,6 +23503,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kuang5-hang6-權限
     headword: 權限
@@ -23079,6 +23542,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: hng1-riang5-欣然
     headword: 欣然
@@ -23252,6 +23716,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zian1-ghuêh8-ciu1-ig4-正月初一
     headword: 正月初一
@@ -23300,6 +23765,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zian3-boin5-正爿
     headword: 正爿
@@ -23324,6 +23790,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zian3-lêng5-liang6-正能量
     headword: 正能量
@@ -23439,6 +23906,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bhu2-sug8-武術
     headword: 武術
@@ -23451,6 +23919,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: suê3-ghuêh8-歲月
     headword: 歲月
@@ -23463,6 +23932,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: lêh8-lai5-歷來
     headword: 歷來
@@ -23475,6 +23945,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: lêh8-se2-歷史
     headword: 歷史
@@ -23487,6 +23958,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: lêh8-tian5-歷程
     headword: 歷程
@@ -23768,6 +24240,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bi2-hung1-比分
     headword: 比分
@@ -23792,6 +24265,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bi2-ga3-比較
     headword: 比較
@@ -23806,6 +24280,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: mao5-bên7-毛病
     headword: 毛病
@@ -23818,6 +24293,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: mo5-bêg4-毛筆
     headword: 毛筆
@@ -23904,6 +24380,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: tang2-毯
     headword: 毯
@@ -23952,6 +24429,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ming5-se7-民事
     headword: 民事
@@ -24014,6 +24492,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ki3-bhi7-氣味
     headword: 氣味
@@ -24026,6 +24505,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ki3-kai3-氣概
     headword: 氣概
@@ -24038,6 +24518,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ki3-cion1-氣槍
     headword: 氣槍
@@ -24062,6 +24543,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ki3-giu5-氣球
     headword: 氣球
@@ -24098,6 +24580,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zui2-bhag8-水墨
     headword: 水墨
@@ -24138,6 +24621,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: zui2-tang2-水桶
     headword: 水桶
@@ -24336,6 +24820,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ing5-tu5-沿途
     headword: 沿途
@@ -24558,6 +25043,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: uah8-gag4-活結
     headword: 活結
@@ -24583,6 +25069,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: pai3-tao5-派頭
     headword: 派頭
@@ -24853,6 +25340,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: siao1-huang5-cia1-消防車
     headword: 消防車
@@ -24916,6 +25404,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zêng6-tou2-淨土
     headword: 淨土
@@ -25052,6 +25541,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dou7-zung5-渡船
     headword: 渡船
@@ -25089,6 +25579,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gang2-zua2-港紙
     headword: 港紙
@@ -25358,6 +25849,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ciam5-lêng5-潛能
     headword: 潛能
@@ -25394,6 +25886,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sib4-geng1-濕巾
     headword: 濕巾
@@ -25503,6 +25996,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: huê2-zai1-火災
     headword: 火災
@@ -25565,6 +26059,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: huê2-zung5-火船
     headword: 火船
@@ -25625,6 +26120,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zai1-lang7-災難
     headword: 災難
@@ -25637,6 +26133,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ge6-炬
     headword: 炬
@@ -25855,6 +26352,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bho5-ko2-giu3-ioh8-無可救藥
     headword: 無可救藥
@@ -25996,6 +26494,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bho5-su1-無須
     headword: 無須
@@ -26087,6 +26586,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: ug4-dao2-熨斗
     headword: 熨斗
@@ -26220,6 +26720,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: dêng1-gu6-燈具
     headword: 燈具
@@ -26293,6 +26794,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dêng1-dan2-燈膽
     headword: 燈膽
@@ -26367,6 +26869,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ziag4-爵
     headword: 爵
@@ -26531,6 +27034,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ghu5-gian2-kou3-牛囝褲
     headword: 牛囝褲
@@ -26607,6 +27111,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: muêh8-ze1-物資
     headword: 物資
@@ -26619,6 +27124,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: muêh8-toi2-物體
     headword: 物體
@@ -26669,6 +27175,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: dêg8-sên3-特性
     headword: 特性
@@ -26729,6 +27236,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dêg8-ziêh4-特質
     headword: 特質
@@ -26753,6 +27261,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dêg8-diam2-特點
     headword: 特點
@@ -26765,6 +27274,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: loi5-犁
     headword: 犁
@@ -26805,6 +27315,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: kuang5-kiang2-bên7-狂犬病
     headword: 狂犬病
@@ -26946,6 +27457,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ziang3-bing2-獎品
     headword: 獎品
@@ -27007,6 +27519,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: dog8-gu6-zêg8-gêh4-獨具一格
     headword: 獨具一格
@@ -27070,6 +27583,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: nguang2-cio3-玩笑
     headword: 玩笑
@@ -27177,6 +27691,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: bang1-gi1-班機
     headword: 班機
@@ -27225,6 +27740,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hing7-gim1-現金
     headword: 現金
@@ -27237,6 +27753,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hêng7-ngêng5-現銀
     headword: 現銀
@@ -27390,6 +27907,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: li2-di3-理智
     headword: 理智
@@ -27404,6 +27922,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: li2-iu5-理由
     headword: 理由
@@ -27416,6 +27935,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: li2-kuê1-理科
     headword: 理科
@@ -27442,6 +27962,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: kim5-琴
     headword: 琴
@@ -27582,6 +28103,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si2-璽
     headword: 璽
@@ -27674,6 +28196,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: sên1-rig8-生日
     headword: 生日
@@ -27686,6 +28209,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: sên1-rig8-kuai3-lag8-生日快樂
     headword: 生日快樂
@@ -27723,6 +28247,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: sêng1-li2-生理
     headword: 生理
@@ -27737,6 +28262,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sên1-suan2-lag8-生產力
     headword: 生產力
@@ -27785,6 +28311,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: suan2-ngiab8-產業
     headword: 產業
@@ -27797,6 +28324,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: suan2-ngiab8-liang7-產業鏈
     headword: 產業鏈
@@ -27871,6 +28399,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: pu2-bho2-甫母
     headword: 甫母
@@ -27910,6 +28439,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gah4-gug4-bhung5-甲骨文
     headword: 甲骨文
@@ -27961,6 +28491,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bung3-dao2-畚斗
     headword: 畚斗
@@ -28100,6 +28631,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: deng1-dion5-當場
     headword: 當場
@@ -28112,6 +28644,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dang1-gêg8-當局
     headword: 當局
@@ -28174,6 +28707,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: deng1-dao3-當晝
     headword: 當晝
@@ -28198,6 +28732,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: so1-lao7-疏漏
     headword: 疏漏
@@ -28222,6 +28757,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: mog8-cêng5-疫情
     headword: 疫情
@@ -28371,6 +28907,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: huag4-dag8-gog4-gê1-發達國家
     headword: 發達國家
@@ -28550,6 +29087,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gai1-dai6-huêng1-hi2-皆大歡喜
     headword: 皆大歡喜
@@ -28612,6 +29150,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: mêng2-皿
     headword: 皿
@@ -28663,6 +29202,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: iong5-li6-盈利
     headword: 盈利
@@ -28675,6 +29215,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: iah4-益
     headword: 益
@@ -28739,6 +29280,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sêng6-huê6-盛會
     headword: 盛會
@@ -28787,6 +29329,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: mag8-zoin5-目前
     headword: 目前
@@ -28799,6 +29342,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: mag8-biê1-目標
     headword: 目標
@@ -28811,6 +29355,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: mag8-dêg8-目的
     headword: 目的
@@ -28823,6 +29368,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: mag8-dêg8-di7-目的地
     headword: 目的地
@@ -28859,6 +29405,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: mag8-gian3-目鏡
     headword: 目鏡
@@ -29031,6 +29578,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: siang1-gi3-相繼
     headword: 相繼
@@ -29097,6 +29645,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: zing1-li2-真理
     headword: 真理
@@ -29109,6 +29658,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zing1-siang3-真相
     headword: 真相
@@ -29121,6 +29671,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zing1-gim1-bêh8-ngeng5-真金白銀
     headword: 真金白銀
@@ -29170,6 +29721,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ngang2-zoin5-眼前
     headword: 眼前
@@ -29233,6 +29785,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zêng3-sên1-眾生
     headword: 眾生
@@ -29410,6 +29963,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: do2-pao2-短跑
     headword: 短跑
@@ -29449,6 +30003,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ngên6-buan5-硬盤
     headword: 硬盤
@@ -29566,6 +30121,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: bhê2-碼
     headword: 碼
@@ -29644,6 +30200,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: sia6-huê6-zu2-ngi6-社會主義
     headword: 社會主義
@@ -29693,6 +30250,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sing5-hag8-神學
     headword: 神學
@@ -29878,6 +30436,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hog4-siêng6-hua6-im5-福善禍淫
     headword: 福善禍淫
@@ -29903,6 +30462,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hog4-cang5-福田
     headword: 福田
@@ -30054,6 +30614,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: loi2-gim1-禮金
     headword: 禮金
@@ -30152,6 +30713,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kuê1-科
     headword: 科
@@ -30179,6 +30741,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: kuê1-hag8-sên3-科學性
     headword: 科學性
@@ -30254,6 +30817,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kuê1-ngaing2-科研
     headword: 科研
@@ -30364,6 +30928,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: i5-huê1-ziab4-bhag8-移花接木
     headword: 移花接木
@@ -30403,6 +30968,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: suê3-bhu6-稅務
     headword: 稅務
@@ -30465,6 +31031,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: tian5-dou7-程度
     headword: 程度
@@ -30477,6 +31044,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bing2-hu3-稟賦
     headword: 稟賦
@@ -30513,6 +31081,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: go2-zua2-稿紙
     headword: 稿紙
@@ -30600,6 +31169,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: kang1-ui7-空位
     headword: 空位
@@ -30624,6 +31194,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kong1-tam5-空談
     headword: 空談
@@ -30672,6 +31243,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: kong1-kiah4-空隙
     headword: 空隙
@@ -30684,6 +31256,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kong1-tao5-zin1-pio3-空頭支票
     headword: 空頭支票
@@ -30744,6 +31317,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gêng2-竟
     headword: 竟
@@ -30768,6 +31342,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ziang1-tian5-章程
     headword: 章程
@@ -30780,6 +31355,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: tong5-ni5-童年
     headword: 童年
@@ -30816,6 +31392,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: tong5-iao5-童謠
     headword: 童謠
@@ -30867,6 +31444,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dêg4-coin2-竹筅
     headword: 竹筅
@@ -30952,6 +31530,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: doin6-ig4-si5-gang1-第一時間
     headword: 第一時間
@@ -31065,6 +31644,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kêng1-筐
     headword: 筐
@@ -31077,6 +31657,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dab4-uan3-答案
     headword: 答案
@@ -31089,6 +31670,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: dab4-doi5-ka2-答題卡
     headword: 答題卡
@@ -31299,6 +31881,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zag4-pah4-節拍
     headword: 節拍
@@ -31324,6 +31907,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: zag4-mag8-節目
     headword: 節目
@@ -31336,6 +31920,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: huam6-ui5-範圍
     headword: 範圍
@@ -31348,6 +31933,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: duang6-篆
     headword: 篆
@@ -31464,6 +32050,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gang2-cêng1-簡稱
     headword: 簡稱
@@ -31502,6 +32089,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: liam5-簾
     headword: 簾
@@ -31688,6 +32276,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zêng1-sing5-bhung5-mêng5-精神文明
     headword: 精神文明
@@ -31741,6 +32330,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: dêg4-na5-竹籃
     headword: 竹籃
@@ -31765,6 +32355,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hi6-tong2-系統
     headword: 系統
@@ -31777,6 +32368,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: giu6-hung1-糾紛
     headword: 糾紛
@@ -31789,6 +32381,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gi2-nguang5-紀元
     headword: 紀元
@@ -31813,6 +32406,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gi2-log8-紀錄
     headword: 紀錄
@@ -31825,6 +32419,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gi2-log8-piang3-紀錄片
     headword: 紀錄片
@@ -31849,6 +32444,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ang5-bao1-紅包
     headword: 紅包
@@ -31861,6 +32457,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ang5-zab8-ri7-cia1-紅十字車
     headword: 紅十字車
@@ -32197,6 +32794,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kib4-siao3-級數
     headword: 級數
@@ -32227,6 +32825,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: su3-muê6-pêng5-sên1-素昧平生
     headword: 素昧平生
@@ -32329,6 +32928,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: zong1-rig8-終日
     headword: 終日
@@ -32366,6 +32966,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zong1-su1-終須
     headword: 終須
@@ -32393,6 +32994,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gag4-bhuê2-結尾
     headword: 結尾
@@ -32417,6 +33019,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gag4-guê2-結果
     headword: 結果
@@ -32431,6 +33034,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gag4-gou3-結構
     headword: 結構
@@ -32443,6 +33047,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gag4-lung6-結論
     headword: 結論
@@ -32455,6 +33060,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zoh8-dui3-絕對
     headword: 絕對
@@ -32467,6 +33073,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zoh8-gi6-絕技
     headword: 絕技
@@ -32505,6 +33112,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si1-min5-puê6-絲棉被
     headword: 絲棉被
@@ -32529,6 +33137,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: gian1-ze1-經書
     headword: 經書
@@ -32553,6 +33162,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gêng1-zi3-hag8-經濟學
     headword: 經濟學
@@ -32589,6 +33199,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gêng1-ngiam7-經驗
     headword: 經驗
@@ -32602,6 +33213,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: rui5-ta1-mêng6-維他命
     headword: 維他命
@@ -32639,6 +33251,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gang1-綱
     headword: 綱
@@ -32701,6 +33314,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: mang6-ing2-網癮
     headword: 網癮
@@ -32726,6 +33340,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: mang6-ioh4-cia1-網約車
     headword: 網約車
@@ -32765,6 +33380,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: mang6-kuê3-網課
     headword: 網課
@@ -32866,6 +33482,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: suan3-lou7-線路
     headword: 線路
@@ -32902,6 +33519,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: piang1-zi3-編制
     headword: 編制
@@ -32940,6 +33558,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zong2-si6-總是
     headword: 總是
@@ -32952,6 +33571,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: zong2-hiah8-總額
     headword: 總額
@@ -33040,6 +33660,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bhuang2-罔
     headword: 罔
@@ -33140,6 +33761,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: huag8-gim1-罰金
     headword: 罰金
@@ -33250,6 +33872,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: mui2-huag4-美髮
     headword: 美髮
@@ -33274,6 +33897,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kung5-群
     headword: 群
@@ -33286,6 +33910,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: kung5-zu1-群組
     headword: 群組
@@ -33322,6 +33947,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ngi6-bhu6-ga3-iog8-義務教育
     headword: 義務教育
@@ -33359,6 +33985,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: sib8-sog8-習俗
     headword: 習俗
@@ -33371,6 +33998,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: lao6-ni5-老年
     headword: 老年
@@ -33437,6 +34065,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kao2-ci3-考試
     headword: 考試
@@ -33449,6 +34078,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: kao2-doi5-考題
     headword: 考題
@@ -33717,6 +34347,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sian1-mo7-聲望
     headword: 聲望
@@ -33768,6 +34399,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: sian1-e6-聲譽
     headword: 聲譽
@@ -33780,6 +34412,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sian1-im1-聲音
     headword: 聲音
@@ -33792,6 +34425,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: zêh4-職
     headword: 職
@@ -33817,6 +34451,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zêh4-bhu6-職務
     headword: 職務
@@ -33829,6 +34464,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zêh4-ngiab8-職業
     headword: 職業
@@ -33843,6 +34479,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: zêh4-cêng1-職稱
     headword: 職稱
@@ -33920,6 +34557,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gou2-ci6-股市
     headword: 股市
@@ -33948,6 +34586,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: buê3-gêng2-背景
     headword: 背景
@@ -33960,6 +34599,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: buê3-ming7-背面
     headword: 背面
@@ -33984,6 +34624,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hou5-sêng5-pah4-胡蠅拍
     headword: 胡蠅拍
@@ -34008,6 +34649,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: lêng5-ui5-能為
     headword: 能為
@@ -34033,6 +34675,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dung5-im1-脣音
     headword: 脣音
@@ -34335,6 +34978,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ru5-臾
     headword: 臾
@@ -34387,6 +35031,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: ge2-zêg8-huang2-san1-舉一反三
     headword: 舉一反三
@@ -34424,6 +35069,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ge2-cu3-舉措
     headword: 舉措
@@ -34512,6 +35158,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bo1-ria2-般若
     headword: 般若
@@ -34575,6 +35222,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cao5-艚
     headword: 艚
@@ -34652,6 +35300,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sêg4-cêng5-色情
     headword: 色情
@@ -34957,6 +35606,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: co2-liag8-草略
     headword: 草略
@@ -35030,6 +35680,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: mai3-kêh4-ki3-莫客氣
     headword: 莫客氣
@@ -35181,6 +35832,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: du3-zag4-kuang5-著作權
     headword: 著作權
@@ -35438,6 +36090,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ioh8-bing2-藥品
     headword: 藥品
@@ -35554,6 +36207,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cu3-hng1-處方
     headword: 處方
@@ -35745,6 +36399,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gian5-zêng3-ku1-liu5-行政拘留
     headword: 行政拘留
@@ -35784,6 +36439,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gian5-ui5-行為
     headword: 行為
@@ -35796,6 +36452,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gian5-zung5-to2-hai2-san1-hung1-mian7-行船討海三分命
     headword: 行船討海三分命
@@ -35910,6 +36567,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: biao2-gêh4-表格
     headword: 表格
@@ -35923,6 +36581,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: biao2-mêng7-表面
     headword: 表面
@@ -35935,6 +36594,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: san1-衫
     headword: 衫
@@ -36249,6 +36909,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zuang1-bi6-裝備
     headword: 裝備
@@ -36263,6 +36924,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zuang1-sog4-裝束
     headword: 裝束
@@ -36511,6 +37173,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: iao3-diam2-要點
     headword: 要點
@@ -36523,6 +37186,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: giang3-li6-bhuang5-ngi6-見利忘義
     headword: 見利忘義
@@ -36587,6 +37251,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gui1-dian7-規定
     headword: 規定
@@ -36599,6 +37264,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gui1-lug8-規律
     headword: 規律
@@ -36611,6 +37277,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gui1-gêh4-規格
     headword: 規格
@@ -36623,6 +37290,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gui1-mo5-規模
     headword: 規模
@@ -36635,6 +37303,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gui1-ge2-規矩
     headword: 規矩
@@ -36647,6 +37316,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gui1-tian5-規程
     headword: 規程
@@ -36671,6 +37341,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gui1-huang6-規範
     headword: 規範
@@ -36685,6 +37356,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gui1-huam6-sên3-規範性
     headword: 規範性
@@ -36709,6 +37381,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si6-tian1-視聽
     headword: 視聽
@@ -36733,6 +37406,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si6-ping5-視頻
     headword: 視頻
@@ -36793,6 +37467,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: cing1-sing1-親身
     headword: 親身
@@ -36807,6 +37482,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gag4-dou7-角度
     headword: 角度
@@ -36819,6 +37495,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gioh4-sêg4-角色
     headword: 角色
@@ -36831,6 +37508,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ngang5-言
     headword: 言
@@ -36869,6 +37547,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ngang5-lung6-ze6-iu5-言論自由
     headword: 言論自由
@@ -36942,6 +37621,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gi3-seng3-gi1-計算機
     headword: 計算機
@@ -37020,6 +37700,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: siag4-bi6-設備
     headword: 設備
@@ -37032,6 +37713,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: siag4-si1-設施
     headword: 設施
@@ -37044,6 +37726,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: siag4-sing1-cu3-di7-設身處地
     headword: 設身處地
@@ -37095,6 +37778,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: se5-詞
     headword: 詞
@@ -37121,6 +37805,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: se5-huê6-詞彙
     headword: 詞彙
@@ -37133,6 +37818,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: se5-ghe2-詞語
     headword: 詞語
@@ -37145,6 +37831,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: ci3-geng2-試卷
     headword: 試卷
@@ -37157,6 +37844,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ci3-guang2-試管
     headword: 試管
@@ -37183,6 +37871,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: si1-詩
     headword: 詩
@@ -37195,6 +37884,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: si1-i3-詩意
     headword: 詩意
@@ -37231,6 +37921,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: uê7-doi5-話題
     headword: 話題
@@ -37243,6 +37934,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gai2-si2-該死
     headword: 該死
@@ -37358,6 +38050,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ghe2-im1-語音
     headword: 語音
@@ -37444,6 +38137,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: kuê3-ghua7-課外
     headword: 課外
@@ -37481,6 +38175,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: kuê3-gang1-課間
     headword: 課間
@@ -37505,6 +38200,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: tiou5-ping5-調頻
     headword: 調頻
@@ -37545,6 +38241,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: lung6-li2-hag8-論理學
     headword: 論理學
@@ -37618,6 +38315,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gang2-giu3-講究
     headword: 講究
@@ -37632,6 +38330,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: sia7-i3-謝意
     headword: 謝意
@@ -37656,6 +38355,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: mo5-謨
     headword: 謨
@@ -37682,6 +38382,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zêng3-guang3-證券
     headword: 證券
@@ -37708,6 +38409,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zêng3-ze1-證書
     headword: 證書
@@ -37720,6 +38422,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: pou2-譜
     headword: 譜
@@ -37821,6 +38524,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: hu6-sing1-hu5-護身符
     headword: 護身符
@@ -38108,6 +38812,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cai5-財
     headword: 財
@@ -38144,6 +38849,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cai5-zêng3-財政
     headword: 財政
@@ -38156,6 +38862,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cai5-ki3-財氣
     headword: 財氣
@@ -38192,6 +38899,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gong3-貢
     headword: 貢
@@ -38233,6 +38941,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: huê3-gê3-貨架
     headword: 貨架
@@ -38295,6 +39004,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: zêh4-rim6-sim1-責任心
     headword: 責任心
@@ -38357,6 +39067,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: dah4-di7-貼地
     headword: 貼地
@@ -38438,6 +39149,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ze1-gêh4-資格
     headword: 資格
@@ -38450,6 +39162,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ze1-lêh8-資歷
     headword: 資歷
@@ -38474,6 +39187,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ze1-suan2-資產
     headword: 資產
@@ -38487,6 +39201,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ze1-hui3-資費
     headword: 資費
@@ -38523,6 +39238,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: siên2-gêh4-賞格
     headword: 賞格
@@ -38587,6 +39303,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: dion3-hou6-賬戶
     headword: 賬戶
@@ -38599,6 +39316,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: sai3-se7-賽事
     headword: 賽事
@@ -38648,6 +39366,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zao2-bhê2-dêng1-走馬燈
     headword: 走馬燈
@@ -38698,6 +39417,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ki2-ge1-起居
     headword: 起居
@@ -38722,6 +39442,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ki2-bhê2-起碼
     headword: 起碼
@@ -38736,6 +39457,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ki2-su3-ze1-起訴書
     headword: 起訴書
@@ -38799,6 +39521,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: cu1-si3-趨勢
     headword: 趨勢
@@ -38811,6 +39534,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zog4-giu5-足球
     headword: 足球
@@ -38860,6 +39584,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ziah4-跡
     headword: 跡
@@ -38884,6 +39609,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ka1-giah8-跤屐
     headword: 跤屐
@@ -39031,6 +39757,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sêng1-hung7-身份
     headword: 身份
@@ -39043,6 +39770,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: sing1-hung7-zêng3-身份證
     headword: 身份證
@@ -39153,6 +39881,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: cia1-gi6-車技
     headword: 車技
@@ -39300,6 +40029,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gung1-軍
     headword: 軍
@@ -39324,6 +40054,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gung1-ming5-軍民
     headword: 軍民
@@ -39377,6 +40108,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: heng1-軒
     headword: 軒
@@ -39415,6 +40147,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: dêg8-軸
     headword: 軸
@@ -39559,6 +40292,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: lung5-zung5-輪船
     headword: 輪船
@@ -39571,6 +40305,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: su1-ian5-輸贏
     headword: 輸贏
@@ -39611,6 +40346,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: e5-lung6-dion5-輿論場
     headword: 輿論場
@@ -39662,6 +40398,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: bang7-tao5-辦頭
     headword: 辦頭
@@ -39727,6 +40464,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: geng6-rig8-近日
     headword: 近日
@@ -39765,6 +40503,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: huê5-bhung5-zam1-迴紋針
     headword: 迴紋針
@@ -39804,6 +40543,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dui1-zao6-huê6-追悼會
     headword: 追悼會
@@ -39866,6 +40606,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: dog8-ziam6-逐漸
     headword: 逐漸
@@ -39878,6 +40619,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: tu5-途
     headword: 途
@@ -39902,6 +40644,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: tong1-sog8-goi7-dong2-通俗易懂
     headword: 通俗易懂
@@ -39951,6 +40694,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: sog4-ziang3-sog4-guag4-速戰速決
     headword: 速戰速決
@@ -40002,6 +40746,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: liang5-mê5-連夜
     headword: 連夜
@@ -40050,6 +40795,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: liang5-i1-gung5-連衣裙
     headword: 連衣裙
@@ -40086,6 +40832,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zing3-zêg8-bou7-進一步
     headword: 進一步
@@ -40124,6 +40871,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: iu5-hi3-gi1-遊戲機
     headword: 遊戲機
@@ -40190,6 +40938,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ung7-dong6-huê6-運動會
     headword: 運動會
@@ -40214,6 +40963,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ung7-ian5-siang1-運營商
     headword: 運營商
@@ -40242,6 +40992,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: guê3-zab8-ngou2-過十五
     headword: 過十五
@@ -40269,6 +41020,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: guê3-ni5-mê5-過年暝
     headword: 過年暝
@@ -40319,6 +41071,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: guê3-huam6-過犯
     headword: 過犯
@@ -40343,6 +41096,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: dao6-道
     headword: 道
@@ -40456,6 +41210,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ge6-遽
     headword: 遽
@@ -40482,6 +41237,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bang1-邦
     headword: 邦
@@ -40530,6 +41286,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bou6-hung7-部分
     headword: 部分
@@ -40542,6 +41299,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: bou6-mung5-部門
     headword: 部門
@@ -40555,6 +41313,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bou6-dui7-部隊
     headword: 部隊
@@ -40840,6 +41599,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: tong5-iang5-zoih4-重陽節
     headword: 重陽節
@@ -40852,6 +41612,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dong6-diam2-重點
     headword: 重點
@@ -40864,6 +41625,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ia2-sim1-野心
     headword: 野心
@@ -40876,6 +41638,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ia2-ziang3-gung1-野戰軍
     headword: 野戰軍
@@ -40963,6 +41726,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gim1-ngeng5-zua2-金銀紙
     headword: 金銀紙
@@ -41158,6 +41922,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: lêng1-鈴
     headword: 鈴
@@ -41170,6 +41935,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: kiam5-gian2-鉗囝
     headword: 鉗囝
@@ -41475,6 +42241,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: zin5-kug4-錢窟
     headword: 錢窟
@@ -41562,6 +42329,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zag4-鍘
     headword: 鍘
@@ -41602,6 +42370,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: so2-si5-鎖匙
     headword: 鎖匙
@@ -41663,6 +42432,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zam6-鏨
     headword: 鏨
@@ -41689,6 +42459,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zêng1-sian1-鐘聲
     headword: 鐘聲
@@ -41939,6 +42710,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: mung5-pio3-門票
     headword: 門票
@@ -41988,6 +42760,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: kai5-nguang5-開源
     headword: 開源
@@ -42194,6 +42967,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hu3-dua3-附帶
     headword: 附帶
@@ -42331,6 +43105,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: log8-gung1-陸軍
     headword: 陸軍
@@ -42380,6 +43155,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: kiah4-隙
     headword: 隙
@@ -42445,6 +43221,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sui5-ziag4-隨即
     headword: 隨即
@@ -42457,6 +43234,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sui5-ao6-隨後
     headword: 隨後
@@ -42481,6 +43259,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sui5-si5-隨時
     headword: 隨時
@@ -42493,6 +43272,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: sui5-am3-隨暗
     headword: 隨暗
@@ -42565,6 +43345,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: eng2-se1-隱私
     headword: 隱私
@@ -42577,6 +43358,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: di6-ze1-隸書
     headword: 隸書
@@ -42627,6 +43409,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zib8-ti2-集體
     headword: 集體
@@ -42641,6 +43424,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: diao1-suag4-雕塑
     headword: 雕塑
@@ -42656,6 +43440,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sang1-ig4-liu5-雙一流
     headword: 雙一流
@@ -42725,6 +43510,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zab8-bhu6-雜務
     headword: 雜務
@@ -42749,6 +43535,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zab8-muêh8-雜物
     headword: 雜物
@@ -42773,6 +43560,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: zab8-huê3-雜貨
     headword: 雜貨
@@ -42874,6 +43662,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hou6-suan3-雨傘
     headword: 雨傘
@@ -43008,6 +43797,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: diang6-sing3-電信
     headword: 電信
@@ -43135,6 +43925,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: diang6-liu5-電流
     headword: 電流
@@ -43209,6 +44000,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: diêng6-si6-gi1-電視機
     headword: 電視機
@@ -43307,6 +44099,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: kag4-霍
     headword: 霍
@@ -43395,6 +44188,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: lêng5-cia1-靈車
     headword: 靈車
@@ -43419,6 +44213,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cên1-se2-青史
     headword: 青史
@@ -43443,6 +44238,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hui1-sion5-非常
     headword: 非常
@@ -43455,6 +44251,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: hui1-rui6-非遺
     headword: 非遺
@@ -43520,6 +44317,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ming7-sê1-面紗
     headword: 面紗
@@ -43558,6 +44356,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hia1-靴
     headword: 靴
@@ -43594,6 +44393,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: oi5-suêh4-鞋刷
     headword: 鞋刷
@@ -43679,6 +44479,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: ciu1-ciang1-鞦韆
     headword: 鞦韆
@@ -43716,6 +44517,7 @@ entries:
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: im1-ghaoh8-huê6-音樂會
     headword: 音樂會
@@ -43791,6 +44593,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: sung6-kao2-liu3-順口溜
     headword: 順口溜
@@ -43865,6 +44668,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: nguang2-zib8-頑疾
     headword: 頑疾
@@ -43889,6 +44693,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: nian2-hog8-領域
     headword: 領域
@@ -43901,6 +44706,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: nia2-nê1-go3-zi1-領奶塊膣
     headword: 領奶塊膣
@@ -44063,6 +44869,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ping5-ping5-頻頻
     headword: 頻頻
@@ -44089,6 +44896,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: doi5-mag8-題目
     headword: 題目
@@ -44101,6 +44909,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: nguang6-gêng2-願景
     headword: 願景
@@ -44125,6 +44934,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: lui7-類
     headword: 類
@@ -44139,6 +44949,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: lui7-hêng5-類型
     headword: 類型
@@ -44177,6 +44988,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hiang2-si7-ping5-顯示屏
     headword: 顯示屏
@@ -44202,6 +45014,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: huang1-cuê1-hou6-da2-風吹雨打
     headword: 風吹雨打
@@ -44250,6 +45063,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hong1-ki3-風氣
     headword: 風氣
@@ -44262,6 +45076,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: huang1-bo1-風波
     headword: 風波
@@ -44387,6 +45202,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: huang1-cang1-lou7-suah4-風餐露宿
     headword: 風餐露宿
@@ -44412,6 +45228,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: buê1-gi1-sug8-飛機恤
     headword: 飛機恤
@@ -44539,6 +45356,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: siu2-hiêh8-首頁
     headword: 首頁
@@ -44611,6 +45429,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: bhê2-lag8-馬力
     headword: 馬力
@@ -44636,6 +45455,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bhê2-bou3-馬布
     headword: 馬布
@@ -44911,6 +45731,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ti2-huag8-體罰
     headword: 體罰
@@ -44937,6 +45758,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: ti2-liang6-體量
     headword: 體量
@@ -44989,6 +45811,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gao1-huêh4-iab4-高血壓
     headword: 高血壓
@@ -45193,6 +46016,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: mo5-魔
     headword: 魔
@@ -45229,6 +46053,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ah4-gian2-pou1-鴨仔鋪
     headword: 鴨仔鋪
@@ -45253,6 +46078,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bhêh8-dang1-lao5-麥當勞
     headword: 麥當勞
@@ -45301,6 +46127,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hêg4-mian5-duan1-黑名單
     headword: 黑名單
@@ -45325,6 +46152,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: hêg4-suan2-黑產
     headword: 黑產
@@ -45365,6 +46193,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dai3-黛
     headword: 黛
@@ -45403,6 +46232,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: dang2-pai3-黨派
     headword: 黨派
@@ -45439,6 +46269,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ce2-mog8-鼠疫
     headword: 鼠疫
@@ -45736,6 +46567,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: cig4-ghuêh8-七月
     headword: 七月
@@ -45827,6 +46659,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: bug4-不
     headword: 不
@@ -45841,6 +46674,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: houn2-不
     headword: 不
@@ -45855,6 +46689,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: m6-不
     headword: 不
@@ -45870,6 +46705,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: si3-zion7-世上
     headword: 世上
@@ -45918,6 +46754,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cuang3-串
     headword: 串
@@ -45933,6 +46770,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bing1-乒
     headword: 乒
@@ -45962,6 +46800,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ia7-也
     headword: 也
@@ -45977,6 +46816,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: kiang5-乾
     headword: 乾
@@ -45992,6 +46832,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ruang6-亂
     headword: 亂
@@ -46007,6 +46848,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: se7-事
     headword: 事
@@ -46082,6 +46924,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: êg8-亦
     headword: 亦
@@ -46097,6 +46940,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gim1-今
     headword: 今
@@ -46208,6 +47052,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: huag8-伐
     headword: 伐
@@ -46299,6 +47144,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: sing3-ngiang2-信仰
     headword: 信仰
@@ -46314,6 +47160,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: sing3-sim1-信心
     headword: 信心
@@ -46329,6 +47176,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: do3-ciu2-boin5-倒手爿
     headword: 倒手爿
@@ -46375,6 +47223,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: zo3-zêg8-ê7-做一下
     headword: 做一下
@@ -46420,6 +47269,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: tuêng5-tong2-傳統
     headword: 傳統
@@ -46436,6 +47286,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: tuang5-suêh4-傳說
     headword: 傳說
@@ -46451,6 +47302,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: nguang5-元
     headword: 元
@@ -46467,6 +47319,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: nguêng5-siou1-zoih4-元宵節
     headword: 元宵節
@@ -46482,6 +47335,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: cong1-diêng6-bo2-充電寶
     headword: 充電寶
@@ -46513,6 +47367,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: soin1-huê5-先回
     headword: 先回
@@ -46648,6 +47503,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: diang2-典
     headword: 典
@@ -46678,6 +47534,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zai3-gin3-再見
     headword: 再見
@@ -46695,6 +47552,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: guang1-冠
     headword: 冠
@@ -46833,6 +47691,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zoin5-前
     headword: 前
@@ -46877,6 +47736,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zab4-匝
     headword: 匝
@@ -46938,6 +47798,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: buan3-geng1-boih4-niê2-半斤八兩
     headword: 半斤八兩
@@ -46970,6 +47831,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: na1-南
     headword: 南
@@ -46984,6 +47846,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: ing3-印
     headword: 印
@@ -47031,6 +47894,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: nguang5-lai5-原來
     headword: 原來
@@ -47046,6 +47910,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: nguang5-ing1-原因
     headword: 原因
@@ -47062,6 +47927,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ke3-si2-去死
     headword: 去死
@@ -47092,6 +47958,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: gu3-句
     headword: 句
@@ -47151,6 +48018,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: se2-史
     headword: 史
@@ -47319,6 +48187,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: mêh8-咩
     headword: 咩
@@ -47398,6 +48267,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: di1-da5-啲咑
     headword: 啲咑
@@ -47429,6 +48299,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: seng1-喪
     headword: 喪
@@ -47458,6 +48329,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: mag8-tao5-嘜頭
     headword: 嘜頭
@@ -47488,6 +48360,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: si3-huang1-四方
     headword: 四方
@@ -47548,6 +48421,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gog4-gê1-huab4-國家法
     headword: 國家法
@@ -47609,6 +48483,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: tuêng5-toi2-團體
     headword: 團體
@@ -47624,6 +48499,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: nah4-sab4-tang2-垃圾桶
     headword: 垃圾桶
@@ -47639,6 +48515,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gao2-垢
     headword: 垢
@@ -47671,6 +48548,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: diêng6-墊
     headword: 墊
@@ -47686,6 +48564,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bhag8-in7-墨硯
     headword: 墨硯
@@ -47716,6 +48595,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: mang7-sion6-夢想
     headword: 夢想
@@ -47731,6 +48611,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: tiêng1-zu2-天主
     headword: 天主
@@ -47776,6 +48657,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: iou1-siu7-夭壽
     headword: 夭壽
@@ -47852,6 +48734,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: ri7-toi2-字體
     headword: 字體
@@ -47927,6 +48810,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: uêng2-宛
     headword: 宛
@@ -47987,6 +48871,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: kia1-家
     headword: 家
@@ -48001,6 +48886,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: mig8-bhê2-密碼
     headword: 密碼
@@ -48016,6 +48902,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: kuan1-nê5-寬呢
     headword: 寬呢
@@ -48184,6 +49071,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: gang1-工
     headword: 工
@@ -48275,6 +49163,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: pang5-帆
     headword: 帆
@@ -48399,6 +49288,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: dou7-度
     headword: 度
@@ -48429,6 +49319,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: tang5-彈
     headword: 彈
@@ -48444,6 +49335,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: hiun3-復
     headword: 復
@@ -48549,6 +49441,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ng1-恩
     headword: 恩
@@ -48625,6 +49518,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ain3-pin1-愛便，愛鮮，愛大粒奶
     headword: 愛便，愛鮮，愛大粒奶
@@ -48715,6 +49609,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ciu2-bio1-手錶
     headword: 手錶
@@ -48730,6 +49625,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ciu2-diêng6-手電
     headword: 手電
@@ -48760,6 +49656,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: la5-lung5-拉圇
     headword: 拉圇
@@ -48883,6 +49780,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zin1-piê3-支票
     headword: 支票
@@ -48898,6 +49796,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gu3-故
     headword: 故
@@ -48944,6 +49843,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: dou3-斗
     headword: 斗
@@ -49008,6 +49908,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: rig8-zi2-日子
     headword: 日子
@@ -49054,6 +49955,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: rig8-ki5-日期
     headword: 日期
@@ -49069,6 +49971,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: rig8-dog8-日逐
     headword: 日逐
@@ -49116,6 +50019,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: muan3-rig8-明日
     headword: 明日
@@ -49270,6 +50174,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: dao3-晝
     headword: 晝
@@ -49389,6 +50294,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: gêng3-更
     headword: 更
@@ -49403,6 +50309,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: zêng5-曾
     headword: 曾
@@ -49431,6 +50338,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ziao1-朝
     headword: 朝
@@ -49446,6 +50354,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ciao5-朝
     headword: 朝
@@ -49461,6 +50370,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bhuah8-末
     headword: 末
@@ -49492,6 +50402,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: dong3-hong1-中風
     headword: 中風
@@ -49538,6 +50449,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: gia1-iu5-加油
     headword: 加油
@@ -49584,6 +50496,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: go3-塊
     headword: 塊
@@ -49598,6 +50511,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: zab4-札
     headword: 札
@@ -49629,6 +50543,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: dang1-東
     headword: 東
@@ -49644,6 +50559,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: su2-杵
     headword: 杵
@@ -49688,6 +50604,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ui5-桅
     headword: 桅
@@ -49733,6 +50650,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: diou5-gian6-條件
     headword: 條件
@@ -49748,6 +50666,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: huam6-梵
     headword: 梵
@@ -49807,6 +50726,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gang3-槓
     headword: 槓
@@ -49837,6 +50757,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: zuang1-樁
     headword: 樁
@@ -49914,6 +50835,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: piou1-doi5-標題
     headword: 標題
@@ -49929,6 +50851,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: mo5-模
     headword: 模
@@ -49959,6 +50882,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: iên7-樣
     headword: 樣
@@ -50004,6 +50928,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: kuang2-款
     headword: 款
@@ -50064,6 +50989,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: pai2-sê3-歹勢
     headword: 歹勢
@@ -50095,6 +51021,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: dag8-bing2-毒品
     headword: 毒品
@@ -50111,6 +51038,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: di1-氐
     headword: 氐
@@ -50172,6 +51100,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: le2-ho2-汝好
     headword: 汝好
@@ -50202,6 +51131,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: huab4-法
     headword: 法
@@ -50232,6 +51162,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: soi2-san1-boin2-洗衫板
     headword: 洗衫板
@@ -50321,6 +51252,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ui5-sim6-moh4-為什麼
     headword: 為什麼
@@ -50336,6 +51268,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: bho5-riêh8-gu2-無偌久
     headword: 無偌久
@@ -50426,6 +51359,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: boin5-爿
     headword: 爿
@@ -50459,6 +51393,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bang2-版
     headword: 版
@@ -50550,6 +51485,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: hing7-zai6-現在
     headword: 現在
@@ -50566,6 +51502,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: hing7-sig8-現實
     headword: 現實
@@ -50581,6 +51518,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: huang5-環
     headword: 環
@@ -50718,6 +51656,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: mog8-疫
     headword: 疫
@@ -50796,6 +51735,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: deg4-的
     headword: 的
@@ -50810,6 +51750,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: di1-se6-的士
     headword: 的士
@@ -50856,6 +51797,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ming5-ceng5-眠床
     headword: 眠床
@@ -50919,6 +51861,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: ge2-矩
     headword: 矩
@@ -51072,6 +52015,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: siam5-禪
     headword: 禪
@@ -51133,6 +52077,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: loi2-mao6-禮貌
     headword: 禮貌
@@ -51149,6 +52094,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: se1-se7-私事
     headword: 私事
@@ -51208,6 +52154,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bi3-mig8-秘密
     headword: 秘密
@@ -51223,6 +52170,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: diag4-秩
     headword: 秩
@@ -51268,6 +52216,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: kong1-空
     headword: 空
@@ -51298,6 +52247,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: kiao3-竅
     headword: 竅
@@ -51344,6 +52294,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: duêng1-ngou2-端午
     headword: 端午
@@ -51496,6 +52447,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: huang6-範
     headword: 範
@@ -51526,6 +52478,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: bi3-篦
     headword: 篦
@@ -51633,6 +52586,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gou5-糊
     headword: 糊
@@ -51800,6 +52754,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: hang2-dig4-罕得
     headword: 罕得
@@ -51891,6 +52846,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: kiên1-腔
     headword: 腔
@@ -51937,6 +52893,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: hêng3-興
     headword: 興
@@ -51966,6 +52923,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: buan1-般
     headword: 般
@@ -52148,6 +53106,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: iêh8-hng1-藥方
     headword: 藥方
@@ -52194,6 +53153,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: sag4-bêng3-蝨篦
     headword: 蝨篦
@@ -52301,6 +53261,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: hiun5-裘
     headword: 裘
@@ -52361,6 +53322,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gi3-i3-記憶
     headword: 記憶
@@ -52377,6 +53339,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gi3-di5-記池
     headword: 記池
@@ -52528,6 +53491,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ciên6-gi5-象棋
     headword: 象棋
@@ -52543,6 +53507,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: de1-bho2-cai2-豬母𤷕
     headword: 豬母𤷕
@@ -52619,6 +53584,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: bhua5-磨-noun
     headword: 磨
@@ -52679,6 +53645,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: mou3-貿
     headword: 貿
@@ -52709,6 +53676,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ze1-liou7-資料
     headword: 資料
@@ -52724,6 +53692,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: ziêh4-質
     headword: 質
@@ -53009,6 +53978,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: dao6-li2-道理
     headword: 道理
@@ -53024,6 +53994,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: bi7-hêng6-tao3-避孕套
     headword: 避孕套
@@ -53057,6 +54028,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: biang1-邊
     headword: 邊
@@ -53119,6 +54091,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: dêng5-iang5-重陽
     headword: 重陽
@@ -53254,6 +54227,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: gao1-liêm5-鉤鐮
     headword: 鉤鐮
@@ -53286,6 +54260,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: zu1-銖
     headword: 銖
@@ -53364,6 +54339,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: deng6-錠
     headword: 錠
@@ -53425,6 +54401,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: liang7-鏈
     headword: 鏈
@@ -53530,6 +54507,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: a1-阿
     headword: 阿
@@ -53575,6 +54553,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: goi1-mo5-coin2-雞毛筅
     headword: 雞毛筅
@@ -53605,6 +54584,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: lang5-guêng1-難關
     headword: 難關
@@ -53694,6 +54674,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: diang6-ze2-im1-ghaoh8-電子音樂
     headword: 電子音樂
@@ -53724,6 +54705,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: diêng6-hi3-電戲
     headword: 電戲
@@ -53801,6 +54783,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: diêng6-dan2-電膽
     headword: 電膽
@@ -53924,6 +54907,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: hioh8-頁
     headword: 頁
@@ -53939,6 +54923,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: kuang2-頃
     headword: 頃
@@ -53969,6 +54954,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: tao5-soin1-頭先
     headword: 頭先
@@ -54088,6 +55074,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: zao5-齊
     headword: 齊

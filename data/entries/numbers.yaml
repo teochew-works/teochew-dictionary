@@ -28,6 +28,7 @@ entries:
             en: one day
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: no6-兩
     headword: 兩
@@ -47,6 +48,7 @@ entries:
             en: two days
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: ri7-二
     headword: 二
@@ -63,6 +65,7 @@ entries:
             en: twelve
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: san1-三
     headword: 三
@@ -78,6 +81,7 @@ entries:
             en: March (the third month)
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: si3-四
     headword: 四
@@ -93,6 +97,7 @@ entries:
             en: April (the fourth month)
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: ngou6-五
     headword: 五
@@ -108,6 +113,7 @@ entries:
             en: May (the fifth month)
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: lag8-六
     headword: 六
@@ -123,6 +129,7 @@ entries:
             en: June (the sixth month)
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: cig4-七
     headword: 七
@@ -138,6 +145,7 @@ entries:
             en: July (the seventh month)
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: boih4-八
     headword: 八
@@ -156,6 +164,7 @@ entries:
             en: eight days
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: gao2-九
     headword: 九
@@ -171,6 +180,7 @@ entries:
             en: September (the ninth month)
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: zab8-十
     headword: 十
@@ -186,6 +196,7 @@ entries:
             en: October (the tenth month)
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: bêh4-百
     headword: 百
@@ -201,6 +212,7 @@ entries:
             en: three hundred
     frequency: 4
     sources: [seed]
+    level: A1
 
   - id: cing1-千
     headword: 千
@@ -216,6 +228,7 @@ entries:
             en: one thousand
     frequency: 4
     sources: [seed]
+    level: A1
 
   # The following entries were merged from the Wiktionary index sweep
   # (issue #68).
@@ -264,6 +277,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: san1-zab8-三十
     headword: 三十
@@ -374,6 +388,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: gao2-zab8-九十
     headword: 九十
@@ -698,6 +713,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: buê6-倍
     headword: 倍
@@ -710,6 +726,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: buê6-siou3-倍數
     headword: 倍數
@@ -734,6 +751,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
 
   # The following entries were merged from the Wiktionary index sweep
@@ -752,6 +770,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: boih4-zab8-八十
     headword: 八十
@@ -860,6 +879,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: gong1-li2-公里
     headword: 公里
@@ -872,6 +892,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: lag8-zab8-六十
     headword: 六十
@@ -1297,6 +1318,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: bhuê5-枚
     headword: 枚
@@ -1311,6 +1333,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bhou2-畝
     headword: 畝
@@ -1387,6 +1410,7 @@ entries:
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: doin6-cig4-第七
     headword: 第七
@@ -1521,6 +1545,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ho7-bhê2-號碼
     headword: 號碼
@@ -1533,6 +1558,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: hu6-ho7-負號
     headword: 負號
@@ -1559,6 +1585,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: li5-bhi2-釐米
     headword: 釐米
@@ -1571,6 +1598,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: êg4-鎰
     headword: 鎰
@@ -1609,6 +1637,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: tao5-zêg8-頭一
     headword: 頭一
@@ -2116,6 +2145,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: si3-zab8-ig4-四十一
     headword: 四十一
@@ -2177,6 +2207,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: riab8-廿
     headword: 廿
@@ -2209,6 +2240,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: siou3-hag8-數學
     headword: 數學
@@ -2224,6 +2256,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: bung2-本
     headword: 本
@@ -2239,6 +2272,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: diao5-條
     headword: 條
@@ -2254,6 +2288,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: bêh4-hung1-ze1-百分之
     headword: 百分之
@@ -2299,6 +2334,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: se3-肆
     headword: 肆
@@ -2329,6 +2365,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: zuag8-蜀-numeral
     headword: 蜀
@@ -2390,6 +2427,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ko1-顆
     headword: 顆
@@ -2406,3 +2444,4 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2

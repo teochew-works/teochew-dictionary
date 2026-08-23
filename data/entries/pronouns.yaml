@@ -19,6 +19,7 @@ entries:
             en: I want to eat.
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: le2-你
     headword: 你
@@ -35,6 +36,7 @@ entries:
             en: hello
     frequency: 5
     sources: [seed]
+    level: A1
 
   - id: i1-伊
     headword: 伊
@@ -159,6 +161,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-07-28'
+    level: A2
 
   - id: he2-許
     headword: 許
@@ -239,6 +242,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: mih4-sai2-乜屎
     headword: 乜屎
@@ -288,6 +292,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ta1-mung5-他們
     headword: 他們
@@ -420,6 +425,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: bag4-gai5-別個
     headword: 別個
@@ -486,6 +492,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: gag4-ui7-各位
     headword: 各位
@@ -611,6 +618,7 @@ entries:
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: ma2-嗎
     headword: 嗎
@@ -625,6 +633,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: di7-go3-地塊
     headword: 地塊
@@ -653,6 +662,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
 
   # The following entries were merged from the Wiktionary index sweep
@@ -669,6 +679,7 @@ entries:
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: zio2-go3-少塊
     headword: 少塊
@@ -777,6 +788,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B2
 
   - id: za2-怎
     headword: 怎
@@ -805,6 +817,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: le2-您
     headword: 您
@@ -819,6 +832,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ngo5-diêg8-愚姪
     headword: 愚姪
@@ -848,6 +862,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: se1-斯
     headword: 斯
@@ -943,6 +958,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: bung2-sing1-本身
     headword: 本身
@@ -955,6 +971,7 @@ entries:
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: C1
 
   - id: mong2-nang5-某人
     headword: 某人
@@ -991,6 +1008,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: ke5-渠
     headword: 渠
@@ -1103,6 +1121,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: zê2-li2-這裡
     headword: 這裡
@@ -1127,6 +1146,7 @@ entries:
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: na2-li2-那裡
     headword: 那裡
@@ -1229,6 +1249,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: riêh8-zoi7-偌濟
     headword: 偌濟
@@ -1292,6 +1313,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: dai6-gê1-大家
     headword: 大家
@@ -1306,6 +1328,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: hi5-奚
     headword: 奚
@@ -1365,6 +1388,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A2
 
   - id: di7-底
     headword: 底
@@ -1379,6 +1403,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: B1
 
   - id: di7-go3-底塊
     headword: 底塊
@@ -1483,6 +1508,7 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+    level: A1
 
   - id: lang2-赧
     headword: 赧
