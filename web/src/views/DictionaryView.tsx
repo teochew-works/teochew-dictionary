@@ -26,7 +26,19 @@ function writeShowLicence(value: boolean): void {
   }
 }
 
+/**
+ * The modes that render a grouped tree rather than a flat list. Kept as a
+ * predicate so adding a mode is a one-line change here rather than a
+ * disjunction repeated at every branch.
+ */
+type GroupedSortMode = 'tone' | 'category' | 'level'
+
+function isGrouped(mode: SortMode): mode is GroupedSortMode {
+  return mode === 'tone' || mode === 'category' || mode === 'level'
+}
+
 const SORT_MODE_LABELS: Record<SortMode, string> = {
+  relevance: 'Relevance',
   headword: 'Headword',
   english: 'English',
   tone: 'Tone',
@@ -38,7 +50,7 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
   const [query, setQuery] = useState('')
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [showLicence, setShowLicence] = useState(readShowLicence)
-  const [sortMode, setSortMode] = useState<SortMode>('headword')
+  const [sortMode, setSortMode] = useState<SortMode>('relevance')
   const [toneSource, setToneSource] = useState<ToneSource>('citation')
 
   const index = useMemo(() => createSearchIndex(entries), [entries])
@@ -48,11 +60,20 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
     [index, query, entries, isSearching],
   )
 
-  const isFlat = sortMode === 'headword' || sortMode === 'english'
-  const sortedEntries = useMemo(() => (isFlat ? sortFlat(results, sortMode) : []), [results, sortMode, isFlat])
+  // "Relevance" only means something while a query is active — Fuse hands back
+  // its hits best-first and we keep that order. With no query there is no
+  // ranking to preserve, so browsing the whole dictionary falls back to
+  // headword order rather than showing it in data-file order.
+  const effectiveSort: SortMode = sortMode === 'relevance' && !isSearching ? 'headword' : sortMode
+
+  const isFlat = !isGrouped(effectiveSort)
+  const sortedEntries = useMemo(
+    () => (isGrouped(effectiveSort) ? [] : sortFlat(results, effectiveSort)),
+    [results, effectiveSort],
+  )
   const groups = useMemo(
-    () => (isFlat ? [] : groupEntries(results, sortMode, toneSource)),
-    [results, sortMode, toneSource, isFlat],
+    () => (isGrouped(effectiveSort) ? groupEntries(results, effectiveSort, toneSource) : []),
+    [results, effectiveSort, toneSource],
   )
 
   const selected = results.find((e) => e.id === selectedId) ?? entries.find((e) => e.id === selectedId) ?? null

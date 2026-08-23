@@ -56,6 +56,16 @@ describe('sortFlat', () => {
   it('sorts by first English gloss', () => {
     expect(sortFlat(entries, 'english').map((e) => e.id)).toEqual(['a', 'b'])
   })
+
+  it('leaves relevance order untouched so search ranking survives', () => {
+    expect(sortFlat(entries, 'relevance').map((e) => e.id)).toEqual(['b', 'a'])
+  })
+
+  it('does not mutate the caller\'s array in relevance mode', () => {
+    const input = [...entries]
+    sortFlat(input, 'relevance')
+    expect(input.map((e) => e.id)).toEqual(['b', 'a'])
+  })
 })
 
 describe('groupEntries — tone', () => {
