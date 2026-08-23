@@ -50,6 +50,9 @@ type Phase = 'closed' | 'idle' | 'recording' | 'recorded' | 'saving' | 'saved'
 
 const BADGE_LABEL: Record<RecordStatus, string> = { none: 'Record', pending: 'Pending review', published: 'Re-record' }
 
+const PENDING_REPLACE_CONFIRM =
+  'You already have a take pending review for this syllable — recording a new one will replace it. Continue?'
+
 /**
  * Per-row record control on the Sounds tab (issue #128, `data/phonology/
  * REVIEW.md` § 17) — dev-only, mounted from `SoundsView` behind
@@ -94,6 +97,11 @@ export function RecordClipButton({ pengim, status, onSaved }: RecordClipButtonPr
     chunksRef.current = []
     setError(null)
     setPhase('closed')
+  }
+
+  const openPanel = () => {
+    if (status === 'pending' && !window.confirm(PENDING_REPLACE_CONFIRM)) return
+    setPhase('idle')
   }
 
   const startRecording = async () => {
@@ -177,7 +185,7 @@ export function RecordClipButton({ pengim, status, onSaved }: RecordClipButtonPr
       <button
         type="button"
         className="record-clip__toggle"
-        onClick={phase === 'closed' ? () => setPhase('idle') : close}
+        onClick={phase === 'closed' ? openPanel : close}
         aria-expanded={phase !== 'closed'}
       >
         {phase === 'closed' ? BADGE_LABEL[status] : 'Close'}

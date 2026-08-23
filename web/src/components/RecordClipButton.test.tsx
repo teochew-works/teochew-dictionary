@@ -49,6 +49,12 @@ function stubSaveFetch(response: { ok: boolean; error?: string } = { ok: true })
   return fetchMock
 }
 
+function stubConfirm(returnValue: boolean) {
+  const confirmMock = vi.fn(() => returnValue)
+  vi.stubGlobal('confirm', confirmMock)
+  return confirmMock
+}
+
 async function recordAClip() {
   fireEvent.click(screen.getByRole('button', { name: '● Start recording' }))
   await screen.findByRole('button', { name: '■ Stop' })
@@ -81,6 +87,43 @@ describe('RecordClipButton', () => {
     stubMedia()
     render(<RecordClipButton pengim="dio5" status={status} onSaved={vi.fn()} />)
     expect(screen.getByRole('button', { name: label })).toBeInTheDocument()
+  })
+
+  it('asks for confirmation before opening the panel when a take is already pending, and does nothing if declined', () => {
+    stubMedia()
+    const confirmMock = stubConfirm(false)
+    render(<RecordClipButton pengim="dio5" status="pending" onSaved={vi.fn()} />)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Pending review' }))
+
+    expect(confirmMock).toHaveBeenCalledWith(
+      'You already have a take pending review for this syllable — recording a new one will replace it. Continue?',
+    )
+    expect(screen.queryByRole('group')).not.toBeInTheDocument()
+  })
+
+  it('opens the panel as normal when the replace confirmation is accepted', () => {
+    stubMedia()
+    stubConfirm(true)
+    render(<RecordClipButton pengim="dio5" status="pending" onSaved={vi.fn()} />)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Pending review' }))
+
+    expect(screen.getByRole('group', { name: 'Record a clip for dio5' })).toBeInTheDocument()
+  })
+
+  it.each([
+    ['none', 'Record'],
+    ['published', 'Re-record'],
+  ] as const)('does not prompt for confirmation when there is no pending take (%s)', (status, label) => {
+    stubMedia()
+    const confirmMock = stubConfirm(true)
+    render(<RecordClipButton pengim="dio5" status={status} onSaved={vi.fn()} />)
+
+    fireEvent.click(screen.getByRole('button', { name: label }))
+
+    expect(confirmMock).not.toHaveBeenCalled()
+    expect(screen.getByRole('group', { name: 'Record a clip for dio5' })).toBeInTheDocument()
   })
 
   it('disables Save until a speaker id and consent are both given', async () => {
