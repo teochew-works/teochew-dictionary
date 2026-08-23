@@ -936,6 +936,7 @@ entries:
       - pos: verb
         gloss_en: [to sprout, to germinate, to bud]
         gloss_zh: [出芽]
+        topics: [biology, botany, natural-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1186,6 +1187,7 @@ entries:
         gloss_en: [karst (landform)]
         gloss_zh: [喀斯特]
         note: 喀斯特 is a specialized geological loanword (karst) with limited everyday colloquial usage.
+        topics: [geography, natural-sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -1325,6 +1327,7 @@ entries:
       - pos: noun
         gloss_en: [Earth, the globe]
         gloss_zh: [地球]
+        topics: [astronomy, natural-sciences]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1409,6 +1412,7 @@ entries:
       - pos: noun
         gloss_en: [seismic zone, earthquake belt]
         gloss_zh: [地震帶]
+        topics: [geography, geology, natural-sciences, seismology]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2074,6 +2078,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Solar System]
         gloss_zh: [太陽系]
+        topics: [astronomy, natural-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2733,6 +2738,7 @@ entries:
       - pos: noun
         gloss_en: [gravity, gravitation]
         gloss_zh: [引力]
+        topics: [natural-sciences, physical-sciences, physics]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2759,6 +2765,7 @@ entries:
       - pos: noun
         gloss_en: [comet]
         gloss_zh: [彗星]
+        topics: [astronomy, natural-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3098,6 +3105,7 @@ entries:
       - pos: noun
         gloss_en: [meteor, shooting star]
         gloss_zh: [星屎]
+        topics: [astronomy, natural-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3122,6 +3130,7 @@ entries:
       - pos: noun
         gloss_en: [meteor, shooting star]
         gloss_zh: [流星]
+        topics: [astronomy, natural-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3206,6 +3215,7 @@ entries:
       - pos: noun
         gloss_en: [nebula]
         gloss_zh: [星雲]
+        topics: [astronomy, natural-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3651,6 +3661,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Jupiter]
         gloss_zh: [木星]
+        topics: [astronomy, natural-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3688,6 +3699,7 @@ entries:
         gloss_en: [Akebia stem (used in traditional Chinese medicine)]
         gloss_zh: [木通]
         note: This is a specialized traditional-Chinese-medicine botanical term, so its real-world frequency in everyday Teochew speech is uncertain.
+        topics: [medicine, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -4046,6 +4058,7 @@ entries:
       - pos: noun
         gloss_en: [persimmon calyx (used in traditional Chinese medicine)]
         gloss_zh: [柿蒂]
+        topics: [medicine, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4250,6 +4263,7 @@ entries:
       - pos: noun
         gloss_en: [habitat]
         gloss_zh: [棲息地, 生境]
+        topics: [biology, ecology, natural-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4262,6 +4276,7 @@ entries:
       - pos: noun
         gloss_en: [plant, vegetation, flora]
         gloss_zh: [植物]
+        topics: [biology, botany, natural-sciences]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5072,6 +5087,7 @@ entries:
         gloss_en: [Milky Way]
         gloss_zh: [河溪]
         note: Wiktionary glosses 河溪 as 'Milky Way' rather than a literal 'river and stream' sense; flagging to confirm this is the intended meaning for the Teochew reading.
+        topics: [astronomy, natural-sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -5230,6 +5246,7 @@ entries:
       - pos: noun
         gloss_en: [wavelength]
         gloss_zh: [波長]
+        topics: [natural-sciences, physical-sciences, physics]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5353,6 +5370,7 @@ entries:
       - pos: noun
         gloss_en: [active volcano]
         gloss_zh: [活火山]
+        topics: [geography, geology, natural-sciences, volcanology]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5582,6 +5600,7 @@ entries:
       - pos: noun
         gloss_en: [tide]
         gloss_zh: [海潮]
+        topics: [nautical, transport]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5645,6 +5664,7 @@ entries:
       - pos: noun
         gloss_en: [sea surface, sea level]
         gloss_zh: [海面, 海平面]
+        topics: [geography, natural-sciences, oceanography]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5695,6 +5715,7 @@ entries:
       - pos: noun
         gloss_en: [liquid crystal]
         gloss_zh: [液晶]
+        topics: [natural-sciences, physical-sciences, physics]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5916,6 +5937,7 @@ entries:
       - pos: noun
         gloss_en: [solubility]
         gloss_zh: [溶解度]
+        topics: [chemistry, natural-sciences, physical-sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5929,6 +5951,7 @@ entries:
         gloss_en: [heat of solution]
         gloss_zh: [溶解熱]
         note: Specialized chemistry term with no closely matching category file; assigned to nature.yaml (materials) for lack of a better fit.
+        topics: [chemistry, natural-sciences, physical-sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -6693,6 +6716,7 @@ entries:
       - pos: noun
         gloss_en: [species]
         gloss_zh: [物種]
+        topics: [biology, natural-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6717,6 +6741,7 @@ entries:
       - pos: noun
         gloss_en: [cowherb seed (herb used in traditional Chinese medicine to promote blood circulation)]
         gloss_zh: [王不留行]
+        topics: [medicine, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6901,6 +6926,7 @@ entries:
       - pos: noun
         gloss_en: [agate]
         gloss_zh: [瑪瑙]
+        topics: [chemistry, geography, geology, mineralogy, natural-sciences, physical-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7040,6 +7066,7 @@ entries:
         gloss_en: [growth hormone]
         gloss_zh: [生長激素]
         note: Highly specialized biochemistry/medical term (growth hormone); category assignment between nature.yaml and body.yaml is uncertain.
+        topics: [biochemistry, biology, chemistry, microbiology, natural-sciences, physical-sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -7090,6 +7117,7 @@ entries:
         gloss_en: [place of origin, birthplace, source]
         gloss_zh: [發源地]
         tags: [also, figuratively]
+        topics: [geography, natural-sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7238,6 +7266,7 @@ entries:
       - pos: noun
         gloss_en: [lime (calcium compound)]
         gloss_zh: [石灰]
+        topics: [chemistry, geography, geology, mineralogy, natural-sciences, physical-sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7346,6 +7375,7 @@ entries:
       - pos: noun
         gloss_en: [sulfur]
         gloss_zh: [硫]
+        topics: [chemistry, natural-sciences, physical-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7358,6 +7388,7 @@ entries:
       - pos: noun
         gloss_en: [hydrogen sulfide]
         gloss_zh: [硫化氫]
+        topics: [chemistry, inorganic-chemistry, natural-sciences, physical-sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7370,6 +7401,7 @@ entries:
       - pos: noun
         gloss_en: [sulfuric acid]
         gloss_zh: [硫酸]
+        topics: [chemistry, inorganic-chemistry, natural-sciences, physical-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7382,6 +7414,7 @@ entries:
       - pos: noun
         gloss_en: [sulfur; sulphur]
         gloss_zh: [硫黃]
+        topics: [chemistry, natural-sciences, physical-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7394,6 +7427,7 @@ entries:
       - pos: noun
         gloss_en: [iodine]
         gloss_zh: [碘]
+        topics: [chemistry, natural-sciences, physical-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7430,6 +7464,7 @@ entries:
       - pos: noun
         gloss_en: [carbon neutrality]
         gloss_zh: [碳中和]
+        topics: [biology, ecology, natural-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7442,6 +7477,7 @@ entries:
       - pos: noun
         gloss_en: [carbon peak (peak carbon dioxide emissions)]
         gloss_zh: [碳達峰]
+        topics: [biology, ecology, natural-sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7454,6 +7490,7 @@ entries:
       - pos: noun
         gloss_en: [magnetic field]
         gloss_zh: [磁場]
+        topics: [natural-sciences, physical-sciences, physics]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8771,6 +8808,7 @@ entries:
         gloss_en: [dodder seed]
         gloss_zh: [菟絲子]
         note: Highly specialized traditional-Chinese-medicine term (dodder plant seed used as a medicinal ingredient); gloss is technical rather than everyday vocabulary.
+        topics: [medicine, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -9077,6 +9115,7 @@ entries:
       - pos: noun
         gloss_en: [menthol]
         gloss_zh: [薄荷冰, 薄荷腦]
+        topics: [chemistry, natural-sciences, organic-chemistry, physical-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9101,6 +9140,7 @@ entries:
       - pos: noun
         gloss_en: [menthol]
         gloss_zh: [薄荷腦]
+        topics: [chemistry, natural-sciences, organic-chemistry, physical-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9253,6 +9293,7 @@ entries:
         gloss_en: ["creeping or trailing plant (bound morpheme, e.g. in 蘿蔔 'radish')"]
         gloss_zh: [蘿]
         note: Character rarely stands alone as an independent word; mainly occurs as a bound morpheme in compounds.
+        topics: [biology, botany, natural-sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -9362,6 +9403,7 @@ entries:
       - pos: noun
         gloss_en: [planet]
         gloss_zh: [行星]
+        topics: [astronomy, natural-sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9498,6 +9540,7 @@ entries:
       - pos: noun
         gloss_en: [crop, agricultural produce]
         gloss_zh: [農作物]
+        topics: [agriculture, business, lifestyle]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9738,6 +9781,7 @@ entries:
       - pos: noun
         gloss_en: [uranium]
         gloss_zh: [鈾]
+        topics: [chemistry, natural-sciences, physical-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9762,6 +9806,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Milky Way]
         gloss_zh: [銀河]
+        topics: [astronomy, natural-sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9774,6 +9819,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Milky Way galaxy, the Galaxy]
         gloss_zh: [銀河系]
+        topics: [astronomy, natural-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9798,6 +9844,7 @@ entries:
       - pos: noun
         gloss_en: [verdigris]
         gloss_zh: [銅綠, 銅鏽]
+        topics: [chemistry, natural-sciences, physical-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9810,6 +9857,7 @@ entries:
       - pos: noun
         gloss_en: [verdigris]
         gloss_zh: [銅青, 銅綠]
+        topics: [chemistry, natural-sciences, physical-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9822,6 +9870,7 @@ entries:
       - pos: noun
         gloss_en: [aluminium, aluminum]
         gloss_zh: [鋁]
+        topics: [chemistry, natural-sciences, physical-sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9908,6 +9957,7 @@ entries:
       - pos: noun
         gloss_en: [manganese]
         gloss_zh: [錳]
+        topics: [chemistry, natural-sciences, physical-sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9947,6 +9997,7 @@ entries:
       - pos: noun
         gloss_en: [tungsten, wolfram]
         gloss_zh: [鎢]
+        topics: [chemistry, natural-sciences, physical-sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9983,6 +10034,7 @@ entries:
       - pos: noun
         gloss_en: [ytterbium (chemical element)]
         gloss_zh: [鐿]
+        topics: [chemistry, natural-sciences, physical-sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10106,6 +10158,7 @@ entries:
       - pos: noun
         gloss_en: [dry land, landmass]
         gloss_zh: [陸地]
+        topics: [geography, natural-sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10130,6 +10183,7 @@ entries:
       - pos: noun
         gloss_en: [cockscomb flower (Celosia argentea var. cristata)]
         gloss_zh: [雞冠花]
+        topics: [biology, botany, natural-sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10142,6 +10196,7 @@ entries:
       - pos: noun
         gloss_en: [rainy season]
         gloss_zh: [雨季]
+        topics: [climatology, meteorology, natural-sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10228,6 +10283,7 @@ entries:
       - pos: noun
         gloss_en: [marble (stone)]
         gloss_zh: [雲石, 大理石]
+        topics: [geography, geology, natural-sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10319,6 +10375,7 @@ entries:
         gloss_zh: [震級]
         tags: [abbreviation, alt-of]
         alt_of: [地震震級, 地震震级]
+        topics: [geography, geology, natural-sciences, seismology]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10754,6 +10811,7 @@ entries:
         gloss_en: [aftershock]
         gloss_zh: [餘震]
         tags: [also, figuratively]
+        topics: [geography, geology, natural-sciences, seismology]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10900,6 +10958,7 @@ entries:
       - pos: noun
         gloss_en: [velvet antler]
         gloss_zh: [鹿茸]
+        topics: [medicine, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10972,6 +11031,7 @@ entries:
       - pos: noun
         gloss_en: [Codonopsis pilosula (medicinal herb)]
         gloss_zh: [黨參]
+        topics: [medicine, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11150,6 +11210,7 @@ entries:
         gloss_zh: [原子]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
         tags: [countable]
+        topics: [chemistry, natural-sciences, physical-sciences, physics]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -11272,6 +11333,7 @@ entries:
         gloss_en: [marble]
         gloss_zh: [大理石]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [geography, geology, natural-sciences]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -11498,6 +11560,7 @@ entries:
         gloss_en: [plain; flatland]
         gloss_zh: [平原]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [geography, natural-sciences]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -11984,6 +12047,7 @@ entries:
         gloss_en: [camphor]
         gloss_zh: [樟腦]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [chemistry, natural-sciences, organic-chemistry, physical-sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -12240,6 +12304,7 @@ entries:
         gloss_en: [bay; gulf]
         gloss_zh: [海灣]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [geography, natural-sciences]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -12709,6 +12774,7 @@ entries:
         gloss_en: [white peony root (medicinal herb)]
         gloss_zh: [白芍]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [medicine, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]

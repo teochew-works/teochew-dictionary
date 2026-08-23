@@ -2591,6 +2591,7 @@ entries:
         gloss_en: [criminal, penal]
         gloss_zh: [刑事]
         tags: [attributive]
+        topics: [law]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5054,6 +5055,7 @@ entries:
         gloss_en: [regular, periodic, fixed-term]
         gloss_zh: [定期]
         tags: [attributive]
+        topics: [banking, business]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5201,6 +5203,7 @@ entries:
       - pos: adjective
         gloss_en: [cold, freezing (weather)]
         gloss_zh: [寒冷]
+        topics: [climatology, meteorology, natural-sciences, weather]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5461,6 +5464,7 @@ entries:
         gloss_en: [rugged, craggy, uneven (terrain)]
         gloss_zh: [崎嶇, 不平]
         tags: [usually]
+        topics: [road, transport]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5699,6 +5703,7 @@ entries:
         gloss_en: [young]
         gloss_zh: [年輕]
         tags: [usually]
+        topics: [country, location, organization, region]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7139,6 +7144,7 @@ entries:
         gloss_en: [mature, ripe]
         gloss_zh: [成熟]
         tags: [figuratively]
+        topics: [biology, natural-sciences]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9041,6 +9047,7 @@ entries:
         gloss_en: [smooth and natural (of writing or calligraphy), unforced in style]
         gloss_zh: [流水行雲]
         tags: [idiomatic, usually]
+        topics: [communications, journalism, literature, media, publishing, writing]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9492,6 +9499,7 @@ entries:
         gloss_en: [delicately fragrant, sweet-scented]
         gloss_zh: [清香]
         note: The page lists two etymologies sharing this reading (general delicate fragrance vs. specifically joss-stick/incense) and the word is used both as a noun and an adjective; the general fragrance/adjective sense was chosen as most broadly applicable.
+        topics: [lifestyle, religion]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -11184,6 +11192,7 @@ entries:
         gloss_en: [impotent, sexually deficient]
         gloss_zh: [痿]
         note: The source gloss ('to be lacking in sexual energies') is phrased ambiguously between a verbal and adjectival sense and the character page gives no explicit part-of-speech tag.
+        topics: [medicine, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -13281,6 +13290,7 @@ entries:
         gloss_en: [viviparous]
         gloss_zh: [胎生]
         tags: [attributive]
+        topics: [biology, natural-sciences, zoology]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13332,6 +13342,7 @@ entries:
         gloss_en: [clinical]
         gloss_zh: [臨床]
         tags: [attributive]
+        topics: [medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -15237,6 +15248,7 @@ entries:
         gloss_en: [progressive (medicine)]
         gloss_zh: [進行性]
         tags: [attributive]
+        topics: [medicine, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'

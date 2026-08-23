@@ -560,6 +560,7 @@ entries:
       - pos: noun
         gloss_en: [(Christianity) bishop]
         gloss_zh: [主教]
+        topics: [Christianity]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -573,6 +574,7 @@ entries:
         gloss_en: [mastermind; chief instigator (of a crime/plot)]
         gloss_zh: [主謀]
         note: 主謀 can also function as a verb ('to head a conspiracy'); the noun sense was chosen as primary.
+        topics: [law]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -811,6 +813,7 @@ entries:
         gloss_en: [personality rights (law)]
         gloss_zh: [人格權]
         note: This is a narrow, technical legal term (personality rights) rather than everyday vocabulary, so its frequency and general applicability are uncertain.
+        topics: [law]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -973,6 +976,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Immanuel]
         gloss_zh: [以馬內利]
+        topics: [Christianity, Protestantism]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1226,6 +1230,7 @@ entries:
       - pos: noun
         gloss_en: [apostle]
         gloss_zh: [使徒]
+        topics: [Christianity, Protestantism]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1462,6 +1467,7 @@ entries:
         gloss_en: [debtor]
         gloss_zh: [債務人]
         note: Specialized legal term (debtor); page also lists a near-synonym 借方 whose nuance was not explored further.
+        topics: [law]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -1793,6 +1799,7 @@ entries:
       - pos: noun
         gloss_en: [minister (diplomatic rank below ambassador)]
         gloss_zh: [公使]
+        topics: [diplomacy, government, politics]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2659,6 +2666,7 @@ entries:
       - pos: noun
         gloss_en: [accomplice, conspirator]
         gloss_zh: [同謀]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2973,6 +2981,7 @@ entries:
       - pos: noun
         gloss_en: [lama (Buddhist monk/teacher)]
         gloss_zh: [喇嘛]
+        topics: [Buddhism, lifestyle, religion]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3259,6 +3268,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Tudigong (earth deity), God of the Soil and the Ground]
         gloss_zh: [塗地公, 土地公]
+        topics: [lifestyle, religion]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3271,6 +3281,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Tudigong (earth deity), God of the Soil and the Ground]
         gloss_zh: [塗地爺, 土地公]
+        topics: [lifestyle, religion]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3534,6 +3545,7 @@ entries:
       - pos: noun
         gloss_en: [archbishop]
         gloss_zh: [大主教]
+        topics: [Christianity]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3584,6 +3596,7 @@ entries:
       - pos: noun
         gloss_en: [chief mate, first mate]
         gloss_zh: [大副]
+        topics: [nautical, transport]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3806,6 +3819,7 @@ entries:
         gloss_en: [Heavenly Father (Christianity)]
         gloss_zh: [天父]
         note: Niche Southern Min Christian religious term for 'Heavenly Father'; its category placement (kinship vs. religion) and general currency outside Christian usage are uncertain.
+        topics: [Christianity]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -4866,6 +4880,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Mazu (sea goddess)]
         gloss_zh: [媽祖]
+        topics: [human-sciences, lifestyle, mysticism, mythology, philosophy, religion, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4878,6 +4893,7 @@ entries:
       - pos: noun
         gloss_en: [suspect, person suspected of a crime]
         gloss_zh: [嫌疑人]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4890,6 +4906,7 @@ entries:
       - pos: noun
         gloss_en: [suspect, offender]
         gloss_zh: [嫌疑犯]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5515,6 +5532,7 @@ entries:
         gloss_en: [chancellor (imperial China), prime minister (historical)]
         gloss_zh: [宰相]
         tags: [historical]
+        topics: [government]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5884,6 +5902,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Nicodemus]
         gloss_zh: [尼哥底母]
+        topics: [Christianity, Protestantism]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6084,6 +6103,7 @@ entries:
         gloss_en: [Herod]
         gloss_zh: [希律]
         tags: [secular]
+        topics: [Christianity, Protestantism]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6323,6 +6343,7 @@ entries:
         gloss_en: [brothers and sisters, brethren (fellow believers)]
         gloss_zh: [弟兄姐妹]
         note: Wiktionary's primary listed sense is the Christian term 'brothers and sisters in Christ', but the compound could also simply read as literal 'siblings'; unclear which predominates in Teochew usage.
+        topics: [Christianity]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -6635,6 +6656,7 @@ entries:
         gloss_en: [patient, sufferer (of a disease)]
         gloss_zh: [患者]
         tags: [countable]
+        topics: [medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6820,6 +6842,7 @@ entries:
         gloss_en: [comrade-in-arms, fellow soldier]
         gloss_zh: [戰友]
         tags: [countable, figuratively]
+        topics: [government, military, politics, war]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7003,6 +7026,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Saul (biblical figure)]
         gloss_zh: [掃羅]
+        topics: [Christianity, Protestantism]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7831,6 +7855,7 @@ entries:
         note: Page lists two distinct senses sharing this reading (short for 'armed police' vs. a residential place name in Fujian); the armed-police sense was chosen as the more general-vocabulary one.
         tags: [abbreviation, alt-of]
         alt_of: [武裝警察, 武装警察]
+        topics: [government, law-enforcement]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -8052,6 +8077,7 @@ entries:
       - pos: noun
         gloss_en: [judge, justice]
         gloss_zh: [法官]
+        topics: [law]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8089,6 +8115,7 @@ entries:
         gloss_en: [Reuben (Protestant Bible transliteration)]
         gloss_zh: [流便]
         note: The only sense on the Wiktionary page is a niche Protestant Bible transliteration of the name Reuben, a highly specialized proper-noun use rather than a common word.
+        topics: [Christianity, Protestantism]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -8581,6 +8608,7 @@ entries:
       - pos: noun
         gloss_en: [pastor, minister, reverend]
         gloss_zh: [牧師]
+        topics: [Christianity, Protestantism]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8667,6 +8695,7 @@ entries:
       - pos: proper-noun
         gloss_en: [the Jade Emperor (supreme deity in Chinese folk religion and Taoism)]
         gloss_zh: [玉皇大帝]
+        topics: [human-sciences, mysticism, mythology, philosophy, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9425,6 +9454,7 @@ entries:
         gloss_en: [Cephas (the apostle Peter)]
         gloss_zh: [磯法]
         note: Niche Christian transliterated proper noun (biblical Cephas/Peter); flagging as a specialized/proper-noun term for review.
+        topics: [Christianity, Protestantism]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -10737,6 +10767,7 @@ entries:
         gloss_en: [hero]
         gloss_zh: [英雄]
         tags: [figuratively, literally]
+        topics: [government, hobbies, lifestyle, martial-arts, military, politics, sports, war]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10962,6 +10993,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Chiyou (legendary tribal leader of the Jiuli people in Chinese mythology)]
         gloss_zh: [蚩尤]
+        topics: [human-sciences, mysticism, mythology, philosophy, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11073,6 +11105,7 @@ entries:
       - pos: noun
         gloss_en: [defendant, the accused]
         gloss_zh: [被告]
+        topics: [law]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11085,6 +11118,7 @@ entries:
       - pos: noun
         gloss_en: [defendant, the accused]
         gloss_zh: [被告人]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11098,6 +11132,7 @@ entries:
         gloss_en: [victim, injured party]
         gloss_zh: [被害人]
         tags: [countable]
+        topics: [law]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12037,6 +12072,7 @@ entries:
       - pos: noun
         gloss_en: [circuit intendant, daotai (a local governor in imperial China)]
         gloss_zh: [道臺]
+        topics: [history, human-sciences, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12437,6 +12473,7 @@ entries:
         gloss_en: [developer (computing)]
         gloss_zh: [開發者]
         tags: [countable]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13154,6 +13191,7 @@ entries:
         gloss_en: [consul]
         gloss_zh: [領事]
         tags: [countable]
+        topics: [diplomacy, government, politics]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13181,6 +13219,7 @@ entries:
         gloss_en: [foreman, supervisor of a work crew]
         gloss_zh: [領班]
         tags: [countable]
+        topics: [management]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13451,6 +13490,7 @@ entries:
       - pos: proper-noun
         gloss_en: [the Yellow Emperor]
         gloss_zh: [黃帝]
+        topics: [human-sciences, mysticism, mythology, philosophy, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14955,6 +14995,7 @@ entries:
         gloss_en: [Maitreya]
         gloss_zh: [彌勒佛]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [Buddhism, lifestyle, religion]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -15868,6 +15909,7 @@ entries:
         gloss_en: [Guanyin, the Goddess of Mercy]
         gloss_zh: [觀音娘]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [Buddhism, lifestyle, religion]
     frequency: 3
     needs_review: true
     sources: [wiktionary]

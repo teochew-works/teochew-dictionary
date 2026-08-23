@@ -614,6 +614,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Bethlehem]
         gloss_zh: [伯利恆]
+        topics: [Christianity, Protestantism]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1446,6 +1447,7 @@ entries:
       - pos: noun
         gloss_en: [ATM, automated teller machine]
         gloss_zh: [取款機]
+        topics: [banking, business]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1655,6 +1657,7 @@ entries:
       - pos: noun
         gloss_en: [section (of a route/line), segment]
         gloss_zh: [區段]
+        topics: [transport]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1795,6 +1798,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Corinth (city in Greece)]
         gloss_zh: [哥林多]
+        topics: [Christianity, Protestantism]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3032,6 +3036,7 @@ entries:
       - pos: noun
         gloss_en: [Catholic church (building)]
         gloss_zh: [天主堂]
+        topics: [Catholicism, Christianity]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3060,6 +3065,7 @@ entries:
       - pos: noun
         gloss_en: [Mazu temple, temple of the sea goddess]
         gloss_zh: [天后宮, 媽祖廟]
+        topics: [lifestyle, religion]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3146,6 +3152,7 @@ entries:
         gloss_en: [Mazu temple, temple of the sea goddess Mazu]
         gloss_zh: [媽祖廟]
         note: The page lists two distinct senses (common noun 'Mazu temple' vs. proper noun, the historical name for 馬公/Magong); the common-noun sense is chosen as attested in Jieyang Teochew, but it is unclear which the given reading is meant to cover.
+        topics: [lifestyle, religion]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -3159,6 +3166,7 @@ entries:
       - pos: noun
         gloss_en: [Mazu temple]
         gloss_zh: [媽祖廟]
+        topics: [lifestyle, religion]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3171,6 +3179,7 @@ entries:
       - pos: noun
         gloss_en: [Confucian temple, temple of Confucius]
         gloss_zh: [孔廟]
+        topics: [lifestyle, religion]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3652,6 +3661,7 @@ entries:
         gloss_en: [small cabin (on a junk/boat)]
         gloss_zh: [峇厘]
         note: The page lists two unrelated senses sharing this Teochew reading — a nautical 'boat cabin' term and a proper-noun sense for the island of Bali — and it is unclear which the headword is meant to target.
+        topics: [nautical, transport]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -4687,6 +4697,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Nazareth]
         gloss_zh: [拿撒勒]
+        topics: [Christianity, Protestantism]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4894,6 +4905,7 @@ entries:
         gloss_en: [church]
         gloss_zh: [教會]
         note: 教會 has two distinct etymological senses under the same reading — noun 'church' and a verb-complement construction meaning 'to teach until someone learns it'; the noun/church sense was chosen as more core.
+        topics: [Christianity]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -6394,6 +6406,7 @@ entries:
       - pos: noun
         gloss_en: [court, tribunal]
         gloss_zh: [法院]
+        topics: [law]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7272,6 +7285,7 @@ entries:
       - pos: noun
         gloss_en: [pillbox (military fortification)]
         gloss_zh: [炮樓]
+        topics: [government, military, politics, war]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7284,6 +7298,7 @@ entries:
       - pos: noun
         gloss_en: [gun battery; fort; barbette]
         gloss_zh: [炮臺]
+        topics: [government, military, politics, war]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7542,6 +7557,7 @@ entries:
       - pos: noun
         gloss_en: [field; court; ballpark]
         gloss_zh: [球場]
+        topics: [ball-games, games, hobbies, lifestyle, sports]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7893,6 +7909,7 @@ entries:
         gloss_en: [pillbox, bunker, blockhouse]
         gloss_zh: [碉堡]
         note: The page also lists an unrelated colloquial/slang sense (alternative form of Mandarin 屌爆, meaning 'awesome/cool') sharing the identical reading; the standard military-structure noun sense was chosen as primary.
+        topics: [government, military, politics, war]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -8720,6 +8737,7 @@ entries:
       - pos: noun
         gloss_en: [Mazu temple (temple of the sea goddess Mazu)]
         gloss_zh: [老媽宮]
+        topics: [lifestyle, religion]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9699,6 +9717,7 @@ entries:
       - pos: noun
         gloss_en: [fortress, stronghold, fort]
         gloss_zh: [要塞]
+        topics: [government, military, politics, war]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10191,6 +10210,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Capernaum]
         gloss_zh: [迦百農]
+        topics: [Christianity, Protestantism]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10326,6 +10346,7 @@ entries:
         gloss_en: [ruins, historical site, archaeological site]
         gloss_zh: [遺址]
         tags: [countable]
+        topics: [archaeology, history, human-sciences, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11699,6 +11720,7 @@ entries:
       - pos: noun
         gloss_en: [viaduct, flyover; overpass]
         gloss_zh: [高架橋]
+        topics: [transport]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13614,6 +13636,7 @@ entries:
         gloss_en: [church, chapel]
         gloss_zh: [禮拜堂]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [Christianity, Protestantism]
     frequency: 2
     needs_review: true
     sources: [wiktionary]

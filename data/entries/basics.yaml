@@ -444,6 +444,7 @@ entries:
         note: B超 is a specialized medical/technical abbreviation (short for B型超聲檢查) with no clearly matching category file, so it was placed in the basics.yaml catch-all.
         tags: [abbreviation, alt-of]
         alt_of: [B型超聲檢查, B型超声检查]
+        topics: [medicine, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -966,6 +967,7 @@ entries:
       - pos: noun
         gloss_en: [triangle (polygon)]
         gloss_zh: [三角形]
+        topics: [geometry, mathematics, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -1029,6 +1031,7 @@ entries:
         gloss_en: [rising tone (in Chinese phonetics)]
         gloss_zh: [上聲]
         note: Specialized linguistic/phonetic term with no clearly matching category, so it was placed in the catch-all basics.yaml.
+        topics: [human-sciences, linguistics, phonetics, phonology, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -1617,6 +1620,7 @@ entries:
       - pos: noun
         gloss_en: [home page, front page (of a website)]
         gloss_zh: [主頁]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2041,6 +2045,7 @@ entries:
       - pos: proper-noun
         gloss_en: [the Internet]
         gloss_zh: [互聯網]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -2416,6 +2421,7 @@ entries:
         gloss_en: [glide (phonetics), semivowel]
         gloss_zh: [介音]
         note: Highly technical linguistics term with no clearly matching category file; placed in the general catch-all.
+        topics: [human-sciences, linguistics, phonetics, phonology, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -2480,6 +2486,7 @@ entries:
         gloss_en: [algebra]
         gloss_zh: [代數]
         note: Highly technical academic/mathematics term with limited everyday spoken usage; no dedicated academic-subject category exists so it is filed under the generic catch-all.
+        topics: [mathematics, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -2773,6 +2780,7 @@ entries:
       - pos: noun
         gloss_en: [criminal tool, tool used to commit a crime]
         gloss_zh: [作案工具]
+        topics: [law]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3080,6 +3088,7 @@ entries:
       - pos: noun
         gloss_en: [coefficient, factor]
         gloss_zh: [係數]
+        topics: [mathematics, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3240,6 +3249,7 @@ entries:
         gloss_en: [angle of depression]
         gloss_zh: [俯角]
         note: Highly specialized geometry/optics term (angle of depression), rare outside technical contexts; no better-fitting category exists in the list.
+        topics: [geometry, mathematics, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -3559,6 +3569,7 @@ entries:
       - pos: noun
         gloss_en: [perjury, false testimony]
         gloss_zh: [偽證]
+        topics: [law]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3646,6 +3657,7 @@ entries:
       - pos: noun
         gloss_en: [infectious disease]
         gloss_zh: [傳染病]
+        topics: [medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -3695,6 +3707,7 @@ entries:
         gloss_en: [bond, debenture]
         gloss_zh: [債券]
         note: Specialized finance term (bond/debenture) with a narrow single Wiktionary definition.
+        topics: [business, finance]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -3721,6 +3734,7 @@ entries:
         gloss_en: [creditor's rights, claim]
         gloss_zh: [債權]
         note: Specialized legal/financial term (creditor's rights) with a narrow single definition on the page.
+        topics: [law]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -4091,6 +4105,7 @@ entries:
       - pos: noun
         gloss_en: [optics]
         gloss_zh: [光學]
+        topics: [natural-sciences, physical-sciences, physics]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4263,6 +4278,7 @@ entries:
       - pos: noun
         gloss_en: [domestic demand]
         gloss_zh: [內需]
+        topics: [economics, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4526,6 +4542,7 @@ entries:
       - pos: noun
         gloss_en: [government bond]
         gloss_zh: [公債]
+        topics: [business, finance, government]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4601,6 +4618,7 @@ entries:
         gloss_en: [public order and good morals, public morality]
         gloss_zh: [公序良俗]
         note: This is a highly technical legal set-phrase (from PRC Civil Code terminology); classification as idiom vs. plain noun compound is somewhat judgment-based.
+        topics: [law]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -4832,6 +4850,7 @@ entries:
         gloss_en: [sharing economy]
         gloss_zh: [共享經濟]
         note: Modern economic term with no clean fit among the category list; filed under basics.yaml as the catch-all.
+        topics: [economics, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -4901,6 +4920,7 @@ entries:
         gloss_en: [consensus, common understanding]
         gloss_zh: [共識]
         tags: [usually]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -4976,6 +4996,7 @@ entries:
         gloss_en: [a Teochew two-string bowed instrument with a coconut-shell body]
         gloss_zh: [冇弦]
         note: This is a musical instrument, which does not fit any listed category cleanly (no instruments/objects category exists); defaulted to the basics.yaml catch-all.
+        topics: [entertainment, lifestyle, music]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -5104,6 +5125,7 @@ entries:
         gloss_zh: [冠病]
         note: This neologism is described as primarily used in Singapore/Malaysia Chinese; its currency specifically within other Teochew-speaking communities is uncertain.
         tags: [informal, neologism]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -5359,6 +5381,7 @@ entries:
       - pos: noun
         gloss_en: [trade surplus]
         gloss_zh: [出超]
+        topics: [economics, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5583,6 +5606,7 @@ entries:
         gloss_en: [penalty, punishment, sentence]
         gloss_zh: [刑罰]
         note: Page gives both a standard legal noun sense ('penalty; punishment') and a Mainland-China-Hokkien-labeled verb sense ('to punish; to tease') under the same shared Teochew reading; chose the more general noun sense.
+        topics: [law]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -5805,6 +5829,7 @@ entries:
       - pos: noun
         gloss_en: [profit]
         gloss_zh: [利潤]
+        topics: [accounting, business, economics, finance, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -5919,6 +5944,7 @@ entries:
         gloss_en: [millennium bug, Y2K bug]
         gloss_zh: [千年蟲]
         note: Wiktionary tags this as a proper noun, but it functions as a common technical term (the Y2K computer bug); treated here as an ordinary noun.
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -6362,6 +6388,7 @@ entries:
       - pos: noun
         gloss_en: [atomic nucleus]
         gloss_zh: [原子核]
+        topics: [natural-sciences, physical-sciences, physics]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6398,6 +6425,7 @@ entries:
       - pos: noun
         gloss_en: [original sin]
         gloss_zh: [原罪]
+        topics: [Christianity]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6486,6 +6514,7 @@ entries:
       - pos: noun
         gloss_en: [opposition party]
         gloss_zh: [反對黨]
+        topics: [government, politics]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6536,6 +6565,7 @@ entries:
       - pos: noun
         gloss_en: [inverse ratio, inverse proportion, negative correlation]
         gloss_zh: [反比]
+        topics: [mathematics, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6548,6 +6578,7 @@ entries:
       - pos: noun
         gloss_en: [inverse proportion]
         gloss_zh: [反比例]
+        topics: [mathematics, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6639,6 +6670,7 @@ entries:
         gloss_en: [feedback, response]
         gloss_zh: [反饋]
         tags: [figuratively]
+        topics: [business, electrical-engineering, electricity, electromagnetism, electronics, energy, engineering, natural-sciences, physical-sciences, physics]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -6911,6 +6943,7 @@ entries:
       - pos: noun
         gloss_en: [frontline]
         gloss_zh: [前線]
+        topics: [government, military, politics, war]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -7026,6 +7059,7 @@ entries:
         gloss_en: [adverb]
         gloss_zh: [副詞]
         note: No category cleanly fits abstract grammar terminology (the word 'adverb' itself, not a function word), so basics.yaml is used as the catch-all.
+        topics: [grammar, human-sciences, linguistics, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -7308,6 +7342,7 @@ entries:
       - pos: noun
         gloss_en: [stipend, scholarship, grant-in-aid]
         gloss_zh: [助學金]
+        topics: [business, education, finance]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8205,6 +8240,7 @@ entries:
       - pos: noun
         gloss_en: [right to reputation, reputation rights]
         gloss_zh: [名誉权]
+        topics: [law]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -8331,6 +8367,7 @@ entries:
         gloss_en: [perimeter (geometry)]
         gloss_zh: [周長]
         note: Specialized geometry/mathematics term with no clearly matching category in the list; assigned to basics.yaml as a catch-all.
+        topics: [geometry, mathematics, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -8345,6 +8382,7 @@ entries:
         gloss_en: [call forwarding]
         gloss_zh: [呼叫轉移]
         note: Specialized telecom term (call forwarding) with no well-matching category in the list; assigned to basics.yaml as a catch-all.
+        topics: [communications, electrical-engineering, engineering, natural-sciences, physical-sciences, telecommunications, telephony]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -8421,6 +8459,7 @@ entries:
         gloss_en: [chord (music)]
         gloss_zh: [和弦]
         note: Specialized music-theory term; likely low frequency in everyday Teochew speech despite being a clear, unambiguous definition.
+        topics: [entertainment, lifestyle, music]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -8613,6 +8652,7 @@ entries:
       - pos: proper-noun
         gloss_en: [1 Corinthians (book of the Bible)]
         gloss_zh: [哥林多前書]
+        topics: [Christianity, Protestantism]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9137,6 +9177,7 @@ entries:
         gloss_zh: [單反]
         tags: [abbreviation, alt-of]
         alt_of: [單鏡頭反光相機]
+        topics: [arts, hobbies, lifestyle, photography]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9476,6 +9517,7 @@ entries:
       - pos: noun
         gloss_en: [quadrilateral]
         gloss_zh: [四邊形, 四角形]
+        topics: [geometry, mathematics, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -9797,6 +9839,7 @@ entries:
       - pos: noun
         gloss_en: [circumference, circle]
         gloss_zh: [圓周]
+        topics: [mathematics, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10180,6 +10223,7 @@ entries:
         gloss_en: [domain name]
         gloss_zh: [域名]
         tags: [Internet]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -10437,6 +10481,7 @@ entries:
       - pos: noun
         gloss_en: [ballast, ship's load]
         gloss_zh: [壓載]
+        topics: [nautical, transport]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11127,6 +11172,7 @@ entries:
       - pos: noun
         gloss_en: [a traditional Teochew gong-and-drum music genre]
         gloss_zh: [大鑼鼓]
+        topics: [entertainment, lifestyle, music]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -11802,6 +11848,7 @@ entries:
         gloss_en: [gynaecology, gynaecology department]
         gloss_zh: [婦科]
         note: No category file cleanly covers medical-department terms; defaulted to the basics.yaml catch-all rather than body.yaml (which is for body parts, not medical fields) or people.yaml.
+        topics: [medicine, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -12221,6 +12268,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Android (operating system)]
         gloss_zh: [安卓]
+        topics: [communications, computing, electrical-engineering, engineering, mathematics, mobile-telephony, natural-sciences, physical-sciences, sciences, telecommunications, telephony]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12407,6 +12455,7 @@ entries:
       - pos: noun
         gloss_en: [deposit, down payment, earnest money]
         gloss_zh: [定金]
+        topics: [business, finance]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12419,6 +12468,7 @@ entries:
       - pos: noun
         gloss_en: [deposit, down payment, earnest money]
         gloss_zh: [定錢]
+        topics: [business, finance]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -12810,6 +12860,7 @@ entries:
         gloss_en: [precious blood (of Christ)]
         gloss_zh: [寶血]
         note: This is a narrow, specialized Christian religious term (the blood of Jesus Christ) with little use outside that context.
+        topics: [Christianity]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -13047,6 +13098,7 @@ entries:
         gloss_en: [antithetical couplet, paired verses (e.g. for Spring Festival)]
         gloss_zh: [對聯]
         tags: [rhetoric]
+        topics: [human-sciences, linguistics, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13097,6 +13149,7 @@ entries:
       - pos: noun
         gloss_en: [group stage (sports)]
         gloss_zh: [小組賽]
+        topics: [hobbies, lifestyle, sports]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13211,6 +13264,7 @@ entries:
       - pos: noun
         gloss_en: [shakuhachi, bamboo flute]
         gloss_zh: [尺八]
+        topics: [entertainment, lifestyle, music]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -13718,6 +13772,7 @@ entries:
         gloss_en: [gongche notation symbols, traditional Chinese musical note names]
         gloss_zh: [工尺]
         note: Specialized traditional-music notation term with very limited everyday usage.
+        topics: [entertainment, lifestyle, music]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -13732,6 +13787,7 @@ entries:
         gloss_en: [gongche notation, traditional Chinese musical notation system]
         gloss_zh: [工尺譜]
         note: Specialized traditional-music notation term with very limited everyday usage.
+        topics: [entertainment, lifestyle, music]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -14041,6 +14097,7 @@ entries:
       - pos: noun
         gloss_en: [ibuprofen]
         gloss_zh: [布洛芬]
+        topics: [chemistry, medicine, natural-sciences, organic-chemistry, pharmacology, physical-sciences, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14093,6 +14150,7 @@ entries:
       - pos: noun
         gloss_en: [Parkinson's disease]
         gloss_zh: [帕金森病]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14105,6 +14163,7 @@ entries:
       - pos: noun
         gloss_en: [silk manuscript]
         gloss_zh: [帛書]
+        topics: [historiography, history, human-sciences, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14189,6 +14248,7 @@ entries:
       - pos: noun
         gloss_en: [constant (math/science)]
         gloss_zh: [常數]
+        topics: [algebra, computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -14310,6 +14370,7 @@ entries:
         gloss_en: [square (arithmetic), second power, square metre (colloquial short form)]
         gloss_zh: [平方]
         note: Wiktionary lists two distinct senses sharing this reading — the mathematical noun sense (square/second power) and a colloquial classifier sense short for 平方米 'square metre' — the noun sense was chosen as primary.
+        topics: [arithmetic]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -14624,6 +14685,7 @@ entries:
         gloss_en: [geometry]
         gloss_zh: [幾何]
         note: The page gives both a literary adverb sense ('how much/how many') and a noun sense ('geometry') under the same reading; the more commonly recognized modern noun sense was chosen but either could apply.
+        topics: [mathematics, sciences]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -15102,6 +15164,7 @@ entries:
         gloss_en: [pop-up window, pop-up (internet)]
         gloss_zh: [彈窗]
         tags: [Internet]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16047,6 +16110,7 @@ entries:
         gloss_en: [sex ratio]
         gloss_zh: [性別比]
         note: This is a technical demographic/statistical term with no clearly matching topical category file, so it was placed under the basics.yaml catch-all.
+        topics: [biology, human-sciences, natural-sciences, sciences, social-science, sociology]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -16256,6 +16320,7 @@ entries:
       - pos: noun
         gloss_en: [prevalence rate, disease prevalence]
         gloss_zh: [患病率]
+        topics: [epidemiology, medicine, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -16304,6 +16369,7 @@ entries:
       - pos: noun
         gloss_en: [information, intelligence]
         gloss_zh: [情報]
+        topics: [espionage, government, military, politics, war]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17031,6 +17097,7 @@ entries:
       - pos: noun
         gloss_en: [cost (of production)]
         gloss_zh: [成本]
+        topics: [accounting, business, finance]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17465,6 +17532,7 @@ entries:
       - pos: noun
         gloss_en: [pistol, handgun]
         gloss_zh: [手槍]
+        topics: [engineering, government, military, natural-sciences, physical-sciences, politics, tools, war, weaponry]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17806,6 +17874,7 @@ entries:
       - pos: noun
         gloss_en: [depression (illness)]
         gloss_zh: [抑鬱症]
+        topics: [human-sciences, medicine, pathology, psychiatry, psychology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17831,6 +17900,7 @@ entries:
       - pos: noun
         gloss_en: [antigen]
         gloss_zh: [抗原]
+        topics: [immunology, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17870,6 +17940,7 @@ entries:
       - pos: noun
         gloss_en: [antibiotic]
         gloss_zh: [抗生素]
+        topics: [medicine, pharmacology, sciences]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -17882,6 +17953,7 @@ entries:
       - pos: noun
         gloss_en: [antibody]
         gloss_zh: [抗體]
+        topics: [immunology, medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18006,6 +18078,7 @@ entries:
       - pos: noun
         gloss_en: [printer (computer)]
         gloss_zh: [打印機]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18756,6 +18829,7 @@ entries:
       - pos: noun
         gloss_en: [income, revenue, earnings]
         gloss_zh: [收入]
+        topics: [accounting, business, finance]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18796,6 +18870,7 @@ entries:
         gloss_en: [offensive (military or sports)]
         gloss_zh: [攻勢]
         tags: [offensive]
+        topics: [government, hobbies, lifestyle, military, politics, sports, war]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -18905,6 +18980,7 @@ entries:
         gloss_en: [style of government, government ethics/integrity]
         gloss_zh: [政風]
         note: The Wiktionary page gives only a vague 'style of government' definition, but the term is also commonly used specifically for the Taiwan government ethics/anti-corruption system, so the intended sense is uncertain.
+        topics: [government, politics]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -19135,6 +19211,7 @@ entries:
         gloss_en: [septicemia, blood poisoning]
         gloss_zh: [敗血症]
         note: Highly technical medical/pathology term with no dedicated category among the options, so basics.yaml catch-all was used.
+        topics: [medicine, pathology, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -19292,6 +19369,7 @@ entries:
       - pos: noun
         gloss_en: [account entry, item in accounts]
         gloss_zh: [賬目]
+        topics: [business, finance]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19540,6 +19618,7 @@ entries:
       - pos: noun
         gloss_en: [Fibonacci sequence]
         gloss_zh: [斐波那契數列]
+        topics: [mathematics, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -19605,6 +19684,7 @@ entries:
       - pos: noun
         gloss_en: [COVID-19]
         gloss_zh: [新冠肺炎]
+        topics: [biology, medicine, microbiology, natural-sciences, pathology, sciences, virology]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -20163,6 +20243,7 @@ entries:
         gloss_en: [melded kong (mahjong term)]
         gloss_zh: [明槓]
         note: Niche mahjong-specific term with no clean category fit in the given list (placed in the basics.yaml catch-all), and it also has a closely related verb sense ('to make a melded kong') not captured by the chosen noun pos.
+        topics: [board-games, games, mahjong]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -20776,6 +20857,7 @@ entries:
         gloss_en: [concealed kong (mahjong), hidden meld]
         gloss_zh: [暗槓]
         note: Mahjong-specific term with both a noun sense (the concealed meld) and a verb sense (to form one) under the same reading; picked the noun sense but the verb usage is equally common.
+        topics: [board-games, games, mahjong]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -21199,6 +21281,7 @@ entries:
       - pos: noun
         gloss_en: [fixed-term imprisonment, prison sentence of limited duration]
         gloss_zh: [有期徒刑]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -21385,6 +21468,7 @@ entries:
       - pos: noun
         gloss_en: [futures (finance)]
         gloss_zh: [期貨]
+        topics: [business, finance]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -22260,6 +22344,7 @@ entries:
       - pos: noun
         gloss_en: [yehu (coconut-shell bowed fiddle)]
         gloss_zh: [椰胡]
+        topics: [entertainment, lifestyle, music]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23101,6 +23186,7 @@ entries:
       - pos: noun
         gloss_en: [lyrics]
         gloss_zh: [歌詞]
+        topics: [entertainment, lifestyle, music]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23248,6 +23334,7 @@ entries:
         gloss_en: [positive energy; positivity]
         gloss_zh: [正能量]
         tags: [bureaucratese, neologism]
+        topics: [government, officialese]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23459,6 +23546,7 @@ entries:
       - pos: noun
         gloss_en: [bad shot; bad pass (in a ball game)]
         gloss_zh: [歹球]
+        topics: [hobbies, lifestyle, sports]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -23651,6 +23739,7 @@ entries:
         gloss_en: [viral strain]
         gloss_zh: [毒株]
         note: This is a specialized virology term; its everyday conversational frequency outside medical/news contexts is uncertain.
+        topics: [biology, microbiology, natural-sciences, virology]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -24318,6 +24407,7 @@ entries:
       - pos: noun
         gloss_en: [rule of law]
         gloss_zh: [法治]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24526,6 +24616,7 @@ entries:
       - pos: noun
         gloss_en: [flu, influenza]
         gloss_zh: [流感, 流行性感冒]
+        topics: [medicine, pathology, sciences]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24611,6 +24702,7 @@ entries:
         gloss_en: [contact tracing, epidemiological investigation]
         gloss_zh: [流調]
         tags: [neologism]
+        topics: [epidemiology, medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24671,6 +24763,7 @@ entries:
       - pos: noun
         gloss_en: [poster, placard]
         gloss_zh: [海報]
+        topics: [advertising, business, marketing]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24719,6 +24812,7 @@ entries:
       - pos: noun
         gloss_en: [navy]
         gloss_zh: [海軍]
+        topics: [government, military, politics, war]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -24743,6 +24837,7 @@ entries:
       - pos: noun
         gloss_en: [nirvana]
         gloss_zh: [涅槃]
+        topics: [Buddhism, lifestyle, religion]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26719,6 +26814,7 @@ entries:
       - pos: noun
         gloss_en: [rabies]
         gloss_zh: [狂犬病]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -26781,6 +26877,7 @@ entries:
         gloss_en: [scarlet fever]
         gloss_zh: [猩紅熱]
         note: This is a medical/disease term with no well-fitting category among the given options; filed under basics.yaml as the catch-all.
+        topics: [medicine, pathology, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -27186,6 +27283,7 @@ entries:
       - pos: noun
         gloss_en: [racket; bat]
         gloss_zh: [球拍]
+        topics: [hobbies, lifestyle, sports]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27520,6 +27618,7 @@ entries:
         gloss_zh: [甙, 糖苷]
         note: Highly technical, dated chemistry term with no clearly better-fitting category.
         tags: [dated]
+        topics: [chemistry, natural-sciences, organic-chemistry, physical-sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -27719,6 +27818,7 @@ entries:
       - pos: noun
         gloss_en: [property rights]
         gloss_zh: [產權]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27731,6 +27831,7 @@ entries:
       - pos: noun
         gloss_en: [output, yield]
         gloss_zh: [產量]
+        topics: [agriculture, business, economics, lifestyle, manufacturing, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27818,6 +27919,7 @@ entries:
       - pos: noun
         gloss_en: [oracle bone script]
         gloss_zh: [甲骨文]
+        topics: [biology, epigraphy, geography, historiography, history, human-sciences, literature, media, natural-sciences, palaeography, paleogeography, paleography, paleontology, publishing, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -27932,6 +28034,7 @@ entries:
       - pos: noun
         gloss_en: [artistic style, painting style]
         gloss_zh: [畫風]
+        topics: [art, arts]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28042,6 +28145,7 @@ entries:
       - pos: adverb
         gloss_en: [at court, in the courtroom (legal)]
         gloss_zh: [當庭]
+        topics: [law]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28176,6 +28280,7 @@ entries:
       - pos: noun
         gloss_en: [gout]
         gloss_zh: [痛風]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28250,6 +28355,7 @@ entries:
       - pos: noun
         gloss_en: [incidence rate, morbidity]
         gloss_zh: [發病率]
+        topics: [epidemiology, medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28274,6 +28380,7 @@ entries:
       - pos: noun
         gloss_en: [developed country]
         gloss_zh: [發達國家]
+        topics: [economics, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28287,6 +28394,7 @@ entries:
         gloss_en: [generator]
         gloss_zh: [發電機]
         tags: [countable]
+        topics: [business, electrical-engineering, electricity, electromagnetism, energy, engineering, natural-sciences, physical-sciences, physics]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28525,6 +28633,7 @@ entries:
       - pos: proper-noun
         gloss_en: [Ghost Festival, Ullambana Festival]
         gloss_zh: [盂蘭盆節]
+        topics: [Buddhism, lifestyle, religion]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -28812,6 +28921,7 @@ entries:
         gloss_zh: [直線]
         note: The same reading is also attested for an attributive-adjective block ('straight; direct; steep'); noun was chosen as the primary dictionary sense but both are valid.
         tags: [countable]
+        topics: [geometry, mathematics, sciences]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -29803,6 +29913,7 @@ entries:
         gloss_en: [field of merit (Buddhist term for a source of blessings/enlightenment)]
         gloss_zh: [福田]
         note: The page lists two senses sharing this reading -- a Buddhist abstract noun 'field of merit' and a proper-noun sense (Futian district/town; the Japanese surname Fukuda) -- picked the common-noun Buddhist sense as more dictionary-relevant.
+        topics: [Buddhism, lifestyle, religion]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -30789,6 +30900,7 @@ entries:
       - pos: noun
         gloss_en: [sheng (mouth-blown reed instrument)]
         gloss_zh: [笙]
+        topics: [entertainment, lifestyle, music]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -31196,6 +31308,7 @@ entries:
       - pos: noun
         gloss_en: [beat; meter (music)]
         gloss_zh: [節拍]
+        topics: [entertainment, lifestyle, music]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -31781,6 +31894,7 @@ entries:
       - pos: noun
         gloss_en: [infrared ray]
         gloss_zh: [紅外線]
+        topics: [natural-sciences, physical-sciences, physics]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -31895,6 +32009,7 @@ entries:
       - pos: noun
         gloss_en: [Teochew junk (traditional sailing ship)]
         gloss_zh: [紅頭船]
+        topics: [nautical, transport]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32092,6 +32207,7 @@ entries:
         gloss_en: [series (mathematics)]
         gloss_zh: [級數]
         note: Specialized mathematics term (series); likely too technical to be core vocabulary.
+        topics: [mathematics, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -32645,6 +32761,7 @@ entries:
       - pos: noun
         gloss_en: [network, internet]
         gloss_zh: [網絡]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32657,6 +32774,7 @@ entries:
       - pos: noun
         gloss_en: [online class]
         gloss_zh: [網課]
+        topics: [education]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -32981,6 +33099,7 @@ entries:
       - pos: noun
         gloss_en: [criminal case, crime]
         gloss_zh: [罪案]
+        topics: [law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33212,6 +33331,7 @@ entries:
       - pos: noun
         gloss_en: [compulsory education]
         gloss_zh: [義務教育]
+        topics: [education, law]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33276,6 +33396,7 @@ entries:
         gloss_zh: [老年痴呆症]
         note: Technical medical term (marked 'proscribed' on the source page); no dedicated medical/health category exists in the given list, so filed under the basics catch-all.
         tags: [proscribed]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -33526,6 +33647,7 @@ entries:
       - pos: noun
         gloss_en: [Holy Communion, Eucharist]
         gloss_zh: [聖餐]
+        topics: [Christianity]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33629,6 +33751,7 @@ entries:
         gloss_en: ["initial (the initial consonant of a syllable, phonetics)"]
         gloss_zh: [聲母]
         note: Specialized linguistics term with no dedicated category file, so the basics catch-all was used.
+        topics: [human-sciences, linguistics, phonetics, phonology, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -33780,6 +33903,7 @@ entries:
       - pos: noun
         gloss_en: [dudou; traditional Chinese bodice/undergarment]
         gloss_zh: [肚帕]
+        topics: [fashion, lifestyle]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33792,6 +33916,7 @@ entries:
       - pos: noun
         gloss_en: [share, stock]
         gloss_zh: [股份]
+        topics: [business, finance]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -33918,6 +34043,7 @@ entries:
         gloss_en: [labial sound, labial (phonetics)]
         gloss_zh: [脣音]
         note: Specialized linguistics/phonetics term with no clearly matching category; classified under the basics catch-all.
+        topics: [human-sciences, linguistics, phonetics, phonology, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -34057,6 +34183,7 @@ entries:
       - pos: noun
         gloss_en: [automated teller machine; ATM]
         gloss_zh: [自動取款機, 提款機]
+        topics: [banking, business]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34330,6 +34457,7 @@ entries:
       - pos: noun
         gloss_en: [weightlifting]
         gloss_zh: [舉重]
+        topics: [hobbies, lifestyle, sports]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34366,6 +34494,7 @@ entries:
       - pos: noun
         gloss_en: [lingual sound]
         gloss_zh: [舌音]
+        topics: [human-sciences, linguistics, phonetics, phonology, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34392,6 +34521,7 @@ entries:
       - pos: noun
         gloss_en: [prajna, Buddhist transcendental wisdom]
         gloss_zh: [般若]
+        topics: [Buddhism, lifestyle, religion]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -34749,6 +34879,7 @@ entries:
         gloss_en: [sea of bitterness; ocean of suffering (figurative for this weary world)]
         gloss_zh: [苦海]
         tags: [figuratively]
+        topics: [Buddhism, lifestyle, religion]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -35624,6 +35755,7 @@ entries:
         gloss_en: [to administratively detain]
         gloss_zh: [行政拘留]
         note: This is a highly specialized legal term (administrative detention) with little evidence of colloquial everyday Teochew usage.
+        topics: [law]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -35962,6 +36094,7 @@ entries:
       - pos: noun
         gloss_en: [kasaya (Buddhist monk's robe)]
         gloss_zh: [袈裟]
+        topics: [Buddhism, lifestyle, religion]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37382,6 +37515,7 @@ entries:
         gloss_en: [frequency modulation (FM), to tune/adjust frequency]
         gloss_zh: [調頻]
         note: A noun sense (FM/frequency modulation) and a verb sense (to adjust frequency) share the identical Teochew reading, so the intended part of speech is uncertain.
+        topics: [broadcasting, media, radio]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -37557,6 +37691,7 @@ entries:
       - pos: noun
         gloss_en: [security (financial instrument)]
         gloss_zh: [證券]
+        topics: [business, finance]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37721,6 +37856,7 @@ entries:
       - pos: noun
         gloss_en: [transformer (electrical)]
         gloss_zh: [變壓器]
+        topics: [business, electrical-engineering, electricity, electromagnetism, electronics, energy, engineering, natural-sciences, physical-sciences, physics]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37733,6 +37869,7 @@ entries:
       - pos: noun
         gloss_en: [hymn, psalm]
         gloss_zh: [讚美歌, 聖歌]
+        topics: [lifestyle, religion]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37904,6 +38041,7 @@ entries:
       - pos: noun
         gloss_en: ["quadrant (math, one of four regions of the Cartesian plane)"]
         gloss_zh: [象限]
+        topics: [mathematics, sciences]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -37928,6 +38066,7 @@ entries:
       - pos: noun
         gloss_en: [epilepsy]
         gloss_zh: [豬母筅]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38090,6 +38229,7 @@ entries:
       - pos: noun
         gloss_en: [money, currency]
         gloss_zh: [貨幣]
+        topics: [business, economics, finance, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38343,6 +38483,7 @@ entries:
       - pos: noun
         gloss_en: [asset, capital, property]
         gloss_zh: [資產]
+        topics: [business, economics, finance, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38403,6 +38544,7 @@ entries:
       - pos: noun
         gloss_en: [odds (betting)]
         gloss_zh: [賠率]
+        topics: [gambling, games]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38502,6 +38644,7 @@ entries:
       - pos: noun
         gloss_en: [deficit]
         gloss_zh: [赤字]
+        topics: [economics, government, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -38602,6 +38745,7 @@ entries:
       - pos: noun
         gloss_en: [indictment]
         gloss_zh: [起訴書]
+        topics: [law]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39229,6 +39373,7 @@ entries:
         gloss_en: [army; troops; military forces]
         gloss_zh: [軍隊]
         tags: [collective]
+        topics: [government, military, politics, war]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -39357,6 +39502,7 @@ entries:
         gloss_zh: [輪]
         note: The character covers many senses under one reading (wheel; edge/rim; to take turns; classifier for rounds/cycles; short forms of 輪船 and 輪姦), so picking a single primary sense/POS is uncertain.
         tags: [in-compounds]
+        topics: [business, finance]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -40405,6 +40551,7 @@ entries:
       - pos: noun
         gloss_en: [department; division; sector]
         gloss_zh: [部門]
+        topics: [business, government]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40861,6 +41008,7 @@ entries:
       - pos: noun
         gloss_en: [injectable medication, injection (medicine)]
         gloss_zh: [針劑]
+        topics: [medicine, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -40897,6 +41045,7 @@ entries:
       - pos: noun
         gloss_en: [acupuncture (and moxibustion)]
         gloss_zh: [針灸]
+        topics: [medicine, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -41849,6 +41998,7 @@ entries:
         gloss_en: [open source (computing), to open-source]
         gloss_zh: [開源]
         note: Functions as both noun ('open source') and verb ('to open-source'); no dedicated computing/technology category exists so basics.yaml was used as the catch-all.
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -41912,6 +42062,7 @@ entries:
       - pos: noun
         gloss_en: [keyword]
         gloss_zh: [關鍵詞, 關鍵字]
+        topics: [computing, engineering, human-sciences, linguistics, mathematics, natural-sciences, physical-sciences, programming, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42000,6 +42151,7 @@ entries:
         gloss_en: [Alzheimer's disease]
         gloss_zh: [阿爾茨海默病]
         note: Highly technical medical loanword term; no dedicated medical/health category exists in the list, so it was filed under the basics.yaml catch-all.
+        topics: [medicine, pathology, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -42188,6 +42340,7 @@ entries:
       - pos: noun
         gloss_en: [army, ground forces]
         gloss_zh: [陸軍]
+        topics: [government, military, politics, war]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42433,6 +42586,7 @@ entries:
       - pos: noun
         gloss_en: [clerical script (a style of Chinese calligraphy)]
         gloss_zh: [隸書]
+        topics: [communications, journalism, literature, media, publishing, writing]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42555,6 +42709,7 @@ entries:
       - pos: noun
         gloss_en: [doubles (sports)]
         gloss_zh: [雙打]
+        topics: [hobbies, lifestyle, sports]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42938,6 +43093,7 @@ entries:
       - pos: noun
         gloss_en: [voltage]
         gloss_zh: [電壓]
+        topics: [business, electrical-engineering, electricity, electromagnetism, energy, engineering, natural-sciences, physical-sciences, physics]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42975,6 +43131,7 @@ entries:
         gloss_en: [battery]
         gloss_zh: [電池]
         tags: [countable]
+        topics: [business, electrical-engineering, electricity, electromagnetism, electronics, energy, engineering, natural-sciences, physical-sciences, physics]
     frequency: 5
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -42987,6 +43144,7 @@ entries:
       - pos: noun
         gloss_en: [electric current]
         gloss_zh: [電流]
+        topics: [business, electrical-engineering, electricity, electromagnetism, energy, engineering, natural-sciences, physical-sciences, physics]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43011,6 +43169,7 @@ entries:
       - pos: noun
         gloss_en: [electromagnetic wave]
         gloss_zh: [電磁波]
+        topics: [natural-sciences, physical-sciences, physics]
     frequency: 1
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43357,6 +43516,7 @@ entries:
       - pos: noun
         gloss_en: [area (measurement)]
         gloss_zh: [面積]
+        topics: [geometry, mathematics, sciences]
     frequency: 4
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -43578,6 +43738,7 @@ entries:
         gloss_en: [sound wave]
         gloss_zh: [音波, 聲波]
         note: Technical physics term with no dedicated science category among the listed files; placed in basics.yaml as the catch-all, following the precedent set for similar physics terms.
+        topics: [natural-sciences, physical-sciences, physics]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -44025,6 +44186,7 @@ entries:
       - pos: noun
         gloss_en: [display screen, monitor]
         gloss_zh: [顯示屏]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -44646,6 +44808,7 @@ entries:
       - pos: noun
         gloss_en: [verification code, CAPTCHA; security code]
         gloss_zh: [驗證碼]
+        topics: [computing, engineering, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 3
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -45285,6 +45448,7 @@ entries:
       - pos: noun
         gloss_en: [plague]
         gloss_zh: [鼠疫]
+        topics: [medicine, pathology, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -46664,6 +46828,7 @@ entries:
         gloss_en: [interest (on savings or loans)]
         gloss_zh: [利息]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [business, finance]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -47043,6 +47208,7 @@ entries:
         gloss_en: [guitar]
         gloss_zh: [吉他]
         note: 3 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [entertainment, lifestyle, music]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -47244,6 +47410,7 @@ entries:
         gloss_zh: [啲咑, 嗩吶]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker. No category in the list fits a musical-instrument noun well, so it was placed in the basics.yaml catch-all.
         tags: [dialectal]
+        topics: [entertainment, lifestyle, music]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -47407,6 +47574,7 @@ entries:
         gloss_en: [the International Phonetic Alphabet (IPA)]
         gloss_zh: [國際音標]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [human-sciences, linguistics, phonetics, phonology, sciences]
     frequency: 1
     needs_review: true
     sources: [wiktionary]
@@ -49335,6 +49503,7 @@ entries:
         gloss_en: [stroke; apoplexy]
         gloss_zh: [中風]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [medicine, pathology, sciences]
     frequency: 3
     needs_review: true
     sources: [wiktionary]
@@ -51717,6 +51886,7 @@ entries:
         gloss_en: [share; stock]
         gloss_zh: [股票]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [business, finance]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -51747,6 +51917,7 @@ entries:
         gloss_en: [herbal plaster; medicated patch; poultice]
         gloss_zh: [膏藥]
         note: 2 candidate readings from Wiktionary — genuine Chaozhou colloquial form not yet confirmed by a speaker.
+        topics: [medicine, sciences]
     frequency: 2
     needs_review: true
     sources: [wiktionary]
@@ -53996,6 +54167,7 @@ entries:
       - pos: noun
         gloss_en: [background music]
         gloss_zh: [BGM]
+        topics: [entertainment, lifestyle, music]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -54098,6 +54270,7 @@ entries:
       - pos: noun
         gloss_en: [the Latin letter K (as used in Chinese)]
         gloss_zh: [K]
+        topics: [card-games, games]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
@@ -54228,6 +54401,7 @@ entries:
         gloss_en: [the Latin letter U (as used in Chinese)]
         gloss_zh: [U]
         tags: [informal, letter, slang, uppercase]
+        topics: [business, computing, engineering, finance, mathematics, natural-sciences, physical-sciences, sciences]
     frequency: 2
     sources: [wiktionary]
     retrieved: '2026-08-16'
