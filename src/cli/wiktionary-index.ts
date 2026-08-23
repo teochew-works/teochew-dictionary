@@ -35,6 +35,7 @@ const counts: Record<WiktionaryWordlistStatus, number> = {
   to_fetch: 0,
   staged: 0,
   no_reading: 0,
+  no_gloss: 0,
 }
 for (const item of items) counts[item.status] += 1
 
@@ -43,3 +44,4 @@ console.log(`  existing: ${counts.existing}`)
 console.log(`  to_fetch: ${counts.to_fetch}`)
 console.log(`  staged: ${counts.staged}`)
 console.log(`  no_reading: ${counts.no_reading}`)
+console.log(`  no_gloss: ${counts.no_gloss}`)
