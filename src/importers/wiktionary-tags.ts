@@ -56,6 +56,25 @@ export function mapWiktextractTags(rawTags: string[] | undefined): string[] {
   return kept
 }
 
+/**
+ * Trims, drops empty, and dedupes wiktextract's raw sense `topics` — no
+ * capitalization filter, unlike `mapWiktextractTags`: a topic like `Buddhism`
+ * or `Chinese-cuisine` is a genuine capitalized domain name, not
+ * place/topolect noise. `topics` is a separate, already-clean field —
+ * wiktextract's own tags/topics split does the work `mapWiktextractTags`'s
+ * heuristic has to do by hand for `tags` (issue #105).
+ */
+export function mapWiktextractTopics(rawTopics: string[] | undefined): string[] {
+  if (!rawTopics) return []
+  const kept: string[] = []
+  for (const raw of rawTopics) {
+    const topic = raw.trim()
+    if (!topic || kept.includes(topic)) continue
+    kept.push(topic)
+  }
+  return kept
+}
+
 /** Pulls the target headword(s) out of wiktextract's structured `alt_of`, dropping the Mandarin gloss `extra` carries. */
 export function extractAltOf(rawAltOf: WiktextractAltOf[] | undefined): string[] {
   if (!rawAltOf) return []

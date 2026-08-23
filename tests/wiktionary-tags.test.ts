@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { extractAltOf, mapWiktextractTags } from '../src/importers/wiktionary-tags.js'
+import { extractAltOf, mapWiktextractTags, mapWiktextractTopics } from '../src/importers/wiktionary-tags.js'
 
 describe('mapWiktextractTags', () => {
   it('passes genuine usage tags through unchanged', () => {
@@ -58,6 +58,36 @@ describe('mapWiktextractTags', () => {
 
   it('keeps the diagnostic no-gloss tag (documented in README as worth surfacing)', () => {
     expect(mapWiktextractTags(['no-gloss'])).toEqual(['no-gloss'])
+  })
+})
+
+describe('mapWiktextractTopics', () => {
+  it('passes topic values through unchanged, in input order', () => {
+    expect(mapWiktextractTopics(['board-games', 'games', 'xiangqi'])).toEqual(['board-games', 'games', 'xiangqi'])
+  })
+
+  it('dedupes and trims', () => {
+    expect(mapWiktextractTopics([' zoology ', 'zoology', 'cooking'])).toEqual(['zoology', 'cooking'])
+  })
+
+  it('drops empty/whitespace-only entries', () => {
+    expect(mapWiktextractTopics(['', ' ', 'sciences'])).toEqual(['sciences'])
+  })
+
+  it('returns an empty array for undefined input', () => {
+    expect(mapWiktextractTopics(undefined)).toEqual([])
+  })
+
+  it('keeps capitalized proper-noun topics, unlike mapWiktextractTags', () => {
+    // Unlike `tags`, where capitalization signals place/topolect noise to
+    // drop, `topics`'s capitalized values (Buddhism, Chinese-cuisine, ...)
+    // are genuine domain names — wiktextract's own tags/topics split already
+    // leaves this field clean, so no capitalization filter applies here.
+    expect(mapWiktextractTopics(['Buddhism', 'Chinese-cuisine', 'lifestyle'])).toEqual([
+      'Buddhism',
+      'Chinese-cuisine',
+      'lifestyle',
+    ])
   })
 })
 

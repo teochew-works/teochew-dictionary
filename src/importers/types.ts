@@ -73,13 +73,14 @@ export interface ProposedReading {
 export interface ProposedSense {
   pos?: string
   /**
-   * Absent for a sense staged purely for its `tags`/`alt_of` signal — the
-   * Wiktionary importer never fetches a gloss (licence hygiene: readings and
-   * glosses are separate decisions, see ./wiktionary.js).
+   * Absent for a sense staged purely for its `tags`/`topics`/`alt_of` signal —
+   * the Wiktionary importer never fetches a gloss (licence hygiene: readings
+   * and glosses are separate decisions, see ./wiktionary.js).
    */
   gloss_en?: string[]
   gloss_zh?: string[]
   tags?: string[]
+  topics?: string[]
   alt_of?: string[]
 }
 
