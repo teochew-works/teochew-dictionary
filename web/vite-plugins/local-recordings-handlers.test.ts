@@ -1,4 +1,4 @@
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { stringify } from 'yaml'
@@ -6,6 +6,7 @@ import { stringify } from 'yaml'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 
 import { getStatus, saveRecording } from './local-recordings-handlers.js'
+import { readLocalRecordingStaging } from '../../src/importers/local-recording-staging.js'
 
 describe('getStatus', () => {
   let audioDir: string
@@ -201,12 +202,41 @@ describe('saveRecording', () => {
     }
   })
 
-  it('uses a distinct id per call so re-recording the same syllable does not collide', () => {
+  it('replaces a pending proposal for the same syllable instead of appending a second one', () => {
     const paths: string[] = []
     const write = (path: string) => paths.push(path)
-    saveRecording(validBody(), { recordingsDir, stagingDir, writeFile: write })
-    saveRecording(validBody(), { recordingsDir, stagingDir, writeFile: write })
+    saveRecording(validBody(), { recordingsDir, stagingDir, writeFile: write, idSuffix: () => 'first' })
+    saveRecording(validBody(), { recordingsDir, stagingDir, writeFile: write, idSuffix: () => 'second' })
+
+    // Both raw files were written under distinct names (still avoids a
+    // filename collision)...
     expect(new Set(paths).size).toBe(2)
+
+    // ...but only the newest proposal remains staged.
+    const staged = readLocalRecordingStaging(stagingDir)
+    expect(staged?.proposals).toHaveLength(1)
+    expect(staged?.proposals[0]).toMatchObject({ pengim: 'dio5' })
+    expect(staged?.proposals[0]?.localPath).toContain('second')
+  })
+
+  it('deletes the superseded take from disk when replacing a pending proposal', () => {
+    // Uses the real filesystem writer (not the pushing-to-an-array spy the
+    // other tests use) so the superseded file's deletion can be observed.
+    saveRecording(validBody(), { recordingsDir, stagingDir, idSuffix: () => 'first' })
+    saveRecording(validBody(), { recordingsDir, stagingDir, idSuffix: () => 'second' })
+
+    expect(existsSync(join(recordingsDir, 'dio5__speaker-1__first.wav'))).toBe(false)
+    expect(existsSync(join(recordingsDir, 'dio5__speaker-1__second.wav'))).toBe(true)
+  })
+
+  it('does not touch a proposal for a different pengim', () => {
+    saveRecording(validBody({ pengim: 'dio5' }), { recordingsDir, stagingDir, idSuffix: () => 'first' })
+    saveRecording(validBody({ pengim: 'ang1' }), { recordingsDir, stagingDir, idSuffix: () => 'second' })
+
+    const staged = readLocalRecordingStaging(stagingDir)
+    expect(staged?.proposals.map((p) => p.pengim)).toEqual(['dio5', 'ang1'])
+    expect(existsSync(join(recordingsDir, 'dio5__speaker-1__first.wav'))).toBe(true)
+    expect(existsSync(join(recordingsDir, 'ang1__speaker-1__second.wav'))).toBe(true)
   })
 
   it('creates the recordings directory if it does not exist yet', () => {
