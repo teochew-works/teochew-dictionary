@@ -26,6 +26,7 @@
     "xref": "tsx src/cli/xref.ts",
     "lookup": "tsx src/cli/lookup.ts",
     "audio:verify": "tsx src/cli/audio-verify.ts",
+    "rehost:lingualibre": "tsx src/cli/lingualibre-rehost.ts",
     "schema": "tsx src/cli/emit-schema.ts",
     "test": "vitest run",
     "test:watch": "vitest",
