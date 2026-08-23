@@ -52,14 +52,16 @@ function wholeWordPattern(query: string): RegExp {
 }
 
 function matchTier(entry: EnrichedEntry, needle: string, wholeWord: RegExp): number {
-  let substring = false
+  let sawSubstring = false
   for (const key of entry.search_keys) {
     const k = key.toLowerCase()
     if (k === needle) return TIER_EXACT
-    if (!substring && k.includes(needle)) substring = true
+    if (k.includes(needle)) {
+      sawSubstring = true
+      if (wholeWord.test(k)) return TIER_WHOLE_WORD
+    }
   }
-  if (!substring) return TIER_FUZZY
-  return entry.search_keys.some((k) => wholeWord.test(k.toLowerCase())) ? TIER_WHOLE_WORD : TIER_SUBSTRING
+  return sawSubstring ? TIER_SUBSTRING : TIER_FUZZY
 }
 
 export function search(index: Fuse<EnrichedEntry>, query: string): EnrichedEntry[] {
