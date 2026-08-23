@@ -959,6 +959,85 @@ recording to keep stays exactly the kind of accent/quality judgment §16
 already assigns to a human, not something `mergeLinguaLibreClip` decides by
 picking the first match.
 
+## 17. Recording clips from the Sounds tab · `web/`, `phonology/audio/*.yaml` · issue #128
+
+**Background.** #124 shipped a Sounds tab listing every distinct syllable
+attested in the lexicon, but most rows have no clip in
+`data/phonology/audio/chaozhou.yaml` yet — filling that gap today means
+running the whole `import`/`merge:lingualibre` pipeline against an outside
+corpus, which has nothing to offer for a syllable no one has ever uploaded to
+Commons. #128 asks for a "record" control right on the Sounds tab so a
+contributor at a mic can capture one directly, dev-only (production is a
+static GitHub Pages build with no backend to write to).
+
+**Decision: stage for human review, not a direct publish from the browser.**
+The alternative — the browser's save action immediately re-hosts to a GitHub
+Release and writes into `chaozhou.yaml`, mirroring what `merge:lingualibre`
+already does — was rejected even though it satisfies the issue's draft
+acceptance criteria more literally (a plain restart alone would surface the
+clip). Publishing to a public GitHub Release is a real, externally-visible
+action; today it only happens when a human deliberately runs a CLI against
+an already-staged, already-reviewed proposal. Routing a browser button
+straight to that same effect — with no review step, and gated only by a
+client-side checkbox — lowers the bar for publishing in a way the rest of
+this pipeline never has. So: the record flow only ever writes to disk and
+appends a proposal; publishing stays a separate, human-run merge step, same
+shape as the existing Lingua Libre flow. Consequence, noted here so it
+doesn't read as an oversight: issue #128's "after a server restart, entries
+using that syllable serve the new recording" acceptance criterion is not met
+by a restart alone — it also needs `npm run merge:local-recording` first.
+
+**New staging shape, not a repurposed `AudioClipProposal`.**
+`src/importers/audio-types.ts`'s `AudioClipProposal` is Commons-shaped
+(`commonsTitle`, `commonsUrl`, `licence` recovered from `imageinfo`) and has
+no room for a clip that was never fetched from anywhere — it was recorded
+straight to a local file. `src/importers/local-recording-types.ts` adds a
+parallel `LocalRecordingProposal` (`pengim`, `localPath`, `speaker`,
+`recordedDate`, `consentAcknowledged`), staged to a new
+`data/staging/teochew-dictionary-audio.yaml` (same directory/one-file-per-
+source convention as `data/staging/lingualibre.yaml`) via
+`src/importers/local-recording-staging.ts`. Unlike `writeAudioStaging`
+(one overwrite per batch import run), this file is built up one proposal at
+a time as recordings happen, so its writer appends into the existing
+document (`yaml`'s `parseDocument` + mutate) rather than regenerating the
+whole file — a human's own edits to already-staged entries (e.g. a review
+note) survive a later browser-triggered append instead of being clobbered.
+
+**Recorded bytes are committed, not gitignored.** This project already has a
+gitignored scratch convention (`CACHE_DIR`, `.cache/`) for anything
+refetchable — but a spoken recording isn't refetchable; losing the file
+before it's merged loses the recording itself. `data/staging/recordings/`
+holds the raw clip bytes alongside the proposal that references them by
+path, so a reviewer (on any machine, via a normal PR diff) can actually listen
+to what they're being asked to merge, and nothing depends on the recording
+contributor's own machine still having the file later.
+
+**Consent stays exactly the manual process `AUDIO-CONSENT.md` already
+describes**, not something this feature automates or verifies — that
+document is explicit that consent is tracked outside the repository. The
+record flow requires a speaker pseudonym and an explicit "I have obtained
+consent" acknowledgement before it will let a proposal be saved, the same
+way `mergeLinguaLibreClip` requires `--variety` with no default: not proof
+of the right call, just a guardrail against clicking past the requirement
+unnoticed. `teochew-dictionary-audio` (`data/sources.yaml:67-84`) already
+existed as this feature's eventual source id before this issue was written.
+
+**Merge mechanics reuse `rehostClip`'s shape, not its code path.** A local
+recording has no URL to fetch — the bytes are already on disk — so
+`src/importers/lingualibre-rehost.ts`'s tmp-file/`gh release upload`/sha256
+logic is factored out into a shared `uploadBytesToRelease` helper that both
+the existing fetch-from-Commons path and a new
+`src/importers/local-recording-rehost.ts` (read-from-disk) call, rather than
+duplicating it. `src/importers/local-recording-merge.ts` mirrors
+`mergeLinguaLibreClip` otherwise: refuses to overwrite an existing key
+without `--force`, builds a clip with `sources: ['teochew-dictionary-audio']`
+and `confidence: 'high'` (a direct first-party recording, not scraped
+metadata of uncertain fit), validates with `audioSchema.parse`, writes back
+with the same comment-preserving `parseDocument`/`setIn` mutation. On
+success it deletes the now-redundant staged proposal and local file — once
+the bytes live on a Release, the staged copy is only a liability (a second,
+driftable copy of the same clip).
+
 ## Individual entries flagged `needs_review`
 
 Run `npm run validate` for the current count. As of writing:
