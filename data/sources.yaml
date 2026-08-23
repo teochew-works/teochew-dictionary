@@ -156,6 +156,20 @@ sources:
       the phonetic target is /o/ rather than /u/ — every other source gives
       /u/. Cited, never reproduced.
 
+  - id: hsk-vocabulary
+    name: 'drkameleon/complete-hsk-vocabulary — Complete HSK 2.0/3.0 Vocabulary Lists'
+    kind: reference
+    url: https://github.com/drkameleon/complete-hsk-vocabulary
+    retrieved: '2026-08-23'
+    note: >-
+      MIT-licensed, community-maintained HSK 2.0/3.0 band per Mandarin word
+      (complete.json). Cross-referenced against shared-hanzi Teochew
+      headwords to derive a provisional `entrySchema.level` (issue #110) via
+      `npm run backfill:mandarin-level` — the band itself is consulted, not
+      reproduced: no entry cites this id in its `sources:` (which must
+      resolve to `kind: import` ids only), the same way `pengim-1960` and the
+      other reference works below back a derived fact without being copied.
+
   - id: mogher-region-diff
     name: Mogher — regional Teochew rime correspondence table
     kind: reference

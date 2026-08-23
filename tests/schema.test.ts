@@ -35,6 +35,22 @@ describe('entrySchema', () => {
     const result = entrySchema.safeParse(baseEntry({ retrieved: '28-07-2026' }))
     expect(result.success).toBe(false)
   })
+
+  it('allows level to be omitted', () => {
+    const result = entrySchema.safeParse(baseEntry())
+    expect(result.success).toBe(true)
+  })
+
+  it('accepts a valid CEFR level', () => {
+    const result = entrySchema.safeParse(baseEntry({ level: 'A2' }))
+    expect(result.success).toBe(true)
+    if (result.success) expect(result.data.level).toBe('A2')
+  })
+
+  it('rejects a level outside the CEFR A1–C2 scale', () => {
+    const result = entrySchema.safeParse(baseEntry({ level: 'D1' }))
+    expect(result.success).toBe(false)
+  })
 })
 
 describe('senseSchema', () => {

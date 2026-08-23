@@ -32,6 +32,9 @@ export const PART_OF_SPEECH = [
 
 export const REGISTER = ['colloquial', 'literary', 'both'] as const
 
+/** CEFR-aligned proficiency tier, A1 (easiest) – C2 (hardest). */
+export const LEVEL = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'] as const
+
 /** The reference variety a reading is attested in when none is given. */
 export const DEFAULT_VARIETY = 'chaozhou'
 
@@ -108,6 +111,13 @@ export const entrySchema = z.object({
    * Used to rank search results and to pick what to work on next.
    */
   frequency: z.number().int().min(1).max(5).optional(),
+  /**
+   * CEFR-aligned proficiency tier (A1 easiest – C2 hardest). Distinct from
+   * `frequency`: tracks curriculum difficulty, not corpus commonness — a
+   * common word can be late-taught (idiom) and a rare word can be
+   * early-taught (basic body part). See issue #110.
+   */
+  level: z.enum(LEVEL).optional(),
   /** Source ids, resolved against `data/sources.yaml` — must be `kind: import`. */
   sources: z.array(z.string().min(1)).min(1),
   /** ISO date the entry's content was retrieved from an import source. */
@@ -153,3 +163,4 @@ export type Entry = z.infer<typeof entrySchema>
 export type Source = z.infer<typeof sourceSchema>
 export type PartOfSpeech = (typeof PART_OF_SPEECH)[number]
 export type SourceKind = (typeof SOURCE_KIND)[number]
+export type Level = (typeof LEVEL)[number]
