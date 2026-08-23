@@ -32,6 +32,23 @@ function err(file: string, message: string, path: string): Issue {
   return { level: 'error', file, message, path }
 }
 
+/**
+ * Every clip in one variety's table, keyed by its `path` for issue reporting:
+ * `clips` and `wordClips` alike. `wordClips` (issue #106) carries exactly the
+ * same `url`/`checksum` pair as `clips`, and the checksum is the only
+ * integrity check either has — the bytes live on GitHub Releases, not in this
+ * repo (data/phonology/REVIEW.md § 12) — so leaving word clips out verified
+ * nothing while still reporting success.
+ */
+function clipEntries(audio: Audio): [string, Audio['clips'][string]][] {
+  return [
+    ...Object.entries(audio.clips).map(([key, clip]): [string, Audio['clips'][string]] => [`clips.${key}`, clip]),
+    ...Object.entries(audio.wordClips ?? {}).map(
+      ([key, clip]): [string, Audio['clips'][string]] => [`wordClips.${key}`, clip],
+    ),
+  ]
+}
+
 const FETCH_TIMEOUT_MS = 30_000
 
 async function fetchClipDefault(url: string): Promise<Response> {
@@ -48,8 +65,7 @@ export async function verifyAudioRemote(sources: AudioSource[], options: AudioRe
   const issues: Issue[] = []
 
   for (const { file, audio } of sources) {
-    for (const [syllable, clip] of Object.entries(audio.clips)) {
-      const path = `clips.${syllable}`
+    for (const [path, clip] of clipEntries(audio)) {
 
       let body: Buffer
       try {

@@ -25,7 +25,10 @@ for (const id of listAudioVarieties()) {
   }
 }
 
-const clipCount = sources.reduce((n, s) => n + Object.keys(s.audio.clips).length, 0)
+const clipCount = sources.reduce(
+  (n, s) => n + Object.keys(s.audio.clips).length + Object.keys(s.audio.wordClips ?? {}).length,
+  0,
+)
 
 console.log(dim(`fetching and checksumming ${clipCount} audio clip${clipCount === 1 ? '' : 's'}…`))
 
