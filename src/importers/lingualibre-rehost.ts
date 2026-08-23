@@ -105,7 +105,10 @@ export async function rehostClip(proposal: AudioClipProposal, options: RehostOpt
   writeFileSync(localPath, bytes)
 
   try {
-    runGh(['release', 'upload', tag, localPath])
+    // --clobber: a re-run against the same proposal (or a --force re-merge,
+    // see mergeLinguaLibreClip) re-uploads to this same deterministic
+    // filename — without it `gh` refuses the asset-name collision.
+    runGh(['release', 'upload', tag, localPath, '--clobber'])
   } finally {
     rmSync(localPath, { force: true })
   }
