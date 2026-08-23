@@ -46,7 +46,8 @@ export interface Sense {
 }
 
 export interface AudioReference {
-  syllable: string
+  /** The `clips`/`wordClips` key this clip was resolved from, e.g. `dio5` or `bhi7 jui2`. */
+  key: string
   url: string
   confidence: Confidence
   licence: string
@@ -67,6 +68,8 @@ export interface EnrichedReading {
   syllable_count: number
   /** One slot per syllable; null where no clip has been recorded (out of scope for v1 UI). */
   audio: (AudioReference | null)[]
+  /** Whole-word/phrase clip for this reading's exact pengim string, e.g. a Lingua Libre import (out of scope for v1 UI). */
+  wordAudio: AudioReference | null
 }
 
 export interface EnrichedEntry {

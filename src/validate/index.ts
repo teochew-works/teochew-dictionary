@@ -461,6 +461,13 @@ export function checkSyllableInventory(
  * on GitHub Releases, not in this repo — see `data/phonology/REVIEW.md` § 12)
  * — remote resolution/checksum verification is issue #35's job, not this
  * function's.
+ *
+ * `wordClips` (issue #106, `data/phonology/REVIEW.md` § 16) gets the same
+ * treatment, keyed by a whole reading's pengim string instead of one
+ * syllable: the key must itself parse as Peng'im, must be more than one
+ * syllable (a single-syllable key belongs in `clips`, which already has an
+ * unambiguous home for it), and every syllable it parses to must be legal
+ * per the same generated inventory.
  */
 export function checkAudio(
   file: string,
@@ -497,6 +504,51 @@ export function checkAudio(
         warn(
           file,
           `clip url does not reference its own syllable '${syllable}' — double check it wasn't copied from a different clip`,
+          undefined,
+          `${path}.url`,
+        ),
+      )
+    }
+
+    issues.push(
+      ...checkSources(
+        file,
+        clip.sources,
+        sourceMap,
+        "cannot back a clip directly (evidence about the language, not the clip's origin)",
+        undefined,
+        `${path}.sources`,
+      ),
+    )
+  }
+
+  for (const [key, clip] of Object.entries(audio.wordClips ?? {})) {
+    const path = `wordClips.${key}`
+
+    const parsed = tryParsePengim(key)
+    if (!parsed.ok) {
+      issues.push(err(file, `wordClips key '${key}' is not valid Peng'im: ${parsed.error}`, undefined, path))
+    } else if (parsed.syllables.length < 2) {
+      issues.push(
+        err(file, `'${key}' is a single syllable — belongs in 'clips', not 'wordClips'`, undefined, path),
+      )
+    } else {
+      for (const s of parsed.syllables) {
+        if (!legalSyllables.has(s.raw)) {
+          issues.push(err(file, `'${key}' contains '${s.raw}', not a legal Peng'im syllable`, undefined, path))
+        }
+      }
+    }
+
+    // Same soft copy-paste guard as `clips`, checked against the key's first
+    // syllable — a full multi-syllable match is not required since asset
+    // naming is non-binding (REVIEW.md § 12).
+    const firstSyllable = key.split(/\s+/u)[0] ?? key
+    if (!clip.url.toLowerCase().includes(firstSyllable.toLowerCase())) {
+      issues.push(
+        warn(
+          file,
+          `clip url does not reference '${firstSyllable}' — double check it wasn't copied from a different clip`,
           undefined,
           `${path}.url`,
         ),

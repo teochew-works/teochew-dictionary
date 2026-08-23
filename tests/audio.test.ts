@@ -2,12 +2,13 @@ import { describe, expect, it } from 'vitest'
 
 import { GITHUB_REPO, audioSchema } from '../src/schema/phonology.js'
 import { checkAudio } from '../src/validate/index.js'
-import { deriveReadingAudio } from '../src/build/enrich.js'
+import { deriveReadingAudio, deriveReadingWordAudio } from '../src/build/enrich.js'
 import { parsePengim } from '../src/phonology/syllable.js'
 import type { Source, SourceKind } from '../src/schema/entry.js'
-import { AUDIO_CLIP_URL, audioTable, makeClipFixture } from './helpers/audio-fixtures.js'
+import { AUDIO_CLIP_URL, AUDIO_WORD_CLIP_URL, audioTable, makeClipFixture } from './helpers/audio-fixtures.js'
 
 const VALID_URL = AUDIO_CLIP_URL
+const VALID_WORD_URL = AUDIO_WORD_CLIP_URL
 const VALID_CHECKSUM = `sha256:${'a'.repeat(64)}`
 
 function source(id: string, kind: SourceKind = 'import', licence?: string): Source {
@@ -114,6 +115,17 @@ describe('audioSchema', () => {
     })
     expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
   })
+
+  it('accepts wordClips alongside clips, same clip shape', () => {
+    const wordClip = clip({ url: VALID_WORD_URL })
+    expect(() =>
+      audioSchema.parse(audioTable({}, { 'dio5 ziu1': wordClip })),
+    ).not.toThrow()
+  })
+
+  it('accepts a file with no wordClips at all — optional, the common case', () => {
+    expect(audioSchema.parse(audio({ dio5: clip() })).wordClips).toBeUndefined()
+  })
 })
 
 describe('checkAudio', () => {
@@ -218,6 +230,49 @@ describe('checkAudio', () => {
     const issues = checkAudio('f.yaml', bad, 'chaozhou', varietyIds, sourceMap, legalSyllables)
     expect(issues).toEqual([])
   })
+
+  it('passes a clean wordClips entry', () => {
+    const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL }) })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toEqual([])
+  })
+
+  it('flags a wordClips key that does not parse as Peng\'im', () => {
+    const url = `https://github.com/${GITHUB_REPO}/releases/download/audio-lingualibre/not-pengim.opus`
+    const table = audioTable({}, { 'not pengim!!': clip({ url }) })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain("wordClips key 'not pengim!!' is not valid Peng'im")
+  })
+
+  it('flags a single-syllable wordClips key — belongs in clips instead', () => {
+    const table = audioTable({}, { dio5: clip({ url: VALID_URL }) })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain("'dio5' is a single syllable — belongs in 'clips', not 'wordClips'")
+  })
+
+  it('flags a wordClips key containing an illegal syllable', () => {
+    // 'ang1' parses as well-formed Peng'im but isn't in this fixture's legalSyllables set.
+    const table = audioTable({}, { 'dio5 ang1': clip({ url: VALID_WORD_URL }) })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain("'dio5 ang1' contains 'ang1', not a legal Peng'im syllable")
+  })
+
+  it("warns when a wordClips url doesn't reference the key's first syllable", () => {
+    const table = audioTable({}, { 'ziu1 dio5': clip({ url: VALID_URL }) })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ level: 'warning', path: 'wordClips.ziu1 dio5.url' })
+  })
+
+  it('flags an unresolved source on a wordClips entry', () => {
+    const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL, sources: ['nope'] }) })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain("unknown source 'nope'")
+  })
 })
 
 describe('deriveReadingAudio', () => {
@@ -239,7 +294,7 @@ describe('deriveReadingAudio', () => {
     const syllables = parsePengim('dio5 ziu1')
     const table = audio({ dio5: clip({ confidence: 'medium' }) })
     expect(deriveReadingAudio(syllables, table, sources)).toEqual([
-      { syllable: 'dio5', url: VALID_URL, confidence: 'medium', licence: 'CC-BY-4.0', attributions: [] },
+      { key: 'dio5', url: VALID_URL, confidence: 'medium', licence: 'CC-BY-4.0', attributions: [] },
       null,
     ])
   })
@@ -248,7 +303,7 @@ describe('deriveReadingAudio', () => {
     const syllables = parsePengim('dio5')
     const table = audio({ dio5: clip() })
     expect(deriveReadingAudio(syllables, table, sources)).toEqual([
-      { syllable: 'dio5', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] },
+      { key: 'dio5', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] },
     ])
   })
 
@@ -256,7 +311,7 @@ describe('deriveReadingAudio', () => {
     const syllables = parsePengim('dio5')
     const table = audio({ dio5: clip({ sources: ['teochew-dictionary-audio'] }) })
     expect(deriveReadingAudio(syllables, table, sources)).toEqual([
-      { syllable: 'dio5', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] },
+      { key: 'dio5', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] },
     ])
   })
 
@@ -265,7 +320,7 @@ describe('deriveReadingAudio', () => {
     const table = audio({ dio5: clip({ sources: ['audio-import-sa'] }) })
     expect(deriveReadingAudio(syllables, table, sources)).toEqual([
       {
-        syllable: 'dio5',
+        key: 'dio5',
         url: VALID_URL,
         confidence: 'high',
         licence: 'CC-BY-SA-4.0',
@@ -278,5 +333,58 @@ describe('deriveReadingAudio', () => {
     const syllables = parsePengim('dio5')
     const table = audio({ dio5: clip({ sources: ['unclassified'] }) })
     expect(() => deriveReadingAudio(syllables, table, sources)).toThrow(/not classified as permissive or share-alike/u)
+  })
+})
+
+describe('deriveReadingWordAudio', () => {
+  const sources = new Map<string, Source>(
+    [
+      source('fixture', 'import', 'CC-BY-4.0'),
+      source('lingualibre', 'import', 'CC-BY-SA-4.0'),
+      source('unclassified', 'import', 'CC0'),
+    ].map((s) => [s.id, s]),
+  )
+
+  it('returns null when the variety has no audio metadata', () => {
+    expect(deriveReadingWordAudio('dio5 ziu1', null, sources)).toBeNull()
+  })
+
+  it('returns null when the variety has audio metadata but no wordClips at all', () => {
+    const table = audio({ dio5: clip() })
+    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toBeNull()
+  })
+
+  it('returns null when wordClips exists but has no entry for this reading', () => {
+    const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL }) })
+    expect(deriveReadingWordAudio('ziu1 dio5', table, sources)).toBeNull()
+  })
+
+  it('resolves a word clip keyed by the exact reading string', () => {
+    const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL, confidence: 'medium' }) })
+    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toEqual({
+      key: 'dio5 ziu1',
+      url: VALID_WORD_URL,
+      confidence: 'medium',
+      licence: 'CC-BY-4.0',
+      attributions: [],
+    })
+  })
+
+  it('carries a non-BASE_LICENCE source through to licence and attributions', () => {
+    const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL, sources: ['lingualibre'] }) })
+    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toEqual({
+      key: 'dio5 ziu1',
+      url: VALID_WORD_URL,
+      confidence: 'high',
+      licence: 'CC-BY-SA-4.0',
+      attributions: ['lingualibre (CC-BY-SA-4.0)'],
+    })
+  })
+
+  it('throws when a clip cites a source with an unresolvable licence — trusted not to happen post-validate', () => {
+    const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL, sources: ['unclassified'] }) })
+    expect(() => deriveReadingWordAudio('dio5 ziu1', table, sources)).toThrow(
+      /not classified as permissive or share-alike/u,
+    )
   })
 })

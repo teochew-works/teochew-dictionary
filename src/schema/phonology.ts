@@ -158,6 +158,16 @@ export const audioSchema = z.object({
   }),
   /** Keyed by canonical Peng'im syllable, e.g. `dio5` — matches `syllable-inventory.yaml` item keys. */
   clips: z.record(audioClip),
+  /**
+   * Whole-word/phrase clips, keyed by a reading's full space-joined pengim
+   * string (e.g. `bhi7 jui2`) rather than a single syllable — see
+   * `data/phonology/REVIEW.md` § 16. Same shape as `clips`, deliberately not
+   * folded into it: the key space is different (syllable vs. reading
+   * string), and conflating them would make a lookup ambiguous for any
+   * single-syllable reading. No inheritance and no compositional fallback,
+   * same rule as `clips` — a reading either has a word clip or it doesn't.
+   */
+  wordClips: z.record(audioClip).optional(),
 })
 
 export const pojSchema = z.object({
