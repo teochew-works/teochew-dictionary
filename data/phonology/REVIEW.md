@@ -908,7 +908,10 @@ Wiktionary proposals) stayed separate from the Wiktionary importer itself.
 Bulk re-hosting is likewise not run here; the rehost CLI is built but
 invoked per-clip, at merge time. No web UI renders `wordAudio` — same as
 per-syllable `audio`, already out of scope for v1 (`web/src/components/
-EntryDetail.tsx`).
+EntryDetail.tsx`). *(That last point no longer holds: issue #114 shipped
+playback for both `audio` and `wordAudio` in `EntryDetail`; the display and
+clip-licence decisions are recorded in `web/README.md` § Architecture. The
+data side is unchanged — there is still no clip to play.)*
 
 ## Individual entries flagged `needs_review`
 
