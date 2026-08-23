@@ -19,9 +19,14 @@ import type { LocalRecordingProposal } from '../../src/importers/local-recording
 /** The Sounds tab is Chaozhou-only today — matches SOUNDS_VARIETY in src/build/sounds.ts. */
 export const VARIETY = 'chaozhou'
 
+export interface PublishedClip {
+  url: string
+  speaker?: string
+}
+
 export interface StatusResult {
-  /** Syllable keys with a published clip in data/phonology/audio/<variety>.yaml. */
-  published: string[]
+  /** Syllable keys with a published clip in data/phonology/audio/<variety>.yaml, with playback data. */
+  published: Record<string, PublishedClip>
   /** Syllable keys with a proposal already staged, awaiting `npm run merge:local-recording`. */
   pending: string[]
 }
@@ -37,7 +42,12 @@ export function getStatus(deps: StatusDeps = {}): StatusResult {
   const staged = readLocalRecordingStaging(deps.stagingDir)
 
   return {
-    published: Object.keys(audio?.clips ?? {}),
+    published: Object.fromEntries(
+      Object.entries(audio?.clips ?? {}).map(([pengim, clip]) => [
+        pengim,
+        clip.speaker ? { url: clip.url, speaker: clip.speaker } : { url: clip.url },
+      ]),
+    ),
     pending: (staged?.proposals ?? []).filter((p) => p.variety === VARIETY).map((p) => p.pengim),
   }
 }
