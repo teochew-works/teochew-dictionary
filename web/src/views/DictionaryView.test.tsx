@@ -1,7 +1,7 @@
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { DictionaryView } from './DictionaryView'
-import type { EnrichedEntry } from '../types/dict'
+import type { AudioReference, EnrichedEntry } from '../types/dict'
 
 const ENTRIES: EnrichedEntry[] = [
   {
@@ -64,5 +64,44 @@ describe('DictionaryView', () => {
     fireEvent.click(screen.getByText('潮州'))
     expect(screen.getByLabelText('Show licensing info')).toBeChecked()
     expect(screen.getByText(/Licence:/)).toBeInTheDocument()
+  })
+})
+
+describe('DictionaryView audio', () => {
+  const CLIP: AudioReference = {
+    key: 'dio5 ziu1',
+    url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou/dio5-ziu1.opus',
+    confidence: 'high',
+    licence: 'CC-BY-4.0',
+    attributions: ['Teochew Dictionary audio (CC-BY-4.0)'],
+  }
+
+  const WITH_CLIP: EnrichedEntry[] = [
+    { ...ENTRIES[0]!, readings: [{ ...ENTRIES[0]!.readings[0]!, wordAudio: CLIP }] },
+    { ...ENTRIES[0]!, id: 'other', headword: '汕頭' },
+  ]
+
+  beforeEach(() => {
+    vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined)
+    vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
+  })
+
+  afterEach(() => {
+    cleanup()
+    vi.restoreAllMocks()
+  })
+
+  it('stops a playing clip when a different entry is selected', () => {
+    render(<DictionaryView entries={WITH_CLIP} />)
+    fireEvent.click(screen.getByText('潮州'))
+    fireEvent.click(screen.getByRole('button', { name: /^Play whole-word/ }))
+    expect(screen.getByRole('button', { name: /^Play whole-word/ })).toHaveAttribute('aria-pressed', 'true')
+
+    fireEvent.click(screen.getByText('汕頭'))
+    expect(HTMLMediaElement.prototype.pause).toHaveBeenCalled()
+
+    // Back on the clip's own entry, nothing is playing any more.
+    fireEvent.click(screen.getByText('潮州'))
+    expect(screen.getByRole('button', { name: /^Play whole-word/ })).toHaveAttribute('aria-pressed', 'false')
   })
 })

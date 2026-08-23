@@ -114,7 +114,10 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
       </div>
       <div className="dictionary-view__detail-pane">
         {selected ? (
-          <EntryDetail entry={selected} showLicence={showLicence} />
+          // Keyed so selecting another entry remounts the pane: EntryDetail
+          // owns the audio player, and a clip should stop when the user
+          // navigates away from the entry it belongs to.
+          <EntryDetail key={selected.id} entry={selected} showLicence={showLicence} />
         ) : (
           <div className="dictionary-view__empty-state">
             <ruby className="dictionary-view__empty-state-headline" aria-hidden="true">
