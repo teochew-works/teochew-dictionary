@@ -1,0 +1,75 @@
+# Audio clip metadata for the 'chaozhou' variety (data/phonology/REVIEW.md § 11, § 12).
+#
+# Hand-maintained, not wholly regenerated: entries arrive via `npm run
+# merge:lingualibre` (issue #106) or a direct hand edit. Editing an existing
+# clip by hand is fine — just keep it valid against audioSchema in
+# src/schema/phonology.ts, and re-run `npm run validate` after.
+audio:
+  id: chaozhou
+  variety: chaozhou
+clips: {}
+wordClips:
+  dao7 suang2:
+    url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dao7-suang2.wav
+    confidence: low
+    sources:
+      - lingualibre-cc0
+    speaker: Youvalentine
+    recorded: 2023-05-14
+    checksum: sha256:ad1c39f4d326515bbec0beec94241681a40419fa99c6c56496a2f172d3c478f0
+  di7 dou5:
+    url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/di7-dou5.wav
+    confidence: low
+    sources:
+      - lingualibre-cc0
+    speaker: Apsaltini
+    recorded: 2023-05-12
+    checksum: sha256:f22798fb0210893122c53e1b3de6b9705646492f75178cfc721feb80c6bf956f
+  goin1 tao5:
+    url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/goin1-tao5.wav
+    confidence: low
+    sources:
+      - lingualibre-cc0
+    speaker: Youvalentine
+    recorded: 2023-05-14
+    checksum: sha256:c2c5ed12f43bcd55d9c7c6353e3b4b760f6aafff8a27c6e9401190c2f75ef9a3
+  ou7 ni5:
+    url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/ou7-ni5.wav
+    confidence: low
+    sources:
+      - lingualibre-cc0
+    speaker: Youvalentine
+    recorded: 2023-05-14
+    checksum: sha256:5f5a696d29732a5a739646c6ae66fec94b29c45da54bc90f1c5a72679953f36c
+  mang7 mang7:
+    url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/mang7-mang7.wav
+    confidence: low
+    sources:
+      - lingualibre-cc0
+    speaker: Youvalentine
+    recorded: 2023-05-14
+    checksum: sha256:3ae2c2325519507a5efd34c3bf4df05e93de6729f9d1adc2ac43dafc7fd02751
+  ming7 pung5:
+    url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/ming7-pung5.wav
+    confidence: low
+    sources:
+      - lingualibre-cc0
+    speaker: Youvalentine
+    recorded: 2023-05-12
+    checksum: sha256:08f7ae3c377bf7109585a20946ef457f3ba24c006bf9cb49de9d532f79e3ea0a
+  si7 iu5:
+    url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/si7-iu5.wav
+    confidence: low
+    sources:
+      - lingualibre-cc0
+    speaker: Siwly
+    recorded: 2023-05-12
+    checksum: sha256:a4129398baaf49be425308b69bf084e53f967c250ee1043a7e96dba7407e7447
+  pang1 iu5:
+    url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/pang1-iu5.wav
+    confidence: low
+    sources:
+      - lingualibre-cc0
+    speaker: Youvalentine
+    recorded: 2023-05-12
+    checksum: sha256:da423874b6398c10c3d7ed42d60d46b396c3e4cdb741d08614b64d8b988f8580
