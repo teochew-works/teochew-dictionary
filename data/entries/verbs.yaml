@@ -60572,3 +60572,18 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: giê3-叽
+    headword: 叽
+    readings:
+      - pengim: giê3
+      - pengim: gio3
+    senses:
+      - pos: verb
+        gloss_en: ["to call (rare)", "to cry out (rare)"]
+        gloss_zh: [叽]
+        note: The page's Etymology 1 (the only etymology carrying a Teochew reading — giê3 explicitly tagged Chaozhou, gio3 untagged) gives these two rare verb senses; separate etymologies for "variant of 叫" and "simplified form of 嘰" exist on the same page but are not tied to either Teochew reading.
+    frequency: 2
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
