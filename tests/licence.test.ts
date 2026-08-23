@@ -18,9 +18,10 @@ const UNIHAN = source('unihan', 'Unicode-DFS-2016')
 const WIKTIONARY = source('wiktionary', 'CC-BY-SA-4.0')
 const CEDICT = source('cedict', 'CC-BY-SA-4.0')
 const PENGIM_1960 = source('pengim-1960', 'unknown')
+const LINGUALIBRE_CC0 = source('lingualibre-cc0', 'CC0')
 
 const sources = new Map(
-  [SEED, UNIHAN, WIKTIONARY, CEDICT, PENGIM_1960].map((s) => [s.id, s]),
+  [SEED, UNIHAN, WIKTIONARY, CEDICT, PENGIM_1960, LINGUALIBRE_CC0].map((s) => [s.id, s]),
 )
 
 describe('resolveLicence', () => {
@@ -67,6 +68,38 @@ describe('resolveLicence', () => {
     const result = resolveLicence(['pengim-1960'], sources)
     expect(result.ok).toBe(false)
     expect(result.ok === false && result.reason).toContain("'pengim-1960'")
+  })
+
+  it('reports CC0 itself, with no attribution owed, when every source is public-domain', () => {
+    // The lingualibre-cc0 case (data/sources.yaml, issue #106): a clip that IS
+    // the externally-sourced material, not an adaptation combining it with
+    // project-original text, so it isn't forced back to BASE_LICENCE the way
+    // a merely-cited permissive source would be — and CC0 waives attribution.
+    expect(resolveLicence(['lingualibre-cc0'], sources)).toEqual({ ok: true, licence: 'CC0', attributions: [] })
+  })
+
+  it('falls back to BASE_LICENCE when a public-domain source is mixed with another permissive one', () => {
+    // Once a CC0 source sits alongside anything else, the record is a
+    // collection/adaptation like any other and BASE_LICENCE governs as usual
+    // — the non-CC0 source still owes its own attribution.
+    expect(resolveLicence(['seed', 'lingualibre-cc0'], sources)).toEqual({
+      ok: true,
+      licence: BASE_LICENCE,
+      attributions: [],
+    })
+    expect(resolveLicence(['unihan', 'lingualibre-cc0'], sources)).toEqual({
+      ok: true,
+      licence: BASE_LICENCE,
+      attributions: ['unihan (Unicode-DFS-2016)'],
+    })
+  })
+
+  it('lets a share-alike source override even when mixed with a public-domain one', () => {
+    expect(resolveLicence(['wiktionary', 'lingualibre-cc0'], sources)).toEqual({
+      ok: true,
+      licence: 'CC-BY-SA-4.0',
+      attributions: ['wiktionary (CC-BY-SA-4.0)'],
+    })
   })
 
   it('rejects sources citing genuinely different share-alike licences', () => {

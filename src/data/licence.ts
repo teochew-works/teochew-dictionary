@@ -18,11 +18,19 @@ import type { Source } from '../schema/entry.js'
  * *governs* redistribution of the entry — BASE_LICENCE, unless a share-alike
  * source overrides it, since a merged record is an adaptation, not a mere
  * collection, and can't keep its parts separately licensed. `attributions` is
- * whose notice must additionally be retained — every non-BASE_LICENCE source
- * cited, share-alike or not. A permissive source whose text differs from
- * BASE_LICENCE (e.g. `unihan`, Unicode-DFS-2016) never changes which licence
- * governs, but it still owes its own notice; folding it silently into
- * BASE_LICENCE would lose that.
+ * whose notice must additionally be retained — every non-BASE_LICENCE,
+ * non-public-domain source cited, share-alike or not. A permissive source
+ * whose text differs from BASE_LICENCE (e.g. `unihan`, Unicode-DFS-2016)
+ * never changes which licence governs, but it still owes its own notice;
+ * folding it silently into BASE_LICENCE would lose that.
+ *
+ * `public-domain` (CC0) sources are a third case: unlike a merely-cited
+ * permissive source, a clip whose *every* source is CC0 carries no rights of
+ * its own to fall back to BASE_LICENCE for — see data/sources.yaml's
+ * `lingualibre-cc0` — so `licence` reports CC0 itself, and no attribution is
+ * owed (CC0 explicitly waives that). Mixed with any non-public-domain source,
+ * it's an adaptation/collection like any other and falls back to BASE_LICENCE
+ * as usual, same as a merely-permissive citation.
  *
  * BASE_LICENCE is deliberately not the project's code licence (BSD-3-Clause,
  * see ../../LICENSE). A software licence's "redistributions of source code /
@@ -32,13 +40,13 @@ import type { Source } from '../schema/entry.js'
 
 export const BASE_LICENCE = 'CC-BY-4.0'
 
-type LicenceClass = 'permissive' | 'share-alike'
+type LicenceClass = 'permissive' | 'share-alike' | 'public-domain'
 
 const LICENCE_CLASS: Record<string, LicenceClass> = {
   'CC-BY-4.0': 'permissive',
   'BSD-3-Clause': 'permissive',
   'Unicode-DFS-2016': 'permissive',
-  CC0: 'permissive',
+  CC0: 'public-domain',
   'CC-BY-SA-4.0': 'share-alike',
 }
 
@@ -53,9 +61,11 @@ export type LicenceResolution =
  */
 export function resolveLicence(sourceIds: string[], sources: Map<string, Source>): LicenceResolution {
   const shareAlike = new Set<string>()
+  const publicDomain = new Set<string>()
   // Keyed by source id, not the formatted string, so two distinct sources
   // that happen to share a name and licence don't collapse into one notice.
   const attributions = new Map<string, string>()
+  let allPublicDomain = sourceIds.length > 0
 
   for (const id of sourceIds) {
     const source = sources.get(id)
@@ -65,19 +75,37 @@ export function resolveLicence(sourceIds: string[], sources: Map<string, Source>
       return {
         ok: false,
         reason: `source '${id}' has licence '${licence ?? 'unresolved'}', which is not classified as ` +
-          'permissive or share-alike',
+          'permissive, share-alike, or public-domain',
       }
     }
     if (cls === 'share-alike') shareAlike.add(licence!)
-    if (licence !== BASE_LICENCE) attributions.set(id, `${source!.name} (${licence})`)
+    if (cls === 'public-domain') publicDomain.add(licence!)
+    else allPublicDomain = false
+    // CC0 waives attribution outright — data/sources.yaml's lingualibre-cc0 —
+    // so a public-domain source never owes a notice, unlike a merely
+    // permissive-but-distinct one (e.g. unihan).
+    if (cls !== 'public-domain' && licence !== BASE_LICENCE) attributions.set(id, `${source!.name} (${licence})`)
   }
 
   if (shareAlike.size > 1) {
     return { ok: false, reason: `sources cite incompatible share-alike licences: ${[...shareAlike].join(', ')}` }
   }
 
-  const [only] = shareAlike
-  return { ok: true, licence: only ?? BASE_LICENCE, attributions: [...attributions.values()].sort() }
+  const [onlyShareAlike] = shareAlike
+  if (onlyShareAlike) return { ok: true, licence: onlyShareAlike, attributions: [...attributions.values()].sort() }
+
+  if (allPublicDomain) {
+    if (publicDomain.size > 1) {
+      return {
+        ok: false,
+        reason: `sources cite incompatible public-domain licences: ${[...publicDomain].join(', ')}`,
+      }
+    }
+    const [onlyPublicDomain] = publicDomain
+    return { ok: true, licence: onlyPublicDomain!, attributions: [] }
+  }
+
+  return { ok: true, licence: BASE_LICENCE, attributions: [...attributions.values()].sort() }
 }
 
 /**

@@ -332,7 +332,9 @@ describe('deriveReadingAudio', () => {
   it('throws when a clip cites a source with an unresolvable licence — trusted not to happen post-validate', () => {
     const syllables = parsePengim('dio5')
     const table = audio({ dio5: clip({ sources: ['unclassified'] }) })
-    expect(() => deriveReadingAudio(syllables, table, sources)).toThrow(/not classified as permissive or share-alike/u)
+    expect(() => deriveReadingAudio(syllables, table, sources)).toThrow(
+      /not classified as permissive, share-alike, or public-domain/u,
+    )
   })
 })
 
@@ -384,7 +386,7 @@ describe('deriveReadingWordAudio', () => {
   it('throws when a clip cites a source with an unresolvable licence — trusted not to happen post-validate', () => {
     const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL, sources: ['unclassified'] }) })
     expect(() => deriveReadingWordAudio('dio5 ziu1', table, sources)).toThrow(
-      /not classified as permissive or share-alike/u,
+      /not classified as permissive, share-alike, or public-domain/u,
     )
   })
 })
