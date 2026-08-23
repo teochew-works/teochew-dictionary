@@ -109,3 +109,25 @@ describe('groupEntries — category', () => {
     expect(groups.map((g) => g.label)).toEqual(['Adjective', 'Verb'])
   })
 })
+
+describe('groupEntries — level', () => {
+  it('groups by level', () => {
+    const a2 = makeEntry({ id: 'a2', headword: 'X', level: 'A2' })
+    const groups = groupEntries([a2], 'level')
+    expect(groups).toEqual([{ key: 'A2', label: 'A2', entries: [a2] }])
+  })
+
+  it('falls back to an "Untiered" group when the entry has no level', () => {
+    const untiered = makeEntry({ id: 'untiered', headword: 'Y' })
+    const groups = groupEntries([untiered], 'level')
+    expect(groups).toEqual([{ key: 'untiered', label: 'Untiered', entries: [untiered] }])
+  })
+
+  it('sorts groups in CEFR order, not alphabetically, with Untiered last', () => {
+    const b1 = makeEntry({ id: 'b1', headword: 'B', level: 'B1' })
+    const a2 = makeEntry({ id: 'a2', headword: 'A', level: 'A2' })
+    const untiered = makeEntry({ id: 'untiered', headword: 'C' })
+    const groups = groupEntries([b1, a2, untiered], 'level')
+    expect(groups.map((g) => g.key)).toEqual(['A2', 'B1', 'untiered'])
+  })
+})

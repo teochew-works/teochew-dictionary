@@ -1,7 +1,9 @@
-import type { EnrichedEntry, PartOfSpeech } from '../types/dict'
+import type { EnrichedEntry, Level, PartOfSpeech } from '../types/dict'
 
-export type SortMode = 'headword' | 'english' | 'tone' | 'category'
+export type SortMode = 'headword' | 'english' | 'tone' | 'category' | 'level'
 export type ToneSource = 'citation' | 'sandhi'
+
+const LEVEL_ORDER: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
 
 export interface EntryGroup {
   key: string
@@ -69,18 +71,29 @@ function categoryGroupKey(entry: EnrichedEntry): { key: string; label: string } 
   return { key: 'other', label: 'Other' }
 }
 
+function levelGroupKey(entry: EnrichedEntry): { key: string; label: string } {
+  const level = entry.level
+  return level ? { key: level, label: level } : { key: 'untiered', label: 'Untiered' }
+}
+
 /**
  * Groups `entries` by tone (citation or sandhi tone digit of the first
- * reading's first syllable) or category (first tag, falling back to part of
- * speech when the entry has no tags). Tone groups sort numerically 1-8 with
- * any unparseable-tone "Other" group last; category groups sort
- * alphabetically by label.
+ * reading's first syllable), category (first tag, falling back to part of
+ * speech when the entry has no tags), or CEFR level. Tone groups sort
+ * numerically 1-8 with any unparseable-tone "Other" group last; level groups
+ * sort A1-C2 with an untiered-entry "Untiered" group last; category groups
+ * sort alphabetically by label.
  */
-export function groupEntries(entries: EnrichedEntry[], mode: 'tone' | 'category', toneSource: ToneSource = 'citation'): EntryGroup[] {
+export function groupEntries(
+  entries: EnrichedEntry[],
+  mode: 'tone' | 'category' | 'level',
+  toneSource: ToneSource = 'citation',
+): EntryGroup[] {
   const groups = new Map<string, EntryGroup>()
 
   for (const entry of entries) {
-    const { key, label } = mode === 'tone' ? toneGroupKey(entry, toneSource) : categoryGroupKey(entry)
+    const { key, label } =
+      mode === 'tone' ? toneGroupKey(entry, toneSource) : mode === 'category' ? categoryGroupKey(entry) : levelGroupKey(entry)
     let group = groups.get(key)
     if (!group) {
       group = { key, label, entries: [] }
@@ -92,6 +105,9 @@ export function groupEntries(entries: EnrichedEntry[], mode: 'tone' | 'category'
   const result = [...groups.values()]
   if (mode === 'tone') {
     result.sort((a, b) => (a.key === 'other' ? 9 : Number(a.key)) - (b.key === 'other' ? 9 : Number(b.key)))
+  } else if (mode === 'level') {
+    const rank = (key: string) => (key === 'untiered' ? LEVEL_ORDER.length : LEVEL_ORDER.indexOf(key as Level))
+    result.sort((a, b) => rank(a.key) - rank(b.key))
   } else {
     result.sort((a, b) => collator.compare(a.label, b.label))
   }
