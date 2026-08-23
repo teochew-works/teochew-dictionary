@@ -100,6 +100,37 @@ sources:
       AUDIO-CONSENT.md process; consent for these clips already happened
       through Commons' own upload flow, not this project's.
 
+  - id: lingualibre-ccby4
+    name: Lingua Libre / Wikimedia Commons (Teochew pronunciation, CC-BY-4.0)
+    kind: import
+    licence: CC-BY-4.0
+    url: https://commons.wikimedia.org/wiki/Category:Teochew_pronunciation
+    retrieved: '2026-08-23'
+    note: >-
+      A minority of files in the same Commons category as `lingualibre`
+      report CC-BY-4.0, not the category's CC-BY-SA-4.0 default, in their own
+      `imageinfo` licence metadata — per-file, not a blanket recheck of the
+      whole corpus. Split into its own id rather than folded into
+      `lingualibre` so a clip's `sources` never overstates the share-alike
+      obligation a specific file's actual licence doesn't carry. Same
+      provenance/consent story as `lingualibre` otherwise — see that id's
+      note.
+
+  - id: lingualibre-cc0
+    name: Lingua Libre / Wikimedia Commons (Teochew pronunciation, CC0)
+    kind: import
+    licence: CC0
+    url: https://commons.wikimedia.org/wiki/Category:Teochew_pronunciation
+    retrieved: '2026-08-23'
+    note: >-
+      Same split as `lingualibre-ccby4`, for files whose own `imageinfo`
+      licence metadata reports CC0 (public domain dedication) instead of the
+      category's CC-BY-SA-4.0 default. CC0 needs no attribution at all, but
+      this project credits it anyway via the clip's `speaker` field, the same
+      courtesy already extended to other permissive-but-distinct sources
+      (e.g. `unihan`). Same provenance/consent story as `lingualibre`
+      otherwise — see that id's note.
+
   # ─── Reference works (kind: reference) ─────────────────────────────────────
   #
   # Cited by phonology mappings (`sources:` in varieties/*.yaml) to record the
