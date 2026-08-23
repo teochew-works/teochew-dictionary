@@ -19,10 +19,11 @@ import { loadWiktionaryWordlist, writeWiktionaryWordlist } from '../data/wiktion
  *                                   each processed headword's status instead of
  *                                   overwriting, so repeated chunked runs are
  *                                   resumable.
- *   wiktionary --backfill-tags      re-derive tags/alt_of for every proposal
- *                                   already in data/staging/wiktionary.yaml
- *                                   from the local wiktextract cache (issue
- *                                   #102) — no live fetch, no headwords needed.
+ *   wiktionary --backfill-tags      re-derive tags/topics/alt_of for every
+ *                                   proposal already in
+ *                                   data/staging/wiktionary.yaml from the
+ *                                   local wiktextract cache (issue #102,
+ *                                   #105) — no live fetch, no headwords needed.
  *
  * Both write to data/staging/ for review; neither touches data/entries/.
  */
@@ -33,8 +34,8 @@ const USAGE = `usage:
   npm run import -- wiktionary --from-wordlist [--limit=N] [--delay=MS]
                                                 (to_fetch items from
                                                  data/wordlists/wiktionary-teochew-index.yaml)
-  npm run import -- wiktionary --backfill-tags (re-derive tags/alt_of for
-                                                 already-staged proposals)
+  npm run import -- wiktionary --backfill-tags (re-derive tags/topics/alt_of
+                                                 for already-staged proposals)
 
 Both write proposals to data/staging/ for human review. Neither modifies data/entries/.`
 
@@ -85,10 +86,10 @@ switch (source) {
         source: 'wiktionary',
         proposals,
         misses: staged.misses,
-        notes: [`backfilled tags/alt_of from the wiktextract cache: ${after} of ${proposals.length} proposal(s) now tagged (${after - before} newly)`],
+        notes: [`backfilled tags/topics/alt_of from the wiktextract cache: ${after} of ${proposals.length} proposal(s) now tagged (${after - before} newly)`],
       })
       console.log(`backfilled tags → ${out}`)
-      console.log(`${after} of ${proposals.length} proposal(s) now carry tags/alt_of (${after - before} newly tagged)`)
+      console.log(`${after} of ${proposals.length} proposal(s) now carry tags/topics/alt_of (${after - before} newly tagged)`)
       break
     }
 

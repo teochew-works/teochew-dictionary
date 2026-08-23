@@ -10,12 +10,13 @@ import { ENTRIES_DIR } from '../paths.js'
 import { entryFileSchema } from '../schema/entry.js'
 
 /**
- * `npm run backfill:wiktionary-tags [-- --write]` (issue #102)
+ * `npm run backfill:wiktionary-tags [-- --write]` (issue #102, #105)
  *
- * Backfills `senses[].tags`/`alt_of` onto entries already hand-merged into
- * data/entries/*.yaml, matching each sense against the local wiktextract
- * cache (see src/importers/entry-tag-matching.js for the matching rules).
- * Dry-run by default — prints a summary only; pass --write to apply.
+ * Backfills `senses[].tags`/`topics`/`alt_of` onto entries already
+ * hand-merged into data/entries/*.yaml, matching each sense against the
+ * local wiktextract cache (see src/importers/entry-tag-matching.js for the
+ * matching rules). Dry-run by default — prints a summary only; pass --write
+ * to apply.
  *
  * Deliberately not part of any importer: importers never write to
  * data/entries/ (see src/importers/types.ts), but this script edits data
@@ -30,9 +31,9 @@ import { entryFileSchema } from '../schema/entry.js'
  * entries — confirmed on this dataset before settling on this approach.
  * Instead, this only ever *reads* structure from a parsed `Document` (node
  * `.range`s, byte offsets into the original text) and splices new
- * `tags:`/`alt_of:` lines directly into the pristine source string —
- * `doc.toString()` is never called on a whole file, so every byte this
- * script doesn't touch survives untouched.
+ * `tags:`/`topics:`/`alt_of:` lines directly into the pristine source
+ * string — `doc.toString()` is never called on a whole file, so every byte
+ * this script doesn't touch survives untouched.
  */
 
 const write = process.argv.slice(2).includes('--write')
@@ -74,7 +75,7 @@ for (const file of listEntryFiles()) {
     // buildCandidates's doc comment for why untagged ones still count for
     // cardinality — so check for actual signal before counting this entry as
     // matched, not just for a wiktextract record existing at all.
-    if (!candidates.some((c) => c.tags.length > 0 || c.altOf.length > 0)) return
+    if (!candidates.some((c) => c.tags.length > 0 || c.topics.length > 0 || c.altOf.length > 0)) return
     entriesMatched += 1
 
     const matches = matchEntrySenses(
@@ -94,6 +95,7 @@ for (const file of listEntryFiles()) {
       const indent = indentOf(senseNode, raw)
       const text =
         (match.tags.length > 0 ? fieldLine(indent, 'tags', match.tags) : '') +
+        (match.topics.length > 0 ? fieldLine(indent, 'topics', match.topics) : '') +
         (match.altOf.length > 0 ? fieldLine(indent, 'alt_of', match.altOf) : '')
       const [, end] = senseNode.range as [number, number, number]
       edits.push({ offset: end, text })

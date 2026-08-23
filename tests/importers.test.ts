@@ -122,6 +122,23 @@ describe('importWiktionary', () => {
     const r = await importWiktionary(['潮州'], '2026-07-25', opts)
     expect(r.proposals[0]?.senses).toBeUndefined()
   })
+
+  it('attaches topics from the wiktextract index alongside the fetched reading', async () => {
+    const index = new Map<string, WiktextractRecord[]>([
+      [
+        '潮州',
+        [
+          {
+            word: '潮州',
+            pos: 'proper noun',
+            senses: [{ glosses: ['a city'], topics: ['geography'] }],
+          },
+        ],
+      ],
+    ])
+    const r = await importWiktionary(['潮州'], '2026-07-25', { ...opts, wiktextractIndex: index })
+    expect(r.proposals[0]?.senses).toEqual([{ pos: 'proper noun', topics: ['geography'] }])
+  })
 })
 
 describe('proposeSensesFromWiktextract', () => {
@@ -154,6 +171,31 @@ describe('proposeSensesFromWiktextract', () => {
       ['犬', [{ word: '犬', senses: [{ glosses: ['dog'], tags: ['Cantonese', 'Sichuanese'] }] }]],
     ])
     expect(proposeSensesFromWiktextract('犬', index)).toEqual([])
+  })
+
+  it('carries topics alongside pos and tags', () => {
+    const index = new Map<string, WiktextractRecord[]>([
+      [
+        '馬',
+        [
+          {
+            word: '馬',
+            pos: 'noun',
+            senses: [{ glosses: ['knight (xiangqi piece)'], tags: ['slang'], topics: ['board-games', 'games', 'xiangqi'] }],
+          },
+        ],
+      ],
+    ])
+    expect(proposeSensesFromWiktextract('馬', index)).toEqual([
+      { pos: 'noun', tags: ['slang'], topics: ['board-games', 'games', 'xiangqi'] },
+    ])
+  })
+
+  it('keeps a sense on topics signal alone, even with no tags or alt_of', () => {
+    const index = new Map<string, WiktextractRecord[]>([
+      ['犬', [{ word: '犬', pos: 'noun', senses: [{ glosses: ['dog'], topics: ['zoology'] }] }]],
+    ])
+    expect(proposeSensesFromWiktextract('犬', index)).toEqual([{ pos: 'noun', topics: ['zoology'] }])
   })
 
   it('collects senses across every record for a multi-section headword', () => {
@@ -200,6 +242,14 @@ describe('backfillStagedTags', () => {
     ])
     const [backfilled] = backfillStagedTags([stagedProposal('馬')], { wiktextractIndex: index })
     expect(backfilled).toMatchObject({ headword: '馬', readings: [{ pengim: 'ê5', variety: 'chaozhou' }], flags: [] })
+  })
+
+  it('attaches a topics-only proposal', () => {
+    const index = new Map<string, WiktextractRecord[]>([
+      ['馬', [{ word: '馬', senses: [{ glosses: ['horse'], topics: ['zoology'] }] }]],
+    ])
+    const [backfilled] = backfillStagedTags([stagedProposal('馬')], { wiktextractIndex: index })
+    expect(backfilled?.senses).toEqual([{ topics: ['zoology'] }])
   })
 })
 

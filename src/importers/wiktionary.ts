@@ -8,7 +8,7 @@ import {
   type ProposedSense,
 } from './types.js'
 import { loadWiktextractIndex, type WiktextractRecord } from './wiktextract.js'
-import { extractAltOf, mapWiktextractTags } from './wiktionary-tags.js'
+import { extractAltOf, mapWiktextractTags, mapWiktextractTopics } from './wiktionary-tags.js'
 
 /**
  * Wiktionary importer — the one open source that actually carries Teochew
@@ -147,11 +147,11 @@ async function fetchWikitext(title: string): Promise<string | null> {
 }
 
 /**
- * Builds tag/alt-of-only senses for a headword from the wiktextract index
- * (issue #84/#102) — never a gloss: the importer never fetches one (licence
- * hygiene, see the module doc comment above), so a proposed sense here always
- * omits `gloss_en` and exists purely to carry `tags`/`alt_of` signal for
- * whoever hand-merges the proposal.
+ * Builds tag/topic/alt-of-only senses for a headword from the wiktextract
+ * index (issue #84/#102/#105) — never a gloss: the importer never fetches one
+ * (licence hygiene, see the module doc comment above), so a proposed sense
+ * here always omits `gloss_en` and exists purely to carry `tags`/`topics`/
+ * `alt_of` signal for whoever hand-merges the proposal.
  */
 export function proposeSensesFromWiktextract(
   headword: string,
@@ -161,11 +161,13 @@ export function proposeSensesFromWiktextract(
   for (const record of index.get(headword) ?? []) {
     for (const sense of record.senses ?? []) {
       const tags = mapWiktextractTags(sense.tags)
+      const topics = mapWiktextractTopics(sense.topics)
       const alt_of = extractAltOf(sense.alt_of)
-      if (tags.length === 0 && alt_of.length === 0) continue
+      if (tags.length === 0 && topics.length === 0 && alt_of.length === 0) continue
       proposed.push({
         ...(record.pos ? { pos: record.pos } : {}),
         ...(tags.length > 0 ? { tags } : {}),
+        ...(topics.length > 0 ? { topics } : {}),
         ...(alt_of.length > 0 ? { alt_of } : {}),
       })
     }
@@ -259,10 +261,11 @@ export interface BackfillTagsOptions {
 }
 
 /**
- * Re-derives `tags`/`alt_of` senses for already-staged proposals (issue
- * #102's backfill of the ~15,845 proposals in data/staging/wiktionary.yaml)
- * purely from the local wiktextract cache — no live fetch, so it's cheap to
- * re-run as the cache or the tag mapping in ./wiktionary-tags.js changes.
+ * Re-derives `tags`/`topics`/`alt_of` senses for already-staged proposals
+ * (issue #102's backfill of the ~15,845 proposals in
+ * data/staging/wiktionary.yaml, issue #105's `topics` extension) purely from
+ * the local wiktextract cache — no live fetch, so it's cheap to re-run as the
+ * cache or the tag mapping in ./wiktionary-tags.js changes.
  */
 export function backfillStagedTags(proposals: Proposal[], options: BackfillTagsOptions = {}): Proposal[] {
   const { wiktextractIndex = loadWiktextractIndex() } = options

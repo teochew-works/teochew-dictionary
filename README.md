@@ -682,9 +682,44 @@ original file) rather than a parse→stringify round-trip: these files are
 hand-typed, not machine-generated, so `yaml`'s own stringifier doesn't
 reproduce them byte-for-byte — it rewraps folded scalars to its own line
 width, restyles flow collections (`[one, "1"]` → `[ one, "1" ]`), and drops
-blank-line grouping between entries. Splicing new `tags:`/`alt_of:` lines
-directly into the source string, at the exact offset a parsed node's range
-reports, keeps every byte the script doesn't touch untouched.
+blank-line grouping between entries. Splicing new `tags:`/`topics:`/`alt_of:`
+lines directly into the source string, at the exact offset a parsed node's
+range reports, keeps every byte the script doesn't touch untouched.
+
+### Wiktionary sense topics (issue #105)
+
+`senses[].topics` (`src/schema/entry.ts`) is a sibling field to
+`senses[].tags`, sourced from wiktextract's own `senses[].topics`
+(`.cache/teochew-relevant.min.jsonl`, see #84) — a separate list wiktextract
+already splits out at extraction time. Where `tags` carries usage/register
+signal (`dialectal`, `obsolete`, ...), `topics` carries subject-matter/domain
+labels: `zoology`, `cooking`, `military`, `sciences`, .... A frequency pass
+over the full cache (32,167 records / 62,020 senses) found `topics` present
+on 4.80% of senses (vs. 47.93% for `tags`) — sparser, but 1,866 of those
+senses carry topics with no `tags` at all, so it's genuinely new signal, not
+a duplicate of what `tags` already covers. Topics arrays are wiktextract's
+full hierarchical ancestor chain for a sense (e.g.
+`["computing","engineering","mathematics","natural-sciences","physical-sciences","sciences"]`
+for a computing sense of "child"), pre-sorted alphabetically, so this project
+doesn't re-sort them.
+
+**No capitalization filter needed.** Unlike `tags`, where a capitalized
+value signals place/topolect noise to drop, every capitalized `topics` value
+found in the frequency pass (`ACG`, `BDSM`, `Buddhism`, `Buddhist`,
+`Catholicism`, `Chinese-cuisine`, `Christianity`, `Islam`, `LGBT`,
+`Protestantism`) is a genuine proper-noun domain name, not noise — and no
+`en:`-prefixed or namespaced junk values exist either. So
+`mapWiktextractTopics` (`src/importers/wiktionary-tags.ts`) only trims,
+drops empty entries, and dedupes; it does no capitalization-based filtering.
+
+Otherwise `topics` rides the exact same pipeline `tags`/`alt_of` already
+use: `npm run import -- wiktionary [...]` and `npm run import -- wiktionary
+--backfill-tags` carry `topics` on proposed senses alongside `tags`/`alt_of`
+(`proposeSensesFromWiktextract`, `src/importers/wiktionary.ts`), and `npm
+run backfill:wiktionary-tags [-- --write]` writes `topics:` lines onto
+already-merged entries in `data/entries/*.yaml` the same way it writes
+`tags:`/`alt_of:` (`src/importers/entry-tag-matching.ts`,
+`src/cli/backfill-wiktionary-tags.ts`).
 
 ---
 

@@ -1,6 +1,6 @@
 import type { PartOfSpeech } from '../schema/entry.js'
 import type { WiktextractRecord } from './wiktextract.js'
-import { extractAltOf, mapWiktextractTags } from './wiktionary-tags.js'
+import { extractAltOf, mapWiktextractTags, mapWiktextractTopics } from './wiktionary-tags.js'
 
 /**
  * Wiktextract's raw `pos` strings, mapped to this dictionary's closed
@@ -39,13 +39,14 @@ const POS_MAP: Record<string, PartOfSpeech> = {
 export interface WiktextractCandidate {
   pos?: PartOfSpeech
   tags: string[]
+  topics: string[]
   altOf: string[]
 }
 
 /**
  * Every wiktextract sense across a headword and its variant writings,
  * tag-mapped and pos-mapped and ready to match against an entry's own
- * senses — including senses with no tag/alt_of signal of their own.
+ * senses — including senses with no tag/topic/alt_of signal of their own.
  *
  * Keeping the untagged senses matters for `matchEntrySenses`'s single-sense
  * shortcut: a headword can have several unrelated senses on one Wiktionary
@@ -64,7 +65,12 @@ export function buildCandidates(headwords: string[], index: Map<string, Wiktextr
     for (const record of index.get(headword) ?? []) {
       const pos = record.pos ? POS_MAP[record.pos] : undefined
       for (const sense of record.senses ?? []) {
-        candidates.push({ pos, tags: mapWiktextractTags(sense.tags), altOf: extractAltOf(sense.alt_of) })
+        candidates.push({
+          pos,
+          tags: mapWiktextractTags(sense.tags),
+          topics: mapWiktextractTopics(sense.topics),
+          altOf: extractAltOf(sense.alt_of),
+        })
       }
     }
   }
@@ -73,6 +79,7 @@ export function buildCandidates(headwords: string[], index: Map<string, Wiktextr
 
 export interface SenseMatch {
   tags: string[]
+  topics: string[]
   altOf: string[]
 }
 
@@ -88,11 +95,14 @@ export function matchEntrySenses(entrySensePos: PartOfSpeech[], candidates: Wikt
   if (candidates.length === 0) return matches
 
   // Only records a match when there's actually something to attach — a
-  // candidate can legitimately win the match and still carry no tags/alt_of
-  // of its own (e.g. it's counted for cardinality but was filtered to
-  // nothing), in which case there's nothing to write for that sense.
+  // candidate can legitimately win the match and still carry no
+  // tags/topics/alt_of of its own (e.g. it's counted for cardinality but was
+  // filtered to nothing), in which case there's nothing to write for that
+  // sense.
   const record = (i: number, c: WiktextractCandidate) => {
-    if (c.tags.length > 0 || c.altOf.length > 0) matches.set(i, { tags: c.tags, altOf: c.altOf })
+    if (c.tags.length > 0 || c.topics.length > 0 || c.altOf.length > 0) {
+      matches.set(i, { tags: c.tags, topics: c.topics, altOf: c.altOf })
+    }
   }
 
   if (entrySensePos.length === 1 && candidates.length === 1) {
