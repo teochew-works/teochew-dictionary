@@ -913,6 +913,52 @@ playback for both `audio` and `wordAudio` in `EntryDetail`; the display and
 clip-licence decisions are recorded in `web/README.md` § Architecture. The
 data side is unchanged — there is still no clip to play.)*
 
+**Update 2026-08-23: the merge step exists now, and the corpus needed a
+licence-classification fix first.** `npm run merge:lingualibre --
+<index-or-commonsTitle> --variety=<id>` (`src/importers/lingualibre-merge.ts`)
+re-hosts a staged proposal and writes it straight into
+`data/phonology/audio/<variety>.yaml`, replacing the old hand-copy step —
+still per-clip and human-driven, `--variety` has no default, and an existing
+key is left alone unless `--force` is passed.
+
+Running the importer for real against the live Commons category staged 164
+proposals from the 2,138 files it found (127 single-syllable, 37
+multi-syllable). Cross-referencing staged pengim keys against the lexicon's
+readings found 70 distinct readings with at least one candidate clip (10 of
+them word-level) — but only 25 of those had a candidate whose own Commons
+`imageinfo` licence cleanly matched the category's declared CC-BY-SA-4.0
+default. The rest reported `CC0` or `CC-BY-4.0` instead (`normaliseLicence` in
+`lingualibre.ts` only canonicalises the expected value, so these staged as
+the raw Commons string and picked up the importer's existing licence-mismatch
+flag). Both are more permissive than CC-BY-SA-4.0, not less, so nothing here
+suggests miscredited source material — just that upload-time metadata for
+this corpus is genuinely mixed, not uniformly share-alike.
+
+**Decision: a merged clip cites its own reported licence, not a blanket
+`lingualibre` id.** Two new `data/sources.yaml` entries, `lingualibre-ccby4`
+(CC-BY-4.0) and `lingualibre-cc0` (CC0), alongside the existing `lingualibre`
+(CC-BY-SA-4.0) — same provenance/consent story, split only on licence.
+`licenceSourceId` (`lingualibre-merge.ts`) maps a proposal's raw Commons
+licence string to the right id and refuses to merge (throws, not a silent
+default) when it recognises none of the three — the alternative, always
+citing `lingualibre` regardless of what Commons actually reports, would
+overstate a CC0/CC-BY-4.0 file's share-alike obligation. `CC0` joins
+`LICENCE_CLASS` in `src/data/licence.ts` as `permissive` (it needs no
+attribution at all, legally, but is credited via the clip's `speaker` field
+anyway, the same courtesy already extended to `unihan`), and
+[`LICENSE-DATA-CC0`](../../LICENSE-DATA-CC0) — the official CC0 1.0 Universal
+legal code, fetched directly from creativecommons.org rather than
+reproduced from memory — joins the licence files at the repo root. This
+unlocks all 70 candidate readings for merging today, not just the 25 whose
+Commons metadata happened to match the category default.
+
+**Duplicate candidates are still a human call, not this tool's.** Several
+matched keys have more than one staged candidate (different uploaders, or the
+same uploader's retry) — the schema holds one clip per key, so picking which
+recording to keep stays exactly the kind of accent/quality judgment §16
+already assigns to a human, not something `mergeLinguaLibreClip` decides by
+picking the first match.
+
 ## Individual entries flagged `needs_review`
 
 Run `npm run validate` for the current count. As of writing:
