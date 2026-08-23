@@ -32,11 +32,21 @@ export function resolveProposal(arg: string, proposals: AudioClipProposal[]): Au
   return proposals.find((p) => p.commonsTitle === arg)
 }
 
+/**
+ * A plain-ASCII, hyphenated asset filename for `key`, keeping whatever
+ * extension `sourcePathOrUrl` ends in (falling back to `.wav`). Shared by
+ * `assetFilename` below and `local-recording-rehost.ts`'s equivalent, which
+ * derives a filename from a local file path rather than a Commons URL.
+ */
+export function slugAssetFilename(key: string, sourcePathOrUrl: string): string {
+  const ext = sourcePathOrUrl.match(/\.[a-zA-Z0-9]+$/u)?.[0]?.toLowerCase() ?? '.wav'
+  const slug = key.trim().toLowerCase().replace(/\s+/gu, '-')
+  return `${slug}${ext}`
+}
+
 /** A plain-ASCII, hyphenated asset filename derived from the proposal's pengim key, keeping the source's own extension. */
 export function assetFilename(proposal: AudioClipProposal): string {
-  const ext = proposal.commonsUrl.match(/\.[a-zA-Z0-9]+$/u)?.[0]?.toLowerCase() ?? '.wav'
-  const slug = proposal.pengim.trim().toLowerCase().replace(/\s+/gu, '-')
-  return `${slug}${ext}`
+  return slugAssetFilename(proposal.pengim, proposal.commonsUrl)
 }
 
 /**
@@ -65,17 +75,71 @@ function defaultRunGh(args: string[]): void {
   execFileSync('gh', args, { stdio: 'inherit' })
 }
 
-function ensureRelease(tag: string, releaseExists: (tag: string) => boolean, runGh: (args: string[]) => void): void {
+function ensureRelease(
+  tag: string,
+  releaseExists: (tag: string) => boolean,
+  runGh: (args: string[]) => void,
+  notes: string,
+): void {
   if (releaseExists(tag)) return
-  runGh([
-    'release',
-    'create',
+  runGh(['release', 'create', tag, '--title', tag, '--notes', notes])
+}
+
+export interface UploadBytesOptions {
+  tag: string
+  /** Passed to `gh release create` the first time `tag` is used — callers own their own wording. */
+  releaseNotes: string
+  /** Injectable for tests — avoids shelling out to a real `gh release view`. */
+  releaseExists?: (tag: string) => boolean
+  /** Injectable for tests — avoids shelling out to a real `gh`. */
+  runGh?: (args: string[]) => void
+  tmpDir?: string
+}
+
+export interface UploadBytesResult {
+  url: string
+  checksum: string
+}
+
+/**
+ * The re-host mechanics shared by every clip source regardless of where its
+ * bytes came from: checksum, write to a tmp file, `gh release upload`, clean
+ * up. Factored out of `rehostClip` (issue #128, `data/phonology/REVIEW.md` §
+ * 17) so a locally-recorded clip — which has no URL to fetch, only bytes
+ * already in hand — can reuse this instead of duplicating the tmpdir/`gh`/
+ * checksum dance.
+ */
+export async function uploadBytesToRelease(
+  bytes: Buffer,
+  filename: string,
+  options: UploadBytesOptions,
+): Promise<UploadBytesResult> {
+  const {
     tag,
-    '--title',
-    tag,
-    '--notes',
-    'Re-hosted Lingua Libre/Commons audio clips — see data/phonology/REVIEW.md § 16.',
-  ])
+    releaseNotes,
+    releaseExists = defaultReleaseExists,
+    runGh = defaultRunGh,
+    tmpDir = mkdtempSync(join(tmpdir(), 'rehost-')),
+  } = options
+
+  ensureRelease(tag, releaseExists, runGh, releaseNotes)
+
+  const localPath = join(tmpDir, filename)
+  writeFileSync(localPath, bytes)
+
+  try {
+    // --clobber: a re-run against the same proposal (or a --force re-merge,
+    // see mergeLinguaLibreClip/mergeLocalRecording) re-uploads to this same
+    // deterministic filename — without it `gh` refuses the asset-name
+    // collision.
+    runGh(['release', 'upload', tag, localPath, '--clobber'])
+  } finally {
+    rmSync(localPath, { force: true })
+  }
+
+  const checksum = `sha256:${createHash('sha256').update(bytes).digest('hex')}`
+  const url = `https://github.com/${GITHUB_REPO}/releases/download/${tag}/${filename}`
+  return { url, checksum }
 }
 
 export interface RehostOptions {
@@ -96,31 +160,15 @@ export interface RehostResult {
 }
 
 export async function rehostClip(proposal: AudioClipProposal, options: RehostOptions = {}): Promise<RehostResult> {
-  const {
-    tag = DEFAULT_REHOST_TAG,
-    fetchBytes = defaultFetchBytes,
-    releaseExists = defaultReleaseExists,
-    runGh = defaultRunGh,
-    tmpDir = mkdtempSync(join(tmpdir(), 'lingualibre-rehost-')),
-  } = options
-
-  ensureRelease(tag, releaseExists, runGh)
+  const { tag = DEFAULT_REHOST_TAG, fetchBytes = defaultFetchBytes, ...uploadOptions } = options
 
   const bytes = await fetchBytes(proposal.commonsUrl)
   const filename = assetFilename(proposal)
-  const localPath = join(tmpDir, filename)
-  writeFileSync(localPath, bytes)
+  const { url, checksum } = await uploadBytesToRelease(bytes, filename, {
+    ...uploadOptions,
+    tag,
+    releaseNotes: 'Re-hosted Lingua Libre/Commons audio clips — see data/phonology/REVIEW.md § 16.',
+  })
 
-  try {
-    // --clobber: a re-run against the same proposal (or a --force re-merge,
-    // see mergeLinguaLibreClip) re-uploads to this same deterministic
-    // filename — without it `gh` refuses the asset-name collision.
-    runGh(['release', 'upload', tag, localPath, '--clobber'])
-  } finally {
-    rmSync(localPath, { force: true })
-  }
-
-  const checksum = `sha256:${createHash('sha256').update(bytes).digest('hex')}`
-  const url = `https://github.com/${GITHUB_REPO}/releases/download/${tag}/${filename}`
   return { proposal, url, checksum }
 }
