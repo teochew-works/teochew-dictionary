@@ -959,6 +959,16 @@ recording to keep stays exactly the kind of accent/quality judgment §16
 already assigns to a human, not something `mergeLinguaLibreClip` decides by
 picking the first match.
 
+**Update 2026-08-24 (issue #123): truncation is now flagged, not silent.**
+`extractPengimPrefix` itself is unchanged, but `importLinguaLibre` now
+re-scans the discarded remainder for whitespace tokens shaped like
+`letters+tone-digit` (`findDroppedPengimTokens`) and adds a `flags` entry
+when one is found — the same mechanism already used for licence mismatches.
+Of the corpus staged before this fix, 80 of 164 proposals were affected (68
+single-syllable, 12 multi-syllable); those already-staged entries are not
+retroactively corrected by this change — a re-import or hand-fix is a
+separate follow-on.
+
 ## 17. Recording clips from the Sounds tab · `web/`, `phonology/audio/*.yaml` · issue #128
 
 **Background.** #124 shipped a Sounds tab listing every distinct syllable
