@@ -82,6 +82,29 @@ reappear as new (DevTools → Application → IndexedDB →
   database, `cards` object store keyed by entry id).
 - Plain CSS, no UI framework — matches the root project's minimal-dependency
   approach.
+- Audio playback (issue #114): each reading's clips render as play buttons in
+  `EntryDetail`, driven by one shared `HTMLAudioElement`
+  (`src/hooks/useAudioPlayer.ts`), so starting a clip stops the previous one.
+  Four calls worth knowing:
+  - **`EntryDetail` only.** `EntryRow` renders a `<button>`, so a play control
+    inside it would nest interactive elements; the row is also too cramped
+    (the same conclusion issue #104 reached for tags).
+  - **Both `wordAudio` and `audio`, word clip first.** A whole-word recording
+    carries connected-speech coarticulation a syllable clip cannot
+    (`data/phonology/REVIEW.md` § 16), so it leads; per-syllable clips stay
+    reachable for drilling. Same order and glyphs (♪♪ then ♪) as
+    `src/cli/lookup.ts`.
+  - **Clip licences are credited separately, gated by "Show licensing info".**
+    A clip's licence comes from its own sources and can differ from the
+    entry's — a CC-BY-SA-4.0 Lingua Libre import on an otherwise CC-BY-4.0
+    entry — so distinct clip credits are deduped and listed under the entry's
+    licence block rather than assumed covered by it.
+  - **Custom buttons, not `<audio controls>`.** A three-syllable reading would
+    otherwise render four full-width native players.
+
+  No clip exists yet: `data/phonology/audio/*.yaml` is still unwritten
+  (issues #36/#37, and the #106 merge follow-on), so every `audio`/`wordAudio`
+  slot resolves to `null` and this renders nothing at all today.
 - `dist/dict.json` is fetched at runtime as a static asset (via
   `scripts/sync-data.mjs`, not bundled as a JS import), so the dataset can
   grow without bloating the JS bundle.
@@ -108,5 +131,7 @@ workflow's `deploy` job can actually publish anything.
 Matches the parent issue's explicit non-goals:
 
 - User accounts or cross-device progress sync.
-- Audio playback (recordings aren't wired up in the dataset yet).
 - Offline/PWA support.
+
+Audio playback was on this list for v1 and no longer is — the UI shipped in
+issue #114. What's still missing is the data: no recording exists to play yet.
