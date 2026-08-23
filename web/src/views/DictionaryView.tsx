@@ -31,6 +31,7 @@ const SORT_MODE_LABELS: Record<SortMode, string> = {
   english: 'English',
   tone: 'Tone',
   category: 'Category',
+  level: 'Level',
 }
 
 export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
