@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useSounds } from '../hooks/useSounds'
-import { useLocalRecordingsStatus } from '../hooks/useLocalRecordingsStatus'
+import { useLocalRecordingsStatus, type PublishedClip } from '../hooks/useLocalRecordingsStatus'
+import { useAudioPlayer } from '../hooks/useAudioPlayer'
 import { RecordClipButton, type RecordStatus } from '../components/RecordClipButton'
 import type { Sound } from '../types/sounds'
 import './SoundsView.css'
@@ -45,15 +46,54 @@ function matchesQuery(sound: Sound, query: string): boolean {
   return haystack.includes(query)
 }
 
+/**
+ * A row's play button for its already-published clip (issue #132) — a
+ * single-caller control analogous to ReadingAudio.tsx's ClipButton, so it
+ * stays a private function here rather than a standalone file/test the way
+ * RecordClipButton earns one by owning a much larger record/save state
+ * machine. Reuses useAudioPlayer, the same shared-<audio> primitive the
+ * Dictionary tab already plays clips with.
+ */
+function PlayClipButton({
+  pengim,
+  clip,
+  playingId,
+  onPlay,
+}: {
+  pengim: string
+  clip: PublishedClip
+  playingId: string | null
+  onPlay: (id: string, url: string) => void
+}) {
+  const playing = playingId === pengim
+  return (
+    <button
+      type="button"
+      className={playing ? 'sound-row__play sound-row__play--playing' : 'sound-row__play'}
+      aria-label={clip.speaker ? `Play recording by ${clip.speaker}` : 'Play recording'}
+      aria-pressed={playing}
+      onClick={() => onPlay(pengim, clip.url)}
+    >
+      <span aria-hidden="true">▶</span> {clip.speaker ?? 'Play'}
+    </button>
+  )
+}
+
 function SoundRow({
   sound,
   showCount,
   recordStatus,
+  publishedClip,
+  playingId,
+  onPlay,
   onSaved,
 }: {
   sound: Sound
   showCount: boolean
   recordStatus: RecordStatus
+  publishedClip: PublishedClip | undefined
+  playingId: string | null
+  onPlay: (id: string, url: string) => void
   onSaved: (pengim: string) => void
 }) {
   return (
@@ -75,7 +115,14 @@ function SoundRow({
           </span>
         ))}
       </span>
-      {import.meta.env.DEV && <RecordClipButton pengim={sound.pengim} status={recordStatus} onSaved={onSaved} />}
+      {import.meta.env.DEV && (
+        <span className="sound-row__dev-controls">
+          {publishedClip && (
+            <PlayClipButton pengim={sound.pengim} clip={publishedClip} playingId={playingId} onPlay={onPlay} />
+          )}
+          <RecordClipButton pengim={sound.pengim} status={recordStatus} onSaved={onSaved} />
+        </span>
+      )}
     </li>
   )
 }
@@ -91,12 +138,16 @@ export function SoundsView() {
   // Dev-only (see RecordClipButton); the hook itself no-ops in production.
   const localRecordings = useLocalRecordingsStatus()
   const [justSaved, setJustSaved] = useState<Set<string>>(() => new Set())
-  const recordStatus = (pengim: string): RecordStatus => {
-    if (localRecordings?.published.has(pengim)) return 'published'
+  const recordStatus = (publishedClip: PublishedClip | undefined, pengim: string): RecordStatus => {
+    if (publishedClip) return 'published'
     if (justSaved.has(pengim) || localRecordings?.pending.has(pengim)) return 'pending'
     return 'none'
   }
   const markSaved = (pengim: string) => setJustSaved((prev) => new Set(prev).add(pengim))
+
+  // One shared <audio> element for the whole tab, same primitive the
+  // Dictionary tab plays clips with — starting one row's clip stops another.
+  const { playingId, play } = useAudioPlayer()
 
   const allLetters = useMemo(() => groupByLetter(data?.sounds ?? []).map((g) => g.letter), [data])
 
@@ -183,30 +234,42 @@ export function SoundsView() {
                 <span className="sounds-view__group-count">{sounds.length}</span>
               </h2>
               <ul className="sounds-view__rows">
-                {sounds.map((sound) => (
-                  <SoundRow
-                    key={sound.pengim}
-                    sound={sound}
-                    showCount={false}
-                    recordStatus={recordStatus(sound.pengim)}
-                    onSaved={markSaved}
-                  />
-                ))}
+                {sounds.map((sound) => {
+                  const publishedClip = localRecordings?.published.get(sound.pengim)
+                  return (
+                    <SoundRow
+                      key={sound.pengim}
+                      sound={sound}
+                      showCount={false}
+                      recordStatus={recordStatus(publishedClip, sound.pengim)}
+                      publishedClip={publishedClip}
+                      playingId={playingId}
+                      onPlay={play}
+                      onSaved={markSaved}
+                    />
+                  )
+                })}
               </ul>
             </section>
           ))}
 
         {sortMode === 'frequency' && ranked.length > 0 && (
           <ul className="sounds-view__rows">
-            {ranked.map((sound) => (
-              <SoundRow
-                key={sound.pengim}
-                sound={sound}
-                showCount
-                recordStatus={recordStatus(sound.pengim)}
-                onSaved={markSaved}
-              />
-            ))}
+            {ranked.map((sound) => {
+              const publishedClip = localRecordings?.published.get(sound.pengim)
+              return (
+                <SoundRow
+                  key={sound.pengim}
+                  sound={sound}
+                  showCount
+                  recordStatus={recordStatus(publishedClip, sound.pengim)}
+                  publishedClip={publishedClip}
+                  playingId={playingId}
+                  onPlay={play}
+                  onSaved={markSaved}
+                />
+              )
+            })}
           </ul>
         )}
       </div>
