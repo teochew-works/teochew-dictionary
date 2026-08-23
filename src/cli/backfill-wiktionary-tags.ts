@@ -18,6 +18,13 @@ import { entryFileSchema } from '../schema/entry.js'
  * matching rules). Dry-run by default — prints a summary only; pass --write
  * to apply.
  *
+ * Only fills in a field a sense doesn't already have — never overwrites or
+ * re-derives one that's already present. This makes the script safe to
+ * re-run (e.g. once #105 added `topics` to a pipeline that had already
+ * backfilled `tags`/`alt_of` for #102): without this check, a sense that
+ * already carried `tags` would get a second, duplicate `tags:` key spliced
+ * in alongside its existing one, since the splice only ever appends.
+ *
  * Deliberately not part of any importer: importers never write to
  * data/entries/ (see src/importers/types.ts), but this script edits data
  * that has already been reviewed and merged, only adding metadata rather
@@ -43,6 +50,7 @@ const index = loadWiktextractIndex()
 let entriesScanned = 0
 let entriesMatched = 0
 let sensesTagged = 0
+let sensesUnchanged = 0
 let sensesSkipped = 0
 let filesChanged = 0
 
@@ -53,8 +61,14 @@ function indentOf(map: YAMLMap, raw: string): string {
   return raw.slice(lineStart, lastKey.range[0])
 }
 
+/**
+ * `lineWidth: 0` disables yaml's default 80-column wrapping — without it, a
+ * long value list (topics arrays run longer than tags/alt_of ever did, up to
+ * 17 entries) gets stringified onto multiple lines, breaking every
+ * assumption in this file that a spliced field is exactly one line.
+ */
 function fieldLine(indent: string, key: string, values: string[]): string {
-  const flow = stringify(values, { flow: true, flowCollectionPadding: false }).trim()
+  const flow = stringify(values, { flow: true, flowCollectionPadding: false, lineWidth: 0 }).trim()
   return `${indent}${key}: ${flow}\n`
 }
 
@@ -83,20 +97,26 @@ for (const file of listEntryFiles()) {
       candidates,
     )
 
-    entry.senses.forEach((_sense, senseIndex) => {
+    entry.senses.forEach((sense, senseIndex) => {
       const match = matches.get(senseIndex)
       if (!match) {
         sensesSkipped += 1
         return
       }
-      sensesTagged += 1
 
       const senseNode = doc.getIn(['entries', entryIndex, 'senses', senseIndex]) as YAMLMap
       const indent = indentOf(senseNode, raw)
       const text =
-        (match.tags.length > 0 ? fieldLine(indent, 'tags', match.tags) : '') +
-        (match.topics.length > 0 ? fieldLine(indent, 'topics', match.topics) : '') +
-        (match.altOf.length > 0 ? fieldLine(indent, 'alt_of', match.altOf) : '')
+        (match.tags.length > 0 && !sense.tags ? fieldLine(indent, 'tags', match.tags) : '') +
+        (match.topics.length > 0 && !sense.topics ? fieldLine(indent, 'topics', match.topics) : '') +
+        (match.altOf.length > 0 && !sense.alt_of ? fieldLine(indent, 'alt_of', match.altOf) : '')
+
+      if (!text) {
+        sensesUnchanged += 1
+        return
+      }
+      sensesTagged += 1
+
       const [, end] = senseNode.range as [number, number, number]
       edits.push({ offset: end, text })
     })
@@ -114,6 +134,8 @@ for (const file of listEntryFiles()) {
 }
 
 console.log(`${entriesScanned} entries scanned, ${entriesMatched} matched a wiktextract record`)
-console.log(`${sensesTagged} sense(s) tagged, ${sensesSkipped} skipped (no unambiguous match)`)
+console.log(
+  `${sensesTagged} sense(s) tagged, ${sensesUnchanged} already had every matched field, ${sensesSkipped} skipped (no unambiguous match)`,
+)
 console.log(`${filesChanged} file(s) ${write ? 'written' : 'would change'}`)
 if (!write) console.log('dry run — pass --write to apply')
