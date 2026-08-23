@@ -134,7 +134,7 @@ describe('checkAudio', () => {
     [
       source('fixture', 'import', 'CC-BY-4.0'),
       source('pengim-1960', 'reference'),
-      source('unclassified', 'import', 'CC0'),
+      source('unclassified', 'import', 'CC-BY-NC-4.0'),
     ].map((s) => [s.id, s]),
   )
   const legalSyllables = new Set(['dio5', 'ziu1', 'xyz1'])
@@ -280,7 +280,7 @@ describe('deriveReadingAudio', () => {
     [
       source('fixture', 'import', 'CC-BY-4.0'),
       source('teochew-dictionary-audio', 'import', 'CC-BY-4.0'),
-      source('unclassified', 'import', 'CC0'),
+      source('unclassified', 'import', 'CC-BY-NC-4.0'),
       source('audio-import-sa', 'import', 'CC-BY-SA-4.0'),
     ].map((s) => [s.id, s]),
   )
@@ -341,7 +341,7 @@ describe('deriveReadingWordAudio', () => {
     [
       source('fixture', 'import', 'CC-BY-4.0'),
       source('lingualibre', 'import', 'CC-BY-SA-4.0'),
-      source('unclassified', 'import', 'CC0'),
+      source('unclassified', 'import', 'CC-BY-NC-4.0'),
     ].map((s) => [s.id, s]),
   )
 

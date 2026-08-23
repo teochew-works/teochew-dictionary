@@ -38,6 +38,7 @@ const LICENCE_CLASS: Record<string, LicenceClass> = {
   'CC-BY-4.0': 'permissive',
   'BSD-3-Clause': 'permissive',
   'Unicode-DFS-2016': 'permissive',
+  CC0: 'permissive',
   'CC-BY-SA-4.0': 'share-alike',
 }
 
