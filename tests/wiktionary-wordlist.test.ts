@@ -45,6 +45,15 @@ describe('classifyAgainstEntries', () => {
     expect(items).toEqual([{ headword: '新', status: 'staged' }])
   })
 
+  it('preserves a prior no_gloss status instead of resetting to to_fetch', () => {
+    const previous = {
+      list: 'wiktionary-teochew-index',
+      items: [{ headword: '新', status: 'no_gloss' as const }],
+    }
+    const items = classifyAgainstEntries(['新'], entries, previous)
+    expect(items).toEqual([{ headword: '新', status: 'no_gloss' }])
+  })
+
   it('reclassifies as existing even if it was previously staged', () => {
     const previous = {
       list: 'wiktionary-teochew-index',
