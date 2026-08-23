@@ -2,7 +2,9 @@ import { describe, expect, it } from 'vitest'
 
 import { loadSyllableInventory } from '../src/data/load.js'
 import {
+  buildAttestationCounts,
   buildAttestationIndex,
+  buildSandhiAttestationCounts,
   buildSandhiAttestationIndex,
   buildSyllableInventory,
   generateSyllables,
@@ -120,6 +122,82 @@ describe('buildSandhiAttestationIndex', () => {
   it('skips malformed readings rather than throwing', () => {
     const index = buildSandhiAttestationIndex([entry('bad', [{ pengim: 'za8 nang5' }])])
     expect(index.size).toBe(0)
+  })
+})
+
+describe('buildAttestationCounts', () => {
+  function entry(id: string, readings: { pengim: string; variety?: string }[]): LoadedEntry {
+    return {
+      file: 'fixture.yaml',
+      entry: {
+        id,
+        headword: id,
+        readings: readings.map((r) => ({ pengim: r.pengim, variety: r.variety ?? 'chaozhou' })),
+        senses: [{ pos: 'noun', gloss_en: ['x'] }],
+        sources: ['fixture'],
+      } as Entry,
+    }
+  }
+
+  it('counts every occurrence, not just distinct attesting entries', () => {
+    const counts = buildAttestationCounts([
+      entry('a', [{ pengim: 'a1 a1' }]), // the same syllable twice in one reading
+      entry('b', [{ pengim: 'a1' }]), // and once more via a different entry
+    ])
+
+    expect(counts.get('a1')!.get('chaozhou')).toBe(3)
+  })
+
+  it('keeps counts separate per variety', () => {
+    const counts = buildAttestationCounts([
+      entry('a', [{ pengim: 'dio5', variety: 'chaozhou' }]),
+      entry('b', [{ pengim: 'dio5', variety: 'shantou' }]),
+    ])
+
+    expect(counts.get('dio5')!.get('chaozhou')).toBe(1)
+    expect(counts.get('dio5')!.get('shantou')).toBe(1)
+  })
+
+  it('skips malformed readings rather than throwing', () => {
+    const counts = buildAttestationCounts([entry('bad', [{ pengim: 'za8' }])])
+    expect(counts.size).toBe(0)
+  })
+})
+
+describe('buildSandhiAttestationCounts', () => {
+  function entry(id: string, readings: { pengim: string; variety?: string }[]): LoadedEntry {
+    return {
+      file: 'fixture.yaml',
+      entry: {
+        id,
+        headword: id,
+        readings: readings.map((r) => ({ pengim: r.pengim, variety: r.variety ?? 'chaozhou' })),
+        senses: [{ pos: 'noun', gloss_en: ['x'] }],
+        sources: ['fixture'],
+      } as Entry,
+    }
+  }
+
+  it('counts sandhi-surface occurrences of non-final syllables, summed across entries', () => {
+    // dio5 ziu1 (潮州) sandhis to dio7 ziu1: only the first syllable changes.
+    const counts = buildSandhiAttestationCounts([
+      entry('a', [{ pengim: 'dio5 ziu1' }]),
+      entry('b', [{ pengim: 'dio5 ziu1' }]),
+    ])
+
+    expect(counts.get('dio7')!.get('chaozhou')).toBe(2)
+    // The final syllable never undergoes sandhi, so it's not in this index.
+    expect(counts.has('ziu1')).toBe(false)
+  })
+
+  it('contributes nothing for single-syllable readings', () => {
+    const counts = buildSandhiAttestationCounts([entry('nang5-儂', [{ pengim: 'nang5' }])])
+    expect(counts.size).toBe(0)
+  })
+
+  it('skips malformed readings rather than throwing', () => {
+    const counts = buildSandhiAttestationCounts([entry('bad', [{ pengim: 'za8 nang5' }])])
+    expect(counts.size).toBe(0)
   })
 })
 

@@ -76,35 +76,86 @@ export function generateSyllables(scheme?: PengimScheme): Syllable[] {
   return [...kept.values()].sort((a, b) => a.raw.localeCompare(b.raw))
 }
 
-/** syllable.raw → variety id → attesting entry ids. */
-export function buildAttestationIndex(
-  entries: LoadedEntry[] = loadEntries(),
-  scheme?: PengimScheme,
-): Map<string, Map<string, Set<string>>> {
-  const index = new Map<string, Map<string, Set<string>>>()
+interface Occurrence {
+  key: string
+  variety: string
+  entryId: string
+}
 
+/** Every citation-form syllable spoken by `entries`, one `Occurrence` per syllable slot. */
+function* citationOccurrences(entries: LoadedEntry[], scheme?: PengimScheme): Generator<Occurrence> {
   for (const { entry } of entries) {
     for (const reading of entry.readings) {
       const parsed = tryParsePengim(reading.pengim, scheme)
       if (!parsed.ok) continue // validate() reports malformed readings precisely; not this function's job
 
       for (const syllable of parsed.syllables) {
-        let byVariety = index.get(syllable.raw)
-        if (!byVariety) {
-          byVariety = new Map()
-          index.set(syllable.raw, byVariety)
-        }
-        let ids = byVariety.get(reading.variety)
-        if (!ids) {
-          ids = new Set()
-          byVariety.set(reading.variety, ids)
-        }
-        ids.add(entry.id)
+        yield { key: syllable.raw, variety: reading.variety, entryId: entry.id }
       }
     }
   }
+}
 
+/**
+ * Every tone-sandhi surface form spoken by `entries`: for every
+ * multi-syllable reading, every non-final syllable's sandhi surface (per
+ * `applySandhiToSyllables`, issue #34/#48), one `Occurrence` per syllable
+ * slot. The final syllable of a reading never undergoes sandhi and is
+ * already covered by `citationOccurrences`, so it's skipped here.
+ */
+function* sandhiOccurrences(entries: LoadedEntry[], scheme?: PengimScheme): Generator<Occurrence> {
+  const sandhiFor = createSandhiResolver()
+
+  for (const { entry } of entries) {
+    for (const reading of entry.readings) {
+      const parsed = tryParsePengim(reading.pengim, scheme)
+      if (!parsed.ok) continue // validate() reports malformed readings precisely; not this function's job
+
+      const { syllables } = applySandhiToSyllables(parsed.syllables, sandhiFor(reading.variety))
+      for (const s of syllables.slice(0, -1)) {
+        yield { key: s.surface, variety: reading.variety, entryId: entry.id }
+      }
+    }
+  }
+}
+
+function toAttestationIndex(occurrences: Iterable<Occurrence>): Map<string, Map<string, Set<string>>> {
+  const index = new Map<string, Map<string, Set<string>>>()
+  for (const { key, variety, entryId } of occurrences) {
+    let byVariety = index.get(key)
+    if (!byVariety) {
+      byVariety = new Map()
+      index.set(key, byVariety)
+    }
+    let ids = byVariety.get(variety)
+    if (!ids) {
+      ids = new Set()
+      byVariety.set(variety, ids)
+    }
+    ids.add(entryId)
+  }
   return index
+}
+
+function toAttestationCounts(occurrences: Iterable<Occurrence>): Map<string, Map<string, number>> {
+  const counts = new Map<string, Map<string, number>>()
+  for (const { key, variety } of occurrences) {
+    let byVariety = counts.get(key)
+    if (!byVariety) {
+      byVariety = new Map()
+      counts.set(key, byVariety)
+    }
+    byVariety.set(variety, (byVariety.get(variety) ?? 0) + 1)
+  }
+  return counts
+}
+
+/** syllable.raw → variety id → attesting entry ids. */
+export function buildAttestationIndex(
+  entries: LoadedEntry[] = loadEntries(),
+  scheme?: PengimScheme,
+): Map<string, Map<string, Set<string>>> {
+  return toAttestationIndex(citationOccurrences(entries, scheme))
 }
 
 /**
@@ -119,32 +170,29 @@ export function buildSandhiAttestationIndex(
   entries: LoadedEntry[] = loadEntries(),
   scheme?: PengimScheme,
 ): Map<string, Map<string, Set<string>>> {
-  const index = new Map<string, Map<string, Set<string>>>()
-  const sandhiFor = createSandhiResolver()
+  return toAttestationIndex(sandhiOccurrences(entries, scheme))
+}
 
-  for (const { entry } of entries) {
-    for (const reading of entry.readings) {
-      const parsed = tryParsePengim(reading.pengim, scheme)
-      if (!parsed.ok) continue // validate() reports malformed readings precisely; not this function's job
+/**
+ * syllable.raw → variety id → total occurrence count of that citation-form
+ * syllable across every reading, *not* deduped by entry — unlike
+ * `buildAttestationIndex`'s entry-id sets, the same syllable spoken twice in
+ * one reading, or by two different entries, both add to the count (issue
+ * #129 needs "how many times", not "how many distinct entries").
+ */
+export function buildAttestationCounts(
+  entries: LoadedEntry[] = loadEntries(),
+  scheme?: PengimScheme,
+): Map<string, Map<string, number>> {
+  return toAttestationCounts(citationOccurrences(entries, scheme))
+}
 
-      const { syllables } = applySandhiToSyllables(parsed.syllables, sandhiFor(reading.variety))
-      for (const s of syllables.slice(0, -1)) {
-        let byVariety = index.get(s.surface)
-        if (!byVariety) {
-          byVariety = new Map()
-          index.set(s.surface, byVariety)
-        }
-        let ids = byVariety.get(reading.variety)
-        if (!ids) {
-          ids = new Set()
-          byVariety.set(reading.variety, ids)
-        }
-        ids.add(entry.id)
-      }
-    }
-  }
-
-  return index
+/** Same as `buildAttestationCounts`, but for tone-sandhi surface forms — see `buildSandhiAttestationIndex`. */
+export function buildSandhiAttestationCounts(
+  entries: LoadedEntry[] = loadEntries(),
+  scheme?: PengimScheme,
+): Map<string, Map<string, number>> {
+  return toAttestationCounts(sandhiOccurrences(entries, scheme))
 }
 
 /** Assembles the full `syllable-inventory.yaml` content. */
