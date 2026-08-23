@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { DictionaryView } from './DictionaryView'
 import type { AudioReference, EnrichedEntry } from '../types/dict'
+import { makeEntry as makeBaseEntry, makeReading } from '../test/entryFixtures'
 
 function makeEntry({
   id,
@@ -16,31 +17,14 @@ function makeEntry({
   keys: string[]
   level?: EnrichedEntry['level']
 }): EnrichedEntry {
-  return {
+  return makeBaseEntry({
     id,
     headword,
-    readings: [
-      {
-        pengim: 'bhog8',
-        variety: 'chaozhou',
-        ipa: 'bok̚⁴',
-        poj: 'bo̍k',
-        sandhi: 'bhog8',
-        ipa_confidence: 'medium',
-        ipa_caveats: [],
-        pengim_toneless: 'bhog',
-        syllable_count: 1,
-        audio: [null],
-        wordAudio: null,
-      },
-    ],
+    readings: [makeReading({ pengim: 'bhog8', ipa: 'bok̚⁴', poj: 'bo̍k', sandhi: 'bhog8', pengim_toneless: 'bhog', syllable_count: 1, audio: [null] })],
     senses: [{ pos: 'noun', gloss_en: gloss }],
-    sources: ['seed'],
     search_keys: keys,
-    licence: 'CC-BY-4.0',
-    attributions: [],
     ...(level ? { level } : {}),
-  }
+  })
 }
 
 const ENTRIES: EnrichedEntry[] = [
