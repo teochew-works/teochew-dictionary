@@ -182,6 +182,23 @@ describe('checkAudio', () => {
     expect(issues[0]?.message).toContain("does not reference its own syllable 'ziu1'")
   })
 
+  it("doesn't warn when a diacritic syllable's url is its own ASCII-slugged filename", () => {
+    const diacriticSyllables = new Set([...legalSyllables, 'sêg4'])
+    const issues = checkAudio(
+      'f.yaml',
+      audio({
+        sêg4: clip({
+          url: `https://github.com/${GITHUB_REPO}/releases/download/audio-teochew-dictionary-audio/seg4.webm`,
+        }),
+      }),
+      'chaozhou',
+      varietyIds,
+      sourceMap,
+      diacriticSyllables,
+    )
+    expect(issues).toEqual([])
+  })
+
   it('flags an unresolved source', () => {
     const issues = checkAudio(
       'f.yaml',

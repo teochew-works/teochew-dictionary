@@ -469,6 +469,10 @@ export function checkSyllableInventory(
  * unambiguous home for it), and every syllable it parses to must be legal
  * per the same generated inventory.
  */
+function stripDiacritics(s: string): string {
+  return s.normalize('NFD').replace(new RegExp('[\\u0300-\\u036f]', 'gu'), '')
+}
+
 export function checkAudio(
   file: string,
   audio: Audio,
@@ -499,7 +503,10 @@ export function checkAudio(
     // which syllable it actually points at. Warning, not error: asset
     // naming is explicitly non-binding (REVIEW.md § 12), so a url that
     // legitimately omits the syllable shouldn't block the build.
-    if (!clip.url.toLowerCase().includes(syllable.toLowerCase())) {
+    // stripDiacritics: rehost filenames are ASCII-slugged (lingualibre-
+    // rehost.ts's slugAssetFilename), so a syllable like 'sêg4' legitimately
+    // shows up as 'seg4' in its own url.
+    if (!clip.url.toLowerCase().includes(stripDiacritics(syllable.toLowerCase()))) {
       issues.push(
         warn(
           file,
