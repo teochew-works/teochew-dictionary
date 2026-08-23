@@ -68,9 +68,9 @@ export interface EnrichedReading {
   ipa_caveats: string[]
   pengim_toneless: string
   syllable_count: number
-  /** One slot per syllable; null where no clip has been recorded (out of scope for v1 UI). */
+  /** One slot per syllable; null where no clip has been recorded. */
   audio: (AudioReference | null)[]
-  /** Whole-word/phrase clip for this reading's exact pengim string, e.g. a Lingua Libre import (out of scope for v1 UI). */
+  /** Whole-word/phrase clip for this reading's exact pengim string, e.g. a Lingua Libre import. */
   wordAudio: AudioReference | null
 }
 

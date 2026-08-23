@@ -1,20 +1,62 @@
+import { useAudioPlayer } from '../hooks/useAudioPlayer'
+import { ReadingAudio } from './ReadingAudio'
 import type { EnrichedEntry } from '../types/dict'
 import { LevelBadge } from './LevelBadge'
 
-// Entry-level licence is only ever CC-BY-4.0 or CC-BY-SA-4.0 in practice (see
-// src/data/licence.ts) — link each to its LICENSE-DATA-* file at the repo root.
+// Entry and clip licences are only ever CC-BY-4.0 or CC-BY-SA-4.0 in practice
+// (see src/data/licence.ts, and data/sources.yaml's teochew-dictionary-audio /
+// lingualibre entries) — link each to its LICENSE-DATA-* file at the repo root.
 const LICENCE_URLS: Record<string, string> = {
   'CC-BY-4.0': 'https://github.com/teochew-works/teochew-dictionary/blob/main/LICENSE-DATA-CC-BY-4.0',
   'CC-BY-SA-4.0': 'https://github.com/teochew-works/teochew-dictionary/blob/main/LICENSE-DATA-CC-BY-SA-4.0',
 }
 
+interface ClipCredit {
+  licence: string
+  attributions: string[]
+}
+
+/**
+ * Every distinct (licence, attributions) pair across the entry's audio clips.
+ * A clip's licence is derived from its own sources and can differ from the
+ * entry's — a CC-BY-SA-4.0 Lingua Libre import sits on an otherwise CC-BY-4.0
+ * entry (data/phonology/REVIEW.md § 16) — so it owes its own notice rather
+ * than being covered by the entry-level one. Deduped because a reading's word
+ * clip and its syllable clips usually share a source.
+ */
+function clipCredits(entry: EnrichedEntry): ClipCredit[] {
+  const seen = new Map<string, ClipCredit>()
+  for (const reading of entry.readings) {
+    for (const clip of [reading.wordAudio, ...reading.audio]) {
+      if (!clip) continue
+      const key = [clip.licence, ...clip.attributions].join(' ')
+      if (!seen.has(key)) seen.set(key, { licence: clip.licence, attributions: clip.attributions })
+    }
+  }
+  return [...seen.values()]
+}
+
+function LicenceLink({ licence }: { licence: string }) {
+  const url = LICENCE_URLS[licence]
+  if (!url) return <>{licence}</>
+  return (
+    <a href={url} target="_blank" rel="noreferrer">
+      {licence}
+    </a>
+  )
+}
+
 /**
  * Mirrors src/cli/lookup.ts's display conventions: sandhi shown only when it
- * differs from the citation form, each ipa_caveat prefixed with ⚠, and a
- * "flagged for review" indicator when needs_review is set. Per-syllable audio
- * (reading.audio) is present in the data but out of scope for the v1 UI.
+ * differs from the citation form, each ipa_caveat prefixed with ⚠, a
+ * "flagged for review" indicator when needs_review is set, and each reading's
+ * audio clips as play buttons (see ReadingAudio). One player is shared across
+ * the whole entry, so starting a clip stops the previous one.
  */
 export function EntryDetail({ entry, showLicence }: { entry: EnrichedEntry; showLicence: boolean }) {
+  const { playingUrl, play } = useAudioPlayer()
+  const credits = clipCredits(entry)
+
   return (
     <article className="entry-detail">
       <header className="entry-detail__header">
@@ -45,6 +87,7 @@ export function EntryDetail({ entry, showLicence }: { entry: EnrichedEntry; show
                   ⚠ {caveat}
                 </div>
               ))}
+              <ReadingAudio reading={r} playingUrl={playingUrl} onPlay={play} />
             </div>
           )
         })}
@@ -73,14 +116,7 @@ export function EntryDetail({ entry, showLicence }: { entry: EnrichedEntry; show
       {showLicence && (
         <section className="entry-detail__licence">
           <p className="entry-detail__licence-id">
-            Licence:{' '}
-            {LICENCE_URLS[entry.licence] ? (
-              <a href={LICENCE_URLS[entry.licence]} target="_blank" rel="noreferrer">
-                {entry.licence}
-              </a>
-            ) : (
-              entry.licence
-            )}
+            Licence: <LicenceLink licence={entry.licence} />
           </p>
           {entry.attributions.length > 0 && (
             <ul className="entry-detail__attributions">
@@ -89,6 +125,20 @@ export function EntryDetail({ entry, showLicence }: { entry: EnrichedEntry; show
               ))}
             </ul>
           )}
+          {credits.map((credit, i) => (
+            <div className="entry-detail__clip-licence" key={i}>
+              <p className="entry-detail__licence-id">
+                Audio clips: <LicenceLink licence={credit.licence} />
+              </p>
+              {credit.attributions.length > 0 && (
+                <ul className="entry-detail__attributions">
+                  {credit.attributions.map((a, j) => (
+                    <li key={j}>{a}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
         </section>
       )}
     </article>

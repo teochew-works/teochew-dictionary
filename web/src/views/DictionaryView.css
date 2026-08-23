@@ -263,6 +263,32 @@
   margin-left: 0.25rem;
 }
 
+.reading__audio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+  margin-left: 0.25rem;
+}
+
+.reading__clip {
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.reading__clip--word {
+  font-weight: 600;
+}
+
+.reading__clip--playing {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
 .sense {
   margin-bottom: 1rem;
 }
@@ -312,4 +338,8 @@
 .entry-detail__attributions {
   margin: 0;
   padding-left: 1.1rem;
+}
+
+.entry-detail__clip-licence {
+  margin-top: 0.4rem;
 }
