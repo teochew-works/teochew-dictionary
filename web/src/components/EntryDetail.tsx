@@ -32,7 +32,11 @@ function clipCredits(entry: EnrichedEntry): ClipCredit[] {
   for (const reading of entry.readings) {
     for (const clip of [reading.wordAudio, ...reading.audio]) {
       if (!clip) continue
-      const key = [clip.licence, ...clip.attributions].join(' ')
+      // JSON-encoded rather than joined: a plain join could collide two
+      // distinct (licence, attributions) pairs whose strings straddle the
+      // join boundary differently (e.g. licence 'A', attributions ['B C']
+      // vs. licence 'A B', attributions ['C']), silently dropping a credit.
+      const key = JSON.stringify([clip.licence, clip.attributions])
       if (!seen.has(key)) seen.set(key, { licence: clip.licence, attributions: clip.attributions })
     }
   }
