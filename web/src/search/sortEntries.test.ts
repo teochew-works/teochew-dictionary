@@ -1,37 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { firstSyllableTone, groupEntries, sortFlat } from './sortEntries'
-import type { EnrichedEntry, EnrichedReading } from '../types/dict'
-
-function makeReading(overrides: Partial<EnrichedReading> = {}): EnrichedReading {
-  return {
-    pengim: 'dio5 ziu1',
-    variety: 'chaozhou',
-    ipa: 'tie⁵⁵ tsiu³³',
-    poj: 'tiô-tsiu',
-    sandhi: 'dio7 ziu1',
-    ipa_confidence: 'medium',
-    ipa_caveats: [],
-    pengim_toneless: 'dio ziu',
-    syllable_count: 2,
-    audio: [null, null],
-    wordAudio: null,
-    ...overrides,
-  }
-}
-
-function makeEntry(overrides: Partial<EnrichedEntry> = {}): EnrichedEntry {
-  return {
-    id: 'dio5-ziu1-潮州',
-    headword: '潮州',
-    readings: [makeReading()],
-    senses: [{ pos: 'proper-noun', gloss_en: ['Chaozhou', 'Teochew'] }],
-    sources: ['seed'],
-    search_keys: ['潮州', 'dio5 ziu1'],
-    licence: 'CC-BY-4.0',
-    attributions: [],
-    ...overrides,
-  }
-}
+import { makeEntry, makeReading } from '../test/entryFixtures'
 
 describe('firstSyllableTone', () => {
   it('reads the tone digit off the first syllable of a multi-syllable string', () => {

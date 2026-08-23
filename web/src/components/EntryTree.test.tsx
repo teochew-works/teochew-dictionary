@@ -3,32 +3,16 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { EntryTree } from './EntryTree'
 import type { EntryGroup } from '../search/sortEntries'
 import type { EnrichedEntry } from '../types/dict'
+import { makeEntry as makeBaseEntry, makeReading } from '../test/entryFixtures'
 
 function makeEntry(id: string, headword: string): EnrichedEntry {
-  return {
+  return makeBaseEntry({
     id,
     headword,
-    readings: [
-      {
-        pengim: 'a1',
-        variety: 'chaozhou',
-        ipa: 'a',
-        poj: 'a',
-        sandhi: 'a1',
-        ipa_confidence: 'medium',
-        ipa_caveats: [],
-        pengim_toneless: 'a',
-        syllable_count: 1,
-        audio: [null],
-        wordAudio: null,
-      },
-    ],
+    readings: [makeReading({ pengim: 'a1', ipa: 'a', poj: 'a', sandhi: 'a1', pengim_toneless: 'a', syllable_count: 1, audio: [null] })],
     senses: [{ pos: 'noun', gloss_en: ['gloss'] }],
-    sources: ['seed'],
     search_keys: [headword],
-    licence: 'CC-BY-4.0',
-    attributions: [],
-  }
+  })
 }
 
 const GROUPS: EntryGroup[] = [

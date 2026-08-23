@@ -1,38 +1,15 @@
 import { describe, expect, it } from 'vitest'
 import { createSearchIndex, search } from './searchIndex'
-import type { EnrichedEntry } from '../types/dict'
+import { makeEntry } from '../test/entryFixtures'
 
-function makeEntry(overrides: Partial<EnrichedEntry>): EnrichedEntry {
-  return {
-    id: 'dio5-ziu1-潮州',
-    headword: '潮州',
-    readings: [
-      {
-        pengim: 'dio5 ziu1',
-        variety: 'chaozhou',
-        ipa: 'tie⁵⁵ tsiu³³',
-        poj: 'tiô-tsiu',
-        sandhi: 'dio7 ziu1',
-        ipa_confidence: 'medium',
-        ipa_caveats: [],
-        pengim_toneless: 'dio ziu',
-        syllable_count: 2,
-        audio: [null, null],
-        wordAudio: null,
-      },
-    ],
-    senses: [{ pos: 'proper-noun', gloss_en: ['Chaozhou', 'Teochew'] }],
-    sources: ['seed'],
-    search_keys: ['潮州', 'dio5 ziu1', 'dio ziu', 'dioziu', 'tiô-tsiu', 'tio-tsiu', 'Chaozhou', 'Teochew'],
-    licence: 'CC-BY-4.0',
-    attributions: [],
-    ...overrides,
-  }
-}
+// This suite's queries exercise search_keys beyond the shared fixture's bare
+// defaults (toneless/diacritic-stripped Peng'im and POJ variants — see
+// src/build/enrich.ts), so the base entry carries its own fuller list.
+const BASE_SEARCH_KEYS = ['潮州', 'dio5 ziu1', 'dio ziu', 'dioziu', 'tiô-tsiu', 'tio-tsiu', 'Chaozhou', 'Teochew']
 
 describe('createSearchIndex / search', () => {
   const entries = [
-    makeEntry({}),
+    makeEntry({ search_keys: BASE_SEARCH_KEYS }),
     makeEntry({
       id: 'ziao2-鳥',
       headword: '鳥',
