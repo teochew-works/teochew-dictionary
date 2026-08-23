@@ -9,6 +9,7 @@ const FIXTURE: SoundsData = {
     {
       pengim: 'a1',
       ipa: 'a³³',
+      occurrences: 5,
       examples: [
         { headword: '阿', pengim: 'a1', gloss: 'kinship prefix' },
         { headword: '鴉', pengim: 'a1', gloss: 'crow' },
@@ -17,11 +18,13 @@ const FIXTURE: SoundsData = {
     {
       pengim: 'ai3',
       ipa: 'ai²¹³',
+      occurrences: 20,
       examples: [{ headword: '愛', pengim: 'ai3', gloss: 'to want' }],
     },
     {
       pengim: 'bho5',
       ipa: 'bo⁵⁵',
+      occurrences: 1,
       examples: [],
     },
   ],
@@ -75,5 +78,33 @@ describe('SoundsView', () => {
     render(<SoundsView />)
 
     expect(await screen.findByText(/couldn't load the sound inventory/i)).toBeInTheDocument()
+  })
+
+  it('switches to a flat, occurrence-ranked list and hides the alphabet nav when Frequency is selected', async () => {
+    stubFetch(FIXTURE)
+    const { container } = render(<SoundsView />)
+    await screen.findByText('a³³')
+
+    fireEvent.click(screen.getByRole('button', { name: 'Frequency' }))
+
+    const pengims = [...container.querySelectorAll('.sound-row__pengim')].map((el) => el.textContent)
+    expect(pengims).toEqual(['ai3', 'a1', 'bho5']) // descending by occurrences: 20, 5, 1
+    expect(screen.queryByLabelText('Jump to initial')).not.toBeInTheDocument()
+
+    const counts = [...container.querySelectorAll('.sound-row__count')].map((el) => el.textContent)
+    expect(counts).toEqual(['20×', '5×', '1×'])
+  })
+
+  it('switching back to A–Z restores the grouped alphabetical view', async () => {
+    stubFetch(FIXTURE)
+    const { container } = render(<SoundsView />)
+    await screen.findByText('a³³')
+
+    fireEvent.click(screen.getByRole('button', { name: 'Frequency' }))
+    fireEvent.click(screen.getByRole('button', { name: 'A–Z' }))
+
+    expect(screen.getByLabelText('Jump to initial')).toBeInTheDocument()
+    const pengims = [...container.querySelectorAll('.sound-row__pengim')].map((el) => el.textContent)
+    expect(pengims).toEqual(['a1', 'ai3', 'bho5'])
   })
 })

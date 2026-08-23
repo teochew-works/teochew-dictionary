@@ -79,7 +79,9 @@ describe('App with a hidden entry', () => {
 describe('App Sounds tab', () => {
   const SOUNDS_FIXTURE: SoundsData = {
     variety: 'chaozhou',
-    sounds: [{ pengim: 'dio5', ipa: 'tie⁵⁵', examples: [{ headword: '潮', pengim: 'dio5', gloss: 'tide' }] }],
+    sounds: [
+      { pengim: 'dio5', ipa: 'tie⁵⁵', occurrences: 1, examples: [{ headword: '潮', pengim: 'dio5', gloss: 'tide' }] },
+    ],
   }
 
   beforeEach(() => {
