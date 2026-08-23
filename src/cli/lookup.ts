@@ -59,7 +59,10 @@ for (const { entry, match } of hits) {
     for (const caveat of r.ipa_caveats) console.log(`    ${dim(`⚠ ${caveat}`)}`)
     for (const clip of r.audio) {
       if (!clip) continue
-      console.log(`    ${dim(`♪ ${clip.syllable}: ${clip.url} [${clip.confidence}]`)}`)
+      console.log(`    ${dim(`♪ ${clip.key}: ${clip.url} [${clip.confidence}]`)}`)
+    }
+    if (r.wordAudio) {
+      console.log(`    ${dim(`♪♪ ${r.wordAudio.key}: ${r.wordAudio.url} [${r.wordAudio.confidence}]`)}`)
     }
   }
 

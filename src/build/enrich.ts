@@ -18,10 +18,14 @@ import type { Syllable } from '../phonology/syllable.js'
  * thousands of times over a full build.
  */
 
-/** A whole-syllable audio clip resolved for one syllable of a reading. */
+/**
+ * An audio clip resolved for a reading — either one syllable (from `clips`)
+ * or the reading's whole pengim string (from `wordClips`); `key` holds
+ * whichever string it was looked up by.
+ */
 export interface AudioReference extends Pick<AudioClip, 'url' | 'confidence'> {
-  /** Canonical Peng'im syllable this clip is for, e.g. `dio5`. */
-  syllable: string
+  /** The `clips`/`wordClips` key this clip was resolved from, e.g. `dio5` or `bhi7 jui2`. */
+  key: string
   /**
    * Derived from the clip's `sources` against data/sources.yaml — see
    * ../data/licence.ts. Mirrors EnrichedEntry.licence; see its doc comment.
@@ -49,6 +53,14 @@ export interface EnrichedReading extends Reading {
    * `ipa`/`poj`: a syllable either has a recording or it doesn't.
    */
   audio: (AudioReference | null)[]
+  /**
+   * A whole-word/phrase clip for this reading's exact pengim string (e.g. a
+   * Lingua Libre import), distinct from the per-syllable `audio` above —
+   * see `Audio.wordClips` and data/phonology/REVIEW.md § 16. `null` when no
+   * such clip exists, which is the common case: most readings only ever get
+   * per-syllable coverage.
+   */
+  wordAudio: AudioReference | null
 }
 
 export interface EnrichedEntry extends Omit<Entry, 'readings'> {
@@ -100,13 +112,38 @@ export function deriveReadingAudio(
     const resolved = resolveLicenceOrThrow(clip.sources, sources, `${audio.audio.id}/${s.raw}`)
 
     return {
-      syllable: s.raw,
+      key: s.raw,
       url: clip.url,
       confidence: clip.confidence,
       licence: resolved.licence,
       attributions: resolved.attributions,
     }
   })
+}
+
+/**
+ * Look up a reading's whole-word/phrase clip, if any, keyed by its exact
+ * pengim string. Distinct from `deriveReadingAudio`: no per-syllable
+ * iteration, no compositional fallback — see `Audio.wordClips` and
+ * data/phonology/REVIEW.md § 16.
+ */
+export function deriveReadingWordAudio(
+  pengim: string,
+  audio: Audio | null,
+  sources: Map<string, Source>,
+): AudioReference | null {
+  const clip = audio?.wordClips?.[pengim]
+  if (!audio || !clip) return null
+
+  const resolved = resolveLicenceOrThrow(clip.sources, sources, `${audio.audio.id}/${pengim}`)
+
+  return {
+    key: pengim,
+    url: clip.url,
+    confidence: clip.confidence,
+    licence: resolved.licence,
+    attributions: resolved.attributions,
+  }
 }
 
 /** Cache a per-id loader's result, so a naive per-reading call re-reads/re-parses nothing twice. */
@@ -151,6 +188,7 @@ export function createEnricher() {
       pengim_toneless: stripTones(reading.pengim),
       syllable_count: syllables.length,
       audio: deriveReadingAudio(syllables, audioFor(reading.variety), sources),
+      wordAudio: deriveReadingWordAudio(reading.pengim, audioFor(reading.variety), sources),
     }
   }
 
