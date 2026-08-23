@@ -141,6 +141,44 @@ describe('EntryDetail audio', () => {
     expect(warn).not.toHaveBeenCalled()
   })
 
+  it('treats a reduplicated reading as two independent buttons, not one shared playing state', () => {
+    // Playback state is keyed by button, not by the clip url the two
+    // syllables happen to share — otherwise starting the first would show
+    // both as playing, and clicking the second would stop instead of start.
+    const entry: EnrichedEntry = {
+      ...ENTRY,
+      readings: [{ ...READING, audio: [SYLLABLE_CLIP, SYLLABLE_CLIP] }],
+    }
+
+    render(<EntryDetail entry={entry} showLicence={false} />)
+    const [first, second] = screen.getAllByRole('button', { name: 'Play recording of syllable dio5' })
+
+    fireEvent.click(first!)
+    expect(first).toHaveAttribute('aria-pressed', 'true')
+    expect(second).toHaveAttribute('aria-pressed', 'false')
+
+    fireEvent.click(second!)
+    expect(first).toHaveAttribute('aria-pressed', 'false')
+    expect(second).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  it('does not link playing state across readings that share a clip url', () => {
+    const entry: EnrichedEntry = {
+      ...ENTRY,
+      readings: [
+        { ...READING, pengim: 'a', audio: [SYLLABLE_CLIP, null] },
+        { ...READING, pengim: 'b', audio: [SYLLABLE_CLIP, null] },
+      ],
+    }
+
+    render(<EntryDetail entry={entry} showLicence={false} />)
+    const [first, second] = screen.getAllByRole('button', { name: 'Play recording of syllable dio5' })
+
+    fireEvent.click(first!)
+    expect(first).toHaveAttribute('aria-pressed', 'true')
+    expect(second).toHaveAttribute('aria-pressed', 'false')
+  })
+
   it('plays a clip and marks its button as pressed', () => {
     render(<EntryDetail entry={WITH_AUDIO} showLicence={false} />)
     const word = screen.getByRole('button', { name: 'Play whole-word recording of dio5 ziu1' })

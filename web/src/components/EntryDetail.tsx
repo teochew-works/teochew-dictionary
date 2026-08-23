@@ -57,7 +57,7 @@ function LicenceLink({ licence }: { licence: string }) {
  * the whole entry, so starting a clip stops the previous one.
  */
 export function EntryDetail({ entry, showLicence }: { entry: EnrichedEntry; showLicence: boolean }) {
-  const { playingUrl, play } = useAudioPlayer()
+  const { playingId, play } = useAudioPlayer()
   const credits = clipCredits(entry)
 
   return (
@@ -90,7 +90,7 @@ export function EntryDetail({ entry, showLicence }: { entry: EnrichedEntry; show
                   ⚠ {caveat}
                 </div>
               ))}
-              <ReadingAudio reading={r} playingUrl={playingUrl} onPlay={play} />
+              <ReadingAudio reading={r} readingIndex={i} playingId={playingId} onPlay={play} />
             </div>
           )
         })}
