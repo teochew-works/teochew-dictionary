@@ -1,11 +1,16 @@
 import { randomUUID } from 'node:crypto'
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { join, relative } from 'node:path'
 
 import { AUDIO_METADATA_DIR, DATA_DIR, ROOT } from '../../src/paths.js'
 import { loadOptionalFile } from '../../src/phonology/load.js'
 import { audioSchema } from '../../src/schema/phonology.js'
-import { appendLocalRecordingProposal, readLocalRecordingStaging } from '../../src/importers/local-recording-staging.js'
+import {
+  appendLocalRecordingProposal,
+  findLocalRecordingProposals,
+  readLocalRecordingStaging,
+  removeLocalRecordingProposal,
+} from '../../src/importers/local-recording-staging.js'
 import type { LocalRecordingProposal } from '../../src/importers/local-recording-types.js'
 
 /**
@@ -94,6 +99,11 @@ export interface SaveRecordingDeps {
  * and appends a `LocalRecordingProposal` (via `appendLocalRecordingProposal`)
  * — never touches `data/phonology/audio/*.yaml` directly. Publishing stays a
  * separate, human-run `npm run merge:local-recording` step (REVIEW.md § 17).
+ * When a proposal is already staged for the same pengim+variety (a syllable
+ * marked "pending" on the Sounds tab), that older proposal and its raw
+ * recording file are removed as part of the same save — this project keeps
+ * at most one staged proposal per pengim+variety (issue #135); see
+ * `findLocalRecordingProposals`.
  */
 export function saveRecording(body: SaveRecordingBody, deps: SaveRecordingDeps = {}): SaveRecordingResult {
   const { pengim, speaker, recordedDate, consentAcknowledged, audioBase64, mimeType } = body
@@ -121,6 +131,8 @@ export function saveRecording(body: SaveRecordingBody, deps: SaveRecordingDeps =
     stagingDir,
   } = deps
 
+  const existing = findLocalRecordingProposals(pengim, VARIETY, stagingDir)
+
   const ext = MIME_EXTENSIONS[baseMimeType]!
   const filename = `${slugify(pengim)}__${slugify(speaker)}__${idSuffix()}${ext}`
   const absPath = join(recordingsDir, filename)
@@ -140,6 +152,12 @@ export function saveRecording(body: SaveRecordingBody, deps: SaveRecordingDeps =
     variety: VARIETY,
   }
   appendLocalRecordingProposal(proposal, stagingDir)
+
+  // Only now that the new take is safely written and staged, clean up
+  // whatever it superseded — never destroy the old take before the new one
+  // is durable.
+  for (const { index } of existing) removeLocalRecordingProposal(index, stagingDir)
+  for (const { proposal: old } of existing) rmSync(join(ROOT, old.localPath), { force: true })
 
   return { ok: true, localPath }
 }
