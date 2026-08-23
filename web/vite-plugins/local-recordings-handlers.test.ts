@@ -22,10 +22,35 @@ describe('getStatus', () => {
   })
 
   it('reports no published or pending clips when nothing exists yet', () => {
-    expect(getStatus({ audioDir, stagingDir })).toEqual({ published: [], pending: [] })
+    expect(getStatus({ audioDir, stagingDir })).toEqual({ published: {}, pending: [] })
   })
 
-  it('lists published clip keys from the audio file', () => {
+  it('lists published clips with their playback url and speaker from the audio file', () => {
+    writeFileSync(
+      join(audioDir, 'chaozhou.yaml'),
+      stringify({
+        audio: { id: 'chaozhou', variety: 'chaozhou' },
+        clips: {
+          dio5: {
+            url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5.wav',
+            confidence: 'high',
+            sources: ['x'],
+            speaker: 'speaker-1',
+            checksum: `sha256:${'a'.repeat(64)}`,
+          },
+        },
+      }),
+    )
+
+    expect(getStatus({ audioDir, stagingDir }).published).toEqual({
+      dio5: {
+        url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5.wav',
+        speaker: 'speaker-1',
+      },
+    })
+  })
+
+  it('omits the speaker key entirely for a clip with no speaker', () => {
     writeFileSync(
       join(audioDir, 'chaozhou.yaml'),
       stringify({
@@ -41,7 +66,11 @@ describe('getStatus', () => {
       }),
     )
 
-    expect(getStatus({ audioDir, stagingDir }).published).toEqual(['dio5'])
+    const clip = getStatus({ audioDir, stagingDir }).published.dio5
+    expect(clip).toEqual({
+      url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5.wav',
+    })
+    expect(clip).not.toHaveProperty('speaker')
   })
 
   it('lists pending syllables from staged proposals for this variety only', () => {
