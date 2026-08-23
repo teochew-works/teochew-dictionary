@@ -1,9 +1,10 @@
 import type { AudioReference, EnrichedReading } from '../types/dict'
 
 /**
- * Clip buttons for one reading. Mirrors src/cli/lookup.ts's ordering and
- * glyphs: the whole-word clip first as ♪♪, then one ♪ button per syllable
- * that has a recording.
+ * Clip buttons for one reading: the whole-word clip first as ♪♪, then one ♪
+ * button per syllable that has a recording. Same glyphs as src/cli/lookup.ts,
+ * but that order is reversed there (syllables, then the word clip last) — the
+ * CLI wasn't updated when this ordering was chosen; see web/README.md.
  *
  * Both are offered when both exist rather than the word clip suppressing the
  * syllables — a word recording carries connected-speech coarticulation a

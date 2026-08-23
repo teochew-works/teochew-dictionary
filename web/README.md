@@ -92,8 +92,9 @@ reappear as new (DevTools → Application → IndexedDB →
   - **Both `wordAudio` and `audio`, word clip first.** A whole-word recording
     carries connected-speech coarticulation a syllable clip cannot
     (`data/phonology/REVIEW.md` § 16), so it leads; per-syllable clips stay
-    reachable for drilling. Same order and glyphs (♪♪ then ♪) as
-    `src/cli/lookup.ts`.
+    reachable for drilling. Same glyphs (♪♪, ♪) as `src/cli/lookup.ts`, but
+    that order is reversed there (syllables, then the word clip last) — the
+    CLI predates this ordering decision and wasn't updated to match.
   - **Clip licences are credited separately, gated by "Show licensing info".**
     A clip's licence comes from its own sources and can differ from the
     entry's — a CC-BY-SA-4.0 Lingua Libre import on an otherwise CC-BY-4.0
