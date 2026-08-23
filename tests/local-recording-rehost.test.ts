@@ -55,6 +55,10 @@ describe('assetFilename', () => {
   it('falls back to .wav when the local path has no recognisable extension', () => {
     expect(assetFilename(proposal({ pengim: 'dio5', localPath: 'no-extension' }))).toBe('dio5.wav')
   })
+
+  it('strips diacritics so the filename stays plain ASCII', () => {
+    expect(assetFilename(proposal({ pengim: 'sêg4', localPath: 'x.webm' }))).toBe('seg4.webm')
+  })
 })
 
 describe('rehostLocalRecording', () => {
