@@ -16331,3 +16331,18 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: diah4-嫡
+    headword: 嫡
+    readings:
+      - pengim: diah4
+      - pengim: dêg4
+    senses:
+      - pos: adjective
+        gloss_en: [of the legal/primary wife (as opposed to a concubine's); of direct/lineal descent; orthodox, legitimate]
+        gloss_zh: [嫡]
+        note: diah4 (vernacular) and dêg4 (literary) are a register pair for the same word, not competing senses. The page's Chinese-section entry lists five related senses ("primary wife," "of/by the legal wife," short for 嫡子, "of lineal descent," "orthodox/authentic"), condensed here into one adjectival gloss covering the common modifier usage (嫡子, 嫡系, 嫡親); the staged cache had recorded this headword as a bare stub with no senses at all.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'

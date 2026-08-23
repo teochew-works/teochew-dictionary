@@ -22449,3 +22449,17 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: dai2-靆
+    headword: 靆
+    readings:
+      - pengim: dai2
+    senses:
+      - pos: adjective
+        gloss_en: ["hazy; cloud-covered (bound form, as in 靉靆)"]
+        gloss_zh: [靉靆]
+        note: Bound morpheme not used standalone; same compound-only meaning as its sibling 靉 (id ai2-靉), inferred from 靉靆 (hazy/cloudy), which is not yet its own entry.
+    frequency: 1
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-17'

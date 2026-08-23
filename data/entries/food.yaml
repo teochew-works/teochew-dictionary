@@ -9510,3 +9510,29 @@ entries:
     needs_review: true
     sources: [wiktionary]
     retrieved: '2026-08-16'
+
+  - id: guê2-餜
+    headword: 餜
+    readings:
+      - pengim: guê2
+    senses:
+      - pos: noun
+        gloss_en: [cakes; biscuits; pastry]
+        gloss_zh: [餜, 馃]
+    frequency: 3
+    sources: [wiktionary]
+    retrieved: '2026-08-17'
+
+  - id: cuê1-lang5-炊籠
+    headword: 炊籠
+    readings:
+      - pengim: cuê1 lang5
+    senses:
+      - pos: noun
+        gloss_en: [steamer (basket); steaming basket]
+        gloss_zh: [蒸籠]
+        note: The page's own Noun line carries no English gloss text, just a dialect label ("dialectal Cantonese, Rongxian Hakka, Teochew, Leizhou Min, Zhongshan Min"), but its Synonyms section cross-references 蒸籠 ("steamer basket") as the standard-Mandarin equivalent, which is unambiguous enough to draft the gloss from.
+    frequency: 3
+    needs_review: true
+    sources: [wiktionary]
+    retrieved: '2026-08-16'
