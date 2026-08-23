@@ -83,6 +83,23 @@ sources:
       never folded into this one, mirroring how `wiktionary` and `cedict`
       stay distinct today.
 
+  - id: lingualibre
+    name: Lingua Libre / Wikimedia Commons (Teochew pronunciation)
+    kind: import
+    licence: CC-BY-SA-4.0
+    url: https://commons.wikimedia.org/wiki/Category:Teochew_pronunciation
+    retrieved: '2026-08-23'
+    note: >-
+      Share-alike, same as `wiktionary`. Word/phrase-level recordings
+      originally hosted on Wikimedia Commons via the Lingua Libre project,
+      re-hosted on this project's own GitHub Releases (see
+      data/phonology/REVIEW.md § 16) — this id is the citable provenance
+      regardless of where a clip's bytes physically live. A clip's `speaker`
+      field carries the contributor's real Commons/Wikimedia username, not a
+      pseudonym — distinct from `teochew-dictionary-audio`'s
+      AUDIO-CONSENT.md process; consent for these clips already happened
+      through Commons' own upload flow, not this project's.
+
   # ─── Reference works (kind: reference) ─────────────────────────────────────
   #
   # Cited by phonology mappings (`sources:` in varieties/*.yaml) to record the
