@@ -969,6 +969,16 @@ single-syllable, 12 multi-syllable); those already-staged entries are not
 retroactively corrected by this change — a re-import or hand-fix is a
 separate follow-on.
 
+**Update 2026-08-24: the "there is still no clip to play" note above is now
+stale.** Issue #128's merge commits landed real clips —
+`data/phonology/audio/chaozhou.yaml` currently holds 110 per-syllable clips
+and 8 whole-word clips. `EntryDetail`'s players and the "Only entries with
+audio" filter (`web/src/search/filters.ts`) now render real content for the
+Chaozhou entries those keys resolve to. Coverage is still partial (most
+Chaozhou syllables remain unrecorded, and Shantou/Chaoyang have none), so
+most entries still resolve every slot to `null` — this isn't "done," just no
+longer "nothing."
+
 ## 17. Recording clips from the Sounds tab · `web/`, `phonology/audio/*.yaml` · issue #128
 
 **Background.** #124 shipped a Sounds tab listing every distinct syllable

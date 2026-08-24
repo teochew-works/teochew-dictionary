@@ -11,8 +11,9 @@ import type { AudioReference, EnrichedReading } from '../types/dict'
  * syllable clip can't (data/phonology/REVIEW.md § 16), but the syllables stay
  * reachable for drilling one at a time.
  *
- * Renders nothing when the reading has no clips at all, which is every reading
- * today: data/phonology/audio/*.yaml doesn't exist yet (issues #36/#37).
+ * Renders nothing when the reading has no clips at all — still most readings
+ * today, since recorded coverage (data/phonology/audio/chaozhou.yaml) is
+ * partial and Shantou/Chaoyang have none yet (issues #37, #106).
  */
 export function ReadingAudio({
   reading,

@@ -18,9 +18,10 @@ export interface AudioPlayer {
  * recording can point two distinct buttons at the same url, and keying on url
  * alone would make those buttons indistinguishable to this hook.
  *
- * The element is created on first play, not on mount: almost every entry has
- * no clip at all today (data/phonology/audio/*.yaml doesn't exist yet — see
- * issues #36/#37), so the common render constructs nothing.
+ * The element is created on first play, not on mount: most entries still have
+ * no clip today — recorded coverage (data/phonology/audio/chaozhou.yaml) is
+ * real but partial, and Shantou/Chaoyang have none yet (issues #37, #106) —
+ * so the common render constructs nothing.
  */
 export function useAudioPlayer(): AudioPlayer {
   const elementRef = useRef<HTMLAudioElement | null>(null)
