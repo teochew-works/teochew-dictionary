@@ -47,6 +47,17 @@ export interface RetryOptions {
 }
 
 /**
+ * Default `onRetry`: a 429 retry is otherwise silent for the whole backoff
+ * wait, which looks identical to a hang rather than progress (issue #125).
+ * `fetchWithRetry` defaults to this so every caller gets it for free; pass
+ * an explicit `onRetry` to replace it (e.g. an adaptive concurrency governor
+ * that wants to log too should call this itself alongside its own logic).
+ */
+export function logRetryToStderr(status: number, attempt: number, waitMs: number): void {
+  console.error(`[fetch-retry] HTTP ${status}, waiting ${(waitMs / 1000).toFixed(1)}s before retry ${attempt + 1}`)
+}
+
+/**
  * `fetch` that retries on HTTP 429, honoring the `retry-after` header when
  * present. Wikimedia's edge rate limiter sends one (confirmed live, issue
  * #54's bulk run trips it well before any per-request delay would suggest) —
@@ -57,7 +68,7 @@ export async function fetchWithRetry(
   init: RequestInit,
   options: RetryOptions = {},
 ): Promise<Response> {
-  const { maxRetries = 5, backoffMs = 2000, timeoutMs, maxWaitMs = 60_000, onRetry } = options
+  const { maxRetries = 5, backoffMs = 2000, timeoutMs, maxWaitMs = 60_000, onRetry = logRetryToStderr } = options
 
   for (let attempt = 0; ; attempt += 1) {
     const attemptInit = timeoutMs !== undefined ? { ...init, signal: AbortSignal.timeout(timeoutMs) } : init

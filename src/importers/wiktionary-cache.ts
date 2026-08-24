@@ -3,6 +3,7 @@ import { existsSync, lstatSync, mkdirSync, readlinkSync, renameSync, rmSync, sta
 import { dirname, isAbsolute, join, resolve } from 'node:path'
 
 import { CACHE_DIR, ROOT, WIKTIONARY_PAGE_CACHE_DIR } from '../paths.js'
+import { logRetryToStderr } from './types.js'
 import { fetchWikitextResult, type WikitextResult } from './wiktionary.js'
 
 /**
@@ -316,7 +317,14 @@ export async function syncWiktionaryPages(
   // an injected `fetchPage` (tests, local-dump runs) has no such signal, so it
   // falls back to the `isRateLimitError` check below on the settled result.
   const resolvedFetchPage =
-    fetchPage ?? ((title: string) => fetchWikitextResult(title, { onRetry: () => gate.reportThrottle() }))
+    fetchPage ??
+    ((title: string) =>
+      fetchWikitextResult(title, {
+        onRetry: (status, attempt, waitMs) => {
+          logRetryToStderr(status, attempt, waitMs)
+          gate.reportThrottle()
+        },
+      }))
 
   let done = 0
 
