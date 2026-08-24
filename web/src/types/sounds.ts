@@ -11,6 +11,12 @@ export interface SoundExample {
   gloss: string
 }
 
+/** A published recording of this sound, stripped down to what playback needs. */
+export interface SoundClip {
+  url: string
+  speaker?: string
+}
+
 export interface Sound {
   pengim: string
   ipa: string
@@ -22,6 +28,8 @@ export interface Sound {
    */
   occurrences: number
   examples: SoundExample[]
+  /** Every recorded clip for this syllable; empty when none exist yet. */
+  clips: SoundClip[]
 }
 
 export interface SoundsData {

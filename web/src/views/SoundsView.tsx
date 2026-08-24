@@ -47,34 +47,53 @@ function matchesQuery(sound: Sound, query: string): boolean {
 }
 
 /**
- * A row's play button for its already-published clip (issue #132) — a
- * single-caller control analogous to ReadingAudio.tsx's ClipButton, so it
- * stays a private function here rather than a standalone file/test the way
- * RecordClipButton earns one by owning a much larger record/save state
- * machine. Reuses useAudioPlayer, the same shared-<audio> primitive the
- * Dictionary tab already plays clips with.
+ * Falls back to a numbered label ("Recording 2") rather than the plain "Play"
+ * used when a sound has just one unlabeled clip — with several clips at the
+ * same syllable (issue #134), an unnumbered fallback would leave two buttons
+ * with identical text and no way to tell them apart.
+ */
+function clipLabel(clip: PublishedClip, index: number, total: number): string {
+  if (clip.speaker) return clip.speaker
+  return total > 1 ? `Recording ${index + 1}` : 'Play'
+}
+
+/**
+ * One clip's play button (issue #132, extended for multiple clips per
+ * syllable by issue #134) — a single-caller control analogous to
+ * ReadingAudio.tsx's ClipButton, so it stays a private function here rather
+ * than a standalone file/test the way RecordClipButton earns one by owning a
+ * much larger record/save state machine. Reuses useAudioPlayer, the same
+ * shared-<audio> primitive the Dictionary tab already plays clips with.
+ *
+ * `id` is `${pengim}:${index}`, not the bare pengim: two clips at the same
+ * syllable need distinct playback ids so starting one doesn't read as
+ * already-playing for the other.
  */
 function PlayClipButton({
-  pengim,
+  id,
   clip,
+  label,
+  ariaLabel,
   playingId,
   onPlay,
 }: {
-  pengim: string
+  id: string
   clip: PublishedClip
+  label: string
+  ariaLabel: string
   playingId: string | null
   onPlay: (id: string, url: string) => void
 }) {
-  const playing = playingId === pengim
+  const playing = playingId === id
   return (
     <button
       type="button"
       className={playing ? 'sound-row__play sound-row__play--playing' : 'sound-row__play'}
-      aria-label={clip.speaker ? `Play recording by ${clip.speaker}` : 'Play recording'}
+      aria-label={ariaLabel}
       aria-pressed={playing}
-      onClick={() => onPlay(pengim, clip.url)}
+      onClick={() => onPlay(id, clip.url)}
     >
-      <span aria-hidden="true">▶</span> {clip.speaker ?? 'Play'}
+      <span aria-hidden="true">▶</span> {label}
     </button>
   )
 }
@@ -83,7 +102,7 @@ function SoundRow({
   sound,
   showCount,
   recordStatus,
-  publishedClip,
+  clips,
   playingId,
   onPlay,
   onSaved,
@@ -91,7 +110,7 @@ function SoundRow({
   sound: Sound
   showCount: boolean
   recordStatus: RecordStatus
-  publishedClip: PublishedClip | undefined
+  clips: PublishedClip[]
   playingId: string | null
   onPlay: (id: string, url: string) => void
   onSaved: (pengim: string) => void
@@ -117,8 +136,26 @@ function SoundRow({
       </span>
       {import.meta.env.DEV && (
         <span className="sound-row__dev-controls">
-          {publishedClip && (
-            <PlayClipButton pengim={sound.pengim} clip={publishedClip} playingId={playingId} onPlay={onPlay} />
+          {clips.length > 0 && (
+            <span className="sound-row__play-list">
+              {clips.map((clip, i) => (
+                <PlayClipButton
+                  key={i}
+                  id={`${sound.pengim}:${i}`}
+                  clip={clip}
+                  label={clipLabel(clip, i, clips.length)}
+                  ariaLabel={
+                    clip.speaker
+                      ? `Play recording by ${clip.speaker}`
+                      : clips.length > 1
+                        ? `Play recording ${i + 1}`
+                        : 'Play recording'
+                  }
+                  playingId={playingId}
+                  onPlay={onPlay}
+                />
+              ))}
+            </span>
           )}
           <RecordClipButton pengim={sound.pengim} status={recordStatus} onSaved={onSaved} />
         </span>
@@ -138,8 +175,8 @@ export function SoundsView() {
   // Dev-only (see RecordClipButton); the hook itself no-ops in production.
   const localRecordings = useLocalRecordingsStatus()
   const [justSaved, setJustSaved] = useState<Set<string>>(() => new Set())
-  const recordStatus = (publishedClip: PublishedClip | undefined, pengim: string): RecordStatus => {
-    if (publishedClip) return 'published'
+  const recordStatus = (clips: PublishedClip[], pengim: string): RecordStatus => {
+    if (clips.length > 0) return 'published'
     if (justSaved.has(pengim) || localRecordings?.pending.has(pengim)) return 'pending'
     return 'none'
   }
@@ -235,14 +272,14 @@ export function SoundsView() {
               </h2>
               <ul className="sounds-view__rows">
                 {sounds.map((sound) => {
-                  const publishedClip = localRecordings?.published.get(sound.pengim)
+                  const clips = localRecordings?.published.get(sound.pengim) ?? sound.clips
                   return (
                     <SoundRow
                       key={sound.pengim}
                       sound={sound}
                       showCount={false}
-                      recordStatus={recordStatus(publishedClip, sound.pengim)}
-                      publishedClip={publishedClip}
+                      recordStatus={recordStatus(clips, sound.pengim)}
+                      clips={clips}
                       playingId={playingId}
                       onPlay={play}
                       onSaved={markSaved}
@@ -256,14 +293,14 @@ export function SoundsView() {
         {sortMode === 'frequency' && ranked.length > 0 && (
           <ul className="sounds-view__rows">
             {ranked.map((sound) => {
-              const publishedClip = localRecordings?.published.get(sound.pengim)
+              const clips = localRecordings?.published.get(sound.pengim) ?? sound.clips
               return (
                 <SoundRow
                   key={sound.pengim}
                   sound={sound}
                   showCount
-                  recordStatus={recordStatus(publishedClip, sound.pengim)}
-                  publishedClip={publishedClip}
+                  recordStatus={recordStatus(clips, sound.pengim)}
+                  clips={clips}
                   playingId={playingId}
                   onPlay={play}
                   onSaved={markSaved}

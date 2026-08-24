@@ -30,8 +30,8 @@ export interface PublishedClip {
 }
 
 export interface StatusResult {
-  /** Syllable keys with a published clip in data/phonology/audio/<variety>.yaml, with playback data. */
-  published: Record<string, PublishedClip>
+  /** Syllable keys with one or more published clips in data/phonology/audio/<variety>.yaml, with playback data. */
+  published: Record<string, PublishedClip[]>
   /** Syllable keys with a proposal already staged, awaiting `npm run merge:local-recording`. */
   pending: string[]
 }
@@ -48,9 +48,9 @@ export function getStatus(deps: StatusDeps = {}): StatusResult {
 
   return {
     published: Object.fromEntries(
-      Object.entries(audio?.clips ?? {}).map(([pengim, clip]) => [
+      Object.entries(audio?.clips ?? {}).map(([pengim, clips]) => [
         pengim,
-        clip.speaker ? { url: clip.url, speaker: clip.speaker } : { url: clip.url },
+        clips.map((clip) => (clip.speaker ? { url: clip.url, speaker: clip.speaker } : { url: clip.url })),
       ]),
     ),
     pending: (staged?.proposals ?? []).filter((p) => p.variety === VARIETY).map((p) => p.pengim),

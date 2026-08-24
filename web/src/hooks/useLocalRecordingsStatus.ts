@@ -7,12 +7,12 @@ export interface PublishedClip {
 }
 
 export interface LocalRecordingsStatus {
-  published: Map<string, PublishedClip>
+  published: Map<string, PublishedClip[]>
   pending: Set<string>
 }
 
 interface StatusResponse {
-  published?: Record<string, PublishedClip>
+  published?: Record<string, PublishedClip[]>
   pending?: string[]
 }
 
