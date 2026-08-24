@@ -32,22 +32,26 @@ describe('getStatus', () => {
       stringify({
         audio: { id: 'chaozhou', variety: 'chaozhou' },
         clips: {
-          dio5: {
-            url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5.wav',
-            confidence: 'high',
-            sources: ['x'],
-            speaker: 'speaker-1',
-            checksum: `sha256:${'a'.repeat(64)}`,
-          },
+          dio5: [
+            {
+              url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5.wav',
+              confidence: 'high',
+              sources: ['x'],
+              speaker: 'speaker-1',
+              checksum: `sha256:${'a'.repeat(64)}`,
+            },
+          ],
         },
       }),
     )
 
     expect(getStatus({ audioDir, stagingDir }).published).toEqual({
-      dio5: {
-        url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5.wav',
-        speaker: 'speaker-1',
-      },
+      dio5: [
+        {
+          url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5.wav',
+          speaker: 'speaker-1',
+        },
+      ],
     })
   })
 
@@ -57,21 +61,61 @@ describe('getStatus', () => {
       stringify({
         audio: { id: 'chaozhou', variety: 'chaozhou' },
         clips: {
-          dio5: {
-            url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5.wav',
-            confidence: 'high',
-            sources: ['x'],
-            checksum: `sha256:${'a'.repeat(64)}`,
-          },
+          dio5: [
+            {
+              url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5.wav',
+              confidence: 'high',
+              sources: ['x'],
+              checksum: `sha256:${'a'.repeat(64)}`,
+            },
+          ],
         },
       }),
     )
 
-    const clip = getStatus({ audioDir, stagingDir }).published.dio5
+    const [clip] = getStatus({ audioDir, stagingDir }).published.dio5 ?? []
     expect(clip).toEqual({
       url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5.wav',
     })
     expect(clip).not.toHaveProperty('speaker')
+  })
+
+  it('lists every clip at a key, one per speaker (issue #134)', () => {
+    writeFileSync(
+      join(audioDir, 'chaozhou.yaml'),
+      stringify({
+        audio: { id: 'chaozhou', variety: 'chaozhou' },
+        clips: {
+          dio5: [
+            {
+              url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5-a.wav',
+              confidence: 'high',
+              sources: ['x'],
+              speaker: 'speaker-1',
+              checksum: `sha256:${'a'.repeat(64)}`,
+            },
+            {
+              url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5-b.wav',
+              confidence: 'low',
+              sources: ['x'],
+              speaker: 'speaker-2',
+              checksum: `sha256:${'b'.repeat(64)}`,
+            },
+          ],
+        },
+      }),
+    )
+
+    expect(getStatus({ audioDir, stagingDir }).published.dio5).toEqual([
+      {
+        url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5-a.wav',
+        speaker: 'speaker-1',
+      },
+      {
+        url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5-b.wav',
+        speaker: 'speaker-2',
+      },
+    ])
   })
 
   it('lists pending syllables from staged proposals for this variety only', () => {

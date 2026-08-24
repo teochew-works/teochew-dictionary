@@ -216,6 +216,13 @@
   gap: 0.4rem;
 }
 
+/* Wraps one PlayClipButton per clip when a syllable has recordings from more than one speaker (issue #134). */
+.sound-row__play-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
 .sound-row__play {
   padding: 0.15rem 0.5rem;
   border: 1px solid var(--color-border);

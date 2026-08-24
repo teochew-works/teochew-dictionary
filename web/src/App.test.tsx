@@ -80,7 +80,13 @@ describe('App Sounds tab', () => {
   const SOUNDS_FIXTURE: SoundsData = {
     variety: 'chaozhou',
     sounds: [
-      { pengim: 'dio5', ipa: 'tie⁵⁵', occurrences: 1, examples: [{ headword: '潮', pengim: 'dio5', gloss: 'tide' }] },
+      {
+        pengim: 'dio5',
+        ipa: 'tie⁵⁵',
+        occurrences: 1,
+        examples: [{ headword: '潮', pengim: 'dio5', gloss: 'tide' }],
+        clips: [],
+      },
     ],
   }
 

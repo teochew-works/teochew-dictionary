@@ -14,18 +14,21 @@ const FIXTURE: SoundsData = {
         { headword: '阿', pengim: 'a1', gloss: 'kinship prefix' },
         { headword: '鴉', pengim: 'a1', gloss: 'crow' },
       ],
+      clips: [],
     },
     {
       pengim: 'ai3',
       ipa: 'ai²¹³',
       occurrences: 20,
       examples: [{ headword: '愛', pengim: 'ai3', gloss: 'to want' }],
+      clips: [],
     },
     {
       pengim: 'bho5',
       ipa: 'bo⁵⁵',
       occurrences: 1,
       examples: [],
+      clips: [],
     },
   ],
 }
@@ -139,7 +142,7 @@ describe('SoundsView play button (issue #132)', () => {
 
   it('labels the play button with the speaker for a published clip', async () => {
     stubFetchWithLocalRecordings(FIXTURE, {
-      published: { a1: { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1.wav', speaker: 'speaker-1' } },
+      published: { a1: [{ url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1.wav', speaker: 'speaker-1' }] },
     })
     render(<SoundsView />)
 
@@ -148,7 +151,7 @@ describe('SoundsView play button (issue #132)', () => {
 
   it('falls back to a generic "Play" label when the clip has no speaker', async () => {
     stubFetchWithLocalRecordings(FIXTURE, {
-      published: { a1: { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1.wav' } },
+      published: { a1: [{ url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1.wav' }] },
     })
     render(<SoundsView />)
 
@@ -165,7 +168,7 @@ describe('SoundsView play button (issue #132)', () => {
 
   it('plays the clip and marks the button as pressed', async () => {
     stubFetchWithLocalRecordings(FIXTURE, {
-      published: { a1: { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1.wav', speaker: 'speaker-1' } },
+      published: { a1: [{ url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1.wav', speaker: 'speaker-1' }] },
     })
     render(<SoundsView />)
     const button = await screen.findByRole('button', { name: 'Play recording by speaker-1' })
@@ -179,8 +182,8 @@ describe('SoundsView play button (issue #132)', () => {
   it('stops the first clip when a second row is played', async () => {
     stubFetchWithLocalRecordings(FIXTURE, {
       published: {
-        a1: { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1.wav', speaker: 'speaker-1' },
-        ai3: { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/ai3.wav', speaker: 'speaker-2' },
+        a1: [{ url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1.wav', speaker: 'speaker-1' }],
+        ai3: [{ url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/ai3.wav', speaker: 'speaker-2' }],
       },
     })
     render(<SoundsView />)
@@ -193,5 +196,70 @@ describe('SoundsView play button (issue #132)', () => {
     expect(pause).toHaveBeenCalled()
     expect(first).toHaveAttribute('aria-pressed', 'false')
     expect(second).toHaveAttribute('aria-pressed', 'true')
+  })
+})
+
+describe('SoundsView play button with multiple speakers (issue #134)', () => {
+  let play: ReturnType<typeof vi.spyOn>
+
+  beforeEach(() => {
+    play = vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined)
+    vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
+  })
+
+  afterEach(() => {
+    cleanup()
+    vi.restoreAllMocks()
+    vi.unstubAllGlobals()
+  })
+
+  it('renders one distinguishable button per clip when a syllable has recordings from more than one speaker', async () => {
+    stubFetchWithLocalRecordings(FIXTURE, {
+      published: {
+        a1: [
+          { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1-1.wav', speaker: 'speaker-1' },
+          { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1-2.wav', speaker: 'speaker-2' },
+        ],
+      },
+    })
+    render(<SoundsView />)
+
+    expect(await screen.findByRole('button', { name: 'Play recording by speaker-1' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Play recording by speaker-2' })).toBeInTheDocument()
+  })
+
+  it('plays only the clicked clip and keeps the other button unpressed', async () => {
+    stubFetchWithLocalRecordings(FIXTURE, {
+      published: {
+        a1: [
+          { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1-1.wav', speaker: 'speaker-1' },
+          { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1-2.wav', speaker: 'speaker-2' },
+        ],
+      },
+    })
+    render(<SoundsView />)
+    const first = await screen.findByRole('button', { name: 'Play recording by speaker-1' })
+    const second = await screen.findByRole('button', { name: 'Play recording by speaker-2' })
+
+    fireEvent.click(second)
+
+    expect(play).toHaveBeenCalledTimes(1)
+    expect(second).toHaveAttribute('aria-pressed', 'true')
+    expect(first).toHaveAttribute('aria-pressed', 'false')
+  })
+
+  it('numbers unlabeled clips so two speakerless recordings stay distinguishable', async () => {
+    stubFetchWithLocalRecordings(FIXTURE, {
+      published: {
+        a1: [
+          { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1-1.wav' },
+          { url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1-2.wav' },
+        ],
+      },
+    })
+    render(<SoundsView />)
+
+    expect(await screen.findByRole('button', { name: 'Play recording 1' })).toHaveTextContent('Recording 1')
+    expect(screen.getByRole('button', { name: 'Play recording 2' })).toHaveTextContent('Recording 2')
   })
 })
