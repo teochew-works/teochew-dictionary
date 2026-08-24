@@ -6,6 +6,7 @@ describe('fetchWithRetry', () => {
   afterEach(() => {
     vi.unstubAllGlobals()
     vi.useRealTimers()
+    vi.restoreAllMocks()
   })
 
   it('returns immediately on a non-429 response', async () => {
@@ -80,6 +81,41 @@ describe('fetchWithRetry', () => {
 
     expect(res.status).toBe(200)
     expect(fetchMock).toHaveBeenCalledTimes(2)
+  })
+
+  it('logs a 429 retry to stderr by default, so it is visible instead of looking like a hang', async () => {
+    vi.useFakeTimers()
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(new Response('', { status: 429, headers: { 'retry-after': '1' } }))
+      .mockResolvedValueOnce(new Response('ok', { status: 200 }))
+    vi.stubGlobal('fetch', fetchMock)
+
+    const promise = fetchWithRetry('https://example.test', {})
+    await vi.advanceTimersByTimeAsync(1000)
+    await promise
+
+    expect(errorSpy).toHaveBeenCalledTimes(1)
+    expect(errorSpy.mock.calls[0]?.[0]).toContain('429')
+  })
+
+  it('a custom onRetry replaces the default logger rather than running alongside it', async () => {
+    vi.useFakeTimers()
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    const onRetry = vi.fn()
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(new Response('', { status: 429, headers: { 'retry-after': '1' } }))
+      .mockResolvedValueOnce(new Response('ok', { status: 200 }))
+    vi.stubGlobal('fetch', fetchMock)
+
+    const promise = fetchWithRetry('https://example.test', {}, { onRetry })
+    await vi.advanceTimersByTimeAsync(1000)
+    await promise
+
+    expect(onRetry).toHaveBeenCalledTimes(1)
+    expect(errorSpy).not.toHaveBeenCalled()
   })
 
   it('gives up after maxRetries and returns the last 429 response', async () => {
