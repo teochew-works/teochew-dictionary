@@ -111,10 +111,16 @@ reappear as new (DevTools → Application → IndexedDB →
   the licensing toggle: returning to a dictionary that silently hides almost
   everything is worse than re-ticking a box.
 
-  No clip exists yet: `data/phonology/audio/*.yaml` is still unwritten
-  (issues #36/#37, and the #106 merge follow-on), so every `audio`/`wordAudio`
-  slot resolves to `null`, the players render nothing, and the filter reports
-  "No recordings in the dictionary yet" rather than a bare "No matches".
+  Real clips exist for Chaozhou now: `data/phonology/audio/chaozhou.yaml`
+  holds 110 per-syllable clips and 8 whole-word clips, merged via the #106
+  Lingua Libre importer and #128's follow-on merges. Coverage is still
+  partial — most Chaozhou syllables remain unrecorded, and Shantou/Chaoyang
+  (issue #37) have no clips at all — so most entries still resolve every
+  `audio`/`wordAudio` slot to `null` and the players render nothing for them.
+  The empty state distinguishes the two cases: "No matches with a recording"
+  when the dataset has *some* audio but the current search/filter combination
+  excludes it, versus "No recordings in the dictionary yet" only for a
+  dataset with none at all (e.g. a build with no `audio/*.yaml` present).
 - `dist/dict.json` and `dist/sounds.json` are fetched at runtime as static
   assets (via `scripts/sync-data.mjs`, not bundled as a JS import), so the
   dataset can grow without bloating the JS bundle.
@@ -164,4 +170,6 @@ Matches the parent issue's explicit non-goals:
 - Offline/PWA support.
 
 Audio playback was on this list for v1 and no longer is — the UI shipped in
-issue #114. What's still missing is the data: no recording exists to play yet.
+issue #114. Real Chaozhou recordings exist now (issues #106/#128); what's
+still missing is full coverage — most Chaozhou syllables and all of
+Shantou/Chaoyang (issue #37) remain unrecorded.
