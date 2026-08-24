@@ -134,8 +134,8 @@ function SoundRow({
           </span>
         ))}
       </span>
-      {import.meta.env.DEV && (
-        <span className="sound-row__dev-controls">
+      {(clips.length > 0 || import.meta.env.DEV) && (
+        <span className="sound-row__controls">
           {clips.length > 0 && (
             <span className="sound-row__play-list">
               {clips.map((clip, i) => (
@@ -157,7 +157,9 @@ function SoundRow({
               ))}
             </span>
           )}
-          <RecordClipButton pengim={sound.pengim} status={recordStatus} onSaved={onSaved} />
+          {import.meta.env.DEV && (
+            <RecordClipButton pengim={sound.pengim} status={recordStatus} onSaved={onSaved} />
+          )}
         </span>
       )}
     </li>

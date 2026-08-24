@@ -125,9 +125,10 @@
 
 .sound-row {
   display: grid;
-  /* The trailing `auto` column only ever has content in dev, where
-     RecordClipButton renders as a 4th grid child (issue #128) — an empty
-     `auto` track otherwise contributes no width. */
+  /* The trailing `auto` column only has content when a syllable has a
+     published clip (any environment, issue #149) or in dev regardless of
+     clips (RecordClipButton, issue #128) — an empty `auto` track otherwise
+     contributes no width. */
   grid-template-columns: 6rem 6rem 1fr auto;
   gap: 0.75rem;
   align-items: baseline;
@@ -136,9 +137,9 @@
 }
 
 .sound-row:has(.sound-row__count) {
-  /* Same trailing `auto` reservation as the base rule above — without it, the
-     dev-only controls (a 5th grid child) fall onto an implicit second row
-     instead of staying in their own trailing column. */
+  /* Same trailing `auto` reservation as the base rule above — without it,
+     `.sound-row__controls` (a 5th grid child) falls onto an implicit second
+     row instead of staying in its own trailing column. */
   grid-template-columns: 6rem 6rem 4rem 1fr auto;
 }
 
@@ -207,9 +208,12 @@
   }
 }
 
-/* Dev-only record control (issue #128) — see web/src/components/RecordClipButton.tsx. */
+/* Trailing grid column for a sound row: the play-list (any environment,
+   issue #149) and/or the dev-only record control (issue #128) — see
+   web/src/components/RecordClipButton.tsx. Kept as one wrapper so it's at
+   most one grid child; see the `.sound-row` grid-template-columns comment. */
 
-.sound-row__dev-controls {
+.sound-row__controls {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;

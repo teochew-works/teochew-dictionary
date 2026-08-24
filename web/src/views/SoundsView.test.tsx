@@ -263,3 +263,71 @@ describe('SoundsView play button with multiple speakers (issue #134)', () => {
     expect(screen.getByRole('button', { name: 'Play recording 2' })).toHaveTextContent('Recording 2')
   })
 })
+
+const PROD_FIXTURE: SoundsData = {
+  variety: 'chaozhou',
+  sounds: [
+    {
+      pengim: 'a1',
+      ipa: 'a³³',
+      occurrences: 5,
+      examples: [{ headword: '阿', pengim: 'a1', gloss: 'kinship prefix' }],
+      clips: [{ url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1.wav', speaker: 'speaker-1' }],
+    },
+  ],
+}
+
+describe('SoundsView play button in production (issue #149)', () => {
+  let play: ReturnType<typeof vi.spyOn>
+
+  beforeEach(() => {
+    play = vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined)
+    vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
+    vi.stubEnv('DEV', false)
+  })
+
+  afterEach(() => {
+    cleanup()
+    vi.restoreAllMocks()
+    vi.unstubAllGlobals()
+    vi.unstubAllEnvs()
+  })
+
+  it('shows a working play button in production for a syllable with a clip (A–Z)', async () => {
+    stubFetch(PROD_FIXTURE)
+    render(<SoundsView />)
+    const button = await screen.findByRole('button', { name: 'Play recording by speaker-1' })
+
+    fireEvent.click(button)
+
+    expect(play).toHaveBeenCalledTimes(1)
+    expect(button).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  it('shows a working play button in production in Frequency sort mode too', async () => {
+    stubFetch(PROD_FIXTURE)
+    render(<SoundsView />)
+    await screen.findByRole('button', { name: 'Play recording by speaker-1' })
+
+    fireEvent.click(screen.getByRole('button', { name: 'Frequency' }))
+
+    expect(await screen.findByRole('button', { name: 'Play recording by speaker-1' })).toBeInTheDocument()
+  })
+
+  it('renders no play button and no record control in production for a syllable with no clips', async () => {
+    stubFetch(FIXTURE)
+    render(<SoundsView />)
+
+    await screen.findByText('a³³')
+    expect(screen.queryByRole('button', { name: /^Play recording/ })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /^(Record|Re-record|Pending review)$/ })).not.toBeInTheDocument()
+  })
+
+  it('does not render the record control in production even when a clip exists', async () => {
+    stubFetch(PROD_FIXTURE)
+    render(<SoundsView />)
+
+    await screen.findByRole('button', { name: 'Play recording by speaker-1' })
+    expect(screen.queryByRole('button', { name: /^(Record|Re-record|Pending review)$/ })).not.toBeInTheDocument()
+  })
+})
