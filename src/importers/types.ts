@@ -28,6 +28,16 @@ export interface RetryOptions {
    */
   timeoutMs?: number
   /**
+   * Upper bound on any single wait, including a server-supplied
+   * `retry-after` — left uncapped, a large header can stall a call for as
+   * long as the server asks, up to `maxRetries` times over (issue #125: a
+   * `retry-after: 600` with the default `maxRetries` costs up to ~50
+   * minutes, silently). Defaults to 60s: generous next to a normal
+   * rate-limit clear, short enough that a live retry doesn't read as a hung
+   * process.
+   */
+  maxWaitMs?: number
+  /**
    * Fired the moment a 429 is seen, before the backoff wait — a caller that
    * wants to react to rate-limiting (e.g. an adaptive concurrency governor)
    * otherwise has no signal until the whole retry sequence either succeeds or
@@ -47,7 +57,7 @@ export async function fetchWithRetry(
   init: RequestInit,
   options: RetryOptions = {},
 ): Promise<Response> {
-  const { maxRetries = 5, backoffMs = 2000, timeoutMs, onRetry } = options
+  const { maxRetries = 5, backoffMs = 2000, timeoutMs, maxWaitMs = 60_000, onRetry } = options
 
   for (let attempt = 0; ; attempt += 1) {
     const attemptInit = timeoutMs !== undefined ? { ...init, signal: AbortSignal.timeout(timeoutMs) } : init
@@ -55,7 +65,8 @@ export async function fetchWithRetry(
     if (res.status !== 429 || attempt >= maxRetries) return res
 
     const retryAfter = Number(res.headers.get('retry-after'))
-    const waitMs = Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : backoffMs * 2 ** attempt
+    const rawWaitMs = Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : backoffMs * 2 ** attempt
+    const waitMs = Math.min(rawWaitMs, maxWaitMs)
     onRetry?.(res.status, attempt, waitMs)
     await new Promise((r) => setTimeout(r, waitMs))
   }

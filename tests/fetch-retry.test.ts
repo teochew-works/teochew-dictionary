@@ -49,6 +49,39 @@ describe('fetchWithRetry', () => {
     expect(fetchMock).toHaveBeenCalledTimes(2)
   })
 
+  it('caps an oversized retry-after to the default maxWaitMs instead of sleeping it in full', async () => {
+    vi.useFakeTimers()
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(new Response('', { status: 429, headers: { 'retry-after': '3600' } }))
+      .mockResolvedValueOnce(new Response('ok', { status: 200 }))
+    vi.stubGlobal('fetch', fetchMock)
+
+    const promise = fetchWithRetry('https://example.test', {})
+    // The full hour the header asks for never elapses — only the 60s cap does.
+    await vi.advanceTimersByTimeAsync(60_000)
+    const res = await promise
+
+    expect(res.status).toBe(200)
+    expect(fetchMock).toHaveBeenCalledTimes(2)
+  })
+
+  it('honors a custom maxWaitMs', async () => {
+    vi.useFakeTimers()
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(new Response('', { status: 429, headers: { 'retry-after': '3600' } }))
+      .mockResolvedValueOnce(new Response('ok', { status: 200 }))
+    vi.stubGlobal('fetch', fetchMock)
+
+    const promise = fetchWithRetry('https://example.test', {}, { maxWaitMs: 5_000 })
+    await vi.advanceTimersByTimeAsync(5_000)
+    const res = await promise
+
+    expect(res.status).toBe(200)
+    expect(fetchMock).toHaveBeenCalledTimes(2)
+  })
+
   it('gives up after maxRetries and returns the last 429 response', async () => {
     vi.useFakeTimers()
     const fetchMock = vi.fn().mockResolvedValue(new Response('', { status: 429 }))
