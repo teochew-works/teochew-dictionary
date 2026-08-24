@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { buildSounds } from '../src/build/sounds.js'
 import type { LoadedEntry } from '../src/data/load.js'
 import type { Entry } from '../src/schema/entry.js'
+import type { Audio } from '../src/schema/phonology.js'
 
 function entry(overrides: Partial<Entry> & Pick<Entry, 'id' | 'headword' | 'readings'>): LoadedEntry {
   return {
@@ -126,5 +127,34 @@ describe('buildSounds', () => {
   it('skips malformed readings rather than throwing', () => {
     const data = buildSounds([entry({ id: 'bad', headword: '壞', readings: [{ pengim: 'za8', variety: 'chaozhou' }] })])
     expect(data.sounds).toEqual([])
+  })
+
+  it('attaches every recorded clip for a syllable, stripped to playback fields (issue #134)', () => {
+    const audio: Audio = {
+      audio: { id: 'chaozhou', variety: 'chaozhou' },
+      clips: {
+        a1: [
+          { url: 'https://a.example/1', confidence: 'high', sources: ['x'], checksum: `sha256:${'a'.repeat(64)}`, speaker: 'x' },
+          { url: 'https://a.example/2', confidence: 'low', sources: ['x'], checksum: `sha256:${'b'.repeat(64)}` },
+        ],
+      },
+    }
+    const data = buildSounds(
+      [entry({ id: 'a', headword: '阿', readings: [{ pengim: 'a1', variety: 'chaozhou' }] })],
+      undefined,
+      audio,
+    )
+    const a1 = data.sounds.find((s) => s.pengim === 'a1')!
+    expect(a1.clips).toEqual([{ url: 'https://a.example/1', speaker: 'x' }, { url: 'https://a.example/2' }])
+  })
+
+  it('gives a syllable with no recorded clips an empty list, not undefined', () => {
+    const data = buildSounds(
+      [entry({ id: 'a', headword: '阿', readings: [{ pengim: 'a1', variety: 'chaozhou' }] })],
+      undefined,
+      null,
+    )
+    const a1 = data.sounds.find((s) => s.pengim === 'a1')!
+    expect(a1.clips).toEqual([])
   })
 })

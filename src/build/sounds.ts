@@ -1,5 +1,5 @@
 import type { LoadedEntry } from '../data/load.js'
-import { loadPengimScheme } from '../phonology/load.js'
+import { loadAudioIfExists, loadPengimScheme } from '../phonology/load.js'
 import {
   buildAttestationCounts,
   buildAttestationIndex,
@@ -8,7 +8,7 @@ import {
 import { toIpa } from '../phonology/ipa.js'
 import { parsePengim } from '../phonology/syllable.js'
 import type { Entry } from '../schema/entry.js'
-import type { PengimScheme } from '../schema/phonology.js'
+import type { Audio, PengimScheme } from '../schema/phonology.js'
 
 /**
  * Every distinct Peng'im syllable ("sound") actually spoken by a headword's
@@ -35,6 +35,12 @@ export interface SoundExample {
   gloss: string
 }
 
+/** A published recording of this sound, stripped down to what playback needs. */
+export interface SoundClip {
+  url: string
+  speaker?: string
+}
+
 export interface Sound {
   pengim: string
   ipa: string
@@ -46,6 +52,14 @@ export interface Sound {
    */
   occurrences: number
   examples: SoundExample[]
+  /**
+   * Every recorded clip for this syllable (issue #134), not just one — the
+   * Sounds tab lets a visitor play and compare all of them, unlike the
+   * Dictionary tab's single-clip-per-reading playback (see
+   * `selectPrimaryClip` in `./enrich.js`). Empty when the syllable has no
+   * recording yet.
+   */
+  clips: SoundClip[]
 }
 
 export interface SoundsData {
@@ -79,7 +93,11 @@ function compareExampleCandidates(
   return a.entry.headword.localeCompare(b.entry.headword, 'zh')
 }
 
-export function buildSounds(loaded: LoadedEntry[], scheme: PengimScheme = loadPengimScheme()): SoundsData {
+export function buildSounds(
+  loaded: LoadedEntry[],
+  scheme: PengimScheme = loadPengimScheme(),
+  audio: Audio | null = loadAudioIfExists(SOUNDS_VARIETY),
+): SoundsData {
   const byId = new Map(loaded.map(({ entry }) => [entry.id, entry]))
   const attestation = buildAttestationIndex(loaded, scheme)
   const citationCounts = buildAttestationCounts(loaded, scheme)
@@ -114,7 +132,11 @@ export function buildSounds(loaded: LoadedEntry[], scheme: PengimScheme = loadPe
       gloss: entry.senses[0]?.gloss_en[0] ?? '',
     }))
 
-    sounds.push({ pengim: syllableRaw, ipa: toIpa(syllableRaw, SOUNDS_VARIETY).ipa, occurrences, examples })
+    const clips = (audio?.clips[syllableRaw] ?? []).map((c) =>
+      c.speaker ? { url: c.url, speaker: c.speaker } : { url: c.url },
+    )
+
+    sounds.push({ pengim: syllableRaw, ipa: toIpa(syllableRaw, SOUNDS_VARIETY).ipa, occurrences, examples, clips })
   }
 
   // Plain code-point order, not localeCompare: ICU collation treats `ê` as a
