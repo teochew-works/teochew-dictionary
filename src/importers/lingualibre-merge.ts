@@ -65,7 +65,12 @@ function audioFileHeader(variety: string): string {
 export interface MergeOptions extends RehostOptions {
   variety: string
   confidence?: (typeof CONFIDENCE)[number]
-  /** Overwrite an existing clip at the same key instead of refusing. */
+  /**
+   * A distinct speaker's clip at an already-used key is always appended — no
+   * flag needed. `force` only matters when `proposal.speaker` already has a
+   * clip at this key: without it, that's refused; with it, that speaker's
+   * existing clip is replaced (issue #134).
+   */
   force?: boolean
   /** Injectable for tests — avoids writing into the real data/phonology/audio/. */
   audioDir?: string
@@ -118,8 +123,12 @@ export async function mergeLinguaLibreClip(proposal: AudioClipProposal, options:
   const audio: Audio = loadAudioFile(path) ?? { audio: { id: variety, variety }, clips: {}, wordClips: {} }
 
   const existingBucket = audio[bucket] ?? {}
-  if (Object.hasOwn(existingBucket, key) && !force) {
-    throw new Error(`'${key}' already has a clip in ${bucket} for '${variety}' (${path}) — pass --force to overwrite`)
+  const existingList = Object.hasOwn(existingBucket, key) ? existingBucket[key]! : []
+  const dupIndex = existingList.findIndex((c) => c.speaker === proposal.speaker)
+  if (dupIndex !== -1 && !force) {
+    throw new Error(
+      `'${proposal.speaker}' already has a clip at '${key}' in ${bucket} for '${variety}' (${path}) — pass --force to overwrite`,
+    )
   }
 
   const { url, checksum } = await rehostClip(proposal, rehostOptions)
@@ -133,9 +142,12 @@ export async function mergeLinguaLibreClip(proposal: AudioClipProposal, options:
     ...(proposal.uploadDate ? { recorded: proposal.uploadDate } : {}),
   }
 
+  const newList =
+    dupIndex !== -1 ? existingList.map((c, i) => (i === dupIndex ? clip : c)) : [...existingList, clip]
+
   const updated: Audio = audioSchema.parse({
     ...audio,
-    [bucket]: { ...existingBucket, [key]: clip },
+    [bucket]: { ...existingBucket, [key]: newList },
   })
 
   mkdirSync(audioDir, { recursive: true })

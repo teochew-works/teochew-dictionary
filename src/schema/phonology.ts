@@ -156,8 +156,15 @@ export const audioSchema = z.object({
     id: z.string().min(1),
     variety: z.string().min(1),
   }),
-  /** Keyed by canonical Peng'im syllable, e.g. `dio5` — matches `syllable-inventory.yaml` item keys. */
-  clips: z.record(audioClip),
+  /**
+   * Keyed by canonical Peng'im syllable, e.g. `dio5` — matches
+   * `syllable-inventory.yaml` item keys. A non-empty list, not a single clip
+   * (issue #134): distinct speakers' recordings of the same syllable can
+   * coexist. Consumers that need exactly one clip (e.g. Dictionary-tab
+   * playback) apply a documented selection rule — see `selectPrimaryClip` in
+   * `src/build/enrich.ts`.
+   */
+  clips: z.record(z.array(audioClip).min(1)),
   /**
    * Whole-word/phrase clips, keyed by a reading's full space-joined pengim
    * string (e.g. `bhi7 jui2`) rather than a single syllable — see
@@ -167,7 +174,7 @@ export const audioSchema = z.object({
    * single-syllable reading. No inheritance and no compositional fallback,
    * same rule as `clips` — a reading either has a word clip or it doesn't.
    */
-  wordClips: z.record(audioClip).optional(),
+  wordClips: z.record(z.array(audioClip).min(1)).optional(),
 })
 
 export const pojSchema = z.object({

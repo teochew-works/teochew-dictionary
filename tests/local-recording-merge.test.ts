@@ -56,7 +56,8 @@ describe('mergeLocalRecording', () => {
 
     const written = parseYaml(readFileSync(result.path, 'utf8'))
     expect(written.audio).toEqual({ id: 'chaozhou', variety: 'chaozhou' })
-    expect(written.clips.dio5).toMatchObject({
+    expect(written.clips.dio5).toHaveLength(1)
+    expect(written.clips.dio5[0]).toMatchObject({
       url: result.url,
       confidence: 'high',
       sources: ['teochew-dictionary-audio'],
@@ -81,12 +82,14 @@ describe('mergeLocalRecording', () => {
       stringify({
         audio: { id: 'chaozhou', variety: 'chaozhou' },
         clips: {
-          existing1: {
-            url: `https://github.com/${GITHUB_REPO}/releases/download/audio-lingualibre/existing1.wav`,
-            confidence: 'high',
-            sources: ['lingualibre'],
-            checksum: `sha256:${'a'.repeat(64)}`,
-          },
+          existing1: [
+            {
+              url: `https://github.com/${GITHUB_REPO}/releases/download/audio-lingualibre/existing1.wav`,
+              confidence: 'high',
+              sources: ['lingualibre'],
+              checksum: `sha256:${'a'.repeat(64)}`,
+            },
+          ],
         },
       }),
     )
@@ -102,18 +105,30 @@ describe('mergeLocalRecording', () => {
     expect(Object.keys(written.clips).sort()).toEqual(['dio5', 'existing1'])
   })
 
-  it('refuses to overwrite an existing key without force', async () => {
+  it('appends a distinct speaker as a second clip at an already-used key, without needing force (issue #134)', async () => {
+    const base = { variety: 'chaozhou', audioDir, rootDir, readBytes: () => Buffer.from('x'), ...rehostOptions }
+    await mergeLocalRecording(proposal({ speaker: 'first-speaker' }), base)
+    const result = await mergeLocalRecording(proposal({ speaker: 'second-speaker' }), base)
+    const written = parseYaml(readFileSync(result.path, 'utf8'))
+    expect(written.clips.dio5.map((c: { speaker: string }) => c.speaker).sort()).toEqual([
+      'first-speaker',
+      'second-speaker',
+    ])
+  })
+
+  it('refuses to overwrite the same speaker\'s existing clip at a key without force', async () => {
     const opts = { variety: 'chaozhou', audioDir, rootDir, readBytes: () => Buffer.from('x'), ...rehostOptions }
     await mergeLocalRecording(proposal(), opts)
     await expect(mergeLocalRecording(proposal(), opts)).rejects.toThrow(/already has a clip/)
   })
 
-  it('overwrites an existing key when force is set', async () => {
+  it('replaces that speaker\'s existing clip in place when force is set — the list does not grow', async () => {
     const base = { variety: 'chaozhou', audioDir, rootDir, readBytes: () => Buffer.from('x'), ...rehostOptions }
-    await mergeLocalRecording(proposal({ speaker: 'first-speaker' }), base)
-    const result = await mergeLocalRecording(proposal({ speaker: 'second-speaker' }), { ...base, force: true })
+    await mergeLocalRecording(proposal(), base)
+    const result = await mergeLocalRecording(proposal({ recordedDate: '2026-08-24' }), { ...base, force: true })
     const written = parseYaml(readFileSync(result.path, 'utf8'))
-    expect(written.clips.dio5.speaker).toBe('second-speaker')
+    expect(written.clips.dio5).toHaveLength(1)
+    expect(written.clips.dio5[0].recorded).toBe('2026-08-24')
   })
 
   it('defaults confidence to high and accepts an override', async () => {
@@ -126,7 +141,7 @@ describe('mergeLocalRecording', () => {
       ...rehostOptions,
     })
     const written = parseYaml(readFileSync(result.path, 'utf8'))
-    expect(written.clips.dio5.confidence).toBe('medium')
+    expect(written.clips.dio5[0].confidence).toBe('medium')
   })
 
   it('preserves a hand-written comment when merging a second clip into an existing file', async () => {
@@ -137,12 +152,14 @@ describe('mergeLocalRecording', () => {
       `${handComment}\n${stringify({
         audio: { id: 'chaozhou', variety: 'chaozhou' },
         clips: {
-          existing1: {
-            url: `https://github.com/${GITHUB_REPO}/releases/download/audio-lingualibre/existing1.wav`,
-            confidence: 'high',
-            sources: ['lingualibre'],
-            checksum: `sha256:${'a'.repeat(64)}`,
-          },
+          existing1: [
+            {
+              url: `https://github.com/${GITHUB_REPO}/releases/download/audio-lingualibre/existing1.wav`,
+              confidence: 'high',
+              sources: ['lingualibre'],
+              checksum: `sha256:${'a'.repeat(64)}`,
+            },
+          ],
         },
       })}`,
     )

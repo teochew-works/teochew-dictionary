@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto'
 
 import { IMPORTER_USER_AGENT } from '../importers/types.js'
-import type { Audio } from '../schema/phonology.js'
+import type { Audio, AudioClip } from '../schema/phonology.js'
 import type { Issue } from './index.js'
 
 /**
@@ -40,11 +40,13 @@ function err(file: string, message: string, path: string): Issue {
  * repo (data/phonology/REVIEW.md § 12) — so leaving word clips out verified
  * nothing while still reporting success.
  */
-function clipEntries(audio: Audio): [string, Audio['clips'][string]][] {
+function clipEntries(audio: Audio): [string, AudioClip][] {
   return [
-    ...Object.entries(audio.clips).map(([key, clip]): [string, Audio['clips'][string]] => [`clips.${key}`, clip]),
-    ...Object.entries(audio.wordClips ?? {}).map(
-      ([key, clip]): [string, Audio['clips'][string]] => [`wordClips.${key}`, clip],
+    ...Object.entries(audio.clips).flatMap(([key, clips]): [string, AudioClip][] =>
+      clips.map((clip, i) => [`clips.${key}[${i}]`, clip]),
+    ),
+    ...Object.entries(audio.wordClips ?? {}).flatMap(([key, clips]): [string, AudioClip][] =>
+      clips.map((clip, i) => [`wordClips.${key}[${i}]`, clip]),
     ),
   ]
 }
