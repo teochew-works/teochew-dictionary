@@ -26,7 +26,10 @@ for (const id of listAudioVarieties()) {
 }
 
 const clipCount = sources.reduce(
-  (n, s) => n + Object.keys(s.audio.clips).length + Object.keys(s.audio.wordClips ?? {}).length,
+  (n, s) =>
+    n +
+    Object.values(s.audio.clips).reduce((m, clips) => m + clips.length, 0) +
+    Object.values(s.audio.wordClips ?? {}).reduce((m, clips) => m + clips.length, 0),
   0,
 )
 

@@ -39,7 +39,7 @@ describe('verifyAudioRemote', () => {
 
     const issues = await verifyAudioRemote(sources, { fetchClip })
     expect(issues).toHaveLength(1)
-    expect(issues[0]).toMatchObject({ level: 'error', path: 'clips.dio5' })
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'clips.dio5[0]' })
     expect(issues[0]?.message).toContain('HTTP 404')
   })
 
@@ -49,7 +49,7 @@ describe('verifyAudioRemote', () => {
 
     const issues = await verifyAudioRemote(sources, { fetchClip })
     expect(issues).toHaveLength(1)
-    expect(issues[0]).toMatchObject({ level: 'error', path: 'clips.dio5.checksum' })
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'clips.dio5[0].checksum' })
     expect(issues[0]?.message).toContain('checksum mismatch')
   })
 
@@ -71,7 +71,7 @@ describe('verifyAudioRemote', () => {
       { file: 'data/phonology/audio/chaozhou.yaml', audio: audio({ dio5: clip() }) },
       {
         file: 'data/phonology/audio/shantou.yaml',
-        audio: { audio: { id: 'shantou', variety: 'shantou' }, clips: { ziu1: clip({ url: url2 }) } },
+        audio: { audio: { id: 'shantou', variety: 'shantou' }, clips: { ziu1: [clip({ url: url2 })] } },
       },
     ]
     const fetchClip = fetchClipFixture({
@@ -113,7 +113,7 @@ describe('verifyAudioRemote over wordClips', () => {
 
     const issues = await verifyAudioRemote(sources, { fetchClip })
     expect(issues).toHaveLength(1)
-    expect(issues[0]).toMatchObject({ level: 'error', path: 'wordClips.dio5 ziu1.checksum' })
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'wordClips.dio5 ziu1[0].checksum' })
   })
 
   it('checks clips and wordClips in the same table', async () => {
@@ -127,6 +127,6 @@ describe('verifyAudioRemote over wordClips', () => {
 
     const issues = await verifyAudioRemote(sources, { fetchClip })
     expect(issues).toHaveLength(1)
-    expect(issues[0]).toMatchObject({ path: 'wordClips.dio5 ziu1' })
+    expect(issues[0]).toMatchObject({ path: 'wordClips.dio5 ziu1[0]' })
   })
 })

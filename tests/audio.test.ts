@@ -18,9 +18,18 @@ function source(id: string, kind: SourceKind = 'import', licence?: string): Sour
 const clip = makeClipFixture(VALID_CHECKSUM)
 const audio = audioTable
 
-/** Raw (possibly invalid) input for schema tests — bypasses the typed `Audio` fixtures above. */
+/**
+ * Raw (possibly invalid) input for schema tests — bypasses the typed `Audio`
+ * fixtures above. Each key's value is wrapped in a one-element array (issue
+ * #134's list shape) unless it's already an array, so a malformed clip is
+ * still validated as one list element, exercising the same per-clip checks
+ * as before.
+ */
 function rawAudio(clips: Record<string, unknown>): unknown {
-  return { audio: { id: 'chaozhou', variety: 'chaozhou' }, clips }
+  const wrapped = Object.fromEntries(
+    Object.entries(clips).map(([key, v]) => [key, Array.isArray(v) ? v : [v]]),
+  )
+  return { audio: { id: 'chaozhou', variety: 'chaozhou' }, clips: wrapped }
 }
 
 describe('audioSchema', () => {
@@ -60,7 +69,7 @@ describe('audioSchema', () => {
   it('accepts an uppercase-hex checksum, normalising it to lowercase', () => {
     const upper = clip({ checksum: `sha256:${'A'.repeat(64)}` })
     const parsed = audioSchema.parse(rawAudio({ dio5: upper }))
-    expect(parsed.clips.dio5?.checksum).toBe(VALID_CHECKSUM)
+    expect(parsed.clips.dio5?.[0]?.checksum).toBe(VALID_CHECKSUM)
   })
 
   it('rejects a malformed recorded date', () => {
@@ -126,6 +135,16 @@ describe('audioSchema', () => {
   it('accepts a file with no wordClips at all — optional, the common case', () => {
     expect(audioSchema.parse(audio({ dio5: clip() })).wordClips).toBeUndefined()
   })
+
+  it('accepts more than one clip at the same key — distinct speakers of the same syllable (issue #134)', () => {
+    const table = audio({ dio5: [clip({ speaker: 'a' }), clip({ speaker: 'b' })] })
+    const parsed = audioSchema.parse(table)
+    expect(parsed.clips.dio5).toHaveLength(2)
+  })
+
+  it('rejects an empty clip list at a key — must be non-empty', () => {
+    expect(() => audioSchema.parse(rawAudio({ dio5: [] }))).toThrow()
+  })
 })
 
 describe('checkAudio', () => {
@@ -178,7 +197,7 @@ describe('checkAudio', () => {
     // legal syllable, but VALID_URL (via clip()'s default) points at .../dio5.opus.
     const issues = checkAudio('f.yaml', audio({ ziu1: clip() }), 'chaozhou', varietyIds, sourceMap, legalSyllables)
     expect(issues).toHaveLength(1)
-    expect(issues[0]).toMatchObject({ level: 'warning', path: 'clips.ziu1.url' })
+    expect(issues[0]).toMatchObject({ level: 'warning', path: 'clips.ziu1[0].url' })
     expect(issues[0]?.message).toContain("does not reference its own syllable 'ziu1'")
   })
 
@@ -281,7 +300,7 @@ describe('checkAudio', () => {
     const table = audioTable({}, { 'ziu1 dio5': clip({ url: VALID_URL }) })
     const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
     expect(issues).toHaveLength(1)
-    expect(issues[0]).toMatchObject({ level: 'warning', path: 'wordClips.ziu1 dio5.url' })
+    expect(issues[0]).toMatchObject({ level: 'warning', path: 'wordClips.ziu1 dio5[0].url' })
   })
 
   it('flags an unresolved source on a wordClips entry', () => {
@@ -289,6 +308,25 @@ describe('checkAudio', () => {
     const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
     expect(issues).toHaveLength(1)
     expect(issues[0]?.message).toContain("unknown source 'nope'")
+  })
+
+  it('passes distinct speakers at the same clips key — the whole point of issue #134', () => {
+    const table = audio({ dio5: [clip({ speaker: 'a' }), clip({ speaker: 'b' })] })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toEqual([])
+  })
+
+  it('flags more than one clip from the same speaker at the same clips key — should have been caught at merge time', () => {
+    const table = audio({ dio5: [clip({ speaker: 'a' }), clip({ speaker: 'a' })] })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain("more than one clip from speaker 'a'")
+  })
+
+  it('does not flag more than one clip with no speaker at all — nothing to dedupe against', () => {
+    const table = audio({ dio5: [clip({ speaker: undefined }), clip({ speaker: undefined })] })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toEqual([])
   })
 })
 
@@ -352,6 +390,32 @@ describe('deriveReadingAudio', () => {
     expect(() => deriveReadingAudio(syllables, table, sources)).toThrow(
       /not classified as permissive, share-alike, or public-domain/u,
     )
+  })
+
+  it('picks the highest-confidence clip when a syllable has more than one (issue #134)', () => {
+    const syllables = parsePengim('dio5')
+    const table = audio({
+      dio5: [
+        clip({ confidence: 'low', speaker: 'a', recorded: '2026-08-01' }),
+        clip({ confidence: 'high', speaker: 'b', recorded: '2020-01-01' }),
+        clip({ confidence: 'medium', speaker: 'c', recorded: '2026-08-02' }),
+      ],
+    })
+    const [resolved] = deriveReadingAudio(syllables, table, sources)
+    expect(resolved).toMatchObject({ confidence: 'high' })
+  })
+
+  it('breaks a confidence tie by the most recently recorded clip', () => {
+    const olderUrl = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/dio5-older.opus`
+    const syllables = parsePengim('dio5')
+    const table = audio({
+      dio5: [
+        clip({ confidence: 'high', recorded: '2020-01-01', url: olderUrl }),
+        clip({ confidence: 'high', recorded: '2026-08-01' }),
+      ],
+    })
+    const [resolved] = deriveReadingAudio(syllables, table, sources)
+    expect(resolved).toMatchObject({ url: AUDIO_CLIP_URL })
   })
 })
 

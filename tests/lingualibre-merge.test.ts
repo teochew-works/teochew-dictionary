@@ -96,7 +96,8 @@ describe('mergeLinguaLibreClip', () => {
 
     const written = parseYaml(readFileSync(result.path, 'utf8'))
     expect(written.audio).toEqual({ id: 'chaozhou', variety: 'chaozhou' })
-    expect(written.clips.dio5).toMatchObject({
+    expect(written.clips.dio5).toHaveLength(1)
+    expect(written.clips.dio5[0]).toMatchObject({
       url: result.url,
       confidence: 'high',
       sources: ['lingualibre'],
@@ -126,7 +127,7 @@ describe('mergeLinguaLibreClip', () => {
     expect(result.sourceId).toBe('lingualibre-cc0')
 
     const written = parseYaml(readFileSync(result.path, 'utf8'))
-    expect(written.clips.dio5.sources).toEqual(['lingualibre-cc0'])
+    expect(written.clips.dio5[0].sources).toEqual(['lingualibre-cc0'])
   })
 
   it('records the uploadDate as recorded when present, and omits it otherwise', async () => {
@@ -136,14 +137,14 @@ describe('mergeLinguaLibreClip', () => {
       ...rehostOptions,
     })
     const written = parseYaml(readFileSync(withDate.path, 'utf8'))
-    expect(written.clips.dio5.recorded).toBe('2024-03-01')
-    expect('recorded' in (parseYaml(readFileSync(withDate.path, 'utf8')).clips.dio5 ?? {})).toBe(true)
+    expect(written.clips.dio5[0].recorded).toBe('2024-03-01')
+    expect('recorded' in (parseYaml(readFileSync(withDate.path, 'utf8')).clips.dio5[0] ?? {})).toBe(true)
 
     rmSync(audioDir, { recursive: true, force: true })
     audioDir = mkdtempSync(join(tmpdir(), 'lingualibre-merge-test-'))
     const withoutDate = await mergeLinguaLibreClip(proposal(), { variety: 'chaozhou', audioDir, ...rehostOptions })
     const writtenNoDate = parseYaml(readFileSync(withoutDate.path, 'utf8'))
-    expect('recorded' in writtenNoDate.clips.dio5).toBe(false)
+    expect('recorded' in writtenNoDate.clips.dio5[0]).toBe(false)
   })
 
   it('preserves existing clips already in the file when adding a new one', async () => {
@@ -153,12 +154,14 @@ describe('mergeLinguaLibreClip', () => {
       stringify({
         audio: { id: 'chaozhou', variety: 'chaozhou' },
         clips: {
-          existing1: {
-            url: `https://github.com/${GITHUB_REPO}/releases/download/audio-lingualibre/existing1.wav`,
-            confidence: 'high',
-            sources: ['lingualibre'],
-            checksum: `sha256:${'a'.repeat(64)}`,
-          },
+          existing1: [
+            {
+              url: `https://github.com/${GITHUB_REPO}/releases/download/audio-lingualibre/existing1.wav`,
+              confidence: 'high',
+              sources: ['lingualibre'],
+              checksum: `sha256:${'a'.repeat(64)}`,
+            },
+          ],
         },
       }),
     )
@@ -168,23 +171,35 @@ describe('mergeLinguaLibreClip', () => {
     expect(Object.keys(written.clips).sort()).toEqual(['dio5', 'existing1'])
   })
 
-  it('refuses to overwrite an existing key without force', async () => {
+  it('appends a distinct speaker as a second clip at an already-used key, without needing force (issue #134)', async () => {
+    await mergeLinguaLibreClip(proposal({ speaker: 'First' }), { variety: 'chaozhou', audioDir, ...rehostOptions })
+    const result = await mergeLinguaLibreClip(proposal({ speaker: 'Second' }), {
+      variety: 'chaozhou',
+      audioDir,
+      ...rehostOptions,
+    })
+    const written = parseYaml(readFileSync(result.path, 'utf8'))
+    expect(written.clips.dio5.map((c: { speaker: string }) => c.speaker).sort()).toEqual(['First', 'Second'])
+  })
+
+  it('refuses to overwrite the same speaker\'s existing clip at a key without force', async () => {
     await mergeLinguaLibreClip(proposal(), { variety: 'chaozhou', audioDir, ...rehostOptions })
     await expect(mergeLinguaLibreClip(proposal(), { variety: 'chaozhou', audioDir, ...rehostOptions })).rejects.toThrow(
       /already has a clip/,
     )
   })
 
-  it('overwrites an existing key when force is set', async () => {
-    await mergeLinguaLibreClip(proposal({ speaker: 'First' }), { variety: 'chaozhou', audioDir, ...rehostOptions })
-    const result = await mergeLinguaLibreClip(proposal({ speaker: 'Second' }), {
+  it('replaces that speaker\'s existing clip in place when force is set — the list does not grow', async () => {
+    await mergeLinguaLibreClip(proposal(), { variety: 'chaozhou', audioDir, ...rehostOptions })
+    const result = await mergeLinguaLibreClip(proposal({ uploadDate: '2024-03-01' }), {
       variety: 'chaozhou',
       audioDir,
       force: true,
       ...rehostOptions,
     })
     const written = parseYaml(readFileSync(result.path, 'utf8'))
-    expect(written.clips.dio5.speaker).toBe('Second')
+    expect(written.clips.dio5).toHaveLength(1)
+    expect(written.clips.dio5[0].recorded).toBe('2024-03-01')
   })
 
   it('rejects a proposal whose licence has no known source mapping', async () => {
@@ -201,7 +216,7 @@ describe('mergeLinguaLibreClip', () => {
       ...rehostOptions,
     })
     const written = parseYaml(readFileSync(result.path, 'utf8'))
-    expect(written.clips.dio5.confidence).toBe('medium')
+    expect(written.clips.dio5[0].confidence).toBe('medium')
   })
 
   it('does not mistake a pengim key matching an Object.prototype member name for an existing clip', async () => {
@@ -226,12 +241,14 @@ describe('mergeLinguaLibreClip', () => {
       `${handComment}\n${stringify({
         audio: { id: 'chaozhou', variety: 'chaozhou' },
         clips: {
-          existing1: {
-            url: `https://github.com/${GITHUB_REPO}/releases/download/audio-lingualibre/existing1.wav`,
-            confidence: 'high',
-            sources: ['lingualibre'],
-            checksum: `sha256:${'a'.repeat(64)}`,
-          },
+          existing1: [
+            {
+              url: `https://github.com/${GITHUB_REPO}/releases/download/audio-lingualibre/existing1.wav`,
+              confidence: 'high',
+              sources: ['lingualibre'],
+              checksum: `sha256:${'a'.repeat(64)}`,
+            },
+          ],
         },
       })}`,
     )

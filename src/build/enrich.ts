@@ -93,6 +93,24 @@ export function stripDiacritics(s: string): string {
   return s.normalize('NFD').replace(/\p{M}/gu, '').normalize('NFC')
 }
 
+const CONFIDENCE_RANK: Record<Confidence, number> = { high: 0, medium: 1, low: 2 }
+
+/**
+ * Picks the one clip a single-clip consumer (Dictionary-tab playback, CLI
+ * lookup) shows for a syllable/reading that has more than one (issue #134):
+ * highest `confidence` wins; ties broken by the most recent `recorded` date;
+ * a clip missing `recorded` sorts as older than one that has it. If still
+ * tied (e.g. both undefined), the earlier clip in the list wins — `sort` is
+ * stable, so this falls out of the comparator alone.
+ */
+function selectPrimaryClip(clips: AudioClip[]): AudioClip {
+  return [...clips].sort((a, b) => {
+    const byConfidence = CONFIDENCE_RANK[a.confidence] - CONFIDENCE_RANK[b.confidence]
+    if (byConfidence !== 0) return byConfidence
+    return (b.recorded ?? '').localeCompare(a.recorded ?? '')
+  })[0]!
+}
+
 /**
  * Look up each syllable's whole-syllable clip, if any. Pure and independent of
  * file I/O so it's directly testable — `audio` is `null` when the variety has
@@ -106,8 +124,9 @@ export function deriveReadingAudio(
   if (!audio) return syllables.map(() => null)
 
   return syllables.map((s) => {
-    const clip = audio.clips[s.raw]
-    if (!clip) return null
+    const clips = audio.clips[s.raw]
+    if (!clips || clips.length === 0) return null
+    const clip = selectPrimaryClip(clips)
 
     const resolved = resolveLicenceOrThrow(clip.sources, sources, `${audio.audio.id}/${s.raw}`)
 
@@ -132,8 +151,9 @@ export function deriveReadingWordAudio(
   audio: Audio | null,
   sources: Map<string, Source>,
 ): AudioReference | null {
-  const clip = audio?.wordClips?.[pengim]
-  if (!audio || !clip) return null
+  const clips = audio?.wordClips?.[pengim]
+  if (!audio || !clips || clips.length === 0) return null
+  const clip = selectPrimaryClip(clips)
 
   const resolved = resolveLicenceOrThrow(clip.sources, sources, `${audio.audio.id}/${pengim}`)
 

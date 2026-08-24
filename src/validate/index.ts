@@ -18,7 +18,7 @@ import { toIpa } from '../phonology/ipa.js'
 import { toPoj } from '../phonology/poj.js'
 import { resolveLicence } from '../data/licence.js'
 import type { Entry, Source } from '../schema/entry.js'
-import type { Audio, Variety } from '../schema/phonology.js'
+import type { Audio, AudioClip, Variety } from '../schema/phonology.js'
 import type { ExternalChart, SyllableInventory } from '../schema/inventory.js'
 
 /**
@@ -473,6 +473,26 @@ function stripDiacritics(s: string): string {
   return s.normalize('NFD').replace(new RegExp('[\\u0300-\\u036f]', 'gu'), '')
 }
 
+/**
+ * Defense-in-depth against a hand-edit bypassing `mergeLocalRecording`'s/
+ * `mergeLinguaLibreClip`'s per-speaker uniqueness check (issue #134): flags
+ * more than one clip from the same named speaker under one `clips`/
+ * `wordClips` key. Clips with no `speaker` at all are never compared —
+ * there's no identity to dedupe against.
+ */
+function checkDuplicateSpeakers(file: string, key: string, clips: AudioClip[], path: string): Issue[] {
+  const seen = new Set<string>()
+  const dupes = new Set<string>()
+  for (const clip of clips) {
+    if (!clip.speaker) continue
+    if (seen.has(clip.speaker)) dupes.add(clip.speaker)
+    seen.add(clip.speaker)
+  }
+  return [...dupes].map((speaker) =>
+    err(file, `'${key}' has more than one clip from speaker '${speaker}'`, undefined, path),
+  )
+}
+
 export function checkAudio(
   file: string,
   audio: Audio,
@@ -491,45 +511,51 @@ export function checkAudio(
     issues.push(err(file, `unknown variety '${audio.audio.variety}' (have: ${[...varietyIds].join(', ')})`))
   }
 
-  for (const [syllable, clip] of Object.entries(audio.clips)) {
+  for (const [syllable, clips] of Object.entries(audio.clips)) {
     const path = `clips.${syllable}`
 
     if (!legalSyllables.has(syllable)) {
       issues.push(err(file, `'${syllable}' is not a legal Peng'im syllable`, undefined, path))
     }
 
-    // A stale copy-pasted url (e.g. from another clip entry) is otherwise
-    // undetectable — the URL regex and licence checks pass regardless of
-    // which syllable it actually points at. Warning, not error: asset
-    // naming is explicitly non-binding (REVIEW.md § 12), so a url that
-    // legitimately omits the syllable shouldn't block the build.
-    // stripDiacritics: rehost filenames are ASCII-slugged (lingualibre-
-    // rehost.ts's slugAssetFilename), so a syllable like 'sêg4' legitimately
-    // shows up as 'seg4' in its own url.
-    if (!clip.url.toLowerCase().includes(stripDiacritics(syllable.toLowerCase()))) {
+    issues.push(...checkDuplicateSpeakers(file, syllable, clips, path))
+
+    clips.forEach((clip, i) => {
+      const clipPath = `${path}[${i}]`
+
+      // A stale copy-pasted url (e.g. from another clip entry) is otherwise
+      // undetectable — the URL regex and licence checks pass regardless of
+      // which syllable it actually points at. Warning, not error: asset
+      // naming is explicitly non-binding (REVIEW.md § 12), so a url that
+      // legitimately omits the syllable shouldn't block the build.
+      // stripDiacritics: rehost filenames are ASCII-slugged (lingualibre-
+      // rehost.ts's slugAssetFilename), so a syllable like 'sêg4' legitimately
+      // shows up as 'seg4' in its own url.
+      if (!clip.url.toLowerCase().includes(stripDiacritics(syllable.toLowerCase()))) {
+        issues.push(
+          warn(
+            file,
+            `clip url does not reference its own syllable '${syllable}' — double check it wasn't copied from a different clip`,
+            undefined,
+            `${clipPath}.url`,
+          ),
+        )
+      }
+
       issues.push(
-        warn(
+        ...checkSources(
           file,
-          `clip url does not reference its own syllable '${syllable}' — double check it wasn't copied from a different clip`,
+          clip.sources,
+          sourceMap,
+          "cannot back a clip directly (evidence about the language, not the clip's origin)",
           undefined,
-          `${path}.url`,
+          `${clipPath}.sources`,
         ),
       )
-    }
-
-    issues.push(
-      ...checkSources(
-        file,
-        clip.sources,
-        sourceMap,
-        "cannot back a clip directly (evidence about the language, not the clip's origin)",
-        undefined,
-        `${path}.sources`,
-      ),
-    )
+    })
   }
 
-  for (const [key, clip] of Object.entries(audio.wordClips ?? {})) {
+  for (const [key, clips] of Object.entries(audio.wordClips ?? {})) {
     const path = `wordClips.${key}`
 
     const parsed = tryParsePengim(key)
@@ -547,31 +573,37 @@ export function checkAudio(
       }
     }
 
-    // Same soft copy-paste guard as `clips`, checked against the key's first
-    // syllable — a full multi-syllable match is not required since asset
-    // naming is non-binding (REVIEW.md § 12).
-    const firstSyllable = key.split(/\s+/u)[0] ?? key
-    if (!clip.url.toLowerCase().includes(firstSyllable.toLowerCase())) {
+    issues.push(...checkDuplicateSpeakers(file, key, clips, path))
+
+    clips.forEach((clip, i) => {
+      const clipPath = `${path}[${i}]`
+
+      // Same soft copy-paste guard as `clips`, checked against the key's first
+      // syllable — a full multi-syllable match is not required since asset
+      // naming is non-binding (REVIEW.md § 12).
+      const firstSyllable = key.split(/\s+/u)[0] ?? key
+      if (!clip.url.toLowerCase().includes(firstSyllable.toLowerCase())) {
+        issues.push(
+          warn(
+            file,
+            `clip url does not reference '${firstSyllable}' — double check it wasn't copied from a different clip`,
+            undefined,
+            `${clipPath}.url`,
+          ),
+        )
+      }
+
       issues.push(
-        warn(
+        ...checkSources(
           file,
-          `clip url does not reference '${firstSyllable}' — double check it wasn't copied from a different clip`,
+          clip.sources,
+          sourceMap,
+          "cannot back a clip directly (evidence about the language, not the clip's origin)",
           undefined,
-          `${path}.url`,
+          `${clipPath}.sources`,
         ),
       )
-    }
-
-    issues.push(
-      ...checkSources(
-        file,
-        clip.sources,
-        sourceMap,
-        "cannot back a clip directly (evidence about the language, not the clip's origin)",
-        undefined,
-        `${path}.sources`,
-      ),
-    )
+    })
   }
 
   return issues
