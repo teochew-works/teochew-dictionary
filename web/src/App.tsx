@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDictionary } from './hooks/useDictionary'
 import { DictionaryView } from './views/DictionaryView'
 import { FlashcardsView } from './views/FlashcardsView'
@@ -7,36 +7,40 @@ import './App.css'
 
 type Tab = 'dictionary' | 'flashcards' | 'sounds'
 
+const TABS: { id: Tab; label: string }[] = [
+  { id: 'dictionary', label: 'Dictionary' },
+  { id: 'flashcards', label: 'Flashcards' },
+  { id: 'sounds', label: 'Sounds' },
+]
+
+function tabFromHash(hash: string): Tab {
+  const id = hash.replace(/^#/, '')
+  return TABS.some((t) => t.id === id) ? (id as Tab) : 'dictionary'
+}
+
 export function App() {
   const { data, loading, error } = useDictionary()
-  const [tab, setTab] = useState<Tab>('dictionary')
+  const [tab, setTab] = useState<Tab>(() => tabFromHash(window.location.hash))
+
+  // Real `#tab` links give Cmd/Ctrl+click and middle-click their native
+  // "open in new tab" behavior for free (issue #156); this listener keeps
+  // `tab` in sync for same-tab navigation (clicks, back/forward).
+  useEffect(() => {
+    const onHashChange = () => setTab(tabFromHash(window.location.hash))
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
 
   return (
     <div className="app">
       <header className="app__header">
         <h1>Teochew Dictionary</h1>
         <nav className="app__tabs">
-          <button
-            type="button"
-            className={tab === 'dictionary' ? 'app__tab app__tab--active' : 'app__tab'}
-            onClick={() => setTab('dictionary')}
-          >
-            Dictionary
-          </button>
-          <button
-            type="button"
-            className={tab === 'flashcards' ? 'app__tab app__tab--active' : 'app__tab'}
-            onClick={() => setTab('flashcards')}
-          >
-            Flashcards
-          </button>
-          <button
-            type="button"
-            className={tab === 'sounds' ? 'app__tab app__tab--active' : 'app__tab'}
-            onClick={() => setTab('sounds')}
-          >
-            Sounds
-          </button>
+          {TABS.map(({ id, label }) => (
+            <a key={id} href={`#${id}`} className={tab === id ? 'app__tab app__tab--active' : 'app__tab'}>
+              {label}
+            </a>
+          ))}
         </nav>
       </header>
 

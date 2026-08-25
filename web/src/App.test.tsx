@@ -110,7 +110,7 @@ describe('App Sounds tab', () => {
     await screen.findByText('潮州')
     expect(screen.queryByText('tie⁵⁵')).not.toBeInTheDocument()
 
-    fireEvent.click(screen.getByRole('button', { name: 'Sounds' }))
+    fireEvent.click(screen.getByRole('link', { name: 'Sounds' }))
 
     expect(await screen.findByText('tie⁵⁵')).toBeInTheDocument()
     expect(screen.getAllByText('dio5').length).toBeGreaterThan(0)
