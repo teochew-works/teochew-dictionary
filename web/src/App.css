@@ -31,6 +31,7 @@
   border-radius: 999px;
   background: transparent;
   color: var(--color-fg);
+  text-decoration: none;
 }
 
 .app__tab--active {
