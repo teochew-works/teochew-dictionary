@@ -8,6 +8,7 @@ import { resolveLicenceOrThrow, withProjectAttribution } from '../data/licence.j
 import type { Entry, Reading, Source } from '../schema/entry.js'
 import type { Audio, AudioClip, Confidence } from '../schema/phonology.js'
 import type { Syllable } from '../phonology/syllable.js'
+import type { SandhiResult } from '../phonology/sandhi.js'
 
 /**
  * Build-time enrichment: turn each hand-written Peng'im reading into the full
@@ -53,6 +54,12 @@ export interface EnrichedReading extends Reading {
    * `ipa`/`poj`: a syllable either has a recording or it doesn't.
    */
   audio: (AudioReference | null)[]
+  /**
+   * Same as `audio`, but keyed by each syllable's sandhi surface spelling
+   * where a sandhi-specific clip has been recorded; falls back to the
+   * citation clip at that index otherwise (issue #36 coverage is partial).
+   */
+  sandhiAudio: (AudioReference | null)[]
   /**
    * A whole-word/phrase clip for this reading's exact pengim string (e.g. a
    * Lingua Libre import), distinct from the per-syllable `audio` above —
@@ -111,6 +118,22 @@ function selectPrimaryClip(clips: AudioClip[]): AudioClip {
   })[0]!
 }
 
+function resolveClipForKey(key: string, audio: Audio, sources: Map<string, Source>): AudioReference | null {
+  const clips = audio.clips[key]
+  if (!clips || clips.length === 0) return null
+  const clip = selectPrimaryClip(clips)
+
+  const resolved = resolveLicenceOrThrow(clip.sources, sources, `${audio.audio.id}/${key}`)
+
+  return {
+    key,
+    url: clip.url,
+    confidence: clip.confidence,
+    licence: resolved.licence,
+    attributions: resolved.attributions,
+  }
+}
+
 /**
  * Look up each syllable's whole-syllable clip, if any. Pure and independent of
  * file I/O so it's directly testable — `audio` is `null` when the variety has
@@ -122,22 +145,23 @@ export function deriveReadingAudio(
   sources: Map<string, Source>,
 ): (AudioReference | null)[] {
   if (!audio) return syllables.map(() => null)
+  return syllables.map((s) => resolveClipForKey(s.raw, audio, sources))
+}
 
-  return syllables.map((s) => {
-    const clips = audio.clips[s.raw]
-    if (!clips || clips.length === 0) return null
-    const clip = selectPrimaryClip(clips)
-
-    const resolved = resolveLicenceOrThrow(clip.sources, sources, `${audio.audio.id}/${s.raw}`)
-
-    return {
-      key: s.raw,
-      url: clip.url,
-      confidence: clip.confidence,
-      licence: resolved.licence,
-      attributions: resolved.attributions,
-    }
-  })
+/**
+ * Same as `deriveReadingAudio`, but looks up each syllable's sandhi surface
+ * spelling instead of its citation spelling, falling back to the
+ * already-derived citation clip at that index when no sandhi-specific clip
+ * has been recorded yet (issue #36 coverage is partial).
+ */
+export function deriveReadingSandhiAudio(
+  sandhi: SandhiResult,
+  citationAudio: (AudioReference | null)[],
+  audio: Audio | null,
+  sources: Map<string, Source>,
+): (AudioReference | null)[] {
+  if (!audio) return citationAudio
+  return sandhi.syllables.map((s, i) => resolveClipForKey(s.surface, audio, sources) ?? citationAudio[i] ?? null)
 }
 
 /**
@@ -197,6 +221,7 @@ export function createEnricher() {
     const derived = syllablesToIpa(syllables, variety(reading.variety), scheme)
     const derivedPoj = syllablesToPoj(syllables, poj)
     const sandhi = applySandhiToSyllables(syllables, sandhiFor(reading.variety))
+    const audio = deriveReadingAudio(syllables, audioFor(reading.variety), sources)
 
     return {
       ...reading,
@@ -207,7 +232,8 @@ export function createEnricher() {
       ipa_caveats: reading.ipa ? [] : derived.caveats,
       pengim_toneless: stripTones(reading.pengim),
       syllable_count: syllables.length,
-      audio: deriveReadingAudio(syllables, audioFor(reading.variety), sources),
+      audio,
+      sandhiAudio: deriveReadingSandhiAudio(sandhi, audio, audioFor(reading.variety), sources),
       wordAudio: deriveReadingWordAudio(reading.pengim, audioFor(reading.variety), sources),
     }
   }

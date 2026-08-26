@@ -13,16 +13,25 @@ import {
 } from '../flashcards/levelFilter'
 import type { LevelFilterValue } from '../flashcards/levelFilter'
 import { hasFullAudio, readFullAudioOnly, writeFullAudioOnly } from '../flashcards/audioFilter'
+import { readPronunciationMode, writePronunciationMode } from '../flashcards/pronunciationMode'
+import type { PronunciationMode } from '../flashcards/pronunciationMode'
 import './FlashcardsView.css'
 
 export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
   const [mode, setMode] = useState<PromptMode>(readPromptMode)
+  const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
   const [levelFilter, setLevelFilter] = useState<Set<LevelFilterValue>>(readLevelFilter)
   const [fullAudioOnly, setFullAudioOnly] = useState<boolean>(readFullAudioOnly)
 
   function handleModeChange(next: PromptMode) {
     setMode(next)
     writePromptMode(next)
+  }
+
+  function handlePronunciationToggle(checked: boolean) {
+    const next: PronunciationMode = checked ? 'sandhi' : 'citation'
+    setPronunciation(next)
+    writePronunciationMode(next)
   }
 
   function handleLevelToggle(value: LevelFilterValue, checked: boolean) {
@@ -74,6 +83,15 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
       <label className="flashcards-view__toggle">
         <input
           type="checkbox"
+          checked={pronunciation === 'sandhi'}
+          onChange={(e) => handlePronunciationToggle(e.target.checked)}
+        />
+        Use sandhi pronunciation
+      </label>
+
+      <label className="flashcards-view__toggle">
+        <input
+          type="checkbox"
           checked={fullAudioOnly}
           onChange={(e) => handleFullAudioOnlyChange(e.target.checked)}
         />
@@ -117,7 +135,7 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
           No entries have fully recorded audio yet — try unchecking "Only fully recorded audio."
         </p>
       ) : currentEntry ? (
-        <Flashcard key={currentEntry.id} entry={currentEntry} mode={mode} onGrade={grade} />
+        <Flashcard key={currentEntry.id} entry={currentEntry} mode={mode} pronunciation={pronunciation} onGrade={grade} />
       ) : (
         <p className="flashcards-view__status">
           Nothing due right now — come back later, or check back tomorrow for new cards.

@@ -2,8 +2,9 @@ import { describe, expect, it } from 'vitest'
 
 import { GITHUB_REPO, audioSchema } from '../src/schema/phonology.js'
 import { checkAudio } from '../src/validate/index.js'
-import { deriveReadingAudio, deriveReadingWordAudio } from '../src/build/enrich.js'
+import { deriveReadingAudio, deriveReadingSandhiAudio, deriveReadingWordAudio } from '../src/build/enrich.js'
 import { parsePengim } from '../src/phonology/syllable.js'
+import { applySandhi } from '../src/phonology/sandhi.js'
 import type { Source, SourceKind } from '../src/schema/entry.js'
 import { AUDIO_CLIP_URL, AUDIO_WORD_CLIP_URL, audioTable, makeClipFixture } from './helpers/audio-fixtures.js'
 
@@ -416,6 +417,56 @@ describe('deriveReadingAudio', () => {
     })
     const [resolved] = deriveReadingAudio(syllables, table, sources)
     expect(resolved).toMatchObject({ url: AUDIO_CLIP_URL })
+  })
+})
+
+describe('deriveReadingSandhiAudio', () => {
+  const sources = new Map<string, Source>(
+    [source('fixture', 'import', 'CC-BY-4.0')].map((s) => [s.id, s]),
+  )
+
+  it('prefers a sandhi-specific clip over the citation clip', () => {
+    const syllables = parsePengim('dio5 ziu1')
+    const sandhi = applySandhi('dio5 ziu1')
+    const table = audio({ dio5: clip({ confidence: 'low' }), dio7: clip({ confidence: 'high' }) })
+    const citationAudio = deriveReadingAudio(syllables, table, sources)
+    expect(deriveReadingSandhiAudio(sandhi, citationAudio, table, sources)).toEqual([
+      { key: 'dio7', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] },
+      null,
+    ])
+  })
+
+  it('falls back to the citation clip when no sandhi-specific clip has been recorded yet', () => {
+    const syllables = parsePengim('dio5 ziu1')
+    const sandhi = applySandhi('dio5 ziu1')
+    const table = audio({ dio5: clip() })
+    const citationAudio = deriveReadingAudio(syllables, table, sources)
+    expect(deriveReadingSandhiAudio(sandhi, citationAudio, table, sources)).toEqual(citationAudio)
+  })
+
+  it('returns null when neither the sandhi nor the citation form has a clip', () => {
+    const syllables = parsePengim('dio5 ziu1')
+    const sandhi = applySandhi('dio5 ziu1')
+    const table = audio({})
+    const citationAudio = deriveReadingAudio(syllables, table, sources)
+    expect(deriveReadingSandhiAudio(sandhi, citationAudio, table, sources)).toEqual([null, null])
+  })
+
+  it('resolves the same clip for a final syllable regardless of source, since sandhi leaves it unchanged', () => {
+    const syllables = parsePengim('dio5 ziu1')
+    const sandhi = applySandhi('dio5 ziu1')
+    const table = audio({ ziu1: clip({ confidence: 'medium' }) })
+    const citationAudio = deriveReadingAudio(syllables, table, sources)
+    const sandhiAudio = deriveReadingSandhiAudio(sandhi, citationAudio, table, sources)
+    expect(sandhiAudio[1]).toEqual(citationAudio[1])
+    expect(sandhiAudio[1]).toMatchObject({ key: 'ziu1', confidence: 'medium' })
+  })
+
+  it('returns the citation audio unchanged when the variety has no audio metadata', () => {
+    const syllables = parsePengim('dio5 ziu1')
+    const sandhi = applySandhi('dio5 ziu1')
+    const citationAudio = deriveReadingAudio(syllables, null, sources)
+    expect(deriveReadingSandhiAudio(sandhi, citationAudio, null, sources)).toBe(citationAudio)
   })
 })
 
