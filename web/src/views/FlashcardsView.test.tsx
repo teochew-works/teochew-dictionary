@@ -125,6 +125,39 @@ describe('FlashcardsView level filter', () => {
   })
 })
 
+describe('FlashcardsView pronunciation toggle', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  afterEach(() => {
+    cleanup()
+    localStorage.clear()
+  })
+
+  it('checks the toggle by default', async () => {
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/nothing due/i)
+    expect(screen.getByLabelText('Use sandhi pronunciation')).toBeChecked()
+  })
+
+  it('persists an unchecked toggle to localStorage', async () => {
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/nothing due/i)
+
+    fireEvent.click(screen.getByLabelText('Use sandhi pronunciation'))
+
+    expect(localStorage.getItem('teochew-dictionary:flashcard-pronunciation')).toBe('citation')
+  })
+
+  it('restores a previously persisted citation preference on mount', async () => {
+    localStorage.setItem('teochew-dictionary:flashcard-pronunciation', 'citation')
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/nothing due/i)
+    expect(screen.getByLabelText('Use sandhi pronunciation')).not.toBeChecked()
+  })
+})
+
 describe('FlashcardsView full-audio filter', () => {
   beforeEach(() => {
     localStorage.clear()

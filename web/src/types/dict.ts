@@ -70,6 +70,8 @@ export interface EnrichedReading {
   syllable_count: number
   /** One slot per syllable; null where no clip has been recorded. */
   audio: (AudioReference | null)[]
+  /** Same as `audio`, keyed by sandhi surface spelling; falls back to the citation clip per syllable. */
+  sandhiAudio: (AudioReference | null)[]
   /** Whole-word/phrase clip for this reading's exact pengim string, e.g. a Lingua Libre import. */
   wordAudio: AudioReference | null
 }

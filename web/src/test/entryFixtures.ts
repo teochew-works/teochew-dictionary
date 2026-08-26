@@ -19,6 +19,7 @@ export function makeReading(overrides: Partial<EnrichedReading> = {}): EnrichedR
     pengim_toneless: 'dio ziu',
     syllable_count: 2,
     audio: [null, null],
+    sandhiAudio: [null, null],
     wordAudio: null,
     ...overrides,
   }

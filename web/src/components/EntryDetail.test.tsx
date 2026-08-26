@@ -14,6 +14,7 @@ const READING: EnrichedReading = {
   pengim_toneless: 'dio ziu',
   syllable_count: 2,
   audio: [null, null],
+  sandhiAudio: [null, null],
   wordAudio: null,
 }
 
