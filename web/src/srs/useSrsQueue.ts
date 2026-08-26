@@ -31,6 +31,7 @@ export function useSrsQueue(entries: EnrichedEntry[]): SrsQueueState {
 
   useEffect(() => {
     let cancelled = false
+    setReviewedCount(0)
 
     getAllCards()
       .then((loaded) => {
