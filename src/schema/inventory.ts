@@ -34,9 +34,9 @@ export const syllableInventoryItemSchema = z.object({
   /** Canonical Peng'im form, e.g. "dio5". Everything else is derived from this. */
   syllable: z.string().min(1),
   /** Keyed by external source id, e.g. { learnteochew: true }. */
-  external: z.record(z.boolean()),
+  external: z.record(z.string(), z.boolean()),
   /** Keyed by variety id. */
-  varieties: z.record(varietyStatusSchema),
+  varieties: z.record(z.string(), varietyStatusSchema),
 })
 
 export const syllableInventorySchema = z.object({
