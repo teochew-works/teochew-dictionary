@@ -124,4 +124,20 @@ describe('buildQueue', () => {
     expect(queue.map((q) => q.entryId)).not.toContain('gone')
     expect(queue.map((q) => q.entryId)).toEqual(['high', 'mid', 'low'])
   })
+
+  it('breaks frequency ties via the injected shuffle, not alphabetical id order', () => {
+    const tied = [
+      { id: 'aaa', frequency: 5 },
+      { id: 'bbb', frequency: 5 },
+      { id: 'ccc', frequency: 5 },
+    ]
+    // random() => 0 makes every Fisher-Yates swap target index 0, a fixed, traceable permutation.
+    const queue = buildQueue(tied, new Map(), NOW, 20, () => 0)
+    expect(queue.map((q) => q.entryId)).toEqual(['bbb', 'ccc', 'aaa'])
+  })
+
+  it('still ranks by frequency first — shuffling never lets a lower-frequency entry jump ahead', () => {
+    const queue = buildQueue(entries, new Map(), NOW, 20, () => 0)
+    expect(queue.map((q) => q.entryId)).toEqual(['high', 'mid', 'low'])
+  })
 })
