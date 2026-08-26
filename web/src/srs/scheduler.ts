@@ -60,16 +60,31 @@ export function gradeCard(state: CardState, grade: Grade, now = new Date()): Car
   }
 }
 
+/** Fisher-Yates, parameterized on `random` so callers can inject a deterministic sequence in tests. */
+function shuffle<T>(items: T[], random: () => number): T[] {
+  const result = [...items]
+  for (let i = result.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(random() * (i + 1))
+    ;[result[i], result[j]] = [result[j], result[i]]
+  }
+  return result
+}
+
 /**
  * Due cards first (oldest due first), then never-reviewed entries up to
  * `newCardCap`, ranked by frequency so the most useful vocabulary surfaces
  * first. This is a soft, per-queue-build cap — see web/README.md.
+ *
+ * Entries are shuffled before the frequency sort (stable, so it only
+ * reorders ties) so that cards sharing a frequency band don't always come
+ * back in the same alphabetical-by-id order every session.
  */
 export function buildQueue(
   entries: { id: string; frequency?: number }[],
   cards: Map<string, CardState>,
   now = new Date(),
   newCardCap = 20,
+  random: () => number = Math.random,
 ): QueueItem[] {
   const ids = new Set(entries.map((e) => e.id))
   const due = [...cards.values()]
@@ -77,9 +92,11 @@ export function buildQueue(
     .sort((a, b) => a.dueAt.localeCompare(b.dueAt))
     .map((c): QueueItem => ({ entryId: c.entryId, kind: 'due' }))
 
-  const fresh = entries
-    .filter((e) => !cards.has(e.id))
-    .sort((a, b) => (b.frequency ?? 0) - (a.frequency ?? 0) || a.id.localeCompare(b.id))
+  const fresh = shuffle(
+    entries.filter((e) => !cards.has(e.id)),
+    random,
+  )
+    .sort((a, b) => (b.frequency ?? 0) - (a.frequency ?? 0))
     .slice(0, newCardCap)
     .map((e): QueueItem => ({ entryId: e.id, kind: 'new' }))
 
