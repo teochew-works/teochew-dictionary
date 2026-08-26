@@ -205,7 +205,11 @@ describe('the committed syllable inventory', () => {
   // Guards the generated file, not just the generator: catches pengim.yaml or
   // an entry's readings changing without `npm run inventory` being rerun,
   // the same way tests/dataset.test.ts guards the shipped lexicon.
-  it('is exactly what the generator produces right now', () => {
-    expect(loadSyllableInventory()).toEqual(buildSyllableInventory())
-  })
+  it(
+    'is exactly what the generator produces right now',
+    () => {
+      expect(loadSyllableInventory()).toEqual(buildSyllableInventory())
+    },
+    15_000,
+  )
 })

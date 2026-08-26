@@ -1,4 +1,4 @@
-import { ignoreOverride, zodToJsonSchema } from 'zod-to-json-schema'
+import { z } from 'zod'
 
 import { listVarieties } from '../phonology/load.js'
 import { DEFAULT_VARIETY, entryFileSchema } from './entry.js'
@@ -11,43 +11,53 @@ import {
 } from './phonology.js'
 import { externalChartSchema, syllableInventorySchema } from './inventory.js'
 
+/** Reproduces `zod-to-json-schema`'s `name` option: `{ $ref: '#/definitions/name', definitions: { name: ... } }`. */
+function namedJsonSchema(
+  schema: z.ZodType,
+  name: string,
+  overrideFn?: (path: (string | number)[], jsonSchema: Record<string, unknown>) => void,
+): object {
+  const inner = z.toJSONSchema(schema, {
+    target: 'draft-07',
+    io: 'input', // pre-transform shape (e.g. checksum's regex, not its lowercased output) — transforms alone can't be represented in JSON Schema
+    override: overrideFn ? (ctx) => overrideFn(ctx.path, ctx.jsonSchema) : undefined,
+  })
+  return { $ref: `#/definitions/${name}`, definitions: { [name]: inner } }
+}
+
 /**
- * Where `reading.variety` lands in `entryFileSchema`'s generated JSON Schema.
- * Zod itself only knows this field is a string — the set of legal variety ids
- * is filesystem-derived (`listVarieties()`), so it can't be a static `z.enum`
- * without coupling schema definition to directory contents at module-load
- * time. Injected here instead, into the generated artifact only.
+ * Where `reading.variety` lands in `entryFileSchema`'s generated JSON Schema,
+ * relative to its own root (see `namedJsonSchema`). Zod itself only knows this
+ * field is a string — the set of legal variety ids is filesystem-derived
+ * (`listVarieties()`), so it can't be a static `z.enum` without coupling
+ * schema definition to directory contents at module-load time. Injected here
+ * instead, into the generated artifact only.
  */
-const VARIETY_PATH =
-  '#/definitions/TeochewEntryFile/properties/entries/items/properties/readings/items/properties/variety'
+const VARIETY_PATH = 'properties/entries/items/properties/readings/items/properties/variety'
 
 function entryFileJsonSchema(): object {
   const varietyIds = listVarieties()
-  return zodToJsonSchema(entryFileSchema, {
-    name: 'TeochewEntryFile',
-    override: (_def, refs) => {
-      if (refs.currentPath.join('/') === VARIETY_PATH) {
-        return { type: 'string', enum: varietyIds, default: DEFAULT_VARIETY }
-      }
-      return ignoreOverride
-    },
+  return namedJsonSchema(entryFileSchema, 'TeochewEntryFile', (path, jsonSchema) => {
+    if (path.join('/') === VARIETY_PATH) {
+      Object.assign(jsonSchema, { type: 'string', enum: varietyIds, default: DEFAULT_VARIETY })
+    }
   })
 }
 
 const SCHEMA_EMISSIONS: Array<{ filename: string; build: () => object }> = [
   { filename: 'schema.json', build: entryFileJsonSchema },
-  { filename: 'pengim-schema.json', build: () => zodToJsonSchema(pengimSchemeSchema, 'PengimScheme') },
-  { filename: 'poj-schema.json', build: () => zodToJsonSchema(pojSchema, 'PojScheme') },
-  { filename: 'variety-schema.json', build: () => zodToJsonSchema(varietySchema, 'Variety') },
-  { filename: 'sandhi-schema.json', build: () => zodToJsonSchema(sandhiSchema, 'SandhiTable') },
+  { filename: 'pengim-schema.json', build: () => namedJsonSchema(pengimSchemeSchema, 'PengimScheme') },
+  { filename: 'poj-schema.json', build: () => namedJsonSchema(pojSchema, 'PojScheme') },
+  { filename: 'variety-schema.json', build: () => namedJsonSchema(varietySchema, 'Variety') },
+  { filename: 'sandhi-schema.json', build: () => namedJsonSchema(sandhiSchema, 'SandhiTable') },
   {
     filename: 'external-chart-schema.json',
-    build: () => zodToJsonSchema(externalChartSchema, 'ExternalChart'),
+    build: () => namedJsonSchema(externalChartSchema, 'ExternalChart'),
   },
-  { filename: 'audio-schema.json', build: () => zodToJsonSchema(audioSchema, 'Audio') },
+  { filename: 'audio-schema.json', build: () => namedJsonSchema(audioSchema, 'Audio') },
   {
     filename: 'syllable-inventory-schema.json',
-    build: () => zodToJsonSchema(syllableInventorySchema, 'SyllableInventory'),
+    build: () => namedJsonSchema(syllableInventorySchema, 'SyllableInventory'),
   },
 ]
 

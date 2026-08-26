@@ -76,16 +76,16 @@ export const varietySchema = z.object({
     reference: z.boolean().optional(),
     inherits: z.string().optional(),
   }),
-  initials: z.record(mapping).optional(),
-  medials: z.record(mapping).optional(),
-  nuclei: z.record(mapping).optional(),
-  codas: z.record(mapping).optional(),
+  initials: z.record(z.string(), mapping).optional(),
+  medials: z.record(z.string(), mapping).optional(),
+  nuclei: z.record(z.string(), mapping).optional(),
+  codas: z.record(z.string(), mapping).optional(),
   nasalisation: z
     .object({ combining: z.string().min(1), confidence: z.enum(CONFIDENCE) })
     .optional(),
-  tones: z.record(z.string()).optional(),
+  tones: z.record(z.string(), z.string()).optional(),
   /** Whole-rime overrides that the compositional rules do not predict. */
-  irregular: z.record(mapping).optional(),
+  irregular: z.record(z.string(), mapping).optional(),
 })
 
 /** This project's own GitHub repo — the single source of truth for the URL pattern below. */
@@ -164,7 +164,7 @@ export const audioSchema = z.object({
    * playback) apply a documented selection rule — see `selectPrimaryClip` in
    * `src/build/enrich.ts`.
    */
-  clips: z.record(z.array(audioClip).min(1)),
+  clips: z.record(z.string(), z.array(audioClip).min(1)),
   /**
    * Whole-word/phrase clips, keyed by a reading's full space-joined pengim
    * string (e.g. `bhi7 jui2`) rather than a single syllable — see
@@ -174,22 +174,22 @@ export const audioSchema = z.object({
    * single-syllable reading. No inheritance and no compositional fallback,
    * same rule as `clips` — a reading either has a word clip or it doesn't.
    */
-  wordClips: z.record(z.array(audioClip).min(1)).optional(),
+  wordClips: z.record(z.string(), z.array(audioClip).min(1)).optional(),
 })
 
 export const pojSchema = z.object({
   scheme: z.object({ id: z.literal('poj'), name: z.string(), name_zh: z.string().optional() }),
-  initials: z.record(z.string()),
-  medials: z.record(z.string()),
-  nuclei: z.record(z.string()),
-  codas: z.record(z.string()),
+  initials: z.record(z.string(), z.string()),
+  medials: z.record(z.string(), z.string()),
+  nuclei: z.record(z.string(), z.string()),
+  codas: z.record(z.string(), z.string()),
   nasalisation: z.string(),
-  tones: z.record(z.object({ combining: z.string(), name: z.string() })),
+  tones: z.record(z.string(), z.object({ combining: z.string(), name: z.string() })),
   tone_vowel_priority: z.array(z.string().min(1)).min(1),
   alternates: z
     .object({
-      nuclei: z.record(z.array(z.string())).optional(),
-      initials: z.record(z.array(z.string())).optional(),
+      nuclei: z.record(z.string(), z.array(z.string())).optional(),
+      initials: z.record(z.string(), z.array(z.string())).optional(),
     })
     .optional(),
 })
@@ -202,13 +202,14 @@ export const sandhiSchema = z.object({
     scope: z.string().optional(),
   }),
   rules: z.record(
+    z.string(),
     z.object({
       to: z.number().int().min(1).max(8),
       contour: z.string(),
       note: z.string().optional(),
     }),
   ),
-  exceptions: z.record(z.unknown()).optional(),
+  exceptions: z.record(z.string(), z.unknown()).optional(),
 })
 
 export type PengimScheme = z.infer<typeof pengimSchemeSchema>

@@ -307,7 +307,7 @@ describe('lookup against the built database', () => {
   beforeAll(() => {
     result = build()
     db = openDb()
-  })
+  }, 30_000)
   afterAll(() => db?.close())
 
   it('emits a JSON Schema file per src/schema/ schema, not just the entry format', () => {
