@@ -33,6 +33,14 @@
   color: var(--color-fg);
 }
 
+.flashcards-view__toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
 .flashcards-view__levels {
   display: flex;
   flex-wrap: wrap;
