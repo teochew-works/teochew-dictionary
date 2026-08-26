@@ -1,4 +1,5 @@
 import type { AudioReference, EnrichedReading } from '../types/dict'
+import type { PronunciationMode } from '../flashcards/pronunciationMode'
 
 /**
  * Clip buttons for one reading: the whole-word clip first as ♪♪, then one ♪
@@ -20,6 +21,7 @@ export function ReadingAudio({
   readingIndex,
   playingId,
   onPlay,
+  pronunciation = 'citation',
 }: {
   reading: EnrichedReading
   /** Disambiguates this reading's clip ids from every other reading's on the
@@ -28,8 +30,12 @@ export function ReadingAudio({
   readingIndex: number
   playingId: string | null
   onPlay: (id: string, url: string) => void
+  /** Which per-syllable clip array to play from. Defaults to citation — only
+   *  Flashcard mode's sandhi toggle passes 'sandhi'. */
+  pronunciation?: PronunciationMode
 }) {
-  const hasSyllableClip = reading.audio.some((c) => c !== null)
+  const syllableClips = pronunciation === 'sandhi' ? reading.sandhiAudio : reading.audio
+  const hasSyllableClip = syllableClips.some((c) => c !== null)
   if (!reading.wordAudio && !hasSyllableClip) return null
 
   return (
@@ -45,7 +51,7 @@ export function ReadingAudio({
           onPlay={onPlay}
         />
       )}
-      {reading.audio.map(
+      {syllableClips.map(
         (clip, i) =>
           clip && (
             // Id (and key) carry the syllable's own slot, not a reduplicated
