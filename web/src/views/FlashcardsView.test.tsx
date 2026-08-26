@@ -1,7 +1,16 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { FlashcardsView } from './FlashcardsView'
-import { makeEntry } from '../test/entryFixtures'
+import { makeEntry, makeReading } from '../test/entryFixtures'
+import type { AudioReference } from '../types/dict'
+
+const CLIP: AudioReference = {
+  key: 'dio5',
+  url: 'https://example.com/dio5.opus',
+  confidence: 'high',
+  licence: 'CC-BY-4.0',
+  attributions: [],
+}
 
 describe('FlashcardsView', () => {
   beforeEach(() => {
@@ -113,5 +122,55 @@ describe('FlashcardsView level filter', () => {
     render(<FlashcardsView entries={[a1, untiered]} />)
     await screen.findByText('無級詞')
     expect(screen.queryByText('A1詞')).not.toBeInTheDocument()
+  })
+})
+
+describe('FlashcardsView full-audio filter', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  afterEach(() => {
+    cleanup()
+    localStorage.clear()
+  })
+
+  it('leaves the checkbox unchecked by default', async () => {
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/nothing due/i)
+    expect(screen.getByLabelText('Only fully recorded audio')).not.toBeChecked()
+  })
+
+  it('persists the checked state to localStorage and excludes partially recorded entries', async () => {
+    const partial = makeEntry({
+      id: 'partial-entry',
+      headword: '部分詞',
+      readings: [makeReading({ audio: [CLIP, null] })],
+    })
+    render(<FlashcardsView entries={[partial]} />)
+    await screen.findByText('部分詞')
+
+    fireEvent.click(screen.getByLabelText('Only fully recorded audio'))
+
+    expect(localStorage.getItem('teochew-dictionary:flashcard-full-audio-only')).toBe('true')
+    expect(await screen.findByText(/No entries have fully recorded audio/)).toBeInTheDocument()
+  })
+
+  it('restores a previously persisted checked state on mount', async () => {
+    localStorage.setItem('teochew-dictionary:flashcard-full-audio-only', 'true')
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/nothing due/i)
+    expect(screen.getByLabelText('Only fully recorded audio')).toBeChecked()
+  })
+
+  it('keeps a fully recorded entry when checked', async () => {
+    const full = makeEntry({
+      id: 'full-entry',
+      headword: '全錄詞',
+      readings: [makeReading({ audio: [CLIP, CLIP] })],
+    })
+    localStorage.setItem('teochew-dictionary:flashcard-full-audio-only', 'true')
+    render(<FlashcardsView entries={[full]} />)
+    expect(await screen.findByText('全錄詞')).toBeInTheDocument()
   })
 })

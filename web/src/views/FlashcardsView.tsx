@@ -12,11 +12,13 @@ import {
   writeLevelFilter,
 } from '../flashcards/levelFilter'
 import type { LevelFilterValue } from '../flashcards/levelFilter'
+import { hasFullAudio, readFullAudioOnly, writeFullAudioOnly } from '../flashcards/audioFilter'
 import './FlashcardsView.css'
 
 export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
   const [mode, setMode] = useState<PromptMode>(readPromptMode)
   const [levelFilter, setLevelFilter] = useState<Set<LevelFilterValue>>(readLevelFilter)
+  const [fullAudioOnly, setFullAudioOnly] = useState<boolean>(readFullAudioOnly)
 
   function handleModeChange(next: PromptMode) {
     setMode(next)
@@ -31,10 +33,19 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
     writeLevelFilter(next)
   }
 
+  function handleFullAudioOnlyChange(next: boolean) {
+    setFullAudioOnly(next)
+    writeFullAudioOnly(next)
+  }
+
   const modeEligibleEntries = useMemo(() => entries.filter((e) => isEligibleForMode(e, mode)), [entries, mode])
-  const eligibleEntries = useMemo(
+  const levelEligibleEntries = useMemo(
     () => modeEligibleEntries.filter((e) => isEligibleForLevel(e, levelFilter)),
     [modeEligibleEntries, levelFilter],
+  )
+  const eligibleEntries = useMemo(
+    () => (fullAudioOnly ? levelEligibleEntries.filter(hasFullAudio) : levelEligibleEntries),
+    [levelEligibleEntries, fullAudioOnly],
   )
   const { current, reviewedCount, totalCount, loading, persistError, grade } = useSrsQueue(eligibleEntries)
 
@@ -59,6 +70,15 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
           </option>
         ))}
       </select>
+
+      <label className="flashcards-view__toggle">
+        <input
+          type="checkbox"
+          checked={fullAudioOnly}
+          onChange={(e) => handleFullAudioOnlyChange(e.target.checked)}
+        />
+        Only fully recorded audio
+      </label>
 
       <fieldset className="flashcards-view__levels">
         <legend>Levels</legend>
@@ -88,9 +108,13 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
         <p className="flashcards-view__status">
           No entries are available for {PROMPT_MODE_LABELS[mode]} mode yet — try a different mode.
         </p>
-      ) : modeEligibleEntries.length > 0 && eligibleEntries.length === 0 ? (
+      ) : modeEligibleEntries.length > 0 && levelEligibleEntries.length === 0 ? (
         <p className="flashcards-view__status">
           No entries match the selected levels — try including more levels.
+        </p>
+      ) : levelEligibleEntries.length > 0 && eligibleEntries.length === 0 ? (
+        <p className="flashcards-view__status">
+          No entries have fully recorded audio yet — try unchecking "Only fully recorded audio."
         </p>
       ) : currentEntry ? (
         <Flashcard key={currentEntry.id} entry={currentEntry} mode={mode} onGrade={grade} />
