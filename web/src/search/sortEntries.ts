@@ -16,7 +16,7 @@ export function isGrouped(mode: SortMode): mode is GroupedSortMode {
   return mode === 'tone' || mode === 'category' || mode === 'level'
 }
 
-const LEVEL_ORDER: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
+export const LEVEL_ORDER: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
 
 export interface EntryGroup {
   key: string
