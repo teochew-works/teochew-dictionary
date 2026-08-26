@@ -114,4 +114,14 @@ describe('buildQueue', () => {
     const queue = buildQueue(entries, cards, NOW)
     expect(queue.map((q) => q.entryId)).toEqual(['mid', 'low'])
   })
+
+  it('excludes a due card whose entryId is absent from entries, e.g. filtered out by a prompt-mode restriction', () => {
+    const cards = new Map<string, CardState>([
+      ['gone', { ...newCardState('gone', NOW), dueAt: new Date('2020-01-01T00:00:00Z').toISOString() }],
+      ['high', { ...newCardState('high', NOW), dueAt: new Date('2020-01-01T00:00:00Z').toISOString() }],
+    ])
+    const queue = buildQueue(entries, cards, NOW)
+    expect(queue.map((q) => q.entryId)).not.toContain('gone')
+    expect(queue.map((q) => q.entryId)).toEqual(['high', 'mid', 'low'])
+  })
 })

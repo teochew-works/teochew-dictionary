@@ -71,8 +71,9 @@ export function buildQueue(
   now = new Date(),
   newCardCap = 20,
 ): QueueItem[] {
+  const ids = new Set(entries.map((e) => e.id))
   const due = [...cards.values()]
-    .filter((c) => new Date(c.dueAt) <= now)
+    .filter((c) => ids.has(c.entryId) && new Date(c.dueAt) <= now)
     .sort((a, b) => a.dueAt.localeCompare(b.dueAt))
     .map((c): QueueItem => ({ entryId: c.entryId, kind: 'due' }))
 
