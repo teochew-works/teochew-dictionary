@@ -398,6 +398,7 @@ describe('SoundsView chart view (issue #171)', () => {
   let play: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
+    localStorage.clear()
     play = vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined)
     vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
   })
@@ -406,6 +407,7 @@ describe('SoundsView chart view (issue #171)', () => {
     cleanup()
     vi.restoreAllMocks()
     vi.unstubAllGlobals()
+    localStorage.clear()
   })
 
   it('switches to the grid and hides the alphabet nav', async () => {
@@ -513,5 +515,30 @@ describe('SoundsView chart view (issue #171)', () => {
     fireEvent.mouseUp(window)
 
     expect(panel.style.width).not.toBe(widthBefore)
+  })
+
+  it('does not link an example entry\'s Peng\'im to mogher.com when the setting is off (or unset)', async () => {
+    stubFetchWithChart(CHART_SOUNDS, CHART_FIXTURE)
+    render(<SoundsView />)
+    fireEvent.click(await screen.findByRole('button', { name: 'Chart' }))
+    fireEvent.click(await screen.findByRole('gridcell', { name: /no initial, rime a: attested/i }))
+
+    const panel = screen.getByLabelText('Cell detail')
+    expect(within(panel).queryByRole('link')).not.toBeInTheDocument()
+  })
+
+  it('links an example entry\'s Peng\'im to mogher.com\'s per-syllable page when the setting is on', async () => {
+    localStorage.setItem('teochew-dictionary:mogher-links', 'true')
+    stubFetchWithChart(CHART_SOUNDS, CHART_FIXTURE)
+    render(<SoundsView />)
+    fireEvent.click(await screen.findByRole('button', { name: 'Chart' }))
+    fireEvent.click(await screen.findByRole('gridcell', { name: /no initial, rime a: attested/i }))
+
+    const panel = screen.getByLabelText('Cell detail')
+    const link = within(panel).getByRole('link', { name: 'a1' })
+    expect(link).toHaveAttribute('href', 'https://mogher.com/dic/czpy/a1')
+    expect(link).toHaveAttribute('target', '_blank')
+    // The syllable/tone row's own Peng'im (not an example entry) is never linked.
+    expect(within(panel).getAllByRole('link')).toHaveLength(1)
   })
 })

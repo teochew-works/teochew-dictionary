@@ -1,7 +1,7 @@
 import type { EnrichedEntry, Level, PartOfSpeech } from '../types/dict'
+import { DEFAULT_PRONUNCIATION_MODE, type PronunciationMode } from '../settings/pronunciationMode'
 
 export type SortMode = 'relevance' | 'headword' | 'english' | 'tone' | 'category' | 'level'
-export type ToneSource = 'citation' | 'sandhi'
 
 /**
  * The modes that render a grouped tree rather than a flat list. Kept as a
@@ -77,9 +77,9 @@ export function sortFlat(entries: EnrichedEntry[], mode: 'relevance' | 'headword
   return [...entries].sort((a, b) => collator.compare(keyFor(a), keyFor(b)))
 }
 
-function toneGroupKey(entry: EnrichedEntry, toneSource: ToneSource): { key: string; label: string } {
+function toneGroupKey(entry: EnrichedEntry, pronunciation: PronunciationMode): { key: string; label: string } {
   const reading = entry.readings[0]
-  const pengim = reading ? (toneSource === 'citation' ? reading.pengim : reading.sandhi) : undefined
+  const pengim = reading ? (pronunciation === 'citation' ? reading.pengim : reading.sandhi) : undefined
   const tone = pengim ? firstSyllableTone(pengim) : null
   return tone === null ? { key: 'other', label: 'Other' } : { key: String(tone), label: `Tone ${tone}` }
 }
@@ -108,13 +108,13 @@ function levelGroupKey(entry: EnrichedEntry): { key: string; label: string } {
 export function groupEntries(
   entries: EnrichedEntry[],
   mode: GroupedSortMode,
-  toneSource: ToneSource = 'citation',
+  pronunciation: PronunciationMode = DEFAULT_PRONUNCIATION_MODE,
 ): EntryGroup[] {
   const groups = new Map<string, EntryGroup>()
 
   for (const entry of entries) {
     const { key, label } =
-      mode === 'tone' ? toneGroupKey(entry, toneSource) : mode === 'category' ? categoryGroupKey(entry) : levelGroupKey(entry)
+      mode === 'tone' ? toneGroupKey(entry, pronunciation) : mode === 'category' ? categoryGroupKey(entry) : levelGroupKey(entry)
     let group = groups.get(key)
     if (!group) {
       group = { key, label, entries: [] }

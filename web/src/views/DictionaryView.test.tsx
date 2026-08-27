@@ -90,6 +90,23 @@ describe('DictionaryView', () => {
     expect(screen.getByLabelText('Show licensing info')).toBeChecked()
     expect(screen.getByText(/Licence:/)).toBeInTheDocument()
   })
+
+  it('persists the audio-only toggle across remounts (issue #173)', () => {
+    const { unmount } = render(<DictionaryView entries={ENTRIES} />)
+    fireEvent.click(screen.getByLabelText('Only entries with audio'))
+    unmount()
+
+    render(<DictionaryView entries={ENTRIES} />)
+    expect(screen.getByLabelText('Only entries with audio')).toBeChecked()
+  })
+
+  it('persists the tone-type select via the shared pronunciation-mode setting', () => {
+    render(<DictionaryView entries={ENTRIES} />)
+    fireEvent.change(screen.getByLabelText('Sort dictionary by'), { target: { value: 'tone' } })
+    fireEvent.change(screen.getByLabelText('Tone type'), { target: { value: 'citation' } })
+
+    expect(localStorage.getItem('teochew-dictionary:pronunciation-mode')).toBe('citation')
+  })
 })
 
 describe('DictionaryView audio', () => {
@@ -229,7 +246,14 @@ describe('DictionaryView audio filter', () => {
     return [...document.querySelectorAll('.entry-list__headword')].map((n) => n.textContent ?? '')
   }
 
-  afterEach(cleanup)
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  afterEach(() => {
+    cleanup()
+    localStorage.clear()
+  })
 
   it('is off by default, listing entries with and without recordings alike', () => {
     render(<DictionaryView entries={[RECORDED, SILENT]} />)
@@ -280,5 +304,68 @@ describe('DictionaryView audio filter', () => {
 
     expect(headwords()).toEqual(['木'])
     expect(screen.getByRole('heading', { name: '柴' })).toBeInTheDocument()
+  })
+})
+
+describe('DictionaryView full-audio-only filter', () => {
+  const CLIP: AudioReference = {
+    key: 'bhog8',
+    url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou/bhog8.opus',
+    confidence: 'high',
+    licence: 'CC-BY-4.0',
+    attributions: ['Teochew Dictionary audio (CC-BY-4.0)'],
+  }
+
+  /** The same entry, given every syllable slot a clip. */
+  function withFullAudio(entry: EnrichedEntry): EnrichedEntry {
+    return { ...entry, readings: [{ ...entry.readings[0]!, audio: [CLIP] }] }
+  }
+
+  /** The same entry, given only some of its syllable slots a clip. */
+  function withPartialAudio(entry: EnrichedEntry): EnrichedEntry {
+    return { ...entry, readings: [{ ...entry.readings[0]!, audio: [null] }] }
+  }
+
+  const FULL = withFullAudio(makeEntry({ id: 'a1', headword: '木', gloss: ['wood'], keys: ['木', 'wood'] }))
+  const PARTIAL = withPartialAudio(makeEntry({ id: 'b2', headword: '柴', gloss: ['firewood'], keys: ['柴', 'firewood'] }))
+
+  function headwords(): string[] {
+    return [...document.querySelectorAll('.entry-list__headword')].map((n) => n.textContent ?? '')
+  }
+
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  afterEach(() => {
+    cleanup()
+    localStorage.clear()
+  })
+
+  it('is off by default, listing partially and fully recorded entries alike', () => {
+    render(<DictionaryView entries={[FULL, PARTIAL]} />)
+    expect(screen.getByLabelText('Only fully recorded audio')).not.toBeChecked()
+    expect(headwords()).toEqual(['木', '柴'])
+  })
+
+  it('narrows the list to entries that are fully recorded, and restores it when unticked', () => {
+    render(<DictionaryView entries={[FULL, PARTIAL]} />)
+    const toggle = screen.getByLabelText('Only fully recorded audio')
+
+    fireEvent.click(toggle)
+    expect(headwords()).toEqual(['木'])
+
+    fireEvent.click(toggle)
+    expect(headwords()).toEqual(['木', '柴'])
+  })
+
+  it('persists across remounts', () => {
+    const { unmount } = render(<DictionaryView entries={[FULL, PARTIAL]} />)
+    fireEvent.click(screen.getByLabelText('Only fully recorded audio'))
+    unmount()
+
+    render(<DictionaryView entries={[FULL, PARTIAL]} />)
+    expect(screen.getByLabelText('Only fully recorded audio')).toBeChecked()
+    expect(headwords()).toEqual(['木'])
   })
 })

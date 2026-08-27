@@ -1,6 +1,7 @@
 import type { PublishedClip, LocalRecordingsStatus } from '../hooks/useLocalRecordingsStatus'
 import { PlayClipButton, clipLabel } from '../components/PlayClipButton'
 import { RecordClipButton, type RecordStatus } from '../components/RecordClipButton'
+import { MogherPengim } from '../components/MogherPengim'
 import type { Sound } from '../types/sounds'
 import type { SyllableChartCell } from '../types/syllable-chart'
 
@@ -30,6 +31,7 @@ export function ChartDetailPanel({
   playingId,
   onPlay,
   width,
+  mogherLinks = false,
 }: {
   cell: SelectedCell | null
   chartCell: SyllableChartCell | null
@@ -41,6 +43,8 @@ export function ChartDetailPanel({
   onPlay: (id: string, url: string) => void
   /** User-resizable panel width in px (issue #171) — falls back to the CSS default when omitted. */
   width?: number
+  /** Link each example entry's Peng'im out to mogher.com, per syllable (issue #173). */
+  mogherLinks?: boolean
 }) {
   const style = width !== undefined ? { width } : undefined
 
@@ -73,7 +77,9 @@ export function ChartDetailPanel({
                     {sound.examples.map((example, i) => (
                       <span key={i} className="sound-row__example">
                         <span className="sound-row__example-hanzi">{example.headword}</span>
-                        <span className="sound-row__example-pengim">{example.pengim}</span>
+                        <span className="sound-row__example-pengim">
+                          {mogherLinks ? <MogherPengim pengim={example.pengim} /> : example.pengim}
+                        </span>
                         <span className="sound-row__example-gloss">{example.gloss}</span>
                       </span>
                     ))}

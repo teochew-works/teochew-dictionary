@@ -1,7 +1,9 @@
 import { useMemo } from 'react'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
 import { ReadingAudio } from './ReadingAudio'
+import { MogherPengim } from './MogherPengim'
 import type { EnrichedEntry } from '../types/dict'
+import type { PronunciationMode } from '../settings/pronunciationMode'
 import { LevelBadge } from './LevelBadge'
 
 // An entry's licence is always CC-BY-4.0 or CC-BY-SA-4.0 (see src/data/licence.ts).
@@ -61,7 +63,17 @@ function LicenceLink({ licence }: { licence: string }) {
  * audio clips as play buttons (see ReadingAudio). One player is shared across
  * the whole entry, so starting a clip stops the previous one.
  */
-export function EntryDetail({ entry, showLicence }: { entry: EnrichedEntry; showLicence: boolean }) {
+export function EntryDetail({
+  entry,
+  showLicence,
+  pronunciation = 'citation',
+  mogherLinks = false,
+}: {
+  entry: EnrichedEntry
+  showLicence: boolean
+  pronunciation?: PronunciationMode
+  mogherLinks?: boolean
+}) {
   const { playingId, play } = useAudioPlayer()
   // Gated/memoized rather than computed unconditionally: showLicence is off
   // by default, and playingId changes on every clip click — without this,
@@ -88,7 +100,7 @@ export function EntryDetail({ entry, showLicence }: { entry: EnrichedEntry; show
           return (
             <div className="reading" key={`${r.pengim}-${i}`}>
               <div className="reading__line">
-                <span className="reading__pengim">{r.pengim}</span>
+                <span className="reading__pengim">{mogherLinks ? <MogherPengim pengim={r.pengim} /> : r.pengim}</span>
                 <span className="reading__ipa">{r.ipa}</span>
                 <span className="reading__poj">{r.poj}</span>
                 {tags && <span className="reading__tags">[{tags}]</span>}
@@ -99,7 +111,13 @@ export function EntryDetail({ entry, showLicence }: { entry: EnrichedEntry; show
                   ⚠ {caveat}
                 </div>
               ))}
-              <ReadingAudio reading={r} readingIndex={i} playingId={playingId} onPlay={play} />
+              <ReadingAudio
+                reading={r}
+                readingIndex={i}
+                playingId={playingId}
+                onPlay={play}
+                pronunciation={pronunciation}
+              />
             </div>
           )
         })}

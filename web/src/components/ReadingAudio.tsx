@@ -1,5 +1,5 @@
 import type { AudioReference, EnrichedReading } from '../types/dict'
-import type { PronunciationMode } from '../flashcards/pronunciationMode'
+import type { PronunciationMode } from '../settings/pronunciationMode'
 
 /**
  * Clip buttons for one reading: the whole-word clip first as ♪♪, then one ♪

@@ -1,31 +1,19 @@
 import { useMemo, useState } from 'react'
 import { createSearchIndex, search } from '../search/searchIndex'
 import { groupEntries, isGrouped, sortFlat } from '../search/sortEntries'
-import type { SortMode, ToneSource } from '../search/sortEntries'
-import { hasAudio } from '../search/filters'
+import type { SortMode } from '../search/sortEntries'
+import { hasAudio, hasFullAudio } from '../search/filters'
+import { readShowLicence, writeShowLicence } from '../settings/showLicence'
+import { readAudioOnly, writeAudioOnly } from '../settings/audioOnly'
+import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly'
+import { readPronunciationMode, writePronunciationMode } from '../settings/pronunciationMode'
+import type { PronunciationMode } from '../settings/pronunciationMode'
+import { readMogherLinks } from '../settings/mogherLinks'
 import { EntryList } from '../components/EntryList'
 import { EntryTree } from '../components/EntryTree'
 import { EntryDetail } from '../components/EntryDetail'
 import type { EnrichedEntry } from '../types/dict'
 import './DictionaryView.css'
-
-const SHOW_LICENCE_KEY = 'teochew-dictionary:show-licence'
-
-function readShowLicence(): boolean {
-  try {
-    return localStorage.getItem(SHOW_LICENCE_KEY) === 'true'
-  } catch {
-    return false
-  }
-}
-
-function writeShowLicence(value: boolean): void {
-  try {
-    localStorage.setItem(SHOW_LICENCE_KEY, String(value))
-  } catch {
-    // localStorage unavailable (e.g. private browsing) — toggle still works, just doesn't persist.
-  }
-}
 
 const SORT_MODE_LABELS: Record<SortMode, string> = {
   relevance: 'Relevance',
@@ -40,13 +28,16 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
   const [query, setQuery] = useState('')
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [showLicence, setShowLicence] = useState(readShowLicence)
-  // Deliberately not persisted, unlike showLicence: this narrows which entries
-  // exist as far as the UI is concerned, and coming back to a dictionary that
-  // silently hides almost everything is worse than re-ticking a box. Same
-  // reasoning as sortMode and the query itself.
-  const [audioOnly, setAudioOnly] = useState(false)
+  // Persisted as of the Settings tab (issue #173) — previously deliberately
+  // not persisted here, because narrowing the visible entries silently across
+  // a reload was worse than re-ticking a box. That tradeoff is reversed now
+  // that this is a named, discoverable setting shared with the Settings tab
+  // rather than an easily-forgotten local toggle.
+  const [audioOnly, setAudioOnly] = useState(readAudioOnly)
+  const [fullAudioOnly, setFullAudioOnly] = useState(readFullAudioOnly)
   const [sortMode, setSortMode] = useState<SortMode>('relevance')
-  const [toneSource, setToneSource] = useState<ToneSource>('citation')
+  const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
+  const [mogherLinks] = useState(readMogherLinks)
 
   const index = useMemo(() => createSearchIndex(entries), [entries])
   const isSearching = query.trim() !== ''
@@ -54,12 +45,17 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
     () => (isSearching ? search(index, query) : entries),
     [index, query, entries, isSearching],
   )
-  const results = useMemo(() => (audioOnly ? matches.filter(hasAudio) : matches), [matches, audioOnly])
+  const audioFiltered = useMemo(() => (audioOnly ? matches.filter(hasAudio) : matches), [matches, audioOnly])
+  const results = useMemo(
+    () => (fullAudioOnly ? audioFiltered.filter(hasFullAudio) : audioFiltered),
+    [audioFiltered, fullAudioOnly],
+  )
 
   // Distinguishes "your search found nothing with a recording" from "this
   // dictionary has no recordings at all", which is the case for every entry
   // today — without it the filter just looks broken.
   const anyAudio = useMemo(() => entries.some(hasAudio), [entries])
+  const anyFullAudio = useMemo(() => entries.some(hasFullAudio), [entries])
 
   // "Relevance" only means something while a query is active — Fuse hands back
   // its hits best-first and we keep that order. With no query there is no
@@ -73,8 +69,8 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
     [results, effectiveSort],
   )
   const groups = useMemo(
-    () => (isGrouped(effectiveSort) ? groupEntries(results, effectiveSort, toneSource) : []),
-    [results, effectiveSort, toneSource],
+    () => (isGrouped(effectiveSort) ? groupEntries(results, effectiveSort, pronunciation) : []),
+    [results, effectiveSort, pronunciation],
   )
 
   const selected = results.find((e) => e.id === selectedId) ?? entries.find((e) => e.id === selectedId) ?? null
@@ -82,6 +78,21 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
   const toggleShowLicence = (value: boolean) => {
     setShowLicence(value)
     writeShowLicence(value)
+  }
+
+  const toggleAudioOnly = (value: boolean) => {
+    setAudioOnly(value)
+    writeAudioOnly(value)
+  }
+
+  const toggleFullAudioOnly = (value: boolean) => {
+    setFullAudioOnly(value)
+    writeFullAudioOnly(value)
+  }
+
+  const setPronunciationAndPersist = (next: PronunciationMode) => {
+    setPronunciation(next)
+    writePronunciationMode(next)
   }
 
   return (
@@ -105,8 +116,16 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
             Show licensing info
           </label>
           <label className="dictionary-view__toggle">
-            <input type="checkbox" checked={audioOnly} onChange={(e) => setAudioOnly(e.target.checked)} />
+            <input type="checkbox" checked={audioOnly} onChange={(e) => toggleAudioOnly(e.target.checked)} />
             Only entries with audio
+          </label>
+          <label className="dictionary-view__toggle">
+            <input
+              type="checkbox"
+              checked={fullAudioOnly}
+              onChange={(e) => toggleFullAudioOnly(e.target.checked)}
+            />
+            Only fully recorded audio
           </label>
         </div>
         <div className="dictionary-view__controls">
@@ -126,17 +145,23 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
             <select
               className="dictionary-view__tone-source"
               aria-label="Tone type"
-              value={toneSource}
-              onChange={(e) => setToneSource(e.target.value as ToneSource)}
+              value={pronunciation}
+              onChange={(e) => setPronunciationAndPersist(e.target.value as PronunciationMode)}
             >
               <option value="citation">Citation tone</option>
               <option value="sandhi">Sandhi tone</option>
             </select>
           )}
         </div>
-        {audioOnly && results.length === 0 ? (
+        {(audioOnly || fullAudioOnly) && results.length === 0 ? (
           <p className="entry-list__empty">
-            {anyAudio ? 'No matches with a recording.' : 'No recordings in the dictionary yet.'}
+            {fullAudioOnly
+              ? anyFullAudio
+                ? 'No matches with fully recorded audio.'
+                : 'No fully recorded entries in the dictionary yet.'
+              : anyAudio
+                ? 'No matches with a recording.'
+                : 'No recordings in the dictionary yet.'}
           </p>
         ) : isFlat ? (
           <EntryList entries={sortedEntries} selectedId={selectedId} onSelect={setSelectedId} />
@@ -149,7 +174,13 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
           // Keyed so selecting another entry remounts the pane: EntryDetail
           // owns the audio player, and a clip should stop when the user
           // navigates away from the entry it belongs to.
-          <EntryDetail key={selected.id} entry={selected} showLicence={showLicence} />
+          <EntryDetail
+            key={selected.id}
+            entry={selected}
+            showLicence={showLicence}
+            pronunciation={pronunciation}
+            mogherLinks={mogherLinks}
+          />
         ) : (
           <div className="dictionary-view__empty-state">
             <ruby className="dictionary-view__empty-state-headline" aria-hidden="true">

@@ -20,7 +20,7 @@ describe('readPronunciationMode / writePronunciationMode', () => {
   })
 
   it('falls back to the default on an invalid stored value', () => {
-    localStorage.setItem('teochew-dictionary:flashcard-pronunciation', 'not-a-real-mode')
+    localStorage.setItem('teochew-dictionary:pronunciation-mode', 'not-a-real-mode')
     expect(readPronunciationMode()).toBe('sandhi')
   })
 })

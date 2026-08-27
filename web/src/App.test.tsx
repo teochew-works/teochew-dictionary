@@ -120,3 +120,26 @@ describe('App Sounds tab', () => {
     expect(screen.getAllByText('dio5').length).toBeGreaterThan(0)
   })
 })
+
+describe('App Settings tab', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    window.location.hash = ''
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() => Promise.resolve(new Response(JSON.stringify(FIXTURE), { status: 200 }))),
+    )
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+    localStorage.clear()
+  })
+
+  it('shows the Settings tab even before the dictionary has loaded', async () => {
+    render(<App />)
+    fireEvent.click(screen.getByRole('link', { name: 'Settings' }))
+    expect(await screen.findByRole('heading', { name: 'Settings' })).toBeInTheDocument()
+    expect(screen.getByLabelText('Show licensing info')).toBeInTheDocument()
+  })
+})

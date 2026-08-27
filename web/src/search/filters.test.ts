@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { hasAudio } from './filters'
+import { hasAudio, hasFullAudio } from './filters'
 import type { AudioReference, EnrichedEntry, EnrichedReading } from '../types/dict'
 
 const CLIP: AudioReference = {
@@ -57,5 +57,28 @@ describe('hasAudio', () => {
 
   it('is true when only a later reading carries the clip', () => {
     expect(hasAudio(entryWith(READING, { ...READING, wordAudio: CLIP }))).toBe(true)
+  })
+})
+
+describe('hasFullAudio', () => {
+  it('rejects an entry with no readings', () => {
+    expect(hasFullAudio(entryWith())).toBe(false)
+  })
+
+  it('accepts a whole-word clip regardless of syllable coverage', () => {
+    expect(hasFullAudio(entryWith({ ...READING, wordAudio: CLIP, audio: [null, null] }))).toBe(true)
+  })
+
+  it('accepts every syllable recorded with no word clip', () => {
+    expect(hasFullAudio(entryWith({ ...READING, audio: [CLIP, CLIP] }))).toBe(true)
+  })
+
+  it('rejects a partially recorded reading', () => {
+    expect(hasFullAudio(entryWith({ ...READING, audio: [CLIP, null] }))).toBe(false)
+  })
+
+  it('only looks at readings[0], not a fully-recorded later reading', () => {
+    const entry = entryWith({ ...READING, audio: [CLIP, null] }, { ...READING, wordAudio: CLIP })
+    expect(hasFullAudio(entry)).toBe(false)
   })
 })
