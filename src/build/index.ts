@@ -8,15 +8,18 @@ import { listVarieties, loadVariety } from '../phonology/load.js'
 import { emitAllSchemas } from '../schema/emit.js'
 import { createEnricher, stripDiacritics, type EnrichedEntry } from './enrich.js'
 import { buildSounds } from './sounds.js'
+import { buildSyllableChart } from './syllable-chart.js'
 
 /**
  * Build the distributable artifacts from the YAML source of truth.
  *
- * Four outputs, for four consumers:
- *   dict.json    — the whole dataset, for anything that can hold it in memory
- *   dict.ndjson  — one entry per line, for streaming and for diff-friendly review
- *   dict.sqlite  — indexed, with FTS5, for a real lookup path
- *   sounds.json  — every attested syllable + example words, for the web UI's Sounds tab
+ * Five outputs, for five consumers:
+ *   dict.json           — the whole dataset, for anything that can hold it in memory
+ *   dict.ndjson         — one entry per line, for streaming and for diff-friendly review
+ *   dict.sqlite         — indexed, with FTS5, for a real lookup path
+ *   sounds.json         — every attested syllable + example words, for the web UI's Sounds tab
+ *   syllable-chart.json — per-(initial,rime) legal/attested/recorded tone sets, for the
+ *                         Sounds tab's Chart view (issue #171)
  */
 
 export interface BuildResult {
@@ -54,7 +57,9 @@ export function build(): BuildResult {
 
   emit('dict.json', JSON.stringify({ meta, entries: enriched }, null, 2))
   emit('dict.ndjson', enriched.map((e) => JSON.stringify(e)).join('\n') + '\n')
-  emit('sounds.json', JSON.stringify(buildSounds(loaded), null, 2))
+  const soundsData = buildSounds(loaded)
+  emit('sounds.json', JSON.stringify(soundsData, null, 2))
+  emit('syllable-chart.json', JSON.stringify(buildSyllableChart(soundsData.sounds), null, 2))
   emitAllSchemas(emit)
 
   buildSqlite(join(DIST_DIR, 'dict.sqlite'), enriched)
