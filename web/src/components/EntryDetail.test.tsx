@@ -265,3 +265,62 @@ describe('EntryDetail audio', () => {
     expect(screen.getAllByText('Teochew Dictionary audio (CC-BY-4.0)')).toHaveLength(1)
   })
 })
+
+describe('EntryDetail mogher.com links', () => {
+  afterEach(cleanup)
+
+  it('renders the Peng\'im as plain text when mogherLinks is off (or omitted)', () => {
+    render(<EntryDetail entry={ENTRY} showLicence={false} />)
+    expect(screen.getByText('dio5 ziu1')).toBeInTheDocument()
+    expect(screen.queryByRole('link')).not.toBeInTheDocument()
+  })
+
+  it('links each syllable of the Peng\'im to its mogher.com syllable page when on', () => {
+    render(<EntryDetail entry={ENTRY} showLicence={false} mogherLinks={true} />)
+
+    const dio5 = screen.getByRole('link', { name: 'dio5' })
+    const ziu1 = screen.getByRole('link', { name: 'ziu1' })
+    expect(dio5).toHaveAttribute('href', 'https://mogher.com/dic/czpy/dio5')
+    expect(ziu1).toHaveAttribute('href', 'https://mogher.com/dic/czpy/ziu1')
+    expect(dio5).toHaveAttribute('target', '_blank')
+    // The headword itself is never linked — mogher.com is a single-character
+    // dictionary with no page for a multi-character word like 潮州.
+    expect(screen.getByRole('heading', { name: '潮州' }).querySelector('a')).toBeNull()
+  })
+
+  it('preserves the displayed spacing between syllables', () => {
+    render(<EntryDetail entry={ENTRY} showLicence={false} mogherLinks={true} />)
+    expect(document.querySelector('.reading__pengim')).toHaveTextContent('dio5 ziu1')
+  })
+
+  it('percent-encodes a diacritic syllable in the link href', () => {
+    const entry: EnrichedEntry = { ...ENTRY, readings: [{ ...READING, pengim: 'gang2 uê7' }] }
+    render(<EntryDetail entry={entry} showLicence={false} mogherLinks={true} />)
+    expect(screen.getByRole('link', { name: 'uê7' })).toHaveAttribute(
+      'href',
+      'https://mogher.com/dic/czpy/u%C3%AA7',
+    )
+  })
+})
+
+describe('EntryDetail pronunciation', () => {
+  afterEach(cleanup)
+
+  it('defaults to citation clips when no pronunciation prop is passed', () => {
+    const entry: EnrichedEntry = {
+      ...ENTRY,
+      readings: [{ ...READING, audio: [SYLLABLE_CLIP, null], sandhiAudio: [null, null] }],
+    }
+    render(<EntryDetail entry={entry} showLicence={false} />)
+    expect(screen.getByRole('button', { name: 'Play recording of syllable dio5' })).toBeInTheDocument()
+  })
+
+  it('plays sandhi clips when pronunciation="sandhi" is passed', () => {
+    const entry: EnrichedEntry = {
+      ...ENTRY,
+      readings: [{ ...READING, audio: [null, null], sandhiAudio: [SYLLABLE_CLIP, null] }],
+    }
+    render(<EntryDetail entry={entry} showLicence={false} pronunciation="sandhi" />)
+    expect(screen.getByRole('button', { name: 'Play recording of syllable dio5' })).toBeInTheDocument()
+  })
+})
