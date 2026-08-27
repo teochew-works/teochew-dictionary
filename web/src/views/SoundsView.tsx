@@ -7,6 +7,7 @@ import { RecordClipButton, type RecordStatus } from '../components/RecordClipBut
 import { PlayClipButton, clipLabel } from '../components/PlayClipButton'
 import { SyllableChartGrid, chartCellKey } from './SyllableChartGrid'
 import { ChartDetailPanel, type SelectedCell } from './ChartDetailPanel'
+import { readMogherLinks } from '../settings/mogherLinks'
 import type { Sound } from '../types/sounds'
 import './SoundsView.css'
 
@@ -150,6 +151,7 @@ export function SoundsView() {
   const chart = useSyllableChart(sortMode === 'chart')
   const [selectedCell, setSelectedCell] = useState<SelectedCell | null>(null)
   const [audioCoverageOn, setAudioCoverageOn] = useState(false)
+  const [mogherLinks] = useState(readMogherLinks)
 
   // Drag-to-resize the detail panel (issue #171): width is measured from the
   // pointer to the chart body's right edge, since the panel is pinned there,
@@ -362,6 +364,7 @@ export function SoundsView() {
                   playingId={playingId}
                   onPlay={play}
                   width={detailWidth}
+                  mogherLinks={mogherLinks}
                 />
               </>
             )}
