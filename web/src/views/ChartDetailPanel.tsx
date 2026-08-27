@@ -66,7 +66,7 @@ export function ChartDetailPanel({
               if (!sound) return null
               const clips = localRecordings?.published.get(sound.pengim) ?? sound.clips
               return (
-                <li key={tone} className="sound-row sound-row--chart">
+                <li key={sound.pengim} className="sound-row sound-row--chart">
                   <span className="sounds-view__chart-tone-badge">{tone}</span>
                   <span className="sound-row__pengim">{sound.pengim}</span>
                   <span className="sound-row__ipa">{sound.ipa}</span>

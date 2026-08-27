@@ -542,3 +542,101 @@ describe('SoundsView chart view (issue #171)', () => {
     expect(within(panel).getAllByRole('link')).toHaveLength(1)
   })
 })
+
+// Two cells sharing tone 2 (only 8 tone values exist, so most cell pairs
+// share at least one) — used to reproduce issue #175.
+const SHARED_TONE_SOUNDS: SoundsData = {
+  variety: 'chaozhou',
+  sounds: [
+    { pengim: 'u2', ipa: 'u⁵³', initial: null, rime: 'u', tone: 2, occurrences: 1, examples: [], clips: [] },
+    { pengim: 'bu2', ipa: 'bu⁵³', initial: 'b', rime: 'u', tone: 2, occurrences: 1, examples: [], clips: [] },
+  ],
+}
+
+const SHARED_TONE_CHART: SyllableChart = {
+  list: 'syllable-chart',
+  initials: [{ pengim: '' }, { pengim: 'b' }],
+  rimes: ['u'],
+  cells: [
+    { initial: '', rime: 'u', legalTones: [1, 2], attestedTones: [2], recordedTones: [] },
+    { initial: 'b', rime: 'u', legalTones: [1, 2], attestedTones: [2], recordedTones: [] },
+  ],
+  coverage: { cellsAttested: 2, cellsWithRecording: 0, syllablesAttested: 2, syllablesRecorded: 0 },
+}
+
+function stubFetchSharedTone() {
+  vi.stubGlobal(
+    'fetch',
+    vi.fn((input: RequestInfo | URL) => {
+      const url = typeof input === 'string' ? input : input.toString()
+      if (url.includes('syllable-chart.json')) {
+        return Promise.resolve(new Response(JSON.stringify(SHARED_TONE_CHART), { status: 200 }))
+      }
+      if (url.includes('/api/local-recordings')) {
+        return Promise.resolve(new Response('not found', { status: 404 }))
+      }
+      return Promise.resolve(new Response(JSON.stringify(SHARED_TONE_SOUNDS), { status: 200 }))
+    }),
+  )
+}
+
+class FakeMediaRecorder {
+  static isTypeSupported = () => true
+  mimeType: string
+  ondataavailable: ((e: { data: Blob }) => void) | null = null
+  onstop: (() => void) | null = null
+
+  constructor(_stream: unknown, opts?: { mimeType?: string }) {
+    this.mimeType = opts?.mimeType ?? 'audio/webm'
+  }
+
+  start() {}
+
+  stop() {
+    this.ondataavailable?.({ data: new Blob(['fake audio bytes'], { type: this.mimeType }) })
+    this.onstop?.()
+  }
+}
+
+function stubMedia() {
+  const getUserMedia = vi.fn(async () => ({ getTracks: () => [{ stop: vi.fn() }] }) as unknown as MediaStream)
+  Object.defineProperty(navigator, 'mediaDevices', { value: { getUserMedia }, configurable: true })
+  vi.stubGlobal('MediaRecorder', FakeMediaRecorder)
+  vi.stubGlobal('URL', Object.assign(URL, { createObjectURL: vi.fn(() => 'blob:fake'), revokeObjectURL: vi.fn() }))
+}
+
+describe('SoundsView chart view — recording state does not leak between cells (issue #175)', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  afterEach(() => {
+    cleanup()
+    vi.unstubAllGlobals()
+    localStorage.clear()
+  })
+
+  it('resets an in-progress preview when switching to a different cell that shares a tone', async () => {
+    stubFetchSharedTone()
+    stubMedia()
+    render(<SoundsView />)
+    fireEvent.click(await screen.findByRole('button', { name: 'Chart' }))
+
+    // u2 (no initial, rime u) attests tone 2 — start a recording and get to the preview phase.
+    fireEvent.click(await screen.findByRole('gridcell', { name: /no initial, rime u: attested/i }))
+    fireEvent.click(within(screen.getByLabelText('Cell detail')).getByRole('button', { name: 'Record' }))
+    fireEvent.click(screen.getByRole('button', { name: '● Start recording' }))
+    fireEvent.click(await screen.findByRole('button', { name: '■ Stop' }))
+    await screen.findByRole('button', { name: 'Save to staging' })
+
+    // bu2 (initial 'b', rime u) also attests tone 2 — the previous fix keyed rows by
+    // tone, so React would reuse the same <li>/RecordClipButton instance here instead
+    // of remounting it, carrying the stale preview over.
+    fireEvent.click(screen.getByRole('gridcell', { name: /b initial, rime u: attested/i }))
+
+    const panel = screen.getByLabelText('Cell detail')
+    expect(within(panel).getByRole('button', { name: 'Record' })).toBeInTheDocument()
+    expect(within(panel).queryByRole('button', { name: 'Save to staging' })).not.toBeInTheDocument()
+    expect(within(panel).queryByRole('group', { name: /Record a clip for/ })).not.toBeInTheDocument()
+  })
+})
