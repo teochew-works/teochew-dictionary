@@ -3,14 +3,16 @@ import { useDictionary } from './hooks/useDictionary'
 import { DictionaryView } from './views/DictionaryView'
 import { FlashcardsView } from './views/FlashcardsView'
 import { SoundsView } from './views/SoundsView'
+import { SettingsView } from './views/SettingsView'
 import './App.css'
 
-type Tab = 'dictionary' | 'flashcards' | 'sounds'
+type Tab = 'dictionary' | 'flashcards' | 'sounds' | 'settings'
 
 const TABS: { id: Tab; label: string }[] = [
   { id: 'dictionary', label: 'Dictionary' },
   { id: 'flashcards', label: 'Flashcards' },
   { id: 'sounds', label: 'Sounds' },
+  { id: 'settings', label: 'Settings' },
 ]
 
 function tabFromHash(hash: string): Tab {
@@ -46,10 +48,11 @@ export function App() {
 
       <main className="app__main">
         {/* Sounds has its own data source (dist/sounds.json via useSounds inside
-            SoundsView) and doesn't depend on dict.json, so it isn't gated behind
-            the dictionary's loading/error state below. */}
-        {tab !== 'sounds' && loading && <p className="app__status">Loading dictionary…</p>}
-        {tab !== 'sounds' && error && (
+            SoundsView) and Settings only touches localStorage — neither
+            depends on dict.json, so neither is gated behind the dictionary's
+            loading/error state below. */}
+        {tab !== 'sounds' && tab !== 'settings' && loading && <p className="app__status">Loading dictionary…</p>}
+        {tab !== 'sounds' && tab !== 'settings' && error && (
           <p className="app__status app__status--error">
             Couldn't load the dictionary ({error}). If you're running this locally, make sure you've run{' '}
             <code>npm run build</code> in the repo root first.
@@ -58,6 +61,7 @@ export function App() {
         {data && tab === 'dictionary' && <DictionaryView entries={data.entries} />}
         {data && tab === 'flashcards' && <FlashcardsView entries={data.entries} />}
         {tab === 'sounds' && <SoundsView />}
+        {tab === 'settings' && <SettingsView />}
       </main>
     </div>
   )
