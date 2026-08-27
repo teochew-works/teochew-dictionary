@@ -559,7 +559,14 @@
   flex-basis: 100%;
 }
 
+/* Let the hanzi/pengim/gloss trio wrap onto more than one line as whole
+   units when they don't all fit — but never break inside any one of them
+   (a multi-syllable pengim reading like "kao5 lao5" must stay intact). */
 .sound-row.sound-row--chart .sound-row__example {
+  flex-wrap: wrap;
+  row-gap: 0.1rem;
+}
+
+.sound-row.sound-row--chart .sound-row__example-gloss {
   white-space: normal;
-  overflow-wrap: anywhere;
 }
