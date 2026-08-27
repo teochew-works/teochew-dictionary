@@ -1,7 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { SoundsView } from './SoundsView'
 import type { SoundsData } from '../types/sounds'
+import type { SyllableChart } from '../types/syllable-chart'
 
 const FIXTURE: SoundsData = {
   variety: 'chaozhou',
@@ -9,6 +10,9 @@ const FIXTURE: SoundsData = {
     {
       pengim: 'a1',
       ipa: 'a³³',
+      initial: null,
+      rime: 'a',
+      tone: 1,
       occurrences: 5,
       examples: [
         { headword: '阿', pengim: 'a1', gloss: 'kinship prefix' },
@@ -19,6 +23,9 @@ const FIXTURE: SoundsData = {
     {
       pengim: 'ai3',
       ipa: 'ai²¹³',
+      initial: null,
+      rime: 'ai',
+      tone: 3,
       occurrences: 20,
       examples: [{ headword: '愛', pengim: 'ai3', gloss: 'to want' }],
       clips: [],
@@ -26,6 +33,9 @@ const FIXTURE: SoundsData = {
     {
       pengim: 'bho5',
       ipa: 'bo⁵⁵',
+      initial: 'bh',
+      rime: 'o',
+      tone: 5,
       occurrences: 1,
       examples: [],
       clips: [],
@@ -270,6 +280,9 @@ const PROD_FIXTURE: SoundsData = {
     {
       pengim: 'a1',
       ipa: 'a³³',
+      initial: null,
+      rime: 'a',
+      tone: 1,
       occurrences: 5,
       examples: [{ headword: '阿', pengim: 'a1', gloss: 'kinship prefix' }],
       clips: [{ url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/a1.wav', speaker: 'speaker-1' }],
@@ -329,5 +342,159 @@ describe('SoundsView play button in production (issue #149)', () => {
 
     await screen.findByRole('button', { name: 'Play recording by speaker-1' })
     expect(screen.queryByRole('button', { name: /^(Record|Re-record|Pending review)$/ })).not.toBeInTheDocument()
+  })
+})
+
+const CHART_SOUNDS: SoundsData = {
+  variety: 'chaozhou',
+  sounds: [
+    { pengim: 'a1', ipa: 'a³³', initial: null, rime: 'a', tone: 1, occurrences: 5, examples: [{ headword: '阿', pengim: 'a1', gloss: 'kinship prefix' }], clips: [] },
+    {
+      pengim: 'ai3',
+      ipa: 'ai²¹³',
+      initial: null,
+      rime: 'ai',
+      tone: 3,
+      occurrences: 20,
+      examples: [{ headword: '愛', pengim: 'ai3', gloss: 'to want' }],
+      clips: [{ url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/x/ai3.wav', speaker: 'speaker-1' }],
+    },
+    { pengim: 'bho5', ipa: 'bo⁵⁵', initial: 'bh', rime: 'o', tone: 5, occurrences: 1, examples: [], clips: [] },
+  ],
+}
+
+const CHART_FIXTURE: SyllableChart = {
+  list: 'syllable-chart',
+  initials: [{ pengim: '' }, { pengim: 'bh', example: '無', examplePengim: 'bho5' }],
+  rimes: ['a', 'ai', 'o'],
+  cells: [
+    { initial: '', rime: 'a', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [1], recordedTones: [] },
+    { initial: '', rime: 'ai', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [3], recordedTones: [3] },
+    { initial: '', rime: 'o', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [], recordedTones: [] },
+    { initial: 'bh', rime: 'a', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [], recordedTones: [] },
+    { initial: 'bh', rime: 'ai', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [], recordedTones: [] },
+    { initial: 'bh', rime: 'o', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [5], recordedTones: [] },
+  ],
+  coverage: { cellsAttested: 3, cellsWithRecording: 1, syllablesAttested: 3, syllablesRecorded: 1 },
+}
+
+function stubFetchWithChart(soundsData: SoundsData, chartData: SyllableChart) {
+  vi.stubGlobal(
+    'fetch',
+    vi.fn((input: RequestInfo | URL) => {
+      const url = typeof input === 'string' ? input : input.toString()
+      if (url.includes('syllable-chart.json')) {
+        return Promise.resolve(new Response(JSON.stringify(chartData), { status: 200 }))
+      }
+      if (url.includes('/api/local-recordings')) {
+        return Promise.resolve(new Response('not found', { status: 404 }))
+      }
+      return Promise.resolve(new Response(JSON.stringify(soundsData), { status: 200 }))
+    }),
+  )
+}
+
+describe('SoundsView chart view (issue #171)', () => {
+  let play: ReturnType<typeof vi.spyOn>
+
+  beforeEach(() => {
+    play = vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined)
+    vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
+  })
+
+  afterEach(() => {
+    cleanup()
+    vi.restoreAllMocks()
+    vi.unstubAllGlobals()
+  })
+
+  it('switches to the grid and hides the alphabet nav', async () => {
+    stubFetchWithChart(CHART_SOUNDS, CHART_FIXTURE)
+    render(<SoundsView />)
+    await screen.findByText('a³³') // wait for the initial A–Z render first
+
+    fireEvent.click(screen.getByRole('button', { name: 'Chart' }))
+
+    const grid = await screen.findByRole('grid', { name: /syllable chart/i })
+    expect(within(grid).getAllByRole('columnheader')).toHaveLength(1 + CHART_FIXTURE.initials.length) // + rime corner
+    expect(within(grid).getAllByRole('rowheader')).toHaveLength(CHART_FIXTURE.rimes.length)
+    expect(within(grid).getAllByRole('gridcell')).toHaveLength(CHART_FIXTURE.cells.length)
+    expect(screen.queryByLabelText('Jump to initial')).not.toBeInTheDocument()
+  })
+
+  it('clicking an attested cell populates the detail panel with tone, pengim, IPA, and examples', async () => {
+    stubFetchWithChart(CHART_SOUNDS, CHART_FIXTURE)
+    render(<SoundsView />)
+    fireEvent.click(await screen.findByRole('button', { name: 'Chart' }))
+
+    const cell = await screen.findByRole('gridcell', { name: /no initial, rime a: attested/i })
+    fireEvent.click(cell)
+
+    const panel = screen.getByLabelText('Cell detail')
+    expect(within(panel).getAllByText('a1')).toHaveLength(2) // sound-row__pengim + example's own pengim
+    expect(within(panel).getByText('a³³')).toBeInTheDocument()
+    expect(within(panel).getByText('阿')).toBeInTheDocument()
+    expect(within(panel).getByText('1')).toBeInTheDocument() // tone badge
+  })
+
+  it('clicking a legal-unattested cell shows a distinct message and no tone rows', async () => {
+    stubFetchWithChart(CHART_SOUNDS, CHART_FIXTURE)
+    render(<SoundsView />)
+    fireEvent.click(await screen.findByRole('button', { name: 'Chart' }))
+
+    const cell = await screen.findByRole('gridcell', { name: /no initial, rime o: legal, unattested/i })
+    fireEvent.click(cell)
+
+    const panel = screen.getByLabelText('Cell detail')
+    expect(within(panel).getByText(/none attested yet/i)).toBeInTheDocument()
+  })
+
+  it('shows a working PlayClipButton in the panel for a tone with a clip, and RecordClipButton for one without (dev mode)', async () => {
+    stubFetchWithChart(CHART_SOUNDS, CHART_FIXTURE)
+    render(<SoundsView />)
+    fireEvent.click(await screen.findByRole('button', { name: 'Chart' }))
+
+    // ai3 (no initial, rime ai) has a clip.
+    fireEvent.click(await screen.findByRole('gridcell', { name: /no initial, rime ai: attested/i }))
+    const playButton = within(screen.getByLabelText('Cell detail')).getByRole('button', {
+      name: 'Play recording by speaker-1',
+    })
+    fireEvent.click(playButton)
+    expect(play).toHaveBeenCalledTimes(1)
+
+    // bho5 (bh initial, rime o) has no clip.
+    fireEvent.click(screen.getByRole('gridcell', { name: /bh initial, rime o: attested/i }))
+    expect(
+      within(screen.getByLabelText('Cell detail')).getByRole('button', { name: /^Record$/ }),
+    ).toBeInTheDocument()
+  })
+
+  it('dims non-matching cells on search without changing how many cells are rendered', async () => {
+    stubFetchWithChart(CHART_SOUNDS, CHART_FIXTURE)
+    const { container } = render(<SoundsView />)
+    fireEvent.click(await screen.findByRole('button', { name: 'Chart' }))
+    await screen.findByRole('grid', { name: /syllable chart/i })
+
+    const totalBefore = container.querySelectorAll('.sounds-view__chart-cell').length
+
+    // Matches only the 'a1' sound (rime 'a', zero initial) — the other 5 cells should dim.
+    fireEvent.change(screen.getByLabelText('Search the sound inventory'), { target: { value: 'a1' } })
+
+    const totalAfter = container.querySelectorAll('.sounds-view__chart-cell').length
+    expect(totalAfter).toBe(totalBefore)
+    expect(container.querySelectorAll('.sounds-view__chart-cell--dimmed').length).toBe(5)
+  })
+
+  it('toggling audio coverage re-shades cells and shows a summary built from the fetched data', async () => {
+    stubFetchWithChart(CHART_SOUNDS, CHART_FIXTURE)
+    const { container } = render(<SoundsView />)
+    fireEvent.click(await screen.findByRole('button', { name: 'Chart' }))
+    await screen.findByRole('grid', { name: /syllable chart/i })
+
+    expect(screen.getByText(/1 \/ 3 syllables recorded/)).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Audio coverage' }))
+
+    expect(container.querySelector('.sounds-view__chart-cell--coverage-all')).not.toBeNull()
   })
 })
