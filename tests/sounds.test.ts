@@ -157,4 +157,22 @@ describe('buildSounds', () => {
     const a1 = data.sounds.find((s) => s.pengim === 'a1')!
     expect(a1.clips).toEqual([])
   })
+
+  it('decomposes initial/rime/tone via parseSyllable (issue #171)', () => {
+    const data = buildSounds([
+      entry({ id: 'a', headword: '潮', readings: [{ pengim: 'dio5', variety: 'chaozhou' }] }),
+    ])
+    const dio5 = data.sounds.find((s) => s.pengim === 'dio5')!
+    expect(dio5.initial).toBe('d')
+    expect(dio5.rime).toBe('io')
+    expect(dio5.tone).toBe(5)
+  })
+
+  it('gives a zero-initial syllable a null initial', () => {
+    const data = buildSounds([entry({ id: 'a', headword: '阿', readings: [{ pengim: 'a1', variety: 'chaozhou' }] })])
+    const a1 = data.sounds.find((s) => s.pengim === 'a1')!
+    expect(a1.initial).toBeNull()
+    expect(a1.rime).toBe('a')
+    expect(a1.tone).toBe(1)
+  })
 })

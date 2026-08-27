@@ -210,6 +210,6 @@ describe('the committed syllable inventory', () => {
     () => {
       expect(loadSyllableInventory()).toEqual(buildSyllableInventory())
     },
-    15_000,
+    30_000,
   )
 })

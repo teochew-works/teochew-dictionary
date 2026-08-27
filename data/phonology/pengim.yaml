@@ -39,6 +39,10 @@ syllable:
   # Tones 4 and 8 are the "checked" (入聲) tones and occur ONLY with a stop coda.
   # All other tones occur ONLY without one. The validator enforces this.
   checked_codas: [b, g, h]
+  # Coda "kind", used to order the Sounds tab's Chart view (issue #171) rows
+  # open coda < nasal coda < stop coda. Every entry in `codas` below must have
+  # exactly one kind here — pengimSchemeSchema enforces that they match.
+  coda_kinds: { m: nasal, ng: nasal, b: stop, g: stop, h: stop }
 
 # ─── Initials 聲母 ─────────────────────────────────────────────────────────────
 # 17 consonantal initials plus the zero initial.

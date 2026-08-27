@@ -1,8 +1,12 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { useSounds } from '../hooks/useSounds'
+import { useSyllableChart } from '../hooks/useSyllableChart'
 import { useLocalRecordingsStatus, type PublishedClip } from '../hooks/useLocalRecordingsStatus'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
 import { RecordClipButton, type RecordStatus } from '../components/RecordClipButton'
+import { PlayClipButton, clipLabel } from '../components/PlayClipButton'
+import { SyllableChartGrid, chartCellKey } from './SyllableChartGrid'
+import { ChartDetailPanel, type SelectedCell } from './ChartDetailPanel'
 import type { Sound } from '../types/sounds'
 import './SoundsView.css'
 
@@ -11,7 +15,14 @@ interface LetterGroup {
   sounds: Sound[]
 }
 
-type SoundSortMode = 'alphabetical' | 'frequency'
+type SoundSortMode = 'alphabetical' | 'frequency' | 'chart'
+
+// Matches `.sounds-view__chart-detail`'s CSS default of 22rem, assuming the
+// usual 16px root font size — only used as the initial value before a user
+// drags the resizer (issue #171).
+const DEFAULT_DETAIL_WIDTH = 352
+const MIN_DETAIL_WIDTH = 220
+const MAX_DETAIL_WIDTH = 640
 
 /**
  * Buckets consecutive sounds sharing a Peng'im initial letter. Relies on
@@ -44,58 +55,6 @@ function matchesQuery(sound: Sound, query: string): boolean {
     .join(' ')
     .toLowerCase()
   return haystack.includes(query)
-}
-
-/**
- * Falls back to a numbered label ("Recording 2") rather than the plain "Play"
- * used when a sound has just one unlabeled clip — with several clips at the
- * same syllable (issue #134), an unnumbered fallback would leave two buttons
- * with identical text and no way to tell them apart.
- */
-function clipLabel(clip: PublishedClip, index: number, total: number): string {
-  if (clip.speaker) return clip.speaker
-  return total > 1 ? `Recording ${index + 1}` : 'Play'
-}
-
-/**
- * One clip's play button (issue #132, extended for multiple clips per
- * syllable by issue #134) — a single-caller control analogous to
- * ReadingAudio.tsx's ClipButton, so it stays a private function here rather
- * than a standalone file/test the way RecordClipButton earns one by owning a
- * much larger record/save state machine. Reuses useAudioPlayer, the same
- * shared-<audio> primitive the Dictionary tab already plays clips with.
- *
- * `id` is `${pengim}:${index}`, not the bare pengim: two clips at the same
- * syllable need distinct playback ids so starting one doesn't read as
- * already-playing for the other.
- */
-function PlayClipButton({
-  id,
-  clip,
-  label,
-  ariaLabel,
-  playingId,
-  onPlay,
-}: {
-  id: string
-  clip: PublishedClip
-  label: string
-  ariaLabel: string
-  playingId: string | null
-  onPlay: (id: string, url: string) => void
-}) {
-  const playing = playingId === id
-  return (
-    <button
-      type="button"
-      className={playing ? 'sound-row__play sound-row__play--playing' : 'sound-row__play'}
-      aria-label={ariaLabel}
-      aria-pressed={playing}
-      onClick={() => onPlay(id, clip.url)}
-    >
-      <span aria-hidden="true">▶</span> {label}
-    </button>
-  )
 }
 
 function SoundRow({
@@ -188,6 +147,36 @@ export function SoundsView() {
   // Dictionary tab plays clips with — starting one row's clip stops another.
   const { playingId, play } = useAudioPlayer()
 
+  const chart = useSyllableChart(sortMode === 'chart')
+  const [selectedCell, setSelectedCell] = useState<SelectedCell | null>(null)
+  const [audioCoverageOn, setAudioCoverageOn] = useState(false)
+
+  // Drag-to-resize the detail panel (issue #171): width is measured from the
+  // pointer to the chart body's right edge, since the panel is pinned there,
+  // rather than accumulating mouse-movement deltas.
+  const chartBodyRef = useRef<HTMLDivElement>(null)
+  const [detailWidth, setDetailWidth] = useState(DEFAULT_DETAIL_WIDTH)
+
+  function startDetailResize(e: React.MouseEvent) {
+    e.preventDefault()
+    const body = chartBodyRef.current
+    if (!body) return
+
+    function onMove(ev: MouseEvent) {
+      // Non-null: this closure only runs between the mousedown above (which
+      // returned early if `body` were null) and the matching mouseup.
+      const rect = body!.getBoundingClientRect()
+      const next = rect.right - ev.clientX
+      setDetailWidth(Math.min(MAX_DETAIL_WIDTH, Math.max(MIN_DETAIL_WIDTH, next)))
+    }
+    function onUp() {
+      window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('mouseup', onUp)
+    }
+    window.addEventListener('mousemove', onMove)
+    window.addEventListener('mouseup', onUp)
+  }
+
   const allLetters = useMemo(() => groupByLetter(data?.sounds ?? []).map((g) => g.letter), [data])
 
   const filtered = useMemo(() => {
@@ -201,6 +190,32 @@ export function SoundsView() {
     () => (sortMode === 'frequency' ? [...filtered].sort(byFrequencyDesc) : []),
     [filtered, sortMode],
   )
+
+  // Chart mode never filters `data.sounds` (that would reflow the grid) — it
+  // groups the full, unfiltered list by cell instead, and dims non-matches
+  // via a separate signal (`chartMatchingCells`) computed below.
+  const soundsByCell = useMemo(() => {
+    const map = new Map<string, Sound[]>()
+    for (const sound of data?.sounds ?? []) {
+      const key = chartCellKey(sound.initial ?? '', sound.rime)
+      const list = map.get(key)
+      if (list) list.push(sound)
+      else map.set(key, [sound])
+    }
+    for (const list of map.values()) list.sort((a, b) => a.tone - b.tone)
+    return map
+  }, [data])
+
+  const chartMatchingCells = useMemo(() => {
+    if (sortMode !== 'chart' || !data) return null
+    const q = query.trim().toLowerCase()
+    if (!q) return null
+    const matches = new Set<string>()
+    for (const sound of data.sounds) {
+      if (matchesQuery(sound, q)) matches.add(chartCellKey(sound.initial ?? '', sound.rime))
+    }
+    return matches
+  }, [data, query, sortMode])
 
   if (loading) return <p className="sounds-view__status">Loading sound inventory…</p>
   if (error) {
@@ -237,9 +252,18 @@ export function SoundsView() {
           >
             Frequency
           </button>
+          <button
+            type="button"
+            className={sortMode === 'chart' ? 'sounds-view__sort-button sounds-view__sort-button--active' : 'sounds-view__sort-button'}
+            onClick={() => setSortMode('chart')}
+          >
+            Chart
+          </button>
         </div>
         <span className="sounds-view__count">
-          {shownCount} / {data.sounds.length} sounds
+          {sortMode === 'chart' && chart.data
+            ? `${chartMatchingCells?.size ?? chart.data.cells.length} / ${chart.data.cells.length} cells`
+            : `${shownCount} / ${data.sounds.length} sounds`}
         </span>
       </div>
 
@@ -262,56 +286,141 @@ export function SoundsView() {
         </nav>
       )}
 
-      <div className="sounds-view__list">
-        {shownCount === 0 && <p className="sounds-view__empty">No sounds match "{query.trim()}".</p>}
-
-        {sortMode === 'alphabetical' &&
-          groups.map(({ letter, sounds }) => (
-            <section key={letter} id={`sound-group-${letter}`} className="sounds-view__group">
-              <h2 className="sounds-view__group-heading">
-                {letter}
-                <span className="sounds-view__group-count">{sounds.length}</span>
-              </h2>
-              <ul className="sounds-view__rows">
-                {sounds.map((sound) => {
-                  const clips = localRecordings?.published.get(sound.pengim) ?? sound.clips
-                  return (
-                    <SoundRow
-                      key={sound.pengim}
-                      sound={sound}
-                      showCount={false}
-                      recordStatus={recordStatus(clips, sound.pengim)}
-                      clips={clips}
-                      playingId={playingId}
-                      onPlay={play}
-                      onSaved={markSaved}
-                    />
-                  )
-                })}
-              </ul>
-            </section>
-          ))}
-
-        {sortMode === 'frequency' && ranked.length > 0 && (
-          <ul className="sounds-view__rows">
-            {ranked.map((sound) => {
-              const clips = localRecordings?.published.get(sound.pengim) ?? sound.clips
-              return (
-                <SoundRow
-                  key={sound.pengim}
-                  sound={sound}
-                  showCount
-                  recordStatus={recordStatus(clips, sound.pengim)}
-                  clips={clips}
+      {sortMode === 'chart' && (
+        <div className="sounds-view__chart">
+          <div className="sounds-view__chart-subbar">
+            <div className="sounds-view__chart-legend" aria-hidden="true">
+              <span className="sounds-view__chart-legend-swatch sounds-view__chart-legend-swatch--attested" />
+              attested
+              <span className="sounds-view__chart-legend-swatch sounds-view__chart-legend-swatch--unattested" />
+              legal, unattested
+              {/* Styled but not yet wired — no data source exists today (issue #171, tracked as a follow-up). */}
+              <span className="sounds-view__chart-legend-swatch sounds-view__chart-legend-swatch--external" />
+              seen in other charts only
+              <span className="sounds-view__chart-legend-swatch sounds-view__chart-legend-swatch--illegal" />
+              not a legal syllable
+            </div>
+            <button
+              type="button"
+              className={
+                audioCoverageOn
+                  ? 'sounds-view__sort-button sounds-view__sort-button--active'
+                  : 'sounds-view__sort-button'
+              }
+              aria-pressed={audioCoverageOn}
+              onClick={() => setAudioCoverageOn((v) => !v)}
+            >
+              Audio coverage
+            </button>
+            {chart.data && (
+              <span className="sounds-view__chart-coverage-summary">
+                {chart.data.coverage.syllablesRecorded} / {chart.data.coverage.syllablesAttested} syllables recorded (
+                {chart.data.coverage.cellsWithRecording} / {chart.data.coverage.cellsAttested} cells,{' '}
+                {chart.data.coverage.cellsAttested > 0
+                  ? Math.round((chart.data.coverage.cellsWithRecording / chart.data.coverage.cellsAttested) * 100)
+                  : 0}
+                %)
+              </span>
+            )}
+          </div>
+          <div className="sounds-view__chart-body" ref={chartBodyRef}>
+            {chart.loading && <p className="sounds-view__status">Loading syllable chart…</p>}
+            {chart.error && (
+              <p className="sounds-view__status sounds-view__status--error">
+                Couldn't load the syllable chart ({chart.error}).
+              </p>
+            )}
+            {chart.data && (
+              <>
+                <SyllableChartGrid
+                  chart={chart.data}
+                  selectedCell={selectedCell}
+                  onSelectCell={setSelectedCell}
+                  dimmedExcept={chartMatchingCells}
+                  audioCoverageOn={audioCoverageOn}
+                />
+                <div
+                  className="sounds-view__chart-resizer"
+                  role="separator"
+                  aria-orientation="vertical"
+                  aria-label="Resize detail panel"
+                  onMouseDown={startDetailResize}
+                />
+                <ChartDetailPanel
+                  cell={selectedCell}
+                  chartCell={
+                    selectedCell
+                      ? (chart.data.cells.find(
+                          (c) => c.initial === selectedCell.initial && c.rime === selectedCell.rime,
+                        ) ?? null)
+                      : null
+                  }
+                  sounds={selectedCell ? (soundsByCell.get(chartCellKey(selectedCell.initial, selectedCell.rime)) ?? []) : []}
+                  localRecordings={localRecordings}
+                  recordStatus={recordStatus}
+                  onSaved={markSaved}
                   playingId={playingId}
                   onPlay={play}
-                  onSaved={markSaved}
+                  width={detailWidth}
                 />
-              )
-            })}
-          </ul>
-        )}
-      </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+
+      {sortMode !== 'chart' && (
+        <div className="sounds-view__list">
+          {shownCount === 0 && <p className="sounds-view__empty">No sounds match "{query.trim()}".</p>}
+
+          {sortMode === 'alphabetical' &&
+            groups.map(({ letter, sounds }) => (
+              <section key={letter} id={`sound-group-${letter}`} className="sounds-view__group">
+                <h2 className="sounds-view__group-heading">
+                  {letter}
+                  <span className="sounds-view__group-count">{sounds.length}</span>
+                </h2>
+                <ul className="sounds-view__rows">
+                  {sounds.map((sound) => {
+                    const clips = localRecordings?.published.get(sound.pengim) ?? sound.clips
+                    return (
+                      <SoundRow
+                        key={sound.pengim}
+                        sound={sound}
+                        showCount={false}
+                        recordStatus={recordStatus(clips, sound.pengim)}
+                        clips={clips}
+                        playingId={playingId}
+                        onPlay={play}
+                        onSaved={markSaved}
+                      />
+                    )
+                  })}
+                </ul>
+              </section>
+            ))}
+
+          {sortMode === 'frequency' && ranked.length > 0 && (
+            <ul className="sounds-view__rows">
+              {ranked.map((sound) => {
+                const clips = localRecordings?.published.get(sound.pengim) ?? sound.clips
+                return (
+                  <SoundRow
+                    key={sound.pengim}
+                    sound={sound}
+                    showCount
+                    recordStatus={recordStatus(clips, sound.pengim)}
+                    clips={clips}
+                    playingId={playingId}
+                    onPlay={play}
+                    onSaved={markSaved}
+                  />
+                )
+              })}
+            </ul>
+          )}
+        </div>
+      )}
     </div>
   )
 }

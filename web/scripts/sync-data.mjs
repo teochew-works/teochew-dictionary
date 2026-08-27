@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-// Copies the repo root's built dist/dict.json and dist/sounds.json into
-// web/public/data/, where the app fetches them at runtime as static assets.
-// Run automatically via the predev/prebuild npm scripts — see web/README.md.
+// Copies the repo root's built dist/dict.json, dist/sounds.json, and
+// dist/syllable-chart.json into web/public/data/, where the app fetches them
+// at runtime as static assets. Run automatically via the predev/prebuild npm
+// scripts — see web/README.md.
 import { copyFileSync, existsSync, mkdirSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -40,4 +41,12 @@ sync('sounds.json', ({ sounds }, dest) => {
     process.exit(1)
   }
   console.log(`synced ${sounds.length} sounds → web/public/data/sounds.json`)
+})
+
+sync('syllable-chart.json', ({ initials, rimes, cells }, dest) => {
+  if (!Array.isArray(initials) || !Array.isArray(rimes) || !Array.isArray(cells)) {
+    console.error(`${dest} doesn't look like a dist/syllable-chart.json (missing initials/rimes/cells arrays)`)
+    process.exit(1)
+  }
+  console.log(`synced ${cells.length} chart cells (${initials.length} initials × ${rimes.length} rimes) → web/public/data/syllable-chart.json`)
 })
