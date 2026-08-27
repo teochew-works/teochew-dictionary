@@ -28,7 +28,7 @@ const mapping = z.object({
   sources: z.array(z.string().min(1)).min(1).optional(),
 })
 
-export const pengimSchemeSchema = z.object({
+const pengimSchemeShape = z.object({
   scheme: z.object({
     id: z.literal('pengim'),
     name: z.string(),
@@ -40,6 +40,8 @@ export const pengimSchemeSchema = z.object({
     nasalisation_marker: z.string().length(1),
     syllabic_nuclei: z.array(z.string().min(1)).min(1),
     checked_codas: z.array(z.string().min(1)).min(1),
+    /** Open/nasal/stop, per coda — orders the Sounds tab's Chart view rows (issue #171). */
+    coda_kinds: z.record(z.string(), z.enum(['nasal', 'stop'])),
   }),
   initials: z
     .array(
@@ -66,6 +68,21 @@ export const pengimSchemeSchema = z.object({
     )
     .length(8),
 })
+
+/**
+ * `syllable.coda_kinds` must declare exactly one kind for every entry in
+ * `codas` — otherwise a future coda added to `codas` with no declared kind
+ * would silently mis-sort (or vanish from) the Chart view's rime ordering
+ * (issue #171) instead of failing validation.
+ */
+export const pengimSchemeSchema = pengimSchemeShape.refine(
+  (v) => {
+    const codas = new Set(v.codas)
+    const kinds = new Set(Object.keys(v.syllable.coda_kinds))
+    return codas.size === kinds.size && [...codas].every((c) => kinds.has(c))
+  },
+  { message: 'syllable.coda_kinds must declare exactly one kind for every entry in codas, and no others' },
+)
 
 export const varietySchema = z.object({
   variety: z.object({
