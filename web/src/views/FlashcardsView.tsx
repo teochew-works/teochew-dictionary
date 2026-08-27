@@ -12,9 +12,10 @@ import {
   writeLevelFilter,
 } from '../flashcards/levelFilter'
 import type { LevelFilterValue } from '../flashcards/levelFilter'
-import { hasFullAudio, readFullAudioOnly, writeFullAudioOnly } from '../flashcards/audioFilter'
-import { readPronunciationMode, writePronunciationMode } from '../flashcards/pronunciationMode'
-import type { PronunciationMode } from '../flashcards/pronunciationMode'
+import { hasFullAudio } from '../search/filters'
+import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly'
+import { readPronunciationMode, writePronunciationMode } from '../settings/pronunciationMode'
+import type { PronunciationMode } from '../settings/pronunciationMode'
 import './FlashcardsView.css'
 
 export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {

@@ -147,11 +147,11 @@ describe('FlashcardsView pronunciation toggle', () => {
 
     fireEvent.click(screen.getByLabelText('Use sandhi pronunciation'))
 
-    expect(localStorage.getItem('teochew-dictionary:flashcard-pronunciation')).toBe('citation')
+    expect(localStorage.getItem('teochew-dictionary:pronunciation-mode')).toBe('citation')
   })
 
   it('restores a previously persisted citation preference on mount', async () => {
-    localStorage.setItem('teochew-dictionary:flashcard-pronunciation', 'citation')
+    localStorage.setItem('teochew-dictionary:pronunciation-mode', 'citation')
     render(<FlashcardsView entries={[]} />)
     await screen.findByText(/nothing due/i)
     expect(screen.getByLabelText('Use sandhi pronunciation')).not.toBeChecked()

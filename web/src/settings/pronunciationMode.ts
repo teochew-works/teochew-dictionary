@@ -2,7 +2,12 @@ export type PronunciationMode = 'citation' | 'sandhi'
 
 export const DEFAULT_PRONUNCIATION_MODE: PronunciationMode = 'sandhi'
 
-const PRONUNCIATION_MODE_KEY = 'teochew-dictionary:flashcard-pronunciation'
+// New key, distinct from the old flashcard-only teochew-dictionary:flashcard-pronunciation:
+// this setting now also drives Dictionary tab's tone-sort grouping and audio
+// playback (issue #173), which previously defaulted to 'citation' — silently
+// reinterpreting a flashcard user's stored 'citation' pick as a vote for
+// Dictionary's default too would apply a choice they never made.
+const PRONUNCIATION_MODE_KEY = 'teochew-dictionary:pronunciation-mode'
 
 function isPronunciationMode(value: string | null): value is PronunciationMode {
   return value === 'citation' || value === 'sandhi'

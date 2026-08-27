@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type { EnrichedEntry, EnrichedReading } from '../types/dict'
 import type { Grade } from '../srs/types'
 import type { PromptMode } from '../flashcards/promptMode'
-import type { PronunciationMode } from '../flashcards/pronunciationMode'
+import type { PronunciationMode } from '../settings/pronunciationMode'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
 import { ReadingAudio } from './ReadingAudio'
 
