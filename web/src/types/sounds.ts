@@ -20,6 +20,11 @@ export interface SoundClip {
 export interface Sound {
   pengim: string
   ipa: string
+  /** Peng'im initial, or null for the zero initial (issue #171). */
+  initial: string | null
+  /** Peng'im rime — see `rimeOf` in the root project's src/phonology/ipa.ts. */
+  rime: string
+  tone: number
   /**
    * Dictionary-wide occurrence count: citation-form occurrences plus
    * tone-sandhi surface occurrences, summed. Distinct from a headword's

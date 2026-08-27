@@ -84,6 +84,9 @@ describe('App Sounds tab', () => {
       {
         pengim: 'dio5',
         ipa: 'tie⁵⁵',
+        initial: 'd',
+        rime: 'io',
+        tone: 5,
         occurrences: 1,
         examples: [{ headword: '潮', pengim: 'dio5', gloss: 'tide' }],
         clips: [],
