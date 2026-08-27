@@ -515,6 +515,7 @@
   width: 22rem;
   flex-shrink: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 0.75rem;
   border-left: 1px solid var(--color-border);
 }
@@ -539,7 +540,26 @@
   font-weight: 700;
 }
 
-/* One extra leading column (the tone badge) versus the base `.sound-row` template. */
+/* The base `.sound-row` grid (fixed 6rem/6rem/1fr/auto columns) assumes the
+   full-width list view — in the ~22rem detail panel that overflows instead
+   of wrapping, since its children (in particular a long gloss) don't wrap
+   inside a fixed-width grid track. Switched to a wrapping flex row instead:
+   badge/pengim/ipa flow inline, examples and controls each get their own
+   full-width line. */
 .sound-row.sound-row--chart {
-  grid-template-columns: 2.2rem 6rem 6rem 1fr auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.5rem;
+  row-gap: 0.3rem;
+}
+
+.sound-row.sound-row--chart .sound-row__examples,
+.sound-row.sound-row--chart .sound-row__controls {
+  flex-basis: 100%;
+}
+
+.sound-row.sound-row--chart .sound-row__example {
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
