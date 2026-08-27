@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { useSounds } from '../hooks/useSounds'
 import { useSyllableChart } from '../hooks/useSyllableChart'
 import { useLocalRecordingsStatus, type PublishedClip } from '../hooks/useLocalRecordingsStatus'
@@ -16,6 +16,13 @@ interface LetterGroup {
 }
 
 type SoundSortMode = 'alphabetical' | 'frequency' | 'chart'
+
+// Matches `.sounds-view__chart-detail`'s CSS default of 22rem, assuming the
+// usual 16px root font size — only used as the initial value before a user
+// drags the resizer (issue #171).
+const DEFAULT_DETAIL_WIDTH = 352
+const MIN_DETAIL_WIDTH = 220
+const MAX_DETAIL_WIDTH = 640
 
 /**
  * Buckets consecutive sounds sharing a Peng'im initial letter. Relies on
@@ -143,6 +150,32 @@ export function SoundsView() {
   const chart = useSyllableChart(sortMode === 'chart')
   const [selectedCell, setSelectedCell] = useState<SelectedCell | null>(null)
   const [audioCoverageOn, setAudioCoverageOn] = useState(false)
+
+  // Drag-to-resize the detail panel (issue #171): width is measured from the
+  // pointer to the chart body's right edge, since the panel is pinned there,
+  // rather than accumulating mouse-movement deltas.
+  const chartBodyRef = useRef<HTMLDivElement>(null)
+  const [detailWidth, setDetailWidth] = useState(DEFAULT_DETAIL_WIDTH)
+
+  function startDetailResize(e: React.MouseEvent) {
+    e.preventDefault()
+    const body = chartBodyRef.current
+    if (!body) return
+
+    function onMove(ev: MouseEvent) {
+      // Non-null: this closure only runs between the mousedown above (which
+      // returned early if `body` were null) and the matching mouseup.
+      const rect = body!.getBoundingClientRect()
+      const next = rect.right - ev.clientX
+      setDetailWidth(Math.min(MAX_DETAIL_WIDTH, Math.max(MIN_DETAIL_WIDTH, next)))
+    }
+    function onUp() {
+      window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('mouseup', onUp)
+    }
+    window.addEventListener('mousemove', onMove)
+    window.addEventListener('mouseup', onUp)
+  }
 
   const allLetters = useMemo(() => groupByLetter(data?.sounds ?? []).map((g) => g.letter), [data])
 
@@ -290,7 +323,7 @@ export function SoundsView() {
               </span>
             )}
           </div>
-          <div className="sounds-view__chart-body">
+          <div className="sounds-view__chart-body" ref={chartBodyRef}>
             {chart.loading && <p className="sounds-view__status">Loading syllable chart…</p>}
             {chart.error && (
               <p className="sounds-view__status sounds-view__status--error">
@@ -305,6 +338,13 @@ export function SoundsView() {
                   onSelectCell={setSelectedCell}
                   dimmedExcept={chartMatchingCells}
                   audioCoverageOn={audioCoverageOn}
+                />
+                <div
+                  className="sounds-view__chart-resizer"
+                  role="separator"
+                  aria-orientation="vertical"
+                  aria-label="Resize detail panel"
+                  onMouseDown={startDetailResize}
                 />
                 <ChartDetailPanel
                   cell={selectedCell}
@@ -321,6 +361,7 @@ export function SoundsView() {
                   onSaved={markSaved}
                   playingId={playingId}
                   onPlay={play}
+                  width={detailWidth}
                 />
               </>
             )}

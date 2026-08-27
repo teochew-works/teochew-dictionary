@@ -29,6 +29,7 @@ export function ChartDetailPanel({
   onSaved,
   playingId,
   onPlay,
+  width,
 }: {
   cell: SelectedCell | null
   chartCell: SyllableChartCell | null
@@ -38,81 +39,83 @@ export function ChartDetailPanel({
   onSaved: (pengim: string) => void
   playingId: string | null
   onPlay: (id: string, url: string) => void
+  /** User-resizable panel width in px (issue #171) — falls back to the CSS default when omitted. */
+  width?: number
 }) {
-  if (!cell || !chartCell) {
-    return (
-      <aside className="sounds-view__chart-detail" aria-label="Cell detail">
-        <p className="sounds-view__empty">Select a cell to see its syllables.</p>
-      </aside>
-    )
-  }
-
-  if (chartCell.attestedTones.length === 0) {
-    return (
-      <aside className="sounds-view__chart-detail" aria-label="Cell detail">
-        <h2 className="sounds-view__chart-detail-heading">{cellLabel(cell)}</h2>
-        <p className="sounds-view__empty">Legal tones: {chartCell.legalTones.join(' ')} — none attested yet.</p>
-      </aside>
-    )
-  }
+  const style = width !== undefined ? { width } : undefined
 
   return (
-    <aside className="sounds-view__chart-detail" aria-label="Cell detail">
-      <h2 className="sounds-view__chart-detail-heading">{cellLabel(cell)}</h2>
-      <ul className="sounds-view__rows">
-        {chartCell.attestedTones.map((tone) => {
-          const sound = sounds.find((s) => s.tone === tone)
-          if (!sound) return null
-          const clips = localRecordings?.published.get(sound.pengim) ?? sound.clips
-          return (
-            <li key={tone} className="sound-row sound-row--chart">
-              <span className="sounds-view__chart-tone-badge">{tone}</span>
-              <span className="sound-row__pengim">{sound.pengim}</span>
-              <span className="sound-row__ipa">{sound.ipa}</span>
-              <span className="sound-row__examples">
-                {sound.examples.length === 0 && (
-                  <span className="sound-row__no-examples">no isolated example yet</span>
-                )}
-                {sound.examples.map((example, i) => (
-                  <span key={i} className="sound-row__example">
-                    <span className="sound-row__example-hanzi">{example.headword}</span>
-                    <span className="sound-row__example-pengim">{example.pengim}</span>
-                    <span className="sound-row__example-gloss">{example.gloss}</span>
+    <aside className="sounds-view__chart-detail" aria-label="Cell detail" style={style}>
+      {!cell || !chartCell ? (
+        <p className="sounds-view__empty">Select a cell to see its syllables.</p>
+      ) : chartCell.attestedTones.length === 0 ? (
+        <>
+          <h2 className="sounds-view__chart-detail-heading">{cellLabel(cell)}</h2>
+          <p className="sounds-view__empty">Legal tones: {chartCell.legalTones.join(' ')} — none attested yet.</p>
+        </>
+      ) : (
+        <>
+          <h2 className="sounds-view__chart-detail-heading">{cellLabel(cell)}</h2>
+          <ul className="sounds-view__rows">
+            {chartCell.attestedTones.map((tone) => {
+              const sound = sounds.find((s) => s.tone === tone)
+              if (!sound) return null
+              const clips = localRecordings?.published.get(sound.pengim) ?? sound.clips
+              return (
+                <li key={tone} className="sound-row sound-row--chart">
+                  <span className="sounds-view__chart-tone-badge">{tone}</span>
+                  <span className="sound-row__pengim">{sound.pengim}</span>
+                  <span className="sound-row__ipa">{sound.ipa}</span>
+                  <span className="sound-row__examples">
+                    {sound.examples.length === 0 && (
+                      <span className="sound-row__no-examples">no isolated example yet</span>
+                    )}
+                    {sound.examples.map((example, i) => (
+                      <span key={i} className="sound-row__example">
+                        <span className="sound-row__example-hanzi">{example.headword}</span>
+                        <span className="sound-row__example-pengim">{example.pengim}</span>
+                        <span className="sound-row__example-gloss">{example.gloss}</span>
+                      </span>
+                    ))}
                   </span>
-                ))}
-              </span>
-              {(clips.length > 0 || import.meta.env.DEV) && (
-                <span className="sound-row__controls">
-                  {clips.length > 0 && (
-                    <span className="sound-row__play-list">
-                      {clips.map((clip, i) => (
-                        <PlayClipButton
-                          key={i}
-                          id={`${sound.pengim}:${i}`}
-                          clip={clip}
-                          label={clipLabel(clip, i, clips.length)}
-                          ariaLabel={
-                            clip.speaker
-                              ? `Play recording by ${clip.speaker}`
-                              : clips.length > 1
-                                ? `Play recording ${i + 1}`
-                                : 'Play recording'
-                          }
-                          playingId={playingId}
-                          onPlay={onPlay}
+                  {(clips.length > 0 || import.meta.env.DEV) && (
+                    <span className="sound-row__controls">
+                      {clips.length > 0 && (
+                        <span className="sound-row__play-list">
+                          {clips.map((clip, i) => (
+                            <PlayClipButton
+                              key={i}
+                              id={`${sound.pengim}:${i}`}
+                              clip={clip}
+                              label={clipLabel(clip, i, clips.length)}
+                              ariaLabel={
+                                clip.speaker
+                                  ? `Play recording by ${clip.speaker}`
+                                  : clips.length > 1
+                                    ? `Play recording ${i + 1}`
+                                    : 'Play recording'
+                              }
+                              playingId={playingId}
+                              onPlay={onPlay}
+                            />
+                          ))}
+                        </span>
+                      )}
+                      {import.meta.env.DEV && (
+                        <RecordClipButton
+                          pengim={sound.pengim}
+                          status={recordStatus(clips, sound.pengim)}
+                          onSaved={onSaved}
                         />
-                      ))}
+                      )}
                     </span>
                   )}
-                  {import.meta.env.DEV && (
-                    <RecordClipButton pengim={sound.pengim} status={recordStatus(clips, sound.pengim)} onSaved={onSaved} />
-                  )}
-                </span>
-              )}
-            </li>
-          )
-        })}
-      </ul>
+                </li>
+              )
+            })}
+          </ul>
+        </>
+      )}
     </aside>
   )
 }

@@ -497,4 +497,21 @@ describe('SoundsView chart view (issue #171)', () => {
 
     expect(container.querySelector('.sounds-view__chart-cell--coverage-all')).not.toBeNull()
   })
+
+  it('lets the detail panel be resized by dragging the divider', async () => {
+    stubFetchWithChart(CHART_SOUNDS, CHART_FIXTURE)
+    render(<SoundsView />)
+    fireEvent.click(await screen.findByRole('button', { name: 'Chart' }))
+    await screen.findByRole('grid', { name: /syllable chart/i })
+
+    const resizer = screen.getByRole('separator', { name: 'Resize detail panel' })
+    const panel = screen.getByLabelText('Cell detail')
+    const widthBefore = panel.style.width
+
+    fireEvent.mouseDown(resizer, { clientX: 500 })
+    fireEvent.mouseMove(window, { clientX: 300 }) // dragging left should widen a right-pinned panel
+    fireEvent.mouseUp(window)
+
+    expect(panel.style.width).not.toBe(widthBefore)
+  })
 })

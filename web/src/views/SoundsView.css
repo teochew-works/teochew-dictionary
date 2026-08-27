@@ -511,6 +511,9 @@
   color: var(--color-muted);
 }
 
+/* Drag-resizable (issue #171) — see SoundsView.tsx's startDetailResize.
+   `width: 22rem` is only the pre-drag default; the panel's actual width is
+   inline style once known, which wins over this rule. */
 .sounds-view__chart-detail {
   width: 22rem;
   flex-shrink: 0;
@@ -518,6 +521,19 @@
   overflow-x: hidden;
   padding: 0.75rem;
   border-left: 1px solid var(--color-border);
+}
+
+/* The draggable divider between the grid and the detail panel. */
+.sounds-view__chart-resizer {
+  flex-shrink: 0;
+  width: 6px;
+  cursor: col-resize;
+  background: transparent;
+}
+
+.sounds-view__chart-resizer:hover,
+.sounds-view__chart-resizer:active {
+  background: var(--color-accent);
 }
 
 .sounds-view__chart-detail-heading {
