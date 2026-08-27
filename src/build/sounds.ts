@@ -5,8 +5,8 @@ import {
   buildAttestationIndex,
   buildSandhiAttestationCounts,
 } from '../phonology/inventory.js'
-import { toIpa } from '../phonology/ipa.js'
-import { parsePengim } from '../phonology/syllable.js'
+import { rimeOf, toIpa } from '../phonology/ipa.js'
+import { parsePengim, parseSyllable } from '../phonology/syllable.js'
 import type { Entry } from '../schema/entry.js'
 import type { Audio, PengimScheme } from '../schema/phonology.js'
 
@@ -44,6 +44,11 @@ export interface SoundClip {
 export interface Sound {
   pengim: string
   ipa: string
+  /** Peng'im initial, or null for the zero initial (issue #171, for the Chart view). */
+  initial: string | null
+  /** Peng'im rime — medial+nucleus+nasalisation+coda, or the bare nucleus for a syllabic nasal. See `rimeOf`. */
+  rime: string
+  tone: number
   /**
    * Dictionary-wide occurrence count: citation-form occurrences plus
    * tone-sandhi surface occurrences, summed (issue #129). Distinct from
@@ -136,7 +141,17 @@ export function buildSounds(
       c.speaker ? { url: c.url, speaker: c.speaker } : { url: c.url },
     )
 
-    sounds.push({ pengim: syllableRaw, ipa: toIpa(syllableRaw, SOUNDS_VARIETY).ipa, occurrences, examples, clips })
+    const parsed = parseSyllable(syllableRaw, scheme)
+    sounds.push({
+      pengim: syllableRaw,
+      ipa: toIpa(syllableRaw, SOUNDS_VARIETY).ipa,
+      initial: parsed.initial,
+      rime: rimeOf(parsed),
+      tone: parsed.tone,
+      occurrences,
+      examples,
+      clips,
+    })
   }
 
   // Plain code-point order, not localeCompare: ICU collation treats `ê` as a
