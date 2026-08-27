@@ -477,15 +477,15 @@
 }
 
 .sounds-view__chart-cell--coverage-some {
-  background: color-mix(in srgb, var(--color-accent) 25%, var(--color-surface));
+  background: color-mix(in srgb, var(--color-success) 25%, var(--color-surface));
 }
 
 .sounds-view__chart-cell--coverage-all {
-  background: color-mix(in srgb, var(--color-accent) 55%, var(--color-surface));
+  background: color-mix(in srgb, var(--color-success) 55%, var(--color-surface));
 }
 
 .sounds-view__chart-cell--selected {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-success);
   outline-offset: -2px;
 }
 
@@ -503,7 +503,7 @@
 }
 
 .sounds-view__chart-tone--recorded {
-  color: var(--color-accent);
+  color: var(--color-success);
   font-weight: 700;
 }
 
