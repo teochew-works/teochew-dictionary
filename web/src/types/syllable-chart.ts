@@ -22,6 +22,8 @@ export interface SyllableChartCell {
   attestedTones: number[]
   /** Ascending subset of `attestedTones` with at least one recorded clip. */
   recordedTones: number[]
+  /** Ascending subset of `attestedTones` with a staged (unreviewed) local-recording proposal. */
+  stagedTones: number[]
 }
 
 export interface SyllableChartCoverage {
@@ -29,6 +31,10 @@ export interface SyllableChartCoverage {
   cellsWithRecording: number
   syllablesAttested: number
   syllablesRecorded: number
+  /** Cells with at least one tone staged but not yet recorded. */
+  cellsWithStaging: number
+  /** Sum of such tones across all cells, net of `recordedTones`. */
+  syllablesStaged: number
 }
 
 export interface SyllableChart {

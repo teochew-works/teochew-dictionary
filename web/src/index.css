@@ -10,6 +10,7 @@
   --color-warning-fg: #7a4a00;
   --color-danger: #b3261e;
   --color-success: #1a7f37;
+  --color-staged: #0969da;
 
   /* Deck hues (issue #187) — one palette slot per deck, so it reads the
      same swatch in the library rail and on the table. */
@@ -46,6 +47,7 @@
     --color-warning-bg: #3a2c12;
     --color-warning-fg: #f0c078;
     --color-success: #3fb950;
+    --color-staged: #58a6ff;
 
     --deck-hue-red-bg: #e5766c;
     --deck-hue-red-fg: #2a0f0c;

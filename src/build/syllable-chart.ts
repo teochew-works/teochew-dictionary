@@ -1,9 +1,12 @@
+import { readLocalRecordingStaging } from '../importers/local-recording-staging.js'
+import type { LocalRecordingProposal } from '../importers/local-recording-types.js'
 import { generateSyllables } from '../phonology/inventory.js'
 import { rimeOf } from '../phonology/ipa.js'
 import { loadPengimScheme } from '../phonology/load.js'
 import { declaredRimeOrder } from '../phonology/rime-order.js'
+import { parseSyllable } from '../phonology/syllable.js'
 import type { PengimScheme } from '../schema/phonology.js'
-import type { Sound } from './sounds.js'
+import { SOUNDS_VARIETY, type Sound } from './sounds.js'
 
 /**
  * The syllable inventory presented as an initials × rimes grid (issue #171),
@@ -31,6 +34,13 @@ export interface SyllableChartCell {
   attestedTones: number[]
   /** Ascending subset of `attestedTones` with at least one recorded clip. */
   recordedTones: number[]
+  /**
+   * Ascending subset of `attestedTones` with a staged (unreviewed)
+   * local-recording proposal. Not netted against `recordedTones` — a tone can
+   * have both a published clip and a separate pending proposal (e.g. a second
+   * speaker).
+   */
+  stagedTones: number[]
 }
 
 export interface SyllableChartCoverage {
@@ -38,6 +48,10 @@ export interface SyllableChartCoverage {
   cellsWithRecording: number
   syllablesAttested: number
   syllablesRecorded: number
+  /** Cells with at least one tone staged but not yet recorded. */
+  cellsWithStaging: number
+  /** Sum of such tones across all cells, net of `recordedTones`. */
+  syllablesStaged: number
 }
 
 export interface SyllableChart {
@@ -79,8 +93,17 @@ function sortedTones(set: Set<number> | undefined): number[] {
   return set ? [...set].sort((a, b) => a - b) : []
 }
 
-/** Assembles `dist/syllable-chart.json`'s content. `sounds` is `buildSounds()`'s output, reused rather than re-derived. */
-export function buildSyllableChart(sounds: Sound[], scheme: PengimScheme = loadPengimScheme()): SyllableChart {
+/**
+ * Assembles `dist/syllable-chart.json`'s content. `sounds` is `buildSounds()`'s
+ * output, reused rather than re-derived. `staged` defaults to reading
+ * `data/staging/teochew-dictionary-audio.yaml` — the dev-only record control's
+ * (issue #128) unreviewed proposals — for the staged coverage tier (issue #183).
+ */
+export function buildSyllableChart(
+  sounds: Sound[],
+  scheme: PengimScheme = loadPengimScheme(),
+  staged: { proposals: LocalRecordingProposal[] } | null = readLocalRecordingStaging(),
+): SyllableChart {
   const legal = generateSyllables(scheme)
 
   const legalByKey = new Map<string, Set<number>>()
@@ -115,12 +138,21 @@ export function buildSyllableChart(sounds: Sound[], scheme: PengimScheme = loadP
     if (sound.clips.length > 0) addTone(recordedByKey, key, sound.tone)
   }
 
+  const stagedByKey = new Map<string, Set<number>>()
+  for (const proposal of staged?.proposals ?? []) {
+    if (proposal.variety !== SOUNDS_VARIETY) continue
+    const parsed = parseSyllable(proposal.pengim, scheme)
+    addTone(stagedByKey, cellKey(parsed.initial ?? '', rimeOf(parsed)), parsed.tone)
+  }
+
   const cells: SyllableChartCell[] = []
   const coverage: SyllableChartCoverage = {
     cellsAttested: 0,
     cellsWithRecording: 0,
     syllablesAttested: 0,
     syllablesRecorded: 0,
+    cellsWithStaging: 0,
+    syllablesStaged: 0,
   }
 
   for (const { pengim: initial } of initials) {
@@ -131,6 +163,7 @@ export function buildSyllableChart(sounds: Sound[], scheme: PengimScheme = loadP
 
       const attestedTones = sortedTones(attestedByKey.get(key))
       const recordedTones = sortedTones(recordedByKey.get(key))
+      const stagedTones = sortedTones(stagedByKey.get(key)).filter((t) => attestedTones.includes(t))
       if (attestedTones.length > 0) {
         coverage.cellsAttested++
         coverage.syllablesAttested += attestedTones.length
@@ -139,8 +172,13 @@ export function buildSyllableChart(sounds: Sound[], scheme: PengimScheme = loadP
         coverage.cellsWithRecording++
         coverage.syllablesRecorded += recordedTones.length
       }
+      const stagedOnlyTones = stagedTones.filter((t) => !recordedTones.includes(t))
+      if (stagedOnlyTones.length > 0) {
+        coverage.cellsWithStaging++
+        coverage.syllablesStaged += stagedOnlyTones.length
+      }
 
-      cells.push({ initial, rime, legalTones: sortedTones(legalSet), attestedTones, recordedTones })
+      cells.push({ initial, rime, legalTones: sortedTones(legalSet), attestedTones, recordedTones, stagedTones })
     }
   }
 

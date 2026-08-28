@@ -368,14 +368,21 @@ const CHART_FIXTURE: SyllableChart = {
   initials: [{ pengim: '' }, { pengim: 'bh', example: '無', examplePengim: 'bho5' }],
   rimes: ['a', 'ai', 'o'],
   cells: [
-    { initial: '', rime: 'a', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [1], recordedTones: [] },
-    { initial: '', rime: 'ai', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [3], recordedTones: [3] },
-    { initial: '', rime: 'o', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [], recordedTones: [] },
-    { initial: 'bh', rime: 'a', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [], recordedTones: [] },
-    { initial: 'bh', rime: 'ai', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [], recordedTones: [] },
-    { initial: 'bh', rime: 'o', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [5], recordedTones: [] },
+    { initial: '', rime: 'a', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [1], recordedTones: [], stagedTones: [] },
+    { initial: '', rime: 'ai', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [3], recordedTones: [3], stagedTones: [] },
+    { initial: '', rime: 'o', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [], recordedTones: [], stagedTones: [] },
+    { initial: 'bh', rime: 'a', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [], recordedTones: [], stagedTones: [] },
+    { initial: 'bh', rime: 'ai', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [], recordedTones: [], stagedTones: [] },
+    { initial: 'bh', rime: 'o', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [5], recordedTones: [], stagedTones: [5] },
   ],
-  coverage: { cellsAttested: 3, cellsWithRecording: 1, syllablesAttested: 3, syllablesRecorded: 1 },
+  coverage: {
+    cellsAttested: 3,
+    cellsWithRecording: 1,
+    syllablesAttested: 3,
+    syllablesRecorded: 1,
+    cellsWithStaging: 1,
+    syllablesStaged: 1,
+  },
 }
 
 function stubFetchWithChart(soundsData: SoundsData, chartData: SyllableChart) {
@@ -500,6 +507,19 @@ describe('SoundsView chart view (issue #171)', () => {
     expect(container.querySelector('.sounds-view__chart-cell--coverage-all')).not.toBeNull()
   })
 
+  it('shades a staged-only cell with the blue tier and includes the staged count in the summary (issue #183)', async () => {
+    stubFetchWithChart(CHART_SOUNDS, CHART_FIXTURE)
+    const { container } = render(<SoundsView />)
+    fireEvent.click(await screen.findByRole('button', { name: 'Chart' }))
+    await screen.findByRole('grid', { name: /syllable chart/i })
+
+    expect(screen.getByText(/1 staged, pending review \(1 cells\)/)).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Audio coverage' }))
+
+    expect(container.querySelector('.sounds-view__chart-cell--coverage-staged-all')).not.toBeNull()
+  })
+
   it('lets the detail panel be resized by dragging the divider', async () => {
     stubFetchWithChart(CHART_SOUNDS, CHART_FIXTURE)
     render(<SoundsView />)
@@ -541,6 +561,41 @@ describe('SoundsView chart view (issue #171)', () => {
     // The syllable/tone row's own Peng'im (not an example entry) is never linked.
     expect(within(panel).getAllByRole('link')).toHaveLength(1)
   })
+
+  it('blends green and blue for a cell with both recorded and staged-only tones (issue #183)', async () => {
+    const sounds: SoundsData = {
+      variety: 'chaozhou',
+      sounds: [
+        { pengim: 'a1', ipa: 'a33', initial: null, rime: 'a', tone: 1, occurrences: 1, examples: [], clips: [{ url: 'https://x/1' }] },
+        { pengim: 'a2', ipa: 'a53', initial: null, rime: 'a', tone: 2, occurrences: 1, examples: [], clips: [] },
+      ],
+    }
+    const chart: SyllableChart = {
+      list: 'syllable-chart',
+      initials: [{ pengim: '' }],
+      rimes: ['a'],
+      cells: [
+        { initial: '', rime: 'a', legalTones: [1, 2, 3, 5, 6, 7], attestedTones: [1, 2], recordedTones: [1], stagedTones: [2] },
+      ],
+      coverage: {
+        cellsAttested: 1,
+        cellsWithRecording: 1,
+        syllablesAttested: 2,
+        syllablesRecorded: 1,
+        cellsWithStaging: 1,
+        syllablesStaged: 1,
+      },
+    }
+    stubFetchWithChart(sounds, chart)
+    const { container } = render(<SoundsView />)
+    fireEvent.click(await screen.findByRole('button', { name: 'Chart' }))
+    await screen.findByRole('grid', { name: /syllable chart/i })
+
+    fireEvent.click(screen.getByRole('button', { name: 'Audio coverage' }))
+
+    expect(container.querySelector('.sounds-view__chart-cell--coverage-mixed-all')).not.toBeNull()
+    expect(container.querySelector('.sounds-view__chart-tone--staged')).not.toBeNull()
+  })
 })
 
 // Two cells sharing tone 2 (only 8 tone values exist, so most cell pairs
@@ -558,10 +613,17 @@ const SHARED_TONE_CHART: SyllableChart = {
   initials: [{ pengim: '' }, { pengim: 'b' }],
   rimes: ['u'],
   cells: [
-    { initial: '', rime: 'u', legalTones: [1, 2], attestedTones: [2], recordedTones: [] },
-    { initial: 'b', rime: 'u', legalTones: [1, 2], attestedTones: [2], recordedTones: [] },
+    { initial: '', rime: 'u', legalTones: [1, 2], attestedTones: [2], recordedTones: [], stagedTones: [] },
+    { initial: 'b', rime: 'u', legalTones: [1, 2], attestedTones: [2], recordedTones: [], stagedTones: [] },
   ],
-  coverage: { cellsAttested: 2, cellsWithRecording: 0, syllablesAttested: 2, syllablesRecorded: 0 },
+  coverage: {
+    cellsAttested: 2,
+    cellsWithRecording: 0,
+    syllablesAttested: 2,
+    syllablesRecorded: 0,
+    cellsWithStaging: 0,
+    syllablesStaged: 0,
+  },
 }
 
 function stubFetchSharedTone() {

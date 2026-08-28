@@ -18,8 +18,8 @@ import { buildSyllableChart } from './syllable-chart.js'
  *   dict.ndjson         — one entry per line, for streaming and for diff-friendly review
  *   dict.sqlite         — indexed, with FTS5, for a real lookup path
  *   sounds.json         — every attested syllable + example words, for the web UI's Sounds tab
- *   syllable-chart.json — per-(initial,rime) legal/attested/recorded tone sets, for the
- *                         Sounds tab's Chart view (issue #171)
+ *   syllable-chart.json — per-(initial,rime) legal/attested/recorded/staged tone sets,
+ *                         for the Sounds tab's Chart view (issue #171, staged tier issue #183)
  */
 
 export interface BuildResult {

@@ -322,6 +322,13 @@ export function SoundsView() {
                   ? Math.round((chart.data.coverage.cellsWithRecording / chart.data.coverage.cellsAttested) * 100)
                   : 0}
                 %)
+                {chart.data.coverage.syllablesStaged > 0 && (
+                  <>
+                    {' '}
+                    · {chart.data.coverage.syllablesStaged} staged, pending review (
+                    {chart.data.coverage.cellsWithStaging} cells)
+                  </>
+                )}
               </span>
             )}
           </div>

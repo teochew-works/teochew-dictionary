@@ -16,17 +16,34 @@ function initialTitle({ example, examplePengim }: SyllableChartInitial): string 
   return examplePengim ? `${example} (${examplePengim})` : example
 }
 
-function cellAriaLabel(initial: string, rime: string, cell: SyllableChartCell | undefined): string {
+function cellAriaLabel(
+  initial: string,
+  rime: string,
+  cell: SyllableChartCell | undefined,
+  audioCoverageOn: boolean,
+): string {
   const initialDesc = initial ? `${initial} initial` : 'no initial'
   if (!cell || cell.legalTones.length === 0) return `${initialDesc}, rime ${rime}: not a legal syllable`
   if (cell.attestedTones.length === 0) return `${initialDesc}, rime ${rime}: legal, unattested`
-  return `${initialDesc}, rime ${rime}: attested, tones ${cell.attestedTones.join(', ')}`
+  const base = `${initialDesc}, rime ${rime}: attested, tones ${cell.attestedTones.join(', ')}`
+  if (!audioCoverageOn) return base
+
+  const stagedOnly = cell.stagedTones.filter((t) => !cell.recordedTones.includes(t))
+  const parts: string[] = []
+  if (cell.recordedTones.length > 0) parts.push(`${cell.recordedTones.length} recorded`)
+  if (stagedOnly.length > 0) parts.push(`${stagedOnly.length} staged, pending review`)
+  return parts.length > 0 ? `${base}; ${parts.join(', ')}` : base
 }
 
 function coverageClass(cell: SyllableChartCell): string {
-  if (cell.recordedTones.length === 0) return 'sounds-view__chart-cell--coverage-none'
-  if (cell.recordedTones.length >= cell.attestedTones.length) return 'sounds-view__chart-cell--coverage-all'
-  return 'sounds-view__chart-cell--coverage-some'
+  const stagedOnly = cell.stagedTones.filter((t) => !cell.recordedTones.includes(t))
+  const covered = new Set([...cell.recordedTones, ...stagedOnly])
+  if (covered.size === 0) return 'sounds-view__chart-cell--coverage-none'
+
+  const intensity = covered.size >= cell.attestedTones.length ? 'all' : 'some'
+  if (cell.recordedTones.length > 0 && stagedOnly.length > 0) return `sounds-view__chart-cell--coverage-mixed-${intensity}`
+  if (cell.recordedTones.length > 0) return `sounds-view__chart-cell--coverage-${intensity}`
+  return `sounds-view__chart-cell--coverage-staged-${intensity}`
 }
 
 /**
@@ -114,8 +131,8 @@ export function SyllableChartGrid({
                   key={initial.pengim}
                   role="gridcell"
                   tabIndex={0}
-                  title={cellAriaLabel(initial.pengim, rime, cell)}
-                  aria-label={cellAriaLabel(initial.pengim, rime, cell)}
+                  title={cellAriaLabel(initial.pengim, rime, cell, audioCoverageOn)}
+                  aria-label={cellAriaLabel(initial.pengim, rime, cell, audioCoverageOn)}
                   aria-selected={selected}
                   className={classNames.join(' ')}
                   onClick={() => onSelectCell({ initial: initial.pengim, rime })}
@@ -128,11 +145,14 @@ export function SyllableChartGrid({
                 >
                   {cell.attestedTones.map((tone) => {
                     const recorded = cell.recordedTones.includes(tone)
+                    const staged = !recorded && cell.stagedTones.includes(tone)
                     const toneClass =
                       audioCoverageOn && attested
                         ? recorded
                           ? 'sounds-view__chart-tone sounds-view__chart-tone--recorded'
-                          : 'sounds-view__chart-tone sounds-view__chart-tone--unrecorded'
+                          : staged
+                            ? 'sounds-view__chart-tone sounds-view__chart-tone--staged'
+                            : 'sounds-view__chart-tone sounds-view__chart-tone--unrecorded'
                         : 'sounds-view__chart-tone'
                     return (
                       <span key={tone} className={toneClass}>
