@@ -121,6 +121,9 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  /* Extra bottom padding so the last row has room to expand (RecordClipButton's
+     panel adds ~130-160px) without jarring the scroll position. */
+  padding-bottom: 10rem;
 }
 
 .sound-row {
