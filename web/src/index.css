@@ -9,6 +9,7 @@
   --color-warning-bg: #fff4e5;
   --color-warning-fg: #7a4a00;
   --color-danger: #b3261e;
+  --color-success: #1a7f37;
 
   color-scheme: light dark;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -25,6 +26,7 @@
     --color-accent-fg: #17181a;
     --color-warning-bg: #3a2c12;
     --color-warning-fg: #f0c078;
+    --color-success: #3fb950;
   }
 }
 
