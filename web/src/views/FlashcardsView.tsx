@@ -241,15 +241,29 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
     [decksById, entryById, decksStore, note, withUndo],
   )
 
+  /**
+   * Whether a change takes the card under review out of the pool, which is the
+   * only case where editing a deck also replaces what is on screen. It usually
+   * doesn't: with the dictionary on the table the card is still in play however
+   * many user decks let go of it. `holdsAfter` answers "would this in-play deck
+   * hold the card once the change lands".
+   */
+  const replacesDrawnCard = useCallback(
+    (entryId: string, holdsAfter: (deck: Deck) => boolean) =>
+      current?.entryId === entryId && !inPlayDecks.some(holdsAfter),
+    [current, inPlayDecks],
+  )
+
   const removeCard = useCallback(
     (deckId: string, entryId: string) => {
       const deck = decksById.get(deckId)
       const entry = entryById.get(entryId)
       if (!deck || !deck.cards.includes(entryId)) return
+      const replaced = replacesDrawnCard(entryId, (d) => d.id !== deckId && d.cards.includes(entryId))
       decksStore.removeCardFromDeck(deckId, entryId)
-      withUndo(`Removed ${entry?.headword ?? 'card'} from ${deck.name}`)
+      withUndo(`Removed ${entry?.headword ?? 'card'} from ${deck.name}${replaced ? ' — drawing another card' : ''}`)
     },
-    [decksById, entryById, decksStore, withUndo],
+    [decksById, entryById, decksStore, withUndo, replacesDrawnCard],
   )
 
   const moveCard = useCallback(
@@ -257,10 +271,14 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
       const to = decksById.get(toDeckId)
       const entry = entryById.get(entryId)
       if (!decksById.get(fromDeckId) || !to) return
+      const replaced = replacesDrawnCard(
+        entryId,
+        (d) => d.id === toDeckId || (d.id !== fromDeckId && d.cards.includes(entryId)),
+      )
       decksStore.moveCardBetweenDecks(fromDeckId, toDeckId, entryId)
-      withUndo(`Moved ${entry?.headword ?? 'card'} to ${to.name}`)
+      withUndo(`Moved ${entry?.headword ?? 'card'} to ${to.name}${replaced ? ' — drawing another card' : ''}`)
     },
-    [decksById, entryById, decksStore, withUndo],
+    [decksById, entryById, decksStore, withUndo, replacesDrawnCard],
   )
 
   const savePoolAsDeck = useCallback(() => {

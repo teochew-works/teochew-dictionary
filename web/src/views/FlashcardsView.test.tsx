@@ -662,3 +662,59 @@ describe('FlashcardsView deck contents', () => {
     expect(container.querySelector('.drawer--open')).toBeNull()
   })
 })
+
+/*
+ * Editing a deck can silently swap the card under review. It only does so when
+ * the card leaves the pool entirely, which is rarer than it sounds — with the
+ * dictionary on the table it never happens — so the message has to distinguish
+ * the two rather than warn every time.
+ */
+describe('FlashcardsView when a deck edit replaces the drawn card', () => {
+  const deck = (cards: string[]) => ({ id: 'deck-1', name: 'Kitchen', hue: 'green' as const, cards, kind: 'user' as const })
+  const entries = [makeEntry({ id: 'e1', headword: '一', frequency: 30 }), makeEntry({ id: 'e2', headword: '二', frequency: 20 })]
+
+  async function openContents() {
+    await screen.findByText(/reviewed/)
+    fireEvent.click(screen.getByRole('button', { name: 'Options for Kitchen' }))
+    fireEvent.click(screen.getByRole('menuitem', { name: 'View cards' }))
+  }
+
+  /** The headword shows on the study card and again in the contents row, so this scopes to the card. */
+  const drawn = (container: HTMLElement) => container.querySelector('.card__prompt')?.textContent
+
+  it('says so when the removed card was the one on screen', async () => {
+    // Only Kitchen is on the table, so removing its card takes it out of play.
+    writeDecksState({ decks: [deck(['e1', 'e2'])], inPlay: ['deck-1'], groups: [] })
+    const { container } = render(<FlashcardsView entries={entries} />)
+    await openContents()
+    expect(drawn(container)).toBe('一')
+
+    fireEvent.click(screen.getByRole('button', { name: 'Remove 一 from Kitchen' }))
+
+    expect(screen.getAllByText('Removed 一 from Kitchen — drawing another card').length).toBeGreaterThan(0)
+    expect(drawn(container)).toBe('二')
+  })
+
+  it('stays quiet when the card is still in play from another deck', async () => {
+    // The dictionary holds every entry, so the card never leaves the pool.
+    writeDecksState({ decks: [deck(['e1'])], inPlay: [DICTIONARY_DECK_ID, 'deck-1'], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openContents()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Remove 一 from Kitchen' }))
+
+    expect(screen.getAllByText('Removed 一 from Kitchen').length).toBeGreaterThan(0)
+    expect(screen.queryByText(/drawing another card/)).not.toBeInTheDocument()
+  })
+
+  it('stays quiet when the removed card was not the one on screen', async () => {
+    writeDecksState({ decks: [deck(['e1', 'e2'])], inPlay: ['deck-1'], groups: [] })
+    const { container } = render(<FlashcardsView entries={entries} />)
+    await openContents()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Remove 二 from Kitchen' }))
+
+    expect(screen.queryByText(/drawing another card/)).not.toBeInTheDocument()
+    expect(drawn(container)).toBe('一')
+  })
+})
