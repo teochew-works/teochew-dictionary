@@ -109,4 +109,80 @@ describe('useDecksStore', () => {
 
     expect(result.current.state.groups).toEqual([])
   })
+
+  describe('issue #189 additions', () => {
+    it('returns the new deck id, so the caller can name it in place', () => {
+      const { result } = renderHook(() => useDecksStore())
+      let id = ''
+      act(() => {
+        id = result.current.createDeck('Kitchen')
+      })
+      expect(result.current.state.decks.map((d) => d.id)).toEqual([id])
+    })
+
+    it('creates a deck already holding cards', () => {
+      const { result } = renderHook(() => useDecksStore())
+      act(() => {
+        result.current.createDeck('Pool', ['a', 'b'])
+      })
+      expect(result.current.state.decks[0]!.cards).toEqual(['a', 'b'])
+    })
+
+    it('duplicates a deck under its own id, copying the cards', () => {
+      const { result } = renderHook(() => useDecksStore())
+      act(() => {
+        result.current.createDeck('Kitchen', ['a'])
+      })
+      const original = result.current.state.decks[0]!
+      act(() => result.current.duplicateDeck(original.id))
+
+      const [first, copy] = result.current.state.decks
+      expect(copy!.name).toBe('Kitchen copy')
+      expect(copy!.cards).toEqual(['a'])
+      expect(copy!.id).not.toBe(first!.id)
+    })
+
+    it('copies the cards rather than sharing the array', () => {
+      const { result } = renderHook(() => useDecksStore())
+      act(() => {
+        result.current.createDeck('Kitchen', ['a'])
+      })
+      act(() => result.current.duplicateDeck(result.current.state.decks[0]!.id))
+      act(() => result.current.addCardToDeck(result.current.state.decks[1]!.id, 'b'))
+
+      expect(result.current.state.decks[0]!.cards).toEqual(['a'])
+      expect(result.current.state.decks[1]!.cards).toEqual(['a', 'b'])
+    })
+
+    it('ignores a duplicate of a deck that no longer exists', () => {
+      const { result } = renderHook(() => useDecksStore())
+      act(() => result.current.duplicateDeck('gone'))
+      expect(result.current.state.decks).toEqual([])
+    })
+
+    it('restores a whole snapshot, which is what backs Undo', () => {
+      const { result } = renderHook(() => useDecksStore())
+      act(() => {
+        result.current.createDeck('Kitchen', ['a'])
+      })
+      const snapshot = result.current.state
+      act(() => result.current.deleteDeck(snapshot.decks[0]!.id))
+      expect(result.current.state.decks).toEqual([])
+
+      act(() => result.current.restore(snapshot))
+      expect(result.current.state).toEqual(snapshot)
+    })
+
+    it('persists a restore, so a reload agrees with what Undo put back', () => {
+      const { result } = renderHook(() => useDecksStore())
+      act(() => {
+        result.current.createDeck('Kitchen', ['a'])
+      })
+      const snapshot = result.current.state
+      act(() => result.current.deleteDeck(snapshot.decks[0]!.id))
+      act(() => result.current.restore(snapshot))
+
+      expect(readDecksState()).toEqual(snapshot)
+    })
+  })
 })

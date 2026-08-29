@@ -7,7 +7,9 @@ import type { DecksState } from './storage'
 
 export interface DecksStore {
   state: DecksState
-  createDeck: (name: string) => void
+  /** Returns the new deck's id, so the caller can put it straight into inline rename. */
+  createDeck: (name: string, cards?: string[]) => string
+  duplicateDeck: (deckId: string) => void
   renameDeck: (deckId: string, name: string) => void
   deleteDeck: (deckId: string) => void
   reorderDecks: (orderedIds: string[]) => void
@@ -21,6 +23,12 @@ export interface DecksStore {
   saveGroup: (name: string, deckIds: string[]) => void
   deleteGroup: (groupId: string) => void
   loadGroup: (groupId: string) => void
+  /**
+   * Puts the whole state back, verbatim. Backs the undo offered on
+   * destructive actions (deleting a deck, clearing the table): the caller
+   * snapshots `state` before the change and hands that snapshot back here.
+   */
+  restore: (state: DecksState) => void
 }
 
 /**
@@ -44,8 +52,26 @@ export function useDecksStore(): DecksStore {
   return {
     state,
     createDeck: useCallback(
-      (name: string) =>
-        update((s) => actions.addDeck(s, { id: generateDeckId(), name, hue: nextHue(s.decks.length), cards: [], kind: 'user' })),
+      (name: string, cards: string[] = []) => {
+        const id = generateDeckId()
+        update((s) => actions.addDeck(s, { id, name, hue: nextHue(s.decks.length), cards, kind: 'user' }))
+        return id
+      },
+      [update],
+    ),
+    duplicateDeck: useCallback(
+      (deckId: string) =>
+        update((s) => {
+          const source = s.decks.find((d) => d.id === deckId)
+          if (!source) return s
+          return actions.addDeck(s, {
+            id: generateDeckId(),
+            name: `${source.name} copy`,
+            hue: nextHue(s.decks.length),
+            cards: [...source.cards],
+            kind: 'user',
+          })
+        }),
       [update],
     ),
     renameDeck: useCallback((deckId: string, name: string) => update((s) => actions.renameDeck(s, deckId, name)), [update]),
@@ -70,5 +96,6 @@ export function useDecksStore(): DecksStore {
     ),
     deleteGroup: useCallback((groupId: string) => update((s) => actions.deleteGroup(s, groupId)), [update]),
     loadGroup: useCallback((groupId: string) => update((s) => actions.loadGroup(s, groupId)), [update]),
+    restore: useCallback((snapshot: DecksState) => update(() => snapshot), [update]),
   }
 }
