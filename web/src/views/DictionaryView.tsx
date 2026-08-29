@@ -3,10 +3,13 @@ import { createSearchIndex, search } from '../search/searchIndex'
 import { readShowLicence, writeShowLicence } from '../settings/showLicence'
 import { readAudioOnly, writeAudioOnly } from '../settings/audioOnly'
 import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly'
+import { readAudioMode, writeAudioMode } from '../settings/audioMode'
+import type { AudioMode } from '../settings/audioMode'
 import { readMogherLinks } from '../settings/mogherLinks'
 import { EntryList } from '../components/EntryList'
 import { EntryTree } from '../components/EntryTree'
 import { EntryDetail } from '../components/EntryDetail'
+import { AudioModeControl } from '../components/AudioModeControl'
 import {
   capGroups,
   groupEntries,
@@ -75,6 +78,7 @@ export function DictionaryView({
   const [fullAudioOnly, setFullAudioOnly] = useState(readFullAudioOnly)
   const [sortMode, setSortMode] = useState<SortMode>('relevance')
   const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
+  const [audioMode, setAudioMode] = useState<AudioMode>(readAudioMode)
   const [mogherLinks] = useState(readMogherLinks)
   // Below the phone breakpoint the filters collapse behind the "Filters"
   // summary, which otherwise pushes the first result 200px down the screen
@@ -173,6 +177,11 @@ export function DictionaryView({
     writePronunciationMode(next)
   }
 
+  const setAudioModeAndPersist = (next: AudioMode) => {
+    setAudioMode(next)
+    writeAudioMode(next)
+  }
+
   return (
     <div className={selected ? 'dictionary-view dictionary-view--detail-open' : 'dictionary-view'}>
       <div className="dictionary-view__list-pane">
@@ -243,6 +252,7 @@ export function DictionaryView({
                 <option value="sandhi">Sandhi tone</option>
               </select>
             )}
+            <AudioModeControl mode={audioMode} onChange={setAudioModeAndPersist} />
           </div>
         </details>
         {(audioOnly || fullAudioOnly) && results.length === 0 ? (
@@ -296,8 +306,10 @@ export function DictionaryView({
               showLicence={showLicence}
               pronunciation={pronunciation}
               mogherLinks={mogherLinks}
+              audioMode={audioMode}
             />
           </>
+
         ) : (
           <div className="dictionary-view__empty-state">
             <ruby className="dictionary-view__empty-state-headline" aria-hidden="true">

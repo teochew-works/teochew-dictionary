@@ -3,10 +3,13 @@ import { readShowLicence, writeShowLicence } from '../settings/showLicence'
 import { readAudioOnly, writeAudioOnly } from '../settings/audioOnly'
 import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly'
 import { readPronunciationMode, writePronunciationMode, type PronunciationMode } from '@teochew/core'
+import { readAudioMode, writeAudioMode } from '../settings/audioMode'
+import type { AudioMode } from '../settings/audioMode'
 import { readMogherLinks, writeMogherLinks } from '../settings/mogherLinks'
 import { buildBackup, restoreBackup } from '../backup/backup'
 import { InstallPrompt } from '../pwa/InstallPrompt'
 import { OfflineDataToggle } from '../pwa/OfflineDataToggle'
+import { AudioModeControl } from '../components/AudioModeControl'
 import './SettingsView.css'
 
 /**
@@ -21,6 +24,7 @@ export function SettingsView() {
   const [audioOnly, setAudioOnly] = useState(readAudioOnly)
   const [fullAudioOnly, setFullAudioOnly] = useState(readFullAudioOnly)
   const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
+  const [audioMode, setAudioMode] = useState<AudioMode>(readAudioMode)
   const [mogherLinks, setMogherLinks] = useState(readMogherLinks)
   const [backupStatus, setBackupStatus] = useState<{ kind: 'ok' | 'error'; message: string } | null>(null)
   const importInputRef = useRef<HTMLInputElement>(null)
@@ -44,6 +48,11 @@ export function SettingsView() {
     const next: PronunciationMode = checked ? 'sandhi' : 'citation'
     setPronunciation(next)
     writePronunciationMode(next)
+  }
+
+  function toggleAudioMode(next: AudioMode) {
+    setAudioMode(next)
+    writeAudioMode(next)
   }
 
   function toggleMogherLinks(value: boolean) {
@@ -119,6 +128,11 @@ export function SettingsView() {
           />
           Only fully recorded audio
         </label>
+      </fieldset>
+
+      <fieldset className="settings-view__group">
+        <legend>Audio buttons</legend>
+        <AudioModeControl mode={audioMode} onChange={toggleAudioMode} />
       </fieldset>
 
       <fieldset className="settings-view__group">
