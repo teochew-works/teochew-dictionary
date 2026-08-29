@@ -2,27 +2,40 @@ import { useMemo, useState } from 'react'
 import { useSrsQueue } from '../srs/useSrsQueue'
 import { Flashcard } from '../components/Flashcard'
 import type { EnrichedEntry } from '../types/dict'
-import { PROMPT_MODE_LABELS, isEligibleForMode, readPromptMode, writePromptMode } from '../flashcards/promptMode'
+import { PROMPT_MODE_LABELS, readPromptMode, writePromptMode } from '../flashcards/promptMode'
 import type { PromptMode } from '../flashcards/promptMode'
-import {
-  LEVEL_FILTER_ORDER,
-  isEligibleForLevel,
-  levelFilterLabel,
-  readLevelFilter,
-  writeLevelFilter,
-} from '../flashcards/levelFilter'
+import { LEVEL_FILTER_ORDER, levelFilterLabel, readLevelFilter, writeLevelFilter } from '../flashcards/levelFilter'
 import type { LevelFilterValue } from '../flashcards/levelFilter'
-import { hasFullAudio } from '../search/filters'
 import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly'
 import { readPronunciationMode, writePronunciationMode } from '../settings/pronunciationMode'
 import type { PronunciationMode } from '../settings/pronunciationMode'
+import { useDecksStore } from '../decks/useDecksStore'
+import { makeDictionaryDeck, DICTIONARY_DECK_ID } from '../decks/virtualDeck'
+import { runDeckPipeline, stageCount } from '../decks/pipeline'
 import './FlashcardsView.css'
 
+/**
+ * Stage 1 of issue #187: entries are now sourced through the deck pipeline
+ * instead of directly from the `entries` prop, but the visible UI still
+ * only ever has one deck to pick — the virtual dictionary deck — until
+ * stage 4 adds deck creation. Selecting a (future) deck here writes through
+ * to the same `inPlay` list stage 2's table will manage, so today's choice
+ * of deck already survives a reload.
+ */
 export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
+  const decksStore = useDecksStore()
   const [mode, setMode] = useState<PromptMode>(readPromptMode)
   const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
   const [levelFilter, setLevelFilter] = useState<Set<LevelFilterValue>>(readLevelFilter)
   const [fullAudioOnly, setFullAudioOnly] = useState<boolean>(readFullAudioOnly)
+
+  const dictionaryDeck = useMemo(() => makeDictionaryDeck(entries), [entries])
+  const allDecks = useMemo(() => [dictionaryDeck, ...decksStore.state.decks], [dictionaryDeck, decksStore.state.decks])
+  const selectedDeckId = decksStore.state.inPlay[0] ?? DICTIONARY_DECK_ID
+
+  function handleDeckChange(deckId: string) {
+    decksStore.setInPlay([deckId])
+  }
 
   function handleModeChange(next: PromptMode) {
     setMode(next)
@@ -48,18 +61,27 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
     writeFullAudioOnly(next)
   }
 
-  const modeEligibleEntries = useMemo(() => entries.filter((e) => isEligibleForMode(e, mode)), [entries, mode])
-  const levelEligibleEntries = useMemo(
-    () => modeEligibleEntries.filter((e) => isEligibleForLevel(e, levelFilter)),
-    [modeEligibleEntries, levelFilter],
+  const entryById = useMemo(() => new Map(entries.map((e) => [e.id, e])), [entries])
+  const pipeline = useMemo(
+    () =>
+      runDeckPipeline({
+        decks: allDecks,
+        inPlay: decksStore.state.inPlay,
+        entryById,
+        mode,
+        levelFilter,
+        fullAudioOnly,
+      }),
+    [allDecks, decksStore.state.inPlay, entryById, mode, levelFilter, fullAudioOnly],
   )
-  const eligibleEntries = useMemo(
-    () => (fullAudioOnly ? levelEligibleEntries.filter(hasFullAudio) : levelEligibleEntries),
-    [levelEligibleEntries, fullAudioOnly],
-  )
+  const eligibleEntries = pipeline.entries
+  const inPlayCount = stageCount(pipeline.stages, 'in-play')
+  const modeCount = stageCount(pipeline.stages, 'mode')
+  const levelCount = stageCount(pipeline.stages, 'level')
+  const audioCount = stageCount(pipeline.stages, 'audio')
+
   const { current, reviewedCount, totalCount, loading, persistError, grade } = useSrsQueue(eligibleEntries)
 
-  const entryById = useMemo(() => new Map(eligibleEntries.map((e) => [e.id, e])), [eligibleEntries])
   const currentEntry = current ? entryById.get(current.entryId) : null
 
   if (loading) {
@@ -68,6 +90,19 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
 
   return (
     <div className="flashcards-view">
+      <select
+        className="flashcards-view__deck"
+        aria-label="Deck"
+        value={selectedDeckId}
+        onChange={(e) => handleDeckChange(e.target.value)}
+      >
+        {allDecks.map((deck) => (
+          <option key={deck.id} value={deck.id}>
+            {deck.name}
+          </option>
+        ))}
+      </select>
+
       <select
         className="flashcards-view__mode"
         aria-label="Flashcard prompt"
@@ -123,15 +158,15 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
         {reviewedCount} reviewed{totalCount > 0 ? ` · ${totalCount} in this session` : ''}
       </p>
 
-      {entries.length > 0 && modeEligibleEntries.length === 0 ? (
+      {inPlayCount > 0 && modeCount === 0 ? (
         <p className="flashcards-view__status">
           No entries are available for {PROMPT_MODE_LABELS[mode]} mode yet — try a different mode.
         </p>
-      ) : modeEligibleEntries.length > 0 && levelEligibleEntries.length === 0 ? (
+      ) : modeCount > 0 && levelCount === 0 ? (
         <p className="flashcards-view__status">
           No entries match the selected levels — try including more levels.
         </p>
-      ) : levelEligibleEntries.length > 0 && eligibleEntries.length === 0 ? (
+      ) : levelCount > 0 && audioCount === 0 ? (
         <p className="flashcards-view__status">
           No entries have fully recorded audio yet — try unchecking "Only fully recorded audio."
         </p>

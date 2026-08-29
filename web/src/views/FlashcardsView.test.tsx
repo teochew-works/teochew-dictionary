@@ -3,6 +3,8 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { FlashcardsView } from './FlashcardsView'
 import { makeEntry, makeReading } from '../test/entryFixtures'
 import type { AudioReference } from '../types/dict'
+import { readDecksState, writeDecksState } from '../decks/storage'
+import { DICTIONARY_DECK_ID } from '../decks/virtualDeck'
 
 const CLIP: AudioReference = {
   key: 'dio5',
@@ -205,5 +207,88 @@ describe('FlashcardsView full-audio filter', () => {
     localStorage.setItem('teochew-dictionary:flashcard-full-audio-only', 'true')
     render(<FlashcardsView entries={[full]} />)
     expect(await screen.findByText('全錄詞')).toBeInTheDocument()
+  })
+})
+
+describe('FlashcardsView deck selection (issue #187 stage 1)', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  afterEach(() => {
+    cleanup()
+    localStorage.clear()
+  })
+
+  it('defaults to the Dictionary deck, keeping today\'s behaviour unchanged', async () => {
+    const a = makeEntry({ id: 'a', headword: '一' })
+    const b = makeEntry({ id: 'b', headword: '二' })
+    render(<FlashcardsView entries={[a, b]} />)
+
+    await screen.findByText(/2 in this session/)
+    expect(screen.getByLabelText('Deck')).toHaveValue(DICTIONARY_DECK_ID)
+    expect(screen.getByText('Dictionary')).toBeInTheDocument()
+  })
+
+  it('lists a persisted user deck and narrows the pool to it when selected', async () => {
+    writeDecksState({
+      decks: [{ id: 'deck-1', name: 'Kitchen', hue: 'green', cards: ['b'], kind: 'user' }],
+      inPlay: [DICTIONARY_DECK_ID],
+      groups: [],
+    })
+    const a = makeEntry({ id: 'a', headword: '一' })
+    const b = makeEntry({ id: 'b', headword: '二' })
+    render(<FlashcardsView entries={[a, b]} />)
+    await screen.findByText(/2 in this session/)
+
+    fireEvent.change(screen.getByLabelText('Deck'), { target: { value: 'deck-1' } })
+
+    await screen.findByText(/1 in this session/)
+    expect(screen.getByText('二')).toBeInTheDocument()
+    expect(screen.queryByText('一')).not.toBeInTheDocument()
+  })
+
+  it('persists the selected deck to the shared inPlay list so it survives a reload', async () => {
+    writeDecksState({
+      decks: [{ id: 'deck-1', name: 'Kitchen', hue: 'green', cards: [], kind: 'user' }],
+      inPlay: [DICTIONARY_DECK_ID],
+      groups: [],
+    })
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/nothing due/i)
+
+    fireEvent.change(screen.getByLabelText('Deck'), { target: { value: 'deck-1' } })
+
+    expect(readDecksState().inPlay).toEqual(['deck-1'])
+  })
+})
+
+describe('FlashcardsView review queue stability (issue #187)', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  afterEach(() => {
+    cleanup()
+    localStorage.clear()
+  })
+
+  // Grading triggers a re-render driven entirely by useSrsQueue's own
+  // internal state (not by a new `entries` prop or a filter/deck change).
+  // useSrsQueue rebuilds its queue whenever the array it's given changes
+  // identity (see useSrsQueue.ts), so if the deck pipeline's output isn't
+  // properly memoized, this re-render would silently rebuild the queue and
+  // reset reviewedCount back to 0 — see the note on this in issue #187.
+  it('does not reset review progress on the re-render grading itself triggers', async () => {
+    const a = makeEntry({ id: 'a', headword: '一' })
+    const b = makeEntry({ id: 'b', headword: '二' })
+    render(<FlashcardsView entries={[a, b]} />)
+    await screen.findByText(/2 in this session/)
+
+    fireEvent.click(screen.getByText('Show answer'))
+    fireEvent.click(screen.getByText('Good'))
+
+    expect(await screen.findByText(/1 reviewed/)).toBeInTheDocument()
+    expect(screen.queryByText(/^0 reviewed/)).not.toBeInTheDocument()
   })
 })
