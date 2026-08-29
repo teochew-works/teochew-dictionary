@@ -180,16 +180,30 @@ shares with the mobile app, and where it lives).
   - **Custom buttons, not `<audio controls>`.** A three-syllable reading would
     otherwise render four full-width native players.
 
-  **Combined playback (issue #191).** A "play all" button synthesizes one
-  continuous clip from a reading's per-syllable recordings — fetch,
-  `decodeAudioData`, resample to a common rate, trim each clip's
-  leading/trailing silence (amplitude-threshold scan), crossfade-concatenate
-  the trimmed clips (`src/audio/combineClips.ts`), then play the result as an
-  `AudioBufferSourceNode` via `useAudioPlayer`'s `playBuffer`. Synthesis only
-  runs when `reading.wordAudio` is absent — a native whole-word recording
-  already *is* a single continuous clip, so the combined button plays that
-  directly instead. Combined playback is only offered when every syllable's
-  clip is present *and* from the same recorded speaker
+  **Combined playback (issue #191).** A "play all" button plays a reading's
+  syllable clips back-to-back under one `<audio>` element
+  (`useAudioPlayer`'s `playSequence`), advancing to the next clip on each
+  one's `ended` event. **Not** a synthesized single clip: the original design
+  fetched each clip's bytes, trimmed leading/trailing silence, and
+  crossfaded the seams via the Web Audio API — abandoned after discovering
+  GitHub Release assets (where every clip is hosted,
+  `data/phonology/REVIEW.md` § 12) send no `Access-Control-Allow-Origin`
+  header on either the redirect or the final response, so `fetch()` is
+  CORS-blocked from ever reading the bytes. `<audio src>` playback is exempt
+  from that restriction (browsers don't apply CORS to media-element
+  playback), which is why chaining plain elements works and synthesis
+  can't — short of rehosting every clip somewhere CORS-enabled, which was
+  explicitly declined for this issue. Consequently there's no
+  silence-trimming or crossfade: the natural gap in each clip is still
+  audible between syllables, which is the choppiness the issue originally
+  set out to fix — a real, open limitation of the current implementation,
+  not a hidden one.
+
+  A native whole-word `wordAudio` recording is still preferred over chaining
+  when present — it's already one continuous, coarticulated clip, strictly
+  better than stitched-together syllables — so the combined button plays
+  that directly instead. Combined playback is only offered when every
+  syllable's clip is present *and* from the same recorded speaker
   (`canCombine` in `src/search/filters.ts`) — splicing together different
   voices would sound worse than not offering it — which the build pipeline
   helps by preferring a fully same-speaker clip set across a reading's
