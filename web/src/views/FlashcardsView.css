@@ -2,15 +2,18 @@
  * The flashcards screen. Layout is a library rail beside a main column
  * holding the table, the session bar, the card, and the browse drawer.
  *
- * The extra tokens below are scoped to `.flashcards-view` rather than added
- * to index.css: this screen needs a couple of surface depths and a set of
- * solid accents that no other view uses, and keeping them local means the
- * Dictionary/Sounds/Settings views can't drift because of a change made
- * here. Everything that *does* already exist globally (--color-accent, the
- * deck hues) is reused rather than restated.
+ * The extra tokens this screen needs — a couple of surface depths, a set of
+ * solid accents, its radii and easings — are declared at `:root` rather than
+ * on `.flashcards-view`. They were scoped here originally so other views
+ * couldn't drift, but a custom property that nothing references changes
+ * nothing, and scoping them broke the popovers: those render through a portal
+ * into `document.body` (see AnchoredPopover.tsx) and so fall outside this
+ * screen's subtree entirely, losing their radius, shadow, and border colour.
+ * Everything that already exists globally (--color-accent, the deck hues) is
+ * reused rather than restated.
  */
 
-.flashcards-view {
+:root {
   --sunken: color-mix(in srgb, var(--color-surface) 70%, var(--color-fg) 4%);
   --surface-2: color-mix(in srgb, var(--color-surface) 82%, var(--color-fg) 8%);
   --ink-2: color-mix(in srgb, var(--color-fg) 72%, var(--color-bg));
@@ -34,7 +37,9 @@
   --r-lg: 16px;
   --ease: cubic-bezier(0.2, 0.8, 0.25, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 
+.flashcards-view {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -44,7 +49,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .flashcards-view {
+  :root {
     --due: #d6a250;
     --learned: #6cba75;
     --g-again: #c4463b;
@@ -62,8 +67,14 @@
  * component rule below it (`.pill`, `.group__load`, `.card__reveal`, …),
  * which silently strips their padding, border, and background — the reset
  * has to lose every one of those arguments, not win them.
+ *
+ * `.pop` is listed alongside because popovers render through a portal into
+ * `document.body` (see AnchoredPopover.tsx) and so sit outside this screen's
+ * subtree; without it their menu items fall back to the browser's default
+ * grey button face.
  */
-.flashcards-view :where(button) {
+.flashcards-view :where(button),
+.pop :where(button) {
   background: none;
   border: none;
   padding: 0;
@@ -430,9 +441,6 @@
 }
 
 .deck-menu__panel {
-  position: absolute;
-  top: calc(100% + 5px);
-  right: 0;
   width: 196px;
   padding: 6px;
   gap: 2px;
@@ -441,7 +449,9 @@
 /* ── popovers ─────────────────────────────────────────────────────── */
 
 .pop {
-  z-index: 60;
+  /* Above the toast stack (200): a transient confirmation must not cover a
+     menu the reader is using. Below the drag image (999). */
+  z-index: 250;
   background: var(--color-bg);
   border: 1px solid var(--line-2);
   border-radius: var(--r-lg);
@@ -464,6 +474,14 @@
   }
 }
 
+/* Panels are portalled and positioned inline, so the column that lays their
+   contents out is an inner element rather than the panel itself. */
+.pop__items {
+  display: flex;
+  flex-direction: column;
+  gap: inherit;
+}
+
 .pop__item {
   display: block;
   width: 100%;
@@ -477,8 +495,10 @@
   background: var(--color-surface);
 }
 
+/* Muted by colour rather than opacity: a washed-out menu item is hard to read
+   and, on a faded ancestor, compounds into something barely there at all. */
 .pop__item:disabled {
-  opacity: 0.4;
+  color: var(--ink-3);
   cursor: default;
 }
 
@@ -1006,9 +1026,6 @@
 }
 
 .filters-popover__panel {
-  position: absolute;
-  top: calc(100% + 7px);
-  left: 0;
   width: 306px;
 }
 
@@ -1561,18 +1578,9 @@
 }
 
 .entry-deck-menu {
-  position: absolute;
-  top: calc(100% + 5px);
-  left: 0;
   width: 218px;
   padding: 6px;
   gap: 2px;
-}
-
-/* Hung from the right edge when its anchor sits against the card's corner. */
-.entry-deck-menu--right {
-  left: auto;
-  right: 0;
 }
 
 /* ── drag image, drop states, insertion caret ─────────────────────── */

@@ -1,3 +1,4 @@
+import { createRef } from 'react'
 import { describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { EntryDeckMenu } from './EntryDeckMenu'
@@ -13,6 +14,7 @@ function setup(overrides: Partial<Parameters<typeof EntryDeckMenu>[0]> = {}) {
     headword: '茶',
     entryId: 'e1',
     userDecks: decks,
+    anchorRef: createRef<HTMLElement>(),
     onAddCard: vi.fn(),
     onRemoveCard: vi.fn(),
     onNewDeck: vi.fn(),
@@ -66,20 +68,24 @@ describe('EntryDeckMenu', () => {
     expect(screen.getByRole('menuitem', { name: '+ New deck with this card' })).toBeInTheDocument()
   })
 
-  it('can hang from the right edge when its anchor sits in a corner', () => {
+  it('renders outside its caller, so no scrolling or faded ancestor can swallow it', () => {
+    const host = document.createElement('div')
+    document.body.append(host)
     const { container } = render(
       <EntryDeckMenu
         headword="茶"
         entryId="e1"
         userDecks={decks}
-        align="right"
+        anchorRef={createRef<HTMLElement>()}
         onAddCard={vi.fn()}
         onRemoveCard={vi.fn()}
         onNewDeck={vi.fn()}
         onClose={vi.fn()}
       />,
+      { container: host },
     )
-    expect(container.querySelector('.entry-deck-menu--right')).not.toBeNull()
+    expect(container.querySelector('.entry-deck-menu')).toBeNull()
+    expect(document.body.querySelector('.entry-deck-menu')).not.toBeNull()
   })
 
   it('closes on Escape', () => {

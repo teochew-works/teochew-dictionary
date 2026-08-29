@@ -111,6 +111,7 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
   const [filtersOpen, setFiltersOpen] = useState(false)
   const [renaming, setRenaming] = useState<{ deckId: string; value: string } | null>(null)
   const [filingMenuFor, setFilingMenuFor] = useState<string | null>(null)
+  const filingHandleRef = useRef<HTMLButtonElement>(null)
   const toasts = useToasts()
 
   const dictionaryDeck = useMemo(() => makeDictionaryDeck(entries), [entries])
@@ -568,6 +569,7 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
           sourceDeck={sourceDeck}
           intervals={intervals}
           filing={{
+            anchorRef: filingHandleRef,
             onPointerDown: drag.onPointerDown({ kind: 'card', id: currentEntry.id }),
             dragging: drag.isDragging('card', currentEntry.id),
             menuOpen: filingMenuFor === currentEntry.id,
@@ -577,6 +579,7 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
                 headword={currentEntry.headword}
                 entryId={currentEntry.id}
                 userDecks={userDecks}
+                anchorRef={filingHandleRef}
                 align="right"
                 onAddCard={(deckId) => addCard(deckId, currentEntry.id)}
                 onRemoveCard={(deckId) => removeCard(deckId, currentEntry.id)}

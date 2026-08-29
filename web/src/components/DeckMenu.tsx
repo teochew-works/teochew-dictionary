@@ -1,4 +1,5 @@
 import { useId, useRef, useState } from 'react'
+import { AnchoredPopover } from './AnchoredPopover'
 import { useDismissOnOutside } from './useDismissOnOutside'
 
 export interface DeckMenuActions {
@@ -53,7 +54,15 @@ export function DeckMenu({ deckName, inPlay, actions }: { deckName: string; inPl
       </button>
 
       {open && (
-        <div id={panelId} className="deck-menu__panel pop" role="menu" aria-label={`${deckName} options`} ref={panelRef}>
+        <AnchoredPopover
+          anchorRef={triggerRef}
+          align="right"
+          id={panelId}
+          className="deck-menu__panel pop"
+          role="menu"
+          aria-label={`${deckName} options`}
+        >
+          <div ref={panelRef} className="pop__items">
           <button type="button" role="menuitem" className="pop__item" disabled={inPlay} onClick={() => run(actions.onPutOnTable)}>
             Put on the table
           </button>
@@ -69,7 +78,8 @@ export function DeckMenu({ deckName, inPlay, actions }: { deckName: string; inPl
           <button type="button" role="menuitem" className="pop__item pop__item--danger" onClick={() => run(actions.onDelete)}>
             Delete
           </button>
-        </div>
+          </div>
+        </AnchoredPopover>
       )}
     </div>
   )

@@ -45,6 +45,9 @@
     --color-accent-fg: #17181a;
     --color-warning-bg: #3a2c12;
     --color-warning-fg: #f0c078;
+    /* Every other colour here has a dark variant; this one was missed, which
+       left "Delete" a near-black red on a near-black menu. */
+    --color-danger: #f08a80;
     --color-success: #3fb950;
 
     --deck-hue-red-bg: #e5766c;
