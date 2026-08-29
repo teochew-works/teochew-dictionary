@@ -3,7 +3,6 @@ import type { PointerEvent as ReactPointerEvent, ReactNode, RefObject } from 're
 import type { EnrichedEntry, EnrichedReading, Grade, PromptMode, PronunciationMode, Deck } from '@teochew/core'
 import type { AudioMode } from '../settings/audioMode'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
-import { useCombinedClip } from '../hooks/useCombinedClip'
 import { syllableClipUrls } from '@teochew/core'
 import { ReadingAudio } from './ReadingAudio'
 
@@ -68,21 +67,15 @@ export function Flashcard({
   } | null
 }) {
   const [revealed, setRevealed] = useState(false)
-  const { playingId, play, playBuffer } = useAudioPlayer()
-  const { statusFor, ensure } = useCombinedClip()
+  const { playingId, play, playSequence } = useAudioPlayer()
   const reading = entry.readings[0]
   const gloss = entry.senses[0]?.gloss_en.join(', ')
-  const combinedUrls = reading ? syllableClipUrls(reading, pronunciation) : []
   const onPlayCombined = (id: string) => {
     if (reading?.wordAudio) {
       play(id, reading.wordAudio.url)
-      return
+    } else if (reading) {
+      playSequence(id, syllableClipUrls(reading, pronunciation))
     }
-    void ensure(combinedUrls)
-      .then((buffer) => playBuffer(id, buffer))
-      .catch(() => {
-        // useCombinedClip already tracks the error status for the button; nothing more to do here.
-      })
   }
   const audio = reading && (
     <ReadingAudio
@@ -91,7 +84,6 @@ export function Flashcard({
       playingId={playingId}
       onPlay={play}
       onPlayCombined={onPlayCombined}
-      combinedStatus={statusFor(combinedUrls)}
       pronunciation={pronunciation}
       audioMode={audioMode}
     />

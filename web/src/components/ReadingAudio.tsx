@@ -1,7 +1,6 @@
 import { canCombine } from '@teochew/core'
 import type { AudioReference, EnrichedReading, PronunciationMode } from '@teochew/core'
 import type { AudioMode } from '../settings/audioMode'
-import type { CombinedClipStatus } from '../hooks/useCombinedClip'
 
 /**
  * Clip buttons for one reading: a combined "play all" button first when
@@ -15,8 +14,9 @@ import type { CombinedClipStatus } from '../hooks/useCombinedClip'
  * coarticulation a syllable clip can't (data/phonology/REVIEW.md § 16), but
  * the syllables stay reachable for drilling one at a time. `audioMode`
  * governs this independently of that: it toggles the *combined* control
- * (native wordAudio, or a synthesized clip — issue #191) against these
- * per-syllable "component" buttons, not one against the other.
+ * (native wordAudio, or the syllable clips chained back-to-back — issue
+ * #191) against these per-syllable "component" buttons, not one against the
+ * other.
  *
  * Renders nothing when the reading has no clips at all — still most readings
  * today, since recorded coverage (data/phonology/audio/chaozhou.yaml) is
@@ -28,7 +28,6 @@ export function ReadingAudio({
   playingId,
   onPlay,
   onPlayCombined,
-  combinedStatus = 'idle',
   pronunciation = 'citation',
   audioMode = 'both',
 }: {
@@ -41,14 +40,11 @@ export function ReadingAudio({
   onPlay: (id: string, url: string) => void
   /**
    * Plays the combined clip under `id` — reading.wordAudio directly when
-   * present, otherwise a synthesized clip once `combinedStatus` is 'ready'.
-   * Required whenever a combined button can be shown; the caller owns that
-   * branch since it's the one holding both useAudioPlayer and
-   * useCombinedClip.
+   * present, otherwise the syllable clips chained back-to-back. Required
+   * whenever a combined button can be shown; the caller owns that branch
+   * since it's the one holding useAudioPlayer.
    */
   onPlayCombined?: (id: string) => void
-  /** Synthesis status for this reading's combined clip. Irrelevant (and ignored) when reading.wordAudio covers it — that path is always instant. */
-  combinedStatus?: CombinedClipStatus
   /** Which per-syllable clip array to play from. Defaults to citation — only
    *  Flashcard mode's sandhi toggle passes 'sandhi'. */
   pronunciation?: PronunciationMode
@@ -59,8 +55,8 @@ export function ReadingAudio({
   const hasSyllableClip = syllableClips.some((c) => c !== null)
   if (!reading.wordAudio && !hasSyllableClip) return null
 
-  // A native wordAudio recording IS a combined clip already — no synthesis
-  // needed, so it alone is enough to make this reading combinable.
+  // A native wordAudio recording IS a combined clip already — nothing to
+  // chain, so it alone is enough to make this reading combinable.
   const combinable = reading.wordAudio !== null || canCombine(reading, pronunciation)
   // "combined" falls back to component buttons when this reading can't
   // combine, so an entry never loses audio access entirely just because the
@@ -75,7 +71,6 @@ export function ReadingAudio({
         <CombinedClipButton
           id={`${readingIndex}:combined`}
           label={`Play combined recording of ${reading.pengim}`}
-          status={reading.wordAudio ? 'ready' : combinedStatus}
           playingId={playingId}
           onPlay={onPlayCombined}
         />
@@ -117,18 +112,15 @@ export function ReadingAudio({
 function CombinedClipButton({
   id,
   label,
-  status,
   playingId,
   onPlay,
 }: {
   id: string
   label: string
-  status: CombinedClipStatus
   playingId: string | null
   onPlay: (id: string) => void
 }) {
   const playing = playingId === id
-  const loading = status === 'loading'
   const classes = ['reading__clip', 'reading__clip--combined', playing && 'reading__clip--playing'].filter(Boolean)
   return (
     <button
@@ -136,8 +128,6 @@ function CombinedClipButton({
       className={classes.join(' ')}
       aria-label={label}
       aria-pressed={playing}
-      aria-busy={loading}
-      disabled={loading}
       onClick={() => onPlay(id)}
     >
       <span aria-hidden="true">▶</span> Play all

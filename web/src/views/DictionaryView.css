@@ -319,11 +319,6 @@
   color: var(--color-accent);
 }
 
-.reading__clip:disabled {
-  opacity: 0.6;
-  cursor: wait;
-}
-
 .sense {
   margin-bottom: 1rem;
 }

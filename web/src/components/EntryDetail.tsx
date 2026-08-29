@@ -1,6 +1,5 @@
 import { useMemo } from 'react'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
-import { useCombinedClip } from '../hooks/useCombinedClip'
 import { syllableClipUrls } from '@teochew/core'
 import { ReadingAudio } from './ReadingAudio'
 import { MogherPengim } from './MogherPengim'
@@ -68,8 +67,7 @@ export function EntryDetail({
   mogherLinks?: boolean
   audioMode?: AudioMode
 }) {
-  const { playingId, play, playBuffer } = useAudioPlayer()
-  const { statusFor, ensure } = useCombinedClip()
+  const { playingId, play, playSequence } = useAudioPlayer()
   // Gated/memoized rather than computed unconditionally: showLicence is off
   // by default, and playingId changes on every clip click — without this,
   // clipCredits would re-walk every reading's clips on every play/pause even
@@ -92,17 +90,12 @@ export function EntryDetail({
       <section className="entry-detail__readings">
         {entry.readings.map((r, i) => {
           const tags = [r.variety, r.register].filter(Boolean).join(', ')
-          const combinedUrls = syllableClipUrls(r, pronunciation)
           const onPlayCombined = (id: string) => {
             if (r.wordAudio) {
               play(id, r.wordAudio.url)
-              return
+            } else {
+              playSequence(id, syllableClipUrls(r, pronunciation))
             }
-            void ensure(combinedUrls)
-              .then((buffer) => playBuffer(id, buffer))
-              .catch(() => {
-                // useCombinedClip already tracks the error status for the button; nothing more to do here.
-              })
           }
           return (
             <div className="reading" key={`${r.pengim}-${i}`}>
@@ -124,7 +117,6 @@ export function EntryDetail({
                 playingId={playingId}
                 onPlay={play}
                 onPlayCombined={onPlayCombined}
-                combinedStatus={statusFor(combinedUrls)}
                 pronunciation={pronunciation}
                 audioMode={audioMode}
               />
