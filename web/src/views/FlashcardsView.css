@@ -123,7 +123,20 @@
   flex-direction: column;
   gap: 4px;
   padding: 14px 12px 12px;
+  /* A library taller than the window scrolls. Without this its sections are
+     flex items that shrink below their content, and the deck cards spill out
+     of the list and land on top of whatever follows. */
+  overflow-y: auto;
   transition: width 0.32s var(--ease), padding 0.32s var(--ease);
+}
+
+.rail__top,
+.rail__section,
+.rail__list,
+.rail__hint,
+.rail__empty,
+.trash {
+  flex-shrink: 0;
 }
 
 .rail--closed {
@@ -1665,6 +1678,8 @@
 
   .rail {
     width: auto;
+    flex: none;
+    overflow-y: visible;
     border-right: none;
     border-bottom: 1px solid var(--color-border);
   }
