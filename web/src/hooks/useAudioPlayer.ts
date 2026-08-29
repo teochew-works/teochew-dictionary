@@ -1,10 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { getAudioContext } from '../audio/combineClips'
 
 export interface AudioPlayer {
   /** The id of the clip currently playing, or null when nothing is. */
   playingId: string | null
   /** Play `url` under `id`, stopping whatever was playing; playing the current id again stops it. */
   play: (id: string, url: string) => void
+  /** Same contract as `play`, but for a synthesized `AudioBuffer` (issue #191's combined clip) rather than a url. */
+  playBuffer: (id: string, buffer: AudioBuffer) => void
 }
 
 /**
@@ -25,25 +28,43 @@ export interface AudioPlayer {
  */
 export function useAudioPlayer(): AudioPlayer {
   const elementRef = useRef<HTMLAudioElement | null>(null)
+  const sourceRef = useRef<AudioBufferSourceNode | null>(null)
   const requestIdRef = useRef(0)
   const [playingId, setPlayingId] = useState<string | null>(null)
 
   useEffect(() => {
     return () => {
       elementRef.current?.pause()
+      sourceRef.current?.stop()
+    }
+  }, [])
+
+  // Shared by play/playBuffer so a url-based clip and a synthesized buffer
+  // (issue #191's combined clip) exclude each other through the same
+  // "only one thing plays" state, regardless of which kind started it.
+  const stopCurrent = useCallback(() => {
+    elementRef.current?.pause()
+    if (sourceRef.current) {
+      // Stopping a buffer source fires 'ended' asynchronously; clear the
+      // handler first so that doesn't clobber whatever plays next (the
+      // requestId guard below would also catch it, but this avoids relying
+      // on that alone).
+      sourceRef.current.onended = null
+      sourceRef.current.stop()
+      sourceRef.current = null
     }
   }, [])
 
   const play = useCallback(
     (id: string, url: string) => {
-      const element = elementRef.current ?? new Audio()
-      elementRef.current = element
-
-      element.pause()
+      stopCurrent()
       if (id === playingId) {
         setPlayingId(null)
         return
       }
+
+      const element = elementRef.current ?? new Audio()
+      elementRef.current = element
 
       // Reusing the element to switch clips aborts any in-flight play()
       // request for the previous clip, which rejects its promise — a request
@@ -64,8 +85,33 @@ export function useAudioPlayer(): AudioPlayer {
       void Promise.resolve(element.play()).catch(stopIfCurrent)
       setPlayingId(id)
     },
-    [playingId],
+    [playingId, stopCurrent],
   )
 
-  return { playingId, play }
+  const playBuffer = useCallback(
+    (id: string, buffer: AudioBuffer) => {
+      stopCurrent()
+      if (id === playingId) {
+        setPlayingId(null)
+        return
+      }
+
+      const context = getAudioContext()
+      const source = context.createBufferSource()
+      source.buffer = buffer
+      source.connect(context.destination)
+
+      const requestId = ++requestIdRef.current
+      source.onended = () => {
+        if (requestIdRef.current === requestId) setPlayingId(null)
+      }
+
+      sourceRef.current = source
+      source.start()
+      setPlayingId(id)
+    },
+    [playingId, stopCurrent],
+  )
+
+  return { playingId, play, playBuffer }
 }
