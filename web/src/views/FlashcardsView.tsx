@@ -7,6 +7,7 @@ import { DeckRail } from '../components/DeckRail'
 import { DragGhost } from '../components/DragGhost'
 import { GroupPresets } from '../components/GroupPresets'
 import { BrowseDrawer } from '../components/BrowseDrawer'
+import { EntryDeckMenu } from '../components/EntryDeckMenu'
 import { PromptModeControl } from '../components/PromptModeControl'
 import { FiltersPopover } from '../components/FiltersPopover'
 import { ActiveFilterChips } from '../components/ActiveFilterChips'
@@ -105,6 +106,7 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
   const [browseOpen, setBrowseOpen] = useState(false)
   const [filtersOpen, setFiltersOpen] = useState(false)
   const [renaming, setRenaming] = useState<{ deckId: string; value: string } | null>(null)
+  const [filingMenuFor, setFilingMenuFor] = useState<string | null>(null)
   const toasts = useToasts()
 
   const dictionaryDeck = useMemo(() => makeDictionaryDeck(entries), [entries])
@@ -234,6 +236,17 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
       withUndo(`${entry.headword} → ${deck.name}`)
     },
     [decksById, entryById, decksStore, note, withUndo],
+  )
+
+  const removeCard = useCallback(
+    (deckId: string, entryId: string) => {
+      const deck = decksById.get(deckId)
+      const entry = entryById.get(entryId)
+      if (!deck || !deck.cards.includes(entryId)) return
+      decksStore.removeCardFromDeck(deckId, entryId)
+      withUndo(`Removed ${entry?.headword ?? 'card'} from ${deck.name}`)
+    },
+    [decksById, entryById, decksStore, withUndo],
   )
 
   const savePoolAsDeck = useCallback(() => {
@@ -484,14 +497,24 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
           pronunciation={pronunciation}
           sourceDeck={sourceDeck}
           intervals={intervals}
-          filingDrag={
-            userDecks.length > 0
-              ? {
-                  onPointerDown: drag.onPointerDown({ kind: 'card', id: currentEntry.id }),
-                  dragging: drag.isDragging('card', currentEntry.id),
-                }
-              : null
-          }
+          filing={{
+            onPointerDown: drag.onPointerDown({ kind: 'card', id: currentEntry.id }),
+            dragging: drag.isDragging('card', currentEntry.id),
+            menuOpen: filingMenuFor === currentEntry.id,
+            onOpenMenu: () => setFilingMenuFor(currentEntry.id),
+            menu: filingMenuFor === currentEntry.id && (
+              <EntryDeckMenu
+                headword={currentEntry.headword}
+                entryId={currentEntry.id}
+                userDecks={userDecks}
+                align="right"
+                onAddCard={(deckId) => addCard(deckId, currentEntry.id)}
+                onRemoveCard={(deckId) => removeCard(deckId, currentEntry.id)}
+                onNewDeck={() => newDeckFromCard(currentEntry.id)}
+                onClose={() => setFilingMenuFor(null)}
+              />
+            ),
+          }}
           onGrade={grade}
         />
         <div className="study__note">
@@ -703,6 +726,7 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
               isDragging: (entryId) => drag.isDragging('entry', entryId),
             }}
             onAddCard={addCard}
+            onRemoveCard={removeCard}
             onNewDeckFromCard={newDeckFromCard}
             onSavePoolAsDeck={savePoolAsDeck}
           />

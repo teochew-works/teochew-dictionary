@@ -40,6 +40,7 @@ function setup(overrides: Partial<Parameters<typeof BrowseDrawer>[0]> = {}) {
     poolSize: 12,
     cardDrag: { onPointerDown: () => vi.fn(), isDragging: () => false },
     onAddCard: vi.fn(),
+    onRemoveCard: vi.fn(),
     onNewDeckFromCard: vi.fn(),
     onSavePoolAsDeck: vi.fn(),
     ...overrides,
@@ -97,7 +98,7 @@ describe('BrowseDrawer', () => {
     searchFor('tea')
     fireEvent.click(screen.getByRole('button', { name: /茶/ }))
     expect(screen.getByRole('menu')).toBeInTheDocument()
-    expect(screen.getByRole('menuitem', { name: 'Food words' })).toBeInTheDocument()
+    expect(screen.getByRole('menuitemcheckbox', { name: /Food words/ })).toBeInTheDocument()
   })
 
   it('opens the same menu from the keyboard', () => {
@@ -111,8 +112,17 @@ describe('BrowseDrawer', () => {
     const { props } = setup()
     searchFor('tea')
     fireEvent.click(screen.getByRole('button', { name: /茶/ }))
-    fireEvent.click(screen.getByRole('menuitem', { name: 'Food words' }))
+    fireEvent.click(screen.getByRole('menuitemcheckbox', { name: /Food words/ }))
     expect(props.onAddCard).toHaveBeenCalledWith('d1', 'de5-茶')
+  })
+
+  it('takes an entry back out of a deck that holds it', () => {
+    const decksWithCard = [{ ...decks[0]!, cards: ['de5-茶'] }]
+    const { props } = setup({ userDecks: decksWithCard })
+    searchFor('tea')
+    fireEvent.click(screen.getByRole('button', { name: /茶/ }))
+    fireEvent.click(screen.getByRole('menuitemcheckbox', { name: /Food words/ }))
+    expect(props.onRemoveCard).toHaveBeenCalledWith('d1', 'de5-茶')
   })
 
   it('starts a new deck from an entry', () => {

@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
 import { createSearchIndex, search } from '../search/searchIndex'
 import { hasFullAudio } from '../search/filters'
-import { EntryAddMenu } from './EntryAddMenu'
+import { EntryDeckMenu } from './EntryDeckMenu'
 import type { EnrichedEntry } from '../types/dict'
 import type { PronunciationMode } from '../settings/pronunciationMode'
 import type { Deck } from '../decks/types'
@@ -33,6 +33,7 @@ export function BrowseDrawer({
   poolSize,
   cardDrag,
   onAddCard,
+  onRemoveCard,
   onNewDeckFromCard,
   onSavePoolAsDeck,
 }: {
@@ -44,6 +45,7 @@ export function BrowseDrawer({
   poolSize: number
   cardDrag: { onPointerDown: (entryId: string) => (e: ReactPointerEvent) => void; isDragging: (entryId: string) => boolean }
   onAddCard: (deckId: string, entryId: string) => void
+  onRemoveCard: (deckId: string, entryId: string) => void
   onNewDeckFromCard: (entryId: string) => void
   onSavePoolAsDeck: () => void
 }) {
@@ -116,11 +118,12 @@ export function BrowseDrawer({
                 </div>
 
                 {menuEntryId === entry.id && (
-                  <EntryAddMenu
+                  <EntryDeckMenu
                     headword={entry.headword}
                     entryId={entry.id}
                     userDecks={userDecks}
                     onAddCard={(deckId) => onAddCard(deckId, entry.id)}
+                    onRemoveCard={(deckId) => onRemoveCard(deckId, entry.id)}
                     onNewDeck={() => onNewDeckFromCard(entry.id)}
                     onClose={() => setMenuEntryId(null)}
                   />

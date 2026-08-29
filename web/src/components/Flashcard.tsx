@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { PointerEvent as ReactPointerEvent } from 'react'
+import type { PointerEvent as ReactPointerEvent, ReactNode } from 'react'
 import type { EnrichedEntry, EnrichedReading } from '../types/dict'
 import type { Grade } from '../srs/types'
 import type { PromptMode } from '../flashcards/promptMode'
@@ -40,7 +40,7 @@ export function Flashcard({
   pronunciation,
   sourceDeck,
   intervals,
-  filingDrag,
+  filing,
   onGrade,
 }: {
   entry: EnrichedEntry
@@ -51,7 +51,18 @@ export function Flashcard({
   /** Days each grade would schedule, from the live card state — see srs/scheduler.ts's previewIntervals. */
   intervals: Record<Grade, number>
   onGrade: (grade: Grade) => void
-  filingDrag: { onPointerDown: (e: ReactPointerEvent) => void; dragging: boolean } | null
+  /**
+   * The handle for filing this card into a deck. It is a drag source *and* a
+   * button: pressing it opens the same membership menu the drag files into, so
+   * the gesture has a keyboard path rather than being pointer-only.
+   */
+  filing: {
+    onPointerDown: (e: ReactPointerEvent) => void
+    dragging: boolean
+    menuOpen: boolean
+    onOpenMenu: () => void
+    menu: ReactNode
+  } | null
 }) {
   const [revealed, setRevealed] = useState(false)
   const { playingId, play } = useAudioPlayer()
@@ -95,14 +106,18 @@ export function Flashcard({
         <span>{sourceDeck?.name ?? 'Dictionary'}</span>
       </div>
 
-      {filingDrag && (
+      {filing && (
+        <div className="card__filing-wrap">
         <button
           type="button"
-          className={filingDrag.dragging ? 'card__filing card__filing--dragging' : 'card__filing'}
+          className={filing.dragging ? 'card__filing card__filing--dragging' : 'card__filing'}
           data-drag-source=""
-          aria-label={`Drag ${entry.headword} onto one of your decks`}
-          title="Drag onto a deck to file this card"
-          onPointerDown={filingDrag.onPointerDown}
+          aria-label={`File ${entry.headword} into a deck`}
+          title="Drag onto a deck, or press to choose"
+          aria-haspopup="menu"
+          aria-expanded={filing.menuOpen}
+          onPointerDown={filing.onPointerDown}
+          onClick={filing.onOpenMenu}
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
             <path
@@ -113,6 +128,8 @@ export function Flashcard({
             <path d="M7 6.6v3.2M5.4 8.2h3.2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
           </svg>
         </button>
+          {filing.menu}
+        </div>
       )}
 
       <div className={mode === 'english' ? 'card__prompt card__prompt--en' : 'card__prompt'}>

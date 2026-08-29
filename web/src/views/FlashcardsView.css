@@ -490,6 +490,28 @@
   color: var(--color-accent);
 }
 
+/* Membership toggles: the tick column is reserved whether or not it is set, so
+   the deck names line up and the list doesn't shift as they are toggled. */
+.pop__item--check {
+  display: grid;
+  grid-template-columns: 12px 1fr;
+  align-items: center;
+  gap: 7px;
+}
+
+.pop__tick {
+  color: var(--color-accent);
+  font-size: 11px;
+  line-height: 1;
+}
+
+.pop__note {
+  margin: 0;
+  padding: 4px 9px;
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+
 .pop__group {
   display: flex;
   flex-direction: column;
@@ -1149,10 +1171,15 @@
   background: var(--hue);
 }
 
-.card__filing {
+/* The wrapper carries the corner position so the membership menu can hang off
+   it; the button itself stays in flow inside. */
+.card__filing-wrap {
   position: absolute;
   top: 7px;
   right: 7px;
+}
+
+.card__filing {
   width: 26px;
   height: 26px;
   border-radius: var(--r-sm);
@@ -1463,13 +1490,19 @@
   color: var(--due);
 }
 
-.entry-add-menu {
+.entry-deck-menu {
   position: absolute;
   top: calc(100% + 5px);
   left: 0;
   width: 218px;
   padding: 6px;
   gap: 2px;
+}
+
+/* Hung from the right edge when its anchor sits against the card's corner. */
+.entry-deck-menu--right {
+  left: auto;
+  right: 0;
 }
 
 /* ── drag image, drop states, insertion caret ─────────────────────── */

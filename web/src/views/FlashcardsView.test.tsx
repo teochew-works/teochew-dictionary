@@ -553,3 +553,56 @@ describe('FlashcardsView the drawn card', () => {
     expect(screen.getByText(/0 reviewed/)).toBeInTheDocument()
   })
 })
+
+describe('FlashcardsView filing the card under review', () => {
+  const deck = (cards: string[] = []) => ({ id: 'deck-1', name: 'Kitchen', hue: 'green' as const, cards, kind: 'user' as const })
+  const entries = [makeEntry({ id: 'e1', headword: '一', frequency: 30 }), makeEntry({ id: 'e2', headword: '二', frequency: 20 })]
+
+  async function openFilingMenu() {
+    fireEvent.click(await screen.findByLabelText('File 一 into a deck'))
+  }
+
+  it('opens its membership menu from a press, not only a drag', async () => {
+    writeDecksState({ decks: [deck()], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openFilingMenu()
+
+    expect(screen.getByRole('menu', { name: /Decks for 一/ })).toBeInTheDocument()
+  })
+
+  it('files the card, and takes it back out again from the same menu', async () => {
+    writeDecksState({ decks: [deck()], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openFilingMenu()
+
+    fireEvent.click(screen.getByRole('menuitemcheckbox', { name: /Kitchen/ }))
+    expect(readDecksState().decks[0]!.cards).toEqual(['e1'])
+
+    fireEvent.click(screen.getByRole('menuitemcheckbox', { name: /Kitchen/ }))
+    expect(readDecksState().decks[0]!.cards).toEqual([])
+  })
+
+  it('offers Undo on a removal', async () => {
+    writeDecksState({ decks: [deck(['e1'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openFilingMenu()
+
+    fireEvent.click(screen.getByRole('menuitemcheckbox', { name: /Kitchen/ }))
+    expect(readDecksState().decks[0]!.cards).toEqual([])
+    // Once in the toast and once in the live region — both are intended.
+    expect(screen.getAllByText('Removed 一 from Kitchen')).toHaveLength(2)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Undo' }))
+    expect(readDecksState().decks[0]!.cards).toEqual(['e1'])
+  })
+
+  it('leaves the drawn card alone when the removal is from a deck off the table', async () => {
+    writeDecksState({ decks: [deck(['e1'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openFilingMenu()
+
+    fireEvent.click(screen.getByRole('menuitemcheckbox', { name: /Kitchen/ }))
+
+    expect(screen.getByText('一')).toBeInTheDocument()
+  })
+})
