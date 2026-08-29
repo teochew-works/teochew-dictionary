@@ -107,7 +107,11 @@ reappear as new (DevTools → Application → IndexedDB →
   deck a *move*; holding the platform's copy modifier (Option on macOS, Control
   elsewhere — `decks/dnd/copyModifier.ts`) makes it a copy instead, and the
   badge flips while the key is held. The trash arms for those drags too.
-  `EntryDeckMenu` is the pointer- and keyboard-native equivalent: it lists every
+  The list is itself a drop zone that can say *where* in the deck a card would
+  land, so dragging a row within it reorders the deck and dragging a card into
+  it files at a position; space lifts a row for the keyboard equivalent while
+  Enter opens its decks. `EntryDeckMenu` is the pointer- and keyboard-native
+  equivalent for membership: it lists every
   deck as a checkbox, so ticking files, unticking removes, and ticking a second
   deck without unticking the first is the copy a modifier-less path could not
   otherwise express.

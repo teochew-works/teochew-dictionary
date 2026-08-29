@@ -31,10 +31,33 @@ export function reorderDecks(state: DecksState, orderedIds: string[]): DecksStat
   return { ...state, decks: reordered }
 }
 
-export function addCardToDeck(state: DecksState, deckId: string, entryId: string): DecksState {
+/** Clamps an insertion point to a list, treating "no index given" as the end. */
+function insertAt(cards: string[], entryId: string, index?: number): string[] {
+  const at = index === undefined ? cards.length : Math.max(0, Math.min(index, cards.length))
+  return [...cards.slice(0, at), entryId, ...cards.slice(at)]
+}
+
+/** `index` places the card in the deck's order; omitted, it goes on the end. */
+export function addCardToDeck(state: DecksState, deckId: string, entryId: string, index?: number): DecksState {
   return {
     ...state,
-    decks: state.decks.map((d) => (d.id === deckId && !d.cards.includes(entryId) ? { ...d, cards: [...d.cards, entryId] } : d)),
+    decks: state.decks.map((d) => (d.id === deckId && !d.cards.includes(entryId) ? { ...d, cards: insertAt(d.cards, entryId, index) } : d)),
+  }
+}
+
+/**
+ * Moves a card the deck already holds to a different position in its own
+ * order. `index` counts positions in the list *without* the card in it, which
+ * is what a drop between two other cards means.
+ */
+export function reorderCardInDeck(state: DecksState, deckId: string, entryId: string, index: number): DecksState {
+  return {
+    ...state,
+    decks: state.decks.map((d) => {
+      if (d.id !== deckId || !d.cards.includes(entryId)) return d
+      const without = d.cards.filter((id) => id !== entryId)
+      return { ...d, cards: insertAt(without, entryId, index) }
+    }),
   }
 }
 
@@ -51,15 +74,22 @@ export function removeCardFromDeck(state: DecksState, deckId: string, entryId: s
  * reading as a removal followed by an unrelated addition.
  *
  * A move onto the deck the card is already in is a no-op, as is a move whose
- * target already holds it (the card still leaves the source).
+ * target already holds it (the card still leaves the source). `index` places
+ * the card in the target's order; omitted, it goes on the end.
  */
-export function moveCardBetweenDecks(state: DecksState, fromDeckId: string, toDeckId: string, entryId: string): DecksState {
+export function moveCardBetweenDecks(
+  state: DecksState,
+  fromDeckId: string,
+  toDeckId: string,
+  entryId: string,
+  index?: number,
+): DecksState {
   if (fromDeckId === toDeckId) return state
   return {
     ...state,
     decks: state.decks.map((d) => {
       if (d.id === fromDeckId) return { ...d, cards: d.cards.filter((id) => id !== entryId) }
-      if (d.id === toDeckId && !d.cards.includes(entryId)) return { ...d, cards: [...d.cards, entryId] }
+      if (d.id === toDeckId && !d.cards.includes(entryId)) return { ...d, cards: insertAt(d.cards, entryId, index) }
       return d
     }),
   }

@@ -1,5 +1,5 @@
-import { memo, useState } from 'react'
-import type { PointerEvent as ReactPointerEvent } from 'react'
+import { Fragment, memo, useState } from 'react'
+import type { KeyboardEvent as ReactKeyboardEvent, PointerEvent as ReactPointerEvent } from 'react'
 import { EntryDeckMenu } from './EntryDeckMenu'
 import { copyModifierName } from '../decks/dnd/copyModifier'
 import type { EnrichedEntry } from '../types/dict'
@@ -9,6 +9,14 @@ import type { Deck } from '../decks/types'
 export interface DeckContentsCardDrag {
   onPointerDown: (entryId: string) => (e: ReactPointerEvent) => void
   isDragging: (entryId: string) => boolean
+  /** Registers the list itself as a drop zone, so cards can be dropped *into* the deck at a position. */
+  listRef: (el: HTMLElement | null) => void
+  /** Registers one card's row, so a drop between rows knows where it landed. */
+  itemRef: (entryId: string) => (el: HTMLElement | null) => void
+  /** Where a card would land right now, or null. */
+  caretIndex: number | null
+  /** True while a card is being dragged over the list. */
+  isOver: boolean
 }
 
 /**
@@ -30,6 +38,7 @@ export function DeckContents({
   onRemoveCard,
   onNewDeckFromCard,
   onBrowseDictionary,
+  lift,
 }: {
   deck: Deck
   entryById: Map<string, EnrichedEntry>
@@ -41,6 +50,8 @@ export function DeckContents({
   onRemoveCard: (deckId: string, entryId: string) => void
   onNewDeckFromCard: (entryId: string) => void
   onBrowseDictionary: () => void
+  /** The keyboard equivalent of dragging a card around inside the deck — see decks/dnd/useCardLift.ts. */
+  lift: { isLifted: (entryId: string) => boolean; handleKeyDown: (entryId: string, e: ReactKeyboardEvent) => void }
 }) {
   const [menuEntryId, setMenuEntryId] = useState<string | null>(null)
 
@@ -56,7 +67,8 @@ export function DeckContents({
           </span>
         </span>
         <span className="drawer__hint">
-          Drag a card onto another deck to move it · hold {copyModifierName()} to copy
+          Drag to reorder, or onto another deck to move · hold {copyModifierName()} to copy · <kbd>Space</kbd> lifts,{' '}
+          <kbd>Enter</kbd> opens a card's decks
         </span>
         <div className="bar__spacer" />
         <button type="button" className="pill" onClick={onBrowseDictionary}>
@@ -64,23 +76,28 @@ export function DeckContents({
         </button>
       </div>
 
-      <div className="drawer__list">
+      <div className={cardDrag.isOver ? 'drawer__list drawer__list--over' : 'drawer__list'} ref={cardDrag.listRef}>
         {deck.cards.length === 0 && (
           <p className="drawer__note">
             This deck is empty. Add cards from the dictionary, or file the card you are reviewing.
           </p>
         )}
 
-        {deck.cards.map((entryId) => (
-          <div className="entry-wrap" key={entryId}>
+        {deck.cards.map((entryId, index) => (
+          <Fragment key={entryId}>
+            {cardDrag.caretIndex === index && <span className="caret caret--card" />}
+            <div className="entry-wrap">
             <DeckContentsRow
               entryId={entryId}
               entry={entryById.get(entryId)}
               deckName={deck.name}
               pronunciation={pronunciation}
               dragging={cardDrag.isDragging(entryId)}
+              lifted={lift.isLifted(entryId)}
+              elementRef={cardDrag.itemRef(entryId)}
               onPointerDown={cardDrag.onPointerDown(entryId)}
               onOpenMenu={() => setMenuEntryId(entryId)}
+              onKeyDown={(e) => lift.handleKeyDown(entryId, e)}
               onRemove={() => onRemoveCard(deck.id, entryId)}
             />
             {menuEntryId === entryId && (
@@ -94,8 +111,10 @@ export function DeckContents({
                 onClose={() => setMenuEntryId(null)}
               />
             )}
-          </div>
+            </div>
+          </Fragment>
         ))}
+        {cardDrag.caretIndex === deck.cards.length && <span className="caret caret--card" />}
       </div>
     </>
   )
@@ -113,8 +132,11 @@ const DeckContentsRow = memo(function DeckContentsRow({
   deckName,
   pronunciation,
   dragging,
+  lifted,
+  elementRef,
   onPointerDown,
   onOpenMenu,
+  onKeyDown,
   onRemove,
 }: {
   entryId: string
@@ -123,12 +145,16 @@ const DeckContentsRow = memo(function DeckContentsRow({
   deckName: string
   pronunciation: PronunciationMode
   dragging: boolean
+  lifted: boolean
+  elementRef: (el: HTMLElement | null) => void
   onPointerDown: (e: ReactPointerEvent) => void
   onOpenMenu: () => void
+  onKeyDown: (e: ReactKeyboardEvent) => void
   onRemove: () => void
 }) {
   const classes = ['entry', 'entry--in-deck']
   if (dragging) classes.push('is-source')
+  if (lifted) classes.push('kbd-lift')
 
   /*
    * A card id that no longer resolves against the loaded dictionary — stale
@@ -138,7 +164,7 @@ const DeckContentsRow = memo(function DeckContentsRow({
    */
   if (!entry) {
     return (
-      <div className="entry entry--unresolved">
+      <div className="entry entry--unresolved" ref={elementRef}>
         <span className="entry__hw">?</span>
         <span className="entry__rest">
           <span className="entry__g">No longer in the dictionary</span>
@@ -157,6 +183,7 @@ const DeckContentsRow = memo(function DeckContentsRow({
   return (
     <div
       className={classes.join(' ')}
+      ref={elementRef}
       data-drag-source=""
       role="button"
       tabIndex={0}
@@ -164,10 +191,14 @@ const DeckContentsRow = memo(function DeckContentsRow({
       onPointerDown={onPointerDown}
       onClick={onOpenMenu}
       onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
+        // Enter opens the card's decks; space lifts it, the same key that lifts
+        // a deck in the rail. Splitting them is what lets one row do both.
+        if (e.key === 'Enter') {
           e.preventDefault()
           onOpenMenu()
+          return
         }
+        onKeyDown(e)
       }}
     >
       <span className="entry__hw">{entry.headword}</span>

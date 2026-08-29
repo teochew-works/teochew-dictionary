@@ -21,6 +21,7 @@ function zones(overrides: Partial<DropZones> = {}): DropZones {
       { id: 'd2', name: 'Travel', rect: rect(10, 70, 250, 120), isVirtual: false, alreadyHas: true },
       { id: 'dictionary', name: 'Dictionary', rect: rect(10, 130, 250, 180), isVirtual: true, alreadyHas: false },
     ],
+    cardList: null,
     ...overrides,
   }
 }
@@ -194,5 +195,69 @@ describe('resolveDrop — a card with nowhere to go back to', () => {
     // The engine does not arm the trash for these, but the resolver must not
     // depend on that to stay safe.
     expect(resolveDrop(draggedCard, zones(), 100, 530)).toMatchObject({ ok: false, act: null })
+  })
+})
+
+describe("resolveDrop — the open deck's card list", () => {
+  const list = {
+    deckId: 'd1',
+    deckName: 'Food words',
+    rect: rect(300, 600, 900, 800),
+    items: [rect(310, 610, 410, 650), rect(420, 610, 520, 650)],
+    alreadyHas: false,
+  }
+  const withList = (overrides = {}) => zones({ cardList: { ...list, ...overrides } })
+  const fromThisDeck: DragSubject = { kind: 'entry', id: 'e9', from: { id: 'd1', name: 'Food words' } }
+  const fromAnother: DragSubject = { kind: 'entry', id: 'e9', from: { id: 'd2', name: 'Travel' } }
+
+  it('reorders within the deck when the card came from it', () => {
+    expect(resolveDrop(fromThisDeck, withList({ alreadyHas: true }), 415, 630)).toMatchObject({
+      ok: true,
+      act: 'reorder-cards',
+      deckId: 'd1',
+      index: 1,
+      highlight: 'cards',
+      label: 'Move here',
+    })
+  })
+
+  it('places the card at the end when dropped past every row', () => {
+    expect(resolveDrop(fromThisDeck, withList({ alreadyHas: true }), 880, 630)).toMatchObject({ act: 'reorder-cards', index: 2 })
+  })
+
+  it('adds a card from elsewhere at the position it was dropped', () => {
+    expect(resolveDrop(draggedCard, withList(), 415, 630)).toMatchObject({
+      ok: true,
+      act: 'add',
+      deckId: 'd1',
+      index: 1,
+      label: '+1 → Food words',
+    })
+  })
+
+  it('moves a card in from another deck, rather than copying it', () => {
+    expect(resolveDrop(fromAnother, withList(), 415, 630)).toMatchObject({ ok: true, act: 'move', deckId: 'd1', index: 1 })
+  })
+
+  it('copies in from another deck while the modifier is held', () => {
+    expect(resolveDrop({ ...fromAnother, copy: true }, withList(), 415, 630)).toMatchObject({ act: 'add', deckId: 'd1' })
+  })
+
+  it('refuses a card the deck already holds and did not come from', () => {
+    expect(resolveDrop(fromAnother, withList({ alreadyHas: true }), 415, 630)).toMatchObject({
+      ok: false,
+      act: null,
+      label: 'Already in Food words',
+    })
+  })
+
+  it('takes precedence over the deck rows behind it', () => {
+    // The list is the more specific target, and unlike a rail row it can say where.
+    const overlapping = zones({ cardList: { ...list, rect: rect(0, 0, 900, 800) } })
+    expect(resolveDrop(draggedCard, overlapping, 100, 30)).toMatchObject({ act: 'add', index: expect.any(Number) })
+  })
+
+  it('is not consulted for a deck drag', () => {
+    expect(resolveDrop(draggedDeck, withList(), 415, 630)).toMatchObject({ act: null })
   })
 })

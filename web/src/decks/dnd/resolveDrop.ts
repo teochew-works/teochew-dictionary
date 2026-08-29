@@ -8,10 +8,20 @@ import type { Rect } from './geometry'
  */
 export type DragKind = 'deck' | 'chip' | 'card' | 'entry'
 
-export type DropAct = 'play' | 'reorder-play' | 'reorder-lib' | 'off' | 'delete' | 'add' | 'move' | 'remove' | 'new-deck'
+export type DropAct =
+  | 'play'
+  | 'reorder-play'
+  | 'reorder-lib'
+  | 'reorder-cards'
+  | 'off'
+  | 'delete'
+  | 'add'
+  | 'move'
+  | 'remove'
+  | 'new-deck'
 
 /** Which drop zone should light up under the pointer. */
-export type DropHighlight = 'tray' | 'library' | 'trash' | 'deck'
+export type DropHighlight = 'tray' | 'library' | 'trash' | 'deck' | 'cards'
 
 export interface DropOutcome {
   /** Whether letting go here would do anything. Drives the badge colour and the reject bounce. */
@@ -39,6 +49,21 @@ export interface DeckDropTarget {
   alreadyHas: boolean
 }
 
+/**
+ * The open deck's own card list, when a deck's contents are showing. Unlike a
+ * `DeckDropTarget` it can say *where* in the deck a card would land, which is
+ * what makes it both a place to reorder within and a place to drop into.
+ */
+export interface CardListZone {
+  deckId: string
+  deckName: string
+  rect: Rect
+  /** The listed cards in display order, excluding the one being dragged. */
+  items: Rect[]
+  /** Whether this deck already holds the card being dragged. */
+  alreadyHas: boolean
+}
+
 export interface DropZones {
   /** The table's drop area, or null when it isn't mounted. */
   tray: Rect | null
@@ -52,6 +77,8 @@ export interface DropZones {
   trash: Rect | null
   /** Every deck a card can be filed into, rail rows and table chips alike. */
   deckTargets: DeckDropTarget[]
+  /** The open deck's card list, or null when the dock isn't showing one. */
+  cardList: CardListZone | null
 }
 
 export interface DragSubject {
@@ -142,6 +169,27 @@ function resolveCardDrop(subject: DragSubject, zones: DropZones, x: number, y: n
   // is also the only case where the caller arms the trash at all.
   if (from && zones.trash && pointInRect(x, y, zones.trash)) {
     return { ok: true, act: 'remove', highlight: 'trash', label: `Remove from ${from.name}` }
+  }
+
+  /*
+   * The open deck's own list, checked before the rail and the table because it
+   * is the more specific target and can place the card at a position rather
+   * than only in a deck. Reordering within it and dropping into it are the same
+   * gesture; which one it is depends only on where the card came from.
+   */
+  const list = zones.cardList
+  if (list && pointInRect(x, y, list.rect)) {
+    const index = insertionIndex(list.items, { x, y }, 'horizontal')
+    if (from?.id === list.deckId) {
+      return { ok: true, act: 'reorder-cards', index, deckId: list.deckId, highlight: 'cards', label: 'Move here' }
+    }
+    if (list.alreadyHas) {
+      return { ok: false, act: null, highlight: 'cards', label: `Already in ${list.deckName}` }
+    }
+    if (from && !subject.copy) {
+      return { ok: true, act: 'move', index, deckId: list.deckId, highlight: 'cards', label: `Move to ${list.deckName}` }
+    }
+    return { ok: true, act: 'add', index, deckId: list.deckId, highlight: 'cards', label: `+1 → ${list.deckName}` }
   }
 
   const target = deckTargetAt(zones.deckTargets, x, y)

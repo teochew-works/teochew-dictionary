@@ -13,9 +13,10 @@ export interface DecksStore {
   renameDeck: (deckId: string, name: string) => void
   deleteDeck: (deckId: string) => void
   reorderDecks: (orderedIds: string[]) => void
-  addCardToDeck: (deckId: string, entryId: string) => void
+  addCardToDeck: (deckId: string, entryId: string, index?: number) => void
+  reorderCardInDeck: (deckId: string, entryId: string, index: number) => void
   removeCardFromDeck: (deckId: string, entryId: string) => void
-  moveCardBetweenDecks: (fromDeckId: string, toDeckId: string, entryId: string) => void
+  moveCardBetweenDecks: (fromDeckId: string, toDeckId: string, entryId: string, index?: number) => void
   setInPlay: (deckIds: string[]) => void
   addToPlay: (deckId: string) => void
   removeFromPlay: (deckId: string) => void
@@ -79,7 +80,11 @@ export function useDecksStore(): DecksStore {
     deleteDeck: useCallback((deckId: string) => update((s) => actions.deleteDeck(s, deckId)), [update]),
     reorderDecks: useCallback((orderedIds: string[]) => update((s) => actions.reorderDecks(s, orderedIds)), [update]),
     addCardToDeck: useCallback(
-      (deckId: string, entryId: string) => update((s) => actions.addCardToDeck(s, deckId, entryId)),
+      (deckId: string, entryId: string, index?: number) => update((s) => actions.addCardToDeck(s, deckId, entryId, index)),
+      [update],
+    ),
+    reorderCardInDeck: useCallback(
+      (deckId: string, entryId: string, index: number) => update((s) => actions.reorderCardInDeck(s, deckId, entryId, index)),
       [update],
     ),
     removeCardFromDeck: useCallback(
@@ -87,8 +92,8 @@ export function useDecksStore(): DecksStore {
       [update],
     ),
     moveCardBetweenDecks: useCallback(
-      (fromDeckId: string, toDeckId: string, entryId: string) =>
-        update((s) => actions.moveCardBetweenDecks(s, fromDeckId, toDeckId, entryId)),
+      (fromDeckId: string, toDeckId: string, entryId: string, index?: number) =>
+        update((s) => actions.moveCardBetweenDecks(s, fromDeckId, toDeckId, entryId, index)),
       [update],
     ),
     setInPlay: useCallback((deckIds: string[]) => update((s) => actions.setInPlay(s, deckIds)), [update]),

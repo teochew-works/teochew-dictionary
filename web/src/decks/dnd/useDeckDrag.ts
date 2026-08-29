@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
 import { resolveDrop } from './resolveDrop'
-import type { DeckDropTarget, DragKind, DragSubject, DropOutcome, DropZones } from './resolveDrop'
+import type { CardListZone, DeckDropTarget, DragKind, DragSubject, DropOutcome, DropZones } from './resolveDrop'
 import { nextGhostFrame } from './dragPhysics'
 import type { GhostFrame } from './dragPhysics'
 import { prefersReducedMotion } from './prefersReducedMotion'
@@ -40,9 +40,10 @@ export interface DeckDragActions {
   onReorderLibrary: (deckId: string, index: number) => void
   onTakeOff: (deckId: string) => void
   onDelete: (deckId: string) => void
-  onAddCard: (deckId: string, entryId: string) => void
-  onMoveCard: (fromDeckId: string, toDeckId: string, entryId: string) => void
+  onAddCard: (deckId: string, entryId: string, index?: number) => void
+  onMoveCard: (fromDeckId: string, toDeckId: string, entryId: string, index?: number) => void
   onRemoveCard: (fromDeckId: string, entryId: string) => void
+  onReorderCards: (deckId: string, entryId: string, index: number) => void
   onNewDeckFromCard: (entryId: string) => void
 }
 
@@ -53,6 +54,8 @@ export interface DeckDragContext {
   libraryIds: string[]
   /** Everything a resolved drop needs to know about a deck, by id. */
   deckInfo: (deckId: string) => { name: string; isVirtual: boolean; kept: number; hasCard: (entryId: string) => boolean } | null
+  /** The deck whose cards the dock is listing, and the order it lists them in — null when it is showing something else. */
+  cardList: { deckId: string; entryIds: string[] } | null
 }
 
 export interface DeckDrag {
@@ -82,6 +85,9 @@ export interface DeckDrag {
    * two elements standing for one deck.
    */
   deckTargetRef: (deckId: string, place: 'rail' | 'tray') => (el: HTMLElement | null) => void
+  /** The open deck's card list, so a card can be dropped into it at a position. */
+  cardListRef: (el: HTMLElement | null) => void
+  cardItemRef: (entryId: string) => (el: HTMLElement | null) => void
   /** The drag image's current position — for tests, which can't read a style attribute React never wrote. */
   readGhostFrame: () => GhostFrame | null
 }
@@ -131,6 +137,8 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
   const trayItemEls = useRef(new Map<string, HTMLElement>())
   const libraryItemEls = useRef(new Map<string, HTMLElement>())
   const deckTargetEls = useRef(new Map<string, { deckId: string; el: HTMLElement }>())
+  const cardListElRef = useRef<HTMLElement | null>(null)
+  const cardItemEls = useRef(new Map<string, HTMLElement>())
 
   const contextRef = useRef(context)
   contextRef.current = context
@@ -205,6 +213,15 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
     [cachedRef],
   )
 
+  const cardItemRef = useCallback(
+    (entryId: string) =>
+      cachedRef(`card:${entryId}`, () => (el: HTMLElement | null) => {
+        if (el) cardItemEls.current.set(entryId, el)
+        else cardItemEls.current.delete(entryId)
+      }),
+    [cachedRef],
+  )
+
   const rectsFor = useCallback((ids: string[], store: Map<string, HTMLElement>, exclude: string): Rect[] => {
     return ids.flatMap((id) => {
       if (id === exclude) return []
@@ -247,6 +264,20 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
             return [{ id: deckId, name: info.name, rect, isVirtual: info.isVirtual, alreadyHas: info.hasCard(dragged.id) }]
           })
 
+      const listRect = rectOf(cardListElRef.current)
+      const list = ctx.cardList
+      const info = list && ctx.deckInfo(list.deckId)
+      const cardList: CardListZone | null =
+        !isDeckDrag && list && listRect && info
+          ? {
+              deckId: list.deckId,
+              deckName: info.name,
+              rect: listRect,
+              items: rectsFor(list.entryIds, cardItemEls.current, dragged.id),
+              alreadyHas: info.hasCard(dragged.id),
+            }
+          : null
+
       return {
         tray: rectOf(trayElRef.current),
         trayItems: rectsFor(ctx.inPlayIds, trayItemEls.current, dragged.id),
@@ -256,6 +287,7 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
         // the air that came out of a deck and so has something to leave.
         trash: isDeckDrag || dragged.from ? rectOf(trashElRef.current) : null,
         deckTargets,
+        cardList,
       }
     },
     [rectsFor],
@@ -350,10 +382,13 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
           a.onDelete(dragged.id)
           break
         case 'add':
-          if (resolved.deckId) a.onAddCard(resolved.deckId, dragged.id)
+          if (resolved.deckId) a.onAddCard(resolved.deckId, dragged.id, resolved.index)
           break
         case 'move':
-          if (resolved.deckId && dragged.from) a.onMoveCard(dragged.from.id, resolved.deckId, dragged.id)
+          if (resolved.deckId && dragged.from) a.onMoveCard(dragged.from.id, resolved.deckId, dragged.id, resolved.index)
+          break
+        case 'reorder-cards':
+          if (resolved.deckId) a.onReorderCards(resolved.deckId, dragged.id, resolved.index ?? 0)
           break
         case 'remove':
           if (dragged.from) a.onRemoveCard(dragged.from.id, dragged.id)
@@ -474,6 +509,10 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
     trayItemRef,
     libraryItemRef,
     deckTargetRef,
+    cardListRef: useCallback((el: HTMLElement | null) => {
+      cardListElRef.current = el
+    }, []),
+    cardItemRef,
     readGhostFrame: () => frameRef.current,
   }
 }

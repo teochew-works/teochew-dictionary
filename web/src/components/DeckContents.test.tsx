@@ -27,7 +27,15 @@ function setup(overrides: Partial<Parameters<typeof DeckContents>[0]> = {}) {
     entryById,
     pronunciation: 'citation' as const,
     userDecks: [deck, otherDeck],
-    cardDrag: { onPointerDown: () => vi.fn(), isDragging: () => false },
+    cardDrag: {
+      onPointerDown: () => vi.fn(),
+      isDragging: () => false,
+      listRef: vi.fn(),
+      itemRef: () => vi.fn(),
+      caretIndex: null,
+      isOver: false,
+    },
+    lift: { isLifted: () => false, handleKeyDown: vi.fn() },
     onAddCard: vi.fn(),
     onRemoveCard: vi.fn(),
     onNewDeckFromCard: vi.fn(),
@@ -74,7 +82,16 @@ describe('DeckContents', () => {
 
   it('does not start a drag from the remove button', () => {
     const onPointerDown = vi.fn()
-    setup({ cardDrag: { onPointerDown: () => onPointerDown, isDragging: () => false } })
+    setup({
+      cardDrag: {
+        onPointerDown: () => onPointerDown,
+        isDragging: () => false,
+        listRef: vi.fn(),
+        itemRef: () => vi.fn(),
+        caretIndex: null,
+        isOver: false,
+      },
+    })
     fireEvent.pointerDown(screen.getByRole('button', { name: 'Remove 茶 from Kitchen' }), { button: 0 })
     expect(onPointerDown).not.toHaveBeenCalled()
   })
@@ -92,8 +109,55 @@ describe('DeckContents', () => {
     expect(screen.getByRole('menu')).toBeInTheDocument()
   })
 
+  it('leaves space for the lift, so one row can both open a menu and be moved', () => {
+    const lift = { isLifted: () => false, handleKeyDown: vi.fn() }
+    setup({ lift })
+    fireEvent.keyDown(screen.getByRole('button', { name: /^茶/ }), { key: ' ' })
+    expect(lift.handleKeyDown).toHaveBeenCalled()
+    expect(screen.queryByRole('menu')).not.toBeInTheDocument()
+  })
+
+  it('marks the row held by the keyboard', () => {
+    const { container } = setup({ lift: { isLifted: (id: string) => id === 'e-tea', handleKeyDown: vi.fn() } })
+    expect(container.querySelector('.entry.kbd-lift')).not.toBeNull()
+  })
+
+  it('shows a caret where a dropped card would land', () => {
+    const { container } = setup({
+      cardDrag: {
+        onPointerDown: () => vi.fn(),
+        isDragging: () => false,
+        listRef: vi.fn(),
+        itemRef: () => vi.fn(),
+        caretIndex: 1,
+        isOver: true,
+      },
+    })
+    const children = [...(container.querySelector('.drawer__list')?.children ?? [])]
+    const caretAt = children.findIndex((c) => c.classList.contains('caret'))
+    expect(children.slice(0, caretAt).filter((c) => c.classList.contains('entry-wrap'))).toHaveLength(1)
+    expect(container.querySelector('.drawer__list--over')).not.toBeNull()
+  })
+
+  it('registers itself as a drop zone, so cards can be dropped into the deck', () => {
+    const listRef = vi.fn()
+    setup({
+      cardDrag: { onPointerDown: () => vi.fn(), isDragging: () => false, listRef, itemRef: () => vi.fn(), caretIndex: null, isOver: false },
+    })
+    expect(listRef).toHaveBeenCalledWith(expect.any(HTMLElement))
+  })
+
   it('marks the row being dragged as the source', () => {
-    const { container } = setup({ cardDrag: { onPointerDown: () => vi.fn(), isDragging: (id) => id === 'e-tea' } })
+    const { container } = setup({
+      cardDrag: {
+        onPointerDown: () => vi.fn(),
+        isDragging: (id: string) => id === 'e-tea',
+        listRef: vi.fn(),
+        itemRef: () => vi.fn(),
+        caretIndex: null,
+        isOver: false,
+      },
+    })
     expect(container.querySelector('.entry.is-source')).not.toBeNull()
   })
 
