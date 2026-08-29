@@ -83,4 +83,15 @@ describe('DeckTable', () => {
     expect(onReorder).toHaveBeenCalledWith(['b', 'a'])
     expect(announce).toHaveBeenCalledWith(expect.stringContaining('Moved A to position 2 of 2'))
   })
+
+  it('hands up a dropZone handle reflecting the table container and items (issue #189)', () => {
+    const onDropZoneChange = vi.fn()
+    const a = deck({ id: 'a', name: 'A' })
+    renderTable({ inPlayDecks: [a], onDropZoneChange })
+
+    expect(onDropZoneChange).toHaveBeenCalledTimes(1)
+    const dropZone = onDropZoneChange.mock.calls[0]![0]
+    expect(typeof dropZone.containerRect).toBe('function')
+    expect(typeof dropZone.items).toBe('function')
+  })
 })

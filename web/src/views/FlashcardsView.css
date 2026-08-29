@@ -162,6 +162,105 @@
   }
 }
 
+/*
+ * Drag affordances (issue #189): the tilt/lag drag image, collapsed source
+ * slot, insertion caret, FLIP-animated reflow, and outcome badge from
+ * #187's original "Affordances" spec. All gated behind
+ * `prefers-reduced-motion: no-preference` — under reduced motion, dragging
+ * still works exactly as the opacity/outline rules above describe.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  /* Collapsed source placeholder: the dragged chip's own slot goes empty
+     rather than staying opaque, without changing its box size so siblings
+     don't jump. */
+  .deck-chip--dragging {
+    opacity: 1;
+    background: transparent;
+    border: 1px dashed var(--color-border);
+    box-shadow: none;
+  }
+
+  .deck-chip--dragging .deck-chip__name,
+  .deck-chip--dragging .deck-chip__count,
+  .deck-chip--dragging .deck-chip__remove {
+    visibility: hidden;
+  }
+
+  /* FLIP-animated reflow: applyFlip() (decks/dnd/flip.ts) offsets an item
+     the instant its position changes, then clears the offset — this
+     transition is what carries it smoothly back to its natural spot. */
+  .deck-table__item,
+  .deck-rail__row {
+    transition: transform 0.2s ease;
+  }
+}
+
+.insertion-caret {
+  flex: 0 0 auto;
+  background: var(--color-accent);
+  border-radius: 999px;
+}
+
+.insertion-caret--horizontal {
+  width: 0.15rem;
+  align-self: stretch;
+}
+
+.insertion-caret--vertical {
+  height: 0.15rem;
+  align-self: stretch;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .insertion-caret {
+    animation: flashcards-view-caret-pulse 0.9s ease-in-out infinite;
+  }
+}
+
+@keyframes flashcards-view-caret-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.drag-ghost {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
+  font-size: 0.8rem;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.drag-ghost__badge {
+  color: var(--color-muted);
+  font-size: 0.7rem;
+}
+
+.drag-ghost--refused {
+  animation: flashcards-view-ghost-refuse 0.22s ease-out;
+}
+
+@keyframes flashcards-view-ghost-refuse {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  40% {
+    transform: translate(-50%, -50%) rotate(-8deg) scale(1.05);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+}
+
 .deck-chip--red { background: var(--deck-hue-red-bg); color: var(--deck-hue-red-fg); }
 .deck-chip--orange { background: var(--deck-hue-orange-bg); color: var(--deck-hue-orange-fg); }
 .deck-chip--amber { background: var(--deck-hue-amber-bg); color: var(--deck-hue-amber-fg); }
@@ -426,6 +525,70 @@
   background: #2f6fa6;
 }
 
+/* Delete confirmation (issue #189): a small anchored popover replacing
+   window.confirm for deck and group deletion — see DeleteConfirm.tsx. */
+
+.delete-confirm {
+  position: relative;
+  display: inline-flex;
+}
+
+.delete-confirm__trigger {
+  border: none;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  padding: 0.15rem 0.3rem;
+  text-decoration: underline;
+}
+
+.delete-confirm__trigger:hover {
+  color: var(--color-fg);
+}
+
+.delete-confirm__panel {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 12rem;
+  padding: 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
+  font-size: 0.8rem;
+}
+
+.delete-confirm__text {
+  margin: 0;
+  color: var(--color-fg);
+}
+
+.delete-confirm__confirm,
+.delete-confirm__cancel {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.4rem;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-size: 0.8rem;
+}
+
+.delete-confirm__confirm {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .delete-confirm__panel {
+    animation: flashcards-view-popover-in 0.12s ease-out;
+  }
+}
+
 /* Library rail (issue #187 stage 4) */
 
 .deck-rail {
@@ -660,6 +823,16 @@
   background: var(--color-surface);
   color: var(--color-fg);
   font-size: 0.8rem;
+}
+
+.group-presets__save-input {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+  color: var(--color-fg);
+  font-size: 0.8rem;
+  min-width: 10rem;
 }
 
 .group-presets__list {

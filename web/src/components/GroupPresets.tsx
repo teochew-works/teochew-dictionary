@@ -1,10 +1,14 @@
+import { useState } from 'react'
+import { DeleteConfirm } from './DeleteConfirm'
 import type { DeckGroup } from '../decks/types'
 
 /**
  * Named, saved deck-id sets — "the table" as it was when saved (issue #187
- * stage 4). Naming uses window.prompt rather than a custom form, matching
- * DeckRail's create/rename/delete controls, to keep this additive rather
- * than introducing the first modal-dialog component in the app.
+ * stage 4). Naming is an inline input swapped in for the "Save table as
+ * group…" button (issue #189), the same pattern DeckRail's rename and
+ * create controls use; deleting a group uses DeleteConfirm, the same small
+ * non-modal confirmation deck deletion uses — this stays additive rather
+ * than introducing a general-purpose modal-dialog component.
  */
 export function GroupPresets({
   groups,
@@ -19,9 +23,13 @@ export function GroupPresets({
   onLoad: (groupId: string) => void
   onDelete: (groupId: string) => void
 }) {
-  function handleSave() {
-    const name = window.prompt('Save the current table as a group named:')
-    if (name && name.trim()) onSave(name.trim())
+  const [saving, setSaving] = useState(false)
+  const [saveValue, setSaveValue] = useState('')
+
+  function commitSave() {
+    if (saveValue.trim()) onSave(saveValue.trim())
+    setSaving(false)
+    setSaveValue('')
   }
 
   return (
@@ -45,23 +53,39 @@ export function GroupPresets({
         ))}
       </select>
 
-      <button type="button" className="group-presets__save" onClick={handleSave} disabled={currentInPlay.length === 0}>
-        Save table as group…
-      </button>
+      {saving ? (
+        <input
+          className="group-presets__save-input"
+          aria-label="Name this group"
+          value={saveValue}
+          autoFocus
+          onChange={(e) => setSaveValue(e.target.value)}
+          onBlur={commitSave}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') commitSave()
+            if (e.key === 'Escape') {
+              setSaving(false)
+              setSaveValue('')
+            }
+          }}
+        />
+      ) : (
+        <button
+          type="button"
+          className="group-presets__save"
+          onClick={() => setSaving(true)}
+          disabled={currentInPlay.length === 0}
+        >
+          Save table as group…
+        </button>
+      )}
 
       {groups.length > 0 && (
         <ul className="group-presets__list">
           {groups.map((group) => (
             <li key={group.id} className="group-presets__item">
               {group.name}
-              <button
-                type="button"
-                className="group-presets__delete"
-                aria-label={`Delete group ${group.name}`}
-                onClick={() => onDelete(group.id)}
-              >
-                ×
-              </button>
+              <DeleteConfirm label={`group ${group.name}`} onConfirm={() => onDelete(group.id)} />
             </li>
           ))}
         </ul>

@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
+import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { FlashcardsView } from './FlashcardsView'
 import { makeEntry, makeReading } from '../test/entryFixtures'
 import type { AudioReference } from '../types/dict'
@@ -436,6 +436,33 @@ describe('FlashcardsView deck table drag-and-drop (issue #187 stage 3)', () => {
     fireEvent.keyDown(screen.getByLabelText('Reorder Dictionary'), { key: 'ArrowRight' })
     expect(screen.getByRole('status')).toHaveTextContent(/Moved Dictionary to position 2 of 2/)
   })
+
+  it('moves a rail deck onto the table via the keyboard cross-list move and persists it (issue #189)', async () => {
+    writeDecksState({
+      decks: [{ id: 'deck-1', name: 'Kitchen', hue: 'green', cards: [], kind: 'user' }],
+      inPlay: [DICTIONARY_DECK_ID],
+      groups: [],
+    })
+    const { container } = render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/reviewed/i)
+    // DeckTable hands its DropZoneHandle up to DeckRail via a mount effect
+    // (onDropZoneChange -> setTableDropZone), one render tick after the
+    // `loading` flip above — which itself resolves via a real Promise, so
+    // it isn't covered by findByText's act() wrapping. Flush explicitly so
+    // DeckRail's crossListDrop prop is settled before we pick anything up.
+    await act(async () => {})
+
+    const handle = screen.getByLabelText('Reorder Kitchen')
+    fireEvent.keyDown(handle, { key: ' ' })
+    expect(screen.getByRole('status')).toHaveTextContent(/t to move to the table/)
+
+    fireEvent.keyDown(handle, { key: 't' })
+
+    expect(screen.getByRole('status')).toHaveTextContent('Moved Kitchen to the table.')
+    expect(readDecksState().inPlay).toEqual([DICTIONARY_DECK_ID, 'deck-1'])
+    const table = container.querySelector<HTMLElement>('.deck-table')!
+    expect(within(table).getByText('Kitchen')).toBeInTheDocument()
+  })
 })
 
 describe('FlashcardsView funnel readout', () => {
@@ -507,15 +534,16 @@ describe('FlashcardsView deck curation (issue #187 stage 4)', () => {
   })
 
   it('creates a deck from the rail and lists it as addable to the table', async () => {
-    vi.spyOn(window, 'prompt').mockReturnValue('Kitchen')
     render(<FlashcardsView entries={[]} />)
     await screen.findByText(/reviewed/i)
 
     fireEvent.click(screen.getByText('+ New deck'))
+    const input = screen.getByLabelText('New deck name')
+    fireEvent.change(input, { target: { value: 'Kitchen' } })
+    fireEvent.keyDown(input, { key: 'Enter' })
 
     expect(screen.getByRole('option', { name: 'Kitchen' })).toBeInTheDocument()
     expect(readDecksState().decks[0]!.name).toBe('Kitchen')
-    vi.restoreAllMocks()
   })
 
   it('renames and deletes a deck from the rail', async () => {
@@ -532,10 +560,9 @@ describe('FlashcardsView deck curation (issue #187 stage 4)', () => {
     fireEvent.keyDown(screen.getByLabelText('New name for Kitchen'), { key: 'Enter' })
     expect(readDecksState().decks[0]!.name).toBe('Kitchen vocab')
 
-    vi.spyOn(window, 'confirm').mockReturnValue(true)
     fireEvent.click(screen.getByLabelText('Delete Kitchen vocab'))
+    fireEvent.click(screen.getByLabelText('Confirm deleting Kitchen vocab'))
     expect(readDecksState().decks).toEqual([])
-    vi.restoreAllMocks()
   })
 
   it('files the current card into a deck via the pointer-only select', async () => {
@@ -584,7 +611,6 @@ describe('FlashcardsView deck curation (issue #187 stage 4)', () => {
   })
 
   it('saves the table as a group and loads it back', async () => {
-    vi.spyOn(window, 'prompt').mockReturnValue('Evenings')
     writeDecksState({
       decks: [{ id: 'deck-1', name: 'Kitchen', hue: 'green', cards: [], kind: 'user' }],
       inPlay: [DICTIONARY_DECK_ID, 'deck-1'],
@@ -594,6 +620,9 @@ describe('FlashcardsView deck curation (issue #187 stage 4)', () => {
     await screen.findByText(/reviewed/i)
 
     fireEvent.click(screen.getByText('Save table as group…'))
+    const saveInput = screen.getByLabelText('Name this group')
+    fireEvent.change(saveInput, { target: { value: 'Evenings' } })
+    fireEvent.keyDown(saveInput, { key: 'Enter' })
     expect(readDecksState().groups[0]!.name).toBe('Evenings')
 
     fireEvent.click(screen.getByLabelText('Remove Kitchen from the table'))

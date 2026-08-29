@@ -14,6 +14,7 @@ import { FunnelReadout } from '../components/FunnelReadout'
 import type { FunnelStage } from '../components/FunnelReadout'
 import { LiveRegion } from '../components/LiveRegion'
 import { useCardDrag } from '../decks/dnd/useCardDrag'
+import type { DropZoneHandle } from '../decks/dnd/useDragReorder'
 import type { EnrichedEntry } from '../types/dict'
 import { PROMPT_MODE_LABELS, readPromptMode, writePromptMode } from '../flashcards/promptMode'
 import type { PromptMode } from '../flashcards/promptMode'
@@ -54,6 +55,8 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
   const [announcement, setAnnouncement] = useState('')
   const announce = useCallback((message: string) => setAnnouncement(message), [])
   const [browseDrawerOpen, setBrowseDrawerOpen] = useState(false)
+  const [tableDropZone, setTableDropZone] = useState<DropZoneHandle | null>(null)
+  const [incomingTablePreviewIndex, setIncomingTablePreviewIndex] = useState<number | null>(null)
 
   const dictionaryDeck = useMemo(() => makeDictionaryDeck(entries), [entries])
   const userDecks = decksStore.state.decks
@@ -173,6 +176,16 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
             onOpenBrowseDrawer={() => setBrowseDrawerOpen(true)}
             announce={announce}
             cardDrop={{ targetRef: cardDrag.targetRef, overId: cardDrag.overId }}
+            crossListDrop={
+              tableDropZone
+                ? {
+                    dropZone: tableDropZone,
+                    zoneLabel: 'the table',
+                    onMove: decksStore.moveToPlay,
+                    onPreviewChange: setIncomingTablePreviewIndex,
+                  }
+                : undefined
+            }
           />
         </div>
 
@@ -184,6 +197,8 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
             onRemove={decksStore.removeFromPlay}
             onReorder={decksStore.reorderPlay}
             announce={announce}
+            onDropZoneChange={setTableDropZone}
+            incomingPreviewIndex={incomingTablePreviewIndex}
           />
 
           <GroupPresets

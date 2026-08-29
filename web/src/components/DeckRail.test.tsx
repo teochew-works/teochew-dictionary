@@ -71,25 +71,32 @@ describe('DeckRail', () => {
     expect(screen.getByText('B')).toBeInTheDocument()
   })
 
-  it('creates a deck from a window.prompt value', () => {
-    vi.spyOn(window, 'prompt').mockReturnValue('Kitchen vocab')
+  it('creates a deck via the inline input', () => {
     const onCreateDeck = vi.fn()
     renderRail({ onCreateDeck })
 
     fireEvent.click(screen.getByText('+ New deck'))
+    const input = screen.getByLabelText('New deck name')
+    fireEvent.change(input, { target: { value: 'Kitchen vocab' } })
+    fireEvent.keyDown(input, { key: 'Enter' })
 
     expect(onCreateDeck).toHaveBeenCalledWith('Kitchen vocab')
+    expect(screen.queryByLabelText('New deck name')).not.toBeInTheDocument()
   })
 
-  it('does not create a deck when the prompt is cancelled or blank', () => {
+  it('does not create a deck when the input is cancelled or blank', () => {
     const onCreateDeck = vi.fn()
-    vi.spyOn(window, 'prompt').mockReturnValue(null)
     renderRail({ onCreateDeck })
-    fireEvent.click(screen.getByText('+ New deck'))
-    expect(onCreateDeck).not.toHaveBeenCalled()
 
-    vi.spyOn(window, 'prompt').mockReturnValue('   ')
     fireEvent.click(screen.getByText('+ New deck'))
+    fireEvent.keyDown(screen.getByLabelText('New deck name'), { key: 'Escape' })
+    expect(onCreateDeck).not.toHaveBeenCalled()
+    expect(screen.queryByLabelText('New deck name')).not.toBeInTheDocument()
+
+    fireEvent.click(screen.getByText('+ New deck'))
+    const input = screen.getByLabelText('New deck name')
+    fireEvent.change(input, { target: { value: '   ' } })
+    fireEvent.keyDown(input, { key: 'Enter' })
     expect(onCreateDeck).not.toHaveBeenCalled()
   })
 
@@ -118,22 +125,22 @@ describe('DeckRail', () => {
     expect(screen.queryByLabelText('New name for A')).not.toBeInTheDocument()
   })
 
-  it('deletes a deck after confirming', () => {
-    vi.spyOn(window, 'confirm').mockReturnValue(true)
+  it('deletes a deck after confirming via DeleteConfirm', () => {
     const onDeleteDeck = vi.fn()
     renderRail({ userDecks: [deck({ id: 'a', name: 'A' })], onDeleteDeck })
 
     fireEvent.click(screen.getByLabelText('Delete A'))
+    fireEvent.click(screen.getByLabelText('Confirm deleting A'))
 
     expect(onDeleteDeck).toHaveBeenCalledWith('a')
   })
 
-  it('does not delete a deck when the confirmation is declined', () => {
-    vi.spyOn(window, 'confirm').mockReturnValue(false)
+  it('does not delete a deck when the confirmation is cancelled', () => {
     const onDeleteDeck = vi.fn()
     renderRail({ userDecks: [deck({ id: 'a', name: 'A' })], onDeleteDeck })
 
     fireEvent.click(screen.getByLabelText('Delete A'))
+    fireEvent.click(screen.getByText('Cancel'))
 
     expect(onDeleteDeck).not.toHaveBeenCalled()
   })
@@ -183,5 +190,73 @@ describe('DeckRail', () => {
     })
     expect(container.querySelector('.deck-rail__row--refuse')).not.toBeNull()
     expect(container.querySelector('.deck-rail__row--accept')).toBeNull()
+  })
+
+  describe('crossListDrop (issue #189)', () => {
+    function stubDropZone() {
+      return {
+        containerRect: () => ({ top: 100, bottom: 150, left: 0, right: 200 }),
+        items: () => [],
+      }
+    }
+
+    it('drops a dragged deck onto the cross-list target and announces the move', () => {
+      const onMove = vi.fn()
+      const announce = vi.fn()
+      renderRail({
+        userDecks: [deck({ id: 'a', name: 'A' })],
+        announce,
+        crossListDrop: { dropZone: stubDropZone(), zoneLabel: 'the table', onMove },
+      })
+
+      const handle = screen.getByLabelText('Reorder A')
+      fireEvent.pointerDown(handle, { button: 0 })
+      fireEvent(document, new PointerEvent('pointerup', { clientX: 100, clientY: 125 }))
+
+      expect(onMove).toHaveBeenCalledWith('a', 0)
+      expect(announce).toHaveBeenCalledWith(expect.stringContaining('Moved A to the table'))
+    })
+
+    it('does not treat a drop outside both the rail and the cross-list target as a move', () => {
+      const onMove = vi.fn()
+      renderRail({
+        userDecks: [deck({ id: 'a', name: 'A' })],
+        crossListDrop: { dropZone: stubDropZone(), zoneLabel: 'the table', onMove },
+      })
+
+      const handle = screen.getByLabelText('Reorder A')
+      fireEvent.pointerDown(handle, { button: 0 })
+      fireEvent(document, new PointerEvent('pointerup', { clientX: 9999, clientY: 9999 }))
+
+      expect(onMove).not.toHaveBeenCalled()
+    })
+
+    it('moves a grabbed deck to the cross-list target via the keyboard, with no index', () => {
+      const onMove = vi.fn()
+      const announce = vi.fn()
+      renderRail({
+        userDecks: [deck({ id: 'a', name: 'A' })],
+        announce,
+        crossListDrop: { dropZone: stubDropZone(), zoneLabel: 'the table', onMove },
+      })
+
+      const handle = screen.getByLabelText('Reorder A')
+      fireEvent.keyDown(handle, { key: ' ' })
+      expect(announce).toHaveBeenCalledWith(expect.stringContaining('t to move to the table'))
+
+      fireEvent.keyDown(handle, { key: 't' })
+
+      expect(onMove).toHaveBeenCalledWith('a')
+      expect(announce).toHaveBeenCalledWith('Moved A to the table.')
+    })
+
+    it('does not offer the cross-list move hint when crossListDrop is not given', () => {
+      const announce = vi.fn()
+      renderRail({ userDecks: [deck({ id: 'a', name: 'A' })], announce })
+
+      fireEvent.keyDown(screen.getByLabelText('Reorder A'), { key: ' ' })
+
+      expect(announce).toHaveBeenCalledWith('Picked up A. Use arrow keys to move, space to drop, escape to cancel.')
+    })
   })
 })

@@ -112,6 +112,71 @@ describe('useKeyboardReorder', () => {
     expect(announce).toHaveBeenCalledWith(expect.stringContaining('Cancelled'))
   })
 
+  it('picking up an item without a crossListTarget announces the plain hint', () => {
+    const announce = vi.fn()
+    const { result } = renderHook(() => useKeyboardReorder(['a', 'b'], vi.fn(), announce, labelFor))
+
+    act(() => result.current.handleKeyDown('a', key(' ')))
+
+    expect(announce).toHaveBeenCalledWith('Picked up A. Use arrow keys to move, space to drop, escape to cancel.')
+  })
+
+  it('picking up an item with a crossListTarget mentions the move key in the hint', () => {
+    const announce = vi.fn()
+    const { result } = renderHook(() =>
+      useKeyboardReorder(['a', 'b'], vi.fn(), announce, labelFor, { zoneLabel: 'the table', onMove: vi.fn() }),
+    )
+
+    act(() => result.current.handleKeyDown('a', key(' ')))
+
+    expect(announce).toHaveBeenCalledWith(
+      'Picked up A. Use arrow keys to move, space to drop, t to move to the table, escape to cancel.',
+    )
+  })
+
+  it('the move key moves the grabbed item to the cross-list target and drops the grab', () => {
+    const onReorder = vi.fn()
+    const onMove = vi.fn()
+    const announce = vi.fn()
+    const { result } = renderHook(() =>
+      useKeyboardReorder(['a', 'b'], onReorder, announce, labelFor, { zoneLabel: 'the table', onMove }),
+    )
+
+    act(() => result.current.handleKeyDown('a', key(' ')))
+    act(() => result.current.handleKeyDown('a', key('t')))
+
+    expect(onMove).toHaveBeenCalledWith('a')
+    expect(onReorder).not.toHaveBeenCalled()
+    expect(result.current.isGrabbed('a')).toBe(false)
+    expect(announce).toHaveBeenCalledWith('Moved A to the table.')
+  })
+
+  it('the move key is case-insensitive and respects a custom moveKey', () => {
+    const onMove = vi.fn()
+    const { result } = renderHook(() =>
+      useKeyboardReorder(['a', 'b'], vi.fn(), vi.fn(), labelFor, { zoneLabel: 'the table', moveKey: 'm', onMove }),
+    )
+
+    act(() => result.current.handleKeyDown('a', key(' ')))
+    act(() => result.current.handleKeyDown('a', key('M')))
+
+    expect(onMove).toHaveBeenCalledWith('a')
+  })
+
+  it('the move key does nothing when nothing is grabbed or there is no crossListTarget', () => {
+    const onMove = vi.fn()
+    const { result } = renderHook(() => useKeyboardReorder(['a', 'b'], vi.fn(), vi.fn(), labelFor))
+
+    act(() => result.current.handleKeyDown('a', key('t')))
+    expect(onMove).not.toHaveBeenCalled()
+
+    const { result: result2 } = renderHook(() =>
+      useKeyboardReorder(['a', 'b'], vi.fn(), vi.fn(), labelFor, { zoneLabel: 'the table', onMove }),
+    )
+    act(() => result2.current.handleKeyDown('a', key('t')))
+    expect(onMove).not.toHaveBeenCalled()
+  })
+
   it('ignores an id that is not in the list', () => {
     const onReorder = vi.fn()
     const announce = vi.fn()

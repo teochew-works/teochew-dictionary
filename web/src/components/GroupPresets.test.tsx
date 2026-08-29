@@ -39,30 +39,52 @@ describe('GroupPresets', () => {
     expect(screen.getByText('Save table as group…')).toBeDisabled()
   })
 
-  it('saves the table under the prompted name', () => {
-    vi.spyOn(window, 'prompt').mockReturnValue('Evenings')
+  it('saves the table under the inline-input name', () => {
     const onSave = vi.fn()
     render(<GroupPresets groups={[]} currentInPlay={['a', 'b']} onSave={onSave} onLoad={vi.fn()} onDelete={vi.fn()} />)
 
     fireEvent.click(screen.getByText('Save table as group…'))
+    const input = screen.getByLabelText('Name this group')
+    fireEvent.change(input, { target: { value: 'Evenings' } })
+    fireEvent.keyDown(input, { key: 'Enter' })
 
     expect(onSave).toHaveBeenCalledWith('Evenings')
+    expect(screen.queryByLabelText('Name this group')).not.toBeInTheDocument()
   })
 
-  it('does not save when the prompt is cancelled or blank', () => {
+  it('does not save when the input is cancelled or blank', () => {
     const onSave = vi.fn()
-    vi.spyOn(window, 'prompt').mockReturnValue(null)
     render(<GroupPresets groups={[]} currentInPlay={['a']} onSave={onSave} onLoad={vi.fn()} onDelete={vi.fn()} />)
+
     fireEvent.click(screen.getByText('Save table as group…'))
+    fireEvent.keyDown(screen.getByLabelText('Name this group'), { key: 'Escape' })
+    expect(onSave).not.toHaveBeenCalled()
+    expect(screen.queryByLabelText('Name this group')).not.toBeInTheDocument()
+
+    fireEvent.click(screen.getByText('Save table as group…'))
+    const input = screen.getByLabelText('Name this group')
+    fireEvent.change(input, { target: { value: '   ' } })
+    fireEvent.keyDown(input, { key: 'Enter' })
     expect(onSave).not.toHaveBeenCalled()
   })
 
-  it('deletes a group', () => {
+  it('deletes a group after confirming via DeleteConfirm', () => {
     const onDelete = vi.fn()
     render(<GroupPresets groups={GROUPS} currentInPlay={['a']} onSave={vi.fn()} onLoad={vi.fn()} onDelete={onDelete} />)
 
     fireEvent.click(screen.getByLabelText('Delete group Evenings'))
+    fireEvent.click(screen.getByLabelText('Confirm deleting group Evenings'))
 
     expect(onDelete).toHaveBeenCalledWith('g1')
+  })
+
+  it('does not delete a group when the confirmation is cancelled', () => {
+    const onDelete = vi.fn()
+    render(<GroupPresets groups={GROUPS} currentInPlay={['a']} onSave={vi.fn()} onLoad={vi.fn()} onDelete={onDelete} />)
+
+    fireEvent.click(screen.getByLabelText('Delete group Evenings'))
+    fireEvent.click(screen.getByText('Cancel'))
+
+    expect(onDelete).not.toHaveBeenCalled()
   })
 })

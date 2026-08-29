@@ -16,6 +16,7 @@ export interface DecksStore {
   setInPlay: (deckIds: string[]) => void
   addToPlay: (deckId: string) => void
   removeFromPlay: (deckId: string) => void
+  moveToPlay: (deckId: string, index?: number) => void
   reorderPlay: (orderedIds: string[]) => void
   saveGroup: (name: string, deckIds: string[]) => void
   deleteGroup: (groupId: string) => void
@@ -61,6 +62,7 @@ export function useDecksStore(): DecksStore {
     setInPlay: useCallback((deckIds: string[]) => update((s) => actions.setInPlay(s, deckIds)), [update]),
     addToPlay: useCallback((deckId: string) => update((s) => actions.addToPlay(s, deckId)), [update]),
     removeFromPlay: useCallback((deckId: string) => update((s) => actions.removeFromPlay(s, deckId)), [update]),
+    moveToPlay: useCallback((deckId: string, index?: number) => update((s) => actions.moveToPlay(s, deckId, index)), [update]),
     reorderPlay: useCallback((orderedIds: string[]) => update((s) => actions.reorderPlay(s, orderedIds)), [update]),
     saveGroup: useCallback(
       (name: string, deckIds: string[]) => update((s) => actions.saveGroup(s, { id: generateGroupId(), name, deckIds })),
