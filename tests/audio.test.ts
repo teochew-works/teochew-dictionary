@@ -453,6 +453,71 @@ describe('deriveReadingAudio', () => {
     const [resolved] = deriveReadingAudio(syllables, table, sources)
     expect(resolved?.cafUrl).toBeUndefined()
   })
+
+  it('threads speaker through from the chosen clip', () => {
+    const syllables = parsePengim('dio5')
+    const table = audio({ dio5: clip({ speaker: 'jky' }) })
+    const [resolved] = deriveReadingAudio(syllables, table, sources)
+    expect(resolved).toMatchObject({ speaker: 'jky' })
+  })
+
+  describe('speaker-aware selection across a reading (issue #191)', () => {
+    it('prefers a full same-speaker set over each syllable\'s independently-best clip', () => {
+      const syllables = parsePengim('dio5 ziu1')
+      const table = audio({
+        dio5: [clip({ speaker: 'a', confidence: 'high' }), clip({ speaker: 'b', confidence: 'medium' })],
+        ziu1: [clip({ speaker: 'b', confidence: 'high' })],
+      })
+      const resolved = deriveReadingAudio(syllables, table, sources)
+      // 'a' is dio5's individually-best clip, but only 'b' covers both syllables.
+      expect(resolved.map((r) => r?.speaker)).toEqual(['b', 'b'])
+    })
+
+    it('falls back to independent per-syllable selection when no speaker covers every syllable', () => {
+      const syllables = parsePengim('dio5 ziu1')
+      const table = audio({
+        dio5: clip({ speaker: 'a' }),
+        ziu1: clip({ speaker: 'b' }),
+      })
+      const resolved = deriveReadingAudio(syllables, table, sources)
+      expect(resolved.map((r) => r?.speaker)).toEqual(['a', 'b'])
+    })
+
+    it('breaks a tie between two fully-covering speakers by worst-clip confidence', () => {
+      const syllables = parsePengim('dio5 ziu1')
+      const table = audio({
+        dio5: [clip({ speaker: 'a', confidence: 'high' }), clip({ speaker: 'b', confidence: 'high' })],
+        ziu1: [clip({ speaker: 'a', confidence: 'high' }), clip({ speaker: 'b', confidence: 'medium' })],
+      })
+      const resolved = deriveReadingAudio(syllables, table, sources)
+      // b's weakest clip (medium) is worse than a's weakest (high), so a wins throughout.
+      expect(resolved.map((r) => r?.speaker)).toEqual(['a', 'a'])
+    })
+
+    it('breaks a same-worst-confidence tie between two fully-covering speakers by recency', () => {
+      const syllables = parsePengim('dio5 ziu1')
+      const table = audio({
+        dio5: [
+          clip({ speaker: 'a', confidence: 'high', recorded: '2020-01-01' }),
+          clip({ speaker: 'b', confidence: 'high', recorded: '2026-01-01' }),
+        ],
+        ziu1: [
+          clip({ speaker: 'a', confidence: 'high', recorded: '2020-01-01' }),
+          clip({ speaker: 'b', confidence: 'high', recorded: '2020-01-01' }),
+        ],
+      })
+      const resolved = deriveReadingAudio(syllables, table, sources)
+      expect(resolved.map((r) => r?.speaker)).toEqual(['b', 'b'])
+    })
+
+    it('forces the fallback path when a syllable has zero clips, even alongside a fully-recorded one', () => {
+      const syllables = parsePengim('dio5 ziu1')
+      const table = audio({ dio5: clip({ speaker: 'a' }) })
+      const resolved = deriveReadingAudio(syllables, table, sources)
+      expect(resolved[0]).toMatchObject({ speaker: 'a' })
+      expect(resolved[1]).toBeNull()
+    })
+  })
 })
 
 describe('deriveReadingSandhiAudio', () => {
@@ -502,6 +567,27 @@ describe('deriveReadingSandhiAudio', () => {
     const sandhi = applySandhi('dio5 ziu1')
     const citationAudio = deriveReadingAudio(syllables, null, sources)
     expect(deriveReadingSandhiAudio(sandhi, citationAudio, null, sources)).toBe(citationAudio)
+  })
+
+  it('applies speaker-aware selection across full sandhi-specific coverage, independent of the citation clip (issue #191)', () => {
+    const syllables = parsePengim('dio5 ziu1')
+    const sandhi = applySandhi('dio5 ziu1')
+    const table = audio({
+      // The citation clip at dio5 is a different speaker entirely — irrelevant
+      // once dio7 (its sandhi surface form) has its own full coverage.
+      dio5: clip({ speaker: 'c', confidence: 'low' }),
+      dio7: [clip({ speaker: 'a', confidence: 'medium' }), clip({ speaker: 'b', confidence: 'high' })],
+      ziu1: [clip({ speaker: 'a', confidence: 'low' }), clip({ speaker: 'b', confidence: 'medium' })],
+    })
+    const citationAudio = deriveReadingAudio(syllables, table, sources)
+    const sandhiAudio = deriveReadingSandhiAudio(sandhi, citationAudio, table, sources)
+    // 'b' has the better worst-clip confidence across both sandhi keys, so it
+    // wins even though 'a' alone would have been dio7's or ziu1's individual pick.
+    expect(sandhiAudio).toEqual([
+      { key: 'dio7', url: VALID_URL, confidence: 'high', speaker: 'b', licence: 'CC-BY-4.0', attributions: [] },
+      { key: 'ziu1', url: VALID_URL, confidence: 'medium', speaker: 'b', licence: 'CC-BY-4.0', attributions: [] },
+    ])
+    expect(sandhiAudio[0]?.speaker).not.toBe(citationAudio[0]?.speaker)
   })
 })
 
@@ -564,5 +650,10 @@ describe('deriveReadingWordAudio', () => {
       { 'dio5 ziu1': clip({ url: VALID_WORD_URL, cafUrl, cafChecksum: `sha256:${'b'.repeat(64)}` }) },
     )
     expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toMatchObject({ url: VALID_WORD_URL, cafUrl })
+  })
+
+  it('threads speaker through from the chosen clip', () => {
+    const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL, speaker: 'jky' }) })
+    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toMatchObject({ speaker: 'jky' })
   })
 })
