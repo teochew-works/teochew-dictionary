@@ -26,7 +26,7 @@ function setup(overrides: Partial<Parameters<typeof DeckRail>[0]> = {}) {
     libraryRef: vi.fn(),
     trashRef: vi.fn(),
     itemRef: () => vi.fn(),
-    dropTargetRef: () => vi.fn(),
+    dictionaryRef: vi.fn(),
     caretIndex: null,
     libraryOver: false,
     trashArmed: false,

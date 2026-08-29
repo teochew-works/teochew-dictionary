@@ -29,7 +29,6 @@ export function DeckTray({
   totals,
   trayRef,
   itemRef,
-  dropTargetRef,
   isOver,
   caretIndex,
   isDragging,
@@ -44,8 +43,8 @@ export function DeckTray({
   statsById: Map<string, DeckStats>
   totals: TrayTotals
   trayRef: (el: HTMLElement | null) => void
+  /** One ref per chip, composed by the caller (drag source, FLIP, and card drop target) and stable across renders. */
   itemRef: (deckId: string) => (el: HTMLElement | null) => void
-  dropTargetRef: (deckId: string) => (el: HTMLElement | null) => void
   /** True while a deck is being dragged over the tray — lights the whole zone, not just the gap. */
   isOver: boolean
   /** Where a deck would land right now, or null. */
@@ -108,7 +107,6 @@ export function DeckTray({
               deck={deck}
               stats={statsById.get(deck.id) ?? { total: deck.cards.length, kept: 0, due: 0, fresh: 0, learned: 0 }}
               elementRef={itemRef(deck.id)}
-              dropTargetRef={dropTargetRef(deck.id)}
               dragging={isDragging(deck.id)}
               lifted={isLifted(deck.id)}
               cardDrop={cardDropFor(deck.id)}

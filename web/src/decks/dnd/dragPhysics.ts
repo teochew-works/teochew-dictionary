@@ -14,8 +14,13 @@ export interface GhostFrame {
   angle: number
 }
 
-/** Fraction of the remaining distance closed per second, as an exponential rate — higher trails less. */
-const CATCH_UP_RATE = 18
+/**
+ * Fraction of the remaining distance closed per second, as an exponential
+ * rate — higher trails less. Tuned to close ~34% of the gap in a 60Hz frame:
+ * enough lag to tilt the image and read as weight, little enough that the
+ * image doesn't feel like it is lagging behind the pointer.
+ */
+const CATCH_UP_RATE = 25
 /** Degrees of tilt per pixel still behind the pointer. */
 const TILT_PER_PX = 0.25
 const MAX_TILT_DEG = 9

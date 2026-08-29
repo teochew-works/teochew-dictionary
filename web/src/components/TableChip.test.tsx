@@ -12,7 +12,6 @@ function setup(overrides: Partial<Parameters<typeof TableChip>[0]> = {}) {
     deck,
     stats,
     elementRef: vi.fn(),
-    dropTargetRef: vi.fn(),
     dragging: false,
     lifted: false,
     cardDrop: null,
@@ -66,9 +65,9 @@ describe('TableChip', () => {
     expect(props.onPointerDown).not.toHaveBeenCalled()
   })
 
-  it('registers itself as somewhere a card can be filed', () => {
-    const dropTargetRef = vi.fn()
-    setup({ dropTargetRef })
-    expect(dropTargetRef).toHaveBeenCalledWith(expect.any(HTMLElement))
+  it('registers itself through the one composed ref it is given', () => {
+    const elementRef = vi.fn()
+    setup({ elementRef })
+    expect(elementRef).toHaveBeenCalledWith(expect.any(HTMLElement))
   })
 })

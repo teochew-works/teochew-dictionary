@@ -48,6 +48,34 @@ function setEquals<T>(a: Set<T>, b: Set<T>): boolean {
   return a.size === b.size && [...a].every((v) => b.has(v))
 }
 
+type ItemRef = (el: HTMLElement | null) => void
+
+/**
+ * Composes the several per-deck element refs a card needs — drag source,
+ * FLIP measurement, card drop target — into one, cached per deck id.
+ *
+ * Without the cache each render hands React a brand-new ref function for
+ * every deck, so React detaches and re-attaches every element: real DOM work
+ * on the path a drag re-renders. The factories are read through a ref so the
+ * composed function itself never has to change.
+ */
+function useComposedItemRef(...factories: ((id: string) => ItemRef)[]): (id: string) => ItemRef {
+  const cache = useRef(new Map<string, ItemRef>())
+  const factoriesRef = useRef(factories)
+  factoriesRef.current = factories
+
+  return useCallback((id: string) => {
+    let composed = cache.current.get(id)
+    if (!composed) {
+      composed = (el) => {
+        for (const factory of factoriesRef.current) factory(id)(el)
+      }
+      cache.current.set(id, composed)
+    }
+    return composed
+  }, [])
+}
+
 const EMPTY_STATS: DeckStats = { total: 0, kept: 0, due: 0, fresh: 0, learned: 0 }
 
 /**
@@ -294,6 +322,9 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
 
   const railFlip = useFlip(libraryIds)
   const trayFlip = useFlip(inPlayIds)
+  const railItemRef = useComposedItemRef(drag.libraryItemRef, railFlip.itemRef, useCallback((id: string) => drag.deckTargetRef(id, 'rail'), [drag]))
+  const trayItemRef = useComposedItemRef(drag.trayItemRef, trayFlip.itemRef, useCallback((id: string) => drag.deckTargetRef(id, 'tray'), [drag]))
+  const dictionaryRef = drag.deckTargetRef(dictionaryDeck.id, 'rail')
 
   const outcome = drag.outcome
   const trayCaret =
@@ -480,11 +511,8 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
           inPlayIds={inPlayIds}
           libraryRef={drag.libraryRef}
           trashRef={drag.trashRef}
-          itemRef={(id) => (el) => {
-            drag.libraryItemRef(id)(el)
-            railFlip.itemRef(id)(el)
-          }}
-          dropTargetRef={(id) => drag.deckTargetRef(id, 'rail')}
+          itemRef={railItemRef}
+          dictionaryRef={dictionaryRef}
           caretIndex={libraryCaret}
           libraryOver={outcome?.highlight === 'library'}
           trashArmed={drag.subject?.kind === 'deck' || drag.subject?.kind === 'chip'}
@@ -533,11 +561,7 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
             statsById={statsById}
             totals={totals}
             trayRef={drag.trayRef}
-            itemRef={(id) => (el) => {
-              drag.trayItemRef(id)(el)
-              trayFlip.itemRef(id)(el)
-            }}
-            dropTargetRef={(id) => drag.deckTargetRef(id, 'tray')}
+            itemRef={trayItemRef}
             isOver={outcome?.highlight === 'tray'}
             caretIndex={trayCaret}
             isDragging={(id) => drag.isDragging('chip', id)}
@@ -677,7 +701,8 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
       </div>
 
       <DragGhost
-        frame={drag.ghost}
+        visible={drag.showGhost}
+        elementRef={drag.ghostRef}
         size={drag.ghostSize}
         content={ghostContent}
         outcome={drag.outcome}

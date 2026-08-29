@@ -1,4 +1,3 @@
-import type { GhostFrame } from '../decks/dnd/dragPhysics'
 import type { DropOutcome } from '../decks/dnd/resolveDrop'
 
 export interface GhostContent {
@@ -15,29 +14,31 @@ export interface GhostContent {
  * this land?" into a statement of the outcome before you commit to it, and
  * it flips red the moment the target refuses.
  *
- * The tilt comes from the image trailing the pointer (see
- * decks/dnd/dragPhysics.ts). Under reduced motion the image is pinned
- * exactly to the pointer and the tilt stays at zero — the badge and the
- * image are affordances, so they stay; only the motion goes.
+ * This component renders once per drag and then holds still: its position
+ * comes from `elementRef`, which decks/dnd/useDeckDrag.ts writes straight to
+ * the node every frame. Driving the transform through props instead would
+ * re-render this whole screen sixty times a second to move one element.
  *
- * Positioned `fixed` with no transformed ancestor between the rail/table
- * and the viewport, so this needs no portal — if that ever changes it needs
+ * Positioned `fixed` with no transformed ancestor between the rail/table and
+ * the viewport, so this needs no portal — if that ever changes it needs
  * `createPortal(..., document.body)`.
  */
 export function DragGhost({
-  frame,
+  visible,
+  elementRef,
   size,
   content,
   outcome,
   rejecting,
 }: {
-  frame: GhostFrame | null
+  visible: boolean
+  elementRef: (el: HTMLElement | null) => void
   size: { width: number; height: number } | null
   content: GhostContent
   outcome: DropOutcome | null
   rejecting: boolean
 }) {
-  if (!frame) return null
+  if (!visible) return null
 
   const classes = ['ghost']
   if (rejecting) classes.push('ghost--reject')
@@ -49,12 +50,12 @@ export function DragGhost({
   return (
     <div
       className={classes.join(' ')}
+      ref={elementRef}
       aria-hidden="true"
       style={{
         ['--hue' as string]: content.hue,
         width: size ? `${size.width}px` : undefined,
         minHeight: size ? `${size.height}px` : undefined,
-        transform: `translate3d(${frame.x.toFixed(1)}px, ${frame.y.toFixed(1)}px, 0) rotate(${frame.angle.toFixed(2)}deg) scale(1.045)`,
       }}
     >
       <div className="ghost__bar" />

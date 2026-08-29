@@ -33,7 +33,7 @@ export function DeckRail({
   libraryRef,
   trashRef,
   itemRef,
-  dropTargetRef,
+  dictionaryRef,
   caretIndex,
   libraryOver,
   trashArmed,
@@ -54,8 +54,10 @@ export function DeckRail({
   inPlayIds: string[]
   libraryRef: (el: HTMLElement | null) => void
   trashRef: (el: HTMLElement | null) => void
+  /** One ref per user deck, composed by the caller (drag source, FLIP, and card drop target) and stable across renders. */
   itemRef: (deckId: string) => (el: HTMLElement | null) => void
-  dropTargetRef: (deckId: string) => (el: HTMLElement | null) => void
+  /** The dictionary row is a card drop target but never reorders, so it takes its own ref. */
+  dictionaryRef: (el: HTMLElement | null) => void
   caretIndex: number | null
   libraryOver: boolean
   /** True while a deck or chip is in the air — the only time the trash exists. */
@@ -107,7 +109,7 @@ export function DeckRail({
           deck={dictionaryDeck}
           stats={statsFor(dictionaryDeck)}
           inPlay={inPlayIds.includes(dictionaryDeck.id)}
-          elementRef={dropTargetRef(dictionaryDeck.id)}
+          elementRef={dictionaryRef}
           dragging={isDragging(dictionaryDeck.id)}
           lifted={isLifted(dictionaryDeck.id)}
           cardDrop={cardDropFor(dictionaryDeck.id)}
@@ -137,10 +139,7 @@ export function DeckRail({
               deck={deck}
               stats={statsFor(deck)}
               inPlay={inPlayIds.includes(deck.id)}
-              elementRef={(el) => {
-                itemRef(deck.id)(el)
-                dropTargetRef(deck.id)(el)
-              }}
+              elementRef={itemRef(deck.id)}
               dragging={isDragging(deck.id)}
               lifted={isLifted(deck.id)}
               cardDrop={cardDropFor(deck.id)}

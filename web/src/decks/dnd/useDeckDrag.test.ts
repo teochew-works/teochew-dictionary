@@ -29,6 +29,18 @@ function release(x: number, y: number) {
   document.dispatchEvent(new MouseEvent('pointerup', { clientX: x, clientY: y, bubbles: true }))
 }
 
+/**
+ * Drop resolution is coalesced into the animation frame (see useDeckDrag's
+ * header), so a pointer move only reaches `outcome` once a frame has run.
+ * Releasing does not need this — the engine resolves once on release if the
+ * press was let go inside the same frame it started.
+ */
+async function frame() {
+  await act(async () => {
+    await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
+  })
+}
+
 const DECKS: Record<string, { name: string; isVirtual: boolean; kept: number; cards: string[] }> = {
   dictionary: { name: 'Dictionary', isVirtual: true, kept: 16244, cards: ['e1'] },
   d1: { name: 'Food words', isVirtual: false, kept: 18, cards: [] },
@@ -114,10 +126,11 @@ describe('useDeckDrag', () => {
     expect(a.onPlay).not.toHaveBeenCalled()
   })
 
-  it('fills in the dragged deck from live state, so the badge promises a real count', () => {
+  it('fills in the dragged deck from live state, so the badge promises a real count', async () => {
     const { drag, railD1 } = setup()
     act(() => drag().onPointerDown({ kind: 'deck', id: 'd1' })(press(railD1, 20, 20)))
     act(() => move(600, 50))
+    await frame()
     expect(drag().outcome).toMatchObject({ ok: true, act: 'play', label: '+18 cards' })
   })
 
@@ -153,19 +166,21 @@ describe('useDeckDrag', () => {
     expect(a.onTakeOff).toHaveBeenCalledWith('dictionary')
   })
 
-  it('files a card onto a deck row', () => {
+  it('files a card onto a deck row', async () => {
     const { drag, railD1, a } = setup()
     act(() => drag().onPointerDown({ kind: 'card', id: 'e1' })(press(railD1, 700, 700)))
     act(() => move(100, 20))
+    await frame()
     expect(drag().outcome).toMatchObject({ ok: true, act: 'add', label: '+1 → Food words' })
     act(() => release(100, 20))
     expect(a.onAddCard).toHaveBeenCalledWith('d1', 'e1')
   })
 
-  it('refuses a deck that already holds the card, and does nothing on release', () => {
+  it('refuses a deck that already holds the card, and does nothing on release', async () => {
     const { drag, railD1, a, announce } = setup()
     act(() => drag().onPointerDown({ kind: 'card', id: 'e1' })(press(railD1, 700, 700)))
     act(() => move(100, 80))
+    await frame()
     expect(drag().outcome).toMatchObject({ ok: false, label: 'Already in Travel' })
 
     act(() => release(100, 80))
@@ -174,12 +189,14 @@ describe('useDeckDrag', () => {
     expect(drag().rejecting).toBe(true)
   })
 
-  it('refuses the dictionary wherever it appears — the rail row and the tray chip alike', () => {
+  it('refuses the dictionary wherever it appears — the rail row and the tray chip alike', async () => {
     const { drag, railD1 } = setup()
     act(() => drag().onPointerDown({ kind: 'card', id: 'e2' })(press(railD1, 700, 700)))
     act(() => move(100, 140))
+    await frame()
     expect(drag().outcome).toMatchObject({ ok: false, label: 'The dictionary is read-only' })
     act(() => move(350, 50))
+    await frame()
     expect(drag().outcome).toMatchObject({ ok: false, label: 'The dictionary is read-only' })
   })
 
@@ -213,7 +230,7 @@ describe('useDeckDrag', () => {
     expect(drag().isDragging('chip', 'd1')).toBe(false)
   })
 
-  it('still shows a drag image under reduced motion — the badge is an affordance, not decoration', () => {
+  it('still shows a drag image under reduced motion — the badge is an affordance, not decoration', async () => {
     vi.spyOn(window, 'matchMedia').mockImplementation(
       (query: string) => ({ matches: query.includes('reduce'), media: query, addEventListener: () => {}, removeEventListener: () => {} }) as unknown as MediaQueryList,
     )
@@ -221,9 +238,10 @@ describe('useDeckDrag', () => {
 
     act(() => drag().onPointerDown({ kind: 'deck', id: 'd1' })(press(railD1, 20, 20)))
     act(() => move(600, 50))
+    await frame()
 
-    expect(drag().ghost).not.toBeNull()
-    expect(drag().ghost?.angle).toBe(0)
+    expect(drag().showGhost).toBe(true)
+    expect(drag().readGhostFrame()?.angle).toBe(0)
     expect(drag().outcome?.label).toBe('+18 cards')
     vi.restoreAllMocks()
   })
@@ -235,5 +253,17 @@ describe('useDeckDrag', () => {
     act(() => release(320, 50))
     expect(drag().subject).toBeNull()
     expect(drag().outcome).toBeNull()
+  })
+
+  it('hands back the same ref function for a given element on every call', () => {
+    const { drag } = setup()
+    expect(drag().libraryItemRef('d1')).toBe(drag().libraryItemRef('d1'))
+    expect(drag().trayItemRef('d1')).toBe(drag().trayItemRef('d1'))
+    expect(drag().deckTargetRef('d1', 'rail')).toBe(drag().deckTargetRef('d1', 'rail'))
+  })
+
+  it('keeps the rail and tray elements for one deck apart', () => {
+    const { drag } = setup()
+    expect(drag().deckTargetRef('d1', 'rail')).not.toBe(drag().deckTargetRef('d1', 'tray'))
   })
 })

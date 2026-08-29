@@ -17,7 +17,6 @@ export function TableChip({
   deck,
   stats,
   elementRef,
-  dropTargetRef,
   dragging,
   lifted,
   cardDrop,
@@ -28,7 +27,6 @@ export function TableChip({
   deck: Deck
   stats: DeckStats
   elementRef: (el: HTMLElement | null) => void
-  dropTargetRef: (el: HTMLElement | null) => void
   dragging: boolean
   lifted: boolean
   cardDrop: CardDropState
@@ -53,10 +51,7 @@ export function TableChip({
     <div
       className={classes.join(' ')}
       style={{ ['--hue' as string]: `var(--deck-hue-${deck.hue}-bg)` }}
-      ref={(el) => {
-        elementRef(el)
-        dropTargetRef(el)
-      }}
+      ref={elementRef}
       data-drag-source=""
       data-deck-id={deck.id}
       data-place="tray"
