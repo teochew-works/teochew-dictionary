@@ -1,58 +1,57 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import type { ReactNode } from 'react'
+import { useDismissOnOutside } from './useDismissOnOutside'
 
 /**
- * Everything besides prompt side (issue #187 stage 2) lives behind this
- * disclosure rather than as a permanent stack of controls — see
- * FlashcardsView's file header. Closes on Escape or an outside click;
- * content is unmounted while closed rather than hidden, so closed-state
- * markup never has to be excluded by hand in tests.
+ * Everything except prompt side lives behind this one disclosure rather
+ * than as a permanent stack of controls above the card — the view it
+ * replaced stacked a select, two checkboxes, and a seven-box level
+ * fieldset between the reader and the thing they came to read.
+ *
+ * Open state is owned by the caller so the funnel readout can open it by
+ * naming the stage that cut the pool. Content is unmounted while closed
+ * rather than hidden, so closed-state markup never has to be excluded by
+ * hand in tests.
  */
-export function FiltersPopover({ children }: { children: ReactNode }) {
-  const [open, setOpen] = useState(false)
+export function FiltersPopover({
+  open,
+  onOpenChange,
+  activeCount,
+  children,
+}: {
+  open: boolean
+  onOpenChange: (open: boolean) => void
+  /** Non-default filters currently applied — shown as a badge on the trigger. */
+  activeCount: number
+  children: ReactNode
+}) {
   const panelRef = useRef<HTMLDivElement>(null)
   const triggerRef = useRef<HTMLButtonElement>(null)
 
-  useEffect(() => {
-    if (!open) return
-
-    function onKeyDown(e: KeyboardEvent) {
-      if (e.key === 'Escape') setOpen(false)
-    }
-    function onPointerDown(e: MouseEvent) {
-      const target = e.target as Node
-      if (panelRef.current?.contains(target) || triggerRef.current?.contains(target)) return
-      setOpen(false)
-    }
-
-    document.addEventListener('keydown', onKeyDown)
-    document.addEventListener('mousedown', onPointerDown)
-    return () => {
-      document.removeEventListener('keydown', onKeyDown)
-      document.removeEventListener('mousedown', onPointerDown)
-    }
-  }, [open])
+  useDismissOnOutside(open, () => onOpenChange(false), [panelRef, triggerRef])
 
   return (
     <div className="filters-popover">
       <button
         type="button"
         ref={triggerRef}
-        className="filters-popover__trigger"
+        className={activeCount > 0 ? 'pill pill--on' : 'pill'}
         aria-expanded={open}
         aria-controls="flashcards-filters-panel"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => onOpenChange(!open)}
       >
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <path d="M1 2.2h10L7.2 6.6v3.6L4.8 11V6.6L1 2.2Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
+        </svg>
         Filters
+        {activeCount > 0 && (
+          <span className="pill__n" aria-label={`${activeCount} active`}>
+            {activeCount}
+          </span>
+        )}
       </button>
       {open && (
-        <div
-          id="flashcards-filters-panel"
-          className="filters-popover__panel"
-          role="group"
-          aria-label="Filters"
-          ref={panelRef}
-        >
+        <div id="flashcards-filters-panel" className="pop filters-popover__panel" role="group" aria-label="Filters" ref={panelRef}>
           {children}
         </div>
       )}

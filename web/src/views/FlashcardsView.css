@@ -1,909 +1,1693 @@
+/*
+ * The flashcards screen. Layout is a library rail beside a main column
+ * holding the table, the session bar, the card, and the browse drawer.
+ *
+ * The extra tokens below are scoped to `.flashcards-view` rather than added
+ * to index.css: this screen needs a couple of surface depths and a set of
+ * solid accents that no other view uses, and keeping them local means the
+ * Dictionary/Sounds/Settings views can't drift because of a change made
+ * here. Everything that *does* already exist globally (--color-accent, the
+ * deck hues) is reused rather than restated.
+ */
+
 .flashcards-view {
-  flex: 1;
+  --sunken: color-mix(in srgb, var(--color-surface) 70%, var(--color-fg) 4%);
+  --surface-2: color-mix(in srgb, var(--color-surface) 82%, var(--color-fg) 8%);
+  --ink-2: color-mix(in srgb, var(--color-fg) 72%, var(--color-bg));
+  --ink-3: var(--color-muted);
+  --line-2: color-mix(in srgb, var(--color-border) 65%, var(--color-fg) 20%);
+  --accent-wash: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  --accent-wash-2: color-mix(in srgb, var(--color-accent) 22%, transparent);
+  --danger-wash: color-mix(in srgb, var(--color-danger) 11%, transparent);
+  --due: #8a5c0c;
+  --learned: #37703f;
+  --g-again: #a33027;
+  --g-good: #3d6b35;
+  --g-easy: #2f6193;
+
+  --shadow-1: 0 1px 2px rgba(60, 40, 34, 0.07), 0 2px 6px rgba(60, 40, 34, 0.05);
+  --shadow-2: 0 2px 6px rgba(60, 40, 34, 0.1), 0 12px 28px rgba(60, 40, 34, 0.12);
+  --shadow-lift: 0 10px 20px rgba(60, 40, 34, 0.16), 0 30px 60px rgba(60, 40, 34, 0.22);
+
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --ease: cubic-bezier(0.2, 0.8, 0.25, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
   display: flex;
+  flex: 1;
   flex-direction: column;
-  padding: 2rem 1.25rem;
-  gap: 1.25rem;
   min-height: 0;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-.flashcards-view__layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-}
-
-.flashcards-view__rail {
-  flex: 0 0 15rem;
-}
-
-.flashcards-view__main {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-@media (max-width: 720px) {
-  .flashcards-view__layout {
-    flex-direction: column;
-  }
-
-  .flashcards-view__rail {
-    flex: none;
-    width: 100%;
+@media (prefers-color-scheme: dark) {
+  .flashcards-view {
+    --due: #d6a250;
+    --learned: #6cba75;
+    --g-again: #c4463b;
+    --g-good: #4e8544;
+    --g-easy: #3d79b4;
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.28);
+    --shadow-2: 0 2px 6px rgba(0, 0, 0, 0.4), 0 12px 28px rgba(0, 0, 0, 0.45);
+    --shadow-lift: 0 10px 20px rgba(0, 0, 0, 0.5), 0 30px 60px rgba(0, 0, 0, 0.55);
   }
 }
 
-.flashcards-view__status {
-  color: var(--color-muted);
+.flashcards-view button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
 }
 
-.flashcards-view__progress {
-  color: var(--color-muted);
-  margin: 0;
+.flashcards-view :focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.eyebrow {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.flashcards-view__status,
+.flashcards-view__warning {
+  padding: 1rem;
+  text-align: center;
+  color: var(--ink-3);
 }
 
 .flashcards-view__warning {
   background: var(--color-warning-bg);
   color: var(--color-warning-fg);
-  padding: 0.6rem 1rem;
-  border-radius: 0.5rem;
-  max-width: 32rem;
-  text-align: center;
-}
-
-/* Deck table (issue #187 stage 2) */
-
-.deck-table {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  width: 100%;
-}
-
-.deck-table__chips {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.deck-table__empty {
-  color: var(--color-muted);
+  border-radius: var(--r-md);
+  margin: 0 22px;
   font-size: 0.85rem;
 }
 
-.deck-table__add {
-  padding: 0.3rem 0.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
+.shell {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  align-items: stretch;
+}
+
+/* ── library rail ─────────────────────────────────────────────────── */
+
+.rail {
+  width: 264px;
+  flex: none;
+  border-right: 1px solid var(--color-border);
   background: var(--color-surface);
-  color: var(--color-fg);
-  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 12px 12px;
+  transition: width 0.32s var(--ease), padding 0.32s var(--ease);
 }
 
-.deck-chip {
-  display: inline-flex;
+.rail--closed {
+  width: 52px;
+  padding-left: 8px;
+  padding-right: 8px;
+  overflow: hidden;
+}
+
+.rail--closed .rail__hideable {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rail--closed .rail__list,
+.rail--closed .trash {
+  display: none;
+}
+
+.rail__hideable {
+  transition: opacity 0.18s var(--ease);
+}
+
+.rail__top {
+  display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.3rem 0.5rem 0.3rem 0.7rem;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.rail__toggle {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  border-radius: var(--r-sm);
+  color: var(--ink-3);
+  display: grid;
+  place-items: center;
+}
+
+.rail__toggle:hover {
+  background: var(--surface-2);
+  color: var(--color-fg);
+}
+
+.rail__section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 14px 2px 7px;
+}
+
+.rail__add {
+  font-size: 12px;
+  color: var(--color-accent);
+  font-weight: 500;
+  padding: 2px 7px;
   border-radius: 999px;
-  font-size: 0.85rem;
-  line-height: 1;
+  border: 1px solid transparent;
 }
 
-.deck-chip__count {
-  opacity: 0.8;
-  font-variant-numeric: tabular-nums;
+.rail__add:hover {
+  background: var(--accent-wash);
+  border-color: var(--accent-wash-2);
 }
 
-.deck-chip__remove {
-  border: none;
-  background: transparent;
-  color: inherit;
-  opacity: 0.8;
-  padding: 0 0.15rem;
-  line-height: 1;
-  font-size: 1rem;
+.rail__list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-height: 24px;
+  border-radius: var(--r-md);
 }
 
-.deck-chip__remove:hover {
+.rail__list--over {
+  box-shadow: inset 0 0 0 1.5px var(--color-accent);
+  background: var(--accent-wash);
+}
+
+.rail__empty,
+.rail__hint {
+  font-size: 11.5px;
+  color: var(--ink-3);
+  margin: 10px 2px 0;
+  line-height: 1.45;
+}
+
+.rail__hint kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10.5px;
+  background: var(--surface-2);
+  border: 1px solid var(--line-2);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0 4px;
+}
+
+.rail__spacer {
+  flex: 1;
+  min-height: 12px;
+}
+
+/* The trash only exists while a deck is in the air, so the rail isn't
+   carrying a destructive control the rest of the time. */
+.trash {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  border-radius: var(--r-md);
+  border: 1.5px dashed transparent;
+  display: grid;
+  place-items: center;
+  color: var(--ink-3);
+  font-size: 12px;
+  gap: 4px;
+  transition: height 0.26s var(--ease), opacity 0.2s var(--ease), background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.trash--armed {
+  height: 56px;
   opacity: 1;
+  border-color: var(--line-2);
 }
 
-/* Drag-and-drop (issue #187 stage 3) */
+.trash.is-over {
+  background: var(--danger-wash);
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
 
-.deck-chip__handle {
-  border: none;
-  background: transparent;
-  color: inherit;
-  opacity: 0.7;
-  padding: 0 0.1rem;
-  line-height: 1;
+/* ── deck card (library) ──────────────────────────────────────────── */
+
+.deck {
+  --hue: var(--color-muted);
+  position: relative;
+  display: grid;
+  grid-template-columns: 14px 1fr auto;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 9px 9px 7px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-1);
   cursor: grab;
   touch-action: none;
+  transition: box-shadow 0.18s var(--ease), border-color 0.18s var(--ease), transform 0.18s var(--ease);
 }
 
-.deck-chip__handle:hover {
+.deck:hover {
+  border-color: var(--line-2);
+  box-shadow: var(--shadow-2);
+}
+
+.deck::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--hue);
+}
+
+.deck__grip {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+  align-items: center;
+  padding-left: 4px;
+  opacity: 0.32;
+  transition: opacity 0.15s var(--ease);
+}
+
+.deck:hover .deck__grip {
+  opacity: 0.7;
+}
+
+.deck__grip i {
+  width: 10px;
+  height: 1.5px;
+  border-radius: 1px;
+  background: var(--color-fg);
+  display: block;
+}
+
+.deck__body {
+  min-width: 0;
+}
+
+.deck__name {
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deck__meta {
+  font-size: 11px;
+  color: var(--ink-3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1px;
+}
+
+.deck__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--due);
+  flex: none;
+}
+
+/* The dictionary reads as a deck you can play but not edit. */
+.deck--virtual {
+  background: repeating-linear-gradient(-45deg, transparent 0 6px, var(--sunken) 6px 7px), var(--color-surface);
+  border-color: var(--line-2);
+  cursor: grab;
+}
+
+.deck--virtual .deck__name::after {
+  content: 'virtual';
+  margin-left: 7px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  border: 1px solid var(--line-2);
+  border-radius: 3px;
+  padding: 0 4px;
+  vertical-align: 1px;
+}
+
+.deck--inplay {
+  opacity: 0.48;
+}
+
+.deck__played {
+  font-size: 9.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.deck__tail {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.deck__rename {
+  width: 100%;
+  background: var(--color-bg);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--r-sm);
+  padding: 2px 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-fg);
+}
+
+.deck-menu {
+  position: relative;
+}
+
+.deck-menu__trigger {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--r-sm);
+  color: var(--ink-3);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 0.15s var(--ease);
+}
+
+.deck:hover .deck-menu__trigger,
+.deck-menu__trigger:focus-visible,
+.deck-menu__trigger[aria-expanded='true'] {
   opacity: 1;
 }
 
-.deck-chip--grabbed {
-  outline: 2px solid var(--color-fg);
-  outline-offset: 2px;
+.deck-menu__trigger:hover {
+  background: var(--surface-2);
+  color: var(--color-fg);
 }
 
-.deck-chip--dragging {
+.deck-menu__panel {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  width: 196px;
+  padding: 6px;
+  gap: 2px;
+}
+
+/* ── popovers ─────────────────────────────────────────────────────── */
+
+.pop {
+  z-index: 60;
+  background: var(--color-bg);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lift);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  animation: pop-in 0.18s var(--ease) both;
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.pop__item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 6px 9px;
+  border-radius: var(--r-sm);
+  font-size: 12.5px;
+}
+
+.pop__item:hover:not(:disabled) {
+  background: var(--color-surface);
+}
+
+.pop__item:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pop__item--danger {
+  color: var(--color-danger);
+}
+
+.pop__item--accent {
+  color: var(--color-accent);
+}
+
+.pop__group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pop__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.pop__reset {
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+
+.pop__reset:hover {
+  color: var(--color-accent);
+}
+
+.pop__foot {
+  font-size: 11px;
+  color: var(--ink-3);
+  border-top: 1px solid var(--color-border);
+  padding-top: 10px;
+  line-height: 1.45;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.chipbtn {
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 12px;
+  color: var(--ink-3);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  transition: all 0.14s var(--ease);
+}
+
+.chipbtn:hover {
+  border-color: var(--line-2);
+  color: var(--color-fg);
+}
+
+.chipbtn[aria-pressed='true'] {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent-fg);
+  font-weight: 500;
+}
+
+/* ── main column ──────────────────────────────────────────────────── */
+
+.main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  /* On a short window with the browse drawer open, the card would otherwise be
+     squeezed out of existence; let the column scroll instead. */
+  overflow-y: auto;
+}
+
+/* ── the table ────────────────────────────────────────────────────── */
+
+.table {
+  padding: 16px 22px 14px;
+  border-bottom: 1px solid var(--color-border);
+  background: radial-gradient(120% 90% at 50% -30%, var(--accent-wash) 0%, transparent 60%), var(--sunken);
+}
+
+.table__head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 9px;
+}
+
+.table__totals {
+  font-size: 12px;
+  color: var(--ink-2);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.table__totals b {
+  font-weight: 600;
+  color: var(--color-fg);
+}
+
+.table__pips {
+  display: flex;
+  gap: 10px;
+}
+
+.pip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pip::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.pip--due {
+  color: var(--due);
+}
+
+.pip--new {
+  color: var(--color-accent);
+}
+
+.pip--seen {
+  color: var(--learned);
+}
+
+/* A standing drop zone with its own empty state: dragging the first deck
+   out of the library needs a target to aim at before anything is in it. */
+.tray {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-height: 82px;
+  padding: 9px 9px 20px;
+  border-radius: var(--r-lg);
+  border: 1.5px dashed var(--line-2);
+  background: var(--color-bg);
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.tray.is-over {
+  border-color: var(--color-accent);
+  background: var(--accent-wash);
+  box-shadow: inset 0 0 0 1px var(--accent-wash-2), 0 0 0 4px var(--accent-wash);
+}
+
+.tray__empty {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 3px;
+  color: var(--ink-3);
+  font-size: 12.5px;
+  text-align: center;
+  pointer-events: none;
+  transition: opacity 0.2s var(--ease);
+}
+
+.tray:not(.is-empty) .tray__empty {
+  opacity: 0;
+}
+
+.tray__empty svg {
   opacity: 0.5;
 }
 
-.deck-table__chips {
-  border-radius: 0.75rem;
-  padding: 0.2rem;
+/* A deck on the table is drawn as a small pile of cards. */
+.chip {
+  --hue: var(--color-muted);
+  position: relative;
+  flex: none;
+  width: 152px;
+  padding: 9px 10px 8px;
+  border-radius: var(--r-md);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-1);
+  cursor: grab;
+  touch-action: none;
+  animation: chip-in 0.34s var(--ease-spring) both;
 }
 
-.deck-table__chips--drag-leaving {
-  background: var(--color-warning-bg);
+.chip::after,
+.chip::before {
+  content: '';
+  position: absolute;
+  height: 6px;
+  border: 1px solid var(--color-border);
+  border-top: none;
+  background: var(--color-bg);
+  border-radius: 0 0 var(--r-md) var(--r-md);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .deck-chip--dragging {
-    transition: opacity 0.1s ease-out;
+.chip::before {
+  top: 100%;
+  margin-top: -1px;
+  left: 5px;
+  right: 5px;
+}
+
+.chip::after {
+  top: 100%;
+  margin-top: 4px;
+  left: 10px;
+  right: 10px;
+  opacity: 0.6;
+}
+
+@keyframes chip-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.92);
   }
-
-  .deck-table__chips {
-    transition: background-color 0.1s ease-out;
-  }
-}
-
-/*
- * Drag affordances (issue #189): the tilt/lag drag image, collapsed source
- * slot, insertion caret, FLIP-animated reflow, and outcome badge from
- * #187's original "Affordances" spec. All gated behind
- * `prefers-reduced-motion: no-preference` — under reduced motion, dragging
- * still works exactly as the opacity/outline rules above describe.
- */
-@media (prefers-reduced-motion: no-preference) {
-  /* Collapsed source placeholder: the dragged chip's own slot goes empty
-     rather than staying opaque, without changing its box size so siblings
-     don't jump. */
-  .deck-chip--dragging {
+  to {
     opacity: 1;
-    background: transparent;
-    border: 1px dashed var(--color-border);
-    box-shadow: none;
-  }
-
-  .deck-chip--dragging .deck-chip__name,
-  .deck-chip--dragging .deck-chip__count,
-  .deck-chip--dragging .deck-chip__remove {
-    visibility: hidden;
-  }
-
-  /* FLIP-animated reflow: applyFlip() (decks/dnd/flip.ts) offsets an item
-     the instant its position changes, then clears the offset — this
-     transition is what carries it smoothly back to its natural spot. */
-  .deck-table__item,
-  .deck-rail__row {
-    transition: transform 0.2s ease;
+    transform: none;
   }
 }
 
-.insertion-caret {
-  flex: 0 0 auto;
-  background: var(--color-accent);
-  border-radius: 999px;
+.chip__bar {
+  height: 3px;
+  border-radius: 2px;
+  background: var(--hue);
+  margin-bottom: 7px;
 }
 
-.insertion-caret--horizontal {
-  width: 0.15rem;
-  align-self: stretch;
+.chip__name {
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.insertion-caret--vertical {
-  height: 0.15rem;
-  align-self: stretch;
+.chip__stat {
+  font-size: 10.5px;
+  color: var(--ink-3);
+  margin-top: 2px;
+  display: flex;
+  gap: 7px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .insertion-caret {
-    animation: flashcards-view-caret-pulse 0.9s ease-in-out infinite;
-  }
+.chip__slice {
+  margin-top: 6px;
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  border-top: 1px dotted var(--line-2);
+  padding-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-@keyframes flashcards-view-caret-pulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+.chip__x {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--ink-3);
+  opacity: 0;
+  transition: opacity 0.15s var(--ease);
 }
 
-.drag-ghost {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 30;
+.chip:hover .chip__x,
+.chip__x:focus-visible {
+  opacity: 1;
+}
+
+.chip__x:hover {
+  background: var(--surface-2);
+  color: var(--color-fg);
+}
+
+/* ── group presets ────────────────────────────────────────────────── */
+
+.groups {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.group {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--color-border);
   border-radius: 999px;
+  background: var(--color-bg);
+  font-size: 12px;
+  color: var(--ink-2);
+  transition: border-color 0.16s var(--ease), background 0.16s var(--ease), color 0.16s var(--ease);
+}
+
+.group:hover {
+  border-color: var(--color-accent);
+  color: var(--color-fg);
+}
+
+.group--on {
+  border-color: var(--color-accent);
+  background: var(--accent-wash);
+  color: var(--color-fg);
+  font-weight: 500;
+}
+
+.group__load {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 4px 4px 7px;
+}
+
+.group__swatches {
+  display: flex;
+}
+
+.group__swatches i {
+  width: 7px;
+  height: 12px;
+  border-radius: 2px;
+  display: block;
+  margin-right: -3px;
+  border: 1px solid var(--color-bg);
+}
+
+.group__delete {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 7px;
+  border-radius: 50%;
+  color: var(--ink-3);
+}
+
+.group__delete:hover {
+  background: var(--surface-2);
+  color: var(--color-danger);
+}
+
+.group__save {
+  font-size: 12px;
+  color: var(--ink-3);
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px dashed var(--line-2);
+}
+
+.group__save:hover:not(:disabled) {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.group__save:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.group__save-input {
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--color-accent);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-size: 12px;
+  min-width: 10rem;
+}
+
+/* ── session bar ──────────────────────────────────────────────────── */
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 9px 22px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.bar__spacer {
+  flex: 1;
+}
+
+.seg {
+  display: inline-flex;
+  padding: 2px;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
-  font-size: 0.8rem;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-.drag-ghost__badge {
-  color: var(--color-muted);
-  font-size: 0.7rem;
-}
-
-.drag-ghost--refused {
-  animation: flashcards-view-ghost-refuse 0.22s ease-out;
-}
-
-@keyframes flashcards-view-ghost-refuse {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg) scale(1);
-  }
-  40% {
-    transform: translate(-50%, -50%) rotate(-8deg) scale(1.05);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(0deg) scale(1);
-  }
-}
-
-.deck-chip--red { background: var(--deck-hue-red-bg); color: var(--deck-hue-red-fg); }
-.deck-chip--orange { background: var(--deck-hue-orange-bg); color: var(--deck-hue-orange-fg); }
-.deck-chip--amber { background: var(--deck-hue-amber-bg); color: var(--deck-hue-amber-fg); }
-.deck-chip--green { background: var(--deck-hue-green-bg); color: var(--deck-hue-green-fg); }
-.deck-chip--teal { background: var(--deck-hue-teal-bg); color: var(--deck-hue-teal-fg); }
-.deck-chip--blue { background: var(--deck-hue-blue-bg); color: var(--deck-hue-blue-fg); }
-.deck-chip--purple { background: var(--deck-hue-purple-bg); color: var(--deck-hue-purple-fg); }
-.deck-chip--pink { background: var(--deck-hue-pink-bg); color: var(--deck-hue-pink-fg); }
-
-/* Session bar (issue #187 stage 2) */
-
-.flashcards-view__session-bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.prompt-mode {
-  display: flex;
-  gap: 0.2rem;
+  border-radius: 999px;
   margin: 0;
-  padding: 0.2rem;
+}
+
+.seg--prompt {
   border: 1px solid var(--color-border);
+}
+
+.seg button,
+.seg__option {
+  padding: 4px 11px;
   border-radius: 999px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background 0.16s var(--ease), color 0.16s var(--ease);
 }
 
-.prompt-mode__option {
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  color: var(--color-muted);
-  font-size: 0.85rem;
+.seg button:hover,
+.seg__option:hover {
+  color: var(--color-fg);
 }
 
-.prompt-mode__option--active {
-  background: var(--color-accent);
-  color: var(--color-accent-fg);
+.seg button[aria-pressed='true'],
+.seg__option--on {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-weight: 500;
+  box-shadow: var(--shadow-1);
 }
 
-.prompt-mode__option input {
+/* The prompt-mode control is native radios so arrow-key navigation is free;
+   the inputs themselves are hidden and the labels carry the styling. */
+.seg__option input {
   position: absolute;
   width: 1px;
   height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  font-size: 12.5px;
+  color: var(--ink-2);
+  transition: border-color 0.16s var(--ease), background 0.16s var(--ease), color 0.16s var(--ease);
+}
+
+.pill:hover:not(:disabled) {
+  border-color: var(--line-2);
+  color: var(--color-fg);
+}
+
+.pill:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.pill--on {
+  border-color: var(--color-accent);
+  background: var(--accent-wash);
+  color: var(--color-fg);
+}
+
+.pill__n {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10.5px;
+  font-weight: 600;
+  background: var(--color-accent);
+  color: var(--color-accent-fg);
+  border-radius: 999px;
+  min-width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  padding: 0 4px;
 }
 
 .filters-popover {
   position: relative;
 }
 
-.filters-popover__trigger {
-  padding: 0.4rem 0.9rem;
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  background: var(--color-surface);
-  color: var(--color-fg);
-  font-size: 0.85rem;
-}
-
-.filters-popover__trigger[aria-expanded='true'] {
-  background: var(--color-accent);
-  color: var(--color-accent-fg);
-  border-color: var(--color-accent);
-}
-
 .filters-popover__panel {
   position: absolute;
-  z-index: 1;
-  top: calc(100% + 0.5rem);
-  left: 50%;
-  transform: translateX(-50%);
+  top: calc(100% + 7px);
+  left: 0;
+  width: 306px;
+}
+
+.active {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.active__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 6px 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 11.5px;
+  color: var(--ink-2);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.active__chip-remove {
+  color: var(--ink-3);
+  display: grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.active__chip-remove:hover {
+  background: var(--color-border);
+  color: var(--color-fg);
+}
+
+/* ── the funnel ───────────────────────────────────────────────────── */
+
+.funnel {
+  display: flex;
+  align-items: center;
+}
+
+.funnel__stage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 3px 10px;
+  border-radius: var(--r-sm);
+  position: relative;
+  transition: background 0.16s var(--ease);
+}
+
+.funnel__stage + .funnel__stage::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid var(--line-2);
+  border-top: 1.5px solid var(--line-2);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.funnel__stage--cut:hover {
+  background: var(--color-surface);
+}
+
+.funnel__n {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.funnel__label {
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.funnel__stage--cut .funnel__n {
+  color: var(--ink-2);
+}
+
+.funnel__stage--out .funnel__n {
+  color: var(--color-accent);
+}
+
+/* ── study surface ────────────────────────────────────────────────── */
+
+.study {
+  flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
-  width: max(20rem, 100%);
-  border: 1px solid var(--color-border);
-  border-radius: 0.75rem;
+  /* `safe` so a card taller than the space left (short window, browse drawer
+     open) overflows downward into the scroll rather than upward under the
+     session bar, which is what plain centring does. */
+  justify-content: center;
+  justify-content: safe center;
+  overflow-y: auto;
+  gap: 16px;
+  min-height: 15rem;
+  padding: 34px 22px 22px;
+  background: var(--color-bg);
+}
+
+.card {
+  --hue: var(--color-muted);
+  position: relative;
+  width: min(100%, 420px);
   background: var(--color-surface);
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-2);
+  padding: 30px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  animation: card-in 0.3s var(--ease) both;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .filters-popover__panel {
-    animation: flashcards-view-popover-in 0.12s ease-out;
-  }
-}
-
-@keyframes flashcards-view-popover-in {
+@keyframes card-in {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(-0.25rem);
+    transform: translateY(6px) scale(0.99);
   }
   to {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: none;
   }
 }
 
-.active-filter-chips {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.4rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.filter-chip {
+.card__source {
+  position: absolute;
+  top: 10px;
+  left: 12px;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.25rem 0.4rem 0.25rem 0.65rem;
-  border-radius: 999px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  gap: 5px;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.card__source i {
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--hue);
+}
+
+.card__filing {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--r-sm);
+  display: grid;
+  place-items: center;
+  color: var(--ink-3);
+  cursor: grab;
+  touch-action: none;
+  border: 1px dashed transparent;
+  transition: color 0.16s var(--ease), border-color 0.16s var(--ease), background 0.16s var(--ease);
+}
+
+.card__filing:hover,
+.card__filing--dragging {
+  color: var(--color-accent);
+  border-color: var(--accent-wash-2);
+  background: var(--accent-wash);
+}
+
+/* A serif face for Han, from the system only — this app ships as static files
+   and fetches no webfonts, so the stack degrades to the platform default
+   rather than pulling in a font host. */
+.card__prompt,
+.card__hw,
+.entry__hw {
+  font-family: 'Songti TC', 'Source Han Serif', 'Noto Serif TC', 'Songti SC', serif;
+}
+
+.card__prompt {
+  font-size: 46px;
+  line-height: 1.25;
+  text-align: center;
   color: var(--color-fg);
-  font-size: 0.8rem;
 }
 
-.filter-chip__remove {
-  border: none;
-  background: transparent;
-  color: inherit;
-  opacity: 0.7;
-  padding: 0 0.15rem;
-  line-height: 1;
+.card__prompt--en {
+  font-family: inherit;
+  font-size: 22px;
+  max-width: 22ch;
 }
 
-.filter-chip__remove:hover {
-  opacity: 1;
-}
-
-.flashcards-view__funnel {
-  margin: 0;
-  color: var(--color-muted);
-  font-size: 0.8rem;
-  font-variant-numeric: tabular-nums;
-  text-align: center;
-}
-
-.flashcards-view__toggle {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--color-muted);
-  font-size: 0.85rem;
-}
-
-.flashcards-view__levels {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4rem 1rem;
-  width: min(100%, 28rem);
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-.flashcards-view__levels legend {
-  width: 100%;
-  text-align: center;
-  padding: 0;
-  margin-bottom: 0.3rem;
-  color: var(--color-muted);
-  font-size: 0.85rem;
-}
-
-.flashcards-view__level-toggle {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--color-muted);
-  font-size: 0.85rem;
-}
-
-.flashcard {
-  width: min(100%, 28rem);
-  border: 1px solid var(--color-border);
-  border-radius: 0.75rem;
-  padding: 2rem 1.5rem;
+.card__back {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
-  background: var(--color-surface);
+  gap: 7px;
+  text-align: center;
 }
 
-.flashcard__front {
-  font-size: 2.5rem;
-  color: var(--color-accent);
+.card__hw {
+  font-size: 27px;
 }
 
-.flashcard__back {
+.card__reading {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.flashcard__headword {
-  font-size: 1.5rem;
-  color: var(--color-accent);
-}
-
-.flashcard__reading {
-  display: flex;
-  gap: 0.75rem;
+  gap: 11px;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: baseline;
 }
 
-.flashcard__pengim {
+.card__pengim {
   font-weight: 600;
   color: var(--color-accent);
+  font-size: 15px;
 }
 
-.flashcard__ipa,
-.flashcard__poj {
-  color: var(--color-muted);
+.card__ipa,
+.card__poj {
+  color: var(--ink-3);
+  font-size: 13px;
 }
 
-.flashcard__gloss {
-  font-size: 1.1rem;
+.card__gloss {
+  font-size: 15px;
+  color: var(--ink-2);
+  max-width: 32ch;
 }
 
-.flashcard__reveal {
-  padding: 0.6rem 1.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  background: transparent;
-  color: var(--color-fg);
-}
-
-.flashcard__grades {
-  display: flex;
-  gap: 0.6rem;
-}
-
-.flashcard__grade {
-  padding: 0.5rem 1.1rem;
-  border: none;
-  border-radius: 0.5rem;
-  color: #ffffff;
-}
-
-.flashcard__grade--again {
-  background: #b3261e;
-}
-
-.flashcard__grade--good {
-  background: #3d6b35;
-}
-
-.flashcard__grade--easy {
-  background: #2f6fa6;
-}
-
-/* Delete confirmation (issue #189): a small anchored popover replacing
-   window.confirm for deck and group deletion — see DeleteConfirm.tsx. */
-
-.delete-confirm {
-  position: relative;
-  display: inline-flex;
-}
-
-.delete-confirm__trigger {
-  border: none;
-  background: transparent;
-  color: var(--color-muted);
-  font-size: 0.75rem;
-  padding: 0.15rem 0.3rem;
-  text-decoration: underline;
-}
-
-.delete-confirm__trigger:hover {
-  color: var(--color-fg);
-}
-
-.delete-confirm__panel {
-  position: absolute;
-  z-index: 5;
-  top: calc(100% + 0.4rem);
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  min-width: 12rem;
-  padding: 0.6rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  background: var(--color-surface);
-  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
-  font-size: 0.8rem;
-}
-
-.delete-confirm__text {
-  margin: 0;
-  color: var(--color-fg);
-}
-
-.delete-confirm__confirm,
-.delete-confirm__cancel {
-  padding: 0.3rem 0.6rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.4rem;
-  background: var(--color-bg);
-  color: var(--color-fg);
-  font-size: 0.8rem;
-}
-
-.delete-confirm__confirm {
-  border-color: var(--color-danger);
-  color: var(--color-danger);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .delete-confirm__panel {
-    animation: flashcards-view-popover-in 0.12s ease-out;
-  }
-}
-
-/* Library rail (issue #187 stage 4) */
-
-.deck-rail {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.deck-rail__heading {
-  margin: 0 0 0.5rem;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: var(--color-muted);
-}
-
-.deck-rail__row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  padding: 0.3rem;
-  border-radius: 0.5rem;
-}
-
-.deck-rail__row--accept {
-  outline: 2px dashed var(--color-success);
-  outline-offset: 2px;
-}
-
-.deck-rail__row--refuse {
-  background: var(--color-warning-bg);
-  outline: 2px dashed var(--color-danger);
-  outline-offset: 2px;
-}
-
-.deck-rail__badge {
-  font-size: 0.7rem;
-  color: var(--color-muted);
-  border: 1px solid var(--color-border);
+.card__reveal {
+  padding: 9px 26px;
+  border: 1px solid var(--line-2);
   border-radius: 999px;
-  padding: 0.1rem 0.5rem;
-}
-
-.deck-rail__action {
-  border: none;
-  background: transparent;
-  color: var(--color-muted);
-  font-size: 0.75rem;
-  padding: 0.15rem 0.3rem;
-  text-decoration: underline;
-}
-
-.deck-rail__action:hover {
+  background: var(--color-bg);
+  font-size: 13.5px;
   color: var(--color-fg);
 }
 
-.deck-rail__rename-input {
-  padding: 0.2rem 0.4rem;
-  border: 1px solid var(--color-accent);
-  border-radius: 0.4rem;
-  background: var(--color-surface);
-  color: var(--color-fg);
-  font-size: 0.85rem;
-  min-width: 6rem;
+.card__reveal:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
-.deck-rail__empty {
-  color: var(--color-muted);
-  font-size: 0.8rem;
-  margin: 0 0 0.5rem;
+.grades {
+  display: flex;
+  gap: 8px;
 }
 
-.deck-rail__create,
-.deck-rail__browse {
-  align-self: flex-start;
-  padding: 0.4rem 0.7rem;
-  border: 1px dashed var(--color-border);
-  border-radius: 0.5rem;
-  background: transparent;
-  color: var(--color-fg);
-  font-size: 0.85rem;
+.grade {
+  padding: 8px 18px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  transition: transform 0.14s var(--ease-spring), filter 0.14s var(--ease);
 }
 
-.deck-rail__browse {
-  align-self: stretch;
+.grade:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.grade small {
+  display: block;
+  font-size: 9.5px;
+  opacity: 0.8;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 400;
+}
+
+.grade--again {
+  background: var(--g-again);
+}
+
+.grade--good {
+  background: var(--g-good);
+}
+
+.grade--easy {
+  background: var(--g-easy);
+}
+
+.study__note {
+  font-size: 12px;
+  color: var(--ink-3);
   text-align: center;
-  border-style: solid;
+  max-width: 44ch;
 }
 
-.deck-chip--compact {
-  padding: 0.15rem 0.3rem 0.15rem 0.5rem;
-  font-size: 0.75rem;
+.study__note b {
+  color: var(--ink-2);
+  font-weight: 500;
 }
 
-/* Browse drawer (issue #187 stage 4) */
-
-.browse-drawer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: min(26rem, 100%);
+.empty {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  padding: 1.25rem;
-  background: var(--color-bg);
-  border-left: 1px solid var(--color-border);
-  box-shadow: -0.5rem 0 1.5rem rgba(0, 0, 0, 0.2);
-  overflow-y: auto;
-  z-index: 20;
+  align-items: center;
+  gap: 9px;
+  max-width: 34ch;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .browse-drawer {
-    animation: flashcards-view-drawer-in 0.15s ease-out;
-  }
+.empty__title {
+  font-size: 16px;
+  font-weight: 600;
 }
 
-@keyframes flashcards-view-drawer-in {
-  from {
-    transform: translateX(1rem);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+.empty__body {
+  font-size: 13px;
+  color: var(--ink-3);
 }
 
-.browse-drawer__header {
+.empty__fix {
+  font-size: 12.5px;
+  color: var(--color-accent);
+  border: 1px solid var(--accent-wash-2);
+  background: var(--accent-wash);
+  border-radius: 999px;
+  padding: 5px 13px;
+}
+
+/* ── browse drawer ────────────────────────────────────────────────── */
+
+.drawer {
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.34s var(--ease);
+}
+
+.drawer--open {
+  max-height: min(268px, 45vh);
+}
+
+.drawer__head {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.browse-drawer__header h3 {
-  margin: 0;
-}
-
-.browse-drawer__close {
-  border: none;
-  background: transparent;
-  color: var(--color-fg);
-  font-size: 1.25rem;
-  line-height: 1;
-  padding: 0.2rem 0.5rem;
-}
-
-.browse-drawer__search {
-  padding: 0.5rem 0.6rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  background: var(--color-surface);
-  color: var(--color-fg);
-}
-
-.browse-drawer__hint {
-  color: var(--color-muted);
-  font-size: 0.85rem;
-}
-
-.browse-drawer__results {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  overflow-y: auto;
-}
-
-.browse-drawer__row {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  padding-bottom: 0.75rem;
+  gap: 10px;
+  padding: 9px 22px;
   border-bottom: 1px solid var(--color-border);
 }
 
-.browse-drawer__entry {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.browse-drawer__headword {
-  font-weight: 600;
-}
-
-.browse-drawer__gloss {
-  color: var(--color-muted);
-  font-size: 0.85rem;
-}
-
-.browse-drawer__memberships {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-}
-
-.browse-drawer__add {
-  align-self: flex-start;
-  padding: 0.25rem 0.4rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.4rem;
-  background: var(--color-surface);
-  color: var(--color-fg);
-  font-size: 0.8rem;
-}
-
-/* Group presets (issue #187 stage 4) */
-
-.group-presets {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-}
-
-.group-presets__load,
-.group-presets__save {
-  padding: 0.3rem 0.6rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  background: var(--color-surface);
-  color: var(--color-fg);
-  font-size: 0.8rem;
-}
-
-.group-presets__save-input {
-  padding: 0.3rem 0.6rem;
-  border: 1px solid var(--color-accent);
-  border-radius: 0.5rem;
-  background: var(--color-surface);
-  color: var(--color-fg);
-  font-size: 0.8rem;
-  min-width: 10rem;
-}
-
-.group-presets__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  justify-content: center;
-}
-
-.group-presets__item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.15rem 0.3rem 0.15rem 0.6rem;
+.drawer__search {
+  flex: 1;
+  max-width: 320px;
+  padding: 5px 11px;
   border-radius: 999px;
-  border: 1px solid var(--color-border);
-  color: var(--color-muted);
-  font-size: 0.75rem;
-}
-
-.group-presets__delete {
-  border: none;
-  background: transparent;
-  color: inherit;
-  opacity: 0.7;
-  padding: 0 0.15rem;
-  line-height: 1;
-}
-
-.group-presets__delete:hover {
-  opacity: 1;
-}
-
-/* Card filing (issue #187 stage 4) */
-
-.card-file-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.card-file-controls__handle {
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  background: var(--color-surface);
+  border: 1px solid var(--line-2);
+  background: var(--color-bg);
   color: var(--color-fg);
-  padding: 0.35rem 0.7rem;
-  font-size: 0.8rem;
+  font-size: 12.5px;
+}
+
+.drawer__hint,
+.drawer__note {
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+
+/* The hint is the first thing to go when the drawer head runs out of room —
+   the search field and the save action both have to stay reachable. */
+@media (max-width: 1100px) {
+  .drawer__hint {
+    display: none;
+  }
+}
+
+.drawer__head .pill {
+  white-space: nowrap;
+}
+
+.drawer__list {
+  overflow-y: auto;
+  padding: 9px 22px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.entry-wrap {
+  position: relative;
+}
+
+.entry {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 3px 9px;
+  padding: 6px 11px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  box-shadow: var(--shadow-1);
   cursor: grab;
   touch-action: none;
+  transition: box-shadow 0.16s var(--ease), border-color 0.16s var(--ease);
 }
 
-.card-file-controls--dragging .card-file-controls__handle {
-  opacity: 0.6;
+.entry:hover {
+  border-color: var(--line-2);
+  box-shadow: var(--shadow-2);
 }
 
-.card-file-controls__select {
-  padding: 0.35rem 0.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  background: var(--color-surface);
-  color: var(--color-fg);
-  font-size: 0.8rem;
+.entry__hw {
+  font-size: 16px;
+  grid-row: span 2;
 }
 
+.entry__p {
+  font-size: 11px;
+  color: var(--color-accent);
+}
+
+.entry__rest {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  min-width: 0;
+  grid-column: 2;
+}
+
+.entry__g {
+  font-size: 10.5px;
+  color: var(--ink-3);
+  max-width: 20ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.entry__tags {
+  display: flex;
+  gap: 3px;
+}
+
+.tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--line-2);
+  border-radius: 3px;
+  padding: 0 3px;
+  color: var(--ink-3);
+}
+
+.tag--full {
+  border-color: var(--learned);
+  color: var(--learned);
+}
+
+.tag--part {
+  border-color: var(--due);
+  color: var(--due);
+}
+
+.entry-add-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 218px;
+  padding: 6px;
+  gap: 2px;
+}
+
+/* ── drag image, drop states, insertion caret ─────────────────────── */
+
+.ghost {
+  --hue: var(--color-muted);
+  position: fixed;
+  z-index: 999;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  min-width: 132px;
+  padding: 9px 10px 8px;
+  border-radius: var(--r-md);
+  background: var(--color-bg);
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-lift);
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.ghost__bar {
+  height: 3px;
+  border-radius: 2px;
+  background: var(--hue);
+  margin-bottom: 7px;
+}
+
+.ghost__title {
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ghost__subtitle {
+  font-size: 10.5px;
+  color: var(--ink-3);
+  margin-top: 2px;
+}
+
+/* The badge is the point of the drag image: it names the outcome before you
+   commit to it, and turns red the moment the target refuses. */
+.ghost__badge {
+  position: absolute;
+  bottom: -11px;
+  right: -9px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--color-accent);
+  color: var(--color-accent-fg);
+  box-shadow: var(--shadow-2);
+  white-space: nowrap;
+  transition: background 0.16s var(--ease), transform 0.2s var(--ease-spring);
+}
+
+.ghost__badge--no,
+.ghost__badge--del {
+  background: var(--color-danger);
+  color: #fff;
+}
+
+/* The slot a dragged item came from is left empty rather than kept opaque,
+   without changing its box so its siblings don't jump. */
+.is-source {
+  opacity: 0.22;
+  filter: grayscale(0.5);
+}
+
+.drop-ok {
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-wash) !important;
+}
+
+.drop-no {
+  border-color: var(--color-danger) !important;
+  box-shadow: 0 0 0 3px var(--danger-wash) !important;
+}
+
+.kbd-lift {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lift);
+}
+
+.caret {
+  flex: none;
+  width: 3px;
+  height: 64px;
+  align-self: flex-start;
+  border-radius: 2px;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--accent-wash);
+}
+
+.caret--horizontal {
+  width: 100%;
+  height: 3px;
+  align-self: stretch;
+}
+
+/* ── toasts ───────────────────────────────────────────────────────── */
+
+.toasts {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 6px;
+  align-items: center;
+  pointer-events: none;
+}
+
+.toast {
+  background: var(--color-fg);
+  color: var(--color-bg);
+  font-size: 12.5px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-2);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  pointer-events: auto;
+}
+
+.toast__undo {
+  color: var(--color-bg);
+  text-decoration: underline;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* ── motion ───────────────────────────────────────────────────────── */
+
+/*
+ * FLIP reflow (decks/dnd/flip.ts offsets an item the instant its position
+ * changes, then clears the offset — this transition carries it back) and
+ * the drag image's own easing are motion, so they stand down under reduced
+ * motion. The caret, the badge, and every drop highlight are affordances
+ * and stay: see decks/dnd/useDeckDrag.ts, which pins the image to the
+ * pointer rather than removing it.
+ */
 @media (prefers-reduced-motion: no-preference) {
-  .card-file-controls__handle {
-    transition: opacity 0.1s ease-out;
+  .deck,
+  .chip {
+    transition: transform 0.2s var(--ease), box-shadow 0.18s var(--ease), border-color 0.18s var(--ease);
+  }
+
+  .ghost--reject {
+    animation: ghost-reject 0.32s var(--ease);
+  }
+
+  @keyframes ghost-reject {
+    0%,
+    100% {
+      filter: none;
+    }
+    20% {
+      filter: saturate(0.4) brightness(0.95);
+    }
+  }
+
+  .caret {
+    animation: caret-in 0.18s var(--ease) both;
+  }
+
+  @keyframes caret-in {
+    from {
+      transform: scaleY(0.3);
+      opacity: 0;
+    }
+    to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flashcards-view *,
+  .flashcards-view *::before,
+  .flashcards-view *::after,
+  .ghost,
+  .ghost * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── responsive ───────────────────────────────────────────────────── */
+
+@media (max-width: 860px) {
+  .shell {
+    flex-direction: column;
+  }
+
+  .rail {
+    width: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .rail--closed {
+    width: auto;
+  }
+
+  .rail__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .deck {
+    width: 174px;
+  }
+
+  .study {
+    padding: 22px 14px;
+  }
+
+  .card__prompt {
+    font-size: 38px;
+  }
+
+  .table,
+  .bar,
+  .drawer__head,
+  .drawer__list {
+    padding-left: 14px;
+    padding-right: 14px;
   }
 }

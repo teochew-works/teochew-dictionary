@@ -82,6 +82,24 @@ reappear as new (DevTools → Application → IndexedDB →
   no dependency) with a 3-button grading UI (Again/Good/Easy), persisted via
   [`idb`](https://github.com/jakearchibald/idb) (IndexedDB `teochew-flashcards`
   database, `cards` object store keyed by entry id).
+- Decks and the table (issues #187/#189): decks live in a library rail and are
+  dragged onto "the table" to enter a session. Everything on the table is
+  unioned into one review queue (`src/decks/pipeline.ts`), and the session's
+  filters apply to that whole pool rather than to any one deck — which is why
+  the session bar carries a funnel readout naming what each stage removed.
+  Deck membership, the table, and saved groups persist to localStorage under
+  `teochew-dictionary:decks/v1`; review scheduling stays in IndexedDB.
+- One drag engine, not four (`src/decks/dnd/useDeckDrag.ts`): a deck out of the
+  library, a chip around the table, the showing card into a deck, and an entry
+  out of the browse drawer all resolve against the same set of zones on every
+  pointer move (`resolveDrop.ts`, pure and rect-based). That single resolution
+  is what lets the drag image carry a badge naming the outcome — `+18 cards`,
+  `Already in Travel`, `Delete deck` — and turn red the moment a target
+  refuses. Every drag has a keyboard equivalent (`useDeckLift.ts`: space lifts,
+  arrows move — including between the rail and the table — space drops, escape
+  cancels) and every outcome is announced through one aria-live region.
+  Destructive actions apply immediately and offer Undo in a toast rather than
+  asking for confirmation first, so the screen needs no modal dialog at all.
 - Plain CSS, no UI framework — matches the root project's minimal-dependency
   approach.
 - Audio playback (issue #114): each reading's clips render as play buttons in

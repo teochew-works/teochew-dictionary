@@ -1,94 +1,91 @@
 import { useState } from 'react'
-import { DeleteConfirm } from './DeleteConfirm'
-import type { DeckGroup } from '../decks/types'
+import type { Deck, DeckGroup } from '../decks/types'
+
+function sameSet(a: string[], b: string[]): boolean {
+  return a.length === b.length && [...a].sort().join(',') === [...b].sort().join(',')
+}
 
 /**
- * Named, saved deck-id sets — "the table" as it was when saved (issue #187
- * stage 4). Naming is an inline input swapped in for the "Save table as
- * group…" button (issue #189), the same pattern DeckRail's rename and
- * create controls use; deleting a group uses DeleteConfirm, the same small
- * non-modal confirmation deck deletion uses — this stays additive rather
- * than introducing a general-purpose modal-dialog component.
+ * Saved tables. A combination worth repeating — Core 100 + Kitchen +
+ * the dictionary — saves as a group and reloads in one click, with the
+ * deck hues carried onto the pill so a group is recognisable before its
+ * name is read.
+ *
+ * Naming is an inline input rather than `window.prompt` (issue #189), the
+ * same pattern deck rename uses; loading and deleting are both undoable
+ * from the toast they raise, so neither needs a confirmation step.
  */
 export function GroupPresets({
   groups,
+  decksById,
   currentInPlay,
   onSave,
   onLoad,
   onDelete,
 }: {
   groups: DeckGroup[]
+  decksById: Map<string, Deck>
   currentInPlay: string[]
   onSave: (name: string) => void
   onLoad: (groupId: string) => void
   onDelete: (groupId: string) => void
 }) {
   const [saving, setSaving] = useState(false)
-  const [saveValue, setSaveValue] = useState('')
+  const [value, setValue] = useState('')
 
-  function commitSave() {
-    if (saveValue.trim()) onSave(saveValue.trim())
+  function commit() {
+    if (value.trim()) onSave(value.trim())
     setSaving(false)
-    setSaveValue('')
+    setValue('')
+  }
+
+  function cancel() {
+    setSaving(false)
+    setValue('')
   }
 
   return (
-    <div className="group-presets">
-      <select
-        className="group-presets__load"
-        aria-label="Load a saved group"
-        value=""
-        disabled={groups.length === 0}
-        onChange={(e) => {
-          if (e.target.value) onLoad(e.target.value)
-        }}
-      >
-        <option value="" disabled>
-          {groups.length === 0 ? 'No saved groups' : 'Load a group…'}
-        </option>
-        {groups.map((group) => (
-          <option key={group.id} value={group.id}>
-            {group.name}
-          </option>
-        ))}
-      </select>
+    <div className="groups">
+      {groups.map((group) => {
+        const on = sameSet(group.deckIds, currentInPlay)
+        const names = group.deckIds.map((id) => decksById.get(id)?.name ?? '?').join(' + ')
+        return (
+          <span key={group.id} className={on ? 'group group--on' : 'group'}>
+            <button type="button" className="group__load" aria-pressed={on} title={names} onClick={() => onLoad(group.id)}>
+              <span className="group__swatches" aria-hidden="true">
+                {group.deckIds.map((id) => {
+                  const deck = decksById.get(id)
+                  return deck ? <i key={id} style={{ background: `var(--deck-hue-${deck.hue}-bg)` }} /> : null
+                })}
+              </span>
+              <span>{group.name}</span>
+            </button>
+            <button type="button" className="group__delete" aria-label={`Delete group ${group.name}`} onClick={() => onDelete(group.id)}>
+              <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true">
+                <path d="M1.3 1.3l5.4 5.4M6.7 1.3L1.3 6.7" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+              </svg>
+            </button>
+          </span>
+        )
+      })}
 
       {saving ? (
         <input
-          className="group-presets__save-input"
+          className="group__save-input"
           aria-label="Name this group"
-          value={saveValue}
+          value={value}
           autoFocus
-          onChange={(e) => setSaveValue(e.target.value)}
-          onBlur={commitSave}
+          onChange={(e) => setValue(e.target.value)}
+          onBlur={commit}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') commitSave()
-            if (e.key === 'Escape') {
-              setSaving(false)
-              setSaveValue('')
-            }
+            if (e.key === 'Enter') commit()
+            if (e.key === 'Escape') cancel()
           }}
         />
       ) : (
-        <button
-          type="button"
-          className="group-presets__save"
-          onClick={() => setSaving(true)}
-          disabled={currentInPlay.length === 0}
-        >
-          Save table as group…
+        <button type="button" className="group__save" disabled={currentInPlay.length === 0} onClick={() => setSaving(true)}>
+          + Save this table
         </button>
-      )}
-
-      {groups.length > 0 && (
-        <ul className="group-presets__list">
-          {groups.map((group) => (
-            <li key={group.id} className="group-presets__item">
-              {group.name}
-              <DeleteConfirm label={`group ${group.name}`} onConfirm={() => onDelete(group.id)} />
-            </li>
-          ))}
-        </ul>
       )}
     </div>
   )

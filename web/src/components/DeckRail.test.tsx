@@ -1,262 +1,152 @@
-import { afterEach, describe, expect, it, vi } from 'vitest'
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { describe, expect, it, vi } from 'vitest'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import { DeckRail } from './DeckRail'
+import type { DeckStats } from '../decks/stats'
 import type { Deck } from '../decks/types'
 
-const DICTIONARY: Deck = { id: 'dictionary', name: 'Dictionary', hue: 'blue', cards: ['a', 'b'], kind: 'virtual' }
+const dictionaryDeck: Deck = { id: 'dictionary', name: 'Dictionary', hue: 'blue', kind: 'virtual', cards: ['a', 'b'] }
+const userDecks: Deck[] = [
+  { id: 'd1', name: 'Food words', hue: 'red', kind: 'user', cards: ['a'] },
+  { id: 'd2', name: 'Travel', hue: 'orange', kind: 'user', cards: [] },
+]
+const statsById = new Map<string, DeckStats>([
+  ['dictionary', { total: 2, kept: 2, due: 0, fresh: 2, learned: 0 }],
+  ['d1', { total: 1, kept: 1, due: 1, fresh: 0, learned: 0 }],
+  ['d2', { total: 0, kept: 0, due: 0, fresh: 0, learned: 0 }],
+])
 
-function deck(overrides: Partial<Deck> = {}): Deck {
-  return { id: 'deck-1', name: 'Kitchen', hue: 'green', cards: [], kind: 'user', ...overrides }
-}
+const menuActions = { onPutOnTable: vi.fn(), onRename: vi.fn(), onDuplicate: vi.fn(), onDelete: vi.fn() }
 
-function renderRail(props: Partial<Parameters<typeof DeckRail>[0]> = {}) {
-  return render(
-    <DeckRail
-      dictionaryDeck={DICTIONARY}
-      userDecks={[]}
-      inPlayIds={[]}
-      onAddToTable={vi.fn()}
-      onCreateDeck={vi.fn()}
-      onRenameDeck={vi.fn()}
-      onDeleteDeck={vi.fn()}
-      onReorderDecks={vi.fn()}
-      onOpenBrowseDrawer={vi.fn()}
-      announce={vi.fn()}
-      {...props}
-    />,
-  )
+function setup(overrides: Partial<Parameters<typeof DeckRail>[0]> = {}) {
+  const props = {
+    dictionaryDeck,
+    userDecks,
+    statsById,
+    inPlayIds: ['dictionary'],
+    libraryRef: vi.fn(),
+    trashRef: vi.fn(),
+    itemRef: () => vi.fn(),
+    dropTargetRef: () => vi.fn(),
+    caretIndex: null,
+    libraryOver: false,
+    trashArmed: false,
+    trashOver: false,
+    isDragging: () => false,
+    isLifted: () => false,
+    cardDropFor: () => null,
+    renaming: null,
+    menuActionsFor: () => menuActions,
+    onPointerDown: () => vi.fn(),
+    onKeyDown: vi.fn(),
+    onRenameRequest: vi.fn(),
+    onCreateDeck: vi.fn(),
+    ...overrides,
+  }
+  const view = render(<DeckRail {...props} />)
+  return { ...view, props }
 }
 
 describe('DeckRail', () => {
-  afterEach(() => {
-    cleanup()
-    vi.restoreAllMocks()
-  })
-
-  it('shows the dictionary deck marked read-only', () => {
-    renderRail()
-    expect(screen.getByText('Dictionary')).toBeInTheDocument()
-    expect(screen.getByText('Read-only')).toBeInTheDocument()
-  })
-
-  it('offers to add the dictionary to the table only when it is not already in play', () => {
-    const { rerender } = renderRail({ inPlayIds: [] })
-    expect(screen.getByLabelText('Add Dictionary to the table')).toBeInTheDocument()
-
-    rerender(
-      <DeckRail
-        dictionaryDeck={DICTIONARY}
-        userDecks={[]}
-        inPlayIds={['dictionary']}
-        onAddToTable={vi.fn()}
-        onCreateDeck={vi.fn()}
-        onRenameDeck={vi.fn()}
-        onDeleteDeck={vi.fn()}
-        onReorderDecks={vi.fn()}
-        onOpenBrowseDrawer={vi.fn()}
-        announce={vi.fn()}
-      />,
-    )
-    expect(screen.queryByLabelText('Add Dictionary to the table')).not.toBeInTheDocument()
-  })
-
-  it('shows an empty state when there are no user decks', () => {
-    renderRail({ userDecks: [] })
-    expect(screen.getByText(/No decks yet/)).toBeInTheDocument()
+  it('separates the read-only dictionary from the user decks', () => {
+    setup()
+    expect(screen.getByText('Reference')).toBeInTheDocument()
+    expect(screen.getByText('My decks')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /^Dictionary,/ })).toBeInTheDocument()
   })
 
   it('lists every user deck', () => {
-    renderRail({ userDecks: [deck({ id: 'a', name: 'A' }), deck({ id: 'b', name: 'B' })] })
-    expect(screen.getByText('A')).toBeInTheDocument()
-    expect(screen.getByText('B')).toBeInTheDocument()
+    setup()
+    expect(screen.getByRole('button', { name: /^Food words,/ })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /^Travel,/ })).toBeInTheDocument()
   })
 
-  it('creates a deck via the inline input', () => {
-    const onCreateDeck = vi.fn()
-    renderRail({ onCreateDeck })
-
-    fireEvent.click(screen.getByText('+ New deck'))
-    const input = screen.getByLabelText('New deck name')
-    fireEvent.change(input, { target: { value: 'Kitchen vocab' } })
-    fireEvent.keyDown(input, { key: 'Enter' })
-
-    expect(onCreateDeck).toHaveBeenCalledWith('Kitchen vocab')
-    expect(screen.queryByLabelText('New deck name')).not.toBeInTheDocument()
+  it('gives the dictionary no options menu, since there is nothing to do to it', () => {
+    setup()
+    expect(screen.queryByRole('button', { name: 'Options for Dictionary' })).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Options for Food words' })).toBeInTheDocument()
   })
 
-  it('does not create a deck when the input is cancelled or blank', () => {
-    const onCreateDeck = vi.fn()
-    renderRail({ onCreateDeck })
-
-    fireEvent.click(screen.getByText('+ New deck'))
-    fireEvent.keyDown(screen.getByLabelText('New deck name'), { key: 'Escape' })
-    expect(onCreateDeck).not.toHaveBeenCalled()
-    expect(screen.queryByLabelText('New deck name')).not.toBeInTheDocument()
-
-    fireEvent.click(screen.getByText('+ New deck'))
-    const input = screen.getByLabelText('New deck name')
-    fireEvent.change(input, { target: { value: '   ' } })
-    fireEvent.keyDown(input, { key: 'Enter' })
-    expect(onCreateDeck).not.toHaveBeenCalled()
+  it('invites a first deck when the library is empty', () => {
+    setup({ userDecks: [] })
+    expect(screen.getByText(/No decks yet/)).toBeInTheDocument()
   })
 
-  it('renames a deck via the inline input', () => {
-    const onRenameDeck = vi.fn()
-    renderRail({ userDecks: [deck({ id: 'a', name: 'A' })], onRenameDeck })
-
-    fireEvent.click(screen.getByLabelText('Rename A'))
-    const input = screen.getByLabelText('New name for A')
-    fireEvent.change(input, { target: { value: 'Renamed' } })
-    fireEvent.keyDown(input, { key: 'Enter' })
-
-    expect(onRenameDeck).toHaveBeenCalledWith('a', 'Renamed')
+  it('creates a deck from the section header', () => {
+    const { props } = setup()
+    fireEvent.click(screen.getByRole('button', { name: '+ New' }))
+    expect(props.onCreateDeck).toHaveBeenCalled()
   })
 
-  it('cancels a rename on Escape without calling onRenameDeck', () => {
-    const onRenameDeck = vi.fn()
-    renderRail({ userDecks: [deck({ id: 'a', name: 'A' })], onRenameDeck })
-
-    fireEvent.click(screen.getByLabelText('Rename A'))
-    const input = screen.getByLabelText('New name for A')
-    fireEvent.change(input, { target: { value: 'Renamed' } })
-    fireEvent.keyDown(input, { key: 'Escape' })
-
-    expect(onRenameDeck).not.toHaveBeenCalled()
-    expect(screen.queryByLabelText('New name for A')).not.toBeInTheDocument()
+  it('explains the keyboard path alongside the drag one', () => {
+    setup()
+    expect(screen.getByText(/Drag a deck onto the table/)).toBeInTheDocument()
+    expect(screen.getAllByText('Space', { selector: 'kbd' })).toHaveLength(2)
   })
 
-  it('deletes a deck after confirming via DeleteConfirm', () => {
-    const onDeleteDeck = vi.fn()
-    renderRail({ userDecks: [deck({ id: 'a', name: 'A' })], onDeleteDeck })
-
-    fireEvent.click(screen.getByLabelText('Delete A'))
-    fireEvent.click(screen.getByLabelText('Confirm deleting A'))
-
-    expect(onDeleteDeck).toHaveBeenCalledWith('a')
-  })
-
-  it('does not delete a deck when the confirmation is cancelled', () => {
-    const onDeleteDeck = vi.fn()
-    renderRail({ userDecks: [deck({ id: 'a', name: 'A' })], onDeleteDeck })
-
-    fireEvent.click(screen.getByLabelText('Delete A'))
-    fireEvent.click(screen.getByText('Cancel'))
-
-    expect(onDeleteDeck).not.toHaveBeenCalled()
-  })
-
-  it('adds a user deck to the table only when not already in play', () => {
-    const onAddToTable = vi.fn()
-    renderRail({ userDecks: [deck({ id: 'a', name: 'A' })], inPlayIds: [], onAddToTable })
-
-    fireEvent.click(screen.getByLabelText('Add A to the table'))
-
-    expect(onAddToTable).toHaveBeenCalledWith('a')
-  })
-
-  it('opens the browse drawer', () => {
-    const onOpenBrowseDrawer = vi.fn()
-    renderRail({ onOpenBrowseDrawer })
-
-    fireEvent.click(screen.getByText('Browse dictionary…'))
-
-    expect(onOpenBrowseDrawer).toHaveBeenCalledOnce()
-  })
-
-  it('reorders user decks via the keyboard', () => {
-    const onReorderDecks = vi.fn()
-    const announce = vi.fn()
-    renderRail({ userDecks: [deck({ id: 'a', name: 'A' }), deck({ id: 'b', name: 'B' })], onReorderDecks, announce })
-
-    const handle = screen.getByLabelText('Reorder A')
-    fireEvent.keyDown(handle, { key: ' ' })
-    fireEvent.keyDown(handle, { key: 'ArrowDown' })
-
-    expect(onReorderDecks).toHaveBeenCalledWith(['b', 'a'])
-  })
-
-  it('registers every row as a card-drop target when cardDrop is given', () => {
-    const targetRef = vi.fn(() => vi.fn())
-    renderRail({ userDecks: [deck({ id: 'a', name: 'A' })], cardDrop: { targetRef, overId: null } })
-
-    expect(targetRef).toHaveBeenCalledWith('dictionary')
-    expect(targetRef).toHaveBeenCalledWith('a')
-  })
-
-  it('marks the dictionary row as refusing and a user deck row as accepting, based on overId', () => {
-    const { container } = renderRail({
-      userDecks: [deck({ id: 'a', name: 'A' })],
-      cardDrop: { targetRef: () => vi.fn(), overId: 'dictionary' },
-    })
-    expect(container.querySelector('.deck-rail__row--refuse')).not.toBeNull()
-    expect(container.querySelector('.deck-rail__row--accept')).toBeNull()
-  })
-
-  describe('crossListDrop (issue #189)', () => {
-    function stubDropZone() {
-      return {
-        containerRect: () => ({ top: 100, bottom: 150, left: 0, right: 200 }),
-        items: () => [],
-      }
-    }
-
-    it('drops a dragged deck onto the cross-list target and announces the move', () => {
-      const onMove = vi.fn()
-      const announce = vi.fn()
-      renderRail({
-        userDecks: [deck({ id: 'a', name: 'A' })],
-        announce,
-        crossListDrop: { dropZone: stubDropZone(), zoneLabel: 'the table', onMove },
-      })
-
-      const handle = screen.getByLabelText('Reorder A')
-      fireEvent.pointerDown(handle, { button: 0 })
-      fireEvent(document, new PointerEvent('pointerup', { clientX: 100, clientY: 125 }))
-
-      expect(onMove).toHaveBeenCalledWith('a', 0)
-      expect(announce).toHaveBeenCalledWith(expect.stringContaining('Moved A to the table'))
+  describe('the rail toggle', () => {
+    it('starts open', () => {
+      const { container } = setup()
+      expect(container.querySelector('.rail--closed')).toBeNull()
+      expect(screen.getByRole('button', { name: 'Collapse the deck library' })).toHaveAttribute('aria-expanded', 'true')
     })
 
-    it('does not treat a drop outside both the rail and the cross-list target as a move', () => {
-      const onMove = vi.fn()
-      renderRail({
-        userDecks: [deck({ id: 'a', name: 'A' })],
-        crossListDrop: { dropZone: stubDropZone(), zoneLabel: 'the table', onMove },
-      })
+    it('collapses and re-expands', () => {
+      const { container } = setup()
+      fireEvent.click(screen.getByRole('button', { name: 'Collapse the deck library' }))
+      expect(container.querySelector('.rail--closed')).not.toBeNull()
+      fireEvent.click(screen.getByRole('button', { name: 'Expand the deck library' }))
+      expect(container.querySelector('.rail--closed')).toBeNull()
+    })
+  })
 
-      const handle = screen.getByLabelText('Reorder A')
-      fireEvent.pointerDown(handle, { button: 0 })
-      fireEvent(document, new PointerEvent('pointerup', { clientX: 9999, clientY: 9999 }))
-
-      expect(onMove).not.toHaveBeenCalled()
+  describe('the trash', () => {
+    it('is hidden from assistive tech until a deck is in the air', () => {
+      const { container } = setup()
+      expect(container.querySelector('.trash')).toHaveAttribute('aria-hidden', 'true')
+      expect(container.querySelector('.trash--armed')).toBeNull()
     })
 
-    it('moves a grabbed deck to the cross-list target via the keyboard, with no index', () => {
-      const onMove = vi.fn()
-      const announce = vi.fn()
-      renderRail({
-        userDecks: [deck({ id: 'a', name: 'A' })],
-        announce,
-        crossListDrop: { dropZone: stubDropZone(), zoneLabel: 'the table', onMove },
-      })
-
-      const handle = screen.getByLabelText('Reorder A')
-      fireEvent.keyDown(handle, { key: ' ' })
-      expect(announce).toHaveBeenCalledWith(expect.stringContaining('t to move to the table'))
-
-      fireEvent.keyDown(handle, { key: 't' })
-
-      expect(onMove).toHaveBeenCalledWith('a')
-      expect(announce).toHaveBeenCalledWith('Moved A to the table.')
+    it('materialises while a deck is being dragged', () => {
+      const { container } = setup({ trashArmed: true })
+      expect(container.querySelector('.trash--armed')).not.toBeNull()
+      expect(container.querySelector('.trash')).toHaveAttribute('aria-hidden', 'false')
     })
 
-    it('does not offer the cross-list move hint when crossListDrop is not given', () => {
-      const announce = vi.fn()
-      renderRail({ userDecks: [deck({ id: 'a', name: 'A' })], announce })
-
-      fireEvent.keyDown(screen.getByLabelText('Reorder A'), { key: ' ' })
-
-      expect(announce).toHaveBeenCalledWith('Picked up A. Use arrow keys to move, space to drop, escape to cancel.')
+    it('reacts when the deck is over it', () => {
+      const { container } = setup({ trashArmed: true, trashOver: true })
+      expect(container.querySelector('.trash.is-over')).not.toBeNull()
     })
+  })
+
+  it('shows a caret where a dragged deck would land in the library', () => {
+    const { container } = setup({ caretIndex: 1 })
+    const list = container.querySelectorAll('.rail__list')[1] as HTMLElement
+    const children = [...list.children]
+    const caretAt = children.findIndex((c) => c.classList.contains('caret'))
+    expect(children.slice(0, caretAt).filter((c) => c.classList.contains('deck'))).toHaveLength(1)
+  })
+
+  it('lights the library when a card is dropped there to start a deck', () => {
+    const { container } = setup({ libraryOver: true })
+    expect(container.querySelector('.rail__list--over')).not.toBeNull()
+  })
+
+  it('renames in place, on the deck being renamed only', () => {
+    const renaming = { deckId: 'd2', value: 'Trips', onChange: vi.fn(), onCommit: vi.fn(), onCancel: vi.fn() }
+    setup({ renaming })
+    expect(screen.getByLabelText('New name for Travel')).toHaveValue('Trips')
+    expect(screen.queryByLabelText('New name for Food words')).not.toBeInTheDocument()
+  })
+
+  it('offers rename from a deck double-click', () => {
+    const { props } = setup()
+    fireEvent.doubleClick(screen.getByRole('button', { name: /^Travel,/ }))
+    expect(props.onRenameRequest).toHaveBeenCalledWith(userDecks[1])
+  })
+
+  it('marks the decks already on the table', () => {
+    const { container } = setup({ inPlayIds: ['dictionary', 'd1'] })
+    const railLists = container.querySelectorAll('.rail__list')
+    expect(within(railLists[1] as HTMLElement).getAllByText('on the table')).toHaveLength(1)
   })
 })

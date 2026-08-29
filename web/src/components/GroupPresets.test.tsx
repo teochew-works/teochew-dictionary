@@ -1,90 +1,111 @@
-import { afterEach, describe, expect, it, vi } from 'vitest'
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { describe, expect, it, vi } from 'vitest'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { GroupPresets } from './GroupPresets'
-import type { DeckGroup } from '../decks/types'
+import type { Deck, DeckGroup } from '../decks/types'
 
-const GROUPS: DeckGroup[] = [
-  { id: 'g1', name: 'Evenings', deckIds: ['a'] },
-  { id: 'g2', name: 'Weekend', deckIds: ['b'] },
-]
+const decksById = new Map<string, Deck>([
+  ['d1', { id: 'd1', name: 'Core 100', hue: 'teal', kind: 'user', cards: [] }],
+  ['d2', { id: 'd2', name: 'Kitchen', hue: 'green', kind: 'user', cards: [] }],
+])
+const groups: DeckGroup[] = [{ id: 'g1', name: 'Morning drill', deckIds: ['d1', 'd2'] }]
+
+function setup(overrides: Partial<Parameters<typeof GroupPresets>[0]> = {}) {
+  const props = {
+    groups,
+    decksById,
+    currentInPlay: ['d1'],
+    onSave: vi.fn(),
+    onLoad: vi.fn(),
+    onDelete: vi.fn(),
+    ...overrides,
+  }
+  const view = render(<GroupPresets {...props} />)
+  return { ...view, props }
+}
 
 describe('GroupPresets', () => {
-  afterEach(() => {
-    cleanup()
-    vi.restoreAllMocks()
+  it('names each saved table', () => {
+    setup()
+    expect(screen.getByRole('button', { name: 'Morning drill' })).toBeInTheDocument()
   })
 
-  it('disables the load select when there are no groups', () => {
-    render(<GroupPresets groups={[]} currentInPlay={['a']} onSave={vi.fn()} onLoad={vi.fn()} onDelete={vi.fn()} />)
-    expect(screen.getByLabelText('Load a saved group')).toBeDisabled()
+  it('carries a swatch per deck, so a group is recognisable before it is read', () => {
+    const { container } = setup()
+    expect(container.querySelectorAll('.group__swatches i')).toHaveLength(2)
   })
 
-  it('lists every saved group as a load option', () => {
-    render(<GroupPresets groups={GROUPS} currentInPlay={['a']} onSave={vi.fn()} onLoad={vi.fn()} onDelete={vi.fn()} />)
-    expect(screen.getByRole('option', { name: 'Evenings' })).toBeInTheDocument()
-    expect(screen.getByRole('option', { name: 'Weekend' })).toBeInTheDocument()
+  it('lists its decks in the tooltip', () => {
+    setup()
+    expect(screen.getByRole('button', { name: 'Morning drill' })).toHaveAttribute('title', 'Core 100 + Kitchen')
   })
 
-  it('calls onLoad with the selected group id', () => {
-    const onLoad = vi.fn()
-    render(<GroupPresets groups={GROUPS} currentInPlay={['a']} onSave={vi.fn()} onLoad={onLoad} onDelete={vi.fn()} />)
-
-    fireEvent.change(screen.getByLabelText('Load a saved group'), { target: { value: 'g2' } })
-
-    expect(onLoad).toHaveBeenCalledWith('g2')
+  it('marks the group that matches the table right now, whatever the order', () => {
+    setup({ currentInPlay: ['d2', 'd1'] })
+    expect(screen.getByRole('button', { name: 'Morning drill' })).toHaveAttribute('aria-pressed', 'true')
   })
 
-  it('disables saving when the table is empty', () => {
-    render(<GroupPresets groups={[]} currentInPlay={[]} onSave={vi.fn()} onLoad={vi.fn()} onDelete={vi.fn()} />)
-    expect(screen.getByText('Save table as group…')).toBeDisabled()
+  it('is unpressed when the table has drifted from every group', () => {
+    setup()
+    expect(screen.getByRole('button', { name: 'Morning drill' })).toHaveAttribute('aria-pressed', 'false')
   })
 
-  it('saves the table under the inline-input name', () => {
-    const onSave = vi.fn()
-    render(<GroupPresets groups={[]} currentInPlay={['a', 'b']} onSave={onSave} onLoad={vi.fn()} onDelete={vi.fn()} />)
-
-    fireEvent.click(screen.getByText('Save table as group…'))
-    const input = screen.getByLabelText('Name this group')
-    fireEvent.change(input, { target: { value: 'Evenings' } })
-    fireEvent.keyDown(input, { key: 'Enter' })
-
-    expect(onSave).toHaveBeenCalledWith('Evenings')
-    expect(screen.queryByLabelText('Name this group')).not.toBeInTheDocument()
+  it('loads a group in one press', () => {
+    const { props } = setup()
+    fireEvent.click(screen.getByRole('button', { name: 'Morning drill' }))
+    expect(props.onLoad).toHaveBeenCalledWith('g1')
   })
 
-  it('does not save when the input is cancelled or blank', () => {
-    const onSave = vi.fn()
-    render(<GroupPresets groups={[]} currentInPlay={['a']} onSave={onSave} onLoad={vi.fn()} onDelete={vi.fn()} />)
-
-    fireEvent.click(screen.getByText('Save table as group…'))
-    fireEvent.keyDown(screen.getByLabelText('Name this group'), { key: 'Escape' })
-    expect(onSave).not.toHaveBeenCalled()
-    expect(screen.queryByLabelText('Name this group')).not.toBeInTheDocument()
-
-    fireEvent.click(screen.getByText('Save table as group…'))
-    const input = screen.getByLabelText('Name this group')
-    fireEvent.change(input, { target: { value: '   ' } })
-    fireEvent.keyDown(input, { key: 'Enter' })
-    expect(onSave).not.toHaveBeenCalled()
+  it('deletes a group without a confirmation step', () => {
+    const { props } = setup()
+    fireEvent.click(screen.getByRole('button', { name: 'Delete group Morning drill' }))
+    expect(props.onDelete).toHaveBeenCalledWith('g1')
   })
 
-  it('deletes a group after confirming via DeleteConfirm', () => {
-    const onDelete = vi.fn()
-    render(<GroupPresets groups={GROUPS} currentInPlay={['a']} onSave={vi.fn()} onLoad={vi.fn()} onDelete={onDelete} />)
+  describe('saving the current table', () => {
+    it('names it with an inline input rather than a browser prompt', () => {
+      setup()
+      fireEvent.click(screen.getByRole('button', { name: '+ Save this table' }))
+      expect(screen.getByLabelText('Name this group')).toBeInTheDocument()
+    })
 
-    fireEvent.click(screen.getByLabelText('Delete group Evenings'))
-    fireEvent.click(screen.getByLabelText('Confirm deleting group Evenings'))
+    it('saves on Enter', () => {
+      const { props } = setup()
+      fireEvent.click(screen.getByRole('button', { name: '+ Save this table' }))
+      const input = screen.getByLabelText('Name this group')
+      fireEvent.change(input, { target: { value: 'Evening' } })
+      fireEvent.keyDown(input, { key: 'Enter' })
+      expect(props.onSave).toHaveBeenCalledWith('Evening')
+    })
 
-    expect(onDelete).toHaveBeenCalledWith('g1')
-  })
+    it('trims the name', () => {
+      const { props } = setup()
+      fireEvent.click(screen.getByRole('button', { name: '+ Save this table' }))
+      const input = screen.getByLabelText('Name this group')
+      fireEvent.change(input, { target: { value: '  Evening  ' } })
+      fireEvent.blur(input)
+      expect(props.onSave).toHaveBeenCalledWith('Evening')
+    })
 
-  it('does not delete a group when the confirmation is cancelled', () => {
-    const onDelete = vi.fn()
-    render(<GroupPresets groups={GROUPS} currentInPlay={['a']} onSave={vi.fn()} onLoad={vi.fn()} onDelete={onDelete} />)
+    it('saves nothing for a blank name', () => {
+      const { props } = setup()
+      fireEvent.click(screen.getByRole('button', { name: '+ Save this table' }))
+      fireEvent.blur(screen.getByLabelText('Name this group'))
+      expect(props.onSave).not.toHaveBeenCalled()
+    })
 
-    fireEvent.click(screen.getByLabelText('Delete group Evenings'))
-    fireEvent.click(screen.getByText('Cancel'))
+    it('abandons the name on Escape', () => {
+      const { props } = setup()
+      fireEvent.click(screen.getByRole('button', { name: '+ Save this table' }))
+      const input = screen.getByLabelText('Name this group')
+      fireEvent.change(input, { target: { value: 'Evening' } })
+      fireEvent.keyDown(input, { key: 'Escape' })
+      expect(props.onSave).not.toHaveBeenCalled()
+      expect(screen.queryByLabelText('Name this group')).not.toBeInTheDocument()
+    })
 
-    expect(onDelete).not.toHaveBeenCalled()
+    it('cannot save an empty table', () => {
+      setup({ currentInPlay: [] })
+      expect(screen.getByRole('button', { name: '+ Save this table' })).toBeDisabled()
+    })
   })
 })
