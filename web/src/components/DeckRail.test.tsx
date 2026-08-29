@@ -15,7 +15,7 @@ const statsById = new Map<string, DeckStats>([
   ['d2', { total: 0, kept: 0, due: 0, fresh: 0, learned: 0 }],
 ])
 
-const menuActions = { onPutOnTable: vi.fn(), onRename: vi.fn(), onDuplicate: vi.fn(), onDelete: vi.fn() }
+const menuActions = { onPutOnTable: vi.fn(), onViewCards: vi.fn(), onRename: vi.fn(), onDuplicate: vi.fn(), onDelete: vi.fn() }
 
 function setup(overrides: Partial<Parameters<typeof DeckRail>[0]> = {}) {
   const props = {
@@ -31,6 +31,7 @@ function setup(overrides: Partial<Parameters<typeof DeckRail>[0]> = {}) {
     libraryOver: false,
     trashArmed: false,
     trashOver: false,
+    trashLabel: 'Release to delete deck',
     isDragging: () => false,
     isLifted: () => false,
     cardDropFor: () => null,
@@ -115,6 +116,11 @@ describe('DeckRail', () => {
     it('reacts when the deck is over it', () => {
       const { container } = setup({ trashArmed: true, trashOver: true })
       expect(container.querySelector('.trash.is-over')).not.toBeNull()
+    })
+
+    it('says what releasing would do, which is not always deleting a deck', () => {
+      setup({ trashArmed: true, trashLabel: 'Release to remove from Kitchen' })
+      expect(screen.getByText('Release to remove from Kitchen')).toBeInTheDocument()
     })
   })
 

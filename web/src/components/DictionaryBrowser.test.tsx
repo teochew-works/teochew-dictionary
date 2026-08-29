@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
-import { BrowseDrawer } from './BrowseDrawer'
+import { DictionaryBrowser } from './DictionaryBrowser'
 import { makeEntry, makeReading } from '../test/entryFixtures'
 import type { AudioReference } from '../types/dict'
 import type { Deck } from '../decks/types'
@@ -31,20 +31,20 @@ const RICE = makeEntry({
 
 const decks: Deck[] = [{ id: 'd1', name: 'Food words', hue: 'red', kind: 'user', cards: [] }]
 
-function setup(overrides: Partial<Parameters<typeof BrowseDrawer>[0]> = {}) {
+function setup(overrides: Partial<Parameters<typeof DictionaryBrowser>[0]> = {}) {
   const props = {
-    open: true,
     entries: [TEA, RICE],
     userDecks: decks,
     pronunciation: 'citation' as const,
     poolSize: 12,
     cardDrag: { onPointerDown: () => vi.fn(), isDragging: () => false },
     onAddCard: vi.fn(),
+    onRemoveCard: vi.fn(),
     onNewDeckFromCard: vi.fn(),
     onSavePoolAsDeck: vi.fn(),
     ...overrides,
   }
-  const view = render(<BrowseDrawer {...props} />)
+  const view = render(<DictionaryBrowser {...props} />)
   return { ...view, props }
 }
 
@@ -52,13 +52,7 @@ function searchFor(query: string) {
   fireEvent.change(screen.getByLabelText('Search the dictionary'), { target: { value: query } })
 }
 
-describe('BrowseDrawer', () => {
-  it('is collapsed and hidden from assistive tech while closed', () => {
-    const { container } = setup({ open: false })
-    expect(container.querySelector('.drawer--open')).toBeNull()
-    expect(container.querySelector('.drawer')).toHaveAttribute('aria-hidden', 'true')
-  })
-
+describe('DictionaryBrowser', () => {
   it('waits for a query rather than listing 16,000 entries', () => {
     setup()
     expect(screen.getByText('Type to search for entries to add.')).toBeInTheDocument()
@@ -97,7 +91,7 @@ describe('BrowseDrawer', () => {
     searchFor('tea')
     fireEvent.click(screen.getByRole('button', { name: /茶/ }))
     expect(screen.getByRole('menu')).toBeInTheDocument()
-    expect(screen.getByRole('menuitem', { name: 'Food words' })).toBeInTheDocument()
+    expect(screen.getByRole('menuitemcheckbox', { name: /Food words/ })).toBeInTheDocument()
   })
 
   it('opens the same menu from the keyboard', () => {
@@ -111,8 +105,17 @@ describe('BrowseDrawer', () => {
     const { props } = setup()
     searchFor('tea')
     fireEvent.click(screen.getByRole('button', { name: /茶/ }))
-    fireEvent.click(screen.getByRole('menuitem', { name: 'Food words' }))
+    fireEvent.click(screen.getByRole('menuitemcheckbox', { name: /Food words/ }))
     expect(props.onAddCard).toHaveBeenCalledWith('d1', 'de5-茶')
+  })
+
+  it('takes an entry back out of a deck that holds it', () => {
+    const decksWithCard = [{ ...decks[0]!, cards: ['de5-茶'] }]
+    const { props } = setup({ userDecks: decksWithCard })
+    searchFor('tea')
+    fireEvent.click(screen.getByRole('button', { name: /茶/ }))
+    fireEvent.click(screen.getByRole('menuitemcheckbox', { name: /Food words/ }))
+    expect(props.onRemoveCard).toHaveBeenCalledWith('d1', 'de5-茶')
   })
 
   it('starts a new deck from an entry', () => {

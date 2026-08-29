@@ -45,7 +45,7 @@ export function DragGhost({
 
   const badgeClasses = ['ghost__badge']
   if (outcome && !outcome.ok) badgeClasses.push('ghost__badge--no')
-  if (outcome?.act === 'delete') badgeClasses.push('ghost__badge--del')
+  if (outcome?.act === 'delete' || outcome?.act === 'remove') badgeClasses.push('ghost__badge--del')
 
   return (
     <div

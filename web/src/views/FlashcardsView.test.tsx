@@ -387,7 +387,7 @@ describe('FlashcardsView saved groups', () => {
   })
 })
 
-describe('FlashcardsView the browse drawer', () => {
+describe('FlashcardsView the dock', () => {
   it('opens and closes from the session bar', async () => {
     render(<FlashcardsView entries={[ENTRY]} />)
     await screen.findByText(/reviewed/)
@@ -551,5 +551,238 @@ describe('FlashcardsView the drawn card', () => {
     fireEvent.click(screen.getByRole('menuitem', { name: 'Put on the table' }))
 
     expect(screen.getByText(/0 reviewed/)).toBeInTheDocument()
+  })
+})
+
+describe('FlashcardsView filing the card under review', () => {
+  const deck = (cards: string[] = []) => ({ id: 'deck-1', name: 'Kitchen', hue: 'green' as const, cards, kind: 'user' as const })
+  const entries = [makeEntry({ id: 'e1', headword: '一', frequency: 30 }), makeEntry({ id: 'e2', headword: '二', frequency: 20 })]
+
+  async function openFilingMenu() {
+    fireEvent.click(await screen.findByLabelText('File 一 into a deck'))
+  }
+
+  it('opens its membership menu from a press, not only a drag', async () => {
+    writeDecksState({ decks: [deck()], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openFilingMenu()
+
+    expect(screen.getByRole('menu', { name: /Decks for 一/ })).toBeInTheDocument()
+  })
+
+  it('files the card, and takes it back out again from the same menu', async () => {
+    writeDecksState({ decks: [deck()], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openFilingMenu()
+
+    fireEvent.click(screen.getByRole('menuitemcheckbox', { name: /Kitchen/ }))
+    expect(readDecksState().decks[0]!.cards).toEqual(['e1'])
+
+    fireEvent.click(screen.getByRole('menuitemcheckbox', { name: /Kitchen/ }))
+    expect(readDecksState().decks[0]!.cards).toEqual([])
+  })
+
+  it('offers Undo on a removal', async () => {
+    writeDecksState({ decks: [deck(['e1'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openFilingMenu()
+
+    fireEvent.click(screen.getByRole('menuitemcheckbox', { name: /Kitchen/ }))
+    expect(readDecksState().decks[0]!.cards).toEqual([])
+    // Once in the toast and once in the live region — both are intended.
+    expect(screen.getAllByText('Removed 一 from Kitchen')).toHaveLength(2)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Undo' }))
+    expect(readDecksState().decks[0]!.cards).toEqual(['e1'])
+  })
+
+  it('leaves the drawn card alone when the removal is from a deck off the table', async () => {
+    writeDecksState({ decks: [deck(['e1'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openFilingMenu()
+
+    fireEvent.click(screen.getByRole('menuitemcheckbox', { name: /Kitchen/ }))
+
+    expect(screen.getByText('一')).toBeInTheDocument()
+  })
+})
+
+describe('FlashcardsView deck contents', () => {
+  const deck = (cards: string[] = []) => ({ id: 'deck-1', name: 'Kitchen', hue: 'green' as const, cards, kind: 'user' as const })
+  const entries = [makeEntry({ id: 'e1', headword: '一', frequency: 30 }), makeEntry({ id: 'e2', headword: '二', frequency: 20 })]
+
+  async function openContents() {
+    await screen.findByText(/reviewed/)
+    fireEvent.click(screen.getByRole('button', { name: 'Options for Kitchen' }))
+    fireEvent.click(screen.getByRole('menuitem', { name: 'View cards' }))
+  }
+
+  it('opens a deck cards from its options menu', async () => {
+    writeDecksState({ decks: [deck(['e1'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openContents()
+
+    const dock = screen.getByRole('region', { name: 'Cards in Kitchen' })
+    expect(within(dock).getByText('1 card')).toBeInTheDocument()
+    expect(within(dock).getByRole('button', { name: /^一/ })).toBeInTheDocument()
+  })
+
+  it('removes a card from the deck, with an undo', async () => {
+    writeDecksState({ decks: [deck(['e1', 'e2'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openContents()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Remove 一 from Kitchen' }))
+    expect(readDecksState().decks[0]!.cards).toEqual(['e2'])
+
+    fireEvent.click(screen.getByRole('button', { name: 'Undo' }))
+    expect(readDecksState().decks[0]!.cards).toEqual(['e1', 'e2'])
+  })
+
+  it('swaps the same dock over to the dictionary rather than closing it', async () => {
+    writeDecksState({ decks: [deck(['e1'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openContents()
+
+    fireEvent.click(within(screen.getByRole('region', { name: 'Cards in Kitchen' })).getByRole('button', { name: '＋ Add cards' }))
+
+    expect(screen.getByRole('region', { name: 'Browse the dictionary' })).toBeInTheDocument()
+    expect(screen.getByLabelText('Search the dictionary')).toBeInTheDocument()
+  })
+
+  it('collapses the dock when the deck it was showing is deleted', async () => {
+    writeDecksState({ decks: [deck(['e1'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    const { container } = render(<FlashcardsView entries={entries} />)
+    await openContents()
+    expect(container.querySelector('.drawer--open')).not.toBeNull()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Options for Kitchen' }))
+    fireEvent.click(screen.getByRole('menuitem', { name: 'Delete' }))
+
+    expect(container.querySelector('.drawer--open')).toBeNull()
+  })
+})
+
+/*
+ * Editing a deck can silently swap the card under review. It only does so when
+ * the card leaves the pool entirely, which is rarer than it sounds — with the
+ * dictionary on the table it never happens — so the message has to distinguish
+ * the two rather than warn every time.
+ */
+describe('FlashcardsView when a deck edit replaces the drawn card', () => {
+  const deck = (cards: string[]) => ({ id: 'deck-1', name: 'Kitchen', hue: 'green' as const, cards, kind: 'user' as const })
+  const entries = [makeEntry({ id: 'e1', headword: '一', frequency: 30 }), makeEntry({ id: 'e2', headword: '二', frequency: 20 })]
+
+  async function openContents() {
+    await screen.findByText(/reviewed/)
+    fireEvent.click(screen.getByRole('button', { name: 'Options for Kitchen' }))
+    fireEvent.click(screen.getByRole('menuitem', { name: 'View cards' }))
+  }
+
+  /** The headword shows on the study card and again in the contents row, so this scopes to the card. */
+  const drawn = (container: HTMLElement) => container.querySelector('.card__prompt')?.textContent
+
+  it('says so when the removed card was the one on screen', async () => {
+    // Only Kitchen is on the table, so removing its card takes it out of play.
+    writeDecksState({ decks: [deck(['e1', 'e2'])], inPlay: ['deck-1'], groups: [] })
+    const { container } = render(<FlashcardsView entries={entries} />)
+    await openContents()
+    expect(drawn(container)).toBe('一')
+
+    fireEvent.click(screen.getByRole('button', { name: 'Remove 一 from Kitchen' }))
+
+    expect(screen.getAllByText('Removed 一 from Kitchen — drawing another card').length).toBeGreaterThan(0)
+    expect(drawn(container)).toBe('二')
+  })
+
+  it('stays quiet when the card is still in play from another deck', async () => {
+    // The dictionary holds every entry, so the card never leaves the pool.
+    writeDecksState({ decks: [deck(['e1'])], inPlay: [DICTIONARY_DECK_ID, 'deck-1'], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openContents()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Remove 一 from Kitchen' }))
+
+    expect(screen.getAllByText('Removed 一 from Kitchen').length).toBeGreaterThan(0)
+    expect(screen.queryByText(/drawing another card/)).not.toBeInTheDocument()
+  })
+
+  it('stays quiet when the removed card was not the one on screen', async () => {
+    writeDecksState({ decks: [deck(['e1', 'e2'])], inPlay: ['deck-1'], groups: [] })
+    const { container } = render(<FlashcardsView entries={entries} />)
+    await openContents()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Remove 二 from Kitchen' }))
+
+    expect(screen.queryByText(/drawing another card/)).not.toBeInTheDocument()
+    expect(drawn(container)).toBe('一')
+  })
+})
+
+describe('FlashcardsView reordering a deck from the keyboard', () => {
+  const deck = (cards: string[]) => ({ id: 'deck-1', name: 'Kitchen', hue: 'green' as const, cards, kind: 'user' as const })
+  const entries = [
+    makeEntry({ id: 'e1', headword: '一', frequency: 30 }),
+    makeEntry({ id: 'e2', headword: '二', frequency: 20 }),
+    makeEntry({ id: 'e3', headword: '三', frequency: 10 }),
+  ]
+
+  async function openContents() {
+    await screen.findByText(/reviewed/)
+    fireEvent.click(screen.getByRole('button', { name: 'Options for Kitchen' }))
+    fireEvent.click(screen.getByRole('menuitem', { name: 'View cards' }))
+  }
+
+  const order = (container: HTMLElement) =>
+    [...container.querySelectorAll('.entry--in-deck .entry__hw')].map((e) => e.textContent)
+
+  it('lifts a card with space and moves it with an arrow', async () => {
+    writeDecksState({ decks: [deck(['e1', 'e2', 'e3'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    const { container } = render(<FlashcardsView entries={entries} />)
+    await openContents()
+    expect(order(container)).toEqual(['一', '二', '三'])
+
+    const row = screen.getByRole('button', { name: /^一/ })
+    fireEvent.keyDown(row, { key: ' ' })
+    fireEvent.keyDown(row, { key: 'ArrowRight' })
+
+    expect(order(container)).toEqual(['二', '一', '三'])
+    expect(readDecksState().decks[0]!.cards).toEqual(['e2', 'e1', 'e3'])
+  })
+
+  it('puts the card back on escape', async () => {
+    writeDecksState({ decks: [deck(['e1', 'e2', 'e3'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    const { container } = render(<FlashcardsView entries={entries} />)
+    await openContents()
+
+    const row = screen.getByRole('button', { name: /^一/ })
+    fireEvent.keyDown(row, { key: ' ' })
+    fireEvent.keyDown(row, { key: 'ArrowRight' })
+    fireEvent.keyDown(screen.getByRole('button', { name: /^一/ }), { key: 'Escape' })
+
+    expect(order(container)).toEqual(['一', '二', '三'])
+  })
+
+  it('keeps Enter for the card decks menu, so one row does both', async () => {
+    writeDecksState({ decks: [deck(['e1', 'e2'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openContents()
+
+    fireEvent.keyDown(screen.getByRole('button', { name: /^一/ }), { key: 'Enter' })
+
+    expect(screen.getByRole('menu', { name: /Decks for 一/ })).toBeInTheDocument()
+  })
+
+  it('leaves the review pool alone — reordering a deck is not a filter change', async () => {
+    writeDecksState({ decks: [deck(['e1', 'e2', 'e3'])], inPlay: ['deck-1'], groups: [] })
+    const { container } = render(<FlashcardsView entries={entries} />)
+    await openContents()
+    const drawn = container.querySelector('.card__prompt')?.textContent
+
+    const row = screen.getByRole('button', { name: /^三/ })
+    fireEvent.keyDown(row, { key: ' ' })
+    fireEvent.keyDown(row, { key: 'ArrowLeft' })
+
+    expect(container.querySelector('.card__prompt')?.textContent).toBe(drawn)
   })
 })

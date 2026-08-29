@@ -160,6 +160,22 @@ describe('useDecksStore', () => {
       expect(result.current.state.decks).toEqual([])
     })
 
+    it('moves a card between decks and persists it once', () => {
+      const { result } = renderHook(() => useDecksStore())
+      let from = ''
+      let to = ''
+      act(() => {
+        from = result.current.createDeck('From', ['x'])
+      })
+      act(() => {
+        to = result.current.createDeck('To')
+      })
+      act(() => result.current.moveCardBetweenDecks(from, to, 'x'))
+
+      expect(result.current.state.decks.map((d) => d.cards)).toEqual([[], ['x']])
+      expect(readDecksState().decks.map((d) => d.cards)).toEqual([[], ['x']])
+    })
+
     it('restores a whole snapshot, which is what backs Undo', () => {
       const { result } = renderHook(() => useDecksStore())
       act(() => {

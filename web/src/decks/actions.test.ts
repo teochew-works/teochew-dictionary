@@ -155,3 +155,86 @@ describe('saveGroup / deleteGroup / loadGroup', () => {
     expect(actions.loadGroup(s, 'missing')).toEqual(s)
   })
 })
+
+describe('moveCardBetweenDecks', () => {
+  const state = () => ({
+    decks: [
+      { id: 'a', name: 'A', hue: 'red' as const, kind: 'user' as const, cards: ['x', 'y'] },
+      { id: 'b', name: 'B', hue: 'blue' as const, kind: 'user' as const, cards: ['z'] },
+    ],
+    inPlay: [],
+    groups: [],
+  })
+
+  it('takes the card out of one deck and puts it in the other, in one step', () => {
+    const next = actions.moveCardBetweenDecks(state(), 'a', 'b', 'x')
+    expect(next.decks[0]!.cards).toEqual(['y'])
+    expect(next.decks[1]!.cards).toEqual(['z', 'x'])
+  })
+
+  it('is a no-op when the source and target are the same deck', () => {
+    const before = state()
+    expect(actions.moveCardBetweenDecks(before, 'a', 'a', 'x')).toBe(before)
+  })
+
+  it('still leaves the source when the target already holds the card', () => {
+    const withDuplicate = state()
+    withDuplicate.decks[1]!.cards = ['z', 'x']
+    const next = actions.moveCardBetweenDecks(withDuplicate, 'a', 'b', 'x')
+    expect(next.decks[0]!.cards).toEqual(['y'])
+    expect(next.decks[1]!.cards).toEqual(['z', 'x'])
+  })
+
+  it('leaves other decks alone', () => {
+    const next = actions.moveCardBetweenDecks(state(), 'a', 'b', 'gone')
+    expect(next.decks[0]!.cards).toEqual(['x', 'y'])
+    expect(next.decks[1]!.cards).toEqual(['z', 'gone'])
+  })
+})
+
+describe('card positions within a deck', () => {
+  const state = () => ({
+    decks: [{ id: 'a', name: 'A', hue: 'red' as const, kind: 'user' as const, cards: ['x', 'y', 'z'] }],
+    inPlay: [],
+    groups: [],
+  })
+
+  it('adds at a position when given one, and on the end when not', () => {
+    expect(actions.addCardToDeck(state(), 'a', 'new', 1).decks[0]!.cards).toEqual(['x', 'new', 'y', 'z'])
+    expect(actions.addCardToDeck(state(), 'a', 'new').decks[0]!.cards).toEqual(['x', 'y', 'z', 'new'])
+  })
+
+  it('clamps an out-of-range position rather than dropping the card', () => {
+    expect(actions.addCardToDeck(state(), 'a', 'new', 99).decks[0]!.cards).toEqual(['x', 'y', 'z', 'new'])
+    expect(actions.addCardToDeck(state(), 'a', 'new', -5).decks[0]!.cards).toEqual(['new', 'x', 'y', 'z'])
+  })
+
+  it('reorders a card the deck already holds', () => {
+    expect(actions.reorderCardInDeck(state(), 'a', 'x', 2).decks[0]!.cards).toEqual(['y', 'z', 'x'])
+    expect(actions.reorderCardInDeck(state(), 'a', 'z', 0).decks[0]!.cards).toEqual(['z', 'x', 'y'])
+  })
+
+  it('counts positions in the list without the moved card in it', () => {
+    // Moving the first card to index 1 puts it after what was the second.
+    expect(actions.reorderCardInDeck(state(), 'a', 'x', 1).decks[0]!.cards).toEqual(['y', 'x', 'z'])
+  })
+
+  it('ignores a card the deck does not hold', () => {
+    const before = state()
+    expect(actions.reorderCardInDeck(before, 'a', 'gone', 0).decks[0]!.cards).toEqual(['x', 'y', 'z'])
+  })
+
+  it('moves a card into another deck at a position', () => {
+    const two = {
+      decks: [
+        { id: 'a', name: 'A', hue: 'red' as const, kind: 'user' as const, cards: ['x'] },
+        { id: 'b', name: 'B', hue: 'blue' as const, kind: 'user' as const, cards: ['p', 'q'] },
+      ],
+      inPlay: [],
+      groups: [],
+    }
+    const next = actions.moveCardBetweenDecks(two, 'a', 'b', 'x', 1)
+    expect(next.decks[0]!.cards).toEqual([])
+    expect(next.decks[1]!.cards).toEqual(['p', 'x', 'q'])
+  })
+})

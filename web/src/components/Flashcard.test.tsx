@@ -26,7 +26,7 @@ function card(overrides: Partial<Parameters<typeof Flashcard>[0]> = {}) {
       pronunciation="citation"
       sourceDeck={null}
       intervals={INTERVALS}
-      filingDrag={null}
+      filing={null}
       onGrade={vi.fn()}
       {...overrides}
     />,
@@ -132,20 +132,49 @@ describe('Flashcard', () => {
     input.remove()
   })
 
-  it('offers a filing handle only when there is a deck to file into', () => {
+  const filing = (overrides: Record<string, unknown> = {}) => ({
+    onPointerDown: vi.fn(),
+    dragging: false,
+    menuOpen: false,
+    onOpenMenu: vi.fn(),
+    menu: null,
+    ...overrides,
+  })
+
+  it('has no filing handle when the caller offers none', () => {
     card()
-    expect(screen.queryByLabelText(/Drag 潮州/)).not.toBeInTheDocument()
+    expect(screen.queryByLabelText(/潮州 into a deck/)).not.toBeInTheDocument()
   })
 
   it('starts a filing drag from the handle', () => {
     const onPointerDown = vi.fn()
-    card({ filingDrag: { onPointerDown, dragging: false } })
-    fireEvent.pointerDown(screen.getByLabelText('Drag 潮州 onto one of your decks'), { button: 0 })
+    card({ filing: filing({ onPointerDown }) })
+    fireEvent.pointerDown(screen.getByLabelText('File 潮州 into a deck'), { button: 0 })
     expect(onPointerDown).toHaveBeenCalled()
   })
 
+  it('opens the membership menu when the handle is pressed, so the drag has a keyboard path', () => {
+    const onOpenMenu = vi.fn()
+    card({ filing: filing({ onOpenMenu }) })
+    fireEvent.click(screen.getByLabelText('File 潮州 into a deck'))
+    expect(onOpenMenu).toHaveBeenCalled()
+  })
+
+  it('announces the handle as a menu trigger', () => {
+    card({ filing: filing() })
+    const handle = screen.getByLabelText('File 潮州 into a deck')
+    expect(handle).toHaveAttribute('aria-haspopup', 'menu')
+    expect(handle).toHaveAttribute('aria-expanded', 'false')
+  })
+
+  it('renders the menu the caller hands it', () => {
+    card({ filing: filing({ menuOpen: true, menu: <p>membership menu</p> }) })
+    expect(screen.getByText('membership menu')).toBeInTheDocument()
+    expect(screen.getByLabelText('File 潮州 into a deck')).toHaveAttribute('aria-expanded', 'true')
+  })
+
   it('shows the handle as active while the card is in the air', () => {
-    const { container } = card({ filingDrag: { onPointerDown: vi.fn(), dragging: true } })
+    const { container } = card({ filing: filing({ dragging: true }) })
     expect(container.querySelector('.card__filing--dragging')).not.toBeNull()
   })
 })

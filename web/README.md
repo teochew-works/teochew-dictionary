@@ -99,6 +99,22 @@ reappear as new (DevTools → Application → IndexedDB →
   still passes all leave it alone. (Rebuilding on every pool change instead
   reshuffles, so an unrelated deck rename used to deal a different card.)
   Sessions live for the page load; the scheduling state behind them persists.
+- A deck's cards are editable, not just countable. "View cards" in a deck's
+  options menu opens its contents in the bottom dock (`DeckContents.tsx`),
+  sharing one `Drawer` shell with the dictionary browser so switching between
+  them doesn't restart the dock's open transition. Rows there are drag sources
+  that carry which deck they came from, which is what makes a drop on another
+  deck a *move*; holding the platform's copy modifier (Option on macOS, Control
+  elsewhere — `decks/dnd/copyModifier.ts`) makes it a copy instead, and the
+  badge flips while the key is held. The trash arms for those drags too.
+  The list is itself a drop zone that can say *where* in the deck a card would
+  land, so dragging a row within it reorders the deck and dragging a card into
+  it files at a position; space lifts a row for the keyboard equivalent while
+  Enter opens its decks. `EntryDeckMenu` is the pointer- and keyboard-native
+  equivalent for membership: it lists every
+  deck as a checkbox, so ticking files, unticking removes, and ticking a second
+  deck without unticking the first is the copy a modifier-less path could not
+  otherwise express.
 - One drag engine, not four (`src/decks/dnd/useDeckDrag.ts`): a deck out of the
   library, a chip around the table, the showing card into a deck, and an entry
   out of the browse drawer all resolve against the same set of zones on every

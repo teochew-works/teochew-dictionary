@@ -8,7 +8,7 @@ const deck: Deck = { id: 'd1', name: 'Food words', hue: 'red', kind: 'user', car
 const dictionary: Deck = { id: 'dictionary', name: 'Dictionary', hue: 'blue', kind: 'virtual', cards: ['a', 'b'] }
 const stats: DeckStats = { total: 3, kept: 3, due: 2, fresh: 1, learned: 0 }
 
-const menuActions = { onPutOnTable: vi.fn(), onRename: vi.fn(), onDuplicate: vi.fn(), onDelete: vi.fn() }
+const menuActions = { onPutOnTable: vi.fn(), onViewCards: vi.fn(), onRename: vi.fn(), onDuplicate: vi.fn(), onDelete: vi.fn() }
 
 function setup(overrides: Partial<Parameters<typeof DeckCard>[0]> = {}) {
   const props = {

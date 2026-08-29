@@ -47,10 +47,11 @@ const DECKS: Record<string, { name: string; isVirtual: boolean; kept: number; ca
   d2: { name: 'Travel', isVirtual: false, kept: 4, cards: ['e1'] },
 }
 
-function context(): DeckDragContext {
+function context(cardList: DeckDragContext['cardList'] = null): DeckDragContext {
   return {
     inPlayIds: ['dictionary'],
     libraryIds: ['d1', 'd2'],
+    cardList,
     deckInfo: (id) => {
       const deck = DECKS[id]
       if (!deck) return null
@@ -67,6 +68,9 @@ function actions(): DeckDragActions & Record<keyof DeckDragActions, ReturnType<t
     onTakeOff: vi.fn(),
     onDelete: vi.fn(),
     onAddCard: vi.fn(),
+    onMoveCard: vi.fn(),
+    onRemoveCard: vi.fn(),
+    onReorderCards: vi.fn(),
     onNewDeckFromCard: vi.fn(),
   }
   return a as DeckDragActions & Record<keyof DeckDragActions, ReturnType<typeof vi.fn>>
@@ -173,7 +177,7 @@ describe('useDeckDrag', () => {
     await frame()
     expect(drag().outcome).toMatchObject({ ok: true, act: 'add', label: '+1 → Food words' })
     act(() => release(100, 20))
-    expect(a.onAddCard).toHaveBeenCalledWith('d1', 'e1')
+    expect(a.onAddCard).toHaveBeenCalledWith('d1', 'e1', undefined)
   })
 
   it('refuses a deck that already holds the card, and does nothing on release', async () => {
@@ -228,6 +232,41 @@ describe('useDeckDrag', () => {
     act(() => move(60, 20))
     expect(drag().isDragging('deck', 'd1')).toBe(true)
     expect(drag().isDragging('chip', 'd1')).toBe(false)
+  })
+
+  describe('a card dragged out of a deck', () => {
+    const fromTravel = { kind: 'entry' as const, id: 'e2', from: { id: 'd2', name: 'Travel' } }
+
+    it('moves it into the deck it lands on', () => {
+      const { drag, railD1, a } = setup()
+      act(() => drag().onPointerDown(fromTravel)(press(railD1, 700, 700)))
+      act(() => move(100, 20))
+      act(() => release(100, 20))
+      expect(a.onMoveCard).toHaveBeenCalledWith('d2', 'd1', 'e2', undefined)
+      expect(a.onAddCard).not.toHaveBeenCalled()
+    })
+
+    it('takes it out of its deck when dropped on the trash', () => {
+      const { drag, railD1, a } = setup()
+      act(() => drag().onPointerDown(fromTravel)(press(railD1, 700, 700)))
+      act(() => move(100, 530))
+      act(() => release(100, 530))
+      expect(a.onRemoveCard).toHaveBeenCalledWith('d2', 'e2')
+    })
+
+    it('arms the trash, which a card with no source never does', async () => {
+      const { drag, railD1 } = setup()
+      act(() => drag().onPointerDown(fromTravel)(press(railD1, 700, 700)))
+      act(() => move(100, 530))
+      await frame()
+      expect(drag().outcome).toMatchObject({ act: 'remove' })
+
+      act(() => release(100, 530))
+      act(() => drag().onPointerDown({ kind: 'card', id: 'e2' })(press(railD1, 700, 700)))
+      act(() => move(100, 530))
+      await frame()
+      expect(drag().outcome).toMatchObject({ ok: false, act: null })
+    })
   })
 
   it('still shows a drag image under reduced motion — the badge is an affordance, not decoration', async () => {
