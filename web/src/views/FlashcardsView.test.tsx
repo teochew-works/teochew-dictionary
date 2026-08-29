@@ -392,6 +392,50 @@ describe('FlashcardsView deck table (issue #187 stage 2)', () => {
   })
 })
 
+describe('FlashcardsView deck table drag-and-drop (issue #187 stage 3)', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  afterEach(() => {
+    cleanup()
+    localStorage.clear()
+  })
+
+  it('reorders the table via the keyboard and persists the new order', async () => {
+    writeDecksState({
+      decks: [{ id: 'deck-1', name: 'Kitchen', hue: 'green', cards: [], kind: 'user' }],
+      inPlay: [DICTIONARY_DECK_ID, 'deck-1'],
+      groups: [],
+    })
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/reviewed/i)
+
+    const handle = screen.getByLabelText('Reorder Dictionary')
+    fireEvent.keyDown(handle, { key: ' ' })
+    fireEvent.keyDown(handle, { key: 'ArrowRight' })
+    fireEvent.keyDown(handle, { key: ' ' })
+
+    expect(readDecksState().inPlay).toEqual(['deck-1', DICTIONARY_DECK_ID])
+  })
+
+  it('announces each step of a keyboard reorder through the shared live region', async () => {
+    writeDecksState({
+      decks: [{ id: 'deck-1', name: 'Kitchen', hue: 'green', cards: [], kind: 'user' }],
+      inPlay: [DICTIONARY_DECK_ID, 'deck-1'],
+      groups: [],
+    })
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/reviewed/i)
+
+    fireEvent.keyDown(screen.getByLabelText('Reorder Dictionary'), { key: ' ' })
+    expect(screen.getByRole('status')).toHaveTextContent(/Picked up Dictionary/)
+
+    fireEvent.keyDown(screen.getByLabelText('Reorder Dictionary'), { key: 'ArrowRight' })
+    expect(screen.getByRole('status')).toHaveTextContent(/Moved Dictionary to position 2 of 2/)
+  })
+})
+
 describe('FlashcardsView funnel readout', () => {
   beforeEach(() => {
     localStorage.clear()

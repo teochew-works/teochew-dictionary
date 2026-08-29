@@ -35,4 +35,39 @@ describe('DeckChip', () => {
     render(<DeckChip deck={DECK} onRemove={vi.fn()} removeLabel="Take Kitchen off the table" />)
     expect(screen.getByLabelText('Take Kitchen off the table')).toBeInTheDocument()
   })
+
+  it('omits the drag handle when drag is not given', () => {
+    render(<DeckChip deck={DECK} />)
+    expect(screen.queryByLabelText('Reorder Kitchen')).not.toBeInTheDocument()
+  })
+
+  it('renders a drag handle wired to the given pointer and keyboard handlers', () => {
+    const onPointerDown = vi.fn()
+    const onKeyDown = vi.fn()
+    render(
+      <DeckChip
+        deck={DECK}
+        drag={{ grabbed: false, dragging: false, onPointerDown, onKeyDown }}
+      />,
+    )
+    const handle = screen.getByLabelText('Reorder Kitchen')
+
+    fireEvent.pointerDown(handle)
+    fireEvent.keyDown(handle, { key: 'ArrowRight' })
+
+    expect(onPointerDown).toHaveBeenCalledOnce()
+    expect(onKeyDown).toHaveBeenCalledOnce()
+  })
+
+  it('reflects grabbed and dragging state as classes and aria-pressed', () => {
+    const { container, rerender } = render(
+      <DeckChip deck={DECK} drag={{ grabbed: true, dragging: false, onPointerDown: vi.fn(), onKeyDown: vi.fn() }} />,
+    )
+    expect(container.querySelector('.deck-chip--grabbed')).not.toBeNull()
+    expect(screen.getByLabelText('Reorder Kitchen')).toHaveAttribute('aria-pressed', 'true')
+
+    rerender(<DeckChip deck={DECK} drag={{ grabbed: false, dragging: true, onPointerDown: vi.fn(), onKeyDown: vi.fn() }} />)
+    expect(container.querySelector('.deck-chip--dragging')).not.toBeNull()
+    expect(screen.getByLabelText('Reorder Kitchen')).toHaveAttribute('aria-pressed', 'false')
+  })
 })

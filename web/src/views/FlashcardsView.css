@@ -87,6 +87,51 @@
   opacity: 1;
 }
 
+/* Drag-and-drop (issue #187 stage 3) */
+
+.deck-chip__handle {
+  border: none;
+  background: transparent;
+  color: inherit;
+  opacity: 0.7;
+  padding: 0 0.1rem;
+  line-height: 1;
+  cursor: grab;
+  touch-action: none;
+}
+
+.deck-chip__handle:hover {
+  opacity: 1;
+}
+
+.deck-chip--grabbed {
+  outline: 2px solid var(--color-fg);
+  outline-offset: 2px;
+}
+
+.deck-chip--dragging {
+  opacity: 0.5;
+}
+
+.deck-table__chips {
+  border-radius: 0.75rem;
+  padding: 0.2rem;
+}
+
+.deck-table__chips--drag-leaving {
+  background: var(--color-warning-bg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .deck-chip--dragging {
+    transition: opacity 0.1s ease-out;
+  }
+
+  .deck-table__chips {
+    transition: background-color 0.1s ease-out;
+  }
+}
+
 .deck-chip--red { background: var(--deck-hue-red-bg); color: var(--deck-hue-red-fg); }
 .deck-chip--orange { background: var(--deck-hue-orange-bg); color: var(--deck-hue-orange-fg); }
 .deck-chip--amber { background: var(--deck-hue-amber-bg); color: var(--deck-hue-amber-fg); }

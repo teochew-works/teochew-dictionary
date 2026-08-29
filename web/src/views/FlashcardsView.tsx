@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { useSrsQueue } from '../srs/useSrsQueue'
 import { Flashcard } from '../components/Flashcard'
 import { DeckTable } from '../components/DeckTable'
@@ -8,6 +8,7 @@ import { ActiveFilterChips } from '../components/ActiveFilterChips'
 import type { ActiveFilterChip } from '../components/ActiveFilterChips'
 import { FunnelReadout } from '../components/FunnelReadout'
 import type { FunnelStage } from '../components/FunnelReadout'
+import { LiveRegion } from '../components/LiveRegion'
 import type { EnrichedEntry } from '../types/dict'
 import { PROMPT_MODE_LABELS, readPromptMode, writePromptMode } from '../flashcards/promptMode'
 import type { PromptMode } from '../flashcards/promptMode'
@@ -45,6 +46,8 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
   const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
   const [levelFilter, setLevelFilter] = useState<Set<LevelFilterValue>>(readLevelFilter)
   const [fullAudioOnly, setFullAudioOnly] = useState<boolean>(readFullAudioOnly)
+  const [announcement, setAnnouncement] = useState('')
+  const announce = useCallback((message: string) => setAnnouncement(message), [])
 
   const dictionaryDeck = useMemo(() => makeDictionaryDeck(entries), [entries])
   const allDecks = useMemo(() => [dictionaryDeck, ...decksStore.state.decks], [dictionaryDeck, decksStore.state.decks])
@@ -131,11 +134,15 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
 
   return (
     <div className="flashcards-view">
+      <LiveRegion message={announcement} />
+
       <DeckTable
         inPlayDecks={inPlayDecks}
         availableDecks={availableDecks}
         onAdd={decksStore.addToPlay}
         onRemove={decksStore.removeFromPlay}
+        onReorder={decksStore.reorderPlay}
+        announce={announce}
       />
 
       <div className="flashcards-view__session-bar">
