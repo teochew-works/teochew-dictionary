@@ -17,9 +17,11 @@ function getDb(): Promise<IDBPDatabase> {
 }
 
 /**
- * Only 244 cards exist at most, so loading the whole store and working with
- * it in memory is simpler than adding a `dueAt` index — see the plan for
- * issue #55.
+ * Loads the whole store and works with it in memory rather than adding a
+ * `dueAt` index. The lexicon itself is 16,000+ entries and growing, but this
+ * store only ever holds *reviewed* cards — bounded by how much a person has
+ * actually studied, not by dictionary size — so it stays small regardless.
+ * See the plan for issue #55.
  */
 export async function getAllCards(): Promise<Map<string, CardState>> {
   const db = await getDb()
