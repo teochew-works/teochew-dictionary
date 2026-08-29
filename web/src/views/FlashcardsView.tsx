@@ -124,7 +124,16 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
     [allDecks, inPlayIds, entryById, mode, levelFilter, fullAudioOnly],
   )
   const eligibleEntries = pipeline.entries
-  const { current, cardStates, reviewedCount, totalCount, loading, persistError, grade } = useSrsQueue(eligibleEntries)
+  /*
+   * Identifies the table for the review session, so each set of decks keeps
+   * its own place in its own queue. Sorted, because reordering the chips
+   * rearranges the table without changing which decks are on it.
+   */
+  const tableKey = useMemo(() => [...inPlayIds].sort().join('|'), [inPlayIds])
+  const { current, cardStates, reviewedCount, totalCount, loading, persistError, grade } = useSrsQueue(
+    eligibleEntries,
+    tableKey,
+  )
 
   const statsById = useMemo(() => {
     const map = new Map<string, DeckStats>()

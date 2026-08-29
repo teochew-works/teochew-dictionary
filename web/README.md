@@ -89,6 +89,16 @@ reappear as new (DevTools → Application → IndexedDB →
   the session bar carries a funnel readout naming what each stage removed.
   Deck membership, the table, and saved groups persist to localStorage under
   `teochew-dictionary:decks/v1`; review scheduling stays in IndexedDB.
+- The drawn card has continuity (`src/srs/useSrsQueue.ts`). A review queue is
+  kept per table — the set of decks in play, order-insensitive — so putting a
+  deck on the table and taking it off again returns you to the card the first
+  table was showing, with its own progress. Within a table the queue only
+  changes when something in it becomes ineligible: it is pruned of cards that
+  left the pool, and topped up only when the pool actually grows. Renaming a
+  deck, filing a card, reordering the library, or changing a filter the card
+  still passes all leave it alone. (Rebuilding on every pool change instead
+  reshuffles, so an unrelated deck rename used to deal a different card.)
+  Sessions live for the page load; the scheduling state behind them persists.
 - One drag engine, not four (`src/decks/dnd/useDeckDrag.ts`): a deck out of the
   library, a chip around the table, the showing card into a deck, and an entry
   out of the browse drawer all resolve against the same set of zones on every

@@ -428,3 +428,128 @@ describe('FlashcardsView the funnel', () => {
     expect(screen.getByText('Tones shown')).toBeInTheDocument()
   })
 })
+
+/*
+ * The drawn card is the one thing on this screen with continuity: it should
+ * survive anything that doesn't invalidate it, and each table should keep its
+ * own. Progress is asserted alongside the headword because a rebuilt queue
+ * used to reset the reviewed count, which pins the regression precisely
+ * whatever the shuffle happens to deal.
+ */
+describe('FlashcardsView the drawn card', () => {
+  const deck = (cards: string[] = []) => ({ id: 'deck-1', name: 'Kitchen', hue: 'green' as const, cards, kind: 'user' as const })
+  const entries = [
+    makeEntry({ id: 'e1', headword: '一', frequency: 30 }),
+    makeEntry({ id: 'e2', headword: '二', frequency: 20 }),
+    makeEntry({ id: 'e3', headword: '三', frequency: 10 }),
+  ]
+
+  async function reviewOne() {
+    fireEvent.click(await screen.findByText('Show answer'))
+    fireEvent.click(screen.getByRole('button', { name: /Good/ }))
+  }
+
+  it('stays put when a deck that is not even on the table is renamed', async () => {
+    writeDecksState({ decks: [deck()], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await reviewOne()
+
+    const showing = screen.getByText('二')
+
+    fireEvent.click(screen.getByRole('button', { name: 'Options for Kitchen' }))
+    fireEvent.click(screen.getByRole('menuitem', { name: 'Rename' }))
+    const input = screen.getByLabelText('New name for Kitchen')
+    fireEvent.change(input, { target: { value: 'Market' } })
+    fireEvent.keyDown(input, { key: 'Enter' })
+
+    expect(showing).toBeInTheDocument()
+    expect(screen.getByText(/1 reviewed/)).toBeInTheDocument()
+  })
+
+  it('stays put when a deck is duplicated', async () => {
+    writeDecksState({ decks: [deck()], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await reviewOne()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Options for Kitchen' }))
+    fireEvent.click(screen.getByRole('menuitem', { name: 'Duplicate' }))
+
+    expect(screen.getByText('二')).toBeInTheDocument()
+    expect(screen.getByText(/1 reviewed/)).toBeInTheDocument()
+  })
+
+  it('stays put when a filter it still passes changes', async () => {
+    writeDecksState({ decks: [], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await reviewOne()
+
+    fireEvent.click(screen.getByRole('button', { name: /Filters/ }))
+    fireEvent.click(screen.getByRole('button', { name: 'Citation' }))
+
+    expect(screen.getByText('二')).toBeInTheDocument()
+    expect(screen.getByText(/1 reviewed/)).toBeInTheDocument()
+  })
+
+  it('gives way when a filter makes it ineligible', async () => {
+    const levelled = [
+      makeEntry({ id: 'e1', headword: '一', level: 'A1', frequency: 30 }),
+      makeEntry({ id: 'e2', headword: '二', level: 'B1', frequency: 20 }),
+    ]
+    writeDecksState({ decks: [], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={levelled} />)
+    expect(await screen.findByText('一')).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: /Filters/ }))
+    fireEvent.click(screen.getByRole('button', { name: /^A1$/ }))
+
+    expect(screen.queryByText('一')).not.toBeInTheDocument()
+    expect(screen.getByText('二')).toBeInTheDocument()
+  })
+
+  it('keeps a card per table, and resumes each where it was left', async () => {
+    writeDecksState({ decks: [deck(['e3'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await reviewOne()
+    expect(screen.getByText('二')).toBeInTheDocument()
+
+    // A second table: the dictionary plus Kitchen. It starts its own session,
+    // so it has reviewed nothing even though the first table has.
+    fireEvent.click(screen.getByRole('button', { name: 'Options for Kitchen' }))
+    fireEvent.click(screen.getByRole('menuitem', { name: 'Put on the table' }))
+    expect(screen.getByText(/0 reviewed/)).toBeInTheDocument()
+
+    // Back to the first table.
+    fireEvent.click(screen.getByRole('button', { name: 'Take Kitchen off the table' }))
+    expect(screen.getByText('二')).toBeInTheDocument()
+    expect(screen.getByText(/1 reviewed/)).toBeInTheDocument()
+  })
+
+  it('treats a reordered table as the same table, not a new one', async () => {
+    writeDecksState({ decks: [deck(['e3'])], inPlay: [DICTIONARY_DECK_ID, 'deck-1'], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await reviewOne()
+    expect(screen.getByText('二')).toBeInTheDocument()
+
+    // Lift the Kitchen chip and move it to the front. The decks on the table
+    // are the same ones, so the session should carry straight on.
+    const chip = screen.getByRole('button', { name: /^Kitchen on the table/ })
+    fireEvent.keyDown(chip, { key: ' ' })
+    fireEvent.keyDown(chip, { key: 'ArrowLeft' })
+
+    expect(readDecksState().inPlay).toEqual(['deck-1', DICTIONARY_DECK_ID])
+    expect(screen.getByText('二')).toBeInTheDocument()
+    expect(screen.getByText(/1 reviewed/)).toBeInTheDocument()
+  })
+
+  it('starts a fresh session when the table is genuinely different', async () => {
+    writeDecksState({ decks: [deck(['e3'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await reviewOne()
+    expect(screen.getByText(/1 reviewed/)).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Options for Kitchen' }))
+    fireEvent.click(screen.getByRole('menuitem', { name: 'Put on the table' }))
+
+    expect(screen.getByText(/0 reviewed/)).toBeInTheDocument()
+  })
+})

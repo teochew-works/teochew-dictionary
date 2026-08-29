@@ -73,6 +73,44 @@ export function gradeCard(state: CardState, grade: Grade, now = new Date()): Car
   }
 }
 
+/**
+ * Drops queue items whose entry has left the pool, keeping the order of
+ * everything that survives — so the card on screen stays on screen unless it
+ * is the one that became ineligible.
+ *
+ * Returns `queue` itself when nothing was dropped, so a caller can tell "no
+ * change" by identity and skip a state update.
+ */
+export function pruneQueue(queue: QueueItem[], eligibleIds: Set<string>): QueueItem[] {
+  const kept = queue.filter((item) => eligibleIds.has(item.entryId))
+  return kept.length === queue.length ? queue : kept
+}
+
+/**
+ * Appends anything from a freshly built queue that `kept` doesn't already
+ * hold. `kept` keeps its order and its head, so topping up after the pool
+ * grows never disturbs the card on screen or the ones lined up behind it.
+ *
+ * The new-card cap is applied to the result rather than to the additions, so
+ * repeated top-ups can't walk a session past it.
+ *
+ * Returns `kept` itself when there is nothing to add.
+ */
+export function mergeQueue(kept: QueueItem[], built: QueueItem[], newCardCap = 20): QueueItem[] {
+  const have = new Set(kept.map((item) => item.entryId))
+  let room = Math.max(0, newCardCap - kept.filter((item) => item.kind === 'new').length)
+
+  const additions = built.filter((item) => {
+    if (have.has(item.entryId)) return false
+    if (item.kind !== 'new') return true
+    if (room === 0) return false
+    room -= 1
+    return true
+  })
+
+  return additions.length === 0 ? kept : [...kept, ...additions]
+}
+
 /** Fisher-Yates, parameterized on `random` so callers can inject a deterministic sequence in tests. */
 function shuffle<T>(items: T[], random: () => number): T[] {
   const result = [...items]

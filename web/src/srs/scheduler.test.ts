@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { buildQueue, gradeCard, newCardState, previewIntervals } from './scheduler'
-import type { CardState } from './types'
+import { buildQueue, gradeCard, mergeQueue, newCardState, previewIntervals, pruneQueue } from './scheduler'
+import type { CardState, QueueItem } from './types'
 
 const NOW = new Date('2026-08-16T00:00:00.000Z')
 
@@ -171,5 +171,77 @@ describe('previewIntervals', () => {
     const before = { ...state }
     previewIntervals(state)
     expect(state).toEqual(before)
+  })
+})
+
+describe('pruneQueue', () => {
+  const queue: QueueItem[] = [
+    { entryId: 'a', kind: 'due' },
+    { entryId: 'b', kind: 'new' },
+    { entryId: 'c', kind: 'new' },
+  ]
+
+  it('returns the very same array when nothing was dropped, so callers can skip an update', () => {
+    expect(pruneQueue(queue, new Set(['a', 'b', 'c', 'd']))).toBe(queue)
+  })
+
+  it('drops what left the pool and keeps the order of the rest', () => {
+    expect(pruneQueue(queue, new Set(['a', 'c']))).toEqual([
+      { entryId: 'a', kind: 'due' },
+      { entryId: 'c', kind: 'new' },
+    ])
+  })
+
+  it('drops the head when the head is what became ineligible', () => {
+    expect(pruneQueue(queue, new Set(['b', 'c']))[0]).toEqual({ entryId: 'b', kind: 'new' })
+  })
+
+  it('empties completely when the pool does', () => {
+    expect(pruneQueue(queue, new Set())).toEqual([])
+  })
+})
+
+describe('mergeQueue', () => {
+  const kept: QueueItem[] = [
+    { entryId: 'a', kind: 'due' },
+    { entryId: 'b', kind: 'new' },
+  ]
+
+  it('returns the very same array when there is nothing to add', () => {
+    expect(mergeQueue(kept, [{ entryId: 'a', kind: 'due' }])).toBe(kept)
+  })
+
+  it('appends after everything already queued, leaving the head alone', () => {
+    const merged = mergeQueue(kept, [
+      { entryId: 'z', kind: 'due' },
+      { entryId: 'a', kind: 'due' },
+    ])
+    expect(merged.map((i) => i.entryId)).toEqual(['a', 'b', 'z'])
+  })
+
+  it('never queues the same entry twice', () => {
+    const merged = mergeQueue(kept, [
+      { entryId: 'b', kind: 'new' },
+      { entryId: 'c', kind: 'new' },
+    ])
+    expect(merged.map((i) => i.entryId)).toEqual(['a', 'b', 'c'])
+  })
+
+  it('counts the cards already queued against the new-card cap', () => {
+    const twoNew: QueueItem[] = [
+      { entryId: 'a', kind: 'new' },
+      { entryId: 'b', kind: 'new' },
+    ]
+    const additions: QueueItem[] = [
+      { entryId: 'c', kind: 'new' },
+      { entryId: 'd', kind: 'new' },
+    ]
+    expect(mergeQueue(twoNew, additions, 3).map((i) => i.entryId)).toEqual(['a', 'b', 'c'])
+  })
+
+  it('lets due cards through regardless of the new-card cap', () => {
+    const full: QueueItem[] = [{ entryId: 'a', kind: 'new' }]
+    const merged = mergeQueue(full, [{ entryId: 'due', kind: 'due' }], 1)
+    expect(merged.map((i) => i.entryId)).toEqual(['a', 'due'])
   })
 })
