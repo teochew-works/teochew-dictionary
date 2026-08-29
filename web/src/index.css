@@ -11,6 +11,25 @@
   --color-danger: #b3261e;
   --color-success: #1a7f37;
 
+  /* Deck hues (issue #187) — one palette slot per deck, so it reads the
+     same swatch in the library rail and on the table. */
+  --deck-hue-red-bg: #c0392b;
+  --deck-hue-red-fg: #ffffff;
+  --deck-hue-orange-bg: #c2691d;
+  --deck-hue-orange-fg: #ffffff;
+  --deck-hue-amber-bg: #a67c00;
+  --deck-hue-amber-fg: #ffffff;
+  --deck-hue-green-bg: #2f7d3c;
+  --deck-hue-green-fg: #ffffff;
+  --deck-hue-teal-bg: #1f7a72;
+  --deck-hue-teal-fg: #ffffff;
+  --deck-hue-blue-bg: #2f6fa6;
+  --deck-hue-blue-fg: #ffffff;
+  --deck-hue-purple-bg: #6b4fa0;
+  --deck-hue-purple-fg: #ffffff;
+  --deck-hue-pink-bg: #b23a6b;
+  --deck-hue-pink-fg: #ffffff;
+
   color-scheme: light dark;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
@@ -27,6 +46,23 @@
     --color-warning-bg: #3a2c12;
     --color-warning-fg: #f0c078;
     --color-success: #3fb950;
+
+    --deck-hue-red-bg: #e5766c;
+    --deck-hue-red-fg: #2a0f0c;
+    --deck-hue-orange-bg: #e0975a;
+    --deck-hue-orange-fg: #2a1a08;
+    --deck-hue-amber-bg: #d1b34a;
+    --deck-hue-amber-fg: #2a2308;
+    --deck-hue-green-bg: #7bc088;
+    --deck-hue-green-fg: #0d2612;
+    --deck-hue-teal-bg: #6bc0b8;
+    --deck-hue-teal-fg: #0a2422;
+    --deck-hue-blue-bg: #8fb8dd;
+    --deck-hue-blue-fg: #12233a;
+    --deck-hue-purple-bg: #b39ddb;
+    --deck-hue-purple-fg: #211a35;
+    --deck-hue-pink-bg: #dd93b3;
+    --deck-hue-pink-fg: #35131f;
   }
 }
 

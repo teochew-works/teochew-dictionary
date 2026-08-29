@@ -14,6 +14,10 @@ const CLIP: AudioReference = {
   attributions: [],
 }
 
+function openFilters() {
+  fireEvent.click(screen.getByRole('button', { name: 'Filters' }))
+}
+
 describe('FlashcardsView', () => {
   beforeEach(() => {
     localStorage.clear()
@@ -24,22 +28,22 @@ describe('FlashcardsView', () => {
     localStorage.clear()
   })
 
-  it('shows a "nothing due" state when there are no entries to review', async () => {
+  it('shows an empty-table state when there are no entries to review', async () => {
     render(<FlashcardsView entries={[]} />)
-    expect(await screen.findByText(/nothing due/i)).toBeInTheDocument()
+    expect(await screen.findByText(/No cards are in play/i)).toBeInTheDocument()
   })
 
   it('defaults the prompt mode selector to Chinese', async () => {
     render(<FlashcardsView entries={[]} />)
-    await screen.findByText(/nothing due/i)
-    expect(screen.getByLabelText('Flashcard prompt')).toHaveValue('chinese')
+    await screen.findByText(/reviewed/i)
+    expect(screen.getByLabelText('Chinese')).toBeChecked()
   })
 
   it('persists the selected prompt mode to localStorage', async () => {
     render(<FlashcardsView entries={[]} />)
-    await screen.findByText(/nothing due/i)
+    await screen.findByText(/reviewed/i)
 
-    fireEvent.change(screen.getByLabelText('Flashcard prompt'), { target: { value: 'audio-only' } })
+    fireEvent.click(screen.getByLabelText('Audio only'))
 
     expect(localStorage.getItem('teochew-dictionary:flashcard-prompt-mode')).toBe('audio-only')
   })
@@ -47,15 +51,15 @@ describe('FlashcardsView', () => {
   it('picks up a previously persisted prompt mode on mount', async () => {
     localStorage.setItem('teochew-dictionary:flashcard-prompt-mode', 'english')
     render(<FlashcardsView entries={[]} />)
-    await screen.findByText(/nothing due/i)
-    expect(screen.getByLabelText('Flashcard prompt')).toHaveValue('english')
+    await screen.findByText(/reviewed/i)
+    expect(screen.getByLabelText('English')).toBeChecked()
   })
 
   it('excludes entries lacking the field a mode depends on, with a distinct empty-state message', async () => {
     const glossless = makeEntry({ id: 'no-gloss', senses: [{ pos: 'noun', gloss_en: [] }] })
     render(<FlashcardsView entries={[glossless]} />)
 
-    fireEvent.change(await screen.findByLabelText('Flashcard prompt'), { target: { value: 'english' } })
+    fireEvent.click(await screen.findByLabelText('English'))
 
     expect(await screen.findByText(/No entries are available for English mode/)).toBeInTheDocument()
   })
@@ -73,7 +77,8 @@ describe('FlashcardsView level filter', () => {
 
   it('checks every level and untiered by default', async () => {
     render(<FlashcardsView entries={[]} />)
-    await screen.findByText(/nothing due/i)
+    await screen.findByText(/reviewed/i)
+    openFilters()
 
     for (const label of ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'Untiered']) {
       expect(screen.getByLabelText(label)).toBeChecked()
@@ -84,6 +89,7 @@ describe('FlashcardsView level filter', () => {
     const a1 = makeEntry({ id: 'a1-entry', headword: 'A1詞', level: 'A1' })
     render(<FlashcardsView entries={[a1]} />)
     await screen.findByText('A1詞')
+    openFilters()
 
     fireEvent.click(screen.getByLabelText('A1'))
 
@@ -94,7 +100,8 @@ describe('FlashcardsView level filter', () => {
   it('restores a previously persisted level subset on mount', async () => {
     localStorage.setItem('teochew-dictionary:flashcard-level-filter', 'A1,B1')
     render(<FlashcardsView entries={[]} />)
-    await screen.findByText(/nothing due/i)
+    await screen.findByText(/reviewed/i)
+    openFilters()
 
     expect(screen.getByLabelText('A1')).toBeChecked()
     expect(screen.getByLabelText('B1')).toBeChecked()
@@ -139,13 +146,15 @@ describe('FlashcardsView pronunciation toggle', () => {
 
   it('checks the toggle by default', async () => {
     render(<FlashcardsView entries={[]} />)
-    await screen.findByText(/nothing due/i)
+    await screen.findByText(/reviewed/i)
+    openFilters()
     expect(screen.getByLabelText('Use sandhi pronunciation')).toBeChecked()
   })
 
   it('persists an unchecked toggle to localStorage', async () => {
     render(<FlashcardsView entries={[]} />)
-    await screen.findByText(/nothing due/i)
+    await screen.findByText(/reviewed/i)
+    openFilters()
 
     fireEvent.click(screen.getByLabelText('Use sandhi pronunciation'))
 
@@ -155,7 +164,8 @@ describe('FlashcardsView pronunciation toggle', () => {
   it('restores a previously persisted citation preference on mount', async () => {
     localStorage.setItem('teochew-dictionary:pronunciation-mode', 'citation')
     render(<FlashcardsView entries={[]} />)
-    await screen.findByText(/nothing due/i)
+    await screen.findByText(/reviewed/i)
+    openFilters()
     expect(screen.getByLabelText('Use sandhi pronunciation')).not.toBeChecked()
   })
 })
@@ -172,7 +182,8 @@ describe('FlashcardsView full-audio filter', () => {
 
   it('leaves the checkbox unchecked by default', async () => {
     render(<FlashcardsView entries={[]} />)
-    await screen.findByText(/nothing due/i)
+    await screen.findByText(/reviewed/i)
+    openFilters()
     expect(screen.getByLabelText('Only fully recorded audio')).not.toBeChecked()
   })
 
@@ -184,6 +195,7 @@ describe('FlashcardsView full-audio filter', () => {
     })
     render(<FlashcardsView entries={[partial]} />)
     await screen.findByText('部分詞')
+    openFilters()
 
     fireEvent.click(screen.getByLabelText('Only fully recorded audio'))
 
@@ -194,7 +206,8 @@ describe('FlashcardsView full-audio filter', () => {
   it('restores a previously persisted checked state on mount', async () => {
     localStorage.setItem('teochew-dictionary:flashcard-full-audio-only', 'true')
     render(<FlashcardsView entries={[]} />)
-    await screen.findByText(/nothing due/i)
+    await screen.findByText(/reviewed/i)
+    openFilters()
     expect(screen.getByLabelText('Only fully recorded audio')).toBeChecked()
   })
 
@@ -210,7 +223,7 @@ describe('FlashcardsView full-audio filter', () => {
   })
 })
 
-describe('FlashcardsView deck selection (issue #187 stage 1)', () => {
+describe('FlashcardsView filters popover', () => {
   beforeEach(() => {
     localStorage.clear()
   })
@@ -220,46 +233,190 @@ describe('FlashcardsView deck selection (issue #187 stage 1)', () => {
     localStorage.clear()
   })
 
-  it('defaults to the Dictionary deck, keeping today\'s behaviour unchanged', async () => {
-    const a = makeEntry({ id: 'a', headword: '一' })
-    const b = makeEntry({ id: 'b', headword: '二' })
+  it('is closed by default and opens when the Filters button is clicked', async () => {
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/reviewed/i)
+    expect(screen.queryByLabelText('Use sandhi pronunciation')).not.toBeInTheDocument()
+
+    openFilters()
+
+    expect(screen.getByLabelText('Use sandhi pronunciation')).toBeInTheDocument()
+  })
+
+  it('closes on Escape', async () => {
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/reviewed/i)
+    openFilters()
+    expect(screen.getByLabelText('Use sandhi pronunciation')).toBeInTheDocument()
+
+    fireEvent.keyDown(document, { key: 'Escape' })
+
+    expect(screen.queryByLabelText('Use sandhi pronunciation')).not.toBeInTheDocument()
+  })
+
+  it('closes on an outside click', async () => {
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/reviewed/i)
+    openFilters()
+    expect(screen.getByLabelText('Use sandhi pronunciation')).toBeInTheDocument()
+
+    fireEvent.mouseDown(document.body)
+
+    expect(screen.queryByLabelText('Use sandhi pronunciation')).not.toBeInTheDocument()
+  })
+})
+
+describe('FlashcardsView active filter chips', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  afterEach(() => {
+    cleanup()
+    localStorage.clear()
+  })
+
+  it('shows no chips when filters are at their defaults', async () => {
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/reviewed/i)
+    expect(screen.queryByText(/Levels:/)).not.toBeInTheDocument()
+    expect(screen.queryByText('Full audio only')).not.toBeInTheDocument()
+  })
+
+  it('echoes a narrowed level filter as a removable chip, and removing it clears the chip', async () => {
+    const a1 = makeEntry({ id: 'a1', headword: 'A1詞', level: 'A1' })
+    render(<FlashcardsView entries={[a1]} />)
+    await screen.findByText('A1詞')
+    openFilters()
+    fireEvent.click(screen.getByLabelText('A2'))
+
+    expect(screen.getByText(/Levels:/)).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: /Remove filter: Levels/ }))
+
+    expect(screen.queryByText(/Levels:/)).not.toBeInTheDocument()
+  })
+
+  it('echoes "Full audio only" as a removable chip, and removing it unchecks the toggle', async () => {
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/reviewed/i)
+    openFilters()
+    fireEvent.click(screen.getByLabelText('Only fully recorded audio'))
+
+    expect(screen.getByText('Full audio only')).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Remove filter: Full audio only' }))
+
+    expect(screen.queryByText('Full audio only')).not.toBeInTheDocument()
+    expect(screen.getByLabelText('Only fully recorded audio')).not.toBeChecked()
+  })
+})
+
+describe('FlashcardsView deck table (issue #187 stage 2)', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  afterEach(() => {
+    cleanup()
+    localStorage.clear()
+  })
+
+  it('has the Dictionary deck on the table by default', async () => {
+    const a = makeEntry({ id: 'a' })
+    const b = makeEntry({ id: 'b' })
     render(<FlashcardsView entries={[a, b]} />)
 
     await screen.findByText(/2 in this session/)
-    expect(screen.getByLabelText('Deck')).toHaveValue(DICTIONARY_DECK_ID)
     expect(screen.getByText('Dictionary')).toBeInTheDocument()
+    expect(screen.getByText('2 in play')).toBeInTheDocument()
   })
 
-  it('lists a persisted user deck and narrows the pool to it when selected', async () => {
-    writeDecksState({
-      decks: [{ id: 'deck-1', name: 'Kitchen', hue: 'green', cards: ['b'], kind: 'user' }],
-      inPlay: [DICTIONARY_DECK_ID],
-      groups: [],
-    })
-    const a = makeEntry({ id: 'a', headword: '一' })
-    const b = makeEntry({ id: 'b', headword: '二' })
-    render(<FlashcardsView entries={[a, b]} />)
-    await screen.findByText(/2 in this session/)
-
-    fireEvent.change(screen.getByLabelText('Deck'), { target: { value: 'deck-1' } })
-
-    await screen.findByText(/1 in this session/)
-    expect(screen.getByText('二')).toBeInTheDocument()
-    expect(screen.queryByText('一')).not.toBeInTheDocument()
-  })
-
-  it('persists the selected deck to the shared inPlay list so it survives a reload', async () => {
+  it('lists a persisted user deck in "Add a deck to the table" and adds it on selection', async () => {
     writeDecksState({
       decks: [{ id: 'deck-1', name: 'Kitchen', hue: 'green', cards: [], kind: 'user' }],
       inPlay: [DICTIONARY_DECK_ID],
       groups: [],
     })
     render(<FlashcardsView entries={[]} />)
-    await screen.findByText(/nothing due/i)
+    await screen.findByText(/reviewed/i)
 
-    fireEvent.change(screen.getByLabelText('Deck'), { target: { value: 'deck-1' } })
+    fireEvent.change(screen.getByLabelText('Add a deck to the table'), { target: { value: 'deck-1' } })
 
-    expect(readDecksState().inPlay).toEqual(['deck-1'])
+    expect(screen.getByText('Kitchen')).toBeInTheDocument()
+    expect(readDecksState().inPlay).toEqual([DICTIONARY_DECK_ID, 'deck-1'])
+  })
+
+  it('removes a deck from the table and persists it', async () => {
+    writeDecksState({
+      decks: [{ id: 'deck-1', name: 'Kitchen', hue: 'green', cards: [], kind: 'user' }],
+      inPlay: [DICTIONARY_DECK_ID, 'deck-1'],
+      groups: [],
+    })
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/reviewed/i)
+
+    fireEvent.click(screen.getByLabelText('Remove Kitchen from the table'))
+
+    expect(screen.queryByLabelText('Remove Kitchen from the table')).not.toBeInTheDocument()
+    expect(readDecksState().inPlay).toEqual([DICTIONARY_DECK_ID])
+  })
+
+  it('unions in-play decks and reviews a card that is in two decks only once', async () => {
+    writeDecksState({
+      decks: [
+        { id: 'deck-a', name: 'A', hue: 'green', cards: ['shared', 'only-a'], kind: 'user' },
+        { id: 'deck-b', name: 'B', hue: 'red', cards: ['shared', 'only-b'], kind: 'user' },
+      ],
+      inPlay: ['deck-a', 'deck-b'],
+      groups: [],
+    })
+    const shared = makeEntry({ id: 'shared', headword: '共用' })
+    const onlyA = makeEntry({ id: 'only-a', headword: '甲' })
+    const onlyB = makeEntry({ id: 'only-b', headword: '乙' })
+    render(<FlashcardsView entries={[shared, onlyA, onlyB]} />)
+
+    await screen.findByText(/3 in this session/)
+    expect(screen.getByText('3 in play')).toBeInTheDocument()
+  })
+
+  it('shows the in-play empty state when the only deck on the table has no cards', async () => {
+    writeDecksState({
+      decks: [{ id: 'deck-1', name: 'Empty Deck', hue: 'green', cards: [], kind: 'user' }],
+      inPlay: ['deck-1'],
+      groups: [],
+    })
+    render(<FlashcardsView entries={[makeEntry({ id: 'unused' })]} />)
+
+    expect(await screen.findByText(/No cards are in play/)).toBeInTheDocument()
+  })
+})
+
+describe('FlashcardsView funnel readout', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  afterEach(() => {
+    cleanup()
+    localStorage.clear()
+  })
+
+  it('shows a single stage when nothing was filtered out', async () => {
+    const a = makeEntry({ id: 'a' })
+    render(<FlashcardsView entries={[a]} />)
+    await screen.findByText(/1 in this session/)
+    expect(screen.getByText('1 in play')).toBeInTheDocument()
+  })
+
+  it('names the stage that narrowed the pool, skipping stages that changed nothing', async () => {
+    const a1 = makeEntry({ id: 'a1', level: 'A1' })
+    const b1 = makeEntry({ id: 'b1', level: 'B1' })
+    localStorage.setItem('teochew-dictionary:flashcard-level-filter', 'A1')
+    render(<FlashcardsView entries={[a1, b1]} />)
+
+    await screen.findByText(/1 in this session/)
+    expect(screen.getByText('2 in play → 1 level')).toBeInTheDocument()
   })
 })
 
