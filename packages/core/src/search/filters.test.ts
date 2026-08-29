@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { hasAudio, hasFullAudio } from './filters.js'
+import { canCombine, hasAudio, hasFullAudio } from './filters.js'
 import type { AudioReference, EnrichedEntry, EnrichedReading } from '../enrichedEntry.js'
 
 const CLIP: AudioReference = {
@@ -80,5 +80,39 @@ describe('hasFullAudio', () => {
   it('only looks at readings[0], not a fully-recorded later reading', () => {
     const entry = entryWith({ ...READING, audio: [CLIP, null] }, { ...READING, wordAudio: CLIP })
     expect(hasFullAudio(entry)).toBe(false)
+  })
+})
+
+describe('canCombine', () => {
+  const speakerA = { ...CLIP, key: 'dio5', speaker: 'a' }
+  const speakerAAgain = { ...CLIP, key: 'ziu1', speaker: 'a' }
+  const speakerB = { ...CLIP, key: 'ziu1', speaker: 'b' }
+  const noSpeaker = { ...CLIP, key: 'ziu1' }
+
+  it('rejects a single-syllable reading — nothing to combine', () => {
+    const reading: EnrichedReading = { ...READING, syllable_count: 1, audio: [speakerA] }
+    expect(canCombine(reading)).toBe(false)
+  })
+
+  it('accepts full same-speaker coverage', () => {
+    expect(canCombine({ ...READING, audio: [speakerA, speakerAAgain] })).toBe(true)
+  })
+
+  it('rejects a reading with one syllable missing a clip', () => {
+    expect(canCombine({ ...READING, audio: [speakerA, null] })).toBe(false)
+  })
+
+  it('rejects mixed speakers across syllables', () => {
+    expect(canCombine({ ...READING, audio: [speakerA, speakerB] })).toBe(false)
+  })
+
+  it('rejects a clip with no speaker at all — no identity to match', () => {
+    expect(canCombine({ ...READING, audio: [speakerA, noSpeaker] })).toBe(false)
+  })
+
+  it('reads from sandhiAudio in sandhi mode', () => {
+    const reading: EnrichedReading = { ...READING, audio: [speakerA, speakerB], sandhiAudio: [speakerA, speakerAAgain] }
+    expect(canCombine(reading, 'citation')).toBe(false)
+    expect(canCombine(reading, 'sandhi')).toBe(true)
   })
 })
