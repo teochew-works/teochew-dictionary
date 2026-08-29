@@ -1,8 +1,11 @@
 import { useMemo } from 'react'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
+import { useCombinedClip } from '../hooks/useCombinedClip'
+import { syllableClipUrls } from '@teochew/core'
 import { ReadingAudio } from './ReadingAudio'
 import { MogherPengim } from './MogherPengim'
 import type { EnrichedEntry, PronunciationMode } from '@teochew/core'
+import type { AudioMode } from '../settings/audioMode'
 import { LevelBadge } from './LevelBadge'
 import { LICENCE_URLS } from '../data/licenceUrls'
 
@@ -57,13 +60,16 @@ export function EntryDetail({
   showLicence,
   pronunciation = 'citation',
   mogherLinks = false,
+  audioMode = 'both',
 }: {
   entry: EnrichedEntry
   showLicence: boolean
   pronunciation?: PronunciationMode
   mogherLinks?: boolean
+  audioMode?: AudioMode
 }) {
-  const { playingId, play } = useAudioPlayer()
+  const { playingId, play, playBuffer } = useAudioPlayer()
+  const { statusFor, ensure } = useCombinedClip()
   // Gated/memoized rather than computed unconditionally: showLicence is off
   // by default, and playingId changes on every clip click — without this,
   // clipCredits would re-walk every reading's clips on every play/pause even
@@ -86,6 +92,18 @@ export function EntryDetail({
       <section className="entry-detail__readings">
         {entry.readings.map((r, i) => {
           const tags = [r.variety, r.register].filter(Boolean).join(', ')
+          const combinedUrls = syllableClipUrls(r, pronunciation)
+          const onPlayCombined = (id: string) => {
+            if (r.wordAudio) {
+              play(id, r.wordAudio.url)
+              return
+            }
+            void ensure(combinedUrls)
+              .then((buffer) => playBuffer(id, buffer))
+              .catch(() => {
+                // useCombinedClip already tracks the error status for the button; nothing more to do here.
+              })
+          }
           return (
             <div className="reading" key={`${r.pengim}-${i}`}>
               <div className="reading__line">
@@ -105,7 +123,10 @@ export function EntryDetail({
                 readingIndex={i}
                 playingId={playingId}
                 onPlay={play}
+                onPlayCombined={onPlayCombined}
+                combinedStatus={statusFor(combinedUrls)}
                 pronunciation={pronunciation}
+                audioMode={audioMode}
               />
             </div>
           )

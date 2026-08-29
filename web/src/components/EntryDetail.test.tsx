@@ -110,9 +110,12 @@ describe('EntryDetail audio', () => {
   })
 
   it('renders the whole-word clip first, then one button per recorded syllable', () => {
+    // Default audioMode is 'both', and this reading's wordAudio makes it
+    // combinable — see the 'audioMode' describe block for mode-specific cases.
     render(<EntryDetail entry={WITH_AUDIO} showLicence={false} />)
     const buttons = screen.getAllByRole('button', { name: /^Play / })
     expect(buttons.map((b) => b.getAttribute('aria-label'))).toEqual([
+      'Play combined recording of dio5 ziu1',
       'Play whole-word recording of dio5 ziu1',
       'Play recording of syllable dio5',
     ])
@@ -300,6 +303,71 @@ describe('EntryDetail mogher.com links', () => {
       'href',
       'https://mogher.com/dic/czpy/u%C3%AA7',
     )
+  })
+})
+
+describe('EntryDetail audioMode', () => {
+  afterEach(cleanup)
+
+  beforeEach(() => {
+    vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined)
+    vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  // Combinable via synthesis (not wordAudio): full same-speaker syllable coverage.
+  const SYNTH_COMBINABLE: EnrichedEntry = {
+    ...ENTRY,
+    readings: [
+      {
+        ...READING,
+        audio: [
+          { ...SYLLABLE_CLIP, speaker: 'jky' },
+          { ...SYLLABLE_CLIP, key: 'ziu1', speaker: 'jky' },
+        ],
+      },
+    ],
+  }
+
+  // Not combinable: no wordAudio, and the syllable clips are from different speakers.
+  const NOT_COMBINABLE: EnrichedEntry = {
+    ...ENTRY,
+    readings: [
+      {
+        ...READING,
+        audio: [
+          { ...SYLLABLE_CLIP, speaker: 'a' },
+          { ...SYLLABLE_CLIP, key: 'ziu1', speaker: 'b' },
+        ],
+      },
+    ],
+  }
+
+  it("'component' never shows a combined button, even when the reading is combinable", () => {
+    render(<EntryDetail entry={WITH_AUDIO} showLicence={false} audioMode="component" />)
+    expect(screen.queryByRole('button', { name: /^Play combined/ })).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Play whole-word recording of dio5 ziu1' })).toBeInTheDocument()
+  })
+
+  it("'combined' on a combinable reading hides the component buttons", () => {
+    render(<EntryDetail entry={SYNTH_COMBINABLE} showLicence={false} audioMode="combined" />)
+    expect(screen.getByRole('button', { name: /^Play combined/ })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /^Play recording of syllable/ })).not.toBeInTheDocument()
+  })
+
+  it("'combined' on a non-combinable reading falls back to component buttons instead of showing nothing", () => {
+    render(<EntryDetail entry={NOT_COMBINABLE} showLicence={false} audioMode="combined" />)
+    expect(screen.queryByRole('button', { name: /^Play combined/ })).not.toBeInTheDocument()
+    expect(screen.getAllByRole('button', { name: /^Play recording of syllable/ })).toHaveLength(2)
+  })
+
+  it("'both' shows the combined button alongside component buttons", () => {
+    render(<EntryDetail entry={SYNTH_COMBINABLE} showLicence={false} audioMode="both" />)
+    expect(screen.getByRole('button', { name: /^Play combined/ })).toBeInTheDocument()
+    expect(screen.getAllByRole('button', { name: /^Play recording of syllable/ })).toHaveLength(2)
   })
 })
 
