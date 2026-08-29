@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { DeckMenu } from './DeckMenu'
 
 function actions() {
-  return { onPutOnTable: vi.fn(), onRename: vi.fn(), onDuplicate: vi.fn(), onDelete: vi.fn() }
+  return { onPutOnTable: vi.fn(), onViewCards: vi.fn(), onRename: vi.fn(), onDuplicate: vi.fn(), onDelete: vi.fn() }
 }
 
 function open(inPlay = false) {
@@ -20,14 +20,21 @@ describe('DeckMenu', () => {
     expect(screen.getByRole('button')).toHaveAttribute('aria-expanded', 'false')
   })
 
-  it('offers put-on-table, rename, duplicate, and delete', () => {
+  it('offers put-on-table, view, rename, duplicate, and delete', () => {
     open()
     expect(screen.getAllByRole('menuitem').map((i) => i.textContent)).toEqual([
       'Put on the table',
+      'View cards',
       'Rename',
       'Duplicate',
       'Delete',
     ])
+  })
+
+  it('opens the deck contents', () => {
+    const a = open()
+    fireEvent.click(screen.getByRole('menuitem', { name: 'View cards' }))
+    expect(a.onViewCards).toHaveBeenCalled()
   })
 
   it('disables putting a deck on the table when it is already there', () => {

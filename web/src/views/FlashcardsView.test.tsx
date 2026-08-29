@@ -387,7 +387,7 @@ describe('FlashcardsView saved groups', () => {
   })
 })
 
-describe('FlashcardsView the browse drawer', () => {
+describe('FlashcardsView the dock', () => {
   it('opens and closes from the session bar', async () => {
     render(<FlashcardsView entries={[ENTRY]} />)
     await screen.findByText(/reviewed/)
@@ -604,5 +604,61 @@ describe('FlashcardsView filing the card under review', () => {
     fireEvent.click(screen.getByRole('menuitemcheckbox', { name: /Kitchen/ }))
 
     expect(screen.getByText('一')).toBeInTheDocument()
+  })
+})
+
+describe('FlashcardsView deck contents', () => {
+  const deck = (cards: string[] = []) => ({ id: 'deck-1', name: 'Kitchen', hue: 'green' as const, cards, kind: 'user' as const })
+  const entries = [makeEntry({ id: 'e1', headword: '一', frequency: 30 }), makeEntry({ id: 'e2', headword: '二', frequency: 20 })]
+
+  async function openContents() {
+    await screen.findByText(/reviewed/)
+    fireEvent.click(screen.getByRole('button', { name: 'Options for Kitchen' }))
+    fireEvent.click(screen.getByRole('menuitem', { name: 'View cards' }))
+  }
+
+  it('opens a deck cards from its options menu', async () => {
+    writeDecksState({ decks: [deck(['e1'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openContents()
+
+    const dock = screen.getByRole('region', { name: 'Cards in Kitchen' })
+    expect(within(dock).getByText('1 card')).toBeInTheDocument()
+    expect(within(dock).getByRole('button', { name: /^一/ })).toBeInTheDocument()
+  })
+
+  it('removes a card from the deck, with an undo', async () => {
+    writeDecksState({ decks: [deck(['e1', 'e2'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openContents()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Remove 一 from Kitchen' }))
+    expect(readDecksState().decks[0]!.cards).toEqual(['e2'])
+
+    fireEvent.click(screen.getByRole('button', { name: 'Undo' }))
+    expect(readDecksState().decks[0]!.cards).toEqual(['e1', 'e2'])
+  })
+
+  it('swaps the same dock over to the dictionary rather than closing it', async () => {
+    writeDecksState({ decks: [deck(['e1'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    render(<FlashcardsView entries={entries} />)
+    await openContents()
+
+    fireEvent.click(within(screen.getByRole('region', { name: 'Cards in Kitchen' })).getByRole('button', { name: '＋ Add cards' }))
+
+    expect(screen.getByRole('region', { name: 'Browse the dictionary' })).toBeInTheDocument()
+    expect(screen.getByLabelText('Search the dictionary')).toBeInTheDocument()
+  })
+
+  it('collapses the dock when the deck it was showing is deleted', async () => {
+    writeDecksState({ decks: [deck(['e1'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    const { container } = render(<FlashcardsView entries={entries} />)
+    await openContents()
+    expect(container.querySelector('.drawer--open')).not.toBeNull()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Options for Kitchen' }))
+    fireEvent.click(screen.getByRole('menuitem', { name: 'Delete' }))
+
+    expect(container.querySelector('.drawer--open')).toBeNull()
   })
 })

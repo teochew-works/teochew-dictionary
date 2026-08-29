@@ -3,6 +3,7 @@ import { useDismissOnOutside } from './useDismissOnOutside'
 
 export interface DeckMenuActions {
   onPutOnTable: () => void
+  onViewCards: () => void
   onRename: () => void
   onDuplicate: () => void
   onDelete: () => void
@@ -55,6 +56,9 @@ export function DeckMenu({ deckName, inPlay, actions }: { deckName: string; inPl
         <div id={panelId} className="deck-menu__panel pop" role="menu" aria-label={`${deckName} options`} ref={panelRef}>
           <button type="button" role="menuitem" className="pop__item" disabled={inPlay} onClick={() => run(actions.onPutOnTable)}>
             Put on the table
+          </button>
+          <button type="button" role="menuitem" className="pop__item" onClick={() => run(actions.onViewCards)}>
+            View cards
           </button>
           <button type="button" role="menuitem" className="pop__item" onClick={() => run(actions.onRename)}>
             Rename

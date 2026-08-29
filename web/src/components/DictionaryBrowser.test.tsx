@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
-import { BrowseDrawer } from './BrowseDrawer'
+import { DictionaryBrowser } from './DictionaryBrowser'
 import { makeEntry, makeReading } from '../test/entryFixtures'
 import type { AudioReference } from '../types/dict'
 import type { Deck } from '../decks/types'
@@ -31,9 +31,8 @@ const RICE = makeEntry({
 
 const decks: Deck[] = [{ id: 'd1', name: 'Food words', hue: 'red', kind: 'user', cards: [] }]
 
-function setup(overrides: Partial<Parameters<typeof BrowseDrawer>[0]> = {}) {
+function setup(overrides: Partial<Parameters<typeof DictionaryBrowser>[0]> = {}) {
   const props = {
-    open: true,
     entries: [TEA, RICE],
     userDecks: decks,
     pronunciation: 'citation' as const,
@@ -45,7 +44,7 @@ function setup(overrides: Partial<Parameters<typeof BrowseDrawer>[0]> = {}) {
     onSavePoolAsDeck: vi.fn(),
     ...overrides,
   }
-  const view = render(<BrowseDrawer {...props} />)
+  const view = render(<DictionaryBrowser {...props} />)
   return { ...view, props }
 }
 
@@ -53,13 +52,7 @@ function searchFor(query: string) {
   fireEvent.change(screen.getByLabelText('Search the dictionary'), { target: { value: query } })
 }
 
-describe('BrowseDrawer', () => {
-  it('is collapsed and hidden from assistive tech while closed', () => {
-    const { container } = setup({ open: false })
-    expect(container.querySelector('.drawer--open')).toBeNull()
-    expect(container.querySelector('.drawer')).toHaveAttribute('aria-hidden', 'true')
-  })
-
+describe('DictionaryBrowser', () => {
   it('waits for a query rather than listing 16,000 entries', () => {
     setup()
     expect(screen.getByText('Type to search for entries to add.')).toBeInTheDocument()

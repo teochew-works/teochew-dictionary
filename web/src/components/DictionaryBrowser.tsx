@@ -15,18 +15,16 @@ function hasAnyAudio(entry: EnrichedEntry): boolean {
 }
 
 /**
- * The dictionary, docked under the study surface: search it, then drag an
+ * The dictionary as a drawer body (see Drawer.tsx): search it, then drag an
  * entry onto one of your decks — or click it for the same thing without a
- * drag. A drawer rather than a modal because filing cards is something you
- * do *while* reviewing, and a modal would hide the decks you are filing
- * into.
+ * drag. Docked rather than modal because filing cards is something you do
+ * *while* reviewing, and a modal would hide the decks you are filing into.
  *
  * Requires a query before listing anything: with 16,000+ entries, showing
  * the whole dictionary here (as the Dictionary tab does) would turn "add a
  * few cards" into a scroll-fest.
  */
-export function BrowseDrawer({
-  open,
+export function DictionaryBrowser({
   entries,
   userDecks,
   pronunciation,
@@ -37,7 +35,6 @@ export function BrowseDrawer({
   onNewDeckFromCard,
   onSavePoolAsDeck,
 }: {
-  open: boolean
   entries: EnrichedEntry[]
   userDecks: Deck[]
   pronunciation: PronunciationMode
@@ -55,7 +52,7 @@ export function BrowseDrawer({
   const results = useMemo(() => (query.trim() ? search(index, query).slice(0, MAX_RESULTS) : []), [index, query])
 
   return (
-    <section className={open ? 'drawer drawer--open' : 'drawer'} aria-label="Browse the dictionary" aria-hidden={!open}>
+    <>
       <div className="drawer__head">
         <span className="eyebrow">Dictionary</span>
         <input
@@ -133,6 +130,6 @@ export function BrowseDrawer({
           })
         )}
       </div>
-    </section>
+    </>
   )
 }

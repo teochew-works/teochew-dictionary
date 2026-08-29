@@ -1418,6 +1418,69 @@
   position: relative;
 }
 
+/* ── a deck's own cards ───────────────────────────────────────────── */
+
+.drawer__deck {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+}
+
+.drawer__swatch {
+  width: 4px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.drawer__count {
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+/*
+ * A packed contents list leaves nowhere to start a touch pan if every row
+ * swallows the gesture, so rows here keep vertical panning. Drags from this
+ * list go left to the rail or up to the tray, and a pan that steals the
+ * pointer fires pointercancel, which the drag engine already treats as a
+ * clean abort.
+ */
+.entry--in-deck {
+  touch-action: pan-y;
+  padding-right: 6px;
+}
+
+.entry--unresolved {
+  opacity: 0.55;
+  border-style: dashed;
+  cursor: default;
+}
+
+.entry__remove {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--ink-3);
+  opacity: 0;
+  transition: opacity 0.15s var(--ease);
+}
+
+.entry:hover .entry__remove,
+.entry__remove:focus-visible {
+  opacity: 1;
+}
+
+.entry__remove:hover {
+  background: var(--surface-2);
+  color: var(--color-danger);
+}
+
+.entry--unresolved .entry__remove {
+  opacity: 1;
+}
+
 .entry {
   display: inline-grid;
   grid-template-columns: auto auto;

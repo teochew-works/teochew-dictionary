@@ -15,7 +15,7 @@ const statsById = new Map<string, DeckStats>([
   ['d2', { total: 0, kept: 0, due: 0, fresh: 0, learned: 0 }],
 ])
 
-const menuActions = { onPutOnTable: vi.fn(), onRename: vi.fn(), onDuplicate: vi.fn(), onDelete: vi.fn() }
+const menuActions = { onPutOnTable: vi.fn(), onViewCards: vi.fn(), onRename: vi.fn(), onDuplicate: vi.fn(), onDelete: vi.fn() }
 
 function setup(overrides: Partial<Parameters<typeof DeckRail>[0]> = {}) {
   const props = {

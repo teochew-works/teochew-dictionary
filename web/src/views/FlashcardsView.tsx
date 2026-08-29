@@ -6,7 +6,9 @@ import { DeckTray } from '../components/DeckTray'
 import { DeckRail } from '../components/DeckRail'
 import { DragGhost } from '../components/DragGhost'
 import { GroupPresets } from '../components/GroupPresets'
-import { BrowseDrawer } from '../components/BrowseDrawer'
+import { Drawer } from '../components/Drawer'
+import { DictionaryBrowser } from '../components/DictionaryBrowser'
+import { DeckContents } from '../components/DeckContents'
 import { EntryDeckMenu } from '../components/EntryDeckMenu'
 import { PromptModeControl } from '../components/PromptModeControl'
 import { FiltersPopover } from '../components/FiltersPopover'
@@ -103,7 +105,8 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
   const [fullAudioOnly, setFullAudioOnly] = useState<boolean>(readFullAudioOnly)
   const [announcement, setAnnouncement] = useState('')
   const announce = useCallback((message: string) => setAnnouncement(message), [])
-  const [browseOpen, setBrowseOpen] = useState(false)
+  /** What the bottom dock is showing: nothing, the dictionary, or one deck's cards. */
+  const [drawer, setDrawer] = useState<{ mode: 'dictionary' } | { mode: 'deck'; deckId: string } | null>(null)
   const [filtersOpen, setFiltersOpen] = useState(false)
   const [renaming, setRenaming] = useState<{ deckId: string; value: string } | null>(null)
   const [filingMenuFor, setFilingMenuFor] = useState<string | null>(null)
@@ -348,6 +351,9 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
   const trayItemRef = useComposedItemRef(drag.trayItemRef, trayFlip.itemRef, useCallback((id: string) => drag.deckTargetRef(id, 'tray'), [drag]))
   const dictionaryRef = drag.deckTargetRef(dictionaryDeck.id, 'rail')
 
+  const viewedDeck = drawer?.mode === 'deck' ? (decksById.get(drawer.deckId) ?? null) : null
+  const drawerOpen = drawer?.mode === 'dictionary' || viewedDeck !== null
+
   const outcome = drag.outcome
   const trayCaret =
     outcome?.highlight === 'tray' && (outcome.act === 'play' || outcome.act === 'reorder-play') ? (outcome.index ?? null) : null
@@ -571,6 +577,7 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
               decksStore.addToPlay(deck.id)
               note(`${deck.name} is on the table`)
             },
+            onViewCards: () => setDrawer({ mode: 'deck', deckId: deck.id }),
             onRename: () => setRenaming({ deckId: deck.id, value: deck.name }),
             onDuplicate: () => {
               decksStore.duplicateDeck(deck.id)
@@ -702,8 +709,13 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
 
             <FunnelReadout stages={funnelStages} onOpenFilters={() => setFiltersOpen(true)} />
 
-            <button type="button" className="pill" aria-expanded={browseOpen} onClick={() => setBrowseOpen((v) => !v)}>
-              {browseOpen ? '✕ Done adding' : '＋ Add cards'}
+            <button
+              type="button"
+              className="pill"
+              aria-expanded={drawer?.mode === 'dictionary'}
+              onClick={() => setDrawer((d) => (d?.mode === 'dictionary' ? null : { mode: 'dictionary' }))}
+            >
+              {drawer?.mode === 'dictionary' ? '✕ Done adding' : '＋ Add cards'}
             </button>
           </div>
 
@@ -715,21 +727,39 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
 
           <section className="study">{renderStudy()}</section>
 
-          <BrowseDrawer
-            open={browseOpen}
-            entries={entries}
-            userDecks={userDecks}
-            pronunciation={pronunciation}
-            poolSize={eligibleEntries.length}
-            cardDrag={{
-              onPointerDown: (entryId) => drag.onPointerDown({ kind: 'entry', id: entryId }),
-              isDragging: (entryId) => drag.isDragging('entry', entryId),
-            }}
-            onAddCard={addCard}
-            onRemoveCard={removeCard}
-            onNewDeckFromCard={newDeckFromCard}
-            onSavePoolAsDeck={savePoolAsDeck}
-          />
+          <Drawer open={drawerOpen} label={viewedDeck ? `Cards in ${viewedDeck.name}` : 'Browse the dictionary'}>
+            {viewedDeck ? (
+              <DeckContents
+                deck={viewedDeck}
+                entryById={entryById}
+                pronunciation={pronunciation}
+                userDecks={userDecks}
+                cardDrag={{
+                  onPointerDown: (entryId) => drag.onPointerDown({ kind: 'entry', id: entryId }),
+                  isDragging: (entryId) => drag.isDragging('entry', entryId),
+                }}
+                onAddCard={addCard}
+                onRemoveCard={removeCard}
+                onNewDeckFromCard={newDeckFromCard}
+                onBrowseDictionary={() => setDrawer({ mode: 'dictionary' })}
+              />
+            ) : (
+              <DictionaryBrowser
+                entries={entries}
+                userDecks={userDecks}
+                pronunciation={pronunciation}
+                poolSize={eligibleEntries.length}
+                cardDrag={{
+                  onPointerDown: (entryId) => drag.onPointerDown({ kind: 'entry', id: entryId }),
+                  isDragging: (entryId) => drag.isDragging('entry', entryId),
+                }}
+                onAddCard={addCard}
+                onRemoveCard={removeCard}
+                onNewDeckFromCard={newDeckFromCard}
+                onSavePoolAsDeck={savePoolAsDeck}
+              />
+            )}
+          </Drawer>
         </div>
       </div>
 
