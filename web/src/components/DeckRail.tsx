@@ -38,6 +38,7 @@ export function DeckRail({
   libraryOver,
   trashArmed,
   trashOver,
+  trashLabel,
   isDragging,
   isLifted,
   cardDropFor,
@@ -60,9 +61,11 @@ export function DeckRail({
   dictionaryRef: (el: HTMLElement | null) => void
   caretIndex: number | null
   libraryOver: boolean
-  /** True while a deck or chip is in the air — the only time the trash exists. */
+  /** True while something the trash can act on is in the air — the only time it exists. */
   trashArmed: boolean
   trashOver: boolean
+  /** What releasing here would do: delete the deck, or take a card out of one. */
+  trashLabel: string
   isDragging: (deckId: string) => boolean
   isLifted: (deckId: string) => boolean
   cardDropFor: (deckId: string) => CardDropState
@@ -182,7 +185,7 @@ export function DeckRail({
             strokeLinejoin="round"
           />
         </svg>
-        Release to delete deck
+        {trashLabel}
       </div>
     </aside>
   )

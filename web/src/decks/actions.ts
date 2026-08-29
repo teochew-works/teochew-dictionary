@@ -45,6 +45,26 @@ export function removeCardFromDeck(state: DecksState, deckId: string, entryId: s
   }
 }
 
+/**
+ * Takes `entryId` out of one deck and puts it in another, as one transition —
+ * so a move persists once and offers a single thing to undo, rather than
+ * reading as a removal followed by an unrelated addition.
+ *
+ * A move onto the deck the card is already in is a no-op, as is a move whose
+ * target already holds it (the card still leaves the source).
+ */
+export function moveCardBetweenDecks(state: DecksState, fromDeckId: string, toDeckId: string, entryId: string): DecksState {
+  if (fromDeckId === toDeckId) return state
+  return {
+    ...state,
+    decks: state.decks.map((d) => {
+      if (d.id === fromDeckId) return { ...d, cards: d.cards.filter((id) => id !== entryId) }
+      if (d.id === toDeckId && !d.cards.includes(entryId)) return { ...d, cards: [...d.cards, entryId] }
+      return d
+    }),
+  }
+}
+
 export function setInPlay(state: DecksState, deckIds: string[]): DecksState {
   return { ...state, inPlay: deckIds }
 }

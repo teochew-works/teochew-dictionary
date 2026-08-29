@@ -155,3 +155,39 @@ describe('saveGroup / deleteGroup / loadGroup', () => {
     expect(actions.loadGroup(s, 'missing')).toEqual(s)
   })
 })
+
+describe('moveCardBetweenDecks', () => {
+  const state = () => ({
+    decks: [
+      { id: 'a', name: 'A', hue: 'red' as const, kind: 'user' as const, cards: ['x', 'y'] },
+      { id: 'b', name: 'B', hue: 'blue' as const, kind: 'user' as const, cards: ['z'] },
+    ],
+    inPlay: [],
+    groups: [],
+  })
+
+  it('takes the card out of one deck and puts it in the other, in one step', () => {
+    const next = actions.moveCardBetweenDecks(state(), 'a', 'b', 'x')
+    expect(next.decks[0]!.cards).toEqual(['y'])
+    expect(next.decks[1]!.cards).toEqual(['z', 'x'])
+  })
+
+  it('is a no-op when the source and target are the same deck', () => {
+    const before = state()
+    expect(actions.moveCardBetweenDecks(before, 'a', 'a', 'x')).toBe(before)
+  })
+
+  it('still leaves the source when the target already holds the card', () => {
+    const withDuplicate = state()
+    withDuplicate.decks[1]!.cards = ['z', 'x']
+    const next = actions.moveCardBetweenDecks(withDuplicate, 'a', 'b', 'x')
+    expect(next.decks[0]!.cards).toEqual(['y'])
+    expect(next.decks[1]!.cards).toEqual(['z', 'x'])
+  })
+
+  it('leaves other decks alone', () => {
+    const next = actions.moveCardBetweenDecks(state(), 'a', 'b', 'gone')
+    expect(next.decks[0]!.cards).toEqual(['x', 'y'])
+    expect(next.decks[1]!.cards).toEqual(['z', 'gone'])
+  })
+})

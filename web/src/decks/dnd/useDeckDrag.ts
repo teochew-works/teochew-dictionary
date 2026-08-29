@@ -5,6 +5,7 @@ import type { DeckDropTarget, DragKind, DragSubject, DropOutcome, DropZones } fr
 import { nextGhostFrame } from './dragPhysics'
 import type { GhostFrame } from './dragPhysics'
 import { prefersReducedMotion } from './prefersReducedMotion'
+import { isCopyModifier, isMacPlatform } from './copyModifier'
 import type { Rect } from './geometry'
 
 /** Pointer travel before a press becomes a drag, so a click on a deck's menu button stays a click. */
@@ -40,6 +41,8 @@ export interface DeckDragActions {
   onTakeOff: (deckId: string) => void
   onDelete: (deckId: string) => void
   onAddCard: (deckId: string, entryId: string) => void
+  onMoveCard: (fromDeckId: string, toDeckId: string, entryId: string) => void
+  onRemoveCard: (fromDeckId: string, entryId: string) => void
   onNewDeckFromCard: (entryId: string) => void
 }
 
@@ -136,6 +139,9 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
   const announceRef = useRef(announce)
   announceRef.current = announce
   const outcomeRef = useRef<DropOutcome | null>(null)
+  /** Whether the platform's copy modifier is down right now — see decks/dnd/copyModifier.ts. */
+  const copyHeldRef = useRef(false)
+  const macRef = useRef(isMacPlatform())
 
   /** The drag image's current position and tilt; advanced by the rAF loop, never by React. */
   const frameRef = useRef<GhostFrame | null>(null)
@@ -214,10 +220,18 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
    * the one that was true when the press began.
    */
   const enrich = useCallback((dragged: DragSubject): DragSubject => {
-    if (dragged.kind !== 'deck' && dragged.kind !== 'chip') return dragged
-    const info = contextRef.current.deckInfo(dragged.id)
-    if (!info) return dragged
-    return { ...dragged, deck: { name: info.name, isVirtual: info.isVirtual, kept: info.kept } }
+    if (dragged.kind === 'deck' || dragged.kind === 'chip') {
+      const info = contextRef.current.deckInfo(dragged.id)
+      if (!info) return dragged
+      return { ...dragged, deck: { name: info.name, isVirtual: info.isVirtual, kept: info.kept } }
+    }
+    if (!dragged.from) return dragged
+    const info = contextRef.current.deckInfo(dragged.from.id)
+    return {
+      ...dragged,
+      copy: copyHeldRef.current,
+      from: info ? { id: dragged.from.id, name: info.name } : dragged.from,
+    }
   }, [])
 
   const zonesFor = useCallback(
@@ -238,8 +252,9 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
         trayItems: rectsFor(ctx.inPlayIds, trayItemEls.current, dragged.id),
         library: rectOf(libraryElRef.current),
         libraryItems: rectsFor(ctx.libraryIds, libraryItemEls.current, dragged.id),
-        // The trash only exists while a deck is in the air, matching the prototype.
-        trash: isDeckDrag ? rectOf(trashElRef.current) : null,
+        // The trash exists while a deck is in the air, and while a card is in
+        // the air that came out of a deck and so has something to leave.
+        trash: isDeckDrag || dragged.from ? rectOf(trashElRef.current) : null,
         deckTargets,
       }
     },
@@ -281,6 +296,7 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
 
       press.pointX = e.clientX
       press.pointY = e.clientY
+      copyHeldRef.current = isCopyModifier(e, macRef.current)
       ghostTargetRef.current = { x: e.clientX - press.offsetX, y: e.clientY - press.offsetY }
 
       if (!press.started) {
@@ -336,19 +352,44 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
         case 'add':
           if (resolved.deckId) a.onAddCard(resolved.deckId, dragged.id)
           break
+        case 'move':
+          if (resolved.deckId && dragged.from) a.onMoveCard(dragged.from.id, resolved.deckId, dragged.id)
+          break
+        case 'remove':
+          if (dragged.from) a.onRemoveCard(dragged.from.id, dragged.id)
+          break
         case 'new-deck':
           a.onNewDeckFromCard(dragged.id)
           break
+        default: {
+          // A new act that nobody handles would otherwise do nothing at all and
+          // not even announce a refusal, since `ok` is true by this point.
+          const unhandled: never = resolved.act
+          throw new Error(`Unhandled drop act: ${String(unhandled)}`)
+        }
       }
+    }
+
+    // Pressing or releasing the copy modifier without moving the pointer still
+    // has to flip the badge, so the key state is tracked as well as read off
+    // each pointermove. This effect subscribes once for the component's
+    // lifetime — the rAF effect below re-runs per drag and must not be used.
+    function handleModifier(e: KeyboardEvent) {
+      if (!pressRef.current) return
+      copyHeldRef.current = isCopyModifier(e, macRef.current)
     }
 
     document.addEventListener('pointermove', handleMove)
     document.addEventListener('pointerup', handleUp)
     document.addEventListener('pointercancel', handleUp)
+    document.addEventListener('keydown', handleModifier)
+    document.addEventListener('keyup', handleModifier)
     return () => {
       document.removeEventListener('pointermove', handleMove)
       document.removeEventListener('pointerup', handleUp)
       document.removeEventListener('pointercancel', handleUp)
+      document.removeEventListener('keydown', handleModifier)
+      document.removeEventListener('keyup', handleModifier)
     }
   }, [resolveNow])
 
@@ -404,6 +445,7 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
         started: false,
         outcome: null,
       }
+      copyHeldRef.current = isCopyModifier(e, macRef.current)
       ghostTargetRef.current = { x: rect.left, y: rect.top }
       frameRef.current = { x: rect.left, y: rect.top, angle: 0 }
       setGhostSize({ width: rect.width, height: rect.height })

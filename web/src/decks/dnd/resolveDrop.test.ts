@@ -135,3 +135,64 @@ describe('resolveDrop — a card being filed', () => {
     expect(resolveDrop({ kind: 'entry', id: 'e1' }, zones(), 100, 30)).toMatchObject({ ok: true, act: 'add', deckId: 'd1' })
   })
 })
+
+describe('resolveDrop — a card dragged out of a deck', () => {
+  const fromKitchen: DragSubject = { kind: 'entry', id: 'e2', from: { id: 'd2', name: 'Travel' } }
+
+  it('moves rather than copies when it lands on another deck', () => {
+    expect(resolveDrop(fromKitchen, zones(), 100, 30)).toMatchObject({
+      ok: true,
+      act: 'move',
+      deckId: 'd1',
+      label: 'Move to Food words',
+    })
+  })
+
+  it('copies instead while the platform copy modifier is held', () => {
+    expect(resolveDrop({ ...fromKitchen, copy: true }, zones(), 100, 30)).toMatchObject({
+      ok: true,
+      act: 'add',
+      deckId: 'd1',
+      label: '+1 → Food words',
+    })
+  })
+
+  it('refuses being dropped back where it came from', () => {
+    // The source holds the card by definition, so the already-has branch covers it.
+    const homeAgain: DragSubject = { kind: 'entry', id: 'e1', from: { id: 'd2', name: 'Travel' } }
+    expect(resolveDrop(homeAgain, zones(), 100, 90)).toMatchObject({ ok: false, act: null, label: 'Already in Travel' })
+  })
+
+  it('removes from its deck when dropped on the trash', () => {
+    expect(resolveDrop(fromKitchen, zones(), 100, 530)).toMatchObject({
+      ok: true,
+      act: 'remove',
+      highlight: 'trash',
+      label: 'Remove from Travel',
+    })
+  })
+
+  it('still removes while the copy modifier is held — there is nothing to copy to', () => {
+    expect(resolveDrop({ ...fromKitchen, copy: true }, zones(), 100, 530)).toMatchObject({ ok: true, act: 'remove' })
+  })
+
+  it('copies into a new deck rather than emptying the one being viewed', () => {
+    expect(resolveDrop(fromKitchen, zones(), 100, 300)).toMatchObject({ ok: true, act: 'new-deck' })
+  })
+
+  it('refuses the read-only dictionary like any other card drag', () => {
+    expect(resolveDrop(fromKitchen, zones(), 100, 150)).toMatchObject({ ok: false, label: 'The dictionary is read-only' })
+  })
+})
+
+describe('resolveDrop — a card with nowhere to go back to', () => {
+  it('only ever adds, never moves', () => {
+    expect(resolveDrop(draggedCard, zones(), 100, 30)).toMatchObject({ act: 'add' })
+  })
+
+  it('ignores the trash, even when the zone is supplied', () => {
+    // The engine does not arm the trash for these, but the resolver must not
+    // depend on that to stay safe.
+    expect(resolveDrop(draggedCard, zones(), 100, 530)).toMatchObject({ ok: false, act: null })
+  })
+})

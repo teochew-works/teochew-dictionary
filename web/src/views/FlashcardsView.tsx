@@ -252,6 +252,17 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
     [decksById, entryById, decksStore, withUndo],
   )
 
+  const moveCard = useCallback(
+    (fromDeckId: string, toDeckId: string, entryId: string) => {
+      const to = decksById.get(toDeckId)
+      const entry = entryById.get(entryId)
+      if (!decksById.get(fromDeckId) || !to) return
+      decksStore.moveCardBetweenDecks(fromDeckId, toDeckId, entryId)
+      withUndo(`Moved ${entry?.headword ?? 'card'} to ${to.name}`)
+    },
+    [decksById, entryById, decksStore, withUndo],
+  )
+
   const savePoolAsDeck = useCallback(() => {
     if (eligibleEntries.length === 0) return
     const bits: string[] = []
@@ -267,6 +278,8 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
 
   /* ── drag and keyboard lift ──────────────────────────────────────── */
 
+  const cardSetsById = useMemo(() => new Map(allDecks.map((d) => [d.id, new Set(d.cards)])), [allDecks])
+
   const dragContext = useMemo(
     () => ({
       inPlayIds,
@@ -278,11 +291,11 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
           name: deck.name,
           isVirtual: deck.kind === 'virtual',
           kept: statsById.get(deckId)?.kept ?? 0,
-          hasCard: (entryId: string) => deck.cards.includes(entryId),
+          hasCard: (entryId: string) => cardSetsById.get(deckId)?.has(entryId) ?? false,
         }
       },
     }),
-    [inPlayIds, libraryIds, decksById, statsById],
+    [inPlayIds, libraryIds, decksById, statsById, cardSetsById],
   )
 
   const dragActions = useMemo(
@@ -307,9 +320,11 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
         withUndo(`Deleted ${name}`)
       },
       onAddCard: addCard,
+      onMoveCard: moveCard,
+      onRemoveCard: removeCard,
       onNewDeckFromCard: newDeckFromCard,
     }),
-    [decksStore, libraryIds, nameOf, note, withUndo, addCard, newDeckFromCard],
+    [decksStore, libraryIds, nameOf, note, withUndo, addCard, moveCard, removeCard, newDeckFromCard],
   )
 
   const drag = useDeckDrag(dragContext, dragActions, announce)
@@ -553,7 +568,10 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
           dictionaryRef={dictionaryRef}
           caretIndex={libraryCaret}
           libraryOver={outcome?.highlight === 'library'}
-          trashArmed={drag.subject?.kind === 'deck' || drag.subject?.kind === 'chip'}
+          trashArmed={drag.subject?.kind === 'deck' || drag.subject?.kind === 'chip' || Boolean(drag.subject?.from)}
+          trashLabel={
+            drag.subject?.from ? `Release to remove from ${drag.subject.from.name}` : 'Release to delete deck'
+          }
           trashOver={outcome?.highlight === 'trash'}
           isDragging={(id) => drag.isDragging('deck', id)}
           isLifted={(id) => lift.isLifted('deck', id)}
@@ -735,7 +753,12 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
                 pronunciation={pronunciation}
                 userDecks={userDecks}
                 cardDrag={{
-                  onPointerDown: (entryId) => drag.onPointerDown({ kind: 'entry', id: entryId }),
+                  onPointerDown: (entryId) =>
+                    drag.onPointerDown({
+                      kind: 'entry',
+                      id: entryId,
+                      from: { id: viewedDeck.id, name: viewedDeck.name },
+                    }),
                   isDragging: (entryId) => drag.isDragging('entry', entryId),
                 }}
                 onAddCard={addCard}

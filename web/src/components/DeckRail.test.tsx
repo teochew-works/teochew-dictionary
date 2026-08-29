@@ -31,6 +31,7 @@ function setup(overrides: Partial<Parameters<typeof DeckRail>[0]> = {}) {
     libraryOver: false,
     trashArmed: false,
     trashOver: false,
+    trashLabel: 'Release to delete deck',
     isDragging: () => false,
     isLifted: () => false,
     cardDropFor: () => null,
@@ -115,6 +116,11 @@ describe('DeckRail', () => {
     it('reacts when the deck is over it', () => {
       const { container } = setup({ trashArmed: true, trashOver: true })
       expect(container.querySelector('.trash.is-over')).not.toBeNull()
+    })
+
+    it('says what releasing would do, which is not always deleting a deck', () => {
+      setup({ trashArmed: true, trashLabel: 'Release to remove from Kitchen' })
+      expect(screen.getByText('Release to remove from Kitchen')).toBeInTheDocument()
     })
   })
 

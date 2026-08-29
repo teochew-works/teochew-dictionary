@@ -15,6 +15,7 @@ export interface DecksStore {
   reorderDecks: (orderedIds: string[]) => void
   addCardToDeck: (deckId: string, entryId: string) => void
   removeCardFromDeck: (deckId: string, entryId: string) => void
+  moveCardBetweenDecks: (fromDeckId: string, toDeckId: string, entryId: string) => void
   setInPlay: (deckIds: string[]) => void
   addToPlay: (deckId: string) => void
   removeFromPlay: (deckId: string) => void
@@ -83,6 +84,11 @@ export function useDecksStore(): DecksStore {
     ),
     removeCardFromDeck: useCallback(
       (deckId: string, entryId: string) => update((s) => actions.removeCardFromDeck(s, deckId, entryId)),
+      [update],
+    ),
+    moveCardBetweenDecks: useCallback(
+      (fromDeckId: string, toDeckId: string, entryId: string) =>
+        update((s) => actions.moveCardBetweenDecks(s, fromDeckId, toDeckId, entryId)),
       [update],
     ),
     setInPlay: useCallback((deckIds: string[]) => update((s) => actions.setInPlay(s, deckIds)), [update]),

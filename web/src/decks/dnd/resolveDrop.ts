@@ -8,7 +8,7 @@ import type { Rect } from './geometry'
  */
 export type DragKind = 'deck' | 'chip' | 'card' | 'entry'
 
-export type DropAct = 'play' | 'reorder-play' | 'reorder-lib' | 'off' | 'delete' | 'add' | 'new-deck'
+export type DropAct = 'play' | 'reorder-play' | 'reorder-lib' | 'off' | 'delete' | 'add' | 'move' | 'remove' | 'new-deck'
 
 /** Which drop zone should light up under the pointer. */
 export type DropHighlight = 'tray' | 'library' | 'trash' | 'deck'
@@ -64,6 +64,15 @@ export interface DragSubject {
     /** Cards that survive the session's filters — what "+N cards" actually promises. */
     kept: number
   }
+  /**
+   * For a card dragged out of a deck's contents: the deck it is leaving. This
+   * is what makes a drop a *move* rather than a copy, and what gives the trash
+   * something to remove the card from. A card dragged from the study surface or
+   * the dictionary has no source, so it can only ever be added.
+   */
+  from?: { id: string; name: string }
+  /** The platform's copy modifier is held, so a sourced drag copies instead of moving. */
+  copy?: boolean
 }
 
 const NOTHING: DropOutcome = { ok: false, act: null, highlight: null, label: '' }
@@ -92,7 +101,7 @@ export function resolveDrop(subject: DragSubject, zones: DropZones, x: number, y
   if (subject.kind === 'deck' || subject.kind === 'chip') {
     return resolveDeckDrop(subject, zones, x, y)
   }
-  return resolveCardDrop(zones, x, y)
+  return resolveCardDrop(subject, zones, x, y)
 }
 
 function resolveDeckDrop(subject: DragSubject, zones: DropZones, x: number, y: number): DropOutcome {
@@ -126,19 +135,34 @@ function resolveDeckDrop(subject: DragSubject, zones: DropZones, x: number, y: n
   return { ...NOTHING, label: 'Drop on the table' }
 }
 
-/** `alreadyHas` is resolved by the caller, so the dragged card's own id isn't needed here. */
-function resolveCardDrop(zones: DropZones, x: number, y: number): DropOutcome {
+function resolveCardDrop(subject: DragSubject, zones: DropZones, x: number, y: number): DropOutcome {
+  const from = subject.from
+
+  // Only a card that came out of a deck has anything to be removed from, which
+  // is also the only case where the caller arms the trash at all.
+  if (from && zones.trash && pointInRect(x, y, zones.trash)) {
+    return { ok: true, act: 'remove', highlight: 'trash', label: `Remove from ${from.name}` }
+  }
+
   const target = deckTargetAt(zones.deckTargets, x, y)
   if (target) {
     if (target.isVirtual) {
       return { ok: false, act: null, highlight: 'deck', highlightDeckId: target.id, label: 'The dictionary is read-only' }
     }
+    // The source deck holds the card by definition, so this also covers
+    // dropping a card straight back where it came from.
     if (target.alreadyHas) {
       return { ok: false, act: null, highlight: 'deck', highlightDeckId: target.id, label: `Already in ${target.name}` }
+    }
+    if (from && !subject.copy) {
+      return { ok: true, act: 'move', deckId: target.id, highlight: 'deck', highlightDeckId: target.id, label: `Move to ${target.name}` }
     }
     return { ok: true, act: 'add', deckId: target.id, highlight: 'deck', highlightDeckId: target.id, label: `+1 → ${target.name}` }
   }
 
+  // A new deck always copies, even from a sourced drag: "start a new deck from
+  // this card" reads as making something, not as emptying the deck you are
+  // looking at one card at a time.
   if (zones.library && pointInRect(x, y, zones.library)) {
     return { ok: true, act: 'new-deck', highlight: 'library', label: 'Start a new deck' }
   }
