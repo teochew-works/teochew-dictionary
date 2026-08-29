@@ -57,6 +57,18 @@ export function removeFromPlay(state: DecksState, deckId: string): DecksState {
   return { ...state, inPlay: state.inPlay.filter((id) => id !== deckId) }
 }
 
+/**
+ * Puts `deckId` in play at `index` (the end, if omitted), repositioning it
+ * there if it's already in play. Used by rail-to-table drag/keyboard-move
+ * (issue #189), where "drop on the table" always means "ends up at this
+ * position" — unlike `addToPlay`'s simple append-if-absent.
+ */
+export function moveToPlay(state: DecksState, deckId: string, index?: number): DecksState {
+  const withoutDeck = state.inPlay.filter((id) => id !== deckId)
+  const clamped = index === undefined ? withoutDeck.length : Math.max(0, Math.min(index, withoutDeck.length))
+  return { ...state, inPlay: [...withoutDeck.slice(0, clamped), deckId, ...withoutDeck.slice(clamped)] }
+}
+
 export function reorderPlay(state: DecksState, orderedIds: string[]): DecksState {
   return { ...state, inPlay: orderedIds }
 }

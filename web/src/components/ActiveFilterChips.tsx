@@ -8,17 +8,19 @@ export interface ActiveFilterChip {
 export function ActiveFilterChips({ chips }: { chips: ActiveFilterChip[] }) {
   if (chips.length === 0) return null
   return (
-    <ul className="active-filter-chips">
+    <ul className="active">
       {chips.map((chip) => (
-        <li key={chip.key} className="filter-chip">
+        <li key={chip.key} className="active__chip">
           {chip.label}
           <button
             type="button"
-            className="filter-chip__remove"
+            className="active__chip-remove"
             aria-label={`Remove filter: ${chip.label}`}
             onClick={chip.onRemove}
           >
-            ×
+            <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true">
+              <path d="M1.3 1.3l5.4 5.4M6.7 1.3L1.3 6.7" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+            </svg>
           </button>
         </li>
       ))}

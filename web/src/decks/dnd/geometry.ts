@@ -3,7 +3,7 @@
  * APIs so they're unit-testable with fabricated rects — jsdom's
  * getBoundingClientRect always reports all-zero rects (it doesn't run
  * layout), so real coordinate math can only be verified this way in tests.
- * Callers (useDragReorder.ts) supply real rects at the DOM boundary.
+ * Callers (useDeckDrag.ts) supply real rects at the DOM boundary.
  */
 export interface Rect {
   top: number

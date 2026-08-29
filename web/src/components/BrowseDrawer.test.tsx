@@ -1,110 +1,142 @@
-import { afterEach, describe, expect, it, vi } from 'vitest'
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { describe, expect, it, vi } from 'vitest'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { BrowseDrawer } from './BrowseDrawer'
-import { makeEntry } from '../test/entryFixtures'
+import { makeEntry, makeReading } from '../test/entryFixtures'
+import type { AudioReference } from '../types/dict'
 import type { Deck } from '../decks/types'
 
-const KITCHEN: Deck = { id: 'kitchen', name: 'Kitchen', hue: 'green', cards: [], kind: 'user' }
-const TRAVEL: Deck = { id: 'travel', name: 'Travel', hue: 'blue', cards: [], kind: 'user' }
+const CLIP: AudioReference = {
+  key: 'dio5',
+  url: 'https://example.com/dio5.opus',
+  confidence: 'high',
+  licence: 'CC-BY-4.0',
+  attributions: [],
+}
+
+const TEA = makeEntry({
+  id: 'de5-茶',
+  headword: '茶',
+  level: 'A1',
+  readings: [makeReading({ pengim: 'dê5', sandhi: 'dê7', wordAudio: CLIP })],
+  senses: [{ pos: 'noun', gloss_en: ['tea'] }],
+  search_keys: ['茶', 'de5', 'tea'],
+})
+const RICE = makeEntry({
+  id: 'bng7-飯',
+  headword: '飯',
+  readings: [makeReading({ pengim: 'bng7', sandhi: 'bng7' })],
+  senses: [{ pos: 'noun', gloss_en: ['rice'] }],
+  search_keys: ['飯', 'bng7', 'rice'],
+})
+
+const decks: Deck[] = [{ id: 'd1', name: 'Food words', hue: 'red', kind: 'user', cards: [] }]
+
+function setup(overrides: Partial<Parameters<typeof BrowseDrawer>[0]> = {}) {
+  const props = {
+    open: true,
+    entries: [TEA, RICE],
+    userDecks: decks,
+    pronunciation: 'citation' as const,
+    poolSize: 12,
+    cardDrag: { onPointerDown: () => vi.fn(), isDragging: () => false },
+    onAddCard: vi.fn(),
+    onNewDeckFromCard: vi.fn(),
+    onSavePoolAsDeck: vi.fn(),
+    ...overrides,
+  }
+  const view = render(<BrowseDrawer {...props} />)
+  return { ...view, props }
+}
+
+function searchFor(query: string) {
+  fireEvent.change(screen.getByLabelText('Search the dictionary'), { target: { value: query } })
+}
 
 describe('BrowseDrawer', () => {
-  afterEach(() => {
-    cleanup()
+  it('is collapsed and hidden from assistive tech while closed', () => {
+    const { container } = setup({ open: false })
+    expect(container.querySelector('.drawer--open')).toBeNull()
+    expect(container.querySelector('.drawer')).toHaveAttribute('aria-hidden', 'true')
   })
 
-  it('prompts to create a deck first when there are no user decks', () => {
-    render(<BrowseDrawer entries={[]} userDecks={[]} onAddCard={vi.fn()} onRemoveCard={vi.fn()} onClose={vi.fn()} />)
+  it('waits for a query rather than listing 16,000 entries', () => {
+    setup()
+    expect(screen.getByText('Type to search for entries to add.')).toBeInTheDocument()
+    expect(screen.queryByText('茶')).not.toBeInTheDocument()
+  })
+
+  it('lists matches with their reading, gloss, and tags', () => {
+    setup()
+    searchFor('tea')
+    expect(screen.getByText('茶')).toBeInTheDocument()
+    expect(screen.getByText('dê5')).toBeInTheDocument()
+    expect(screen.getByText('tea')).toBeInTheDocument()
+    expect(screen.getByText('A1')).toBeInTheDocument()
+    expect(screen.getByText('audio')).toBeInTheDocument()
+  })
+
+  it('follows the sandhi setting in the reading it shows', () => {
+    setup({ pronunciation: 'sandhi' })
+    searchFor('tea')
+    expect(screen.getByText('dê7')).toBeInTheDocument()
+  })
+
+  it('says so when nothing matches', () => {
+    setup()
+    searchFor('zzzz')
+    expect(screen.getByText(/No entries match/)).toBeInTheDocument()
+  })
+
+  it('points at the library when there is nowhere to file yet', () => {
+    setup({ userDecks: [] })
     expect(screen.getByText(/Create a deck first/)).toBeInTheDocument()
   })
 
-  it('prompts to search before showing any results', () => {
-    const entry = makeEntry({ id: 'a', headword: '一' })
-    render(<BrowseDrawer entries={[entry]} userDecks={[KITCHEN]} onAddCard={vi.fn()} onRemoveCard={vi.fn()} onClose={vi.fn()} />)
-    expect(screen.getByText(/Type to search/)).toBeInTheDocument()
-    expect(screen.queryByText('一')).not.toBeInTheDocument()
+  it('opens a deck menu when an entry is clicked, for the non-drag path', () => {
+    setup()
+    searchFor('tea')
+    fireEvent.click(screen.getByRole('button', { name: /茶/ }))
+    expect(screen.getByRole('menu')).toBeInTheDocument()
+    expect(screen.getByRole('menuitem', { name: 'Food words' })).toBeInTheDocument()
   })
 
-  it('shows matching entries once a query is typed', () => {
-    const entry = makeEntry({ id: 'a', headword: '一', search_keys: ['一', 'yi'] })
-    render(<BrowseDrawer entries={[entry]} userDecks={[KITCHEN]} onAddCard={vi.fn()} onRemoveCard={vi.fn()} onClose={vi.fn()} />)
-
-    fireEvent.change(screen.getByLabelText('Search the dictionary'), { target: { value: '一' } })
-
-    expect(screen.getByText('一')).toBeInTheDocument()
+  it('opens the same menu from the keyboard', () => {
+    setup()
+    searchFor('tea')
+    fireEvent.keyDown(screen.getByRole('button', { name: /茶/ }), { key: 'Enter' })
+    expect(screen.getByRole('menu')).toBeInTheDocument()
   })
 
-  it('shows a no-matches message for a query with no hits', () => {
-    const entry = makeEntry({ id: 'a', headword: '一', search_keys: ['一'] })
-    render(<BrowseDrawer entries={[entry]} userDecks={[KITCHEN]} onAddCard={vi.fn()} onRemoveCard={vi.fn()} onClose={vi.fn()} />)
-
-    fireEvent.change(screen.getByLabelText('Search the dictionary'), { target: { value: 'zzzzz' } })
-
-    expect(screen.getByText('No matches.')).toBeInTheDocument()
+  it('files the entry through that menu', () => {
+    const { props } = setup()
+    searchFor('tea')
+    fireEvent.click(screen.getByRole('button', { name: /茶/ }))
+    fireEvent.click(screen.getByRole('menuitem', { name: 'Food words' }))
+    expect(props.onAddCard).toHaveBeenCalledWith('d1', 'de5-茶')
   })
 
-  it('offers only decks the entry is not already in, in the add select', () => {
-    const entry = makeEntry({ id: 'a', headword: '一', search_keys: ['一'] })
-    render(
-      <BrowseDrawer
-        entries={[entry]}
-        userDecks={[{ ...KITCHEN, cards: ['a'] }, TRAVEL]}
-        onAddCard={vi.fn()}
-        onRemoveCard={vi.fn()}
-        onClose={vi.fn()}
-      />,
-    )
-    fireEvent.change(screen.getByLabelText('Search the dictionary'), { target: { value: '一' } })
-
-    const addSelect = screen.getByLabelText('Add 一 to a deck')
-    expect(screen.queryByRole('option', { name: 'Kitchen' })).not.toBeInTheDocument()
-    expect(addSelect).toBeInTheDocument()
+  it('starts a new deck from an entry', () => {
+    const { props } = setup()
+    searchFor('tea')
+    fireEvent.click(screen.getByRole('button', { name: /茶/ }))
+    fireEvent.click(screen.getByRole('menuitem', { name: '+ New deck with this card' }))
+    expect(props.onNewDeckFromCard).toHaveBeenCalledWith('de5-茶')
   })
 
-  it('calls onAddCard with the deck and entry id', () => {
-    const entry = makeEntry({ id: 'a', headword: '一', search_keys: ['一'] })
-    const onAddCard = vi.fn()
-    render(<BrowseDrawer entries={[entry]} userDecks={[KITCHEN]} onAddCard={onAddCard} onRemoveCard={vi.fn()} onClose={vi.fn()} />)
-    fireEvent.change(screen.getByLabelText('Search the dictionary'), { target: { value: '一' } })
-
-    fireEvent.change(screen.getByLabelText('Add 一 to a deck'), { target: { value: 'kitchen' } })
-
-    expect(onAddCard).toHaveBeenCalledWith('kitchen', 'a')
+  it('saves the filtered review pool as its own deck', () => {
+    const { props } = setup()
+    fireEvent.click(screen.getByRole('button', { name: 'Save this pool as a deck' }))
+    expect(props.onSavePoolAsDeck).toHaveBeenCalled()
   })
 
-  it('shows a removable chip for each deck the entry already belongs to', () => {
-    const entry = makeEntry({ id: 'a', headword: '一', search_keys: ['一'] })
-    const onRemoveCard = vi.fn()
-    render(
-      <BrowseDrawer
-        entries={[entry]}
-        userDecks={[{ ...KITCHEN, cards: ['a'] }]}
-        onAddCard={vi.fn()}
-        onRemoveCard={onRemoveCard}
-        onClose={vi.fn()}
-      />,
-    )
-    fireEvent.change(screen.getByLabelText('Search the dictionary'), { target: { value: '一' } })
-
-    fireEvent.click(screen.getByLabelText('Remove 一 from Kitchen'))
-
-    expect(onRemoveCard).toHaveBeenCalledWith('kitchen', 'a')
+  it('cannot save an empty pool', () => {
+    setup({ poolSize: 0 })
+    expect(screen.getByRole('button', { name: 'Save this pool as a deck' })).toBeDisabled()
   })
 
-  it('calls onClose when the close button is clicked', () => {
-    const onClose = vi.fn()
-    render(<BrowseDrawer entries={[]} userDecks={[]} onAddCard={vi.fn()} onRemoveCard={vi.fn()} onClose={onClose} />)
-
-    fireEvent.click(screen.getByLabelText('Close'))
-
-    expect(onClose).toHaveBeenCalledOnce()
-  })
-
-  it('calls onClose on Escape', () => {
-    const onClose = vi.fn()
-    render(<BrowseDrawer entries={[]} userDecks={[]} onAddCard={vi.fn()} onRemoveCard={vi.fn()} onClose={onClose} />)
-
-    fireEvent.keyDown(document, { key: 'Escape' })
-
-    expect(onClose).toHaveBeenCalledOnce()
+  it('marks the entry being dragged as the source', () => {
+    const { container } = setup({ cardDrag: { onPointerDown: () => vi.fn(), isDragging: (id: string) => id === 'de5-茶' } })
+    searchFor('tea')
+    expect(container.querySelector('.entry.is-source')).not.toBeNull()
   })
 })

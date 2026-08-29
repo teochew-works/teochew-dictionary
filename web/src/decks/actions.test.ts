@@ -105,6 +105,29 @@ describe('setInPlay / addToPlay / removeFromPlay / reorderPlay', () => {
   })
 })
 
+describe('moveToPlay', () => {
+  it('inserts a not-yet-in-play deck at the start', () => {
+    expect(actions.moveToPlay(state({ inPlay: ['a', 'b'] }), 'c', 0).inPlay).toEqual(['c', 'a', 'b'])
+  })
+
+  it('inserts a not-yet-in-play deck in the middle', () => {
+    expect(actions.moveToPlay(state({ inPlay: ['a', 'b'] }), 'c', 1).inPlay).toEqual(['a', 'c', 'b'])
+  })
+
+  it('appends when index is omitted', () => {
+    expect(actions.moveToPlay(state({ inPlay: ['a', 'b'] }), 'c').inPlay).toEqual(['a', 'b', 'c'])
+  })
+
+  it('repositions an already-in-play deck instead of duplicating it', () => {
+    expect(actions.moveToPlay(state({ inPlay: ['a', 'b', 'c'] }), 'a', 2).inPlay).toEqual(['b', 'c', 'a'])
+  })
+
+  it('clamps an out-of-range index', () => {
+    expect(actions.moveToPlay(state({ inPlay: ['a', 'b'] }), 'c', 99).inPlay).toEqual(['a', 'b', 'c'])
+    expect(actions.moveToPlay(state({ inPlay: ['a', 'b'] }), 'c', -5).inPlay).toEqual(['c', 'a', 'b'])
+  })
+})
+
 describe('saveGroup / deleteGroup / loadGroup', () => {
   it('saveGroup adds a new group', () => {
     const next = actions.saveGroup(state(), { id: 'g1', name: 'Evenings', deckIds: ['a'] })

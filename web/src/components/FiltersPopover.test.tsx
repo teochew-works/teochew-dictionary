@@ -1,81 +1,61 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { FiltersPopover } from './FiltersPopover'
 
+function setup(open: boolean, activeCount = 0) {
+  const onOpenChange = vi.fn()
+  render(
+    <FiltersPopover open={open} onOpenChange={onOpenChange} activeCount={activeCount}>
+      <p>panel body</p>
+    </FiltersPopover>,
+  )
+  return { onOpenChange }
+}
+
 describe('FiltersPopover', () => {
-  it('starts closed, with its content not in the document', () => {
-    render(
-      <FiltersPopover>
-        <p>Panel content</p>
-      </FiltersPopover>,
-    )
-    expect(screen.queryByText('Panel content')).not.toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Filters' })).toHaveAttribute('aria-expanded', 'false')
+  it('keeps the panel unmounted while closed', () => {
+    setup(false)
+    expect(screen.queryByText('panel body')).not.toBeInTheDocument()
+    expect(screen.getByRole('button')).toHaveAttribute('aria-expanded', 'false')
   })
 
-  it('opens on trigger click', () => {
-    render(
-      <FiltersPopover>
-        <p>Panel content</p>
-      </FiltersPopover>,
-    )
-
-    fireEvent.click(screen.getByRole('button', { name: 'Filters' }))
-
-    expect(screen.getByText('Panel content')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Filters' })).toHaveAttribute('aria-expanded', 'true')
+  it('shows the panel when the caller says it is open', () => {
+    setup(true)
+    expect(screen.getByText('panel body')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /Filters/ })).toHaveAttribute('aria-expanded', 'true')
   })
 
-  it('toggles closed on a second trigger click', () => {
-    render(
-      <FiltersPopover>
-        <p>Panel content</p>
-      </FiltersPopover>,
-    )
-    const trigger = screen.getByRole('button', { name: 'Filters' })
+  it('asks the caller to open and to close', () => {
+    const { onOpenChange } = setup(false)
+    fireEvent.click(screen.getByRole('button'))
+    expect(onOpenChange).toHaveBeenCalledWith(true)
+  })
 
-    fireEvent.click(trigger)
-    fireEvent.click(trigger)
+  it('badges the number of filters actually applied', () => {
+    setup(false, 2)
+    expect(screen.getByLabelText('2 active')).toHaveTextContent('2')
+  })
 
-    expect(screen.queryByText('Panel content')).not.toBeInTheDocument()
+  it('shows no badge when nothing is filtered', () => {
+    setup(false, 0)
+    expect(screen.queryByLabelText(/active/)).not.toBeInTheDocument()
   })
 
   it('closes on Escape', () => {
-    render(
-      <FiltersPopover>
-        <p>Panel content</p>
-      </FiltersPopover>,
-    )
-    fireEvent.click(screen.getByRole('button', { name: 'Filters' }))
-
+    const { onOpenChange } = setup(true)
     fireEvent.keyDown(document, { key: 'Escape' })
-
-    expect(screen.queryByText('Panel content')).not.toBeInTheDocument()
+    expect(onOpenChange).toHaveBeenCalledWith(false)
   })
 
-  it('closes on a click outside the panel and trigger', () => {
-    render(
-      <FiltersPopover>
-        <p>Panel content</p>
-      </FiltersPopover>,
-    )
-    fireEvent.click(screen.getByRole('button', { name: 'Filters' }))
-
+  it('closes on a press outside the panel and trigger', () => {
+    const { onOpenChange } = setup(true)
     fireEvent.mouseDown(document.body)
-
-    expect(screen.queryByText('Panel content')).not.toBeInTheDocument()
+    expect(onOpenChange).toHaveBeenCalledWith(false)
   })
 
-  it('does not close on a click inside the panel', () => {
-    render(
-      <FiltersPopover>
-        <p>Panel content</p>
-      </FiltersPopover>,
-    )
-    fireEvent.click(screen.getByRole('button', { name: 'Filters' }))
-
-    fireEvent.mouseDown(screen.getByText('Panel content'))
-
-    expect(screen.getByText('Panel content')).toBeInTheDocument()
+  it('stays open for a press inside the panel', () => {
+    const { onOpenChange } = setup(true)
+    fireEvent.mouseDown(screen.getByText('panel body'))
+    expect(onOpenChange).not.toHaveBeenCalled()
   })
 })
