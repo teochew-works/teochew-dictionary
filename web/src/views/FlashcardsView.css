@@ -56,7 +56,14 @@
   }
 }
 
-.flashcards-view button {
+/*
+ * Wrapped in :where() so it contributes no specificity. A plain
+ * `.flashcards-view button` selector (0,1,1) outranks every single-class
+ * component rule below it (`.pill`, `.group__load`, `.card__reveal`, …),
+ * which silently strips their padding, border, and background — the reset
+ * has to lose every one of those arguments, not win them.
+ */
+.flashcards-view :where(button) {
   background: none;
   border: none;
   padding: 0;
