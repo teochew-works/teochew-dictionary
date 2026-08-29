@@ -180,6 +180,27 @@ shares with the mobile app, and where it lives).
   - **Custom buttons, not `<audio controls>`.** A three-syllable reading would
     otherwise render four full-width native players.
 
+  **Combined playback (issue #191).** A "play all" button synthesizes one
+  continuous clip from a reading's per-syllable recordings — fetch,
+  `decodeAudioData`, resample to a common rate, trim each clip's
+  leading/trailing silence (amplitude-threshold scan), crossfade-concatenate
+  the trimmed clips (`src/audio/combineClips.ts`), then play the result as an
+  `AudioBufferSourceNode` via `useAudioPlayer`'s `playBuffer`. Synthesis only
+  runs when `reading.wordAudio` is absent — a native whole-word recording
+  already *is* a single continuous clip, so the combined button plays that
+  directly instead. Combined playback is only offered when every syllable's
+  clip is present *and* from the same recorded speaker
+  (`canCombine` in `src/search/filters.ts`) — splicing together different
+  voices would sound worse than not offering it — which the build pipeline
+  helps by preferring a fully same-speaker clip set across a reading's
+  syllables when one exists (`selectReadingClips` in `src/build/enrich.ts`),
+  rather than picking each syllable's independently-best clip in isolation. A
+  three-state "Audio buttons" setting (`src/settings/audioMode.ts`: component
+  / combined / both, default both) controls whether `ReadingAudio` shows the
+  per-syllable buttons, the combined button, or both; "combined" falls back
+  to the component buttons for any reading that doesn't qualify, rather than
+  showing nothing.
+
   An "Only entries with audio" checkbox filters the list to entries that have
   a clip (`@teochew/core`'s `search/filters.ts`), applied after search and before
   sorting/grouping so it works in every sort mode. It is not persisted, unlike
