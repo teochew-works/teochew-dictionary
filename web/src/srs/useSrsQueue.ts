@@ -6,6 +6,8 @@ import type { EnrichedEntry } from '../types/dict'
 
 export interface SrsQueueState {
   current: QueueItem | null
+  /** Every known card's scheduling state, so callers can count what's due per deck (see decks/stats.ts). */
+  cardStates: Map<string, CardState>
   reviewedCount: number
   totalCount: number
   loading: boolean
@@ -80,6 +82,7 @@ export function useSrsQueue(entries: EnrichedEntry[]): SrsQueueState {
 
   return {
     current: queue[0] ?? null,
+    cardStates: cards,
     reviewedCount,
     totalCount: totalCountRef.current,
     loading,

@@ -44,6 +44,19 @@ function nextInterval(state: CardState, grade: Grade): number {
   return grade === 'easy' ? Math.round(base * EASY_BONUS) : base
 }
 
+/**
+ * What each button would schedule, without committing to it — so the grade
+ * buttons can show the real next interval ("1d", "6d", "8d") rather than a
+ * fixed caption that drifts from what the scheduler actually does.
+ */
+export function previewIntervals(state: CardState): Record<Grade, number> {
+  return {
+    again: nextInterval(state, 'again'),
+    good: nextInterval(state, 'good'),
+    easy: nextInterval(state, 'easy'),
+  }
+}
+
 export function gradeCard(state: CardState, grade: Grade, now = new Date()): CardState {
   const q = quality(grade)
   const efactor = Math.max(MIN_EFACTOR, state.efactor + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02)))

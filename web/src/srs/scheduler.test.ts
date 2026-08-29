@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildQueue, gradeCard, newCardState } from './scheduler'
+import { buildQueue, gradeCard, newCardState, previewIntervals } from './scheduler'
 import type { CardState } from './types'
 
 const NOW = new Date('2026-08-16T00:00:00.000Z')
@@ -139,5 +139,37 @@ describe('buildQueue', () => {
   it('still ranks by frequency first — shuffling never lets a lower-frequency entry jump ahead', () => {
     const queue = buildQueue(entries, new Map(), NOW, 20, () => 0)
     expect(queue.map((q) => q.entryId)).toEqual(['high', 'mid', 'low'])
+  })
+})
+
+describe('previewIntervals', () => {
+  it('agrees with what grading actually schedules', () => {
+    const state = newCardState('a', NOW)
+    const preview = previewIntervals(state)
+    expect(preview.again).toBe(gradeCard(state, 'again', NOW).interval)
+    expect(preview.good).toBe(gradeCard(state, 'good', NOW).interval)
+    expect(preview.easy).toBe(gradeCard(state, 'easy', NOW).interval)
+  })
+
+  it('keeps agreeing once a card has some history', () => {
+    let state = newCardState('a', NOW)
+    state = gradeCard(state, 'good', NOW)
+    state = gradeCard(state, 'good', NOW)
+    const preview = previewIntervals(state)
+    expect(preview.good).toBe(gradeCard(state, 'good', NOW).interval)
+    expect(preview.easy).toBeGreaterThan(preview.good)
+  })
+
+  it('sends a lapse back to tomorrow', () => {
+    let state = newCardState('a', NOW)
+    state = gradeCard(state, 'easy', NOW)
+    expect(previewIntervals(state).again).toBe(1)
+  })
+
+  it('does not mutate the state it is previewing', () => {
+    const state = newCardState('a', NOW)
+    const before = { ...state }
+    previewIntervals(state)
+    expect(state).toEqual(before)
   })
 })
