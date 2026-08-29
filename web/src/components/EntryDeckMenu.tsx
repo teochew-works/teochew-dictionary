@@ -1,5 +1,7 @@
 import { useId, useRef } from 'react'
+import { AnchoredPopover } from './AnchoredPopover'
 import { useDismissOnOutside } from './useDismissOnOutside'
+import type { RefObject } from 'react'
 import type { Deck } from '../decks/types'
 
 /**
@@ -20,6 +22,7 @@ export function EntryDeckMenu({
   headword,
   entryId,
   userDecks,
+  anchorRef,
   align = 'left',
   onAddCard,
   onRemoveCard,
@@ -29,6 +32,8 @@ export function EntryDeckMenu({
   headword: string
   entryId: string
   userDecks: Deck[]
+  /** The row or button this hangs off — the panel is portalled, so it positions from this. */
+  anchorRef: RefObject<HTMLElement | null>
   /** Which edge to hang the panel from, so it doesn't run off the side of its anchor. */
   align?: 'left' | 'right'
   onAddCard: (deckId: string) => void
@@ -42,12 +47,8 @@ export function EntryDeckMenu({
   useDismissOnOutside(true, onClose, [panelRef])
 
   return (
-    <div
-      className={align === 'right' ? 'pop entry-deck-menu entry-deck-menu--right' : 'pop entry-deck-menu'}
-      role="menu"
-      aria-labelledby={labelId}
-      ref={panelRef}
-    >
+    <AnchoredPopover anchorRef={anchorRef} align={align} className="pop entry-deck-menu" role="menu" aria-labelledby={labelId}>
+      <div ref={panelRef} className="pop__items">
       <div className="eyebrow" id={labelId}>
         Decks for {headword}
       </div>
@@ -84,6 +85,7 @@ export function EntryDeckMenu({
       >
         + New deck with this card
       </button>
-    </div>
+      </div>
+    </AnchoredPopover>
   )
 }

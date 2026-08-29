@@ -1,3 +1,4 @@
+import { createRef } from 'react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { Flashcard } from './Flashcard'
@@ -133,6 +134,7 @@ describe('Flashcard', () => {
   })
 
   const filing = (overrides: Record<string, unknown> = {}) => ({
+    anchorRef: createRef<HTMLButtonElement>(),
     onPointerDown: vi.fn(),
     dragging: false,
     menuOpen: false,

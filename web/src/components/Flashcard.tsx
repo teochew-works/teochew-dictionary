@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { PointerEvent as ReactPointerEvent, ReactNode } from 'react'
+import type { PointerEvent as ReactPointerEvent, ReactNode, RefObject } from 'react'
 import type { EnrichedEntry, EnrichedReading } from '../types/dict'
 import type { Grade } from '../srs/types'
 import type { PromptMode } from '../flashcards/promptMode'
@@ -58,6 +58,8 @@ export function Flashcard({
    */
   filing: {
     onPointerDown: (e: ReactPointerEvent) => void
+    /** The portalled menu positions itself from this button. */
+    anchorRef: RefObject<HTMLButtonElement | null>
     dragging: boolean
     menuOpen: boolean
     onOpenMenu: () => void
@@ -110,6 +112,7 @@ export function Flashcard({
         <div className="card__filing-wrap">
         <button
           type="button"
+          ref={filing.anchorRef}
           className={filing.dragging ? 'card__filing card__filing--dragging' : 'card__filing'}
           data-drag-source=""
           aria-label={`File ${entry.headword} into a deck`}

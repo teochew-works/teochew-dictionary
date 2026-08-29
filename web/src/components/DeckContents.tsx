@@ -1,4 +1,4 @@
-import { Fragment, memo, useState } from 'react'
+import { Fragment, memo, useRef, useState } from 'react'
 import type { KeyboardEvent as ReactKeyboardEvent, PointerEvent as ReactPointerEvent } from 'react'
 import { EntryDeckMenu } from './EntryDeckMenu'
 import { copyModifierName } from '../decks/dnd/copyModifier'
@@ -54,6 +54,8 @@ export function DeckContents({
   lift: { isLifted: (entryId: string) => boolean; handleKeyDown: (entryId: string, e: ReactKeyboardEvent) => void }
 }) {
   const [menuEntryId, setMenuEntryId] = useState<string | null>(null)
+  /** The row the open menu belongs to — the panel is portalled, so it positions from this. */
+  const menuAnchorRef = useRef<HTMLElement | null>(null)
 
   return (
     <>
@@ -96,7 +98,10 @@ export function DeckContents({
               lifted={lift.isLifted(entryId)}
               elementRef={cardDrag.itemRef(entryId)}
               onPointerDown={cardDrag.onPointerDown(entryId)}
-              onOpenMenu={() => setMenuEntryId(entryId)}
+              onOpenMenu={(el) => {
+                menuAnchorRef.current = el
+                setMenuEntryId(entryId)
+              }}
               onKeyDown={(e) => lift.handleKeyDown(entryId, e)}
               onRemove={() => onRemoveCard(deck.id, entryId)}
             />
@@ -105,6 +110,7 @@ export function DeckContents({
                 headword={entryById.get(entryId)?.headword ?? entryId}
                 entryId={entryId}
                 userDecks={userDecks}
+                anchorRef={menuAnchorRef}
                 onAddCard={(toDeckId) => onAddCard(toDeckId, entryId)}
                 onRemoveCard={(fromDeckId) => onRemoveCard(fromDeckId, entryId)}
                 onNewDeck={() => onNewDeckFromCard(entryId)}
@@ -148,7 +154,8 @@ const DeckContentsRow = memo(function DeckContentsRow({
   lifted: boolean
   elementRef: (el: HTMLElement | null) => void
   onPointerDown: (e: ReactPointerEvent) => void
-  onOpenMenu: () => void
+  /** Handed the row element, so the portalled menu knows what to hang off. */
+  onOpenMenu: (el: HTMLElement) => void
   onKeyDown: (e: ReactKeyboardEvent) => void
   onRemove: () => void
 }) {
@@ -189,13 +196,13 @@ const DeckContentsRow = memo(function DeckContentsRow({
       tabIndex={0}
       aria-label={`${entry.headword}${gloss ? `, ${gloss}` : ''}, in ${deckName}`}
       onPointerDown={onPointerDown}
-      onClick={onOpenMenu}
+      onClick={(e) => onOpenMenu(e.currentTarget)}
       onKeyDown={(e) => {
         // Enter opens the card's decks; space lifts it, the same key that lifts
         // a deck in the rail. Splitting them is what lets one row do both.
         if (e.key === 'Enter') {
           e.preventDefault()
-          onOpenMenu()
+          onOpenMenu(e.currentTarget)
           return
         }
         onKeyDown(e)
