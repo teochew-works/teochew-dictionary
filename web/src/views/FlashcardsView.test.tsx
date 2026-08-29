@@ -1,5 +1,5 @@
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { FlashcardsView } from './FlashcardsView'
 import { makeEntry, makeReading } from '../test/entryFixtures'
 import type { AudioReference } from '../types/dict'
@@ -325,10 +325,11 @@ describe('FlashcardsView deck table (issue #187 stage 2)', () => {
   it('has the Dictionary deck on the table by default', async () => {
     const a = makeEntry({ id: 'a' })
     const b = makeEntry({ id: 'b' })
-    render(<FlashcardsView entries={[a, b]} />)
+    const { container } = render(<FlashcardsView entries={[a, b]} />)
 
     await screen.findByText(/2 in this session/)
-    expect(screen.getByText('Dictionary')).toBeInTheDocument()
+    const table = container.querySelector<HTMLElement>('.deck-table')!
+    expect(within(table).getByText('Dictionary')).toBeInTheDocument()
     expect(screen.getByText('2 in play')).toBeInTheDocument()
   })
 
@@ -338,12 +339,13 @@ describe('FlashcardsView deck table (issue #187 stage 2)', () => {
       inPlay: [DICTIONARY_DECK_ID],
       groups: [],
     })
-    render(<FlashcardsView entries={[]} />)
+    const { container } = render(<FlashcardsView entries={[]} />)
     await screen.findByText(/reviewed/i)
 
     fireEvent.change(screen.getByLabelText('Add a deck to the table'), { target: { value: 'deck-1' } })
 
-    expect(screen.getByText('Kitchen')).toBeInTheDocument()
+    const table = container.querySelector<HTMLElement>('.deck-table')!
+    expect(within(table).getByText('Kitchen')).toBeInTheDocument()
     expect(readDecksState().inPlay).toEqual([DICTIONARY_DECK_ID, 'deck-1'])
   })
 
@@ -491,5 +493,115 @@ describe('FlashcardsView review queue stability (issue #187)', () => {
 
     expect(await screen.findByText(/1 reviewed/)).toBeInTheDocument()
     expect(screen.queryByText(/^0 reviewed/)).not.toBeInTheDocument()
+  })
+})
+
+describe('FlashcardsView deck curation (issue #187 stage 4)', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  afterEach(() => {
+    cleanup()
+    localStorage.clear()
+  })
+
+  it('creates a deck from the rail and lists it as addable to the table', async () => {
+    vi.spyOn(window, 'prompt').mockReturnValue('Kitchen')
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/reviewed/i)
+
+    fireEvent.click(screen.getByText('+ New deck'))
+
+    expect(screen.getByRole('option', { name: 'Kitchen' })).toBeInTheDocument()
+    expect(readDecksState().decks[0]!.name).toBe('Kitchen')
+    vi.restoreAllMocks()
+  })
+
+  it('renames and deletes a deck from the rail', async () => {
+    writeDecksState({
+      decks: [{ id: 'deck-1', name: 'Kitchen', hue: 'green', cards: [], kind: 'user' }],
+      inPlay: [DICTIONARY_DECK_ID],
+      groups: [],
+    })
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/reviewed/i)
+
+    fireEvent.click(screen.getByLabelText('Rename Kitchen'))
+    fireEvent.change(screen.getByLabelText('New name for Kitchen'), { target: { value: 'Kitchen vocab' } })
+    fireEvent.keyDown(screen.getByLabelText('New name for Kitchen'), { key: 'Enter' })
+    expect(readDecksState().decks[0]!.name).toBe('Kitchen vocab')
+
+    vi.spyOn(window, 'confirm').mockReturnValue(true)
+    fireEvent.click(screen.getByLabelText('Delete Kitchen vocab'))
+    expect(readDecksState().decks).toEqual([])
+    vi.restoreAllMocks()
+  })
+
+  it('files the current card into a deck via the pointer-only select', async () => {
+    writeDecksState({
+      decks: [{ id: 'deck-1', name: 'Kitchen', hue: 'green', cards: [], kind: 'user' }],
+      inPlay: [DICTIONARY_DECK_ID],
+      groups: [],
+    })
+    const entry = makeEntry({ id: 'wok', headword: '鍋' })
+    render(<FlashcardsView entries={[entry]} />)
+    await screen.findByText('鍋')
+
+    fireEvent.change(screen.getByLabelText('File 鍋 into a deck'), { target: { value: 'deck-1' } })
+
+    expect(readDecksState().decks[0]!.cards).toEqual(['wok'])
+    expect(screen.getByRole('status')).toHaveTextContent('Added 鍋 to Kitchen.')
+  })
+
+  it('does not show card-filing controls when there are no user decks', async () => {
+    const entry = makeEntry({ id: 'wok', headword: '鍋' })
+    render(<FlashcardsView entries={[entry]} />)
+    await screen.findByText('鍋')
+
+    expect(screen.queryByLabelText('File 鍋 into a deck')).not.toBeInTheDocument()
+  })
+
+  it('opens the browse drawer, adds a card from search, and closes on Escape', async () => {
+    writeDecksState({
+      decks: [{ id: 'deck-1', name: 'Kitchen', hue: 'green', cards: [], kind: 'user' }],
+      inPlay: [DICTIONARY_DECK_ID],
+      groups: [],
+    })
+    const entry = makeEntry({ id: 'wok', headword: '鍋', search_keys: ['鍋', 'ue1'] })
+    render(<FlashcardsView entries={[entry]} />)
+    await screen.findByText(/reviewed/i)
+
+    fireEvent.click(screen.getByText('Browse dictionary…'))
+    expect(screen.getByRole('dialog', { name: 'Browse dictionary' })).toBeInTheDocument()
+
+    fireEvent.change(screen.getByLabelText('Search the dictionary'), { target: { value: '鍋' } })
+    fireEvent.change(screen.getByLabelText('Add 鍋 to a deck'), { target: { value: 'deck-1' } })
+    expect(readDecksState().decks[0]!.cards).toEqual(['wok'])
+
+    fireEvent.keyDown(document, { key: 'Escape' })
+    expect(screen.queryByRole('dialog', { name: 'Browse dictionary' })).not.toBeInTheDocument()
+  })
+
+  it('saves the table as a group and loads it back', async () => {
+    vi.spyOn(window, 'prompt').mockReturnValue('Evenings')
+    writeDecksState({
+      decks: [{ id: 'deck-1', name: 'Kitchen', hue: 'green', cards: [], kind: 'user' }],
+      inPlay: [DICTIONARY_DECK_ID, 'deck-1'],
+      groups: [],
+    })
+    render(<FlashcardsView entries={[]} />)
+    await screen.findByText(/reviewed/i)
+
+    fireEvent.click(screen.getByText('Save table as group…'))
+    expect(readDecksState().groups[0]!.name).toBe('Evenings')
+
+    fireEvent.click(screen.getByLabelText('Remove Kitchen from the table'))
+    expect(readDecksState().inPlay).toEqual([DICTIONARY_DECK_ID])
+
+    fireEvent.change(screen.getByLabelText('Load a saved group'), { target: { value: readDecksState().groups[0]!.id } })
+
+    expect(readDecksState().inPlay).toEqual([DICTIONARY_DECK_ID, 'deck-1'])
+    vi.restoreAllMocks()
   })
 })

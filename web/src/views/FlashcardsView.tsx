@@ -2,6 +2,10 @@ import { useCallback, useMemo, useState } from 'react'
 import { useSrsQueue } from '../srs/useSrsQueue'
 import { Flashcard } from '../components/Flashcard'
 import { DeckTable } from '../components/DeckTable'
+import { DeckRail } from '../components/DeckRail'
+import { GroupPresets } from '../components/GroupPresets'
+import { BrowseDrawer } from '../components/BrowseDrawer'
+import { CardFileControls } from '../components/CardFileControls'
 import { PromptModeControl } from '../components/PromptModeControl'
 import { FiltersPopover } from '../components/FiltersPopover'
 import { ActiveFilterChips } from '../components/ActiveFilterChips'
@@ -9,6 +13,7 @@ import type { ActiveFilterChip } from '../components/ActiveFilterChips'
 import { FunnelReadout } from '../components/FunnelReadout'
 import type { FunnelStage } from '../components/FunnelReadout'
 import { LiveRegion } from '../components/LiveRegion'
+import { useCardDrag } from '../decks/dnd/useCardDrag'
 import type { EnrichedEntry } from '../types/dict'
 import { PROMPT_MODE_LABELS, readPromptMode, writePromptMode } from '../flashcards/promptMode'
 import type { PromptMode } from '../flashcards/promptMode'
@@ -48,9 +53,12 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
   const [fullAudioOnly, setFullAudioOnly] = useState<boolean>(readFullAudioOnly)
   const [announcement, setAnnouncement] = useState('')
   const announce = useCallback((message: string) => setAnnouncement(message), [])
+  const [browseDrawerOpen, setBrowseDrawerOpen] = useState(false)
 
   const dictionaryDeck = useMemo(() => makeDictionaryDeck(entries), [entries])
-  const allDecks = useMemo(() => [dictionaryDeck, ...decksStore.state.decks], [dictionaryDeck, decksStore.state.decks])
+  const userDecks = decksStore.state.decks
+  const allDecks = useMemo(() => [dictionaryDeck, ...userDecks], [dictionaryDeck, userDecks])
+  const nameById = useMemo(() => new Map(allDecks.map((d) => [d.id, d.name])), [allDecks])
   const inPlayIds = decksStore.state.inPlay
   const inPlayDecks = useMemo(() => resolveDecks(inPlayIds, allDecks), [inPlayIds, allDecks])
   const availableDecks = useMemo(
@@ -106,6 +114,21 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
 
   const currentEntry = current ? entryById.get(current.entryId) : null
 
+  const handleFileCard = useCallback(
+    (deckId: string) => {
+      if (!currentEntry) return
+      decksStore.addCardToDeck(deckId, currentEntry.id)
+      announce(`Added ${currentEntry.headword} to ${nameById.get(deckId) ?? deckId}.`)
+    },
+    [currentEntry, decksStore, announce, nameById],
+  )
+  const cardDropTargets = useMemo(() => allDecks.map((d) => ({ id: d.id, isVirtual: d.kind === 'virtual' })), [allDecks])
+  const cardDrag = useCardDrag({
+    targets: cardDropTargets,
+    onFile: handleFileCard,
+    onRefused: (deckId) => announce(`Can't file a card into ${nameById.get(deckId) ?? deckId} — it's read-only.`),
+  })
+
   const significant = significantStages(pipeline.stages)
   const lastSignificantCount = significant[significant.length - 1]?.count ?? 0
   const funnelStages: FunnelStage[] =
@@ -136,75 +159,124 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
     <div className="flashcards-view">
       <LiveRegion message={announcement} />
 
-      <DeckTable
-        inPlayDecks={inPlayDecks}
-        availableDecks={availableDecks}
-        onAdd={decksStore.addToPlay}
-        onRemove={decksStore.removeFromPlay}
-        onReorder={decksStore.reorderPlay}
-        announce={announce}
-      />
+      <div className="flashcards-view__layout">
+        <div className="flashcards-view__rail">
+          <DeckRail
+            dictionaryDeck={dictionaryDeck}
+            userDecks={userDecks}
+            inPlayIds={inPlayIds}
+            onAddToTable={decksStore.addToPlay}
+            onCreateDeck={decksStore.createDeck}
+            onRenameDeck={decksStore.renameDeck}
+            onDeleteDeck={decksStore.deleteDeck}
+            onReorderDecks={decksStore.reorderDecks}
+            onOpenBrowseDrawer={() => setBrowseDrawerOpen(true)}
+            announce={announce}
+            cardDrop={{ targetRef: cardDrag.targetRef, overId: cardDrag.overId }}
+          />
+        </div>
 
-      <div className="flashcards-view__session-bar">
-        <PromptModeControl mode={mode} onChange={handleModeChange} />
+        <div className="flashcards-view__main">
+          <DeckTable
+            inPlayDecks={inPlayDecks}
+            availableDecks={availableDecks}
+            onAdd={decksStore.addToPlay}
+            onRemove={decksStore.removeFromPlay}
+            onReorder={decksStore.reorderPlay}
+            announce={announce}
+          />
 
-        <FiltersPopover>
-          <label className="flashcards-view__toggle">
-            <input
-              type="checkbox"
-              checked={pronunciation === 'sandhi'}
-              onChange={(e) => handlePronunciationToggle(e.target.checked)}
-            />
-            Use sandhi pronunciation
-          </label>
+          <GroupPresets
+            groups={decksStore.state.groups}
+            currentInPlay={inPlayIds}
+            onSave={(name) => decksStore.saveGroup(name, inPlayIds)}
+            onLoad={decksStore.loadGroup}
+            onDelete={decksStore.deleteGroup}
+          />
 
-          <label className="flashcards-view__toggle">
-            <input
-              type="checkbox"
-              checked={fullAudioOnly}
-              onChange={(e) => handleFullAudioOnlyChange(e.target.checked)}
-            />
-            Only fully recorded audio
-          </label>
+          <div className="flashcards-view__session-bar">
+            <PromptModeControl mode={mode} onChange={handleModeChange} />
 
-          <fieldset className="flashcards-view__levels">
-            <legend>Levels</legend>
-            {LEVEL_FILTER_ORDER.map((value) => (
-              <label key={value} className="flashcards-view__level-toggle">
+            <FiltersPopover>
+              <label className="flashcards-view__toggle">
                 <input
                   type="checkbox"
-                  checked={levelFilter.has(value)}
-                  onChange={(e) => handleLevelToggle(value, e.target.checked)}
+                  checked={pronunciation === 'sandhi'}
+                  onChange={(e) => handlePronunciationToggle(e.target.checked)}
                 />
-                {levelFilterLabel(value)}
+                Use sandhi pronunciation
               </label>
-            ))}
-          </fieldset>
-        </FiltersPopover>
+
+              <label className="flashcards-view__toggle">
+                <input
+                  type="checkbox"
+                  checked={fullAudioOnly}
+                  onChange={(e) => handleFullAudioOnlyChange(e.target.checked)}
+                />
+                Only fully recorded audio
+              </label>
+
+              <fieldset className="flashcards-view__levels">
+                <legend>Levels</legend>
+                {LEVEL_FILTER_ORDER.map((value) => (
+                  <label key={value} className="flashcards-view__level-toggle">
+                    <input
+                      type="checkbox"
+                      checked={levelFilter.has(value)}
+                      onChange={(e) => handleLevelToggle(value, e.target.checked)}
+                    />
+                    {levelFilterLabel(value)}
+                  </label>
+                ))}
+              </fieldset>
+            </FiltersPopover>
+          </div>
+
+          <ActiveFilterChips chips={activeFilterChips} />
+
+          <FunnelReadout stages={funnelStages} />
+
+          {persistError && (
+            <p className="flashcards-view__warning">
+              ⚠ Your progress can't be saved in this browser ({persistError}). You can still review this session.
+            </p>
+          )}
+
+          <p className="flashcards-view__progress">
+            {reviewedCount} reviewed{totalCount > 0 ? ` · ${totalCount} in this session` : ''}
+          </p>
+
+          {emptyStage ? (
+            <p className="flashcards-view__status">{EMPTY_STAGE_MESSAGES[emptyStage.key](mode)}</p>
+          ) : currentEntry ? (
+            <>
+              <Flashcard key={currentEntry.id} entry={currentEntry} mode={mode} pronunciation={pronunciation} onGrade={grade} />
+              {userDecks.length > 0 && (
+                <CardFileControls
+                  headword={currentEntry.headword}
+                  userDecks={userDecks}
+                  dragging={cardDrag.isDragging}
+                  onPointerDown={cardDrag.onPointerDown}
+                  onFile={handleFileCard}
+                />
+              )}
+            </>
+          ) : (
+            <p className="flashcards-view__status">
+              Nothing due right now — come back later, or check back tomorrow for new cards.
+            </p>
+          )}
+        </div>
       </div>
 
-      <ActiveFilterChips chips={activeFilterChips} />
-
-      <FunnelReadout stages={funnelStages} />
-
-      {persistError && (
-        <p className="flashcards-view__warning">
-          ⚠ Your progress can't be saved in this browser ({persistError}). You can still review this session.
-        </p>
-      )}
-
-      <p className="flashcards-view__progress">
-        {reviewedCount} reviewed{totalCount > 0 ? ` · ${totalCount} in this session` : ''}
-      </p>
-
-      {emptyStage ? (
-        <p className="flashcards-view__status">{EMPTY_STAGE_MESSAGES[emptyStage.key](mode)}</p>
-      ) : currentEntry ? (
-        <Flashcard key={currentEntry.id} entry={currentEntry} mode={mode} pronunciation={pronunciation} onGrade={grade} />
-      ) : (
-        <p className="flashcards-view__status">
-          Nothing due right now — come back later, or check back tomorrow for new cards.
-        </p>
+      {browseDrawerOpen && (
+        <BrowseDrawer
+          entries={entries}
+          userDecks={userDecks}
+          onAddCard={decksStore.addCardToDeck}
+          onRemoveCard={decksStore.removeCardFromDeck}
+          onClose={() => setBrowseDrawerOpen(false)}
+        />
       )}
     </div>
   )

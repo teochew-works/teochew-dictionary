@@ -2,9 +2,39 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 2rem 1.25rem;
   gap: 1.25rem;
+  min-height: 0;
+}
+
+.flashcards-view__layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.flashcards-view__rail {
+  flex: 0 0 15rem;
+}
+
+.flashcards-view__main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+@media (max-width: 720px) {
+  .flashcards-view__layout {
+    flex-direction: column;
+  }
+
+  .flashcards-view__rail {
+    flex: none;
+    width: 100%;
+  }
 }
 
 .flashcards-view__status {
@@ -394,4 +424,313 @@
 
 .flashcard__grade--easy {
   background: #2f6fa6;
+}
+
+/* Library rail (issue #187 stage 4) */
+
+.deck-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.deck-rail__heading {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-muted);
+}
+
+.deck-rail__row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+}
+
+.deck-rail__row--accept {
+  outline: 2px dashed var(--color-success);
+  outline-offset: 2px;
+}
+
+.deck-rail__row--refuse {
+  background: var(--color-warning-bg);
+  outline: 2px dashed var(--color-danger);
+  outline-offset: 2px;
+}
+
+.deck-rail__badge {
+  font-size: 0.7rem;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+}
+
+.deck-rail__action {
+  border: none;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  padding: 0.15rem 0.3rem;
+  text-decoration: underline;
+}
+
+.deck-rail__action:hover {
+  color: var(--color-fg);
+}
+
+.deck-rail__rename-input {
+  padding: 0.2rem 0.4rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 0.4rem;
+  background: var(--color-surface);
+  color: var(--color-fg);
+  font-size: 0.85rem;
+  min-width: 6rem;
+}
+
+.deck-rail__empty {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  margin: 0 0 0.5rem;
+}
+
+.deck-rail__create,
+.deck-rail__browse {
+  align-self: flex-start;
+  padding: 0.4rem 0.7rem;
+  border: 1px dashed var(--color-border);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--color-fg);
+  font-size: 0.85rem;
+}
+
+.deck-rail__browse {
+  align-self: stretch;
+  text-align: center;
+  border-style: solid;
+}
+
+.deck-chip--compact {
+  padding: 0.15rem 0.3rem 0.15rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* Browse drawer (issue #187 stage 4) */
+
+.browse-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(26rem, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background: var(--color-bg);
+  border-left: 1px solid var(--color-border);
+  box-shadow: -0.5rem 0 1.5rem rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  z-index: 20;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .browse-drawer {
+    animation: flashcards-view-drawer-in 0.15s ease-out;
+  }
+}
+
+@keyframes flashcards-view-drawer-in {
+  from {
+    transform: translateX(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.browse-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.browse-drawer__header h3 {
+  margin: 0;
+}
+
+.browse-drawer__close {
+  border: none;
+  background: transparent;
+  color: var(--color-fg);
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0.2rem 0.5rem;
+}
+
+.browse-drawer__search {
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+  color: var(--color-fg);
+}
+
+.browse-drawer__hint {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.browse-drawer__results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow-y: auto;
+}
+
+.browse-drawer__row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.browse-drawer__entry {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.browse-drawer__headword {
+  font-weight: 600;
+}
+
+.browse-drawer__gloss {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.browse-drawer__memberships {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.browse-drawer__add {
+  align-self: flex-start;
+  padding: 0.25rem 0.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.4rem;
+  background: var(--color-surface);
+  color: var(--color-fg);
+  font-size: 0.8rem;
+}
+
+/* Group presets (issue #187 stage 4) */
+
+.group-presets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.group-presets__load,
+.group-presets__save {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+  color: var(--color-fg);
+  font-size: 0.8rem;
+}
+
+.group-presets__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: center;
+}
+
+.group-presets__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0.3rem 0.15rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 0.75rem;
+}
+
+.group-presets__delete {
+  border: none;
+  background: transparent;
+  color: inherit;
+  opacity: 0.7;
+  padding: 0 0.15rem;
+  line-height: 1;
+}
+
+.group-presets__delete:hover {
+  opacity: 1;
+}
+
+/* Card filing (issue #187 stage 4) */
+
+.card-file-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-file-controls__handle {
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+  color: var(--color-fg);
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+  cursor: grab;
+  touch-action: none;
+}
+
+.card-file-controls--dragging .card-file-controls__handle {
+  opacity: 0.6;
+}
+
+.card-file-controls__select {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+  color: var(--color-fg);
+  font-size: 0.8rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card-file-controls__handle {
+    transition: opacity 0.1s ease-out;
+  }
 }
