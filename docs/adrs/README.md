@@ -56,10 +56,13 @@ by Michael Nygard.
 | [ADR-0020](adr-0020.md) | ✅ Accepted | 2026-08-30 | A Hand-Rolled SM-2 Scheduler over IndexedDB                        |
 | [ADR-0021](adr-0021.md) | ✅ Accepted | 2026-08-30 | One Drag Engine, Keyboard Parity, and Undo Instead of Confirmation |
 | [ADR-0022](adr-0022.md) | ✅ Accepted | 2026-08-30 | Derive CEFR `level` from HSK Cognates; Reject an HSK 3.0 Crosswalk |
+| [ADR-0023](adr-0023.md) | ✅ Accepted | 2026-08-30 | A Responsive PWA over a Native Wrapper, with Workbox Exception     |
 
-ADR-0001 onwards were written **retrospectively**, in one pass over the project's existing record,
-so their git-derived dates are all the date of adoption rather than the date each decision was
-made. Each record states its own decision date and issue number in the text.
+ADR-0001 through ADR-0022 were written **retrospectively**, in one pass over the project's
+existing record, so their git-derived dates are all the date of adoption rather than the date each
+decision was made. Each record states its own decision date and issue number in the text.
+ADR-0023 was written alongside its own work (issue #194) and was renumbered from 0001 when the
+retrospective batch landed.
 
 The inventory is maintained by the `update-adr-inventory` skill, which scans `adr-*.md` for the
 title and status and derives the date from git history. Run it whenever an ADR is added or its

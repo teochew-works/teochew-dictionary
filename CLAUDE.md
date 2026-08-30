@@ -76,6 +76,9 @@ diverging from it.
 13. **`web/` is an independent npm project** consuming `dist/`. Build at the repo root first, and
     never duplicate data-loading or phonology logic in the browser.
     → [ADR-0019](docs/adrs/adr-0019.md)
+14. **The service worker precaches the shell only — never `dict.json`.** Offline data is a separate,
+    explicit opt-in handled by hand through the Cache Storage API, not a Workbox route.
+    → [ADR-0023](docs/adrs/adr-0023.md)
 
 ## Common Commands
 
@@ -122,6 +125,7 @@ src/importers/    CC-CEDICT, Wiktionary, Lingua Libre, local recordings   (ADR-0
 src/data/         source registry and licence derivation                  (ADR-0008, ADR-0009)
 src/cli/          the npm-script entry points
 web/              static React frontend, independent npm project          (ADR-0019)
+web/src/pwa/      installable PWA: precached shell, opt-in offline data    (ADR-0023)
 ```
 
 ## Key Documentation

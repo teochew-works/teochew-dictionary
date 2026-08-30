@@ -78,8 +78,9 @@ The decisions behind this section are recorded in [`docs/adrs/`](../docs/adrs/RE
 [ADR-0019](../docs/adrs/adr-0019.md) (static, backend-free, its own npm project, data fetched at
 runtime), [ADR-0020](../docs/adrs/adr-0020.md) (the hand-rolled SM-2 scheduler and where state
 lives), [ADR-0021](../docs/adrs/adr-0021.md) (one drag engine, keyboard parity, undo instead of
-confirmation) and [ADR-0015](../docs/adrs/adr-0015.md) (why clip licences are credited separately
-from the entry's).
+confirmation), [ADR-0015](../docs/adrs/adr-0015.md) (why clip licences are credited separately
+from the entry's) and [ADR-0023](../docs/adrs/adr-0023.md) (installable as a PWA, and why Workbox
+is an exception to hand-rolling).
 
 - Vite + React + TypeScript, no router — Dictionary, Flashcards, and Sounds
   are in-app views, not separate routes; the dictionary's entry detail is a
@@ -225,12 +226,14 @@ workflow's `deploy` job can actually publish anything.
 
 ## Out of scope (v1)
 
-Matches the parent issue's explicit non-goals — both are consequences of the
-backend-free choice, not independent scoping decisions
+Matches the parent issue's explicit non-goals, which follow from the backend-free
+choice rather than being independent scoping decisions
 ([ADR-0019](../docs/adrs/adr-0019.md), [ADR-0020](../docs/adrs/adr-0020.md)):
 
 - User accounts or cross-device progress sync.
-- Offline/PWA support.
+- ~~Offline/PWA support.~~ **Reversed by issue #194** — the app now ships
+  installable with a precached shell. See
+  [ADR-0023](../docs/adrs/adr-0023.md).
 
 Audio playback was on this list for v1 and no longer is — the UI shipped in
 issue #114. Real Chaozhou recordings exist now (issues #106/#128); what's
