@@ -180,6 +180,7 @@
 }
 
 .rail__toggle {
+  position: relative;
   width: 28px;
   height: 28px;
   flex: none;
@@ -187,6 +188,15 @@
   color: var(--ink-3);
   display: grid;
   place-items: center;
+}
+
+/* Invisible hit-area overlay up to the 44px platform minimum (mobile.md
+   §3.6) without growing the visible control — the dense flashcards chrome
+   is deliberate. */
+.rail__toggle::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
 }
 
 .rail__toggle:hover {
@@ -202,12 +212,19 @@
 }
 
 .rail__add {
+  position: relative;
   font-size: 12px;
   color: var(--color-accent);
   font-weight: 500;
   padding: 2px 7px;
   border-radius: 999px;
   border: 1px solid transparent;
+}
+
+.rail__add::after {
+  content: '';
+  position: absolute;
+  inset: -10px 0;
 }
 
 .rail__add:hover {
@@ -425,14 +442,22 @@
   color: var(--ink-3);
   display: grid;
   place-items: center;
-  opacity: 0;
-  transition: opacity 0.15s var(--ease);
+  opacity: 1;
 }
 
-.deck:hover .deck-menu__trigger,
-.deck-menu__trigger:focus-visible,
-.deck-menu__trigger[aria-expanded='true'] {
-  opacity: 1;
+/* Visible by default (it's the only non-drag route to the deck menu, mobile.md
+   §2.2); only fine, hover-capable pointers get the hide-until-hovered look. */
+@media (hover: hover) and (pointer: fine) {
+  .deck-menu__trigger {
+    opacity: 0;
+    transition: opacity 0.15s var(--ease);
+  }
+
+  .deck:hover .deck-menu__trigger,
+  .deck-menu__trigger:focus-visible,
+  .deck-menu__trigger[aria-expanded='true'] {
+    opacity: 1;
+  }
 }
 
 .deck-menu__trigger:hover {
@@ -569,6 +594,7 @@
 }
 
 .chipbtn {
+  position: relative;
   padding: 3px 10px;
   border-radius: 999px;
   border: 1px solid var(--color-border);
@@ -577,6 +603,12 @@
   color: var(--ink-3);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   transition: all 0.14s var(--ease);
+}
+
+.chipbtn::after {
+  content: '';
+  position: absolute;
+  inset: -11px -4px;
 }
 
 .chipbtn:hover {
@@ -806,13 +838,19 @@
   display: grid;
   place-items: center;
   color: var(--ink-3);
-  opacity: 0;
-  transition: opacity 0.15s var(--ease);
+  opacity: 1;
 }
 
-.chip:hover .chip__x,
-.chip__x:focus-visible {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .chip__x {
+    opacity: 0;
+    transition: opacity 0.15s var(--ease);
+  }
+
+  .chip:hover .chip__x,
+  .chip__x:focus-visible {
+    opacity: 1;
+  }
 }
 
 .chip__x:hover {
@@ -947,12 +985,20 @@
 
 .seg button,
 .seg__option {
+  position: relative;
   padding: 4px 11px;
   border-radius: 999px;
   font-size: 12.5px;
   color: var(--ink-2);
   cursor: pointer;
   transition: background 0.16s var(--ease), color 0.16s var(--ease);
+}
+
+.seg button::after,
+.seg__option::after {
+  content: '';
+  position: absolute;
+  inset: -9px 0;
 }
 
 .seg button:hover,
@@ -979,6 +1025,7 @@
 }
 
 .pill {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -989,6 +1036,12 @@
   font-size: 12.5px;
   color: var(--ink-2);
   transition: border-color 0.16s var(--ease), background 0.16s var(--ease), color 0.16s var(--ease);
+}
+
+.pill::after {
+  content: '';
+  position: absolute;
+  inset: -7px 0;
 }
 
 .pill:hover:not(:disabled) {
@@ -1197,6 +1250,7 @@
 }
 
 .card__filing {
+  position: relative;
   width: 26px;
   height: 26px;
   border-radius: var(--r-sm);
@@ -1207,6 +1261,12 @@
   touch-action: none;
   border: 1px dashed transparent;
   transition: color 0.16s var(--ease), border-color 0.16s var(--ease), background 0.16s var(--ease);
+}
+
+.card__filing::after {
+  content: '';
+  position: absolute;
+  inset: -9px;
 }
 
 .card__filing:hover,
@@ -1487,13 +1547,19 @@
   display: grid;
   place-items: center;
   color: var(--ink-3);
-  opacity: 0;
-  transition: opacity 0.15s var(--ease);
+  opacity: 1;
 }
 
-.entry:hover .entry__remove,
-.entry__remove:focus-visible {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .entry__remove {
+    opacity: 0;
+    transition: opacity 0.15s var(--ease);
+  }
+
+  .entry:hover .entry__remove,
+  .entry__remove:focus-visible {
+    opacity: 1;
+  }
 }
 
 .entry__remove:hover {
