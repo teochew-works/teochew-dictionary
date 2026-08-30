@@ -49,7 +49,11 @@ export function ChartDetailPanel({
   const style = width !== undefined ? { width } : undefined
 
   return (
-    <aside className="sounds-view__chart-detail" aria-label="Cell detail" style={style}>
+    <aside
+      className={cell ? 'sounds-view__chart-detail sounds-view__chart-detail--open' : 'sounds-view__chart-detail'}
+      aria-label="Cell detail"
+      style={style}
+    >
       {!cell || !chartCell ? (
         <p className="sounds-view__empty">Select a cell to see its syllables.</p>
       ) : chartCell.attestedTones.length === 0 ? (
