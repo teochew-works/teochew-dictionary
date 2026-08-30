@@ -1697,7 +1697,7 @@
 
 .toasts {
   position: fixed;
-  bottom: 16px;
+  bottom: max(16px, env(safe-area-inset-bottom));
   left: 50%;
   transform: translateX(-50%);
   z-index: 200;
@@ -1706,6 +1706,13 @@
   gap: 6px;
   align-items: center;
   pointer-events: none;
+}
+
+/* Clear the phone bottom tab bar (App.css) instead of hiding behind it. */
+@media (max-width: 640px) {
+  .toasts {
+    bottom: calc(48px + max(16px, env(safe-area-inset-bottom)));
+  }
 }
 
 .toast {
