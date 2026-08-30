@@ -7,6 +7,7 @@ import type { PronunciationMode } from '../settings/pronunciationMode'
 import { readMogherLinks, writeMogherLinks } from '../settings/mogherLinks'
 import { buildBackup, restoreBackup } from '../backup/backup'
 import { InstallPrompt } from '../pwa/InstallPrompt'
+import { OfflineDataToggle } from '../pwa/OfflineDataToggle'
 import './SettingsView.css'
 
 /**
@@ -152,6 +153,15 @@ export function SettingsView() {
           period of inactivity, and an installed app is exempt.
         </p>
         <InstallPrompt />
+      </fieldset>
+
+      <fieldset className="settings-view__group">
+        <legend>Offline access</legend>
+        <p className="settings-view__hint">
+          The app shell works offline once installed, but the dictionary itself is large enough that it
+          isn't downloaded until you ask for it here.
+        </p>
+        <OfflineDataToggle />
       </fieldset>
 
       <fieldset className="settings-view__group">
