@@ -24,6 +24,13 @@ import './DictionaryView.css'
  */
 const PAGE_SIZE = 200
 
+/**
+ * The phone breakpoint, in step with the `max-width: 640px` blocks in
+ * DictionaryView.css — this is the one place the tier has to be known in JS
+ * as well, to decide whether the filters disclosure starts collapsed.
+ */
+const PHONE_QUERY = '(max-width: 640px)'
+
 const SORT_MODE_LABELS: Record<SortMode, string> = {
   relevance: 'Relevance',
   headword: 'Headword',
@@ -62,13 +69,24 @@ export function DictionaryView({
   const [sortMode, setSortMode] = useState<SortMode>('relevance')
   const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
   const [mogherLinks] = useState(readMogherLinks)
-  // Open by default above the phone breakpoint (desktop/tablet keep today's
-  // always-visible filters); closed by default at phone width, where they'd
-  // otherwise push the first result 200px down the screen (mobile.md §3.3).
-  // Read once at mount, not kept in sync with resizes — same convention as
-  // every other breakpoint here, which is media-query driven except for this
-  // one JS-only default.
-  const [filtersOpenByDefault] = useState(() => window.innerWidth > 640)
+  // Below the phone breakpoint the filters collapse behind the "Filters"
+  // summary, which otherwise pushes the first result 200px down the screen
+  // (mobile.md §3.3). Above it that summary is `display: none`, so the
+  // disclosure has to be open for the filters to be reachable at all.
+  //
+  // Hence a live media query rather than a width read once at mount: a phone
+  // rotated to landscape crosses 640px without remounting, and a mount-time
+  // read would leave the disclosure closed with the only control that could
+  // reopen it now hidden — filters gone until a reload.
+  const [isPhone, setIsPhone] = useState(() => window.matchMedia(PHONE_QUERY).matches)
+  const [filtersOpenOnPhone, setFiltersOpenOnPhone] = useState(false)
+
+  useEffect(() => {
+    const query = window.matchMedia(PHONE_QUERY)
+    const onChange = (event: MediaQueryListEvent) => setIsPhone(event.matches)
+    query.addEventListener('change', onChange)
+    return () => query.removeEventListener('change', onChange)
+  }, [])
 
   const index = useMemo(() => createSearchIndex(entries), [entries])
 
@@ -159,7 +177,18 @@ export function DictionaryView({
           onChange={(e) => setQuery(e.target.value)}
           aria-label="Search the dictionary"
         />
-        <details className="dictionary-view__filters" open={filtersOpenByDefault}>
+        <details
+          className="dictionary-view__filters"
+          open={!isPhone || filtersOpenOnPhone}
+          // Only a tap on the phone's summary is a preference worth keeping.
+          // Widening past the breakpoint also fires this (React sets `open`
+          // to force the filters back into view), and by then `isPhone` is
+          // false — so that one is ignored and rotating back to portrait
+          // restores the collapsed state rather than silently expanding it.
+          onToggle={(event) => {
+            if (isPhone) setFiltersOpenOnPhone(event.currentTarget.open)
+          }}
+        >
           <summary className="dictionary-view__filters-summary">Filters</summary>
           <div className="dictionary-view__toggles">
             <label className="dictionary-view__toggle">
