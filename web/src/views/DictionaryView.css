@@ -349,3 +349,46 @@
 .entry-detail__clip-licence {
   margin-top: 0.4rem;
 }
+
+/* Results, and the control that reveals more of them (see PAGE_SIZE). */
+
+.dictionary-view__results {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/*
+ * While the typed text is ahead of the searched-for text, the list below is
+ * showing the previous query's answer. Fading it says so without moving
+ * anything, which a spinner in its place would.
+ */
+.dictionary-view__results--stale {
+  opacity: 0.6;
+  transition: opacity 0.12s ease-out;
+}
+
+.dictionary-view__more {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem 1rem;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.dictionary-view__more button {
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-fg);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.dictionary-view__more button:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}

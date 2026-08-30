@@ -1,6 +1,6 @@
-import { useMemo, useState } from 'react'
+import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { createSearchIndex, search } from '../search/searchIndex'
-import { groupEntries, isGrouped, sortFlat } from '../search/sortEntries'
+import { capGroups, groupEntries, isGrouped, sortFlat } from '../search/sortEntries'
 import type { SortMode } from '../search/sortEntries'
 import { hasAudio, hasFullAudio } from '../search/filters'
 import { readShowLicence, writeShowLicence } from '../settings/showLicence'
@@ -14,6 +14,15 @@ import { EntryTree } from '../components/EntryTree'
 import { EntryDetail } from '../components/EntryDetail'
 import type { EnrichedEntry } from '../types/dict'
 import './DictionaryView.css'
+
+/**
+ * How many rows go into the DOM at once. The dictionary is 16,000+ entries and
+ * an uncapped list put every one of them there — 84,000 nodes at rest — which
+ * made each keystroke rebuild the whole thing, blocking the main thread for up
+ * to 600ms. Nobody scrolls 16,000 rows; the ones past this are reached by
+ * searching or by asking for more.
+ */
+const PAGE_SIZE = 200
 
 const SORT_MODE_LABELS: Record<SortMode, string> = {
   relevance: 'Relevance',
@@ -40,10 +49,21 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
   const [mogherLinks] = useState(readMogherLinks)
 
   const index = useMemo(() => createSearchIndex(entries), [entries])
-  const isSearching = query.trim() !== ''
+
+  /*
+   * The searched-for text lags the typed text on purpose. Searching 16,000
+   * entries costs 30-100ms depending on how many words the query has, and
+   * running it in the keystroke's own render meant the character you typed
+   * could not appear until it finished. Deferring lets the input paint
+   * immediately and the results catch up, and React can abandon a result
+   * render that is already stale.
+   */
+  const deferredQuery = useDeferredValue(query)
+  const isSearching = deferredQuery.trim() !== ''
+  const isStale = query !== deferredQuery
   const matches = useMemo(
-    () => (isSearching ? search(index, query) : entries),
-    [index, query, entries, isSearching],
+    () => (isSearching ? search(index, deferredQuery) : entries),
+    [index, deferredQuery, entries, isSearching],
   )
   const audioFiltered = useMemo(() => (audioOnly ? matches.filter(hasAudio) : matches), [matches, audioOnly])
   const results = useMemo(
@@ -72,6 +92,17 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
     () => (isGrouped(effectiveSort) ? groupEntries(results, effectiveSort, pronunciation) : []),
     [results, effectiveSort, pronunciation],
   )
+
+  // Sorting and grouping run over everything — they are cheap, and capping
+  // before them would change *which* entries you see rather than only how many.
+  const [shown, setShown] = useState(PAGE_SIZE)
+  useEffect(() => {
+    setShown(PAGE_SIZE)
+  }, [deferredQuery, effectiveSort, audioOnly, fullAudioOnly, pronunciation])
+
+  const visibleEntries = useMemo(() => sortedEntries.slice(0, shown), [sortedEntries, shown])
+  const visibleGroups = useMemo(() => capGroups(groups, shown), [groups, shown])
+  const hidden = results.length - shown
 
   const selected = results.find((e) => e.id === selectedId) ?? entries.find((e) => e.id === selectedId) ?? null
 
@@ -163,10 +194,24 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
                 ? 'No matches with a recording.'
                 : 'No recordings in the dictionary yet.'}
           </p>
-        ) : isFlat ? (
-          <EntryList entries={sortedEntries} selectedId={selectedId} onSelect={setSelectedId} />
         ) : (
-          <EntryTree groups={groups} selectedId={selectedId} onSelect={setSelectedId} isSearching={isSearching} />
+          <div className={isStale ? 'dictionary-view__results dictionary-view__results--stale' : 'dictionary-view__results'}>
+            {isFlat ? (
+              <EntryList entries={visibleEntries} selectedId={selectedId} onSelect={setSelectedId} />
+            ) : (
+              <EntryTree groups={visibleGroups} selectedId={selectedId} onSelect={setSelectedId} isSearching={isSearching} />
+            )}
+            {hidden > 0 && (
+              <div className="dictionary-view__more">
+                <span>
+                  Showing {shown.toLocaleString()} of {results.length.toLocaleString()}
+                </span>
+                <button type="button" onClick={() => setShown((n) => n + PAGE_SIZE)}>
+                  Show {Math.min(PAGE_SIZE, hidden).toLocaleString()} more
+                </button>
+              </div>
+            )}
+          </div>
         )}
       </div>
       <div className="dictionary-view__detail-pane">

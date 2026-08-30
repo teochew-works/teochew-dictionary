@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import type { ReactNode } from 'react'
+import { AnchoredPopover } from './AnchoredPopover'
 import { useDismissOnOutside } from './useDismissOnOutside'
 
 /**
@@ -51,9 +52,17 @@ export function FiltersPopover({
         )}
       </button>
       {open && (
-        <div id="flashcards-filters-panel" className="pop filters-popover__panel" role="group" aria-label="Filters" ref={panelRef}>
-          {children}
-        </div>
+        <AnchoredPopover
+          anchorRef={triggerRef}
+          id="flashcards-filters-panel"
+          className="pop filters-popover__panel"
+          role="group"
+          aria-label="Filters"
+        >
+          <div ref={panelRef} className="pop__items">
+            {children}
+          </div>
+        </AnchoredPopover>
       )}
     </div>
   )

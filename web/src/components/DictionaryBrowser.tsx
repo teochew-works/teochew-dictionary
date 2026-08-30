@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
 import { createSearchIndex, search } from '../search/searchIndex'
 import { hasFullAudio } from '../search/filters'
@@ -48,6 +48,8 @@ export function DictionaryBrowser({
 }) {
   const [query, setQuery] = useState('')
   const [menuEntryId, setMenuEntryId] = useState<string | null>(null)
+  /** The row the open menu belongs to — the panel is portalled, so it positions from this. */
+  const menuAnchorRef = useRef<HTMLElement | null>(null)
   const index = useMemo(() => createSearchIndex(entries), [entries])
   const results = useMemo(() => (query.trim() ? search(index, query).slice(0, MAX_RESULTS) : []), [index, query])
 
@@ -89,10 +91,14 @@ export function DictionaryBrowser({
                   tabIndex={0}
                   aria-label={`${entry.headword}${reading ? `, ${reading.pengim}` : ''}${gloss ? `, ${gloss}` : ''}`}
                   onPointerDown={cardDrag.onPointerDown(entry.id)}
-                  onClick={() => setMenuEntryId(entry.id)}
+                  onClick={(e) => {
+                    menuAnchorRef.current = e.currentTarget
+                    setMenuEntryId(entry.id)
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault()
+                      menuAnchorRef.current = e.currentTarget
                       setMenuEntryId(entry.id)
                     }
                   }}
@@ -119,6 +125,7 @@ export function DictionaryBrowser({
                     headword={entry.headword}
                     entryId={entry.id}
                     userDecks={userDecks}
+                    anchorRef={menuAnchorRef}
                     onAddCard={(deckId) => onAddCard(deckId, entry.id)}
                     onRemoveCard={(deckId) => onRemoveCard(deckId, entry.id)}
                     onNewDeck={() => onNewDeckFromCard(entry.id)}
