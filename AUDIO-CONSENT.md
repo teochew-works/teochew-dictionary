@@ -3,7 +3,8 @@
 This project records short spoken-syllable clips from volunteer speakers to
 illustrate Teochew pronunciation. A voice recording is a separately
 copyrightable performance, distinct from the phonological fact it captures —
-see `README.md` § Licensing and `data/phonology/REVIEW.md` § 13. That means
+see `README.md` § Licensing, `data/phonology/REVIEW.md` § 13, and
+[ADR-0015](docs/adrs/adr-0015.md). That means
 a speaker's consent is needed for the *recording itself*, on top of whatever
 provenance the `teochew-dictionary-audio` source in `data/sources.yaml`
 already establishes for the dataset.

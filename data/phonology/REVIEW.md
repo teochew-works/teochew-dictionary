@@ -12,7 +12,24 @@ touching code.
 A resolved question keeps its number and stays in place rather than being
 deleted, so that references to it do not rot and the reasoning behind a `high`
 mapping stays readable. A mapping records the evidence it rests on in a
-`sources:` list, resolved against `data/sources.yaml`.
+`sources:` list, resolved against `data/sources.yaml`. The confidence-and-sources
+model itself is recorded as [ADR-0003](../../docs/adrs/adr-0003.md).
+
+**Open questions here; settled decisions in `docs/adrs/`.** Several sections
+below opened with a **Decision:** paragraph and have since graduated into an
+Architecture Decision Record — they stay here in full as the working narrative,
+and the ADR is the citable summary:
+
+| Section                                          | ADR                                     |
+|--------------------------------------------------|-----------------------------------------|
+| § 10 the syllable inventory (issue #30)          | [ADR-0010](../../docs/adrs/adr-0010.md) |
+| § 12 audio asset hosting (issue #32)             | [ADR-0014](../../docs/adrs/adr-0014.md) |
+| § 13 audio licensing and speaker consent (#33)   | [ADR-0015](../../docs/adrs/adr-0015.md) |
+| § 15 `dist/schema.json` scope (issue #39)        | [ADR-0004](../../docs/adrs/adr-0004.md) |
+| § 16 importing Lingua Libre/Commons audio (#106) | [ADR-0015](../../docs/adrs/adr-0015.md) |
+| § 17 recording clips from the Sounds tab (#128)  | [ADR-0017](../../docs/adrs/adr-0017.md) |
+
+See [docs/adrs/README.md](../../docs/adrs/README.md) for the full inventory.
 
 ---
 
@@ -337,6 +354,8 @@ headword's three readings are pinned in `tests/dataset.test.ts`.
 
 ## 10. The syllable inventory — `wordlists/syllable-inventory.yaml`  ·  issue #30
 
+> Recorded as [ADR-0010](../../docs/adrs/adr-0010.md).
+
 **What this is.** `npm run inventory` enumerates every syllable
 `pengim.yaml`'s grammar allows and cross-checks each one against
 `data/entries/` (per variety) and an external chart (learnteochew.com). It
@@ -509,6 +528,8 @@ it isn't mistaken for an oversight.
 
 ## 12. Audio asset hosting: GitHub Releases + manifest  ·  `phonology/audio/*.yaml`  ·  issue #32
 
+> Recorded as [ADR-0014](../../docs/adrs/adr-0014.md).
+
 **Decision: external object storage, not git.** Clip bytes are hosted as **GitHub Release
 assets**; only a YAML manifest (URL + checksum + licence) is committed to `data/`. A clip's
 bytes never enter this repo's git history, and no Git LFS store is used either.
@@ -580,6 +601,8 @@ issue #33's job. Actual recording and upload is issue #36's job. `dist/schema.js
 remains out of scope per §11's own note — unchanged by this decision.
 
 ## 13. Audio licensing and speaker consent · issue #33
+
+> Recorded as [ADR-0015](../../docs/adrs/adr-0015.md).
 
 **Decision: CC-BY-4.0, via a new `teochew-dictionary-audio` source — no new
 `LICENSE-DATA-AUDIO-*` file.** `data/sources.yaml` gains a `kind: import`
@@ -719,6 +742,8 @@ decision — recording still cannot start against a complete inventory until
 
 ## 15. `dist/schema.json` scope — phonology-side schemas · issue #39  ✅ **Resolved 2026-08-16**
 
+> Recorded as [ADR-0004](../../docs/adrs/adr-0004.md).
+
 **Decision: broadened, one file per schema — not a merged bag.** `npm run
 schema` / `src/build/index.ts` now emit a JSON Schema for every schema in
 `src/schema/`, not just `entryFileSchema`: `pengim-schema.json`,
@@ -788,6 +813,8 @@ named in the issue as separate, likely-larger work and remains so; unchanged
 by this decision.
 
 ## 16. Importing Lingua Libre/Commons audio — schema, hosting, consent · issue #106
+
+> Recorded as [ADR-0015](../../docs/adrs/adr-0015.md).
 
 **Background.** #106 found that Wikimedia Commons hosts ~2,138 CC-BY-SA-4.0
 Teochew pronunciation recordings via the Lingua Libre project
@@ -980,6 +1007,8 @@ most entries still resolve every slot to `null` — this isn't "done," just no
 longer "nothing."
 
 ## 17. Recording clips from the Sounds tab · `web/`, `phonology/audio/*.yaml` · issue #128
+
+> Recorded as [ADR-0017](../../docs/adrs/adr-0017.md).
 
 **Background.** #124 shipped a Sounds tab listing every distinct syllable
 attested in the lexicon, but most rows have no clip in
