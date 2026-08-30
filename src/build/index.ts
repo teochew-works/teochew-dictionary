@@ -9,17 +9,20 @@ import { emitAllSchemas } from '../schema/emit.js'
 import { createEnricher, stripDiacritics, type EnrichedEntry } from './enrich.js'
 import { buildSounds } from './sounds.js'
 import { buildSyllableChart } from './syllable-chart.js'
+import { buildStarterDecks } from './starter-decks.js'
 
 /**
  * Build the distributable artifacts from the YAML source of truth.
  *
- * Five outputs, for five consumers:
+ * Six outputs, for six consumers:
  *   dict.json           — the whole dataset, for anything that can hold it in memory
  *   dict.ndjson         — one entry per line, for streaming and for diff-friendly review
  *   dict.sqlite         — indexed, with FTS5, for a real lookup path
  *   sounds.json         — every attested syllable + example words, for the web UI's Sounds tab
  *   syllable-chart.json — per-(initial,rime) legal/attested/recorded/staged tone sets,
  *                         for the Sounds tab's Chart view (issue #171, staged tier issue #183)
+ *   starter-decks.json  — the curated marketplace catalog of themed beginner decks,
+ *                         for the web UI's flashcards Marketplace pane (issue #199)
  */
 
 export interface BuildResult {
@@ -60,6 +63,14 @@ export function build(): BuildResult {
   const soundsData = buildSounds(loaded)
   emit('sounds.json', JSON.stringify(soundsData, null, 2))
   emit('syllable-chart.json', JSON.stringify(buildSyllableChart(soundsData.sounds), null, 2))
+
+  const starterDecks = buildStarterDecks(loaded)
+  emit('starter-decks.json', JSON.stringify({ decks: starterDecks.decks }, null, 2))
+  if (starterDecks.unresolved.length > 0) {
+    console.warn(`starter-decks: ${starterDecks.unresolved.length} headword(s) unresolved:`)
+    for (const { deckId, headword } of starterDecks.unresolved) console.warn(`  ${deckId}: ${headword}`)
+  }
+
   emitAllSchemas(emit)
 
   buildSqlite(join(DIST_DIR, 'dict.sqlite'), enriched)

@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { FlashcardsView } from './FlashcardsView'
 import { makeEntry, makeReading } from '../test/entryFixtures'
@@ -361,6 +361,64 @@ describe('FlashcardsView the library', () => {
     fireEvent.click(screen.getByRole('menuitem', { name: 'Put on the table' }))
 
     expect(readDecksState().inPlay).toEqual([DICTIONARY_DECK_ID, 'deck-1'])
+  })
+})
+
+describe('FlashcardsView the marketplace', () => {
+  const CATALOG = { decks: [{ id: 'animals', name: 'Animals', cards: ['a'] }] }
+
+  function stubCatalogFetch() {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() => Promise.resolve(new Response(JSON.stringify(CATALOG), { status: 200 }))),
+    )
+  }
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
+  it('opens the marketplace pane from the library and lists the catalog', async () => {
+    stubCatalogFetch()
+    render(<FlashcardsView entries={[ENTRY]} />)
+    await screen.findByText(/reviewed/)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Marketplace' }))
+
+    expect(await screen.findByText('Animals')).toBeInTheDocument()
+    expect(screen.getByText('1 words')).toBeInTheDocument()
+  })
+
+  it('installs a starter deck as a normal, editable user deck and confirms with a toast', async () => {
+    stubCatalogFetch()
+    render(<FlashcardsView entries={[ENTRY]} />)
+    await screen.findByText(/reviewed/)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Marketplace' }))
+    await screen.findByText('Animals')
+    fireEvent.click(screen.getByRole('button', { name: 'Install' }))
+
+    expect(readDecksState().decks).toEqual([
+      expect.objectContaining({ name: 'Animals', kind: 'user', cards: ['a'] }),
+    ])
+    // Once in the toast and once in the live region — both are intended.
+    expect(await screen.findAllByText('Installed “Animals”')).toHaveLength(2)
+  })
+
+  it('gives an installed deck a numbered suffix when its name collides with an existing deck', async () => {
+    writeDecksState({
+      decks: [{ id: 'deck-1', name: 'Animals', hue: 'green', cards: ['x'], kind: 'user' }],
+      inPlay: [DICTIONARY_DECK_ID],
+      groups: [],
+    })
+    stubCatalogFetch()
+    render(<FlashcardsView entries={[ENTRY]} />)
+    await screen.findByText(/reviewed/)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Marketplace' }))
+    fireEvent.click(await screen.findByRole('button', { name: 'Install' }))
+
+    expect(readDecksState().decks.map((d) => d.name)).toEqual(['Animals', 'Animals 2'])
   })
 })
 

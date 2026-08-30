@@ -21,6 +21,7 @@ export const SOURCES_FILE = join(DATA_DIR, 'sources.yaml')
 export const WORDLISTS_DIR = join(DATA_DIR, 'wordlists')
 export const SYLLABLE_INVENTORY_FILE = join(WORDLISTS_DIR, 'syllable-inventory.yaml')
 export const WIKTIONARY_WORDLIST_FILE = join(WORDLISTS_DIR, 'wiktionary-teochew-index.yaml')
+export const STARTER_DECKS_FILE = join(WORDLISTS_DIR, 'starter-decks.yaml')
 export const DIST_DIR = join(ROOT, 'dist')
 
 /**
