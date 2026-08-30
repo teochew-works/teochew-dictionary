@@ -325,14 +325,49 @@ Ordered so each is independently shippable and reviewable.
 | 7 | **Export/import decks and SRS state** — JSON round-trip, guards against ITP eviction and device loss | S–M | — |
 | 8 | **PWA: manifest, icons, service worker, install affordance** (incl. iOS Add-to-Home-Screen instructions and an update path) | M | 1 |
 | 9 | **Offline data opt-in** — Settings toggle that caches `dict.json`, showing its size | M | 8 |
-| 10 | **Investigate `dict.json` payload and parse cost on real devices** — 41 MB decoded / 2.5 MB gzipped, 60–80 MB heap on desktop; measure on a mid-range phone before deciding whether to split into a light index plus lazy entries | Investigation | — |
+| 10 | **Investigate `dict.json` payload and parse cost on real devices** — 39 MB decoded / 2.42 MB gzipped as of §6's re-check, 60–80 MB heap on desktop; measure on a mid-range phone before deciding whether to split into a light index plus lazy entries. §6 has what could be checked without a device — the device measurement itself is still open. | Investigation | — |
 | 11 | **ADR: responsive PWA over a native wrapper**, and the `vite-plugin-pwa` exception to the hand-rolled-implementations preference | S | 8 |
 
 Issues 1 and 2 are worth doing first regardless of everything else: together they are a few
 hours of CSS and remove the failures that make the app feel broken rather than merely
 cramped.
 
-## 6. Device-test checklist
+## 6. `dict.json` payload — investigation findings (issue #10)
+
+This environment has no real phone and no browser automation, so the actual ask —
+cold-load time and heap on a mid-range Android device — is **still not done** and stays
+on the device-test checklist below. What follows is what could be checked without one,
+so the real measurement starts from current numbers rather than the ones in §2.5, which
+already look slightly stale.
+
+**Current size**, measured directly rather than carried over: `dict.json` is **39 MB
+decoded / 2.42 MB gzipped**, 16,245 entries — both numbers moved slightly since §2.5's
+audit (41 MB / 2.5 MB), as the dataset does with ongoing edits. Re-check before acting on
+either figure.
+
+**Parse cost, desktop-Node proxy.** `fs.readFileSync` + `JSON.parse` of the file on the
+machine this was written on (Apple Silicon, unthrottled): read 43 ms, parse 81 ms, V8 heap
+128.6 MB / RSS 292.3 MB immediately after. This is *not* the number that matters — it
+skips fetch/decode overhead, and skips everything the app does after parsing (building the
+Fuse.js search index, which is most of the 60–80 MB desktop-Chrome figure in §2.5). It's
+only useful as a floor: a mid-range phone's CPU is commonly 3–10× slower single-threaded
+than a current desktop, and its memory budget is far tighter, so real hardware should be
+assumed worse than this in both dimensions until measured otherwise.
+
+**What the real investigation still needs**, unchanged from §6: cold-load time, peak
+heap, and whether the tab survives an app switch, on an actual mid-range Android device.
+Chrome DevTools' CPU/network throttling on a desktop would be a reasonable middle ground
+if a real device stays unavailable — closer to real conditions than the unthrottled
+number above, though still not a substitute for it.
+
+**Given what's known so far**, prototyping a light-index-plus-lazy-entries split seems
+worth doing regardless of the exact numbers that come back — the file is large enough,
+and phones constrained enough, that the direction is unlikely to be wrong even if the
+magnitude turns out smaller than feared. But this issue should stay open and tracked
+until someone can actually run the device-test checklist below; treat that as blocking
+the decision, not this write-up.
+
+## 7. Device-test checklist
 
 Emulated viewports caught everything above, but these need real hardware:
 
