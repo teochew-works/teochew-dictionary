@@ -33,3 +33,16 @@ export async function putCard(card: CardState): Promise<void> {
   const db = await getDb()
   await db.put(STORE, card)
 }
+
+/** Bulk write for backup restore (backup/backup.ts) — one transaction rather than one round trip per card. */
+export async function putAllCards(cards: CardState[]): Promise<void> {
+  const db = await getDb()
+  const tx = db.transaction(STORE, 'readwrite')
+  await Promise.all([...cards.map((card) => tx.store.put(card)), tx.done])
+}
+
+/** Empties the store before a backup restore writes its own cards in — a restore replaces review history, it doesn't merge it. */
+export async function clearAllCards(): Promise<void> {
+  const db = await getDb()
+  await db.clear(STORE)
+}
