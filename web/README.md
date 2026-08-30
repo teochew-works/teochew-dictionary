@@ -173,12 +173,15 @@ is an exception to hand-rolling).
   the licensing toggle: returning to a dictionary that silently hides almost
   everything is worse than re-ticking a box.
 
-  Real clips exist for Chaozhou now: `data/phonology/audio/chaozhou.yaml`
-  holds 110 per-syllable clips and 8 whole-word clips, merged via the #106
-  Lingua Libre importer and #128's follow-on merges. Coverage is still
-  partial — most Chaozhou syllables remain unrecorded, and Shantou/Chaoyang
-  (issue #37) have no clips at all — so most entries still resolve every
-  `audio`/`wordAudio` slot to `null` and the players render nothing for them.
+  Real clips exist for Chaozhou: `data/phonology/audio/chaozhou.yaml` holds
+  1,902 per-syllable clips across 1,883 syllable keys (a key can carry more
+  than one speaker's recording — issue #134) plus 8 whole-word clips, merged
+  via the #106 Lingua Libre importer and the #128/#36 recording effort.
+  Coverage is now the majority case rather than the exception: **1,882 of the
+  3,088 syllables attested in the lexicon have a clip (61%)**. It is still
+  partial, though — the remaining 39% of Chaozhou syllables are unrecorded and
+  Shantou/Chaoyang (issue #37) have no clips at all, so plenty of entries
+  still resolve an `audio`/`wordAudio` slot to `null` and render no player.
   The empty state distinguishes the two cases: "No matches with a recording"
   when the dataset has *some* audio but the current search/filter combination
   excludes it, versus "No recordings in the dictionary yet" only for a
@@ -236,6 +239,6 @@ choice rather than being independent scoping decisions
   [ADR-0023](../docs/adrs/adr-0023.md).
 
 Audio playback was on this list for v1 and no longer is — the UI shipped in
-issue #114. Real Chaozhou recordings exist now (issues #106/#128); what's
-still missing is full coverage — most Chaozhou syllables and all of
-Shantou/Chaoyang (issue #37) remain unrecorded.
+issue #114. Chaozhou recordings now cover 1,882 of 3,088 attested syllables
+(issues #106/#128/#36); what's still missing is full coverage — the remaining
+Chaozhou syllables, and all of Shantou/Chaoyang (issue #37).

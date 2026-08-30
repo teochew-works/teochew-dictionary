@@ -129,6 +129,10 @@ data/                      ← the product
     TTS.md                   synthesis-as-audio-supplement research (issue #58)
   sources.yaml               provenance and licence registry
   staging/                   importer output, awaiting human review
+                               (wiktionary.yaml still holds the 15,845
+                               already-merged issue #68 proposals — the
+                               checklist, not this file, is the source of
+                               truth for what is outstanding)
   wordlists/                 checklists tracking growth (see below)
     swadesh-207.yaml           headword checklist, hand-maintained
     syllable-inventory.yaml    full legal syllable checklist, script-regenerated
@@ -630,7 +634,12 @@ again: readings and glosses are separate decisions). So merging one into
 page at `https://en.wiktionary.org/wiki/<headword>` and write its gloss,
 part of speech, and — where the page gives one — an example, the same way
 the 141 entries from issue #5 were done. That per-entry cost is why 15,845
-candidates gets worked in many small batches rather than one PR.
+candidates got worked in many small batches rather than one PR.
+
+**This sweep is now complete** — every item is `existing`, `no_reading` or
+`no_gloss`, and `npm run batch:wiktionary` reports an empty batch. What
+follows describes the workflow as it ran, and is what a future sweep against
+a refreshed index would use again.
 
 ```bash
 npm run batch:wiktionary -- --limit=25
@@ -930,8 +939,11 @@ rejects an entry that cites a `reference` source, rather than silently
 accepting it.
 
 **As of the Swadesh-207 Wiktionary merge (issue #5), the dataset is a mix of
-both licences** — 103 entries cite only `seed` and remain CC-BY-4.0; 141
-entries cite `wiktionary` and are CC-BY-SA-4.0. This is why importers write to
+both licences** — 103 entries cite only `seed` and remain CC-BY-4.0; 16,142
+cite `wiktionary` and are CC-BY-SA-4.0. The share-alike side has grown from
+141 entries to nearly the whole dataset as the issue #68 sweep completed, so
+a consumer wanting the permissive subset is now filtering to a small
+minority. This is why importers write to
 `data/staging/` and never to `data/entries/`: merging a CC-BY-SA gloss into an
 entry, and thereby relicensing that entry, stays a deliberate human act rather
 than something a script does by accident.
@@ -1026,30 +1038,47 @@ build, and deploy it.
 
 ## Status
 
-264 entries. 244 cover core everyday vocabulary against the Swadesh-207
-checklist — numerals, pronouns, kinship, body parts, animals, nature, common
-verbs and descriptives, place names, function words — 141 of those merged
-from the Wiktionary import (issue #5). A further 20 are the first batch of
-the much larger Wiktionary index sweep (issue #68, 15,825 `staged` proposals
-remaining after this batch). Entries merged from Wiktionary carry
-`needs_review: true` wherever Wiktionary returned more than one candidate
-reading or the headword choice itself was a guess; a native speaker still
-needs to confirm them.
+16,245 entries, 19,350 readings.
+
+The **Swadesh-207 checklist** — core everyday vocabulary: numerals, pronouns,
+kinship, body parts, animals, nature, common verbs and descriptives, place
+names, function words — is at 191 `existing` of 207, with 16 still
+`no_reading`.
+
+The **Wiktionary index sweep (issue #68) is complete.** All 17,175 headwords
+that `insource:` enumeration found (issue #54) have been worked through:
+16,031 merged into `data/entries/`, 1,091 `no_reading` (the importer found
+nothing), and 53 `no_gloss` (a valid reading, but the page defines no
+independent content — a bound character, a compound-only note, or an unfilled
+stub). Nothing remains `staged`.
+
+That scale is the dataset's central caveat rather than an achievement to
+report unqualified. **4,811 entries carry `needs_review: true`** — set wherever
+Wiktionary returned more than one candidate reading, or the headword choice
+itself was a guess. A native speaker still needs to confirm them, and until
+that happens the bulk of this dictionary is machine-assembled and unverified.
+
+3,320 entries carry a CEFR `level` (issue #110); the other 12,925 have no
+Mandarin-cognate signal to derive one from.
 
 The most valuable next contributions, in order:
 
-1. **Working through the issue #68 batches** — `npm run batch:wiktionary`
-   lists the next batch of `data/staging/wiktionary.yaml` proposals to
-   hand-merge; see "Hand-merging Wiktionary candidates into entries" above.
-2. **A native speaker confirming the `needs_review` entries from the
-   Wiktionary merge** — around 100 entries carry unresolved multi-reading
-   ambiguity or headword/register uncertainty, tracked per-item in
-   `data/wordlists/swadesh-207.yaml`.
-3. **Confirming the sandhi table** in `data/phonology/sandhi/chaozhou.yaml`. It is
+1. **A native speaker confirming the 4,811 `needs_review` entries.** This is
+   now the single largest gap by a wide margin. Each carries unresolved
+   multi-reading ambiguity or headword/register uncertainty from the
+   Wiktionary merge.
+2. **Confirming the sandhi table** in `data/phonology/sandhi/chaozhou.yaml`. It is
    flagged `needs_review: true` in full, and published descriptions disagree with
-   each other, so this is the largest remaining unknown.
-4. **A native speaker walking [REVIEW.md](data/phonology/REVIEW.md).** §1, the
-   `e`/`ê` vowel split, is resolved; §2–§7 are not.
+   each other, so this is the largest remaining *phonological* unknown.
+3. **A native speaker walking [REVIEW.md](data/phonology/REVIEW.md).** §1 (the
+   `e`/`ê` vowel split), §3, §8, §9, §14 and §15 are resolved; §2 and §4–§7
+   are not.
+4. **Audio for Shantou and Chaoyang** (issue #37) — both have no clips at all.
+   Chaozhou now has 1,902 clips covering 1,882 of its 3,088 attested
+   syllables (issue #36).
 5. **The 16 Swadesh items still `no_reading`** in
    `data/wordlists/swadesh-207.yaml` — the importer found nothing for these
    headword guesses; they need better headwords before they can be re-fetched.
+6. **The 1,091 `no_reading` headwords** in
+   `data/wordlists/wiktionary-teochew-index.yaml`, same problem at the larger
+   scale.
