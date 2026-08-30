@@ -82,6 +82,13 @@ reappear as new (DevTools → Application → IndexedDB →
   no dependency) with a 3-button grading UI (Again/Good/Easy), persisted via
   [`idb`](https://github.com/jakearchibald/idb) (IndexedDB `teochew-flashcards`
   database, `cards` object store keyed by entry id).
+- The dictionary list is capped, not virtualised (`PAGE_SIZE` in
+  `DictionaryView.tsx`). Rendering all 16,000+ entries put 84,000 nodes in the
+  DOM at rest and made each keystroke rebuild them — up to 600ms of blocked
+  main thread, measured. The first 200 render with a "show more" control, and
+  the query itself is passed through `useDeferredValue` so a keystroke never
+  waits on the search (30-100ms, scaling with the number of words Fuse has to
+  tokenise) before painting.
 - Decks and the table (issues #187/#189): decks live in a library rail and are
   dragged onto "the table" to enter a session. Everything on the table is
   unioned into one review queue (`src/decks/pipeline.ts`), and the session's

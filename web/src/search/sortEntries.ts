@@ -105,6 +105,30 @@ function levelGroupKey(entry: EnrichedEntry): { key: string; label: string } {
  * sort A1-C2 with an untiered-entry "Untiered" group last; category groups
  * sort alphabetically by label.
  */
+/**
+ * The first `limit` entries across the groups, keeping the group structure and
+ * dropping whole groups once the budget runs out. Used to bound what is put in
+ * the DOM without reordering or re-bucketing anything — see DictionaryView's
+ * `PAGE_SIZE`.
+ */
+export function capGroups(groups: EntryGroup[], limit: number): EntryGroup[] {
+  const capped: EntryGroup[] = []
+  let budget = limit
+
+  for (const group of groups) {
+    if (budget <= 0) break
+    if (group.entries.length <= budget) {
+      capped.push(group)
+      budget -= group.entries.length
+    } else {
+      capped.push({ ...group, entries: group.entries.slice(0, budget) })
+      budget = 0
+    }
+  }
+
+  return capped
+}
+
 export function groupEntries(
   entries: EnrichedEntry[],
   mode: GroupedSortMode,
