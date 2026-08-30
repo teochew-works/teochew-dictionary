@@ -33,9 +33,24 @@ const SORT_MODE_LABELS: Record<SortMode, string> = {
   level: 'Level',
 }
 
-export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
+export function DictionaryView({
+  entries,
+  selectedId: controlledSelectedId,
+  onSelectEntry,
+}: {
+  entries: EnrichedEntry[]
+  // Both optional so the view still works standalone (as in this file's own
+  // tests): uncontrolled internal state when the parent doesn't route
+  // selection through the URL, controlled when it does (App.tsx, mobile.md
+  // §3.3 — hash-routed so a phone's back gesture returns to the list instead
+  // of leaving the app, and an entry gets a shareable deep link).
+  selectedId?: string | null
+  onSelectEntry?: (id: string | null) => void
+}) {
   const [query, setQuery] = useState('')
-  const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [internalSelectedId, setInternalSelectedId] = useState<string | null>(null)
+  const selectedId = controlledSelectedId !== undefined ? controlledSelectedId : internalSelectedId
+  const setSelectedId = onSelectEntry ?? setInternalSelectedId
   const [showLicence, setShowLicence] = useState(readShowLicence)
   // Persisted as of the Settings tab (issue #173) — previously deliberately
   // not persisted here, because narrowing the visible entries silently across
@@ -47,6 +62,13 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
   const [sortMode, setSortMode] = useState<SortMode>('relevance')
   const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
   const [mogherLinks] = useState(readMogherLinks)
+  // Open by default above the phone breakpoint (desktop/tablet keep today's
+  // always-visible filters); closed by default at phone width, where they'd
+  // otherwise push the first result 200px down the screen (mobile.md §3.3).
+  // Read once at mount, not kept in sync with resizes — same convention as
+  // every other breakpoint here, which is media-query driven except for this
+  // one JS-only default.
+  const [filtersOpenByDefault] = useState(() => window.innerWidth > 640)
 
   const index = useMemo(() => createSearchIndex(entries), [entries])
 
@@ -127,7 +149,7 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
   }
 
   return (
-    <div className="dictionary-view">
+    <div className={selected ? 'dictionary-view dictionary-view--detail-open' : 'dictionary-view'}>
       <div className="dictionary-view__list-pane">
         <input
           type="search"
@@ -137,53 +159,56 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
           onChange={(e) => setQuery(e.target.value)}
           aria-label="Search the dictionary"
         />
-        <div className="dictionary-view__toggles">
-          <label className="dictionary-view__toggle">
-            <input
-              type="checkbox"
-              checked={showLicence}
-              onChange={(e) => toggleShowLicence(e.target.checked)}
-            />
-            Show licensing info
-          </label>
-          <label className="dictionary-view__toggle">
-            <input type="checkbox" checked={audioOnly} onChange={(e) => toggleAudioOnly(e.target.checked)} />
-            Only entries with audio
-          </label>
-          <label className="dictionary-view__toggle">
-            <input
-              type="checkbox"
-              checked={fullAudioOnly}
-              onChange={(e) => toggleFullAudioOnly(e.target.checked)}
-            />
-            Only fully recorded audio
-          </label>
-        </div>
-        <div className="dictionary-view__controls">
-          <select
-            className="dictionary-view__sort"
-            aria-label="Sort dictionary by"
-            value={sortMode}
-            onChange={(e) => setSortMode(e.target.value as SortMode)}
-          >
-            {Object.entries(SORT_MODE_LABELS).map(([mode, label]) => (
-              <option key={mode} value={mode}>
-                {label}
-              </option>
-            ))}
-          </select>
-          {sortMode === 'tone' && (
+        <details className="dictionary-view__filters" open={filtersOpenByDefault}>
+          <summary className="dictionary-view__filters-summary">Filters</summary>
+          <div className="dictionary-view__toggles">
+            <label className="dictionary-view__toggle">
+              <input
+                type="checkbox"
+                checked={showLicence}
+                onChange={(e) => toggleShowLicence(e.target.checked)}
+              />
+              Show licensing info
+            </label>
+            <label className="dictionary-view__toggle">
+              <input type="checkbox" checked={audioOnly} onChange={(e) => toggleAudioOnly(e.target.checked)} />
+              Only entries with audio
+            </label>
+            <label className="dictionary-view__toggle">
+              <input
+                type="checkbox"
+                checked={fullAudioOnly}
+                onChange={(e) => toggleFullAudioOnly(e.target.checked)}
+              />
+              Only fully recorded audio
+            </label>
+          </div>
+          <div className="dictionary-view__controls">
             <select
-              className="dictionary-view__tone-source"
-              aria-label="Tone type"
-              value={pronunciation}
-              onChange={(e) => setPronunciationAndPersist(e.target.value as PronunciationMode)}
+              className="dictionary-view__sort"
+              aria-label="Sort dictionary by"
+              value={sortMode}
+              onChange={(e) => setSortMode(e.target.value as SortMode)}
             >
-              <option value="citation">Citation tone</option>
-              <option value="sandhi">Sandhi tone</option>
+              {Object.entries(SORT_MODE_LABELS).map(([mode, label]) => (
+                <option key={mode} value={mode}>
+                  {label}
+                </option>
+              ))}
             </select>
-          )}
-        </div>
+            {sortMode === 'tone' && (
+              <select
+                className="dictionary-view__tone-source"
+                aria-label="Tone type"
+                value={pronunciation}
+                onChange={(e) => setPronunciationAndPersist(e.target.value as PronunciationMode)}
+              >
+                <option value="citation">Citation tone</option>
+                <option value="sandhi">Sandhi tone</option>
+              </select>
+            )}
+          </div>
+        </details>
         {(audioOnly || fullAudioOnly) && results.length === 0 ? (
           <p className="entry-list__empty">
             {fullAudioOnly
@@ -216,16 +241,27 @@ export function DictionaryView({ entries }: { entries: EnrichedEntry[] }) {
       </div>
       <div className="dictionary-view__detail-pane">
         {selected ? (
-          // Keyed so selecting another entry remounts the pane: EntryDetail
-          // owns the audio player, and a clip should stop when the user
-          // navigates away from the entry it belongs to.
-          <EntryDetail
-            key={selected.id}
-            entry={selected}
-            showLicence={showLicence}
-            pronunciation={pronunciation}
-            mogherLinks={mogherLinks}
-          />
+          <>
+            {/* Phone only (CSS) — below 640px the two panes are two screens,
+                not two columns, so getting back to the list needs an
+                explicit affordance rather than just seeing it beside the
+                detail (mobile.md §3.3). The browser/OS back gesture also
+                works, since selecting an entry pushed a history entry via
+                the hash. */}
+            <button type="button" className="dictionary-view__back" onClick={() => setSelectedId(null)}>
+              ‹ Back to list
+            </button>
+            {/* Keyed so selecting another entry remounts the pane: EntryDetail
+                owns the audio player, and a clip should stop when the user
+                navigates away from the entry it belongs to. */}
+            <EntryDetail
+              key={selected.id}
+              entry={selected}
+              showLicence={showLicence}
+              pronunciation={pronunciation}
+              mogherLinks={mogherLinks}
+            />
+          </>
         ) : (
           <div className="dictionary-view__empty-state">
             <ruby className="dictionary-view__empty-state-headline" aria-hidden="true">

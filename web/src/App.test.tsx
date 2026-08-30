@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { App } from './App'
 import type { Dict } from './types/dict'
 import type { SoundsData } from './types/sounds'
@@ -118,6 +118,40 @@ describe('App Sounds tab', () => {
 
     expect(await screen.findByText('tie⁵⁵')).toBeInTheDocument()
     expect(screen.getAllByText('dio5').length).toBeGreaterThan(0)
+  })
+})
+
+describe('App dictionary entry routing (issue #194)', () => {
+  beforeEach(() => {
+    window.location.hash = ''
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() => Promise.resolve(new Response(JSON.stringify(FIXTURE), { status: 200 }))),
+    )
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+    window.location.hash = ''
+  })
+
+  it('routes a selected entry through the hash and back again', async () => {
+    render(<App />)
+    fireEvent.click(await screen.findByText('潮州'))
+
+    expect(window.location.hash).toBe(`#dictionary/${encodeURIComponent('dio5-ziu1-潮州')}`)
+    expect(await screen.findByRole('heading', { name: '潮州' })).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: /Back to list/ }))
+
+    expect(window.location.hash).toBe('#dictionary')
+    await waitFor(() => expect(screen.queryByRole('heading', { name: '潮州' })).not.toBeInTheDocument())
+  })
+
+  it('opens directly to a deep-linked entry', async () => {
+    window.location.hash = `#dictionary/${encodeURIComponent('dio5-ziu1-潮州')}`
+    render(<App />)
+    expect(await screen.findByRole('heading', { name: '潮州' })).toBeInTheDocument()
   })
 })
 
