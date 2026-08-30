@@ -6,6 +6,7 @@ import { readPronunciationMode, writePronunciationMode } from '../settings/pronu
 import type { PronunciationMode } from '../settings/pronunciationMode'
 import { readMogherLinks, writeMogherLinks } from '../settings/mogherLinks'
 import { buildBackup, restoreBackup } from '../backup/backup'
+import { InstallPrompt } from '../pwa/InstallPrompt'
 import './SettingsView.css'
 
 /**
@@ -142,6 +143,15 @@ export function SettingsView() {
           />
           Link to mogher.com
         </label>
+      </fieldset>
+
+      <fieldset className="settings-view__group">
+        <legend>Install</legend>
+        <p className="settings-view__hint">
+          Installing keeps your review history: Safari and Chrome both clear a site's storage after a
+          period of inactivity, and an installed app is exempt.
+        </p>
+        <InstallPrompt />
       </fieldset>
 
       <fieldset className="settings-view__group">

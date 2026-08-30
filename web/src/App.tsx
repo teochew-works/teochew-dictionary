@@ -4,6 +4,7 @@ import { DictionaryView } from './views/DictionaryView'
 import { FlashcardsView } from './views/FlashcardsView'
 import { SoundsView } from './views/SoundsView'
 import { SettingsView } from './views/SettingsView'
+import { UpdatePrompt } from './pwa/UpdatePrompt'
 import './App.css'
 
 type Tab = 'dictionary' | 'flashcards' | 'sounds' | 'settings'
@@ -51,6 +52,7 @@ export function App() {
 
   return (
     <div className="app">
+      <UpdatePrompt />
       <header className="app__header">
         <h1>Teochew Dictionary</h1>
         <nav className="app__tabs">
