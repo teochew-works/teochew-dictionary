@@ -78,6 +78,9 @@ Three things follow from this, and they are the reason for the choice:
 Hand-written `ipa:` / `poj:` overrides are available for genuinely irregular
 forms, and the validator requires a `note` justifying each one.
 
+Recorded as [ADR-0001](docs/adrs/adr-0001.md) (Peng'im-only storage) and
+[ADR-0002](docs/adrs/adr-0002.md) (reference variety with sparse overlays).
+
 ### Confidence is tracked, not assumed
 
 Every phoneme mapping carries `confidence: high | medium | low`. A derived form
@@ -100,6 +103,8 @@ e:
 **The dataset has not been checked by a native speaker.** Tone assignments in
 particular are provisional, and the tone sandhi table is flagged
 `needs_review: true` in full.
+
+Recorded as [ADR-0003](docs/adrs/adr-0003.md).
 
 ---
 
@@ -140,6 +145,10 @@ src/
 .cache/                    ← generated, gitignored
   wiktionary-pages/          raw Wiktionary wikitext, one file per headword
 
+docs/
+  adrs/                      Architecture Decision Records — why the project is
+                               shaped this way, and what was rejected
+
 dist/                      ← generated, gitignored
   dict.json                  everything, enriched
   dict.ndjson                one entry per line, for streaming
@@ -163,6 +172,27 @@ web/                       ← static frontend (issue #55), independent npm proj
   public/data/               ← generated, gitignored
   dist/                      ← generated, gitignored (deployed to GitHub Pages)
 ```
+
+---
+
+## Architecture decisions
+
+This README explains **how the project works today**.
+[`docs/adrs/`](docs/adrs/README.md) records **why it is shaped that way** — and
+which approaches were considered and **rejected**.
+
+The corpus covers the core choices (Peng'im-only storage with derived IPA/POJ, a
+reference variety with sparse overlays, Zod schemas as the single source of
+truth, the importer staging boundary, the derived per-entry licence, audio
+hosted on GitHub Releases, a static backend-free web UI) and the rejections (TTS
+synthesis as an audio supplement, a Mandarin frequency list as the growth
+denominator, an HSK 3.0 → CEFR crosswalk, publishing audio straight from the
+browser), each as a stable, citable record.
+
+Where a decision has a fuller narrative here or in
+[`data/phonology/REVIEW.md`](data/phonology/REVIEW.md), the ADR links to it
+rather than duplicating it. See [docs/adrs/README.md](docs/adrs/README.md) for
+the inventory.
 
 ---
 
@@ -237,10 +267,14 @@ Two reasons this is worth the friction:
 Wiktionary readings are validated as Peng'im before being proposed; malformed
 candidates are reported rather than imported.
 
+Recorded as [ADR-0006](docs/adrs/adr-0006.md).
+
 ### Growing the lexicon from a checklist
 
 Ad-hoc additions make "how complete is this?" unanswerable. `data/wordlists/`
-holds checklists that give growth a defined denominator.
+holds checklists that give growth a defined denominator
+([ADR-0010](docs/adrs/adr-0010.md); the `insource:` enumeration that replaced
+issue #53's Mandarin frequency list is [ADR-0011](docs/adrs/adr-0011.md)).
 
 `swadesh-207.yaml`, the Swadesh 1971 basic-vocabulary list, tracks whether
 each item's Teochew headword is already `existing` in `data/entries/`,
@@ -309,6 +343,8 @@ gloss, and the audit pass then reads the same page again to check the result.
 Those fetches are the bulk of the cost, and none of them survive an
 interruption — a subagent that dies halfway through a batch re-downloads
 everything on retry.
+
+Recorded as [ADR-0013](docs/adrs/adr-0013.md).
 
 **One-time setup:** `.cache` must be a symlink to wherever you want the page
 cache to actually live (it grows to tens of thousands of small files, so it's
@@ -706,7 +742,8 @@ reproduce them byte-for-byte — it rewraps folded scalars to its own line
 width, restyles flow collections (`[one, "1"]` → `[ one, "1" ]`), and drops
 blank-line grouping between entries. Splicing new `tags:`/`topics:`/`alt_of:`
 lines directly into the source string, at the exact offset a parsed node's
-range reports, keeps every byte the script doesn't touch untouched.
+range reports, keeps every byte the script doesn't touch untouched — see
+[ADR-0018](docs/adrs/adr-0018.md).
 
 ### Wiktionary sense topics (issue #105)
 
@@ -786,6 +823,9 @@ Phrase/idiom-level tiering and the other two signals from issue #110
 (Hokkien-cognate via Taiwan's GTPT/MOE material, Teochew-internal corpus
 frequency) are follow-up work, not covered here.
 
+Recorded as [ADR-0022](docs/adrs/adr-0022.md), including why HSK 3.0's `new-N`
+bands are deliberately not crosswalked.
+
 ### Importing Lingua Libre/Commons audio (issue #106)
 
 ```bash
@@ -823,14 +863,15 @@ A clip's `sources` cites whichever of `lingualibre` / `lingualibre-ccby4` /
 `lingualibre-cc0` matches its own Commons-reported licence — the category
 defaults to CC-BY-SA-4.0, but a meaningful share of files report CC-BY-4.0 or
 CC0 instead, and merging always cites the file's actual licence rather than
-assuming the category default (see `data/phonology/REVIEW.md` § 16).
+assuming the category default (see `data/phonology/REVIEW.md` § 16 and
+[ADR-0015](docs/adrs/adr-0015.md)).
 
 ---
 
 ## Licensing
 
 **Code and data are licensed separately — deliberately, not as an artifact of
-reusing one licence for everything.**
+reusing one licence for everything** ([ADR-0007](docs/adrs/adr-0007.md)).
 
 | | Licence | File |
 |---|---|---|
@@ -852,8 +893,9 @@ individual facts, that a plain software licence like BSD is silent on. It's
 also the idiom the comparable projects in this space actually use (Wiktionary,
 iTaigi, Tatoeba) — nobody licenses lexical data under a software licence.
 
-**An entry's licence is derived from its `sources`, never hand-written** —
-computed by [`src/data/licence.ts`](src/data/licence.ts) and shipped as
+**An entry's licence is derived from its `sources`, never hand-written**
+([ADR-0008](docs/adrs/adr-0008.md)) — computed by
+[`src/data/licence.ts`](src/data/licence.ts) and shipped as
 `licence` and `attributions` fields on every entry in `dist/dict.json` and
 `dist/dict.sqlite`, so a consumer can filter to a purely permissive subset
 without re-deriving the rule themselves. The two fields answer different
@@ -873,7 +915,7 @@ questions:
   distinct licence text a source can carry has its own `LICENSE-DATA-*` file
   at the repo root, per the table above.
 
-**Every source also has a `kind`** — `import` (material is copied out of it
+**Every source also has a `kind`** ([ADR-0009](docs/adrs/adr-0009.md)) — `import` (material is copied out of it
 into the dataset; `licence` is required, and defaults to `import` for a source
 that doesn't say) or `reference` (cited as evidence, e.g. to justify a
 phonology mapping's `confidence`, but never reproduced; `licence` is
@@ -894,7 +936,9 @@ entries cite `wiktionary` and are CC-BY-SA-4.0. This is why importers write to
 entry, and thereby relicensing that entry, stays a deliberate human act rather
 than something a script does by accident.
 
-**Audio clips follow the same rule.** A clip's `licence` (`AudioReference` in
+**Audio clips follow the same rule** ([ADR-0015](docs/adrs/adr-0015.md); the
+bytes are hosted on GitHub Releases rather than committed —
+[ADR-0014](docs/adrs/adr-0014.md))**.** A clip's `licence` (`AudioReference` in
 `dist/dict.json`) derives from its `sources` exactly like an entry's, via the
 `teochew-dictionary-audio` id in `data/sources.yaml` (original recordings) or
 whichever of `lingualibre` / `lingualibre-ccby4` / `lingualibre-cc0` matches
@@ -912,7 +956,8 @@ consent to release the recording — see [`AUDIO-CONSENT.md`](AUDIO-CONSENT.md)
 — which is a separate, genuinely new concern from copyright licensing. See
 `data/phonology/REVIEW.md` § 13 for the full rationale.
 
-**Why not synthesize audio instead of recording it.**
+**Why not synthesize audio instead of recording it**
+([ADR-0016](docs/adrs/adr-0016.md))**.**
 [`data/phonology/TTS.md`](data/phonology/TTS.md) (issue #58) surveys
 text-to-speech/IPA-to-audio synthesis as a possible supplement to
 volunteer recordings and finds no near-term viable option: no commercial
@@ -932,7 +977,8 @@ npm run audio:verify
 
 which fetches every declared clip and confirms its checksum matches — kept
 out of `npm run check` for the same reason `npm run xref`/`npm run import`
-are, so `check` stays fast, offline, and CI-safe.
+are, so `check` stays fast, offline, and CI-safe
+([ADR-0012](docs/adrs/adr-0012.md)).
 
 ---
 
@@ -961,9 +1007,9 @@ are, so `check` stays fast, offline, and CI-safe.
 
 ## Web UI
 
-`web/` is a static, backend-free frontend (issue #55): a dictionary browser
-with client-side search plus a flashcard/SRS trainer, built on Vite + React +
-TypeScript. It's an independent npm project with its own `package.json`,
+`web/` is a static, backend-free frontend (issue #55,
+[ADR-0019](docs/adrs/adr-0019.md)): a dictionary browser with client-side
+search plus a flashcard/SRS trainer, built on Vite + React + TypeScript. It's an independent npm project with its own `package.json`,
 consuming `dist/dict.json` at runtime rather than duplicating any
 data-loading logic.
 

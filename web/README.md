@@ -6,7 +6,9 @@ sound inventory, built on top of the root project's `dist/dict.json` and
 `dist/sounds.json`.
 
 This is its own npm project — independent `package.json`, buildable without
-touching the root CLI tooling's build/test pipeline.
+touching the root CLI tooling's build/test pipeline. Why it is static and
+backend-free, and why it is a separate project, is recorded as
+[ADR-0019](../docs/adrs/adr-0019.md).
 
 ---
 
@@ -72,14 +74,21 @@ reappear as new (DevTools → Application → IndexedDB →
 
 ## Architecture
 
+The decisions behind this section are recorded in [`docs/adrs/`](../docs/adrs/README.md):
+[ADR-0019](../docs/adrs/adr-0019.md) (static, backend-free, its own npm project, data fetched at
+runtime), [ADR-0020](../docs/adrs/adr-0020.md) (the hand-rolled SM-2 scheduler and where state
+lives), [ADR-0021](../docs/adrs/adr-0021.md) (one drag engine, keyboard parity, undo instead of
+confirmation) and [ADR-0015](../docs/adrs/adr-0015.md) (why clip licences are credited separately
+from the entry's).
+
 - Vite + React + TypeScript, no router — Dictionary, Flashcards, and Sounds
   are in-app views, not separate routes; the dictionary's entry detail is a
   master-detail pane within its own view.
 - Search: [Fuse.js](https://www.fusejs.io/) over each entry's precomputed
   `search_keys` (headword, Peng'im with/without tones, POJ with/without
   diacritics, English glosses — see `src/build/enrich.ts` at the repo root).
-- Flashcards: a hand-rolled SM-2-style scheduler (`src/srs/scheduler.ts`,
-  no dependency) with a 3-button grading UI (Again/Good/Easy), persisted via
+- Flashcards ([ADR-0020](../docs/adrs/adr-0020.md)): a hand-rolled SM-2-style
+  scheduler (`src/srs/scheduler.ts`, no dependency) with a 3-button grading UI (Again/Good/Easy), persisted via
   [`idb`](https://github.com/jakearchibald/idb) (IndexedDB `teochew-flashcards`
   database, `cards` object store keyed by entry id).
 - The dictionary list is capped, not virtualised (`PAGE_SIZE` in
@@ -122,7 +131,8 @@ reappear as new (DevTools → Application → IndexedDB →
   deck as a checkbox, so ticking files, unticking removes, and ticking a second
   deck without unticking the first is the copy a modifier-less path could not
   otherwise express.
-- One drag engine, not four (`src/decks/dnd/useDeckDrag.ts`): a deck out of the
+- One drag engine, not four ([ADR-0021](../docs/adrs/adr-0021.md),
+  `src/decks/dnd/useDeckDrag.ts`): a deck out of the
   library, a chip around the table, the showing card into a deck, and an entry
   out of the browse drawer all resolve against the same set of zones on every
   pointer move (`resolveDrop.ts`, pure and rect-based). That single resolution
@@ -215,7 +225,9 @@ workflow's `deploy` job can actually publish anything.
 
 ## Out of scope (v1)
 
-Matches the parent issue's explicit non-goals:
+Matches the parent issue's explicit non-goals — both are consequences of the
+backend-free choice, not independent scoping decisions
+([ADR-0019](../docs/adrs/adr-0019.md), [ADR-0020](../docs/adrs/adr-0020.md)):
 
 - User accounts or cross-device progress sync.
 - Offline/PWA support.

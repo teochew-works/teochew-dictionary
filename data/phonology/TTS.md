@@ -1,5 +1,7 @@
 # Text-to-speech / IPA-to-audio: research findings · issue #58
 
+> The conclusion is recorded as [ADR-0016](../../docs/adrs/adr-0016.md).
+
 Issue #58 asked whether text-to-speech — more precisely, phoneme/IPA-to-audio
 synthesis — could plausibly supplement this project's audio pipeline: a
 placeholder for a not-yet-recorded syllable, a preview while waiting on a
