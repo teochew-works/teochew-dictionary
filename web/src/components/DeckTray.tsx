@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import type { KeyboardEvent as ReactKeyboardEvent, PointerEvent as ReactPointerEvent, ReactNode } from 'react'
 import { TableChip } from './TableChip'
 import type { CardDropState } from './DeckCard'
@@ -62,9 +62,20 @@ export function DeckTray({
   if (isOver) trayClasses.push('is-over')
   if (inPlayDecks.length === 0) trayClasses.push('is-empty')
 
+  // Open by default above the phone breakpoint (desktop/tablet keep the tray
+  // always visible); closed by default at phone width, where "on the table"
+  // collapses to this one-line summary until tapped open (mobile.md §3.4).
+  // Same read-once-at-mount convention as DictionaryView's filters disclosure.
+  const [trayOpenOnPhone, setTrayOpenOnPhone] = useState(() => window.innerWidth > 640)
+
   return (
-    <section className="table" aria-label="Decks in play">
-      <div className="table__head">
+    <section className={trayOpenOnPhone ? 'table table--tray-open' : 'table'} aria-label="Decks in play">
+      <button
+        type="button"
+        className="table__head"
+        aria-expanded={trayOpenOnPhone}
+        onClick={() => setTrayOpenOnPhone((v) => !v)}
+      >
         <span className="eyebrow">On the table</span>
         <div className="table__totals">
           {inPlayDecks.length === 0 ? (
@@ -83,7 +94,7 @@ export function DeckTray({
             </>
           )}
         </div>
-      </div>
+      </button>
 
       <div className={trayClasses.join(' ')} ref={trayRef}>
         <div className="tray__empty">

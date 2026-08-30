@@ -12,9 +12,28 @@ import type { ReactNode } from 'react'
  * focusable. Marking it hidden while leaving it tabbable is a WCAG failure;
  * `inert` takes it out of the tab order and the accessibility tree together.
  */
-export function Drawer({ open, label, children }: { open: boolean; label: string; children: ReactNode }) {
+export function Drawer({
+  open,
+  label,
+  onClose,
+  children,
+}: {
+  open: boolean
+  label: string
+  /** Phone width only (CSS) — the dock becomes a bottom sheet there, and this
+      renders a drag-handle-shaped close button across its top edge so it can
+      be dismissed without reaching back up to whatever opened it
+      (mobile.md §3.4). Omit where a caller has no such affordance to offer. */
+  onClose?: () => void
+  children: ReactNode
+}) {
   return (
     <section className={open ? 'drawer drawer--open' : 'drawer'} aria-label={label} inert={!open}>
+      {onClose && (
+        <button type="button" className="drawer__handle" onClick={onClose} aria-label={`Close ${label}`}>
+          <span className="drawer__handle-bar" aria-hidden="true" />
+        </button>
+      )}
       {children}
     </section>
   )

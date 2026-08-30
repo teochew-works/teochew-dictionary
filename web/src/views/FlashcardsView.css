@@ -648,7 +648,10 @@
   align-items: baseline;
   gap: 12px;
   flex-wrap: wrap;
+  width: 100%;
+  text-align: left;
   margin-bottom: 9px;
+  cursor: default;
 }
 
 .table__totals {
@@ -968,6 +971,11 @@
 
 .bar__spacer {
   flex: 1;
+}
+
+.bar__decks-toggle,
+.rail-scrim {
+  display: none;
 }
 
 .seg {
@@ -1472,11 +1480,17 @@
 }
 
 /* The hint is the first thing to go when the drawer head runs out of room —
-   the search field and the save action both have to stay reachable. */
-@media (max-width: 1100px) {
+   the search field and the save action both have to stay reachable. Folded
+   into the documented tablet breakpoint (mobile.md §3.1) — was its own
+   ad-hoc 1100px rule. */
+@media (max-width: 1024px) {
   .drawer__hint {
     display: none;
   }
+}
+
+.drawer__handle {
+  display: none;
 }
 
 .drawer__head .pill {
@@ -1861,7 +1875,9 @@
 
 /* ── responsive ───────────────────────────────────────────────────── */
 
-@media (max-width: 860px) {
+/* Folded into the documented tablet breakpoint (mobile.md §3.1) — was its
+   own ad-hoc 860px rule. */
+@media (max-width: 1024px) {
   .shell {
     flex-direction: column;
   }
@@ -1901,5 +1917,170 @@
   .drawer__list {
     padding-left: 14px;
     padding-right: 14px;
+  }
+}
+
+/* Phone: card-first (mobile.md §3.4). Everything but the card itself gets
+   out of the way — the rail becomes an off-canvas drawer, the table
+   collapses to a one-line summary, and the browse drawer becomes a sheet —
+   so the thing the screen exists for isn't below the fold on every session. */
+@media (max-width: 640px) {
+  /* ── rail: off-canvas drawer with a scrim ─────────────────────────── */
+
+  .rail {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    width: 85%;
+    max-width: 320px;
+    border-bottom: none;
+    border-right: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lift);
+    transform: translateX(-100%);
+    transition: transform 0.22s var(--ease);
+  }
+
+  .rail--closed {
+    /* The desktop/tablet collapse-to-a-strip toggle is superseded here by
+       the open/closed drawer itself — always full width when shown. */
+    width: 85%;
+    max-width: 320px;
+    padding-left: 12px;
+    padding-right: 12px;
+    overflow-y: auto;
+  }
+
+  .rail--closed .rail__hideable {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .rail--closed .rail__list,
+  .rail--closed .trash {
+    display: flex;
+  }
+
+  .rail__list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .rail__toggle {
+    display: none;
+  }
+
+  .shell--rail-open .rail {
+    transform: translateX(0);
+  }
+
+  .rail-scrim {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 25;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .shell--rail-open .rail-scrim {
+    display: block;
+  }
+
+  .bar__decks-toggle {
+    display: inline-flex;
+  }
+
+  /* ── table: one-line strip ─────────────────────────────────────────── */
+
+  .table__head {
+    cursor: pointer;
+  }
+
+  .tray {
+    display: none;
+  }
+
+  .table--tray-open .tray {
+    display: flex;
+  }
+
+  /* ── study: the card gets the screen ─────────────────────────────── */
+
+  .study {
+    padding: 18px 14px calc(72px + env(safe-area-inset-bottom));
+  }
+
+  /* .card's entry animation briefly sets a `transform` (its `to` keyframe
+     clears it, but only once the animation finishes) — a transformed
+     ancestor scopes any `position: fixed` descendant to itself instead of
+     the viewport. .card__reveal is a fixed child mounted at the same instant
+     the animation starts, so it would flash in the wrong place for that
+     300ms without this. */
+  .card {
+    animation: none;
+  }
+
+  /* Detached from the card's own flow into a fixed, thumb-reachable row
+     above the bottom tab bar (App.css) — the primary action stays in the
+     same place whether or not the card above it needs to scroll. */
+  .card__reveal,
+  .grades {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: calc(48px + env(safe-area-inset-bottom));
+    z-index: 15;
+    margin: 0;
+    padding: 10px 16px;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .card__reveal {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+  }
+
+  .grades {
+    justify-content: center;
+  }
+
+  .grade {
+    flex: 1;
+    max-width: 140px;
+  }
+
+  /* ── browse drawer: bottom sheet ──────────────────────────────────── */
+
+  .drawer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    border-radius: 14px 14px 0 0;
+    box-shadow: var(--shadow-lift);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .drawer--open {
+    max-height: 85vh;
+  }
+
+  .drawer__handle {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0 2px;
+    width: 100%;
+  }
+
+  .drawer__handle-bar {
+    width: 36px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--line-2);
   }
 }
