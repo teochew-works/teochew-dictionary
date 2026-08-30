@@ -6,7 +6,7 @@ import type { Rect } from './geometry'
  * decks, so the *kind* — not the id — is what decides whether a drop means
  * "put in play", "reorder", or "take off the table".
  */
-export type DragKind = 'deck' | 'chip' | 'card' | 'entry'
+export type DragKind = 'deck' | 'chip' | 'card' | 'entry' | 'starter-deck'
 
 export type DropAct =
   | 'play'
@@ -19,6 +19,7 @@ export type DropAct =
   | 'move'
   | 'remove'
   | 'new-deck'
+  | 'install-starter-deck'
 
 /** Which drop zone should light up under the pointer. */
 export type DropHighlight = 'tray' | 'library' | 'trash' | 'deck' | 'cards'
@@ -100,6 +101,8 @@ export interface DragSubject {
   from?: { id: string; name: string }
   /** The platform's copy modifier is held, so a sourced drag copies instead of moving. */
   copy?: boolean
+  /** Set for 'starter-deck' drags: the marketplace catalog entry being installed. */
+  starterDeck?: { name: string; cards: string[] }
 }
 
 const NOTHING: DropOutcome = { ok: false, act: null, highlight: null, label: '' }
@@ -128,7 +131,27 @@ export function resolveDrop(subject: DragSubject, zones: DropZones, x: number, y
   if (subject.kind === 'deck' || subject.kind === 'chip') {
     return resolveDeckDrop(subject, zones, x, y)
   }
+  if (subject.kind === 'starter-deck') {
+    return resolveStarterDeckDrop(subject, zones, x, y)
+  }
   return resolveCardDrop(subject, zones, x, y)
+}
+
+/**
+ * A marketplace catalog deck has exactly one sensible destination — the
+ * library, to become a new user deck — unlike a card, which can also be
+ * filed into a specific existing deck. It isn't a `Deck` yet (no persisted
+ * id, no membership to protect), so dropping it on an existing deck row or
+ * the trash has no defined meaning and isn't offered.
+ */
+function resolveStarterDeckDrop(subject: DragSubject, zones: DropZones, x: number, y: number): DropOutcome {
+  if (zones.library && pointInRect(x, y, zones.library)) {
+    return { ok: true, act: 'install-starter-deck', highlight: 'library', label: `Install "${subject.starterDeck?.name ?? ''}"` }
+  }
+  if (zones.tray && pointInRect(x, y, zones.tray)) {
+    return { ok: false, act: null, highlight: 'tray', label: 'Drop on your library, not the table' }
+  }
+  return { ...NOTHING, label: 'Drop on your library to install' }
 }
 
 function resolveDeckDrop(subject: DragSubject, zones: DropZones, x: number, y: number): DropOutcome {

@@ -395,8 +395,7 @@ describe('FlashcardsView the marketplace', () => {
     await screen.findByText(/reviewed/)
 
     fireEvent.click(screen.getByRole('button', { name: 'Marketplace' }))
-    await screen.findByText('Animals')
-    fireEvent.click(screen.getByRole('button', { name: 'Install' }))
+    fireEvent.click(await screen.findByRole('button', { name: 'Animals, 1 words' }))
 
     expect(readDecksState().decks).toEqual([
       expect.objectContaining({ name: 'Animals', kind: 'user', cards: ['a'] }),
@@ -416,7 +415,7 @@ describe('FlashcardsView the marketplace', () => {
     await screen.findByText(/reviewed/)
 
     fireEvent.click(screen.getByRole('button', { name: 'Marketplace' }))
-    fireEvent.click(await screen.findByRole('button', { name: 'Install' }))
+    fireEvent.click(await screen.findByRole('button', { name: 'Animals, 1 words' }))
 
     expect(readDecksState().decks.map((d) => d.name)).toEqual(['Animals', 'Animals 2'])
   })

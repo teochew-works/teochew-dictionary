@@ -13,11 +13,16 @@ function setup(overrides: Partial<Parameters<typeof MarketplaceBrowser>[0]> = {}
     decks: CATALOG,
     loading: false,
     error: null,
+    deckDrag: { onPointerDown: vi.fn(() => vi.fn()), isDragging: vi.fn(() => false) },
     onInstall: vi.fn(),
     ...overrides,
   }
   const view = render(<MarketplaceBrowser {...props} />)
   return { ...view, props }
+}
+
+function row(name: string) {
+  return screen.getByRole('button', { name: new RegExp(`^${name},`) })
 }
 
 describe('MarketplaceBrowser', () => {
@@ -29,10 +34,32 @@ describe('MarketplaceBrowser', () => {
     expect(screen.getByText('2 words')).toBeInTheDocument()
   })
 
-  it('fires onInstall with the right catalog deck', () => {
+  it('installs on a click, without needing a drag', () => {
     const { props } = setup()
-    fireEvent.click(screen.getAllByRole('button', { name: 'Install' })[1]!)
+    fireEvent.click(row('Numbers & Counting'))
     expect(props.onInstall).toHaveBeenCalledWith(CATALOG[1])
+  })
+
+  it('installs on Enter or Space from the keyboard', () => {
+    const { props } = setup()
+    fireEvent.keyDown(row('Animals'), { key: 'Enter' })
+    expect(props.onInstall).toHaveBeenCalledWith(CATALOG[0])
+
+    props.onInstall.mockClear()
+    fireEvent.keyDown(row('Animals'), { key: ' ' })
+    expect(props.onInstall).toHaveBeenCalledWith(CATALOG[0])
+  })
+
+  it('wires each row as a drag source', () => {
+    const { props } = setup()
+    fireEvent.pointerDown(row('Animals'))
+    expect(props.deckDrag.onPointerDown).toHaveBeenCalledWith('animals')
+  })
+
+  it('marks the row being dragged', () => {
+    setup({ deckDrag: { onPointerDown: vi.fn(() => vi.fn()), isDragging: (id: string) => id === 'animals' } })
+    expect(row('Animals').className).toContain('is-source')
+    expect(row('Numbers & Counting').className).not.toContain('is-source')
   })
 
   it('shows a loading note instead of the list while loading', () => {

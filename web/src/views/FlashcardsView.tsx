@@ -237,6 +237,10 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
   }, [decksStore])
 
   const starterDecks = useStarterDecks(drawer?.mode === 'marketplace')
+  const catalogDeckById = useMemo(
+    () => new Map((starterDecks.data?.decks ?? []).map((d) => [d.id, d])),
+    [starterDecks.data],
+  )
   const installStarterDeck = useCallback(
     (catalogDeck: StarterDeckCatalogEntry) => {
       const name = uniqueDeckName(
@@ -391,8 +395,9 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
       onRemoveCard: removeCard,
       onReorderCards: reorderCards,
       onNewDeckFromCard: newDeckFromCard,
+      onInstallStarterDeck: (id: string, name: string, cards: string[]) => installStarterDeck({ id, name, cards }),
     }),
-    [decksStore, libraryIds, nameOf, note, withUndo, addCard, moveCard, removeCard, reorderCards, newDeckFromCard],
+    [decksStore, libraryIds, nameOf, note, withUndo, addCard, moveCard, removeCard, reorderCards, newDeckFromCard, installStarterDeck],
   )
 
   const drag = useDeckDrag(dragContext, dragActions, announce)
@@ -473,6 +478,13 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
         title: deck?.name ?? subject.id,
         subtitle: `${stats.kept.toLocaleString()} cards`,
         hue: deck ? `var(--deck-hue-${deck.hue}-bg)` : 'var(--color-muted)',
+      }
+    }
+    if (subject.kind === 'starter-deck') {
+      return {
+        title: subject.starterDeck?.name ?? subject.id,
+        subtitle: `${subject.starterDeck?.cards.length ?? 0} words`,
+        hue: 'var(--color-accent)',
       }
     }
     const entry = entryById.get(subject.id)
@@ -697,7 +709,13 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
           onKeyDown={(id, e) => lift.handleKeyDown('deck', id, e)}
           onRenameRequest={(deck) => setRenaming({ deckId: deck.id, value: deck.name })}
           onCreateDeck={createDeck}
-          onOpenMarketplace={() => setDrawer({ mode: 'marketplace' })}
+          onOpenMarketplace={() => {
+            // On phone the rail is an off-canvas overlay that would otherwise
+            // sit on top of the drawer this opens, hiding it entirely — close
+            // it first, same as tapping outside it (the rail-scrim) already does.
+            setRailOpenOnPhone(false)
+            setDrawer({ mode: 'marketplace' })
+          }}
         />
 
         <div className="main">
@@ -885,6 +903,17 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
                 decks={starterDecks.data?.decks ?? []}
                 loading={starterDecks.loading}
                 error={starterDecks.error}
+                deckDrag={{
+                  onPointerDown: (deckId) => {
+                    const catalogDeck = catalogDeckById.get(deckId)
+                    return drag.onPointerDown({
+                      kind: 'starter-deck',
+                      id: deckId,
+                      starterDeck: catalogDeck ? { name: catalogDeck.name, cards: catalogDeck.cards } : undefined,
+                    })
+                  },
+                  isDragging: (deckId) => drag.isDragging('starter-deck', deckId),
+                }}
                 onInstall={installStarterDeck}
               />
             ) : (
