@@ -973,7 +973,11 @@
   flex: 1;
 }
 
-.bar__decks-toggle,
+/* `.bar` qualifies the toggle only to outrank `.pill` below, which the
+   button also carries and which would otherwise win on source order and
+   show a phone-only control on desktop. The phone rule that reveals it is
+   qualified to match. */
+.bar .bar__decks-toggle,
 .rail-scrim {
   display: none;
 }
@@ -1987,7 +1991,7 @@
     display: block;
   }
 
-  .bar__decks-toggle {
+  .bar .bar__decks-toggle {
     display: inline-flex;
   }
 
