@@ -4,6 +4,7 @@ import { DictionaryView } from './views/DictionaryView'
 import { FlashcardsView } from './views/FlashcardsView'
 import { SoundsView } from './views/SoundsView'
 import { SettingsView } from './views/SettingsView'
+import { UpdatePrompt } from './pwa/UpdatePrompt'
 import './App.css'
 
 type Tab = 'dictionary' | 'flashcards' | 'sounds' | 'settings'
@@ -15,26 +16,43 @@ const TABS: { id: Tab; label: string }[] = [
   { id: 'settings', label: 'Settings' },
 ]
 
-function tabFromHash(hash: string): Tab {
-  const id = hash.replace(/^#/, '')
-  return TABS.some((t) => t.id === id) ? (id as Tab) : 'dictionary'
+/**
+ * The dictionary tab additionally carries an optional selected entry as
+ * `#dictionary/<entry-id>` — routing that selection through the hash rather
+ * than component state gets a phone's back gesture back to the list instead
+ * of out of the app, and makes an entry a shareable deep link (also useful
+ * on desktop). See DictionaryView's own `selectedId`/`onSelectEntry` props.
+ */
+function routeFromHash(hash: string): { tab: Tab; entryId: string | null } {
+  const raw = hash.replace(/^#/, '')
+  const slash = raw.indexOf('/')
+  const id = slash === -1 ? raw : raw.slice(0, slash)
+  const tab = TABS.some((t) => t.id === id) ? (id as Tab) : 'dictionary'
+  const entryId = tab === 'dictionary' && slash !== -1 ? decodeURIComponent(raw.slice(slash + 1)) : null
+  return { tab, entryId }
 }
 
 export function App() {
   const { data, loading, error } = useDictionary()
-  const [tab, setTab] = useState<Tab>(() => tabFromHash(window.location.hash))
+  const [{ tab, entryId }, setRoute] = useState(() => routeFromHash(window.location.hash))
 
   // Real `#tab` links give Cmd/Ctrl+click and middle-click their native
   // "open in new tab" behavior for free (issue #156); this listener keeps
-  // `tab` in sync for same-tab navigation (clicks, back/forward).
+  // the route in sync for same-tab navigation (clicks, back/forward, and a
+  // selected dictionary entry changing the hash — see routeFromHash).
   useEffect(() => {
-    const onHashChange = () => setTab(tabFromHash(window.location.hash))
+    const onHashChange = () => setRoute(routeFromHash(window.location.hash))
     window.addEventListener('hashchange', onHashChange)
     return () => window.removeEventListener('hashchange', onHashChange)
   }, [])
 
+  const selectEntry = (id: string | null) => {
+    window.location.hash = id ? `dictionary/${encodeURIComponent(id)}` : 'dictionary'
+  }
+
   return (
     <div className="app">
+      <UpdatePrompt />
       <header className="app__header">
         <h1>Teochew Dictionary</h1>
         <nav className="app__tabs">
@@ -58,7 +76,9 @@ export function App() {
             <code>npm run build</code> in the repo root first.
           </p>
         )}
-        {data && tab === 'dictionary' && <DictionaryView entries={data.entries} />}
+        {data && tab === 'dictionary' && (
+          <DictionaryView entries={data.entries} selectedId={entryId} onSelectEntry={selectEntry} />
+        )}
         {data && tab === 'flashcards' && <FlashcardsView entries={data.entries} />}
         {tab === 'sounds' && <SoundsView />}
         {tab === 'settings' && <SettingsView />}

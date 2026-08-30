@@ -64,7 +64,7 @@ describe('DeckMenu', () => {
 
   it('closes on a press outside it', () => {
     open()
-    fireEvent.mouseDown(document.body)
+    fireEvent.pointerDown(document.body)
     expect(screen.queryByRole('menu')).not.toBeInTheDocument()
   })
 })

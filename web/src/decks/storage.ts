@@ -49,7 +49,8 @@ function isDeckGroup(value: unknown): value is DeckGroup {
   return typeof v.id === 'string' && typeof v.name === 'string' && isStringArray(v.deckIds)
 }
 
-function isDecksState(value: unknown): value is DecksState {
+/** Exported for backup/backup.ts, which validates an imported file's decks the same way a stored blob is. */
+export function isDecksState(value: unknown): value is DecksState {
   if (typeof value !== 'object' || value === null) return false
   const v = value as Record<string, unknown>
   return (

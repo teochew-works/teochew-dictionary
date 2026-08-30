@@ -81,7 +81,7 @@ describe('FlashcardsView filters', () => {
     expect(screen.queryByText('Tones shown')).not.toBeInTheDocument()
 
     openFilters()
-    fireEvent.mouseDown(document.body)
+    fireEvent.pointerDown(document.body)
     expect(screen.queryByText('Tones shown')).not.toBeInTheDocument()
   })
 

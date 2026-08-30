@@ -109,6 +109,19 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
   /** What the bottom dock is showing: nothing, the dictionary, or one deck's cards. */
   const [drawer, setDrawer] = useState<{ mode: 'dictionary' } | { mode: 'deck'; deckId: string } | null>(null)
   const [filtersOpen, setFiltersOpen] = useState(false)
+  // Phone only (CSS) — the rail becomes an off-canvas drawer with a scrim
+  // instead of a column beside `.main` (mobile.md §3.4). Unrelated to
+  // DeckRail's own `open`/`rail--closed` collapse-to-a-strip toggle, which
+  // stays a desktop/tablet affordance.
+  const [railOpenOnPhone, setRailOpenOnPhone] = useState(false)
+  useEffect(() => {
+    if (!railOpenOnPhone) return
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') setRailOpenOnPhone(false)
+    }
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [railOpenOnPhone])
   const [renaming, setRenaming] = useState<{ deckId: string; value: string } | null>(null)
   const [filingMenuFor, setFilingMenuFor] = useState<string | null>(null)
   const filingHandleRef = useRef<HTMLButtonElement>(null)
@@ -608,7 +621,10 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
     <div className="flashcards-view">
       <LiveRegion message={announcement} />
 
-      <div className="shell">
+      <div className={railOpenOnPhone ? 'shell shell--rail-open' : 'shell'}>
+        {/* Phone only (CSS) — dismisses the off-canvas rail by tapping outside it. */}
+        <div className="rail-scrim" onClick={() => setRailOpenOnPhone(false)} aria-hidden="true" />
+
         <DeckRail
           dictionaryDeck={dictionaryDeck}
           userDecks={userDecks}
@@ -705,6 +721,17 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
           </DeckTray>
 
           <div className="bar">
+            {/* Phone only (CSS) — opens the off-canvas rail; there's no room
+                for a whole library column beside the card there. */}
+            <button
+              type="button"
+              className="pill bar__decks-toggle"
+              aria-expanded={railOpenOnPhone}
+              onClick={() => setRailOpenOnPhone((v) => !v)}
+            >
+              ☰ Decks
+            </button>
+
             <PromptModeControl mode={mode} onChange={handleModeChange} />
 
             <FiltersPopover open={filtersOpen} onOpenChange={setFiltersOpen} activeCount={activeFilterChips.length}>
@@ -797,7 +824,11 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
 
           <section className="study">{renderStudy()}</section>
 
-          <Drawer open={drawerOpen} label={viewedDeck ? `Cards in ${viewedDeck.name}` : 'Browse the dictionary'}>
+          <Drawer
+            open={drawerOpen}
+            label={viewedDeck ? `Cards in ${viewedDeck.name}` : 'Browse the dictionary'}
+            onClose={() => setDrawer(null)}
+          >
             {viewedDeck ? (
               <DeckContents
                 deck={viewedDeck}

@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { describe, expect, it, vi } from 'vitest'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { Drawer } from './Drawer'
 
 describe('Drawer', () => {
@@ -41,5 +41,28 @@ describe('Drawer', () => {
       </Drawer>,
     )
     expect(screen.getByRole('region', { name: 'Cards in Kitchen' })).toBeInTheDocument()
+  })
+
+  /*
+   * Phone width turns the dock into a bottom sheet (mobile.md §3.4) — the
+   * handle across its top edge is how it's dismissed without reaching back
+   * up to whatever opened it. Omitted where a caller has nothing to close to.
+   */
+  it('offers a close handle when given onClose, and none otherwise', () => {
+    const onClose = vi.fn()
+    const { rerender } = render(
+      <Drawer open label="Browse the dictionary" onClose={onClose}>
+        <p>body</p>
+      </Drawer>,
+    )
+    fireEvent.click(screen.getByRole('button', { name: 'Close Browse the dictionary' }))
+    expect(onClose).toHaveBeenCalled()
+
+    rerender(
+      <Drawer open label="Browse the dictionary">
+        <p>body</p>
+      </Drawer>,
+    )
+    expect(screen.queryByRole('button', { name: /Close/ })).not.toBeInTheDocument()
   })
 })

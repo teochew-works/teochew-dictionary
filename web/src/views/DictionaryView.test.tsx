@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { DictionaryView } from './DictionaryView'
 import type { AudioReference, EnrichedEntry } from '../types/dict'
 import { makeEntry as makeBaseEntry, makeReading } from '../test/entryFixtures'
@@ -430,5 +430,101 @@ describe('DictionaryView result cap', () => {
 
     expect(rows()).toHaveLength(200)
     expect(screen.getByText('Showing 200 of 250')).toBeInTheDocument()
+  })
+})
+
+describe('DictionaryView filters disclosure', () => {
+  /**
+   * Drives the phone media query by hand so a rotation can be simulated: jsdom
+   * has no layout, so resizing the window would not move `matchMedia` on its
+   * own. Only the phone query is answered; anything else (prefersReducedMotion)
+   * keeps the suite-wide "no preference" default.
+   */
+  function mockPhoneBreakpoint(startsMatching: boolean) {
+    const listeners = new Set<(event: MediaQueryListEvent) => void>()
+    let matches = startsMatching
+
+    vi.spyOn(window, 'matchMedia').mockImplementation(
+      (media: string) =>
+        ({
+          get matches() {
+            return media === '(max-width: 640px)' ? matches : false
+          },
+          media,
+          onchange: null,
+          addListener: () => {},
+          removeListener: () => {},
+          addEventListener: (_: string, listener: (event: MediaQueryListEvent) => void) => {
+            listeners.add(listener)
+          },
+          removeEventListener: (_: string, listener: (event: MediaQueryListEvent) => void) => {
+            listeners.delete(listener)
+          },
+          dispatchEvent: () => false,
+        }) as unknown as MediaQueryList,
+    )
+
+    return (next: boolean) => {
+      matches = next
+      act(() => {
+        for (const listener of listeners) listener({ matches: next } as MediaQueryListEvent)
+      })
+    }
+  }
+
+  const disclosure = () => screen.getByText('Filters').closest('details') as HTMLDetailsElement
+
+  afterEach(() => {
+    cleanup()
+    vi.restoreAllMocks()
+  })
+
+  it('starts collapsed at phone width, so results begin near the top', () => {
+    mockPhoneBreakpoint(true)
+    render(<DictionaryView entries={ENTRIES} />)
+
+    expect(disclosure().open).toBe(false)
+  })
+
+  it('starts open above the phone breakpoint, where the summary is hidden', () => {
+    mockPhoneBreakpoint(false)
+    render(<DictionaryView entries={ENTRIES} />)
+
+    expect(disclosure().open).toBe(true)
+  })
+
+  /*
+   * The regression this guards: the breakpoint used to be read once at mount,
+   * so a phone rotated to landscape crossed 640px with the disclosure still
+   * closed — and above 640px the summary that would reopen it is
+   * `display: none`. The filters became unreachable until a reload.
+   */
+  it('opens the filters when the viewport grows past the phone breakpoint', () => {
+    const setPhone = mockPhoneBreakpoint(true)
+    render(<DictionaryView entries={ENTRIES} />)
+    expect(disclosure().open).toBe(false)
+
+    setPhone(false)
+
+    expect(disclosure().open).toBe(true)
+  })
+
+  it('restores the collapsed phone state when the viewport shrinks back', () => {
+    const setPhone = mockPhoneBreakpoint(true)
+    render(<DictionaryView entries={ENTRIES} />)
+
+    setPhone(false)
+    setPhone(true)
+
+    expect(disclosure().open).toBe(false)
+  })
+
+  it('keeps the filters open on a phone once the summary has been tapped', () => {
+    mockPhoneBreakpoint(true)
+    render(<DictionaryView entries={ENTRIES} />)
+
+    fireEvent.click(screen.getByText('Filters'))
+
+    expect(disclosure().open).toBe(true)
   })
 })

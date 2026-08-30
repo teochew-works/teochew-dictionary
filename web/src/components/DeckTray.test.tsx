@@ -113,4 +113,22 @@ describe('DeckTray', () => {
     )
     expect(screen.getByText('groups go here')).toBeInTheDocument()
   })
+
+  /*
+   * The tray's open/closed state only visibly matters at phone width
+   * (mobile.md §3.4 — the tray collapses to a one-line summary there); this
+   * pins the toggle itself, which is width-independent.
+   */
+  it('toggles the tray-open state from its own summary line', () => {
+    const { container } = setup()
+    const head = screen.getByRole('button', { name: /On the table/ })
+    const initiallyOpen = head.getAttribute('aria-expanded') === 'true'
+
+    fireEvent.click(head)
+    expect(head).toHaveAttribute('aria-expanded', String(!initiallyOpen))
+    expect(container.querySelector('.table--tray-open') !== null).toBe(!initiallyOpen)
+
+    fireEvent.click(head)
+    expect(head).toHaveAttribute('aria-expanded', String(initiallyOpen))
+  })
 })

@@ -180,6 +180,7 @@
 }
 
 .rail__toggle {
+  position: relative;
   width: 28px;
   height: 28px;
   flex: none;
@@ -187,6 +188,15 @@
   color: var(--ink-3);
   display: grid;
   place-items: center;
+}
+
+/* Invisible hit-area overlay up to the 44px platform minimum (mobile.md
+   §3.6) without growing the visible control — the dense flashcards chrome
+   is deliberate. */
+.rail__toggle::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
 }
 
 .rail__toggle:hover {
@@ -202,12 +212,19 @@
 }
 
 .rail__add {
+  position: relative;
   font-size: 12px;
   color: var(--color-accent);
   font-weight: 500;
   padding: 2px 7px;
   border-radius: 999px;
   border: 1px solid transparent;
+}
+
+.rail__add::after {
+  content: '';
+  position: absolute;
+  inset: -10px 0;
 }
 
 .rail__add:hover {
@@ -425,14 +442,22 @@
   color: var(--ink-3);
   display: grid;
   place-items: center;
-  opacity: 0;
-  transition: opacity 0.15s var(--ease);
+  opacity: 1;
 }
 
-.deck:hover .deck-menu__trigger,
-.deck-menu__trigger:focus-visible,
-.deck-menu__trigger[aria-expanded='true'] {
-  opacity: 1;
+/* Visible by default (it's the only non-drag route to the deck menu, mobile.md
+   §2.2); only fine, hover-capable pointers get the hide-until-hovered look. */
+@media (hover: hover) and (pointer: fine) {
+  .deck-menu__trigger {
+    opacity: 0;
+    transition: opacity 0.15s var(--ease);
+  }
+
+  .deck:hover .deck-menu__trigger,
+  .deck-menu__trigger:focus-visible,
+  .deck-menu__trigger[aria-expanded='true'] {
+    opacity: 1;
+  }
 }
 
 .deck-menu__trigger:hover {
@@ -569,6 +594,7 @@
 }
 
 .chipbtn {
+  position: relative;
   padding: 3px 10px;
   border-radius: 999px;
   border: 1px solid var(--color-border);
@@ -577,6 +603,12 @@
   color: var(--ink-3);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   transition: all 0.14s var(--ease);
+}
+
+.chipbtn::after {
+  content: '';
+  position: absolute;
+  inset: -11px -4px;
 }
 
 .chipbtn:hover {
@@ -616,7 +648,10 @@
   align-items: baseline;
   gap: 12px;
   flex-wrap: wrap;
+  width: 100%;
+  text-align: left;
   margin-bottom: 9px;
+  cursor: default;
 }
 
 .table__totals {
@@ -806,13 +841,19 @@
   display: grid;
   place-items: center;
   color: var(--ink-3);
-  opacity: 0;
-  transition: opacity 0.15s var(--ease);
+  opacity: 1;
 }
 
-.chip:hover .chip__x,
-.chip__x:focus-visible {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .chip__x {
+    opacity: 0;
+    transition: opacity 0.15s var(--ease);
+  }
+
+  .chip:hover .chip__x,
+  .chip__x:focus-visible {
+    opacity: 1;
+  }
 }
 
 .chip__x:hover {
@@ -932,6 +973,15 @@
   flex: 1;
 }
 
+/* `.bar` qualifies the toggle only to outrank `.pill` below, which the
+   button also carries and which would otherwise win on source order and
+   show a phone-only control on desktop. The phone rule that reveals it is
+   qualified to match. */
+.bar .bar__decks-toggle,
+.rail-scrim {
+  display: none;
+}
+
 .seg {
   display: inline-flex;
   padding: 2px;
@@ -947,12 +997,20 @@
 
 .seg button,
 .seg__option {
+  position: relative;
   padding: 4px 11px;
   border-radius: 999px;
   font-size: 12.5px;
   color: var(--ink-2);
   cursor: pointer;
   transition: background 0.16s var(--ease), color 0.16s var(--ease);
+}
+
+.seg button::after,
+.seg__option::after {
+  content: '';
+  position: absolute;
+  inset: -9px 0;
 }
 
 .seg button:hover,
@@ -979,6 +1037,7 @@
 }
 
 .pill {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -989,6 +1048,12 @@
   font-size: 12.5px;
   color: var(--ink-2);
   transition: border-color 0.16s var(--ease), background 0.16s var(--ease), color 0.16s var(--ease);
+}
+
+.pill::after {
+  content: '';
+  position: absolute;
+  inset: -7px 0;
 }
 
 .pill:hover:not(:disabled) {
@@ -1197,6 +1262,7 @@
 }
 
 .card__filing {
+  position: relative;
   width: 26px;
   height: 26px;
   border-radius: var(--r-sm);
@@ -1207,6 +1273,12 @@
   touch-action: none;
   border: 1px dashed transparent;
   transition: color 0.16s var(--ease), border-color 0.16s var(--ease), background 0.16s var(--ease);
+}
+
+.card__filing::after {
+  content: '';
+  position: absolute;
+  inset: -9px;
 }
 
 .card__filing:hover,
@@ -1412,11 +1484,17 @@
 }
 
 /* The hint is the first thing to go when the drawer head runs out of room —
-   the search field and the save action both have to stay reachable. */
-@media (max-width: 1100px) {
+   the search field and the save action both have to stay reachable. Folded
+   into the documented tablet breakpoint (mobile.md §3.1) — was its own
+   ad-hoc 1100px rule. */
+@media (max-width: 1024px) {
   .drawer__hint {
     display: none;
   }
+}
+
+.drawer__handle {
+  display: none;
 }
 
 .drawer__head .pill {
@@ -1487,13 +1565,19 @@
   display: grid;
   place-items: center;
   color: var(--ink-3);
-  opacity: 0;
-  transition: opacity 0.15s var(--ease);
+  opacity: 1;
 }
 
-.entry:hover .entry__remove,
-.entry__remove:focus-visible {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .entry__remove {
+    opacity: 0;
+    transition: opacity 0.15s var(--ease);
+  }
+
+  .entry:hover .entry__remove,
+  .entry__remove:focus-visible {
+    opacity: 1;
+  }
 }
 
 .entry__remove:hover {
@@ -1697,7 +1781,7 @@
 
 .toasts {
   position: fixed;
-  bottom: 16px;
+  bottom: max(16px, env(safe-area-inset-bottom));
   left: 50%;
   transform: translateX(-50%);
   z-index: 200;
@@ -1706,6 +1790,13 @@
   gap: 6px;
   align-items: center;
   pointer-events: none;
+}
+
+/* Clear the phone bottom tab bar (App.css) instead of hiding behind it. */
+@media (max-width: 640px) {
+  .toasts {
+    bottom: calc(48px + max(16px, env(safe-area-inset-bottom)));
+  }
 }
 
 .toast {
@@ -1788,7 +1879,9 @@
 
 /* ── responsive ───────────────────────────────────────────────────── */
 
-@media (max-width: 860px) {
+/* Folded into the documented tablet breakpoint (mobile.md §3.1) — was its
+   own ad-hoc 860px rule. */
+@media (max-width: 1024px) {
   .shell {
     flex-direction: column;
   }
@@ -1828,5 +1921,186 @@
   .drawer__list {
     padding-left: 14px;
     padding-right: 14px;
+  }
+}
+
+/* Phone: card-first (mobile.md §3.4). Everything but the card itself gets
+   out of the way — the rail becomes an off-canvas drawer, the table
+   collapses to a one-line summary, and the browse drawer becomes a sheet —
+   so the thing the screen exists for isn't below the fold on every session. */
+@media (max-width: 640px) {
+  /* ── rail: off-canvas drawer with a scrim ─────────────────────────── */
+
+  .rail {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    width: 85%;
+    max-width: 320px;
+    border-bottom: none;
+    border-right: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lift);
+    transform: translateX(-100%);
+    transition: transform 0.22s var(--ease);
+  }
+
+  .rail--closed {
+    /* The desktop/tablet collapse-to-a-strip toggle is superseded here by
+       the open/closed drawer itself — always full width when shown. */
+    width: 85%;
+    max-width: 320px;
+    padding-left: 12px;
+    padding-right: 12px;
+    overflow-y: auto;
+  }
+
+  .rail--closed .rail__hideable {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .rail--closed .rail__list,
+  .rail--closed .trash {
+    display: flex;
+  }
+
+  .rail__list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .rail__toggle {
+    display: none;
+  }
+
+  .shell--rail-open .rail {
+    transform: translateX(0);
+  }
+
+  .rail-scrim {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 25;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .shell--rail-open .rail-scrim {
+    display: block;
+  }
+
+  .bar .bar__decks-toggle {
+    display: inline-flex;
+  }
+
+  /* ── touch drag parity ────────────────────────────────────────────── */
+
+  /* On desktop these sit in a narrow rail; at phone width the rail's cards
+     and the table's chips can fill much of the screen, and `touch-action:
+     none` would trap a touch that starts on one from ever scrolling the
+     page. `.entry--in-deck` above already solves this for the drawer's card
+     list, with the same reasoning: a pan that steals the pointer fires
+     pointercancel, which useDeckDrag.ts's long-press arming (see
+     TOUCH_LONG_PRESS_MS) and its drag engine already treat as a clean abort
+     (mobile.md §2.2, §3.5). */
+  .deck,
+  .chip,
+  .entry {
+    touch-action: pan-y;
+  }
+
+  /* ── table: one-line strip ─────────────────────────────────────────── */
+
+  .table__head {
+    cursor: pointer;
+  }
+
+  .tray {
+    display: none;
+  }
+
+  .table--tray-open .tray {
+    display: flex;
+  }
+
+  /* ── study: the card gets the screen ─────────────────────────────── */
+
+  .study {
+    padding: 18px 14px calc(72px + env(safe-area-inset-bottom));
+  }
+
+  /* .card's entry animation briefly sets a `transform` (its `to` keyframe
+     clears it, but only once the animation finishes) — a transformed
+     ancestor scopes any `position: fixed` descendant to itself instead of
+     the viewport. .card__reveal is a fixed child mounted at the same instant
+     the animation starts, so it would flash in the wrong place for that
+     300ms without this. */
+  .card {
+    animation: none;
+  }
+
+  /* Detached from the card's own flow into a fixed, thumb-reachable row
+     above the bottom tab bar (App.css) — the primary action stays in the
+     same place whether or not the card above it needs to scroll. */
+  .card__reveal,
+  .grades {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: calc(48px + env(safe-area-inset-bottom));
+    z-index: 15;
+    margin: 0;
+    padding: 10px 16px;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .card__reveal {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+  }
+
+  .grades {
+    justify-content: center;
+  }
+
+  .grade {
+    flex: 1;
+    max-width: 140px;
+  }
+
+  /* ── browse drawer: bottom sheet ──────────────────────────────────── */
+
+  .drawer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    border-radius: 14px 14px 0 0;
+    box-shadow: var(--shadow-lift);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .drawer--open {
+    max-height: 85vh;
+  }
+
+  .drawer__handle {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0 2px;
+    width: 100%;
+  }
+
+  .drawer__handle-bar {
+    width: 36px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--line-2);
   }
 }

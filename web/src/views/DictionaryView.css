@@ -60,6 +60,26 @@
   margin: 0 0.75rem 0.75rem;
 }
 
+.dictionary-view__filters {
+  margin: 0;
+}
+
+.dictionary-view__filters-summary {
+  display: none;
+  margin: 0 0.75rem 0.5rem;
+  padding: 0.35rem 0.75rem;
+  width: fit-content;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-fg);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.dictionary-view__back {
+  display: none;
+}
+
 .dictionary-view__sort,
 .dictionary-view__tone-source {
   flex: 1;
@@ -391,4 +411,49 @@
 .dictionary-view__more button:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
+}
+
+/* Phone: list and detail become two screens rather than two panes
+   (mobile.md §3.3). Selection is hash-routed (App.tsx), so which one shows
+   is driven by the `dictionary-view--detail-open` modifier. */
+@media (max-width: 640px) {
+  .dictionary-view {
+    display: block;
+  }
+
+  .dictionary-view__list-pane {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    border-right: none;
+  }
+
+  .dictionary-view__filters-summary {
+    display: block;
+  }
+
+  .dictionary-view__detail-pane {
+    display: none;
+  }
+
+  .dictionary-view--detail-open .dictionary-view__list-pane {
+    display: none;
+  }
+
+  .dictionary-view--detail-open .dictionary-view__detail-pane {
+    display: block;
+    width: 100%;
+  }
+
+  .dictionary-view__back {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-surface);
+    color: var(--color-fg);
+    font-size: 0.9rem;
+  }
 }

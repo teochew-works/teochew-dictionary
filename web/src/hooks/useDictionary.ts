@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { Dict } from '../types/dict'
+import { fetchDict } from '../pwa/offlineData'
 
 export interface DictionaryState {
   data: Dict | null
@@ -11,6 +12,10 @@ export interface DictionaryState {
  * Fetches the synced dist/dict.json once on mount. Always goes through
  * BASE_URL (Vite's build-time `base`) rather than a hardcoded path, since the
  * app is served from a subpath on GitHub Pages — see vite.config.ts.
+ *
+ * Goes through pwa/offlineData's fetchDict rather than a bare `fetch`, so a
+ * device with the Settings "Available offline" toggle on reads its own
+ * cached copy instead of hitting the network at all (mobile.md §9).
  */
 export function useDictionary(): DictionaryState {
   const [state, setState] = useState<DictionaryState>({ data: null, loading: true, error: null })
@@ -18,7 +23,7 @@ export function useDictionary(): DictionaryState {
   useEffect(() => {
     let cancelled = false
 
-    fetch(`${import.meta.env.BASE_URL}data/dict.json`)
+    fetchDict()
       .then((res) => {
         if (!res.ok) throw new Error(`fetch failed: ${res.status} ${res.statusText}`)
         return res.json() as Promise<Dict>

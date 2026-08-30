@@ -49,13 +49,13 @@ describe('FiltersPopover', () => {
 
   it('closes on a press outside the panel and trigger', () => {
     const { onOpenChange } = setup(true)
-    fireEvent.mouseDown(document.body)
+    fireEvent.pointerDown(document.body)
     expect(onOpenChange).toHaveBeenCalledWith(false)
   })
 
   it('stays open for a press inside the panel', () => {
     const { onOpenChange } = setup(true)
-    fireEvent.mouseDown(screen.getByText('panel body'))
+    fireEvent.pointerDown(screen.getByText('panel body'))
     expect(onOpenChange).not.toHaveBeenCalled()
   })
 })

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  height: 100dvh;
 }
 
 .app__header {
@@ -11,6 +12,9 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   padding: 0.75rem 1.25rem;
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
   border-bottom: 1px solid var(--color-border);
   flex-shrink: 0;
 }
@@ -45,6 +49,50 @@
   min-height: 0;
   display: flex;
   flex-direction: column;
+}
+
+/* Phone: the tab nav leaves the header and becomes a fixed bottom tab bar —
+   four equal-width, thumb-reachable targets instead of a row that overflows
+   (docs/design/mobile.md §2.1, §3.2). Real `<a href="#tab">` elements are
+   kept so Cmd/middle-click still opens a new tab (issue #156). */
+@media (max-width: 640px) {
+  .app__header {
+    padding-top: max(0.5rem, env(safe-area-inset-top));
+    padding-bottom: 0.5rem;
+  }
+
+  .app__tabs {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    gap: 0;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .app__tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    border: none;
+    border-radius: 0;
+    text-align: center;
+  }
+
+  .app__tab--active {
+    border-color: transparent;
+  }
+
+  .app__main {
+    padding-bottom: calc(48px + env(safe-area-inset-bottom));
+  }
 }
 
 .app__status {

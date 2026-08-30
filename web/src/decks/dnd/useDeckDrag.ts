@@ -12,6 +12,15 @@ import type { Rect } from './geometry'
 const DRAG_THRESHOLD_PX = 5
 /** How long the drag image is held after a refused drop, so the refusal reads as a bounce. */
 const REJECT_MS = 320
+/**
+ * How long a touch has to hold still before it arms a drag, instead of the
+ * 5px-of-travel threshold mouse and pen use. On a coarse pointer, travel is
+ * indistinguishable from the start of a scroll — a touch that moves before
+ * this fires is treated as one and lets go, rather than arming a drag (see
+ * handleMove below and mobile.md §3.5, the platform's own long-press-to-lift
+ * idiom).
+ */
+const TOUCH_LONG_PRESS_MS = 250
 
 function rectOf(el: HTMLElement | null): Rect | null {
   if (!el) return null
@@ -159,6 +168,7 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
   /** Everything the live drag needs that must not re-subscribe the pointer listeners as it changes. */
   const pressRef = useRef<{
     subject: DragSubject
+    pointerType: string
     startX: number
     startY: number
     offsetX: number
@@ -168,6 +178,22 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
     started: boolean
     outcome: DropOutcome | null
   } | null>(null)
+  /** The pending long-press timer for a touch press that hasn't armed yet. */
+  const pressTimerRef = useRef<number | null>(null)
+
+  const clearPressTimer = useCallback(() => {
+    if (pressTimerRef.current !== null) {
+      window.clearTimeout(pressTimerRef.current)
+      pressTimerRef.current = null
+    }
+  }, [])
+
+  /** Turns a pending press into a live drag — from travel past the threshold (mouse, pen), or the long-press timer (touch). */
+  const armPress = useCallback((press: NonNullable<typeof pressRef.current>) => {
+    press.started = true
+    setSubject(press.subject)
+    setRejecting(false)
+  }, [])
 
   /*
    * Ref callbacks are cached per id. Returning a fresh function each render
@@ -333,13 +359,19 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
 
       if (!press.started) {
         if (Math.hypot(e.clientX - press.startX, e.clientY - press.startY) < DRAG_THRESHOLD_PX) return
-        press.started = true
-        setSubject(press.subject)
-        setRejecting(false)
+        if (press.pointerType === 'touch') {
+          // Travelled before the long-press timer armed it — a scroll, not a
+          // drag. Let go so the browser's own pan-y scrolling takes over.
+          clearPressTimer()
+          pressRef.current = null
+          return
+        }
+        armPress(press)
       }
     }
 
     function handleUp() {
+      clearPressTimer()
       const press = pressRef.current
       if (!press) return
       // A press released inside the same frame it started may not have been
@@ -426,7 +458,7 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
       document.removeEventListener('keydown', handleModifier)
       document.removeEventListener('keyup', handleModifier)
     }
-  }, [resolveNow])
+  }, [resolveNow, armPress, clearPressTimer])
 
   /*
    * The whole per-frame cost of a drag, in one place: resolve the drop once,
@@ -469,8 +501,9 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
       const el = e.currentTarget as HTMLElement
       const source = el.closest('[data-drag-source]') ?? el
       const rect = source.getBoundingClientRect()
-      pressRef.current = {
+      const press = {
         subject: dragged,
+        pointerType: e.pointerType,
         startX: e.clientX,
         startY: e.clientY,
         offsetX: e.clientX - rect.left,
@@ -480,12 +513,24 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
         started: false,
         outcome: null,
       }
+      pressRef.current = press
       copyHeldRef.current = isCopyModifier(e, macRef.current)
       ghostTargetRef.current = { x: rect.left, y: rect.top }
       frameRef.current = { x: rect.left, y: rect.top, angle: 0 }
       setGhostSize({ width: rect.width, height: rect.height })
+
+      clearPressTimer()
+      if (e.pointerType === 'touch') {
+        pressTimerRef.current = window.setTimeout(() => {
+          pressTimerRef.current = null
+          // Still this same press, and not already armed by travel — a mouse
+          // reporting as 'touch' shouldn't happen, but the travel path is the
+          // one to trust if it somehow did.
+          if (pressRef.current === press && !press.started) armPress(press)
+        }, TOUCH_LONG_PRESS_MS)
+      }
     },
-    [],
+    [armPress, clearPressTimer],
   )
 
   return {

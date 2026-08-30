@@ -90,6 +90,13 @@ input {
   font: inherit;
 }
 
+/* Responsive breakpoints (issue #194, docs/design/mobile.md §3.1). Plain CSS
+   has no shared custom-media tokens without a build plugin, so these two
+   values are the convention — copy the literal number, don't invent a third
+   tier.
+     phone:  max-width: 640px  — one pane at a time, bottom tab bar, sheets
+     tablet: max-width: 1024px — two panes, condensed chrome, side panels */
+
 .sr-only {
   position: absolute;
   width: 1px;
