@@ -1991,6 +1991,22 @@
     display: inline-flex;
   }
 
+  /* ── touch drag parity ────────────────────────────────────────────── */
+
+  /* On desktop these sit in a narrow rail; at phone width the rail's cards
+     and the table's chips can fill much of the screen, and `touch-action:
+     none` would trap a touch that starts on one from ever scrolling the
+     page. `.entry--in-deck` above already solves this for the drawer's card
+     list, with the same reasoning: a pan that steals the pointer fires
+     pointercancel, which useDeckDrag.ts's long-press arming (see
+     TOUCH_LONG_PRESS_MS) and its drag engine already treat as a clean abort
+     (mobile.md §2.2, §3.5). */
+  .deck,
+  .chip,
+  .entry {
+    touch-action: pan-y;
+  }
+
   /* ── table: one-line strip ─────────────────────────────────────────── */
 
   .table__head {

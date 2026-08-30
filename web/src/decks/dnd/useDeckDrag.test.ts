@@ -17,8 +17,8 @@ function box(left: number, top: number, right: number, bottom: number): HTMLElem
   return node
 }
 
-function press(node: HTMLElement, x: number, y: number): ReactPointerEvent {
-  return { button: 0, clientX: x, clientY: y, currentTarget: node } as unknown as ReactPointerEvent
+function press(node: HTMLElement, x: number, y: number, pointerType = 'mouse'): ReactPointerEvent {
+  return { button: 0, clientX: x, clientY: y, currentTarget: node, pointerType } as unknown as ReactPointerEvent
 }
 
 function move(x: number, y: number) {
@@ -304,5 +304,52 @@ describe('useDeckDrag', () => {
   it('keeps the rail and tray elements for one deck apart', () => {
     const { drag } = setup()
     expect(drag().deckTargetRef('d1', 'rail')).not.toBe(drag().deckTargetRef('d1', 'tray'))
+  })
+
+  /*
+   * On a coarse pointer, travel is indistinguishable from the start of a
+   * scroll, so touch arms a drag by holding still for TOUCH_LONG_PRESS_MS
+   * instead of by travelling DRAG_THRESHOLD_PX (mobile.md §3.5).
+   */
+  describe('touch long-press', () => {
+    afterEach(() => vi.useRealTimers())
+
+    it('does not arm a drag from travel alone', () => {
+      const { drag, railD1 } = setup()
+      act(() => drag().onPointerDown({ kind: 'deck', id: 'd1' })(press(railD1, 20, 20, 'touch')))
+      act(() => move(60, 20))
+      expect(drag().subject).toBeNull()
+    })
+
+    it('arms once held still for the long-press duration', () => {
+      vi.useFakeTimers()
+      const { drag, railD1 } = setup()
+      act(() => drag().onPointerDown({ kind: 'deck', id: 'd1' })(press(railD1, 20, 20, 'touch')))
+      act(() => vi.advanceTimersByTime(250))
+      expect(drag().subject).toMatchObject({ kind: 'deck', id: 'd1' })
+    })
+
+    it('lets go instead of arming when travel outruns the timer — a scroll, not a drag', () => {
+      vi.useFakeTimers()
+      const { drag, railD1, a } = setup()
+      act(() => drag().onPointerDown({ kind: 'deck', id: 'd1' })(press(railD1, 20, 20, 'touch')))
+      act(() => move(60, 20))
+      act(() => vi.advanceTimersByTime(250))
+      expect(drag().subject).toBeNull()
+
+      // The now-abandoned press doesn't resurface as a drag on release either.
+      act(() => release(60, 20))
+      expect(a.onPlay).not.toHaveBeenCalled()
+    })
+
+    it('a release before the timer fires leaves no drag behind', () => {
+      vi.useFakeTimers()
+      const { drag, railD1, a } = setup()
+      act(() => drag().onPointerDown({ kind: 'deck', id: 'd1' })(press(railD1, 20, 20, 'touch')))
+      act(() => release(20, 20))
+      act(() => vi.advanceTimersByTime(250))
+      expect(drag().subject).toBeNull()
+      expect(a.onPlay).not.toHaveBeenCalled()
+    })
   })
 })
