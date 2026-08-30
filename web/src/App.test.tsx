@@ -177,3 +177,24 @@ describe('App Settings tab', () => {
     expect(screen.getByLabelText('Show licensing info')).toBeInTheDocument()
   })
 })
+
+describe('App Donate tab', () => {
+  beforeEach(() => {
+    window.location.hash = ''
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() => Promise.resolve(new Response(JSON.stringify(FIXTURE), { status: 200 }))),
+    )
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
+  it('shows the Donate tab even before the dictionary has loaded', async () => {
+    render(<App />)
+    fireEvent.click(screen.getByRole('link', { name: 'Donate' }))
+    expect(await screen.findByRole('heading', { name: 'Donate' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'GitHub Sponsors' })).toBeInTheDocument()
+  })
+})

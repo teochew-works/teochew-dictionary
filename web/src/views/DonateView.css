@@ -1,0 +1,47 @@
+.donate-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  max-width: 32rem;
+}
+
+.donate-view h2 {
+  margin: 0;
+}
+
+.donate-view__hint {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.donate-view__platforms {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.donate-view__platform {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+}
+
+.donate-view__link {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.donate-view__description {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}

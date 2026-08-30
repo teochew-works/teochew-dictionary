@@ -4,16 +4,18 @@ import { DictionaryView } from './views/DictionaryView'
 import { FlashcardsView } from './views/FlashcardsView'
 import { SoundsView } from './views/SoundsView'
 import { SettingsView } from './views/SettingsView'
+import { DonateView } from './views/DonateView'
 import { UpdatePrompt } from './pwa/UpdatePrompt'
 import './App.css'
 
-type Tab = 'dictionary' | 'flashcards' | 'sounds' | 'settings'
+type Tab = 'dictionary' | 'flashcards' | 'sounds' | 'settings' | 'donate'
 
 const TABS: { id: Tab; label: string }[] = [
   { id: 'dictionary', label: 'Dictionary' },
   { id: 'flashcards', label: 'Flashcards' },
   { id: 'sounds', label: 'Sounds' },
   { id: 'settings', label: 'Settings' },
+  { id: 'donate', label: 'Donate' },
 ]
 
 /**
@@ -66,11 +68,13 @@ export function App() {
 
       <main className="app__main">
         {/* Sounds has its own data source (dist/sounds.json via useSounds inside
-            SoundsView) and Settings only touches localStorage — neither
-            depends on dict.json, so neither is gated behind the dictionary's
-            loading/error state below. */}
-        {tab !== 'sounds' && tab !== 'settings' && loading && <p className="app__status">Loading dictionary…</p>}
-        {tab !== 'sounds' && tab !== 'settings' && error && (
+            SoundsView), and Settings and Donate only touch localStorage or are
+            static — none of the three depend on dict.json, so none are gated
+            behind the dictionary's loading/error state below. */}
+        {tab !== 'sounds' && tab !== 'settings' && tab !== 'donate' && loading && (
+          <p className="app__status">Loading dictionary…</p>
+        )}
+        {tab !== 'sounds' && tab !== 'settings' && tab !== 'donate' && error && (
           <p className="app__status app__status--error">
             Couldn't load the dictionary ({error}). If you're running this locally, make sure you've run{' '}
             <code>npm run build</code> in the repo root first.
@@ -82,6 +86,7 @@ export function App() {
         {data && tab === 'flashcards' && <FlashcardsView entries={data.entries} />}
         {tab === 'sounds' && <SoundsView />}
         {tab === 'settings' && <SettingsView />}
+        {tab === 'donate' && <DonateView />}
       </main>
     </div>
   )
