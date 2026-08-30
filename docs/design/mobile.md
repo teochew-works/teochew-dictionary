@@ -334,7 +334,7 @@ Ordered so each is independently shippable and reviewable.
 | 8 | **PWA: manifest, icons, service worker, install affordance** (incl. iOS Add-to-Home-Screen instructions and an update path) | M | 1 |
 | 9 | **Offline data opt-in** — Settings toggle that caches `dict.json`, showing its size | M | 8 |
 | 10 | **Investigate `dict.json` payload and parse cost on real devices** — 39 MB decoded / 2.42 MB gzipped as of §6's re-check, 60–80 MB heap on desktop; measure on a mid-range phone before deciding whether to split into a light index plus lazy entries. §6 has what could be checked without a device — the device measurement itself is still open. | Investigation | — |
-| 11 | **ADR: responsive PWA over a native wrapper**, and the `vite-plugin-pwa` exception to the hand-rolled-implementations preference | S | 8 |
+| 11 | **ADR: responsive PWA over a native wrapper**, and the `vite-plugin-pwa` exception to the hand-rolled-implementations preference — [ADR-0001](../adrs/adr-0001-responsive-pwa-over-native-wrapper.md) | S | 8 |
 
 Issues 1 and 2 are worth doing first regardless of everything else: together they are a few
 hours of CSS and remove the failures that make the app feel broken rather than merely
