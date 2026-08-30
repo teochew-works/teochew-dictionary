@@ -369,3 +369,66 @@ describe('DictionaryView full-audio-only filter', () => {
     expect(headwords()).toEqual(['木'])
   })
 })
+
+/*
+ * The list used to put every one of the dictionary's 16,000+ entries in the
+ * DOM, which made each keystroke rebuild the lot — up to 600ms of blocked main
+ * thread, measured. These pin the cap that replaced that.
+ */
+describe('DictionaryView result cap', () => {
+  const many = Array.from({ length: 250 }, (_, i) =>
+    makeEntry({ id: `e${i}`, headword: `字${i}`, gloss: [`gloss ${i}`], keys: [`key${i}`, 'common'] }),
+  )
+
+  const rows = () => document.querySelectorAll('.entry-list__item')
+
+  it('renders only the first page of a long list', () => {
+    render(<DictionaryView entries={many} />)
+    expect(rows()).toHaveLength(200)
+    expect(screen.getByText('Showing 200 of 250')).toBeInTheDocument()
+  })
+
+  it('reveals more on request', () => {
+    render(<DictionaryView entries={many} />)
+    fireEvent.click(screen.getByRole('button', { name: /Show 50 more/ }))
+    expect(rows()).toHaveLength(250)
+  })
+
+  it('stops offering more once everything is shown', () => {
+    render(<DictionaryView entries={many} />)
+    fireEvent.click(screen.getByRole('button', { name: /Show 50 more/ }))
+    expect(screen.queryByText(/Showing/)).not.toBeInTheDocument()
+  })
+
+  it('says nothing about a cap when the list already fits', () => {
+    render(<DictionaryView entries={many.slice(0, 10)} />)
+    expect(screen.queryByText(/Showing/)).not.toBeInTheDocument()
+  })
+
+  it('goes back to the first page when the query changes', () => {
+    render(<DictionaryView entries={many} />)
+    fireEvent.click(screen.getByRole('button', { name: /Show 50 more/ }))
+    expect(rows()).toHaveLength(250)
+
+    fireEvent.change(screen.getByLabelText('Search the dictionary'), { target: { value: 'common' } })
+
+    expect(rows()).toHaveLength(200)
+  })
+
+  it('caps a grouped sort across its groups, not per group', () => {
+    const levelled = Array.from({ length: 250 }, (_, i) =>
+      makeEntry({
+        id: `e${i}`,
+        headword: `字${i}`,
+        gloss: [`gloss ${i}`],
+        keys: [`key${i}`],
+        level: i % 2 === 0 ? 'A1' : 'A2',
+      }),
+    )
+    render(<DictionaryView entries={levelled} />)
+    fireEvent.change(screen.getByLabelText('Sort dictionary by'), { target: { value: 'level' } })
+
+    expect(rows()).toHaveLength(200)
+    expect(screen.getByText('Showing 200 of 250')).toBeInTheDocument()
+  })
+})

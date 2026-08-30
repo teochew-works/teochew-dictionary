@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { firstSyllableTone, groupEntries, sortFlat } from './sortEntries'
+import { capGroups, firstSyllableTone, groupEntries, sortFlat } from './sortEntries'
 import { makeEntry, makeReading } from '../test/entryFixtures'
 
 describe('firstSyllableTone', () => {
@@ -108,5 +108,38 @@ describe('groupEntries — level', () => {
     const untiered = makeEntry({ id: 'untiered', headword: 'C' })
     const groups = groupEntries([b1, a2, untiered], 'level')
     expect(groups.map((g) => g.key)).toEqual(['A2', 'B1', 'untiered'])
+  })
+})
+
+describe('capGroups', () => {
+  const group = (key: string, n: number) => ({
+    key,
+    label: key,
+    entries: Array.from({ length: n }, (_, i) => ({ id: `${key}-${i}` }) as never),
+  })
+
+  it('returns everything when the budget covers it', () => {
+    const groups = [group('a', 2), group('b', 3)]
+    expect(capGroups(groups, 10)).toEqual(groups)
+  })
+
+  it('drops whole groups once the budget runs out', () => {
+    const capped = capGroups([group('a', 2), group('b', 3), group('c', 4)], 5)
+    expect(capped.map((g) => g.key)).toEqual(['a', 'b'])
+  })
+
+  it('takes part of the group the budget runs out inside', () => {
+    const capped = capGroups([group('a', 2), group('b', 5)], 4)
+    expect(capped.map((g) => g.entries.length)).toEqual([2, 2])
+  })
+
+  it('does not mutate the groups it was given', () => {
+    const groups = [group('a', 5)]
+    capGroups(groups, 2)
+    expect(groups[0]!.entries).toHaveLength(5)
+  })
+
+  it('returns nothing for a budget of zero', () => {
+    expect(capGroups([group('a', 3)], 0)).toEqual([])
   })
 })
