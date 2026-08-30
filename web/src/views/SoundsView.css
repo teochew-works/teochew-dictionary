@@ -487,6 +487,22 @@
   background: color-mix(in srgb, var(--color-success) 55%, var(--color-surface));
 }
 
+.sounds-view__chart-cell--coverage-staged-some {
+  background: color-mix(in srgb, var(--color-staged) 25%, var(--color-surface));
+}
+
+.sounds-view__chart-cell--coverage-staged-all {
+  background: color-mix(in srgb, var(--color-staged) 55%, var(--color-surface));
+}
+
+.sounds-view__chart-cell--coverage-mixed-some {
+  background: color-mix(in srgb, color-mix(in srgb, var(--color-success), var(--color-staged)) 25%, var(--color-surface));
+}
+
+.sounds-view__chart-cell--coverage-mixed-all {
+  background: color-mix(in srgb, color-mix(in srgb, var(--color-success), var(--color-staged)) 55%, var(--color-surface));
+}
+
 .sounds-view__chart-cell--selected {
   outline: 2px solid var(--color-success);
   outline-offset: -2px;
@@ -512,6 +528,11 @@
 
 .sounds-view__chart-tone--unrecorded {
   color: var(--color-muted);
+}
+
+.sounds-view__chart-tone--staged {
+  color: var(--color-staged);
+  font-style: italic;
 }
 
 /* Drag-resizable (issue #171) — see SoundsView.tsx's startDetailResize.

@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { buildSounds, type Sound } from '../src/build/sounds.js'
 import { buildSyllableChart } from '../src/build/syllable-chart.js'
 import { loadEntries } from '../src/data/load.js'
+import type { LocalRecordingProposal } from '../src/importers/local-recording-types.js'
 import { generateSyllables, rimeOf } from '../src/phonology/inventory.js'
 import { loadPengimScheme } from '../src/phonology/load.js'
 import { declaredRimeOrder, rimeSortKey } from '../src/phonology/rime-order.js'
@@ -12,6 +13,20 @@ const scheme = loadPengimScheme()
 
 function sound(overrides: Partial<Sound> & Pick<Sound, 'pengim' | 'initial' | 'rime' | 'tone'>): Sound {
   return { ipa: '', occurrences: 1, examples: [], clips: [], ...overrides }
+}
+
+function proposal(
+  overrides: Partial<LocalRecordingProposal> & Pick<LocalRecordingProposal, 'pengim'>,
+): LocalRecordingProposal {
+  return {
+    syllableCount: 1,
+    localPath: 'data/staging/recordings/x.wav',
+    speaker: 'test',
+    recordedDate: '2026-01-01',
+    consentAcknowledged: true,
+    variety: 'chaozhou',
+    ...overrides,
+  }
 }
 
 describe('rimeSortKey', () => {
@@ -97,7 +112,61 @@ describe('buildSyllableChart', () => {
       cellsWithRecording: 1,
       syllablesAttested: 3,
       syllablesRecorded: 1,
+      cellsWithStaging: 0,
+      syllablesStaged: 0,
     })
+  })
+
+  it('reflects staged tones from unreviewed local-recording proposals', () => {
+    const sounds: Sound[] = [
+      ...baseline,
+      sound({ pengim: 'a1', initial: null, rime: 'a', tone: 1, clips: [{ url: 'https://x/1' }] }),
+      sound({ pengim: 'a3', initial: null, rime: 'a', tone: 3 }),
+    ]
+    const staged = { proposals: [proposal({ pengim: 'a3' })] }
+    const chart = buildSyllableChart(sounds, scheme, staged)
+    const cell = chart.cells.find((c) => c.initial === '' && c.rime === 'a')!
+    expect(cell.stagedTones).toEqual([3])
+    expect(chart.coverage.cellsWithStaging).toBe(1)
+    expect(chart.coverage.syllablesStaged).toBe(1)
+  })
+
+  it('excludes staged proposals for a different variety', () => {
+    const sounds: Sound[] = [...baseline, sound({ pengim: 'a3', initial: null, rime: 'a', tone: 3 })]
+    const staged = { proposals: [proposal({ pengim: 'a3', variety: 'chaoshan' })] }
+    const chart = buildSyllableChart(sounds, scheme, staged)
+    const cell = chart.cells.find((c) => c.initial === '' && c.rime === 'a')!
+    expect(cell.stagedTones).toEqual([])
+    expect(chart.coverage.syllablesStaged).toBe(0)
+  })
+
+  it('drops a staged proposal whose tone is not attested (defensive intersect against attestedTones)', () => {
+    // 'a5' is a legal tone for the open rime 'a' (see the legal/checked-tone
+    // test above) but not attested by `baseline`, which only attests tone 1.
+    const staged = { proposals: [proposal({ pengim: 'a5' })] }
+    const chart = buildSyllableChart(baseline, scheme, staged)
+    const cell = chart.cells.find((c) => c.initial === '' && c.rime === 'a')!
+    expect(cell.stagedTones).toEqual([])
+  })
+
+  it('does not double-count a tone that is both recorded and staged in the coverage rollup', () => {
+    const sounds: Sound[] = [
+      ...baseline,
+      sound({ pengim: 'a1', initial: null, rime: 'a', tone: 1, clips: [{ url: 'https://x/1' }] }),
+    ]
+    const staged = { proposals: [proposal({ pengim: 'a1' })] }
+    const chart = buildSyllableChart(sounds, scheme, staged)
+    const cell = chart.cells.find((c) => c.initial === '' && c.rime === 'a')!
+    expect(cell.stagedTones).toEqual([1]) // raw, unnetted at the cell level
+    expect(cell.recordedTones).toEqual([1])
+    expect(chart.coverage.cellsWithStaging).toBe(0) // netted at the rollup level
+    expect(chart.coverage.syllablesStaged).toBe(0)
+  })
+
+  it('falls back to reading the real (currently empty) staging file when no third argument is given', () => {
+    const chart = buildSyllableChart(baseline, scheme)
+    expect(chart.coverage.syllablesStaged).toBe(0)
+    expect(chart.coverage.cellsWithStaging).toBe(0)
   })
 
   it('produces one cell for every legal (initial, attested-rime) pair, with none dropped as "not legal" (out of scope this issue)', () => {
