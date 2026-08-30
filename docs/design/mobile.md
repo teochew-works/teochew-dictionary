@@ -109,8 +109,9 @@ physically work under a finger today.
 
 What does not work is the *interaction model*. Drag starts immediately after 5px of travel
 (`DRAG_THRESHOLD_PX`), which on a coarse pointer is indistinguishable from the start of a
-scroll — hence the `touch-action: none` that then breaks scrolling. And per ADR-0021 the
-non-drag escape hatch is *keyboard* (`Space` to lift, arrows to move); phones have no
+scroll — hence the `touch-action: none` that then breaks scrolling. And per
+`useDeckLift.ts` (issue #187, "drag is not the only way") the non-drag escape hatch is
+*keyboard* (`Space` to lift, arrows to move); phones have no
 keyboard, and the rail's own hint text says so out loud: "Drag a deck onto the table…
 By keyboard: focus a deck, `Space` to lift…".
 
@@ -212,8 +213,8 @@ Three changes, in order of importance:
    `.entry--in-deck` already does — vertical scroll keeps working, and a `pointercancel`
    from a scroll take-over is already handled as a clean abort.
 
-This extends ADR-0021's "keyboard parity" principle to touch: *no action may be reachable
-only by dragging.*
+This extends `useDeckLift.ts`'s "drag is not the only way" principle (issue #187) to
+touch: *no action may be reachable only by dragging.*
 
 ### 3.6 Touch affordances
 
@@ -244,7 +245,8 @@ only by dragging.*
 
 **Nothing in the app needs a native capability.** Storage is IndexedDB plus localStorage;
 audio is `<audio>` against remote URLs; the only recording path (`RecordClipButton`) is
-gated to the dev server by design (ADR-0017) and never ships. A Capacitor shell would wrap
+gated to the dev server by design (issue #128, `data/phonology/REVIEW.md` § 17) and never
+ships. A Capacitor shell would wrap
 the same web view around the same code and add a build target, a signing story, a review
 cycle and $99/yr — and Apple's guideline 4.2 specifically rejects apps that are a website
 in a wrapper.
@@ -279,17 +281,23 @@ history, that is the difference between a tool and a toy. Two consequences:
   phone without asking is hostile, and it is a large share of a constrained iOS quota.
   Instead, Settings gets an **"Available offline"** toggle that names the size and does the
   caching on request.
-- **Do not cache audio in v1.** Clips are cross-origin GitHub Release assets (ADR-0014), so
+- **Do not cache audio in v1.** Clips are cross-origin GitHub Release assets
+  (`data/phonology/REVIEW.md` § 12), so
   responses are opaque: you cannot check status, and they count against quota at padded
   size. If offline audio matters later, the honest fix is re-hosting clips under the Pages
   origin, which is a separate decision.
 - **Update path.** A precached shell with no update flow strands users on a stale build
   forever. Prompt on a waiting worker, or activate on next navigation — decide explicitly.
-- **Use `vite-plugin-pwa` (Workbox), not a hand-rolled worker.** This cuts against the
-  project's stated preference for small hand-written implementations (ADR-0020, ADR-0021),
-  so it should be recorded as a deliberate exception: the precache manifest has to be
-  generated from hashed build output, and hand-rolled cache invalidation is a
-  well-known way to brick a static site. Worth its own ADR.
+- **Use `vite-plugin-pwa` (Workbox), not a hand-rolled worker.** This cuts against a
+  preference stated repeatedly in this codebase's own comments — `srs/scheduler.ts` ("A
+  hand-rolled SM-2-style scheduler. Deliberately dependency-free... keeps the dependency
+  list minimal, matching the rest of the repo"), echoed by `decks/dnd/useDeckDrag.ts`
+  ("matching this repo's preference for small hand-written implementations") — so it
+  should be recorded as a deliberate exception: the precache manifest has to be generated
+  from hashed build output, and hand-rolled cache invalidation is a well-known way to
+  brick a static site. Worth its own ADR (§5.11) — this is the first ADR this project has
+  had, so that preference itself has never actually been written down anywhere on its own;
+  the new ADR cites it as an established convention rather than restating it as one.
 
 ### Android
 
