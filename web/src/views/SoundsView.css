@@ -652,6 +652,11 @@
     top: auto;
     max-height: 60vh;
     width: 100% !important; /* overrides the resizer's inline width (issue #171) — nothing to resize here */
+    /* The desktop panel is a column in normal flow, so it inherits the page
+       ground and never needed a background of its own. Lifted out of flow
+       into a sheet over the grid, it does: without this the grid's cells
+       show straight through the sheet's text and neither is readable. */
+    background: var(--color-bg);
     border-left: none;
     border-top: 1px solid var(--color-border);
     border-radius: 12px 12px 0 0;
