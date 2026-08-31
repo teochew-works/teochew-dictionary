@@ -226,6 +226,20 @@ decks:
       different words, unlike Mandarin's more collapsed system — most items
       below genuinely don't map 1:1 from the Mandarin glosses and need a
       native speaker's review before this deck is treated as verified.
+      A non-native pass (2026-08-31) cross-referenced every item against its
+      data/entries/ definition and fixed two outright wrong matches (家 →
+      家庭; 婆婆 → 丈母) plus flagged 姊妹 as standing in for a female-cousin
+      term the dataset doesn't have — see each item's own note. It also
+      surfaced, without fixing, several items worth a native speaker's
+      particular attention: 弟/兒/姪 are dictionary-marked bound forms that
+      may not stand alone in natural speech (弟 pairs oddly with the
+      unbound 阿兄 above it); 娃 (baby) may be a Mandarin loan rather than
+      the authentically Southern Min 嬰仔 originally intended; 阿媽/阿公
+      mark grandparent as generically paternal only by omission rather than
+      an explicit marker, unlike the explicitly "maternal" 外公/外媽; and
+      大家官 (in-laws) specifically means the husband's parents from a
+      wife's perspective, narrower than the deck's generic "in-laws" gloss.
+      None of this substitutes for an actual native speaker's confirmation.
     items:
       - headword: "媽"
         gloss: "mother"
@@ -269,9 +283,9 @@ decks:
       - headword: "娃"
         gloss: "baby"
         note: "substitute for missing headword 嬰仔 (baby/child) — matched gloss \"baby\""
-      - headword: "家"
-        gloss: "family"
-        note: "alt: 厝內人"
+      - headword: "家庭"
+        gloss: "family, household"
+        note: "review fix: the plain headword 家 (originally listed here) resolves in data/entries/ to an unrelated bound-form sense (\"家\" occurring only in 家己 'oneself', pengim ga1) — not the word for family at all. 家庭 (gê1 têng5) is the dataset's actual family/household noun; the deck's original 'alt: 厝內人' idea doesn't exist as its own headword."
       - headword: "阿叔"
         gloss: "uncle (father's younger brother)"
       - headword: "阿伯"
@@ -289,7 +303,7 @@ decks:
         note: "substitute for missing headword 表兄弟 (male cousin) — 表兄 is the existing (older) male-cousin term, a near-exact match"
       - headword: "姊妹"
         gloss: "sisters"
-        note: "substitute for missing headword 表姊妹 (female cousin) — no 表姐/表妹/female-cousin term exists in data/entries/, so falling back to 姊妹 (sisters), the closest same-generation female-relative term available"
+        note: "review flag: stands in for 'female cousin' (表姊妹), which has no headword in data/entries/ — 姊妹 literally means one's own sisters, not cousins. Kept as the closest available same-generation female relative term, but this is a real semantic gap, not just an unconfirmed reading — a genuine female-cousin term (表姐/表妹) should be staged and added before this deck ships."
       - headword: "姪"
         gloss: "nephew; niece (fraternal)"
         note: "substitute for missing headword 姪仔 (nephew) — 姪 is the existing base form covering nephew/niece through a brother"
@@ -311,9 +325,9 @@ decks:
       - headword: "大家官"
         gloss: "in-laws"
         note: "substitute for missing headword 姻親 (in-laws) — matched gloss \"in-laws\""
-      - headword: "婆婆"
-        gloss: "mother-in-law"
-        note: "substitute for missing headword 岳母 (mother-in-law) — matched gloss \"mother-in-law\""
+      - headword: "丈母"
+        gloss: "mother-in-law (wife's mother)"
+        note: "review fix: replaces 婆婆, which the automated pass matched on the generic gloss \"mother-in-law\" but conventionally denotes the husband's mother (paternal side, from a wife's perspective) — the wrong direction for 岳母 (wife's mother, the concept originally intended, paired with 丈人 below). 丈母 is the dataset's dedicated wife's-mother term and pairs correctly with 丈人."
       - headword: "丈人"
         gloss: "father-in-law (wife's father)"
         note: "substitute for missing headword 岳父 (father-in-law) — 丈人 is the existing exact-match term for wife's father"
