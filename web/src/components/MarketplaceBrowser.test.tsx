@@ -9,16 +9,17 @@ const CATALOG: StarterDeckCatalogEntry[] = [
 ]
 
 function setup(overrides: Partial<Parameters<typeof MarketplaceBrowser>[0]> = {}) {
+  const onInstall = vi.fn()
   const props = {
     decks: CATALOG,
     loading: false,
     error: null,
     deckDrag: { onPointerDown: vi.fn(() => vi.fn()), isDragging: vi.fn(() => false) },
-    onInstall: vi.fn(),
+    onInstall,
     ...overrides,
   }
   const view = render(<MarketplaceBrowser {...props} />)
-  return { ...view, props }
+  return { ...view, props, onInstall }
 }
 
 function row(name: string) {
@@ -35,19 +36,19 @@ describe('MarketplaceBrowser', () => {
   })
 
   it('installs on a click, without needing a drag', () => {
-    const { props } = setup()
+    const { onInstall } = setup()
     fireEvent.click(row('Numbers & Counting'))
-    expect(props.onInstall).toHaveBeenCalledWith(CATALOG[1])
+    expect(onInstall).toHaveBeenCalledWith(CATALOG[1])
   })
 
   it('installs on Enter or Space from the keyboard', () => {
-    const { props } = setup()
+    const { onInstall } = setup()
     fireEvent.keyDown(row('Animals'), { key: 'Enter' })
-    expect(props.onInstall).toHaveBeenCalledWith(CATALOG[0])
+    expect(onInstall).toHaveBeenCalledWith(CATALOG[0])
 
-    props.onInstall.mockClear()
+    onInstall.mockClear()
     fireEvent.keyDown(row('Animals'), { key: ' ' })
-    expect(props.onInstall).toHaveBeenCalledWith(CATALOG[0])
+    expect(onInstall).toHaveBeenCalledWith(CATALOG[0])
   })
 
   it('wires each row as a drag source', () => {
