@@ -227,10 +227,12 @@ decks:
       below genuinely don't map 1:1 from the Mandarin glosses and need a
       native speaker's review before this deck is treated as verified.
       A non-native pass (2026-08-31) cross-referenced every item against its
-      data/entries/ definition and fixed two outright wrong matches (家 →
-      家庭; 婆婆 → 丈母) plus flagged 姊妹 as standing in for a female-cousin
-      term the dataset doesn't have — see each item's own note. It also
-      surfaced, without fixing, several items worth a native speaker's
+      data/entries/ definition and fixed three outright wrong matches (家 →
+      家庭; 婆婆 → 丈母; 姊妹, which stood in for a female-cousin term the
+      dataset doesn't have but actually just means "sisters", → 外孫女, an
+      accurate and distinct maternal-line grandchild term instead of a
+      mislabeled one) — see each item's own note. It also surfaced, without
+      fixing, several items worth a native speaker's
       particular attention: 弟/兒/姪 are dictionary-marked bound forms that
       may not stand alone in natural speech (弟 pairs oddly with the
       unbound 阿兄 above it); 娃 (baby) may be a Mandarin loan rather than
@@ -301,9 +303,9 @@ decks:
       - headword: "表兄"
         gloss: "older male cousin (mother's sibling's or father's sister's son, older than oneself)"
         note: "substitute for missing headword 表兄弟 (male cousin) — 表兄 is the existing (older) male-cousin term, a near-exact match"
-      - headword: "姊妹"
-        gloss: "sisters"
-        note: "review flag: stands in for 'female cousin' (表姊妹), which has no headword in data/entries/ — 姊妹 literally means one's own sisters, not cousins. Kept as the closest available same-generation female relative term, but this is a real semantic gap, not just an unconfirmed reading — a genuine female-cousin term (表姐/表妹) should be staged and added before this deck ships."
+      - headword: "外孫女"
+        gloss: "granddaughter (daughter's daughter)"
+        note: "review fix: replaces 姊妹, which stood in for 表姊妹 (female cousin, no headword in data/entries/) but actually just means 'one's own sisters' — not a cousin at all, and not worth mislabeling. 外孫女 is a real, distinct maternal-line grandchild term (paired with 外公/外媽 above), unlike the unmarked 孫女 below it — a genuine female-cousin term (表姐/表妹) still doesn't exist in the dataset and would need staging separately if this deck should represent that relation instead."
       - headword: "姪"
         gloss: "nephew; niece (fraternal)"
         note: "substitute for missing headword 姪仔 (nephew) — 姪 is the existing base form covering nephew/niece through a brother"
