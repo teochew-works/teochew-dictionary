@@ -6,7 +6,7 @@
   "license": "BSD-3-Clause",
   "type": "module",
   "engines": {
-    "node": "^20.19.0 || >=22.12.0"
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
   },
   "scripts": {
     "predev": "node scripts/sync-data.mjs",
