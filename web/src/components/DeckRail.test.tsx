@@ -41,6 +41,7 @@ function setup(overrides: Partial<Parameters<typeof DeckRail>[0]> = {}) {
     onKeyDown: vi.fn(),
     onRenameRequest: vi.fn(),
     onCreateDeck: vi.fn(),
+    onOpenMarketplace: vi.fn(),
     ...overrides,
   }
   const view = render(<DeckRail {...props} />)

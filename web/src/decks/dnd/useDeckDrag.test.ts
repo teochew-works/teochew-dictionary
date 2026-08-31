@@ -72,6 +72,7 @@ function actions(): DeckDragActions & Record<keyof DeckDragActions, ReturnType<t
     onRemoveCard: vi.fn(),
     onReorderCards: vi.fn(),
     onNewDeckFromCard: vi.fn(),
+    onInstallStarterDeck: vi.fn(),
   }
   return a as DeckDragActions & Record<keyof DeckDragActions, ReturnType<typeof vi.fn>>
 }
@@ -210,6 +211,18 @@ describe('useDeckDrag', () => {
     act(() => move(100, 300))
     act(() => release(100, 300))
     expect(a.onNewDeckFromCard).toHaveBeenCalledWith('e2')
+  })
+
+  it('installs a starter deck dropped on the library', () => {
+    const { drag, railD1, a } = setup()
+    act(() =>
+      drag().onPointerDown({ kind: 'starter-deck', id: 'animals', starterDeck: { name: 'Animals', cards: ['x', 'y'] } })(
+        press(railD1, 700, 700),
+      ),
+    )
+    act(() => move(100, 300))
+    act(() => release(100, 300))
+    expect(a.onInstallStarterDeck).toHaveBeenCalledWith('animals', 'Animals', ['x', 'y'])
   })
 
   it('never offers the trash to a card drag', () => {

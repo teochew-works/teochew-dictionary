@@ -48,6 +48,7 @@ export function DeckRail({
   onKeyDown,
   onRenameRequest,
   onCreateDeck,
+  onOpenMarketplace,
 }: {
   dictionaryDeck: Deck
   userDecks: Deck[]
@@ -75,6 +76,7 @@ export function DeckRail({
   onKeyDown: (deckId: string, e: ReactKeyboardEvent) => void
   onRenameRequest: (deck: Deck) => void
   onCreateDeck: () => void
+  onOpenMarketplace: () => void
 }) {
   const [open, setOpen] = useState(true)
 
@@ -126,6 +128,9 @@ export function DeckRail({
 
       <div className="rail__section rail__hideable">
         <span className="eyebrow">My decks</span>
+        <button type="button" className="rail__add" onClick={onOpenMarketplace}>
+          Marketplace
+        </button>
         <button type="button" className="rail__add" onClick={onCreateDeck}>
           + New
         </button>

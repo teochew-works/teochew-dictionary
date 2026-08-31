@@ -50,3 +50,11 @@ sync('syllable-chart.json', ({ initials, rimes, cells }, dest) => {
   }
   console.log(`synced ${cells.length} chart cells (${initials.length} initials × ${rimes.length} rimes) → web/public/data/syllable-chart.json`)
 })
+
+sync('starter-decks.json', ({ decks }, dest) => {
+  if (!Array.isArray(decks)) {
+    console.error(`${dest} doesn't look like a dist/starter-decks.json (missing decks array)`)
+    process.exit(1)
+  }
+  console.log(`synced ${decks.length} starter decks → web/public/data/starter-decks.json`)
+})

@@ -8,6 +8,7 @@ import { DragGhost } from '../components/DragGhost'
 import { GroupPresets } from '../components/GroupPresets'
 import { Drawer } from '../components/Drawer'
 import { DictionaryBrowser } from '../components/DictionaryBrowser'
+import { MarketplaceBrowser } from '../components/MarketplaceBrowser'
 import { DeckContents } from '../components/DeckContents'
 import { EntryDeckMenu } from '../components/EntryDeckMenu'
 import { PromptModeControl } from '../components/PromptModeControl'
@@ -46,6 +47,9 @@ import { deckStats } from '../decks/stats'
 import type { DeckFilters, DeckStats } from '../decks/stats'
 import { firstEmptyStage, resolveDecks, runDeckPipeline, significantStages, stageCount } from '../decks/pipeline'
 import type { Deck } from '../decks/types'
+import { uniqueDeckName } from '../decks/naming'
+import { useStarterDecks } from '../hooks/useStarterDecks'
+import type { StarterDeckCatalogEntry } from '../types/starter-decks'
 import './FlashcardsView.css'
 
 function setEquals<T>(a: Set<T>, b: Set<T>): boolean {
@@ -106,8 +110,10 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
   const [fullAudioOnly, setFullAudioOnly] = useState<boolean>(readFullAudioOnly)
   const [announcement, setAnnouncement] = useState('')
   const announce = useCallback((message: string) => setAnnouncement(message), [])
-  /** What the bottom dock is showing: nothing, the dictionary, or one deck's cards. */
-  const [drawer, setDrawer] = useState<{ mode: 'dictionary' } | { mode: 'deck'; deckId: string } | null>(null)
+  /** What the bottom dock is showing: nothing, the dictionary, one deck's cards, or the starter-deck marketplace. */
+  const [drawer, setDrawer] = useState<{ mode: 'dictionary' } | { mode: 'deck'; deckId: string } | { mode: 'marketplace' } | null>(
+    null,
+  )
   const [filtersOpen, setFiltersOpen] = useState(false)
   // Phone only (CSS) — the rail becomes an off-canvas drawer with a scrim
   // instead of a column beside `.main` (mobile.md §3.4). Unrelated to
@@ -230,6 +236,23 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
     setRenaming({ deckId: id, value: 'New deck' })
   }, [decksStore])
 
+  const starterDecks = useStarterDecks(drawer?.mode === 'marketplace')
+  const catalogDeckById = useMemo(
+    () => new Map((starterDecks.data?.decks ?? []).map((d) => [d.id, d])),
+    [starterDecks.data],
+  )
+  const installStarterDeck = useCallback(
+    (catalogDeck: StarterDeckCatalogEntry) => {
+      const name = uniqueDeckName(
+        decksStore.state.decks.map((d) => d.name),
+        catalogDeck.name,
+      )
+      decksStore.createDeck(name, catalogDeck.cards)
+      note(`Installed “${name}”`)
+    },
+    [decksStore, note],
+  )
+
   const newDeckFromCard = useCallback(
     (entryId: string) => {
       const entry = entryById.get(entryId)
@@ -323,7 +346,7 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
   /* ── drag and keyboard lift ──────────────────────────────────────── */
 
   const viewedDeck = drawer?.mode === 'deck' ? (decksById.get(drawer.deckId) ?? null) : null
-  const drawerOpen = drawer?.mode === 'dictionary' || viewedDeck !== null
+  const drawerOpen = drawer?.mode === 'dictionary' || drawer?.mode === 'marketplace' || viewedDeck !== null
 
   const cardSetsById = useMemo(() => new Map(allDecks.map((d) => [d.id, new Set(d.cards)])), [allDecks])
 
@@ -372,8 +395,9 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
       onRemoveCard: removeCard,
       onReorderCards: reorderCards,
       onNewDeckFromCard: newDeckFromCard,
+      onInstallStarterDeck: (id: string, name: string, cards: string[]) => installStarterDeck({ id, name, cards }),
     }),
-    [decksStore, libraryIds, nameOf, note, withUndo, addCard, moveCard, removeCard, reorderCards, newDeckFromCard],
+    [decksStore, libraryIds, nameOf, note, withUndo, addCard, moveCard, removeCard, reorderCards, newDeckFromCard, installStarterDeck],
   )
 
   const drag = useDeckDrag(dragContext, dragActions, announce)
@@ -454,6 +478,13 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
         title: deck?.name ?? subject.id,
         subtitle: `${stats.kept.toLocaleString()} cards`,
         hue: deck ? `var(--deck-hue-${deck.hue}-bg)` : 'var(--color-muted)',
+      }
+    }
+    if (subject.kind === 'starter-deck') {
+      return {
+        title: subject.starterDeck?.name ?? subject.id,
+        subtitle: `${subject.starterDeck?.cards.length ?? 0} words`,
+        hue: 'var(--color-accent)',
       }
     }
     const entry = entryById.get(subject.id)
@@ -678,6 +709,13 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
           onKeyDown={(id, e) => lift.handleKeyDown('deck', id, e)}
           onRenameRequest={(deck) => setRenaming({ deckId: deck.id, value: deck.name })}
           onCreateDeck={createDeck}
+          onOpenMarketplace={() => {
+            // On phone the rail is an off-canvas overlay that would otherwise
+            // sit on top of the drawer this opens, hiding it entirely — close
+            // it first, same as tapping outside it (the rail-scrim) already does.
+            setRailOpenOnPhone(false)
+            setDrawer({ mode: 'marketplace' })
+          }}
         />
 
         <div className="main">
@@ -826,7 +864,13 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
 
           <Drawer
             open={drawerOpen}
-            label={viewedDeck ? `Cards in ${viewedDeck.name}` : 'Browse the dictionary'}
+            label={
+              viewedDeck
+                ? `Cards in ${viewedDeck.name}`
+                : drawer?.mode === 'marketplace'
+                  ? 'Starter deck marketplace'
+                  : 'Browse the dictionary'
+            }
             onClose={() => setDrawer(null)}
           >
             {viewedDeck ? (
@@ -853,6 +897,24 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
                 onRemoveCard={removeCard}
                 onNewDeckFromCard={newDeckFromCard}
                 onBrowseDictionary={() => setDrawer({ mode: 'dictionary' })}
+              />
+            ) : drawer?.mode === 'marketplace' ? (
+              <MarketplaceBrowser
+                decks={starterDecks.data?.decks ?? []}
+                loading={starterDecks.loading}
+                error={starterDecks.error}
+                deckDrag={{
+                  onPointerDown: (deckId) => {
+                    const catalogDeck = catalogDeckById.get(deckId)
+                    return drag.onPointerDown({
+                      kind: 'starter-deck',
+                      id: deckId,
+                      starterDeck: catalogDeck ? { name: catalogDeck.name, cards: catalogDeck.cards } : undefined,
+                    })
+                  },
+                  isDragging: (deckId) => drag.isDragging('starter-deck', deckId),
+                }}
+                onInstall={installStarterDeck}
               />
             ) : (
               <DictionaryBrowser

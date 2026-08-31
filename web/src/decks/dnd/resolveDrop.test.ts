@@ -137,6 +137,47 @@ describe('resolveDrop — a card being filed', () => {
   })
 })
 
+describe('resolveDrop — a starter deck from the marketplace', () => {
+  const draggedStarterDeck: DragSubject = {
+    kind: 'starter-deck',
+    id: 'animals',
+    starterDeck: { name: 'Animals', cards: ['a', 'b', 'c'] },
+  }
+
+  it('installs when dropped on the library', () => {
+    expect(resolveDrop(draggedStarterDeck, zones(), 100, 300)).toMatchObject({
+      ok: true,
+      act: 'install-starter-deck',
+      highlight: 'library',
+      label: 'Install "Animals"',
+    })
+  })
+
+  it('refuses the tray, and says where it should go instead', () => {
+    expect(resolveDrop(draggedStarterDeck, zones(), 600, 50)).toMatchObject({
+      ok: false,
+      act: null,
+      highlight: 'tray',
+      label: 'Drop on your library, not the table',
+    })
+  })
+
+  it('falls back to a generic instruction off every zone', () => {
+    expect(resolveDrop(draggedStarterDeck, zones(), 1200, 800)).toMatchObject({
+      ok: false,
+      label: 'Drop on your library to install',
+    })
+  })
+
+  it('never lights the trash, and is not offered a specific deck to land on', () => {
+    // Only 'deck'/'chip' drags or a sourced card arm the trash zone in the
+    // real engine (see useDeckDrag.ts's zonesFor) — this only checks that
+    // resolveDrop itself doesn't try to read deckTargets/trash for this kind.
+    expect(resolveDrop(draggedStarterDeck, zones(), 100, 530)).toMatchObject({ ok: false })
+    expect(resolveDrop(draggedStarterDeck, zones(), 100, 30)).toMatchObject({ ok: true, act: 'install-starter-deck' })
+  })
+})
+
 describe('resolveDrop — a card dragged out of a deck', () => {
   const fromKitchen: DragSubject = { kind: 'entry', id: 'e2', from: { id: 'd2', name: 'Travel' } }
 

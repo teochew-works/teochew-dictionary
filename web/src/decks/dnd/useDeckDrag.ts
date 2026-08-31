@@ -54,6 +54,7 @@ export interface DeckDragActions {
   onRemoveCard: (fromDeckId: string, entryId: string) => void
   onReorderCards: (deckId: string, entryId: string, index: number) => void
   onNewDeckFromCard: (entryId: string) => void
+  onInstallStarterDeck: (id: string, name: string, cards: string[]) => void
 }
 
 export interface DeckDragContext {
@@ -427,6 +428,9 @@ export function useDeckDrag(context: DeckDragContext, actions: DeckDragActions, 
           break
         case 'new-deck':
           a.onNewDeckFromCard(dragged.id)
+          break
+        case 'install-starter-deck':
+          if (dragged.starterDeck) a.onInstallStarterDeck(dragged.id, dragged.starterDeck.name, dragged.starterDeck.cards)
           break
         default: {
           // A new act that nobody handles would otherwise do nothing at all and
