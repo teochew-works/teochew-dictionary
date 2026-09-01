@@ -1,10 +1,17 @@
 const SHOW_LICENCE_KEY = 'teochew-dictionary:show-licence'
 
+/**
+ * Defaults to on: most entries are CC-BY-SA-4.0 (README's Licensing section),
+ * and a hosted app that shares that material should surface attribution by
+ * default rather than behind an opt-in a visitor has to find first. A stored
+ * `'false'` (someone who explicitly turned it off) is still honoured.
+ */
 export function readShowLicence(): boolean {
   try {
-    return localStorage.getItem(SHOW_LICENCE_KEY) === 'true'
+    const stored = localStorage.getItem(SHOW_LICENCE_KEY)
+    return stored === null ? true : stored === 'true'
   } catch {
-    return false
+    return true
   }
 }
 

@@ -1,0 +1,63 @@
+.about-view {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 36rem;
+}
+
+.about-view h2 {
+  margin: 0;
+}
+
+.about-view__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about-view__section h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.about-view__section p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.about-view__sources {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-view__source {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+}
+
+.about-view__source-name {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.about-view__source-role {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.about-view__source-licence {
+  font-size: 0.8rem;
+}

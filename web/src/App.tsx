@@ -5,10 +5,11 @@ import { FlashcardsView } from './views/FlashcardsView'
 import { SoundsView } from './views/SoundsView'
 import { SettingsView } from './views/SettingsView'
 import { DonateView } from './views/DonateView'
+import { AboutView } from './views/AboutView'
 import { UpdatePrompt } from './pwa/UpdatePrompt'
 import './App.css'
 
-type Tab = 'dictionary' | 'flashcards' | 'sounds' | 'settings' | 'donate'
+type Tab = 'dictionary' | 'flashcards' | 'sounds' | 'settings' | 'donate' | 'about'
 
 const TABS: { id: Tab; label: string }[] = [
   { id: 'dictionary', label: 'Dictionary' },
@@ -16,6 +17,7 @@ const TABS: { id: Tab; label: string }[] = [
   { id: 'sounds', label: 'Sounds' },
   { id: 'settings', label: 'Settings' },
   { id: 'donate', label: 'Donate' },
+  { id: 'about', label: 'About' },
 ]
 
 /**
@@ -68,13 +70,13 @@ export function App() {
 
       <main className="app__main">
         {/* Sounds has its own data source (dist/sounds.json via useSounds inside
-            SoundsView), and Settings and Donate only touch localStorage or are
-            static — none of the three depend on dict.json, so none are gated
+            SoundsView), and Settings, Donate and About only touch localStorage or are
+            static — none of the four depend on dict.json, so none are gated
             behind the dictionary's loading/error state below. */}
-        {tab !== 'sounds' && tab !== 'settings' && tab !== 'donate' && loading && (
+        {tab !== 'sounds' && tab !== 'settings' && tab !== 'donate' && tab !== 'about' && loading && (
           <p className="app__status">Loading dictionary…</p>
         )}
-        {tab !== 'sounds' && tab !== 'settings' && tab !== 'donate' && error && (
+        {tab !== 'sounds' && tab !== 'settings' && tab !== 'donate' && tab !== 'about' && error && (
           <p className="app__status app__status--error">
             Couldn't load the dictionary ({error}). If you're running this locally, make sure you've run{' '}
             <code>npm run build</code> in the repo root first.
@@ -87,6 +89,7 @@ export function App() {
         {tab === 'sounds' && <SoundsView />}
         {tab === 'settings' && <SettingsView />}
         {tab === 'donate' && <DonateView />}
+        {tab === 'about' && <AboutView />}
       </main>
     </div>
   )
