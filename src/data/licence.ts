@@ -1,4 +1,4 @@
-import type { Source } from '../schema/entry.js'
+import type { Source } from '@teochew/core'
 
 /**
  * Licence resolution, shared by entries and audio clips alike.

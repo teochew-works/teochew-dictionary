@@ -4,7 +4,7 @@ import { join } from 'node:path'
 
 import { describe, expect, it } from 'vitest'
 
-import { GITHUB_REPO } from '../src/schema/phonology.js'
+import { GITHUB_REPO } from '@teochew/core'
 import { assetFilename, rehostLocalRecording, resolveLocalRecordingProposal } from '../src/importers/local-recording-rehost.js'
 import type { LocalRecordingProposal } from '../src/importers/local-recording-types.js'
 

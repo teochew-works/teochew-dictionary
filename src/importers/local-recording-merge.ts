@@ -4,7 +4,7 @@ import { parseDocument, stringify } from 'yaml'
 
 import { AUDIO_METADATA_DIR, ROOT } from '../paths.js'
 import { loadOptionalFile } from '../phonology/load.js'
-import { audioSchema, CONFIDENCE, type Audio } from '../schema/phonology.js'
+import { audioSchema, CONFIDENCE, type Audio } from '@teochew/core'
 import type { LocalRecordingProposal } from './local-recording-types.js'
 import { LOCAL_RECORDING_SOURCE, removeLocalRecordingProposal } from './local-recording-staging.js'
 import { rehostLocalRecording, resolveLocalRecordingProposal, type LocalRehostOptions } from './local-recording-rehost.js'
@@ -33,7 +33,8 @@ function audioFileHeader(variety: string): string {
     '# Hand-maintained, not wholly regenerated: entries arrive via `npm run',
     '# merge:lingualibre` (issue #106), `npm run merge:local-recording` (issue',
     '# #128), or a direct hand edit. Editing an existing clip by hand is fine —',
-    '# just keep it valid against audioSchema in src/schema/phonology.ts, and',
+    '# just keep it valid against audioSchema in',
+    '# packages/core/src/schema/phonology.ts, and',
     '# re-run `npm run validate` after.',
     '',
   ].join('\n')

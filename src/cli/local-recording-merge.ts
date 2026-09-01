@@ -1,6 +1,6 @@
 import { readLocalRecordingStaging } from '../importers/local-recording-staging.js'
 import { mergeLocalRecording, resolveLocalRecordingProposal } from '../importers/local-recording-merge.js'
-import { CONFIDENCE } from '../schema/phonology.js'
+import { CONFIDENCE } from '@teochew/core'
 import { listVarieties } from '../phonology/load.js'
 import { dim, green, red } from './colour.js'
 

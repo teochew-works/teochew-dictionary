@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto'
 
 import { describe, expect, it } from 'vitest'
 
-import { GITHUB_REPO } from '../src/schema/phonology.js'
+import { GITHUB_REPO } from '@teochew/core'
 import { verifyAudioRemote, type AudioSource } from '../src/validate/audio-remote.js'
 import { AUDIO_CLIP_URL, AUDIO_WORD_CLIP_URL, audioTable, makeClipFixture } from './helpers/audio-fixtures.js'
 

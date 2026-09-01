@@ -5,8 +5,7 @@ import { parseDocument, stringify } from 'yaml'
 import { loadSources } from '../data/load.js'
 import { AUDIO_METADATA_DIR } from '../paths.js'
 import { loadOptionalFile } from '../phonology/load.js'
-import { audioSchema, CONFIDENCE, type Audio } from '../schema/phonology.js'
-import type { Source } from '../schema/entry.js'
+import { audioSchema, CONFIDENCE, type Audio, type Source } from '@teochew/core'
 import type { AudioClipProposal } from './audio-types.js'
 import { rehostClip, resolveProposal, type RehostOptions } from './lingualibre-rehost.js'
 
@@ -57,7 +56,7 @@ function audioFileHeader(variety: string): string {
     "# Hand-maintained, not wholly regenerated: entries arrive via `npm run",
     '# merge:lingualibre` (issue #106) or a direct hand edit. Editing an existing',
     '# clip by hand is fine — just keep it valid against audioSchema in',
-    '# src/schema/phonology.ts, and re-run `npm run validate` after.',
+    '# packages/core/src/schema/phonology.ts, and re-run `npm run validate` after.',
     '',
   ].join('\n')
 }

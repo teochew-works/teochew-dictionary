@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { entrySchema, senseSchema } from '../src/schema/entry.js'
+import { entrySchema, senseSchema } from '@teochew/core'
 import { emitAllSchemas } from '../src/schema/emit.js'
 
 /**

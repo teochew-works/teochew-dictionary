@@ -1,5 +1,5 @@
 import { loadEntries, type LoadedEntry } from '../data/load.js'
-import type { PengimScheme } from '../schema/phonology.js'
+import type { PengimScheme } from '@teochew/core'
 import type { SyllableInventory, SyllableStatus } from '../schema/inventory.js'
 import { loadExternalChart, listExternalCharts, listVarieties, loadPengimScheme } from './load.js'
 import { rimeOf } from './ipa.js'

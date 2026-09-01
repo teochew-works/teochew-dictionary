@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto'
 
 import { IMPORTER_USER_AGENT } from '../importers/types.js'
-import type { Audio, AudioClip } from '../schema/phonology.js'
+import type { Audio, AudioClip } from '@teochew/core'
 import type { Issue } from './index.js'
 
 /**

@@ -1,4 +1,4 @@
-import type { PartOfSpeech } from '../schema/entry.js'
+import type { PartOfSpeech } from '@teochew/core'
 import type { WiktextractRecord } from './wiktextract.js'
 import { extractAltOf, mapWiktextractTags, mapWiktextractTopics } from './wiktionary-tags.js'
 

@@ -1,4 +1,4 @@
-import type { Level } from '../schema/entry.js'
+import type { Level } from '@teochew/core'
 
 /**
  * Derives a provisional `entrySchema.level` for entries whose headword is

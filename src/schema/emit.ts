@@ -1,14 +1,15 @@
 import { z } from 'zod'
 
 import { listVarieties } from '../phonology/load.js'
-import { DEFAULT_VARIETY, entryFileSchema } from './entry.js'
 import {
+  DEFAULT_VARIETY,
+  entryFileSchema,
   audioSchema,
   pengimSchemeSchema,
   pojSchema,
   sandhiSchema,
   varietySchema,
-} from './phonology.js'
+} from '@teochew/core'
 import { externalChartSchema, syllableInventorySchema } from './inventory.js'
 
 /** Reproduces `zod-to-json-schema`'s `name` option: `{ $ref: '#/definitions/name', definitions: { name: ... } }`. */

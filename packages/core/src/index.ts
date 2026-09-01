@@ -1,7 +1,13 @@
-// Public entry point for @teochew/core.
+// Public entry point for @teochew/core (ADR-0002).
 //
-// This package is scaffolding for now — the actual schemas, phonology
-// derivation, SM-2 scheduler and deck/search/flashcard pipeline logic move
-// in from the root project and web/ across the following commits. See
-// ../../docs/adrs/adr-0002.md.
-export const TEOCHEW_CORE_PLACEHOLDER = true
+// Kept as one flat re-export surface for now rather than a subpath-export
+// system — see README.md.
+
+export * from './schema/entry.js'
+export * from './schema/phonology.js'
+
+export * from './phonology/syllable.js'
+export * from './phonology/ipa.js'
+export * from './phonology/poj.js'
+export * from './phonology/sandhi.js'
+export * from './phonology/rime-order.js'

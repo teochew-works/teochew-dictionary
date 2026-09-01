@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest'
 
-import { GITHUB_REPO, audioSchema } from '../src/schema/phonology.js'
+import { GITHUB_REPO, audioSchema } from '@teochew/core'
 import { checkAudio } from '../src/validate/index.js'
 import { deriveReadingAudio, deriveReadingSandhiAudio, deriveReadingWordAudio } from '../src/build/enrich.js'
 import { parsePengim } from '../src/phonology/syllable.js'
 import { applySandhi } from '../src/phonology/sandhi.js'
-import type { Source, SourceKind } from '../src/schema/entry.js'
+import type { Source, SourceKind } from '@teochew/core'
 import { AUDIO_CLIP_URL, AUDIO_WORD_CLIP_URL, audioTable, makeClipFixture } from './helpers/audio-fixtures.js'
 
 const VALID_URL = AUDIO_CLIP_URL

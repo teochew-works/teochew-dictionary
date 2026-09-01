@@ -4,7 +4,7 @@ import { join, relative } from 'node:path'
 
 import { AUDIO_METADATA_DIR, DATA_DIR, ROOT } from '../../src/paths.js'
 import { loadOptionalFile } from '../../src/phonology/load.js'
-import { audioSchema } from '../../src/schema/phonology.js'
+import { audioSchema } from '@teochew/core'
 import {
   appendLocalRecordingProposal,
   findLocalRecordingProposals,

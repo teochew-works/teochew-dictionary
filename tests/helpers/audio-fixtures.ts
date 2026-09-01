@@ -1,4 +1,4 @@
-import { GITHUB_REPO, type Audio, type AudioClip } from '../../src/schema/phonology.js'
+import { GITHUB_REPO, type Audio, type AudioClip } from '@teochew/core'
 
 /** Shared by tests/audio.test.ts and tests/audio-remote.test.ts. */
 

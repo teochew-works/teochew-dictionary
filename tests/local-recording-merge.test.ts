@@ -5,7 +5,7 @@ import { parse as parseYaml, stringify } from 'yaml'
 
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 
-import { GITHUB_REPO } from '../src/schema/phonology.js'
+import { GITHUB_REPO } from '@teochew/core'
 import { mergeLocalRecording } from '../src/importers/local-recording-merge.js'
 import { appendLocalRecordingProposal, readLocalRecordingStaging } from '../src/importers/local-recording-staging.js'
 import type { LocalRecordingProposal } from '../src/importers/local-recording-types.js'

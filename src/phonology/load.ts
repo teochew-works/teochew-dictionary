@@ -14,7 +14,7 @@ import {
   type PojScheme,
   type SandhiTable,
   type Variety,
-} from '../schema/phonology.js'
+} from '@teochew/core'
 import { externalChartSchema, type ExternalChart } from '../schema/inventory.js'
 
 function readYaml(path: string): unknown {

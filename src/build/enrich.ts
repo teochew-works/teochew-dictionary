@@ -5,8 +5,7 @@ import { applySandhiToSyllables, createSandhiResolver } from '../phonology/sandh
 import { parsePengim } from '../phonology/syllable.js'
 import { loadSources } from '../data/load.js'
 import { resolveLicenceOrThrow, withProjectAttribution } from '../data/licence.js'
-import type { Entry, Reading, Source } from '../schema/entry.js'
-import type { Audio, AudioClip, Confidence } from '../schema/phonology.js'
+import type { Entry, Reading, Source, Audio, AudioClip, Confidence } from '@teochew/core'
 import type { Syllable } from '../phonology/syllable.js'
 import type { SandhiResult } from '../phonology/sandhi.js'
 

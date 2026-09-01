@@ -7,7 +7,7 @@ import { listEntryFiles } from '../data/load.js'
 import { buildCandidates, matchEntrySenses } from '../importers/entry-tag-matching.js'
 import { loadWiktextractIndex } from '../importers/wiktextract.js'
 import { ENTRIES_DIR } from '../paths.js'
-import { entryFileSchema } from '../schema/entry.js'
+import { entryFileSchema } from '@teochew/core'
 
 /**
  * `npm run backfill:wiktionary-tags [-- --write]` (issue #102, #105)
