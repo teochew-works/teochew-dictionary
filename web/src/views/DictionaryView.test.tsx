@@ -65,11 +65,11 @@ describe('DictionaryView', () => {
     localStorage.clear()
   })
 
-  it('defaults the licensing toggle to off and hides licence info', () => {
+  it('defaults the licensing toggle to on and shows licence info', () => {
     render(<DictionaryView entries={ENTRIES} />)
     fireEvent.click(screen.getByText('潮州'))
-    expect(screen.getByLabelText('Show licensing info')).not.toBeChecked()
-    expect(screen.queryByText(/Licence:/)).not.toBeInTheDocument()
+    expect(screen.getByLabelText('Show licensing info')).toBeChecked()
+    expect(screen.getByText(/Licence:/)).toBeInTheDocument()
   })
 
   it('shows a decorative empty state with accessible fallback text when no entry is selected', () => {
@@ -78,17 +78,17 @@ describe('DictionaryView', () => {
     expect(screen.getByText('Select an entry to see its details.')).toBeInTheDocument()
   })
 
-  it('shows licence info once toggled on and persists the choice across remounts', () => {
+  it('hides licence info once toggled off and persists the choice across remounts', () => {
     const { unmount } = render(<DictionaryView entries={ENTRIES} />)
     fireEvent.click(screen.getByText('潮州'))
     fireEvent.click(screen.getByLabelText('Show licensing info'))
-    expect(screen.getByText(/Licence:/)).toBeInTheDocument()
+    expect(screen.queryByText(/Licence:/)).not.toBeInTheDocument()
     unmount()
 
     render(<DictionaryView entries={ENTRIES} />)
     fireEvent.click(screen.getByText('潮州'))
-    expect(screen.getByLabelText('Show licensing info')).toBeChecked()
-    expect(screen.getByText(/Licence:/)).toBeInTheDocument()
+    expect(screen.getByLabelText('Show licensing info')).not.toBeChecked()
+    expect(screen.queryByText(/Licence:/)).not.toBeInTheDocument()
   })
 
   it('persists the audio-only toggle across remounts (issue #173)', () => {

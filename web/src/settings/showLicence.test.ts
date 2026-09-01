@@ -10,8 +10,8 @@ describe('readShowLicence / writeShowLicence', () => {
     localStorage.clear()
   })
 
-  it('defaults to false when nothing is stored', () => {
-    expect(readShowLicence()).toBe(false)
+  it('defaults to true when nothing is stored', () => {
+    expect(readShowLicence()).toBe(true)
   })
 
   it('round-trips true', () => {
