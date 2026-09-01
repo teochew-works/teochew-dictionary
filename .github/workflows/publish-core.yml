@@ -1,0 +1,38 @@
+name: Publish @teochew/core
+
+# Deliberately not run automatically on every push — publishing to npm is a
+# one-way action a maintainer takes on purpose, not something CI decides for
+# them. Two ways to trigger it:
+#   - push a `core-v*` tag (e.g. `core-v0.1.0`), once a release is decided
+#   - workflow_dispatch, for a manual re-run
+#
+# Needs an NPM_TOKEN repository secret that does not exist yet as of this
+# workflow's creation — see packages/core/README.md's Publishing section.
+# Until that secret is added, this workflow will run and fail at the
+# `npm publish` step; it does nothing until a maintainer deliberately wires
+# up publishing.
+on:
+  push:
+    tags:
+      - 'core-v*'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/core
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: packages/core/package-lock.json
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm run build
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
