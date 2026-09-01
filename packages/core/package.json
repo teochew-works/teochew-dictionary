@@ -33,7 +33,7 @@
     "check": "npm run typecheck && npm run test"
   },
   "dependencies": {
-    "zod": "^4.4.3"
+    "zod": "4.4.3"
   },
   "devDependencies": {
     "jsdom": "^30.0.1",
