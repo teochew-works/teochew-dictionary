@@ -2,9 +2,7 @@ import { Fragment, memo, useRef, useState } from 'react'
 import type { KeyboardEvent as ReactKeyboardEvent, PointerEvent as ReactPointerEvent } from 'react'
 import { EntryDeckMenu } from './EntryDeckMenu'
 import { copyModifierName } from '../decks/dnd/copyModifier'
-import type { EnrichedEntry } from '../types/dict'
-import type { PronunciationMode } from '../settings/pronunciationMode'
-import type { Deck } from '../decks/types'
+import type { EnrichedEntry, PronunciationMode, Deck } from '@teochew/core'
 
 export interface DeckContentsCardDrag {
   onPointerDown: (entryId: string) => (e: ReactPointerEvent) => void

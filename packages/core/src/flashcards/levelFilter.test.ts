@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { DEFAULT_LEVEL_FILTER, isEligibleForLevel, readLevelFilter, writeLevelFilter } from './levelFilter'
-import { makeEntry } from '../test/entryFixtures'
+import { DEFAULT_LEVEL_FILTER, isEligibleForLevel, readLevelFilter, writeLevelFilter } from './levelFilter.js'
+import { makeEntry } from '../test/entryFixtures.js'
 
 describe('isEligibleForLevel', () => {
   it('includes an entry whose level is in the selected set', () => {

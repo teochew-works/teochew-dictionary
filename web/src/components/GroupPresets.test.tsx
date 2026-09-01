@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { GroupPresets } from './GroupPresets'
-import type { Deck, DeckGroup } from '../decks/types'
+import type { Deck, DeckGroup } from '@teochew/core'
 
 const decksById = new Map<string, Deck>([
   ['d1', { id: 'd1', name: 'Core 100', hue: 'teal', kind: 'user', cards: [] }],

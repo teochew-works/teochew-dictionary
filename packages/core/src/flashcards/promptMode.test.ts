@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { isEligibleForMode, readPromptMode, writePromptMode } from './promptMode'
-import { makeEntry, makeReading } from '../test/entryFixtures'
-import type { AudioReference } from '../types/dict'
+import { isEligibleForMode, readPromptMode, writePromptMode } from './promptMode.js'
+import { makeEntry, makeReading } from '../test/entryFixtures.js'
+import type { AudioReference } from '../enrichedEntry.js'
 
 const WORD_CLIP: AudioReference = {
   key: 'dio5 ziu1',

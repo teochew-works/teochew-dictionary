@@ -1,5 +1,4 @@
-import { DECK_HUES } from './types'
-import type { DeckHue } from './types'
+import { DECK_HUES, type DeckHue } from '@teochew/core'
 
 /** Cycles through the palette in a fixed, deterministic order — no randomness to keep tests and re-renders stable. */
 export function nextHue(existingDeckCount: number): DeckHue {

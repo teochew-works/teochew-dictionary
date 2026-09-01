@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen, within } from '@testing-library/react'
 import { DeckTray } from './DeckTray'
 import type { DeckStats } from '../decks/stats'
-import type { Deck } from '../decks/types'
+import type { Deck } from '@teochew/core'
 
 const decks: Deck[] = [
   { id: 'dictionary', name: 'Dictionary', hue: 'blue', kind: 'virtual', cards: ['a', 'b'] },

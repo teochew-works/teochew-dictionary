@@ -2,7 +2,7 @@ import { createRef } from 'react'
 import { describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { EntryDeckMenu } from './EntryDeckMenu'
-import type { Deck } from '../decks/types'
+import type { Deck } from '@teochew/core'
 
 const decks: Deck[] = [
   { id: 'd1', name: 'Food words', hue: 'red', kind: 'user', cards: [] },

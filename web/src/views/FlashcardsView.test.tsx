@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { FlashcardsView } from './FlashcardsView'
 import { makeEntry, makeReading } from '../test/entryFixtures'
-import type { AudioReference } from '../types/dict'
+import type { AudioReference } from '@teochew/core'
 import { readDecksState, writeDecksState } from '../decks/storage'
 import { DICTIONARY_DECK_ID } from '../decks/virtualDeck'
 

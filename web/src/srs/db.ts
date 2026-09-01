@@ -1,5 +1,5 @@
 import { openDB, type IDBPDatabase } from 'idb'
-import type { CardState } from './types'
+import type { CardState } from '@teochew/core'
 
 const DB_NAME = 'teochew-flashcards'
 const DB_VERSION = 1

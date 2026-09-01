@@ -1,5 +1,5 @@
 import Fuse from 'fuse.js'
-import type { EnrichedEntry } from '../types/dict'
+import type { EnrichedEntry } from '@teochew/core'
 
 /**
  * Fuse.js over the pre-computed search_keys (headword, variants, Peng'im with

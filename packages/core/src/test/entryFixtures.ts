@@ -1,11 +1,17 @@
-import type { EnrichedEntry, EnrichedReading } from '@teochew/core'
+import type { EnrichedEntry, EnrichedReading } from '../enrichedEntry.js'
 
 /**
- * Shared base fixtures for the search/sort/component/view test suites (see
- * sortEntries.test.ts, searchIndex.test.ts, EntryTree.test.tsx,
- * DictionaryView.test.tsx) — each needs a minimal-but-valid EnrichedEntry/
- * EnrichedReading and layers its own overrides on top rather than
- * hand-rolling the full shape again.
+ * Shared base fixtures for this package's own search/sort/pipeline/flashcard
+ * test suites — each needs a minimal-but-valid EnrichedEntry/EnrichedReading
+ * and layers its own overrides on top rather than hand-rolling the full shape
+ * again.
+ *
+ * Deliberately duplicated from web/src/test/entryFixtures.ts rather than
+ * shared: that file is also used by several web-only test suites (component
+ * tests, view tests, useSrsQueue.test.ts, searchIndex.test.ts, ...) that stay
+ * in web/ per ADR-0002, and this package can't depend on web/. It's a tiny
+ * builder function — duplication is the pragmatic choice here, not a
+ * subpath-export system.
  */
 export function makeReading(overrides: Partial<EnrichedReading> = {}): EnrichedReading {
   return {

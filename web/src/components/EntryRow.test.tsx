@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, render, screen } from '@testing-library/react'
 import { EntryRow } from './EntryRow'
-import type { EnrichedEntry } from '../types/dict'
+import type { EnrichedEntry } from '@teochew/core'
 
 const ENTRY: EnrichedEntry = {
   id: 'dio5-ziu1-潮州',

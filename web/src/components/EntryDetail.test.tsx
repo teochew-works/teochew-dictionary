@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { EntryDetail } from './EntryDetail'
-import type { AudioReference, EnrichedEntry, EnrichedReading } from '../types/dict'
+import type { AudioReference, EnrichedEntry, EnrichedReading } from '@teochew/core'
 
 const READING: EnrichedReading = {
   pengim: 'dio5 ziu1',

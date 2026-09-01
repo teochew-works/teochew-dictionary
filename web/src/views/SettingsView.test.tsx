@@ -3,7 +3,7 @@ import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/re
 import { SettingsView } from './SettingsView'
 import { DictionaryView } from './DictionaryView'
 import { makeEntry } from '../test/entryFixtures'
-import type { CardState } from '../srs/types'
+import type { CardState } from '@teochew/core'
 
 const storedCards = new Map<string, CardState>()
 

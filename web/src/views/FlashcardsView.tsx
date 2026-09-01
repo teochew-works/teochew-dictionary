@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useSrsQueue } from '../srs/useSrsQueue'
-import { newCardState, previewIntervals } from '../srs/scheduler'
+import { newCardState, previewIntervals } from '@teochew/core'
 import { Flashcard } from '../components/Flashcard'
 import { DeckTray } from '../components/DeckTray'
 import { DeckRail } from '../components/DeckRail'
@@ -26,27 +26,35 @@ import { useDeckLift } from '../decks/dnd/useDeckLift'
 import { useCardLift } from '../decks/dnd/useCardLift'
 import { useFlip } from '../decks/dnd/useFlip'
 import type { CardDropState } from '../components/DeckCard'
-import type { EnrichedEntry } from '../types/dict'
-import { PROMPT_MODE_LABELS, readPromptMode, writePromptMode } from '../flashcards/promptMode'
-import type { PromptMode } from '../flashcards/promptMode'
 import {
+  PROMPT_MODE_LABELS,
+  readPromptMode,
+  writePromptMode,
   DEFAULT_LEVEL_FILTER,
   LEVEL_FILTER_ORDER,
   levelFilterLabel,
   readLevelFilter,
   writeLevelFilter,
-} from '../flashcards/levelFilter'
-import type { LevelFilterValue } from '../flashcards/levelFilter'
+  DEFAULT_PRONUNCIATION_MODE,
+  readPronunciationMode,
+  writePronunciationMode,
+  firstEmptyStage,
+  resolveDecks,
+  runDeckPipeline,
+  significantStages,
+  stageCount,
+  type EnrichedEntry,
+  type PromptMode,
+  type LevelFilterValue,
+  type PronunciationMode,
+  type Deck,
+} from '@teochew/core'
 import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly'
-import { DEFAULT_PRONUNCIATION_MODE, readPronunciationMode, writePronunciationMode } from '../settings/pronunciationMode'
-import type { PronunciationMode } from '../settings/pronunciationMode'
 import { useDecksStore } from '../decks/useDecksStore'
 import type { DecksState } from '../decks/storage'
 import { makeDictionaryDeck } from '../decks/virtualDeck'
 import { deckStats } from '../decks/stats'
 import type { DeckFilters, DeckStats } from '../decks/stats'
-import { firstEmptyStage, resolveDecks, runDeckPipeline, significantStages, stageCount } from '../decks/pipeline'
-import type { Deck } from '../decks/types'
 import { uniqueDeckName } from '../decks/naming'
 import { useStarterDecks } from '../hooks/useStarterDecks'
 import type { StarterDeckCatalogEntry } from '../types/starter-decks'

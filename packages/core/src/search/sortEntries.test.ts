@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { capGroups, firstSyllableTone, groupEntries, sortFlat } from './sortEntries'
-import { makeEntry, makeReading } from '../test/entryFixtures'
+import { capGroups, firstSyllableTone, groupEntries, sortFlat } from './sortEntries.js'
+import { makeEntry, makeReading } from '../test/entryFixtures.js'
 
 describe('firstSyllableTone', () => {
   it('reads the tone digit off the first syllable of a multi-syllable string', () => {

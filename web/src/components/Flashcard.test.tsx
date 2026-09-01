@@ -3,8 +3,8 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { Flashcard } from './Flashcard'
 import { makeEntry, makeReading } from '../test/entryFixtures'
-import type { AudioReference } from '../types/dict'
-import type { Deck } from '../decks/types'
+import type { AudioReference } from '@teochew/core'
+import type { Deck } from '@teochew/core'
 
 const WORD_CLIP: AudioReference = {
   key: 'dio5 ziu1',

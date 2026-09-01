@@ -1,5 +1,4 @@
-import type { Deck, DeckGroup, DeckHue } from './types'
-import { DECK_HUES } from './types'
+import { DECK_HUES, type Deck, type DeckGroup, type DeckHue } from '@teochew/core'
 import { DICTIONARY_DECK_ID } from './virtualDeck'
 
 export interface DecksState {

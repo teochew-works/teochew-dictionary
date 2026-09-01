@@ -1,18 +1,25 @@
 import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { createSearchIndex, search } from '../search/searchIndex'
-import { capGroups, groupEntries, isGrouped, sortFlat } from '../search/sortEntries'
-import type { SortMode } from '../search/sortEntries'
-import { hasAudio, hasFullAudio } from '../search/filters'
 import { readShowLicence, writeShowLicence } from '../settings/showLicence'
 import { readAudioOnly, writeAudioOnly } from '../settings/audioOnly'
 import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly'
-import { readPronunciationMode, writePronunciationMode } from '../settings/pronunciationMode'
-import type { PronunciationMode } from '../settings/pronunciationMode'
 import { readMogherLinks } from '../settings/mogherLinks'
 import { EntryList } from '../components/EntryList'
 import { EntryTree } from '../components/EntryTree'
 import { EntryDetail } from '../components/EntryDetail'
-import type { EnrichedEntry } from '../types/dict'
+import {
+  capGroups,
+  groupEntries,
+  isGrouped,
+  sortFlat,
+  hasAudio,
+  hasFullAudio,
+  readPronunciationMode,
+  writePronunciationMode,
+  type SortMode,
+  type PronunciationMode,
+  type EnrichedEntry,
+} from '@teochew/core'
 import './DictionaryView.css'
 
 /**

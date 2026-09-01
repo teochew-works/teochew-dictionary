@@ -1,4 +1,4 @@
-import type { PipelineStageKey } from '../decks/pipeline'
+import type { PipelineStageKey } from '@teochew/core'
 
 export type FunnelStageKey = PipelineStageKey | 'queue'
 

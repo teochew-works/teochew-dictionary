@@ -1,5 +1,5 @@
 import type { DecksState } from './storage'
-import type { Deck, DeckGroup } from './types'
+import type { Deck, DeckGroup } from '@teochew/core'
 
 /**
  * Pure `DecksState -> DecksState` transitions, unit-testable without React

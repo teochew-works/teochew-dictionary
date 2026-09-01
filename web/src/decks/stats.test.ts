@@ -1,11 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { deckStats, passesFilters, sliceLabel } from './stats'
 import type { DeckFilters } from './stats'
-import { DEFAULT_LEVEL_FILTER } from '../flashcards/levelFilter'
 import { makeEntry, makeReading } from '../test/entryFixtures'
-import type { EnrichedEntry } from '../types/dict'
-import type { CardState } from '../srs/types'
-import type { Deck } from './types'
+import { DEFAULT_LEVEL_FILTER, type EnrichedEntry, type CardState, type Deck } from '@teochew/core'
 
 const NOW = new Date('2026-08-29T00:00:00.000Z')
 

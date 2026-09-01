@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { buildQueue, gradeCard, mergeQueue, newCardState, previewIntervals, pruneQueue } from './scheduler'
-import type { CardState, QueueItem } from './types'
+import { buildQueue, gradeCard, mergeQueue, newCardState, previewIntervals, pruneQueue } from './scheduler.js'
+import type { CardState, QueueItem } from './types.js'
 
 const NOW = new Date('2026-08-16T00:00:00.000Z')
 

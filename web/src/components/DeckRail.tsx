@@ -4,7 +4,7 @@ import { DeckCard } from './DeckCard'
 import type { CardDropState } from './DeckCard'
 import type { DeckMenuActions } from './DeckMenu'
 import type { DeckStats } from '../decks/stats'
-import type { Deck } from '../decks/types'
+import type { Deck } from '@teochew/core'
 
 export interface DeckRailRename {
   deckId: string

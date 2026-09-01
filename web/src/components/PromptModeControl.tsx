@@ -1,5 +1,4 @@
-import { PROMPT_MODE_LABELS } from '../flashcards/promptMode'
-import type { PromptMode } from '../flashcards/promptMode'
+import { PROMPT_MODE_LABELS, type PromptMode } from '@teochew/core'
 
 /** A segmented control over native radios, so arrow-key navigation between options is free (built into every browser's radiogroup handling). */
 export function PromptModeControl({ mode, onChange }: { mode: PromptMode; onChange: (mode: PromptMode) => void }) {

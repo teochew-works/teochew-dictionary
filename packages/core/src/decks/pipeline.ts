@@ -1,10 +1,10 @@
-import type { EnrichedEntry } from '../types/dict'
-import type { Deck } from './types'
-import { isEligibleForMode } from '../flashcards/promptMode'
-import type { PromptMode } from '../flashcards/promptMode'
-import { isEligibleForLevel } from '../flashcards/levelFilter'
-import type { LevelFilterValue } from '../flashcards/levelFilter'
-import { hasFullAudio } from '../search/filters'
+import type { EnrichedEntry } from '../enrichedEntry.js'
+import type { Deck } from './types.js'
+import { isEligibleForMode } from '../flashcards/promptMode.js'
+import type { PromptMode } from '../flashcards/promptMode.js'
+import { isEligibleForLevel } from '../flashcards/levelFilter.js'
+import type { LevelFilterValue } from '../flashcards/levelFilter.js'
+import { hasFullAudio } from '../search/filters.js'
 
 export type PipelineStageKey = 'in-play' | 'mode' | 'level' | 'audio'
 

@@ -2,7 +2,7 @@ import type { KeyboardEvent as ReactKeyboardEvent, PointerEvent as ReactPointerE
 import { sliceLabel } from '../decks/stats'
 import type { DeckStats } from '../decks/stats'
 import type { CardDropState } from './DeckCard'
-import type { Deck } from '../decks/types'
+import type { Deck } from '@teochew/core'
 
 /**
  * A deck laid on the table. Drawn as a small pile of cards (the stacked

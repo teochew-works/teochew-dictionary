@@ -1,5 +1,5 @@
-import type { AudioReference, EnrichedReading } from '../types/dict'
-import type { PronunciationMode } from '../settings/pronunciationMode'
+import type { AudioReference, EnrichedReading } from '@teochew/core'
+import type { PronunciationMode } from '@teochew/core'
 
 /**
  * Clip buttons for one reading: the whole-word clip first as ♪♪, then one ♪

@@ -2,7 +2,7 @@ import { useId, useRef } from 'react'
 import { AnchoredPopover } from './AnchoredPopover'
 import { useDismissOnOutside } from './useDismissOnOutside'
 import type { RefObject } from 'react'
-import type { Deck } from '../decks/types'
+import type { Deck } from '@teochew/core'
 
 /**
  * Which decks hold this card, and the pointer- and keyboard-native way to

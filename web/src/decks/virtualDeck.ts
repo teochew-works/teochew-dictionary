@@ -1,5 +1,5 @@
-import type { EnrichedEntry } from '../types/dict'
-import type { Deck, DeckHue } from './types'
+import type { EnrichedEntry } from '@teochew/core'
+import type { Deck, DeckHue } from '@teochew/core'
 
 /**
  * Not a real user id — no stored deck can ever collide with it (storage.ts

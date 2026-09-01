@@ -1,4 +1,4 @@
-import type { EnrichedEntry } from '../types/dict'
+import type { EnrichedEntry } from '../enrichedEntry.js'
 
 export type PromptMode = 'chinese' | 'english' | 'pronunciation' | 'audio-only'
 

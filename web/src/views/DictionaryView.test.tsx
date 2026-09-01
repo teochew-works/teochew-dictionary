@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { DictionaryView } from './DictionaryView'
-import type { AudioReference, EnrichedEntry } from '../types/dict'
+import type { AudioReference, EnrichedEntry } from '@teochew/core'
 import { makeEntry as makeBaseEntry, makeReading } from '../test/entryFixtures'
 
 function makeEntry({

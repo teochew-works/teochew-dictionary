@@ -1,4 +1,4 @@
-import type { EnrichedEntry } from '../types/dict'
+import type { EnrichedEntry } from '../enrichedEntry.js'
 
 /**
  * Whether any reading on the entry has a recording — a whole-word clip or a

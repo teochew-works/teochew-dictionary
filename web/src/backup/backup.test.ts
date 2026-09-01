@@ -3,7 +3,7 @@ import { buildBackup, restoreBackup } from './backup'
 import { readDecksState, writeDecksState } from '../decks/storage'
 import type { DecksState } from '../decks/storage'
 import { DICTIONARY_DECK_ID } from '../decks/virtualDeck'
-import type { CardState } from '../srs/types'
+import type { CardState } from '@teochew/core'
 
 const stored = new Map<string, CardState>()
 const cleared: boolean[] = []

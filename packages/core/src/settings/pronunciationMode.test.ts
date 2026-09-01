@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { readPronunciationMode, writePronunciationMode } from './pronunciationMode'
+import { readPronunciationMode, writePronunciationMode } from './pronunciationMode.js'
 
 describe('readPronunciationMode / writePronunciationMode', () => {
   beforeEach(() => {

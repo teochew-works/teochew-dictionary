@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import { firstEmptyStage, runDeckPipeline, resolveDecks, significantStages, stageCount } from './pipeline'
-import type { DeckPipelineInput } from './pipeline'
-import { DEFAULT_LEVEL_FILTER } from '../flashcards/levelFilter'
-import { makeEntry, makeReading } from '../test/entryFixtures'
-import type { Deck } from './types'
+import { firstEmptyStage, runDeckPipeline, resolveDecks, significantStages, stageCount } from './pipeline.js'
+import type { DeckPipelineInput } from './pipeline.js'
+import { DEFAULT_LEVEL_FILTER } from '../flashcards/levelFilter.js'
+import { makeEntry, makeReading } from '../test/entryFixtures.js'
+import type { Deck } from './types.js'
 
 function deck(overrides: Partial<Deck> = {}): Deck {
   return { id: 'deck-1', name: 'Deck', hue: 'green', cards: [], kind: 'user', ...overrides }
