@@ -4,7 +4,7 @@ import { mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
-import { GITHUB_REPO } from '../schema/phonology.js'
+import { GITHUB_REPO } from '@teochew/core'
 import { fetchWithRetry, IMPORTER_USER_AGENT } from './types.js'
 import type { AudioClipProposal } from './audio-types.js'
 

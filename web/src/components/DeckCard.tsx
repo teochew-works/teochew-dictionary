@@ -2,7 +2,7 @@ import type { KeyboardEvent as ReactKeyboardEvent, PointerEvent as ReactPointerE
 import { DeckMenu } from './DeckMenu'
 import type { DeckMenuActions } from './DeckMenu'
 import type { DeckStats } from '../decks/stats'
-import type { Deck } from '../decks/types'
+import type { Deck } from '@teochew/core'
 
 export interface DeckCardRename {
   value: string

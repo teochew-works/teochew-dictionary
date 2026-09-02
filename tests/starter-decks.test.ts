@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { buildStarterDecks } from '../src/build/starter-decks.js'
 import type { LoadedEntry } from '../src/data/load.js'
-import type { Entry } from '../src/schema/entry.js'
+import type { Entry } from '@teochew/core'
 import type { StarterDecksFile } from '../src/schema/starter-decks.js'
 
 function entry(overrides: Partial<Entry> & Pick<Entry, 'id' | 'headword'>): LoadedEntry {

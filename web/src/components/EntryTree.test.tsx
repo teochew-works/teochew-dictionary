@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { EntryTree } from './EntryTree'
-import type { EntryGroup } from '../search/sortEntries'
-import type { EnrichedEntry } from '../types/dict'
+import type { EntryGroup } from '@teochew/core'
+import type { EnrichedEntry } from '@teochew/core'
 import { makeEntry as makeBaseEntry, makeReading } from '../test/entryFixtures'
 
 function makeEntry(id: string, headword: string): EnrichedEntry {

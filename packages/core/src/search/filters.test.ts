@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { hasAudio, hasFullAudio } from './filters'
-import type { AudioReference, EnrichedEntry, EnrichedReading } from '../types/dict'
+import { hasAudio, hasFullAudio } from './filters.js'
+import type { AudioReference, EnrichedEntry, EnrichedReading } from '../enrichedEntry.js'
 
 const CLIP: AudioReference = {
   key: 'dio5',

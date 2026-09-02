@@ -8,7 +8,7 @@ import {
   sourcesFileSchema,
   type Entry,
   type Source,
-} from '../schema/entry.js'
+} from '@teochew/core'
 import { syllableInventorySchema, type SyllableInventory } from '../schema/inventory.js'
 
 export interface LoadedEntry {

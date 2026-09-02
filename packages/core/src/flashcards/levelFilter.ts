@@ -1,5 +1,6 @@
-import type { EnrichedEntry, Level } from '../types/dict'
-import { LEVEL_ORDER } from '../search/sortEntries'
+import type { EnrichedEntry } from '../enrichedEntry.js'
+import type { Level } from '../schema/entry.js'
+import { LEVEL_ORDER } from '../search/sortEntries.js'
 
 export type LevelFilterValue = Level | 'untiered'
 

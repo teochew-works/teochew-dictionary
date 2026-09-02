@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { EntryGroup } from '../search/sortEntries'
+import type { EntryGroup } from '@teochew/core'
 import { EntryRow } from './EntryRow'
 
 /**

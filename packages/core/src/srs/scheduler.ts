@@ -1,4 +1,4 @@
-import type { CardState, Grade, QueueItem } from './types'
+import type { CardState, Grade, QueueItem } from './types.js'
 
 /**
  * A hand-rolled SM-2-style scheduler. Deliberately dependency-free (no

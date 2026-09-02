@@ -3,9 +3,8 @@ import type { LocalRecordingProposal } from '../importers/local-recording-types.
 import { generateSyllables } from '../phonology/inventory.js'
 import { rimeOf } from '../phonology/ipa.js'
 import { loadPengimScheme } from '../phonology/load.js'
-import { declaredRimeOrder } from '../phonology/rime-order.js'
 import { parseSyllable } from '../phonology/syllable.js'
-import type { PengimScheme } from '../schema/phonology.js'
+import { declaredRimeOrder, type PengimScheme } from '@teochew/core'
 import { SOUNDS_VARIETY, type Sound } from './sounds.js'
 
 /**

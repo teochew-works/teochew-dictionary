@@ -5,10 +5,10 @@ import { parse as parseYaml, stringify } from 'yaml'
 
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 
-import { GITHUB_REPO } from '../src/schema/phonology.js'
+import { GITHUB_REPO } from '@teochew/core'
 import { licenceSourceId, mergeLinguaLibreClip } from '../src/importers/lingualibre-merge.js'
 import type { AudioClipProposal } from '../src/importers/audio-types.js'
-import type { Source } from '../src/schema/entry.js'
+import type { Source } from '@teochew/core'
 
 function proposal(overrides: Partial<AudioClipProposal> = {}): AudioClipProposal {
   return {

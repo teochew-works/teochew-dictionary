@@ -2,8 +2,8 @@ import { describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { DeckContents } from './DeckContents'
 import { makeEntry, makeReading } from '../test/entryFixtures'
-import type { EnrichedEntry } from '../types/dict'
-import type { Deck } from '../decks/types'
+import type { EnrichedEntry } from '@teochew/core'
+import type { Deck } from '@teochew/core'
 
 const TEA = makeEntry({
   id: 'e-tea',

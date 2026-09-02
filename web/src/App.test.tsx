@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { App } from './App'
-import type { Dict } from './types/dict'
+import type { Dict } from './types/dictMeta'
 import type { SoundsData } from './types/sounds'
 
 const FIXTURE: Dict = {

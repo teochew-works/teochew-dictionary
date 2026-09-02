@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { getAllCards, putCard } from './db'
-import { buildQueue, gradeCard, mergeQueue, newCardState, pruneQueue } from './scheduler'
-import type { CardState, Grade, QueueItem } from './types'
-import type { EnrichedEntry } from '../types/dict'
+import { buildQueue, gradeCard, mergeQueue, newCardState, pruneQueue, type CardState, type Grade, type QueueItem } from '@teochew/core'
+import type { EnrichedEntry } from '@teochew/core'
 
 export interface SrsQueueState {
   current: QueueItem | null

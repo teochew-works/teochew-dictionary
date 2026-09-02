@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { Dict } from '../types/dict'
+import type { Dict } from '../types/dictMeta'
 import { fetchDict } from '../pwa/offlineData'
 
 export interface DictionaryState {

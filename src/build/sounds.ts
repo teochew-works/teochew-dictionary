@@ -7,8 +7,7 @@ import {
 } from '../phonology/inventory.js'
 import { rimeOf, toIpa } from '../phonology/ipa.js'
 import { parsePengim, parseSyllable } from '../phonology/syllable.js'
-import type { Entry } from '../schema/entry.js'
-import type { Audio, PengimScheme } from '../schema/phonology.js'
+import type { Entry, Audio, PengimScheme } from '@teochew/core'
 
 /**
  * Every distinct Peng'im syllable ("sound") actually spoken by a headword's

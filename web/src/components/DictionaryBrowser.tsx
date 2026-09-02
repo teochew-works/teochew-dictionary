@@ -1,11 +1,8 @@
 import { useMemo, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
 import { createSearchIndex, search } from '../search/searchIndex'
-import { hasFullAudio } from '../search/filters'
 import { EntryDeckMenu } from './EntryDeckMenu'
-import type { EnrichedEntry } from '../types/dict'
-import type { PronunciationMode } from '../settings/pronunciationMode'
-import type { Deck } from '../decks/types'
+import { hasFullAudio, type EnrichedEntry, type PronunciationMode, type Deck } from '@teochew/core'
 
 const MAX_RESULTS = 60
 

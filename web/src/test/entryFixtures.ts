@@ -1,4 +1,4 @@
-import type { EnrichedEntry, EnrichedReading } from '../types/dict'
+import type { EnrichedEntry, EnrichedReading } from '@teochew/core'
 
 /**
  * Shared base fixtures for the search/sort/component/view test suites (see

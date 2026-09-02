@@ -2,8 +2,8 @@ import { act, renderHook, waitFor } from '@testing-library/react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { useSrsQueue } from './useSrsQueue'
 import { makeEntry } from '../test/entryFixtures'
-import type { CardState } from './types'
-import type { EnrichedEntry } from '../types/dict'
+import type { CardState } from '@teochew/core'
+import type { EnrichedEntry } from '@teochew/core'
 
 const stored = new Map<string, CardState>()
 const put = vi.fn()

@@ -4,7 +4,7 @@ import { join } from 'node:path'
 
 import { describe, expect, it } from 'vitest'
 
-import { GITHUB_REPO } from '../src/schema/phonology.js'
+import { GITHUB_REPO } from '@teochew/core'
 import { assetFilename, rehostClip, resolveProposal } from '../src/importers/lingualibre-rehost.js'
 import type { AudioClipProposal } from '../src/importers/audio-types.js'
 

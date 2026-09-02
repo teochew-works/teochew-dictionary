@@ -1,6 +1,6 @@
 import { readAudioStaging } from '../importers/audio-staging.js'
 import { mergeLinguaLibreClip, resolveProposal } from '../importers/lingualibre-merge.js'
-import { CONFIDENCE } from '../schema/phonology.js'
+import { CONFIDENCE } from '@teochew/core'
 import { listVarieties } from '../phonology/load.js'
 import { dim, green, red } from './colour.js'
 

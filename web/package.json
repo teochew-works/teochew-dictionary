@@ -21,6 +21,7 @@
     "check": "npm run typecheck && npm run test"
   },
   "dependencies": {
+    "@teochew/core": "file:../packages/core",
     "fuse.js": "^7.5.0",
     "idb": "^8.0.3",
     "react": "^19.2.8",

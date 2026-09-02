@@ -1,5 +1,6 @@
-import type { EnrichedEntry, Level, PartOfSpeech } from '../types/dict'
-import { DEFAULT_PRONUNCIATION_MODE, type PronunciationMode } from '../settings/pronunciationMode'
+import type { EnrichedEntry } from '../enrichedEntry.js'
+import type { Level, PartOfSpeech } from '../schema/entry.js'
+import { DEFAULT_PRONUNCIATION_MODE, type PronunciationMode } from '../settings/pronunciationMode.js'
 
 export type SortMode = 'relevance' | 'headword' | 'english' | 'tone' | 'category' | 'level'
 
@@ -48,7 +49,7 @@ const collator = new Intl.Collator(undefined, { sensitivity: 'base' })
 /**
  * Tone digit (1-8) of a Peng'im/sandhi string's first syllable, e.g.
  * "dio5 ziu1" -> 5. Every syllable is schema-guaranteed to end in 1-8 (see
- * entrySchema in src/schema/entry.ts), but this returns null defensively
+ * entrySchema in ../schema/entry.ts), but this returns null defensively
  * rather than throwing if that's ever untrue.
  */
 export function firstSyllableTone(pengim: string): number | null {

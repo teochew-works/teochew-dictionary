@@ -5,8 +5,7 @@ import { applySandhiToSyllables, createSandhiResolver } from '../phonology/sandh
 import { parsePengim } from '../phonology/syllable.js'
 import { loadSources } from '../data/load.js'
 import { resolveLicenceOrThrow, withProjectAttribution } from '../data/licence.js'
-import type { Entry, Reading, Source } from '../schema/entry.js'
-import type { Audio, AudioClip, Confidence } from '../schema/phonology.js'
+import type { Entry, Reading, Source, Audio, AudioClip, Confidence, AudioReference, EnrichedReading, EnrichedEntry } from '@teochew/core'
 import type { Syllable } from '../phonology/syllable.js'
 import type { SandhiResult } from '../phonology/sandhi.js'
 
@@ -17,78 +16,14 @@ import type { SandhiResult } from '../phonology/sandhi.js'
  * All the phonology tables are loaded once here and threaded through, rather
  * than re-read per reading — the naive version re-parses every YAML file
  * thousands of times over a full build.
+ *
+ * `AudioReference`/`EnrichedReading`/`EnrichedEntry` are declared in
+ * `@teochew/core` (see `enrichedEntry.ts` there), not here — this file does
+ * the disk-dependent computation that produces them, but the shape itself is
+ * what `web/` and a future `mobile/` both consume, per ADR-0002.
  */
 
-/**
- * An audio clip resolved for a reading — either one syllable (from `clips`)
- * or the reading's whole pengim string (from `wordClips`); `key` holds
- * whichever string it was looked up by.
- */
-export interface AudioReference extends Pick<AudioClip, 'url' | 'confidence'> {
-  /** The `clips`/`wordClips` key this clip was resolved from, e.g. `dio5` or `bhi7 jui2`. */
-  key: string
-  /**
-   * Derived from the clip's `sources` against data/sources.yaml — see
-   * ../data/licence.ts. Mirrors EnrichedEntry.licence; see its doc comment.
-   */
-  licence: string
-  /** Notices owed in addition to `licence`. Mirrors EnrichedEntry.attributions. */
-  attributions: string[]
-}
-
-export interface EnrichedReading extends Reading {
-  ipa: string
-  poj: string
-  /** Peng'im respelled with surface (post-sandhi) tone numbers. */
-  sandhi: string
-  /** Confidence of the IPA derivation, or `override` when hand-supplied. */
-  ipa_confidence: Confidence | 'override'
-  ipa_caveats: string[]
-  /** Peng'im with tone digits stripped — the forgiving search key. */
-  pengim_toneless: string
-  syllable_count: number
-  /**
-   * One entry per syllable, in order; `null` where no clip has been recorded
-   * yet. Whole-syllable, not stitched from components — see
-   * data/phonology/REVIEW.md § 11. No compositional fallback exists, unlike
-   * `ipa`/`poj`: a syllable either has a recording or it doesn't.
-   */
-  audio: (AudioReference | null)[]
-  /**
-   * Same as `audio`, but keyed by each syllable's sandhi surface spelling
-   * where a sandhi-specific clip has been recorded; falls back to the
-   * citation clip at that index otherwise (issue #36 coverage is partial).
-   */
-  sandhiAudio: (AudioReference | null)[]
-  /**
-   * A whole-word/phrase clip for this reading's exact pengim string (e.g. a
-   * Lingua Libre import), distinct from the per-syllable `audio` above —
-   * see `Audio.wordClips` and data/phonology/REVIEW.md § 16. `null` when no
-   * such clip exists, which is the common case: most readings only ever get
-   * per-syllable coverage.
-   */
-  wordAudio: AudioReference | null
-}
-
-export interface EnrichedEntry extends Omit<Entry, 'readings'> {
-  readings: EnrichedReading[]
-  /** Every string a user might reasonably type to find this entry. */
-  search_keys: string[]
-  /**
-   * Derived from `sources` against data/sources.yaml — see ../data/licence.ts.
-   * Never hand-written: BASE_LICENCE unless a cited source is share-alike, in
-   * which case that source's licence covers the whole entry.
-   */
-  licence: string
-  /**
-   * Notices owed in addition to `licence` — every cited source whose own
-   * licence differs from BASE_LICENCE, e.g. Unicode-DFS-2016 via `unihan`.
-   * A permissive source here does not change `licence`; it still has to be
-   * credited. Never empty: an entry whose sources owe nobody else's notice
-   * credits the project itself instead — see withProjectAttribution.
-   */
-  attributions: string[]
-}
+export type { AudioReference, EnrichedReading, EnrichedEntry }
 
 /** Strip tone digits: `dio5 ziu1` → `dio ziu`. Users rarely type tones. */
 export function stripTones(pengim: string): string {

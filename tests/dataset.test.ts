@@ -14,8 +14,7 @@ import {
 } from '../src/validate/index.js'
 import { loadEntries, loadSources } from '../src/data/load.js'
 import { PROJECT_ATTRIBUTION, resolveLicence } from '../src/data/licence.js'
-import type { Variety } from '../src/schema/phonology.js'
-import type { Entry, Source } from '../src/schema/entry.js'
+import type { Variety, Entry, Source } from '@teochew/core'
 import type { ExternalChart, SyllableInventory } from '../src/schema/inventory.js'
 
 /**

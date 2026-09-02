@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { Deck, DeckGroup } from '../decks/types'
+import type { Deck, DeckGroup } from '@teochew/core'
 
 function sameSet(a: string[], b: string[]): boolean {
   return a.length === b.length && [...a].sort().join(',') === [...b].sort().join(',')

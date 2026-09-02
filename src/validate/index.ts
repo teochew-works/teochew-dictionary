@@ -1,4 +1,3 @@
-import { entryFileSchema } from '../schema/entry.js'
 import { readEntryFiles, loadSources, loadSyllableInventory } from '../data/load.js'
 import {
   listAudioVarieties,
@@ -17,8 +16,7 @@ import { tryParsePengim } from '../phonology/syllable.js'
 import { toIpa } from '../phonology/ipa.js'
 import { toPoj } from '../phonology/poj.js'
 import { resolveLicence } from '../data/licence.js'
-import type { Entry, Source } from '../schema/entry.js'
-import type { Audio, AudioClip, Variety } from '../schema/phonology.js'
+import { entryFileSchema, type Entry, type Source, type Audio, type AudioClip, type Variety } from '@teochew/core'
 import type { ExternalChart, SyllableInventory } from '../schema/inventory.js'
 
 /**

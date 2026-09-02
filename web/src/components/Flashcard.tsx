@@ -1,12 +1,8 @@
 import { useEffect, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent, ReactNode, RefObject } from 'react'
-import type { EnrichedEntry, EnrichedReading } from '../types/dict'
-import type { Grade } from '../srs/types'
-import type { PromptMode } from '../flashcards/promptMode'
-import type { PronunciationMode } from '../settings/pronunciationMode'
+import type { EnrichedEntry, EnrichedReading, Grade, PromptMode, PronunciationMode, Deck } from '@teochew/core'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
 import { ReadingAudio } from './ReadingAudio'
-import type { Deck } from '../decks/types'
 
 const GRADES: { grade: Grade; label: string; key: string }[] = [
   { grade: 'again', label: 'Again', key: '1' },

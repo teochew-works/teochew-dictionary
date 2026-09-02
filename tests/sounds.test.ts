@@ -2,8 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { buildSounds } from '../src/build/sounds.js'
 import type { LoadedEntry } from '../src/data/load.js'
-import type { Entry } from '../src/schema/entry.js'
-import type { Audio } from '../src/schema/phonology.js'
+import type { Entry, Audio } from '@teochew/core'
 
 function entry(overrides: Partial<Entry> & Pick<Entry, 'id' | 'headword' | 'readings'>): LoadedEntry {
   return {

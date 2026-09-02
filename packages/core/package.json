@@ -1,0 +1,44 @@
+{
+  "name": "@teochew/core",
+  "version": "0.1.0",
+  "description": "Shared, DOM/React-independent logic for the Teochew Dictionary: schemas, phonology derivation, the SM-2 scheduler, and deck/search/flashcard pipeline logic — consumed by web/ here and by the mobile app's repo.",
+  "license": "BSD-3-Clause",
+  "author": "John Ky",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teochew-works/teochew-dictionary.git",
+    "directory": "packages/core"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm run test"
+  },
+  "dependencies": {
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "jsdom": "^30.0.1",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  }
+}

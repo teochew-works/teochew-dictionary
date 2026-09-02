@@ -12,7 +12,7 @@ import {
 } from '../src/phonology/inventory.js'
 import { formatSyllable, parseSyllable } from '../src/phonology/syllable.js'
 import type { LoadedEntry } from '../src/data/load.js'
-import type { Entry } from '../src/schema/entry.js'
+import type { Entry } from '@teochew/core'
 
 const VALID = [
   'dio5', 'ziu1', 'ziah8', 'nang5', 'bng7', 'ng5', 'm6', 'san1', 'toin2',

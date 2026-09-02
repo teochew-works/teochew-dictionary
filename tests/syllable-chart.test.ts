@@ -6,8 +6,8 @@ import { loadEntries } from '../src/data/load.js'
 import type { LocalRecordingProposal } from '../src/importers/local-recording-types.js'
 import { generateSyllables, rimeOf } from '../src/phonology/inventory.js'
 import { loadPengimScheme } from '../src/phonology/load.js'
-import { declaredRimeOrder, rimeSortKey } from '../src/phonology/rime-order.js'
 import { parseSyllable } from '../src/phonology/syllable.js'
+import { declaredRimeOrder, rimeSortKey } from '@teochew/core'
 
 const scheme = loadPengimScheme()
 

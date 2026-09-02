@@ -1,8 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { BASE_LICENCE, PROJECT_ATTRIBUTION, resolveLicence, withProjectAttribution } from '../src/data/licence.js'
-import { sourceSchema } from '../src/schema/entry.js'
-import type { Source, SourceKind } from '../src/schema/entry.js'
+import { sourceSchema, type Source, type SourceKind } from '@teochew/core'
 
 /**
  * Pure unit tests for licence resolution, independent of the shipped dataset —

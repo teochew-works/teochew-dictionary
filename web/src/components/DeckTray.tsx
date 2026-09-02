@@ -3,7 +3,7 @@ import type { KeyboardEvent as ReactKeyboardEvent, PointerEvent as ReactPointerE
 import { TableChip } from './TableChip'
 import type { CardDropState } from './DeckCard'
 import type { DeckStats } from '../decks/stats'
-import type { Deck } from '../decks/types'
+import type { Deck } from '@teochew/core'
 
 export interface TrayTotals {
   /** Cards the session actually drew from, after every filter. */

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import * as actions from './actions'
 import type { DecksState } from './storage'
-import type { Deck } from './types'
+import type { Deck } from '@teochew/core'
 
 function deck(overrides: Partial<Deck> = {}): Deck {
   return { id: 'deck-1', name: 'Kitchen', hue: 'green', cards: [], kind: 'user', ...overrides }

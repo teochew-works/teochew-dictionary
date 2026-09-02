@@ -2,8 +2,8 @@ import { describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { DictionaryBrowser } from './DictionaryBrowser'
 import { makeEntry, makeReading } from '../test/entryFixtures'
-import type { AudioReference } from '../types/dict'
-import type { Deck } from '../decks/types'
+import type { AudioReference } from '@teochew/core'
+import type { Deck } from '@teochew/core'
 
 const CLIP: AudioReference = {
   key: 'dio5',

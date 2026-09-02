@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { TableChip } from './TableChip'
 import type { DeckStats } from '../decks/stats'
-import type { Deck } from '../decks/types'
+import type { Deck } from '@teochew/core'
 
 const deck: Deck = { id: 'd1', name: 'Core 100', hue: 'teal', kind: 'user', cards: ['a', 'b', 'c'] }
 const stats: DeckStats = { total: 3, kept: 3, due: 2, fresh: 1, learned: 0 }

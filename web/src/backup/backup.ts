@@ -1,7 +1,7 @@
 import { isDecksState, readDecksState, writeDecksState } from '../decks/storage'
 import type { DecksState } from '../decks/storage'
 import { clearAllCards, getAllCards, putAllCards } from '../srs/db'
-import type { CardState } from '../srs/types'
+import type { CardState } from '@teochew/core'
 
 /**
  * A JSON export of everything a review history is: the decks (localStorage)

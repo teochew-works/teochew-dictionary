@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { defaultDecksState, readDecksState, writeDecksState } from './storage'
 import type { DecksState } from './storage'
 import { DICTIONARY_DECK_ID } from './virtualDeck'
-import type { Deck } from './types'
+import type { Deck } from '@teochew/core'
 
 const KEY = 'teochew-dictionary:decks/v1'
 

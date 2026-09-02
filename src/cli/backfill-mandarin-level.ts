@@ -6,7 +6,7 @@ import type { YAMLMap } from 'yaml'
 import { listEntryFiles } from '../data/load.js'
 import { buildHskIndex, matchEntryLevel, parseHskWordlist } from '../importers/mandarin-cognate-level.js'
 import { ENTRIES_DIR } from '../paths.js'
-import { entryFileSchema } from '../schema/entry.js'
+import { entryFileSchema } from '@teochew/core'
 
 /**
  * `npm run backfill:mandarin-level -- <path/to/complete.json> [--write]`

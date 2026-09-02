@@ -1,4 +1,4 @@
-import type { EnrichedEntry } from '../types/dict'
+import type { EnrichedEntry } from '@teochew/core'
 import { LevelBadge } from './LevelBadge'
 
 export function EntryRow({

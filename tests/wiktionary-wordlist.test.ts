@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { classifyAgainstEntries } from '../src/data/wiktionary-wordlist.js'
 import type { LoadedEntry } from '../src/data/load.js'
-import type { Entry } from '../src/schema/entry.js'
+import type { Entry } from '@teochew/core'
 
 function entry(id: string, headword: string, variants?: string[]): LoadedEntry {
   return {
