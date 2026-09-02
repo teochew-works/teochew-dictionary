@@ -1,6 +1,6 @@
 {
   "name": "@teochew/core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shared, DOM/React-independent logic for the Teochew Dictionary: schemas, phonology derivation, the SM-2 scheduler, and deck/search/flashcard pipeline logic — consumed by web/ here and by the mobile app's repo.",
   "license": "BSD-3-Clause",
   "author": "John Ky",
