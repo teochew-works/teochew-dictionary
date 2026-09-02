@@ -1,0 +1,42 @@
+name: release dict.sqlite
+
+# Manual trigger only, deliberately. Publishing a new dict.sqlite release is a
+# real, visible action on the public repo (a rolling GitHub Release with a
+# ~40MB asset) — not something that should happen silently on every push to
+# main until a maintainer has decided this workflow is ready to run
+# unattended. See teochew-dictionary-app's ADR-0006 for the freshness
+# protocol this release feeds.
+on:
+  workflow_dispatch: {}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+
+      # One rolling release (tag `dict-sqlite`), assets replaced on each
+      # publish rather than a new tag per run — same convention ADR-0014
+      # already established for audio ("assets uploaded into the existing
+      # release rather than a new tag per batch"). Unlike a stored per-clip
+      # reference, nothing pins a consumer to this tag's current bytes: the
+      # whole point is that a consumer's freshness check re-fetches
+      # dict.sqlite.manifest.json and compares its sha256 against what it has
+      # cached locally.
+      - name: Publish to the dict-sqlite release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view dict-sqlite >/dev/null 2>&1 || \
+            gh release create dict-sqlite \
+              --title "dict.sqlite (rolling)" \
+              --notes "Auto-published dict.sqlite + dict.sqlite.manifest.json. Always reflects the latest successful build from main — see teochew-dictionary-app's ADR-0006 for how a consumer checks freshness against this release."
+          gh release upload dict-sqlite dist/dict.sqlite dist/dict.sqlite.manifest.json --clobber

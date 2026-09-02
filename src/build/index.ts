@@ -1,5 +1,6 @@
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { createHash } from 'node:crypto'
 import Database from 'better-sqlite3'
 
 import { DIST_DIR } from '../paths.js'
@@ -14,16 +15,31 @@ import { buildStarterDecks } from './starter-decks.js'
 /**
  * Build the distributable artifacts from the YAML source of truth.
  *
- * Six outputs, for six consumers:
+ * Seven outputs, for seven consumers:
  *   dict.json           — the whole dataset, for anything that can hold it in memory
  *   dict.ndjson         — one entry per line, for streaming and for diff-friendly review
  *   dict.sqlite         — indexed, with FTS5, for a real lookup path
+ *   dict.sqlite.manifest.json — hash + schema version of the above, for a remote freshness check
  *   sounds.json         — every attested syllable + example words, for the web UI's Sounds tab
  *   syllable-chart.json — per-(initial,rime) legal/attested/recorded/staged tone sets,
  *                         for the Sounds tab's Chart view (issue #171, staged tier issue #183)
  *   starter-decks.json  — the curated marketplace catalog of themed beginner decks,
  *                         for the web UI's flashcards Marketplace pane (issue #199)
+ *
+ * dict.sqlite also gets a sibling dict.sqlite.manifest.json — a small JSON file a
+ * remote consumer (the mobile app's freshness check) can fetch cheaply before
+ * deciding whether to download the full multi-MB database. See
+ * teochew-dictionary-app's ADR-0006 for the protocol this manifest exists to serve.
  */
+
+/**
+ * Bump whenever entries/readings/senses/search's table or column shape changes.
+ * Embedded as SQLite's own `PRAGMA user_version` and mirrored into the manifest,
+ * so a consumer built against an older schema can refuse a downloaded database
+ * it wouldn't be able to query correctly, rather than fail confusingly on a
+ * missing column or table.
+ */
+export const DICT_SQLITE_SCHEMA_VERSION = 1
 
 export interface BuildResult {
   entries: number
@@ -73,8 +89,25 @@ export function build(): BuildResult {
 
   emitAllSchemas(emit)
 
-  buildSqlite(join(DIST_DIR, 'dict.sqlite'), enriched)
+  const sqlitePath = join(DIST_DIR, 'dict.sqlite')
+  buildSqlite(sqlitePath, enriched)
   outputs.push('dict.sqlite')
+
+  const sqliteBytes = readFileSync(sqlitePath)
+  emit(
+    'dict.sqlite.manifest.json',
+    JSON.stringify(
+      {
+        schema_version: DICT_SQLITE_SCHEMA_VERSION,
+        sha256: createHash('sha256').update(sqliteBytes).digest('hex'),
+        bytes: sqliteBytes.length,
+        entry_count: enriched.length,
+        reading_count: meta.reading_count,
+      },
+      null,
+      2,
+    ),
+  )
 
   return { entries: enriched.length, readings: meta.reading_count, outputs }
 }
@@ -82,6 +115,7 @@ export function build(): BuildResult {
 function buildSqlite(path: string, entries: EnrichedEntry[]): void {
   const db = new Database(path)
   db.pragma('journal_mode = WAL')
+  db.pragma(`user_version = ${DICT_SQLITE_SCHEMA_VERSION}`)
 
   db.exec(`
     CREATE TABLE entries (
