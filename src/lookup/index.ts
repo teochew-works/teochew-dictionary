@@ -3,7 +3,7 @@ import { join } from 'node:path'
 import Database from 'better-sqlite3'
 
 import { DIST_DIR } from '../paths.js'
-import { stripDiacritics, stripTones } from '../build/enrich.js'
+import { stripDiacritics, stripTones } from '@teochew/core'
 import type { EnrichedEntry } from '../build/enrich.js'
 
 /**
