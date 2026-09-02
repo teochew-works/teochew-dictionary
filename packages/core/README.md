@@ -55,3 +55,14 @@ repository secret that does not exist yet — someone with maintainer access has
 workflow can do anything. Actually cutting the first real release (npm account, whether `@teochew`
 is available as a scope, semver policy from here) is a deliberate decision for the maintainer to
 make, not something implied by this package existing.
+
+### Stopgap: a tarball release for `mobile/`
+
+`teochew-dictionary-app`'s `mobile/` lives in a separate repo, so it can't reach this package via
+the `file:` link `web/` uses here. Until a real npm publish happens, `.github/workflows/release-core-tarball.yml`
+(manual `workflow_dispatch` only, same reasoning as `publish-core.yml`) runs `npm pack` and uploads
+the resulting tarball as a GitHub Release asset, tagged `core-tarball-v<version>` — a different
+prefix than `publish-core.yml`'s `core-v*`, so triggering one never fires the other. `mobile/`
+depends on the resulting asset URL directly (npm supports installing a dependency straight from a
+`.tgz` URL). Bump this package's `version` and re-run the workflow to cut a new tarball; each tag is
+meant to stay immutable once published, unlike `dict.sqlite`'s rolling release.

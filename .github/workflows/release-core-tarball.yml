@@ -1,0 +1,49 @@
+name: release @teochew/core tarball
+
+# Manual trigger only — same reasoning as release-dict-sqlite.yml and the
+# npm-registry publish-core.yml: creating a public GitHub Release asset is a
+# real, visible action on this repo, not something that should happen
+# silently. This is the stopgap consumption path for teochew-dictionary-app's
+# mobile/ before @teochew/core is ever published to the npm registry — see
+# that repo's package.json dependency comment and this repo's packages/core
+# README.
+#
+# One release per package version (tag core-tarball-v<version>, immutable
+# once published — unlike dict.sqlite's rolling release, a version-pinned
+# dependency should never have its bytes silently swapped under a consumer).
+# Deliberately a different tag prefix than publish-core.yml's `core-v*` —
+# that prefix is reserved for the real npm-registry release trigger, and
+# pushing a `core-v*` tag here would also fire that workflow (which would
+# then fail on the missing NPM_TOKEN). Bump packages/core's package.json
+# version before re-running this for a new release.
+on:
+  workflow_dispatch: {}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: packages/core
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: packages/core/package-lock.json
+      - run: npm ci
+      - run: npm run check
+      - id: pack
+        run: |
+          echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+          npm pack
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "core-tarball-v${{ steps.pack.outputs.version }}" \
+            "teochew-core-${{ steps.pack.outputs.version }}.tgz" \
+            --title "@teochew/core v${{ steps.pack.outputs.version }}" \
+            --notes "Tarball dependency for consumers without npm-registry access — see packages/core/README.md."
