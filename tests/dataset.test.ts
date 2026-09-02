@@ -1,8 +1,9 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import type Database from 'better-sqlite3'
 
+import { stripDiacritics, stripTones } from '@teochew/core'
 import { build } from '../src/build/index.js'
-import { createEnricher, stripDiacritics, stripTones } from '../src/build/enrich.js'
+import { createEnricher } from '../src/build/enrich.js'
 import { lookup, openDb } from '../src/lookup/index.js'
 import {
   checkEntrySources,

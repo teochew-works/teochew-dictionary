@@ -5,6 +5,7 @@ import { applySandhiToSyllables, createSandhiResolver } from '../phonology/sandh
 import { parsePengim } from '../phonology/syllable.js'
 import { loadSources } from '../data/load.js'
 import { resolveLicenceOrThrow, withProjectAttribution } from '../data/licence.js'
+import { stripDiacritics, stripTones } from '@teochew/core'
 import type { Entry, Reading, Source, Audio, AudioClip, Confidence, AudioReference, EnrichedReading, EnrichedEntry } from '@teochew/core'
 import type { Syllable } from '../phonology/syllable.js'
 import type { SandhiResult } from '../phonology/sandhi.js'
@@ -24,16 +25,6 @@ import type { SandhiResult } from '../phonology/sandhi.js'
  */
 
 export type { AudioReference, EnrichedReading, EnrichedEntry }
-
-/** Strip tone digits: `dio5 ziu1` → `dio ziu`. Users rarely type tones. */
-export function stripTones(pengim: string): string {
-  return pengim.replace(/[1-8]/gu, '')
-}
-
-/** Strip combining diacritics from POJ so `tio` finds `tiô`. */
-export function stripDiacritics(s: string): string {
-  return s.normalize('NFD').replace(/\p{M}/gu, '').normalize('NFC')
-}
 
 const CONFIDENCE_RANK: Record<Confidence, number> = { high: 0, medium: 1, low: 2 }
 
