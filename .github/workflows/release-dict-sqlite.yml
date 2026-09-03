@@ -6,6 +6,11 @@ name: release dict.sqlite
 # main until a maintainer has decided this workflow is ready to run
 # unattended. See teochew-dictionary-app's ADR-0006 for the freshness
 # protocol this release feeds.
+#
+# Also publishes sounds.json (~1.7MB) to the same rolling release — the data
+# behind teochew-dictionary-app's Sounds browser. Unlike dict.sqlite, nothing
+# on the mobile side runtime-checks sounds.json for updates yet; it's only
+# refreshed at mobile build/dev time (mobile/scripts/fetch-dict-sqlite.mjs).
 on:
   workflow_dispatch: {}
 
@@ -38,5 +43,5 @@ jobs:
           gh release view dict-sqlite >/dev/null 2>&1 || \
             gh release create dict-sqlite \
               --title "dict.sqlite (rolling)" \
-              --notes "Auto-published dict.sqlite + dict.sqlite.manifest.json. Always reflects the latest successful build from main — see teochew-dictionary-app's ADR-0006 for how a consumer checks freshness against this release."
-          gh release upload dict-sqlite dist/dict.sqlite dist/dict.sqlite.manifest.json --clobber
+              --notes "Auto-published dict.sqlite + dict.sqlite.manifest.json + sounds.json. Always reflects the latest successful build from main — see teochew-dictionary-app's ADR-0006 for how a consumer checks dict.sqlite freshness against this release."
+          gh release upload dict-sqlite dist/dict.sqlite dist/dict.sqlite.manifest.json dist/sounds.json --clobber
