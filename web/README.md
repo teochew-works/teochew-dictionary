@@ -66,9 +66,11 @@ npm run preview
 npm run test
 ```
 
-Covers the SM-2 scheduler's scheduling math (`src/srs/scheduler.test.ts`),
-the Fuse.js search wrapper (`src/search/searchIndex.test.ts`), and a couple
-of component smoke tests. IndexedDB persistence itself isn't exercised by
+Covers the Fuse.js search wrapper (`src/search/searchIndex.test.ts`), the
+deck store and drag logic, and a couple of component smoke tests. The SM-2
+scheduling math and the deck/search pipeline are tested where they live, in
+`@teochew/core` (`packages/core/src/srs/scheduler.test.ts` and siblings — run
+`npm run check` there). IndexedDB persistence itself isn't exercised by
 this suite (`jsdom` doesn't implement IndexedDB) — verify that manually by
 grading a few flashcards, reloading the page, and confirming they don't
 reappear as new (DevTools → Application → IndexedDB →
@@ -81,9 +83,17 @@ The decisions behind this section are recorded in [`docs/adrs/`](../docs/adrs/RE
 runtime), [ADR-0020](../docs/adrs/adr-0020.md) (the hand-rolled SM-2 scheduler and where state
 lives), [ADR-0021](../docs/adrs/adr-0021.md) (one drag engine, keyboard parity, undo instead of
 confirmation), [ADR-0015](../docs/adrs/adr-0015.md) (why clip licences are credited separately
-from the entry's) and [ADR-0023](../docs/adrs/adr-0023.md) (installable as a PWA, and why Workbox
-is an exception to hand-rolling).
+from the entry's), [ADR-0023](../docs/adrs/adr-0023.md) (installable as a PWA, and why Workbox
+is an exception to hand-rolling) and [ADR-0024](../docs/adrs/adr-0024.md) (the logic this app
+shares with the mobile app, and where it lives).
 
+- The pure logic — entry schemas and types, the SM-2 scheduler, the deck
+  pipeline, card filters and sorting, the flashcard-eligibility predicates —
+  is imported from `@teochew/core` (`../packages/core`, linked via `file:`),
+  not defined here ([ADR-0024](../docs/adrs/adr-0024.md)). This directory
+  keeps the React, IndexedDB and localStorage side. Fix shared logic there,
+  and remember to `npm run build` in `packages/core` before this project's
+  checks will see it.
 - Vite + React + TypeScript, no router — Dictionary, Flashcards, and Sounds
   are in-app views, not separate routes; the dictionary's entry detail is a
   master-detail pane within its own view.
@@ -91,7 +101,8 @@ is an exception to hand-rolling).
   `search_keys` (headword, Peng'im with/without tones, POJ with/without
   diacritics, English glosses — see `src/build/enrich.ts` at the repo root).
 - Flashcards ([ADR-0020](../docs/adrs/adr-0020.md)): a hand-rolled SM-2-style
-  scheduler (`src/srs/scheduler.ts`, no dependency) with a 3-button grading UI (Again/Good/Easy), persisted via
+  scheduler (`@teochew/core`'s `srs/scheduler.ts`, no dependency) with a
+  3-button grading UI (Again/Good/Easy), persisted via
   [`idb`](https://github.com/jakearchibald/idb) (IndexedDB `teochew-flashcards`
   database, `cards` object store keyed by entry id).
 - The dictionary list is capped, not virtualised (`PAGE_SIZE` in
@@ -103,7 +114,7 @@ is an exception to hand-rolling).
   tokenise) before painting.
 - Decks and the table (issues #187/#189): decks live in a library rail and are
   dragged onto "the table" to enter a session. Everything on the table is
-  unioned into one review queue (`src/decks/pipeline.ts`), and the session's
+  unioned into one review queue (`@teochew/core`'s `decks/pipeline.ts`), and the session's
   filters apply to that whole pool rather than to any one deck — which is why
   the session bar carries a funnel readout naming what each stage removed.
   Deck membership, the table, and saved groups persist to localStorage under
@@ -170,7 +181,7 @@ is an exception to hand-rolling).
     otherwise render four full-width native players.
 
   An "Only entries with audio" checkbox filters the list to entries that have
-  a clip (`src/search/filters.ts`), applied after search and before
+  a clip (`@teochew/core`'s `search/filters.ts`), applied after search and before
   sorting/grouping so it works in every sort mode. It is not persisted, unlike
   the licensing toggle: returning to a dictionary that silently hides almost
   everything is worse than re-ticking a box.
