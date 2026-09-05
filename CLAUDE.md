@@ -35,6 +35,14 @@ generated and gitignored. See [ADR-0005](docs/adrs/adr-0005.md).
 time from the phonology tables. A contributor writes one romanisation, not four, and fixing a
 mapping re-derives every affected entry. See [ADR-0001](docs/adrs/adr-0001.md).
 
+**Shared logic lives in `packages/core/`, published as `@teochew/core`.** The schemas, the pure
+phonology derivation, the SM-2 scheduler, and the deck/search pipeline are consumed from that
+package by `web/` here (via a `file:` link) and by the separate
+[teochew-dictionary-app](https://github.com/teochew-works/teochew-dictionary-app) mobile app (via
+a version-pinned release tarball). The root `src/` and `web/src/` keep only the edges — disk
+loading, IndexedDB, React. See [ADR-0024](docs/adrs/adr-0024.md) and
+[packages/core/README.md](packages/core/README.md).
+
 ## Invariants
 
 Each of these is a decision with a record, not a style preference. Do not work around one without
@@ -48,8 +56,10 @@ diverging from it.
    differs — never a full copy of the syllabary. → [ADR-0002](docs/adrs/adr-0002.md)
 3. **Every phonology mapping carries a `confidence`.** Raising one is an argument: cite `sources:`.
    Derived forms propagate the *weakest* mapping used. → [ADR-0003](docs/adrs/adr-0003.md)
-4. **Schemas are Zod, in `src/schema/`.** Types and `dist/*-schema.json` are both derived from
-   them — never hand-edit an emitted schema. → [ADR-0004](docs/adrs/adr-0004.md)
+4. **Schemas are Zod.** The entry and phonology schemas live in `packages/core/src/schema/`;
+   `src/schema/` keeps only the root-tooling ones (inventory, starter decks) and the emitter. Types
+   and `dist/*-schema.json` are both derived from them — never hand-edit an emitted schema.
+   → [ADR-0004](docs/adrs/adr-0004.md), [ADR-0024](docs/adrs/adr-0024.md)
 5. **Store nothing derivable.** If it can be computed from `data/`, compute it in `src/build/` and
    ship it in `dist/`. → [ADR-0005](docs/adrs/adr-0005.md)
 6. **Importers write only to `data/staging/`, never to `data/entries/`.** Merging is a human act —
@@ -79,6 +89,11 @@ diverging from it.
 14. **The service worker precaches the shell only — never `dict.json`.** Offline data is a separate,
     explicit opt-in handled by hand through the Cache Storage API, not a Workbox route.
     → [ADR-0023](docs/adrs/adr-0023.md)
+15. **Shared logic is changed in `packages/core/`, once — never patched in the `src/` wrappers or
+    re-copied into `web/src/`.** Schemas, phonology derivation, the scheduler, the deck/search
+    pipeline and their tests all live there; `src/` and `web/` keep only disk, database and React
+    adapters. A change mobile needs is not finished until core's `version` is bumped, the tarball
+    release is cut, and the app repo's pin is updated. → [ADR-0024](docs/adrs/adr-0024.md)
 
 ## Common Commands
 
@@ -110,14 +125,32 @@ npm run backfill:mandarin-level -- <path> [-- --write]
 npm run schema                                 # emit the JSON Schemas alone
 ```
 
-In `web/` (its own project): `npm run dev`, `npm run check`, `npm run build`. Both projects'
-checks run separately in CI — see [.github/workflows/ci.yml](.github/workflows/ci.yml).
+In `packages/core/` (its own project, consumed by the root and by `web/` through a `file:` link):
+
+```bash
+npm run check          # typecheck + test
+npm run build          # tsc → dist/ — the root and web/ import dist/, so run this after
+                       #   editing packages/core/src/ or their checks test the stale build
+```
+
+In `web/` (its own project): `npm run dev`, `npm run check`, `npm run build`. All three projects'
+checks run as separate jobs in CI — see [.github/workflows/ci.yml](.github/workflows/ci.yml).
+
+Releasing a core change to the mobile app (manual, on purpose — see
+[packages/core/README.md § Making a change](packages/core/README.md#making-a-change)): bump
+`version` in `packages/core/package.json`, merge, then dispatch
+`release-core-tarball.yml`; the app repo bumps the tarball URL it pins.
 
 ## Code Architecture
 
 ```
-src/schema/       Zod schemas — source of truth for types + JSON Schema   (ADR-0004)
-src/phonology/    syllable parser, IPA/POJ derivation, sandhi, inventory  (ADR-0001, ADR-0002)
+packages/core/    @teochew/core: entry/phonology schemas, pure phonology
+                    derivation, SM-2 scheduler, deck/search pipeline —
+                    shared with web/ and the mobile app                    (ADR-0024, ADR-0004)
+src/schema/       root-only schemas (inventory, starter decks) + the JSON
+                    Schema emitter over core's schemas                     (ADR-0004)
+src/phonology/    loads the phonology tables from data/ and wraps core's
+                    derivation; the syllable inventory                     (ADR-0001, ADR-0002)
 src/build/        enrichment and artifact generation                      (ADR-0005)
 src/validate/     whole-dataset validation                                (ADR-0012)
 src/lookup/       search over the built SQLite
@@ -136,6 +169,7 @@ web/src/pwa/      installable PWA: precached shell, opt-in offline data    (ADR-
 | [README.md](README.md)                               | How to use the project today (**how**)                         |
 | [data/phonology/REVIEW.md](data/phonology/REVIEW.md) | Open linguistic questions, and what resolves them              |
 | [web/README.md](web/README.md)                       | Frontend architecture, dev and deployment                      |
+| [packages/core/README.md](packages/core/README.md)   | What `@teochew/core` holds, the boundary rule, how to release  |
 | [AUDIO-CONSENT.md](AUDIO-CONSENT.md)                 | Speaker consent process (tracked outside the repo)             |
 | [data/phonology/TTS.md](data/phonology/TTS.md)       | Why synthesis was rejected ([ADR-0016](docs/adrs/adr-0016.md)) |
 | [docs/adrs/adr-0006.md](docs/adrs/adr-0006.md)       | Why importers may never write to `data/entries/`               |

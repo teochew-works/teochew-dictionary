@@ -690,7 +690,7 @@ referencing #68 without closing it — until the batch that finds zero
 
 ### Wiktionary sense/usage tags (issue #102)
 
-`senses[].tags` (`src/schema/entry.ts`) is an open `string[]` of
+`senses[].tags` (`packages/core/src/schema/entry.ts`) is an open `string[]` of
 usage/register labels — `dialectal`, `figuratively`, `obsolete`,
 `abbreviation`, ... — and `senses[].alt_of` is the headword(s) a sense is an
 alternate form or abbreviation of, both sourced from wiktextract's per-sense
@@ -756,7 +756,7 @@ range reports, keeps every byte the script doesn't touch untouched — see
 
 ### Wiktionary sense topics (issue #105)
 
-`senses[].topics` (`src/schema/entry.ts`) is a sibling field to
+`senses[].topics` (`packages/core/src/schema/entry.ts`) is a sibling field to
 `senses[].tags`, sourced from wiktextract's own `senses[].topics`
 (`.cache/teochew-relevant.min.jsonl`, see #84) — a separate list wiktextract
 already splits out at extraction time. Where `tags` carries usage/register
@@ -791,7 +791,7 @@ already-merged entries in `data/entries/*.yaml` the same way it writes
 
 ### CEFR proficiency `level`, Mandarin-cognate signal (issue #110)
 
-`entrySchema.level` (`src/schema/entry.ts`) is a CEFR A1–C2 tier, distinct
+`entrySchema.level` (`packages/core/src/schema/entry.ts`) is a CEFR A1–C2 tier, distinct
 from `frequency`: it tracks curriculum difficulty rather than corpus
 commonness, so a common word can be late-taught and a rare one early-taught.
 No ready-made graded system exists for Teochew, so this project derives one

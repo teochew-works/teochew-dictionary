@@ -239,7 +239,7 @@ independently-attested character, that word gets its own entry filed under
 the etymon — not a second reading nested under the borrowed graph. The
 borrowed graph is recorded in a `note` on the etymon's reading, not via
 `variants`: that field already means "alternative character writings of the
-same word" (`src/schema/entry.ts`), and a 訓讀 graph is not an alternative
+same word" (`packages/core/src/schema/entry.ts`), and a 訓讀 graph is not an alternative
 writing of the etymon — it is the *only* writing anyone actually uses, and it
 belongs to a different character. Overloading `variants` would blur "this
 word is occasionally spelled another way" with "this word is always spelled
@@ -461,7 +461,7 @@ inventory doesn't currently carry.
 **Decision: whole-syllable clips, not per-component.** A clip is recorded for
 one canonical Peng'im syllable (`dio5`, matching a `syllable-inventory.yaml`
 item key exactly), in one variety — never for an isolated initial, medial,
-nucleus, coda, or tone. `audioSchema` in `src/schema/phonology.ts` follows the
+nucleus, coda, or tone. `audioSchema` in `packages/core/src/schema/phonology.ts` follows the
 existing `mapping` shape (`confidence`/`note`/`sources`) as the issue asked,
 plus clip-specific fields: `file`, `speaker`, `recorded`, `checksum`.
 
@@ -555,10 +555,10 @@ human-browsable for anyone spot-checking an upload by hand. Contrast with a clou
 (S3/R2/GCS): those would need a new account, credentials, and a billing relationship this project
 doesn't otherwise have.
 
-**How the schema embodies it.** `audioClip.url` (`src/schema/phonology.ts`) is a full GitHub
-Release asset download URL (`.../releases/download/<tag>/<asset>`, regex-constrained, and
-deliberately not the floating `/releases/latest/download/...` alias — a stored reference must be
-pinned to a tag so it can't silently start pointing at different bytes later). It replaces §11's
+**How the schema embodies it.** `audioClip.url` (`packages/core/src/schema/phonology.ts`) is a
+full GitHub Release asset download URL (`.../releases/download/<tag>/<asset>`, regex-constrained,
+and deliberately not the floating `/releases/latest/download/...` alias — a stored reference must
+be pinned to a tag so it can't silently start pointing at different bytes later). It replaces §11's
 provisional `file` field (a bare filename with an implicit local-directory convention), which
 `audioClip`'s own issue #31 design left for this issue to settle. `checksum` is promoted from
 optional to required: with the clip hosted externally there is no git-tracked local copy to
@@ -758,7 +758,7 @@ adding `audioSchema` — it's a real, independent decision about what a
 generated artifact promises, and every phonology schema was exactly as
 absent as `audioSchema`, including `varietySchema` since #30. Once actually
 weighed on its own: the phonology data files are as much a validated part of
-this project as the lexicon (`src/schema/phonology.ts`'s own header says so),
+this project as the lexicon (`packages/core/src/schema/phonology.ts`'s own header says so),
 and `emit-schema.ts`'s original rationale — "editors and non-TypeScript
 consumers can validate ... without running our tooling" — applies to a
 contributor hand-authoring a new variety overlay exactly as much as it does
@@ -784,7 +784,7 @@ problem the issue exists to avoid, so it's emitted too
 (`pengim-schema.json`).
 
 **The variety enum.** Raised alongside this decision: `reading.variety`
-(`src/schema/entry.ts`) is `z.string()` with no static enum — its legal
+(`packages/core/src/schema/entry.ts`) is `z.string()` with no static enum — its legal
 values are derived at runtime from `listVarieties()`'s directory listing
 (`src/phonology/load.ts`), not from any zod type, and checked only by
 `src/validate/index.ts`. No amount of broadening `dist/schema.json` — merged
@@ -804,7 +804,7 @@ actual enforcement point for this project's own data.
 
 **Out of scope, named explicitly (same reason §11 named `dist/schema.json`
 itself rather than deciding it silently).** `sourcesFileSchema`
-(`src/schema/entry.ts`, backs `data/sources.yaml`) is not one of the
+(`packages/core/src/schema/entry.ts`, backs `data/sources.yaml`) is not one of the
 phonology-side schemas this issue asked about and is left unemitted. The
 *enriched* output shape — `EnrichedEntry`/`EnrichedReading` from
 `src/build/enrich.ts`, i.e. what `dict.json`/`dict.ndjson` actually contain
@@ -825,7 +825,7 @@ recordings (e.g. `bhi7 jui2`), not the single-syllable unit `audioClip`
 alone can paper over.
 
 **Decision: a new `wordClips` map, not a repurposed `clips`.**
-`audioSchema` (`src/schema/phonology.ts`) gains `wordClips:
+`audioSchema` (`packages/core/src/schema/phonology.ts`) gains `wordClips:
 z.record(audioClip).optional()`, keyed by a reading's full space-joined
 pengim string (e.g. `bhi7 jui2`) instead of one syllable, reusing
 `audioClip`'s shape verbatim — no new clip-level fields. Same reasoning as
@@ -1000,7 +1000,7 @@ separate follow-on.
 stale.** Issue #128's merge commits landed real clips —
 `data/phonology/audio/chaozhou.yaml` currently holds 110 per-syllable clips
 and 8 whole-word clips. `EntryDetail`'s players and the "Only entries with
-audio" filter (`web/src/search/filters.ts`) now render real content for the
+audio" filter (`packages/core/src/search/filters.ts`) now render real content for the
 Chaozhou entries those keys resolve to. Coverage is still partial (most
 Chaozhou syllables remain unrecorded, and Shantou/Chaoyang have none), so
 most entries still resolve every slot to `null` — this isn't "done," just no
