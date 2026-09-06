@@ -4291,12 +4291,12 @@ clips:
     m7:
       [
         {
-            url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-teochew-dictionary-audio/m7.webm,
+            url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-teochew-dictionary-audio-4/m7.webm,
             confidence: high,
             sources: [ teochew-dictionary-audio ],
             speaker: jky,
-            recorded: 2026-08-24,
-            checksum: sha256:16e358f6efba9d21a42e1cecea7f4d422239968f389f4ba9a93808abc2448f49
+            recorded: 2026-09-06,
+            checksum: sha256:b9cf1abd92ba3ad0a9a702fedc2d0dbdde93aa2aa5925fb1b2391943ea783a57
           }
       ],
     pang1:
@@ -4324,12 +4324,12 @@ clips:
     ung7:
       [
         {
-            url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-teochew-dictionary-audio/ung7.webm,
+            url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-teochew-dictionary-audio-4/ung7.webm,
             confidence: high,
             sources: [ teochew-dictionary-audio ],
             speaker: jky,
-            recorded: 2026-08-24,
-            checksum: sha256:abf91f81855422704f650e34e9d718deaeae2020bd0eef12c9dfd20a9f7a5d49
+            recorded: 2026-09-06,
+            checksum: sha256:89b0a55841be1387b425e9746ae46facd16fcb41e7e0dcc62087effe313fe95e
           }
       ],
     zoin5:
@@ -5006,12 +5006,12 @@ clips:
     ung1:
       [
         {
-            url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-teochew-dictionary-audio/ung1.webm,
+            url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-teochew-dictionary-audio-4/ung1.webm,
             confidence: high,
             sources: [ teochew-dictionary-audio ],
             speaker: jky,
-            recorded: 2026-08-25,
-            checksum: sha256:0975d1a214a06edc838e35143d6a9bc511ca7ec1a8057e6554bc15a3fb2ccf32
+            recorded: 2026-09-06,
+            checksum: sha256:03b3cfb1507bbedc939c02e8270c10e7a27f4c6cfcc83866c53f017bd9f5259e
           }
       ],
     zion6:
@@ -5952,12 +5952,12 @@ clips:
     m6:
       [
         {
-            url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-teochew-dictionary-audio/m6.webm,
+            url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-teochew-dictionary-audio-4/m6.webm,
             confidence: high,
             sources: [ teochew-dictionary-audio ],
             speaker: jky,
-            recorded: 2026-08-25,
-            checksum: sha256:ab3eeb4cabec1a05ad36e0c8dd0c4c26f292f8e7a7be04114c2302746b8e0725
+            recorded: 2026-09-06,
+            checksum: sha256:5e86f40562a98e188da205030f7a2a053421e59e1a490950ece4cc84dfbf7d0f
           }
       ],
     miang2:
@@ -33887,6 +33887,72 @@ clips:
             speaker: jky,
             recorded: 2026-09-06,
             checksum: sha256:044ceb0941da76aa6d1b2da29980291c3bf4400b82c687a2a230cf86077e39b4
+          }
+      ],
+    ung2:
+      [
+        {
+            url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-teochew-dictionary-audio-4/ung2.webm,
+            confidence: high,
+            sources: [ teochew-dictionary-audio ],
+            speaker: jky,
+            recorded: 2026-09-06,
+            checksum: sha256:8f14fce892db8393e8f73e882dc9fc53b2242a78de46fc71e9e142a5e97423bf
+          }
+      ],
+    ung3:
+      [
+        {
+            url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-teochew-dictionary-audio-4/ung3.webm,
+            confidence: high,
+            sources: [ teochew-dictionary-audio ],
+            speaker: jky,
+            recorded: 2026-09-06,
+            checksum: sha256:add735bbbee9358ff92d3c6e7fad3c14abfe8ff3a8d40e5c76e394a93dd2939a
+          }
+      ],
+    ung5:
+      [
+        {
+            url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-teochew-dictionary-audio-4/ung5.webm,
+            confidence: high,
+            sources: [ teochew-dictionary-audio ],
+            speaker: jky,
+            recorded: 2026-09-06,
+            checksum: sha256:b27c2fff5e83672a5e35d5b6d547de8e49da3e9e4aded64e7f7954aa393149f3
+          }
+      ],
+    ung6:
+      [
+        {
+            url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-teochew-dictionary-audio-4/ung6.webm,
+            confidence: high,
+            sources: [ teochew-dictionary-audio ],
+            speaker: jky,
+            recorded: 2026-09-06,
+            checksum: sha256:f4e7cc21bdbf67aab216bc537f54ff904a6e0082236eac9964fe9e4b351596fb
+          }
+      ],
+    m2:
+      [
+        {
+            url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-teochew-dictionary-audio-4/m2.webm,
+            confidence: high,
+            sources: [ teochew-dictionary-audio ],
+            speaker: jky,
+            recorded: 2026-09-06,
+            checksum: sha256:3e97a2e900554c659cfd376eb7f63d7253b0fbc02d31498c15cd7545e1ee35ae
+          }
+      ],
+    m5:
+      [
+        {
+            url: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-teochew-dictionary-audio-4/m5.webm,
+            confidence: high,
+            sources: [ teochew-dictionary-audio ],
+            speaker: jky,
+            recorded: 2026-09-06,
+            checksum: sha256:958a87e61cbef8d561d2e032d91f4cfcbcd33743f809ef9f74e1aa623321e78d
           }
       ]
   }
