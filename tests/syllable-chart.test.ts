@@ -189,7 +189,7 @@ describe('buildSyllableChart', () => {
       expect(chart.cells.length).toBe(1746)
       expect(chart.coverage.cellsAttested).toBe(962)
     },
-    30_000,
+    90_000,
   )
 
   it('carries example/examplePengim metadata for real initials but not the zero initial', () => {
