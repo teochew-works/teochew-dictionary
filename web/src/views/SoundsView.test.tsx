@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
-import { SoundsView } from './SoundsView'
+import { SoundsView, parseSoundsRoute, formatSoundsRoute, type SoundsRoute } from './SoundsView'
 import type { SoundsData } from '../types/sounds'
 import type { SyllableChart } from '../types/syllable-chart'
 
@@ -131,6 +131,77 @@ describe('SoundsView', () => {
     expect(screen.getByLabelText('Jump to initial')).toBeInTheDocument()
     const pengims = [...container.querySelectorAll('.sound-row__pengim')].map((el) => el.textContent)
     expect(pengims).toEqual(['a1', 'ai3', 'bho5'])
+  })
+})
+
+describe('parseSoundsRoute / formatSoundsRoute (issue #226)', () => {
+  it('parses an empty string as alphabetical, the default', () => {
+    expect(parseSoundsRoute('')).toEqual({ mode: 'alphabetical' })
+  })
+
+  it('round-trips frequency mode', () => {
+    const route: SoundsRoute = { mode: 'frequency' }
+    expect(parseSoundsRoute('frequency')).toEqual(route)
+    expect(formatSoundsRoute(route)).toBe('sounds/frequency')
+  })
+
+  it('round-trips chart mode with no cell selected', () => {
+    const route: SoundsRoute = { mode: 'chart', cell: null }
+    expect(parseSoundsRoute('chart')).toEqual(route)
+    expect(formatSoundsRoute(route)).toBe('sounds/chart')
+  })
+
+  it('round-trips chart mode with a selected cell, including a zero (empty-string) initial', () => {
+    const route: SoundsRoute = { mode: 'chart', cell: { initial: '', rime: 'o' } }
+    expect(formatSoundsRoute(route)).toBe('sounds/chart//o')
+    expect(parseSoundsRoute('chart//o')).toEqual(route)
+  })
+
+  it('encodes and decodes special characters in a cell', () => {
+    const route: SoundsRoute = { mode: 'chart', cell: { initial: 'a/b', rime: 'c d' } }
+    const formatted = formatSoundsRoute(route)
+    expect(formatted).toBe('sounds/chart/a%2Fb/c%20d')
+    expect(parseSoundsRoute(formatted.slice('sounds/'.length))).toEqual(route)
+  })
+
+  it('falls back to alphabetical for an unrecognized mode', () => {
+    expect(parseSoundsRoute('bogus')).toEqual({ mode: 'alphabetical' })
+  })
+
+  it('treats a malformed chart cell (no rime segment) as no selection', () => {
+    expect(parseSoundsRoute('chart/b')).toEqual({ mode: 'chart', cell: null })
+  })
+})
+
+describe('SoundsView routing (issue #226)', () => {
+  const FIXTURE_WITH_INITIAL: SoundsData = {
+    variety: 'chaozhou',
+    sounds: [
+      { pengim: 'bho5', ipa: 'bo⁵⁵', initial: 'bh', rime: 'o', tone: 5, occurrences: 1, examples: [], clips: [] },
+    ],
+  }
+
+  it('starts in the mode given by a controlled route, not the uncontrolled default', async () => {
+    stubFetch(FIXTURE)
+    render(<SoundsView route={{ mode: 'frequency' }} onRouteChange={() => {}} />)
+
+    await screen.findByText('a³³')
+    expect(screen.getByRole('button', { name: 'Frequency' })).toHaveClass('sounds-view__sort-button--active')
+  })
+
+  it('reports mode changes through onRouteChange instead of managing them internally', async () => {
+    stubFetch(FIXTURE_WITH_INITIAL)
+    const onRouteChange = vi.fn()
+    const { rerender } = render(<SoundsView route={{ mode: 'alphabetical' }} onRouteChange={onRouteChange} />)
+    await screen.findByText('bo⁵⁵')
+
+    fireEvent.click(screen.getByRole('button', { name: 'Frequency' }))
+    expect(onRouteChange).toHaveBeenCalledWith({ mode: 'frequency' })
+
+    // A controlled component doesn't move on its own — the parent has to feed the new route back.
+    expect(screen.getByRole('button', { name: 'Frequency' })).not.toHaveClass('sounds-view__sort-button--active')
+    rerender(<SoundsView route={{ mode: 'frequency' }} onRouteChange={onRouteChange} />)
+    expect(screen.getByRole('button', { name: 'Frequency' })).toHaveClass('sounds-view__sort-button--active')
   })
 })
 

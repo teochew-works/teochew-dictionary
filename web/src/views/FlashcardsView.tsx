@@ -94,6 +94,34 @@ function useComposedItemRef(...factories: ((id: string) => ItemRef)[]): (id: str
 
 const EMPTY_STATS: DeckStats = { total: 0, kept: 0, due: 0, fresh: 0, learned: 0 }
 
+/** What the bottom dock is showing: nothing, the dictionary, one deck's cards, or the starter-deck marketplace. */
+export type FlashcardsDrawer = { mode: 'dictionary' } | { mode: 'deck'; deckId: string } | { mode: 'marketplace' } | null
+
+/** Parses the part of the hash after `flashcards/` (or `''` if there was none). */
+export function parseFlashcardsDrawer(rest: string): FlashcardsDrawer {
+  const slash = rest.indexOf('/')
+  const mode = slash === -1 ? rest : rest.slice(0, slash)
+  const arg = slash === -1 ? '' : rest.slice(slash + 1)
+  if (mode === 'marketplace') return { mode: 'marketplace' }
+  if (mode === 'dictionary') return { mode: 'dictionary' }
+  if (mode === 'deck' && arg) return { mode: 'deck', deckId: decodeURIComponent(arg) }
+  return null
+}
+
+/** Formats a `FlashcardsDrawer` back into the part of the hash after `flashcards/`. Closed (the default) has no suffix. */
+export function formatFlashcardsDrawer(drawer: FlashcardsDrawer): string {
+  switch (drawer?.mode) {
+    case 'marketplace':
+      return 'flashcards/marketplace'
+    case 'deck':
+      return `flashcards/deck/${encodeURIComponent(drawer.deckId)}`
+    case 'dictionary':
+      return 'flashcards/dictionary'
+    default:
+      return 'flashcards'
+  }
+}
+
 /**
  * The flashcards screen: a library of decks on the left, the decks in play
  * on the table across the top, and the card under review below.
@@ -110,7 +138,14 @@ const EMPTY_STATS: DeckStats = { total: 0, kept: 0, due: 0, fresh: 0, learned: 0
  * and vice versa: neither half can resolve a drop on its own. See
  * decks/dnd/useDeckDrag.ts.
  */
-export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
+interface FlashcardsViewProps {
+  entries: EnrichedEntry[]
+  /** URL-controlled drawer state (issue #226). Omit for standalone/uncontrolled use, e.g. in tests. */
+  drawer?: FlashcardsDrawer
+  onDrawerChange?: (drawer: FlashcardsDrawer) => void
+}
+
+export function FlashcardsView({ entries, drawer: controlledDrawer, onDrawerChange }: FlashcardsViewProps) {
   const decksStore = useDecksStore()
   const [mode, setMode] = useState<PromptMode>(readPromptMode)
   const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
@@ -118,10 +153,9 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
   const [fullAudioOnly, setFullAudioOnly] = useState<boolean>(readFullAudioOnly)
   const [announcement, setAnnouncement] = useState('')
   const announce = useCallback((message: string) => setAnnouncement(message), [])
-  /** What the bottom dock is showing: nothing, the dictionary, one deck's cards, or the starter-deck marketplace. */
-  const [drawer, setDrawer] = useState<{ mode: 'dictionary' } | { mode: 'deck'; deckId: string } | { mode: 'marketplace' } | null>(
-    null,
-  )
+  const [internalDrawer, setInternalDrawer] = useState<FlashcardsDrawer>(null)
+  const drawer = controlledDrawer !== undefined ? controlledDrawer : internalDrawer
+  const setDrawer = onDrawerChange ?? setInternalDrawer
   const [filtersOpen, setFiltersOpen] = useState(false)
   // Phone only (CSS) — the rail becomes an off-canvas drawer with a scrim
   // instead of a column beside `.main` (mobile.md §3.4). Unrelated to
@@ -355,6 +389,12 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
 
   const viewedDeck = drawer?.mode === 'deck' ? (decksById.get(drawer.deckId) ?? null) : null
   const drawerOpen = drawer?.mode === 'dictionary' || drawer?.mode === 'marketplace' || viewedDeck !== null
+
+  // A deck id from a URL (issue #226) can point at a deleted or otherwise
+  // unknown deck — close the drawer rather than leaving a dead link open.
+  useEffect(() => {
+    if (drawer?.mode === 'deck' && !viewedDeck) setDrawer(null)
+  }, [drawer, viewedDeck, setDrawer])
 
   const cardSetsById = useMemo(() => new Map(allDecks.map((d) => [d.id, new Set(d.cards)])), [allDecks])
 
@@ -856,7 +896,7 @@ export function FlashcardsView({ entries }: { entries: EnrichedEntry[] }) {
               type="button"
               className="pill"
               aria-expanded={drawer?.mode === 'dictionary'}
-              onClick={() => setDrawer((d) => (d?.mode === 'dictionary' ? null : { mode: 'dictionary' }))}
+              onClick={() => setDrawer(drawer?.mode === 'dictionary' ? null : { mode: 'dictionary' })}
             >
               {drawer?.mode === 'dictionary' ? '✕ Done adding' : '＋ Add cards'}
             </button>
