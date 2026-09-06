@@ -125,6 +125,22 @@ export function AboutView() {
           .
         </p>
       </section>
+
+      <section className="about-view__section">
+        <h3>Privacy</h3>
+        <p>
+          This site counts visits with{' '}
+          <a href="https://www.goatcounter.com/" target="_blank" rel="noopener noreferrer">
+            GoatCounter
+          </a>
+          , to get a rough sense of how many people use the dictionary. It doesn't use cookies and
+          doesn't collect anything that identifies you personally — see GoatCounter's{' '}
+          <a href="https://www.goatcounter.com/privacy" target="_blank" rel="noopener noreferrer">
+            privacy policy
+          </a>{' '}
+          for what it does record.
+        </p>
+      </section>
     </div>
   )
 }
