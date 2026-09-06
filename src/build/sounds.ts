@@ -37,6 +37,8 @@ export interface SoundExample {
 /** A published recording of this sound, stripped down to what playback needs. */
 export interface SoundClip {
   url: string
+  /** A CAF/Opus alternate for iOS-native playback (issue #228), when one exists. */
+  cafUrl?: string
   speaker?: string
 }
 
@@ -136,9 +138,11 @@ export function buildSounds(
       gloss: entry.senses[0]?.gloss_en[0] ?? '',
     }))
 
-    const clips = (audio?.clips[syllableRaw] ?? []).map((c) =>
-      c.speaker ? { url: c.url, speaker: c.speaker } : { url: c.url },
-    )
+    const clips = (audio?.clips[syllableRaw] ?? []).map((c) => ({
+      url: c.url,
+      ...(c.cafUrl ? { cafUrl: c.cafUrl } : {}),
+      ...(c.speaker ? { speaker: c.speaker } : {}),
+    }))
 
     const parsed = parseSyllable(syllableRaw, scheme)
     sounds.push({

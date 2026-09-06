@@ -147,6 +147,31 @@ describe('buildSounds', () => {
     expect(a1.clips).toEqual([{ url: 'https://a.example/1', speaker: 'x' }, { url: 'https://a.example/2' }])
   })
 
+  it("carries a clip's cafUrl through when present (issue #228)", () => {
+    const audio: Audio = {
+      audio: { id: 'chaozhou', variety: 'chaozhou' },
+      clips: {
+        a1: [
+          {
+            url: 'https://a.example/1.webm',
+            cafUrl: 'https://a.example/1.caf',
+            cafChecksum: `sha256:${'c'.repeat(64)}`,
+            confidence: 'high',
+            sources: ['x'],
+            checksum: `sha256:${'a'.repeat(64)}`,
+          },
+        ],
+      },
+    }
+    const data = buildSounds(
+      [entry({ id: 'a', headword: '阿', readings: [{ pengim: 'a1', variety: 'chaozhou' }] })],
+      undefined,
+      audio,
+    )
+    const a1 = data.sounds.find((s) => s.pengim === 'a1')!
+    expect(a1.clips).toEqual([{ url: 'https://a.example/1.webm', cafUrl: 'https://a.example/1.caf' }])
+  })
+
   it('gives a syllable with no recorded clips an empty list, not undefined', () => {
     const data = buildSounds(
       [entry({ id: 'a', headword: '阿', readings: [{ pengim: 'a1', variety: 'chaozhou' }] })],

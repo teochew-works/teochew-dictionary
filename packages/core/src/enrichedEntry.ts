@@ -19,7 +19,7 @@ import type { AudioClip, Confidence } from './schema/phonology.js'
  * or the reading's whole pengim string (from `wordClips`); `key` holds
  * whichever string it was looked up by.
  */
-export interface AudioReference extends Pick<AudioClip, 'url' | 'confidence'> {
+export interface AudioReference extends Pick<AudioClip, 'url' | 'cafUrl' | 'confidence'> {
   /** The `clips`/`wordClips` key this clip was resolved from, e.g. `dio5` or `bhi7 jui2`. */
   key: string
   /**

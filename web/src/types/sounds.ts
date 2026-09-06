@@ -14,6 +14,8 @@ export interface SoundExample {
 /** A published recording of this sound, stripped down to what playback needs. */
 export interface SoundClip {
   url: string
+  /** A CAF/Opus alternate for iOS-native playback (issue #228), when one exists. */
+  cafUrl?: string
   speaker?: string
 }
 

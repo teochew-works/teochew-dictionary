@@ -26,6 +26,7 @@
     "xref": "tsx src/cli/xref.ts",
     "lookup": "tsx src/cli/lookup.ts",
     "audio:verify": "tsx src/cli/audio-verify.ts",
+    "backfill:caf-opus": "tsx src/cli/backfill-caf-opus.ts",
     "rehost:lingualibre": "tsx src/cli/lingualibre-rehost.ts",
     "merge:lingualibre": "tsx src/cli/lingualibre-merge.ts",
     "merge:local-recording": "tsx src/cli/local-recording-merge.ts",
