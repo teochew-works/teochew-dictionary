@@ -240,6 +240,13 @@ serve broken asset URLs.**
 the repo's Settings → Pages → Source: "GitHub Actions" before the deploy
 workflow's `deploy` job can actually publish anything.
 
+### Analytics
+
+Visit counts (see [ADR-0025](../docs/adrs/adr-0025.md)) are visible on the
+GoatCounter dashboard at
+[teochew-dictionary.goatcounter.com](https://teochew-dictionary.goatcounter.com/),
+to whoever holds that account.
+
 ## Out of scope (v1)
 
 Matches the parent issue's explicit non-goals, which follow from the backend-free
