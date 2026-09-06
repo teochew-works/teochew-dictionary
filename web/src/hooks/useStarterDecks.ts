@@ -11,14 +11,25 @@ export interface StarterDecksState {
  * Fetches the synced dist/starter-decks.json the first time `enabled` turns
  * true, and never re-fetches after that — mirrors useSyllableChart, gated
  * because the catalog is only needed once the Marketplace pane is opened.
+ *
+ * `attemptedRef` is only set from inside a non-cancelled fetch's own
+ * callback, never synchronously up front — deep-linking straight into the
+ * marketplace drawer (issue #226) means `enabled` can be `true` on the very
+ * first render, which under StrictMode's dev-only mount → cleanup →
+ * remount cycle runs this effect twice. Setting the ref synchronously at
+ * the top (as this used to, see useSyllableChart's history) let the first,
+ * StrictMode-cancelled invocation permanently block the second, real one
+ * from ever starting its own fetch — the panel was stuck on "Loading…"
+ * forever. Gating on the outcome instead means only a fetch that actually
+ * got to finish (checked its own `cancelled` and found it false) can set
+ * the flag.
  */
 export function useStarterDecks(enabled: boolean): StarterDecksState {
   const [state, setState] = useState<StarterDecksState>({ data: null, loading: false, error: null })
-  const startedRef = useRef(false)
+  const attemptedRef = useRef(false)
 
   useEffect(() => {
-    if (!enabled || startedRef.current) return
-    startedRef.current = true
+    if (!enabled || attemptedRef.current) return
     let cancelled = false
     setState((s) => ({ ...s, loading: true }))
 
@@ -28,13 +39,15 @@ export function useStarterDecks(enabled: boolean): StarterDecksState {
         return res.json() as Promise<StarterDecksCatalog>
       })
       .then((data) => {
-        if (!cancelled) setState({ data, loading: false, error: null })
+        if (cancelled) return
+        attemptedRef.current = true
+        setState({ data, loading: false, error: null })
       })
       .catch((err: unknown) => {
-        if (!cancelled) {
-          const message = err instanceof Error ? err.message : String(err)
-          setState({ data: null, loading: false, error: message })
-        }
+        if (cancelled) return
+        attemptedRef.current = true
+        const message = err instanceof Error ? err.message : String(err)
+        setState({ data: null, loading: false, error: message })
       })
 
     return () => {
