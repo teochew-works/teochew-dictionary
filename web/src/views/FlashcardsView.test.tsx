@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
-import { FlashcardsView } from './FlashcardsView'
+import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
+import { FlashcardsView, parseFlashcardsDrawer, formatFlashcardsDrawer, type FlashcardsDrawer } from './FlashcardsView'
 import { makeEntry, makeReading } from '../test/entryFixtures'
 import type { AudioReference } from '@teochew/core'
 import { readDecksState, writeDecksState } from '../decks/storage'
@@ -841,5 +841,76 @@ describe('FlashcardsView reordering a deck from the keyboard', () => {
     fireEvent.keyDown(row, { key: 'ArrowLeft' })
 
     expect(container.querySelector('.card__prompt')?.textContent).toBe(drawn)
+  })
+})
+
+describe('parseFlashcardsDrawer / formatFlashcardsDrawer (issue #226)', () => {
+  it('parses an empty string as closed, the default', () => {
+    expect(parseFlashcardsDrawer('')).toBeNull()
+  })
+
+  it('round-trips the marketplace', () => {
+    const drawer: FlashcardsDrawer = { mode: 'marketplace' }
+    expect(parseFlashcardsDrawer('marketplace')).toEqual(drawer)
+    expect(formatFlashcardsDrawer(drawer)).toBe('flashcards/marketplace')
+  })
+
+  it('round-trips the dictionary browse panel', () => {
+    const drawer: FlashcardsDrawer = { mode: 'dictionary' }
+    expect(parseFlashcardsDrawer('dictionary')).toEqual(drawer)
+    expect(formatFlashcardsDrawer(drawer)).toBe('flashcards/dictionary')
+  })
+
+  it('round-trips a deck, encoding and decoding an id with special characters', () => {
+    const drawer: FlashcardsDrawer = { mode: 'deck', deckId: 'a/b c' }
+    const formatted = formatFlashcardsDrawer(drawer)
+    expect(formatted).toBe('flashcards/deck/a%2Fb%20c')
+    expect(parseFlashcardsDrawer(formatted.slice('flashcards/'.length))).toEqual(drawer)
+  })
+
+  it('formats closed (null) with no suffix', () => {
+    expect(formatFlashcardsDrawer(null)).toBe('flashcards')
+  })
+
+  it('treats a deck segment with no id as closed', () => {
+    expect(parseFlashcardsDrawer('deck')).toBeNull()
+  })
+
+  it('treats an unrecognized mode as closed', () => {
+    expect(parseFlashcardsDrawer('bogus')).toBeNull()
+  })
+})
+
+describe('FlashcardsView drawer routing (issue #226)', () => {
+  const deck = (cards: string[] = []) => ({ id: 'deck-1', name: 'Kitchen', hue: 'green' as const, cards, kind: 'user' as const })
+
+  it('opens the drawer given by a controlled prop, not the uncontrolled default', async () => {
+    render(<FlashcardsView entries={[ENTRY]} drawer={{ mode: 'dictionary' }} onDrawerChange={() => {}} />)
+    await screen.findByText(/reviewed/)
+
+    expect(screen.getByRole('region', { name: 'Browse the dictionary' })).toBeInTheDocument()
+  })
+
+  it('reports drawer changes through onDrawerChange instead of managing them internally', async () => {
+    const onDrawerChange = vi.fn()
+    const { rerender } = render(<FlashcardsView entries={[ENTRY]} drawer={null} onDrawerChange={onDrawerChange} />)
+    await screen.findByText(/reviewed/)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Marketplace' }))
+    expect(onDrawerChange).toHaveBeenCalledWith({ mode: 'marketplace' })
+
+    // A controlled component doesn't move on its own — the parent has to feed the new drawer back.
+    expect(screen.queryByRole('region', { name: 'Starter deck marketplace' })).not.toBeInTheDocument()
+    rerender(<FlashcardsView entries={[ENTRY]} drawer={{ mode: 'marketplace' }} onDrawerChange={onDrawerChange} />)
+    expect(screen.getByRole('region', { name: 'Starter deck marketplace' })).toBeInTheDocument()
+  })
+
+  it('self-heals: an unresolvable deckId reports the drawer closing rather than leaving a dead link open', async () => {
+    writeDecksState({ decks: [deck(['a'])], inPlay: [DICTIONARY_DECK_ID], groups: [] })
+    const onDrawerChange = vi.fn()
+    render(<FlashcardsView entries={[ENTRY]} drawer={{ mode: 'deck', deckId: 'no-such-deck' }} onDrawerChange={onDrawerChange} />)
+    await screen.findByText(/reviewed/)
+
+    await waitFor(() => expect(onDrawerChange).toHaveBeenCalledWith(null))
   })
 })

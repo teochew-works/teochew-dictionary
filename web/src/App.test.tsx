@@ -155,6 +155,99 @@ describe('App dictionary entry routing (issue #194)', () => {
   })
 })
 
+describe('App Sounds tab routing (issue #226)', () => {
+  const SOUNDS_FIXTURE: SoundsData = {
+    variety: 'chaozhou',
+    sounds: [
+      {
+        pengim: 'dio5',
+        ipa: 'tie⁵⁵',
+        initial: 'd',
+        rime: 'io',
+        tone: 5,
+        occurrences: 1,
+        examples: [{ headword: '潮', pengim: 'dio5', gloss: 'tide' }],
+        clips: [],
+      },
+    ],
+  }
+
+  beforeEach(() => {
+    window.location.hash = ''
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((input: RequestInfo | URL) => {
+        const url = String(input)
+        const body = url.includes('sounds.json') ? SOUNDS_FIXTURE : FIXTURE
+        return Promise.resolve(new Response(JSON.stringify(body), { status: 200 }))
+      }),
+    )
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+    window.location.hash = ''
+  })
+
+  it('routes the sort mode through the hash', async () => {
+    render(<App />)
+    fireEvent.click(screen.getByRole('link', { name: 'Sounds' }))
+    await screen.findByText('tie⁵⁵')
+
+    fireEvent.click(screen.getByRole('button', { name: 'Frequency' }))
+
+    expect(window.location.hash).toBe('#sounds/frequency')
+  })
+
+  it('opens directly into a deep-linked sort mode', async () => {
+    window.location.hash = '#sounds/frequency'
+    render(<App />)
+
+    expect(await screen.findByText('tie⁵⁵')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Frequency' })).toHaveClass('sounds-view__sort-button--active')
+  })
+})
+
+describe('App Flashcards tab routing (issue #226)', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    window.location.hash = ''
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((input: RequestInfo | URL) => {
+        const url = String(input)
+        // Content doesn't matter for these tests — only that opening the
+        // marketplace panel doesn't fail on a fetch it makes once mounted.
+        const body = url.includes('starter-decks.json') ? { decks: [] } : FIXTURE
+        return Promise.resolve(new Response(JSON.stringify(body), { status: 200 }))
+      }),
+    )
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+    localStorage.clear()
+    window.location.hash = ''
+  })
+
+  it('routes opening the marketplace through the hash', async () => {
+    render(<App />)
+    fireEvent.click(screen.getByRole('link', { name: 'Flashcards' }))
+    await screen.findByText(/reviewed/)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Marketplace' }))
+
+    expect(window.location.hash).toBe('#flashcards/marketplace')
+  })
+
+  it('opens directly into a deep-linked marketplace drawer', async () => {
+    window.location.hash = '#flashcards/marketplace'
+    render(<App />)
+
+    expect(await screen.findByRole('region', { name: 'Starter deck marketplace' })).toBeInTheDocument()
+  })
+})
+
 describe('App Settings tab', () => {
   beforeEach(() => {
     localStorage.clear()
