@@ -62,7 +62,7 @@ function clipEntries(audio: Audio): [string, AudioClip][] {
  * the original, `clips.dio5[0].cafUrl` vs `clips.dio5[0].cafChecksum` for the
  * alternate — so an issue names the field a reader would actually go and look at.
  */
-interface VerifyTarget {
+export interface VerifyTarget {
   file: string
   /** Reported for a fetch failure. */
   path: string
@@ -132,13 +132,18 @@ export interface AudioRemoteOptions {
    * counting it once would make the meter stall for a beat on every clip.
    */
   onProgress?: (done: number, total: number) => void
+  /**
+   * Precomputed `audioVerifyTargets(sources)`, for a caller that already
+   * needed the list (`src/cli/audio-verify.ts` sizes its progress meter off
+   * it before calling in) — avoids walking every clip a second time. Falls
+   * back to computing it here for any other caller.
+   */
+  targets?: VerifyTarget[]
 }
 
 export async function verifyAudioRemote(sources: AudioSource[], options: AudioRemoteOptions = {}): Promise<Issue[]> {
-  const { fetchClip = fetchClipDefault, onProgress } = options
+  const { fetchClip = fetchClipDefault, onProgress, targets = audioVerifyTargets(sources) } = options
   const issues: Issue[] = []
-
-  const targets = audioVerifyTargets(sources)
 
   let done = 0
   for (const { file, path, checksumPath, url, checksum } of targets) {

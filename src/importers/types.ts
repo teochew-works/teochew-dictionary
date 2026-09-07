@@ -1,3 +1,7 @@
+import { mkdtempSync, rmSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
+
 /**
  * Shared across every importer that fetches from a live site.
  *
@@ -128,6 +132,29 @@ export interface Proposal {
   retrieved: string
   /** Why a human should look at this — ambiguity, low confidence, conflicts. */
   flags?: string[]
+}
+
+/**
+ * An injectable `tmpDir` option (`caf-encode.ts`'s `encodeCaf`,
+ * `lingualibre-rehost.ts`'s `uploadBytesToRelease`) is the caller's directory
+ * to manage; one this call creates itself is this call's own to remove.
+ * `resolveTmpDir`/`cleanupTmpDir` keep that rule in one place rather than
+ * duplicated per caller (issue #240).
+ */
+export interface OwnedTmpDir {
+  tmpDir: string
+  /** Whether this call created `tmpDir`, and so must remove it itself. */
+  owns: boolean
+}
+
+/** Reuses `provided` when given; otherwise creates a fresh directory this call owns. */
+export function resolveTmpDir(prefix: string, provided: string | undefined): OwnedTmpDir {
+  return provided === undefined ? { tmpDir: mkdtempSync(join(tmpdir(), prefix)), owns: true } : { tmpDir: provided, owns: false }
+}
+
+/** Removes `tmpDir` only if `resolveTmpDir` created it — a caller-supplied one is never touched. */
+export function cleanupTmpDir(owned: OwnedTmpDir): void {
+  if (owned.owns) rmSync(owned.tmpDir, { recursive: true, force: true })
 }
 
 export interface ImportResult {

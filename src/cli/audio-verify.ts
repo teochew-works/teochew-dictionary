@@ -28,9 +28,11 @@ for (const id of listAudioVarieties()) {
   }
 }
 
-// Sized off the same walk the verifier uses, rather than re-counting clips
-// here: a clip is not one fetch once it can carry a CAF alternate.
-const assetCount = audioVerifyTargets(sources).length
+// Computed once and handed to verifyAudioRemote below, rather than re-walked
+// there — a clip is not one fetch once it can carry a CAF alternate, and the
+// same walk sizes the progress meter here and drives the verifier itself.
+const targets = audioVerifyTargets(sources)
+const assetCount = targets.length
 
 console.log(dim(`fetching and checksumming ${assetCount} audio asset${assetCount === 1 ? '' : 's'}…`))
 
@@ -44,7 +46,7 @@ const onProgress = process.stdout.isTTY
       if (done % 100 === 0 || done === total) console.log(dim(`${done}/${total} checked`))
     }
 
-const issues = [...loadIssues, ...(await verifyAudioRemote(sources, { onProgress }))]
+const issues = [...loadIssues, ...(await verifyAudioRemote(sources, { onProgress, targets }))]
 if (process.stdout.isTTY) process.stdout.write('\n')
 
 for (const i of issues) {
