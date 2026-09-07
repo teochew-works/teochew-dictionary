@@ -1,6 +1,6 @@
 import { existsSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { join } from 'node:path'
+import { dirname, join } from 'node:path'
 
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 
@@ -79,5 +79,50 @@ describe('encodeCaf', () => {
       }),
     ).toThrow('ffmpeg failed')
     expect(existsSync(join(tmpDir, 'clip.webm'))).toBe(false)
+  })
+
+  it('leaves a caller-supplied temp directory in place', () => {
+    encodeCaf(Buffer.from('fake webm bytes'), {
+      tmpDir,
+      runFfmpeg: () => writeFileSync(join(tmpDir, 'clip.wav'), 'fake wav'),
+      runFfprobe: () => '140000',
+      runAfconvert: () => writeFileSync(join(tmpDir, 'clip.caf'), 'fake caf'),
+    })
+
+    expect(existsSync(tmpDir)).toBe(true)
+  })
+
+  /**
+   * A full-corpus backfill calls this once per clip, so a directory left
+   * behind per call is thousands of empty directories in $TMPDIR (issue #240).
+   */
+  it('removes the temp directory it created itself', () => {
+    let created: string | undefined
+    encodeCaf(Buffer.from('fake webm bytes'), {
+      runFfmpeg: (args: string[]) => {
+        created = dirname(args[3]!)
+        writeFileSync(args[3]!, 'fake wav')
+      },
+      runFfprobe: () => '140000',
+      runAfconvert: (args: string[]) => writeFileSync(args.at(-1)!, 'fake caf'),
+    })
+
+    expect(created).toBeDefined()
+    expect(existsSync(created!)).toBe(false)
+  })
+
+  it('removes the temp directory it created even when a step throws', () => {
+    let created: string | undefined
+    expect(() =>
+      encodeCaf(Buffer.from('fake webm bytes'), {
+        runFfmpeg: (args: string[]) => {
+          created = dirname(args[3]!)
+          throw new Error('ffmpeg failed')
+        },
+      }),
+    ).toThrow('ffmpeg failed')
+
+    expect(created).toBeDefined()
+    expect(existsSync(created!)).toBe(false)
   })
 })
