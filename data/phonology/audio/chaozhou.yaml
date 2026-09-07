@@ -17,7 +17,9 @@ clips:
             sources: [ teochew-dictionary-audio ],
             speaker: jky,
             recorded: 2026-09-06,
-            checksum: sha256:6c3615915d8970567e4f1391baecf084fbdc3bf3d600b7df2e01eb7478e8543f
+            checksum: sha256:6c3615915d8970567e4f1391baecf084fbdc3bf3d600b7df2e01eb7478e8543f,
+            cafUrl: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou-caf/audio-teochew-dictionary-audio-4-du2.caf,
+            cafChecksum: sha256:8875582cc142481689e67af2e2f4dc6d37a0afe5a4b4fafdf9428010afe700ce
           }
       ],
     dua7:
@@ -28,7 +30,9 @@ clips:
             sources: [ teochew-dictionary-audio ],
             speaker: jky,
             recorded: 2026-09-05,
-            checksum: sha256:b36a5cf7c577ac46fb02444fb2beb2e83895181477b3ea689ca31b629c8ed721
+            checksum: sha256:b36a5cf7c577ac46fb02444fb2beb2e83895181477b3ea689ca31b629c8ed721,
+            cafUrl: https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou-caf/audio-teochew-dictionary-audio-3-dua7.caf,
+            cafChecksum: sha256:5e328b27b74b51d17e9d851aad4fa03ec1c4902cb735be54a1d508e46b4e1077
           }
       ],
     iu5:

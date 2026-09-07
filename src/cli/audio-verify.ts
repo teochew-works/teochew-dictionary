@@ -35,7 +35,18 @@ const clipCount = sources.reduce(
 
 console.log(dim(`fetching and checksumming ${clipCount} audio clip${clipCount === 1 ? '' : 's'}…`))
 
-const issues = [...loadIssues, ...(await verifyAudioRemote(sources))]
+// A TTY can overwrite one progress line in place; a non-TTY (redirected to a
+// file, piped, CI) can't usefully use \r, so it gets an occasional new line
+// instead — either way, a run over thousands of clips (each a real network
+// fetch) prints *something* before it finishes, rather than going silent.
+const onProgress = process.stdout.isTTY
+  ? (done: number, total: number) => process.stdout.write(`\r${dim(`${done}/${total} checked`)}`)
+  : (done: number, total: number) => {
+      if (done % 100 === 0 || done === total) console.log(dim(`${done}/${total} checked`))
+    }
+
+const issues = [...loadIssues, ...(await verifyAudioRemote(sources, { onProgress }))]
+if (process.stdout.isTTY) process.stdout.write('\n')
 
 for (const i of issues) {
   const where = [i.file, i.path].filter(Boolean).join(dim(' › '))

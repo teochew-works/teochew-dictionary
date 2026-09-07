@@ -60,38 +60,55 @@ async function fetchClipDefault(url: string): Promise<Response> {
 export interface AudioRemoteOptions {
   /** Injectable for tests and offline runs — avoids real network calls. */
   fetchClip?: (url: string) => Promise<Response>
+  /**
+   * Called once per clip after it's checked (however it resolved), with the
+   * running count and the total — the corpus is thousands of clips and each
+   * one is a real network fetch, so a long run would otherwise print nothing
+   * at all until it finishes. Optional: existing callers/tests that don't
+   * care about progress just omit it.
+   */
+  onProgress?: (done: number, total: number) => void
 }
 
 export async function verifyAudioRemote(sources: AudioSource[], options: AudioRemoteOptions = {}): Promise<Issue[]> {
-  const { fetchClip = fetchClipDefault } = options
+  const { fetchClip = fetchClipDefault, onProgress } = options
   const issues: Issue[] = []
 
-  for (const { file, audio } of sources) {
-    for (const [path, clip] of clipEntries(audio)) {
+  const entries = sources.flatMap(({ file, audio }) =>
+    clipEntries(audio).map(([path, clip]) => ({ file, path, clip })),
+  )
 
-      let body: Buffer
-      try {
-        const res = await fetchClip(clip.url)
-        if (!res.ok) {
-          issues.push(err(file, `HTTP ${res.status} fetching ${clip.url}`, path))
-          continue
-        }
-        body = Buffer.from(await res.arrayBuffer())
-      } catch (e) {
-        const message = e instanceof Error ? e.message : String(e)
-        issues.push(err(file, `failed to fetch ${clip.url}: ${message}`, path))
+  let done = 0
+  for (const { file, path, clip } of entries) {
+    let body: Buffer
+    try {
+      const res = await fetchClip(clip.url)
+      if (!res.ok) {
+        issues.push(err(file, `HTTP ${res.status} fetching ${clip.url}`, path))
+        done += 1
+        onProgress?.(done, entries.length)
         continue
       }
-
-      const digest = createHash('sha256').update(body).digest('hex')
-      const expected = clip.checksum.replace(/^sha256:/u, '').toLowerCase()
-
-      if (digest !== expected) {
-        issues.push(
-          err(file, `checksum mismatch for ${clip.url}: expected ${expected}, got ${digest}`, `${path}.checksum`),
-        )
-      }
+      body = Buffer.from(await res.arrayBuffer())
+    } catch (e) {
+      const message = e instanceof Error ? e.message : String(e)
+      issues.push(err(file, `failed to fetch ${clip.url}: ${message}`, path))
+      done += 1
+      onProgress?.(done, entries.length)
+      continue
     }
+
+    const digest = createHash('sha256').update(body).digest('hex')
+    const expected = clip.checksum.replace(/^sha256:/u, '').toLowerCase()
+
+    if (digest !== expected) {
+      issues.push(
+        err(file, `checksum mismatch for ${clip.url}: expected ${expected}, got ${digest}`, `${path}.checksum`),
+      )
+    }
+
+    done += 1
+    onProgress?.(done, entries.length)
   }
 
   return issues

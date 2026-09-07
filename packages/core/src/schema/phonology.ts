@@ -137,6 +137,15 @@ const audioClip = z.object({
    * manifest alone is enough to fetch the clip.
    */
   url: z.string().regex(GITHUB_RELEASE_ASSET_URL, "must be a GitHub Release asset download URL"),
+  /**
+   * A CAF/Opus-in-CAF alternate for `url`'s WebM/Opus clip (issue #228):
+   * AVFoundation has no WebM demuxer, so iOS-native playback needs this
+   * instead — CAF has supported Opus since iOS 11. Same URL shape as `url`.
+   * Undefined for a clip that needs no alternate (e.g. an already-`.wav`
+   * clip); a consumer that wants iOS playback falls back to `url` when this
+   * is absent. Always paired with `cafChecksum` — see the refine below.
+   */
+  cafUrl: z.string().regex(GITHUB_RELEASE_ASSET_URL, "must be a GitHub Release asset download URL").optional(),
   confidence: z.enum(CONFIDENCE),
   note: z.string().optional(),
   /**
@@ -166,6 +175,14 @@ const audioClip = z.object({
     .string()
     .regex(/^sha256:[0-9a-fA-F]{64}$/u)
     .transform((s) => s.toLowerCase()),
+  /** Same shape/rationale as `checksum`, but for `cafUrl`'s bytes. */
+  cafChecksum: z
+    .string()
+    .regex(/^sha256:[0-9a-fA-F]{64}$/u)
+    .transform((s) => s.toLowerCase())
+    .optional(),
+}).refine((clip) => (clip.cafUrl === undefined) === (clip.cafChecksum === undefined), {
+  message: 'cafUrl and cafChecksum must be either both present or both absent',
 })
 
 export const audioSchema = z.object({

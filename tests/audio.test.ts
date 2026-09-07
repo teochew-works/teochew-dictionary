@@ -146,6 +146,26 @@ describe('audioSchema', () => {
   it('rejects an empty clip list at a key — must be non-empty', () => {
     expect(() => audioSchema.parse(rawAudio({ dio5: [] }))).toThrow()
   })
+
+  it('accepts a clip with a CAF/Opus alternate (issue #228)', () => {
+    const withCaf = clip({
+      cafUrl: `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/dio5.caf`,
+      cafChecksum: VALID_CHECKSUM,
+    })
+    expect(() => audioSchema.parse(audio({ dio5: withCaf }))).not.toThrow()
+  })
+
+  it('rejects cafUrl without cafChecksum', () => {
+    const bad = clip({
+      cafUrl: `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/dio5.caf`,
+    })
+    expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
+  })
+
+  it('rejects cafChecksum without cafUrl', () => {
+    const bad = clip({ cafChecksum: VALID_CHECKSUM })
+    expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
+  })
 })
 
 describe('checkAudio', () => {
@@ -418,6 +438,21 @@ describe('deriveReadingAudio', () => {
     const [resolved] = deriveReadingAudio(syllables, table, sources)
     expect(resolved).toMatchObject({ url: AUDIO_CLIP_URL })
   })
+
+  it("carries the clip's cafUrl through when present (issue #228)", () => {
+    const cafUrl = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/dio5.caf`
+    const syllables = parsePengim('dio5')
+    const table = audio({ dio5: clip({ cafUrl, cafChecksum: `sha256:${'b'.repeat(64)}` }) })
+    const [resolved] = deriveReadingAudio(syllables, table, sources)
+    expect(resolved).toMatchObject({ url: VALID_URL, cafUrl })
+  })
+
+  it('leaves cafUrl undefined when the clip has no CAF alternate', () => {
+    const syllables = parsePengim('dio5')
+    const table = audio({ dio5: clip() })
+    const [resolved] = deriveReadingAudio(syllables, table, sources)
+    expect(resolved?.cafUrl).toBeUndefined()
+  })
 })
 
 describe('deriveReadingSandhiAudio', () => {
@@ -520,5 +555,14 @@ describe('deriveReadingWordAudio', () => {
     expect(() => deriveReadingWordAudio('dio5 ziu1', table, sources)).toThrow(
       /not classified as permissive, share-alike, or public-domain/u,
     )
+  })
+
+  it("carries the clip's cafUrl through when present (issue #228)", () => {
+    const cafUrl = `https://github.com/${GITHUB_REPO}/releases/download/audio-lingualibre/dio5-ziu1.caf`
+    const table = audioTable(
+      {},
+      { 'dio5 ziu1': clip({ url: VALID_WORD_URL, cafUrl, cafChecksum: `sha256:${'b'.repeat(64)}` }) },
+    )
+    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toMatchObject({ url: VALID_WORD_URL, cafUrl })
   })
 })

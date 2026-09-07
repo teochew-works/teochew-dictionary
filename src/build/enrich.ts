@@ -54,6 +54,7 @@ function resolveClipForKey(key: string, audio: Audio, sources: Map<string, Sourc
   return {
     key,
     url: clip.url,
+    cafUrl: clip.cafUrl,
     confidence: clip.confidence,
     licence: resolved.licence,
     attributions: resolved.attributions,
@@ -110,6 +111,7 @@ export function deriveReadingWordAudio(
   return {
     key: pengim,
     url: clip.url,
+    cafUrl: clip.cafUrl,
     confidence: clip.confidence,
     licence: resolved.licence,
     attributions: resolved.attributions,
