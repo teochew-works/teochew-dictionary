@@ -137,33 +137,64 @@ const BUCKETS: Bucket[] = ['clips', 'wordClips']
 
 /**
  * Allocates the CAF release tag to upload the next asset into, for one
- * variety: starts at `audio-<variety>-caf`, checking its current asset count
- * once up front, and only rolls over to `-caf-2`, `-caf-3`, ... (re-checking
- * each new tag's own count) once the running total would meet
- * `GITHUB_RELEASE_ASSET_CAP` — so a long backfill run costs one `gh release
- * view` call per release actually filled, not one per clip.
+ * variety: starts at `audio-<variety>-caf` and only rolls over to `-caf-2`,
+ * `-caf-3`, ... once that release is genuinely at `GITHUB_RELEASE_ASSET_CAP`.
+ * Between rollovers it projects the count locally, so a long backfill run
+ * costs one `gh release view` call per release actually filled, not one per
+ * clip (issue #233).
+ *
+ * Two things keep that projection honest (issue #239):
+ *
+ * - **The first count is lazy.** A dry run never uploads, so it never calls
+ *   `nextTag`, and must not pay for a release lookup it will not use —
+ *   `backfill:caf-opus` is dry-run by default (ADR-0018).
+ * - **The projection is re-read before it is allowed to roll over.** Uploads
+ *   go up with `--clobber`, so re-uploading an existing asset name replaces it
+ *   and adds nothing to the release while `recordUpload` still counts it. Left
+ *   alone that drift only ever runs one way — upward — and would strand
+ *   capacity by rolling over early. Re-reading at the boundary costs one extra
+ *   call per release, and only when the projection claims the release is full.
  */
-function createCafTagAllocator(variety: string, getAssetCount: (tag: string) => number | null) {
+export function createCafTagAllocator(variety: string, getAssetCount: (tag: string) => number | null) {
   const base = `audio-${variety}-caf`
   let suffix = 1
   let tag = base
-  let count = getAssetCount(tag) ?? 0
+  /** `null` until the first `nextTag` — see "the first count is lazy" above. */
+  let count: number | null = null
+  /** Whether `count` came from `getAssetCount` rather than local increments. */
+  let fresh = false
 
   function tagFor(n: number): string {
     return n === 1 ? base : `${base}-${n}`
   }
 
+  function readCount(): void {
+    count = getAssetCount(tag) ?? 0
+    fresh = true
+  }
+
   return {
     nextTag(): string {
-      while (count >= GITHUB_RELEASE_ASSET_CAP) {
+      if (count === null) readCount()
+
+      while (count! >= GITHUB_RELEASE_ASSET_CAP) {
+        // A projected count at the cap might just be drift. Confirm against
+        // the real release before abandoning it; a confirmed-full release
+        // falls through to the rollover below.
+        if (!fresh) {
+          readCount()
+          continue
+        }
         suffix += 1
         tag = tagFor(suffix)
-        count = getAssetCount(tag) ?? 0
+        readCount()
       }
+
       return tag
     },
     recordUpload(): void {
-      count += 1
+      count = (count ?? 0) + 1
+      fresh = false
     },
   }
 }
