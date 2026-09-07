@@ -186,18 +186,24 @@ shares with the mobile app, and where it lives).
   the licensing toggle: returning to a dictionary that silently hides almost
   everything is worse than re-ticking a box.
 
-  Real clips exist for Chaozhou: `data/phonology/audio/chaozhou.yaml` holds
-  1,902 per-syllable clips across 1,883 syllable keys (a key can carry more
-  than one speaker's recording — issue #134) plus 8 whole-word clips, merged
-  via the #106 Lingua Libre importer and the #128/#36 recording effort.
-  Coverage is now the majority case rather than the exception: **1,882 of the
-  3,088 syllables attested in the lexicon have a clip (61%)**. It is still
-  partial, though — the remaining 39% of Chaozhou syllables are unrecorded and
-  Shantou/Chaoyang (issue #37) have no clips at all, so plenty of entries
-  still resolve an `audio`/`wordAudio` slot to `null` and render no player.
-  The empty state distinguishes the two cases: "No matches with a recording"
-  when the dataset has *some* audio but the current search/filter combination
-  excludes it, versus "No recordings in the dictionary yet" only for a
+  Chaozhou per-syllable coverage is complete: `data/phonology/audio/chaozhou.yaml`
+  holds 3,088 clips across 3,088 syllable keys, and **every one of the 3,088
+  syllables attested by a Chaozhou reading has a clip**. One clip per key today,
+  though the schema still allows several (a key can carry more than one speaker's
+  recording — issue #134). Recorded via the #128/#36 effort; each clip also carries
+  a CAF/Opus alternate for iOS-native playback (issue #228,
+  [ADR-0014](../docs/adrs/adr-0014.md)) that this app does not use, since browsers
+  decode the WebM/Opus original.
+
+  Two gaps remain, and they are not the ones this paragraph used to describe.
+  There are **no whole-word clips at all**: the 8 merged by the #106 Lingua Libre
+  importer were removed along with every other non-`jky` recording, so `wordAudio`
+  resolves to `null` for every entry and only per-syllable buttons ever render (37
+  multi-syllable proposals sit unmerged in `data/staging/lingualibre.yaml`). And
+  Shantou/Chaoyang (issue #37) have no clips at all, so a reading in either variety
+  still renders no player. The empty state distinguishes the two cases: "No matches
+  with a recording" when the dataset has *some* audio but the current search/filter
+  combination excludes it, versus "No recordings in the dictionary yet" only for a
   dataset with none at all (e.g. a build with no `audio/*.yaml` present).
 - `dist/dict.json` and `dist/sounds.json` are fetched at runtime as static
   assets (via `scripts/sync-data.mjs`, not bundled as a JS import), so the
@@ -259,6 +265,6 @@ choice rather than being independent scoping decisions
   [ADR-0023](../docs/adrs/adr-0023.md).
 
 Audio playback was on this list for v1 and no longer is — the UI shipped in
-issue #114. Chaozhou recordings now cover 1,882 of 3,088 attested syllables
-(issues #106/#128/#36); what's still missing is full coverage — the remaining
-Chaozhou syllables, and all of Shantou/Chaoyang (issue #37).
+issue #114. Chaozhou recordings now cover all 3,088 attested syllables (issues
+#128/#36); what's still missing is whole-word clips, and all of Shantou/Chaoyang
+(issue #37).
