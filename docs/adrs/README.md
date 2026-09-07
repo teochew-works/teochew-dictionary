@@ -59,6 +59,7 @@ by Michael Nygard.
 | [ADR-0023](adr-0023.md) | ✅ Accepted | 2026-08-30 | A Responsive PWA over a Native Wrapper, with Workbox Exception     |
 | [ADR-0024](adr-0024.md) | ✅ Accepted | 2026-09-05 | Shared Logic Lives in `@teochew/core`, Published from This Repo    |
 | [ADR-0025](adr-0025.md) | ✅ Accepted | 2026-09-06 | Anonymous Visit Counts via GoatCounter                             |
+| [ADR-0026](adr-0026.md) | ✅ Accepted | 2026-09-07 | Serve Audio Direct from Release Assets Until a Named Trigger       |
 
 ADR-0001 through ADR-0022 were written **retrospectively**, in one pass over the project's
 existing record, so their git-derived dates are all the date of adoption rather than the date each
