@@ -174,6 +174,25 @@ describe('backfillCafOpus', () => {
     expect(result.backfilled).toEqual([])
   })
 
+  it('persists each clip as it completes, so a later failure does not lose earlier progress', async () => {
+    const path = join(dir, 'chaozhou.yaml')
+    const table = audioTable({ dio5: [clip()], ziu1: [clip({ url: WEBM_URL_2 })] })
+    writeFileSync(path, stringify(table))
+    const tools = fakeTools(mkdtempSync(join(tmpdir(), 'caf-backfill-tmp-')))
+    let calls = 0
+    tools.fetchBytes = async () => {
+      calls += 1
+      if (calls === 2) throw new Error('network blip')
+      return Buffer.from('fake webm bytes')
+    }
+
+    await expect(backfillCafOpus(path, table, { write: true, ...tools })).rejects.toThrow('network blip')
+
+    const written = parseYaml(readFileSync(path, 'utf8'))
+    expect(written.clips.dio5[0].cafUrl).toBeDefined()
+    expect(written.clips.ziu1[0].cafUrl).toBeUndefined()
+  })
+
   it('preserves a hand-written comment when writing the backfilled fields', async () => {
     const path = join(dir, 'chaozhou.yaml')
     const handComment = '# hand note: dio5 is a Chaoyang-accented recording, verify before reuse'
