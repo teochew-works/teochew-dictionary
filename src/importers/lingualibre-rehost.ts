@@ -1,11 +1,10 @@
 import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
-import { mkdtempSync, rmSync, writeFileSync } from 'node:fs'
-import { tmpdir } from 'node:os'
+import { rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 import { GITHUB_REPO } from '@teochew/core'
-import { fetchWithRetry, IMPORTER_USER_AGENT } from './types.js'
+import { cleanupTmpDir, fetchWithRetry, IMPORTER_USER_AGENT, resolveTmpDir } from './types.js'
 import type { AudioClipProposal } from './audio-types.js'
 
 /**
@@ -127,10 +126,8 @@ export async function uploadBytesToRelease(
 ): Promise<UploadBytesResult> {
   const { tag, releaseNotes, releaseExists = defaultReleaseExists, runGh = defaultRunGh } = options
 
-  // Only a directory this call created is a directory this call may delete —
-  // same rule as `encodeCaf`. A caller-supplied `tmpDir` is the caller's.
-  const ownsTmpDir = options.tmpDir === undefined
-  const tmpDir = options.tmpDir ?? mkdtempSync(join(tmpdir(), 'rehost-'))
+  const owned = resolveTmpDir('rehost-', options.tmpDir)
+  const { tmpDir } = owned
 
   ensureRelease(tag, releaseExists, runGh, releaseNotes)
 
@@ -146,7 +143,7 @@ export async function uploadBytesToRelease(
   } finally {
     rmSync(localPath, { force: true })
     // See `encodeCaf`: one leaked directory per published clip otherwise.
-    if (ownsTmpDir) rmSync(tmpDir, { recursive: true, force: true })
+    cleanupTmpDir(owned)
   }
 
   const checksum = `sha256:${createHash('sha256').update(bytes).digest('hex')}`

@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto'
 import { describe, expect, it } from 'vitest'
 
 import { GITHUB_REPO } from '@teochew/core'
-import { verifyAudioRemote, type AudioSource } from '../src/validate/audio-remote.js'
+import { verifyAudioRemote, type AudioSource, type VerifyTarget } from '../src/validate/audio-remote.js'
 import { AUDIO_CLIP_URL, AUDIO_WORD_CLIP_URL, audioTable, makeClipFixture } from './helpers/audio-fixtures.js'
 
 function checksumOf(body: string): string {
@@ -98,6 +98,31 @@ describe('verifyAudioRemote', () => {
       [1, 2],
       [2, 2],
     ])
+  })
+
+  /**
+   * `src/cli/audio-verify.ts` builds this list once (for its progress-meter
+   * count) and hands it straight to `verifyAudioRemote`, so it must be
+   * honoured verbatim rather than silently recomputed from `sources` — a
+   * `targets` list that disagrees with what `sources` would produce is the
+   * only way to prove which one actually drove the fetch.
+   */
+  it('honours a precomputed `targets` list instead of recomputing from sources', async () => {
+    const sources: AudioSource[] = [{ file: 'data/phonology/audio/chaozhou.yaml', audio: audio({ dio5: clip() }) }]
+    const customUrl = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/custom.opus`
+    const targets: VerifyTarget[] = [
+      { file: 'data/phonology/audio/chaozhou.yaml', path: 'clips.custom[0]', checksumPath: 'clips.custom[0].checksum', url: customUrl, checksum: CHECKSUM },
+    ]
+    const fetched: string[] = []
+    const fetchClip = async (url: string): Promise<Response> => {
+      fetched.push(url)
+      return new Response(BODY, { status: 200 })
+    }
+
+    const issues = await verifyAudioRemote(sources, { fetchClip, targets })
+
+    expect(fetched).toEqual([customUrl])
+    expect(issues).toEqual([])
   })
 })
 
