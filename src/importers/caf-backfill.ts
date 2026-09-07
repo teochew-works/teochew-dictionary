@@ -205,11 +205,16 @@ export async function backfillCafOpus(
         doc!.setIn([bucket, key, index, 'cafUrl'], cafUrl)
         doc!.setIn([bucket, key, index, 'cafChecksum'], cafChecksum)
         result.backfilled.push({ bucket, key, index, cafUrl })
+
+        // Written after every clip, not just once at the end: a run over a
+        // large corpus is thousands of real uploads, and an interruption
+        // partway through (network blip, one bad clip, Ctrl+C) must not lose
+        // the record of everything already uploaded — `needsCaf` above makes
+        // a re-run naturally resume from wherever this left off.
+        writeFileSync(path, doc!.toString())
       }
     }
   }
-
-  if (write) writeFileSync(path, doc!.toString())
 
   return result
 }
