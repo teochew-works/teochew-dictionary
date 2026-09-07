@@ -6,7 +6,12 @@ import { parse as parseYaml, stringify } from 'yaml'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 
 import { GITHUB_REPO, type Audio } from '@teochew/core'
-import { GITHUB_RELEASE_ASSET_CAP, backfillCafOpus, tagFromClipUrl } from '../src/importers/caf-backfill.js'
+import {
+  GITHUB_RELEASE_ASSET_CAP,
+  backfillCafOpus,
+  createCafTagAllocator,
+  tagFromClipUrl,
+} from '../src/importers/caf-backfill.js'
 
 const WEBM_URL = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/dio5.webm`
 const WEBM_URL_2 = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/ziu1.webm`
@@ -84,6 +89,17 @@ describe('backfillCafOpus', () => {
     expect(result.backfilled).toHaveLength(1)
     expect(tools.runGhCalls).toEqual([])
     expect(parseYaml(readFileSync(path, 'utf8')).clips.dio5[0].cafUrl).toBeUndefined()
+  })
+
+  it('dry run: touches the network for no release lookup at all (issue #239)', async () => {
+    const path = join(dir, 'chaozhou.yaml')
+    writeFileSync(path, stringify(audioTable({ dio5: [clip()] })))
+    const tools = fakeTools(mkdtempSync(join(tmpdir(), 'caf-backfill-tmp-')))
+
+    await backfillCafOpus(path, audioTable({ dio5: [clip()] }), { write: false, ...tools })
+
+    expect(tools.getAssetCountCalls).toEqual([])
+    expect(tools.releaseExistsCalls).toEqual([])
   })
 
   it('--write: uploads the .caf asset into a release dedicated to CAF assets, not the source webm release', async () => {
@@ -218,5 +234,90 @@ describe('backfillCafOpus', () => {
     await backfillCafOpus(path, audioTable({ dio5: [clip()] }), { write: true, ...tools })
 
     expect(readFileSync(path, 'utf8')).toContain(handComment)
+  })
+})
+
+/**
+ * Exercised directly rather than only through `backfillCafOpus`: the running
+ * asset count is the one piece of state that decides whether the 1000-asset
+ * cap is respected, and its failure modes (drift from `--clobber` re-uploads,
+ * a wasted lookup on a dry run) are invisible from the outside (issue #239).
+ */
+describe('createCafTagAllocator', () => {
+  function spyCounts(counts: Record<string, number | null>) {
+    const calls: string[] = []
+    const getAssetCount = (tag: string): number | null => {
+      calls.push(tag)
+      return counts[tag] ?? 0
+    }
+    return { calls, getAssetCount }
+  }
+
+  it('makes no call until a tag is actually asked for', () => {
+    const { calls, getAssetCount } = spyCounts({})
+    createCafTagAllocator('chaozhou', getAssetCount)
+
+    expect(calls).toEqual([])
+  })
+
+  it('reads the base release once and reuses it while there is room', () => {
+    const { calls, getAssetCount } = spyCounts({ 'audio-chaozhou-caf': 10 })
+    const alloc = createCafTagAllocator('chaozhou', getAssetCount)
+
+    for (let i = 0; i < 5; i += 1) {
+      expect(alloc.nextTag()).toBe('audio-chaozhou-caf')
+      alloc.recordUpload()
+    }
+
+    expect(calls).toEqual(['audio-chaozhou-caf'])
+  })
+
+  it('rolls over when the release is genuinely full', () => {
+    const { calls, getAssetCount } = spyCounts({ 'audio-chaozhou-caf': GITHUB_RELEASE_ASSET_CAP })
+    const alloc = createCafTagAllocator('chaozhou', getAssetCount)
+
+    expect(alloc.nextTag()).toBe('audio-chaozhou-caf-2')
+    expect(calls).toEqual(['audio-chaozhou-caf', 'audio-chaozhou-caf-2'])
+  })
+
+  it('re-reads rather than rolling over when the projection is drift', () => {
+    // Every upload here is a --clobber replacement, so the release never grows
+    // past 1 even though recordUpload is called CAP times.
+    const { calls, getAssetCount } = spyCounts({ 'audio-chaozhou-caf': 1 })
+    const alloc = createCafTagAllocator('chaozhou', getAssetCount)
+
+    for (let i = 0; i < GITHUB_RELEASE_ASSET_CAP; i += 1) {
+      expect(alloc.nextTag()).toBe('audio-chaozhou-caf')
+      alloc.recordUpload()
+    }
+
+    // Still the base tag: the projected count hit the cap, was checked against
+    // the real release, and found to be wrong.
+    expect(alloc.nextTag()).toBe('audio-chaozhou-caf')
+    expect(calls).toEqual(['audio-chaozhou-caf', 'audio-chaozhou-caf'])
+  })
+
+  it('still rolls over when a re-read confirms the release really is full', () => {
+    let real = GITHUB_RELEASE_ASSET_CAP - 1
+    const calls: string[] = []
+    const getAssetCount = (tag: string): number | null => {
+      calls.push(tag)
+      return tag === 'audio-chaozhou-caf' ? real : 0
+    }
+    const alloc = createCafTagAllocator('chaozhou', getAssetCount)
+
+    expect(alloc.nextTag()).toBe('audio-chaozhou-caf')
+    real += 1
+    alloc.recordUpload()
+
+    expect(alloc.nextTag()).toBe('audio-chaozhou-caf-2')
+    expect(calls).toEqual(['audio-chaozhou-caf', 'audio-chaozhou-caf', 'audio-chaozhou-caf-2'])
+  })
+
+  it('treats a missing release as empty', () => {
+    const { getAssetCount } = spyCounts({ 'audio-chaozhou-caf': null })
+    const alloc = createCafTagAllocator('chaozhou', getAssetCount)
+
+    expect(alloc.nextTag()).toBe('audio-chaozhou-caf')
   })
 })

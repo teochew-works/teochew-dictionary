@@ -87,8 +87,13 @@ export function encodeCaf(webmBytes: Buffer, options: EncodeCafOptions = {}): Bu
     runFfmpeg = defaultRunTool('ffmpeg'),
     runFfprobe = defaultRunFfprobe,
     runAfconvert = defaultRunTool('afconvert'),
-    tmpDir = mkdtempSync(join(tmpdir(), 'caf-encode-')),
   } = options
+
+  // Only a directory this call created is a directory this call may delete.
+  // A caller-supplied `tmpDir` is the caller's to manage — removing it would
+  // be a surprising side effect, and tests pass their own in.
+  const ownsTmpDir = options.tmpDir === undefined
+  const tmpDir = options.tmpDir ?? mkdtempSync(join(tmpdir(), 'caf-encode-'))
 
   const webmPath = join(tmpDir, 'clip.webm')
   const wavPath = join(tmpDir, 'clip.wav')
@@ -104,5 +109,8 @@ export function encodeCaf(webmBytes: Buffer, options: EncodeCafOptions = {}): Bu
     rmSync(webmPath, { force: true })
     rmSync(wavPath, { force: true })
     rmSync(cafPath, { force: true })
+    // Without this a full-corpus backfill leaves one empty directory per clip
+    // behind — thousands of them, never swept until the OS gets round to it.
+    if (ownsTmpDir) rmSync(tmpDir, { recursive: true, force: true })
   }
 }

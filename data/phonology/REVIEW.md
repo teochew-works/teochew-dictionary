@@ -586,6 +586,16 @@ splitting across multiple releases (already the plan — see below) is a trivial
 ever becomes one. Worth confirming empirically once #36 starts uploading, not worth blocking on
 now.
 
+**Update 2026-09-07 (issue #228): the cap is real, and it is 1000 assets per release.** Confirmed
+the way the paragraph above hoped — empirically, partway through a bulk upload, when a real
+`gh release upload` returned `HTTP 422: file_count limited to 1000 assets per release`. The
+anticipated mitigation was the right one: a release that fills rolls over to a numbered successor
+(`audio-<variety>-caf-2`, `-caf-3`, ...). Total per-repo Releases storage remains unconfirmed and
+still untested. **Issue #237 adds an arithmetic footnote:** the cap counts superseded assets too.
+718 of the first `.webm` release's 1000 slots hold re-recorded clips that no manifest entry
+references any more, so that release is full with 28% of it live — some rollovers bought capacity
+that reclaiming dead assets would have bought instead (issue #241).
+
 **Naming convention (non-binding — refined as needed by #35/#36).** One release per variety
 (e.g. tag `audio-chaozhou`). GitHub allows uploading additional assets to an already-published
 release, so no new tag is needed per recording batch. Asset filenames should stay plain
@@ -599,6 +609,29 @@ local-directory check §11 shipped, since that directory no longer exists), and 
 gains no replacement here. Audio-specific licensing (`LICENSE-DATA-AUDIO-*`, speaker consent) is
 issue #33's job. Actual recording and upload is issue #36's job. `dist/schema.json` emission
 remains out of scope per §11's own note — unchanged by this decision.
+
+**Update 2026-09-07 (issue #228): each clip now carries a second asset.** iOS cannot decode
+WebM/Opus at all — AVFoundation ships no WebM demuxer — so `audioClip` gained an optional
+`cafUrl`/`cafChecksum` pair holding a CAF/Opus transcode of the same recording, paired by a schema
+refine so neither can exist without the other. CAF assets go into a release dedicated to the format
+(`audio-<variety>-caf`) rather than alongside their source, precisely because of the cap above. The
+Chaozhou corpus is fully backfilled: 3,088 clips, 6,176 assets.
+
+**Update 2026-09-07 (issue #237): how clips are *served* is now its own decision,
+[ADR-0026](../../docs/adrs/adr-0026.md).** Everything above is about where bytes are stored; none
+of it examined the read path. Briefly: a release asset is fetched through an uncacheable 302, is
+served with no `Cache-Control` and no CORS headers at all, and GitHub's own documentation ("no
+limit on ... bandwidth usage") sits awkwardly against its acceptable-use policy (which reserves the
+right to throttle "significantly excessive" bandwidth). That combination is why offline audio and
+play-time checksum verification are both impossible today, and why ADR-0026 names a trigger for
+moving off Release hosting rather than treating the arrangement as permanent.
+
+One claim above needs qualifying in light of that. This section argues a full stored URL "lets each
+clip's hosting move independently (e.g. one variety re-recorded under a new release tag while
+others stay put)". True of the *data shape*, and true within GitHub — but the schema's
+`GITHUB_RELEASE_ASSET_URL` regex pins every URL to this repo's own `releases/download/` path, so no
+other host validates today. Moving hosting means widening that regex first, which is a
+`@teochew/core` change and carries a version bump ([ADR-0024](../../docs/adrs/adr-0024.md)).
 
 ## 13. Audio licensing and speaker consent · issue #33
 

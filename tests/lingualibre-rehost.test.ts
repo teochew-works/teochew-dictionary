@@ -1,6 +1,6 @@
 import { existsSync, mkdtempSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { join } from 'node:path'
+import { dirname, join } from 'node:path'
 
 import { describe, expect, it } from 'vitest'
 
@@ -115,14 +115,48 @@ describe('rehostClip', () => {
       fetchBytes: async () => Buffer.from('x'),
       releaseExists: () => true,
       runGh: (args) => {
-        localPath = args[2] ?? ''
+        // `['release', 'upload', <tag>, <localPath>, '--clobber']` — index 3.
+        localPath = args[3] ?? ''
       },
       tmpDir,
     })
 
-    expect(localPath).not.toBe('')
+    expect(localPath).toBe(join(tmpDir, 'dio5-ziu1.wav'))
     expect(existsSync(localPath)).toBe(false)
 
     rmSync(tmpDir, { recursive: true, force: true })
+  })
+
+  it('leaves a caller-supplied temp directory in place', async () => {
+    const tmpDir = mkdtempSync(join(tmpdir(), 'lingualibre-rehost-test-'))
+
+    await rehostClip(proposal(), {
+      fetchBytes: async () => Buffer.from('x'),
+      releaseExists: () => true,
+      runGh: () => {},
+      tmpDir,
+    })
+
+    expect(existsSync(tmpDir)).toBe(true)
+    rmSync(tmpDir, { recursive: true, force: true })
+  })
+
+  /**
+   * Every published clip goes through here, so a directory left behind per
+   * call accumulates one-for-one with the corpus (issue #240).
+   */
+  it('removes the temp directory it created itself', async () => {
+    let created = ''
+
+    await rehostClip(proposal(), {
+      fetchBytes: async () => Buffer.from('x'),
+      releaseExists: () => true,
+      runGh: (args) => {
+        created = dirname(args[3] ?? '')
+      },
+    })
+
+    expect(created).not.toBe('')
+    expect(existsSync(created)).toBe(false)
   })
 })

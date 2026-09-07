@@ -125,13 +125,12 @@ export async function uploadBytesToRelease(
   filename: string,
   options: UploadBytesOptions,
 ): Promise<UploadBytesResult> {
-  const {
-    tag,
-    releaseNotes,
-    releaseExists = defaultReleaseExists,
-    runGh = defaultRunGh,
-    tmpDir = mkdtempSync(join(tmpdir(), 'rehost-')),
-  } = options
+  const { tag, releaseNotes, releaseExists = defaultReleaseExists, runGh = defaultRunGh } = options
+
+  // Only a directory this call created is a directory this call may delete —
+  // same rule as `encodeCaf`. A caller-supplied `tmpDir` is the caller's.
+  const ownsTmpDir = options.tmpDir === undefined
+  const tmpDir = options.tmpDir ?? mkdtempSync(join(tmpdir(), 'rehost-'))
 
   ensureRelease(tag, releaseExists, runGh, releaseNotes)
 
@@ -146,6 +145,8 @@ export async function uploadBytesToRelease(
     runGh(['release', 'upload', tag, localPath, '--clobber'])
   } finally {
     rmSync(localPath, { force: true })
+    // See `encodeCaf`: one leaked directory per published clip otherwise.
+    if (ownsTmpDir) rmSync(tmpDir, { recursive: true, force: true })
   }
 
   const checksum = `sha256:${createHash('sha256').update(bytes).digest('hex')}`

@@ -1,11 +1,14 @@
 import { listAudioVarieties, loadAudio } from '../phonology/load.js'
 import type { Issue } from '../validate/index.js'
-import { verifyAudioRemote, type AudioSource } from '../validate/audio-remote.js'
+import { audioVerifyTargets, verifyAudioRemote, type AudioSource } from '../validate/audio-remote.js'
 import { dim, green, red } from './colour.js'
 
 /**
- * `npm run audio:verify` — fetch every declared audio clip and verify its
- * checksum against the real bytes at `clip.url`.
+ * `npm run audio:verify` — fetch every declared audio asset and verify its
+ * checksum against the real bytes. That is both `url`/`checksum` and, when a
+ * clip carries one, the CAF alternate's `cafUrl`/`cafChecksum` (issue #228) —
+ * two independently uploaded Release assets, either of which can rot without
+ * the other.
  *
  * Network-touching, so deliberately kept out of `npm run check` (same reason
  * `npm run xref`/`npm run import` are excluded) — `checkAudio` in
@@ -25,15 +28,11 @@ for (const id of listAudioVarieties()) {
   }
 }
 
-const clipCount = sources.reduce(
-  (n, s) =>
-    n +
-    Object.values(s.audio.clips).reduce((m, clips) => m + clips.length, 0) +
-    Object.values(s.audio.wordClips ?? {}).reduce((m, clips) => m + clips.length, 0),
-  0,
-)
+// Sized off the same walk the verifier uses, rather than re-counting clips
+// here: a clip is not one fetch once it can carry a CAF alternate.
+const assetCount = audioVerifyTargets(sources).length
 
-console.log(dim(`fetching and checksumming ${clipCount} audio clip${clipCount === 1 ? '' : 's'}…`))
+console.log(dim(`fetching and checksumming ${assetCount} audio asset${assetCount === 1 ? '' : 's'}…`))
 
 // A TTY can overwrite one progress line in place; a non-TTY (redirected to a
 // file, piped, CI) can't usefully use \r, so it gets an occasional new line

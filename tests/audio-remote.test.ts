@@ -146,3 +146,84 @@ describe('verifyAudioRemote over wordClips', () => {
     expect(issues[0]).toMatchObject({ path: 'wordClips.dio5 ziu1[0]' })
   })
 })
+
+/**
+ * `cafUrl`/`cafChecksum` (issue #228) went the same way `wordClips` had:
+ * added to the schema after this verifier was written, and never fetched. By
+ * the time it was noticed every one of the 3,088 Chaozhou clips carried a CAF
+ * alternate, so half of the published assets — and the half iOS actually
+ * plays — were being reported as verified without a byte being fetched
+ * (issue #238).
+ */
+describe('verifyAudioRemote over CAF alternates', () => {
+  const cafUrl = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou-caf/audio-chaozhou-dio5.caf`
+  const CAF_BODY = 'pretend caf bytes'
+  const CAF_CHECKSUM = `sha256:${checksumOf(CAF_BODY)}`
+  const withCaf = clip({ cafUrl, cafChecksum: CAF_CHECKSUM })
+
+  it('fetches both assets when a clip carries an alternate', async () => {
+    const sources: AudioSource[] = [{ file: 'data/phonology/audio/chaozhou.yaml', audio: audio({ dio5: withCaf }) }]
+    const fetched: string[] = []
+    const fetchClip = async (url: string): Promise<Response> => {
+      fetched.push(url)
+      return new Response(url === cafUrl ? CAF_BODY : BODY, { status: 200 })
+    }
+
+    expect(await verifyAudioRemote(sources, { fetchClip })).toEqual([])
+    expect(fetched).toEqual([URL, cafUrl])
+  })
+
+  it('fetches once for a clip with no alternate', async () => {
+    const sources: AudioSource[] = [{ file: 'data/phonology/audio/chaozhou.yaml', audio: audio({ dio5: clip() }) }]
+    const fetched: string[] = []
+    const fetchClip = async (url: string): Promise<Response> => {
+      fetched.push(url)
+      return new Response(BODY, { status: 200 })
+    }
+
+    await verifyAudioRemote(sources, { fetchClip })
+    expect(fetched).toEqual([URL])
+  })
+
+  it('flags a CAF checksum mismatch against cafChecksum, not checksum', async () => {
+    const sources: AudioSource[] = [{ file: 'data/phonology/audio/chaozhou.yaml', audio: audio({ dio5: withCaf }) }]
+    const fetchClip = fetchClipFixture({
+      [URL]: { status: 200, body: BODY },
+      [cafUrl]: { status: 200, body: 'different bytes entirely' },
+    })
+
+    const issues = await verifyAudioRemote(sources, { fetchClip })
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'clips.dio5[0].cafChecksum' })
+    expect(issues[0]?.message).toContain(cafUrl)
+  })
+
+  it('flags a missing CAF asset against cafUrl, leaving the original clean', async () => {
+    const sources: AudioSource[] = [{ file: 'data/phonology/audio/chaozhou.yaml', audio: audio({ dio5: withCaf }) }]
+    const fetchClip = fetchClipFixture({
+      [URL]: { status: 200, body: BODY },
+      [cafUrl]: { status: 404, body: '' },
+    })
+
+    const issues = await verifyAudioRemote(sources, { fetchClip })
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'clips.dio5[0].cafUrl' })
+    expect(issues[0]?.message).toContain('HTTP 404')
+  })
+
+  it('counts progress per asset, so a clip with an alternate is two steps', async () => {
+    const sources: AudioSource[] = [{ file: 'data/phonology/audio/chaozhou.yaml', audio: audio({ dio5: withCaf }) }]
+    const fetchClip = fetchClipFixture({
+      [URL]: { status: 200, body: BODY },
+      [cafUrl]: { status: 200, body: CAF_BODY },
+    })
+    const calls: [number, number][] = []
+
+    await verifyAudioRemote(sources, { fetchClip, onProgress: (done, total) => calls.push([done, total]) })
+
+    expect(calls).toEqual([
+      [1, 2],
+      [2, 2],
+    ])
+  })
+})
