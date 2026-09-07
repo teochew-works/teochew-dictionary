@@ -83,6 +83,22 @@ describe('verifyAudioRemote', () => {
     expect(issues).toHaveLength(1)
     expect(issues[0]).toMatchObject({ file: 'data/phonology/audio/shantou.yaml' })
   })
+
+  it('reports progress once per clip, regardless of how it resolved', async () => {
+    const url2 = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/ziu1.opus`
+    const sources: AudioSource[] = [
+      { file: 'data/phonology/audio/chaozhou.yaml', audio: audio({ dio5: clip(), ziu1: clip({ url: url2 }) }) },
+    ]
+    const fetchClip = fetchClipFixture({ [URL]: { status: 200, body: BODY }, [url2]: { status: 404, body: '' } })
+    const calls: [number, number][] = []
+
+    await verifyAudioRemote(sources, { fetchClip, onProgress: (done, total) => calls.push([done, total]) })
+
+    expect(calls).toEqual([
+      [1, 2],
+      [2, 2],
+    ])
+  })
 })
 
 /**
