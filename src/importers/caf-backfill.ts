@@ -4,7 +4,7 @@ import { parseDocument } from 'yaml'
 
 import type { Audio, AudioClip } from '@teochew/core'
 import { fetchWithRetry, IMPORTER_USER_AGENT } from './types.js'
-import { uploadBytesToRelease, type UploadBytesOptions } from './lingualibre-rehost.js'
+import { defaultReleaseExists, uploadBytesToRelease, type UploadBytesOptions } from './lingualibre-rehost.js'
 import { encodeCaf, type EncodeCafOptions } from './caf-encode.js'
 
 /**
@@ -110,6 +110,29 @@ function needsCaf(clip: AudioClip): boolean {
   return clip.cafUrl === undefined && /\.webm$/iu.test(clip.url)
 }
 
+/**
+ * `ensureRelease` (../importers/lingualibre-rehost.js) checks `releaseExists`
+ * before every single upload — fine for that module's one-clip-per-command
+ * callers, but a large batch through the same tag pays that real `gh release
+ * view` round-trip on every iteration for an answer that stops changing after
+ * the first (issue #233: ~1.2s × ~3,000 clips on a full-corpus run). A tag
+ * this confirms once as existing is trusted for the rest of the run; a tag it
+ * hasn't seen yet still falls through to a real check every time, since the
+ * interesting case — "does creating it on the previous call show up yet" — is
+ * exactly what must not be assumed.
+ */
+function cacheKnownExisting(check: (tag: string) => boolean): (tag: string) => boolean {
+  const known = new Set<string>()
+  return (tag) => {
+    if (known.has(tag)) return true
+    if (check(tag)) {
+      known.add(tag)
+      return true
+    }
+    return false
+  }
+}
+
 const BUCKETS: Bucket[] = ['clips', 'wordClips']
 
 /**
@@ -170,6 +193,7 @@ export async function backfillCafOpus(
   const result: BackfillCafOpusResult = { scanned: 0, skippedHasCaf: 0, skippedNotWebm: 0, backfilled: [] }
   const doc = write ? parseDocument(readFileSync(path, 'utf8')) : null
   const cafTags = createCafTagAllocator(audio.audio.variety, getAssetCount)
+  const cachedReleaseExists = cacheKnownExisting(releaseExists ?? defaultReleaseExists)
 
   for (const bucket of BUCKETS) {
     const table = audio[bucket] ?? {}
@@ -197,7 +221,7 @@ export async function backfillCafOpus(
         const { url: cafUrl, checksum: cafChecksum } = await uploadBytesToRelease(cafBytes, cafFilenameFor(clip.url), {
           tag: cafTags.nextTag(),
           releaseNotes: 'CAF/Opus alternates for iOS-native playback (issue #228).',
-          releaseExists,
+          releaseExists: cachedReleaseExists,
           runGh,
         })
         cafTags.recordUpload()

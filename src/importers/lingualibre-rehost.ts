@@ -72,7 +72,8 @@ async function defaultFetchBytes(url: string): Promise<Buffer> {
   return Buffer.from(await res.arrayBuffer())
 }
 
-function defaultReleaseExists(tag: string): boolean {
+/** Exported so a bulk caller (see caf-backfill.ts, issue #233) can wrap it in its own per-run cache. */
+export function defaultReleaseExists(tag: string): boolean {
   try {
     execFileSync('gh', ['release', 'view', tag], { stdio: 'ignore' })
     return true

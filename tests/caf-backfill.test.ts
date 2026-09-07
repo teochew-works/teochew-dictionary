@@ -28,13 +28,17 @@ const clip = (overrides: Partial<Audio['clips'][string][number]> = {}) => ({
 function fakeTools(tmpDir: string) {
   const runGhCalls: string[][] = []
   const getAssetCountCalls: string[] = []
+  const releaseExistsCalls: string[] = []
   return {
     tmpDir,
     fetchBytes: async () => Buffer.from('fake webm bytes'),
     runFfmpeg: (args: string[]) => writeFileSync(join(tmpDir, 'clip.wav'), 'fake wav'),
     runFfprobe: () => '140000',
     runAfconvert: (args: string[]) => writeFileSync(join(tmpDir, 'clip.caf'), 'fake caf'),
-    releaseExists: () => true,
+    releaseExists: (tag: string): boolean => {
+      releaseExistsCalls.push(tag)
+      return true
+    },
     runGh: (args: string[]) => {
       runGhCalls.push(args)
     },
@@ -44,6 +48,7 @@ function fakeTools(tmpDir: string) {
     },
     runGhCalls,
     getAssetCountCalls,
+    releaseExistsCalls,
   }
 }
 
@@ -112,6 +117,17 @@ describe('backfillCafOpus', () => {
     expect(tools.getAssetCountCalls).toEqual(['audio-chaozhou-caf'])
     expect(tools.runGhCalls).toHaveLength(2)
     expect(tools.runGhCalls.every((call) => call[2] === 'audio-chaozhou-caf')).toBe(true)
+  })
+
+  it('checks whether the release exists once per tag, not once per clip (issue #233)', async () => {
+    const path = join(dir, 'chaozhou.yaml')
+    const table = audioTable({ dio5: [clip()], ziu1: [clip({ url: WEBM_URL_2 })] })
+    writeFileSync(path, stringify(table))
+    const tools = fakeTools(mkdtempSync(join(tmpdir(), 'caf-backfill-tmp-')))
+
+    await backfillCafOpus(path, table, { write: true, ...tools })
+
+    expect(tools.releaseExistsCalls).toEqual(['audio-chaozhou-caf'])
   })
 
   it('rolls over to the next numbered CAF release once GitHub\'s per-release asset cap is met (issue #228)', async () => {
