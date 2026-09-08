@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
-import { syllableClipUrls } from '@teochew/core'
+import { syllableClipUrls, withTrim } from '@teochew/core'
 import { ReadingAudio } from './ReadingAudio'
 import { MogherPengim } from './MogherPengim'
 import type { EnrichedEntry, PronunciationMode } from '@teochew/core'
@@ -92,7 +92,7 @@ export function EntryDetail({
           const tags = [r.variety, r.register].filter(Boolean).join(', ')
           const onPlayCombined = (id: string) => {
             if (r.wordAudio) {
-              play(id, r.wordAudio.url)
+              play(id, withTrim(r.wordAudio))
             } else {
               playSequence(id, syllableClipUrls(r, pronunciation))
             }

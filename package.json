@@ -27,6 +27,7 @@
     "lookup": "tsx src/cli/lookup.ts",
     "audio:verify": "tsx src/cli/audio-verify.ts",
     "backfill:caf-opus": "tsx src/cli/backfill-caf-opus.ts",
+    "backfill:silence-trim": "tsx src/cli/backfill-silence-trim.ts",
     "rehost:lingualibre": "tsx src/cli/lingualibre-rehost.ts",
     "merge:lingualibre": "tsx src/cli/lingualibre-merge.ts",
     "merge:local-recording": "tsx src/cli/local-recording-merge.ts",

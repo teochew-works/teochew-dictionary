@@ -49,11 +49,26 @@ export function canCombine(reading: EnrichedReading, pronunciation: Pronunciatio
 }
 
 /**
+ * A clip's playback url, with its precomputed silence boundaries (issue #252)
+ * applied as an HTML5 Media Fragments URI (`#t=start,end`) — trims leading
+ * and/or trailing dead air using only native `<audio>` seeking, so it works
+ * on cross-origin GitHub Release assets without needing CORS-enabled hosting
+ * (see ADR-0026). Returns the bare url unchanged when neither boundary has
+ * been computed yet.
+ */
+export function withTrim(clip: AudioReference): string {
+  if (clip.trimStartMs === undefined && clip.trimEndMs === undefined) return clip.url
+  const start = (clip.trimStartMs ?? 0) / 1000
+  const end = clip.trimEndMs === undefined ? '' : `,${clip.trimEndMs / 1000}`
+  return `${clip.url}#t=${start}${end}`
+}
+
+/**
  * The urls a combined clip is chained from, in order. Only meaningful (and
  * only ever called) where `reading.wordAudio` is absent — a wordAudio-covered
  * reading plays that directly instead (see ReadingAudio).
  */
 export function syllableClipUrls(reading: EnrichedReading, pronunciation: PronunciationMode = 'citation'): string[] {
   const clips = pronunciation === 'sandhi' ? reading.sandhiAudio : reading.audio
-  return clips.filter((c): c is AudioReference => c !== null).map((c) => c.url)
+  return clips.filter((c): c is AudioReference => c !== null).map(withTrim)
 }

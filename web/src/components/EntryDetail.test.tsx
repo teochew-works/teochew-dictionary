@@ -121,6 +121,37 @@ describe('EntryDetail audio', () => {
     ])
   })
 
+  it('plays a syllable clip with a Media Fragments URI when it has precomputed silence-trim boundaries (issue #252)', () => {
+    const trimmed: AudioReference = { ...SYLLABLE_CLIP, trimStartMs: 239, trimEndMs: 677 }
+    const entry: EnrichedEntry = { ...ENTRY, readings: [{ ...READING, audio: [trimmed, null] }] }
+    render(<EntryDetail entry={entry} showLicence={false} />)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Play recording of syllable dio5' }))
+
+    const element = play.mock.instances[0] as HTMLAudioElement
+    expect(element.src).toBe(`${SYLLABLE_CLIP.url}#t=0.239,0.677`)
+  })
+
+  it('plays an untrimmed clip at its bare url — no fragment when neither boundary is set', () => {
+    render(<EntryDetail entry={WITH_AUDIO} showLicence={false} />)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Play whole-word recording of dio5 ziu1' }))
+
+    const element = play.mock.instances[0] as HTMLAudioElement
+    expect(element.src).toBe(WORD_CLIP.url)
+  })
+
+  it('plays the combined wordAudio clip with its Media Fragments URI too', () => {
+    const trimmedWord: AudioReference = { ...WORD_CLIP, trimStartMs: 50, trimEndMs: 900 }
+    const entry: EnrichedEntry = { ...WITH_AUDIO, readings: [{ ...READING, audio: [SYLLABLE_CLIP, null], wordAudio: trimmedWord }] }
+    render(<EntryDetail entry={entry} showLicence={false} />)
+
+    fireEvent.click(screen.getByRole('button', { name: /^Play combined/ }))
+
+    const element = play.mock.instances[0] as HTMLAudioElement
+    expect(element.src).toBe(`${WORD_CLIP.url}#t=0.05,0.9`)
+  })
+
   it('skips syllable slots with no recording', () => {
     const entry = {
       ...ENTRY,

@@ -166,6 +166,21 @@ describe('audioSchema', () => {
     const bad = clip({ cafChecksum: VALID_CHECKSUM })
     expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
   })
+
+  it('accepts a clip with precomputed silence-trim boundaries (issue #252)', () => {
+    const trimmed = clip({ trimStartMs: 239, trimEndMs: 677 })
+    expect(() => audioSchema.parse(audio({ dio5: trimmed }))).not.toThrow()
+  })
+
+  it('accepts trimStartMs or trimEndMs independently — unlike cafUrl/cafChecksum, neither implies the other', () => {
+    expect(() => audioSchema.parse(audio({ dio5: clip({ trimStartMs: 239 }) }))).not.toThrow()
+    expect(() => audioSchema.parse(audio({ dio5: clip({ trimEndMs: 677 }) }))).not.toThrow()
+  })
+
+  it('rejects trimEndMs at or before trimStartMs', () => {
+    const bad = clip({ trimStartMs: 677, trimEndMs: 239 })
+    expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
+  })
 })
 
 describe('checkAudio', () => {
@@ -381,6 +396,12 @@ describe('deriveReadingAudio', () => {
     expect(deriveReadingAudio(syllables, table, sources)).toEqual([
       { key: 'dio5', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] },
     ])
+  })
+
+  it("carries the clip's trimStartMs/trimEndMs through (issue #252)", () => {
+    const syllables = parsePengim('dio5')
+    const table = audio({ dio5: clip({ trimStartMs: 239, trimEndMs: 677 }) })
+    expect(deriveReadingAudio(syllables, table, sources)).toMatchObject([{ trimStartMs: 239, trimEndMs: 677 }])
   })
 
   it("derives licence/attributions from the clip's own sources, matching the real teochew-dictionary-audio shape", () => {
@@ -655,5 +676,10 @@ describe('deriveReadingWordAudio', () => {
   it('threads speaker through from the chosen clip', () => {
     const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL, speaker: 'jky' }) })
     expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toMatchObject({ speaker: 'jky' })
+  })
+
+  it("carries the clip's trimStartMs/trimEndMs through (issue #252)", () => {
+    const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL, trimStartMs: 239, trimEndMs: 677 }) })
+    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toMatchObject({ trimStartMs: 239, trimEndMs: 677 })
   })
 })

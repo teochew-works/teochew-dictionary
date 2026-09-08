@@ -193,20 +193,27 @@ shares with the mobile app, and where it lives).
   from that restriction (browsers don't apply CORS to media-element
   playback), which is why chaining plain elements works and synthesis
   can't — short of rehosting every clip somewhere CORS-enabled, which was
-  explicitly declined for this issue. Consequently there's no
-  silence-trimming or crossfade: the natural gap in each clip is still
-  audible between syllables, which is the choppiness the issue originally
-  set out to fix — a real, open limitation of the current implementation,
-  not a hidden one.
+  explicitly declined for this issue.
+
+  **Silence trimming (issue #252), no CORS needed.** CORS only blocks
+  *reading raw bytes* — it doesn't block seeking or volume on a cross-origin
+  `<audio>` element. Each clip's leading/trailing dead air is precomputed
+  offline (`npm run backfill:silence-trim`, via `ffmpeg silencedetect`) into
+  `trimStartMs`/`trimEndMs` on the clip; `withTrim` (`@teochew/core`'s
+  `search/filters.ts`) turns those into an HTML5 Media Fragments URI
+  (`clip.opus#t=start,end`) wherever a clip becomes an `<audio src>` — every
+  per-syllable button and the combined "play all" sequence alike. Crossfading
+  the seams between chained clips remains unimplemented — a two-element
+  ping-pong player is the natural follow-up, tracked on the same issue.
 
   A native whole-word `wordAudio` recording is still preferred over chaining
   when present — it's already one continuous, coarticulated clip, strictly
   better than stitched-together syllables — so the combined button plays
   that directly instead. Combined playback is only offered when every
   syllable's clip is present *and* from the same recorded speaker
-  (`canCombine` in `src/search/filters.ts`) — splicing together different
-  voices would sound worse than not offering it — which the build pipeline
-  helps by preferring a fully same-speaker clip set across a reading's
+  (`canCombine` in `@teochew/core`'s `search/filters.ts`) — splicing
+  together different voices would sound worse than not offering it — which
+  the build pipeline helps by preferring a fully same-speaker clip set across a reading's
   syllables when one exists (`selectReadingClips` in `src/build/enrich.ts`),
   rather than picking each syllable's independently-best clip in isolation. A
   three-state "Audio buttons" setting (`src/settings/audioMode.ts`: component
