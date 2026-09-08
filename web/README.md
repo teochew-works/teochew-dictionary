@@ -180,6 +180,41 @@ shares with the mobile app, and where it lives).
   - **Custom buttons, not `<audio controls>`.** A three-syllable reading would
     otherwise render four full-width native players.
 
+  **Combined playback (issue #191).** A "play all" button plays a reading's
+  syllable clips back-to-back under one `<audio>` element
+  (`useAudioPlayer`'s `playSequence`), advancing to the next clip on each
+  one's `ended` event. **Not** a synthesized single clip: the original design
+  fetched each clip's bytes, trimmed leading/trailing silence, and
+  crossfaded the seams via the Web Audio API — abandoned after discovering
+  GitHub Release assets (where every clip is hosted,
+  `data/phonology/REVIEW.md` § 12) send no `Access-Control-Allow-Origin`
+  header on either the redirect or the final response, so `fetch()` is
+  CORS-blocked from ever reading the bytes. `<audio src>` playback is exempt
+  from that restriction (browsers don't apply CORS to media-element
+  playback), which is why chaining plain elements works and synthesis
+  can't — short of rehosting every clip somewhere CORS-enabled, which was
+  explicitly declined for this issue. Consequently there's no
+  silence-trimming or crossfade: the natural gap in each clip is still
+  audible between syllables, which is the choppiness the issue originally
+  set out to fix — a real, open limitation of the current implementation,
+  not a hidden one.
+
+  A native whole-word `wordAudio` recording is still preferred over chaining
+  when present — it's already one continuous, coarticulated clip, strictly
+  better than stitched-together syllables — so the combined button plays
+  that directly instead. Combined playback is only offered when every
+  syllable's clip is present *and* from the same recorded speaker
+  (`canCombine` in `src/search/filters.ts`) — splicing together different
+  voices would sound worse than not offering it — which the build pipeline
+  helps by preferring a fully same-speaker clip set across a reading's
+  syllables when one exists (`selectReadingClips` in `src/build/enrich.ts`),
+  rather than picking each syllable's independently-best clip in isolation. A
+  three-state "Audio buttons" setting (`src/settings/audioMode.ts`: component
+  / combined / both, default both) controls whether `ReadingAudio` shows the
+  per-syllable buttons, the combined button, or both; "combined" falls back
+  to the component buttons for any reading that doesn't qualify, rather than
+  showing nothing.
+
   An "Only entries with audio" checkbox filters the list to entries that have
   a clip (`@teochew/core`'s `search/filters.ts`), applied after search and before
   sorting/grouping so it works in every sort mode. It is not persisted, unlike

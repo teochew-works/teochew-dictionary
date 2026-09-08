@@ -44,11 +44,8 @@ function selectPrimaryClip(clips: AudioClip[]): AudioClip {
   })[0]!
 }
 
-function resolveClipForKey(key: string, audio: Audio, sources: Map<string, Source>): AudioReference | null {
-  const clips = audio.clips[key]
-  if (!clips || clips.length === 0) return null
-  const clip = selectPrimaryClip(clips)
-
+/** Builds the published AudioReference from an already-chosen clip. */
+function toAudioReference(key: string, clip: AudioClip, audio: Audio, sources: Map<string, Source>): AudioReference {
   const resolved = resolveLicenceOrThrow(clip.sources, sources, `${audio.audio.id}/${key}`)
 
   return {
@@ -56,9 +53,86 @@ function resolveClipForKey(key: string, audio: Audio, sources: Map<string, Sourc
     url: clip.url,
     cafUrl: clip.cafUrl,
     confidence: clip.confidence,
+    speaker: clip.speaker,
     licence: resolved.licence,
     attributions: resolved.attributions,
   }
+}
+
+/**
+ * The speaker every candidate set in `perSyllableClips` would need in common
+ * to fully cover the reading, if one exists — `null` when any syllable has
+ * no clips at all (full coverage is then impossible regardless of speaker)
+ * or when no single speaker recorded a clip at every syllable. Clips with no
+ * `speaker` are never counted toward any candidate — there's no identity to
+ * match, same convention as `checkDuplicateSpeakers` in ../validate/index.ts.
+ */
+function bestCommonSpeaker(perSyllableClips: AudioClip[][]): string | null {
+  if (perSyllableClips.length === 0 || perSyllableClips.some((clips) => clips.length === 0)) return null
+
+  let candidates: Set<string> | null = null
+  for (const clips of perSyllableClips) {
+    const here = new Set(clips.filter((c) => c.speaker).map((c) => c.speaker!))
+    if (candidates === null) {
+      candidates = here
+    } else {
+      const intersection = new Set<string>()
+      for (const s of candidates) if (here.has(s)) intersection.add(s)
+      candidates = intersection
+    }
+    if (candidates.size === 0) return null
+  }
+  if (candidates === null || candidates.size === 0) return null
+  if (candidates.size === 1) return [...candidates][0]!
+  return pickBestCandidate([...candidates], perSyllableClips)
+}
+
+/**
+ * Breaks a tie between two or more speakers who each fully cover the
+ * reading: the set whose weakest clip has the highest confidence wins first
+ * (a uniformly "high" take beats one dragged down by a single "low" link);
+ * ties within that broken by the most recent `recorded` date anywhere in the
+ * set, then by speaker id for determinism.
+ */
+function pickBestCandidate(speakers: string[], perSyllableClips: AudioClip[][]): string {
+  function clipsFor(speaker: string): AudioClip[] {
+    return perSyllableClips.map((clips) => clips.find((c) => c.speaker === speaker)!)
+  }
+  function worstRank(clips: AudioClip[]): number {
+    return Math.max(...clips.map((c) => CONFIDENCE_RANK[c.confidence]))
+  }
+  function latestRecorded(clips: AudioClip[]): string {
+    return clips.reduce((max, c) => ((c.recorded ?? '') > max ? (c.recorded ?? '') : max), '')
+  }
+
+  return [...speakers].sort((a, b) => {
+    const clipsA = clipsFor(a)
+    const clipsB = clipsFor(b)
+    const byWorstConfidence = worstRank(clipsA) - worstRank(clipsB)
+    if (byWorstConfidence !== 0) return byWorstConfidence
+    const byRecency = latestRecorded(clipsB).localeCompare(latestRecorded(clipsA))
+    if (byRecency !== 0) return byRecency
+    return a.localeCompare(b)
+  })[0]!
+}
+
+/**
+ * Picks one clip per syllable for a whole reading at once: prefers a clip
+ * set where every syllable's chosen clip shares one speaker over each
+ * syllable's independently highest-confidence clip (issue #191) — the
+ * per-syllable-independent rule below can otherwise silently produce a
+ * mixed-speaker set even when a fully consistent take exists, which blocks
+ * combined-audio synthesis for no good reason. Falls back to `selectPrimaryClip`
+ * per syllable when no single speaker covers every syllable that has any
+ * clip at all — including when a syllable has zero clips, which makes full
+ * coverage impossible regardless of speaker.
+ */
+function selectReadingClips(perSyllableClips: AudioClip[][]): (AudioClip | null)[] {
+  const speaker = bestCommonSpeaker(perSyllableClips)
+  if (speaker !== null) {
+    return perSyllableClips.map((clips) => clips.find((c) => c.speaker === speaker) ?? null)
+  }
+  return perSyllableClips.map((clips) => (clips.length > 0 ? selectPrimaryClip(clips) : null))
 }
 
 /**
@@ -72,7 +146,9 @@ export function deriveReadingAudio(
   sources: Map<string, Source>,
 ): (AudioReference | null)[] {
   if (!audio) return syllables.map(() => null)
-  return syllables.map((s) => resolveClipForKey(s.raw, audio, sources))
+  const keys = syllables.map((s) => s.raw)
+  const picks = selectReadingClips(keys.map((k) => audio.clips[k] ?? []))
+  return keys.map((key, i) => (picks[i] ? toAudioReference(key, picks[i]!, audio, sources) : null))
 }
 
 /**
@@ -80,6 +156,12 @@ export function deriveReadingAudio(
  * spelling instead of its citation spelling, falling back to the
  * already-derived citation clip at that index when no sandhi-specific clip
  * has been recorded yet (issue #36 coverage is partial).
+ *
+ * The same-speaker search only considers sandhi-specific clips, not a hybrid
+ * with citation-fallback positions — a syllable that falls back to
+ * `citationAudio[i]` isn't reconciled against a sibling's sandhi-specific
+ * speaker. Sandhi-specific coverage is presently partial enough that this
+ * branch rarely has a chance to matter; worth revisiting if that changes.
  */
 export function deriveReadingSandhiAudio(
   sandhi: SandhiResult,
@@ -88,7 +170,9 @@ export function deriveReadingSandhiAudio(
   sources: Map<string, Source>,
 ): (AudioReference | null)[] {
   if (!audio) return citationAudio
-  return sandhi.syllables.map((s, i) => resolveClipForKey(s.surface, audio, sources) ?? citationAudio[i] ?? null)
+  const keys = sandhi.syllables.map((s) => s.surface)
+  const picks = selectReadingClips(keys.map((k) => audio.clips[k] ?? []))
+  return keys.map((key, i) => (picks[i] ? toAudioReference(key, picks[i]!, audio, sources) : (citationAudio[i] ?? null)))
 }
 
 /**
@@ -113,6 +197,7 @@ export function deriveReadingWordAudio(
     url: clip.url,
     cafUrl: clip.cafUrl,
     confidence: clip.confidence,
+    speaker: clip.speaker,
     licence: resolved.licence,
     attributions: resolved.attributions,
   }

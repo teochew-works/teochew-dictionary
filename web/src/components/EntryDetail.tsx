@@ -1,8 +1,10 @@
 import { useMemo } from 'react'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
+import { syllableClipUrls } from '@teochew/core'
 import { ReadingAudio } from './ReadingAudio'
 import { MogherPengim } from './MogherPengim'
 import type { EnrichedEntry, PronunciationMode } from '@teochew/core'
+import type { AudioMode } from '../settings/audioMode'
 import { LevelBadge } from './LevelBadge'
 import { LICENCE_URLS } from '../data/licenceUrls'
 
@@ -57,13 +59,15 @@ export function EntryDetail({
   showLicence,
   pronunciation = 'citation',
   mogherLinks = false,
+  audioMode = 'both',
 }: {
   entry: EnrichedEntry
   showLicence: boolean
   pronunciation?: PronunciationMode
   mogherLinks?: boolean
+  audioMode?: AudioMode
 }) {
-  const { playingId, play } = useAudioPlayer()
+  const { playingId, play, playSequence } = useAudioPlayer()
   // Gated/memoized rather than computed unconditionally: showLicence is off
   // by default, and playingId changes on every clip click — without this,
   // clipCredits would re-walk every reading's clips on every play/pause even
@@ -86,6 +90,13 @@ export function EntryDetail({
       <section className="entry-detail__readings">
         {entry.readings.map((r, i) => {
           const tags = [r.variety, r.register].filter(Boolean).join(', ')
+          const onPlayCombined = (id: string) => {
+            if (r.wordAudio) {
+              play(id, r.wordAudio.url)
+            } else {
+              playSequence(id, syllableClipUrls(r, pronunciation))
+            }
+          }
           return (
             <div className="reading" key={`${r.pengim}-${i}`}>
               <div className="reading__line">
@@ -105,7 +116,9 @@ export function EntryDetail({
                 readingIndex={i}
                 playingId={playingId}
                 onPlay={play}
+                onPlayCombined={onPlayCombined}
                 pronunciation={pronunciation}
+                audioMode={audioMode}
               />
             </div>
           )

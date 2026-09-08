@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent, ReactNode, RefObject } from 'react'
 import type { EnrichedEntry, EnrichedReading, Grade, PromptMode, PronunciationMode, Deck } from '@teochew/core'
+import type { AudioMode } from '../settings/audioMode'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
+import { syllableClipUrls } from '@teochew/core'
 import { ReadingAudio } from './ReadingAudio'
 
 const GRADES: { grade: Grade; label: string; key: string }[] = [
@@ -34,6 +36,7 @@ export function Flashcard({
   entry,
   mode,
   pronunciation,
+  audioMode = 'both',
   sourceDeck,
   intervals,
   filing,
@@ -42,6 +45,7 @@ export function Flashcard({
   entry: EnrichedEntry
   mode: PromptMode
   pronunciation: PronunciationMode
+  audioMode?: AudioMode
   /** The in-play deck this card came from, or null when it came from the dictionary. */
   sourceDeck: Deck | null
   /** Days each grade would schedule, from the live card state — see srs/scheduler.ts's previewIntervals. */
@@ -63,11 +67,26 @@ export function Flashcard({
   } | null
 }) {
   const [revealed, setRevealed] = useState(false)
-  const { playingId, play } = useAudioPlayer()
+  const { playingId, play, playSequence } = useAudioPlayer()
   const reading = entry.readings[0]
   const gloss = entry.senses[0]?.gloss_en.join(', ')
+  const onPlayCombined = (id: string) => {
+    if (reading?.wordAudio) {
+      play(id, reading.wordAudio.url)
+    } else if (reading) {
+      playSequence(id, syllableClipUrls(reading, pronunciation))
+    }
+  }
   const audio = reading && (
-    <ReadingAudio reading={reading} readingIndex={0} playingId={playingId} onPlay={play} pronunciation={pronunciation} />
+    <ReadingAudio
+      reading={reading}
+      readingIndex={0}
+      playingId={playingId}
+      onPlay={play}
+      onPlayCombined={onPlayCombined}
+      pronunciation={pronunciation}
+      audioMode={audioMode}
+    />
   )
 
   function grade(g: Grade) {

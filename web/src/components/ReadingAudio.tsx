@@ -1,16 +1,22 @@
-import type { AudioReference, EnrichedReading } from '@teochew/core'
-import type { PronunciationMode } from '@teochew/core'
+import { canCombine } from '@teochew/core'
+import type { AudioReference, EnrichedReading, PronunciationMode } from '@teochew/core'
+import type { AudioMode } from '../settings/audioMode'
 
 /**
- * Clip buttons for one reading: the whole-word clip first as ♪♪, then one ♪
- * button per syllable that has a recording. Same glyphs as src/cli/lookup.ts,
- * but that order is reversed there (syllables, then the word clip last) — the
- * CLI wasn't updated when this ordering was chosen; see web/README.md.
+ * Clip buttons for one reading: a combined "play all" button first when
+ * offered, then the whole-word clip as ♪♪, then one ♪ button per syllable
+ * that has a recording. Same glyphs as src/cli/lookup.ts, but that order is
+ * reversed there (syllables, then the word clip last) — the CLI wasn't
+ * updated when this ordering was chosen; see web/README.md.
  *
- * Both are offered when both exist rather than the word clip suppressing the
- * syllables — a word recording carries connected-speech coarticulation a
- * syllable clip can't (data/phonology/REVIEW.md § 16), but the syllables stay
- * reachable for drilling one at a time.
+ * The word clip and syllables are offered together when both exist rather
+ * than one suppressing the other — a word recording carries connected-speech
+ * coarticulation a syllable clip can't (data/phonology/REVIEW.md § 16), but
+ * the syllables stay reachable for drilling one at a time. `audioMode`
+ * governs this independently of that: it toggles the *combined* control
+ * (native wordAudio, or the syllable clips chained back-to-back — issue
+ * #191) against these per-syllable "component" buttons, not one against the
+ * other.
  *
  * Renders nothing when the reading has no clips at all — still most readings
  * today, since recorded coverage (data/phonology/audio/chaozhou.yaml) is
@@ -21,7 +27,9 @@ export function ReadingAudio({
   readingIndex,
   playingId,
   onPlay,
+  onPlayCombined,
   pronunciation = 'citation',
+  audioMode = 'both',
 }: {
   reading: EnrichedReading
   /** Disambiguates this reading's clip ids from every other reading's on the
@@ -30,17 +38,44 @@ export function ReadingAudio({
   readingIndex: number
   playingId: string | null
   onPlay: (id: string, url: string) => void
+  /**
+   * Plays the combined clip under `id` — reading.wordAudio directly when
+   * present, otherwise the syllable clips chained back-to-back. Required
+   * whenever a combined button can be shown; the caller owns that branch
+   * since it's the one holding useAudioPlayer.
+   */
+  onPlayCombined?: (id: string) => void
   /** Which per-syllable clip array to play from. Defaults to citation — only
    *  Flashcard mode's sandhi toggle passes 'sandhi'. */
   pronunciation?: PronunciationMode
+  /** Component (per-syllable) buttons, the combined "play all" button, or both. Defaults to both. */
+  audioMode?: AudioMode
 }) {
   const syllableClips = pronunciation === 'sandhi' ? reading.sandhiAudio : reading.audio
   const hasSyllableClip = syllableClips.some((c) => c !== null)
   if (!reading.wordAudio && !hasSyllableClip) return null
 
+  // A native wordAudio recording IS a combined clip already — nothing to
+  // chain, so it alone is enough to make this reading combinable.
+  const combinable = reading.wordAudio !== null || canCombine(reading, pronunciation)
+  // "combined" falls back to component buttons when this reading can't
+  // combine, so an entry never loses audio access entirely just because the
+  // setting says "combined only" — showCombined always implies combinable,
+  // so there's no state that offers a button with nothing to play.
+  const showComponent = audioMode === 'component' || audioMode === 'both' || (audioMode === 'combined' && !combinable)
+  const showCombined = combinable && (audioMode === 'combined' || audioMode === 'both')
+
   return (
     <div className="reading__audio">
-      {reading.wordAudio && (
+      {showCombined && onPlayCombined && (
+        <CombinedClipButton
+          id={`${readingIndex}:combined`}
+          label={`Play combined recording of ${reading.pengim}`}
+          playingId={playingId}
+          onPlay={onPlayCombined}
+        />
+      )}
+      {showComponent && reading.wordAudio && (
         <ClipButton
           id={`${readingIndex}:word`}
           clip={reading.wordAudio}
@@ -51,25 +86,52 @@ export function ReadingAudio({
           onPlay={onPlay}
         />
       )}
-      {syllableClips.map(
-        (clip, i) =>
-          clip && (
-            // Id (and key) carry the syllable's own slot, not a reduplicated
-            // clip's url: a reading like "mang7 mang7" resolves both
-            // syllables to the same clip, and they must still act — and be
-            // keyed — as two distinct buttons.
-            <ClipButton
-              key={i}
-              id={`${readingIndex}:syllable-${i}`}
-              clip={clip}
-              glyph="♪"
-              label={`Play recording of syllable ${clip.key}`}
-              playingId={playingId}
-              onPlay={onPlay}
-            />
-          ),
-      )}
+      {showComponent &&
+        syllableClips.map(
+          (clip, i) =>
+            clip && (
+              // Id (and key) carry the syllable's own slot, not a reduplicated
+              // clip's url: a reading like "mang7 mang7" resolves both
+              // syllables to the same clip, and they must still act — and be
+              // keyed — as two distinct buttons.
+              <ClipButton
+                key={i}
+                id={`${readingIndex}:syllable-${i}`}
+                clip={clip}
+                glyph="♪"
+                label={`Play recording of syllable ${clip.key}`}
+                playingId={playingId}
+                onPlay={onPlay}
+              />
+            ),
+        )}
     </div>
+  )
+}
+
+function CombinedClipButton({
+  id,
+  label,
+  playingId,
+  onPlay,
+}: {
+  id: string
+  label: string
+  playingId: string | null
+  onPlay: (id: string) => void
+}) {
+  const playing = playingId === id
+  const classes = ['reading__clip', 'reading__clip--combined', playing && 'reading__clip--playing'].filter(Boolean)
+  return (
+    <button
+      type="button"
+      className={classes.join(' ')}
+      aria-label={label}
+      aria-pressed={playing}
+      onClick={() => onPlay(id)}
+    >
+      <span aria-hidden="true">▶</span> Play all
+    </button>
   )
 }
 

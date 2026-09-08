@@ -1,4 +1,5 @@
-import type { EnrichedEntry } from '../enrichedEntry.js'
+import type { AudioReference, EnrichedEntry, EnrichedReading } from '../enrichedEntry.js'
+import type { PronunciationMode } from '../settings/pronunciationMode.js'
 
 /**
  * Whether any reading on the entry has a recording — a whole-word clip or a
@@ -25,4 +26,34 @@ export function hasAudio(entry: EnrichedEntry): boolean {
 export function hasFullAudio(entry: EnrichedEntry): boolean {
   const r = entry.readings[0]
   return r !== undefined && (r.wordAudio !== null || r.audio.every((c) => c !== null))
+}
+
+/**
+ * Whether `reading` qualifies for combined playback — its syllable clips
+ * chained back-to-back (issue #191): more than one syllable, every syllable
+ * clip present, and every one of those clips from the same speaker — a
+ * mixed-speaker set would splice different voices together, which sounds
+ * worse than not offering combined playback at all. Deliberately doesn't
+ * consider `wordAudio` — a natively-recorded whole-word clip is played
+ * directly instead of chaining syllables (see ReadingAudio), so this only
+ * answers "can the syllables be chained". A clip with no `speaker` never
+ * counts toward a match — there's no identity to compare, same convention as
+ * the build pipeline's `bestCommonSpeaker` (src/build/enrich.ts).
+ */
+export function canCombine(reading: EnrichedReading, pronunciation: PronunciationMode = 'citation'): boolean {
+  if (reading.syllable_count <= 1) return false
+  const clips = pronunciation === 'sandhi' ? reading.sandhiAudio : reading.audio
+  if (!clips.every((c): c is AudioReference => c !== null)) return false
+  const speaker = clips[0]!.speaker
+  return speaker !== undefined && clips.every((c) => c.speaker === speaker)
+}
+
+/**
+ * The urls a combined clip is chained from, in order. Only meaningful (and
+ * only ever called) where `reading.wordAudio` is absent — a wordAudio-covered
+ * reading plays that directly instead (see ReadingAudio).
+ */
+export function syllableClipUrls(reading: EnrichedReading, pronunciation: PronunciationMode = 'citation'): string[] {
+  const clips = pronunciation === 'sandhi' ? reading.sandhiAudio : reading.audio
+  return clips.filter((c): c is AudioReference => c !== null).map((c) => c.url)
 }

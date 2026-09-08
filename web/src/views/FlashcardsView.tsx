@@ -50,6 +50,9 @@ import {
   type Deck,
 } from '@teochew/core'
 import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly'
+import { readAudioMode, writeAudioMode } from '../settings/audioMode'
+import type { AudioMode } from '../settings/audioMode'
+import { AudioModeControl } from '../components/AudioModeControl'
 import { useDecksStore } from '../decks/useDecksStore'
 import type { DecksState } from '../decks/storage'
 import { makeDictionaryDeck } from '../decks/virtualDeck'
@@ -149,6 +152,7 @@ export function FlashcardsView({ entries, drawer: controlledDrawer, onDrawerChan
   const decksStore = useDecksStore()
   const [mode, setMode] = useState<PromptMode>(readPromptMode)
   const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
+  const [audioMode, setAudioMode] = useState<AudioMode>(readAudioMode)
   const [levelFilter, setLevelFilter] = useState<Set<LevelFilterValue>>(readLevelFilter)
   const [fullAudioOnly, setFullAudioOnly] = useState<boolean>(readFullAudioOnly)
   const [announcement, setAnnouncement] = useState('')
@@ -254,6 +258,11 @@ export function FlashcardsView({ entries, drawer: controlledDrawer, onDrawerChan
   function handlePronunciationChange(next: PronunciationMode) {
     setPronunciation(next)
     writePronunciationMode(next)
+  }
+
+  function handleAudioModeChange(next: AudioMode) {
+    setAudioMode(next)
+    writeAudioMode(next)
   }
 
   function handleLevelFilterChange(next: Set<LevelFilterValue>) {
@@ -658,6 +667,7 @@ export function FlashcardsView({ entries, drawer: controlledDrawer, onDrawerChan
           entry={currentEntry}
           mode={mode}
           pronunciation={pronunciation}
+          audioMode={audioMode}
           sourceDeck={sourceDeck}
           intervals={intervals}
           filing={{
@@ -881,6 +891,11 @@ export function FlashcardsView({ entries, drawer: controlledDrawer, onDrawerChan
                     Sandhi
                   </button>
                 </div>
+              </div>
+
+              <div className="pop__group">
+                <span className="eyebrow">Audio buttons</span>
+                <AudioModeControl mode={audioMode} onChange={handleAudioModeChange} />
               </div>
 
               <div className="pop__foot">Filters run across everything on the table — your decks and the dictionary alike.</div>

@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { EntryDetail } from './EntryDetail'
 import type { AudioReference, EnrichedEntry, EnrichedReading } from '@teochew/core'
 
@@ -110,9 +110,12 @@ describe('EntryDetail audio', () => {
   })
 
   it('renders the whole-word clip first, then one button per recorded syllable', () => {
+    // Default audioMode is 'both', and this reading's wordAudio makes it
+    // combinable — see the 'audioMode' describe block for mode-specific cases.
     render(<EntryDetail entry={WITH_AUDIO} showLicence={false} />)
     const buttons = screen.getAllByRole('button', { name: /^Play / })
     expect(buttons.map((b) => b.getAttribute('aria-label'))).toEqual([
+      'Play combined recording of dio5 ziu1',
       'Play whole-word recording of dio5 ziu1',
       'Play recording of syllable dio5',
     ])
@@ -300,6 +303,168 @@ describe('EntryDetail mogher.com links', () => {
       'href',
       'https://mogher.com/dic/czpy/u%C3%AA7',
     )
+  })
+})
+
+describe('EntryDetail audioMode', () => {
+  afterEach(cleanup)
+
+  let play: ReturnType<typeof vi.spyOn>
+
+  beforeEach(() => {
+    play = vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined)
+    vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  // Combinable via synthesis (not wordAudio): full same-speaker syllable coverage.
+  const SYNTH_COMBINABLE: EnrichedEntry = {
+    ...ENTRY,
+    readings: [
+      {
+        ...READING,
+        audio: [
+          { ...SYLLABLE_CLIP, speaker: 'jky' },
+          { ...SYLLABLE_CLIP, key: 'ziu1', speaker: 'jky' },
+        ],
+      },
+    ],
+  }
+
+  // Not combinable: no wordAudio, and the syllable clips are from different speakers.
+  const NOT_COMBINABLE: EnrichedEntry = {
+    ...ENTRY,
+    readings: [
+      {
+        ...READING,
+        audio: [
+          { ...SYLLABLE_CLIP, speaker: 'a' },
+          { ...SYLLABLE_CLIP, key: 'ziu1', speaker: 'b' },
+        ],
+      },
+    ],
+  }
+
+  it("'component' never shows a combined button, even when the reading is combinable", () => {
+    render(<EntryDetail entry={WITH_AUDIO} showLicence={false} audioMode="component" />)
+    expect(screen.queryByRole('button', { name: /^Play combined/ })).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Play whole-word recording of dio5 ziu1' })).toBeInTheDocument()
+  })
+
+  it("'combined' on a combinable reading hides the component buttons", () => {
+    render(<EntryDetail entry={SYNTH_COMBINABLE} showLicence={false} audioMode="combined" />)
+    expect(screen.getByRole('button', { name: /^Play combined/ })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /^Play recording of syllable/ })).not.toBeInTheDocument()
+  })
+
+  it("'combined' on a non-combinable reading falls back to component buttons instead of showing nothing", () => {
+    render(<EntryDetail entry={NOT_COMBINABLE} showLicence={false} audioMode="combined" />)
+    expect(screen.queryByRole('button', { name: /^Play combined/ })).not.toBeInTheDocument()
+    expect(screen.getAllByRole('button', { name: /^Play recording of syllable/ })).toHaveLength(2)
+  })
+
+  it("'both' shows the combined button alongside component buttons", () => {
+    render(<EntryDetail entry={SYNTH_COMBINABLE} showLicence={false} audioMode="both" />)
+    expect(screen.getByRole('button', { name: /^Play combined/ })).toBeInTheDocument()
+    expect(screen.getAllByRole('button', { name: /^Play recording of syllable/ })).toHaveLength(2)
+  })
+
+  it('chains syllable clips back-to-back, advancing on ended (no CORS-gated synthesis — GitHub Release assets send no CORS headers)', () => {
+    const secondUrl = 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou/ziu1.opus'
+    const entry: EnrichedEntry = {
+      ...ENTRY,
+      readings: [
+        {
+          ...READING,
+          audio: [
+            { ...SYLLABLE_CLIP, speaker: 'jky' },
+            { ...SYLLABLE_CLIP, key: 'ziu1', speaker: 'jky', url: secondUrl },
+          ],
+        },
+      ],
+    }
+    render(<EntryDetail entry={entry} showLicence={false} audioMode="combined" />)
+    const button = screen.getByRole('button', { name: /^Play combined/ })
+
+    fireEvent.click(button)
+    expect(play).toHaveBeenCalledTimes(1)
+    const element = play.mock.instances[0] as HTMLAudioElement
+    expect(element.src).toBe(SYLLABLE_CLIP.url)
+    expect(button).toHaveAttribute('aria-pressed', 'true')
+
+    act(() => element.dispatchEvent(new Event('ended')))
+    expect(play).toHaveBeenCalledTimes(2)
+    expect(element.src).toBe(secondUrl)
+    expect(button).toHaveAttribute('aria-pressed', 'true')
+    // Same element throughout — that's what makes the two clips chain rather
+    // than layer.
+    expect(play.mock.instances[1]).toBe(element)
+
+    act(() => element.dispatchEvent(new Event('ended')))
+    expect(button).toHaveAttribute('aria-pressed', 'false')
+  })
+
+  it('stops the sequence when a component button is clicked mid-chain', () => {
+    const secondUrl = 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou/ziu1.opus'
+    const entry: EnrichedEntry = {
+      ...ENTRY,
+      readings: [
+        {
+          ...READING,
+          audio: [
+            { ...SYLLABLE_CLIP, speaker: 'jky' },
+            { ...SYLLABLE_CLIP, key: 'ziu1', speaker: 'jky', url: secondUrl },
+          ],
+        },
+      ],
+    }
+    render(<EntryDetail entry={entry} showLicence={false} audioMode="both" />)
+    const combined = screen.getByRole('button', { name: /^Play combined/ })
+    const [syllable] = screen.getAllByRole('button', { name: /^Play recording of syllable/ })
+
+    fireEvent.click(combined)
+    fireEvent.click(syllable!)
+
+    expect(combined).toHaveAttribute('aria-pressed', 'false')
+    expect(syllable).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  it("does not let an interrupted combined sequence's stale continuation clobber the clip switched to after it", async () => {
+    // Reusing the element to switch clips aborts the combined sequence's
+    // in-flight play() request, which rejects its promise — the same hazard
+    // useAudioPlayer's requestId guard already protects `play` from.
+    const secondUrl = 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou/ziu1.opus'
+    const entry: EnrichedEntry = {
+      ...ENTRY,
+      readings: [
+        {
+          ...READING,
+          audio: [
+            { ...SYLLABLE_CLIP, speaker: 'jky' },
+            { ...SYLLABLE_CLIP, key: 'ziu1', speaker: 'jky', url: secondUrl },
+          ],
+        },
+      ],
+    }
+    let rejectFirst: (reason: unknown) => void = () => {}
+    play.mockImplementationOnce(() => new Promise((_resolve, reject) => (rejectFirst = reject)))
+
+    render(<EntryDetail entry={entry} showLicence={false} audioMode="both" />)
+    const combined = screen.getByRole('button', { name: /^Play combined/ })
+    const [syllable] = screen.getAllByRole('button', { name: /^Play recording of syllable/ })
+
+    fireEvent.click(combined)
+    fireEvent.click(syllable!)
+    rejectFirst(new DOMException('interrupted', 'AbortError'))
+    await Promise.resolve().then().then()
+
+    // The stale sequence must not resurrect the combined button, advance to
+    // the second clip, or clear the syllable button it was interrupted by.
+    expect(combined).toHaveAttribute('aria-pressed', 'false')
+    expect(syllable).toHaveAttribute('aria-pressed', 'true')
   })
 })
 

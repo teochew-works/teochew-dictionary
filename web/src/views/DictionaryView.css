@@ -310,6 +310,10 @@
   font-weight: 600;
 }
 
+.reading__clip--combined {
+  font-weight: 600;
+}
+
 .reading__clip--playing {
   border-color: var(--color-accent);
   color: var(--color-accent);
