@@ -69,8 +69,10 @@ The loop, in order:
 3. `npm run check` at the repo root and in `web/` — both consume this package and are where an
    API change shows up. CI runs all three as separate jobs.
 4. Bump `version` in `package.json` if the change should reach the mobile app, following the
-   semver policy below, and say so in the commit message. `web/` tracks the working tree and needs
-   no bump; `mobile/` pins a version and sees nothing until a release is cut.
+   semver policy below, and say so in the commit message. Run `npm install --package-lock-only`
+   afterwards so `package-lock.json`'s recorded version matches — otherwise the next `npm install`
+   here produces an unexplained two-line diff. `web/` tracks the working tree and needs no bump;
+   `mobile/` pins a version and sees nothing until a release is cut.
 5. After merge: cut a release (next section), then bump the tarball URL pinned in the app repo's
    `mobile/package.json`. A change mobile needs is not finished until that pin moves.
 
