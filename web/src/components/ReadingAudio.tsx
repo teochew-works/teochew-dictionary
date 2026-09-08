@@ -1,4 +1,4 @@
-import { canCombine } from '@teochew/core'
+import { canCombine, withTrim } from '@teochew/core'
 import type { AudioReference, EnrichedReading, PronunciationMode } from '@teochew/core'
 import type { AudioMode } from '../settings/audioMode'
 
@@ -160,7 +160,7 @@ function ClipButton({
       className={classes.join(' ')}
       aria-label={label}
       aria-pressed={playing}
-      onClick={() => onPlay(id, clip.url)}
+      onClick={() => onPlay(id, withTrim(clip))}
     >
       <span aria-hidden="true">{glyph}</span> {clip.key}
     </button>

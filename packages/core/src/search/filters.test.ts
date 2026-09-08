@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { canCombine, hasAudio, hasFullAudio } from './filters.js'
+import { canCombine, hasAudio, hasFullAudio, syllableClipUrls, withTrim } from './filters.js'
 import type { AudioReference, EnrichedEntry, EnrichedReading } from '../enrichedEntry.js'
 
 const CLIP: AudioReference = {
@@ -114,5 +114,36 @@ describe('canCombine', () => {
     const reading: EnrichedReading = { ...READING, audio: [speakerA, speakerB], sandhiAudio: [speakerA, speakerAAgain] }
     expect(canCombine(reading, 'citation')).toBe(false)
     expect(canCombine(reading, 'sandhi')).toBe(true)
+  })
+})
+
+describe('withTrim', () => {
+  it('returns the bare url when neither boundary is set', () => {
+    expect(withTrim(CLIP)).toBe(CLIP.url)
+  })
+
+  it('appends a Media Fragments URI when only trimStartMs is set', () => {
+    expect(withTrim({ ...CLIP, trimStartMs: 239 })).toBe(`${CLIP.url}#t=0.239`)
+  })
+
+  it('defaults the start to 0 when only trimEndMs is set', () => {
+    expect(withTrim({ ...CLIP, trimEndMs: 677 })).toBe(`${CLIP.url}#t=0,0.677`)
+  })
+
+  it('includes both bounds when both are set', () => {
+    expect(withTrim({ ...CLIP, trimStartMs: 239, trimEndMs: 677 })).toBe(`${CLIP.url}#t=0.239,0.677`)
+  })
+})
+
+describe('syllableClipUrls', () => {
+  it('trims null slots and maps each clip through withTrim', () => {
+    const trimmed = { ...CLIP, key: 'ziu1', trimStartMs: 239, trimEndMs: 677 }
+    const reading: EnrichedReading = { ...READING, audio: [CLIP, null, trimmed] }
+    expect(syllableClipUrls(reading)).toEqual([CLIP.url, `${CLIP.url}#t=0.239,0.677`])
+  })
+
+  it('reads from sandhiAudio in sandhi mode', () => {
+    const reading: EnrichedReading = { ...READING, audio: [CLIP], sandhiAudio: [{ ...CLIP, trimStartMs: 100 }] }
+    expect(syllableClipUrls(reading, 'sandhi')).toEqual([`${CLIP.url}#t=0.1`])
   })
 })

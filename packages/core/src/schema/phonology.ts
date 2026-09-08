@@ -181,8 +181,24 @@ const audioClip = z.object({
     .regex(/^sha256:[0-9a-fA-F]{64}$/u)
     .transform((s) => s.toLowerCase())
     .optional(),
+  /**
+   * Ms from the start of the file where useful audio begins — leading silence
+   * before this is skipped at playback (issue #252). Independently optional
+   * from `trimEndMs`, unlike `cafUrl`/`cafChecksum`: a clip can have detected
+   * leading silence with no trailing silence, or vice versa. Absent means not
+   * yet analyzed (or `ffmpeg silencedetect` found none): play from 0.
+   */
+  trimStartMs: z.number().int().nonnegative().optional(),
+  /**
+   * Ms from the start of the file where useful audio ends — trailing silence
+   * after this is skipped at playback (issue #252). Absent means not yet
+   * analyzed: play to the natural end.
+   */
+  trimEndMs: z.number().int().positive().optional(),
 }).refine((clip) => (clip.cafUrl === undefined) === (clip.cafChecksum === undefined), {
   message: 'cafUrl and cafChecksum must be either both present or both absent',
+}).refine((clip) => clip.trimStartMs === undefined || clip.trimEndMs === undefined || clip.trimEndMs > clip.trimStartMs, {
+  message: 'trimEndMs must be greater than trimStartMs when both are present',
 })
 
 export const audioSchema = z.object({

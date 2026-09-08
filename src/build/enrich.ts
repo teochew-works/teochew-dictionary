@@ -54,6 +54,8 @@ function toAudioReference(key: string, clip: AudioClip, audio: Audio, sources: M
     cafUrl: clip.cafUrl,
     confidence: clip.confidence,
     speaker: clip.speaker,
+    trimStartMs: clip.trimStartMs,
+    trimEndMs: clip.trimEndMs,
     licence: resolved.licence,
     attributions: resolved.attributions,
   }
@@ -198,6 +200,8 @@ export function deriveReadingWordAudio(
     cafUrl: clip.cafUrl,
     confidence: clip.confidence,
     speaker: clip.speaker,
+    trimStartMs: clip.trimStartMs,
+    trimEndMs: clip.trimEndMs,
     licence: resolved.licence,
     attributions: resolved.attributions,
   }
