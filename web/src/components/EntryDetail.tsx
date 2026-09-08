@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
-import { syllableClipUrls, withTrim } from '@teochew/core'
+import { syllableClips, withTrim } from '@teochew/core'
 import { ReadingAudio } from './ReadingAudio'
 import { MogherPengim } from './MogherPengim'
 import type { EnrichedEntry, PronunciationMode } from '@teochew/core'
@@ -67,7 +67,7 @@ export function EntryDetail({
   mogherLinks?: boolean
   audioMode?: AudioMode
 }) {
-  const { playingId, play, playSequence } = useAudioPlayer()
+  const { playingId, play, playCrossfaded } = useAudioPlayer()
   // Gated/memoized rather than computed unconditionally: showLicence is off
   // by default, and playingId changes on every clip click — without this,
   // clipCredits would re-walk every reading's clips on every play/pause even
@@ -94,7 +94,7 @@ export function EntryDetail({
             if (r.wordAudio) {
               play(id, withTrim(r.wordAudio))
             } else {
-              playSequence(id, syllableClipUrls(r, pronunciation))
+              playCrossfaded(id, syllableClips(r, pronunciation))
             }
           }
           return (

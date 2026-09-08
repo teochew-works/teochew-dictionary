@@ -3,7 +3,7 @@ import type { PointerEvent as ReactPointerEvent, ReactNode, RefObject } from 're
 import type { EnrichedEntry, EnrichedReading, Grade, PromptMode, PronunciationMode, Deck } from '@teochew/core'
 import type { AudioMode } from '../settings/audioMode'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
-import { syllableClipUrls, withTrim } from '@teochew/core'
+import { syllableClips, withTrim } from '@teochew/core'
 import { ReadingAudio } from './ReadingAudio'
 
 const GRADES: { grade: Grade; label: string; key: string }[] = [
@@ -67,14 +67,14 @@ export function Flashcard({
   } | null
 }) {
   const [revealed, setRevealed] = useState(false)
-  const { playingId, play, playSequence } = useAudioPlayer()
+  const { playingId, play, playCrossfaded } = useAudioPlayer()
   const reading = entry.readings[0]
   const gloss = entry.senses[0]?.gloss_en.join(', ')
   const onPlayCombined = (id: string) => {
     if (reading?.wordAudio) {
       play(id, withTrim(reading.wordAudio))
     } else if (reading) {
-      playSequence(id, syllableClipUrls(reading, pronunciation))
+      playCrossfaded(id, syllableClips(reading, pronunciation))
     }
   }
   const audio = reading && (

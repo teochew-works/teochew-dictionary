@@ -64,11 +64,19 @@ export function withTrim(clip: AudioReference): string {
 }
 
 /**
- * The urls a combined clip is chained from, in order. Only meaningful (and
+ * The clips a combined clip is chained from, in order. Only meaningful (and
  * only ever called) where `reading.wordAudio` is absent — a wordAudio-covered
- * reading plays that directly instead (see ReadingAudio).
+ * reading plays that directly instead (see ReadingAudio). Returns the raw
+ * `AudioReference`s rather than urls — crossfaded combined playback (issue
+ * #252 phase 2) needs each clip's own `trimStartMs`/`trimEndMs` to schedule
+ * the seam, not just its playback url.
  */
-export function syllableClipUrls(reading: EnrichedReading, pronunciation: PronunciationMode = 'citation'): string[] {
+export function syllableClips(reading: EnrichedReading, pronunciation: PronunciationMode = 'citation'): AudioReference[] {
   const clips = pronunciation === 'sandhi' ? reading.sandhiAudio : reading.audio
-  return clips.filter((c): c is AudioReference => c !== null).map(withTrim)
+  return clips.filter((c): c is AudioReference => c !== null)
+}
+
+/** `syllableClips`, each mapped through `withTrim` to its (possibly fragment-suffixed) playback url. */
+export function syllableClipUrls(reading: EnrichedReading, pronunciation: PronunciationMode = 'citation'): string[] {
+  return syllableClips(reading, pronunciation).map(withTrim)
 }
