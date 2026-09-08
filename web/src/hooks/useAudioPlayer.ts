@@ -1,4 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import type { AudioReference } from '@teochew/core'
+import { withTrim } from '@teochew/core'
+
+/** ~20-30ms: short enough not to blur two distinct syllables together, long enough to mask the seam. */
+const DEFAULT_CROSSFADE_MS = 30
 
 export interface AudioPlayer {
   /** The id of the clip currently playing, or null when nothing is. */
@@ -6,15 +11,17 @@ export interface AudioPlayer {
   /** Play `url` under `id`, stopping whatever was playing; playing the current id again stops it. */
   play: (id: string, url: string) => void
   /**
-   * Plays `urls` back-to-back under `id`, advancing on each clip's 'ended'
-   * event — issue #191's combined "play all" clip. Chained native playback,
-   * not a synthesized single clip: GitHub Release assets (where every clip
-   * is hosted, data/phonology/REVIEW.md § 12) send no CORS headers, so a
-   * fetch+decodeAudioData approach that could trim silence and crossfade
-   * seams can't work from the browser — only `<audio src>` playback is
-   * exempt from that restriction. Same play/stop contract as `play`.
+   * Plays `clips` back-to-back under `id`, crossfading across each seam
+   * (issue #252 phase 2) — the combined "play all" clip. Two `<audio>`
+   * elements ping-pong: while one plays the current clip, the next clip is
+   * started on the other a `crossfadeMs` before the current one's (trimmed)
+   * end, muted, then ramped in as the current one ramps out — masking the
+   * natural gap #191 originally set out to fix. Built entirely from native
+   * `<audio>` seeking and volume, so it stays clear of the CORS wall GitHub
+   * Release assets impose on `fetch`/`decodeAudioData` (see ADR-0026 and
+   * `withTrim`). Same play/stop contract as `play`.
    */
-  playSequence: (id: string, urls: string[]) => void
+  playCrossfaded: (id: string, clips: AudioReference[], crossfadeMs?: number) => void
 }
 
 /**
@@ -31,21 +38,48 @@ export interface AudioPlayer {
  * The element is created on first play, not on mount: most entries still have
  * no clip today — recorded coverage (data/phonology/audio/chaozhou.yaml) is
  * real but partial, and Shantou/Chaoyang have none yet (issues #37, #106) —
- * so the common render constructs nothing.
+ * so the common render constructs nothing. `playCrossfaded` owns two further
+ * elements of its own, created the same way, so a caller that never uses
+ * combined playback never pays for them either.
  */
 export function useAudioPlayer(): AudioPlayer {
   const elementRef = useRef<HTMLAudioElement | null>(null)
+  const elementARef = useRef<HTMLAudioElement | null>(null)
+  const elementBRef = useRef<HTMLAudioElement | null>(null)
   const requestIdRef = useRef(0)
+  // Only one of these is ever pending at a time — a crossfade sequence is
+  // strictly one clip playing plus, at most, one scheduled handoff to the
+  // next. Tracked outside the sequence's own closures so any of `play`,
+  // `playCrossfaded`, or unmount can cancel a handoff mid-flight.
+  const crossfadeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const crossfadeRafRef = useRef<number | null>(null)
   const [playingId, setPlayingId] = useState<string | null>(null)
+
+  const clearCrossfadeSchedule = useCallback(() => {
+    if (crossfadeTimeoutRef.current !== null) clearTimeout(crossfadeTimeoutRef.current)
+    if (crossfadeRafRef.current !== null) cancelAnimationFrame(crossfadeRafRef.current)
+    crossfadeTimeoutRef.current = null
+    crossfadeRafRef.current = null
+  }, [])
 
   useEffect(() => {
     return () => {
       elementRef.current?.pause()
+      elementARef.current?.pause()
+      elementBRef.current?.pause()
+      clearCrossfadeSchedule()
     }
-  }, [])
+  }, [clearCrossfadeSchedule])
 
   const play = useCallback(
     (id: string, url: string) => {
+      // A crossfade sequence in progress uses its own pair of elements and a
+      // scheduled handoff — starting any other clip must stop both, not just
+      // this hook's single-clip element.
+      elementARef.current?.pause()
+      elementBRef.current?.pause()
+      clearCrossfadeSchedule()
+
       const element = elementRef.current ?? new Audio()
       elementRef.current = element
 
@@ -74,50 +108,114 @@ export function useAudioPlayer(): AudioPlayer {
       void Promise.resolve(element.play()).catch(stopIfCurrent)
       setPlayingId(id)
     },
-    [playingId],
+    [playingId, clearCrossfadeSchedule],
   )
 
-  const playSequence = useCallback(
-    (id: string, urls: string[]) => {
-      const element = elementRef.current ?? new Audio()
-      elementRef.current = element
+  const playCrossfaded = useCallback(
+    (id: string, clips: AudioReference[], crossfadeMs = DEFAULT_CROSSFADE_MS) => {
+      // Symmetric guard against the single-clip player above: a component
+      // button click mid-sequence must stop this crossfade, not layer over it.
+      elementRef.current?.pause()
+      clearCrossfadeSchedule()
 
-      element.pause()
+      const elementA = elementARef.current ?? new Audio()
+      elementARef.current = elementA
+      const elementB = elementBRef.current ?? new Audio()
+      elementBRef.current = elementB
+
+      elementA.pause()
+      elementB.pause()
       if (id === playingId) {
         setPlayingId(null)
         return
       }
-      if (urls.length === 0) return
+      if (clips.length === 0) return
 
       const requestId = ++requestIdRef.current
 
-      const playAt = (i: number) => {
+      const rampCrossfade = (outgoing: HTMLAudioElement, incoming: HTMLAudioElement, durationMs: number) => {
+        if (durationMs <= 0) {
+          outgoing.volume = 0
+          incoming.volume = 1
+          return
+        }
+        const start = performance.now()
+        const step = () => {
+          if (requestIdRef.current !== requestId) return
+          const t = Math.min(1, (performance.now() - start) / durationMs)
+          outgoing.volume = 1 - t
+          incoming.volume = t
+          crossfadeRafRef.current = t < 1 ? requestAnimationFrame(step) : null
+        }
+        step()
+      }
+
+      // `element` plays clip `i`; `other` is where clip `i+1` starts once
+      // scheduled. Ping-ponging (rather than a fixed "left"/"right" pair)
+      // means each element is always either currently playing or fully idle,
+      // never mid-fade-out while also being asked to start something new.
+      const playClip = (i: number, element: HTMLAudioElement, other: HTMLAudioElement, startVolume: number) => {
         if (requestIdRef.current !== requestId) return
-        if (i >= urls.length) {
+        if (i >= clips.length) {
           setPlayingId(null)
           return
         }
-        // Guards against onended/onerror and a rejected play() promise all
-        // firing for the same clip — whichever settles first advances,
-        // the rest are no-ops, so a load failure never double-skips.
+
+        const clip = clips[i]!
+        const isLast = i === clips.length - 1
+        const startS = (clip.trimStartMs ?? 0) / 1000
         let settled = false
-        const next = () => {
-          if (settled) return
+
+        // Fires on a load error (a dead pinned Release asset, same hazard
+        // `play` above guards against) — skips ahead immediately rather than
+        // waiting for a handoff that a failed clip will never reach.
+        const advance = () => {
+          if (settled || requestIdRef.current !== requestId) return
           settled = true
-          playAt(i + 1)
+          playClip(i + 1, other, element, 0)
         }
-        element.onended = next
-        // A dead clip (see the note on `play` above) skips to the next one
-        // rather than stalling the whole sequence.
-        element.onerror = next
-        element.src = urls[i]!
-        void Promise.resolve(element.play()).catch(next)
+
+        const scheduleHandoff = (durationS: number) => {
+          if (settled || requestIdRef.current !== requestId) return
+          if (isLast) {
+            element.onended = advance
+            return
+          }
+          const fadeS = Math.min(crossfadeMs / 1000, Math.max(durationS / 2, 0))
+          crossfadeTimeoutRef.current = setTimeout(
+            () => {
+              if (settled || requestIdRef.current !== requestId) return
+              settled = true
+              playClip(i + 1, other, element, 0)
+              rampCrossfade(element, other, fadeS * 1000)
+            },
+            Math.max(0, (durationS - fadeS) * 1000),
+          )
+        }
+
+        // Cleared up front so a handler left over from an earlier clip on
+        // this same (reused) element can't fire once this clip is current.
+        element.onended = null
+        element.onerror = advance
+        element.volume = startVolume
+        element.src = withTrim(clip)
+        if (clip.trimEndMs !== undefined) {
+          // Both boundaries known — the trimmed duration needs no metadata load.
+          scheduleHandoff(clip.trimEndMs / 1000 - startS)
+        } else {
+          // Trimmed only at the start, or not at all: the clip plays to its
+          // natural end, whose duration isn't known until the browser has
+          // parsed the file's metadata.
+          element.onloadedmetadata = () => scheduleHandoff(element.duration - startS)
+        }
+        void Promise.resolve(element.play()).catch(advance)
       }
-      playAt(0)
+
+      playClip(0, elementA, elementB, 1)
       setPlayingId(id)
     },
-    [playingId],
+    [playingId, clearCrossfadeSchedule],
   )
 
-  return { playingId, play, playSequence }
+  return { playingId, play, playCrossfaded }
 }

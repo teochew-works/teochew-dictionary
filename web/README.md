@@ -181,12 +181,10 @@ shares with the mobile app, and where it lives).
     otherwise render four full-width native players.
 
   **Combined playback (issue #191).** A "play all" button plays a reading's
-  syllable clips back-to-back under one `<audio>` element
-  (`useAudioPlayer`'s `playSequence`), advancing to the next clip on each
-  one's `ended` event. **Not** a synthesized single clip: the original design
-  fetched each clip's bytes, trimmed leading/trailing silence, and
-  crossfaded the seams via the Web Audio API — abandoned after discovering
-  GitHub Release assets (where every clip is hosted,
+  syllable clips back-to-back. **Not** a synthesized single clip: the
+  original design fetched each clip's bytes, trimmed leading/trailing
+  silence, and crossfaded the seams via the Web Audio API — abandoned after
+  discovering GitHub Release assets (where every clip is hosted,
   `data/phonology/REVIEW.md` § 12) send no `Access-Control-Allow-Origin`
   header on either the redirect or the final response, so `fetch()` is
   CORS-blocked from ever reading the bytes. `<audio src>` playback is exempt
@@ -195,16 +193,29 @@ shares with the mobile app, and where it lives).
   can't — short of rehosting every clip somewhere CORS-enabled, which was
   explicitly declined for this issue.
 
-  **Silence trimming (issue #252), no CORS needed.** CORS only blocks
-  *reading raw bytes* — it doesn't block seeking or volume on a cross-origin
-  `<audio>` element. Each clip's leading/trailing dead air is precomputed
-  offline (`npm run backfill:silence-trim`, via `ffmpeg silencedetect`) into
-  `trimStartMs`/`trimEndMs` on the clip; `withTrim` (`@teochew/core`'s
-  `search/filters.ts`) turns those into an HTML5 Media Fragments URI
-  (`clip.opus#t=start,end`) wherever a clip becomes an `<audio src>` — every
-  per-syllable button and the combined "play all" sequence alike. Crossfading
-  the seams between chained clips remains unimplemented — a two-element
-  ping-pong player is the natural follow-up, tracked on the same issue.
+  **Silence trimming (issue #252 phase 1), no CORS needed.** CORS only
+  blocks *reading raw bytes* — it doesn't block seeking or volume on a
+  cross-origin `<audio>` element. Each clip's leading/trailing dead air is
+  precomputed offline (`npm run backfill:silence-trim`, via `ffmpeg
+  silencedetect`) into `trimStartMs`/`trimEndMs` on the clip; `withTrim`
+  (`@teochew/core`'s `search/filters.ts`) turns those into an HTML5 Media
+  Fragments URI (`clip.opus#t=start,end`) wherever a clip becomes an
+  `<audio src>` — every per-syllable button and the combined "play all"
+  sequence alike.
+
+  **Crossfaded combined playback (issue #252 phase 2), same CORS-free
+  approach.** `useAudioPlayer`'s `playCrossfaded` replaces the old single-
+  element `playSequence` with two `<audio>` elements ping-ponging: while one
+  plays the current (trimmed) clip, the next clip is started on the other,
+  muted, `crossfadeMs` (default ~30ms) before the current clip's end, then
+  the two volumes are ramped via `requestAnimationFrame` — outgoing 1→0,
+  incoming 0→1 — masking the seam. The handoff is timed with `setTimeout`
+  (these are sub-second clips, so drift isn't a practical concern): when
+  both `trimStartMs` and `trimEndMs` are known the trimmed duration is exact
+  up front, and when only `trimEndMs` is absent it waits for the browser's
+  own `loadedmetadata` to learn the clip's natural length first. Only ever
+  built from native `<audio>` seeking and volume — no bytes read, so it
+  stays clear of ADR-0026's CORS migration trigger the same way phase 1 does.
 
   A native whole-word `wordAudio` recording is still preferred over chaining
   when present — it's already one continuous, coarticulated clip, strictly

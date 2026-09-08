@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { canCombine, hasAudio, hasFullAudio, syllableClipUrls, withTrim } from './filters.js'
+import { canCombine, hasAudio, hasFullAudio, syllableClips, syllableClipUrls, withTrim } from './filters.js'
 import type { AudioReference, EnrichedEntry, EnrichedReading } from '../enrichedEntry.js'
 
 const CLIP: AudioReference = {
@@ -132,6 +132,20 @@ describe('withTrim', () => {
 
   it('includes both bounds when both are set', () => {
     expect(withTrim({ ...CLIP, trimStartMs: 239, trimEndMs: 677 })).toBe(`${CLIP.url}#t=0.239,0.677`)
+  })
+})
+
+describe('syllableClips', () => {
+  it('filters out null slots, keeping the clips in order', () => {
+    const trimmed = { ...CLIP, key: 'ziu1', trimStartMs: 239, trimEndMs: 677 }
+    const reading: EnrichedReading = { ...READING, audio: [CLIP, null, trimmed] }
+    expect(syllableClips(reading)).toEqual([CLIP, trimmed])
+  })
+
+  it('reads from sandhiAudio in sandhi mode', () => {
+    const sandhiClip = { ...CLIP, trimStartMs: 100 }
+    const reading: EnrichedReading = { ...READING, audio: [CLIP], sandhiAudio: [sandhiClip] }
+    expect(syllableClips(reading, 'sandhi')).toEqual([sandhiClip])
   })
 })
 

@@ -403,7 +403,8 @@ describe('EntryDetail audioMode', () => {
     expect(screen.getAllByRole('button', { name: /^Play recording of syllable/ })).toHaveLength(2)
   })
 
-  it('chains syllable clips back-to-back, advancing on ended (no CORS-gated synthesis — GitHub Release assets send no CORS headers)', () => {
+  it('crossfades between chained syllable clips (issue #252 phase 2): the next clip starts, muted, on the other element before the current one ends, then the two ramp across the seam', () => {
+    vi.useFakeTimers()
     const secondUrl = 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou/ziu1.opus'
     const entry: EnrichedEntry = {
       ...ENTRY,
@@ -411,8 +412,8 @@ describe('EntryDetail audioMode', () => {
         {
           ...READING,
           audio: [
-            { ...SYLLABLE_CLIP, speaker: 'jky' },
-            { ...SYLLABLE_CLIP, key: 'ziu1', speaker: 'jky', url: secondUrl },
+            { ...SYLLABLE_CLIP, speaker: 'jky', trimStartMs: 0, trimEndMs: 500 },
+            { ...SYLLABLE_CLIP, key: 'ziu1', speaker: 'jky', url: secondUrl, trimStartMs: 0, trimEndMs: 400 },
           ],
         },
       ],
@@ -422,20 +423,94 @@ describe('EntryDetail audioMode', () => {
 
     fireEvent.click(button)
     expect(play).toHaveBeenCalledTimes(1)
-    const element = play.mock.instances[0] as HTMLAudioElement
-    expect(element.src).toBe(SYLLABLE_CLIP.url)
+    const first = play.mock.instances[0] as HTMLAudioElement
+    expect(first.src).toBe(`${SYLLABLE_CLIP.url}#t=0,0.5`)
+    expect(first.volume).toBe(1)
     expect(button).toHaveAttribute('aria-pressed', 'true')
 
-    act(() => element.dispatchEvent(new Event('ended')))
+    // Both boundaries are known up front, so the handoff is scheduled
+    // immediately — 30ms (the default crossfade) before the 500ms trimmed
+    // clip's end — with no need to wait on the browser to load metadata.
+    act(() => {
+      vi.advanceTimersByTime(469)
+    })
+    expect(play).toHaveBeenCalledTimes(1)
+
+    act(() => {
+      vi.advanceTimersByTime(1)
+    })
     expect(play).toHaveBeenCalledTimes(2)
-    expect(element.src).toBe(secondUrl)
+    const second = play.mock.instances[1] as HTMLAudioElement
+    // A different element — the two overlap during the crossfade, so
+    // chaining them onto one element (which would abort the first) can't work.
+    expect(second).not.toBe(first)
+    expect(second.src).toBe(`${secondUrl}#t=0,0.4`)
+    expect(second.volume).toBe(0)
     expect(button).toHaveAttribute('aria-pressed', 'true')
-    // Same element throughout — that's what makes the two clips chain rather
-    // than layer.
-    expect(play.mock.instances[1]).toBe(element)
 
-    act(() => element.dispatchEvent(new Event('ended')))
+    // Mid-ramp: the outgoing clip is fading out as the incoming one fades in.
+    act(() => {
+      vi.advanceTimersByTime(15)
+    })
+    expect(first.volume).toBeGreaterThan(0)
+    expect(first.volume).toBeLessThan(1)
+    expect(second.volume).toBeGreaterThan(0)
+    expect(second.volume).toBeLessThan(1)
+
+    // Ramp complete well past the end of the crossfade window.
+    act(() => {
+      vi.advanceTimersByTime(100)
+    })
+    expect(first.volume).toBe(0)
+    expect(second.volume).toBe(1)
+
+    // The last clip's own 'ended' (its trimmed end, reached via the Media
+    // Fragment) is what closes out the sequence — there's no clip after it
+    // to hand off to.
+    act(() => second.dispatchEvent(new Event('ended')))
     expect(button).toHaveAttribute('aria-pressed', 'false')
+
+    vi.useRealTimers()
+  })
+
+  it('waits for loadedmetadata before scheduling a handoff when a clip has no precomputed trimEndMs', () => {
+    vi.useFakeTimers()
+    const secondUrl = 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou/ziu1.opus'
+    const entry: EnrichedEntry = {
+      ...ENTRY,
+      readings: [
+        {
+          ...READING,
+          audio: [
+            { ...SYLLABLE_CLIP, speaker: 'jky' },
+            { ...SYLLABLE_CLIP, key: 'ziu1', speaker: 'jky', url: secondUrl, trimStartMs: 0, trimEndMs: 100 },
+          ],
+        },
+      ],
+    }
+    render(<EntryDetail entry={entry} showLicence={false} audioMode="combined" />)
+    const button = screen.getByRole('button', { name: /^Play combined/ })
+
+    fireEvent.click(button)
+    const first = play.mock.instances[0] as HTMLAudioElement
+    expect(first.src).toBe(SYLLABLE_CLIP.url)
+
+    // No handoff scheduled yet — the natural duration isn't known.
+    act(() => {
+      vi.advanceTimersByTime(10_000)
+    })
+    expect(play).toHaveBeenCalledTimes(1)
+
+    Object.defineProperty(first, 'duration', { value: 0.2, configurable: true })
+    act(() => first.dispatchEvent(new Event('loadedmetadata')))
+
+    act(() => {
+      vi.advanceTimersByTime(170)
+    })
+    expect(play).toHaveBeenCalledTimes(2)
+    expect(button).toHaveAttribute('aria-pressed', 'true')
+
+    vi.useRealTimers()
   })
 
   it('stops the sequence when a component button is clicked mid-chain', () => {
