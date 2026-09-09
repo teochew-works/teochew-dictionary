@@ -17,6 +17,9 @@ backend-free, and why it is a separate project, is recorded as
 - Node `^22.22.2 || ^24.15.0 || >=26.0.0` (matches `jsdom`'s own requirement — earlier
   Node 20.x/22.x lack the `worker_threads.markAsUncloneable` API `jsdom`/`undici` need,
   so `npm test` fails to even start on them; see #201)
+- On Node >=25, `vite.config.ts` disables Node's own experimental `localStorage` global
+  (`execArgv: ['--no-experimental-webstorage']`) so jsdom's `localStorage` is used in tests
+  instead of Node's inert one; see nodejs/node#60303, #245.
 - The root project's data must be built first: from the **repo root**, run
 
   ```bash

@@ -37,6 +37,9 @@ Note that *this* repo's ADR-0002 is about phonology varieties, not this package.
   `isEligibleForMode`, `LevelFilterValue`, `isEligibleForLevel`, `PronunciationMode`, …) and
   implement its own persistence — same as this package expects for every other adapter — rather
   than call the `localStorage`-backed `read*`/`write*` helpers.
+  Node >=25's own experimental `localStorage` global shadows jsdom's in the test environment
+  vitest uses for these files; `vitest.config.ts` disables it with
+  `execArgv: ['--no-experimental-webstorage']` (see nodejs/node#60303).
 
 ## Using it
 
