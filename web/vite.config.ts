@@ -65,5 +65,10 @@ export default defineConfig(({ command }) => ({
   test: {
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
+    // Node >=25 has its own inert `localStorage` global (an accessor that's undefined unless
+    // started with --localstorage-file), which shadows jsdom's real one because vitest's jsdom
+    // environment doesn't overwrite globals Node already provides. Disabling it restores jsdom's
+    // localStorage. See nodejs/node#60303, vitest-dev/vitest#8757.
+    execArgv: ['--no-experimental-webstorage'],
   },
 }))
