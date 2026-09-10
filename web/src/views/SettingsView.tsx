@@ -9,6 +9,7 @@ import { readMogherLinks, writeMogherLinks } from '../settings/mogherLinks'
 import { buildBackup, restoreBackup } from '../backup/backup'
 import { InstallPrompt } from '../pwa/InstallPrompt'
 import { OfflineDataToggle } from '../pwa/OfflineDataToggle'
+import { CheckForUpdate } from '../pwa/CheckForUpdate'
 import { AudioModeControl } from '../components/AudioModeControl'
 import './SettingsView.css'
 
@@ -166,6 +167,15 @@ export function SettingsView() {
           period of inactivity, and an installed app is exempt.
         </p>
         <InstallPrompt />
+      </fieldset>
+
+      <fieldset className="settings-view__group">
+        <legend>Updates</legend>
+        <p className="settings-view__hint">
+          The app is served from a cached copy that only refreshes itself occasionally. If a feature
+          you expect seems to be missing, check here instead of waiting.
+        </p>
+        <CheckForUpdate />
       </fieldset>
 
       <fieldset className="settings-view__group">
