@@ -4,14 +4,24 @@ import { UpdatePrompt } from './UpdatePrompt'
 
 const setNeedRefresh = vi.fn()
 const updateServiceWorker = vi.fn()
+const setRegistration = vi.fn()
 let needRefresh = false
 
 vi.mock('virtual:pwa-register/react', () => ({
-  useRegisterSW: () => ({
-    needRefresh: [needRefresh, setNeedRefresh],
-    offlineReady: [false, vi.fn()],
-    updateServiceWorker,
-  }),
+  useRegisterSW: (options?: {
+    onRegisteredSW?: (url: string, registration: ServiceWorkerRegistration | undefined) => void
+  }) => {
+    options?.onRegisteredSW?.('/sw.js', { scope: '/' } as unknown as ServiceWorkerRegistration)
+    return {
+      needRefresh: [needRefresh, setNeedRefresh],
+      offlineReady: [false, vi.fn()],
+      updateServiceWorker,
+    }
+  },
+}))
+
+vi.mock('./registration', () => ({
+  setRegistration: (registration: ServiceWorkerRegistration | undefined) => setRegistration(registration),
 }))
 
 describe('UpdatePrompt', () => {
@@ -20,6 +30,12 @@ describe('UpdatePrompt', () => {
     needRefresh = false
     setNeedRefresh.mockClear()
     updateServiceWorker.mockClear()
+    setRegistration.mockClear()
+  })
+
+  it('hands the registration off for the manual "check for updates" control to use', () => {
+    render(<UpdatePrompt />)
+    expect(setRegistration).toHaveBeenCalledWith({ scope: '/' })
   })
 
   it('renders nothing until the service worker says an update is waiting', () => {

@@ -1,4 +1,5 @@
 import { useRegisterSW } from 'virtual:pwa-register/react'
+import { setRegistration } from './registration'
 import './UpdatePrompt.css'
 
 /**
@@ -13,7 +14,9 @@ export function UpdatePrompt() {
   const {
     needRefresh: [needRefresh, setNeedRefresh],
     updateServiceWorker,
-  } = useRegisterSW()
+  } = useRegisterSW({
+    onRegisteredSW: (_url, registration) => setRegistration(registration),
+  })
 
   if (!needRefresh) return null
 
