@@ -38,6 +38,7 @@ import {
   DEFAULT_PRONUNCIATION_MODE,
   readPronunciationMode,
   writePronunciationMode,
+  readPronunciationDisplay,
   firstEmptyStage,
   resolveDecks,
   runDeckPipeline,
@@ -47,6 +48,7 @@ import {
   type PromptMode,
   type LevelFilterValue,
   type PronunciationMode,
+  type PronunciationField,
   type Deck,
 } from '@teochew/core'
 import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly'
@@ -152,6 +154,7 @@ export function FlashcardsView({ entries, drawer: controlledDrawer, onDrawerChan
   const decksStore = useDecksStore()
   const [mode, setMode] = useState<PromptMode>(readPromptMode)
   const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
+  const [pronunciationDisplay] = useState<PronunciationField[]>(readPronunciationDisplay)
   const [audioMode, setAudioMode] = useState<AudioMode>(readAudioMode)
   const [levelFilter, setLevelFilter] = useState<Set<LevelFilterValue>>(readLevelFilter)
   const [fullAudioOnly, setFullAudioOnly] = useState<boolean>(readFullAudioOnly)
@@ -667,6 +670,7 @@ export function FlashcardsView({ entries, drawer: controlledDrawer, onDrawerChan
           entry={currentEntry}
           mode={mode}
           pronunciation={pronunciation}
+          pronunciationDisplay={pronunciationDisplay}
           audioMode={audioMode}
           sourceDeck={sourceDeck}
           intervals={intervals}

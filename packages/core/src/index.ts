@@ -27,3 +27,4 @@ export * from './flashcards/promptMode.js'
 export * from './flashcards/levelFilter.js'
 
 export * from './settings/pronunciationMode.js'
+export * from './settings/pronunciationDisplay.js'

@@ -3,6 +3,11 @@ import { readShowLicence, writeShowLicence } from '../settings/showLicence'
 import { readAudioOnly, writeAudioOnly } from '../settings/audioOnly'
 import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly'
 import { readPronunciationMode, writePronunciationMode, type PronunciationMode } from '@teochew/core'
+import {
+  readPronunciationDisplay,
+  writePronunciationDisplay,
+  type PronunciationField,
+} from '@teochew/core'
 import { readAudioMode, writeAudioMode } from '../settings/audioMode'
 import type { AudioMode } from '../settings/audioMode'
 import { readMogherLinks, writeMogherLinks } from '../settings/mogherLinks'
@@ -11,6 +16,7 @@ import { InstallPrompt } from '../pwa/InstallPrompt'
 import { OfflineDataToggle } from '../pwa/OfflineDataToggle'
 import { CheckForUpdate } from '../pwa/CheckForUpdate'
 import { AudioModeControl } from '../components/AudioModeControl'
+import { PronunciationDisplayControl } from '../components/PronunciationDisplayControl'
 import './SettingsView.css'
 
 /**
@@ -25,6 +31,7 @@ export function SettingsView() {
   const [audioOnly, setAudioOnly] = useState(readAudioOnly)
   const [fullAudioOnly, setFullAudioOnly] = useState(readFullAudioOnly)
   const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
+  const [pronunciationDisplay, setPronunciationDisplay] = useState<PronunciationField[]>(readPronunciationDisplay)
   const [audioMode, setAudioMode] = useState<AudioMode>(readAudioMode)
   const [mogherLinks, setMogherLinks] = useState(readMogherLinks)
   const [backupStatus, setBackupStatus] = useState<{ kind: 'ok' | 'error'; message: string } | null>(null)
@@ -49,6 +56,11 @@ export function SettingsView() {
     const next: PronunciationMode = checked ? 'sandhi' : 'citation'
     setPronunciation(next)
     writePronunciationMode(next)
+  }
+
+  function changePronunciationDisplay(fields: PronunciationField[]) {
+    setPronunciationDisplay(fields)
+    writePronunciationDisplay(fields)
   }
 
   function toggleAudioMode(next: AudioMode) {
@@ -146,6 +158,8 @@ export function SettingsView() {
           />
           Use sandhi pronunciation
         </label>
+        <div className="settings-view__toggle">Fields shown, in order:</div>
+        <PronunciationDisplayControl fields={pronunciationDisplay} onChange={changePronunciationDisplay} />
       </fieldset>
 
       <fieldset className="settings-view__group">

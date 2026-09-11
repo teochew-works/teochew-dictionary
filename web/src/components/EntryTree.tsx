@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { EntryGroup } from '@teochew/core'
+import type { EntryGroup, PronunciationField } from '@teochew/core'
 import { EntryRow } from './EntryRow'
 
 /**
@@ -12,11 +12,13 @@ export function EntryTree({
   selectedId,
   onSelect,
   isSearching,
+  pronunciationDisplay,
 }: {
   groups: EntryGroup[]
   selectedId: string | null
   onSelect: (id: string) => void
   isSearching: boolean
+  pronunciationDisplay?: PronunciationField[]
 }) {
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set())
 
@@ -50,7 +52,12 @@ export function EntryTree({
               <ul className="entry-list entry-tree__list">
                 {group.entries.map((entry) => (
                   <li key={entry.id}>
-                    <EntryRow entry={entry} selected={entry.id === selectedId} onSelect={onSelect} />
+                    <EntryRow
+                      entry={entry}
+                      selected={entry.id === selectedId}
+                      onSelect={onSelect}
+                      pronunciationDisplay={pronunciationDisplay}
+                    />
                   </li>
                 ))}
               </ul>

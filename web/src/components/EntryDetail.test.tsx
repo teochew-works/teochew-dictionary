@@ -595,3 +595,32 @@ describe('EntryDetail pronunciation', () => {
     expect(screen.getByRole('button', { name: 'Play recording of syllable dio5' })).toBeInTheDocument()
   })
 })
+
+describe('EntryDetail pronunciationDisplay', () => {
+  afterEach(cleanup)
+
+  it('shows all four fields, in the default order, when no pronunciationDisplay is passed', () => {
+    const entry: EnrichedEntry = { ...ENTRY, readings: [{ ...READING, sandhi: 'dio7 ziu1' }] }
+    render(<EntryDetail entry={entry} showLicence={false} />)
+    expect(document.querySelector('.reading__line')).toHaveTextContent('dio5 ziu1tie⁵⁵ tsiu³³tiô-tsiu')
+    expect(screen.getByText('sandhi: dio7 ziu1')).toBeInTheDocument()
+  })
+
+  it('shows only the selected fields, in the given order', () => {
+    render(<EntryDetail entry={ENTRY} showLicence={false} pronunciationDisplay={['ipa', 'pengim']} />)
+    expect(document.querySelector('.reading__line')).toHaveTextContent('tie⁵⁵ tsiu³³dio5 ziu1')
+    expect(screen.queryByText(/^tiô-tsiu$/)).not.toBeInTheDocument()
+  })
+
+  it('omits the sandhi line when sandhi is excluded from pronunciationDisplay', () => {
+    const entry: EnrichedEntry = { ...ENTRY, readings: [{ ...READING, sandhi: 'dio7 ziu1' }] }
+    render(<EntryDetail entry={entry} showLicence={false} pronunciationDisplay={['pengim', 'ipa', 'poj']} />)
+    expect(screen.queryByText(/sandhi:/)).not.toBeInTheDocument()
+  })
+
+  it('omits the sandhi line when it is included but identical to the citation form', () => {
+    // READING's default sandhi equals its pengim.
+    render(<EntryDetail entry={ENTRY} showLicence={false} />)
+    expect(screen.queryByText(/sandhi:/)).not.toBeInTheDocument()
+  })
+})
