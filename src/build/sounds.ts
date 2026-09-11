@@ -1,3 +1,4 @@
+import type { Synthesis } from '@teochew/core'
 import type { LoadedEntry } from '../data/load.js'
 import { loadAudioIfExists, loadPengimScheme } from '../phonology/load.js'
 import {
@@ -40,6 +41,8 @@ export interface SoundClip {
   /** A CAF/Opus alternate for iOS-native playback (issue #228), when one exists. */
   cafUrl?: string
   speaker?: string
+  /** Set when this is a re-rendering of a recording, not a recording (ADR-0027) — the UI labels it. */
+  synthesis?: Synthesis
 }
 
 export interface Sound {
@@ -142,6 +145,7 @@ export function buildSounds(
       url: c.url,
       ...(c.cafUrl ? { cafUrl: c.cafUrl } : {}),
       ...(c.speaker ? { speaker: c.speaker } : {}),
+      ...(c.synthesis ? { synthesis: c.synthesis } : {}),
     }))
 
     const parsed = parseSyllable(syllableRaw, scheme)

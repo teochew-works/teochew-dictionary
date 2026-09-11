@@ -121,6 +121,16 @@ describe('EntryDetail audio', () => {
     ])
   })
 
+  it('badges a rendered syllable clip and says so in its accessible name (ADR-0027)', () => {
+    const rendered: AudioReference = { ...SYLLABLE_CLIP, synthesis: 'world-retune', confidence: 'medium' }
+    const entry: EnrichedEntry = { ...ENTRY, readings: [{ ...READING, audio: [rendered, null] }] }
+    render(<EntryDetail entry={entry} showLicence={false} />)
+
+    const button = screen.getByRole('button', { name: 'Play recording of syllable dio5 (re-rendered from a recording, not the recording itself)' })
+    expect(button).toHaveTextContent('rendered')
+    expect(screen.queryByRole('button', { name: 'Play recording of syllable dio5' })).not.toBeInTheDocument()
+  })
+
   it('plays a syllable clip with a Media Fragments URI when it has precomputed silence-trim boundaries (issue #252)', () => {
     const trimmed: AudioReference = { ...SYLLABLE_CLIP, trimStartMs: 239, trimEndMs: 677 }
     const entry: EnrichedEntry = { ...ENTRY, readings: [{ ...READING, audio: [trimmed, null] }] }

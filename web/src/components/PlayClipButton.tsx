@@ -1,4 +1,5 @@
 import type { PublishedClip } from '../hooks/useLocalRecordingsStatus'
+import { SYNTHESIS_ARIA_SUFFIX, SynthesisBadge } from './SynthesisBadge'
 
 /**
  * Falls back to a numbered label ("Recording 2") rather than the plain "Play"
@@ -43,11 +44,17 @@ export function PlayClipButton({
     <button
       type="button"
       className={playing ? 'sound-row__play sound-row__play--playing' : 'sound-row__play'}
-      aria-label={ariaLabel}
+      aria-label={clip.synthesis ? ariaLabel + SYNTHESIS_ARIA_SUFFIX : ariaLabel}
       aria-pressed={playing}
       onClick={() => onPlay(id, clip.url)}
     >
       <span aria-hidden="true">▶</span> {label}
+      {clip.synthesis && (
+        <>
+          {' '}
+          <SynthesisBadge />
+        </>
+      )}
     </button>
   )
 }

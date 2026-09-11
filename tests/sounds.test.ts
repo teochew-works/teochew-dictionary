@@ -147,6 +147,31 @@ describe('buildSounds', () => {
     expect(a1.clips).toEqual([{ url: 'https://a.example/1', speaker: 'x' }, { url: 'https://a.example/2' }])
   })
 
+  it("carries a clip's synthesis marker through so the UI can label a render (ADR-0027)", () => {
+    const audio: Audio = {
+      audio: { id: 'chaozhou', variety: 'chaozhou' },
+      clips: {
+        a1: [
+          { url: 'https://a.example/1', confidence: 'high', sources: ['x'], checksum: `sha256:${'a'.repeat(64)}`, speaker: 'jky' },
+          {
+            url: 'https://a.example/1n',
+            confidence: 'medium',
+            sources: ['x'],
+            checksum: `sha256:${'b'.repeat(64)}`,
+            speaker: 'jky-n',
+            synthesis: 'world-retune',
+            derivedFrom: `sha256:${'a'.repeat(64)}`,
+          },
+        ],
+      },
+    }
+    const data = buildSounds([entry({ id: 'a', headword: '阿', readings: [{ pengim: 'a1', variety: 'chaozhou' }] })], undefined, audio)
+    expect(data.sounds.find((s) => s.pengim === 'a1')!.clips).toEqual([
+      { url: 'https://a.example/1', speaker: 'jky' },
+      { url: 'https://a.example/1n', speaker: 'jky-n', synthesis: 'world-retune' },
+    ])
+  })
+
   it("carries a clip's cafUrl through when present (issue #228)", () => {
     const audio: Audio = {
       audio: { id: 'chaozhou', variety: 'chaozhou' },
