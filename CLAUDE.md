@@ -112,6 +112,7 @@ npm run import -- <source>     # fetch proposals into data/staging/
 npm run cache:wiktionary       # sync Wiktionary wikitext into .cache/
 npm run xref -- <source>       # refresh a cached external phonology chart
 npm run audio:verify           # fetch every clip and verify its checksum
+npm run audio:grade            # cache every clip, extract features, report per-tone stats + outliers
 ```
 
 Regeneration and maintenance:
@@ -155,6 +156,8 @@ src/build/        enrichment and artifact generation                      (ADR-0
 src/validate/     whole-dataset validation                                (ADR-0012)
 src/lookup/       search over the built SQLite
 src/importers/    CC-CEDICT, Wiktionary, Lingua Libre, local recordings   (ADR-0006)
+src/audio/        clip cache, per-clip features, per-part corpus grading;
+                    drives the Python DSP tool in tools/resynth/             (issue #259)
 src/data/         source registry and licence derivation                  (ADR-0008, ADR-0009)
 src/cli/          the npm-script entry points
 web/              static React frontend, independent npm project          (ADR-0019)

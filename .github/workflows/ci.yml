@@ -52,3 +52,19 @@ jobs:
         working-directory: web
       - run: npm run build
         working-directory: web
+
+  # The Python DSP tool behind `audio:grade`/`audio:synthesize` (issue #259).
+  # Its own job on purpose: `check` stays Node-only and offline (ADR-0012).
+  resynth:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/resynth
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+          cache-dependency-glob: tools/resynth/uv.lock
+      - run: uv sync --locked
+      - run: uv run pytest

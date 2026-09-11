@@ -83,8 +83,8 @@ export type CacheSymlinkStatus =
  * (and shared across worktrees of this repo) rather than letting a plain
  * directory accumulate inside one. The CLI refuses to sync unless that
  * symlink is genuinely there and resolves, rather than silently creating a
- * real directory in its place — see `assertCacheSymlink` in
- * ../cli/wiktionary-page-cache.js.
+ * real directory in its place — see `ensureCacheSymlinkOrExit` in
+ * ../cli/cache-symlink.js.
  *
  * `syncWiktionaryPages` itself stays agnostic to any of this: it takes
  * whatever `cacheDir` it's given, which is what keeps it testable against a

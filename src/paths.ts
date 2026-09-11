@@ -34,3 +34,15 @@ export const CACHE_DIR = join(ROOT, '.cache')
 export const WIKTIONARY_PAGE_CACHE_DIR = join(CACHE_DIR, 'wiktionary-pages')
 /** Trimmed wiktextract dump, keyed by headword (issue #84). Populated manually — see README. */
 export const WIKTEXTRACT_MIN_FILE = join(CACHE_DIR, 'teochew-relevant.min.jsonl')
+/**
+ * Published clip bytes, one `<sha256>.webm` per manifest checksum (issue
+ * #259). Filled by `npm run audio:grade` and read by everything downstream of
+ * it, so a grade or synthesis run over the whole corpus is one download, not
+ * one per run — and `audio:synthesize` needs no network at all.
+ */
+export const AUDIO_CLIP_CACHE_DIR = join(CACHE_DIR, 'audio-clips')
+/** Per-clip features keyed by bare sha256 hex — see `src/audio/features.ts`. */
+export const AUDIO_FEATURES_FILE = join(CACHE_DIR, 'audio-features.json')
+
+/** The Python DSP tool `src/audio/` drives — see tools/resynth/README.md. */
+export const RESYNTH_TOOL_DIR = join(ROOT, 'tools', 'resynth')

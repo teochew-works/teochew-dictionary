@@ -1,17 +1,8 @@
-import { symlinkSync } from 'node:fs'
-
 import { loadWiktionaryWordlist } from '../data/wiktionary-wordlist.js'
-import {
-  cacheFileName,
-  checkCacheSymlink,
-  findMainWorktreeCacheTarget,
-  isCached,
-  syncWiktionaryPages,
-  type CacheSymlinkStatus,
-  type PageCacheResult,
-} from '../importers/wiktionary-cache.js'
-import { CACHE_DIR, WIKTIONARY_PAGE_CACHE_DIR } from '../paths.js'
-import { dim, green, red, yellow } from './colour.js'
+import { cacheFileName, isCached, syncWiktionaryPages, type PageCacheResult } from '../importers/wiktionary-cache.js'
+import { WIKTIONARY_PAGE_CACHE_DIR } from '../paths.js'
+import { ensureCacheSymlinkOrExit } from './cache-symlink.js'
+import { dim, green, yellow } from './colour.js'
 
 /**
  * `npm run cache:wiktionary -- [--resume] [--limit=N] [--delay=MS]
@@ -52,45 +43,7 @@ if (args.includes('--help') || args.includes('-h')) {
   process.exit(0)
 }
 
-// The cache can grow to tens of thousands of files, so `.cache` is meant to
-// be a symlink out to wherever the operator actually wants it to live rather
-// than a plain directory left to accumulate inside the worktree. Refuse
-// outright rather than have mkdirSync silently create one in its place.
-function describeCacheIssue(status: Extract<CacheSymlinkStatus, { valid: false }>): string {
-  switch (status.reason) {
-    case 'missing':
-      return `${CACHE_DIR} does not exist`
-    case 'not-a-symlink':
-      return `${CACHE_DIR} exists but is not a symlink`
-    case 'broken':
-      return `${CACHE_DIR} is a symlink, but its target does not exist`
-    case 'not-a-directory':
-      return `${CACHE_DIR} is a symlink, but its target is not a directory`
-  }
-}
-
-let symlinkStatus = checkCacheSymlink()
-
-// A brand-new worktree of this repo starts with no `.cache` of its own, even
-// though the main checkout usually already has one — mirror that instead of
-// making every worktree an operator has to link by hand. Only for the
-// `missing` case: a `.cache` that exists but is broken or the wrong kind of
-// thing is left for the refusal below, not silently relinked.
-if (!symlinkStatus.valid && symlinkStatus.reason === 'missing') {
-  const mainTarget = findMainWorktreeCacheTarget()
-  if (mainTarget) {
-    symlinkSync(mainTarget, CACHE_DIR)
-    console.log(dim(`linked .cache → ${mainTarget} (matching the main checkout)`))
-    symlinkStatus = checkCacheSymlink()
-  }
-}
-
-if (!symlinkStatus.valid) {
-  console.error(red(`refusing to sync: ${describeCacheIssue(symlinkStatus)}`))
-  console.error(`expected .cache to be a symlink to an external cache directory, e.g.:`)
-  console.error(`  ln -s /path/to/your/wiktionary-page-cache ${CACHE_DIR}`)
-  process.exit(1)
-}
+ensureCacheSymlinkOrExit('sync')
 
 const flags = args.filter((a) => a.startsWith('--'))
 const explicitHeadwords = args.filter((a) => !a.startsWith('--'))

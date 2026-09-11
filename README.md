@@ -992,6 +992,18 @@ out of `npm run check` for the same reason `npm run xref`/`npm run import`
 are, so `check` stays fast, offline, and CI-safe
 ([ADR-0012](docs/adrs/adr-0012.md)).
 
+**Grading the corpus for consistency** (issue #259). The clips were recorded
+over many sessions, and vary in level, pitch and length far more than the
+tones they carry do. `npm run audio:grade` caches every clip locally
+(`.cache/audio-clips/`, keyed by checksum — one download ever), extracts
+per-clip features through the Python tool in
+[`tools/resynth/`](tools/resynth/README.md), and prints per-tone /
+per-coda-class / per-initial statistics plus the clips furthest from them —
+worth a listen, and the targets a normalised re-rendering aims at. Needs
+`ffmpeg` and [`uv`](https://docs.astral.sh/uv/) on `PATH`. Network-touching,
+so also excluded from `check`; the Python tool's own tests run as a separate
+CI job.
+
 ---
 
 ## Commands
@@ -1008,6 +1020,7 @@ are, so `check` stays fast, offline, and CI-safe
 | `npm run cache:wiktionary` | sync Wiktionary wikitext into `.cache/wiktionary-pages/` (issue #79) |
 | `npm run xref -- <source>` | refresh a cached external phonology chart |
 | `npm run audio:verify` | fetch every audio clip and verify its checksum |
+| `npm run audio:grade` | cache every clip, extract features, report per-tone statistics and outliers (issue #259) |
 | `npm run rehost:lingualibre -- <index-or-title>` | re-host a staged Lingua Libre clip as a GitHub Release asset (issue #106) |
 | `npm run merge:lingualibre -- <index-or-title> --variety=<id>` | re-host and merge a staged Lingua Libre clip into `data/phonology/audio/<variety>.yaml` (issue #106) |
 | `npm run schema` | emit the JSON Schemas alone |
