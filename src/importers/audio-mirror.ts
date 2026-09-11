@@ -74,8 +74,19 @@ function sha256(bytes: Buffer): string {
   return `sha256:${createHash('sha256').update(bytes).digest('hex')}`
 }
 
+/**
+ * `fetchWithRetry`'s `timeoutMs` is optional and, left unset, attaches no
+ * `AbortSignal` at all — a connection that stalls (no error, no data, just
+ * silence) then hangs forever instead of failing and retrying. Confirmed
+ * live against the real corpus (issue #270): a mirror run sat for 38
+ * minutes on the very first target with 9 seconds of CPU time spent, two
+ * TCP connections still open. A clip is ~17-22 KB (ADR-0026); 30s is
+ * generous for that and short enough that a real stall fails fast.
+ */
+const FETCH_TIMEOUT_MS = 30_000
+
 async function defaultFetchBytes(url: string): Promise<Buffer> {
-  const res = await fetchWithRetry(url, { headers: { 'user-agent': IMPORTER_USER_AGENT } })
+  const res = await fetchWithRetry(url, { headers: { 'user-agent': IMPORTER_USER_AGENT } }, { timeoutMs: FETCH_TIMEOUT_MS })
   if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`)
   return Buffer.from(await res.arrayBuffer())
 }
