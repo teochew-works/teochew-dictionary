@@ -75,6 +75,19 @@ export function audioAssetPath(key: string, speaker: string, ext: string): strin
   return `${slugSegment(speaker)}/${slugSegment(key)}${ext}`
 }
 
+/**
+ * Manifest clips always carry a `speaker` in practice — every merge path
+ * sets it unconditionally — but the schema itself leaves it optional (a
+ * hand-edited entry could omit it). This is the directory such a clip's
+ * asset path falls back to, rather than failing whatever derives it.
+ */
+export const FALLBACK_SPEAKER = 'unknown-speaker'
+
+/** `audioAssetPath`, tolerating a clip with no recorded `speaker` — see `FALLBACK_SPEAKER`. */
+export function audioAssetPathForClip(key: string, speaker: string | undefined, ext: string): string {
+  return audioAssetPath(key, speaker ?? FALLBACK_SPEAKER, ext)
+}
+
 let sharedClient: S3Client | undefined
 
 /** Lazily-constructed, shared across calls that don't inject their own — avoids opening a new connection pool per upload. */

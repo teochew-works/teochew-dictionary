@@ -4,7 +4,7 @@ import { parseDocument } from 'yaml'
 import type { Audio, AudioClip } from '@teochew/core'
 import { fetchWithRetry, IMPORTER_USER_AGENT } from './types.js'
 import {
-  audioAssetPath,
+  audioAssetPathForClip,
   audioClipKey,
   contentTypeForFilename,
   uploadBytesToS3,
@@ -73,19 +73,6 @@ async function defaultFetchBytes(url: string): Promise<Buffer> {
   return Buffer.from(await res.arrayBuffer())
 }
 
-/**
- * Manifest clips always carry a `speaker` in practice — every merge path
- * sets it unconditionally — but the schema itself leaves it optional (a
- * hand-edited entry could omit it). This is the fallback directory a CAF
- * for such a clip lands under, rather than failing the whole backfill.
- */
-const FALLBACK_SPEAKER = 'unknown-speaker'
-
-/** The `<speaker>/<pengim-key>.caf` path for one clip's CAF alternate — see `audioAssetPath`. */
-function cafPathFor(key: string, clip: AudioClip): string {
-  return audioAssetPath(key, clip.speaker ?? FALLBACK_SPEAKER, '.caf')
-}
-
 function needsCaf(clip: AudioClip): boolean {
   return clip.cafUrl === undefined && /\.webm$/iu.test(clip.url)
 }
@@ -133,7 +120,7 @@ export async function backfillCafOpus(
           continue
         }
 
-        const cafPath = cafPathFor(key, clip)
+        const cafPath = audioAssetPathForClip(key, clip.speaker, '.caf')
         const { url: cafUrl, checksum: cafChecksum } = await uploadBytesToS3(cafBytes, {
           key: audioClipKey(cafPath),
           contentType: contentTypeForFilename(cafPath),
