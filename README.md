@@ -1004,6 +1004,19 @@ worth a listen, and the targets a normalised re-rendering aims at. Needs
 so also excluded from `check`; the Python tool's own tests run as a separate
 CI job.
 
+**Re-rendering the corpus consistently.** `npm run audio:synthesize` (offline —
+it reads only those two caches) re-renders each clip toward a target composed
+from its Peng'im parts' statistics: the tone's median f0 contour, the
+tone × coda-class duration, the initial's unvoiced onset, the corpus level.
+The clip's own spectral envelope — the speaker, the segments, the natural
+coarticulation — is kept, so nothing is spliced across clips. Dry-run by
+default (prints what each clip would be rendered toward); `--write` renders
+WAVs into `.cache/audio-synth/<variety>/` and self-checks every output
+against the same yardsticks, writing a `report.json`. This produces a
+*normalised tier*, never a replacement: publishing it as its own speaker id
+is a separate human step, and one [ADR-0016](docs/adrs/adr-0016.md) does not
+yet permit — see issue #259.
+
 ---
 
 ## Commands
@@ -1021,6 +1034,7 @@ CI job.
 | `npm run xref -- <source>` | refresh a cached external phonology chart |
 | `npm run audio:verify` | fetch every audio clip and verify its checksum |
 | `npm run audio:grade` | cache every clip, extract features, report per-tone statistics and outliers (issue #259) |
+| `npm run audio:synthesize [-- --write]` | re-render every clip toward its parts' targets into `.cache/audio-synth/`, offline; dry-run by default (issue #259) |
 | `npm run rehost:lingualibre -- <index-or-title>` | re-host a staged Lingua Libre clip as a GitHub Release asset (issue #106) |
 | `npm run merge:lingualibre -- <index-or-title> --variety=<id>` | re-host and merge a staged Lingua Libre clip into `data/phonology/audio/<variety>.yaml` (issue #106) |
 | `npm run schema` | emit the JSON Schemas alone |

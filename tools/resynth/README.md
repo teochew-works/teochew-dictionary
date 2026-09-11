@@ -14,6 +14,7 @@ that way — logic that isn't signal processing belongs in TypeScript.
 ```bash
 uv sync                          # once; pins Python 3.12 via .python-version
 uv run resynth features job.json --out result.json
+uv run resynth synthesize job.json --out result.json   # both take --jobs N (default: every core)
 uv run pytest                    # synthetic-signal tests, no fixtures on disk
 ```
 
@@ -40,3 +41,30 @@ A clip's features: `totalMs`, `sampleRate`, `trim {startMs,endMs}`, `activeMs`, 
 `voicedRatio`, and `f0 {medianHz,startHz,endHz,contour[20]}` — the contour is time-normalised over
 the voiced span, so contours of a 300 ms checked syllable and a 700 ms open one are comparable
 point-for-point.
+
+## Job / result shape (`synthesize`)
+
+```jsonc
+// job: as above, plus per clip an output path and a target
+{ "params": { … },
+  "clips": [ { "id": "du2", "wav": "/abs/src.wav", "out": "/abs/du2.wav",
+               "target": { "contourHz": [20 values], "voicedMs": 445, "onsetMs": null, "rmsDb": -12.5,
+                           "peakCeilingDb": -1, "padMs": 50, "fadeMs": 5, "f0Blend": 1 } } ] }
+// result
+{ "version": 2, "clips": { "du2": { "out": "…", "info": { …what was done }, "features": { …of the output } } },
+  "errors": { … } }
+```
+
+The output's features are measured *within the active region the render placed* (`activeStartMs`/
+`activeEndMs`), not re-detected at the absolute silence bound: a render sits several dB below the
+originals, and re-detecting would clip a quiet /s/ or nasal coda out of the measurement.
+
+`render()` keeps the clip's own WORLD spectral envelope and aperiodicity and replaces only what
+varies between takes: the f0 across the voiced span becomes the target contour (folded to the
+target's octave *before* the envelope is computed, since cheaptrick sizes its window from f0), the
+unvoiced onset and voiced span are time-warped to their target lengths, the unvoiced onset and tail
+keep their level *relative to the vowel* (WORLD re-renders noise-excited frames markedly quieter,
+which is audible as a weak sibilant), the whole is set by RMS under a peak ceiling, and the result
+gets 5 ms edge fades and a fixed pad of silence. The output's
+features are measured by the same extractor `features` uses, so the caller's self-check is against
+the same numbers the targets came from.

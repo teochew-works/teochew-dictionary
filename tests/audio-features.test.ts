@@ -10,22 +10,8 @@ import {
   extractFeatures,
   loadFeaturesCache,
   saveFeaturesCache,
-  type ClipFeatures,
 } from '../src/audio/features.js'
-
-/** Mirrors the real `du2.webm` corpus clip as tools/resynth measures it. */
-export const DU2_FEATURES: ClipFeatures = {
-  totalMs: 960,
-  sampleRate: 48000,
-  trim: { startMs: 240, endMs: 680 },
-  activeMs: 440,
-  rmsDb: -13.3,
-  peakDb: -6.1,
-  onsetMs: 45,
-  voicedMs: 380,
-  voicedRatio: 0.87,
-  f0: { medianHz: 114.6, startHz: 101, endHz: 90.9, contour: Array.from({ length: 20 }, (_, i) => 120 - i * 1.5) },
-}
+import { DU2_FEATURES } from './helpers/audio-fixtures.js'
 
 describe('features cache', () => {
   let dir: string

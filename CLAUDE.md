@@ -115,6 +115,12 @@ npm run audio:verify           # fetch every clip and verify its checksum
 npm run audio:grade            # cache every clip, extract features, report per-tone stats + outliers
 ```
 
+Offline but cache-dependent (needs an `audio:grade` run first):
+
+```bash
+npm run audio:synthesize [-- --write]   # re-render clips toward per-part targets into .cache/audio-synth/
+```
+
 Regeneration and maintenance:
 
 ```bash
