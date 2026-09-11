@@ -108,6 +108,9 @@ export const varietySchema = z.object({
 /** This project's own GitHub repo — the single source of truth for the URL pattern below. */
 export const GITHUB_REPO = 'teochew-works/teochew-dictionary'
 
+/** The CloudFront distribution audio clips are mirrored to (ADR-0026, issue #270). */
+export const AUDIO_CDN_HOST = 'daidb11aas52z.cloudfront.net'
+
 /**
  * A GitHub Release asset download URL, pinned to this project's own repo:
  * https://github.com/teochew-works/teochew-dictionary/releases/download/<tag>/<asset>.
@@ -118,11 +121,30 @@ export const GITHUB_REPO = 'teochew-works/teochew-dictionary'
  * Pinning the owner/repo also stops a stored reference from silently
  * pointing at an unrelated project's release asset. Case-insensitive on the
  * owner/repo segment, matching GitHub's own (case-insensitive) URL routing.
+ *
+ * Kept alive alongside `CLOUDFRONT_AUDIO_URL` below even once the manifest
+ * is fully migrated (issue #270's step 4): old clients (cached PWAs,
+ * pinned mobile-app builds) keep requesting these URLs for a while, and
+ * ADR-0026 deliberately does not delete the underlying Release assets on
+ * cutover.
  */
 const GITHUB_RELEASE_ASSET_URL = new RegExp(
   `^https://github\\.com/${GITHUB_REPO}/releases/download/[\\w.-]+/[\\w.-]+$`,
   'iu',
 )
+
+/**
+ * A mirrored audio clip served from this project's own CloudFront
+ * distribution (ADR-0026, issue #270):
+ * https://daidb11aas52z.cloudfront.net/clips/<asset>. Deliberately a second
+ * *closed* allowlist entry alongside `GITHUB_RELEASE_ASSET_URL`, not an open
+ * `z.url()` — a stored reference must resolve to one of exactly two hosts
+ * this project controls, never an arbitrary origin.
+ */
+const CLOUDFRONT_AUDIO_URL = new RegExp(`^https://${AUDIO_CDN_HOST.replace(/\./gu, '\\.')}/[\\w./-]+$`, 'iu')
+
+/** Every host a stored clip `url`/`cafUrl` may point at — see the two patterns above. */
+const AUDIO_CLIP_URL = new RegExp(`(?:${GITHUB_RELEASE_ASSET_URL.source})|(?:${CLOUDFRONT_AUDIO_URL.source})`, 'iu')
 
 /**
  * A recorded clip for one whole Peng'im syllable (e.g. `dio5`), in one variety.
@@ -132,11 +154,12 @@ const GITHUB_RELEASE_ASSET_URL = new RegExp(
 const audioClip = z.object({
   /**
    * Where the clip's bytes actually live (see `data/phonology/REVIEW.md` § 12):
-   * a GitHub Release asset URL, not a path into this repo. Stored in full, not
-   * a bare filename plus a reconstructed base-URL convention, so the YAML
-   * manifest alone is enough to fetch the clip.
+   * a GitHub Release asset URL or a mirrored CloudFront URL (ADR-0026, issue
+   * #270), not a path into this repo. Stored in full, not a bare filename
+   * plus a reconstructed base-URL convention, so the YAML manifest alone is
+   * enough to fetch the clip.
    */
-  url: z.string().regex(GITHUB_RELEASE_ASSET_URL, "must be a GitHub Release asset download URL"),
+  url: z.string().regex(AUDIO_CLIP_URL, 'must be a GitHub Release asset download URL or a CloudFront audio URL'),
   /**
    * A CAF/Opus-in-CAF alternate for `url`'s WebM/Opus clip (issue #228):
    * AVFoundation has no WebM demuxer, so iOS-native playback needs this
@@ -145,7 +168,10 @@ const audioClip = z.object({
    * clip); a consumer that wants iOS playback falls back to `url` when this
    * is absent. Always paired with `cafChecksum` — see the refine below.
    */
-  cafUrl: z.string().regex(GITHUB_RELEASE_ASSET_URL, "must be a GitHub Release asset download URL").optional(),
+  cafUrl: z
+    .string()
+    .regex(AUDIO_CLIP_URL, 'must be a GitHub Release asset download URL or a CloudFront audio URL')
+    .optional(),
   confidence: z.enum(CONFIDENCE),
   note: z.string().optional(),
   /**

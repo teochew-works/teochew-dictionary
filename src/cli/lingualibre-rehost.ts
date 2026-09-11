@@ -3,23 +3,20 @@ import { rehostClip, resolveProposal } from '../importers/lingualibre-rehost.js'
 import { dim, green, red } from './colour.js'
 
 /**
- * `npm run rehost:lingualibre -- <index-or-commonsTitle>... [--tag=audio-lingualibre]`
+ * `npm run rehost:lingualibre -- <index-or-commonsTitle>...`
  *
  * Downloads a staged Lingua Libre proposal's bytes from Commons, computes its
- * sha256, and re-uploads it as a GitHub Release asset — see
+ * sha256, and uploads it to S3 (issue #270) — see
  * ../importers/lingualibre-rehost.js for the actual logic and
  * data/phonology/REVIEW.md § 16 for why re-hosting happens per-clip rather
  * than as a bulk operation over the whole staged corpus.
  */
 
 const args = process.argv.slice(2)
-const flags = args.filter((a) => a.startsWith('--'))
 const positional = args.filter((a) => !a.startsWith('--'))
-const tagFlag = flags.find((f) => f.startsWith('--tag='))
-const tag = tagFlag ? tagFlag.slice('--tag='.length) : undefined
 
 if (positional.length === 0) {
-  console.error('usage: npm run rehost:lingualibre -- <proposal-index-or-commonsTitle>... [--tag=audio-lingualibre]')
+  console.error('usage: npm run rehost:lingualibre -- <proposal-index-or-commonsTitle>...')
   process.exit(2)
 }
 
@@ -39,7 +36,7 @@ for (const arg of positional) {
   }
 
   console.log(dim(`re-hosting ${proposal.commonsTitle} (${proposal.pengim})…`))
-  const { url, checksum } = await rehostClip(proposal, { tag })
+  const { url, checksum } = await rehostClip(proposal)
   console.log(`${green('✓')} ${url}`)
   console.log(`  checksum: ${checksum}`)
 }

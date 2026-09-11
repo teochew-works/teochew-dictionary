@@ -1,13 +1,11 @@
 import { describe, expect, it } from 'vitest'
 
-import { GITHUB_REPO, type Audio } from '@teochew/core'
-import { collectReferencedUrls, reclaimAudioAssets, type ReleaseAsset } from '../src/importers/audio-reclaim.js'
+import type { Audio } from '@teochew/core'
+import { collectReferencedUrls, reclaimAudioAssets, type BucketObject } from '../src/importers/audio-reclaim.js'
+import { AUDIO_CDN_BASE } from '../src/importers/s3-upload.js'
 
-const TAG = 'audio-teochew-dictionary-audio'
-const CAF_TAG = 'audio-chaozhou-caf'
-
-function assetUrl(tag: string, name: string): string {
-  return `https://github.com/${GITHUB_REPO}/releases/download/${tag}/${name}`
+function objectUrl(key: string): string {
+  return `${AUDIO_CDN_BASE}/${key}`
 }
 
 function audioTable(id: string, clips: Audio['clips'], wordClips?: Audio['wordClips']): Audio {
@@ -15,75 +13,58 @@ function audioTable(id: string, clips: Audio['clips'], wordClips?: Audio['wordCl
 }
 
 const clip = (overrides: Partial<Audio['clips'][string][number]> = {}) => ({
-  url: assetUrl(TAG, 'a1.webm'),
+  url: objectUrl('clips/a1.webm'),
   confidence: 'high' as const,
   sources: ['fixture'],
   checksum: `sha256:${'a'.repeat(64)}`,
   ...overrides,
 })
 
-/** Fake `gh` hooks recording every call into an array — no real `gh` ever runs. */
-function fakeGh(assetsByTag: Record<string, ReleaseAsset[]>) {
-  const deleteAssetCalls: Array<[string, string]> = []
+/** Fake S3 hooks recording every call into an array — no real AWS call ever runs. */
+function fakeBucket(objects: BucketObject[]) {
+  const deleteCalls: string[] = []
   return {
-    listTags: () => Object.keys(assetsByTag),
-    listAssets: (tag: string) => assetsByTag[tag] ?? [],
-    deleteAsset: (tag: string, name: string) => {
-      deleteAssetCalls.push([tag, name])
+    listObjects: async () => objects,
+    deleteObject: async (key: string) => {
+      deleteCalls.push(key)
     },
-    deleteAssetCalls,
+    deleteCalls,
   }
 }
 
 describe('reclaimAudioAssets', () => {
-  it('leaves a referenced asset alone', () => {
-    const referenced = new Set([assetUrl(TAG, 'a1.webm')])
-    const gh = fakeGh({ [TAG]: [{ name: 'a1.webm', url: assetUrl(TAG, 'a1.webm') }] })
+  it('leaves a referenced object alone', async () => {
+    const referenced = new Set([objectUrl('clips/a1.webm')])
+    const bucket = fakeBucket([{ key: 'clips/a1.webm', url: objectUrl('clips/a1.webm') }])
 
-    const result = reclaimAudioAssets(referenced, gh)
+    const result = await reclaimAudioAssets(referenced, bucket)
 
     expect(result.stranded).toEqual([])
-    expect(result.assetsScanned).toBe(1)
+    expect(result.objectsScanned).toBe(1)
   })
 
-  it('reports an unreferenced asset as stranded but does not delete it without --write', () => {
+  it('reports an unreferenced object as stranded but does not delete it without --write', async () => {
     const referenced = new Set<string>()
-    const gh = fakeGh({ [TAG]: [{ name: 'a1.webm', url: assetUrl(TAG, 'a1.webm') }] })
+    const bucket = fakeBucket([{ key: 'clips/a1.webm', url: objectUrl('clips/a1.webm') }])
 
-    const result = reclaimAudioAssets(referenced, gh)
+    const result = await reclaimAudioAssets(referenced, bucket)
 
-    expect(result.stranded).toEqual([{ tag: TAG, name: 'a1.webm', url: assetUrl(TAG, 'a1.webm') }])
+    expect(result.stranded).toEqual([{ key: 'clips/a1.webm', url: objectUrl('clips/a1.webm') }])
     expect(result.deleted).toEqual([])
-    expect(gh.deleteAssetCalls).toEqual([])
+    expect(bucket.deleteCalls).toEqual([])
   })
 
-  it('--write deletes every stranded asset and only those', () => {
-    const referenced = new Set([assetUrl(TAG, 'live.webm')])
-    const gh = fakeGh({
-      [TAG]: [
-        { name: 'live.webm', url: assetUrl(TAG, 'live.webm') },
-        { name: 'stale.webm', url: assetUrl(TAG, 'stale.webm') },
-      ],
-    })
+  it('--write deletes every stranded object and only those', async () => {
+    const referenced = new Set([objectUrl('clips/live.webm')])
+    const bucket = fakeBucket([
+      { key: 'clips/live.webm', url: objectUrl('clips/live.webm') },
+      { key: 'clips/stale.webm', url: objectUrl('clips/stale.webm') },
+    ])
 
-    const result = reclaimAudioAssets(referenced, { write: true, ...gh })
+    const result = await reclaimAudioAssets(referenced, { write: true, ...bucket })
 
-    expect(result.deleted).toEqual([{ tag: TAG, name: 'stale.webm', url: assetUrl(TAG, 'stale.webm') }])
-    expect(gh.deleteAssetCalls).toEqual([[TAG, 'stale.webm']])
-  })
-
-  it('scans every audio-* release tag returned by listTags, combining their assets', () => {
-    const referenced = new Set<string>()
-    const gh = fakeGh({
-      [TAG]: [{ name: 'a1.webm', url: assetUrl(TAG, 'a1.webm') }],
-      [CAF_TAG]: [{ name: 'a1.caf', url: assetUrl(CAF_TAG, 'a1.caf') }],
-    })
-
-    const result = reclaimAudioAssets(referenced, gh)
-
-    expect(result.tags).toEqual([TAG, CAF_TAG])
-    expect(result.assetsScanned).toBe(2)
-    expect(result.stranded).toHaveLength(2)
+    expect(result.deleted).toEqual([{ key: 'clips/stale.webm', url: objectUrl('clips/stale.webm') }])
+    expect(bucket.deleteCalls).toEqual(['clips/stale.webm'])
   })
 })
 
@@ -91,34 +72,32 @@ describe('collectReferencedUrls', () => {
   it('picks up url and cafUrl from both clips and wordClips', () => {
     const audio = audioTable(
       'chaozhou',
-      { a1: [clip({ url: assetUrl(TAG, 'a1.webm'), cafUrl: assetUrl(CAF_TAG, 'a1.caf'), cafChecksum: `sha256:${'b'.repeat(64)}` })] },
-      { 'a1 b2': [clip({ url: assetUrl(TAG, 'a1-b2.webm') })] },
+      { a1: [clip({ url: objectUrl('clips/a1.webm'), cafUrl: objectUrl('clips/a1.caf'), cafChecksum: `sha256:${'b'.repeat(64)}` })] },
+      { 'a1 b2': [clip({ url: objectUrl('clips/a1-b2.webm') })] },
     )
 
     const urls = collectReferencedUrls([audio])
 
     expect(urls).toEqual(
-      new Set([assetUrl(TAG, 'a1.webm'), assetUrl(CAF_TAG, 'a1.caf'), assetUrl(TAG, 'a1-b2.webm')]),
+      new Set([objectUrl('clips/a1.webm'), objectUrl('clips/a1.caf'), objectUrl('clips/a1-b2.webm')]),
     )
   })
 
-  it('combines every variety at once — cross-variety safety (issue #241)', () => {
-    const chaozhou = audioTable('chaozhou', { a1: [clip({ url: assetUrl(TAG, 'a1.webm') })] })
-    const shantou = audioTable('shantou', { a1: [clip({ url: assetUrl(TAG, 'a1-shantou.webm') })] })
+  it('combines every variety at once — cross-variety safety (issue #241)', async () => {
+    const chaozhou = audioTable('chaozhou', { a1: [clip({ url: objectUrl('clips/a1.webm') })] })
+    const shantou = audioTable('shantou', { a1: [clip({ url: objectUrl('clips/a1-shantou.webm') })] })
 
     const referenced = collectReferencedUrls([chaozhou, shantou])
-    const gh = fakeGh({
-      [TAG]: [
-        { name: 'a1.webm', url: assetUrl(TAG, 'a1.webm') },
-        { name: 'a1-shantou.webm', url: assetUrl(TAG, 'a1-shantou.webm') },
-      ],
-    })
+    const bucket = fakeBucket([
+      { key: 'clips/a1.webm', url: objectUrl('clips/a1.webm') },
+      { key: 'clips/a1-shantou.webm', url: objectUrl('clips/a1-shantou.webm') },
+    ])
 
     // A diff against only `chaozhou`'s references would call the Shantou
     // asset stranded and delete it out from under that variety's manifest.
-    const result = reclaimAudioAssets(referenced, { write: true, ...gh })
+    const result = await reclaimAudioAssets(referenced, { write: true, ...bucket })
 
     expect(result.stranded).toEqual([])
-    expect(gh.deleteAssetCalls).toEqual([])
+    expect(bucket.deleteCalls).toEqual([])
   })
 })

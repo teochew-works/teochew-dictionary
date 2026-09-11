@@ -5,6 +5,7 @@ import { join } from 'node:path'
 
 import { GITHUB_REPO } from '@teochew/core'
 import { cleanupTmpDir, fetchWithRetry, IMPORTER_USER_AGENT, resolveTmpDir } from './types.js'
+import { audioClipKey, contentTypeForFilename, uploadBytesToS3, type UploadBytesToS3Options } from './s3-upload.js'
 import type { AudioClipProposal } from './audio-types.js'
 
 /**
@@ -32,19 +33,28 @@ export function resolveProposal(arg: string, proposals: AudioClipProposal[]): Au
 }
 
 /**
- * A plain-ASCII, hyphenated asset filename for `key`, keeping whatever
- * extension `sourcePathOrUrl` ends in (falling back to `.wav`). Shared by
- * `assetFilename` below and `local-recording-rehost.ts`'s equivalent, which
- * derives a filename from a local file path rather than a Commons URL.
+ * A plain-ASCII, hyphenated asset filename for `key` + `speaker`, keeping
+ * whatever extension `sourcePathOrUrl` ends in (falling back to `.wav`).
+ * Shared by `assetFilename` below and `local-recording-rehost.ts`'s
+ * equivalent, which derives a filename from a local file path rather than a
+ * Commons URL.
  *
- * Pengim keys can carry diacritics (e.g. `ê`) that `\w` in `phonology.ts`'s
- * `GITHUB_RELEASE_ASSET_URL` regex doesn't match — NFD-decompose and strip
- * combining marks so the resulting filename (and the release URL built from
+ * `speaker` is part of the filename, not just `key`, because the S3 key this
+ * becomes (`audioClipKey`, s3-upload.ts) is one flat namespace with no
+ * per-batch release tag to fall back on: a second speaker recording the same
+ * pengim syllable — which `mergeLinguaLibreClip`/`mergeLocalRecording`
+ * explicitly allow, appending a distinct speaker's clip with no flag needed
+ * — must land at a different key, not silently collide with (or get
+ * refused against) the first speaker's clip.
+ *
+ * Pengim keys and speaker names can carry diacritics (e.g. `ê`) that `\w` in
+ * `phonology.ts`'s `AUDIO_CLIP_URL` regex doesn't match — NFD-decompose and
+ * strip combining marks so the resulting filename (and the URL built from
  * it) stays within that ASCII-only pattern.
  */
-export function slugAssetFilename(key: string, sourcePathOrUrl: string): string {
+export function slugAssetFilename(key: string, speaker: string, sourcePathOrUrl: string): string {
   const ext = sourcePathOrUrl.match(/\.[a-zA-Z0-9]+$/u)?.[0]?.toLowerCase() ?? '.wav'
-  const slug = key
+  const slug = `${key} ${speaker}`
     .trim()
     .toLowerCase()
     .normalize('NFD')
@@ -53,9 +63,9 @@ export function slugAssetFilename(key: string, sourcePathOrUrl: string): string 
   return `${slug}${ext}`
 }
 
-/** A plain-ASCII, hyphenated asset filename derived from the proposal's pengim key, keeping the source's own extension. */
+/** A plain-ASCII, hyphenated asset filename derived from the proposal's pengim key and speaker, keeping the source's own extension. */
 export function assetFilename(proposal: AudioClipProposal): string {
-  return slugAssetFilename(proposal.pengim, proposal.commonsUrl)
+  return slugAssetFilename(proposal.pengim, proposal.speaker, proposal.commonsUrl)
 }
 
 /**
@@ -152,14 +162,12 @@ export async function uploadBytesToRelease(
 }
 
 export interface RehostOptions {
-  tag?: string
   /** Injectable for tests — avoids a real network call. */
   fetchBytes?: (url: string) => Promise<Buffer>
-  /** Injectable for tests — avoids shelling out to a real `gh release view`. */
-  releaseExists?: (tag: string) => boolean
-  /** Injectable for tests — avoids shelling out to a real `gh`. */
-  runGh?: (args: string[]) => void
-  tmpDir?: string
+  /** Injectable for tests — avoids a real AWS call. */
+  headObject?: UploadBytesToS3Options['headObject']
+  /** Injectable for tests — avoids a real AWS call. */
+  putObject?: UploadBytesToS3Options['putObject']
 }
 
 export interface RehostResult {
@@ -169,14 +177,15 @@ export interface RehostResult {
 }
 
 export async function rehostClip(proposal: AudioClipProposal, options: RehostOptions = {}): Promise<RehostResult> {
-  const { tag = DEFAULT_REHOST_TAG, fetchBytes = defaultFetchBytes, ...uploadOptions } = options
+  const { fetchBytes = defaultFetchBytes, headObject, putObject } = options
 
   const bytes = await fetchBytes(proposal.commonsUrl)
   const filename = assetFilename(proposal)
-  const { url, checksum } = await uploadBytesToRelease(bytes, filename, {
-    ...uploadOptions,
-    tag,
-    releaseNotes: 'Re-hosted Lingua Libre/Commons audio clips — see data/phonology/REVIEW.md § 16.',
+  const { url, checksum } = await uploadBytesToS3(bytes, {
+    key: audioClipKey(filename),
+    contentType: contentTypeForFilename(filename),
+    headObject,
+    putObject,
   })
 
   return { proposal, url, checksum }

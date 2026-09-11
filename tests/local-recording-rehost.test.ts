@@ -1,12 +1,13 @@
-import { existsSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
+import { createHash } from 'node:crypto'
+import { mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
 import { describe, expect, it } from 'vitest'
 
-import { GITHUB_REPO } from '@teochew/core'
 import { assetFilename, rehostLocalRecording, resolveLocalRecordingProposal } from '../src/importers/local-recording-rehost.js'
 import type { LocalRecordingProposal } from '../src/importers/local-recording-types.js'
+import type { PutObjectParams } from '../src/importers/s3-upload.js'
 
 function proposal(overrides: Partial<LocalRecordingProposal> = {}): LocalRecordingProposal {
   return {
@@ -19,6 +20,10 @@ function proposal(overrides: Partial<LocalRecordingProposal> = {}): LocalRecordi
     variety: 'chaozhou',
     ...overrides,
   }
+}
+
+function sha256(bytes: Buffer): string {
+  return `sha256:${createHash('sha256').update(bytes).digest('hex')}`
 }
 
 describe('resolveLocalRecordingProposal', () => {
@@ -42,110 +47,96 @@ describe('resolveLocalRecordingProposal', () => {
 })
 
 describe('assetFilename', () => {
-  it('slugs the pengim key and keeps the local file extension', () => {
-    expect(assetFilename(proposal({ pengim: 'dio5', localPath: 'data/staging/recordings/chaozhou/dio5.wav' }))).toBe(
-      'dio5.wav',
-    )
+  it('slugs the pengim key, appends the speaker, and keeps the local file extension', () => {
+    expect(
+      assetFilename(
+        proposal({ pengim: 'dio5', speaker: 'speaker-1', localPath: 'data/staging/recordings/chaozhou/dio5.wav' }),
+      ),
+    ).toBe('dio5-speaker-1.wav')
   })
 
   it('lowercases the key', () => {
-    expect(assetFilename(proposal({ pengim: 'Dio5', localPath: 'x.WAV' }))).toBe('dio5.wav')
+    expect(assetFilename(proposal({ pengim: 'Dio5', speaker: 'speaker-1', localPath: 'x.WAV' }))).toBe(
+      'dio5-speaker-1.wav',
+    )
   })
 
   it('falls back to .wav when the local path has no recognisable extension', () => {
-    expect(assetFilename(proposal({ pengim: 'dio5', localPath: 'no-extension' }))).toBe('dio5.wav')
+    expect(assetFilename(proposal({ pengim: 'dio5', speaker: 'speaker-1', localPath: 'no-extension' }))).toBe(
+      'dio5-speaker-1.wav',
+    )
   })
 
   it('strips diacritics so the filename stays plain ASCII', () => {
-    expect(assetFilename(proposal({ pengim: 'sêg4', localPath: 'x.webm' }))).toBe('seg4.webm')
+    expect(assetFilename(proposal({ pengim: 'sêg4', speaker: 'speaker-1', localPath: 'x.webm' }))).toBe(
+      'seg4-speaker-1.webm',
+    )
+  })
+
+  it('gives two different speakers of the same syllable two different filenames', () => {
+    const a = assetFilename(proposal({ pengim: 'dio5', speaker: 'speaker-1' }))
+    const b = assetFilename(proposal({ pengim: 'dio5', speaker: 'speaker-2' }))
+    expect(a).not.toBe(b)
   })
 })
 
 describe('rehostLocalRecording', () => {
-  it('reads local bytes, checksums, and uploads via the injected gh runner, returning a GitHub Release URL', async () => {
-    const tmpDir = mkdtempSync(join(tmpdir(), 'local-recording-rehost-test-'))
-    const ghCalls: string[][] = []
+  it('reads local bytes, checksums, and uploads to S3, returning a CloudFront URL', async () => {
     const bytes = Buffer.from('fake audio bytes')
+    const putCalls: PutObjectParams[] = []
 
     const result = await rehostLocalRecording(proposal(), {
-      tag: 'audio-teochew-dictionary-audio-test',
       readBytes: () => bytes,
-      releaseExists: () => true,
-      runGh: (args) => ghCalls.push(args),
-      tmpDir,
-    })
-
-    expect(ghCalls).toEqual([
-      ['release', 'upload', 'audio-teochew-dictionary-audio-test', join(tmpDir, 'dio5.wav'), '--clobber'],
-    ])
-    expect(result.url).toBe(
-      `https://github.com/${GITHUB_REPO}/releases/download/audio-teochew-dictionary-audio-test/dio5.wav`,
-    )
-    expect(result.checksum).toMatch(/^sha256:[0-9a-f]{64}$/u)
-
-    rmSync(tmpDir, { recursive: true, force: true })
-  })
-
-  it("creates the release first when it doesn't exist yet, then uploads", async () => {
-    const tmpDir = mkdtempSync(join(tmpdir(), 'local-recording-rehost-test-'))
-    const ghCalls: string[][] = []
-
-    await rehostLocalRecording(proposal(), {
-      tag: 'audio-teochew-dictionary-audio-test',
-      readBytes: () => Buffer.from('x'),
-      releaseExists: () => false,
-      runGh: (args) => ghCalls.push(args),
-      tmpDir,
-    })
-
-    expect(ghCalls[0]).toEqual([
-      'release',
-      'create',
-      'audio-teochew-dictionary-audio-test',
-      '--title',
-      'audio-teochew-dictionary-audio-test',
-      '--notes',
-      'Locally-recorded audio clips — see data/phonology/REVIEW.md § 17.',
-    ])
-    expect(ghCalls[1]?.[1]).toBe('upload')
-
-    rmSync(tmpDir, { recursive: true, force: true })
-  })
-
-  it('removes the local temp file after uploading', async () => {
-    const tmpDir = mkdtempSync(join(tmpdir(), 'local-recording-rehost-test-'))
-    let uploadedPath = ''
-
-    await rehostLocalRecording(proposal(), {
-      readBytes: () => Buffer.from('x'),
-      releaseExists: () => true,
-      runGh: (args) => {
-        uploadedPath = args[2] ?? ''
+      headObject: async () => undefined,
+      putObject: async (params) => {
+        putCalls.push(params)
       },
-      tmpDir,
     })
 
-    expect(uploadedPath).not.toBe('')
-    expect(existsSync(uploadedPath)).toBe(false)
+    expect(putCalls).toHaveLength(1)
+    expect(putCalls[0]?.key).toBe('clips/dio5-speaker-1.wav')
+    expect(result.url).toBe('https://daidb11aas52z.cloudfront.net/clips/dio5-speaker-1.wav')
+    expect(result.checksum).toBe(sha256(bytes))
+  })
 
-    rmSync(tmpDir, { recursive: true, force: true })
+  it('is a safe no-op when the key already holds an identical clip (a resumed run)', async () => {
+    const bytes = Buffer.from('fake audio bytes')
+    let putCalled = false
+
+    const result = await rehostLocalRecording(proposal(), {
+      readBytes: () => bytes,
+      headObject: async () => ({ checksum: sha256(bytes) }),
+      putObject: async () => {
+        putCalled = true
+      },
+    })
+
+    expect(putCalled).toBe(false)
+    expect(result.checksum).toBe(sha256(bytes))
+  })
+
+  it('refuses to overwrite a different clip already uploaded at the same key', async () => {
+    await expect(
+      rehostLocalRecording(proposal(), {
+        readBytes: () => Buffer.from('new bytes'),
+        headObject: async () => ({ checksum: sha256(Buffer.from('old bytes')) }),
+        putObject: async () => {},
+      }),
+    ).rejects.toThrow(/refusing to overwrite/)
   })
 
   it('defaults to reading proposal.localPath from disk when readBytes is not injected', async () => {
-    const tmpDir = mkdtempSync(join(tmpdir(), 'local-recording-rehost-test-'))
     const sourceDir = mkdtempSync(join(tmpdir(), 'local-recording-source-'))
     const sourcePath = join(sourceDir, 'dio5.wav')
     writeFileSync(sourcePath, 'real bytes on disk')
 
     const result = await rehostLocalRecording(proposal({ localPath: sourcePath }), {
-      releaseExists: () => true,
-      runGh: () => {},
-      tmpDir,
+      headObject: async () => undefined,
+      putObject: async () => {},
     })
 
     expect(result.checksum).toMatch(/^sha256:[0-9a-f]{64}$/u)
 
-    rmSync(tmpDir, { recursive: true, force: true })
     rmSync(sourceDir, { recursive: true, force: true })
   })
 })

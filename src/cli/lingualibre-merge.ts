@@ -6,9 +6,9 @@ import { dim, green, red } from './colour.js'
 
 /**
  * `npm run merge:lingualibre -- <index-or-commonsTitle> --variety=<id>
- *   [--confidence=high|medium|low] [--force] [--tag=audio-lingualibre]`
+ *   [--confidence=high|medium|low] [--force]`
  *
- * Re-hosts one staged Lingua Libre proposal (see
+ * Re-hosts one staged Lingua Libre proposal to S3 (issue #270; see
  * ../importers/lingualibre-merge.js for the actual logic) and writes it into
  * data/phonology/audio/<variety>.yaml. `--variety` has no default: judging
  * accent fit stays a human call, per data/phonology/REVIEW.md § 16.
@@ -16,7 +16,7 @@ import { dim, green, red } from './colour.js'
 
 const USAGE =
   'usage: npm run merge:lingualibre -- <proposal-index-or-commonsTitle> --variety=<id> ' +
-  '[--confidence=high|medium|low] [--force] [--tag=audio-lingualibre]'
+  '[--confidence=high|medium|low] [--force]'
 
 const args = process.argv.slice(2)
 const flags = args.filter((a) => a.startsWith('--'))
@@ -39,7 +39,6 @@ function boolFlag(name: string): boolean {
 
 const variety = flagValue('variety')
 const confidenceFlag = flagValue('confidence')
-const tag = flagValue('tag')
 const force = boolFlag('force')
 
 if (positional.length !== 1 || !variety) {
@@ -76,7 +75,6 @@ try {
     variety,
     confidence: confidenceFlag as (typeof CONFIDENCE)[number] | undefined,
     force,
-    tag,
   })
   console.log(`${green('✓')} merged '${result.key}' → ${result.bucket}.${JSON.stringify(result.key)} in ${result.path}`)
   console.log(`  source: ${result.sourceId}`)

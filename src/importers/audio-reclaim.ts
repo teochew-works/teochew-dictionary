@@ -1,55 +1,48 @@
-import { execFileSync } from 'node:child_process'
+import { DeleteObjectCommand, ListObjectsV2Command, S3Client } from '@aws-sdk/client-s3'
 
 import type { Audio } from '@teochew/core'
+import { AUDIO_BUCKET, AUDIO_CDN_BASE, AUDIO_CLIP_PREFIX } from './s3-upload.js'
 
 /**
- * Finds and (behind `--write`) deletes GitHub Release assets under every
- * `audio-*` release tag that no variety's audio manifest references any
- * more — superseded re-recordings whose filename is now referenced under a
- * later release (issue #241, ADR-0014: the 1000-asset-per-release cap counts
- * these too, and the first `.webm` release sits at the cap with only 28%
- * live).
+ * Finds and (behind `--write`) deletes S3 objects under the bucket's
+ * `clips/` prefix that no variety's audio manifest references any more —
+ * superseded re-recordings, or a leftover from an aborted upload (issue
+ * #241/#270).
  *
  * Driven by `src/cli/audio-reclaim.ts`; kept separate from that thin CLI
  * script (a bare top-level script body, like every other file under
  * src/cli/) so this logic stays importable and unit-testable.
  */
 
-const AUDIO_RELEASE_TAG_PREFIX = 'audio-'
-
-export interface ReleaseAsset {
-  name: string
+export interface BucketObject {
+  key: string
   url: string
 }
 
-export interface StrandedAsset {
-  tag: string
-  name: string
+export interface StrandedObject {
+  key: string
   url: string
 }
 
 export interface ReclaimOptions {
   write?: boolean
-  /** Injectable for tests — avoids shelling out to a real `gh release list`. */
-  listTags?: () => string[]
-  /** Injectable for tests — avoids shelling out to a real `gh release view`. */
-  listAssets?: (tag: string) => ReleaseAsset[]
-  /** Injectable for tests — avoids shelling out to a real `gh release delete-asset`. */
-  deleteAsset?: (tag: string, name: string) => void
+  /** Injectable for tests — avoids a real AWS call. */
+  listObjects?: () => Promise<BucketObject[]>
+  /** Injectable for tests — avoids a real AWS call. */
+  deleteObject?: (key: string) => Promise<void>
 }
 
 export interface ReclaimResult {
-  tags: string[]
-  assetsScanned: number
-  stranded: StrandedAsset[]
-  deleted: StrandedAsset[]
+  objectsScanned: number
+  stranded: StrandedObject[]
+  deleted: StrandedObject[]
 }
 
 /**
  * Every clip/CAF URL referenced by ANY variety's audio manifest, combined.
  * Must be built across every variety at once, not one at a time — an asset
  * stranded for one variety's manifest can be the live asset for another
- * variety, and diffing release assets against only one variety's references
+ * variety, and diffing bucket objects against only one variety's references
  * would delete it out from under that other variety.
  */
 export function collectReferencedUrls(audios: Audio[]): Set<string> {
@@ -67,65 +60,47 @@ export function collectReferencedUrls(audios: Audio[]): Set<string> {
   return urls
 }
 
-function defaultListTags(): string[] {
-  const out = execFileSync('gh', ['release', 'list', '--json', 'tagName', '--jq', '.[].tagName'], {
-    encoding: 'utf8',
-  })
+async function defaultListObjects(): Promise<BucketObject[]> {
+  const client = new S3Client({})
+  const out: BucketObject[] = []
+  let continuationToken: string | undefined
+
+  do {
+    const res = await client.send(
+      new ListObjectsV2Command({ Bucket: AUDIO_BUCKET, Prefix: AUDIO_CLIP_PREFIX, ContinuationToken: continuationToken }),
+    )
+    for (const obj of res.Contents ?? []) {
+      if (obj.Key) out.push({ key: obj.Key, url: `${AUDIO_CDN_BASE}/${obj.Key}` })
+    }
+    continuationToken = res.NextContinuationToken
+  } while (continuationToken)
+
   return out
-    .split('\n')
-    .filter((t) => t.startsWith(AUDIO_RELEASE_TAG_PREFIX))
-    .sort()
 }
 
-function defaultListAssets(tag: string): ReleaseAsset[] {
-  const out = execFileSync(
-    'gh',
-    ['release', 'view', tag, '--json', 'assets', '--jq', '.assets[] | {name, url}'],
-    { encoding: 'utf8' },
-  )
-  return out
-    .split('\n')
-    .filter(Boolean)
-    .map((line) => JSON.parse(line) as ReleaseAsset)
-}
-
-function defaultDeleteAsset(tag: string, name: string): void {
-  execFileSync('gh', ['release', 'delete-asset', tag, name, '--yes'], { stdio: 'inherit' })
+async function defaultDeleteObject(key: string): Promise<void> {
+  const client = new S3Client({})
+  await client.send(new DeleteObjectCommand({ Bucket: AUDIO_BUCKET, Key: key }))
 }
 
 /**
- * Diffs every `audio-*` release's actual assets against `referencedUrls`
- * (see `collectReferencedUrls`) and, when `write`, deletes the ones no
- * manifest references any more.
+ * Diffs every object under the bucket's `clips/` prefix against
+ * `referencedUrls` (see `collectReferencedUrls`) and, when `write`, deletes
+ * the ones no manifest references any more.
  */
-export function reclaimAudioAssets(referencedUrls: Set<string>, options: ReclaimOptions = {}): ReclaimResult {
-  const {
-    write = false,
-    listTags = defaultListTags,
-    listAssets = defaultListAssets,
-    deleteAsset = defaultDeleteAsset,
-  } = options
+export async function reclaimAudioAssets(referencedUrls: Set<string>, options: ReclaimOptions = {}): Promise<ReclaimResult> {
+  const { write = false, listObjects = defaultListObjects, deleteObject = defaultDeleteObject } = options
 
-  const tags = listTags()
-  const stranded: StrandedAsset[] = []
-  let assetsScanned = 0
+  const objects = await listObjects()
+  const stranded = objects.filter((o) => !referencedUrls.has(o.url))
 
-  for (const tag of tags) {
-    for (const asset of listAssets(tag)) {
-      assetsScanned += 1
-      if (!referencedUrls.has(asset.url)) {
-        stranded.push({ tag, name: asset.name, url: asset.url })
-      }
-    }
-  }
-
-  const deleted: StrandedAsset[] = []
+  const deleted: StrandedObject[] = []
   if (write) {
     for (const s of stranded) {
-      deleteAsset(s.tag, s.name)
+      await deleteObject(s.key)
       deleted.push(s)
     }
   }
 
-  return { tags, assetsScanned, stranded, deleted }
+  return { objectsScanned: objects.length, stranded, deleted }
 }

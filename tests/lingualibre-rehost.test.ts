@@ -1,12 +1,10 @@
-import { existsSync, mkdtempSync, rmSync } from 'node:fs'
-import { tmpdir } from 'node:os'
-import { dirname, join } from 'node:path'
+import { createHash } from 'node:crypto'
 
 import { describe, expect, it } from 'vitest'
 
-import { GITHUB_REPO } from '@teochew/core'
 import { assetFilename, rehostClip, resolveProposal } from '../src/importers/lingualibre-rehost.js'
 import type { AudioClipProposal } from '../src/importers/audio-types.js'
+import type { PutObjectParams } from '../src/importers/s3-upload.js'
 
 function proposal(overrides: Partial<AudioClipProposal> = {}): AudioClipProposal {
   return {
@@ -18,6 +16,10 @@ function proposal(overrides: Partial<AudioClipProposal> = {}): AudioClipProposal
     licence: 'CC-BY-SA-4.0',
     ...overrides,
   }
+}
+
+function sha256(bytes: Buffer): string {
+  return `sha256:${createHash('sha256').update(bytes).digest('hex')}`
 }
 
 describe('resolveProposal', () => {
@@ -41,122 +43,74 @@ describe('resolveProposal', () => {
 })
 
 describe('assetFilename', () => {
-  it('hyphenates a multi-syllable pengim key and keeps the source extension', () => {
-    expect(assetFilename(proposal({ pengim: 'dio5 ziu1', commonsUrl: '.../x.wav' }))).toBe('dio5-ziu1.wav')
+  it('hyphenates a multi-syllable pengim key, appends the speaker, and keeps the source extension', () => {
+    expect(assetFilename(proposal({ pengim: 'dio5 ziu1', speaker: 'Someone', commonsUrl: '.../x.wav' }))).toBe(
+      'dio5-ziu1-someone.wav',
+    )
   })
 
-  it('lowercases the key', () => {
-    expect(assetFilename(proposal({ pengim: 'Dio5', commonsUrl: '.../x.WAV' }))).toBe('dio5.wav')
+  it('lowercases the key and speaker', () => {
+    expect(assetFilename(proposal({ pengim: 'Dio5', speaker: 'Someone', commonsUrl: '.../x.WAV' }))).toBe(
+      'dio5-someone.wav',
+    )
   })
 
   it('falls back to .wav when the source url has no recognisable extension', () => {
-    expect(assetFilename(proposal({ pengim: 'dio5', commonsUrl: 'https://example.com/no-extension' }))).toBe(
-      'dio5.wav',
-    )
+    expect(
+      assetFilename(proposal({ pengim: 'dio5', speaker: 'Someone', commonsUrl: 'https://example.com/no-extension' })),
+    ).toBe('dio5-someone.wav')
+  })
+
+  it('gives two different speakers of the same syllable two different filenames', () => {
+    const a = assetFilename(proposal({ pengim: 'dio5', speaker: 'Alice', commonsUrl: '.../x.wav' }))
+    const b = assetFilename(proposal({ pengim: 'dio5', speaker: 'Bob', commonsUrl: '.../x.wav' }))
+    expect(a).not.toBe(b)
   })
 })
 
 describe('rehostClip', () => {
-  it('downloads, checksums, and uploads via the injected gh runner, returning a GitHub Release URL', async () => {
-    const tmpDir = mkdtempSync(join(tmpdir(), 'lingualibre-rehost-test-'))
-    const ghCalls: string[][] = []
+  it('downloads, checksums, and uploads to S3, returning a CloudFront URL', async () => {
     const bytes = Buffer.from('fake audio bytes')
+    const putCalls: PutObjectParams[] = []
 
     const result = await rehostClip(proposal(), {
-      tag: 'audio-lingualibre-test',
       fetchBytes: async () => bytes,
-      releaseExists: () => true,
-      runGh: (args) => ghCalls.push(args),
-      tmpDir,
-    })
-
-    expect(ghCalls).toEqual([
-      ['release', 'upload', 'audio-lingualibre-test', join(tmpDir, 'dio5-ziu1.wav'), '--clobber'],
-    ])
-    expect(result.url).toBe(
-      `https://github.com/${GITHUB_REPO}/releases/download/audio-lingualibre-test/dio5-ziu1.wav`,
-    )
-    expect(result.checksum).toMatch(/^sha256:[0-9a-f]{64}$/u)
-
-    rmSync(tmpDir, { recursive: true, force: true })
-  })
-
-  it("creates the release first when it doesn't exist yet, then uploads", async () => {
-    const tmpDir = mkdtempSync(join(tmpdir(), 'lingualibre-rehost-test-'))
-    const ghCalls: string[][] = []
-
-    await rehostClip(proposal(), {
-      tag: 'audio-lingualibre-test',
-      fetchBytes: async () => Buffer.from('x'),
-      releaseExists: () => false,
-      runGh: (args) => ghCalls.push(args),
-      tmpDir,
-    })
-
-    expect(ghCalls[0]).toEqual([
-      'release',
-      'create',
-      'audio-lingualibre-test',
-      '--title',
-      'audio-lingualibre-test',
-      '--notes',
-      'Re-hosted Lingua Libre/Commons audio clips — see data/phonology/REVIEW.md § 16.',
-    ])
-    expect(ghCalls[1]?.[1]).toBe('upload')
-
-    rmSync(tmpDir, { recursive: true, force: true })
-  })
-
-  it('removes the local temp file after uploading', async () => {
-    const tmpDir = mkdtempSync(join(tmpdir(), 'lingualibre-rehost-test-'))
-    let localPath = ''
-
-    await rehostClip(proposal(), {
-      fetchBytes: async () => Buffer.from('x'),
-      releaseExists: () => true,
-      runGh: (args) => {
-        // `['release', 'upload', <tag>, <localPath>, '--clobber']` — index 3.
-        localPath = args[3] ?? ''
-      },
-      tmpDir,
-    })
-
-    expect(localPath).toBe(join(tmpDir, 'dio5-ziu1.wav'))
-    expect(existsSync(localPath)).toBe(false)
-
-    rmSync(tmpDir, { recursive: true, force: true })
-  })
-
-  it('leaves a caller-supplied temp directory in place', async () => {
-    const tmpDir = mkdtempSync(join(tmpdir(), 'lingualibre-rehost-test-'))
-
-    await rehostClip(proposal(), {
-      fetchBytes: async () => Buffer.from('x'),
-      releaseExists: () => true,
-      runGh: () => {},
-      tmpDir,
-    })
-
-    expect(existsSync(tmpDir)).toBe(true)
-    rmSync(tmpDir, { recursive: true, force: true })
-  })
-
-  /**
-   * Every published clip goes through here, so a directory left behind per
-   * call accumulates one-for-one with the corpus (issue #240).
-   */
-  it('removes the temp directory it created itself', async () => {
-    let created = ''
-
-    await rehostClip(proposal(), {
-      fetchBytes: async () => Buffer.from('x'),
-      releaseExists: () => true,
-      runGh: (args) => {
-        created = dirname(args[3] ?? '')
+      headObject: async () => undefined,
+      putObject: async (params) => {
+        putCalls.push(params)
       },
     })
 
-    expect(created).not.toBe('')
-    expect(existsSync(created)).toBe(false)
+    expect(putCalls).toHaveLength(1)
+    expect(putCalls[0]?.key).toBe('clips/dio5-ziu1-someone.wav')
+    expect(putCalls[0]?.contentType).toBe('audio/wav')
+    expect(result.url).toBe('https://daidb11aas52z.cloudfront.net/clips/dio5-ziu1-someone.wav')
+    expect(result.checksum).toBe(sha256(bytes))
+  })
+
+  it('is a safe no-op when the key already holds an identical clip (a resumed run)', async () => {
+    const bytes = Buffer.from('fake audio bytes')
+    let putCalled = false
+
+    const result = await rehostClip(proposal(), {
+      fetchBytes: async () => bytes,
+      headObject: async () => ({ checksum: sha256(bytes) }),
+      putObject: async () => {
+        putCalled = true
+      },
+    })
+
+    expect(putCalled).toBe(false)
+    expect(result.checksum).toBe(sha256(bytes))
+  })
+
+  it('refuses to overwrite a different clip already uploaded at the same key', async () => {
+    await expect(
+      rehostClip(proposal(), {
+        fetchBytes: async () => Buffer.from('new bytes'),
+        headObject: async () => ({ checksum: sha256(Buffer.from('old bytes')) }),
+        putObject: async () => {},
+      }),
+    ).rejects.toThrow(/refusing to overwrite/)
   })
 })
