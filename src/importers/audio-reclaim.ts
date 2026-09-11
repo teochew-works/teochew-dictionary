@@ -1,7 +1,7 @@
 import { DeleteObjectCommand, ListObjectsV2Command, S3Client } from '@aws-sdk/client-s3'
 
 import type { Audio } from '@teochew/core'
-import { AUDIO_BUCKET, AUDIO_CDN_BASE, AUDIO_CLIP_PREFIX } from './s3-upload.js'
+import { AUDIO_BUCKET, AUDIO_BUCKET_REGION, AUDIO_CDN_BASE, AUDIO_CLIP_PREFIX } from './s3-upload.js'
 
 /**
  * Finds and (behind `--write`) deletes S3 objects under the bucket's
@@ -60,8 +60,15 @@ export function collectReferencedUrls(audios: Audio[]): Set<string> {
   return urls
 }
 
+let sharedClient: S3Client | undefined
+
+/** Lazily-constructed, shared across calls that don't inject their own — avoids opening a new connection pool per call. */
+function getClient(): S3Client {
+  return (sharedClient ??= new S3Client({ region: AUDIO_BUCKET_REGION }))
+}
+
 async function defaultListObjects(): Promise<BucketObject[]> {
-  const client = new S3Client({})
+  const client = getClient()
   const out: BucketObject[] = []
   let continuationToken: string | undefined
 
@@ -79,7 +86,7 @@ async function defaultListObjects(): Promise<BucketObject[]> {
 }
 
 async function defaultDeleteObject(key: string): Promise<void> {
-  const client = new S3Client({})
+  const client = getClient()
   await client.send(new DeleteObjectCommand({ Bucket: AUDIO_BUCKET, Key: key }))
 }
 

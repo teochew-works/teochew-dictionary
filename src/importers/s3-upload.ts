@@ -12,6 +12,17 @@ import { HeadObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s
  */
 
 export const AUDIO_BUCKET = 'teochew-dictionary-audio'
+/**
+ * `S3Client` resolves a region lazily through a provider chain (env vars,
+ * shared config, IMDS, ...) when none is given explicitly — and on a
+ * machine with no region configured anywhere in that chain, every single
+ * command re-attempts (and re-fails) that whole resolution rather than
+ * caching a permanent failure. Confirmed live (issue #270): a real
+ * `--write` run against the actual bucket took over an hour to fail
+ * "Region is missing" on all 6,176 targets, immediately fixed by passing
+ * this explicitly instead of leaving it to be inferred.
+ */
+export const AUDIO_BUCKET_REGION = 'us-east-1'
 export const AUDIO_CDN_BASE = 'https://daidb11aas52z.cloudfront.net'
 
 /** The key prefix every clip and CAF alternate is uploaded under — see `audioClipKey`/`audioAssetPath`. */
@@ -92,7 +103,7 @@ let sharedClient: S3Client | undefined
 
 /** Lazily-constructed, shared across calls that don't inject their own — avoids opening a new connection pool per upload. */
 function client(): S3Client {
-  return (sharedClient ??= new S3Client({}))
+  return (sharedClient ??= new S3Client({ region: AUDIO_BUCKET_REGION }))
 }
 
 export interface ExistingObject {
