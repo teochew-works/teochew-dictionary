@@ -11,17 +11,13 @@ never "sounds spliced".
 
 from __future__ import annotations
 
-import warnings
 from dataclasses import dataclass
 
 import numpy as np
 
+from ._pyworld import pw
 from .audio import Wave, db
 from .features import AnalysisParams, analyse, normalised_contour
-
-with warnings.catch_warnings():
-    warnings.filterwarnings("ignore", message="pkg_resources is deprecated")
-    import pyworld as pw
 
 
 @dataclass(frozen=True)
