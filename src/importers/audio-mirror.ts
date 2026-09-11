@@ -54,6 +54,11 @@ export interface ChecksumMismatch extends MirrorTarget {
   actualChecksum: string
 }
 
+/** A target that raised — fetch (timeout, HTTP error) or upload (a genuine AWS error; a checksum-mismatch refusal from `uploadBytesToS3` lands here too). */
+export interface MirrorFailure extends MirrorTarget {
+  error: string
+}
+
 export interface MirrorOptions {
   write?: boolean
   /** Injectable for tests — avoids a real network fetch. */
@@ -68,6 +73,7 @@ export interface MirrorResult {
   scanned: number
   mirrored: MirroredAsset[]
   mismatches: ChecksumMismatch[]
+  failed: MirrorFailure[]
 }
 
 function sha256(bytes: Buffer): string {
@@ -134,37 +140,50 @@ function speakerFor(audio: Audio, target: MirrorTarget): string | undefined {
  * — see the module doc comment. Dry-run by default (still fetches and
  * verifies every target, to prove the corpus is intact before committing to
  * anything, but uploads nothing); `--write` to actually mirror.
+ *
+ * A target that raises — a timeout, an HTTP error, a genuine AWS failure —
+ * is recorded in `failed` and the run moves on to the next target, the same
+ * way a checksum mismatch is recorded rather than treated as fatal.
+ * Confirmed necessary against the real corpus (issue #270): a single
+ * `HTTP 500` on one CAF asset, uncaught, discarded every target already
+ * scanned before it and reported "0 scanned" for the whole variety — one
+ * transient error must not cost re-verifying thousands of already-good
+ * targets on the next run.
  */
 export async function mirrorAudioToS3(audio: Audio, options: MirrorOptions = {}): Promise<MirrorResult> {
   const { write = false, fetchBytes = defaultFetchBytes, headObject, putObject } = options
 
-  const result: MirrorResult = { scanned: 0, mirrored: [], mismatches: [] }
+  const result: MirrorResult = { scanned: 0, mirrored: [], mismatches: [], failed: [] }
 
   for (const target of mirrorTargets(audio)) {
     result.scanned += 1
 
-    const bytes = await fetchBytes(target.sourceUrl)
-    const actualChecksum = sha256(bytes)
-    if (actualChecksum !== target.expectedChecksum) {
-      result.mismatches.push({ ...target, actualChecksum })
-      continue
+    try {
+      const bytes = await fetchBytes(target.sourceUrl)
+      const actualChecksum = sha256(bytes)
+      if (actualChecksum !== target.expectedChecksum) {
+        result.mismatches.push({ ...target, actualChecksum })
+        continue
+      }
+
+      const path = audioAssetPathForClip(target.pengimKey, speakerFor(audio, target), extensionOf(target.sourceUrl))
+      const key = audioClipKey(path)
+
+      if (!write) {
+        result.mirrored.push({ ...target, s3Url: `${AUDIO_CDN_BASE}/${key}` })
+        continue
+      }
+
+      const { url } = await uploadBytesToS3(bytes, {
+        key,
+        contentType: contentTypeForFilename(path),
+        headObject,
+        putObject,
+      })
+      result.mirrored.push({ ...target, s3Url: url })
+    } catch (e) {
+      result.failed.push({ ...target, error: e instanceof Error ? e.message : String(e) })
     }
-
-    const path = audioAssetPathForClip(target.pengimKey, speakerFor(audio, target), extensionOf(target.sourceUrl))
-    const key = audioClipKey(path)
-
-    if (!write) {
-      result.mirrored.push({ ...target, s3Url: `${AUDIO_CDN_BASE}/${key}` })
-      continue
-    }
-
-    const { url } = await uploadBytesToS3(bytes, {
-      key,
-      contentType: contentTypeForFilename(path),
-      headObject,
-      putObject,
-    })
-    result.mirrored.push({ ...target, s3Url: url })
   }
 
   return result

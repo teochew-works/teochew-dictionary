@@ -17,10 +17,12 @@ import { dim, green, red } from './colour.js'
  *
  * Dry-run by default — still fetches and verifies every target, to prove
  * the corpus is intact before committing to anything, but uploads nothing
- * — `--write` to actually mirror. Idempotent and resumable: a re-run after
- * an interruption just re-verifies and re-skips whatever's already
- * mirrored. Network-touching, so deliberately excluded from `npm run
- * check`, same as `audio:verify`.
+ * — `--write` to actually mirror. A target that fails (timeout, HTTP error,
+ * checksum mismatch, a genuine AWS error) is reported and does not abort
+ * the run — the exit code still reflects it. Idempotent and resumable: a
+ * re-run after an interruption just re-verifies and re-skips whatever's
+ * already mirrored. Network-touching, so deliberately excluded from
+ * `npm run check`, same as `audio:verify`.
  */
 
 const args = process.argv.slice(2)
@@ -38,6 +40,7 @@ if (varieties.length === 0) {
 let totalScanned = 0
 let totalMirrored = 0
 let totalMismatches = 0
+let totalFailed = 0
 let failures = 0
 
 for (const id of varieties) {
@@ -51,6 +54,7 @@ for (const id of varieties) {
     totalScanned += result.scanned
     totalMirrored += result.mirrored.length
     totalMismatches += result.mismatches.length
+    totalFailed += result.failed.length
 
     for (const m of result.mismatches) {
       console.error(
@@ -58,12 +62,15 @@ for (const id of varieties) {
           `${m.expectedChecksum}, got ${m.actualChecksum} (${m.sourceUrl})`,
       )
     }
+    for (const f of result.failed) {
+      console.error(`  ${red('✗')} ${f.bucket}.${f.pengimKey}[${f.index}].${f.field} — ${f.error} (${f.sourceUrl})`)
+    }
     for (const a of result.mirrored) {
       console.log(`  ${green('✓')} ${a.bucket}.${a.pengimKey}[${a.index}].${a.field} → ${a.s3Url}`)
     }
     console.log(
       `  ${result.scanned} scanned, ${result.mirrored.length} ${write ? 'mirrored' : 'would mirror'}, ` +
-        `${result.mismatches.length} checksum mismatch(es)`,
+        `${result.mismatches.length} checksum mismatch(es), ${result.failed.length} failed`,
     )
   } catch (e) {
     console.error(`  ${red('✗')} ${e instanceof Error ? e.message : String(e)}`)
@@ -74,10 +81,11 @@ for (const id of varieties) {
 console.log(
   `\n${dim(
     `${totalScanned} target(s) scanned across ${varieties.length} variet${varieties.length === 1 ? 'y' : 'ies'}, ` +
-      `${totalMirrored} ${write ? 'mirrored' : 'would mirror'}, ${totalMismatches} checksum mismatch(es)`,
+      `${totalMirrored} ${write ? 'mirrored' : 'would mirror'}, ${totalMismatches} checksum mismatch(es), ` +
+      `${totalFailed} failed`,
   )}`,
 )
 if (!write) console.log(dim('dry run — pass --write to actually mirror to S3'))
-if (totalMismatches > 0) failures += 1
+if (totalMismatches > 0 || totalFailed > 0) failures += 1
 
 if (failures > 0) process.exit(1)

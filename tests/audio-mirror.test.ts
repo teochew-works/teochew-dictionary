@@ -149,6 +149,48 @@ describe('mirrorAudioToS3', () => {
     expect(putCalled).toBe(true)
   })
 
+  it('records a fetch failure instead of throwing, and continues past it to later targets', async () => {
+    // Confirmed necessary against the real corpus (issue #270): a single
+    // uncaught HTTP 500 on one CAF asset aborted the whole run and
+    // discarded every target already scanned before it.
+    const table = audioTable({
+      dio5: [clip()],
+      ziu1: [clip({ url: 'https://github.com/x/y/releases/download/z/ziu1.webm' })],
+    })
+
+    const result = await mirrorAudioToS3(table, {
+      write: false,
+      fetchBytes: async (url) => {
+        if (url === GITHUB_WEBM) throw new Error('HTTP 500 fetching ' + url)
+        return WEBM_BYTES
+      },
+      headObject: async () => undefined,
+      putObject: async () => {},
+    })
+
+    expect(result.failed).toEqual([
+      expect.objectContaining({ pengimKey: 'dio5', field: 'url', error: expect.stringContaining('HTTP 500') }),
+    ])
+    expect(result.mirrored).toEqual([expect.objectContaining({ pengimKey: 'ziu1' })])
+    expect(result.scanned).toBe(2)
+  })
+
+  it('records an upload failure (e.g. a checksum-mismatch refusal from uploadBytesToS3) rather than throwing', async () => {
+    const audio = audioTable({ dio5: [clip()] })
+
+    const result = await mirrorAudioToS3(audio, {
+      write: true,
+      fetchBytes: fakeBytes({ [GITHUB_WEBM]: WEBM_BYTES }),
+      headObject: async () => ({ checksum: sha256(Buffer.from('a different clip entirely')) }),
+      putObject: async () => {},
+    })
+
+    expect(result.failed).toEqual([
+      expect.objectContaining({ pengimKey: 'dio5', error: expect.stringContaining('refusing to overwrite') }),
+    ])
+    expect(result.mirrored).toEqual([])
+  })
+
   it('is resumable: an already-mirrored, checksum-matching key is skipped, not re-uploaded', async () => {
     const audio = audioTable({ dio5: [clip()] })
     let putCalled = false
