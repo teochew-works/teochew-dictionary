@@ -43,25 +43,25 @@ describe('resolveProposal', () => {
 })
 
 describe('assetFilename', () => {
-  it('hyphenates a multi-syllable pengim key, appends the speaker, and keeps the source extension', () => {
+  it('nests a multi-syllable pengim key under the speaker directory, hyphenating within its own segment', () => {
     expect(assetFilename(proposal({ pengim: 'dio5 ziu1', speaker: 'Someone', commonsUrl: '.../x.wav' }))).toBe(
-      'dio5-ziu1-someone.wav',
+      'someone/dio5-ziu1.wav',
     )
   })
 
   it('lowercases the key and speaker', () => {
     expect(assetFilename(proposal({ pengim: 'Dio5', speaker: 'Someone', commonsUrl: '.../x.WAV' }))).toBe(
-      'dio5-someone.wav',
+      'someone/dio5.wav',
     )
   })
 
   it('falls back to .wav when the source url has no recognisable extension', () => {
     expect(
       assetFilename(proposal({ pengim: 'dio5', speaker: 'Someone', commonsUrl: 'https://example.com/no-extension' })),
-    ).toBe('dio5-someone.wav')
+    ).toBe('someone/dio5.wav')
   })
 
-  it('gives two different speakers of the same syllable two different filenames', () => {
+  it('gives two different speakers of the same syllable two different paths', () => {
     const a = assetFilename(proposal({ pengim: 'dio5', speaker: 'Alice', commonsUrl: '.../x.wav' }))
     const b = assetFilename(proposal({ pengim: 'dio5', speaker: 'Bob', commonsUrl: '.../x.wav' }))
     expect(a).not.toBe(b)
@@ -82,9 +82,9 @@ describe('rehostClip', () => {
     })
 
     expect(putCalls).toHaveLength(1)
-    expect(putCalls[0]?.key).toBe('clips/dio5-ziu1-someone.wav')
+    expect(putCalls[0]?.key).toBe('teochew/clips/someone/dio5-ziu1.wav')
     expect(putCalls[0]?.contentType).toBe('audio/wav')
-    expect(result.url).toBe('https://daidb11aas52z.cloudfront.net/clips/dio5-ziu1-someone.wav')
+    expect(result.url).toBe('https://daidb11aas52z.cloudfront.net/teochew/clips/someone/dio5-ziu1.wav')
     expect(result.checksum).toBe(sha256(bytes))
   })
 

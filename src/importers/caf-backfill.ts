@@ -3,7 +3,13 @@ import { parseDocument } from 'yaml'
 
 import type { Audio, AudioClip } from '@teochew/core'
 import { fetchWithRetry, IMPORTER_USER_AGENT } from './types.js'
-import { audioClipKey, contentTypeForFilename, uploadBytesToS3, type UploadBytesToS3Options } from './s3-upload.js'
+import {
+  audioAssetPath,
+  audioClipKey,
+  contentTypeForFilename,
+  uploadBytesToS3,
+  type UploadBytesToS3Options,
+} from './s3-upload.js'
 import { encodeCaf, type EncodeCafOptions } from './caf-encode.js'
 
 /**
@@ -15,13 +21,15 @@ import { encodeCaf, type EncodeCafOptions } from './caf-encode.js'
  * comment-bearing manifests, not hand-tuned entry files, so mutate-in-place
  * is the right technique here, not byte-offset splicing).
  *
- * The CAF key is derived directly from the source clip's own filename
- * (`cafFilenameFor`) — S3 has no per-"folder" object-count cap the way a
- * GitHub Release does, so unlike the release-tag rollover this module used
- * to need (issue #228/#233/#239, removed in issue #270), there is nothing to
- * allocate: the source filename is already globally unique (it already
- * encodes speaker — see `slugAssetFilename` in lingualibre-rehost.ts), so
- * swapping its extension for `.caf` is unique too.
+ * The CAF key is derived from the source clip's own pengim key and speaker
+ * (`audioAssetPath`, s3-upload.ts) — the same `<speaker>/<pengim-key>`
+ * directory `lingualibre-rehost.ts`'s `slugAssetFilename` uses for the
+ * source clip itself, so a CAF and its source webm always land as siblings
+ * regardless of which host (GitHub Release, pre-migration; or CloudFront)
+ * the source `url` currently points at. S3 has no per-"folder"
+ * object-count cap the way a GitHub Release does, so unlike the
+ * release-tag rollover this module used to need (issue #228/#233/#239,
+ * removed in issue #270), there is nothing to allocate.
  *
  * Dry-run by default, `--write` to commit (mirrors the `backfill:*` family) —
  * and, per that same family's rule, only ever fills an absent field: a clip
@@ -66,14 +74,16 @@ async function defaultFetchBytes(url: string): Promise<Buffer> {
 }
 
 /**
- * A `.caf` filename for a `.webm` clip URL, reusing the source's own
- * basename — the last path segment, host-agnostic (works for both a
- * `releases/download/<tag>/<asset>` URL and a flat `clips/<asset>` one), so
- * this needs no knowledge of which host `url` currently points at.
+ * Manifest clips always carry a `speaker` in practice — every merge path
+ * sets it unconditionally — but the schema itself leaves it optional (a
+ * hand-edited entry could omit it). This is the fallback directory a CAF
+ * for such a clip lands under, rather than failing the whole backfill.
  */
-function cafFilenameFor(url: string): string {
-  const basename = url.split('/').pop()!.replace(/\.webm$/iu, '')
-  return `${basename}.caf`
+const FALLBACK_SPEAKER = 'unknown-speaker'
+
+/** The `<speaker>/<pengim-key>.caf` path for one clip's CAF alternate — see `audioAssetPath`. */
+function cafPathFor(key: string, clip: AudioClip): string {
+  return audioAssetPath(key, clip.speaker ?? FALLBACK_SPEAKER, '.caf')
 }
 
 function needsCaf(clip: AudioClip): boolean {
@@ -123,10 +133,10 @@ export async function backfillCafOpus(
           continue
         }
 
-        const cafFilename = cafFilenameFor(clip.url)
+        const cafPath = cafPathFor(key, clip)
         const { url: cafUrl, checksum: cafChecksum } = await uploadBytesToS3(cafBytes, {
-          key: audioClipKey(cafFilename),
-          contentType: contentTypeForFilename(cafFilename),
+          key: audioClipKey(cafPath),
+          contentType: contentTypeForFilename(cafPath),
           headObject,
           putObject,
         })

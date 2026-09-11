@@ -136,10 +136,11 @@ const GITHUB_RELEASE_ASSET_URL = new RegExp(
 /**
  * A mirrored audio clip served from this project's own CloudFront
  * distribution (ADR-0026, issue #270):
- * https://daidb11aas52z.cloudfront.net/clips/<asset>. Deliberately a second
- * *closed* allowlist entry alongside `GITHUB_RELEASE_ASSET_URL`, not an open
- * `z.url()` — a stored reference must resolve to one of exactly two hosts
- * this project controls, never an arbitrary origin.
+ * https://daidb11aas52z.cloudfront.net/teochew/clips/<speaker>/<asset>.
+ * Deliberately a second *closed* allowlist entry alongside
+ * `GITHUB_RELEASE_ASSET_URL`, not an open `z.url()` — a stored reference
+ * must resolve to one of exactly two hosts this project controls, never an
+ * arbitrary origin.
  */
 const CLOUDFRONT_AUDIO_URL = new RegExp(`^https://${AUDIO_CDN_HOST.replace(/\./gu, '\\.')}/[\\w./-]+$`, 'iu')
 

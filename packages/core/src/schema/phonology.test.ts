@@ -10,7 +10,7 @@ import { audioSchema, GITHUB_REPO } from './phonology.js'
  */
 
 const GITHUB_URL = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/dio5.webm`
-const CLOUDFRONT_URL = 'https://daidb11aas52z.cloudfront.net/clips/dio5-jky.webm'
+const CLOUDFRONT_URL = 'https://daidb11aas52z.cloudfront.net/teochew/clips/jky/dio5.webm'
 
 function audioWithUrl(url: string, overrides: Record<string, unknown> = {}) {
   return {
@@ -41,7 +41,7 @@ describe('audioClip url/cafUrl host allowlist', () => {
   it('accepts a CloudFront cafUrl alongside a GitHub url', () => {
     const result = audioSchema.safeParse(
       audioWithUrl(GITHUB_URL, {
-        cafUrl: 'https://daidb11aas52z.cloudfront.net/clips/dio5-jky.caf',
+        cafUrl: 'https://daidb11aas52z.cloudfront.net/teochew/clips/jky/dio5.caf',
         cafChecksum: `sha256:${'b'.repeat(64)}`,
       }),
     )
@@ -64,12 +64,12 @@ describe('audioClip url/cafUrl host allowlist', () => {
   })
 
   it('rejects an arbitrary other CloudFront distribution', () => {
-    const url = 'https://some-other-distribution.cloudfront.net/clips/dio5.webm'
+    const url = 'https://some-other-distribution.cloudfront.net/teochew/clips/jky/dio5.webm'
     expect(audioSchema.safeParse(audioWithUrl(url)).success).toBe(false)
   })
 
   it('rejects a plain http:// URL even on an otherwise-valid host', () => {
-    const url = 'http://daidb11aas52z.cloudfront.net/clips/dio5.webm'
+    const url = 'http://daidb11aas52z.cloudfront.net/teochew/clips/jky/dio5.webm'
     expect(audioSchema.safeParse(audioWithUrl(url)).success).toBe(false)
   })
 

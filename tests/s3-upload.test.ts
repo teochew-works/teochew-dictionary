@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto'
 import { describe, expect, it } from 'vitest'
 
 import {
+  audioAssetPath,
   audioClipKey,
   contentTypeForFilename,
   uploadBytesToS3,
@@ -31,9 +32,27 @@ describe('contentTypeForFilename', () => {
   })
 })
 
+describe('audioAssetPath', () => {
+  it('nests the pengim key under a speaker directory', () => {
+    expect(audioAssetPath('dio5', 'jky', '.webm')).toBe('jky/dio5.webm')
+  })
+
+  it('lowercases and hyphenates a multi-syllable key, independently of the speaker segment', () => {
+    expect(audioAssetPath('dio5 ziu1', 'Someone', '.wav')).toBe('someone/dio5-ziu1.wav')
+  })
+
+  it('strips diacritics from both segments so the path stays plain ASCII', () => {
+    expect(audioAssetPath('sêg4', 'Guì', '.webm')).toBe('gui/seg4.webm')
+  })
+
+  it('gives two different speakers of the same syllable two different paths', () => {
+    expect(audioAssetPath('dio5', 'alice', '.wav')).not.toBe(audioAssetPath('dio5', 'bob', '.wav'))
+  })
+})
+
 describe('audioClipKey', () => {
-  it('nests every filename under the flat clips/ prefix', () => {
-    expect(audioClipKey('dio5-jky.webm')).toBe('clips/dio5-jky.webm')
+  it('nests every asset path under the shared teochew/clips/ prefix', () => {
+    expect(audioClipKey('jky/dio5.webm')).toBe('teochew/clips/jky/dio5.webm')
   })
 })
 
@@ -43,7 +62,7 @@ describe('uploadBytesToS3', () => {
     const putCalls: PutObjectParams[] = []
 
     const result = await uploadBytesToS3(bytes, {
-      key: 'clips/dio5-jky.webm',
+      key: 'teochew/clips/jky/dio5.webm',
       contentType: 'audio/webm',
       headObject: async () => undefined,
       putObject: async (params) => {
@@ -52,10 +71,10 @@ describe('uploadBytesToS3', () => {
     })
 
     expect(putCalls).toEqual([
-      { key: 'clips/dio5-jky.webm', body: bytes, contentType: 'audio/webm', checksum: sha256(bytes) },
+      { key: 'teochew/clips/jky/dio5.webm', body: bytes, contentType: 'audio/webm', checksum: sha256(bytes) },
     ])
     expect(result).toEqual({
-      url: 'https://daidb11aas52z.cloudfront.net/clips/dio5-jky.webm',
+      url: 'https://daidb11aas52z.cloudfront.net/teochew/clips/jky/dio5.webm',
       checksum: sha256(bytes),
     })
   })
@@ -66,7 +85,7 @@ describe('uploadBytesToS3', () => {
     const existing: ExistingObject = { checksum: sha256(bytes) }
 
     const result = await uploadBytesToS3(bytes, {
-      key: 'clips/dio5-jky.webm',
+      key: 'teochew/clips/jky/dio5.webm',
       contentType: 'audio/webm',
       headObject: async () => existing,
       putObject: async () => {
@@ -83,7 +102,7 @@ describe('uploadBytesToS3', () => {
 
     await expect(
       uploadBytesToS3(Buffer.from('new bytes'), {
-        key: 'clips/dio5-jky.webm',
+        key: 'teochew/clips/jky/dio5.webm',
         contentType: 'audio/webm',
         headObject: async () => ({ checksum: oldChecksum }),
         putObject: async () => {},
@@ -96,7 +115,7 @@ describe('uploadBytesToS3', () => {
     // something other than this module) must never be assumed identical.
     await expect(
       uploadBytesToS3(Buffer.from('new bytes'), {
-        key: 'clips/dio5-jky.webm',
+        key: 'teochew/clips/jky/dio5.webm',
         contentType: 'audio/webm',
         headObject: async () => ({}),
         putObject: async () => {},

@@ -52,7 +52,7 @@ describe('mergeLocalRecording', () => {
     })
 
     expect(result.key).toBe('dio5')
-    expect(result.url).toBe('https://daidb11aas52z.cloudfront.net/clips/dio5-speaker-1.wav')
+    expect(result.url).toBe('https://daidb11aas52z.cloudfront.net/teochew/clips/speaker-1/dio5.wav')
 
     const written = parseYaml(readFileSync(result.path, 'utf8'))
     expect(written.audio).toEqual({ id: 'chaozhou', variety: 'chaozhou' })

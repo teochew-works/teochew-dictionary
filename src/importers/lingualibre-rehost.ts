@@ -5,7 +5,13 @@ import { join } from 'node:path'
 
 import { GITHUB_REPO } from '@teochew/core'
 import { cleanupTmpDir, fetchWithRetry, IMPORTER_USER_AGENT, resolveTmpDir } from './types.js'
-import { audioClipKey, contentTypeForFilename, uploadBytesToS3, type UploadBytesToS3Options } from './s3-upload.js'
+import {
+  audioAssetPath,
+  audioClipKey,
+  contentTypeForFilename,
+  uploadBytesToS3,
+  type UploadBytesToS3Options,
+} from './s3-upload.js'
 import type { AudioClipProposal } from './audio-types.js'
 
 /**
@@ -33,34 +39,21 @@ export function resolveProposal(arg: string, proposals: AudioClipProposal[]): Au
 }
 
 /**
- * A plain-ASCII, hyphenated asset filename for `key` + `speaker`, keeping
- * whatever extension `sourcePathOrUrl` ends in (falling back to `.wav`).
- * Shared by `assetFilename` below and `local-recording-rehost.ts`'s
- * equivalent, which derives a filename from a local file path rather than a
- * Commons URL.
+ * A plain-ASCII `<speaker>/<pengim-key><ext>` relative path (see
+ * `audioAssetPath`, s3-upload.ts), keeping whatever extension
+ * `sourcePathOrUrl` ends in (falling back to `.wav`). Shared by
+ * `assetFilename` below and `local-recording-rehost.ts`'s equivalent, which
+ * derives a path from a local file path rather than a Commons URL.
  *
- * `speaker` is part of the filename, not just `key`, because the S3 key this
- * becomes (`audioClipKey`, s3-upload.ts) is one flat namespace with no
- * per-batch release tag to fall back on: a second speaker recording the same
- * pengim syllable — which `mergeLinguaLibreClip`/`mergeLocalRecording`
- * explicitly allow, appending a distinct speaker's clip with no flag needed
- * — must land at a different key, not silently collide with (or get
- * refused against) the first speaker's clip.
- *
- * Pengim keys and speaker names can carry diacritics (e.g. `ê`) that `\w` in
- * `phonology.ts`'s `AUDIO_CLIP_URL` regex doesn't match — NFD-decompose and
- * strip combining marks so the resulting filename (and the URL built from
- * it) stays within that ASCII-only pattern.
+ * `speaker` disambiguates the path, not just `key`, because
+ * `mergeLinguaLibreClip`/`mergeLocalRecording` explicitly let a distinct
+ * speaker's clip append at an already-used pengim key with no flag needed —
+ * a path keyed on `key` alone would let a second speaker's upload silently
+ * collide with (or get refused against) the first speaker's clip.
  */
 export function slugAssetFilename(key: string, speaker: string, sourcePathOrUrl: string): string {
   const ext = sourcePathOrUrl.match(/\.[a-zA-Z0-9]+$/u)?.[0]?.toLowerCase() ?? '.wav'
-  const slug = `${key} ${speaker}`
-    .trim()
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(new RegExp('[\\u0300-\\u036f]', 'gu'), '')
-    .replace(/\s+/gu, '-')
-  return `${slug}${ext}`
+  return audioAssetPath(key, speaker, ext)
 }
 
 /** A plain-ASCII, hyphenated asset filename derived from the proposal's pengim key and speaker, keeping the source's own extension. */

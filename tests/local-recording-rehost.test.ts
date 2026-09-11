@@ -47,33 +47,33 @@ describe('resolveLocalRecordingProposal', () => {
 })
 
 describe('assetFilename', () => {
-  it('slugs the pengim key, appends the speaker, and keeps the local file extension', () => {
+  it('nests the pengim key under the speaker directory, keeping the local file extension', () => {
     expect(
       assetFilename(
         proposal({ pengim: 'dio5', speaker: 'speaker-1', localPath: 'data/staging/recordings/chaozhou/dio5.wav' }),
       ),
-    ).toBe('dio5-speaker-1.wav')
+    ).toBe('speaker-1/dio5.wav')
   })
 
   it('lowercases the key', () => {
     expect(assetFilename(proposal({ pengim: 'Dio5', speaker: 'speaker-1', localPath: 'x.WAV' }))).toBe(
-      'dio5-speaker-1.wav',
+      'speaker-1/dio5.wav',
     )
   })
 
   it('falls back to .wav when the local path has no recognisable extension', () => {
     expect(assetFilename(proposal({ pengim: 'dio5', speaker: 'speaker-1', localPath: 'no-extension' }))).toBe(
-      'dio5-speaker-1.wav',
+      'speaker-1/dio5.wav',
     )
   })
 
-  it('strips diacritics so the filename stays plain ASCII', () => {
+  it('strips diacritics so the path stays plain ASCII', () => {
     expect(assetFilename(proposal({ pengim: 'sêg4', speaker: 'speaker-1', localPath: 'x.webm' }))).toBe(
-      'seg4-speaker-1.webm',
+      'speaker-1/seg4.webm',
     )
   })
 
-  it('gives two different speakers of the same syllable two different filenames', () => {
+  it('gives two different speakers of the same syllable two different paths', () => {
     const a = assetFilename(proposal({ pengim: 'dio5', speaker: 'speaker-1' }))
     const b = assetFilename(proposal({ pengim: 'dio5', speaker: 'speaker-2' }))
     expect(a).not.toBe(b)
@@ -94,8 +94,8 @@ describe('rehostLocalRecording', () => {
     })
 
     expect(putCalls).toHaveLength(1)
-    expect(putCalls[0]?.key).toBe('clips/dio5-speaker-1.wav')
-    expect(result.url).toBe('https://daidb11aas52z.cloudfront.net/clips/dio5-speaker-1.wav')
+    expect(putCalls[0]?.key).toBe('teochew/clips/speaker-1/dio5.wav')
+    expect(result.url).toBe('https://daidb11aas52z.cloudfront.net/teochew/clips/speaker-1/dio5.wav')
     expect(result.checksum).toBe(sha256(bytes))
   })
 

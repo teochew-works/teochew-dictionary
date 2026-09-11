@@ -14,8 +14,8 @@ import { HeadObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s
 export const AUDIO_BUCKET = 'teochew-dictionary-audio'
 export const AUDIO_CDN_BASE = 'https://daidb11aas52z.cloudfront.net'
 
-/** The flat key prefix every clip and CAF alternate is uploaded under — see `audioClipKey`. */
-export const AUDIO_CLIP_PREFIX = 'clips/'
+/** The key prefix every clip and CAF alternate is uploaded under — see `audioClipKey`/`audioAssetPath`. */
+export const AUDIO_CLIP_PREFIX = 'teochew/clips/'
 
 function sha256(bytes: Buffer): string {
   return `sha256:${createHash('sha256').update(bytes).digest('hex')}`
@@ -37,9 +37,42 @@ export function contentTypeForFilename(filename: string): string {
   return type
 }
 
-/** The S3 key (and CloudFront path) for an asset filename — flat, under one prefix, no release-tag segment. */
-export function audioClipKey(filename: string): string {
-  return `${AUDIO_CLIP_PREFIX}${filename}`
+/** The S3 key (and CloudFront path) for an asset path — `options.key` for `uploadBytesToS3`. */
+export function audioClipKey(assetPath: string): string {
+  return `${AUDIO_CLIP_PREFIX}${assetPath}`
+}
+
+/** NFD-decompose and strip combining marks so a path segment stays plain ASCII — pengim keys and speaker names can both carry diacritics (e.g. `ê`) that `AUDIO_CLIP_URL` in phonology.ts doesn't match. */
+function slugSegment(s: string): string {
+  return s
+    .trim()
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(new RegExp('[\\u0300-\\u036f]', 'gu'), '')
+    .replace(/\s+/gu, '-')
+}
+
+/**
+ * The `<speaker>/<pengim-key><ext>` relative path a clip and its CAF
+ * alternate share, one directory per speaker — not a flat
+ * `<pengim-key>-<speaker><ext>` filename. `mergeLinguaLibreClip`/
+ * `mergeLocalRecording` already let a distinct speaker's clip append at an
+ * already-used pengim key with no flag needed (issue #134), so the key must
+ * disambiguate speakers on its own; nesting by speaker does that the same
+ * way a flat hyphenated name would, but also keeps this project's own
+ * "pengim is the primary key, speaker is per-clip" shape (see how
+ * `data/phonology/audio/*.yaml` itself is structured) rather than
+ * inverting it.
+ *
+ * Shared by `lingualibre-rehost.ts`'s `slugAssetFilename` (for the source
+ * clip) and `caf-backfill.ts` (for its CAF alternate) so both land under the
+ * same `<speaker>/<pengim-key>` directory — deriving straight from `key` and
+ * `speaker` rather than parsing a source URL keeps this correct regardless
+ * of which host (GitHub Release, pre-migration; or CloudFront) that source
+ * clip currently lives at.
+ */
+export function audioAssetPath(key: string, speaker: string, ext: string): string {
+  return `${slugSegment(speaker)}/${slugSegment(key)}${ext}`
 }
 
 let sharedClient: S3Client | undefined
