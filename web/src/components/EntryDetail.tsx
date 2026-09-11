@@ -3,7 +3,8 @@ import { useAudioPlayer } from '../hooks/useAudioPlayer'
 import { syllableClips, withTrim } from '@teochew/core'
 import { ReadingAudio } from './ReadingAudio'
 import { MogherPengim } from './MogherPengim'
-import type { EnrichedEntry, PronunciationMode } from '@teochew/core'
+import { visiblePronunciationFields, DEFAULT_PRONUNCIATION_DISPLAY } from '@teochew/core'
+import type { EnrichedEntry, PronunciationMode, PronunciationField } from '@teochew/core'
 import type { AudioMode } from '../settings/audioMode'
 import { LevelBadge } from './LevelBadge'
 import { LICENCE_URLS } from '../data/licenceUrls'
@@ -58,12 +59,14 @@ export function EntryDetail({
   entry,
   showLicence,
   pronunciation = 'citation',
+  pronunciationDisplay = DEFAULT_PRONUNCIATION_DISPLAY,
   mogherLinks = false,
   audioMode = 'both',
 }: {
   entry: EnrichedEntry
   showLicence: boolean
   pronunciation?: PronunciationMode
+  pronunciationDisplay?: PronunciationField[]
   mogherLinks?: boolean
   audioMode?: AudioMode
 }) {
@@ -97,15 +100,20 @@ export function EntryDetail({
               playCrossfaded(id, syllableClips(r, pronunciation))
             }
           }
+          const visibleFields = visiblePronunciationFields(r, pronunciationDisplay)
+          const inlineFields = visibleFields.filter((f): f is 'pengim' | 'ipa' | 'poj' => f !== 'sandhi')
+          const showSandhi = visibleFields.includes('sandhi')
           return (
             <div className="reading" key={`${r.pengim}-${i}`}>
               <div className="reading__line">
-                <span className="reading__pengim">{mogherLinks ? <MogherPengim pengim={r.pengim} /> : r.pengim}</span>
-                <span className="reading__ipa">{r.ipa}</span>
-                <span className="reading__poj">{r.poj}</span>
+                {inlineFields.map((field) => (
+                  <span key={field} className={`reading__${field}`}>
+                    {field === 'pengim' ? (mogherLinks ? <MogherPengim pengim={r.pengim} /> : r.pengim) : r[field]}
+                  </span>
+                ))}
                 {tags && <span className="reading__tags">[{tags}]</span>}
               </div>
-              {r.sandhi !== r.pengim && <div className="reading__sandhi">sandhi: {r.sandhi}</div>}
+              {showSandhi && <div className="reading__sandhi">sandhi: {r.sandhi}</div>}
               {r.ipa_caveats.map((caveat, j) => (
                 <div className="reading__caveat" key={j}>
                   ⚠ {caveat}

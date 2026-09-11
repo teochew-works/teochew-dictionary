@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent, ReactNode, RefObject } from 'react'
-import type { EnrichedEntry, EnrichedReading, Grade, PromptMode, PronunciationMode, Deck } from '@teochew/core'
+import type { EnrichedEntry, EnrichedReading, Grade, PromptMode, PronunciationMode, PronunciationField, Deck } from '@teochew/core'
 import type { AudioMode } from '../settings/audioMode'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
-import { syllableClips, withTrim } from '@teochew/core'
+import { syllableClips, withTrim, visiblePronunciationFields } from '@teochew/core'
 import { ReadingAudio } from './ReadingAudio'
 
 const GRADES: { grade: Grade; label: string; key: string }[] = [
@@ -12,12 +12,14 @@ const GRADES: { grade: Grade; label: string; key: string }[] = [
   { grade: 'easy', label: 'Easy', key: '3' },
 ]
 
-function ReadingLine({ reading, pronunciation }: { reading: EnrichedReading; pronunciation: PronunciationMode }) {
+function ReadingLine({ reading, fields }: { reading: EnrichedReading; fields: PronunciationField[] }) {
   return (
     <div className="card__reading">
-      <span className="card__pengim mono">{pronunciation === 'sandhi' ? reading.sandhi : reading.pengim}</span>
-      <span className="card__ipa mono">{reading.ipa}</span>
-      <span className="card__poj mono">{reading.poj}</span>
+      {visiblePronunciationFields(reading, fields).map((field) => (
+        <span key={field} className={`card__${field} mono`}>
+          {reading[field]}
+        </span>
+      ))}
     </div>
   )
 }
@@ -36,6 +38,7 @@ export function Flashcard({
   entry,
   mode,
   pronunciation,
+  pronunciationDisplay,
   audioMode = 'both',
   sourceDeck,
   intervals,
@@ -45,6 +48,7 @@ export function Flashcard({
   entry: EnrichedEntry
   mode: PromptMode
   pronunciation: PronunciationMode
+  pronunciationDisplay: PronunciationField[]
   audioMode?: AudioMode
   /** The in-play deck this card came from, or null when it came from the dictionary. */
   sourceDeck: Deck | null
@@ -153,7 +157,7 @@ export function Flashcard({
       <div className={mode === 'english' ? 'card__prompt card__prompt--en' : 'card__prompt'}>
         {mode === 'chinese' && entry.headword}
         {mode === 'english' && gloss}
-        {mode === 'pronunciation' && reading && <ReadingLine reading={reading} pronunciation={pronunciation} />}
+        {mode === 'pronunciation' && reading && <ReadingLine reading={reading} fields={pronunciationDisplay} />}
         {mode === 'audio-only' && audio}
       </div>
 
@@ -161,7 +165,7 @@ export function Flashcard({
         <>
           <div className="card__back">
             {mode !== 'chinese' && <div className="card__hw">{entry.headword}</div>}
-            {mode !== 'pronunciation' && reading && <ReadingLine reading={reading} pronunciation={pronunciation} />}
+            {mode !== 'pronunciation' && reading && <ReadingLine reading={reading} fields={pronunciationDisplay} />}
             {mode !== 'english' && gloss && <div className="card__gloss">{gloss}</div>}
             {mode !== 'audio-only' && audio}
           </div>

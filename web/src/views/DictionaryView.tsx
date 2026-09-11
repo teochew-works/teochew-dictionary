@@ -19,8 +19,10 @@ import {
   hasFullAudio,
   readPronunciationMode,
   writePronunciationMode,
+  readPronunciationDisplay,
   type SortMode,
   type PronunciationMode,
+  type PronunciationField,
   type EnrichedEntry,
 } from '@teochew/core'
 import './DictionaryView.css'
@@ -78,6 +80,7 @@ export function DictionaryView({
   const [fullAudioOnly, setFullAudioOnly] = useState(readFullAudioOnly)
   const [sortMode, setSortMode] = useState<SortMode>('relevance')
   const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
+  const [pronunciationDisplay] = useState<PronunciationField[]>(readPronunciationDisplay)
   const [audioMode, setAudioMode] = useState<AudioMode>(readAudioMode)
   const [mogherLinks] = useState(readMogherLinks)
   // Below the phone breakpoint the filters collapse behind the "Filters"
@@ -268,9 +271,20 @@ export function DictionaryView({
         ) : (
           <div className={isStale ? 'dictionary-view__results dictionary-view__results--stale' : 'dictionary-view__results'}>
             {isFlat ? (
-              <EntryList entries={visibleEntries} selectedId={selectedId} onSelect={setSelectedId} />
+              <EntryList
+                entries={visibleEntries}
+                selectedId={selectedId}
+                onSelect={setSelectedId}
+                pronunciationDisplay={pronunciationDisplay}
+              />
             ) : (
-              <EntryTree groups={visibleGroups} selectedId={selectedId} onSelect={setSelectedId} isSearching={isSearching} />
+              <EntryTree
+                groups={visibleGroups}
+                selectedId={selectedId}
+                onSelect={setSelectedId}
+                isSearching={isSearching}
+                pronunciationDisplay={pronunciationDisplay}
+              />
             )}
             {hidden > 0 && (
               <div className="dictionary-view__more">
@@ -305,6 +319,7 @@ export function DictionaryView({
               entry={selected}
               showLicence={showLicence}
               pronunciation={pronunciation}
+              pronunciationDisplay={pronunciationDisplay}
               mogherLinks={mogherLinks}
               audioMode={audioMode}
             />

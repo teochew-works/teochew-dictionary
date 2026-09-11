@@ -3,6 +3,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { Flashcard } from './Flashcard'
 import { makeEntry, makeReading } from '../test/entryFixtures'
+import { DEFAULT_PRONUNCIATION_DISPLAY } from '@teochew/core'
 import type { AudioReference } from '@teochew/core'
 import type { Deck } from '@teochew/core'
 
@@ -25,6 +26,7 @@ function card(overrides: Partial<Parameters<typeof Flashcard>[0]> = {}) {
       entry={ENTRY}
       mode="chinese"
       pronunciation="citation"
+      pronunciationDisplay={DEFAULT_PRONUNCIATION_DISPLAY}
       sourceDeck={null}
       intervals={INTERVALS}
       filing={null}
@@ -70,9 +72,28 @@ describe('Flashcard prompt modes', () => {
     expect(screen.getByText('潮州')).toBeInTheDocument()
   })
 
-  it('follows the sandhi setting in the reading it shows', () => {
-    card({ mode: 'pronunciation', pronunciation: 'sandhi' })
+  it('shows every default field, including sandhi, on the reading line', () => {
+    card({ mode: 'pronunciation' })
+    expect(screen.getByText('dio5 ziu1')).toBeInTheDocument()
+    expect(screen.getByText('tie⁵⁵ tsiu³³')).toBeInTheDocument()
+    expect(screen.getByText('tiô-tsiu')).toBeInTheDocument()
     expect(screen.getByText('dio7 ziu1')).toBeInTheDocument()
+  })
+
+  it('shows only the fields selected by pronunciationDisplay, in order', () => {
+    card({ mode: 'pronunciation', pronunciationDisplay: ['ipa'] })
+    expect(screen.getByText('tie⁵⁵ tsiu³³')).toBeInTheDocument()
+    expect(screen.queryByText('dio5 ziu1')).not.toBeInTheDocument()
+    expect(screen.queryByText('tiô-tsiu')).not.toBeInTheDocument()
+    expect(screen.queryByText('dio7 ziu1')).not.toBeInTheDocument()
+  })
+
+  it('drops sandhi from the reading line when it matches the citation form', () => {
+    card({
+      mode: 'pronunciation',
+      entry: makeEntry({ readings: [makeReading({ sandhi: 'dio5 ziu1' })] }),
+    })
+    expect(screen.getAllByText('dio5 ziu1')).toHaveLength(1)
   })
 
   it('audio-only: prompts with the clip alone', () => {

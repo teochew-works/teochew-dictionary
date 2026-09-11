@@ -41,4 +41,22 @@ describe('EntryRow', () => {
     render(<EntryRow entry={ENTRY} selected={false} onSelect={vi.fn()} />)
     expect(screen.queryByText(/^[ABC][12]$/)).not.toBeInTheDocument()
   })
+
+  it('shows citation pengim by default', () => {
+    render(<EntryRow entry={ENTRY} selected={false} onSelect={vi.fn()} />)
+    expect(screen.getByText('dio5 ziu1')).toBeInTheDocument()
+  })
+
+  it('shows the first selected pronunciationDisplay field instead of pengim', () => {
+    render(<EntryRow entry={ENTRY} selected={false} onSelect={vi.fn()} pronunciationDisplay={['ipa', 'pengim']} />)
+    expect(screen.getByText('tie⁵⁵ tsiu³³')).toBeInTheDocument()
+    expect(screen.queryByText('dio5 ziu1')).not.toBeInTheDocument()
+  })
+
+  it('skips sandhi as the primary field when it matches the citation form', () => {
+    // ENTRY's reading has sandhi === pengim, so a ['sandhi', 'poj'] order
+    // should fall through to poj rather than showing nothing.
+    render(<EntryRow entry={ENTRY} selected={false} onSelect={vi.fn()} pronunciationDisplay={['sandhi', 'poj']} />)
+    expect(screen.getByText('tiô-tsiu')).toBeInTheDocument()
+  })
 })

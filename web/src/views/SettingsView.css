@@ -71,3 +71,50 @@
 .settings-view__backup-status--error {
   color: var(--color-danger);
 }
+
+.pronunciation-display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pronunciation-display__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pronunciation-display__item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.pronunciation-display__label {
+  flex: 1;
+  color: var(--color-fg);
+}
+
+.pronunciation-display__move,
+.pronunciation-display__remove {
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.35rem;
+  background: var(--color-surface);
+  color: var(--color-fg);
+  line-height: 1.4;
+}
+
+.pronunciation-display__move:disabled,
+.pronunciation-display__remove:disabled {
+  opacity: 0.35;
+}
+
+.pronunciation-display__add {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

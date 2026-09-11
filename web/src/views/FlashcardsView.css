@@ -1337,7 +1337,8 @@
 }
 
 .card__ipa,
-.card__poj {
+.card__poj,
+.card__sandhi {
   color: var(--ink-3);
   font-size: 13px;
 }
