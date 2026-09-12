@@ -28,6 +28,7 @@
     "audio:verify": "tsx src/cli/audio-verify.ts",
     "audio:reclaim": "tsx src/cli/audio-reclaim.ts",
     "audio:mirror-to-s3": "tsx src/cli/audio-mirror-to-s3.ts",
+    "audio:manifest-rewrite-s3": "tsx src/cli/audio-manifest-rewrite-s3.ts",
     "backfill:caf-opus": "tsx src/cli/backfill-caf-opus.ts",
     "backfill:silence-trim": "tsx src/cli/backfill-silence-trim.ts",
     "rehost:lingualibre": "tsx src/cli/lingualibre-rehost.ts",
