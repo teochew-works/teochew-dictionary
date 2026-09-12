@@ -134,6 +134,16 @@ const GITHUB_RELEASE_ASSET_URL = new RegExp(
 )
 
 /**
+ * Escapes every regex metacharacter in `s`, so it matches only literally —
+ * not just `.`, and backslash itself first among them: a partial escaper
+ * that handles `.` alone still lets a stray `\` in the input recombine with
+ * the escaped output into a different, unintended pattern.
+ */
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/gu, '\\$&')
+}
+
+/**
  * A mirrored audio clip served from this project's own CloudFront
  * distribution (ADR-0026, issue #270):
  * https://daidb11aas52z.cloudfront.net/teochew/clips/<speaker>/<asset>.
@@ -142,7 +152,7 @@ const GITHUB_RELEASE_ASSET_URL = new RegExp(
  * must resolve to one of exactly two hosts this project controls, never an
  * arbitrary origin.
  */
-const CLOUDFRONT_AUDIO_URL = new RegExp(`^https://${AUDIO_CDN_HOST.replace(/\./gu, '\\.')}/[\\w./-]+$`, 'iu')
+const CLOUDFRONT_AUDIO_URL = new RegExp(`^https://${escapeRegExp(AUDIO_CDN_HOST)}/[\\w./-]+$`, 'iu')
 
 /** Every host a stored clip `url`/`cafUrl` may point at — see the two patterns above. */
 const AUDIO_CLIP_URL = new RegExp(`(?:${GITHUB_RELEASE_ASSET_URL.source})|(?:${CLOUDFRONT_AUDIO_URL.source})`, 'iu')
