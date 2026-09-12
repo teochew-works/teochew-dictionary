@@ -1,14 +1,18 @@
 import { createHash } from 'node:crypto'
 import { HeadObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
 
+import { AUDIO_CDN_HOST } from '@teochew/core'
+
 /**
- * The S3 write path for audio clips (issue #270), replacing
+ * The S3 write path for audio clips (issue #270), replacing the old
  * `uploadBytesToRelease` in lingualibre-rehost.ts as the shared upload
  * primitive `rehostClip`, `rehostLocalRecording` and `backfillCafOpus`
  * build on. Bytes land in the `teochew-dictionary-audio` bucket behind the
- * `daidb11aas52z.cloudfront.net` CloudFront distribution (ADR-0026);
- * `GITHUB_RELEASE_ASSET_URL` in packages/core/src/schema/phonology.ts admits
- * this host alongside the old GitHub Release one.
+ * CloudFront distribution at `AUDIO_CDN_HOST` (ADR-0026) — imported from
+ * `@teochew/core` rather than restated here, so it can never drift from the
+ * same host the schema's `CLOUDFRONT_AUDIO_URL` allows in
+ * packages/core/src/schema/phonology.ts, alongside the old GitHub Release
+ * host.
  */
 
 export const AUDIO_BUCKET = 'teochew-dictionary-audio'
@@ -23,7 +27,7 @@ export const AUDIO_BUCKET = 'teochew-dictionary-audio'
  * this explicitly instead of leaving it to be inferred.
  */
 export const AUDIO_BUCKET_REGION = 'us-east-1'
-export const AUDIO_CDN_BASE = 'https://daidb11aas52z.cloudfront.net'
+export const AUDIO_CDN_BASE = `https://${AUDIO_CDN_HOST}`
 
 /** The key prefix every clip and CAF alternate is uploaded under — see `audioClipKey`/`audioAssetPath`. */
 export const AUDIO_CLIP_PREFIX = 'teochew/clips/'
@@ -68,8 +72,13 @@ export function audioClipKey(assetPath: string): string {
  * this corpus (checked directly against data/phonology/audio/chaozhou.yaml),
  * so `ê`→`ex` is collision-free without inventing a punctuation character
  * the URL pattern in phonology.ts would need to admit.
+ *
+ * Exported so `checkAudio` (src/validate/index.ts) can check a clip's url
+ * against the same transliteration its own asset path actually went
+ * through, instead of a plain diacritic-strip that no longer matches what
+ * this function produces for a `ê` syllable.
  */
-function transliterateCircumflexE(s: string): string {
+export function transliterateCircumflexE(s: string): string {
   return s.replace(/[êÊ]/gu, 'ex')
 }
 

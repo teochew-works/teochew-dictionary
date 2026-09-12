@@ -254,6 +254,27 @@ describe('checkAudio', () => {
     expect(issues).toEqual([])
   })
 
+  it("doesn't warn when a ê syllable's url uses the ê→ex transliteration, not a plain diacritic strip", () => {
+    // 'ê' is a distinct vowel transliterated to 'ex', not just stripped to
+    // plain 'e' (s3-upload.ts's transliterateCircumflexE) — a plain
+    // diacritic-strip check would wrongly flag every correctly-slugged 'ê'
+    // clip as if its url had been copied from a different syllable.
+    const diacriticSyllables = new Set([...legalSyllables, 'gêng1'])
+    const issues = checkAudio(
+      'f.yaml',
+      audio({
+        gêng1: clip({
+          url: 'https://daidb11aas52z.cloudfront.net/teochew/clips/someone/gexng1.webm',
+        }),
+      }),
+      'chaozhou',
+      varietyIds,
+      sourceMap,
+      diacriticSyllables,
+    )
+    expect(issues).toEqual([])
+  })
+
   it('flags an unresolved source', () => {
     const issues = checkAudio(
       'f.yaml',
