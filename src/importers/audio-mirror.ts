@@ -61,6 +61,8 @@ export interface MirrorFailure extends MirrorTarget {
 
 export interface MirrorOptions {
   write?: boolean
+  /** Forwarded to every `uploadBytesToS3` call — see its own doc comment. Off by default; only for a knowing, targeted resync, typically paired with restricting `audio` to specific keys first (see `filterToKeys`). */
+  overwrite?: boolean
   /** Injectable for tests — avoids a real network fetch. */
   fetchBytes?: (url: string) => Promise<Buffer>
   /** Injectable for tests — avoids a real AWS call. */
@@ -171,7 +173,7 @@ function speakerFor(audio: Audio, target: MirrorTarget): string | undefined {
  * targets on the next run.
  */
 export async function mirrorAudioToS3(audio: Audio, options: MirrorOptions = {}): Promise<MirrorResult> {
-  const { write = false, fetchBytes = defaultFetchBytes, headObject, putObject } = options
+  const { write = false, overwrite = false, fetchBytes = defaultFetchBytes, headObject, putObject } = options
 
   const result: MirrorResult = { scanned: 0, mirrored: [], mismatches: [], failed: [] }
 
@@ -197,6 +199,7 @@ export async function mirrorAudioToS3(audio: Audio, options: MirrorOptions = {})
       const { url } = await uploadBytesToS3(bytes, {
         key,
         contentType: contentTypeForFilename(path),
+        overwrite,
         headObject,
         putObject,
       })

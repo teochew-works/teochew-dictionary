@@ -166,6 +166,18 @@ async function defaultPutObject(params: PutObjectParams): Promise<void> {
 export interface UploadBytesToS3Options {
   key: string
   contentType: string
+  /**
+   * Deliberately overwrite a different clip already at `key`, instead of
+   * refusing. Off by default — only for a knowing, targeted resync (e.g.
+   * `audio-mirror-to-s3 --overwrite --keys=...`) of specific keys already
+   * confirmed stale, such as a leftover from a key-derivation bug fixed
+   * since the original upload (issue #270: the ê→e collision left the
+   * *wrong* clip's bytes sitting at some plain-e siblings' rightful key).
+   * A plain S3 `PutObject` already overwrites unconditionally on its own;
+   * this only ever removes this module's own added safety check, never an
+   * S3-level one.
+   */
+  overwrite?: boolean
   /** Injectable for tests — avoids a real AWS call. */
   headObject?: (key: string) => Promise<ExistingObject | undefined>
   /** Injectable for tests — avoids a real AWS call. */
@@ -182,34 +194,39 @@ export interface UploadBytesToS3Result {
  * (Content-Type, a year-long immutable Cache-Control) and returns the public
  * CloudFront URL plus the sha256 checksum the audio manifest stores.
  *
- * Refuses to silently overwrite a different clip at the same key — unlike
- * `gh release upload --clobber`, the exact mechanism that let a
- * GitHub-stripped filename clobber a different clip's bytes with no warning
- * (the ê/e collision this project already hit once). A second upload to an
- * existing key is only ever a safe no-op (identical checksum — e.g. a
- * resumed mirror run) or a hard error demanding a different key; never a
- * silent overwrite. Callers that derive `key` from a pengim syllable plus
- * speaker (see lingualibre-rehost.ts's `slugAssetFilename`) only collide
- * here when that really is the same clip.
+ * Refuses to silently overwrite a different clip at the same key unless
+ * `overwrite` is explicitly set — unlike `gh release upload --clobber`, the
+ * exact mechanism that let a GitHub-stripped filename clobber a different
+ * clip's bytes with no warning (the ê/e collision this project already hit
+ * once). A second upload to an existing key is a safe no-op (identical
+ * checksum — e.g. a resumed mirror run), a hard error demanding a different
+ * key or `overwrite` (mismatched checksum, `overwrite` unset), or a
+ * deliberate replace (`overwrite` set) — never a silent, unrequested
+ * overwrite. Callers that derive `key` from a pengim syllable plus speaker
+ * (see lingualibre-rehost.ts's `slugAssetFilename`) only collide here when
+ * that really is the same clip, or a confirmed-stale leftover being
+ * knowingly resynced.
  */
 export async function uploadBytesToS3(
   bytes: Buffer,
   options: UploadBytesToS3Options,
 ): Promise<UploadBytesToS3Result> {
-  const { key, contentType, headObject = defaultHeadObject, putObject = defaultPutObject } = options
+  const { key, contentType, overwrite = false, headObject = defaultHeadObject, putObject = defaultPutObject } = options
   const checksum = sha256(bytes)
   const url = `${AUDIO_CDN_BASE}/${key}`
 
   const existing = await headObject(key)
   if (existing !== undefined) {
-    if (existing.checksum !== checksum) {
+    if (existing.checksum === checksum) {
+      return { url, checksum }
+    }
+    if (!overwrite) {
       throw new Error(
         `refusing to overwrite s3://${AUDIO_BUCKET}/${key} — existing object has checksum ` +
           `${existing.checksum ?? '(none recorded)'}, this upload has ${checksum}. Use a different key for a ` +
-          'genuinely new clip (e.g. a different speaker).',
+          'genuinely new clip (e.g. a different speaker), or pass overwrite if this key is confirmed stale.',
       )
     }
-    return { url, checksum }
   }
 
   await putObject({ key, body: bytes, contentType, checksum })

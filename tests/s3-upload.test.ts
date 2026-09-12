@@ -130,4 +130,42 @@ describe('uploadBytesToS3', () => {
       }),
     ).rejects.toThrow(/refusing to overwrite/)
   })
+
+  it('overwrites a different clip at that key when overwrite is explicitly set', async () => {
+    const oldChecksum = sha256(Buffer.from('old bytes'))
+    const newBytes = Buffer.from('new bytes')
+    const putCalls: PutObjectParams[] = []
+
+    const result = await uploadBytesToS3(newBytes, {
+      key: 'teochew/clips/jky/dio5.webm',
+      contentType: 'audio/webm',
+      overwrite: true,
+      headObject: async () => ({ checksum: oldChecksum }),
+      putObject: async (params) => {
+        putCalls.push(params)
+      },
+    })
+
+    expect(putCalls).toEqual([
+      { key: 'teochew/clips/jky/dio5.webm', body: newBytes, contentType: 'audio/webm', checksum: sha256(newBytes) },
+    ])
+    expect(result.checksum).toBe(sha256(newBytes))
+  })
+
+  it('is still a safe no-op with overwrite set when the existing object is already identical', async () => {
+    const bytes = Buffer.from('fake audio bytes')
+    let putCalled = false
+
+    await uploadBytesToS3(bytes, {
+      key: 'teochew/clips/jky/dio5.webm',
+      contentType: 'audio/webm',
+      overwrite: true,
+      headObject: async () => ({ checksum: sha256(bytes) }),
+      putObject: async () => {
+        putCalled = true
+      },
+    })
+
+    expect(putCalled).toBe(false)
+  })
 })

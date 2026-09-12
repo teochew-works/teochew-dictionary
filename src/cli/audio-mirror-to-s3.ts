@@ -6,7 +6,7 @@ import { filterToKeys, mirrorAudioToS3 } from '../importers/audio-mirror.js'
 import { dim, green, red } from './colour.js'
 
 /**
- * `npm run audio:mirror-to-s3 -- [--write] [--variety=<id>] [--keys=<pengim-key>,...]`
+ * `npm run audio:mirror-to-s3 -- [--write] [--variety=<id>] [--keys=<pengim-key>,...] [--overwrite]`
  *
  * Mirrors every clip/CAF asset already on GitHub Releases into S3 (issue
  * #270 step 3) — verifying each against the manifest's own checksum before
@@ -20,6 +20,14 @@ import { dim, green, red } from './colour.js'
  * — for re-syncing a known-bad subset (e.g. every key a key-derivation
  * bug's fix affects) without re-scanning and re-verifying the whole corpus.
  *
+ * `--overwrite` deliberately replaces a different clip already at a target
+ * key instead of refusing (uploadBytesToS3's default) — for a leftover from
+ * a fixed key-derivation bug, confirmed stale, not a routine resync. A
+ * plain S3 PutObject already overwrites unconditionally on its own; this
+ * only removes this project's own added safety check, so it's refused
+ * without `--keys` too — an unscoped overwrite across the whole corpus is
+ * exactly the silent-clobber failure mode that check exists to prevent.
+ *
  * Dry-run by default — still fetches and verifies every target, to prove
  * the corpus is intact before committing to anything, but uploads nothing
  * — `--write` to actually mirror. A target that fails (timeout, HTTP error,
@@ -32,10 +40,16 @@ import { dim, green, red } from './colour.js'
 
 const args = process.argv.slice(2)
 const write = args.includes('--write')
+const overwrite = args.includes('--overwrite')
 const varietyFlag = args.find((a) => a.startsWith('--variety='))
 const onlyVariety = varietyFlag ? varietyFlag.slice('--variety='.length) : undefined
 const keysFlag = args.find((a) => a.startsWith('--keys='))
 const onlyKeys = keysFlag ? new Set(keysFlag.slice('--keys='.length).split(',')) : undefined
+
+if (overwrite && !onlyKeys) {
+  console.error('--overwrite requires --keys — refusing to run an unscoped overwrite across the whole corpus')
+  process.exit(2)
+}
 
 const varieties = listAudioVarieties().filter((id) => !onlyVariety || id === onlyVariety)
 
@@ -57,7 +71,7 @@ for (const id of varieties) {
   try {
     const loaded = loadAudio(id)
     const audio = onlyKeys ? filterToKeys(loaded, onlyKeys) : loaded
-    const result = await mirrorAudioToS3(audio, { write })
+    const result = await mirrorAudioToS3(audio, { write, overwrite })
 
     totalScanned += result.scanned
     totalMirrored += result.mirrored.length
