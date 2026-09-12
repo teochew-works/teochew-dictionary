@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto'
 import { describe, expect, it } from 'vitest'
 
 import type { Audio } from '@teochew/core'
-import { mirrorAudioToS3, mirrorTargets } from '../src/importers/audio-mirror.js'
+import { filterToKeys, mirrorAudioToS3, mirrorTargets } from '../src/importers/audio-mirror.js'
 import type { PutObjectParams } from '../src/importers/s3-upload.js'
 
 const GITHUB_WEBM = 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou/dio5.webm'
@@ -36,6 +36,30 @@ function fakeBytes(byUrl: Record<string, Buffer>) {
     return bytes
   }
 }
+
+describe('filterToKeys', () => {
+  it('keeps only the requested keys from clips', () => {
+    const audio = audioTable({ dio5: [clip()], ziu1: [clip()], geng1: [clip()] })
+    const filtered = filterToKeys(audio, new Set(['dio5', 'geng1']))
+    expect(Object.keys(filtered.clips).sort()).toEqual(['dio5', 'geng1'])
+  })
+
+  it('filters wordClips independently of clips', () => {
+    const audio: Audio = {
+      ...audioTable({ dio5: [clip()] }),
+      wordClips: { 'dio5 ziu1': [clip()], 'geng1 dio5': [clip()] },
+    }
+    const filtered = filterToKeys(audio, new Set(['dio5 ziu1']))
+    expect(Object.keys(filtered.clips)).toEqual([])
+    expect(Object.keys(filtered.wordClips ?? {})).toEqual(['dio5 ziu1'])
+  })
+
+  it('silently drops a requested key absent from this variety, rather than erroring', () => {
+    const audio = audioTable({ dio5: [clip()] })
+    const filtered = filterToKeys(audio, new Set(['dio5', 'not-in-this-variety']))
+    expect(Object.keys(filtered.clips)).toEqual(['dio5'])
+  })
+})
 
 describe('mirrorTargets', () => {
   it('emits one target for a clip with no CAF alternate', () => {

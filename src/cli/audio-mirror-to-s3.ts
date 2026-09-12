@@ -2,11 +2,11 @@ import { join } from 'node:path'
 
 import { AUDIO_METADATA_DIR } from '../paths.js'
 import { listAudioVarieties, loadAudio } from '../phonology/load.js'
-import { mirrorAudioToS3 } from '../importers/audio-mirror.js'
+import { filterToKeys, mirrorAudioToS3 } from '../importers/audio-mirror.js'
 import { dim, green, red } from './colour.js'
 
 /**
- * `npm run audio:mirror-to-s3 -- [--write] [--variety=<id>]`
+ * `npm run audio:mirror-to-s3 -- [--write] [--variety=<id>] [--keys=<pengim-key>,...]`
  *
  * Mirrors every clip/CAF asset already on GitHub Releases into S3 (issue
  * #270 step 3) — verifying each against the manifest's own checksum before
@@ -14,6 +14,11 @@ import { dim, green, red } from './colour.js'
  * **not** touch the manifest; that's a separate, later step
  * (`audio-manifest-rewrite-s3`) gated on the mobile app picking up the
  * widened schema first.
+ *
+ * `--keys` restricts the run to specific pengim keys (comma-separated;
+ * quote a multi-syllable key with a space, e.g. `--keys="dio5 ziu1,geng1"`)
+ * — for re-syncing a known-bad subset (e.g. every key a key-derivation
+ * bug's fix affects) without re-scanning and re-verifying the whole corpus.
  *
  * Dry-run by default — still fetches and verifies every target, to prove
  * the corpus is intact before committing to anything, but uploads nothing
@@ -29,6 +34,8 @@ const args = process.argv.slice(2)
 const write = args.includes('--write')
 const varietyFlag = args.find((a) => a.startsWith('--variety='))
 const onlyVariety = varietyFlag ? varietyFlag.slice('--variety='.length) : undefined
+const keysFlag = args.find((a) => a.startsWith('--keys='))
+const onlyKeys = keysFlag ? new Set(keysFlag.slice('--keys='.length).split(',')) : undefined
 
 const varieties = listAudioVarieties().filter((id) => !onlyVariety || id === onlyVariety)
 
@@ -48,7 +55,8 @@ for (const id of varieties) {
   console.log(dim(`${id}: scanning ${path}…`))
 
   try {
-    const audio = loadAudio(id)
+    const loaded = loadAudio(id)
+    const audio = onlyKeys ? filterToKeys(loaded, onlyKeys) : loaded
     const result = await mirrorAudioToS3(audio, { write })
 
     totalScanned += result.scanned

@@ -99,6 +99,26 @@ async function defaultFetchBytes(url: string): Promise<Buffer> {
 
 const BUCKETS: Bucket[] = ['clips', 'wordClips']
 
+/**
+ * Restricts `audio` to just the given pengim keys, across both `clips` and
+ * `wordClips` — for re-syncing a known-bad subset (e.g. every key a key-
+ * derivation bug's fix affects) without re-scanning and re-verifying the
+ * whole corpus, most of which was already correctly mirrored. A key absent
+ * from `audio` is silently a no-op rather than an error — the caller may be
+ * passing a combined key list gathered across every variety's manifest,
+ * and not every key exists in every variety.
+ */
+export function filterToKeys(audio: Audio, keys: ReadonlySet<string>): Audio {
+  const pick = (table: Record<string, Audio['clips'][string]> | undefined) => {
+    const out: Record<string, Audio['clips'][string]> = {}
+    for (const [pengimKey, clips] of Object.entries(table ?? {})) {
+      if (keys.has(pengimKey)) out[pengimKey] = clips
+    }
+    return out
+  }
+  return { ...audio, clips: pick(audio.clips), wordClips: pick(audio.wordClips) }
+}
+
 /** Every (clip, field) pair across one variety's `Audio` table that has bytes to mirror. */
 export function mirrorTargets(audio: Audio): MirrorTarget[] {
   const targets: MirrorTarget[] = []
