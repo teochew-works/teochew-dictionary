@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 export interface PublishedClip {
   url: string
   speaker?: string
+  /** Set when the clip is a re-rendering of a recording (ADR-0027); the play button labels it. */
+  synthesis?: 'world-retune' | 'cross-splice'
 }
 
 export interface LocalRecordingsStatus {

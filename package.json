@@ -36,6 +36,7 @@
     "rehost:lingualibre": "tsx src/cli/lingualibre-rehost.ts",
     "merge:lingualibre": "tsx src/cli/lingualibre-merge.ts",
     "merge:local-recording": "tsx src/cli/local-recording-merge.ts",
+    "merge:resynth": "tsx src/cli/resynth-merge.ts",
     "schema": "tsx src/cli/emit-schema.ts",
     "test": "vitest run",
     "test:watch": "vitest",
