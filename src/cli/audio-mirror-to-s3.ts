@@ -2,7 +2,7 @@ import { join } from 'node:path'
 
 import { AUDIO_METADATA_DIR } from '../paths.js'
 import { listAudioVarieties, loadAudio } from '../phonology/load.js'
-import { filterToKeys, mirrorAudioToS3 } from '../importers/audio-mirror.js'
+import { filterToKeys, mirrorAudioToS3, type MirrorOutcome, type MirrorProgress } from '../importers/audio-mirror.js'
 import { dim, green, red } from './colour.js'
 
 /**
@@ -36,6 +36,13 @@ import { dim, green, red } from './colour.js'
  * re-run after an interruption just re-verifies and re-skips whatever's
  * already mirrored. Network-touching, so deliberately excluded from
  * `npm run check`, same as `audio:verify`.
+ *
+ * Prints a running "N/total (P%)" checkpoint every
+ * `PROGRESS_CHECKPOINT_EVERY` targets, on top of a line per mismatch/
+ * failure/success as they happen — the corpus is large enough (6,176
+ * targets) and a full pass slow enough (an hour or more) that "is this
+ * actually progressing?" needs a real answer while it runs, not just a
+ * summary at the end (issue #270).
  */
 
 const args = process.argv.slice(2)
@@ -58,6 +65,9 @@ if (varieties.length === 0) {
   process.exit(1)
 }
 
+/** Frequent enough to show real progress in a tailed log; not so frequent it floods one. */
+const PROGRESS_CHECKPOINT_EVERY = 100
+
 let totalScanned = 0
 let totalMirrored = 0
 let totalMismatches = 0
@@ -68,28 +78,37 @@ for (const id of varieties) {
   const path = join(AUDIO_METADATA_DIR, `${id}.yaml`)
   console.log(dim(`${id}: scanning ${path}…`))
 
+  const onProgress = (progress: MirrorProgress, outcome: MirrorOutcome) => {
+    if (outcome.kind === 'mismatch') {
+      const m = outcome.mismatch
+      console.error(
+        `  ${red('✗')} checksum mismatch: ${m.bucket}.${m.pengimKey}[${m.index}].${m.field} — expected ` +
+          `${m.expectedChecksum}, got ${m.actualChecksum} (${m.sourceUrl})`,
+      )
+    } else if (outcome.kind === 'failed') {
+      const f = outcome.failure
+      console.error(`  ${red('✗')} ${f.bucket}.${f.pengimKey}[${f.index}].${f.field} — ${f.error} (${f.sourceUrl})`)
+    } else {
+      const a = outcome.asset
+      console.log(`  ${green('✓')} ${a.bucket}.${a.pengimKey}[${a.index}].${a.field} → ${a.s3Url}`)
+    }
+
+    if (progress.scanned % PROGRESS_CHECKPOINT_EVERY === 0 || progress.scanned === progress.total) {
+      const pct = Math.round((progress.scanned / progress.total) * 100)
+      console.log(dim(`  … ${progress.scanned}/${progress.total} scanned (${pct}%)`))
+    }
+  }
+
   try {
     const loaded = loadAudio(id)
     const audio = onlyKeys ? filterToKeys(loaded, onlyKeys) : loaded
-    const result = await mirrorAudioToS3(audio, { write, overwrite })
+    const result = await mirrorAudioToS3(audio, { write, overwrite, onProgress })
 
     totalScanned += result.scanned
     totalMirrored += result.mirrored.length
     totalMismatches += result.mismatches.length
     totalFailed += result.failed.length
 
-    for (const m of result.mismatches) {
-      console.error(
-        `  ${red('✗')} checksum mismatch: ${m.bucket}.${m.pengimKey}[${m.index}].${m.field} — expected ` +
-          `${m.expectedChecksum}, got ${m.actualChecksum} (${m.sourceUrl})`,
-      )
-    }
-    for (const f of result.failed) {
-      console.error(`  ${red('✗')} ${f.bucket}.${f.pengimKey}[${f.index}].${f.field} — ${f.error} (${f.sourceUrl})`)
-    }
-    for (const a of result.mirrored) {
-      console.log(`  ${green('✓')} ${a.bucket}.${a.pengimKey}[${a.index}].${a.field} → ${a.s3Url}`)
-    }
     console.log(
       `  ${result.scanned} scanned, ${result.mirrored.length} ${write ? 'mirrored' : 'would mirror'}, ` +
         `${result.mismatches.length} checksum mismatch(es), ${result.failed.length} failed`,

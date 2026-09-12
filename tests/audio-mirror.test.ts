@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto'
 import { describe, expect, it } from 'vitest'
 
 import type { Audio } from '@teochew/core'
-import { filterToKeys, mirrorAudioToS3, mirrorTargets } from '../src/importers/audio-mirror.js'
+import { filterToKeys, mirrorAudioToS3, mirrorTargets, type MirrorOutcome, type MirrorProgress } from '../src/importers/audio-mirror.js'
 import type { PutObjectParams } from '../src/importers/s3-upload.js'
 
 const GITHUB_WEBM = 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou/dio5.webm'
@@ -246,5 +246,56 @@ describe('mirrorAudioToS3', () => {
     })
 
     expect(putCalls[0]?.key).toBe('teochew/clips/unknown-speaker/dio5.webm')
+  })
+
+  it('reports progress after each target, in order, with a running scanned/total count', async () => {
+    const withCaf = clip({ cafUrl: GITHUB_CAF, cafChecksum: sha256(CAF_BYTES) })
+    const audio = audioTable({ dio5: [withCaf] })
+    const calls: Array<[MirrorProgress, MirrorOutcome['kind']]> = []
+
+    await mirrorAudioToS3(audio, {
+      write: false,
+      fetchBytes: fakeBytes({ [GITHUB_WEBM]: WEBM_BYTES, [GITHUB_CAF]: CAF_BYTES }),
+      onProgress: (progress, outcome) => {
+        calls.push([progress, outcome.kind])
+      },
+    })
+
+    expect(calls).toEqual([
+      [{ scanned: 1, total: 2 }, 'mirrored'],
+      [{ scanned: 2, total: 2 }, 'mirrored'],
+    ])
+  })
+
+  it('reports a mismatch outcome distinctly from a mirrored one', async () => {
+    const audio = audioTable({ dio5: [clip({ checksum: `sha256:${'0'.repeat(64)}` })] })
+    let outcome: MirrorOutcome | undefined
+
+    await mirrorAudioToS3(audio, {
+      write: false,
+      fetchBytes: fakeBytes({ [GITHUB_WEBM]: WEBM_BYTES }),
+      onProgress: (_progress, o) => {
+        outcome = o
+      },
+    })
+
+    expect(outcome?.kind).toBe('mismatch')
+  })
+
+  it('reports a failed outcome distinctly, without stopping progress reporting for later targets', async () => {
+    const audio = audioTable({ dio5: [clip()], ziu1: [clip()] })
+    const outcomes: MirrorOutcome['kind'][] = []
+
+    await mirrorAudioToS3(audio, {
+      write: false,
+      fetchBytes: async () => {
+        throw new Error('network blip')
+      },
+      onProgress: (_progress, o) => {
+        outcomes.push(o.kind)
+      },
+    })
+
+    expect(outcomes).toEqual(['failed', 'failed'])
   })
 })

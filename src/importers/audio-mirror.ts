@@ -59,6 +59,19 @@ export interface MirrorFailure extends MirrorTarget {
   error: string
 }
 
+/** How one target was resolved — passed to `MirrorOptions.onProgress` right after it happens, not batched until the whole run finishes. */
+export type MirrorOutcome =
+  | { kind: 'mirrored'; asset: MirroredAsset }
+  | { kind: 'mismatch'; mismatch: ChecksumMismatch }
+  | { kind: 'failed'; failure: MirrorFailure }
+
+export interface MirrorProgress {
+  /** Targets resolved so far, including this one — 1-based, so `scanned === total` on the last call. */
+  scanned: number
+  /** Fixed for the whole run — `mirrorTargets(audio).length`, computed once up front. */
+  total: number
+}
+
 export interface MirrorOptions {
   write?: boolean
   /** Forwarded to every `uploadBytesToS3` call — see its own doc comment. Off by default; only for a knowing, targeted resync, typically paired with restricting `audio` to specific keys first (see `filterToKeys`). */
@@ -69,6 +82,15 @@ export interface MirrorOptions {
   headObject?: UploadBytesToS3Options['headObject']
   /** Injectable for tests — avoids a real AWS call. */
   putObject?: UploadBytesToS3Options['putObject']
+  /**
+   * Called synchronously right after each target resolves, so a caller (the
+   * CLI) can report live progress instead of waiting for the whole corpus to
+   * finish — `mirrorAudioToS3`'s own result is otherwise silent until every
+   * target is done, and a full run over the real corpus takes long enough
+   * (an hour or more) that "is this actually progressing?" is a real
+   * question, not a hypothetical one (issue #270).
+   */
+  onProgress?: (progress: MirrorProgress, outcome: MirrorOutcome) => void
 }
 
 export interface MirrorResult {
@@ -173,18 +195,23 @@ function speakerFor(audio: Audio, target: MirrorTarget): string | undefined {
  * targets on the next run.
  */
 export async function mirrorAudioToS3(audio: Audio, options: MirrorOptions = {}): Promise<MirrorResult> {
-  const { write = false, overwrite = false, fetchBytes = defaultFetchBytes, headObject, putObject } = options
+  const { write = false, overwrite = false, fetchBytes = defaultFetchBytes, headObject, putObject, onProgress } = options
 
+  const targets = mirrorTargets(audio)
+  const total = targets.length
   const result: MirrorResult = { scanned: 0, mirrored: [], mismatches: [], failed: [] }
 
-  for (const target of mirrorTargets(audio)) {
+  for (const target of targets) {
     result.scanned += 1
+    const progress: MirrorProgress = { scanned: result.scanned, total }
 
     try {
       const bytes = await fetchBytes(target.sourceUrl)
       const actualChecksum = sha256(bytes)
       if (actualChecksum !== target.expectedChecksum) {
-        result.mismatches.push({ ...target, actualChecksum })
+        const mismatch: ChecksumMismatch = { ...target, actualChecksum }
+        result.mismatches.push(mismatch)
+        onProgress?.(progress, { kind: 'mismatch', mismatch })
         continue
       }
 
@@ -192,7 +219,9 @@ export async function mirrorAudioToS3(audio: Audio, options: MirrorOptions = {})
       const key = audioClipKey(path)
 
       if (!write) {
-        result.mirrored.push({ ...target, s3Url: `${AUDIO_CDN_BASE}/${key}` })
+        const asset: MirroredAsset = { ...target, s3Url: `${AUDIO_CDN_BASE}/${key}` }
+        result.mirrored.push(asset)
+        onProgress?.(progress, { kind: 'mirrored', asset })
         continue
       }
 
@@ -203,9 +232,13 @@ export async function mirrorAudioToS3(audio: Audio, options: MirrorOptions = {})
         headObject,
         putObject,
       })
-      result.mirrored.push({ ...target, s3Url: url })
+      const asset: MirroredAsset = { ...target, s3Url: url }
+      result.mirrored.push(asset)
+      onProgress?.(progress, { kind: 'mirrored', asset })
     } catch (e) {
-      result.failed.push({ ...target, error: e instanceof Error ? e.message : String(e) })
+      const failure: MirrorFailure = { ...target, error: e instanceof Error ? e.message : String(e) }
+      result.failed.push(failure)
+      onProgress?.(progress, { kind: 'failed', failure })
     }
   }
 
