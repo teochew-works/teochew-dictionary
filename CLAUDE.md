@@ -94,6 +94,11 @@ diverging from it.
     pipeline and their tests all live there; `src/` and `web/` keep only disk, database and React
     adapters. A change mobile needs is not finished until core's `version` is bumped, the tarball
     release is cut, and the app repo's pin is updated. → [ADR-0024](docs/adrs/adr-0024.md)
+16. **Synthesis is allowed only as a labelled, derived tier of the speaker's own recordings.** A
+    clip with `synthesis` must name its recording in `derivedFrom`, sit under its own speaker id
+    (`<speaker>-n`), and be capped at `confidence: medium` so the recording stays primary. Never
+    generate a syllable that has no recording. → [ADR-0027](docs/adrs/adr-0027.md),
+    [ADR-0016](docs/adrs/adr-0016.md)
 
 ## Common Commands
 
@@ -113,6 +118,13 @@ npm run cache:wiktionary       # sync Wiktionary wikitext into .cache/
 npm run xref -- <source>       # refresh a cached external phonology chart
 npm run audio:verify           # fetch every clip and verify its checksum
 npm run audio:grade            # cache every clip, extract features, report per-tone stats + outliers
+npm run merge:resynth          # publish passing renders as the <speaker>-n tier (ADR-0027)
+```
+
+Offline but cache-dependent (needs an `audio:grade` run first):
+
+```bash
+npm run audio:synthesize [-- --write]   # re-render clips toward per-part targets into .cache/audio-synth/
 ```
 
 Regeneration and maintenance:
@@ -174,7 +186,7 @@ web/src/pwa/      installable PWA: precached shell, opt-in offline data    (ADR-
 | [web/README.md](web/README.md)                       | Frontend architecture, dev and deployment                      |
 | [packages/core/README.md](packages/core/README.md)   | What `@teochew/core` holds, the boundary rule, how to release  |
 | [AUDIO-CONSENT.md](AUDIO-CONSENT.md)                 | Speaker consent process (tracked outside the repo)             |
-| [data/phonology/TTS.md](data/phonology/TTS.md)       | Why synthesis was rejected ([ADR-0016](docs/adrs/adr-0016.md)) |
+| [data/phonology/TTS.md](data/phonology/TTS.md)       | Why synthesis was rejected ([ADR-0016](docs/adrs/adr-0016.md)); what ADR-0027 later allowed |
 | [docs/adrs/adr-0006.md](docs/adrs/adr-0006.md)       | Why importers may never write to `data/entries/`               |
 | [docs/adrs/adr-0008.md](docs/adrs/adr-0008.md)       | Why an entry's licence is computed, not written                |
 

@@ -115,3 +115,11 @@ def test_run_features_honours_params():
         r = run_features({"params": {"frameMs": 10.0}, "clips": [{"id": "a", "wav": p}]})
     assert r["params"]["frame_ms"] == 10.0
     assert abs(r["clips"]["a"]["f0"]["medianHz"] - 150.0) < 3.0
+
+
+def test_extract_features_honours_a_given_active_region(syllable_like: Wave):
+    f = extract_features(syllable_like, AnalysisParams(), active_ms=(100.0, 750.0))
+    assert f["trim"] == {"startMs": 100.0, "endMs": 750.0}
+    assert f["activeMs"] == 650.0
+    # The onset is now measured from the given start, so it includes the silence before the burst.
+    assert 150.0 <= f["onsetMs"] <= 200.0

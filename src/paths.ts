@@ -43,6 +43,12 @@ export const WIKTEXTRACT_MIN_FILE = join(CACHE_DIR, 'teochew-relevant.min.jsonl'
 export const AUDIO_CLIP_CACHE_DIR = join(CACHE_DIR, 'audio-clips')
 /** Per-clip features keyed by bare sha256 hex — see `src/audio/features.ts`. */
 export const AUDIO_FEATURES_FILE = join(CACHE_DIR, 'audio-features.json')
+/**
+ * `audio:synthesize` output: `<variety>/<syllable>.wav` plus a `report.json`.
+ * Under `.cache` rather than `data/staging/` because, unlike a recording
+ * (ADR-0017), a render is reproducible from the cached clips and the code.
+ */
+export const AUDIO_SYNTH_DIR = join(CACHE_DIR, 'audio-synth')
 
 /** The Python DSP tool `src/audio/` drives — see tools/resynth/README.md. */
 export const RESYNTH_TOOL_DIR = join(ROOT, 'tools', 'resynth')

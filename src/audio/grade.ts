@@ -70,6 +70,8 @@ export interface CorpusStats {
   /** Keyed by initial, '' for the zero initial. Only voiceless onsets contribute. */
   byInitial: Record<string, { onsetMs: Spread }>
   rmsDb: Spread
+  /** Peak − RMS per clip: how much headroom a level target needs under a peak ceiling. */
+  crestDb: Spread
 }
 
 /** One graded clip: which groups it was measured against and how far it sits from each. */
@@ -161,9 +163,11 @@ export function computeCorpusStats(inputs: { syllable: Syllable; features: ClipF
   const byToneCoda = new Map<string, number[]>()
   const byInitial = new Map<string, number[]>()
   const rmsDb: number[] = []
+  const crestDb: number[] = []
 
   for (const { syllable, features } of inputs) {
     rmsDb.push(features.rmsDb)
+    crestDb.push(features.peakDb - features.rmsDb)
     const tone = byTone.get(syllable.tone) ?? { f0: [], contours: [], voicedMs: [], rmsDb: [] }
     byTone.set(syllable.tone, tone)
     tone.rmsDb.push(features.rmsDb)
@@ -179,7 +183,7 @@ export function computeCorpusStats(inputs: { syllable: Syllable; features: ClipF
     }
   }
 
-  const stats: CorpusStats = { byTone: {}, byToneCoda: {}, byInitial: {}, rmsDb: spread(rmsDb) }
+  const stats: CorpusStats = { byTone: {}, byToneCoda: {}, byInitial: {}, rmsDb: spread(rmsDb), crestDb: spread(crestDb) }
   for (const [tone, g] of byTone) {
     stats.byTone[tone] = {
       f0Semitones: spread(g.f0),
@@ -193,45 +197,54 @@ export function computeCorpusStats(inputs: { syllable: Syllable; features: ClipF
   return stats
 }
 
-export function gradeCorpus(inputs: GradeInput[], options: GradeOptions = {}): CorpusGrade {
+/**
+ * One clip scored against already-computed corpus statistics. Used both by
+ * `gradeCorpus` (against the corpus the clip belongs to) and by
+ * `audio:synthesize`'s self-check (a rendered clip against the *source*
+ * corpus's yardsticks, which is the whole point of the check).
+ */
+export function gradeClip(stats: CorpusStats, input: GradeInput, options: GradeOptions = {}): ClipGrade {
   const { outlierZ = DEFAULT_OUTLIER_Z, minVoicedRatio = DEFAULT_MIN_VOICED_RATIO } = options
-  const parsed = inputs.map((input) => ({ ...input, syllable: tryParse(input.key) }))
+  const { key, id, features } = input
+  const syllable = tryParse(key)
+  const flags: string[] = []
+  const zs: ClipGrade['z'] = {}
+  if (syllable === null) {
+    flags.push('unparseable key')
+  } else {
+    const tone = stats.byTone[syllable.tone]
+    const f0Semitones = features.f0.medianHz === null ? null : hzToSemitones(features.f0.medianHz)
+    const f0 = z(f0Semitones, tone?.f0Semitones)
+    const octave = octaveError(f0Semitones, tone?.f0Semitones)
+    const voicedMs = z(features.voicedMs, stats.byToneCoda[toneCodaKey(syllable.tone, codaClass(syllable))]?.voicedMs)
+    const onsetGroup = syllable.initial === null ? undefined : stats.byInitial[syllable.initial]?.onsetMs
+    const onsetMs = onsetGroup && onsetGroup.median >= MIN_MEASURABLE_ONSET_MS ? z(features.onsetMs, onsetGroup) : undefined
+    const rmsDb = z(features.rmsDb, stats.rmsDb)
+    if (f0 !== undefined) zs.f0 = f0
+    if (voicedMs !== undefined) zs.voicedMs = voicedMs
+    if (onsetMs !== undefined) zs.onsetMs = onsetMs
+    if (rmsDb !== undefined) zs.rmsDb = rmsDb
+
+    if (features.f0.medianHz === null) flags.push('no voiced frames')
+    else if (features.voicedRatio < minVoicedRatio) flags.push(`barely voiced (${features.voicedRatio})`)
+    if (octave !== null) flags.push(`f0 an octave ${octave} tone ${syllable.tone}'s median`)
+    else if (f0 !== undefined && Math.abs(f0) >= outlierZ) flags.push(`f0 ${fmtZ(f0)} for tone ${syllable.tone}`)
+    if (voicedMs !== undefined && Math.abs(voicedMs) >= outlierZ) flags.push(`duration ${fmtZ(voicedMs)}`)
+    if (onsetMs !== undefined && Math.abs(onsetMs) >= outlierZ) flags.push(`onset ${fmtZ(onsetMs)} for '${syllable.initial}'`)
+    if (rmsDb !== undefined && Math.abs(rmsDb) >= outlierZ) flags.push(`level ${fmtZ(rmsDb)}`)
+  }
+  const maxZ = Math.max(0, ...Object.values(zs).map((v) => Math.abs(v)))
+  return { key, id, syllable, z: zs, maxZ, flags }
+}
+
+export function gradeCorpus(inputs: GradeInput[], options: GradeOptions = {}): CorpusGrade {
   const stats = computeCorpusStats(
-    parsed.flatMap((p) => (p.syllable ? [{ syllable: p.syllable, features: p.features }] : [])),
+    inputs.flatMap((input) => {
+      const syllable = tryParse(input.key)
+      return syllable ? [{ syllable, features: input.features }] : []
+    }),
   )
-
-  const clips: ClipGrade[] = parsed.map(({ key, id, syllable, features }) => {
-    const flags: string[] = []
-    const zs: ClipGrade['z'] = {}
-    if (syllable === null) {
-      flags.push('unparseable key')
-    } else {
-      const tone = stats.byTone[syllable.tone]
-      const f0Semitones = features.f0.medianHz === null ? null : hzToSemitones(features.f0.medianHz)
-      const f0 = z(f0Semitones, tone?.f0Semitones)
-      const octave = octaveError(f0Semitones, tone?.f0Semitones)
-      const voicedMs = z(features.voicedMs, stats.byToneCoda[toneCodaKey(syllable.tone, codaClass(syllable))]?.voicedMs)
-      const onsetGroup = syllable.initial === null ? undefined : stats.byInitial[syllable.initial]?.onsetMs
-      const onsetMs = onsetGroup && onsetGroup.median >= MIN_MEASURABLE_ONSET_MS ? z(features.onsetMs, onsetGroup) : undefined
-      const rmsDb = z(features.rmsDb, stats.rmsDb)
-      if (f0 !== undefined) zs.f0 = f0
-      if (voicedMs !== undefined) zs.voicedMs = voicedMs
-      if (onsetMs !== undefined) zs.onsetMs = onsetMs
-      if (rmsDb !== undefined) zs.rmsDb = rmsDb
-
-      if (features.f0.medianHz === null) flags.push('no voiced frames')
-      else if (features.voicedRatio < minVoicedRatio) flags.push(`barely voiced (${features.voicedRatio})`)
-      if (octave !== null) flags.push(`f0 an octave ${octave} tone ${syllable.tone}'s median`)
-      else if (f0 !== undefined && Math.abs(f0) >= outlierZ) flags.push(`f0 ${fmtZ(f0)} for tone ${syllable.tone}`)
-      if (voicedMs !== undefined && Math.abs(voicedMs) >= outlierZ) flags.push(`duration ${fmtZ(voicedMs)}`)
-      if (onsetMs !== undefined && Math.abs(onsetMs) >= outlierZ) flags.push(`onset ${fmtZ(onsetMs)} for '${syllable.initial}'`)
-      if (rmsDb !== undefined && Math.abs(rmsDb) >= outlierZ) flags.push(`level ${fmtZ(rmsDb)}`)
-    }
-    const maxZ = Math.max(0, ...Object.values(zs).map((v) => Math.abs(v)))
-    return { key, id, syllable, z: zs, maxZ, flags }
-  })
-
-  return { stats, clips }
+  return { stats, clips: inputs.map((input) => gradeClip(stats, input, options)) }
 }
 
 /** 'below' / 'above' when `semitones` sits within tolerance of ±12 from the group median, else null. */

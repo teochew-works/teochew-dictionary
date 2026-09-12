@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import type { ClipFeatures } from '../src/audio/features.js'
-import { codaClass, computeCorpusStats, gradeCorpus, hzToSemitones, median, spread, toneCodaKey } from '../src/audio/grade.js'
+import { codaClass, computeCorpusStats, gradeClip, gradeCorpus, hzToSemitones, median, spread, toneCodaKey } from '../src/audio/grade.js'
 import { parseSyllable } from '../src/phonology/syllable.js'
 
 function features(overrides: Partial<ClipFeatures> & { f0Hz?: number | null } = {}): ClipFeatures {
@@ -174,5 +174,16 @@ describe('gradeCorpus', () => {
     const inputs = [...group(1, 10, 140, 650), like(1, 143, 650, 'mild')]
     expect(gradeCorpus(inputs, { outlierZ: 2.5 }).clips.find((c) => c.id === 'mild')!.flags).toEqual([])
     expect(gradeCorpus(inputs, { outlierZ: 1 }).clips.find((c) => c.id === 'mild')!.flags.length).toBeGreaterThan(0)
+  })
+})
+
+describe('gradeClip', () => {
+  it('scores one clip against precomputed stats — the self-check path', () => {
+    const corpus = gradeCorpus(group(5, 10, 184, 650))
+    const onTarget = gradeClip(corpus.stats, like(5, 184, 650, 'render'), { outlierZ: 1.5 })
+    expect(onTarget.maxZ).toBeLessThan(0.5)
+    expect(onTarget.flags).toEqual([])
+    const off = gradeClip(corpus.stats, like(5, 184, 720, 'long'), { outlierZ: 1.5 })
+    expect(off.flags).toEqual([expect.stringMatching(/^duration \+\d+\.\dσ$/)])
   })
 })

@@ -56,6 +56,7 @@ function toAudioReference(key: string, clip: AudioClip, audio: Audio, sources: M
     speaker: clip.speaker,
     trimStartMs: clip.trimStartMs,
     trimEndMs: clip.trimEndMs,
+    synthesis: clip.synthesis,
     licence: resolved.licence,
     attributions: resolved.attributions,
   }
@@ -202,6 +203,7 @@ export function deriveReadingWordAudio(
     speaker: clip.speaker,
     trimStartMs: clip.trimStartMs,
     trimEndMs: clip.trimEndMs,
+    synthesis: clip.synthesis,
     licence: resolved.licence,
     attributions: resolved.attributions,
   }
