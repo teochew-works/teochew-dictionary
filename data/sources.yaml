@@ -83,6 +83,22 @@ sources:
       never folded into this one, mirroring how `wiktionary` and `cedict`
       stay distinct today.
 
+  - id: teochew-dictionary-audio-resynth
+    name: Teochew Dictionary Project — resynthesised renderings of its own recordings
+    kind: import
+    licence: CC-BY-4.0
+    note: >-
+      Clips re-rendered from `teochew-dictionary-audio` recordings by `npm run
+      audio:synthesize` (ADR-0027, issue #259): the recording's own WORLD
+      spectral envelope, with its f0 contour, durations and level set to the
+      speaker's measured per-tone medians for consistency. A derivative of
+      the recording it names in `derivedFrom`, so it carries that
+      recording's licence; its own id so that provenance is visible in the
+      licence machinery and the About page, and so the tier can be removed
+      wholesale. Published only under a distinct speaker id (`<speaker>-n`)
+      with `synthesis` set and confidence capped at medium — the recording
+      stays primary.
+
   - id: lingualibre
     name: Lingua Libre / Wikimedia Commons (Teochew pronunciation)
     kind: import

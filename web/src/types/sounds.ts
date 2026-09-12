@@ -17,6 +17,8 @@ export interface SoundClip {
   /** A CAF/Opus alternate for iOS-native playback (issue #228), when one exists. */
   cafUrl?: string
   speaker?: string
+  /** Set when this is a re-rendering of a recording, not a recording (ADR-0027) — the UI labels it. */
+  synthesis?: 'world-retune' | 'cross-splice'
 }
 
 export interface Sound {

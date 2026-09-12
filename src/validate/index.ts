@@ -479,6 +479,27 @@ function stripDiacritics(s: string): string {
  * `wordClips` key. Clips with no `speaker` at all are never compared —
  * there's no identity to dedupe against.
  */
+/**
+ * A synthesised clip's `derivedFrom` must name a *recording* at the same
+ * key (ADR-0027): the render is of this syllable, from this syllable's own
+ * clip, and a chain of renders-of-renders would launder provenance. The
+ * schema already pairs `derivedFrom` with `synthesis` and caps confidence;
+ * this is the cross-clip half it cannot see.
+ */
+function checkDerivedFrom(file: string, clips: AudioClip[], path: string): Issue[] {
+  const issues: Issue[] = []
+  clips.forEach((clip, i) => {
+    if (clip.derivedFrom === undefined) return
+    const source = clips.find((c) => c.checksum === clip.derivedFrom)
+    if (source === undefined) {
+      issues.push(err(file, `derivedFrom names no clip at this key — a render must derive from a recording of the same syllable`, undefined, `${path}[${i}].derivedFrom`))
+    } else if (source.synthesis !== undefined) {
+      issues.push(err(file, `derivedFrom names a synthesised clip — a render must derive from a recording, not from another render`, undefined, `${path}[${i}].derivedFrom`))
+    }
+  })
+  return issues
+}
+
 function checkDuplicateSpeakers(file: string, key: string, clips: AudioClip[], path: string): Issue[] {
   const seen = new Set<string>()
   const dupes = new Set<string>()
@@ -518,6 +539,7 @@ export function checkAudio(
     }
 
     issues.push(...checkDuplicateSpeakers(file, syllable, clips, path))
+    issues.push(...checkDerivedFrom(file, clips, path))
 
     clips.forEach((clip, i) => {
       const clipPath = `${path}[${i}]`

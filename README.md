@@ -1013,9 +1013,20 @@ coarticulation — is kept, so nothing is spliced across clips. Dry-run by
 default (prints what each clip would be rendered toward); `--write` renders
 WAVs into `.cache/audio-synth/<variety>/` and self-checks every output
 against the same yardsticks, writing a `report.json`. This produces a
-*normalised tier*, never a replacement: publishing it as its own speaker id
-is a separate human step, and one [ADR-0016](docs/adrs/adr-0016.md) does not
-yet permit — see issue #259.
+*normalised tier*, never a replacement.
+
+**Publishing the tier.** `npm run merge:resynth` (network-touching, dry-run by
+default) takes the renders that passed their self-check, encodes them to
+WebM/Opus plus a CAF sibling, uploads both to S3 behind CloudFront
+(ADR-0026, issue #270) at `<speaker>-n/<pengim-key>`, and appends a clip
+beside each recording under speaker id `<speaker>-n` with
+`synthesis: world-retune`,
+`derivedFrom: <the recording's checksum>`, the
+`teochew-dictionary-audio-resynth` source and confidence `medium` — so the
+recording stays default playback and the render is reachable, labelled
+"rendered", through the per-speaker buttons. The governance is
+[ADR-0027](docs/adrs/adr-0027.md), which amends
+[ADR-0016](docs/adrs/adr-0016.md)'s rejection of synthesis to exactly this.
 
 ---
 
@@ -1035,6 +1046,7 @@ yet permit — see issue #259.
 | `npm run audio:verify` | fetch every audio clip and verify its checksum |
 | `npm run audio:grade` | cache every clip, extract features, report per-tone statistics and outliers (issue #259) |
 | `npm run audio:synthesize [-- --write]` | re-render every clip toward its parts' targets into `.cache/audio-synth/`, offline; dry-run by default (issue #259) |
+| `npm run merge:resynth [-- --write]` | publish passing renders as the `<speaker>-n` tier: encode, re-host, append to the manifest (ADR-0027) |
 | `npm run rehost:lingualibre -- <index-or-title>` | re-host a staged Lingua Libre clip as a GitHub Release asset (issue #106) |
 | `npm run merge:lingualibre -- <index-or-title> --variety=<id>` | re-host and merge a staged Lingua Libre clip into `data/phonology/audio/<variety>.yaml` (issue #106) |
 | `npm run schema` | emit the JSON Schemas alone |

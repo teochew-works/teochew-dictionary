@@ -8,6 +8,14 @@ import { z } from 'zod'
 
 export const CONFIDENCE = ['high', 'medium', 'low'] as const
 
+/**
+ * How a derived clip was produced from a recording (ADR-0027). `world-retune`
+ * re-renders one clip's own spectral envelope toward its Peng'im parts'
+ * targets; `cross-splice` (not yet produced) would join an onset from one
+ * clip to a rime from another.
+ */
+export const SYNTHESIS = ['world-retune', 'cross-splice'] as const
+
 /** True for a real calendar date — `\d{4}-\d{2}-\d{2}` also matches e.g. 2026-02-30. */
 function isValidCalendarDate(s: string): boolean {
   const [year, month, day] = s.split('-').map(Number) as [number, number, number]
@@ -232,10 +240,34 @@ const audioClip = z.object({
    * analyzed: play to the natural end.
    */
   trimEndMs: z.number().int().positive().optional(),
+  /**
+   * Present on a clip that is not a recording but a re-rendering of one
+   * (ADR-0027): how it was produced. Always paired with `derivedFrom`, and
+   * caps `confidence` below `high` so `selectPrimaryClip` keeps the human
+   * recording as default playback — see the refines below. Absent means a
+   * recording, which every clip was before ADR-0027.
+   */
+  synthesis: z.enum(SYNTHESIS).optional(),
+  /**
+   * The `checksum` of the recording this clip was rendered from — its
+   * provenance, and the handle a consumer needs to find the original in the
+   * same manifest. Same `sha256:` shape as `checksum`.
+   */
+  derivedFrom: z
+    .string()
+    .regex(/^sha256:[0-9a-fA-F]{64}$/u)
+    .transform((s) => s.toLowerCase())
+    .optional(),
 }).refine((clip) => (clip.cafUrl === undefined) === (clip.cafChecksum === undefined), {
   message: 'cafUrl and cafChecksum must be either both present or both absent',
 }).refine((clip) => clip.trimStartMs === undefined || clip.trimEndMs === undefined || clip.trimEndMs > clip.trimStartMs, {
   message: 'trimEndMs must be greater than trimStartMs when both are present',
+}).refine((clip) => (clip.synthesis === undefined) === (clip.derivedFrom === undefined), {
+  message: 'synthesis and derivedFrom must be either both present or both absent',
+}).refine((clip) => clip.synthesis === undefined || clip.confidence !== 'high', {
+  message: "a synthesised clip's confidence is capped at medium — the recording it derives from stays primary (ADR-0027)",
+}).refine((clip) => clip.derivedFrom === undefined || clip.derivedFrom !== clip.checksum, {
+  message: 'derivedFrom must name a different clip (a clip cannot derive from itself)',
 })
 
 export const audioSchema = z.object({
@@ -306,3 +338,4 @@ export type SandhiTable = z.infer<typeof sandhiSchema>
 export type AudioClip = z.infer<typeof audioClip>
 export type Audio = z.infer<typeof audioSchema>
 export type Confidence = (typeof CONFIDENCE)[number]
+export type Synthesis = (typeof SYNTHESIS)[number]

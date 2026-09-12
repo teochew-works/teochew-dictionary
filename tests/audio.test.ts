@@ -11,6 +11,7 @@ import { AUDIO_CLIP_URL, AUDIO_WORD_CLIP_URL, audioTable, makeClipFixture } from
 const VALID_URL = AUDIO_CLIP_URL
 const VALID_WORD_URL = AUDIO_WORD_CLIP_URL
 const VALID_CHECKSUM = `sha256:${'a'.repeat(64)}`
+const OTHER_CHECKSUM = `sha256:${'b'.repeat(64)}`
 
 function source(id: string, kind: SourceKind = 'import', licence?: string): Source {
   return { id, name: id, kind, ...(licence !== undefined && { licence }) }
@@ -177,6 +178,37 @@ describe('audioSchema', () => {
     expect(() => audioSchema.parse(audio({ dio5: clip({ trimEndMs: 677 }) }))).not.toThrow()
   })
 
+  it('accepts a synthesised clip: synthesis + derivedFrom together, confidence below high (ADR-0027)', () => {
+    const render = clip({ synthesis: 'world-retune', derivedFrom: OTHER_CHECKSUM, confidence: 'medium', speaker: 'jky-n' })
+    const parsed = audioSchema.parse(audio({ dio5: [clip(), render] }))
+    expect(parsed.clips['dio5']?.[1]).toMatchObject({ synthesis: 'world-retune', derivedFrom: OTHER_CHECKSUM })
+  })
+
+  it('normalises derivedFrom to lowercase hex like checksum', () => {
+    const render = clip({ synthesis: 'world-retune', derivedFrom: `sha256:${'B'.repeat(64)}`, confidence: 'medium' })
+    expect(audioSchema.parse(audio({ dio5: render })).clips['dio5']?.[0]?.derivedFrom).toBe(`sha256:${'b'.repeat(64)}`)
+  })
+
+  it('rejects synthesis without derivedFrom, and derivedFrom without synthesis', () => {
+    expect(() => audioSchema.parse(audio({ dio5: clip({ synthesis: 'world-retune', confidence: 'medium' }) }))).toThrow(/both present or both absent/)
+    expect(() => audioSchema.parse(audio({ dio5: clip({ derivedFrom: OTHER_CHECKSUM, confidence: 'medium' }) }))).toThrow(/both present or both absent/)
+  })
+
+  it('rejects a synthesised clip at confidence high — the recording stays primary', () => {
+    const render = clip({ synthesis: 'world-retune', derivedFrom: OTHER_CHECKSUM, confidence: 'high' })
+    expect(() => audioSchema.parse(audio({ dio5: render }))).toThrow(/capped at medium/)
+  })
+
+  it('rejects a clip that derives from itself', () => {
+    const render = clip({ synthesis: 'world-retune', derivedFrom: VALID_CHECKSUM, confidence: 'medium' })
+    expect(() => audioSchema.parse(audio({ dio5: render }))).toThrow(/cannot derive from itself/)
+  })
+
+  it('rejects an unknown synthesis method', () => {
+    const render = clip({ synthesis: 'neural-tts' as never, derivedFrom: OTHER_CHECKSUM, confidence: 'medium' })
+    expect(() => audioSchema.parse(audio({ dio5: render }))).toThrow()
+  })
+
   it('rejects trimEndMs at or before trimStartMs', () => {
     const bad = clip({ trimStartMs: 677, trimEndMs: 239 })
     expect(() => audioSchema.parse(rawAudio({ dio5: bad }))).toThrow()
@@ -204,6 +236,30 @@ describe('checkAudio', () => {
       legalSyllables,
     )
     expect(issues).toEqual([])
+  })
+
+  it('passes a synthesised clip that derives from a recording at the same key (ADR-0027)', () => {
+    const recording = clip()
+    const render = clip({ checksum: OTHER_CHECKSUM, synthesis: 'world-retune', derivedFrom: VALID_CHECKSUM, confidence: 'medium', speaker: 'jky-n' })
+    const issues = checkAudio('f.yaml', audio({ dio5: [recording, render] }), 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toEqual([])
+  })
+
+  it('flags a synthesised clip whose derivedFrom names no clip at its key', () => {
+    const render = clip({ checksum: OTHER_CHECKSUM, synthesis: 'world-retune', derivedFrom: `sha256:${'c'.repeat(64)}`, confidence: 'medium' })
+    const issues = checkAudio('f.yaml', audio({ dio5: [clip(), render] }), 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'clips.dio5[1].derivedFrom' })
+    expect(issues[0]?.message).toContain('names no clip at this key')
+  })
+
+  it('flags a synthesised clip that derives from another synthesised clip', () => {
+    const first = clip({ checksum: OTHER_CHECKSUM, synthesis: 'world-retune', derivedFrom: VALID_CHECKSUM, confidence: 'medium' })
+    const second = clip({ checksum: `sha256:${'c'.repeat(64)}`, synthesis: 'world-retune', derivedFrom: OTHER_CHECKSUM, confidence: 'medium' })
+    const issues = checkAudio('f.yaml', audio({ dio5: [clip(), first, second] }), 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'clips.dio5[2].derivedFrom' })
+    expect(issues[0]?.message).toContain('not from another render')
   })
 
   it("flags an audio.id that doesn't match the file it was loaded from", () => {
@@ -481,6 +537,23 @@ describe('deriveReadingAudio', () => {
     expect(resolved).toMatchObject({ url: AUDIO_CLIP_URL })
   })
 
+  it('keeps the recording primary over a newer synthesised render, and carries synthesis through (ADR-0027)', () => {
+    const renderUrl = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou-resynth-1/dio5.opus`
+    const syllables = parsePengim('dio5')
+    const table = audio({
+      dio5: [
+        clip({ confidence: 'high', speaker: 'jky', recorded: '2026-09-01' }),
+        clip({ confidence: 'medium', speaker: 'jky-n', recorded: '2026-09-11', url: renderUrl, checksum: OTHER_CHECKSUM, synthesis: 'world-retune', derivedFrom: VALID_CHECKSUM }),
+      ],
+    })
+    const [resolved] = deriveReadingAudio(syllables, table, sources)
+    expect(resolved).toMatchObject({ url: AUDIO_CLIP_URL, speaker: 'jky' })
+    expect(resolved?.synthesis).toBeUndefined()
+
+    const [renderOnly] = deriveReadingAudio(syllables, audio({ dio5: table.clips['dio5']![1]! }), sources)
+    expect(renderOnly).toMatchObject({ url: renderUrl, synthesis: 'world-retune' })
+  })
+
   it("carries the clip's cafUrl through when present (issue #228)", () => {
     const cafUrl = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/dio5.caf`
     const syllables = parsePengim('dio5')
@@ -683,6 +756,23 @@ describe('deriveReadingWordAudio', () => {
     expect(() => deriveReadingWordAudio('dio5 ziu1', table, sources)).toThrow(
       /not classified as permissive, share-alike, or public-domain/u,
     )
+  })
+
+  it('keeps the recording primary over a newer synthesised render, and carries synthesis through (ADR-0027)', () => {
+    const renderUrl = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou-resynth-1/dio5.opus`
+    const syllables = parsePengim('dio5')
+    const table = audio({
+      dio5: [
+        clip({ confidence: 'high', speaker: 'jky', recorded: '2026-09-01' }),
+        clip({ confidence: 'medium', speaker: 'jky-n', recorded: '2026-09-11', url: renderUrl, checksum: OTHER_CHECKSUM, synthesis: 'world-retune', derivedFrom: VALID_CHECKSUM }),
+      ],
+    })
+    const [resolved] = deriveReadingAudio(syllables, table, sources)
+    expect(resolved).toMatchObject({ url: AUDIO_CLIP_URL, speaker: 'jky' })
+    expect(resolved?.synthesis).toBeUndefined()
+
+    const [renderOnly] = deriveReadingAudio(syllables, audio({ dio5: table.clips['dio5']![1]! }), sources)
+    expect(renderOnly).toMatchObject({ url: renderUrl, synthesis: 'world-retune' })
   })
 
   it("carries the clip's cafUrl through when present (issue #228)", () => {
