@@ -38,6 +38,12 @@ const SOURCES: { name: string; role: string; licence: keyof typeof LICENCE_URLS 
     licence: 'CC-BY-4.0',
     url: 'https://github.com/teochew-works/teochew-dictionary/blob/main/AUDIO-CONSENT.md',
   },
+  {
+    name: 'Rendered clips',
+    role: "Re-renderings of this project's own recordings, with pitch, length and level set to the speaker's typical values for consistency. Marked “rendered” beside the play button; the original recording is always kept and played by default.",
+    licence: 'CC-BY-4.0',
+    url: 'https://github.com/teochew-works/teochew-dictionary/blob/main/docs/adrs/adr-0027.md',
+  },
 ]
 
 export function AboutView() {

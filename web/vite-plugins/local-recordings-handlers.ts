@@ -27,6 +27,8 @@ export const VARIETY = 'chaozhou'
 export interface PublishedClip {
   url: string
   speaker?: string
+  /** Set when the clip is a re-rendering of a recording (ADR-0027); the play button labels it. */
+  synthesis?: 'world-retune' | 'cross-splice'
 }
 
 export interface StatusResult {
@@ -50,7 +52,11 @@ export function getStatus(deps: StatusDeps = {}): StatusResult {
     published: Object.fromEntries(
       Object.entries(audio?.clips ?? {}).map(([pengim, clips]) => [
         pengim,
-        clips.map((clip) => (clip.speaker ? { url: clip.url, speaker: clip.speaker } : { url: clip.url })),
+        clips.map((clip) => ({
+          url: clip.url,
+          ...(clip.speaker ? { speaker: clip.speaker } : {}),
+          ...(clip.synthesis ? { synthesis: clip.synthesis } : {}),
+        })),
       ]),
     ),
     pending: (staged?.proposals ?? []).filter((p) => p.variety === VARIETY).map((p) => p.pengim),

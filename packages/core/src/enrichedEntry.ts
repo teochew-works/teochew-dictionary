@@ -21,7 +21,7 @@ import type { AudioClip, Confidence } from './schema/phonology.js'
  */
 // `speaker` (from AudioClip) is used to gate combined-audio synthesis — see issue #191.
 export interface AudioReference
-  extends Pick<AudioClip, 'url' | 'cafUrl' | 'confidence' | 'speaker' | 'trimStartMs' | 'trimEndMs'> {
+  extends Pick<AudioClip, 'url' | 'cafUrl' | 'confidence' | 'speaker' | 'trimStartMs' | 'trimEndMs' | 'synthesis'> {
   /** The `clips`/`wordClips` key this clip was resolved from, e.g. `dio5` or `bhi7 jui2`. */
   key: string
   /**
