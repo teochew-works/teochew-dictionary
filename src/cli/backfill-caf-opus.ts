@@ -6,7 +6,7 @@ import { backfillCafOpus } from '../importers/caf-backfill.js'
 import { dim, green, red } from './colour.js'
 
 /**
- * `npm run backfill:caf-opus -- [--write] [--variety=<id>]`
+ * `npm run backfill:caf-opus -- [--write] [--overwrite] [--variety=<id>]`
  *
  * Backfills `cafUrl`/`cafChecksum` (issue #228) onto every already-merged
  * `.webm` clip that doesn't have one yet, across every variety's audio
@@ -15,10 +15,17 @@ import { dim, green, red } from './colour.js'
  * the pipeline against real data, but uploads and writes nothing), `--write`
  * to commit. Network- and platform-touching (`afconvert` is macOS-only), so
  * deliberately excluded from `npm run check`, same as `audio:verify`.
+ *
+ * `--overwrite`: re-encode and replace the CAF already sitting at a clip's
+ * key, for a clip re-recorded since its last CAF backfill (`--force`
+ * re-merge, issue #134) — the CAF key doesn't change across a re-recording,
+ * so without this flag `uploadBytesToS3` refuses the mismatched-checksum
+ * overwrite. Off by default; only for a knowingly stale CAF.
  */
 
 const args = process.argv.slice(2)
 const write = args.includes('--write')
+const overwrite = args.includes('--overwrite')
 const varietyFlag = args.find((a) => a.startsWith('--variety='))
 const onlyVariety = varietyFlag ? varietyFlag.slice('--variety='.length) : undefined
 
@@ -39,7 +46,7 @@ for (const id of varieties) {
 
   try {
     const audio = loadAudio(id)
-    const result = await backfillCafOpus(path, audio, { write })
+    const result = await backfillCafOpus(path, audio, { write, overwrite })
 
     totalScanned += result.scanned
     totalBackfilled += result.backfilled.length

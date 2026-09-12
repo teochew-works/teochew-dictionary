@@ -45,6 +45,18 @@ export type Bucket = 'clips' | 'wordClips'
 
 export interface BackfillCafOpusOptions extends EncodeCafOptions {
   write?: boolean
+  /**
+   * Forwarded to `uploadBytesToS3` — off by default. The CAF key is derived
+   * purely from the source clip's pengim key and speaker
+   * (`audioAssetPathForClip`), independent of which upload epoch produced
+   * the source `.webm`, so a legitimate re-recording by the same speaker at
+   * the same key (a `--force` re-merge, issue #134) re-encodes to different
+   * bytes at an already-occupied key — `uploadBytesToS3` refuses that
+   * overwrite unless this is set. Only set it once the existing CAF at that
+   * key is confirmed stale, the same caution `audio-mirror-to-s3 --overwrite`
+   * asks for.
+   */
+  overwrite?: boolean
   /** Injectable for tests — avoids a real network fetch of the source clip. */
   fetchBytes?: (url: string) => Promise<Buffer>
   /** Injectable for tests — avoids a real AWS call. */
@@ -100,7 +112,7 @@ export async function backfillCafOpus(
   audio: Audio,
   options: BackfillCafOpusOptions = {},
 ): Promise<BackfillCafOpusResult> {
-  const { write = false, fetchBytes = defaultFetchBytes, headObject, putObject, ...encodeOptions } = options
+  const { write = false, overwrite = false, fetchBytes = defaultFetchBytes, headObject, putObject, ...encodeOptions } = options
 
   if (write && !existsSync(path)) {
     throw new Error(`cannot write — no such file: ${path}`)
@@ -136,6 +148,7 @@ export async function backfillCafOpus(
         const { url: cafUrl, checksum: cafChecksum } = await uploadBytesToS3(cafBytes, {
           key: audioClipKey(cafPath),
           contentType: contentTypeForFilename(cafPath),
+          overwrite,
           headObject,
           putObject,
         })
