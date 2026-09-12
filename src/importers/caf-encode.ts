@@ -12,8 +12,7 @@ import { cleanupTmpDir, resolveTmpDir } from './types.js'
  * own bitrate is probed and passed through explicitly to avoid an audible
  * quality step down, rather than picking an arbitrary target bitrate.
  *
- * Every external command is injectable (mirrors `uploadBytesToRelease`'s
- * `runGh` in ./lingualibre-rehost.js) so tests never need to shell out for
+ * Every external command is injectable so tests never need to shell out for
  * real — `afconvert` in particular only exists on macOS, and CI runs
  * `ubuntu-latest`.
  */
