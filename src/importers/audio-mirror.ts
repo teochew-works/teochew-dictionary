@@ -179,6 +179,23 @@ function speakerFor(audio: Audio, target: MirrorTarget): string | undefined {
 }
 
 /**
+ * The S3 key `mirrorAudioToS3` uploads (or would upload) `target` to —
+ * derived structurally from the clip's pengim key, speaker and extension,
+ * never from whichever host `target.sourceUrl` currently points at. This is
+ * also what `collectReferencedKeys` (audio-reclaim.ts) must treat as "still
+ * referenced": during the window between mirroring an asset and rewriting
+ * the manifest to point at it (issue #270 steps 3 and 4 are deliberately
+ * separate), the manifest's `url`/`cafUrl` still says GitHub, but the S3
+ * object mirroring just wrote already sits at exactly this key. Comparing
+ * reclaim's referenced set against manifest URLs instead of this derived key
+ * made every freshly-mirrored object look stranded and delete-eligible.
+ */
+export function expectedS3KeyFor(audio: Audio, target: MirrorTarget): string {
+  const path = audioAssetPathForClip(target.pengimKey, speakerFor(audio, target), extensionOf(target.sourceUrl))
+  return audioClipKey(path)
+}
+
+/**
  * Mirrors every clip/CAF target in `audio` to S3, verifying each against
  * its manifest checksum first. Never writes anything back to the manifest
  * — see the module doc comment. Dry-run by default (still fetches and
@@ -215,8 +232,7 @@ export async function mirrorAudioToS3(audio: Audio, options: MirrorOptions = {})
         continue
       }
 
-      const path = audioAssetPathForClip(target.pengimKey, speakerFor(audio, target), extensionOf(target.sourceUrl))
-      const key = audioClipKey(path)
+      const key = expectedS3KeyFor(audio, target)
 
       if (!write) {
         const asset: MirroredAsset = { ...target, s3Url: `${AUDIO_CDN_BASE}/${key}` }
@@ -227,7 +243,7 @@ export async function mirrorAudioToS3(audio: Audio, options: MirrorOptions = {})
 
       const { url } = await uploadBytesToS3(bytes, {
         key,
-        contentType: contentTypeForFilename(path),
+        contentType: contentTypeForFilename(key),
         overwrite,
         headObject,
         putObject,
