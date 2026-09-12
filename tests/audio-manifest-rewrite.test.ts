@@ -120,6 +120,27 @@ describe('rewriteManifestToS3', () => {
     expect(written.clips.ziu1[0].url).toBe(GITHUB_WEBM_2)
   })
 
+  it('records a HEAD-check failure instead of throwing, and continues past it to later targets', async () => {
+    // Confirmed necessary against the real corpus (issue #270): a single
+    // "fetch failed" on the very first target, uncaught, aborted the whole
+    // run and reported "0 scanned".
+    const path = join(dir, 'chaozhou.yaml')
+    const table = audioTable({ dio5: [clip()], ziu1: [clip({ url: GITHUB_WEBM_2 })] })
+    writeFileSync(path, stringify(table))
+
+    const result = await rewriteManifestToS3(path, table, {
+      write: true,
+      checkExists: async (url) => {
+        if (url === EXPECTED_CDN_URL) throw new Error('fetch failed')
+        return url === EXPECTED_CDN_URL_2
+      },
+    })
+
+    expect(result.failed).toEqual([expect.objectContaining({ pengimKey: 'dio5', error: 'fetch failed' })])
+    expect(result.rewritten).toEqual([expect.objectContaining({ pengimKey: 'ziu1' })])
+    expect(result.scanned).toBe(2)
+  })
+
   it('preserves a hand-written comment when rewriting', async () => {
     const path = join(dir, 'chaozhou.yaml')
     const handComment = '# hand note: dio5 is a Chaoyang-accented recording, verify before reuse'

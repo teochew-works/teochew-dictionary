@@ -33,6 +33,11 @@ export interface RewriteTarget extends MirrorTarget {
   newUrl: string
 }
 
+/** A target whose HEAD check itself raised — a timeout or a genuine network error, not "confirmed absent" the way `notYetMirrored` is. */
+export interface RewriteFailure extends RewriteTarget {
+  error: string
+}
+
 export interface RewriteOptions {
   write?: boolean
   /** Injectable for tests — avoids a real network HEAD request. */
@@ -43,10 +48,21 @@ export interface RewriteResult {
   scanned: number
   rewritten: RewriteTarget[]
   notYetMirrored: RewriteTarget[]
+  failed: RewriteFailure[]
 }
 
+/**
+ * A bare `fetch` with no signal attaches no `AbortSignal` and so can hang
+ * forever on a stalled connection instead of failing and letting the caller
+ * move on — confirmed the hard way against `fetchWithRetry` in
+ * audio-mirror.ts/caf-backfill.ts (issue #270: a 38-minute hang on the very
+ * first target). CloudFront answers a HEAD in well under a second normally;
+ * 10s is generous for that and short enough that a real stall fails fast.
+ */
+const HEAD_TIMEOUT_MS = 10_000
+
 async function defaultCheckExists(url: string): Promise<boolean> {
-  const res = await fetch(url, { method: 'HEAD' })
+  const res = await fetch(url, { method: 'HEAD', signal: AbortSignal.timeout(HEAD_TIMEOUT_MS) })
   return res.ok
 }
 
@@ -66,14 +82,26 @@ export async function rewriteManifestToS3(
 ): Promise<RewriteResult> {
   const { write = false, checkExists = defaultCheckExists } = options
 
-  const result: RewriteResult = { scanned: 0, rewritten: [], notYetMirrored: [] }
+  const result: RewriteResult = { scanned: 0, rewritten: [], notYetMirrored: [], failed: [] }
   const doc = write ? parseDocument(readFileSync(path, 'utf8')) : null
 
   for (const target of mirrorTargets(audio)) {
     result.scanned += 1
     const newUrl = expectedCloudFrontUrl(audio, target)
 
-    if (!(await checkExists(newUrl))) {
+    // Isolated per target — a single timeout or network error must not
+    // discard every target already scanned before it and abort the whole
+    // variety, the same lesson audio-mirror.ts's `failed` learned the hard
+    // way (issue #270).
+    let exists: boolean
+    try {
+      exists = await checkExists(newUrl)
+    } catch (e) {
+      result.failed.push({ ...target, newUrl, error: e instanceof Error ? e.message : String(e) })
+      continue
+    }
+
+    if (!exists) {
       result.notYetMirrored.push({ ...target, newUrl })
       continue
     }

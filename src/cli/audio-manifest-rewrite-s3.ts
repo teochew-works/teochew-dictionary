@@ -39,6 +39,7 @@ if (varieties.length === 0) {
 let totalScanned = 0
 let totalRewritten = 0
 let totalNotYetMirrored = 0
+let totalFailed = 0
 let failures = 0
 
 for (const id of varieties) {
@@ -52,13 +53,17 @@ for (const id of varieties) {
     totalScanned += result.scanned
     totalRewritten += result.rewritten.length
     totalNotYetMirrored += result.notYetMirrored.length
+    totalFailed += result.failed.length
 
     for (const t of result.notYetMirrored) {
       console.error(`  ${red('✗')} not yet mirrored: ${t.bucket}.${t.pengimKey}[${t.index}].${t.field} → ${t.newUrl}`)
     }
+    for (const f of result.failed) {
+      console.error(`  ${red('✗')} ${f.bucket}.${f.pengimKey}[${f.index}].${f.field} — ${f.error} (${f.newUrl})`)
+    }
     console.log(
       `  ${result.scanned} scanned, ${result.rewritten.length} ${write ? 'rewritten' : 'would rewrite'}, ` +
-        `${result.notYetMirrored.length} not yet mirrored`,
+        `${result.notYetMirrored.length} not yet mirrored, ${result.failed.length} failed`,
     )
   } catch (e) {
     console.error(`  ${red('✗')} ${e instanceof Error ? e.message : String(e)}`)
@@ -69,10 +74,11 @@ for (const id of varieties) {
 console.log(
   `\n${dim(
     `${totalScanned} target(s) scanned across ${varieties.length} variet${varieties.length === 1 ? 'y' : 'ies'}, ` +
-      `${totalRewritten} ${write ? 'rewritten' : 'would rewrite'}, ${totalNotYetMirrored} not yet mirrored`,
+      `${totalRewritten} ${write ? 'rewritten' : 'would rewrite'}, ${totalNotYetMirrored} not yet mirrored, ` +
+      `${totalFailed} failed`,
   )}`,
 )
 if (!write) console.log(dim('dry run — pass --write to actually rewrite the manifest'))
-if (totalNotYetMirrored > 0) failures += 1
+if (totalNotYetMirrored > 0 || totalFailed > 0) failures += 1
 
 if (failures > 0) process.exit(1)
