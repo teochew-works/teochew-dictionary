@@ -1,17 +1,18 @@
-import { createHash } from 'node:crypto'
-import { execFileSync } from 'node:child_process'
-import { rmSync, writeFileSync } from 'node:fs'
-import { join } from 'node:path'
-
-import { GITHUB_REPO } from '@teochew/core'
-import { cleanupTmpDir, fetchWithRetry, IMPORTER_USER_AGENT, resolveTmpDir } from './types.js'
+import { fetchWithRetry, IMPORTER_USER_AGENT } from './types.js'
+import {
+  audioAssetPath,
+  audioClipKey,
+  contentTypeForFilename,
+  uploadBytesToS3,
+  type UploadBytesToS3Options,
+} from './s3-upload.js'
 import type { AudioClipProposal } from './audio-types.js'
 
 /**
- * Re-hosts one staged Lingua Libre proposal's bytes as a GitHub Release
- * asset (data/phonology/REVIEW.md § 16) — downloads from Commons, checksums,
- * uploads via `gh release upload`, and returns the `url`/`checksum` pair
- * ready to paste into a `data/phonology/audio/<variety>.yaml` clip entry.
+ * Re-hosts one staged Lingua Libre proposal's bytes to S3 behind CloudFront
+ * (issue #270; ADR-0026) — downloads from Commons, checksums, uploads via
+ * `uploadBytesToS3`, and returns the `url`/`checksum` pair ready to paste
+ * into a `data/phonology/audio/<variety>.yaml` clip entry.
  *
  * Deliberately per-clip, not a bulk operation: re-hosting is only worth
  * doing once a human has decided a clip is worth keeping (right
@@ -22,8 +23,6 @@ import type { AudioClipProposal } from './audio-types.js'
  * importable and unit-testable.
  */
 
-export const DEFAULT_REHOST_TAG = 'audio-lingualibre'
-
 /** Resolves a CLI arg to a staged proposal: a numeric index, or an exact `commonsTitle` match. */
 export function resolveProposal(arg: string, proposals: AudioClipProposal[]): AudioClipProposal | undefined {
   const asIndex = Number(arg)
@@ -32,30 +31,26 @@ export function resolveProposal(arg: string, proposals: AudioClipProposal[]): Au
 }
 
 /**
- * A plain-ASCII, hyphenated asset filename for `key`, keeping whatever
- * extension `sourcePathOrUrl` ends in (falling back to `.wav`). Shared by
+ * A plain-ASCII `<speaker>/<pengim-key><ext>` relative path (see
+ * `audioAssetPath`, s3-upload.ts), keeping whatever extension
+ * `sourcePathOrUrl` ends in (falling back to `.wav`). Shared by
  * `assetFilename` below and `local-recording-rehost.ts`'s equivalent, which
- * derives a filename from a local file path rather than a Commons URL.
+ * derives a path from a local file path rather than a Commons URL.
  *
- * Pengim keys can carry diacritics (e.g. `ê`) that `\w` in `phonology.ts`'s
- * `GITHUB_RELEASE_ASSET_URL` regex doesn't match — NFD-decompose and strip
- * combining marks so the resulting filename (and the release URL built from
- * it) stays within that ASCII-only pattern.
+ * `speaker` disambiguates the path, not just `key`, because
+ * `mergeLinguaLibreClip`/`mergeLocalRecording` explicitly let a distinct
+ * speaker's clip append at an already-used pengim key with no flag needed —
+ * a path keyed on `key` alone would let a second speaker's upload silently
+ * collide with (or get refused against) the first speaker's clip.
  */
-export function slugAssetFilename(key: string, sourcePathOrUrl: string): string {
+export function slugAssetFilename(key: string, speaker: string, sourcePathOrUrl: string): string {
   const ext = sourcePathOrUrl.match(/\.[a-zA-Z0-9]+$/u)?.[0]?.toLowerCase() ?? '.wav'
-  const slug = key
-    .trim()
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(new RegExp('[\\u0300-\\u036f]', 'gu'), '')
-    .replace(/\s+/gu, '-')
-  return `${slug}${ext}`
+  return audioAssetPath(key, speaker, ext)
 }
 
-/** A plain-ASCII, hyphenated asset filename derived from the proposal's pengim key, keeping the source's own extension. */
+/** A plain-ASCII, hyphenated asset filename derived from the proposal's pengim key and speaker, keeping the source's own extension. */
 export function assetFilename(proposal: AudioClipProposal): string {
-  return slugAssetFilename(proposal.pengim, proposal.commonsUrl)
+  return slugAssetFilename(proposal.pengim, proposal.speaker, proposal.commonsUrl)
 }
 
 /**
@@ -71,95 +66,13 @@ async function defaultFetchBytes(url: string): Promise<Buffer> {
   return Buffer.from(await res.arrayBuffer())
 }
 
-/** Exported so a bulk caller (see caf-backfill.ts, issue #233) can wrap it in its own per-run cache. */
-export function defaultReleaseExists(tag: string): boolean {
-  try {
-    execFileSync('gh', ['release', 'view', tag], { stdio: 'ignore' })
-    return true
-  } catch {
-    return false
-  }
-}
-
-function defaultRunGh(args: string[]): void {
-  execFileSync('gh', args, { stdio: 'inherit' })
-}
-
-function ensureRelease(
-  tag: string,
-  releaseExists: (tag: string) => boolean,
-  runGh: (args: string[]) => void,
-  notes: string,
-): void {
-  if (releaseExists(tag)) return
-  runGh(['release', 'create', tag, '--title', tag, '--notes', notes])
-}
-
-export interface UploadBytesOptions {
-  tag: string
-  /** Passed to `gh release create` the first time `tag` is used — callers own their own wording. */
-  releaseNotes: string
-  /** Injectable for tests — avoids shelling out to a real `gh release view`. */
-  releaseExists?: (tag: string) => boolean
-  /** Injectable for tests — avoids shelling out to a real `gh`. */
-  runGh?: (args: string[]) => void
-  tmpDir?: string
-}
-
-export interface UploadBytesResult {
-  url: string
-  checksum: string
-}
-
-/**
- * The re-host mechanics shared by every clip source regardless of where its
- * bytes came from: checksum, write to a tmp file, `gh release upload`, clean
- * up. Factored out of `rehostClip` (issue #128, `data/phonology/REVIEW.md` §
- * 17) so a locally-recorded clip — which has no URL to fetch, only bytes
- * already in hand — can reuse this instead of duplicating the tmpdir/`gh`/
- * checksum dance.
- */
-export async function uploadBytesToRelease(
-  bytes: Buffer,
-  filename: string,
-  options: UploadBytesOptions,
-): Promise<UploadBytesResult> {
-  const { tag, releaseNotes, releaseExists = defaultReleaseExists, runGh = defaultRunGh } = options
-
-  const owned = resolveTmpDir('rehost-', options.tmpDir)
-  const { tmpDir } = owned
-
-  ensureRelease(tag, releaseExists, runGh, releaseNotes)
-
-  const localPath = join(tmpDir, filename)
-  writeFileSync(localPath, bytes)
-
-  try {
-    // --clobber: a re-run against the same proposal (or a --force re-merge,
-    // see mergeLinguaLibreClip/mergeLocalRecording) re-uploads to this same
-    // deterministic filename — without it `gh` refuses the asset-name
-    // collision.
-    runGh(['release', 'upload', tag, localPath, '--clobber'])
-  } finally {
-    rmSync(localPath, { force: true })
-    // See `encodeCaf`: one leaked directory per published clip otherwise.
-    cleanupTmpDir(owned)
-  }
-
-  const checksum = `sha256:${createHash('sha256').update(bytes).digest('hex')}`
-  const url = `https://github.com/${GITHUB_REPO}/releases/download/${tag}/${filename}`
-  return { url, checksum }
-}
-
 export interface RehostOptions {
-  tag?: string
   /** Injectable for tests — avoids a real network call. */
   fetchBytes?: (url: string) => Promise<Buffer>
-  /** Injectable for tests — avoids shelling out to a real `gh release view`. */
-  releaseExists?: (tag: string) => boolean
-  /** Injectable for tests — avoids shelling out to a real `gh`. */
-  runGh?: (args: string[]) => void
-  tmpDir?: string
+  /** Injectable for tests — avoids a real AWS call. */
+  headObject?: UploadBytesToS3Options['headObject']
+  /** Injectable for tests — avoids a real AWS call. */
+  putObject?: UploadBytesToS3Options['putObject']
 }
 
 export interface RehostResult {
@@ -169,14 +82,15 @@ export interface RehostResult {
 }
 
 export async function rehostClip(proposal: AudioClipProposal, options: RehostOptions = {}): Promise<RehostResult> {
-  const { tag = DEFAULT_REHOST_TAG, fetchBytes = defaultFetchBytes, ...uploadOptions } = options
+  const { fetchBytes = defaultFetchBytes, headObject, putObject } = options
 
   const bytes = await fetchBytes(proposal.commonsUrl)
   const filename = assetFilename(proposal)
-  const { url, checksum } = await uploadBytesToRelease(bytes, filename, {
-    ...uploadOptions,
-    tag,
-    releaseNotes: 'Re-hosted Lingua Libre/Commons audio clips — see data/phonology/REVIEW.md § 16.',
+  const { url, checksum } = await uploadBytesToS3(bytes, {
+    key: audioClipKey(filename),
+    contentType: contentTypeForFilename(filename),
+    headObject,
+    putObject,
   })
 
   return { proposal, url, checksum }

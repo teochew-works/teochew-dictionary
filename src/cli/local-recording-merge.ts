@@ -6,9 +6,9 @@ import { dim, green, red } from './colour.js'
 
 /**
  * `npm run merge:local-recording -- <index-or-pengim> --variety=<id>
- *   [--confidence=high|medium|low] [--force] [--tag=audio-teochew-dictionary-audio]`
+ *   [--confidence=high|medium|low] [--force]`
  *
- * Re-hosts one staged local-recording proposal (see
+ * Re-hosts one staged local-recording proposal to S3 (issue #270; see
  * ../importers/local-recording-merge.js for the actual logic) and writes it
  * into data/phonology/audio/<variety>.yaml, then removes the now-redundant
  * staged proposal and local file. `--variety` has no default: judging accent
@@ -17,7 +17,7 @@ import { dim, green, red } from './colour.js'
 
 const USAGE =
   'usage: npm run merge:local-recording -- <proposal-index-or-pengim> --variety=<id> ' +
-  '[--confidence=high|medium|low] [--force] [--tag=audio-teochew-dictionary-audio]'
+  '[--confidence=high|medium|low] [--force]'
 
 const args = process.argv.slice(2)
 const flags = args.filter((a) => a.startsWith('--'))
@@ -40,7 +40,6 @@ function boolFlag(name: string): boolean {
 
 const variety = flagValue('variety')
 const confidenceFlag = flagValue('confidence')
-const tag = flagValue('tag')
 const force = boolFlag('force')
 
 if (positional.length !== 1 || !variety) {
@@ -78,7 +77,6 @@ try {
     variety,
     confidence: confidenceFlag as (typeof CONFIDENCE)[number] | undefined,
     force,
-    tag,
     proposalIndex,
   })
   console.log(`${green('✓')} merged '${result.key}' → clips.${JSON.stringify(result.key)} in ${result.path}`)

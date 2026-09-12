@@ -38,8 +38,8 @@ describe('mergeLocalRecording', () => {
   })
 
   const rehostOptions = {
-    releaseExists: () => true,
-    runGh: () => {},
+    headObject: async () => undefined,
+    putObject: async () => {},
   }
 
   it('creates a new variety file and adds a single-syllable clip under clips', async () => {
@@ -52,7 +52,7 @@ describe('mergeLocalRecording', () => {
     })
 
     expect(result.key).toBe('dio5')
-    expect(result.url).toBe(`https://github.com/${GITHUB_REPO}/releases/download/audio-teochew-dictionary-audio/dio5.wav`)
+    expect(result.url).toBe('https://daidb11aas52z.cloudfront.net/teochew/clips/speaker-1/dio5.wav')
 
     const written = parseYaml(readFileSync(result.path, 'utf8'))
     expect(written.audio).toEqual({ id: 'chaozhou', variety: 'chaozhou' })

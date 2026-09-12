@@ -136,7 +136,7 @@ export interface Proposal {
 
 /**
  * An injectable `tmpDir` option (`caf-encode.ts`'s `encodeCaf`,
- * `lingualibre-rehost.ts`'s `uploadBytesToRelease`) is the caller's directory
+ * `silence-detect.ts`'s equivalent) is the caller's directory
  * to manage; one this call creates itself is this call's own to remove.
  * `resolveTmpDir`/`cleanupTmpDir` keep that rule in one place rather than
  * duplicated per caller (issue #240).

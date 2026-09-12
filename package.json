@@ -27,6 +27,7 @@
     "lookup": "tsx src/cli/lookup.ts",
     "audio:verify": "tsx src/cli/audio-verify.ts",
     "audio:reclaim": "tsx src/cli/audio-reclaim.ts",
+    "audio:mirror-to-s3": "tsx src/cli/audio-mirror-to-s3.ts",
     "backfill:caf-opus": "tsx src/cli/backfill-caf-opus.ts",
     "backfill:silence-trim": "tsx src/cli/backfill-silence-trim.ts",
     "rehost:lingualibre": "tsx src/cli/lingualibre-rehost.ts",
@@ -39,6 +40,7 @@
     "check": "npm run typecheck && npm run test && npm run validate"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1130.0",
     "@teochew/core": "file:packages/core",
     "better-sqlite3": "^13.0.3",
     "yaml": "^2.6.1",

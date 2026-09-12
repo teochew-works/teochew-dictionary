@@ -18,6 +18,7 @@ import { toPoj } from '../phonology/poj.js'
 import { resolveLicence } from '../data/licence.js'
 import { entryFileSchema, type Entry, type Source, type Audio, type AudioClip, type Variety } from '@teochew/core'
 import type { ExternalChart, SyllableInventory } from '../schema/inventory.js'
+import { transliterateCircumflexE } from '../importers/s3-upload.js'
 
 /**
  * Whole-dataset validation.
@@ -526,10 +527,22 @@ export function checkAudio(
       // which syllable it actually points at. Warning, not error: asset
       // naming is explicitly non-binding (REVIEW.md § 12), so a url that
       // legitimately omits the syllable shouldn't block the build.
-      // stripDiacritics: rehost filenames are ASCII-slugged (lingualibre-
-      // rehost.ts's slugAssetFilename), so a syllable like 'sêg4' legitimately
-      // shows up as 'seg4' in its own url.
-      if (!clip.url.toLowerCase().includes(stripDiacritics(syllable.toLowerCase()))) {
+      // rehost filenames are ASCII-slugged (lingualibre-rehost.ts's
+      // slugAssetFilename → s3-upload.ts's audioAssetPath), so a syllable
+      // like 'sêg4' legitimately shows up as 'seg4' in its own url. A
+      // syllable using the distinct 'ê' vowel can legitimately appear either
+      // way depending on when its clip was uploaded: a plain diacritic strip
+      // to 'e' (every clip uploaded before issue #270's mirror fixed the
+      // ê/e collision) or the 'ex' transliteration that avoids it
+      // (transliterateCircumflexE, s3-upload.ts; every clip uploaded since).
+      // Accepting either keeps this a soft nudge across that cutover instead
+      // of flagging every pre-fix clip once the fix lands.
+      const syllableLower = syllable.toLowerCase()
+      const urlLower = clip.url.toLowerCase()
+      if (
+        !urlLower.includes(stripDiacritics(syllableLower)) &&
+        !urlLower.includes(stripDiacritics(transliterateCircumflexE(syllableLower)))
+      ) {
         issues.push(
           warn(
             file,

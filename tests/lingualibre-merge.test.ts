@@ -81,8 +81,8 @@ describe('mergeLinguaLibreClip', () => {
 
   const rehostOptions = {
     fetchBytes: async () => Buffer.from('fake audio bytes'),
-    releaseExists: () => true,
-    runGh: () => {},
+    headObject: async () => undefined,
+    putObject: async () => {},
     sources: SOURCES,
   }
 
@@ -92,7 +92,7 @@ describe('mergeLinguaLibreClip', () => {
     expect(result.bucket).toBe('clips')
     expect(result.key).toBe('dio5')
     expect(result.sourceId).toBe('lingualibre')
-    expect(result.url).toBe(`https://github.com/${GITHUB_REPO}/releases/download/audio-lingualibre/dio5.wav`)
+    expect(result.url).toBe('https://daidb11aas52z.cloudfront.net/teochew/clips/someone/dio5.wav')
 
     const written = parseYaml(readFileSync(result.path, 'utf8'))
     expect(written.audio).toEqual({ id: 'chaozhou', variety: 'chaozhou' })
