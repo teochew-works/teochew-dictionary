@@ -41,8 +41,16 @@ describe('audioAssetPath', () => {
     expect(audioAssetPath('dio5 ziu1', 'Someone', '.wav')).toBe('someone/dio5-ziu1.wav')
   })
 
-  it('strips diacritics from both segments so the path stays plain ASCII', () => {
-    expect(audioAssetPath('sêg4', 'Guì', '.webm')).toBe('gui/seg4.webm')
+  it('transliterates ê (a distinct vowel, not just an accented e) rather than stripping it', () => {
+    // gêng1 and geng1 are different real syllables (README § Peng'im
+    // gotchas) — stripping ê down to e would collapse them onto the same
+    // path for the same speaker (confirmed live, issue #270).
+    expect(audioAssetPath('gêng1', 'jky', '.webm')).not.toBe(audioAssetPath('geng1', 'jky', '.webm'))
+    expect(audioAssetPath('sêg4', 'jky', '.webm')).toBe('jky/sexg4.webm')
+  })
+
+  it('strips other diacritics (not ê) so the path stays plain ASCII', () => {
+    expect(audioAssetPath('dio5', 'Guì', '.webm')).toBe('gui/dio5.webm')
   })
 
   it('gives two different speakers of the same syllable two different paths', () => {

@@ -67,9 +67,9 @@ describe('assetFilename', () => {
     )
   })
 
-  it('strips diacritics so the path stays plain ASCII', () => {
+  it('transliterates ê to ex rather than stripping it to plain e (issue #270 — they are different vowels)', () => {
     expect(assetFilename(proposal({ pengim: 'sêg4', speaker: 'speaker-1', localPath: 'x.webm' }))).toBe(
-      'speaker-1/seg4.webm',
+      'speaker-1/sexg4.webm',
     )
   })
 

@@ -53,9 +53,29 @@ export function audioClipKey(assetPath: string): string {
   return `${AUDIO_CLIP_PREFIX}${assetPath}`
 }
 
-/** NFD-decompose and strip combining marks so a path segment stays plain ASCII — pengim keys and speaker names can both carry diacritics (e.g. `ê`) that `AUDIO_CLIP_URL` in phonology.ts doesn't match. */
+/**
+ * `ê` is not just an accented `e` — it's a different vowel (/e/ vs /ɯ/,
+ * README § Peng'im gotchas), and a real, common minimal-pair distinction in
+ * this corpus (570 of the manifest's pengim keys use it). A plain NFD strip
+ * collapses it onto plain `e`, which silently merges distinct syllables
+ * that only differ by the circumflex — confirmed live against the real
+ * bucket (issue #270): `gêng1` and `geng1`, both real words, both spoken by
+ * the same speaker, both mapped to the same S3 key. `uploadBytesToS3`'s
+ * collision guard caught it (a hard error, not silent corruption) but 108
+ * clips' second half still never got mirrored.
+ *
+ * `x` and a doubled `ee` are confirmed absent from every real pengim key in
+ * this corpus (checked directly against data/phonology/audio/chaozhou.yaml),
+ * so `ê`→`ex` is collision-free without inventing a punctuation character
+ * the URL pattern in phonology.ts would need to admit.
+ */
+function transliterateCircumflexE(s: string): string {
+  return s.replace(/[êÊ]/gu, 'ex')
+}
+
+/** NFD-decompose and strip remaining combining marks so a path segment stays plain ASCII — everything but `ê` (see `transliterateCircumflexE`) round-trips through this safely as a plain accent to drop. */
 function slugSegment(s: string): string {
-  return s
+  return transliterateCircumflexE(s)
     .trim()
     .toLowerCase()
     .normalize('NFD')
