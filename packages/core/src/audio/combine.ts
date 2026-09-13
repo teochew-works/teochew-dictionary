@@ -37,11 +37,14 @@ export interface CombinedCandidate {
   /** Summed min-max-normalised per-axis distance — lower is better, not itself a probability. */
   distance: number
   /**
-   * Relative confidence among the *returned* candidates (softmax over
-   * `-distance`, sums to 1 across the result) — a comparison tool for a UI
-   * or CLI ("72% deng1, 15% deng3, …"), not a calibrated probability: it
-   * says nothing about how likely the query is to be any attested syllable
-   * at all, only how this candidate compares to the others attempted.
+   * Relative confidence among the closest `scoreWindow` candidates (softmax
+   * over `-distance`, sums to 1 across that window; 0 outside it) — a
+   * comparison tool for a UI or CLI ("72% deng1, 15% deng3, …"), not a
+   * calibrated probability: it says nothing about how likely the query is
+   * to be any attested syllable at all, only how this candidate compares to
+   * the others near the top. Scoped to a window rather than every attested
+   * triple (thousands, in this corpus) — spreading softmax mass across all
+   * of them makes even the best match's share negligible.
    */
   score: number
 }
@@ -59,7 +62,13 @@ function toDistanceMap(candidates: RankedCandidate[]): Map<string, number> {
   return new Map(candidates.map((c) => [c.key, c.distance]))
 }
 
-export function combineAxes(attested: AttestedTriple[], axes: AxisCandidates): CombinedCandidate[] {
+const DEFAULT_SCORE_WINDOW = 20
+
+export function combineAxes(
+  attested: AttestedTriple[],
+  axes: AxisCandidates,
+  scoreWindow: number = DEFAULT_SCORE_WINDOW,
+): CombinedCandidate[] {
   const initialByLabel = toDistanceMap(axes.initial)
   const rimeByLabel = toDistanceMap(axes.rime)
   const toneByLabel = toDistanceMap(axes.tone)
@@ -77,7 +86,10 @@ export function combineAxes(attested: AttestedTriple[], axes: AxisCandidates): C
   })
   scored.sort((a, b) => a.distance - b.distance)
 
-  const weights = scored.map((c) => Math.exp(-c.distance))
-  const totalWeight = weights.reduce((sum, w) => sum + w, 0)
-  return scored.map((c, i) => ({ ...c, score: totalWeight === 0 ? 0 : weights[i]! / totalWeight }))
+  const windowWeights = scored.slice(0, scoreWindow).map((c) => Math.exp(-c.distance))
+  const totalWeight = windowWeights.reduce((sum, w) => sum + w, 0)
+  return scored.map((c, i) => ({
+    ...c,
+    score: i < scoreWindow && totalWeight > 0 ? windowWeights[i]! / totalWeight : 0,
+  }))
 }

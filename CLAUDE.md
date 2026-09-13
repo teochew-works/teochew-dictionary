@@ -121,6 +121,7 @@ npm run audio:grade            # cache every clip, extract features, report per-
 npm run merge:resynth          # publish passing renders as the <speaker>-n tier (ADR-0027)
 npm run audio:build-search-bank # regenerate data/wordlists/audio-search-bank.json (web speak-to-search)
 npm run audio:classify-eval    # held-out accuracy of the whole-syllable classifier (issue #280 baseline)
+npm run audio:classify-axes    # rank a clip by combined initial/rime/tone axes (issue #280)
 ```
 
 Offline but cache-dependent (needs an `audio:grade` run first):

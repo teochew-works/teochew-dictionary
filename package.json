@@ -32,6 +32,7 @@
     "audio:grade": "tsx src/cli/audio-grade.ts",
     "audio:synthesize": "tsx src/cli/audio-synthesize.ts",
     "audio:classify": "tsx src/cli/audio-classify.ts",
+    "audio:classify-axes": "tsx src/cli/audio-classify-axes.ts",
     "audio:classify-eval": "tsx src/cli/audio-classify-eval.ts",
     "audio:build-search-bank": "tsx src/cli/audio-build-search-bank.ts",
     "backfill:caf-opus": "tsx src/cli/backfill-caf-opus.ts",

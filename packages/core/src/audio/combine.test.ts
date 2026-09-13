@@ -47,4 +47,22 @@ describe('combineAxes', () => {
     const axes: AxisCandidates = { initial: [], rime: [], tone: [] }
     expect(combineAxes(ATTESTED, axes)).toEqual([])
   })
+
+  it('scopes the softmax to scoreWindow candidates, zeroing everything past it', () => {
+    const attested: AttestedTriple[] = Array.from({ length: 5 }, (_, i) => ({
+      syllable: `s${i}`,
+      initial: 'd',
+      rime: 'eng',
+      tone: i + 1,
+    }))
+    const axes: AxisCandidates = {
+      initial: [{ key: 'd', distance: 0 }],
+      rime: [{ key: 'eng', distance: 0 }],
+      tone: Array.from({ length: 5 }, (_, i) => ({ key: String(i + 1), distance: i })),
+    }
+    const ranked = combineAxes(attested, axes, 2)
+    expect(ranked.slice(0, 2).every((c) => c.score > 0)).toBe(true)
+    expect(ranked.slice(2).every((c) => c.score === 0)).toBe(true)
+    expect(ranked.reduce((sum, c) => sum + c.score, 0)).toBeCloseTo(1)
+  })
 })
