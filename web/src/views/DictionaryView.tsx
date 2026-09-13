@@ -6,10 +6,12 @@ import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly
 import { readAudioMode, writeAudioMode } from '../settings/audioMode'
 import type { AudioMode } from '../settings/audioMode'
 import { readMogherLinks } from '../settings/mogherLinks'
+import { readSpeakToSearch } from '../settings/speakToSearch'
 import { EntryList } from '../components/EntryList'
 import { EntryTree } from '../components/EntryTree'
 import { EntryDetail } from '../components/EntryDetail'
 import { AudioModeControl } from '../components/AudioModeControl'
+import { MicSearchButton } from '../components/MicSearchButton'
 import {
   capGroups,
   groupEntries,
@@ -83,6 +85,7 @@ export function DictionaryView({
   const [pronunciationDisplay] = useState<PronunciationField[]>(readPronunciationDisplay)
   const [audioMode, setAudioMode] = useState<AudioMode>(readAudioMode)
   const [mogherLinks] = useState(readMogherLinks)
+  const [speakToSearch] = useState(readSpeakToSearch)
   // Below the phone breakpoint the filters collapse behind the "Filters"
   // summary, which otherwise pushes the first result 200px down the screen
   // (mobile.md §3.3). Above it that summary is `display: none`, so the
@@ -188,14 +191,17 @@ export function DictionaryView({
   return (
     <div className={selected ? 'dictionary-view dictionary-view--detail-open' : 'dictionary-view'}>
       <div className="dictionary-view__list-pane">
-        <input
-          type="search"
-          className="dictionary-view__search"
-          placeholder="Search headword, Peng'im, POJ, or English…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          aria-label="Search the dictionary"
-        />
+        <div className="dictionary-view__search-row">
+          <input
+            type="search"
+            className="dictionary-view__search"
+            placeholder="Search headword, Peng'im, POJ, or English…"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            aria-label="Search the dictionary"
+          />
+          {speakToSearch && <MicSearchButton onResult={setQuery} />}
+        </div>
         <details
           className="dictionary-view__filters"
           open={!isPhone || filtersOpenOnPhone}

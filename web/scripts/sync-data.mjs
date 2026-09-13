@@ -58,3 +58,20 @@ sync('starter-decks.json', ({ decks }, dest) => {
   }
   console.log(`synced ${decks.length} starter decks → web/public/data/starter-decks.json`)
 })
+
+// Optional and experimental (speak-to-search, issue #279's follow-up):
+// unlike every other file here, its absence isn't an error — it needs a
+// manual `npm run audio:build-search-bank` in the repo root first, which a
+// contributor who isn't touching that feature has no reason to have run.
+{
+  const src = join(DIST_DIR, 'audio-search-bank.json')
+  if (existsSync(src)) {
+    const dest = join(DEST_DIR, 'audio-search-bank.json')
+    mkdirSync(DEST_DIR, { recursive: true })
+    copyFileSync(src, dest)
+    const { clips } = JSON.parse(readFileSync(dest, 'utf8'))
+    console.log(`synced ${Object.keys(clips).length} search-bank syllables → web/public/data/audio-search-bank.json`)
+  } else {
+    console.log(`no dist/audio-search-bank.json — speak-to-search will have no reference bank to fetch (see CLAUDE.md)`)
+  }
+}

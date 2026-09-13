@@ -26,5 +26,9 @@ export * from './search/sortEntries.js'
 export * from './flashcards/promptMode.js'
 export * from './flashcards/levelFilter.js'
 
+export * from './audio/fft.js'
+export * from './audio/mfcc.js'
+export * from './audio/dtw.js'
+
 export * from './settings/pronunciationMode.js'
 export * from './settings/pronunciationDisplay.js'

@@ -1,5 +1,5 @@
+import { dtwDistance } from '@teochew/core'
 import { checksumHex, clipCachePath, ensureClipCached, manifestClips, type ManifestClip } from '../audio/clip-cache.js'
-import { dtwDistance } from '../audio/dtw.js'
 import {
   DEFAULT_MFCC_PARAMS,
   emptyMfccCache,

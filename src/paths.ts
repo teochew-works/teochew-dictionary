@@ -22,6 +22,14 @@ export const WORDLISTS_DIR = join(DATA_DIR, 'wordlists')
 export const SYLLABLE_INVENTORY_FILE = join(WORDLISTS_DIR, 'syllable-inventory.yaml')
 export const WIKTIONARY_WORDLIST_FILE = join(WORDLISTS_DIR, 'wiktionary-teochew-index.yaml')
 export const STARTER_DECKS_FILE = join(WORDLISTS_DIR, 'starter-decks.yaml')
+/**
+ * Precomputed MFCC reference bank for the web app's speak-to-search feature
+ * (issue #279's follow-up) — jky's per-syllable MFCC vectors, regenerated
+ * manually via `npm run audio:build-search-bank` (it needs the corpus and
+ * the Python tool, neither available in the offline `npm run build`/CI
+ * pipeline) and committed here like `syllable-inventory.yaml`.
+ */
+export const AUDIO_SEARCH_BANK_FILE = join(WORDLISTS_DIR, 'audio-search-bank.json')
 export const DIST_DIR = join(ROOT, 'dist')
 
 /**
