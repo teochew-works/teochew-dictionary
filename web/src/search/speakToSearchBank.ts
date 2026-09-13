@@ -1,20 +1,34 @@
 import type { MfccParams } from '@teochew/core'
 
 /**
- * The precomputed MFCC reference bank for speak-to-search (issue #279's web
- * follow-up), built offline by `npm run audio:build-search-bank` and synced
- * into `web/public/data/` alongside `dict.json`/`sounds.json` — see
+ * The precomputed reference bank for speak-to-search (issue #279's web
+ * follow-up, extended by #280 with WORLD features for the initial/rime/tone
+ * axis classifiers), built offline by `npm run audio:build-search-bank` and
+ * synced into `web/public/data/` alongside `dict.json`/`sounds.json` — see
  * `web/scripts/sync-data.mjs`. Unlike those, its absence isn't fatal: a
  * checkout that hasn't run that command simply has no reference bank to
  * fetch, and the mic button surfaces that as an error rather than the app
  * failing to load.
+ *
+ * Mirrors `src/audio/search-bank.ts` on the Node side — kept in sync by
+ * hand, since `web/` is an independent npm project (ADR-0019) that only
+ * consumes this file as JSON, not as a shared type.
  */
+export interface SearchBankClip {
+  mfcc: number[][]
+  /** Unvoiced onset in ms before the first voiced frame; null when nothing is voiced. */
+  onsetMs: number | null
+  /** 20-point time-normalised F0 contour in Hz; null when nothing is voiced. */
+  f0Contour: number[] | null
+}
+
 export interface SearchBank {
   version: number
-  params: MfccParams
+  mfccParams: MfccParams
+  featuresParams: { frameMs: number; f0FloorHz: number; f0CeilHz: number; silenceDb: number }
   speaker: string
   variety: string
-  clips: Record<string, number[][]>
+  clips: Record<string, SearchBankClip>
 }
 
 let cached: Promise<SearchBank> | null = null

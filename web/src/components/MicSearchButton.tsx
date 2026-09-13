@@ -74,10 +74,13 @@ export function MicSearchButton({ onResult }: MicSearchButtonProps) {
       try {
         const bank = await loadSearchBank()
         const audioBuffer = await audioContext.decodeAudioData(await blob.arrayBuffer())
-        const query = extractMfccFromSamples(toMono(audioBuffer), audioBuffer.sampleRate, bank.params)
+        const query = extractMfccFromSamples(toMono(audioBuffer), audioBuffer.sampleRate, bank.mfccParams)
 
+        // Still whole-syllable DTW/MFCC only (#279) — #280's axis classifiers
+        // (initial/rime/tone, combined via the attested-triple table) wire in
+        // here once their held-out eval clears the bar set in that issue.
         const ranked = Object.entries(bank.clips)
-          .map(([key, frames]) => ({ key, distance: dtwDistance(query, frames) }))
+          .map(([key, clip]) => ({ key, distance: dtwDistance(query, clip.mfcc) }))
           .sort((a, b) => a.distance - b.distance)
           .slice(0, TOP_N)
 

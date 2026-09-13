@@ -36,10 +36,14 @@ vi.mock('../search/speakToSearchBank', () => ({
 }))
 import { loadSearchBank } from '../search/speakToSearchBank'
 
-function stubBank(clips: Record<string, number[][]>) {
+function stubBank(mfccByKey: Record<string, number[][]>) {
+  const clips = Object.fromEntries(
+    Object.entries(mfccByKey).map(([key, mfcc]) => [key, { mfcc, onsetMs: null, f0Contour: null }]),
+  )
   vi.mocked(loadSearchBank).mockResolvedValue({
-    version: 1,
-    params: { frameMs: 25, hopMs: 10, nMels: 40, nMfcc: 1, silenceDb: -30 },
+    version: 2,
+    mfccParams: { frameMs: 25, hopMs: 10, nMels: 40, nMfcc: 1, silenceDb: -30 },
+    featuresParams: { frameMs: 5, f0FloorHz: 60, f0CeilHz: 400, silenceDb: -30 },
     speaker: 'jky',
     variety: 'chaozhou',
     clips,
