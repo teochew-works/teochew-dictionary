@@ -19,9 +19,28 @@ function defaultRunTool(command: string): RunTool {
   return (args) => execFileSync(command, args, { stdio: ['ignore', 'inherit', 'inherit'] })
 }
 
-/** `ffmpeg -i clip.webm clip.wav` — 48 kHz mono PCM, what the corpus is recorded at. */
-export function decodeToWav(webmPath: string, wavPath: string, runFfmpeg: RunTool = defaultRunTool('ffmpeg')): void {
-  runFfmpeg(['-v', 'error', '-y', '-i', webmPath, '-ac', '1', '-ar', '48000', '-f', 'wav', wavPath])
+export interface DecodeOptions {
+  /** Defaults to 48 kHz, what the corpus is recorded at. */
+  sampleRate?: number
+  /** An `-af` filtergraph applied before the resample — a trim, a pad. */
+  filter?: string
+  /** 32-bit float keeps a clip that decodes above 0 dBFS from clipping; default 16-bit. */
+  float?: boolean
+}
+
+/** `ffmpeg -i clip.webm clip.wav` — mono PCM. */
+export function decodeToWav(
+  webmPath: string,
+  wavPath: string,
+  runFfmpeg: RunTool = defaultRunTool('ffmpeg'),
+  options: DecodeOptions = {},
+): void {
+  const { sampleRate = 48_000, filter, float = false } = options
+  runFfmpeg([
+    '-v', 'error', '-y', '-i', webmPath,
+    ...(filter === undefined ? [] : ['-af', filter]),
+    '-ac', '1', '-ar', String(sampleRate), '-c:a', float ? 'pcm_f32le' : 'pcm_s16le', '-f', 'wav', wavPath,
+  ])
 }
 
 /**

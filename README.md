@@ -1028,6 +1028,20 @@ recording stays default playback and the render is reachable, labelled
 [ADR-0027](docs/adrs/adr-0027.md), which amends
 [ADR-0016](docs/adrs/adr-0016.md)'s rejection of synthesis to exactly this.
 
+**Training a neural voice on the corpus** (issue #260, evaluation only).
+`npm run tts:export` (offline — it reads the same two caches) writes a
+[Piper](https://github.com/OHF-Voice/piper1-gpl) training set into
+`.cache/audio-tts/<variety>/`: one trimmed, padded WAV per recording that
+`audio:grade` would not flag at 3σ, a ~5% hold-out of whole *syllables* the
+model never sees, and — from the same audio — two tokenisations to A/B:
+Peng'im characters (`c ê n 1`) and derived IPA with an explicit tone token
+(`t s ʰ ẽ T1`). Training and generation live in
+[`tools/tts/`](tools/tts/README.md), a separate `uv` project; what it
+generates is graded with `npm run audio:grade -- --dir=<wav dir>` against the
+recordings' own yardsticks. Nothing on this path publishes: ADR-0027 still
+forbids generating a syllable that has no recording, and the findings are
+recorded in [TTS.md §4](data/phonology/TTS.md).
+
 ---
 
 ## Commands
@@ -1047,6 +1061,8 @@ recording stays default playback and the render is reachable, labelled
 | `npm run audio:grade` | cache every clip, extract features, report per-tone statistics and outliers (issue #259) |
 | `npm run audio:synthesize [-- --write]` | re-render every clip toward its parts' targets into `.cache/audio-synth/`, offline; dry-run by default (issue #259) |
 | `npm run merge:resynth [-- --write]` | publish passing renders as the `<speaker>-n` tier: encode, re-host, append to the manifest (ADR-0027) |
+| `npm run tts:export` | write the grade-filtered VITS training set (both token schemes) into `.cache/audio-tts/`, offline (issue #260) |
+| `npm run audio:grade -- --dir=<path>` | grade a directory of generated `<syllable>.wav` files against the recordings, offline (issue #260) |
 | `npm run rehost:lingualibre -- <index-or-title>` | re-host a staged Lingua Libre clip as a GitHub Release asset (issue #106) |
 | `npm run merge:lingualibre -- <index-or-title> --variety=<id>` | re-host and merge a staged Lingua Libre clip into `data/phonology/audio/<variety>.yaml` (issue #106) |
 | `npm run schema` | emit the JSON Schemas alone |

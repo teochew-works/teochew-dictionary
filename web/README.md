@@ -48,6 +48,45 @@ npm run dev
 
 Opens a dev server, by default at `http://localhost:5173/`.
 
+### Dev-only tools
+
+Two features exist **only** under `npm run dev`. Each is a Vite plugin registered through
+`configureServer`, which Vite never calls during `vite build`, and each is additionally gated on
+`command === 'serve'` in `vite.config.ts`:
+
+- **Record** on the Sounds tab (issue #128) — `POST /api/local-recordings` stages a recording.
+- **A/B** tab (issue #260) — a blind listening test between generated audio and the recording it
+  imitates, backed by `/api/tts-review`. The tab itself is behind `import.meta.env.DEV`, so a
+  production build drops it and tree-shakes the view; verify with
+  `grep -c ReviewView dist/assets/*.js` after a build.
+
+The A/B tool must stay dev-only: [ADR-0027](../docs/adrs/adr-0027.md) permits publishing synthesis
+only as a tier derived from one named recording, and nothing it plays qualifies.
+
+#### Using the A/B tool
+
+Generate something to review first — `npm run tts:export` at the repo root, then
+`uv run tts synth …` in [`tools/tts/`](../tools/tts/README.md). Any directory of
+`<syllable>.wav` files under `.cache/audio-tts/{eval,sweep,runs}/` appears as a set.
+
+Each syllable is played as **A** and **B**, and which side is the generated clip is hidden until
+you have judged it. That is the point: told which clip is synthetic, a listener hears artifacts in
+it whether or not they are there, so a sighted comparison produces confident and worthless data.
+The side is derived from a hash of the set and syllable, so it is stable across reloads (you
+cannot reload for a hint) but differs between syllables (one answer does not give away the next),
+and both sides are re-encoded to the same 16-bit WAV so file size gives nothing away either.
+
+Keyboard: <kbd>A</kbd>/<kbd>B</kbd> play, <kbd>Space</kbd> replays the last, <kbd>N</kbd> no
+preference, <kbd>D</kbd>/<kbd>F</kbd>/<kbd>G</kbd>/<kbd>H</kbd> rate, <kbd>←</kbd>/<kbd>→</kbd>
+move. Verdicts are written to `.cache/audio-tts/review.json` as you go, and the tool resumes at
+the first unjudged syllable.
+
+The headline number is the **blind preference rate**: how often the generated clip was preferred
+over the recording. Near 50% means the two could not be told apart; near 0% means the recording
+won every time. Rate a set of the *recordings against themselves* (copy some of
+`.cache/audio-tts/chaozhou/wavs/` into a directory under `eval/`) to calibrate — both sides are
+then the same audio, so anything far from 50% there is a measure of the listener, not the model.
+
 ## Build
 
 ```bash
