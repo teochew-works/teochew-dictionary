@@ -1,6 +1,16 @@
-import { dtwDistance } from '@teochew/core'
-import { type EvalCase, formatAccuracy, tallyAccuracy } from '../audio/eval.js'
+import { computeAxisCandidates, combineAxes, dtwDistance, rimeOf, type RankedCandidate } from '@teochew/core'
+import { attestedTriples } from '../audio/attested-triples.js'
+import { buildAxisReferences } from '../audio/axis-references.js'
 import { checksumHex, clipCachePath, ensureClipCached, manifestClips, type ManifestClip } from '../audio/clip-cache.js'
+import { type EvalCase, formatAccuracy, tallyAccuracy } from '../audio/eval.js'
+import {
+  DEFAULT_ANALYSIS_PARAMS,
+  emptyFeaturesCache,
+  extractFeatures,
+  loadFeaturesCache,
+  saveFeaturesCache,
+  type FeatureTarget,
+} from '../audio/features.js'
 import {
   DEFAULT_MFCC_PARAMS,
   emptyMfccCache,
@@ -9,8 +19,9 @@ import {
   saveMfccCache,
   type MfccTarget,
 } from '../audio/mfcc.js'
-import { AUDIO_MFCC_FILE } from '../paths.js'
+import { AUDIO_FEATURES_FILE, AUDIO_MFCC_FILE } from '../paths.js'
 import { loadAudio } from '../phonology/load.js'
+import { parseSyllable } from '../phonology/syllable.js'
 import { ensureCacheSymlinkOrExit } from './cache-symlink.js'
 import { bold, dim, green, red } from './colour.js'
 
@@ -18,25 +29,28 @@ import { bold, dim, green, red } from './colour.js'
  * `npm run audio:classify-eval -- [--variety=chaozhou] [--reference-speaker=jky]
  * [--query-speaker=jky-n] [--refresh]` (issue #280)
  *
- * Held-out accuracy for #279's whole-syllable DTW/MFCC classifier: every
+ * Held-out accuracy for both #279's whole-syllable DTW/MFCC classifier and
+ * #280's initial/rime/tone axis classifier, side by side: every
  * `query-speaker` clip (by default the `jky-n` WORLD-retuned resynthesis
  * tier, ADR-0027 — a genuine re-rendering, not a byte-copy) ranked against
- * every `reference-speaker` clip, tallied into top-1/3/5. This is the
- * baseline #280's axis classifier is measured against; formalises the ad hoc
- * script that produced the 54.1%/64.6%/69.3% numbers quoted in that issue.
+ * every `reference-speaker` clip, tallied into top-1/3/5. The whole-syllable
+ * number is the baseline the axis classifier is measured against — this is
+ * the go/no-go checkpoint #280 calls for: if the combined number doesn't
+ * clearly beat it, that's a real finding to report, not to hide.
  *
- * Network-touching and slow (~3,000 queries × ~3,000 references), so kept
- * out of `npm run check` like every other `audio:*` command. Incremental:
- * both reference and query clips are real corpus clips with stable
- * checksums, so their MFCC is cached and re-extracted only for new/changed
- * clips, not on every eval run.
+ * Network-touching and slow (the axis classifier runs DTW twice per
+ * reference, once per segment, on top of the whole-syllable baseline's one),
+ * so kept out of `npm run check` like every other `audio:*` command.
+ * Incremental: both reference and query clips are real corpus clips with
+ * stable checksums, so their MFCC/features are cached and re-extracted only
+ * for new/changed clips, not on every eval run.
  */
 
 const USAGE = `usage:
   npm run audio:classify-eval                                        jky-n queries vs jky references, chaozhou
   npm run audio:classify-eval -- --variety=shantou                    a different variety
   npm run audio:classify-eval -- --reference-speaker=jky --query-speaker=jky-n
-  npm run audio:classify-eval -- --refresh                            re-extract MFCC for every clip`
+  npm run audio:classify-eval -- --refresh                            re-extract MFCC/features for every clip`
 
 const args = process.argv.slice(2)
 if (args.includes('--help') || args.includes('-h')) {
@@ -113,44 +127,115 @@ for (const [i, entry] of targets.entries()) {
 endProgress()
 
 // 2. MFCC for both sets, sharing one cache keyed by checksum.
-const cache = (refresh ? null : loadMfccCache()) ?? emptyMfccCache(DEFAULT_MFCC_PARAMS)
-const pending: MfccTarget[] = cached
-  .filter((entry) => refresh || cache.clips[checksumHex(entry.clip.checksum)] === undefined)
+const mfccCache = (refresh ? null : loadMfccCache()) ?? emptyMfccCache(DEFAULT_MFCC_PARAMS)
+const pendingMfcc: MfccTarget[] = cached
+  .filter((entry) => refresh || mfccCache.clips[checksumHex(entry.clip.checksum)] === undefined)
   .map((entry) => ({ id: checksumHex(entry.clip.checksum), webmPath: clipCachePath(entry.clip.checksum) }))
-if (pending.length > 0) {
-  console.log(dim(`  extracting MFCC for ${pending.length} clip${pending.length === 1 ? '' : 's'}…`))
-  const result = extractMfcc(pending, { params: cache.params, onProgress: progress('analysed', 50) })
+if (pendingMfcc.length > 0) {
+  console.log(dim(`  extracting MFCC for ${pendingMfcc.length} clip${pendingMfcc.length === 1 ? '' : 's'}…`))
+  const result = extractMfcc(pendingMfcc, { params: mfccCache.params, onProgress: progress('analysed', 50) })
   endProgress()
-  Object.assign(cache.clips, result.clips)
+  Object.assign(mfccCache.clips, result.clips)
   for (const [clipId, message] of Object.entries(result.errors)) {
     failures += 1
     console.log(`  ${red('error')} ${clipId}: ${message}`)
   }
-  saveMfccCache(cache)
+  saveMfccCache(mfccCache)
   console.log(dim(`  ${Object.keys(result.clips).length} extracted → ${AUDIO_MFCC_FILE}`))
 } else {
   console.log(dim(`  MFCC already cached for every clip (${AUDIO_MFCC_FILE})`))
 }
 
-// 3. Rank every held-out query against every reference by DTW distance.
-const cachedRefs = refs.filter((r) => cached.includes(r) && cache.clips[checksumHex(r.clip.checksum)])
-const cachedQueries = queries.filter((q) => cached.includes(q) && cache.clips[checksumHex(q.clip.checksum)])
+// 2b. WORLD features for both sets — the axis classifier's onsetMs/f0.contour.
+const featuresCache = (refresh ? null : loadFeaturesCache()) ?? emptyFeaturesCache(DEFAULT_ANALYSIS_PARAMS)
+const pendingFeatures: FeatureTarget[] = cached
+  .filter((entry) => refresh || featuresCache.clips[checksumHex(entry.clip.checksum)] === undefined)
+  .map((entry) => ({ id: checksumHex(entry.clip.checksum), webmPath: clipCachePath(entry.clip.checksum) }))
+if (pendingFeatures.length > 0) {
+  console.log(dim(`  extracting WORLD features for ${pendingFeatures.length} clip${pendingFeatures.length === 1 ? '' : 's'}…`))
+  const result = extractFeatures(pendingFeatures, { params: featuresCache.params, onProgress: progress('analysed', 50) })
+  endProgress()
+  Object.assign(featuresCache.clips, result.clips)
+  for (const [clipId, message] of Object.entries(result.errors)) {
+    failures += 1
+    console.log(`  ${red('error')} ${clipId}: ${message}`)
+  }
+  saveFeaturesCache(featuresCache)
+  console.log(dim(`  ${Object.keys(result.clips).length} extracted → ${AUDIO_FEATURES_FILE}`))
+} else {
+  console.log(dim(`  WORLD features already cached for every clip (${AUDIO_FEATURES_FILE})`))
+}
 
-console.log(dim(`  ranking ${cachedQueries.length} queries against ${cachedRefs.length} references…`))
-const onRank = progress('ranked', 100)
-const cases: EvalCase[] = cachedQueries.map((query, i) => {
-  const queryFrames = cache.clips[checksumHex(query.clip.checksum)]!.frames
+const cachedRefs = refs.filter((r) => cached.includes(r) && mfccCache.clips[checksumHex(r.clip.checksum)])
+const cachedQueries = queries.filter((q) => cached.includes(q) && mfccCache.clips[checksumHex(q.clip.checksum)])
+
+// 3. Baseline: whole-syllable DTW/MFCC ranking (#279).
+console.log(dim(`  ranking ${cachedQueries.length} queries against ${cachedRefs.length} references (whole-syllable)…`))
+const onBaselineRank = progress('ranked', 100)
+const baselineCases: EvalCase[] = cachedQueries.map((query, i) => {
+  const queryFrames = mfccCache.clips[checksumHex(query.clip.checksum)]!.frames
   const candidates = cachedRefs.map((ref) => ({
     key: ref.key,
-    distance: dtwDistance(queryFrames, cache.clips[checksumHex(ref.clip.checksum)]!.frames),
+    distance: dtwDistance(queryFrames, mfccCache.clips[checksumHex(ref.clip.checksum)]!.frames),
   }))
   candidates.sort((a, b) => a.distance - b.distance)
-  onRank(i + 1, cachedQueries.length)
+  onBaselineRank(i + 1, cachedQueries.length)
   return { truthKey: query.key, candidates }
 })
 endProgress()
 
-console.log(`\n${formatAccuracy(`whole-syllable DTW/MFCC (${querySpeaker} vs ${referenceSpeaker})`, tallyAccuracy(cases))}`)
+// 4. Axis classifier: initial/rime DTW + tone contour, combined against
+// attested (initial, rime, tone) triples (#280).
+const axisReferences = buildAxisReferences(cachedRefs, mfccCache, featuresCache)
+const attested = attestedTriples()
+console.log(
+  dim(
+    `  ${axisReferences.length}/${cachedRefs.length} references have WORLD features; ${attested.length} attested triples in the lexicon`,
+  ),
+)
+
+function sortedByDistance(candidates: RankedCandidate[]): RankedCandidate[] {
+  return [...candidates].sort((a, b) => a.distance - b.distance)
+}
+
+console.log(dim(`  ranking ${cachedQueries.length} queries against ${axisReferences.length} references (axes)…`))
+const onAxisRank = progress('ranked', 100)
+const combinedCases: EvalCase[] = []
+const initialCases: EvalCase[] = []
+const rimeCases: EvalCase[] = []
+const toneCases: EvalCase[] = []
+let skippedNoFeatures = 0
+for (const [i, query] of cachedQueries.entries()) {
+  const checksum = checksumHex(query.clip.checksum)
+  const mfcc = mfccCache.clips[checksum]?.frames
+  const features = featuresCache.clips[checksum]
+  onAxisRank(i + 1, cachedQueries.length)
+  if (!mfcc || !features) {
+    skippedNoFeatures += 1
+    continue
+  }
+  const truth = parseSyllable(query.key)
+  const axes = computeAxisCandidates(
+    { mfcc, onsetMs: features.onsetMs, f0Contour: features.f0.contour },
+    axisReferences,
+  )
+  const combined = combineAxes(attested, axes)
+
+  combinedCases.push({ truthKey: query.key, candidates: combined.map((c) => ({ key: c.syllable, distance: c.distance })) })
+  initialCases.push({ truthKey: truth.initial ?? '', candidates: sortedByDistance(axes.initial) })
+  rimeCases.push({ truthKey: rimeOf(truth), candidates: sortedByDistance(axes.rime) })
+  toneCases.push({ truthKey: String(truth.tone), candidates: sortedByDistance(axes.tone) })
+}
+endProgress()
+if (skippedNoFeatures > 0) {
+  console.log(dim(`  ${skippedNoFeatures} quer${skippedNoFeatures === 1 ? 'y' : 'ies'} skipped (no cached MFCC/features)`))
+}
+
+console.log(`\n${formatAccuracy(`whole-syllable DTW/MFCC baseline (${querySpeaker} vs ${referenceSpeaker})`, tallyAccuracy(baselineCases))}`)
+console.log(`\n${formatAccuracy('axis classifier — combined (initial+rime+tone)', tallyAccuracy(combinedCases))}`)
+console.log(`\n${formatAccuracy('axis classifier — initial only', tallyAccuracy(initialCases))}`)
+console.log(`\n${formatAccuracy('axis classifier — rime only', tallyAccuracy(rimeCases))}`)
+console.log(`\n${formatAccuracy('axis classifier — tone only', tallyAccuracy(toneCases))}`)
 
 if (failures > 0) {
   console.log(red(`\n✗ ${failures} clip${failures === 1 ? '' : 's'} could not be fetched or analysed`))
