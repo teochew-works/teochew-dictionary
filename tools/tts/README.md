@@ -57,8 +57,10 @@ npm run audio:grade -- --dir=.cache/audio-tts/runs/pengim/holdout --z=1.5
 from the dataset layout (`--data.dataset_type phoneme_ids`, the phoneme map, `num_symbols`, the
 sample rate, no VAD trim — the exporter already trimmed) and forwards anything after `--` to
 Lightning, e.g. `-- --trainer.limit_train_batches=10` for a smoke run. `--accelerator auto`
-picks MPS on Apple Silicon, where the full corpus trains at roughly one 32-clip step per second.
-`--resume` continues from the run's `last.ckpt`.
+picks CUDA or MPS. Measured on this corpus at batch 32: an RTX 4090 runs 2.45 steps/s alone and
+1.86 with both A/B runs sharing it (~45 s/epoch, so 100 epochs of both schemes is ~75 min); an
+M5 Max on MPS manages 0.94 and 0.46 (~3 min/epoch, ~5 h). `--resume` continues from the run's
+`last.ckpt`.
 
 ## What the dataset is
 
@@ -72,6 +74,15 @@ same audio, because which to train on is the A/B the issue asks for:
 |----------|------------------------|---------|
 | `pengim` | `c ê n 1`              | 31      |
 | `ipa`    | `t s ʰ ẽ T1`           | 42      |
+
+**Train on `pengim`.** It beat `ipa` on every measurement at every checkpoint
+(issue #260 — the numbers are in [TTS.md §4a](../../data/phonology/TTS.md)),
+most likely because this project's IPA is a deterministic function of the
+Peng'im and so carries no extra information, only a larger inventory. Also
+generate with **`--length-scale 1.3`**: at the default 1.0 the duration
+predictor lands ~1.8σ short of the corpus, and correcting that roughly
+doubles how many clips pass the σ-grading. `ipa` needs 1.45. Compare only
+after correcting, or the bias decides the comparison.
 
 ## The NumPy alignment search
 

@@ -1,0 +1,221 @@
+{
+  "version": 1,
+  "issue": 260,
+  "variety": "chaozhou",
+  "note": "Hold-out evaluation for TTS.md §4a. 149 syllables never seen in training; graded by src/audio/grade.ts against the recordings own per-tone/coda/initial statistics, and scored by UTMOS (utmos22_strong). UTMOS is an English-sentence predictor: only the relative ordering here is meaningful, and neither measure can tell whether a syllable is the right syllable.",
+  "checkpoints": {
+    "pengim": "epoch=99-val_mel=0.4623",
+    "ipa": "epoch=79-val_mel=0.4772"
+  },
+  "conditions": {
+    "recordings": {
+      "n": 149,
+      "within1_5sigma": 97,
+      "axes": {
+        "f0": {
+          "n": 149,
+          "medianZ": 0.225,
+          "medianAbsZ": 0.85
+        },
+        "voicedMs": {
+          "n": 149,
+          "medianZ": 0.135,
+          "medianAbsZ": 0.674
+        },
+        "onsetMs": {
+          "n": 60,
+          "medianZ": 0.225,
+          "medianAbsZ": 0.899
+        },
+        "rmsDb": {
+          "n": 149,
+          "medianZ": 0.382,
+          "medianAbsZ": 0.793
+        }
+      },
+      "utmos": {
+        "n": 149,
+        "mean": 2.522,
+        "median": 2.528,
+        "stdev": 0.715,
+        "min": 1.378,
+        "max": 4.045
+      }
+    },
+    "jky-n": {
+      "n": 149,
+      "within1_5sigma": 43,
+      "axes": {
+        "f0": {
+          "n": 149,
+          "medianZ": 0.009,
+          "medianAbsZ": 0.065
+        },
+        "voicedMs": {
+          "n": 149,
+          "medianZ": -0.259,
+          "medianAbsZ": 0.27
+        },
+        "onsetMs": {
+          "n": 60,
+          "medianZ": -0.759,
+          "medianAbsZ": 0.759
+        },
+        "rmsDb": {
+          "n": 149,
+          "medianZ": -1.545,
+          "medianAbsZ": 1.545
+        }
+      },
+      "utmos": {
+        "n": 149,
+        "mean": 2.242,
+        "median": 2.167,
+        "stdev": 0.609,
+        "min": 1.396,
+        "max": 3.83
+      },
+      "note": "ADR-0027 WORLD retune; its level target sits ~1.5 sigma below the corpus median by design, so its count is not a fair head-to-head"
+    },
+    "vits-pengim-length1.0": {
+      "n": 149,
+      "within1_5sigma": 30,
+      "axes": {
+        "f0": {
+          "n": 149,
+          "medianZ": 0.422,
+          "medianAbsZ": 0.777
+        },
+        "voicedMs": {
+          "n": 149,
+          "medianZ": -1.813,
+          "medianAbsZ": 1.813
+        },
+        "onsetMs": {
+          "n": 60,
+          "medianZ": -0.131,
+          "medianAbsZ": 0.487
+        },
+        "rmsDb": {
+          "n": 149,
+          "medianZ": 0.699,
+          "medianAbsZ": 0.81
+        }
+      },
+      "utmos": {
+        "n": 149,
+        "mean": 2.037,
+        "median": 1.837,
+        "stdev": 0.627,
+        "min": 1.348,
+        "max": 3.869
+      },
+      "note": "Piper default length_scale; duration is systematically short"
+    },
+    "vits-ipa-length1.0": {
+      "n": 149,
+      "within1_5sigma": 53,
+      "axes": {
+        "f0": {
+          "n": 149,
+          "medianZ": 0.417,
+          "medianAbsZ": 0.813
+        },
+        "voicedMs": {
+          "n": 149,
+          "medianZ": -1.439,
+          "medianAbsZ": 1.455
+        },
+        "onsetMs": {
+          "n": 60,
+          "medianZ": 0.0,
+          "medianAbsZ": 0.45
+        },
+        "rmsDb": {
+          "n": 149,
+          "medianZ": 0.662,
+          "medianAbsZ": 0.801
+        }
+      },
+      "utmos": {
+        "n": 149,
+        "mean": 2.018,
+        "median": 1.759,
+        "stdev": 0.606,
+        "min": 1.358,
+        "max": 3.848
+      },
+      "note": "Piper default length_scale; wins only because its duration bias is smaller"
+    },
+    "vits-pengim-length1.3": {
+      "n": 149,
+      "within1_5sigma": 77,
+      "axes": {
+        "f0": {
+          "n": 148,
+          "medianZ": 0.274,
+          "medianAbsZ": 0.652
+        },
+        "voicedMs": {
+          "n": 148,
+          "medianZ": -0.794,
+          "medianAbsZ": 0.893
+        },
+        "onsetMs": {
+          "n": 59,
+          "medianZ": 0.45,
+          "medianAbsZ": 0.674
+        },
+        "rmsDb": {
+          "n": 149,
+          "medianZ": 0.668,
+          "medianAbsZ": 0.773
+        }
+      },
+      "utmos": {
+        "n": 149,
+        "mean": 2.04,
+        "median": 1.87,
+        "stdev": 0.612,
+        "min": 1.32,
+        "max": 3.837
+      },
+      "note": "duration-corrected; the chosen configuration"
+    },
+    "vits-ipa-length1.45": {
+      "n": 149,
+      "within1_5sigma": 71,
+      "axes": {
+        "f0": {
+          "n": 149,
+          "medianZ": 0.459,
+          "medianAbsZ": 0.791
+        },
+        "voicedMs": {
+          "n": 149,
+          "medianZ": 0.052,
+          "medianAbsZ": 1.049
+        },
+        "onsetMs": {
+          "n": 60,
+          "medianZ": 0.787,
+          "medianAbsZ": 1.012
+        },
+        "rmsDb": {
+          "n": 149,
+          "medianZ": 0.776,
+          "medianAbsZ": 0.825
+        }
+      },
+      "utmos": {
+        "n": 149,
+        "mean": 2.029,
+        "median": 1.773,
+        "stdev": 0.641,
+        "min": 1.331,
+        "max": 3.867
+      },
+      "note": "duration-corrected"
+    }
+  }
+}

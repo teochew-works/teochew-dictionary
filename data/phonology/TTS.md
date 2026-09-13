@@ -26,7 +26,7 @@ specified, as opposed to just phonetic segments.
 | Rule-based (eSpeak-NG) | No — would be built from scratch | Yes, in principle — the same mechanism its Mandarin/Cantonese/Hakka profiles already use | Synthetic/robotic by construction | Technically viable; not recommended to pursue now (§5) |
 | Commercial neural TTS (Polly/Azure/Google) | No | No — IPA phoneme override doesn't reach the Chinese voices at all on two of three platforms, and none can encode a Chao contour | High, but for the wrong language | Not viable |
 | Articulatory synthesis (VocalTractLab) | No — would be hand-built | Yes, in principle — its pitch model is built for exactly this kind of contour | Below commercial neural TTS even for its best-supported language (German) | Not viable at this project's scale |
-| Training/fine-tuning on this project's own clips | N/A (no existing model to start from) | N/A | N/A | Not viable as currently recorded (isolated single syllables) |
+| Training/fine-tuning on this project's own clips | N/A (no existing model to start from) | Yes — learned implicitly per tone token | Below the recordings; unevaluated by ear | Tried in #260: viable for isolated syllables, unnecessary and unpublishable (§4a) |
 
 ## 1. Rule-based / formant synthesis — eSpeak-NG
 
@@ -251,7 +251,8 @@ some connected-speech context — funded by a research grant and HPC
 allocation, done by linguists with TTS engineering expertise, and it still
 only reached "promising, not production."
 
-**Verdict.** Not viable as currently scoped. It would only become
+**Verdict (2026-09, superseded for the isolated-syllable case — see §4a).**
+Not viable as currently scoped. It would only become
 attempt-able if the recording strategy itself changed to also capture
 genuinely connected speech (multi-syllable words with natural sandhi,
 ideally short read sentences) per speaker/variety — a change to #36/#37's
@@ -260,6 +261,134 @@ academic result (itself only "promising") would be a nontrivial ML
 undertaking on top of that, and cross-lingual transfer from Hokkien/
 Taiwanese should not be assumed to reduce the burden.
 
+## 4a. What actually happened when we trained one · issue #260
+
+§4 was written without trying it. Issue #260 tried it, and the part of §4's
+objection that is specific to *isolated syllables* does not survive contact
+with the experiment; the rest does. This section records what was measured,
+because the difference matters for anyone tempted to revisit this.
+
+**What was trained.** [Piper](https://github.com/OHF-Voice/piper1-gpl) 1.8
+(VITS), from the corpus's own 3,087 Chaozhou recordings — 2,977 after
+dropping what `npm run audio:grade` flags beyond 3σ, then 2,828 after holding
+out 149 whole *syllables* the model never saw. Two runs of 100 epochs, one
+per token scheme, warm-starting only the vocoder (`en_US-lessac-medium`;
+the phoneme embedding is necessarily fresh). On an RTX 4090 each run is
+~45 s/epoch, so both together are about 75 minutes — the compute objection
+in §4 ("a research grant and HPC allocation") is simply out of date for a
+corpus this size, though that paper was training on ~3× the material and
+aiming at sentences.
+
+**§4's architectural objection is wrong for this case, and was wrongly
+stated.** §4 argued that a corpus of isolated syllables "structurally
+resembles diphone inventory data, not neural-TTS training data — a mismatch
+of kind, not just of scale." That claim is about *coarticulation and
+phrase-level prosody*, which isolated syllables genuinely cannot teach. But
+it does not follow that a model cannot be trained on them at all: VITS's
+alignment, duration predictor and decoder all operate within an utterance,
+and a one-syllable utterance is a perfectly well-formed one. Both runs
+converged normally (val mel L1 0.53 → 0.46, saturating around epoch 64) and
+produce syllables in the speaker's voice with the correct tone register. The
+objection should have been scoped to what it was actually about: such a model
+can never produce connected speech, and this one cannot.
+
+**The A/B: Peng'im-direct wins, modestly.** Peng'im characters with the tone
+digit (`cên1` → `c ê n 1`, 31 symbols) beat derived IPA with an explicit tone
+token (`t s ʰ ẽ T1`, 42 symbols) on every measurement, at every checkpoint
+from epoch 4 to epoch 99:
+
+| | val mel L1 | held-out within 1.5σ | UTMOS |
+|---|---|---|---|
+| Peng'im | **0.4623** | **77/149** | **2.04** |
+| IPA + tone token | 0.4772 | 71/149 | 2.03 |
+
+The margin is small and the UTMOS difference is nil. The likely reason IPA
+does not win despite being the more phonetically faithful input: this
+project's derived IPA is a *deterministic function* of the Peng'im
+(`src/phonology/ipa.ts`), so it carries no information the Peng'im lacks —
+it only re-spells it, with a larger symbol inventory and therefore fewer
+examples per symbol. Peng'im's digraphs (`bh`, `ng`) cost the model nothing
+it cannot recover from context. **Decision: train on `pengim`.** IPA would
+only become the better input if it stopped being derivable — if the
+phonology tables gained distinctions Peng'im cannot spell.
+
+**A confound worth recording, because it inverts the result.** Both models
+systematically under-predict duration: at Piper's default `length_scale` 1.0
+the generated syllables sit 1.4–1.8σ short of the corpus, and *IPA appears to
+win* (53/149 vs 30/149) purely because its bias is smaller. Correcting the
+bias at inference (`--length-scale` 1.3 for Peng'im, 1.45 for IPA) reverses
+the ranking and roughly doubles both scores. Any future comparison here must
+correct for duration first, or it is measuring the duration predictor's
+global offset rather than the thing under test.
+
+**Quality, against the two tiers that already exist.** On the same 149
+held-out syllables, graded by `npm run audio:grade -- --dir=<path>` against
+the recordings' own per-tone / per-coda / per-initial statistics:
+
+| | within 1.5σ | f0 median \|z\| | duration | onset | level | UTMOS |
+|---|---|---|---|---|---|---|
+| human recordings | 97/149 | 0.85 | 0.67 | 0.90 | 0.79 | 2.52 |
+| `jky-n` renders (ADR-0027) | 43/149 | 0.06 | 0.27 | 0.76 | 1.54 | 2.24 |
+| VITS, Peng'im | 77/149 | 0.65 | 0.89 | 0.67 | 0.77 | 2.04 |
+
+Read this carefully. The VITS output is *tighter than the recordings* on f0
+(median |z| 0.65 vs 0.85) — it has learned each tone's register well, which
+is the thing §2 feared a foreign voice would destroy — and comparable on
+onset and level. It is worse on duration spread, and it scores below the
+recordings on UTMOS. `jky-n`'s 43/149 is **not** a fair head-to-head: that
+tier is deliberately rendered ~1.5σ below the corpus median level
+(`levelTarget` in `src/audio/targets.ts` backs off for peak headroom), so the
+level axis alone flags most of it.
+
+**The evaluation instrument is weak, and nobody has listened.** UTMOS
+([tarepan/SpeechMOS](https://github.com/tarepan/SpeechMOS) `utmos22_strong`)
+is a no-reference MOS predictor trained on English *sentences*; 0.5-second
+Teochew syllables are far out of its distribution, which is why the human
+recordings themselves only score 2.52 on it. The absolute numbers are
+therefore **not comparable** to the LREC-COLING paper's MOS 3.66, which came
+from human listeners. Only the *relative* ordering within this table means
+anything. Crucially, neither UTMOS nor the σ-grading can hear whether a
+syllable is the *right* syllable: both would pass a fluent `dua7` rendered
+with tone 5's contour if its f0 happened to sit near tone 7's median. **No
+native speaker, and no listener at all, has yet evaluated this output.**
+Nothing here should be read as a quality claim until someone has.
+
+**Verdict for the isolated-syllable case: technically viable, currently
+unnecessary, and not publishable.** Viable — it trains, converges, and
+generates any syllable in the speaker's voice at roughly the consistency of
+the recordings. Unnecessary — the gap that motivated §4 is gone: every
+attested Chaozhou syllable has a recording (#36, closed 2026-09-06), so
+there is nothing for it to fill, and where a syllable *does* have a
+recording, ADR-0027's WORLD retune keeps the speaker's own spectral envelope
+instead of generating a new one. Not publishable —
+[ADR-0027](../../docs/adrs/adr-0027.md) permits synthesis only as a derived
+tier of a specific recording (`derivedFrom` a checksum) and forbids
+generating a syllable that has no recording; a VITS voice satisfies neither
+condition by construction, since its output derives from the whole corpus
+rather than from any one clip. Publishing it would need a new ADR, and that
+argument should not be made on these numbers.
+
+**Where it would earn its place.** Three cases, none of them current: a
+second variety (#37) recorded too sparsely to cover its syllabary, where
+synthesis would fill real gaps; a *new* speaker with a partial corpus, where
+a voice trained on their clips could extend it consistently; or as a check on
+the corpus rather than an addition to it — generate the *training* syllables
+and flag where the model confidently disagrees with the recording it learned
+from, which surfaces mislabelled clips (wrong tone, wrong initial) that the
+per-part statistics in `src/audio/grade.ts` cannot see. That last one uses
+the model as a measuring instrument, needs no ADR, and is the most valuable
+thing to do with this checkpoint.
+
+**The numbers above** are in
+[`docs/evaluation/tts-260-holdout.json`](../../docs/evaluation/tts-260-holdout.json),
+per condition and per axis, including the two uncorrected runs.
+
+**Reproducing it.** `npm run tts:export` writes the training set;
+[`tools/tts/`](../../tools/tts/README.md) trains and generates;
+`npm run audio:grade -- --dir=<path>` grades the result. Checkpoints are not
+in git and not published (ADR-0014's spirit); the runs above lived under
+`.cache/audio-tts/runs/`.
+
 ## 5. Overall verdict
 
 **Synthesis is not recommended as a near-term stopgap or supplement to the
@@ -267,8 +396,10 @@ human-recording pipeline.** Three of the four paths are dead ends outright:
 no commercial platform has a usable mechanism for Teochew's tone system, and
 misapplying Teochew IPA to an unrelated voice would actively mislead a
 learner rather than merely sound rough (§2); training on this project's own
-data is blocked by an architectural mismatch, not a data-volume problem,
-given the current isolated-syllable recording format (§4); and articulatory
+data was expected to be blocked by an architectural mismatch rather than a
+data-volume problem (§4) — an expectation issue #260 tested and found too
+broad for isolated syllables, though what it produces is still below the
+recordings and has no gap left to fill (§4a); and articulatory
 synthesis, while technically closer in principle, is too large a hand-tuning
 undertaking for a synthesizer whose naturalness ceiling sits below
 commercial TTS even for its best-supported language (§3).
@@ -301,6 +432,7 @@ technical path documented here would still apply.
 - VocalTractLab: [project site](https://vocaltractlab.de/index.php?page=background), [download/changelog](https://vocaltractlab.de/index.php?page=vocaltractlab-download), [publications](https://vocaltractlab.de/index.php?page=birkholz-publications), [TargetOptimizer](https://vocaltractlab.de/index.php?page=targetoptimizer-about), Krug, Stone & Birkholz 2021, [*Intelligibility and naturalness of articulatory synthesis with VocalTractLab compared to established speech synthesis technologies*](https://www.isca-archive.org/ssw_2021/krug21_ssw.html) (ISCA SSW11), Prom-on, Birkholz & Xu 2014, [*Estimating vocal tract shapes of Thai vowels from contextual tonal variation*](https://vocaltractlab.de/publications/prom-on-2014-cocosda.pdf), `TUD-STKS/VocalTractLabBackend-dev` and `paul-krug/VocalTractLab-Python` (GitHub)
 - Pink Trombone: [original](https://experiments.withgoogle.com/pink-trombone) and forks (`zakaton/Pink-Trombone`, `jamesstaub/pink-trombone-osc`, `chdh/pink-trombone-mod`, `yonatanrozin/Modular-Pink-Trombone`), independent technical writeup at kaushikv.com/notes/pink-trombone/
 - Magistry, Wang & Lim 2024, [*Experiments on Speech Synthesis for Teochew, Can Taiwanese Help?*](https://aclanthology.org/2024.lrec-main.598.pdf) (LREC-COLING 2024)
+- Piper ([OHF-Voice/piper1-gpl](https://github.com/OHF-Voice/piper1-gpl)) 1.8, its [training guide](https://github.com/OHF-Voice/piper1-gpl/blob/main/docs/TRAINING.md) and [checkpoints](https://huggingface.co/datasets/rhasspy/piper-checkpoints); UTMOS, Saeki et al. 2022, [*UTMOS: UTokyo-SaruLab System for VoiceMOS Challenge 2022*](https://arxiv.org/abs/2204.02152), via [tarepan/SpeechMOS](https://github.com/tarepan/SpeechMOS) — §4a
 - Teochew-Wild, [arXiv 2505.05056](https://arxiv.org/abs/2505.05056)
 - VoxHakka, [arXiv 2409.01548](https://arxiv.org/abs/2409.01548)
 - Meta Massively Multilingual Speech, Pratap et al. 2023, [arXiv 2305.13516](https://arxiv.org/abs/2305.13516)
