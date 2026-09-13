@@ -9,3 +9,4 @@ same way it shells out to `ffmpeg` and `afconvert`.
 """
 
 FEATURES_VERSION = 2
+MFCC_VERSION = 1

@@ -125,6 +125,7 @@ Offline but cache-dependent (needs an `audio:grade` run first):
 
 ```bash
 npm run audio:synthesize [-- --write]   # re-render clips toward per-part targets into .cache/audio-synth/
+npm run audio:classify -- <clip>        # identify which Peng'im syllable a clip of jky's own voice most likely is
 ```
 
 Regeneration and maintenance:

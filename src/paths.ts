@@ -43,6 +43,8 @@ export const WIKTEXTRACT_MIN_FILE = join(CACHE_DIR, 'teochew-relevant.min.jsonl'
 export const AUDIO_CLIP_CACHE_DIR = join(CACHE_DIR, 'audio-clips')
 /** Per-clip features keyed by bare sha256 hex — see `src/audio/features.ts`. */
 export const AUDIO_FEATURES_FILE = join(CACHE_DIR, 'audio-features.json')
+/** Per-clip MFCC sequences for the syllable classifier, keyed by bare sha256 hex — see `src/audio/mfcc.ts` (issue #279). */
+export const AUDIO_MFCC_FILE = join(CACHE_DIR, 'audio-mfcc.json')
 /**
  * `audio:synthesize` output: `<variety>/<syllable>.wav` plus a `report.json`.
  * Under `.cache` rather than `data/staging/` because, unlike a recording
