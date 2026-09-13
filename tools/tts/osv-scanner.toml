@@ -1,0 +1,30 @@
+# OSV-Scanner findings accepted for tools/tts/ — see uv.lock beside this file.
+#
+# This directory is a developer-only training tool (issue #260). It is never
+# installed by the root project, `web/`, `packages/core` or the mobile app,
+# never runs in `npm run check`, and nothing it produces is shipped. Its own
+# CI job runs `pytest` only; no model is trained in CI.
+
+[[IgnoredVulns]]
+id = "GHSA-qqmf-gpg7-g8gw"  # CVE-2026-58659
+ignoreUntil = 2026-12-13
+reason = """
+Remote code execution in lightning's `_load_state`: `load_from_checkpoint`
+imports and calls module names taken from a checkpoint's own hyperparameters,
+so loading a hostile .ckpt runs its author's code.
+
+Unfixable by upgrading today. The advisory names 2022.6.15 as the fixed
+version — a date-stamped 2022 release that merely sorts above the current
+2.6.6, which is the latest lightning on PyPI and is itself affected. There is
+no patched release to move to, and Piper's trainer requires lightning.
+
+Accepted because the exposure is loading an untrusted checkpoint, and that is
+now checked rather than assumed: `tts/checkpoints.py` refuses any --warmstart
+file whose SHA-256 is not pinned, applying ADR-0014's "a URL is never trusted,
+its checksum is" to checkpoints. The only other checkpoints loaded are ones
+produced locally by `tts train`. Note that Piper reads a warm-start file with
+`torch.load(weights_only=False)` regardless of this CVE, so pinning — not a
+lightning upgrade — is what actually closes this path.
+
+Revisit by 2026-12-13, or sooner if a patched lightning ships.
+"""

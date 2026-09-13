@@ -16,6 +16,7 @@ import statistics
 import sys
 from pathlib import Path
 
+from .checkpoints import UnpinnedCheckpoint, verify
 from .dataset import Row, SchemeDir, read_rows
 
 _LOGGER = logging.getLogger("tts")
@@ -58,7 +59,13 @@ def _train(args: argparse.Namespace, passthrough: list[str]) -> int:
         "--trainer.log_every_n_steps=10",
     ]
     if args.warmstart:
-        argv.append(f"--model.vocoder_warmstart_ckpt={Path(args.warmstart).resolve()}")
+        warmstart = Path(args.warmstart).resolve()
+        try:
+            _LOGGER.info("warm-start checkpoint: %s", verify(warmstart, args.warmstart_sha256, args.allow_unpinned_warmstart))
+        except UnpinnedCheckpoint as e:
+            _LOGGER.error("%s", e)
+            return 2
+        argv.append(f"--model.vocoder_warmstart_ckpt={warmstart}")
     if args.resume:
         last = _last_checkpoint(run)
         if last is None:
@@ -124,6 +131,9 @@ def _synth(args: argparse.Namespace) -> int:
     out.mkdir(parents=True, exist_ok=True)
     _LOGGER.info("checkpoint %s → %d clip(s) into %s", checkpoint, len(rows), out)
 
+    # Only ever a checkpoint from a local `tts train` run: load_from_checkpoint
+    # executes module names out of the file's hyperparameters (see checkpoints.py),
+    # so a checkpoint from anywhere else must be pinned before it gets here.
     model = VitsModel.load_from_checkpoint(str(checkpoint), map_location="cpu")
     model.eval()
     with torch.no_grad():
@@ -209,6 +219,8 @@ def main(argv: list[str] | None = None) -> int:
     train.add_argument("dataset", help="<variety>/<scheme> directory written by `npm run tts:export`")
     train.add_argument("--run", required=True, help="where checkpoints, logs and config.json go")
     train.add_argument("--warmstart", help="Piper medium checkpoint to copy the vocoder from")
+    train.add_argument("--warmstart-sha256", help="pin --warmstart to this digest (a .ckpt is a pickle — see tts/checkpoints.py)")
+    train.add_argument("--allow-unpinned-warmstart", action="store_true", help="load an unrecognised --warmstart anyway")
     train.add_argument("--accelerator", default="auto", help="Lightning accelerator: auto, mps, cpu, gpu")
     train.add_argument("--batch-size", type=int, default=32)
     train.add_argument("--max-epochs", type=int, default=-1, help="-1 trains until interrupted")

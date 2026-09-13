@@ -37,7 +37,9 @@ uv sync                               # pins Python 3.12; ~2 GB of wheels
 uv run pytest                         # synthetic tests, no dataset needed
 
 # a Piper "medium" checkpoint to warm-start the vocoder from (any language — only the
-# text-agnostic decoder/posterior/flow weights are copied, never the phoneme embedding)
+# text-agnostic decoder/posterior/flow weights are copied, never the phoneme embedding).
+# This one's SHA-256 is already pinned in tts/checkpoints.py; any other must be pinned
+# with --warmstart-sha256 before it will be loaded. See "Checkpoints are code" below.
 curl -L -o ../../.cache/audio-tts/warmstart/en_US-lessac-medium.ckpt \
   'https://huggingface.co/datasets/rhasspy/piper-checkpoints/resolve/main/en/en_US/lessac/medium/epoch%3D2164-step%3D1355540.ckpt'
 
@@ -83,6 +85,23 @@ generate with **`--length-scale 1.3`**: at the default 1.0 the duration
 predictor lands ~1.8σ short of the corpus, and correcting that roughly
 doubles how many clips pass the σ-grading. `ipa` needs 1.45. Compare only
 after correcting, or the bias decides the comparison.
+
+## Checkpoints are code
+
+A `.ckpt` is a pickle. Piper reads a warm-start file with
+`torch.load(..., weights_only=False)`, and `load_from_checkpoint` additionally imports and calls
+module names taken from the checkpoint's own hyperparameters — CVE-2026-58659 in `lightning`,
+**unfixed as of 2.6.6, the current release** (the advisory's "fixed in 2022.6.15" is a 2022
+date-stamped version that merely sorts higher). Loading a downloaded checkpoint is therefore
+equivalent to running an unsigned binary, with or without that CVE.
+
+So `tts train` refuses a `--warmstart` file whose SHA-256 it does not recognise — the same rule
+[ADR-0014](../../docs/adrs/adr-0014.md) applies to audio bytes, where a URL is never trusted and
+its checksum is. Pin a new one with `--warmstart-sha256=<digest>`, or `--allow-unpinned-warmstart`
+to skip the check deliberately; add it to `KNOWN_CHECKPOINTS` in `tts/checkpoints.py` if it should
+be a standing choice. `tts synth` loads only checkpoints a local `tts train` produced.
+
+`osv-scanner.toml` records the accepted finding and its review date.
 
 ## The NumPy alignment search
 
