@@ -1,0 +1,129 @@
+/* Dev-only A/B listening test (issue #260) — see ReviewView.tsx. */
+
+.review {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.review--message {
+  padding: 2rem 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.review__bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+.review__progress { color: #555; }
+.review__score { margin-left: auto; color: #a63d2f; font-weight: 600; }
+
+.review__key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.review__key h2 {
+  margin: 0;
+  font-size: 2rem;
+  min-width: 8rem;
+  text-align: center;
+}
+
+.review__key button {
+  font-size: 1.25rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.review__pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.review__side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: stretch;
+  text-align: center;
+}
+
+.review__play {
+  font-size: 1.5rem;
+  padding: 1.5rem 0.5rem;
+  cursor: pointer;
+}
+
+.review__play.is-playing { background: #a63d2f; color: #fff; }
+
+.review__prefer { padding: 0.5rem; cursor: pointer; }
+.review__prefer.is-chosen,
+.review__neither.is-chosen { background: #a63d2f; color: #fff; }
+
+.review__neither {
+  display: block;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/* Only ever shown after a verdict is recorded — see ReviewView.tsx on why. */
+.review__reveal {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.review__reveal.is-generated { color: #a63d2f; font-weight: 700; }
+.review__reveal.is-original { color: #2f7a46; font-weight: 700; }
+
+.review__qualities {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.review__prompt { margin: 0 0 0.25rem; color: #555; font-size: 0.9rem; }
+
+.review__qualities button {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+}
+
+.review__qualities button:disabled { opacity: 0.45; cursor: default; }
+.review__qualities button.is-chosen { background: #a63d2f; color: #fff; }
+.review__qualities small { color: #666; margin-left: 0.5rem; }
+.review__qualities button.is-chosen small { color: #f3d9d4; }
+
+.review__note {
+  margin-top: 1rem;
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.5rem;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.review__help { margin-top: 1rem; color: #666; font-size: 0.85rem; line-height: 1.8; }
+
+.review kbd {
+  border: 1px solid #bbb;
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  padding: 0 0.3em;
+  font-size: 0.85em;
+  background: #f7f7f7;
+}

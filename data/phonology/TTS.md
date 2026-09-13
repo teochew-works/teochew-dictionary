@@ -340,7 +340,11 @@ tier is deliberately rendered ~1.5σ below the corpus median level
 (`levelTarget` in `src/audio/targets.ts` backs off for peak headroom), so the
 level axis alone flags most of it.
 
-**The evaluation instrument is weak, and nobody has listened.** UTMOS
+**The evaluation instrument is weak, and nobody had listened when this was
+written.** (`web/`'s dev-only A/B tab now exists for exactly that — a blind
+listening test against the recording each clip imitates; see
+[web/README.md](../../web/README.md#dev-only-tools). What follows is why it
+was needed.) UTMOS
 ([tarepan/SpeechMOS](https://github.com/tarepan/SpeechMOS) `utmos22_strong`)
 is a no-reference MOS predictor trained on English *sentences*; 0.5-second
 Teochew syllables are far out of its distribution, which is why the human
@@ -385,7 +389,8 @@ per condition and per axis, including the two uncorrected runs.
 
 **Reproducing it.** `npm run tts:export` writes the training set;
 [`tools/tts/`](../../tools/tts/README.md) trains and generates;
-`npm run audio:grade -- --dir=<path>` grades the result. Checkpoints are not
+`npm run audio:grade -- --dir=<path>` grades the result; and `web/`'s
+dev-only A/B tab is where the listening happens. Checkpoints are not
 in git and not published (ADR-0014's spirit); the runs above lived under
 `.cache/audio-tts/runs/`.
 

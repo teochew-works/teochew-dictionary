@@ -6,11 +6,19 @@ import { SoundsView, parseSoundsRoute, formatSoundsRoute, type SoundsRoute } fro
 import { SettingsView } from './views/SettingsView'
 import { DonateView } from './views/DonateView'
 import { AboutView } from './views/AboutView'
+import { ReviewView } from './views/ReviewView'
 import { UpdatePrompt } from './pwa/UpdatePrompt'
 import './App.css'
 
-type Tab = 'dictionary' | 'flashcards' | 'sounds' | 'settings' | 'donate' | 'about'
+type Tab = 'dictionary' | 'flashcards' | 'sounds' | 'settings' | 'donate' | 'about' | 'review'
 
+/**
+ * The A/B listening test (issue #260) is a developer tool, not a feature:
+ * it plays generated audio ADR-0027 does not allow publishing, and the
+ * `/api/tts-review` route behind it only exists under `vite dev` anyway
+ * (web/vite-plugins/tts-review.ts). `import.meta.env.DEV` is a build-time
+ * constant, so a production build drops the tab and tree-shakes the view.
+ */
 const TABS: { id: Tab; label: string }[] = [
   { id: 'dictionary', label: 'Dictionary' },
   { id: 'flashcards', label: 'Flashcards' },
@@ -18,6 +26,7 @@ const TABS: { id: Tab; label: string }[] = [
   { id: 'settings', label: 'Settings' },
   { id: 'donate', label: 'Donate' },
   { id: 'about', label: 'About' },
+  ...(import.meta.env.DEV ? [{ id: 'review' as const, label: 'A/B' }] : []),
 ]
 
 /**
@@ -34,7 +43,7 @@ type Route =
   | { tab: 'dictionary'; entryId: string | null }
   | { tab: 'sounds'; soundsRoute: SoundsRoute }
   | { tab: 'flashcards'; flashcardsDrawer: FlashcardsDrawer }
-  | { tab: 'settings' | 'donate' | 'about' }
+  | { tab: 'settings' | 'donate' | 'about' | 'review' }
 
 function routeFromHash(hash: string): Route {
   const raw = hash.replace(/^#/, '')
@@ -98,10 +107,10 @@ export function App() {
             SoundsView), and Settings, Donate and About only touch localStorage or are
             static — none of the four depend on dict.json, so none are gated
             behind the dictionary's loading/error state below. */}
-        {tab !== 'sounds' && tab !== 'settings' && tab !== 'donate' && tab !== 'about' && loading && (
+        {tab !== 'sounds' && tab !== 'settings' && tab !== 'donate' && tab !== 'about' && tab !== 'review' && loading && (
           <p className="app__status">Loading dictionary…</p>
         )}
-        {tab !== 'sounds' && tab !== 'settings' && tab !== 'donate' && tab !== 'about' && error && (
+        {tab !== 'sounds' && tab !== 'settings' && tab !== 'donate' && tab !== 'about' && tab !== 'review' && error && (
           <p className="app__status app__status--error">
             Couldn't load the dictionary ({error}). If you're running this locally, make sure you've run{' '}
             <code>npm run build</code> in the repo root first.
@@ -117,6 +126,7 @@ export function App() {
         {tab === 'settings' && <SettingsView />}
         {tab === 'donate' && <DonateView />}
         {tab === 'about' && <AboutView />}
+        {tab === 'review' && import.meta.env.DEV && <ReviewView />}
       </main>
     </div>
   )

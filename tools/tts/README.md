@@ -86,6 +86,14 @@ predictor lands ~1.8σ short of the corpus, and correcting that roughly
 doubles how many clips pass the σ-grading. `ipa` needs 1.45. Compare only
 after correcting, or the bias decides the comparison.
 
+## Listening to what it made
+
+The numbers this tool reports — UTMOS, and the σ-grading at the repo root — cannot hear whether a
+syllable sounds right, or is even the right syllable. `web/`'s dev-only **A/B** tab is where a
+person supplies that: `cd web && npm run dev`, pick a set, and judge generated against recorded
+blind. See [web/README.md § Dev-only tools](../../web/README.md#dev-only-tools). Verdicts land in
+`.cache/audio-tts/review.json`.
+
 ## Checkpoints are code
 
 A `.ckpt` is a pickle. Piper reads a warm-start file with

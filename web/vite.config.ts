@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 import { localRecordingsPlugin } from './vite-plugins/local-recordings.js'
+import { ttsReviewPlugin } from './vite-plugins/tts-review.js'
 
 // GitHub Pages serves this project from a subpath (no custom domain is
 // configured), so asset URLs need that prefix baked in for the Pages build
@@ -23,7 +24,11 @@ export default defineConfig(({ command }) => ({
     // is already never called during `vite build`, so this gate is
     // belt-and-suspenders, not load-bearing — it also keeps the route out of
     // `vite preview`, which serves a real build.
-    ...(command === 'serve' ? [localRecordingsPlugin()] : []),
+    // Dev-server-only, for the same reason and by the same mechanism: the
+    // blind A/B listening test over generated audio (issue #260). ADR-0027
+    // forbids publishing that audio, so the route that serves it must not
+    // survive a build.
+    ...(command === 'serve' ? [localRecordingsPlugin(), ttsReviewPlugin()] : []),
     // PWA installability (mobile.md §4, §11 — a deliberate exception to the
     // hand-rolled-implementations preference: the precache manifest has to
     // be generated from hashed build output, and hand-rolled cache
