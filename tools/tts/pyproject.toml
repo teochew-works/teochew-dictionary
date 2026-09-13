@@ -1,0 +1,29 @@
+[project]
+name = "teochew-tts"
+version = "0.1.0"
+description = "Train and run a phoneme-input VITS (Piper) voice on the project's own syllable corpus (issue #260)"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = "BSD-3-Clause"
+dependencies = [
+  "piper-tts[train]>=1.8,<2",
+  "torchaudio>=2,<3",
+  "numpy>=1.26",
+  "soundfile>=0.12",
+]
+
+[project.scripts]
+tts = "tts.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["uv_build>=0.8,<0.13"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.uv.build-backend]
+module-name = "tts"

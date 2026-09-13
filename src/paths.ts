@@ -49,6 +49,13 @@ export const AUDIO_FEATURES_FILE = join(CACHE_DIR, 'audio-features.json')
  * (ADR-0017), a render is reproducible from the cached clips and the code.
  */
 export const AUDIO_SYNTH_DIR = join(CACHE_DIR, 'audio-synth')
+/**
+ * `tts:export` output: `<variety>/wavs/` plus a `metadata.csv` per token
+ * scheme — the training set tools/tts/ reads (issue #260). Under `.cache`
+ * for the same reason as `AUDIO_SYNTH_DIR`: reproducible from the cached
+ * clips and the code. Checkpoints trained from it stay here too, never in git.
+ */
+export const AUDIO_TTS_DIR = join(CACHE_DIR, 'audio-tts')
 
 /** The Python DSP tool `src/audio/` drives — see tools/resynth/README.md. */
 export const RESYNTH_TOOL_DIR = join(ROOT, 'tools', 'resynth')

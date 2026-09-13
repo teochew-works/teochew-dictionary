@@ -1,0 +1,82 @@
+# teochew-tts
+
+The ML half of issue #260: train a **phoneme-input VITS voice** ([Piper](https://github.com/OHF-Voice/piper1-gpl))
+on the project's own single-speaker syllable corpus, and generate syllables from it. Everything
+that is not model training — choosing which clips train, tokenising Peng'im and IPA, trimming and
+padding the audio, grading what comes out — lives in `src/audio/` at the repo root
+(`npm run tts:export`, `npm run audio:grade -- --dir=…`). This tool reads the dataset the exporter
+writes and never has to know what a syllable is: every row's token ids are final.
+
+It is a separate `uv` project from [`tools/resynth/`](../resynth/README.md) on purpose. That one
+is three small DSP dependencies; this one pulls in PyTorch, Lightning and Piper, and nothing else
+in the repository should pay for that.
+
+> **Licence note.** `piper-tts` is GPL-3.0. It is a training-time tool run from this directory,
+> like `ffmpeg`; no Piper code is linked into or shipped with the BSD-licensed project, and a
+> trained voice's weights are the project's own. Keep it that way — do not import `piper` from
+> anything outside `tools/tts/`.
+
+## Governance (read before publishing anything)
+
+[ADR-0027](../../docs/adrs/adr-0027.md) allows synthesis only as a labelled, derived tier of the
+speaker's own recordings, and still forbids generating a syllable that has no recording. A VITS
+voice **can** generate any syllable, which is exactly why nothing here publishes: `tts synth`
+writes WAVs under `.cache/` for evaluation, and that is where they stay until an ADR says
+otherwise. Model checkpoints stay out of git ([ADR-0014](../../docs/adrs/adr-0014.md)'s spirit), and
+training stays out of `npm run check` ([ADR-0012](../../docs/adrs/adr-0012.md)).
+
+## Running
+
+```bash
+# 1. At the repo root — once: cache clips + features, then export the dataset
+npm run audio:grade
+npm run tts:export                    # → .cache/audio-tts/chaozhou/{wavs, pengim, ipa, dataset.json}
+
+# 2. Here
+uv sync                               # pins Python 3.12; ~2 GB of wheels
+uv run pytest                         # synthetic tests, no dataset needed
+
+# a Piper "medium" checkpoint to warm-start the vocoder from (any language — only the
+# text-agnostic decoder/posterior/flow weights are copied, never the phoneme embedding)
+curl -L -o ../../.cache/audio-tts/warmstart/en_US-lessac-medium.ckpt \
+  'https://huggingface.co/datasets/rhasspy/piper-checkpoints/resolve/main/en/en_US/lessac/medium/epoch%3D2164-step%3D1355540.ckpt'
+
+D=../../.cache/audio-tts
+uv run tts train $D/chaozhou/pengim --run $D/runs/pengim --warmstart $D/warmstart/en_US-lessac-medium.ckpt --max-epochs 100
+uv run tts train $D/chaozhou/ipa    --run $D/runs/ipa    --warmstart $D/warmstart/en_US-lessac-medium.ckpt --max-epochs 100
+
+# generate the held-out syllables (never seen in training) from the best val_mel checkpoint
+uv run tts synth $D/runs/pengim $D/chaozhou/pengim/holdout.csv --out $D/runs/pengim/holdout
+uv run tts mos   $D/runs/pengim/holdout        # UTMOS, a no-reference predicted MOS
+
+# 3. Back at the root: the same yardsticks audio:grade applies to the recordings
+npm run audio:grade -- --dir=.cache/audio-tts/runs/pengim/holdout --z=1.5
+```
+
+`tts train` is a thin wrapper over `python -m piper.train fit`: it fixes the flags that follow
+from the dataset layout (`--data.dataset_type phoneme_ids`, the phoneme map, `num_symbols`, the
+sample rate, no VAD trim — the exporter already trimmed) and forwards anything after `--` to
+Lightning, e.g. `-- --trainer.limit_train_batches=10` for a smoke run. `--accelerator auto`
+picks MPS on Apple Silicon, where the full corpus trains at roughly one 32-clip step per second.
+`--resume` continues from the run's `last.ckpt`.
+
+## What the dataset is
+
+See `tts/dataset.py`. Per variety: `wavs/<key>.wav` (one trimmed, 50 ms-padded, 22.05 kHz float
+clip per recording that `audio:grade` would not flag at 3σ), and per token scheme a
+`metadata.csv` (`file|text|ids`), a `holdout.csv` in the same format for the ~5% of syllables kept
+out of training, and `phonemes.json`, Piper's `phoneme_id_map`. Two schemes are exported from the
+same audio, because which to train on is the A/B the issue asks for:
+
+| scheme   | `cên1` becomes         | symbols |
+|----------|------------------------|---------|
+| `pengim` | `c ê n 1`              | 31      |
+| `ipa`    | `t s ʰ ẽ T1`           | 42      |
+
+## The NumPy alignment search
+
+Piper aligns tokens to frames with a Cython dynamic programme that its macOS wheel does not
+ship (neither the compiled module nor the `.pyx`). `tts/monotonic_align.py` is the same
+algorithm in NumPy — for a ~5-token, ~50-frame syllable the difference is immaterial — and
+`install()` registers it under the names Piper imports only when the compiled one is absent.
+`tests/test_monotonic_align.py` checks it against an exhaustive search.

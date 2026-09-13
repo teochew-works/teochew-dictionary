@@ -5,7 +5,7 @@ import { join } from 'node:path'
 
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 
-import { checksumHex, clipCachePath, ensureClipCached, manifestClips } from '../src/audio/clip-cache.js'
+import { checksumHex, clipCachePath, ensureClipCached, manifestClips, manifestRecordings } from '../src/audio/clip-cache.js'
 import { audioTable, makeClipFixture } from './helpers/audio-fixtures.js'
 
 const BYTES = Buffer.from('real webm bytes')
@@ -89,5 +89,11 @@ describe('clip cache', () => {
   it('walks syllable clips in manifest order and skips wordClips', () => {
     const audio = audioTable({ du2: clip(), dua7: [clip(), clip({ speaker: 'b' })] }, { 'du2 dua7': clip() })
     expect(manifestClips(audio).map((c) => c.path)).toEqual(['clips.du2[0]', 'clips.dua7[0]', 'clips.dua7[1]'])
+  })
+
+  it('manifestRecordings leaves out the derived tier (ADR-0027)', () => {
+    const render = clip({ speaker: 'a-n', confidence: 'medium', synthesis: 'world-retune', derivedFrom: 'sha256:' + 'b'.repeat(64) })
+    const audio = audioTable({ du2: [clip(), render], dua7: clip() })
+    expect(manifestRecordings(audio).map((c) => c.path)).toEqual(['clips.du2[0]', 'clips.dua7[0]'])
   })
 })

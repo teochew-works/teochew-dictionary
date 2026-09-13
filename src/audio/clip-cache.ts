@@ -48,6 +48,16 @@ export function manifestClips(audio: Audio): ManifestClip[] {
   )
 }
 
+/**
+ * `manifestClips` less the derived tier (ADR-0027): the human recordings
+ * only. The yardstick anything is measured against — a render's self-check,
+ * a training set — is the speaker's own takes, never renders of them, which
+ * would only pull the spread toward their own targets.
+ */
+export function manifestRecordings(audio: Audio): ManifestClip[] {
+  return manifestClips(audio).filter((entry) => entry.clip.synthesis === undefined)
+}
+
 const FETCH_TIMEOUT_MS = 30_000
 
 async function fetchClipDefault(url: string): Promise<Response> {

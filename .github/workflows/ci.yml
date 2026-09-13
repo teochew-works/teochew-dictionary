@@ -68,3 +68,19 @@ jobs:
           cache-dependency-glob: tools/resynth/uv.lock
       - run: uv sync --locked
       - run: uv run pytest
+
+  # The VITS training tool (issue #260). Only its own tests run here — the
+  # NumPy alignment search and the dataset reader; no model is trained in CI.
+  tts:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/tts
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+          cache-dependency-glob: tools/tts/uv.lock
+      - run: uv sync --locked
+      - run: uv run pytest

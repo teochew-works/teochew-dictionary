@@ -1,4 +1,7 @@
-import { clipCachePath, ensureClipCached, manifestClips, type ManifestClip } from '../audio/clip-cache.js'
+import { existsSync, readdirSync, writeFileSync } from 'node:fs'
+import { basename, join, resolve } from 'node:path'
+
+import { clipCachePath, ensureClipCached, manifestClips, manifestRecordings, type ManifestClip } from '../audio/clip-cache.js'
 import {
   DEFAULT_ANALYSIS_PARAMS,
   emptyFeaturesCache,
@@ -8,9 +11,10 @@ import {
   type FeatureTarget,
 } from '../audio/features.js'
 import { checksumHex } from '../audio/clip-cache.js'
-import { DEFAULT_OUTLIER_Z, gradeCorpus, toneCodaKey, type ClipGrade, type CorpusStats } from '../audio/grade.js'
+import { DEFAULT_OUTLIER_Z, computeCorpusStats, gradeClip, gradeCorpus, toneCodaKey, type ClipGrade, type CorpusStats } from '../audio/grade.js'
 import { AUDIO_CLIP_CACHE_DIR, AUDIO_FEATURES_FILE } from '../paths.js'
 import { listAudioVarieties, loadAudio } from '../phonology/load.js'
+import { parseSyllable } from '../phonology/syllable.js'
 import { ensureCacheSymlinkOrExit } from './cache-symlink.js'
 import { bold, dim, green, red, yellow } from './colour.js'
 
@@ -27,6 +31,11 @@ import { bold, dim, green, red, yellow } from './colour.js'
  * of `npm run check` like `audio:verify`. Incremental after the first run:
  * a cached clip is not re-fetched and a cached feature record is not
  * re-extracted; `--refresh` re-extracts everything (after changing the tool).
+ *
+ * `--dir=<path>` (issue #260) grades a directory of `<syllable>.wav` files
+ * that are *not* in the manifest — a trained voice's output — against the
+ * recordings' yardsticks instead, offline: nothing is fetched, and the
+ * outside clips' features are not written to the cache.
  */
 
 const USAGE = `usage:
@@ -34,7 +43,8 @@ const USAGE = `usage:
   npm run audio:grade -- --variety=chaozhou one variety
   npm run audio:grade -- --refresh          re-extract features for every clip
   npm run audio:grade -- --z=2.0            flag clips at or beyond this many robust σ (default ${DEFAULT_OUTLIER_Z})
-  npm run audio:grade -- --outliers=100     print at most this many flagged clips (default 40)`
+  npm run audio:grade -- --outliers=100     print at most this many flagged clips (default 40)
+  npm run audio:grade -- --dir=<path>       grade <path>/<syllable>.wav files against the recordings (offline)`
 
 const args = process.argv.slice(2)
 if (args.includes('--help') || args.includes('-h')) {
@@ -55,6 +65,12 @@ function numberFlag(name: string, fallback: number): number {
 
 const varietyFlag = args.find((a) => a.startsWith('--variety='))
 const onlyVariety = varietyFlag ? varietyFlag.slice('--variety='.length) : undefined
+const dirFlag = args.find((a) => a.startsWith('--dir='))
+const gradeDir = dirFlag ? resolve(dirFlag.slice('--dir='.length)) : undefined
+if (gradeDir !== undefined && !existsSync(gradeDir)) {
+  console.error(red(`--dir: no such directory: ${gradeDir}`))
+  process.exit(2)
+}
 const refresh = args.includes('--refresh')
 const outlierZ = numberFlag('z', DEFAULT_OUTLIER_Z)
 const maxOutliers = numberFlag('outliers', 40)
@@ -85,10 +101,25 @@ function endProgress(): void {
 
 let failures = 0
 
+if (gradeDir !== undefined) {
+  if (varieties.length !== 1) {
+    console.error(red('--dir needs exactly one variety to grade against — pass --variety=<id>'))
+    process.exit(2)
+  }
+  const errors = gradeDirectory(gradeDir, varieties[0]!)
+  if (errors > 0) {
+    console.log(red(`\n✗ ${errors} clip${errors === 1 ? '' : 's'} could not be analysed`))
+    process.exit(1)
+  }
+  console.log(green('\n✓ graded'))
+  process.exit(0)
+}
+
 for (const id of varieties) {
   const audio = loadAudio(id)
   const clips = manifestClips(audio)
-  console.log(bold(`${id}: ${clips.length} clip${clips.length === 1 ? '' : 's'}`))
+  const renders = clips.length - manifestRecordings(audio).length
+  console.log(bold(`${id}: ${clips.length} clip${clips.length === 1 ? '' : 's'}`) + (renders > 0 ? dim(` (${renders} rendered, cached but not graded)`) : ''))
 
   // 1. Bytes. One fetch per clip ever, keyed by checksum.
   const cached: ManifestClip[] = []
@@ -128,8 +159,10 @@ for (const id of varieties) {
     console.log(dim(`  features already cached for every clip (${AUDIO_FEATURES_FILE})`))
   }
 
-  // 3. Grade.
+  // 3. Grade — the recordings only. A render (ADR-0027) is already at its
+  // tone's medians by construction, and counting it would only shrink σ.
   const inputs = cached.flatMap((entry) => {
+    if (entry.clip.synthesis !== undefined) return []
     const clipId = checksumHex(entry.clip.checksum)
     const features = cache.clips[clipId]
     return features ? [{ key: entry.key, id: clipId, features }] : []
@@ -144,6 +177,66 @@ if (failures > 0) {
   process.exit(1)
 }
 console.log(green('\n✓ corpus graded'))
+
+/**
+ * Grades every `<key>.wav` in `dir` against `variety`'s recordings. The
+ * yardsticks come from the features cache alone, so `audio:grade` must have
+ * run once for the variety; the clips under `dir` are measured by the same
+ * extractor but kept out of the cache. Writes `<dir>/grade.json`.
+ */
+function gradeDirectory(dir: string, variety: string): number {
+  const cache = loadFeaturesCache()
+  if (cache === null) {
+    console.error(red(`no features cache at ${AUDIO_FEATURES_FILE} — run \`npm run audio:grade\` first`))
+    return 1
+  }
+  const audio = loadAudio(variety)
+  const corpus = manifestRecordings(audio).flatMap((entry) => {
+    const features = cache.clips[checksumHex(entry.clip.checksum)]
+    if (!features) return []
+    try {
+      return [{ syllable: parseSyllable(entry.key), features }]
+    } catch {
+      return []
+    }
+  })
+  if (corpus.length === 0) {
+    console.error(red(`no cached features for ${variety}'s recordings — run \`npm run audio:grade\` first`))
+    return 1
+  }
+  const stats = computeCorpusStats(corpus)
+
+  const wavs = readdirSync(dir).filter((f) => f.endsWith('.wav')).sort()
+  console.log(bold(`${dir}: ${wavs.length} clip${wavs.length === 1 ? '' : 's'}`) + dim(` against ${corpus.length} ${variety} recordings`))
+  if (wavs.length === 0) return 1
+
+  const targets: FeatureTarget[] = wavs.map((f) => ({ id: basename(f, '.wav'), webmPath: join(dir, f) }))
+  const result = extractFeatures(targets, { params: cache.params, onProgress: progress('analysed', 1) })
+  endProgress()
+  for (const [key, message] of Object.entries(result.errors)) console.log(`  ${red('error')} ${key}: ${message}`)
+
+  const grades = Object.entries(result.clips).map(([key, features]) => gradeClip(stats, { key, id: key, features }, { outlierZ }))
+  const within = grades.filter((g) => g.flags.length === 0).length
+  const maxZs = grades.map((g) => g.maxZ).sort((a, b) => a - b)
+  const medianZ = maxZs.length === 0 ? NaN : maxZs[Math.floor(maxZs.length / 2)]!
+  console.log(`\n  ${bold('self-check')}  ${dim(`${within}/${grades.length} within ${outlierZ}σ of the recordings; median worst-axis |z| ${fmt(medianZ, 2)}`)}`)
+  const axes = ['f0', 'voicedMs', 'onsetMs', 'rmsDb'] as const
+  for (const axis of axes) {
+    const zs = grades.flatMap((g) => (g.z[axis] === undefined ? [] : [g.z[axis]!]))
+    if (zs.length === 0) continue
+    const sorted = [...zs].sort((a, b) => a - b)
+    const med = sorted[Math.floor(sorted.length / 2)]!
+    const absMed = [...zs.map(Math.abs)].sort((a, b) => a - b)[Math.floor(zs.length / 2)]!
+    console.log(dim(`  ${axis.padEnd(9)} n=${String(zs.length).padStart(4)}  median z ${(med >= 0 ? '+' : '') + med.toFixed(2)}  median |z| ${absMed.toFixed(2)}`))
+  }
+  printOutliers(grades, maxOutliers)
+  writeFileSync(
+    join(dir, 'grade.json'),
+    JSON.stringify({ version: 1, generated: new Date().toISOString(), variety, outlierZ, recordings: corpus.length, clips: grades, errors: result.errors }, null, 2),
+  )
+  console.log(dim(`  report → ${join(dir, 'grade.json')}`))
+  return Object.keys(result.errors).length
+}
 
 function fmt(value: number, digits = 0): string {
   return Number.isFinite(value) ? value.toFixed(digits) : '–'

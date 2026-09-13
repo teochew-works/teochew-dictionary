@@ -1,7 +1,7 @@
 import { existsSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-import { checksumHex, clipCachePath, manifestClips } from '../audio/clip-cache.js'
+import { checksumHex, clipCachePath, manifestRecordings } from '../audio/clip-cache.js'
 import { loadFeaturesCache, type ClipFeatures } from '../audio/features.js'
 import { computeCorpusStats, type CorpusStats } from '../audio/grade.js'
 import { synthesizeClips, type RenderedClip, type SynthJobClip } from '../audio/synthesize.js'
@@ -92,8 +92,9 @@ let failures = 0
 
 for (const variety of varieties) {
   const audio = loadAudio(variety)
-  const clips = manifestClips(audio)
-  console.log(bold(`${variety}: ${clips.length} clip${clips.length === 1 ? '' : 's'}`))
+  // Recordings only: a published render (ADR-0027) is neither a source nor a yardstick.
+  const clips = manifestRecordings(audio)
+  console.log(bold(`${variety}: ${clips.length} recording${clips.length === 1 ? '' : 's'}`))
 
   // Yardsticks come from the whole corpus, whatever --only selects.
   const withFeatures = clips.flatMap((entry) => {

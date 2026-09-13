@@ -125,7 +125,12 @@ Offline but cache-dependent (needs an `audio:grade` run first):
 
 ```bash
 npm run audio:synthesize [-- --write]   # re-render clips toward per-part targets into .cache/audio-synth/
+npm run tts:export                      # write the VITS training set into .cache/audio-tts/ (issue #260)
+npm run audio:grade -- --dir=<path>     # grade generated <syllable>.wav files against the recordings
 ```
+
+Model training is never run from npm at all — see [tools/tts/README.md](tools/tts/README.md)
+(`uv run tts train|synth|mos`), hours-long and GPU/MPS-bound, output evaluation-only.
 
 Regeneration and maintenance:
 
@@ -170,6 +175,8 @@ src/lookup/       search over the built SQLite
 src/importers/    CC-CEDICT, Wiktionary, Lingua Libre, local recordings   (ADR-0006)
 src/audio/        clip cache, per-clip features, per-part corpus grading;
                     drives the Python DSP tool in tools/resynth/             (issue #259)
+                    tts-dataset.ts: the VITS training-set exporter for
+                    tools/tts/ — tokenisation, grade filter, hold-out         (issue #260)
 src/data/         source registry and licence derivation                  (ADR-0008, ADR-0009)
 src/cli/          the npm-script entry points
 web/              static React frontend, independent npm project          (ADR-0019)
@@ -186,7 +193,8 @@ web/src/pwa/      installable PWA: precached shell, opt-in offline data    (ADR-
 | [web/README.md](web/README.md)                       | Frontend architecture, dev and deployment                      |
 | [packages/core/README.md](packages/core/README.md)   | What `@teochew/core` holds, the boundary rule, how to release  |
 | [AUDIO-CONSENT.md](AUDIO-CONSENT.md)                 | Speaker consent process (tracked outside the repo)             |
-| [data/phonology/TTS.md](data/phonology/TTS.md)       | Why synthesis was rejected ([ADR-0016](docs/adrs/adr-0016.md)); what ADR-0027 later allowed |
+| [data/phonology/TTS.md](data/phonology/TTS.md)       | Why synthesis was rejected ([ADR-0016](docs/adrs/adr-0016.md)); what ADR-0027 later allowed; the issue #260 VITS evaluation |
+| [tools/tts/README.md](tools/tts/README.md)           | Training a Piper/VITS voice on the corpus, and why it publishes nothing |
 | [docs/adrs/adr-0006.md](docs/adrs/adr-0006.md)       | Why importers may never write to `data/entries/`               |
 | [docs/adrs/adr-0008.md](docs/adrs/adr-0008.md)       | Why an entry's licence is computed, not written                |
 
