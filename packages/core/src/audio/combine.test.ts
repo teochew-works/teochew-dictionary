@@ -48,6 +48,26 @@ describe('combineAxes', () => {
     expect(combineAxes(ATTESTED, axes)).toEqual([])
   })
 
+  it('lets a heavily-weighted axis override the other two', () => {
+    const attested: AttestedTriple[] = [
+      { syllable: 'a', initial: 'ia', rime: 'ra', tone: 5 },
+      { syllable: 'b', initial: 'ib', rime: 'rb', tone: 6 },
+    ]
+    // initial/rime weakly favor 'a' (small normalised gap, extra spread-out
+    // labels included so min-max doesn't fully saturate to {0,1}); tone more
+    // strongly favors 'b'.
+    const axes: AxisCandidates = {
+      initial: [{ key: 'ia', distance: 0.1 }, { key: 'ib', distance: 0.2 }, { key: 'filler', distance: 1.0 }],
+      rime: [{ key: 'ra', distance: 0.1 }, { key: 'rb', distance: 0.2 }, { key: 'filler', distance: 1.0 }],
+      tone: [{ key: '5', distance: 0.5 }, { key: '6', distance: 0.4 }, { key: '1', distance: 0 }, { key: '2', distance: 1 }],
+    }
+    const equal = combineAxes(attested, axes)
+    expect(equal[0]!.syllable).toBe('a') // initial+rime's combined small edge still wins unweighted
+
+    const toneWeighted = combineAxes(attested, axes, { weights: { initial: 1, rime: 1, tone: 10 } })
+    expect(toneWeighted[0]!.syllable).toBe('b') // a 10x tone weight flips it
+  })
+
   it('scopes the softmax to scoreWindow candidates, zeroing everything past it', () => {
     const attested: AttestedTriple[] = Array.from({ length: 5 }, (_, i) => ({
       syllable: `s${i}`,
@@ -60,7 +80,7 @@ describe('combineAxes', () => {
       rime: [{ key: 'eng', distance: 0 }],
       tone: Array.from({ length: 5 }, (_, i) => ({ key: String(i + 1), distance: i })),
     }
-    const ranked = combineAxes(attested, axes, 2)
+    const ranked = combineAxes(attested, axes, { scoreWindow: 2 })
     expect(ranked.slice(0, 2).every((c) => c.score > 0)).toBe(true)
     expect(ranked.slice(2).every((c) => c.score === 0)).toBe(true)
     expect(ranked.reduce((sum, c) => sum + c.score, 0)).toBeCloseTo(1)

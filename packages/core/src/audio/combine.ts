@@ -64,11 +64,26 @@ function toDistanceMap(candidates: RankedCandidate[]): Map<string, number> {
 
 const DEFAULT_SCORE_WINDOW = 20
 
+/** How heavily each axis's normalised distance counts toward the combined sum — equal by default. Some axes are simply more discriminative than others (tone's contour is a stronger signal than a short initial segment), so a caller that knows this from its own held-out eval can weight accordingly. */
+export interface AxisWeights {
+  initial: number
+  rime: number
+  tone: number
+}
+
+const DEFAULT_WEIGHTS: AxisWeights = { initial: 1, rime: 1, tone: 1 }
+
+export interface CombineAxesOptions {
+  scoreWindow?: number
+  weights?: AxisWeights
+}
+
 export function combineAxes(
   attested: AttestedTriple[],
   axes: AxisCandidates,
-  scoreWindow: number = DEFAULT_SCORE_WINDOW,
+  options: CombineAxesOptions = {},
 ): CombinedCandidate[] {
+  const { scoreWindow = DEFAULT_SCORE_WINDOW, weights = DEFAULT_WEIGHTS } = options
   const initialByLabel = toDistanceMap(axes.initial)
   const rimeByLabel = toDistanceMap(axes.rime)
   const toneByLabel = toDistanceMap(axes.tone)
@@ -81,7 +96,8 @@ export function combineAxes(
     const rimeDist = rimeByLabel.get(triple.rime)
     const toneDist = toneByLabel.get(String(triple.tone))
     if (initialDist === undefined || rimeDist === undefined || toneDist === undefined) return []
-    const distance = normInitial(initialDist) + normRime(rimeDist) + normTone(toneDist)
+    const distance =
+      weights.initial * normInitial(initialDist) + weights.rime * normRime(rimeDist) + weights.tone * normTone(toneDist)
     return [{ syllable: triple.syllable, initial: triple.initial, rime: triple.rime, tone: triple.tone, distance }]
   })
   scored.sort((a, b) => a.distance - b.distance)

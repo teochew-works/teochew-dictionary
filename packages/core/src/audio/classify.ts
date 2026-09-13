@@ -1,4 +1,4 @@
-import { combineAxes, type AttestedTriple, type AxisCandidates, type CombinedCandidate } from './combine.js'
+import { combineAxes, type AttestedTriple, type AxisCandidates, type CombineAxesOptions, type CombinedCandidate } from './combine.js'
 import { contourDistance } from './tone.js'
 import { dtwDistance } from './dtw.js'
 import { DEFAULT_SEGMENT_PARAMS, segmentFrames, type SegmentParams } from './segment.js'
@@ -71,6 +71,7 @@ export function classifyAxes(
   references: AxisReferenceClip[],
   attested: AttestedTriple[],
   params: SegmentParams = DEFAULT_SEGMENT_PARAMS,
+  combineOptions: CombineAxesOptions = {},
 ): CombinedCandidate[] {
-  return combineAxes(attested, computeAxisCandidates(query, references, params))
+  return combineAxes(attested, computeAxisCandidates(query, references, params), combineOptions)
 }

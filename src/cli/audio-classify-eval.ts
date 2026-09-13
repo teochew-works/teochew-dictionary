@@ -1,4 +1,4 @@
-import { computeAxisCandidates, combineAxes, dtwDistance, rimeOf, type RankedCandidate } from '@teochew/core'
+import { computeAxisCandidates, combineAxes, dtwDistance, rimeOf, type AxisCandidates, type RankedCandidate } from '@teochew/core'
 import { attestedTriples } from '../audio/attested-triples.js'
 import { buildAxisReferences } from '../audio/axis-references.js'
 import { checksumHex, clipCachePath, ensureClipCached, manifestClips, type ManifestClip } from '../audio/clip-cache.js'
@@ -200,7 +200,10 @@ function sortedByDistance(candidates: RankedCandidate[]): RankedCandidate[] {
 
 console.log(dim(`  ranking ${cachedQueries.length} queries against ${axisReferences.length} references (axes)…`))
 const onAxisRank = progress('ranked', 100)
-const combinedCases: EvalCase[] = []
+// axes kept per query (not just the combined result) so a different
+// combination weighting can be retried below without redoing the DTW —
+// that's the expensive part; combineAxes itself is cheap.
+const perQuery: { truthKey: string; axes: AxisCandidates }[] = []
 const initialCases: EvalCase[] = []
 const rimeCases: EvalCase[] = []
 const toneCases: EvalCase[] = []
@@ -219,9 +222,7 @@ for (const [i, query] of cachedQueries.entries()) {
     { mfcc, onsetMs: features.onsetMs, f0Contour: features.f0.contour },
     axisReferences,
   )
-  const combined = combineAxes(attested, axes)
-
-  combinedCases.push({ truthKey: query.key, candidates: combined.map((c) => ({ key: c.syllable, distance: c.distance })) })
+  perQuery.push({ truthKey: query.key, axes })
   initialCases.push({ truthKey: truth.initial ?? '', candidates: sortedByDistance(axes.initial) })
   rimeCases.push({ truthKey: rimeOf(truth), candidates: sortedByDistance(axes.rime) })
   toneCases.push({ truthKey: String(truth.tone), candidates: sortedByDistance(axes.tone) })
@@ -231,11 +232,40 @@ if (skippedNoFeatures > 0) {
   console.log(dim(`  ${skippedNoFeatures} quer${skippedNoFeatures === 1 ? 'y' : 'ies'} skipped (no cached MFCC/features)`))
 }
 
+const initialTally = tallyAccuracy(initialCases)
+const rimeTally = tallyAccuracy(rimeCases)
+const toneTally = tallyAccuracy(toneCases)
+
+function combinedTally(weights?: { initial: number; rime: number; tone: number }): EvalCase[] {
+  return perQuery.map(({ truthKey, axes }) => {
+    const combined = combineAxes(attested, axes, weights ? { weights } : {})
+    return { truthKey, candidates: combined.map((c) => ({ key: c.syllable, distance: c.distance })) }
+  })
+}
+
+// Each axis's own top-1 accuracy as its combination weight: an axis that
+// independently gets the right answer 86% of the time (tone, typically)
+// shouldn't count equally against one that gets it right 50% of the time
+// (initial) — an unweighted sum lets the noisier axis dilute the stronger
+// one's signal. Derived from this same held-out run rather than a separate
+// tuning set, so treat this weighting as a first cut, not a tuned result.
+const accuracyWeights = {
+  initial: initialTally.total > 0 ? initialTally.top1 / initialTally.total : 1,
+  rime: rimeTally.total > 0 ? rimeTally.top1 / rimeTally.total : 1,
+  tone: toneTally.total > 0 ? toneTally.top1 / toneTally.total : 1,
+}
+
 console.log(`\n${formatAccuracy(`whole-syllable DTW/MFCC baseline (${querySpeaker} vs ${referenceSpeaker})`, tallyAccuracy(baselineCases))}`)
-console.log(`\n${formatAccuracy('axis classifier — combined (initial+rime+tone)', tallyAccuracy(combinedCases))}`)
-console.log(`\n${formatAccuracy('axis classifier — initial only', tallyAccuracy(initialCases))}`)
-console.log(`\n${formatAccuracy('axis classifier — rime only', tallyAccuracy(rimeCases))}`)
-console.log(`\n${formatAccuracy('axis classifier — tone only', tallyAccuracy(toneCases))}`)
+console.log(`\n${formatAccuracy('axis classifier — combined, equal weights', tallyAccuracy(combinedTally()))}`)
+console.log(
+  `\n${formatAccuracy(
+    `axis classifier — combined, accuracy-weighted (initial=${accuracyWeights.initial.toFixed(2)}, rime=${accuracyWeights.rime.toFixed(2)}, tone=${accuracyWeights.tone.toFixed(2)})`,
+    tallyAccuracy(combinedTally(accuracyWeights)),
+  )}`,
+)
+console.log(`\n${formatAccuracy('axis classifier — initial only', initialTally)}`)
+console.log(`\n${formatAccuracy('axis classifier — rime only', rimeTally)}`)
+console.log(`\n${formatAccuracy('axis classifier — tone only', toneTally)}`)
 
 if (failures > 0) {
   console.log(red(`\n✗ ${failures} clip${failures === 1 ? '' : 's'} could not be fetched or analysed`))
