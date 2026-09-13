@@ -11,10 +11,9 @@
  * real and reusable.
  */
 
-export interface RankedCandidate {
-  key: string
-  distance: number
-}
+import type { RankedCandidate } from '@teochew/core'
+
+export type { RankedCandidate }
 
 export interface EvalCase {
   /** The manifest key (Peng'im syllable) the query clip actually is. */
