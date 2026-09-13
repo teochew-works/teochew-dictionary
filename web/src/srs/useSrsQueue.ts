@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { getAllCards, putCard } from './db'
 import { buildQueue, gradeCard, mergeQueue, newCardState, pruneQueue, type CardState, type Grade, type QueueItem } from '@teochew/core'
-import type { EnrichedEntry } from '@teochew/core'
+import type { ResolvedEntry } from '@teochew/core'
 
 export interface SrsQueueState {
   current: QueueItem | null
@@ -46,7 +46,7 @@ interface Session {
  * immediately with interval: 1 — so a reload mid-session still finds it due
  * again tomorrow, not today.
  */
-export function useSrsQueue(entries: EnrichedEntry[], tableKey: string): SrsQueueState {
+export function useSrsQueue(entries: ResolvedEntry[], tableKey: string): SrsQueueState {
   const [cards, setCards] = useState<Map<string, CardState>>(new Map())
   const [sessions, setSessions] = useState<Map<string, Session>>(new Map())
   const [loading, setLoading] = useState(true)

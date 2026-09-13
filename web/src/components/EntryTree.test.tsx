@@ -2,10 +2,10 @@ import { describe, expect, it } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { EntryTree } from './EntryTree'
 import type { EntryGroup } from '@teochew/core'
-import type { EnrichedEntry } from '@teochew/core'
+import type { ResolvedEntry } from '@teochew/core'
 import { makeEntry as makeBaseEntry, makeReading } from '../test/entryFixtures'
 
-function makeEntry(id: string, headword: string): EnrichedEntry {
+function makeEntry(id: string, headword: string): ResolvedEntry {
   return makeBaseEntry({
     id,
     headword,

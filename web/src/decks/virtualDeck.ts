@@ -1,4 +1,4 @@
-import type { EnrichedEntry } from '@teochew/core'
+import type { ResolvedEntry } from '@teochew/core'
 import type { Deck, DeckHue } from '@teochew/core'
 
 /**
@@ -21,7 +21,7 @@ export function isVirtualDeckId(id: string): boolean {
  * call rather than stored, so it can't rot as the lexicon grows and doesn't
  * spend localStorage quota on 16,000+ ids that mean "all of them."
  */
-export function makeDictionaryDeck(entries: EnrichedEntry[]): Deck {
+export function makeDictionaryDeck(entries: ResolvedEntry[]): Deck {
   return {
     id: DICTIONARY_DECK_ID,
     name: DICTIONARY_DECK_NAME,

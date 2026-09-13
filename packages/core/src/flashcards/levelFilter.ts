@@ -1,4 +1,4 @@
-import type { EnrichedEntry } from '../enrichedEntry.js'
+import type { ResolvedEntry } from '../enrichedEntry.js'
 import type { Level } from '../schema/entry.js'
 import { LEVEL_ORDER } from '../search/sortEntries.js'
 
@@ -38,6 +38,6 @@ export function writeLevelFilter(selected: Set<LevelFilterValue>): void {
   }
 }
 
-export function isEligibleForLevel(entry: EnrichedEntry, selected: Set<LevelFilterValue>): boolean {
+export function isEligibleForLevel(entry: ResolvedEntry, selected: Set<LevelFilterValue>): boolean {
   return entry.level ? selected.has(entry.level) : selected.has('untiered')
 }

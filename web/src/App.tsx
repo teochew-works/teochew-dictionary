@@ -114,7 +114,7 @@ export function App() {
           <FlashcardsView entries={data.entries} drawer={route.flashcardsDrawer} onDrawerChange={setFlashcardsDrawer} />
         )}
         {route.tab === 'sounds' && <SoundsView route={route.soundsRoute} onRouteChange={setSoundsRoute} />}
-        {tab === 'settings' && <SettingsView />}
+        {tab === 'settings' && <SettingsView entries={data?.entries ?? []} />}
         {tab === 'donate' && <DonateView />}
         {tab === 'about' && <AboutView />}
       </main>

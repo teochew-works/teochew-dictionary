@@ -2,7 +2,7 @@ import { Fragment, memo, useRef, useState } from 'react'
 import type { KeyboardEvent as ReactKeyboardEvent, PointerEvent as ReactPointerEvent } from 'react'
 import { EntryDeckMenu } from './EntryDeckMenu'
 import { copyModifierName } from '../decks/dnd/copyModifier'
-import type { EnrichedEntry, PronunciationMode, Deck } from '@teochew/core'
+import type { ResolvedEntry, PronunciationMode, Deck } from '@teochew/core'
 
 export interface DeckContentsCardDrag {
   onPointerDown: (entryId: string) => (e: ReactPointerEvent) => void
@@ -39,7 +39,7 @@ export function DeckContents({
   lift,
 }: {
   deck: Deck
-  entryById: Map<string, EnrichedEntry>
+  entryById: Map<string, ResolvedEntry>
   pronunciation: PronunciationMode
   cardDrag: DeckContentsCardDrag
   /** Every user deck, for the per-row membership menu. */
@@ -145,7 +145,7 @@ const DeckContentsRow = memo(function DeckContentsRow({
 }: {
   entryId: string
   /** Absent when the id no longer resolves — see the unresolved branch below. */
-  entry: EnrichedEntry | undefined
+  entry: ResolvedEntry | undefined
   deckName: string
   pronunciation: PronunciationMode
   dragging: boolean

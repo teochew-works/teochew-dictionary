@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { canCombine, hasAudio, hasFullAudio, syllableClips, syllableClipUrls, withTrim } from './filters.js'
-import type { AudioReference, EnrichedEntry, EnrichedReading } from '../enrichedEntry.js'
+import type { AudioReference, ResolvedEntry, ResolvedReading } from '../enrichedEntry.js'
 
 const CLIP: AudioReference = {
   key: 'dio5',
@@ -10,7 +10,7 @@ const CLIP: AudioReference = {
   attributions: ['Teochew Dictionary audio (CC-BY-4.0)'],
 }
 
-const READING: EnrichedReading = {
+const READING: ResolvedReading = {
   pengim: 'dio5 ziu1',
   variety: 'chaozhou',
   ipa: 'tie⁵⁵ tsiu³³',
@@ -25,7 +25,7 @@ const READING: EnrichedReading = {
   wordAudio: null,
 }
 
-function entryWith(...readings: EnrichedReading[]): EnrichedEntry {
+function entryWith(...readings: ResolvedReading[]): ResolvedEntry {
   return {
     id: 'dio5-ziu1-潮州',
     headword: '潮州',
@@ -90,7 +90,7 @@ describe('canCombine', () => {
   const noSpeaker = { ...CLIP, key: 'ziu1' }
 
   it('rejects a single-syllable reading — nothing to combine', () => {
-    const reading: EnrichedReading = { ...READING, syllable_count: 1, audio: [speakerA] }
+    const reading: ResolvedReading = { ...READING, syllable_count: 1, audio: [speakerA] }
     expect(canCombine(reading)).toBe(false)
   })
 
@@ -111,7 +111,7 @@ describe('canCombine', () => {
   })
 
   it('reads from sandhiAudio in sandhi mode', () => {
-    const reading: EnrichedReading = { ...READING, audio: [speakerA, speakerB], sandhiAudio: [speakerA, speakerAAgain] }
+    const reading: ResolvedReading = { ...READING, audio: [speakerA, speakerB], sandhiAudio: [speakerA, speakerAAgain] }
     expect(canCombine(reading, 'citation')).toBe(false)
     expect(canCombine(reading, 'sandhi')).toBe(true)
   })
@@ -138,13 +138,13 @@ describe('withTrim', () => {
 describe('syllableClips', () => {
   it('filters out null slots, keeping the clips in order', () => {
     const trimmed = { ...CLIP, key: 'ziu1', trimStartMs: 239, trimEndMs: 677 }
-    const reading: EnrichedReading = { ...READING, audio: [CLIP, null, trimmed] }
+    const reading: ResolvedReading = { ...READING, audio: [CLIP, null, trimmed] }
     expect(syllableClips(reading)).toEqual([CLIP, trimmed])
   })
 
   it('reads from sandhiAudio in sandhi mode', () => {
     const sandhiClip = { ...CLIP, trimStartMs: 100 }
-    const reading: EnrichedReading = { ...READING, audio: [CLIP], sandhiAudio: [sandhiClip] }
+    const reading: ResolvedReading = { ...READING, audio: [CLIP], sandhiAudio: [sandhiClip] }
     expect(syllableClips(reading, 'sandhi')).toEqual([sandhiClip])
   })
 })
@@ -152,12 +152,12 @@ describe('syllableClips', () => {
 describe('syllableClipUrls', () => {
   it('trims null slots and maps each clip through withTrim', () => {
     const trimmed = { ...CLIP, key: 'ziu1', trimStartMs: 239, trimEndMs: 677 }
-    const reading: EnrichedReading = { ...READING, audio: [CLIP, null, trimmed] }
+    const reading: ResolvedReading = { ...READING, audio: [CLIP, null, trimmed] }
     expect(syllableClipUrls(reading)).toEqual([CLIP.url, `${CLIP.url}#t=0.239,0.677`])
   })
 
   it('reads from sandhiAudio in sandhi mode', () => {
-    const reading: EnrichedReading = { ...READING, audio: [CLIP], sandhiAudio: [{ ...CLIP, trimStartMs: 100 }] }
+    const reading: ResolvedReading = { ...READING, audio: [CLIP], sandhiAudio: [{ ...CLIP, trimStartMs: 100 }] }
     expect(syllableClipUrls(reading, 'sandhi')).toEqual([`${CLIP.url}#t=0.1`])
   })
 })

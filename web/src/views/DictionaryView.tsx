@@ -6,6 +6,7 @@ import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly
 import { readAudioMode, writeAudioMode } from '../settings/audioMode'
 import type { AudioMode } from '../settings/audioMode'
 import { readMogherLinks } from '../settings/mogherLinks'
+import { useResolvedEntries } from '../hooks/useResolvedEntries'
 import { EntryList } from '../components/EntryList'
 import { EntryTree } from '../components/EntryTree'
 import { EntryDetail } from '../components/EntryDetail'
@@ -53,7 +54,7 @@ const SORT_MODE_LABELS: Record<SortMode, string> = {
 }
 
 export function DictionaryView({
-  entries,
+  entries: rawEntries,
   selectedId: controlledSelectedId,
   onSelectEntry,
 }: {
@@ -66,6 +67,10 @@ export function DictionaryView({
   selectedId?: string | null
   onSelectEntry?: (id: string | null) => void
 }) {
+  // Resolved once per mount by the stored speaker preference (issue #274) —
+  // this view fully remounts on tab switch (App.tsx), so a Settings change
+  // takes effect the next time the Dictionary tab is opened.
+  const entries = useResolvedEntries(rawEntries)
   const [query, setQuery] = useState('')
   const [internalSelectedId, setInternalSelectedId] = useState<string | null>(null)
   const selectedId = controlledSelectedId !== undefined ? controlledSelectedId : internalSelectedId

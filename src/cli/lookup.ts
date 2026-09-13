@@ -1,4 +1,5 @@
 import { NotBuiltError, lookup, openDb } from '../lookup/index.js'
+import { resolveEntryAudio } from '@teochew/core'
 import { bold, cyan, dim } from './colour.js'
 
 /**
@@ -44,7 +45,12 @@ if (hits.length === 0) {
   process.exit(1)
 }
 
-for (const { entry, match } of hits) {
+for (const { entry: rawEntry, match } of hits) {
+  // No stored speaker preference on the CLI — resolve with today's default
+  // order (confidence, then recency, then whole-reading speaker consistency;
+  // see resolveReadingAudio/sortClipsByDefault) so lookup's output is
+  // unchanged by issue #274.
+  const entry = resolveEntryAudio(rawEntry, [])
   const readings = variety
     ? entry.readings.filter((r) => r.variety === variety)
     : entry.readings

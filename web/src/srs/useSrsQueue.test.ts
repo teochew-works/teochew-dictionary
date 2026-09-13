@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { useSrsQueue } from './useSrsQueue'
 import { makeEntry } from '../test/entryFixtures'
 import type { CardState } from '@teochew/core'
-import type { EnrichedEntry } from '@teochew/core'
+import type { ResolvedEntry } from '@teochew/core'
 
 const stored = new Map<string, CardState>()
 const put = vi.fn()
@@ -16,15 +16,15 @@ vi.mock('./db', () => ({
   },
 }))
 
-function entry(id: string, frequency = 0): EnrichedEntry {
+function entry(id: string, frequency = 0): ResolvedEntry {
   return makeEntry({ id, headword: id, frequency })
 }
 
 /** A fresh array each time, the way FlashcardsView's memo hands one over. */
 const pool = (...ids: string[]) => ids.map((id, i) => entry(id, ids.length - i))
 
-function setup(entries: EnrichedEntry[], tableKey = 'table-a') {
-  return renderHook(({ e, k }: { e: EnrichedEntry[]; k: string }) => useSrsQueue(e, k), {
+function setup(entries: ResolvedEntry[], tableKey = 'table-a') {
+  return renderHook(({ e, k }: { e: ResolvedEntry[]; k: string }) => useSrsQueue(e, k), {
     initialProps: { e: entries, k: tableKey },
   })
 }

@@ -1,4 +1,4 @@
-import type { EnrichedEntry } from '../enrichedEntry.js'
+import type { ResolvedEntry } from '../enrichedEntry.js'
 
 export type PromptMode = 'chinese' | 'english' | 'pronunciation' | 'audio-only'
 
@@ -39,7 +39,7 @@ export function writePromptMode(mode: PromptMode): void {
  * ever displays `readings[0]`, so audio-only checks that reading
  * specifically rather than every reading on the entry.
  */
-export function isEligibleForMode(entry: EnrichedEntry, mode: PromptMode): boolean {
+export function isEligibleForMode(entry: ResolvedEntry, mode: PromptMode): boolean {
   switch (mode) {
     case 'chinese':
       return true

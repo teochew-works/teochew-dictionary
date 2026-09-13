@@ -1,9 +1,9 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, render, screen } from '@testing-library/react'
 import { EntryRow } from './EntryRow'
-import type { EnrichedEntry } from '@teochew/core'
+import type { ResolvedEntry } from '@teochew/core'
 
-const ENTRY: EnrichedEntry = {
+const ENTRY: ResolvedEntry = {
   id: 'dio5-ziu1-潮州',
   headword: '潮州',
   readings: [

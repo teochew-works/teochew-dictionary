@@ -1,5 +1,5 @@
 import Fuse from 'fuse.js'
-import type { EnrichedEntry } from '@teochew/core'
+import type { ResolvedEntry } from '@teochew/core'
 
 /**
  * Fuse.js over the pre-computed search_keys (headword, variants, Peng'im with
@@ -8,7 +8,7 @@ import type { EnrichedEntry } from '@teochew/core'
  * headword itself is weighted higher since an exact/near-exact character match
  * is almost always what a user searching by hanzi wants first.
  */
-export function createSearchIndex(entries: EnrichedEntry[]): Fuse<EnrichedEntry> {
+export function createSearchIndex(entries: ResolvedEntry[]): Fuse<ResolvedEntry> {
   return new Fuse(entries, {
     keys: [
       { name: 'headword', weight: 3 },
@@ -51,7 +51,7 @@ function wholeWordPattern(query: string): RegExp {
   return new RegExp(`(^|[^\\p{L}\\p{N}])${escapeRegExp(query)}($|[^\\p{L}\\p{N}])`, 'u')
 }
 
-function matchTier(entry: EnrichedEntry, needle: string, wholeWord: RegExp): number {
+function matchTier(entry: ResolvedEntry, needle: string, wholeWord: RegExp): number {
   let sawSubstring = false
   for (const key of entry.search_keys) {
     const k = key.toLowerCase()
@@ -64,7 +64,7 @@ function matchTier(entry: EnrichedEntry, needle: string, wholeWord: RegExp): num
   return sawSubstring ? TIER_SUBSTRING : TIER_FUZZY
 }
 
-export function search(index: Fuse<EnrichedEntry>, query: string): EnrichedEntry[] {
+export function search(index: Fuse<ResolvedEntry>, query: string): ResolvedEntry[] {
   const trimmed = query.trim()
   if (!trimmed) return []
 

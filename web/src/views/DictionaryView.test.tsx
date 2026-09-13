@@ -1,8 +1,30 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { DictionaryView } from './DictionaryView'
-import type { AudioReference, EnrichedEntry } from '@teochew/core'
-import { makeEntry as makeBaseEntry, makeReading } from '../test/entryFixtures'
+import type { AudioReference, EnrichedEntry, EnrichedReading } from '@teochew/core'
+
+// DictionaryView's `entries` prop is the raw dict.json shape — every
+// candidate clip per slot, not just the one a no-preference viewer sees — so
+// this file's fixtures build that shape directly (unlike
+// web/src/test/entryFixtures.ts, whose consumers all sit downstream of
+// resolveEntryAudio and so use the resolved single-clip-per-slot shape).
+function baseReading(overrides: Partial<EnrichedReading> = {}): EnrichedReading {
+  return {
+    pengim: 'dio5 ziu1',
+    variety: 'chaozhou',
+    ipa: 'tie⁵⁵ tsiu³³',
+    poj: 'tiô-tsiu',
+    sandhi: 'dio7 ziu1',
+    ipa_confidence: 'medium',
+    ipa_caveats: [],
+    pengim_toneless: 'dio ziu',
+    syllable_count: 2,
+    audio: [[], []],
+    sandhiAudio: [[], []],
+    wordAudio: [],
+    ...overrides,
+  }
+}
 
 function makeEntry({
   id,
@@ -17,36 +39,35 @@ function makeEntry({
   keys: string[]
   level?: EnrichedEntry['level']
 }): EnrichedEntry {
-  return makeBaseEntry({
+  return {
     id,
     headword,
-    readings: [makeReading({ pengim: 'bhog8', ipa: 'bok̚⁴', poj: 'bo̍k', sandhi: 'bhog8', pengim_toneless: 'bhog', syllable_count: 1, audio: [null] })],
+    readings: [
+      baseReading({
+        pengim: 'bhog8',
+        ipa: 'bok̚⁴',
+        poj: 'bo̍k',
+        sandhi: 'bhog8',
+        pengim_toneless: 'bhog',
+        syllable_count: 1,
+        audio: [[]],
+        sandhiAudio: [[]],
+      }),
+    ],
     senses: [{ pos: 'noun', gloss_en: gloss }],
+    sources: ['seed'],
     search_keys: keys,
+    licence: 'CC-BY-4.0',
+    attributions: [],
     ...(level ? { level } : {}),
-  })
+  }
 }
 
 const ENTRIES: EnrichedEntry[] = [
   {
     id: 'dio5-ziu1-潮州',
     headword: '潮州',
-    readings: [
-      {
-        pengim: 'dio5 ziu1',
-        variety: 'chaozhou',
-        ipa: 'tie⁵⁵ tsiu³³',
-        poj: 'tiô-tsiu',
-        sandhi: 'dio5 ziu1',
-        ipa_confidence: 'medium',
-        ipa_caveats: [],
-        pengim_toneless: 'dio ziu',
-        syllable_count: 2,
-        audio: [null, null],
-        sandhiAudio: [null, null],
-        wordAudio: null,
-      },
-    ],
+    readings: [baseReading()],
     senses: [{ pos: 'proper-noun', gloss_en: ['Chaozhou', 'Teochew'] }],
     sources: ['seed', 'wiktionary'],
     search_keys: ['潮州', 'dio5 ziu1', 'Chaozhou'],
@@ -119,7 +140,7 @@ describe('DictionaryView audio', () => {
   }
 
   const WITH_CLIP: EnrichedEntry[] = [
-    { ...ENTRIES[0]!, readings: [{ ...ENTRIES[0]!.readings[0]!, wordAudio: CLIP }] },
+    { ...ENTRIES[0]!, readings: [{ ...ENTRIES[0]!.readings[0]!, wordAudio: [CLIP] }] },
     { ...ENTRIES[0]!, id: 'other', headword: '汕頭' },
   ]
 
@@ -236,7 +257,7 @@ describe('DictionaryView audio filter', () => {
 
   /** The same entry, given a whole-word recording. */
   function withClip(entry: EnrichedEntry): EnrichedEntry {
-    return { ...entry, readings: [{ ...entry.readings[0]!, wordAudio: CLIP }] }
+    return { ...entry, readings: [{ ...entry.readings[0]!, wordAudio: [CLIP] }] }
   }
 
   const RECORDED = withClip(makeEntry({ id: 'a1', headword: '木', gloss: ['wood'], keys: ['木', 'wood'], level: 'A1' }))
@@ -318,12 +339,12 @@ describe('DictionaryView full-audio-only filter', () => {
 
   /** The same entry, given every syllable slot a clip. */
   function withFullAudio(entry: EnrichedEntry): EnrichedEntry {
-    return { ...entry, readings: [{ ...entry.readings[0]!, audio: [CLIP] }] }
+    return { ...entry, readings: [{ ...entry.readings[0]!, audio: [[CLIP]] }] }
   }
 
   /** The same entry, given only some of its syllable slots a clip. */
   function withPartialAudio(entry: EnrichedEntry): EnrichedEntry {
-    return { ...entry, readings: [{ ...entry.readings[0]!, audio: [null] }] }
+    return { ...entry, readings: [{ ...entry.readings[0]!, audio: [[]] }] }
   }
 
   const FULL = withFullAudio(makeEntry({ id: 'a1', headword: '木', gloss: ['wood'], keys: ['木', 'wood'] }))

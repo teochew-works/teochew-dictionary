@@ -45,26 +45,32 @@ export interface EnrichedReading extends Reading {
   pengim_toneless: string
   syllable_count: number
   /**
-   * One entry per syllable, in order; `null` where no clip has been recorded
-   * yet. Whole-syllable, not stitched from components — see
-   * data/phonology/REVIEW.md § 11. No compositional fallback exists, unlike
-   * `ipa`/`poj`: a syllable either has a recording or it doesn't.
+   * One candidate list per syllable, in order, sorted highest-preference
+   * first (confidence, then recency, then a speaker who covers the whole
+   * reading — see `sortClipsByDefault`/`selectReadingClipCandidates` in
+   * `src/build/enrich.ts`); empty where no clip has been recorded yet.
+   * Whole-syllable, not stitched from components — see
+   * data/phonology/REVIEW.md § 11. A consumer that wants one clip per
+   * syllable (a user's speaker preference, or none) should resolve this via
+   * `resolveReadingAudio`/`resolveEntryAudio` (see `audio/resolve.ts`) rather
+   * than reading `[0]` directly.
    */
-  audio: (AudioReference | null)[]
+  audio: AudioReference[][]
   /**
    * Same as `audio`, but keyed by each syllable's sandhi surface spelling
    * where a sandhi-specific clip has been recorded; falls back to the
-   * citation clip at that index otherwise (issue #36 coverage is partial).
+   * citation slot's candidates at that index otherwise (issue #36 coverage is
+   * partial).
    */
-  sandhiAudio: (AudioReference | null)[]
+  sandhiAudio: AudioReference[][]
   /**
-   * A whole-word/phrase clip for this reading's exact pengim string (e.g. a
-   * Lingua Libre import), distinct from the per-syllable `audio` above —
-   * see `Audio.wordClips` and data/phonology/REVIEW.md § 16. `null` when no
-   * such clip exists, which is the common case: most readings only ever get
-   * per-syllable coverage.
+   * Whole-word/phrase clip candidates for this reading's exact pengim string
+   * (e.g. a Lingua Libre import), distinct from the per-syllable `audio`
+   * above — see `Audio.wordClips` and data/phonology/REVIEW.md § 16. Empty
+   * when no such clip exists, which is the common case: most readings only
+   * ever get per-syllable coverage. Sorted the same way as `audio`.
    */
-  wordAudio: AudioReference | null
+  wordAudio: AudioReference[]
 }
 
 export interface EnrichedEntry extends Omit<Entry, 'readings'> {
@@ -85,4 +91,24 @@ export interface EnrichedEntry extends Omit<Entry, 'readings'> {
    * credits the project itself instead — see withProjectAttribution.
    */
   attributions: string[]
+}
+
+/**
+ * `EnrichedReading`, with each candidate list collapsed to the single clip a
+ * one-clip-per-slot consumer plays — the shape `EnrichedReading` itself used
+ * to be before issue #274. Produced by `resolveReadingAudio`
+ * (`audio/resolve.ts`) from a stored speaker preference (or `[]` for today's
+ * build-time default order); every consumer downstream of that call
+ * (`canCombine`, `syllableClips`, `ReadingAudio`, the CLI's lookup renderer)
+ * works against this shape, never the raw candidate lists directly.
+ */
+export interface ResolvedReading extends Omit<EnrichedReading, 'audio' | 'sandhiAudio' | 'wordAudio'> {
+  audio: (AudioReference | null)[]
+  sandhiAudio: (AudioReference | null)[]
+  wordAudio: AudioReference | null
+}
+
+/** `EnrichedEntry`, with every reading resolved via `resolveReadingAudio` — see `ResolvedReading`. */
+export interface ResolvedEntry extends Omit<EnrichedEntry, 'readings'> {
+  readings: ResolvedReading[]
 }

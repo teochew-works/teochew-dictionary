@@ -1,9 +1,9 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { EntryDetail } from './EntryDetail'
-import type { AudioReference, EnrichedEntry, EnrichedReading } from '@teochew/core'
+import type { AudioReference, ResolvedEntry, ResolvedReading } from '@teochew/core'
 
-const READING: EnrichedReading = {
+const READING: ResolvedReading = {
   pengim: 'dio5 ziu1',
   variety: 'chaozhou',
   ipa: 'tie⁵⁵ tsiu³³',
@@ -18,7 +18,7 @@ const READING: EnrichedReading = {
   wordAudio: null,
 }
 
-const ENTRY: EnrichedEntry = {
+const ENTRY: ResolvedEntry = {
   id: 'dio5-ziu1-潮州',
   headword: '潮州',
   readings: [READING],
@@ -46,7 +46,7 @@ const SYLLABLE_CLIP: AudioReference = {
 }
 
 /** Clips present, and deliberately licensed differently from the entry itself. */
-const WITH_AUDIO: EnrichedEntry = {
+const WITH_AUDIO: ResolvedEntry = {
   ...ENTRY,
   licence: 'CC-BY-4.0',
   attributions: ['Teochew Dictionary (CC-BY-4.0)'],
@@ -123,7 +123,7 @@ describe('EntryDetail audio', () => {
 
   it('badges a rendered syllable clip and says so in its accessible name (ADR-0027)', () => {
     const rendered: AudioReference = { ...SYLLABLE_CLIP, synthesis: 'world-retune', confidence: 'medium' }
-    const entry: EnrichedEntry = { ...ENTRY, readings: [{ ...READING, audio: [rendered, null] }] }
+    const entry: ResolvedEntry = { ...ENTRY, readings: [{ ...READING, audio: [rendered, null] }] }
     render(<EntryDetail entry={entry} showLicence={false} />)
 
     const button = screen.getByRole('button', { name: 'Play recording of syllable dio5 (re-rendered from a recording, not the recording itself)' })
@@ -133,7 +133,7 @@ describe('EntryDetail audio', () => {
 
   it('plays a syllable clip with a Media Fragments URI when it has precomputed silence-trim boundaries (issue #252)', () => {
     const trimmed: AudioReference = { ...SYLLABLE_CLIP, trimStartMs: 239, trimEndMs: 677 }
-    const entry: EnrichedEntry = { ...ENTRY, readings: [{ ...READING, audio: [trimmed, null] }] }
+    const entry: ResolvedEntry = { ...ENTRY, readings: [{ ...READING, audio: [trimmed, null] }] }
     render(<EntryDetail entry={entry} showLicence={false} />)
 
     fireEvent.click(screen.getByRole('button', { name: 'Play recording of syllable dio5' }))
@@ -153,7 +153,7 @@ describe('EntryDetail audio', () => {
 
   it('plays the combined wordAudio clip with its Media Fragments URI too', () => {
     const trimmedWord: AudioReference = { ...WORD_CLIP, trimStartMs: 50, trimEndMs: 900 }
-    const entry: EnrichedEntry = { ...WITH_AUDIO, readings: [{ ...READING, audio: [SYLLABLE_CLIP, null], wordAudio: trimmedWord }] }
+    const entry: ResolvedEntry = { ...WITH_AUDIO, readings: [{ ...READING, audio: [SYLLABLE_CLIP, null], wordAudio: trimmedWord }] }
     render(<EntryDetail entry={entry} showLicence={false} />)
 
     fireEvent.click(screen.getByRole('button', { name: /^Play combined/ }))
@@ -175,7 +175,7 @@ describe('EntryDetail audio', () => {
     // mang7 mang7 — both syllables share a url, so the buttons cannot be
     // keyed by it.
     const warn = vi.spyOn(console, 'error').mockImplementation(() => {})
-    const entry: EnrichedEntry = {
+    const entry: ResolvedEntry = {
       ...ENTRY,
       readings: [{ ...READING, audio: [SYLLABLE_CLIP, SYLLABLE_CLIP] }],
     }
@@ -190,7 +190,7 @@ describe('EntryDetail audio', () => {
     // Playback state is keyed by button, not by the clip url the two
     // syllables happen to share — otherwise starting the first would show
     // both as playing, and clicking the second would stop instead of start.
-    const entry: EnrichedEntry = {
+    const entry: ResolvedEntry = {
       ...ENTRY,
       readings: [{ ...READING, audio: [SYLLABLE_CLIP, SYLLABLE_CLIP] }],
     }
@@ -208,7 +208,7 @@ describe('EntryDetail audio', () => {
   })
 
   it('does not link playing state across readings that share a clip url', () => {
-    const entry: EnrichedEntry = {
+    const entry: ResolvedEntry = {
       ...ENTRY,
       readings: [
         { ...READING, pengim: 'a', audio: [SYLLABLE_CLIP, null] },
@@ -300,7 +300,7 @@ describe('EntryDetail audio', () => {
   })
 
   it('credits a shared clip licence once', () => {
-    const entry: EnrichedEntry = {
+    const entry: ResolvedEntry = {
       ...WITH_AUDIO,
       readings: [{ ...READING, audio: [SYLLABLE_CLIP, { ...SYLLABLE_CLIP, key: 'ziu1' }], wordAudio: null }],
     }
@@ -338,7 +338,7 @@ describe('EntryDetail mogher.com links', () => {
   })
 
   it('percent-encodes a diacritic syllable in the link href', () => {
-    const entry: EnrichedEntry = { ...ENTRY, readings: [{ ...READING, pengim: 'gang2 uê7' }] }
+    const entry: ResolvedEntry = { ...ENTRY, readings: [{ ...READING, pengim: 'gang2 uê7' }] }
     render(<EntryDetail entry={entry} showLicence={false} mogherLinks={true} />)
     expect(screen.getByRole('link', { name: 'uê7' })).toHaveAttribute(
       'href',
@@ -362,7 +362,7 @@ describe('EntryDetail audioMode', () => {
   })
 
   // Combinable via synthesis (not wordAudio): full same-speaker syllable coverage.
-  const SYNTH_COMBINABLE: EnrichedEntry = {
+  const SYNTH_COMBINABLE: ResolvedEntry = {
     ...ENTRY,
     readings: [
       {
@@ -376,7 +376,7 @@ describe('EntryDetail audioMode', () => {
   }
 
   // Not combinable: no wordAudio, and the syllable clips are from different speakers.
-  const NOT_COMBINABLE: EnrichedEntry = {
+  const NOT_COMBINABLE: ResolvedEntry = {
     ...ENTRY,
     readings: [
       {
@@ -416,7 +416,7 @@ describe('EntryDetail audioMode', () => {
   it('crossfades between chained syllable clips (issue #252 phase 2): the next clip starts, muted, on the other element before the current one ends, then the two ramp across the seam', () => {
     vi.useFakeTimers()
     const secondUrl = 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou/ziu1.opus'
-    const entry: EnrichedEntry = {
+    const entry: ResolvedEntry = {
       ...ENTRY,
       readings: [
         {
@@ -486,7 +486,7 @@ describe('EntryDetail audioMode', () => {
   it('waits for loadedmetadata before scheduling a handoff when a clip has no precomputed trimEndMs', () => {
     vi.useFakeTimers()
     const secondUrl = 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou/ziu1.opus'
-    const entry: EnrichedEntry = {
+    const entry: ResolvedEntry = {
       ...ENTRY,
       readings: [
         {
@@ -525,7 +525,7 @@ describe('EntryDetail audioMode', () => {
 
   it('stops the sequence when a component button is clicked mid-chain', () => {
     const secondUrl = 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou/ziu1.opus'
-    const entry: EnrichedEntry = {
+    const entry: ResolvedEntry = {
       ...ENTRY,
       readings: [
         {
@@ -553,7 +553,7 @@ describe('EntryDetail audioMode', () => {
     // in-flight play() request, which rejects its promise — the same hazard
     // useAudioPlayer's requestId guard already protects `play` from.
     const secondUrl = 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-chaozhou/ziu1.opus'
-    const entry: EnrichedEntry = {
+    const entry: ResolvedEntry = {
       ...ENTRY,
       readings: [
         {
@@ -588,7 +588,7 @@ describe('EntryDetail pronunciation', () => {
   afterEach(cleanup)
 
   it('defaults to citation clips when no pronunciation prop is passed', () => {
-    const entry: EnrichedEntry = {
+    const entry: ResolvedEntry = {
       ...ENTRY,
       readings: [{ ...READING, audio: [SYLLABLE_CLIP, null], sandhiAudio: [null, null] }],
     }
@@ -597,7 +597,7 @@ describe('EntryDetail pronunciation', () => {
   })
 
   it('plays sandhi clips when pronunciation="sandhi" is passed', () => {
-    const entry: EnrichedEntry = {
+    const entry: ResolvedEntry = {
       ...ENTRY,
       readings: [{ ...READING, audio: [null, null], sandhiAudio: [SYLLABLE_CLIP, null] }],
     }
@@ -610,7 +610,7 @@ describe('EntryDetail pronunciationDisplay', () => {
   afterEach(cleanup)
 
   it('shows all four fields, in the default order, when no pronunciationDisplay is passed', () => {
-    const entry: EnrichedEntry = { ...ENTRY, readings: [{ ...READING, sandhi: 'dio7 ziu1' }] }
+    const entry: ResolvedEntry = { ...ENTRY, readings: [{ ...READING, sandhi: 'dio7 ziu1' }] }
     render(<EntryDetail entry={entry} showLicence={false} />)
     expect(document.querySelector('.reading__line')).toHaveTextContent('dio5 ziu1tie⁵⁵ tsiu³³tiô-tsiu')
     expect(screen.getByText('sandhi: dio7 ziu1')).toBeInTheDocument()
@@ -623,7 +623,7 @@ describe('EntryDetail pronunciationDisplay', () => {
   })
 
   it('omits the sandhi line when sandhi is excluded from pronunciationDisplay', () => {
-    const entry: EnrichedEntry = { ...ENTRY, readings: [{ ...READING, sandhi: 'dio7 ziu1' }] }
+    const entry: ResolvedEntry = { ...ENTRY, readings: [{ ...READING, sandhi: 'dio7 ziu1' }] }
     render(<EntryDetail entry={entry} showLicence={false} pronunciationDisplay={['pengim', 'ipa', 'poj']} />)
     expect(screen.queryByText(/sandhi:/)).not.toBeInTheDocument()
   })

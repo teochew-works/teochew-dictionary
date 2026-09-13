@@ -1,4 +1,4 @@
-import type { EnrichedEntry, PronunciationField } from '@teochew/core'
+import type { ResolvedEntry, PronunciationField } from '@teochew/core'
 import { EntryRow } from './EntryRow'
 
 export function EntryList({
@@ -7,7 +7,7 @@ export function EntryList({
   onSelect,
   pronunciationDisplay,
 }: {
-  entries: EnrichedEntry[]
+  entries: ResolvedEntry[]
   selectedId: string | null
   onSelect: (id: string) => void
   pronunciationDisplay?: PronunciationField[]

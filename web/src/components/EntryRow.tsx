@@ -1,5 +1,5 @@
 import { visiblePronunciationFields, DEFAULT_PRONUNCIATION_DISPLAY } from '@teochew/core'
-import type { EnrichedEntry, PronunciationField } from '@teochew/core'
+import type { ResolvedEntry, PronunciationField } from '@teochew/core'
 import { LevelBadge } from './LevelBadge'
 
 export function EntryRow({
@@ -8,7 +8,7 @@ export function EntryRow({
   onSelect,
   pronunciationDisplay = DEFAULT_PRONUNCIATION_DISPLAY,
 }: {
-  entry: EnrichedEntry
+  entry: ResolvedEntry
   selected: boolean
   onSelect: (id: string) => void
   pronunciationDisplay?: PronunciationField[]
