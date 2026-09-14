@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { FlashcardsView, parseFlashcardsDrawer, formatFlashcardsDrawer, type FlashcardsDrawer } from './FlashcardsView'
-import { makeEntry, makeReading } from '../test/entryFixtures'
-import type { AudioReference } from '@teochew/core'
+import { makeEntry as makeResolvedEntry, makeReading, toRawEntry } from '../test/entryFixtures'
+import type { AudioReference, ResolvedEntry } from '@teochew/core'
 import { readDecksState, writeDecksState } from '../decks/storage'
 import { DICTIONARY_DECK_ID } from '../decks/virtualDeck'
 
@@ -12,6 +12,16 @@ const CLIP: AudioReference = {
   confidence: 'high',
   licence: 'CC-BY-4.0',
   attributions: [],
+}
+
+// FlashcardsView's `entries` prop is the raw dict.json shape (every candidate
+// clip per slot), like DictionaryView's — see that file's fixtures for the
+// full explanation. Callers here still write overrides in the familiar
+// single-clip-per-slot shape via the shared (resolved-shape) makeEntry/
+// makeReading, converted to raw at the boundary so none of this file's many
+// call sites need to change.
+function makeEntry(overrides: Partial<ResolvedEntry> = {}) {
+  return toRawEntry(makeResolvedEntry(overrides))
 }
 
 /** Most cases need a non-empty table, or the view is (correctly) an empty state. */

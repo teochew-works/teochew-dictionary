@@ -118,3 +118,50 @@
   flex-wrap: wrap;
   gap: 0.5rem;
 }
+
+.speaker-preference {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.speaker-preference__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.speaker-preference__item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.speaker-preference__label {
+  flex: 1;
+  color: var(--color-fg);
+}
+
+.speaker-preference__move,
+.speaker-preference__remove {
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.35rem;
+  background: var(--color-surface);
+  color: var(--color-fg);
+  line-height: 1.4;
+}
+
+.speaker-preference__move:disabled,
+.speaker-preference__remove:disabled {
+  opacity: 0.35;
+}
+
+.speaker-preference__add {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

@@ -1,4 +1,4 @@
-import type { EnrichedEntry } from '../enrichedEntry.js'
+import type { ResolvedEntry } from '../enrichedEntry.js'
 import type { Deck } from './types.js'
 import { isEligibleForMode } from '../flashcards/promptMode.js'
 import type { PromptMode } from '../flashcards/promptMode.js'
@@ -15,7 +15,7 @@ export interface PipelineStage {
 
 export interface DeckPipelineResult {
   /** The entries eligible for review after every stage below. */
-  entries: EnrichedEntry[]
+  entries: ResolvedEntry[]
   /** One entry per stage, in pipeline order, regardless of whether that stage actually removed anything — see significantStages. */
   stages: PipelineStage[]
 }
@@ -26,7 +26,7 @@ export interface DeckPipelineInput {
   /** Ordered deck ids currently on the table. */
   inPlay: string[]
   /** The currently loaded dictionary, keyed by id. */
-  entryById: Map<string, EnrichedEntry>
+  entryById: Map<string, ResolvedEntry>
   mode: PromptMode
   levelFilter: Set<LevelFilterValue>
   fullAudioOnly: boolean
@@ -47,7 +47,7 @@ export function runDeckPipeline(input: DeckPipelineInput): DeckPipelineResult {
   const deckById = new Map(input.decks.map((d) => [d.id, d]))
 
   const seen = new Set<string>()
-  const union: EnrichedEntry[] = []
+  const union: ResolvedEntry[] = []
   for (const deckId of input.inPlay) {
     const deck = deckById.get(deckId)
     if (!deck) continue

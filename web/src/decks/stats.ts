@@ -2,7 +2,7 @@ import {
   isEligibleForMode,
   isEligibleForLevel,
   hasFullAudio,
-  type EnrichedEntry,
+  type ResolvedEntry,
   type Deck,
   type PromptMode,
   type LevelFilterValue,
@@ -44,7 +44,7 @@ export interface DeckFilters {
  * counts stay definitionally the same filter rather than two copies that
  * can drift.
  */
-export function passesFilters(entry: EnrichedEntry, filters: DeckFilters): boolean {
+export function passesFilters(entry: ResolvedEntry, filters: DeckFilters): boolean {
   return (
     isEligibleForMode(entry, filters.mode) &&
     isEligibleForLevel(entry, filters.levelFilter) &&
@@ -54,7 +54,7 @@ export function passesFilters(entry: EnrichedEntry, filters: DeckFilters): boole
 
 export function deckStats(
   deck: Deck,
-  entryById: Map<string, EnrichedEntry>,
+  entryById: Map<string, ResolvedEntry>,
   cardStates: Map<string, CardState>,
   filters: DeckFilters,
   now = new Date(),

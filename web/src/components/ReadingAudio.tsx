@@ -1,5 +1,5 @@
 import { canCombine, withTrim } from '@teochew/core'
-import type { AudioReference, EnrichedReading, PronunciationMode } from '@teochew/core'
+import type { AudioReference, ResolvedReading, PronunciationMode } from '@teochew/core'
 import type { AudioMode } from '../settings/audioMode'
 import { SYNTHESIS_ARIA_SUFFIX, SynthesisBadge } from './SynthesisBadge'
 
@@ -32,7 +32,7 @@ export function ReadingAudio({
   pronunciation = 'citation',
   audioMode = 'both',
 }: {
-  reading: EnrichedReading
+  reading: ResolvedReading
   /** Disambiguates this reading's clip ids from every other reading's on the
    *  same entry, so two readings that happen to share a clip url don't share
    *  playing state. */

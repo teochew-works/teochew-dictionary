@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent, ReactNode, RefObject } from 'react'
-import type { EnrichedEntry, EnrichedReading, Grade, PromptMode, PronunciationMode, PronunciationField, Deck } from '@teochew/core'
+import type { ResolvedEntry, ResolvedReading, Grade, PromptMode, PronunciationMode, PronunciationField, Deck } from '@teochew/core'
 import type { AudioMode } from '../settings/audioMode'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
 import { syllableClips, withTrim, visiblePronunciationFields } from '@teochew/core'
@@ -12,7 +12,7 @@ const GRADES: { grade: Grade; label: string; key: string }[] = [
   { grade: 'easy', label: 'Easy', key: '3' },
 ]
 
-function ReadingLine({ reading, fields }: { reading: EnrichedReading; fields: PronunciationField[] }) {
+function ReadingLine({ reading, fields }: { reading: ResolvedReading; fields: PronunciationField[] }) {
   return (
     <div className="card__reading">
       {visiblePronunciationFields(reading, fields).map((field) => (
@@ -45,7 +45,7 @@ export function Flashcard({
   filing,
   onGrade,
 }: {
-  entry: EnrichedEntry
+  entry: ResolvedEntry
   mode: PromptMode
   pronunciation: PronunciationMode
   pronunciationDisplay: PronunciationField[]

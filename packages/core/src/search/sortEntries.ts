@@ -1,4 +1,4 @@
-import type { EnrichedEntry } from '../enrichedEntry.js'
+import type { ResolvedEntry } from '../enrichedEntry.js'
 import type { Level, PartOfSpeech } from '../schema/entry.js'
 import { DEFAULT_PRONUNCIATION_MODE, type PronunciationMode } from '../settings/pronunciationMode.js'
 
@@ -22,7 +22,7 @@ export const LEVEL_ORDER: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
 export interface EntryGroup {
   key: string
   label: string
-  entries: EnrichedEntry[]
+  entries: ResolvedEntry[]
 }
 
 const POS_LABELS: Record<PartOfSpeech, string> = {
@@ -72,20 +72,20 @@ function capitalize(s: string): string {
  * result set by headword throws that ranking away — searching "wood" used to
  * bury 木材/木 around position 150 of a few hundred alphabetised matches.
  */
-export function sortFlat(entries: EnrichedEntry[], mode: 'relevance' | 'headword' | 'english'): EnrichedEntry[] {
+export function sortFlat(entries: ResolvedEntry[], mode: 'relevance' | 'headword' | 'english'): ResolvedEntry[] {
   if (mode === 'relevance') return [...entries]
-  const keyFor = mode === 'headword' ? (e: EnrichedEntry) => e.headword : (e: EnrichedEntry) => e.senses[0]?.gloss_en[0] ?? ''
+  const keyFor = mode === 'headword' ? (e: ResolvedEntry) => e.headword : (e: ResolvedEntry) => e.senses[0]?.gloss_en[0] ?? ''
   return [...entries].sort((a, b) => collator.compare(keyFor(a), keyFor(b)))
 }
 
-function toneGroupKey(entry: EnrichedEntry, pronunciation: PronunciationMode): { key: string; label: string } {
+function toneGroupKey(entry: ResolvedEntry, pronunciation: PronunciationMode): { key: string; label: string } {
   const reading = entry.readings[0]
   const pengim = reading ? (pronunciation === 'citation' ? reading.pengim : reading.sandhi) : undefined
   const tone = pengim ? firstSyllableTone(pengim) : null
   return tone === null ? { key: 'other', label: 'Other' } : { key: String(tone), label: `Tone ${tone}` }
 }
 
-function categoryGroupKey(entry: EnrichedEntry): { key: string; label: string } {
+function categoryGroupKey(entry: ResolvedEntry): { key: string; label: string } {
   const tag = entry.tags?.[0]
   if (tag) return { key: `tag:${tag}`, label: capitalize(tag) }
   const pos = entry.senses[0]?.pos
@@ -93,7 +93,7 @@ function categoryGroupKey(entry: EnrichedEntry): { key: string; label: string } 
   return { key: 'other', label: 'Other' }
 }
 
-function levelGroupKey(entry: EnrichedEntry): { key: string; label: string } {
+function levelGroupKey(entry: ResolvedEntry): { key: string; label: string } {
   const level = entry.level
   return level ? { key: level, label: level } : { key: 'untiered', label: 'Untiered' }
 }
@@ -131,7 +131,7 @@ export function capGroups(groups: EntryGroup[], limit: number): EntryGroup[] {
 }
 
 export function groupEntries(
-  entries: EnrichedEntry[],
+  entries: ResolvedEntry[],
   mode: GroupedSortMode,
   pronunciation: PronunciationMode = DEFAULT_PRONUNCIATION_MODE,
 ): EntryGroup[] {

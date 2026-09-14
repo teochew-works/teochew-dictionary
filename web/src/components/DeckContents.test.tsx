@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { DeckContents } from './DeckContents'
 import { makeEntry, makeReading } from '../test/entryFixtures'
-import type { EnrichedEntry } from '@teochew/core'
+import type { ResolvedEntry } from '@teochew/core'
 import type { Deck } from '@teochew/core'
 
 const TEA = makeEntry({
@@ -13,7 +13,7 @@ const TEA = makeEntry({
 })
 const RICE = makeEntry({ id: 'e-rice', headword: '飯', senses: [{ pos: 'noun', gloss_en: ['rice'] }] })
 
-const entryById = new Map<string, EnrichedEntry>([
+const entryById = new Map<string, ResolvedEntry>([
   [TEA.id, TEA],
   [RICE.id, RICE],
 ])

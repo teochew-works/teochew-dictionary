@@ -29,19 +29,23 @@ export type { AudioReference, EnrichedReading, EnrichedEntry }
 const CONFIDENCE_RANK: Record<Confidence, number> = { high: 0, medium: 1, low: 2 }
 
 /**
- * Picks the one clip a single-clip consumer (Dictionary-tab playback, CLI
- * lookup) shows for a syllable/reading that has more than one (issue #134):
- * highest `confidence` wins; ties broken by the most recent `recorded` date;
- * a clip missing `recorded` sorts as older than one that has it. If still
- * tied (e.g. both undefined), the earlier clip in the list wins — `sort` is
- * stable, so this falls out of the comparator alone.
+ * Sorts a syllable's clips into the order a client with no speaker
+ * preference plays them in — `[0]` is what a single-clip consumer (CLI
+ * lookup, or the web app with no preference set — issue #274) shows for a
+ * syllable/reading that has more than one (issue #134): highest `confidence`
+ * wins; ties broken by the most recent `recorded` date; a clip missing
+ * `recorded` sorts as older than one that has it. If still tied (e.g. both
+ * undefined), the earlier clip in the list wins — `sort` is stable, so this
+ * falls out of the comparator alone. Every candidate survives the sort (not
+ * just the winner) so a client can re-resolve by its own stored speaker
+ * ranking instead of always taking `[0]`.
  */
-function selectPrimaryClip(clips: AudioClip[]): AudioClip {
+function sortClipsByDefault(clips: AudioClip[]): AudioClip[] {
   return [...clips].sort((a, b) => {
     const byConfidence = CONFIDENCE_RANK[a.confidence] - CONFIDENCE_RANK[b.confidence]
     if (byConfidence !== 0) return byConfidence
     return (b.recorded ?? '').localeCompare(a.recorded ?? '')
-  })[0]!
+  })
 }
 
 /** Builds the published AudioReference from an already-chosen clip. */
@@ -120,45 +124,46 @@ function pickBestCandidate(speakers: string[], perSyllableClips: AudioClip[][]):
 }
 
 /**
- * Picks one clip per syllable for a whole reading at once: prefers a clip
- * set where every syllable's chosen clip shares one speaker over each
+ * Every clip candidate per syllable for a whole reading at once, in default
+ * order (issue #274 — a client re-resolves this by its own speaker
+ * preference rather than always taking `[0]`). `[0]` of each slot prefers a
+ * clip set where every syllable's chosen clip shares one speaker over each
  * syllable's independently highest-confidence clip (issue #191) — the
  * per-syllable-independent rule below can otherwise silently produce a
  * mixed-speaker set even when a fully consistent take exists, which blocks
- * combined-audio synthesis for no good reason. Falls back to `selectPrimaryClip`
- * per syllable when no single speaker covers every syllable that has any
- * clip at all — including when a syllable has zero clips, which makes full
- * coverage impossible regardless of speaker.
+ * combined-audio synthesis for no good reason — falling back to
+ * `sortClipsByDefault` per syllable when no single speaker covers every
+ * syllable that has any clip at all (including when a syllable has zero
+ * clips, which makes full coverage impossible regardless of speaker).
  */
-function selectReadingClips(perSyllableClips: AudioClip[][]): (AudioClip | null)[] {
+function selectReadingClipCandidates(perSyllableClips: AudioClip[][]): AudioClip[][] {
   const speaker = bestCommonSpeaker(perSyllableClips)
-  if (speaker !== null) {
-    return perSyllableClips.map((clips) => clips.find((c) => c.speaker === speaker) ?? null)
-  }
-  return perSyllableClips.map((clips) => (clips.length > 0 ? selectPrimaryClip(clips) : null))
+  if (speaker === null) return perSyllableClips.map(sortClipsByDefault)
+  return perSyllableClips.map((clips) => {
+    const chosen = clips.find((c) => c.speaker === speaker)
+    if (!chosen) return sortClipsByDefault(clips)
+    return [chosen, ...sortClipsByDefault(clips.filter((c) => c !== chosen))]
+  })
 }
 
 /**
- * Look up each syllable's whole-syllable clip, if any. Pure and independent of
- * file I/O so it's directly testable — `audio` is `null` when the variety has
- * no clip metadata at all yet (issue #36 hasn't started for it).
+ * Look up each syllable's whole-syllable clip candidates, if any, in default
+ * order (see `selectReadingClipCandidates`). Pure and independent of file I/O
+ * so it's directly testable — every slot is `[]` when the variety has no
+ * clip metadata at all yet (issue #36 hasn't started for it).
  */
-export function deriveReadingAudio(
-  syllables: Syllable[],
-  audio: Audio | null,
-  sources: Map<string, Source>,
-): (AudioReference | null)[] {
-  if (!audio) return syllables.map(() => null)
+export function deriveReadingAudio(syllables: Syllable[], audio: Audio | null, sources: Map<string, Source>): AudioReference[][] {
+  if (!audio) return syllables.map(() => [])
   const keys = syllables.map((s) => s.raw)
-  const picks = selectReadingClips(keys.map((k) => audio.clips[k] ?? []))
-  return keys.map((key, i) => (picks[i] ? toAudioReference(key, picks[i]!, audio, sources) : null))
+  const candidates = selectReadingClipCandidates(keys.map((k) => audio.clips[k] ?? []))
+  return keys.map((key, i) => candidates[i]!.map((clip) => toAudioReference(key, clip, audio, sources)))
 }
 
 /**
  * Same as `deriveReadingAudio`, but looks up each syllable's sandhi surface
  * spelling instead of its citation spelling, falling back to the
- * already-derived citation clip at that index when no sandhi-specific clip
- * has been recorded yet (issue #36 coverage is partial).
+ * already-derived citation candidates at that index when no sandhi-specific
+ * clip has been recorded yet (issue #36 coverage is partial).
  *
  * The same-speaker search only considers sandhi-specific clips, not a hybrid
  * with citation-fallback positions — a syllable that falls back to
@@ -168,45 +173,29 @@ export function deriveReadingAudio(
  */
 export function deriveReadingSandhiAudio(
   sandhi: SandhiResult,
-  citationAudio: (AudioReference | null)[],
+  citationAudio: AudioReference[][],
   audio: Audio | null,
   sources: Map<string, Source>,
-): (AudioReference | null)[] {
+): AudioReference[][] {
   if (!audio) return citationAudio
   const keys = sandhi.syllables.map((s) => s.surface)
-  const picks = selectReadingClips(keys.map((k) => audio.clips[k] ?? []))
-  return keys.map((key, i) => (picks[i] ? toAudioReference(key, picks[i]!, audio, sources) : (citationAudio[i] ?? null)))
+  const candidates = selectReadingClipCandidates(keys.map((k) => audio.clips[k] ?? []))
+  return keys.map((key, i) => {
+    const own = candidates[i]!
+    return own.length > 0 ? own.map((clip) => toAudioReference(key, clip, audio, sources)) : (citationAudio[i] ?? [])
+  })
 }
 
 /**
- * Look up a reading's whole-word/phrase clip, if any, keyed by its exact
- * pengim string. Distinct from `deriveReadingAudio`: no per-syllable
- * iteration, no compositional fallback — see `Audio.wordClips` and
- * data/phonology/REVIEW.md § 16.
+ * Look up a reading's whole-word/phrase clip candidates, if any, keyed by its
+ * exact pengim string, in default order. Distinct from `deriveReadingAudio`:
+ * no per-syllable iteration, no compositional fallback — see
+ * `Audio.wordClips` and data/phonology/REVIEW.md § 16.
  */
-export function deriveReadingWordAudio(
-  pengim: string,
-  audio: Audio | null,
-  sources: Map<string, Source>,
-): AudioReference | null {
+export function deriveReadingWordAudio(pengim: string, audio: Audio | null, sources: Map<string, Source>): AudioReference[] {
   const clips = audio?.wordClips?.[pengim]
-  if (!audio || !clips || clips.length === 0) return null
-  const clip = selectPrimaryClip(clips)
-
-  const resolved = resolveLicenceOrThrow(clip.sources, sources, `${audio.audio.id}/${pengim}`)
-
-  return {
-    key: pengim,
-    url: clip.url,
-    cafUrl: clip.cafUrl,
-    confidence: clip.confidence,
-    speaker: clip.speaker,
-    trimStartMs: clip.trimStartMs,
-    trimEndMs: clip.trimEndMs,
-    synthesis: clip.synthesis,
-    licence: resolved.licence,
-    attributions: resolved.attributions,
-  }
+  if (!audio || !clips || clips.length === 0) return []
+  return sortClipsByDefault(clips).map((clip) => toAudioReference(pengim, clip, audio, sources))
 }
 
 /** Cache a per-id loader's result, so a naive per-reading call re-reads/re-parses nothing twice. */

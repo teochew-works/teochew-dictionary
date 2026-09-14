@@ -2,8 +2,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { SettingsView } from './SettingsView'
 import { DictionaryView } from './DictionaryView'
-import { makeEntry } from '../test/entryFixtures'
-import type { CardState } from '@teochew/core'
+import { makeEntry, makeReading, toRawEntry } from '../test/entryFixtures'
+import type { AudioReference, CardState } from '@teochew/core'
 
 const storedCards = new Map<string, CardState>()
 
@@ -67,8 +67,59 @@ describe('SettingsView', () => {
     fireEvent.click(screen.getByLabelText('Show licensing info'))
     unmount()
 
-    render(<DictionaryView entries={[makeEntry()]} />)
+    render(<DictionaryView entries={[toRawEntry(makeEntry())]} />)
     expect(screen.getByLabelText('Show licensing info')).not.toBeChecked()
+  })
+})
+
+describe('SettingsView speaker preference', () => {
+  const clip = (speaker: string): AudioReference => ({
+    key: 'dio5',
+    url: `https://example.test/${speaker}.opus`,
+    confidence: 'high',
+    speaker,
+    licence: 'CC-BY-4.0',
+    attributions: [],
+  })
+
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  afterEach(() => {
+    cleanup()
+    localStorage.clear()
+  })
+
+  it('is absent when the dictionary has no recordings at all', () => {
+    render(<SettingsView entries={[]} />)
+    expect(screen.queryByText('Speaker preference')).not.toBeInTheDocument()
+  })
+
+  it('is absent when only one speaker is recorded anywhere', () => {
+    const entry = toRawEntry(makeEntry({ readings: [makeReading({ audio: [clip('jky'), null] })] }))
+    render(<SettingsView entries={[entry]} />)
+    expect(screen.queryByText('Speaker preference')).not.toBeInTheDocument()
+  })
+
+  it('offers every speaker recorded anywhere once two or more exist', () => {
+    const entry = toRawEntry(makeEntry({ readings: [makeReading({ audio: [clip('jky'), clip('jky-n')] })] }))
+    render(<SettingsView entries={[entry]} />)
+    expect(screen.getByText('Speaker preference')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '+ jky' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '+ jky-n' })).toBeInTheDocument()
+  })
+
+  it('persists a chosen ranking across remounts', () => {
+    const entry = toRawEntry(makeEntry({ readings: [makeReading({ audio: [clip('jky'), clip('jky-n')] })] }))
+    const { unmount } = render(<SettingsView entries={[entry]} />)
+
+    fireEvent.click(screen.getByRole('button', { name: '+ jky-n' }))
+    expect(localStorage.getItem('teochew-dictionary:speaker-preference')).toBe(JSON.stringify(['jky-n']))
+    unmount()
+
+    render(<SettingsView entries={[entry]} />)
+    expect(document.querySelector('.speaker-preference__list')).toHaveTextContent('jky-n')
   })
 })
 

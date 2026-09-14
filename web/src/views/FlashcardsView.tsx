@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useSrsQueue } from '../srs/useSrsQueue'
+import { useResolvedEntries } from '../hooks/useResolvedEntries'
 import { newCardState, previewIntervals } from '@teochew/core'
 import { Flashcard } from '../components/Flashcard'
 import { DeckTray } from '../components/DeckTray'
@@ -150,7 +151,11 @@ interface FlashcardsViewProps {
   onDrawerChange?: (drawer: FlashcardsDrawer) => void
 }
 
-export function FlashcardsView({ entries, drawer: controlledDrawer, onDrawerChange }: FlashcardsViewProps) {
+export function FlashcardsView({ entries: rawEntries, drawer: controlledDrawer, onDrawerChange }: FlashcardsViewProps) {
+  // Resolved once per mount by the stored speaker preference (issue #274) —
+  // this view fully remounts on tab switch (App.tsx), so a Settings change
+  // takes effect the next time the Flashcards tab is opened.
+  const entries = useResolvedEntries(rawEntries)
   const decksStore = useDecksStore()
   const [mode, setMode] = useState<PromptMode>(readPromptMode)
   const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)

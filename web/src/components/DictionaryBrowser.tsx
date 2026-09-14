@@ -2,11 +2,11 @@ import { useMemo, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
 import { createSearchIndex, search } from '../search/searchIndex'
 import { EntryDeckMenu } from './EntryDeckMenu'
-import { hasFullAudio, type EnrichedEntry, type PronunciationMode, type Deck } from '@teochew/core'
+import { hasFullAudio, type ResolvedEntry, type PronunciationMode, type Deck } from '@teochew/core'
 
 const MAX_RESULTS = 60
 
-function hasAnyAudio(entry: EnrichedEntry): boolean {
+function hasAnyAudio(entry: ResolvedEntry): boolean {
   const r = entry.readings[0]
   return r !== undefined && (r.wordAudio !== null || r.audio.some((c) => c !== null))
 }
@@ -32,7 +32,7 @@ export function DictionaryBrowser({
   onNewDeckFromCard,
   onSavePoolAsDeck,
 }: {
-  entries: EnrichedEntry[]
+  entries: ResolvedEntry[]
   userDecks: Deck[]
   pronunciation: PronunciationMode
   /** Cards currently surviving the filters — what "Save this pool as a deck" would capture. */

@@ -453,17 +453,17 @@ describe('deriveReadingAudio', () => {
     ].map((s) => [s.id, s]),
   )
 
-  it('returns null for every syllable when the variety has no audio metadata', () => {
+  it('returns an empty candidate list for every syllable when the variety has no audio metadata', () => {
     const syllables = parsePengim('dio5 ziu1')
-    expect(deriveReadingAudio(syllables, null, sources)).toEqual([null, null])
+    expect(deriveReadingAudio(syllables, null, sources)).toEqual([[], []])
   })
 
-  it('resolves a clip per syllable, preserving order, null where absent', () => {
+  it('resolves a one-clip candidate list per syllable, preserving order, empty where absent', () => {
     const syllables = parsePengim('dio5 ziu1')
     const table = audio({ dio5: clip({ confidence: 'medium' }) })
     expect(deriveReadingAudio(syllables, table, sources)).toEqual([
-      { key: 'dio5', url: VALID_URL, confidence: 'medium', licence: 'CC-BY-4.0', attributions: [] },
-      null,
+      [{ key: 'dio5', url: VALID_URL, confidence: 'medium', licence: 'CC-BY-4.0', attributions: [] }],
+      [],
     ])
   })
 
@@ -471,21 +471,21 @@ describe('deriveReadingAudio', () => {
     const syllables = parsePengim('dio5')
     const table = audio({ dio5: clip() })
     expect(deriveReadingAudio(syllables, table, sources)).toEqual([
-      { key: 'dio5', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] },
+      [{ key: 'dio5', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] }],
     ])
   })
 
   it("carries the clip's trimStartMs/trimEndMs through (issue #252)", () => {
     const syllables = parsePengim('dio5')
     const table = audio({ dio5: clip({ trimStartMs: 239, trimEndMs: 677 }) })
-    expect(deriveReadingAudio(syllables, table, sources)).toMatchObject([{ trimStartMs: 239, trimEndMs: 677 }])
+    expect(deriveReadingAudio(syllables, table, sources)).toMatchObject([[{ trimStartMs: 239, trimEndMs: 677 }]])
   })
 
   it("derives licence/attributions from the clip's own sources, matching the real teochew-dictionary-audio shape", () => {
     const syllables = parsePengim('dio5')
     const table = audio({ dio5: clip({ sources: ['teochew-dictionary-audio'] }) })
     expect(deriveReadingAudio(syllables, table, sources)).toEqual([
-      { key: 'dio5', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] },
+      [{ key: 'dio5', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] }],
     ])
   })
 
@@ -493,13 +493,15 @@ describe('deriveReadingAudio', () => {
     const syllables = parsePengim('dio5')
     const table = audio({ dio5: clip({ sources: ['audio-import-sa'] }) })
     expect(deriveReadingAudio(syllables, table, sources)).toEqual([
-      {
-        key: 'dio5',
-        url: VALID_URL,
-        confidence: 'high',
-        licence: 'CC-BY-SA-4.0',
-        attributions: ['audio-import-sa (CC-BY-SA-4.0)'],
-      },
+      [
+        {
+          key: 'dio5',
+          url: VALID_URL,
+          confidence: 'high',
+          licence: 'CC-BY-SA-4.0',
+          attributions: ['audio-import-sa (CC-BY-SA-4.0)'],
+        },
+      ],
     ])
   })
 
@@ -511,7 +513,7 @@ describe('deriveReadingAudio', () => {
     )
   })
 
-  it('picks the highest-confidence clip when a syllable has more than one (issue #134)', () => {
+  it('sorts every candidate highest-confidence first, not just the winner (issue #274)', () => {
     const syllables = parsePengim('dio5')
     const table = audio({
       dio5: [
@@ -520,8 +522,9 @@ describe('deriveReadingAudio', () => {
         clip({ confidence: 'medium', speaker: 'c', recorded: '2026-08-02' }),
       ],
     })
-    const [resolved] = deriveReadingAudio(syllables, table, sources)
-    expect(resolved).toMatchObject({ confidence: 'high' })
+    const [candidates] = deriveReadingAudio(syllables, table, sources)
+    expect(candidates).toHaveLength(3)
+    expect(candidates!.map((c) => c.speaker)).toEqual(['b', 'c', 'a'])
   })
 
   it('breaks a confidence tie by the most recently recorded clip', () => {
@@ -533,8 +536,8 @@ describe('deriveReadingAudio', () => {
         clip({ confidence: 'high', recorded: '2026-08-01' }),
       ],
     })
-    const [resolved] = deriveReadingAudio(syllables, table, sources)
-    expect(resolved).toMatchObject({ url: AUDIO_CLIP_URL })
+    const [candidates] = deriveReadingAudio(syllables, table, sources)
+    expect(candidates![0]).toMatchObject({ url: AUDIO_CLIP_URL })
   })
 
   it('keeps the recording primary over a newer synthesised render, and carries synthesis through (ADR-0027)', () => {
@@ -546,34 +549,35 @@ describe('deriveReadingAudio', () => {
         clip({ confidence: 'medium', speaker: 'jky-n', recorded: '2026-09-11', url: renderUrl, checksum: OTHER_CHECKSUM, synthesis: 'world-retune', derivedFrom: VALID_CHECKSUM }),
       ],
     })
-    const [resolved] = deriveReadingAudio(syllables, table, sources)
-    expect(resolved).toMatchObject({ url: AUDIO_CLIP_URL, speaker: 'jky' })
-    expect(resolved?.synthesis).toBeUndefined()
+    const [candidates] = deriveReadingAudio(syllables, table, sources)
+    expect(candidates![0]).toMatchObject({ url: AUDIO_CLIP_URL, speaker: 'jky' })
+    expect(candidates![0]?.synthesis).toBeUndefined()
+    expect(candidates![1]).toMatchObject({ url: renderUrl, speaker: 'jky-n', synthesis: 'world-retune' })
 
     const [renderOnly] = deriveReadingAudio(syllables, audio({ dio5: table.clips['dio5']![1]! }), sources)
-    expect(renderOnly).toMatchObject({ url: renderUrl, synthesis: 'world-retune' })
+    expect(renderOnly![0]).toMatchObject({ url: renderUrl, synthesis: 'world-retune' })
   })
 
   it("carries the clip's cafUrl through when present (issue #228)", () => {
     const cafUrl = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou/dio5.caf`
     const syllables = parsePengim('dio5')
     const table = audio({ dio5: clip({ cafUrl, cafChecksum: `sha256:${'b'.repeat(64)}` }) })
-    const [resolved] = deriveReadingAudio(syllables, table, sources)
-    expect(resolved).toMatchObject({ url: VALID_URL, cafUrl })
+    const [candidates] = deriveReadingAudio(syllables, table, sources)
+    expect(candidates![0]).toMatchObject({ url: VALID_URL, cafUrl })
   })
 
   it('leaves cafUrl undefined when the clip has no CAF alternate', () => {
     const syllables = parsePengim('dio5')
     const table = audio({ dio5: clip() })
-    const [resolved] = deriveReadingAudio(syllables, table, sources)
-    expect(resolved?.cafUrl).toBeUndefined()
+    const [candidates] = deriveReadingAudio(syllables, table, sources)
+    expect(candidates![0]?.cafUrl).toBeUndefined()
   })
 
   it('threads speaker through from the chosen clip', () => {
     const syllables = parsePengim('dio5')
     const table = audio({ dio5: clip({ speaker: 'jky' }) })
-    const [resolved] = deriveReadingAudio(syllables, table, sources)
-    expect(resolved).toMatchObject({ speaker: 'jky' })
+    const [candidates] = deriveReadingAudio(syllables, table, sources)
+    expect(candidates![0]).toMatchObject({ speaker: 'jky' })
   })
 
   describe('speaker-aware selection across a reading (issue #191)', () => {
@@ -585,7 +589,9 @@ describe('deriveReadingAudio', () => {
       })
       const resolved = deriveReadingAudio(syllables, table, sources)
       // 'a' is dio5's individually-best clip, but only 'b' covers both syllables.
-      expect(resolved.map((r) => r?.speaker)).toEqual(['b', 'b'])
+      expect(resolved.map((candidates) => candidates[0]?.speaker)).toEqual(['b', 'b'])
+      // 'a' is still there, just not first — a client preferring 'a' can still find it.
+      expect(resolved[0]!.map((c) => c.speaker)).toEqual(['b', 'a'])
     })
 
     it('falls back to independent per-syllable selection when no speaker covers every syllable', () => {
@@ -595,7 +601,7 @@ describe('deriveReadingAudio', () => {
         ziu1: clip({ speaker: 'b' }),
       })
       const resolved = deriveReadingAudio(syllables, table, sources)
-      expect(resolved.map((r) => r?.speaker)).toEqual(['a', 'b'])
+      expect(resolved.map((candidates) => candidates[0]?.speaker)).toEqual(['a', 'b'])
     })
 
     it('breaks a tie between two fully-covering speakers by worst-clip confidence', () => {
@@ -606,7 +612,7 @@ describe('deriveReadingAudio', () => {
       })
       const resolved = deriveReadingAudio(syllables, table, sources)
       // b's weakest clip (medium) is worse than a's weakest (high), so a wins throughout.
-      expect(resolved.map((r) => r?.speaker)).toEqual(['a', 'a'])
+      expect(resolved.map((candidates) => candidates[0]?.speaker)).toEqual(['a', 'a'])
     })
 
     it('breaks a same-worst-confidence tie between two fully-covering speakers by recency', () => {
@@ -622,15 +628,15 @@ describe('deriveReadingAudio', () => {
         ],
       })
       const resolved = deriveReadingAudio(syllables, table, sources)
-      expect(resolved.map((r) => r?.speaker)).toEqual(['b', 'b'])
+      expect(resolved.map((candidates) => candidates[0]?.speaker)).toEqual(['b', 'b'])
     })
 
     it('forces the fallback path when a syllable has zero clips, even alongside a fully-recorded one', () => {
       const syllables = parsePengim('dio5 ziu1')
       const table = audio({ dio5: clip({ speaker: 'a' }) })
       const resolved = deriveReadingAudio(syllables, table, sources)
-      expect(resolved[0]).toMatchObject({ speaker: 'a' })
-      expect(resolved[1]).toBeNull()
+      expect(resolved[0]![0]).toMatchObject({ speaker: 'a' })
+      expect(resolved[1]).toEqual([])
     })
   })
 })
@@ -646,12 +652,12 @@ describe('deriveReadingSandhiAudio', () => {
     const table = audio({ dio5: clip({ confidence: 'low' }), dio7: clip({ confidence: 'high' }) })
     const citationAudio = deriveReadingAudio(syllables, table, sources)
     expect(deriveReadingSandhiAudio(sandhi, citationAudio, table, sources)).toEqual([
-      { key: 'dio7', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] },
-      null,
+      [{ key: 'dio7', url: VALID_URL, confidence: 'high', licence: 'CC-BY-4.0', attributions: [] }],
+      [],
     ])
   })
 
-  it('falls back to the citation clip when no sandhi-specific clip has been recorded yet', () => {
+  it('falls back to the citation candidates when no sandhi-specific clip has been recorded yet', () => {
     const syllables = parsePengim('dio5 ziu1')
     const sandhi = applySandhi('dio5 ziu1')
     const table = audio({ dio5: clip() })
@@ -659,22 +665,22 @@ describe('deriveReadingSandhiAudio', () => {
     expect(deriveReadingSandhiAudio(sandhi, citationAudio, table, sources)).toEqual(citationAudio)
   })
 
-  it('returns null when neither the sandhi nor the citation form has a clip', () => {
+  it('returns an empty candidate list when neither the sandhi nor the citation form has a clip', () => {
     const syllables = parsePengim('dio5 ziu1')
     const sandhi = applySandhi('dio5 ziu1')
     const table = audio({})
     const citationAudio = deriveReadingAudio(syllables, table, sources)
-    expect(deriveReadingSandhiAudio(sandhi, citationAudio, table, sources)).toEqual([null, null])
+    expect(deriveReadingSandhiAudio(sandhi, citationAudio, table, sources)).toEqual([[], []])
   })
 
-  it('resolves the same clip for a final syllable regardless of source, since sandhi leaves it unchanged', () => {
+  it('resolves the same candidates for a final syllable regardless of source, since sandhi leaves it unchanged', () => {
     const syllables = parsePengim('dio5 ziu1')
     const sandhi = applySandhi('dio5 ziu1')
     const table = audio({ ziu1: clip({ confidence: 'medium' }) })
     const citationAudio = deriveReadingAudio(syllables, table, sources)
     const sandhiAudio = deriveReadingSandhiAudio(sandhi, citationAudio, table, sources)
     expect(sandhiAudio[1]).toEqual(citationAudio[1])
-    expect(sandhiAudio[1]).toMatchObject({ key: 'ziu1', confidence: 'medium' })
+    expect(sandhiAudio[1]![0]).toMatchObject({ key: 'ziu1', confidence: 'medium' })
   })
 
   it('returns the citation audio unchanged when the variety has no audio metadata', () => {
@@ -698,11 +704,11 @@ describe('deriveReadingSandhiAudio', () => {
     const sandhiAudio = deriveReadingSandhiAudio(sandhi, citationAudio, table, sources)
     // 'b' has the better worst-clip confidence across both sandhi keys, so it
     // wins even though 'a' alone would have been dio7's or ziu1's individual pick.
-    expect(sandhiAudio).toEqual([
+    expect(sandhiAudio.map((candidates) => candidates[0])).toEqual([
       { key: 'dio7', url: VALID_URL, confidence: 'high', speaker: 'b', licence: 'CC-BY-4.0', attributions: [] },
       { key: 'ziu1', url: VALID_URL, confidence: 'medium', speaker: 'b', licence: 'CC-BY-4.0', attributions: [] },
     ])
-    expect(sandhiAudio[0]?.speaker).not.toBe(citationAudio[0]?.speaker)
+    expect(sandhiAudio[0]?.[0]?.speaker).not.toBe(citationAudio[0]?.[0]?.speaker)
   })
 })
 
@@ -715,40 +721,44 @@ describe('deriveReadingWordAudio', () => {
     ].map((s) => [s.id, s]),
   )
 
-  it('returns null when the variety has no audio metadata', () => {
-    expect(deriveReadingWordAudio('dio5 ziu1', null, sources)).toBeNull()
+  it('returns an empty list when the variety has no audio metadata', () => {
+    expect(deriveReadingWordAudio('dio5 ziu1', null, sources)).toEqual([])
   })
 
-  it('returns null when the variety has audio metadata but no wordClips at all', () => {
+  it('returns an empty list when the variety has audio metadata but no wordClips at all', () => {
     const table = audio({ dio5: clip() })
-    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toBeNull()
+    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toEqual([])
   })
 
-  it('returns null when wordClips exists but has no entry for this reading', () => {
+  it('returns an empty list when wordClips exists but has no entry for this reading', () => {
     const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL }) })
-    expect(deriveReadingWordAudio('ziu1 dio5', table, sources)).toBeNull()
+    expect(deriveReadingWordAudio('ziu1 dio5', table, sources)).toEqual([])
   })
 
-  it('resolves a word clip keyed by the exact reading string', () => {
+  it('resolves a one-clip candidate list keyed by the exact reading string', () => {
     const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL, confidence: 'medium' }) })
-    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toEqual({
-      key: 'dio5 ziu1',
-      url: VALID_WORD_URL,
-      confidence: 'medium',
-      licence: 'CC-BY-4.0',
-      attributions: [],
-    })
+    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toEqual([
+      {
+        key: 'dio5 ziu1',
+        url: VALID_WORD_URL,
+        confidence: 'medium',
+        licence: 'CC-BY-4.0',
+        attributions: [],
+      },
+    ])
   })
 
   it('carries a non-BASE_LICENCE source through to licence and attributions', () => {
     const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL, sources: ['lingualibre'] }) })
-    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toEqual({
-      key: 'dio5 ziu1',
-      url: VALID_WORD_URL,
-      confidence: 'high',
-      licence: 'CC-BY-SA-4.0',
-      attributions: ['lingualibre (CC-BY-SA-4.0)'],
-    })
+    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toEqual([
+      {
+        key: 'dio5 ziu1',
+        url: VALID_WORD_URL,
+        confidence: 'high',
+        licence: 'CC-BY-SA-4.0',
+        attributions: ['lingualibre (CC-BY-SA-4.0)'],
+      },
+    ])
   })
 
   it('throws when a clip cites a source with an unresolvable licence — trusted not to happen post-validate', () => {
@@ -758,21 +768,29 @@ describe('deriveReadingWordAudio', () => {
     )
   })
 
-  it('keeps the recording primary over a newer synthesised render, and carries synthesis through (ADR-0027)', () => {
-    const renderUrl = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou-resynth-1/dio5.opus`
-    const syllables = parsePengim('dio5')
-    const table = audio({
-      dio5: [
-        clip({ confidence: 'high', speaker: 'jky', recorded: '2026-09-01' }),
-        clip({ confidence: 'medium', speaker: 'jky-n', recorded: '2026-09-11', url: renderUrl, checksum: OTHER_CHECKSUM, synthesis: 'world-retune', derivedFrom: VALID_CHECKSUM }),
-      ],
-    })
-    const [resolved] = deriveReadingAudio(syllables, table, sources)
-    expect(resolved).toMatchObject({ url: AUDIO_CLIP_URL, speaker: 'jky' })
-    expect(resolved?.synthesis).toBeUndefined()
-
-    const [renderOnly] = deriveReadingAudio(syllables, audio({ dio5: table.clips['dio5']![1]! }), sources)
-    expect(renderOnly).toMatchObject({ url: renderUrl, synthesis: 'world-retune' })
+  it('sorts every whole-word candidate highest-confidence first, not just the winner (issue #274)', () => {
+    const renderUrl = `https://github.com/${GITHUB_REPO}/releases/download/audio-chaozhou-resynth-1/dio5-ziu1.opus`
+    const table = audioTable(
+      {},
+      {
+        'dio5 ziu1': [
+          clip({ url: VALID_WORD_URL, confidence: 'high', speaker: 'jky', recorded: '2026-09-01' }),
+          clip({
+            confidence: 'medium',
+            speaker: 'jky-n',
+            recorded: '2026-09-11',
+            url: renderUrl,
+            checksum: OTHER_CHECKSUM,
+            synthesis: 'world-retune',
+            derivedFrom: VALID_CHECKSUM,
+          }),
+        ],
+      },
+    )
+    const candidates = deriveReadingWordAudio('dio5 ziu1', table, sources)
+    expect(candidates[0]).toMatchObject({ url: VALID_WORD_URL, speaker: 'jky' })
+    expect(candidates[0]?.synthesis).toBeUndefined()
+    expect(candidates[1]).toMatchObject({ url: renderUrl, speaker: 'jky-n', synthesis: 'world-retune' })
   })
 
   it("carries the clip's cafUrl through when present (issue #228)", () => {
@@ -781,16 +799,16 @@ describe('deriveReadingWordAudio', () => {
       {},
       { 'dio5 ziu1': clip({ url: VALID_WORD_URL, cafUrl, cafChecksum: `sha256:${'b'.repeat(64)}` }) },
     )
-    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toMatchObject({ url: VALID_WORD_URL, cafUrl })
+    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toMatchObject([{ url: VALID_WORD_URL, cafUrl }])
   })
 
   it('threads speaker through from the chosen clip', () => {
     const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL, speaker: 'jky' }) })
-    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toMatchObject({ speaker: 'jky' })
+    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toMatchObject([{ speaker: 'jky' }])
   })
 
   it("carries the clip's trimStartMs/trimEndMs through (issue #252)", () => {
     const table = audioTable({}, { 'dio5 ziu1': clip({ url: VALID_WORD_URL, trimStartMs: 239, trimEndMs: 677 }) })
-    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toMatchObject({ trimStartMs: 239, trimEndMs: 677 })
+    expect(deriveReadingWordAudio('dio5 ziu1', table, sources)).toMatchObject([{ trimStartMs: 239, trimEndMs: 677 }])
   })
 })

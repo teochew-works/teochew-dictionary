@@ -1,4 +1,4 @@
-import type { AudioReference, EnrichedEntry, EnrichedReading } from '../enrichedEntry.js'
+import type { AudioReference, ResolvedEntry, ResolvedReading } from '../enrichedEntry.js'
 import type { PronunciationMode } from '../settings/pronunciationMode.js'
 
 /**
@@ -12,7 +12,7 @@ import type { PronunciationMode } from '../settings/pronunciationMode.js'
  * on this need to say something useful about an empty result rather than
  * assume a search missed.
  */
-export function hasAudio(entry: EnrichedEntry): boolean {
+export function hasAudio(entry: ResolvedEntry): boolean {
   return entry.readings.some((r) => r.wordAudio !== null || r.audio.some((clip) => clip !== null))
 }
 
@@ -23,7 +23,7 @@ export function hasAudio(entry: EnrichedEntry): boolean {
  * reading. Stricter than `hasAudio` above, which checks "any clip on any
  * reading".
  */
-export function hasFullAudio(entry: EnrichedEntry): boolean {
+export function hasFullAudio(entry: ResolvedEntry): boolean {
   const r = entry.readings[0]
   return r !== undefined && (r.wordAudio !== null || r.audio.every((c) => c !== null))
 }
@@ -40,7 +40,7 @@ export function hasFullAudio(entry: EnrichedEntry): boolean {
  * counts toward a match — there's no identity to compare, same convention as
  * the build pipeline's `bestCommonSpeaker` (src/build/enrich.ts).
  */
-export function canCombine(reading: EnrichedReading, pronunciation: PronunciationMode = 'citation'): boolean {
+export function canCombine(reading: ResolvedReading, pronunciation: PronunciationMode = 'citation'): boolean {
   if (reading.syllable_count <= 1) return false
   const clips = pronunciation === 'sandhi' ? reading.sandhiAudio : reading.audio
   if (!clips.every((c): c is AudioReference => c !== null)) return false
@@ -71,12 +71,12 @@ export function withTrim(clip: AudioReference): string {
  * #252 phase 2) needs each clip's own `trimStartMs`/`trimEndMs` to schedule
  * the seam, not just its playback url.
  */
-export function syllableClips(reading: EnrichedReading, pronunciation: PronunciationMode = 'citation'): AudioReference[] {
+export function syllableClips(reading: ResolvedReading, pronunciation: PronunciationMode = 'citation'): AudioReference[] {
   const clips = pronunciation === 'sandhi' ? reading.sandhiAudio : reading.audio
   return clips.filter((c): c is AudioReference => c !== null)
 }
 
 /** `syllableClips`, each mapped through `withTrim` to its (possibly fragment-suffixed) playback url. */
-export function syllableClipUrls(reading: EnrichedReading, pronunciation: PronunciationMode = 'citation'): string[] {
+export function syllableClipUrls(reading: ResolvedReading, pronunciation: PronunciationMode = 'citation'): string[] {
   return syllableClips(reading, pronunciation).map(withTrim)
 }

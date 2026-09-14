@@ -4,7 +4,7 @@ import { syllableClips, withTrim } from '@teochew/core'
 import { ReadingAudio } from './ReadingAudio'
 import { MogherPengim } from './MogherPengim'
 import { visiblePronunciationFields, DEFAULT_PRONUNCIATION_DISPLAY } from '@teochew/core'
-import type { EnrichedEntry, PronunciationMode, PronunciationField } from '@teochew/core'
+import type { ResolvedEntry, PronunciationMode, PronunciationField } from '@teochew/core'
 import type { AudioMode } from '../settings/audioMode'
 import { LevelBadge } from './LevelBadge'
 import { LICENCE_URLS } from '../data/licenceUrls'
@@ -22,7 +22,7 @@ interface ClipCredit {
  * than being covered by the entry-level one. Deduped because a reading's word
  * clip and its syllable clips usually share a source.
  */
-function clipCredits(entry: EnrichedEntry): ClipCredit[] {
+function clipCredits(entry: ResolvedEntry): ClipCredit[] {
   const seen = new Map<string, ClipCredit>()
   for (const reading of entry.readings) {
     for (const clip of [reading.wordAudio, ...reading.audio]) {
@@ -63,7 +63,7 @@ export function EntryDetail({
   mogherLinks = false,
   audioMode = 'both',
 }: {
-  entry: EnrichedEntry
+  entry: ResolvedEntry
   showLicence: boolean
   pronunciation?: PronunciationMode
   pronunciationDisplay?: PronunciationField[]

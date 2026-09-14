@@ -1,8 +1,8 @@
-import type { EnrichedEntry, EnrichedReading } from '../enrichedEntry.js'
+import type { ResolvedEntry, ResolvedReading } from '../enrichedEntry.js'
 
 /**
  * Shared base fixtures for this package's own search/sort/pipeline/flashcard
- * test suites — each needs a minimal-but-valid EnrichedEntry/EnrichedReading
+ * test suites — each needs a minimal-but-valid ResolvedEntry/ResolvedReading
  * and layers its own overrides on top rather than hand-rolling the full shape
  * again.
  *
@@ -13,7 +13,7 @@ import type { EnrichedEntry, EnrichedReading } from '../enrichedEntry.js'
  * builder function — duplication is the pragmatic choice here, not a
  * subpath-export system.
  */
-export function makeReading(overrides: Partial<EnrichedReading> = {}): EnrichedReading {
+export function makeReading(overrides: Partial<ResolvedReading> = {}): ResolvedReading {
   return {
     pengim: 'dio5 ziu1',
     variety: 'chaozhou',
@@ -31,7 +31,7 @@ export function makeReading(overrides: Partial<EnrichedReading> = {}): EnrichedR
   }
 }
 
-export function makeEntry(overrides: Partial<EnrichedEntry> = {}): EnrichedEntry {
+export function makeEntry(overrides: Partial<ResolvedEntry> = {}): ResolvedEntry {
   return {
     id: 'dio5-ziu1-潮州',
     headword: '潮州',

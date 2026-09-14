@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { readShowLicence, writeShowLicence } from '../settings/showLicence'
 import { readAudioOnly, writeAudioOnly } from '../settings/audioOnly'
 import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly'
@@ -11,12 +11,15 @@ import {
 import { readAudioMode, writeAudioMode } from '../settings/audioMode'
 import type { AudioMode } from '../settings/audioMode'
 import { readMogherLinks, writeMogherLinks } from '../settings/mogherLinks'
+import { readSpeakerPreference, writeSpeakerPreference } from '../settings/speakerPreference'
+import { collectSpeakers, type EnrichedEntry } from '@teochew/core'
 import { buildBackup, restoreBackup } from '../backup/backup'
 import { InstallPrompt } from '../pwa/InstallPrompt'
 import { OfflineDataToggle } from '../pwa/OfflineDataToggle'
 import { CheckForUpdate } from '../pwa/CheckForUpdate'
 import { AudioModeControl } from '../components/AudioModeControl'
 import { PronunciationDisplayControl } from '../components/PronunciationDisplayControl'
+import { SpeakerPreferenceControl } from '../components/SpeakerPreferenceControl'
 import './SettingsView.css'
 
 /**
@@ -26,7 +29,7 @@ import './SettingsView.css'
  * tabs use for their own convenience copies of these controls — so this tab
  * isn't the only place to change them, just the discoverable one.
  */
-export function SettingsView() {
+export function SettingsView({ entries = [] }: { entries?: EnrichedEntry[] }) {
   const [showLicence, setShowLicence] = useState(readShowLicence)
   const [audioOnly, setAudioOnly] = useState(readAudioOnly)
   const [fullAudioOnly, setFullAudioOnly] = useState(readFullAudioOnly)
@@ -34,6 +37,14 @@ export function SettingsView() {
   const [pronunciationDisplay, setPronunciationDisplay] = useState<PronunciationField[]>(readPronunciationDisplay)
   const [audioMode, setAudioMode] = useState<AudioMode>(readAudioMode)
   const [mogherLinks, setMogherLinks] = useState(readMogherLinks)
+  const [speakerPreference, setSpeakerPreference] = useState<string[]>(readSpeakerPreference)
+  // Every speaker recorded anywhere in the currently loaded dictionary, so
+  // the ranking below generalizes automatically as more are added (issue
+  // #37) instead of hardcoding a list. `entries` is empty until dict.json has
+  // loaded — Settings renders before that (it doesn't otherwise depend on the
+  // dictionary), so this fieldset just has nothing to rank yet rather than
+  // blocking the rest of the tab.
+  const availableSpeakers = useMemo(() => collectSpeakers(entries), [entries])
   const [backupStatus, setBackupStatus] = useState<{ kind: 'ok' | 'error'; message: string } | null>(null)
   const importInputRef = useRef<HTMLInputElement>(null)
 
@@ -71,6 +82,11 @@ export function SettingsView() {
   function toggleMogherLinks(value: boolean) {
     setMogherLinks(value)
     writeMogherLinks(value)
+  }
+
+  function changeSpeakerPreference(next: string[]) {
+    setSpeakerPreference(next)
+    writeSpeakerPreference(next)
   }
 
   async function exportBackup() {
@@ -147,6 +163,22 @@ export function SettingsView() {
         <legend>Audio buttons</legend>
         <AudioModeControl mode={audioMode} onChange={toggleAudioMode} />
       </fieldset>
+
+      {availableSpeakers.length > 1 && (
+        <fieldset className="settings-view__group">
+          <legend>Speaker preference</legend>
+          <p className="settings-view__hint">
+            Rank the speakers you'd rather hear. A syllable or reading falls back to its default
+            speaker when none of these have a recording for it. The Sounds tab still lets you play
+            every speaker's clip directly, regardless of this ranking.
+          </p>
+          <SpeakerPreferenceControl
+            speakers={speakerPreference}
+            availableSpeakers={availableSpeakers}
+            onChange={changeSpeakerPreference}
+          />
+        </fieldset>
+      )}
 
       <fieldset className="settings-view__group">
         <legend>Pronunciation</legend>
