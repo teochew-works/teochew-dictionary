@@ -10,6 +10,7 @@ import {
   type Source,
 } from '@teochew/core'
 import { syllableInventorySchema, type SyllableInventory } from '../schema/inventory.js'
+import { applyReadingPatches } from './patches.js'
 
 export interface LoadedEntry {
   entry: Entry
@@ -30,12 +31,23 @@ export function listEntryFiles(): string[] {
     .sort()
 }
 
-/** Read every entry file as raw YAML, without schema validation. */
-export function readEntryFiles(): RawFile[] {
+/** Read every entry file as raw YAML, without schema validation or load-time patching. */
+export function readRawEntryFiles(): RawFile[] {
   return listEntryFiles().map((file) => {
     const path = join(ENTRIES_DIR, file)
     return { file, path, raw: parseYaml(readFileSync(path, 'utf8')) }
   })
+}
+
+/**
+ * Same as `readRawEntryFiles()`, with load-time reading corrections applied
+ * (ADR-0028) — the single seam every consumer but `validate()` reads
+ * through, so a patched typo/variety is visible everywhere `data/entries/`
+ * itself never changes. `validate()` reads `readRawEntryFiles()` directly
+ * instead, so it can also report a patch that fails to apply.
+ */
+export function readEntryFiles(): RawFile[] {
+  return applyReadingPatches(readRawEntryFiles())
 }
 
 /**

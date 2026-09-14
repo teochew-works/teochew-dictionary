@@ -56,5 +56,11 @@
     "tsx": "^4.23.13",
     "typescript": "^7.0.2",
     "vitest": "^4.1.11"
+  },
+  "allowScripts": {
+    "better-sqlite3@13.0.3": true,
+    "esbuild@0.28.1": true,
+    "fsevents@2.3.3": true,
+    "file:../../packages/core": true
   }
 }
