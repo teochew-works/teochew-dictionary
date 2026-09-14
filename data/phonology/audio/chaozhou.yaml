@@ -1231,24 +1231,22 @@ clips:
             confidence: high,
             sources: [ teochew-dictionary-audio ],
             speaker: jky,
-            recorded: 2026-08-23,
-            checksum: sha256:77539498e16de00989f9ef735cea2aa384f9d55ce82b156143745f95b9bec459,
-            cafUrl: https://daidb11aas52z.cloudfront.net/teochew/clips/jky/bag8.caf,
-            cafChecksum: sha256:99b29a56bd9d9235a60c140e4f27f02a974e3f58b799f3acdf6003b4029a82ee
+            recorded: 2026-09-13,
+            checksum: sha256:af9ba1f315a5a05ef6de8f39059280dce2b0354c13b013eac0260b47ba143d8c
           },
         {
             url: https://daidb11aas52z.cloudfront.net/teochew/clips/jky-n/bag8.webm,
             confidence: medium,
             sources: [ teochew-dictionary-audio-resynth ],
             speaker: jky-n,
-            recorded: 2026-09-12,
-            checksum: sha256:48dce5884515c6b34a95daf627b33c87d0852580721a80f8667867baae23d736,
+            recorded: 2026-09-13,
+            checksum: sha256:c3b2b0d6350edd26b483e88c077502c9599a3ecc9fef885f1ae2115de1bdaa80,
             cafUrl: https://daidb11aas52z.cloudfront.net/teochew/clips/jky-n/bag8.caf,
-            cafChecksum: sha256:a17421d6d05cbf1e1a8397cc9e68065d4c51d4336b8ebbc7899275f684ea6ca4,
+            cafChecksum: sha256:fc56fa6c6c613f361577efa6da4392622fbc8c782a7a825f2e5dfdcf6e2e2563,
             trimStartMs: 50,
-            trimEndMs: 275,
+            trimEndMs: 480,
             synthesis: world-retune,
-            derivedFrom: sha256:77539498e16de00989f9ef735cea2aa384f9d55ce82b156143745f95b9bec459
+            derivedFrom: sha256:af9ba1f315a5a05ef6de8f39059280dce2b0354c13b013eac0260b47ba143d8c
           }
       ],
     gang1:
@@ -8399,24 +8397,22 @@ clips:
             confidence: high,
             sources: [ teochew-dictionary-audio ],
             speaker: jky,
-            recorded: 2026-09-05,
-            checksum: sha256:d59d40a3934f8345f7adaf1fe3b1b08d08838de23150c341121070dd7530f4d1,
-            cafUrl: https://daidb11aas52z.cloudfront.net/teochew/clips/jky/bi2.caf,
-            cafChecksum: sha256:9618be8c5e0eafa8c04a466c27423ff92f118fb11e597b9ecc2334cc39d71de8
+            recorded: 2026-09-13,
+            checksum: sha256:c45a55a028ccf24e7c064d180ad428f7dde2427fede8c72b882dbb5c492279fa
           },
         {
             url: https://daidb11aas52z.cloudfront.net/teochew/clips/jky-n/bi2.webm,
             confidence: medium,
             sources: [ teochew-dictionary-audio-resynth ],
             speaker: jky-n,
-            recorded: 2026-09-12,
-            checksum: sha256:d4b3e71a661107134def6021e3194eeea7808bd5655ddc07e73bcd527e77eb4b,
+            recorded: 2026-09-13,
+            checksum: sha256:21176438e9700f1464e6ce59a22da67862bff8539c4f432fe9df2b75d5d4fdb7,
             cafUrl: https://daidb11aas52z.cloudfront.net/teochew/clips/jky-n/bi2.caf,
-            cafChecksum: sha256:6c747b4c97cdca826964931a1ada27c3a839d8b03457394defbdae2396ba6eed,
+            cafChecksum: sha256:4b9c8bcf62c1d7a03fe22a82f62a2ce6c8ccb2995589d7aaa0b2dd27f42037f3,
             trimStartMs: 50,
-            trimEndMs: 495,
+            trimEndMs: 685,
             synthesis: world-retune,
-            derivedFrom: sha256:d59d40a3934f8345f7adaf1fe3b1b08d08838de23150c341121070dd7530f4d1
+            derivedFrom: sha256:c45a55a028ccf24e7c064d180ad428f7dde2427fede8c72b882dbb5c492279fa
           }
       ],
     dang7:
@@ -30173,24 +30169,22 @@ clips:
             confidence: high,
             sources: [ teochew-dictionary-audio ],
             speaker: jky,
-            recorded: 2026-08-28,
-            checksum: sha256:976974f88c55fd9ec532ae6c3e332ae19771301e14e16a2f79808b0a5a5fadfa,
-            cafUrl: https://daidb11aas52z.cloudfront.net/teochew/clips/jky/dai5.caf,
-            cafChecksum: sha256:33c6751e3e872969f5c746e33b32b794c1f8063db838616f49b9abd2a80c7160
+            recorded: 2026-09-13,
+            checksum: sha256:42a5034edefbc3a379402541f55fd9393dfcf6afec9c32c37a44dda85c91a6ce
           },
         {
             url: https://daidb11aas52z.cloudfront.net/teochew/clips/jky-n/dai5.webm,
             confidence: medium,
             sources: [ teochew-dictionary-audio-resynth ],
             speaker: jky-n,
-            recorded: 2026-09-12,
-            checksum: sha256:7d6f32e854818705fbbd0437b3c5d55514f6169106870fa31db3d26c2103ce70,
+            recorded: 2026-09-13,
+            checksum: sha256:a97de90ddc586105b7add5b1cc5703ab62dc29286ed145ea909b6ab989947bbe,
             cafUrl: https://daidb11aas52z.cloudfront.net/teochew/clips/jky-n/dai5.caf,
-            cafChecksum: sha256:bc3601ad379e14400dbfd362f0173020238e538462a73d9276482ebfdafc2b4f,
+            cafChecksum: sha256:459bebe1329a384ab80c83fa433d80f84f675364872277b8c6c24a7551996ee5,
             trimStartMs: 50,
-            trimEndMs: 660,
+            trimEndMs: 850,
             synthesis: world-retune,
-            derivedFrom: sha256:976974f88c55fd9ec532ae6c3e332ae19771301e14e16a2f79808b0a5a5fadfa
+            derivedFrom: sha256:42a5034edefbc3a379402541f55fd9393dfcf6afec9c32c37a44dda85c91a6ce
           }
       ],
     tai1:
@@ -68444,24 +68438,22 @@ clips:
             confidence: high,
             sources: [ teochew-dictionary-audio ],
             speaker: jky,
-            recorded: 2026-09-05,
-            checksum: sha256:02e554aace8a26a05efea7ae98bc2d9542b4cc15df959391f0358866da447aee,
-            cafUrl: https://daidb11aas52z.cloudfront.net/teochew/clips/jky/zing6.caf,
-            cafChecksum: sha256:7ef71041e70deb7ca6a55acad95a98f285b9002b84b20b23eadd9ecfa266871a
+            recorded: 2026-09-13,
+            checksum: sha256:d915d2ea88825de18a0a521f549367c8995fbb2f021336a0cc2959f09c13f031
           },
         {
             url: https://daidb11aas52z.cloudfront.net/teochew/clips/jky-n/zing6.webm,
             confidence: medium,
             sources: [ teochew-dictionary-audio-resynth ],
             speaker: jky-n,
-            recorded: 2026-09-12,
-            checksum: sha256:8558215f26805aa186b41e3aad60cc647a4d3cf3c74c3f5a7d923d7de7c33bff,
+            recorded: 2026-09-13,
+            checksum: sha256:a9a7e891d3b866d48fde52e0213764a70fa717988168dce7a1189d47de37da15,
             cafUrl: https://daidb11aas52z.cloudfront.net/teochew/clips/jky-n/zing6.caf,
-            cafChecksum: sha256:2f330f7c121dab63abe62401eb9c83593bed4559964f3c9fc1a2af054890c482,
+            cafChecksum: sha256:3abaad4e29ab4376bc9c882250dd9744bde85eaa7eee05ac1c50638ff90b8de1,
             trimStartMs: 50,
-            trimEndMs: 645,
+            trimEndMs: 800,
             synthesis: world-retune,
-            derivedFrom: sha256:02e554aace8a26a05efea7ae98bc2d9542b4cc15df959391f0358866da447aee
+            derivedFrom: sha256:d915d2ea88825de18a0a521f549367c8995fbb2f021336a0cc2959f09c13f031
           }
       ],
     zing7:
