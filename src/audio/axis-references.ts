@@ -4,9 +4,10 @@ import type { FeaturesCache } from './features.js'
 import type { MfccCache } from './mfcc.js'
 import { parseSyllable } from '../phonology/syllable.js'
 
-/** An `AxisReferenceClip` still tagged with its manifest key, for reporting. */
+/** An `AxisReferenceClip` still tagged with its manifest key, for reporting, and its active duration for `estimateChecked`. */
 export interface KeyedAxisReferenceClip extends AxisReferenceClip {
   key: string
+  activeMs: number
 }
 
 /**
@@ -37,6 +38,7 @@ export function buildAxisReferences(
         mfcc,
         onsetMs: features.onsetMs,
         f0Contour: features.f0.contour,
+        activeMs: features.activeMs,
       },
     ]
   })

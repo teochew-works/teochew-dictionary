@@ -33,6 +33,7 @@ export * from './audio/segment.js'
 export * from './audio/tone.js'
 export * from './audio/combine.js'
 export * from './audio/classify.js'
+export * from './audio/checkedness.js'
 
 export * from './settings/pronunciationMode.js'
 export * from './settings/pronunciationDisplay.js'

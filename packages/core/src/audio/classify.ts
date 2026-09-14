@@ -40,6 +40,20 @@ export interface AxisFilters {
   tone?: (ref: AxisReferenceClip) => boolean
 }
 
+/**
+ * Per-axis distance adjustment — unlike `AxisFilters`' hard exclude, this
+ * nudges a candidate's distance rather than ruling it out (issue #280's
+ * blind-classification follow-up). For gating by an *estimated* property
+ * (e.g. tone checkedness guessed from the query's own active duration,
+ * `estimateChecked` — never a certainty the way a known QC target is), a
+ * hard exclude risks throwing out the correct answer over a wrong guess;
+ * a penalty only disadvantages it, and a strong enough acoustic match can
+ * still win.
+ */
+export interface AxisAdjustments {
+  tone?: (ref: AxisReferenceClip, distance: number) => number
+}
+
 export interface ComputeAxisCandidatesOptions {
   params?: SegmentParams
   /**
@@ -53,6 +67,7 @@ export interface ComputeAxisCandidatesOptions {
    */
   referenceParams?: (ref: AxisReferenceClip) => SegmentParams
   filters?: AxisFilters
+  adjustments?: AxisAdjustments
 }
 
 function keepMin(m: Map<string, number>, key: string, distance: number): void {
@@ -78,7 +93,7 @@ export function computeAxisCandidates(
   references: AxisReferenceClip[],
   options: ComputeAxisCandidatesOptions = {},
 ): AxisCandidates {
-  const { params = DEFAULT_SEGMENT_PARAMS, referenceParams, filters } = options
+  const { params = DEFAULT_SEGMENT_PARAMS, referenceParams, filters, adjustments } = options
   const querySeg = segmentFrames(query.mfcc, query.onsetMs, params)
 
   const initialBest = new Map<string, number>()
@@ -94,7 +109,8 @@ export function computeAxisCandidates(
       keepMin(rimeBest, ref.rime, dtwDistance(querySeg.rime, refSeg.rime))
     }
     if (query.f0Contour && ref.f0Contour && (!filters?.tone || filters.tone(ref))) {
-      keepMin(toneBest, String(ref.tone), contourDistance(query.f0Contour, ref.f0Contour))
+      const raw = contourDistance(query.f0Contour, ref.f0Contour)
+      keepMin(toneBest, String(ref.tone), adjustments?.tone ? adjustments.tone(ref, raw) : raw)
     }
   }
 

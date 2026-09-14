@@ -1,4 +1,11 @@
-import { computeAxisCandidates, rimeOf, type AxisReferenceClip, type RankedCandidate } from '@teochew/core'
+import {
+  computeAxisCandidates,
+  estimateChecked,
+  estimatedCheckednessAdjustment,
+  rimeOf,
+  type AxisReferenceClip,
+  type RankedCandidate,
+} from '@teochew/core'
 import { buildAxisReferences } from '../audio/axis-references.js'
 import { checksumHex, clipCachePath, ensureClipCached, manifestClips, type ManifestClip } from '../audio/clip-cache.js'
 import { type EvalCase, formatAccuracy, tallyAccuracy } from '../audio/eval.js'
@@ -29,14 +36,24 @@ import { bold, dim, green, red } from './colour.js'
  * `npm run audio:verify-eval -- [--variety=chaozhou] [--speaker=jky] [--refresh]`
  * (issue #280's per-axis accuracy follow-up)
  *
- * Measures the tone/rime *known-target* gating this issue's follow-up
- * proposed: leave-one-out over every `speaker` clip (each ranked against
- * the other N-1, its own label treated as the already-known target — the
- * training-data-QC/synthesis-verification scenario, never a blind mic
- * query), tone restricted to references sharing the target's checkedness
- * and rime restricted to references sharing its nasalisation+coda class
- * (`targetAxisFilters`), reported against the unfiltered leave-one-out
- * baseline. Initial is unaffected by either filter, so it's left out.
+ * Measures two follow-ups to issue #280's per-axis accuracy plan, both
+ * against the same unfiltered leave-one-out baseline (every `speaker` clip
+ * ranked against the other N-1):
+ *
+ * 1. Known-target gating (`targetAxisFilters`) — the clip's own label
+ *    treated as an already-known target, tone restricted to references
+ *    sharing its checkedness and rime restricted to references sharing its
+ *    nasalisation+coda class. The training-data-QC/synthesis-verification
+ *    scenario, never a blind mic query — an oracle upper bound.
+ * 2. Estimated-target tone gating (`estimateChecked`/
+ *    `estimatedCheckednessAdjustment`) — checkedness guessed from the
+ *    query's own active duration (no label read), added as a distance
+ *    penalty rather than a hard exclude, since a wrong guess should only
+ *    disadvantage a candidate, not rule it out. This one *does* apply to a
+ *    blind query — `activeMs` needs no WORLD pass, just the same silence
+ *    trim `extractMfccFromSamples` already does in the browser.
+ *
+ * Initial is unaffected by any of these, so it's left out.
  *
  * Network-touching and leave-one-out is O(n²) DTW, so kept out of
  * `npm run check` like every other `audio:*` command.
@@ -72,6 +89,7 @@ try {
   process.exit(1)
 }
 const scheme = loadPengimScheme()
+const checkedTones = new Set(scheme.tones.filter((t) => t.checked).map((t) => t.number))
 
 const targets = manifestClips(audio).filter((m) => m.clip.speaker === speaker)
 if (targets.length === 0) {
@@ -152,12 +170,13 @@ function sortedByDistance(candidates: RankedCandidate[]): RankedCandidate[] {
   return [...candidates].sort((a, b) => a.distance - b.distance)
 }
 
-console.log(dim(`  ranking ${references.length} clips leave-one-out (unfiltered + gated)…`))
+console.log(dim(`  ranking ${references.length} clips leave-one-out (unfiltered + gated + estimated)…`))
 const onRank = progress('ranked', 200)
 const toneCases: EvalCase[] = []
 const rimeCases: EvalCase[] = []
 const toneGatedCases: EvalCase[] = []
 const rimeGatedCases: EvalCase[] = []
+const toneEstimatedCases: EvalCase[] = []
 for (const [i, q] of references.entries()) {
   const others = references.filter((_, j) => j !== i)
   const target = parseSyllable(q.key)
@@ -165,20 +184,25 @@ for (const [i, q] of references.entries()) {
 
   const unfiltered = computeAxisCandidates(query, others as AxisReferenceClip[])
   const gated = computeAxisCandidates(query, others as AxisReferenceClip[], { filters: targetAxisFilters(target, scheme) })
+  const estimated = computeAxisCandidates(query, others as AxisReferenceClip[], {
+    adjustments: { tone: estimatedCheckednessAdjustment(estimateChecked(q.activeMs), checkedTones) },
+  })
 
   toneCases.push({ truthKey: String(q.tone), candidates: sortedByDistance(unfiltered.tone) })
   rimeCases.push({ truthKey: rimeOf(target), candidates: sortedByDistance(unfiltered.rime) })
   toneGatedCases.push({ truthKey: String(q.tone), candidates: sortedByDistance(gated.tone) })
   rimeGatedCases.push({ truthKey: rimeOf(target), candidates: sortedByDistance(gated.rime) })
+  toneEstimatedCases.push({ truthKey: String(q.tone), candidates: sortedByDistance(estimated.tone) })
 
   onRank(i + 1, references.length)
 }
 endProgress()
 
 console.log(`\n${formatAccuracy('tone — unfiltered leave-one-out', tallyAccuracy(toneCases))}`)
-console.log(`\n${formatAccuracy('tone — gated to same-checkedness references', tallyAccuracy(toneGatedCases))}`)
+console.log(`\n${formatAccuracy('tone — estimated-checkedness penalty (blind-query-capable)', tallyAccuracy(toneEstimatedCases))}`)
+console.log(`\n${formatAccuracy('tone — gated to same-checkedness references (oracle, known target only)', tallyAccuracy(toneGatedCases))}`)
 console.log(`\n${formatAccuracy('rime — unfiltered leave-one-out', tallyAccuracy(rimeCases))}`)
-console.log(`\n${formatAccuracy('rime — gated to same nasalisation+coda references', tallyAccuracy(rimeGatedCases))}`)
+console.log(`\n${formatAccuracy('rime — gated to same nasalisation+coda references (oracle, known target only)', tallyAccuracy(rimeGatedCases))}`)
 
 if (failures > 0) {
   console.log(red(`\n✗ ${failures} clip${failures === 1 ? '' : 's'} could not be fetched or analysed`))

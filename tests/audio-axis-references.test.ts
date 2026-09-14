@@ -38,6 +38,7 @@ describe('buildAxisReferences', () => {
       mfcc: [[1, 2]],
       onsetMs: 40,
       f0Contour: Array.from({ length: 20 }, (_, i) => 100 + i),
+      activeMs: 400,
     })
   })
 

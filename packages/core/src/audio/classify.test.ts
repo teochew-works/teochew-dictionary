@@ -99,4 +99,17 @@ describe('computeAxisCandidates', () => {
     expect(axes.initial).toHaveLength(1)
     expect(axes.initial[0]!.distance).toBeGreaterThanOrEqual(0)
   })
+
+  it('adds a tone adjustment penalty without excluding the candidate', () => {
+    const query = { mfcc: REFERENCES.deng1!.mfcc, onsetMs: REFERENCES.deng1!.onsetMs, f0Contour: REFERENCES.deng1!.f0Contour }
+    const plain = computeAxisCandidates(query, Object.values(REFERENCES), { params: PARAMS })
+    const penalised = computeAxisCandidates(query, Object.values(REFERENCES), {
+      params: PARAMS,
+      adjustments: { tone: (ref, distance) => (ref.tone === 3 ? distance + 100 : distance) },
+    })
+    const plainDist = plain.tone.find((c) => c.key === '3')!.distance
+    const penalisedDist = penalised.tone.find((c) => c.key === '3')!.distance
+    expect(penalisedDist).toBeCloseTo(plainDist + 100)
+    expect(penalised.tone.map((c) => c.key)).toContain('3') // still present, just worse-ranked
+  })
 })
