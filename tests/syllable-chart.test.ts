@@ -180,14 +180,14 @@ describe('buildSyllableChart', () => {
   })
 
   it(
-    'reproduces the real dataset\'s known density figures (issue #155): 97 attested rimes, 1,746 legal cells, 962 attested',
+    'reproduces the real dataset\'s known density figures (issue #155): 94 attested rimes, 1,692 legal cells, 958 attested',
     () => {
       const loaded = loadEntries()
       const soundsData = buildSounds(loaded, scheme)
       const chart = buildSyllableChart(soundsData.sounds, scheme)
-      expect(chart.rimes.length).toBe(97)
-      expect(chart.cells.length).toBe(1746)
-      expect(chart.coverage.cellsAttested).toBe(962)
+      expect(chart.rimes.length).toBe(94)
+      expect(chart.cells.length).toBe(1692)
+      expect(chart.coverage.cellsAttested).toBe(958)
     },
     90_000,
   )

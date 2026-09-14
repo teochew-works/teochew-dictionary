@@ -1,0 +1,70 @@
+patches:
+  # Finding 1 — six confirmed typos imported verbatim from Wiktionary. None of
+  # these rimes exist in the 1960 韻母 table or 潮州音字典 (issue #282).
+  - id: kue1-ngaing2-keyan-typo
+    entry: kuê1-ngaing2-科研
+    match:
+      pengim: kuê1 ngaing2
+    set:
+      pengim: kuê1 ngiêng2
+    reason: >-
+      no `aing` rime in any published scheme; 研 is attested ngiêng5 文 · ngiêng2 文 ·
+      ngoin2 白 in 潮州音字典, and ngiêng2-研 already spells the Chaozhou form this way.
+    confidence: high
+    issue: 282
+
+  - id: bhue7-si6-weishi-typo
+    entry: bhue7-si6-未是
+    match:
+      pengim: bhue7 si6
+    set:
+      pengim: bhuê7 si6
+    reason: >-
+      no `ue` rime exists in any scheme, only `uê`; 未 is bhuê7 in all six localities
+      per 潮州音字典.
+    confidence: high
+    issue: 282
+
+  - id: cun5-kuang2-cunkuan-typo
+    entry: cun5-kuang2-存款
+    match:
+      pengim: cun5 kuang2
+    set:
+      pengim: cung5 kuang2
+    reason: no `un` rime exists in any scheme; 存 is attested cung5 文 in 潮州音字典.
+    confidence: high
+    issue: 282
+
+  - id: hiab8-un7-yeyun-typo
+    entry: hiab8-un7-叶韻
+    match:
+      pengim: hiab8 un7
+    set:
+      pengim: hiab8 ung7
+    reason: no `un` rime exists in any scheme; 韻 is attested ung7 文 in 潮州音字典.
+    confidence: high
+    issue: 282
+
+  - id: si6-houn2-shifou-typo
+    entry: si6-houn2-是否
+    match:
+      pengim: si6 houn2
+    set:
+      pengim: si6 hou2
+    reason: >-
+      no `oun` rime exists in any scheme; 否 is attested pi2 文 · hou2 白 in
+      潮州音字典.
+    confidence: high
+    issue: 282
+
+  - id: suan3-iaoh4-sanyue-typo
+    entry: suan3-iaoh4-散約
+    match:
+      pengim: suan3 iaoh4
+    set:
+      pengim: suan3 iêh4
+    reason: >-
+      no `iaoh` rime exists in any scheme; 約 is attested iêh4 白 · iag4 文 in
+      潮州音字典.
+    confidence: high
+    issue: 282
