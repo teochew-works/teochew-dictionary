@@ -34,6 +34,8 @@ export interface LocalRehostOptions {
   headObject?: UploadBytesToS3Options['headObject']
   /** Injectable for tests — avoids a real AWS call. */
   putObject?: UploadBytesToS3Options['putObject']
+  /** Forwarded to `uploadBytesToS3` — allows replacing this speaker's own stale clip at this key (issue #134). */
+  overwrite?: boolean
 }
 
 export interface LocalRehostResult {
@@ -46,7 +48,7 @@ export async function rehostLocalRecording(
   proposal: LocalRecordingProposal,
   options: LocalRehostOptions = {},
 ): Promise<LocalRehostResult> {
-  const { readBytes = (path) => readFileSync(path), headObject, putObject } = options
+  const { readBytes = (path) => readFileSync(path), headObject, putObject, overwrite } = options
 
   const bytes = readBytes(proposal.localPath)
   const filename = assetFilename(proposal)
@@ -55,6 +57,7 @@ export async function rehostLocalRecording(
     contentType: contentTypeForFilename(filename),
     headObject,
     putObject,
+    overwrite,
   })
 
   return { proposal, url, checksum }

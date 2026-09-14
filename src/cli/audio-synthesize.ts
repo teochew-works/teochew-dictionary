@@ -92,7 +92,12 @@ let failures = 0
 
 for (const variety of varieties) {
   const audio = loadAudio(variety)
-  const clips = manifestClips(audio)
+  // Recordings only: a synthesized clip is never a source to derive from or
+  // a corpus yardstick to synthesize toward — including it would let a key
+  // that already has a published `<speaker>-n` render collide with its own
+  // recording under the same manifest key, and self-referentially skew the
+  // per-tone/coda/initial statistics toward whatever synthesis already did.
+  const clips = manifestClips(audio).filter((entry) => entry.clip.synthesis === undefined)
   console.log(bold(`${variety}: ${clips.length} clip${clips.length === 1 ? '' : 's'}`))
 
   // Yardsticks come from the whole corpus, whatever --only selects.
