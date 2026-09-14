@@ -112,4 +112,17 @@ describe('computeAxisCandidates', () => {
     expect(penalisedDist).toBeCloseTo(plainDist + 100)
     expect(penalised.tone.map((c) => c.key)).toContain('3') // still present, just worse-ranked
   })
+
+  it('adds an initial adjustment penalty without excluding the candidate', () => {
+    const query = { mfcc: REFERENCES.deng1!.mfcc, onsetMs: REFERENCES.deng1!.onsetMs, f0Contour: REFERENCES.deng1!.f0Contour }
+    const plain = computeAxisCandidates(query, Object.values(REFERENCES), { params: PARAMS })
+    const penalised = computeAxisCandidates(query, Object.values(REFERENCES), {
+      params: PARAMS,
+      adjustments: { initial: (ref, distance) => (ref.initial === 'ng' ? distance + 50 : distance) },
+    })
+    const plainDist = plain.initial.find((c) => c.key === 'ng')!.distance
+    const penalisedDist = penalised.initial.find((c) => c.key === 'ng')!.distance
+    expect(penalisedDist).toBeCloseTo(plainDist + 50)
+    expect(penalised.initial.map((c) => c.key)).toContain('ng')
+  })
 })

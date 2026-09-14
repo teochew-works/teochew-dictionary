@@ -43,14 +43,16 @@ export interface AxisFilters {
 /**
  * Per-axis distance adjustment — unlike `AxisFilters`' hard exclude, this
  * nudges a candidate's distance rather than ruling it out (issue #280's
- * blind-classification follow-up). For gating by an *estimated* property
- * (e.g. tone checkedness guessed from the query's own active duration,
- * `estimateChecked` — never a certainty the way a known QC target is), a
- * hard exclude risks throwing out the correct answer over a wrong guess;
- * a penalty only disadvantages it, and a strong enough acoustic match can
- * still win.
+ * blind-classification follow-up). For gating by an *estimated* property —
+ * tone checkedness guessed from the query's own active duration
+ * (`estimateChecked`), or an initial's typical onset duration compared
+ * against the query's own — never a certainty the way a known QC target is,
+ * so a hard exclude risks throwing out the correct answer over a wrong
+ * guess; a penalty only disadvantages it, and a strong enough acoustic
+ * match can still win.
  */
 export interface AxisAdjustments {
+  initial?: (ref: AxisReferenceClip, distance: number) => number
   tone?: (ref: AxisReferenceClip, distance: number) => number
 }
 
@@ -103,7 +105,8 @@ export function computeAxisCandidates(
   for (const ref of references) {
     const refSeg = segmentFrames(ref.mfcc, ref.onsetMs, referenceParams ? referenceParams(ref) : params)
     if (!filters?.initial || filters.initial(ref)) {
-      keepMin(initialBest, ref.initial, dtwDistance(querySeg.initial, refSeg.initial))
+      const raw = dtwDistance(querySeg.initial, refSeg.initial)
+      keepMin(initialBest, ref.initial, adjustments?.initial ? adjustments.initial(ref, raw) : raw)
     }
     if (!filters?.rime || filters.rime(ref)) {
       keepMin(rimeBest, ref.rime, dtwDistance(querySeg.rime, refSeg.rime))

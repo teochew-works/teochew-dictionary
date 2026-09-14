@@ -1,4 +1,15 @@
-import { computeAxisCandidates, combineAxes, dtwDistance, rimeOf, type AxisCandidates, type RankedCandidate } from '@teochew/core'
+import {
+  computeAxisCandidates,
+  combineAxes,
+  computeMedianOnsetByInitial,
+  dtwDistance,
+  estimateChecked,
+  estimatedCheckednessAdjustment,
+  estimatedOnsetAdjustment,
+  rimeOf,
+  type AxisCandidates,
+  type RankedCandidate,
+} from '@teochew/core'
 import { attestedTriples } from '../audio/attested-triples.js'
 import { buildAxisReferences } from '../audio/axis-references.js'
 import { checksumHex, clipCachePath, ensureClipCached, manifestClips, type ManifestClip } from '../audio/clip-cache.js'
@@ -20,7 +31,7 @@ import {
   type MfccTarget,
 } from '../audio/mfcc.js'
 import { AUDIO_FEATURES_FILE, AUDIO_MFCC_FILE } from '../paths.js'
-import { loadAudio } from '../phonology/load.js'
+import { loadAudio, loadPengimScheme } from '../phonology/load.js'
 import { parseSyllable } from '../phonology/syllable.js'
 import { ensureCacheSymlinkOrExit } from './cache-symlink.js'
 import { bold, dim, green, red } from './colour.js'
@@ -37,6 +48,17 @@ import { bold, dim, green, red } from './colour.js'
  * number is the baseline the axis classifier is measured against — this is
  * the go/no-go checkpoint #280 calls for: if the combined number doesn't
  * clearly beat it, that's a real finding to report, not to hide.
+ *
+ * The axis classifier runs its blind-capable estimated adjustments
+ * (`estimatedOnsetAdjustment` for initial, `estimatedCheckednessAdjustment`
+ * for tone — both #280 follow-ups) rather than the raw unfiltered axes, so
+ * this is also where those numbers are reproduced: tone alone reaches
+ * ~98.9% top-1 on this benchmark, and combined top-3/top-5 clear the
+ * whole-syllable baseline for the first time, though combined top-1 stays
+ * stuck around 47% regardless of how the three axes are weighted — a
+ * structural normalisation-loses-confidence-magnitude issue, not a
+ * weight-tuning one (several weightings are tried below for exactly this
+ * reason).
  *
  * Network-touching and slow (the axis classifier runs DTW twice per
  * reference, once per segment, on top of the whole-syllable baseline's one),
@@ -185,9 +207,14 @@ const baselineCases: EvalCase[] = cachedQueries.map((query, i) => {
 endProgress()
 
 // 4. Axis classifier: initial/rime DTW + tone contour, combined against
-// attested (initial, rime, tone) triples (#280).
+// attested (initial, rime, tone) triples (#280). Initial and tone run their
+// blind-capable estimated adjustments (issue #280 follow-up) rather than
+// the raw unfiltered axes.
 const axisReferences = buildAxisReferences(cachedRefs, mfccCache, featuresCache)
 const attested = attestedTriples()
+const scheme = loadPengimScheme()
+const checkedTones = new Set(scheme.tones.filter((t) => t.checked).map((t) => t.number))
+const medianOnsetByInitial = computeMedianOnsetByInitial(axisReferences)
 console.log(
   dim(
     `  ${axisReferences.length}/${cachedRefs.length} references have WORLD features; ${attested.length} attested triples in the lexicon`,
@@ -221,6 +248,12 @@ for (const [i, query] of cachedQueries.entries()) {
   const axes = computeAxisCandidates(
     { mfcc, onsetMs: features.onsetMs, f0Contour: features.f0.contour },
     axisReferences,
+    {
+      adjustments: {
+        initial: estimatedOnsetAdjustment(features.onsetMs ?? 0, medianOnsetByInitial),
+        tone: estimatedCheckednessAdjustment(estimateChecked(features.activeMs), checkedTones),
+      },
+    },
   )
   perQuery.push({ truthKey: query.key, axes })
   initialCases.push({ truthKey: truth.initial ?? '', candidates: sortedByDistance(axes.initial) })
@@ -262,6 +295,14 @@ console.log(
     `axis classifier — combined, accuracy-weighted (initial=${accuracyWeights.initial.toFixed(2)}, rime=${accuracyWeights.rime.toFixed(2)}, tone=${accuracyWeights.tone.toFixed(2)})`,
     tallyAccuracy(combinedTally(accuracyWeights)),
   )}`,
+)
+// Weight tuning tops out around here for top-1 (~47%, still short of the
+// baseline) no matter how heavily tone is weighted, even though tone alone
+// is now ~98.9% — a normalisation-discards-confidence-magnitude ceiling,
+// not a weighting problem. top-3/top-5 do keep improving with more tone
+// weight and clear the baseline well before top-1 would.
+console.log(
+  `\n${formatAccuracy('axis classifier — combined, tone-dominant (initial=0.2, rime=0.4, tone=3.0)', tallyAccuracy(combinedTally({ initial: 0.2, rime: 0.4, tone: 3.0 })))}`,
 )
 console.log(`\n${formatAccuracy('axis classifier — initial only', initialTally)}`)
 console.log(`\n${formatAccuracy('axis classifier — rime only', rimeTally)}`)

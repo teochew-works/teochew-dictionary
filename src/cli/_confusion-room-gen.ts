@@ -1,4 +1,11 @@
-import { computeAxisCandidates, type AxisReferenceClip } from '@teochew/core'
+import {
+  computeAxisCandidates,
+  computeMedianOnsetByInitial,
+  estimateChecked,
+  estimatedCheckednessAdjustment,
+  estimatedOnsetAdjustment,
+  type AxisReferenceClip,
+} from '@teochew/core'
 import { buildAxisReferences, type KeyedAxisReferenceClip } from '../audio/axis-references.js'
 import { checksumHex, clipCachePath, ensureClipCached, manifestClips, type ManifestClip } from '../audio/clip-cache.js'
 import {
@@ -12,16 +19,19 @@ import {
 import { DEFAULT_MFCC_PARAMS, emptyMfccCache, extractMfcc, loadMfccCache, saveMfccCache, type MfccTarget } from '../audio/mfcc.js'
 import { buildAttestationCounts } from '../phonology/inventory.js'
 import { loadEntries } from '../data/load.js'
-import { loadAudio } from '../phonology/load.js'
+import { loadAudio, loadPengimScheme } from '../phonology/load.js'
 import { ensureCacheSymlinkOrExit } from './cache-symlink.js'
 import { dim } from './colour.js'
 import { writeFileSync } from 'node:fs'
 
 /**
- * Ad hoc regeneration of the "Confusion Listening Room" artifact's data
- * (issue #280 diagnostics) after the bi2/bag8/dai5/zing6 jky re-record
- * (#283). Not a permanent CLI — mirrors issue #280's own "ad hoc,
- * uncommitted script" precedent for this kind of one-off analysis.
+ * Regeneration of the "Confusion Listening Room" artifact's data (issue
+ * #280 diagnostics), most recently updated to rank the initial and tone
+ * axes with their blind-capable estimated adjustments
+ * (`estimatedOnsetAdjustment`/`estimatedCheckednessAdjustment`, issue
+ * #280's follow-up) instead of the raw unfiltered classifier — the actual
+ * improvements that shipped, not a QC-only oracle. Rime stays unfiltered
+ * (no validated blind improvement exists for it yet).
  *
  * Leave-one-out: every jky clip ranked against the *other* 3,087, per axis
  * (initial/rime/tone), via the same computeAxisCandidates() the shipped
@@ -95,6 +105,10 @@ const references: (KeyedAxisReferenceClip & { url: string })[] = buildAxisRefere
 )
 console.log(`${references.length} references with both MFCC and features`)
 
+const scheme = loadPengimScheme()
+const checkedTones = new Set(scheme.tones.filter((t) => t.checked).map((t) => t.number))
+const medianOnsetByInitial = computeMedianOnsetByInitial(references)
+
 // Occurrence counts (chaozhou citation form), for picking "highest-occurrence"
 // example clips per axis value in each card's reference list.
 const citationCounts = buildAttestationCounts(loadEntries())
@@ -133,6 +147,12 @@ for (const [i, query] of references.entries()) {
   const candidates = computeAxisCandidates(
     { mfcc: query.mfcc, onsetMs: query.onsetMs, f0Contour: query.f0Contour },
     others as AxisReferenceClip[],
+    {
+      adjustments: {
+        initial: estimatedOnsetAdjustment(query.onsetMs ?? 0, medianOnsetByInitial),
+        tone: estimatedCheckednessAdjustment(estimateChecked(query.activeMs), checkedTones),
+      },
+    },
   )
 
   for (const axis of AXES) {
