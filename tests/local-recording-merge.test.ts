@@ -131,6 +131,29 @@ describe('mergeLocalRecording', () => {
     expect(written.clips.dio5[0].recorded).toBe('2026-08-24')
   })
 
+  it('forwards force as overwrite to the S3 re-host so a live, checksum-mismatched object is actually replaced', async () => {
+    // Seed the YAML entry via the normal (no live S3 object) path, matching
+    // the scenario where the clip was published in an earlier run.
+    const seedOpts = { variety: 'chaozhou', audioDir, rootDir, readBytes: () => Buffer.from('x'), ...rehostOptions }
+    await mergeLocalRecording(proposal(), seedOpts)
+
+    // Now S3 already holds this speaker's previously-published bytes at this key
+    // — a re-recording must be able to replace them when force is set. Before
+    // the fix, force only bypassed the YAML dup check; the S3-level checksum
+    // guard below still rejected, since `overwrite` was never forwarded to it.
+    const staleObject = { checksum: `sha256:${'b'.repeat(64)}` }
+    const result = await mergeLocalRecording(proposal({ recordedDate: '2026-08-25' }), {
+      variety: 'chaozhou',
+      audioDir,
+      rootDir,
+      readBytes: () => Buffer.from('new take'),
+      headObject: async () => staleObject,
+      putObject: async () => {},
+      force: true,
+    })
+    expect(result.checksum).toMatch(/^sha256:[0-9a-f]{64}$/u)
+  })
+
   it('defaults confidence to high and accepts an override', async () => {
     const result = await mergeLocalRecording(proposal(), {
       variety: 'chaozhou',

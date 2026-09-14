@@ -106,6 +106,10 @@ export async function mergeLocalRecording(
   const { url, checksum } = await rehostLocalRecording(proposal, {
     ...rehostOptions,
     readBytes: readBytes ?? ((p) => readFileSync(join(rootDir, p))),
+    // Only meaningful when dupIndex !== -1: the S3 key is derived from
+    // pengim + speaker, so it only pre-exists here when this speaker
+    // already has a clip at this key — the exact case `force` is for.
+    overwrite: force,
   })
 
   const clip = {
