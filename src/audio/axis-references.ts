@@ -32,6 +32,8 @@ export function buildAxisReferences(
         initial: parsed.initial ?? '',
         rime: rimeOf(parsed),
         tone: parsed.tone,
+        nasalised: parsed.nasalised,
+        coda: parsed.coda,
         mfcc,
         onsetMs: features.onsetMs,
         f0Contour: features.f0.contour,

@@ -10,7 +10,7 @@ function manifestClip(key: string, checksum: string): ManifestClip {
 }
 
 describe('buildAxisReferences', () => {
-  it('parses each key into initial/rime/tone and carries onsetMs/f0Contour through', () => {
+  it('parses each key into initial/rime/tone/nasalised/coda and carries onsetMs/f0Contour through', () => {
     const mfccCache = emptyMfccCache()
     mfccCache.clips['abc'] = { frames: [[1, 2]] }
     const featuresCache = emptyFeaturesCache()
@@ -33,10 +33,33 @@ describe('buildAxisReferences', () => {
       initial: 'd',
       rime: 'eng',
       tone: 1,
+      nasalised: false,
+      coda: 'ng',
       mfcc: [[1, 2]],
       onsetMs: 40,
       f0Contour: Array.from({ length: 20 }, (_, i) => 100 + i),
     })
+  })
+
+  it('marks a nasalised nucleus separately from a coda', () => {
+    const mfccCache = emptyMfccCache()
+    mfccCache.clips['xyz'] = { frames: [[1, 2]] }
+    const featuresCache = emptyFeaturesCache()
+    featuresCache.clips['xyz'] = {
+      totalMs: 500,
+      sampleRate: 48000,
+      trim: { startMs: 0, endMs: 500 },
+      activeMs: 400,
+      rmsDb: -20,
+      peakDb: -10,
+      onsetMs: null,
+      voicedMs: 300,
+      voicedRatio: 0.75,
+      f0: { medianHz: 120, startHz: 100, endHz: 140, contour: null },
+    }
+    const [ref] = buildAxisReferences([manifestClip('in5', 'xyz')], mfccCache, featuresCache)
+    expect(ref?.nasalised).toBe(true)
+    expect(ref?.coda).toBeNull()
   })
 
   it('drops a clip missing either cache entry rather than throwing', () => {

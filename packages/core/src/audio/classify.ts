@@ -7,6 +7,10 @@ export interface AxisReferenceClip {
   initial: string
   rime: string
   tone: number
+  /** Whether the rime's nucleus is nasalised (a trailing `-n` marker, not the `-ng` coda) — issue #280's follow-up rime gating needs this alongside `coda` to tell a same-structural-class reference from a different one. */
+  nasalised: boolean
+  /** The rime's coda, or null for an open syllable: `'ng'` (nasal), one of the checked codas (`'b'`/`'g'`/`'h'`), or null. */
+  coda: string | null
   mfcc: number[][]
   onsetMs: number | null
   f0Contour: number[] | null
@@ -16,6 +20,39 @@ export interface AxisQuery {
   mfcc: number[][]
   onsetMs: number | null
   f0Contour: number[] | null
+}
+
+/**
+ * Per-axis inclusion filters — restricts which references are allowed to
+ * contribute a candidate on that axis (issue #280's follow-up). Excluding a
+ * reference skips its distance computation entirely, not just its result.
+ *
+ * Only valid when the query's true label is already known — checking a
+ * clip against its own claimed syllable (training-data QC, or verifying
+ * synthesised output against its intended target, #260), never for a blind
+ * mic query: gating tone candidates by the true tone's own checkedness, or
+ * rime candidates by the true rime's own nasalisation/coda class, would be
+ * circular if that's exactly what's being guessed.
+ */
+export interface AxisFilters {
+  initial?: (ref: AxisReferenceClip) => boolean
+  rime?: (ref: AxisReferenceClip) => boolean
+  tone?: (ref: AxisReferenceClip) => boolean
+}
+
+export interface ComputeAxisCandidatesOptions {
+  params?: SegmentParams
+  /**
+   * Segmentation params to use for one reference's own clip, in place of
+   * `params` — e.g. a fallback initial-window length chosen by that
+   * reference's own (known) manner class, rather than one fixed window for
+   * every onset-detection failure regardless of whether it's a sonorant or
+   * a weakly-voiced stop (issue #280's follow-up). The query itself always
+   * segments with `params`, since its manner class is exactly what's being
+   * classified. Defaults to `params` for every reference.
+   */
+  referenceParams?: (ref: AxisReferenceClip) => SegmentParams
+  filters?: AxisFilters
 }
 
 function keepMin(m: Map<string, number>, key: string, distance: number): void {
@@ -39,8 +76,9 @@ function toRanked(m: Map<string, number>): { key: string; distance: number }[] {
 export function computeAxisCandidates(
   query: AxisQuery,
   references: AxisReferenceClip[],
-  params: SegmentParams = DEFAULT_SEGMENT_PARAMS,
+  options: ComputeAxisCandidatesOptions = {},
 ): AxisCandidates {
+  const { params = DEFAULT_SEGMENT_PARAMS, referenceParams, filters } = options
   const querySeg = segmentFrames(query.mfcc, query.onsetMs, params)
 
   const initialBest = new Map<string, number>()
@@ -48,10 +86,14 @@ export function computeAxisCandidates(
   const toneBest = new Map<string, number>()
 
   for (const ref of references) {
-    const refSeg = segmentFrames(ref.mfcc, ref.onsetMs, params)
-    keepMin(initialBest, ref.initial, dtwDistance(querySeg.initial, refSeg.initial))
-    keepMin(rimeBest, ref.rime, dtwDistance(querySeg.rime, refSeg.rime))
-    if (query.f0Contour && ref.f0Contour) {
+    const refSeg = segmentFrames(ref.mfcc, ref.onsetMs, referenceParams ? referenceParams(ref) : params)
+    if (!filters?.initial || filters.initial(ref)) {
+      keepMin(initialBest, ref.initial, dtwDistance(querySeg.initial, refSeg.initial))
+    }
+    if (!filters?.rime || filters.rime(ref)) {
+      keepMin(rimeBest, ref.rime, dtwDistance(querySeg.rime, refSeg.rime))
+    }
+    if (query.f0Contour && ref.f0Contour && (!filters?.tone || filters.tone(ref))) {
       keepMin(toneBest, String(ref.tone), contourDistance(query.f0Contour, ref.f0Contour))
     }
   }
@@ -70,8 +112,8 @@ export function classifyAxes(
   query: AxisQuery,
   references: AxisReferenceClip[],
   attested: AttestedTriple[],
-  params: SegmentParams = DEFAULT_SEGMENT_PARAMS,
+  options: ComputeAxisCandidatesOptions = {},
   combineOptions: CombineAxesOptions = {},
 ): CombinedCandidate[] {
-  return combineAxes(attested, computeAxisCandidates(query, references, params), combineOptions)
+  return combineAxes(attested, computeAxisCandidates(query, references, options), combineOptions)
 }
