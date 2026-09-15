@@ -5,7 +5,7 @@ import { stringify } from 'yaml'
 
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { deleteRecording, getStatus, saveRecording } from './local-recordings-handlers.js'
+import { deleteRecording, getStatus, readStagedFile, saveRecording } from './local-recordings-handlers.js'
 import { readLocalRecordingStaging } from '../../src/importers/local-recording-staging.js'
 import { ROOT } from '../../src/paths.js'
 
@@ -384,5 +384,57 @@ describe('deleteRecording', () => {
     const remaining = readLocalRecordingStaging(stagingDir)?.proposals
     expect(remaining).toHaveLength(1)
     expect(remaining?.[0]?.localPath).toBe(toKeep!.localPath)
+  })
+})
+
+describe('readStagedFile', () => {
+  let stagingDir: string
+
+  beforeEach(() => {
+    stagingDir = mkdtempSync(join(tmpdir(), 'local-recordings-readfile-staging-'))
+  })
+
+  afterEach(() => {
+    rmSync(stagingDir, { recursive: true, force: true })
+  })
+
+  it('rejects a missing or blank localPath', () => {
+    expect(readStagedFile(undefined)).toEqual({ ok: false, status: 400, error: 'localPath is required' })
+    expect(readStagedFile('  ')).toEqual({ ok: false, status: 400, error: 'localPath is required' })
+  })
+
+  it('refuses a localPath that matches no staged proposal, even if the file exists on disk', () => {
+    const readBytes = vi.fn()
+    const result = readStagedFile('recordings/chaozhou/not-staged.webm', { stagingDir, readBytes })
+    expect(result).toEqual({ ok: false, status: 404, error: "no staged proposal at 'recordings/chaozhou/not-staged.webm'" })
+    expect(readBytes).not.toHaveBeenCalled()
+  })
+
+  it('returns the bytes and Content-Type for a staged proposal, keyed by its localPath', () => {
+    saveRecording(
+      { pengim: 'dio5', recordedDate: '2026-09-14', consentAcknowledged: true, audioBase64: Buffer.from('hi').toString('base64'), mimeType: 'audio/webm' },
+      { recordingsDir: join(stagingDir, 'recordings'), stagingDir, idSuffix: () => 'x', writeFile: () => {} },
+    )
+    const [proposal] = readLocalRecordingStaging(stagingDir)!.proposals
+    const readBytes = vi.fn(() => Buffer.from('fake bytes'))
+
+    const result = readStagedFile(proposal!.localPath, { stagingDir, readBytes })
+
+    expect(result).toEqual({ ok: true, bytes: Buffer.from('fake bytes'), contentType: 'audio/webm' })
+    expect(readBytes).toHaveBeenCalledWith(join(ROOT, proposal!.localPath))
+  })
+
+  it('reports an error when the staged proposal is known but its file is missing', () => {
+    saveRecording(
+      { pengim: 'dio5', recordedDate: '2026-09-14', consentAcknowledged: true, audioBase64: Buffer.from('hi').toString('base64'), mimeType: 'audio/wav' },
+      { recordingsDir: join(stagingDir, 'recordings'), stagingDir, idSuffix: () => 'x', writeFile: () => {} },
+    )
+    const [proposal] = readLocalRecordingStaging(stagingDir)!.proposals
+    const readBytes = vi.fn(() => {
+      throw new Error('ENOENT: no such file')
+    })
+
+    const result = readStagedFile(proposal!.localPath, { stagingDir, readBytes })
+    expect(result).toEqual({ ok: false, status: 404, error: 'ENOENT: no such file' })
   })
 })

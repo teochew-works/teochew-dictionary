@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto'
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { join, relative } from 'node:path'
 
 import { AUDIO_METADATA_DIR, DATA_DIR, ROOT } from '../../src/paths.js'
@@ -96,6 +96,20 @@ const MIME_EXTENSIONS: Record<string, string> = {
 /** Filesystem-safe, not the same slugging `lingualibre-rehost.ts` uses for a pengim key — a speaker pseudonym can contain arbitrary characters. */
 function slugify(value: string): string {
   return value.trim().toLowerCase().replace(/\s+/gu, '-').replace(/[^a-z0-9-]/gu, '') || 'x'
+}
+
+/** Every extension a staged recording can actually have (the range of `MIME_EXTENSIONS`), for serving it back with the right Content-Type. */
+const EXTENSION_CONTENT_TYPES: Record<string, string> = {
+  '.webm': 'audio/webm',
+  '.ogg': 'audio/ogg',
+  '.wav': 'audio/wav',
+  '.m4a': 'audio/mp4',
+  '.mp3': 'audio/mpeg',
+}
+
+function contentTypeForExtension(path: string): string | undefined {
+  const ext = path.match(/\.[a-zA-Z0-9]+$/u)?.[0]?.toLowerCase()
+  return ext ? EXTENSION_CONTENT_TYPES[ext] : undefined
 }
 
 export interface SaveRecordingBody {
@@ -233,4 +247,40 @@ export function deleteRecording(body: DeleteRecordingBody, deps: DeleteRecording
   removeLocalRecordingProposal(index, stagingDir)
   removeFile(join(ROOT, localPath))
   return { ok: true }
+}
+
+export type ReadStagedFileResult =
+  | { ok: true; bytes: Buffer; contentType: string }
+  | { ok: false; status: number; error: string }
+
+export interface ReadStagedFileDeps {
+  stagingDir?: string
+  /** Injectable for tests — avoids a real filesystem read. */
+  readBytes?: (path: string) => Buffer
+}
+
+/**
+ * Reads back the raw bytes of one staged (not yet merged) recording, so the
+ * elicitation UI can play back a take it already saved — staged clips have
+ * no other URL, unlike a published one. Only ever serves a `localPath` that
+ * actually matches a currently-staged proposal (never an arbitrary path a
+ * client might send), the same defense `deleteRecording` uses.
+ */
+export function readStagedFile(localPath: string | null | undefined, deps: ReadStagedFileDeps = {}): ReadStagedFileResult {
+  if (typeof localPath !== 'string' || localPath.trim() === '') return { ok: false, status: 400, error: 'localPath is required' }
+
+  const { stagingDir, readBytes = (path) => readFileSync(path) } = deps
+  const staged = readLocalRecordingStaging(stagingDir)
+  if (!staged?.proposals.some((p) => p.localPath === localPath)) {
+    return { ok: false, status: 404, error: `no staged proposal at '${localPath}'` }
+  }
+
+  const contentType = contentTypeForExtension(localPath)
+  if (!contentType) return { ok: false, status: 404, error: `no known audio Content-Type for '${localPath}'` }
+
+  try {
+    return { ok: true, bytes: readBytes(join(ROOT, localPath)), contentType }
+  } catch (e) {
+    return { ok: false, status: 404, error: (e as Error).message }
+  }
 }

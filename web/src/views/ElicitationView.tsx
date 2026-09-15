@@ -62,6 +62,9 @@ const AXES: { axis: Axis; label: string; description: string }[] = [
   { axis: 'tone', label: 'Same tone', description: 'another syllable on the same tone' },
 ]
 
+/** Up to this many random reference samples per axis, when that many candidates exist. */
+const MAX_REFERENCES_PER_AXIS = 3
+
 function axisValue(sound: Sound, axis: Axis): string | number | null {
   return sound[axis]
 }
@@ -74,10 +77,59 @@ function realClips(sound: Sound, published: Map<string, PublishedClip[]> | undef
   return mergedClips(sound, published).filter((c) => !c.synthesis)
 }
 
+/** A common headword character using this syllable, for visual context alongside the audio — the same examples the Sounds tab shows. */
+function commonCharacter(sound: Sound): string | null {
+  return sound.examples[0]?.headword ?? null
+}
+
+/** A staged (not yet merged) clip's own bytes have no published url — served back by the dev-only file route instead. */
+function stagedFileUrl(localPath: string): string {
+  return `/api/local-recordings/file?localPath=${encodeURIComponent(localPath)}`
+}
+
 function pickRandom<T>(items: T[]): T | null {
   if (items.length === 0) return null
   return items[Math.floor(Math.random() * items.length)]!
 }
+
+/** Samples up to `n` distinct items at random, without replacement. */
+function pickRandomSample<T>(items: T[], n: number): T[] {
+  const pool = [...items]
+  const picks: T[] = []
+  while (pool.length > 0 && picks.length < n) {
+    const index = Math.floor(Math.random() * pool.length)
+    picks.push(pool.splice(index, 1)[0]!)
+  }
+  return picks
+}
+
+/** Weighted random pick, favoring lower weights less — falls back to a uniform pick if every weight is zero. */
+function pickWeightedRandom<T>(items: T[], weightOf: (item: T) => number): T | null {
+  if (items.length === 0) return null
+  const weights = items.map((item) => Math.max(weightOf(item), 0))
+  const total = weights.reduce((sum, w) => sum + w, 0)
+  if (total <= 0) return pickRandom(items)
+  let roll = Math.random() * total
+  for (let i = 0; i < items.length; i++) {
+    roll -= weights[i]!
+    if (roll <= 0) return items[i]!
+  }
+  return items[items.length - 1]!
+}
+
+/** Favors a target with fewer staged (not yet merged) takes so far, so recording effort spreads across the pool rather than piling onto a few targets. */
+function stagedWeight(pengim: string, staged: Map<string, StagedClip[]> | undefined): number {
+  const count = staged?.get(pengim)?.length ?? 0
+  return 1 / (count + 1)
+}
+
+/** Published + staged, so a bucket actually moves as takes are recorded — the pool itself only advances on a merge, but this reflects effort in progress too. */
+function totalTakeCount(sound: Sound, published: Map<string, PublishedClip[]> | undefined, staged: Map<string, StagedClip[]> | undefined): number {
+  return realClips(sound, published).length + (staged?.get(sound.pengim)?.length ?? 0)
+}
+
+/** The last bucket is "this many or more". */
+const MAX_HISTOGRAM_BUCKET = 5
 
 export function ElicitationView() {
   const { data, loading, error } = useSounds()
@@ -98,6 +150,7 @@ export function ElicitationView() {
   }
 
   const published = localRecordings?.published
+  const staged = localRecordings?.staged
 
   const bySound = useMemo(() => new Map((data?.sounds ?? []).map((s) => [s.pengim, s])), [data])
 
@@ -112,35 +165,59 @@ export function ElicitationView() {
   }, [data, published])
 
   // Keep `currentPengim` pointed at something still in the queue, picking a
-  // fresh random one whenever it falls out (queue changes, or nothing chosen yet).
+  // fresh one — weighted toward targets with fewer staged takes so far —
+  // whenever it falls out (queue changes, or nothing chosen yet).
   useEffect(() => {
     if (currentPengim && queue.some((s) => s.pengim === currentPengim)) return
-    setCurrentPengim(pickRandom(queue)?.pengim ?? null)
-  }, [queue, currentPengim])
+    setCurrentPengim(pickWeightedRandom(queue, (s) => stagedWeight(s.pengim, staged))?.pengim ?? null)
+  }, [queue, currentPengim, staged])
 
   const current = currentPengim ? (bySound.get(currentPengim) ?? null) : null
 
   const sameSoundClip = current ? realClips(current, published)[0] : undefined
 
+  // Picked once per target — deliberately keyed on `currentPengim` alone, not
+  // on `current`/`data`/`published` object identity, so a re-render that
+  // doesn't actually change the target (a clip starting to play, or
+  // `published`/`staged` getting a new Map instance from `refresh()` after a
+  // save) reuses the previous pick instead of reshuffling it. Still
+  // synchronous — computed in the same render `current` first reflects the
+  // new target in, not a tick later — since a `useMemo` with an
+  // intentionally-narrow dep array still runs during render, unlike a
+  // `useEffect` (which would leave one render with stale/empty references).
   const references = useMemo(() => {
-    const result: Partial<Record<Axis, Sound>> = {}
+    const result: Partial<Record<Axis, Sound[]>> = {}
     if (!current || !data) return result
     for (const { axis } of AXES) {
       const candidates = data.sounds.filter(
         (s) => s.pengim !== current.pengim && axisValue(s, axis) === axisValue(current, axis) && realClips(s, published).length > 0,
       )
-      const pick = pickRandom(candidates)
-      if (pick) result[axis] = pick
+      const picks = pickRandomSample(candidates, MAX_REFERENCES_PER_AXIS)
+      if (picks.length > 0) result[axis] = picks
     }
     return result
-  }, [current, data, published])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPengim])
+
+  // How recording effort is actually distributed right now — published and
+  // staged takes both count, so this moves with every save, unlike the pool
+  // itself (which only shrinks once a human merges a second take).
+  const recordingCounts = useMemo(() => {
+    const counts = new Map<number, number>()
+    for (const s of data?.sounds ?? []) {
+      const bucket = Math.min(totalTakeCount(s, published, staged), MAX_HISTOGRAM_BUCKET)
+      counts.set(bucket, (counts.get(bucket) ?? 0) + 1)
+    }
+    return counts
+  }, [data, published, staged])
 
   const stagedTakes: StagedClip[] = (current && localRecordings?.staged.get(current.pengim)) || []
 
   const rePick = () => {
     recorder.reset()
     setSaveError(null)
-    const next = pickRandom(queue.filter((s) => s.pengim !== currentPengim))
+    const candidates = queue.filter((s) => s.pengim !== currentPengim)
+    const next = pickWeightedRandom(candidates, (s) => stagedWeight(s.pengim, staged))
     setCurrentPengim(next?.pengim ?? currentPengim)
   }
 
@@ -212,7 +289,16 @@ export function ElicitationView() {
         are other syllables sharing an axis with the one you're about to record, so you can hear how that axis normally
         sounds right before you speak. Speaker id is assigned later, at merge time.
       </p>
-      <p className="elicitation-view__progress">{queue.length} syllable{queue.length === 1 ? '' : 's'} still need a second session</p>
+      <ul className="elicitation-view__histogram" aria-label="Syllables by number of recordings">
+        {Array.from({ length: MAX_HISTOGRAM_BUCKET + 1 }, (_, n) => n).map((n) => (
+          <li key={n} className="elicitation-view__histogram-bucket">
+            <span className="elicitation-view__histogram-count">{recordingCounts.get(n) ?? 0}</span>
+            <span className="elicitation-view__histogram-label">
+              {n === MAX_HISTOGRAM_BUCKET ? `${n}+` : n} recording{n === 1 ? '' : 's'}
+            </span>
+          </li>
+        ))}
+      </ul>
 
       {!current && <p className="elicitation-view__status">Nothing left to record right now.</p>}
 
@@ -243,30 +329,36 @@ export function ElicitationView() {
             )}
 
             {AXES.map(({ axis, label, description }) => {
-              const ref = references[axis]
+              const refs = references[axis] ?? []
               return (
                 <div key={axis} className="elicitation-view__reference">
                   <span className="elicitation-view__reference-label" title={description}>
                     {label}
                   </span>
-                  {ref ? (
-                    (() => {
-                      const clips = realClips(ref, published)
-                      const clip = clips[0]!
-                      return (
-                        <span className="elicitation-view__reference-clip">
-                          <span className="elicitation-view__reference-pengim">{ref.pengim}</span>
-                          <PlayClipButton
-                            id={`elicit-ref-${axis}:${ref.pengim}`}
-                            clip={clip}
-                            label={clipLabel(clip, 0, clips.length)}
-                            ariaLabel={`Play reference recording ${ref.pengim}`}
-                            playingId={playingId}
-                            onPlay={play}
-                          />
-                        </span>
-                      )
-                    })()
+                  {refs.length > 0 ? (
+                    <span className="elicitation-view__reference-samples">
+                      {refs.map((ref) => {
+                        const clips = realClips(ref, published)
+                        const clip = clips[0]!
+                        const character = commonCharacter(ref)
+                        return (
+                          <span key={ref.pengim} className="elicitation-view__reference-clip">
+                            <span className="elicitation-view__reference-pengim">
+                              {ref.pengim}
+                              {character && <span className="elicitation-view__reference-character">{character}</span>}
+                            </span>
+                            <PlayClipButton
+                              id={`elicit-ref-${axis}:${ref.pengim}`}
+                              clip={clip}
+                              label={clipLabel(clip, 0, clips.length)}
+                              ariaLabel={`Play reference recording ${ref.pengim}`}
+                              playingId={playingId}
+                              onPlay={play}
+                            />
+                          </span>
+                        )
+                      })}
+                    </span>
                   ) : (
                     <span className="elicitation-view__reference-none">no reference available</span>
                   )}
@@ -331,9 +423,17 @@ export function ElicitationView() {
                 Staged take{stagedTakes.length === 1 ? '' : 's'} for {current.pengim}
               </span>
               <ul className="elicitation-view__staged-list">
-                {stagedTakes.map((take) => (
+                {stagedTakes.map((take, i) => (
                   <li key={take.localPath} className="elicitation-view__staged-item">
                     <span>{take.recordedDate}</span>
+                    <PlayClipButton
+                      id={`elicit-staged:${take.localPath}`}
+                      clip={{ url: stagedFileUrl(take.localPath) }}
+                      label={stagedTakes.length > 1 ? `Take ${i + 1}` : 'Play'}
+                      ariaLabel={`Play staged take ${i + 1} of ${current.pengim}`}
+                      playingId={playingId}
+                      onPlay={play}
+                    />
                     <button
                       type="button"
                       onClick={() => deleteStagedTake(take.localPath)}

@@ -23,8 +23,36 @@
   max-width: 48rem;
 }
 
-.elicitation-view__progress {
-  font-weight: 600;
+.elicitation-view__histogram {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.elicitation-view__histogram-bucket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  min-width: 4.5rem;
+}
+
+.elicitation-view__histogram-count {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.elicitation-view__histogram-label {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  white-space: nowrap;
 }
 
 .elicitation-view__card {
@@ -61,21 +89,39 @@
 
 .elicitation-view__reference {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
 }
 
 .elicitation-view__reference-label {
   width: 7rem;
   flex-shrink: 0;
+  padding-top: 0.3rem;
   color: var(--color-muted);
   font-size: 0.85rem;
+}
+
+.elicitation-view__reference-samples {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
 .elicitation-view__reference-clip {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.elicitation-view__reference-pengim {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.elicitation-view__reference-character {
+  color: var(--color-muted);
+  font-size: 0.9em;
 }
 
 .elicitation-view__reference-none {
@@ -142,6 +188,9 @@
 .elicitation-view__staged-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 0.5rem;
+}
+
+.elicitation-view__staged-item > span {
+  flex: 1;
 }

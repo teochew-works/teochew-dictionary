@@ -1,7 +1,14 @@
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import type { Plugin } from 'vite'
 
-import { deleteRecording, getStatus, saveRecording, type DeleteRecordingBody, type SaveRecordingBody } from './local-recordings-handlers.js'
+import {
+  deleteRecording,
+  getStatus,
+  readStagedFile,
+  saveRecording,
+  type DeleteRecordingBody,
+  type SaveRecordingBody,
+} from './local-recordings-handlers.js'
 
 /**
  * Dev-only backend for the Sounds tab's "record" control (issue #128,
@@ -9,10 +16,13 @@ import { deleteRecording, getStatus, saveRecording, type DeleteRecordingBody, ty
  * `GET /api/local-recordings` reports which syllables already have a
  * published clip or a staged proposal, `POST /api/local-recordings` stages
  * a newly-recorded one, `DELETE /api/local-recordings` discards a staged
- * one by `localPath`. Registered via `configureServer`, which Vite only
- * ever calls while running `vite dev` — never during `vite build` — so this
- * route (and everything it can do to the filesystem) simply does not exist
- * in the production bundle. See web/vite.config.ts, which additionally only
+ * one by `localPath`, and `GET /api/local-recordings/file?localPath=...`
+ * streams back a staged clip's own bytes so it can be played before it's
+ * merged (a published clip already has its own hosted url; a staged one
+ * doesn't). Registered via `configureServer`, which Vite only ever calls
+ * while running `vite dev` — never during `vite build` — so this route
+ * (and everything it can do to the filesystem) simply does not exist in the
+ * production bundle. See web/vite.config.ts, which additionally only
  * includes this plugin when `command === 'serve'`, belt-and-suspenders on
  * top of that.
  */
@@ -43,6 +53,27 @@ export function localRecordingsPlugin(): Plugin {
     name: 'teochew-local-recordings',
     configureServer(server) {
       server.middlewares.use('/api/local-recordings', (req, res) => {
+        // Connect strips the mount prefix, so `/file?localPath=...` arrives
+        // as `req.url` here — checked before the plain-GET status branch
+        // below, which would otherwise swallow it.
+        const url = new URL(req.url ?? '/', 'http://localhost')
+        if (url.pathname === '/file') {
+          if (req.method !== 'GET') {
+            res.statusCode = 405
+            res.end()
+            return
+          }
+          const result = readStagedFile(url.searchParams.get('localPath'))
+          if (!result.ok) {
+            sendJson(res, result.status, { ok: false, error: result.error })
+            return
+          }
+          res.statusCode = 200
+          res.setHeader('content-type', result.contentType)
+          res.end(result.bytes)
+          return
+        }
+
         if (req.method === 'GET') {
           sendJson(res, 200, getStatus())
           return

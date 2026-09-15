@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { ElicitationView } from './ElicitationView'
 import type { SoundsData } from '../types/sounds'
 
@@ -134,6 +134,21 @@ const FULL_FIXTURE: SoundsData = {
   sounds: [TARGET, SAME_INITIAL, SAME_RIME, SAME_TONE, ALREADY_DONE, NO_RECORDING],
 }
 
+/** Four same-initial candidates (more than MAX_REFERENCES_PER_AXIS), each with its own example character. */
+const MANY_SAME_INITIAL = ['do2', 'do3', 'do4', 'do5'].map((pengim, i) => ({
+  pengim,
+  ipa: `${pengim}-ipa`,
+  initial: 'd',
+  rime: ['o', 'u', 'e', 'ai'][i]!,
+  tone: i + 2,
+  occurrences: 1,
+  examples: [{ headword: `字${i}`, pengim, gloss: 'x' }],
+  clips: [
+    { url: `${pengim}-a.wav`, speaker: 'jky' },
+    { url: `${pengim}-b.wav`, speaker: 'jky-2' },
+  ],
+}))
+
 function stubFetch(data: SoundsData, opts: { onSave?: (body: unknown) => void } = {}) {
   vi.stubGlobal(
     'fetch',
@@ -171,6 +186,16 @@ function stubFetchWithStaged(data: SoundsData, initialStaged: Record<string, { l
   return fetchMock
 }
 
+function referenceRow(label: string): HTMLElement {
+  return screen.getByText(label).closest<HTMLElement>('.elicitation-view__reference')!
+}
+
+/** Reads the count shown for a histogram bucket, e.g. `histogramCount('1 recording')`. */
+function histogramCount(label: string): number {
+  const bucket = screen.getByText(label).closest<HTMLElement>('.elicitation-view__histogram-bucket')!
+  return Number(bucket.querySelector('.elicitation-view__histogram-count')!.textContent)
+}
+
 async function recordAClip() {
   fireEvent.click(screen.getByRole('button', { name: '● Start recording' }))
   await screen.findByRole('button', { name: '■ Stop' })
@@ -185,16 +210,21 @@ describe('ElicitationView', () => {
 
   afterEach(() => {
     vi.unstubAllGlobals()
+    vi.restoreAllMocks()
   })
 
-  it('shows the one syllable that needs a second session, with a progress count', async () => {
+  it('shows the one syllable that needs a second session, and a recording-count histogram', async () => {
     stubFetch(FULL_FIXTURE)
     render(<ElicitationView />)
 
     expect(await screen.findByText('da1')).toBeInTheDocument()
-    expect(screen.getByText('1 syllable still need a second session')).toBeInTheDocument()
     expect(screen.queryByText('zo8')).not.toBeInTheDocument()
     expect(screen.queryByText('never1')).not.toBeInTheDocument()
+
+    // never1 (0 clips), da1 (1), the four 2-clip fixtures (2 each).
+    expect(histogramCount('0 recordings')).toBe(1)
+    expect(histogramCount('1 recording')).toBe(1)
+    expect(histogramCount('2 recordings')).toBe(4)
   })
 
   it('shows a "Same sound" reference to the target\'s own existing recording, plus one candidate per axis', async () => {
@@ -227,7 +257,6 @@ describe('ElicitationView', () => {
     render(<ElicitationView />)
 
     expect(await screen.findByText('Nothing left to record right now.')).toBeInTheDocument()
-    expect(screen.getByText('0 syllables still need a second session')).toBeInTheDocument()
   })
 
   it('a syllable with a staged-but-unmerged take stays in the pool and shows its staged takes', async () => {
@@ -238,9 +267,13 @@ describe('ElicitationView', () => {
     render(<ElicitationView />)
 
     expect(await screen.findByText('da1')).toBeInTheDocument()
-    expect(screen.getByText('1 syllable still need a second session')).toBeInTheDocument()
     expect(screen.getByText('Staged take for da1')).toBeInTheDocument()
     expect(screen.getByText('2026-09-15')).toBeInTheDocument()
+
+    // The histogram counts the staged take too (1 published + 1 staged = 2),
+    // even though da1 is still in the pickable pool (only a published second
+    // take would remove it from there).
+    expect(histogramCount('2 recordings')).toBe(1)
   })
 
   it('deletes a staged take', async () => {
@@ -286,17 +319,19 @@ describe('ElicitationView', () => {
     stubFetch({ variety: 'chaozhou', sounds: [A, B] })
     render(<ElicitationView />)
 
-    await screen.findByText('2 syllables still need a second session')
+    const firstEl = await screen.findByText(/^(ra1|sb2)$/)
     const pengimEl = () => document.querySelector('.elicitation-view__target-pengim')?.textContent
-    const first = pengimEl()
-    expect(['ra1', 'sb2']).toContain(first)
+    const first = firstEl.textContent
 
     fireEvent.click(screen.getByRole('button', { name: 'Re-pick' }))
 
     expect(pengimEl()).not.toBe(first)
     expect(['ra1', 'sb2']).toContain(pengimEl())
-    // Neither target was excluded from the pool by re-picking.
-    expect(screen.getByText('2 syllables still need a second session')).toBeInTheDocument()
+
+    // With only one other candidate, re-picking again must cycle back to the
+    // original — proving it was never excluded from the pool by the first re-pick.
+    fireEvent.click(screen.getByRole('button', { name: 'Re-pick' }))
+    expect(pengimEl()).toBe(first)
   })
 
   it('records and stages a take without a speaker field in the request body', async () => {
@@ -340,6 +375,76 @@ describe('ElicitationView', () => {
     expect(saves).toHaveLength(2)
     expect(saves[0]).toMatchObject({ pengim: 'da1' })
     expect(saves[1]).toMatchObject({ pengim: 'da1' })
+  })
+
+  it('shows up to MAX_REFERENCES_PER_AXIS random samples per axis, each with its own common character, when more are available', async () => {
+    stubFetch({ variety: 'chaozhou', sounds: [TARGET, ...MANY_SAME_INITIAL] })
+    render(<ElicitationView />)
+
+    await screen.findByText('da1')
+    const initialRow = referenceRow('Same initial')
+    const samplePengim = within(initialRow).getAllByText(/^do[2-5]$/)
+    // Capped at 3 even though 4 candidates exist.
+    expect(samplePengim).toHaveLength(3)
+
+    const characters = within(initialRow).getAllByText(/^字[0-3]$/)
+    expect(characters).toHaveLength(3)
+  })
+
+  it('omits the common character for a sample with no examples', async () => {
+    stubFetch(FULL_FIXTURE)
+    render(<ElicitationView />)
+
+    await screen.findByText('da1')
+    const initialRow = referenceRow('Same initial')
+    expect(within(initialRow).getByText('do2')).toBeInTheDocument()
+    expect(initialRow.querySelector('.elicitation-view__reference-character')).not.toBeInTheDocument()
+  })
+
+  it('does not reselect axis samples on an unrelated re-render (e.g. playing a clip) — only when the target changes', async () => {
+    vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined)
+    vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
+    stubFetch({ variety: 'chaozhou', sounds: [TARGET, ...MANY_SAME_INITIAL] })
+    render(<ElicitationView />)
+
+    await screen.findByText('da1')
+    const before = within(referenceRow('Same initial')).getAllByText(/^do[2-5]$/).map((el) => el.textContent)
+
+    fireEvent.click(screen.getByLabelText('Play your existing recording of da1'))
+
+    const after = within(referenceRow('Same initial')).getAllByText(/^do[2-5]$/).map((el) => el.textContent)
+    expect(after).toEqual(before)
+  })
+
+  it('weights the initial pick toward a target with fewer staged takes', async () => {
+    const A = { pengim: 'wa1', ipa: 'wa³³', initial: 'w', rime: 'a', tone: 1, occurrences: 1, examples: [], clips: [{ url: 'a.wav', speaker: 'jky' }] }
+    const B = { pengim: 'wb2', ipa: 'wb⁵³', initial: 'x', rime: 'e', tone: 2, occurrences: 1, examples: [], clips: [{ url: 'b.wav', speaker: 'jky' }] }
+    // weight(A) = 1/(0+1) = 1, weight(B) = 1/(5+1) ≈ 0.167, total ≈ 1.167 —
+    // a mid-range roll lands within A's much larger share of that total.
+    stubFetchWithStaged(
+      { variety: 'chaozhou', sounds: [A, B] },
+      { wb2: Array.from({ length: 5 }, (_, i) => ({ localPath: `p${i}`, recordedDate: '2026-09-15' })) },
+    )
+    vi.spyOn(Math, 'random').mockReturnValue(0.5)
+
+    render(<ElicitationView />)
+
+    expect(await screen.findByText('wa1')).toBeInTheDocument()
+  })
+
+  it('lets a staged take be played back', async () => {
+    vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined)
+    vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
+    stubFetchWithStaged(
+      { variety: 'chaozhou', sounds: [TARGET] },
+      { da1: [{ localPath: 'data/staging/recordings/chaozhou/da1__unassigned__abc.webm', recordedDate: '2026-09-15' }] },
+    )
+    render(<ElicitationView />)
+
+    const playButton = await screen.findByRole('button', { name: 'Play staged take 1 of da1' })
+    fireEvent.click(playButton)
+
+    expect(playButton).toHaveAttribute('aria-pressed', 'true')
   })
 
   it('shows an inline error and stays on the preview when the save request fails', async () => {
