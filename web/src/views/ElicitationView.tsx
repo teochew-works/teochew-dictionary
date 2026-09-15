@@ -36,9 +36,11 @@ import './ElicitationView.css'
  * one from being picked again later.
  *
  * Picking isn't uniform: `pickingWeight` favors a target with fewer staged
- * takes so far, and separately favors one whose initial/rime/tone is shared
- * by few other recorded syllables (a rare axis component has little else to
- * fall back on, so an independent take of it is worth more).
+ * takes so far, and separately favors one whose initial/rime/tone has had
+ * few *staged* takes anywhere (an axis component nobody has second-session
+ * coverage of yet, not one jky's first-session baseline already reaches
+ * everywhere and so can't discriminate). The histogram and axis-coverage
+ * percentages shown in the UI are staging-only for the same reason.
  */
 
 const CONSENT_STORAGE_KEY = 'teochew-dictionary:elicitation-consent-acknowledged'
@@ -66,6 +68,8 @@ const AXES: { axis: Axis; label: string; description: string }[] = [
   { axis: 'rime', label: 'Same rime', description: 'another syllable ending the same way' },
   { axis: 'tone', label: 'Same tone', description: 'another syllable on the same tone' },
 ]
+
+const AXIS_NAMES: Record<Axis, string> = { initial: 'Initial', rime: 'Rime', tone: 'Tone' }
 
 /** Up to this many random reference samples per axis, when that many candidates exist. */
 const MAX_REFERENCES_PER_AXIS = 3
@@ -128,13 +132,23 @@ function stagedWeight(pengim: string, staged: Map<string, StagedClip[]> | undefi
   return 1 / (count + 1)
 }
 
-/** How many other *recorded* syllables share each axis value, for `axisRarityWeight` below. */
+function stagedCount(sound: Sound, staged: Map<string, StagedClip[]> | undefined): number {
+  return staged?.get(sound.pengim)?.length ?? 0
+}
+
+/**
+ * How many syllables with at least one *staged* take share each axis value —
+ * every count here is about second-session progress, not jky's first-session
+ * baseline (which every syllable in the pool already has by definition, so
+ * it wouldn't discriminate anything). Feeds both `axisRarityWeight` below and
+ * the axis-coverage percentages shown in the UI.
+ */
 type AxisCounts = Record<Axis, Map<string | number | null, number>>
 
-function buildAxisCounts(sounds: Sound[], published: Map<string, PublishedClip[]> | undefined): AxisCounts {
+function buildAxisStagedCounts(sounds: Sound[], staged: Map<string, StagedClip[]> | undefined): AxisCounts {
   const counts: AxisCounts = { initial: new Map(), rime: new Map(), tone: new Map() }
   for (const s of sounds) {
-    if (realClips(s, published).length === 0) continue
+    if (stagedCount(s, staged) === 0) continue
     for (const { axis } of AXES) {
       const v = axisValue(s, axis)
       counts[axis].set(v, (counts[axis].get(v) ?? 0) + 1)
@@ -144,25 +158,20 @@ function buildAxisCounts(sounds: Sound[], published: Map<string, PublishedClip[]
 }
 
 /**
- * Favors a target whose initial, rime, or tone is shared by few other
- * recorded syllables — a rare axis component has few (if any) reference
- * samples available elsewhere, so an independent second-session take of it
- * is worth more than one more take of an axis component the corpus already
- * has plenty of. Each axis contributes independently (a syllable rare on
- * several axes at once is favored more, not just as much as being rare on one).
+ * Favors a target whose initial, rime, or tone has had few *staged* takes so
+ * far — an axis component nobody has started second-session work on yet
+ * gets full weight on that axis; one several other syllables already cover
+ * is deprioritized. Each axis contributes independently (a syllable
+ * under-covered on several axes at once is favored more than one under-
+ * covered on just one).
  */
 function axisRarityWeight(sound: Sound, axisCounts: AxisCounts): number {
   let weight = 1
   for (const { axis } of AXES) {
-    const count = axisCounts[axis].get(axisValue(sound, axis)) ?? 1
-    weight *= 1 / count
+    const count = axisCounts[axis].get(axisValue(sound, axis)) ?? 0
+    weight *= 1 / (count + 1)
   }
   return weight
-}
-
-/** Published + staged, so a bucket actually moves as takes are recorded — the pool itself only advances on a merge, but this reflects effort in progress too. */
-function totalTakeCount(sound: Sound, published: Map<string, PublishedClip[]> | undefined, staged: Map<string, StagedClip[]> | undefined): number {
-  return realClips(sound, published).length + (staged?.get(sound.pengim)?.length ?? 0)
 }
 
 /** The last bucket is "this many or more". */
@@ -201,11 +210,11 @@ export function ElicitationView() {
     return data.sounds.filter((s) => realClips(s, published).length === 1)
   }, [data, published])
 
-  const axisCounts = useMemo(() => buildAxisCounts(data?.sounds ?? [], published), [data, published])
+  const axisCounts = useMemo(() => buildAxisStagedCounts(data?.sounds ?? [], staged), [data, staged])
 
   // Combines both picking biases: fewer staged takes so far, and a rarer
-  // initial/rime/tone (few other recorded syllables share it, so there's
-  // little else to fall back on for that component).
+  // initial/rime/tone (few other *staged* syllables share it yet, so this
+  // component of the axis space has had little second-session attention).
   const pickingWeight = (s: Sound) => stagedWeight(s.pengim, staged) * axisRarityWeight(s, axisCounts)
 
   // Keep `currentPengim` pointed at something still in the queue, picking a
@@ -244,17 +253,33 @@ export function ElicitationView() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPengim])
 
-  // How recording effort is actually distributed right now — published and
-  // staged takes both count, so this moves with every save, unlike the pool
-  // itself (which only shrinks once a human merges a second take).
+  // How second-session recording effort is distributed right now — staged
+  // takes only, not jky's first-session baseline every pool syllable already
+  // has. This moves with every save, unlike the pool itself (which only
+  // shrinks once a human merges a second take).
   const recordingCounts = useMemo(() => {
     const counts = new Map<number, number>()
     for (const s of data?.sounds ?? []) {
-      const bucket = Math.min(totalTakeCount(s, published, staged), MAX_HISTOGRAM_BUCKET)
+      const bucket = Math.min(stagedCount(s, staged), MAX_HISTOGRAM_BUCKET)
       counts.set(bucket, (counts.get(bucket) ?? 0) + 1)
     }
     return counts
-  }, [data, published, staged])
+  }, [data, staged])
+
+  // What fraction of each axis's distinct values (e.g. how many of the
+  // corpus's initials) have at least one staged take anywhere — a coverage
+  // view complementing the per-syllable histogram above.
+  const axisCoverage = useMemo(() => {
+    const result: Record<Axis, { covered: number; total: number }> = {
+      initial: { covered: 0, total: 0 },
+      rime: { covered: 0, total: 0 },
+      tone: { covered: 0, total: 0 },
+    }
+    for (const { axis } of AXES) {
+      result[axis] = { covered: axisCounts[axis].size, total: new Set((data?.sounds ?? []).map((s) => axisValue(s, axis))).size }
+    }
+    return result
+  }, [data, axisCounts])
 
   const stagedTakes: StagedClip[] = (current && localRecordings?.staged.get(current.pengim)) || []
 
@@ -334,15 +359,30 @@ export function ElicitationView() {
         are other syllables sharing an axis with the one you're about to record, so you can hear how that axis normally
         sounds right before you speak. Speaker id is assigned later, at merge time.
       </p>
-      <ul className="elicitation-view__histogram" aria-label="Syllables by number of recordings">
+      <ul className="elicitation-view__histogram" aria-label="Syllables by number of staged recordings">
         {Array.from({ length: MAX_HISTOGRAM_BUCKET + 1 }, (_, n) => n).map((n) => (
           <li key={n} className="elicitation-view__histogram-bucket">
             <span className="elicitation-view__histogram-count">{recordingCounts.get(n) ?? 0}</span>
             <span className="elicitation-view__histogram-label">
-              {n === MAX_HISTOGRAM_BUCKET ? `${n}+` : n} recording{n === 1 ? '' : 's'}
+              {n === MAX_HISTOGRAM_BUCKET ? `${n}+` : n} staged recording{n === 1 ? '' : 's'}
             </span>
           </li>
         ))}
+      </ul>
+
+      <ul className="elicitation-view__axis-coverage" aria-label="Axis values with at least one staged recording">
+        {AXES.map(({ axis, description }) => {
+          const { covered, total } = axisCoverage[axis]
+          const pct = total > 0 ? Math.round((covered / total) * 100) : 0
+          return (
+            <li key={axis} className="elicitation-view__axis-coverage-item" title={description}>
+              <span className="elicitation-view__axis-coverage-label">{AXIS_NAMES[axis]}</span>
+              <span className="elicitation-view__axis-coverage-value">
+                {covered}/{total} ({pct}%) staged
+              </span>
+            </li>
+          )
+        })}
       </ul>
 
       {!current && <p className="elicitation-view__status">Nothing left to record right now.</p>}

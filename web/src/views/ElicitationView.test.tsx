@@ -196,6 +196,11 @@ function histogramCount(label: string): number {
   return Number(bucket.querySelector('.elicitation-view__histogram-count')!.textContent)
 }
 
+function axisCoverageValue(axisLabel: string): string | null {
+  const item = screen.getByText(axisLabel).closest<HTMLElement>('.elicitation-view__axis-coverage-item')!
+  return item.querySelector('.elicitation-view__axis-coverage-value')!.textContent
+}
+
 async function recordAClip() {
   fireEvent.click(screen.getByRole('button', { name: '● Start recording' }))
   await screen.findByRole('button', { name: '■ Stop' })
@@ -221,10 +226,10 @@ describe('ElicitationView', () => {
     expect(screen.queryByText('zo8')).not.toBeInTheDocument()
     expect(screen.queryByText('never1')).not.toBeInTheDocument()
 
-    // never1 (0 clips), da1 (1), the four 2-clip fixtures (2 each).
-    expect(histogramCount('0 recordings')).toBe(1)
-    expect(histogramCount('1 recording')).toBe(1)
-    expect(histogramCount('2 recordings')).toBe(4)
+    // Nobody has staged anything in this fixture — the histogram counts
+    // staged takes only, not jky's first-session baseline every pool
+    // syllable already has (see the staged-take test below for a non-zero bucket).
+    expect(histogramCount('0 staged recordings')).toBe(6)
   })
 
   it('shows a "Same sound" reference to the target\'s own existing recording, plus one candidate per axis', async () => {
@@ -270,10 +275,10 @@ describe('ElicitationView', () => {
     expect(screen.getByText('Staged take for da1')).toBeInTheDocument()
     expect(screen.getByText('2026-09-15')).toBeInTheDocument()
 
-    // The histogram counts the staged take too (1 published + 1 staged = 2),
-    // even though da1 is still in the pickable pool (only a published second
-    // take would remove it from there).
-    expect(histogramCount('2 recordings')).toBe(1)
+    // The histogram counts the staged take (staging-only, not jky's
+    // first-session baseline), even though da1 is still in the pickable pool
+    // (only a published second take would remove it from there).
+    expect(histogramCount('1 staged recording')).toBe(1)
   })
 
   it('deletes a staged take', async () => {
@@ -432,10 +437,10 @@ describe('ElicitationView', () => {
     expect(await screen.findByText('wa1')).toBeInTheDocument()
   })
 
-  it('weights picking toward a target whose axis components are rarer among recorded syllables', async () => {
+  it('weights picking toward a target whose axis components have had less staged attention', async () => {
     const RARE = { pengim: 'rb2', ipa: 'rb⁵³', initial: 'r', rime: 'b', tone: 2, occurrences: 1, examples: [], clips: [{ url: 'r.wav', speaker: 'jky' }] }
     const COMMON = { pengim: 'ca1', ipa: 'ca³³', initial: 'c', rime: 'a', tone: 1, occurrences: 1, examples: [], clips: [{ url: 'c.wav', speaker: 'jky' }] }
-    const done = (pengim: string, initial: string, rime: string, tone: number) => ({
+    const filler = (pengim: string, initial: string, rime: string, tone: number) => ({
       pengim,
       ipa: `${pengim}-ipa`,
       initial,
@@ -443,34 +448,60 @@ describe('ElicitationView', () => {
       tone,
       occurrences: 1,
       examples: [],
+      // Two real clips (already has a second, merged session) so these never
+      // compete with COMMON/RARE for the pick themselves — they only exist
+      // to carry a staged take that inflates COMMON's axis-staged counts.
       clips: [
         { url: `${pengim}-a.wav`, speaker: 'jky' },
         { url: `${pengim}-b.wav`, speaker: 'jky-2' },
       ],
     })
-    // Three other recorded syllables share COMMON's initial, three share its
+    // Three other staged syllables share COMMON's initial, three share its
     // rime, three share its tone — none share anything with RARE. Neither
-    // COMMON nor RARE is itself in the queue-competing set (done() gives two
-    // real clips, so these only inflate the axis-frequency counts).
+    // COMMON nor RARE has any staged takes of its own.
     const fillers = [
-      done('cx1', 'c', 'x', 3),
-      done('cy1', 'c', 'y', 4),
-      done('cz1', 'c', 'z', 5),
-      done('xa1', 'x', 'a', 3),
-      done('ya1', 'y', 'a', 4),
-      done('za1', 'z', 'a', 5),
-      done('p1', 'p', 'n', 1),
-      done('q1', 'q', 'o', 1),
-      done('s1', 's', 'p', 1),
+      filler('cx1', 'c', 'x', 3),
+      filler('cy1', 'c', 'y', 4),
+      filler('cz1', 'c', 'z', 5),
+      filler('xa1', 'x', 'a', 3),
+      filler('ya1', 'y', 'a', 4),
+      filler('za1', 'z', 'a', 5),
+      filler('p1', 'p', 'n', 1),
+      filler('q1', 'q', 'o', 1),
+      filler('s1', 's', 'p', 1),
     ]
     // weight(COMMON) = 1 * (1/4 · 1/4 · 1/4) ≈ 0.0156, weight(RARE) = 1 * (1/1 · 1/1 · 1/1) = 1,
     // total ≈ 1.0156 — all but a sliver of that range favors RARE.
-    stubFetch({ variety: 'chaozhou', sounds: [COMMON, RARE, ...fillers] })
+    stubFetchWithStaged(
+      { variety: 'chaozhou', sounds: [COMMON, RARE, ...fillers] },
+      Object.fromEntries(fillers.map((f) => [f.pengim, [{ localPath: `${f.pengim}.webm`, recordedDate: '2026-09-15' }]])),
+    )
     vi.spyOn(Math, 'random').mockReturnValue(0.5)
 
     render(<ElicitationView />)
 
     expect(await screen.findByText('rb2')).toBeInTheDocument()
+  })
+
+  it('shows the percentage of each axis\'s distinct values with at least one staged recording', async () => {
+    // Two initials ('c','d'), two rimes ('a','o'), two tones (1,2) exist;
+    // only initial 'c' and tone 1 have any staged take.
+    const sounds = [
+      { pengim: 'ca1', ipa: 'ca1-ipa', initial: 'c', rime: 'a', tone: 1, occurrences: 1, examples: [], clips: [{ url: 'x.wav', speaker: 'jky' }] },
+      { pengim: 'do2', ipa: 'do2-ipa', initial: 'd', rime: 'o', tone: 2, occurrences: 1, examples: [], clips: [{ url: 'y.wav', speaker: 'jky' }] },
+    ]
+    stubFetchWithStaged(
+      { variety: 'chaozhou', sounds },
+      { ca1: [{ localPath: 'ca1.webm', recordedDate: '2026-09-15' }] },
+    )
+    render(<ElicitationView />)
+
+    // The axis-coverage summary renders as soon as the data loads — it
+    // doesn't depend on which specific syllable ends up as the current pick.
+    await screen.findByText('Initial')
+    expect(axisCoverageValue('Initial')).toBe('1/2 (50%) staged')
+    expect(axisCoverageValue('Rime')).toBe('1/2 (50%) staged')
+    expect(axisCoverageValue('Tone')).toBe('1/2 (50%) staged')
   })
 
   it('lets a staged take be played back', async () => {
