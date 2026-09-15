@@ -18,6 +18,13 @@ export const LEARNTEOCHEW_CHART_FILE = join(EXTERNAL_DIR, 'learnteochew.yaml')
  */
 export const AUDIO_METADATA_DIR = join(PHONOLOGY_DIR, 'audio')
 export const SOURCES_FILE = join(DATA_DIR, 'sources.yaml')
+/**
+ * Load-time corrections to imported readings (ADR-0028): `pengim`/`variety`
+ * fixes applied in memory when entries are read, never as edits to
+ * `data/entries/` — those files mirror an import source and must stay
+ * byte-identical to it so a re-sync can't silently reintroduce a fixed error.
+ */
+export const PATCHES_DIR = join(DATA_DIR, 'patches')
 export const WORDLISTS_DIR = join(DATA_DIR, 'wordlists')
 export const SYLLABLE_INVENTORY_FILE = join(WORDLISTS_DIR, 'syllable-inventory.yaml')
 export const WIKTIONARY_WORDLIST_FILE = join(WORDLISTS_DIR, 'wiktionary-teochew-index.yaml')

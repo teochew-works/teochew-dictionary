@@ -1,4 +1,5 @@
-import { readEntryFiles, loadSources, loadSyllableInventory } from '../data/load.js'
+import { readRawEntryFiles, loadSources, loadSyllableInventory } from '../data/load.js'
+import { applyReadingPatches, findPatchProblems } from '../data/patches.js'
 import {
   listAudioVarieties,
   listExternalCharts,
@@ -141,7 +142,27 @@ export function validate(): ValidationReport {
   const seenIds = new Map<string, string>()
   const seenHeadwords = new Map<string, string[]>()
 
-  for (const { file, raw } of readEntryFiles()) {
+  // Read raw (unpatched) so a stale or ambiguous load-time patch (ADR-0028)
+  // surfaces as a loud validation error instead of silently no-op'ing —
+  // `findPatchProblems` needs the *original* pengim/variety to match
+  // against, which a successfully-applied patch would otherwise have
+  // already overwritten. The rest of validation proceeds against the
+  // patched files, same as every other consumer of `readEntryFiles()`.
+  const rawEntryFiles = readRawEntryFiles()
+  for (const problem of findPatchProblems(rawEntryFiles)) {
+    issues.push(
+      err(
+        'data/patches/',
+        `patch '${problem.patch.id}' (entry '${problem.patch.entry}') ${
+          problem.reason === 'not-found'
+            ? `matched no reading — expected pengim '${problem.patch.match.pengim}'`
+            : `matched ${problem.matchCount} readings, expected exactly 1`
+        }`,
+      ),
+    )
+  }
+
+  for (const { file, raw } of applyReadingPatches(rawEntryFiles)) {
     const parsed = entryFileSchema.safeParse(raw)
     if (!parsed.success) {
       for (const i of parsed.error.issues) {

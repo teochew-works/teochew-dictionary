@@ -16793,11 +16793,7 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: attested
-        attested_entries:
-          - bhue7-si6-未是
-        sandhi_attested_entries:
-          - bhue7-si6-未是
+        status: unattested
       shantou:
         status: unattested
   - syllable: bhuê7
@@ -16810,6 +16806,7 @@ items:
         status: attested
         attested_entries:
           - a1-bhuê7-猶未
+          - bhue7-si6-未是
           - bhue7-未
           - bhuê7-bog4-sain1-zai1-未卜先知
           - bhuê7-gêng1-未經
@@ -16824,6 +16821,7 @@ items:
           - su3-bhuê7-mou5-ming7-素未謀面
           - ziah8-ba2-bhuê7-食飽未
         sandhi_attested_entries:
+          - bhue7-si6-未是
           - bhuê5-gai3-媒介
           - bhuê5-guin7-梅縣
           - bhuê5-huê1-dêg8-梅花鹿
@@ -49065,9 +49063,7 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: attested
-        attested_entries:
-          - cun5-kuang2-存款
+        status: unattested
       shantou:
         status: unattested
   - syllable: cun6
@@ -49087,9 +49083,7 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: attested
-        sandhi_attested_entries:
-          - cun5-kuang2-存款
+        status: unattested
       shantou:
         status: unattested
   - syllable: cunb4
@@ -49197,6 +49191,7 @@ items:
         status: attested
         attested_entries:
           - bo2-cung5-保存
+          - cun5-kuang2-存款
           - cung5-do6-存在
           - cung5-zin5-存錢
           - cung5-存
@@ -49227,6 +49222,7 @@ items:
       chaozhou:
         status: attested
         sandhi_attested_entries:
+          - cun5-kuang2-存款
           - cung5-do6-存在
           - cung5-zin5-存錢
       shantou:
@@ -116013,6 +116009,7 @@ items:
           - hou2-zêg4-否則
           - hou2-否
           - lêng5-hou2-能否
+          - si6-houn2-是否
         sandhi_attested_entries:
           - hou3-dao2-戽斗
       shantou:
@@ -116312,7 +116309,6 @@ items:
           - lêng5-houn2-bang2-龍虎榜
           - mou6-houn2-sai1-舞虎獅
           - ngên6-houn2-硬虎
-          - si6-houn2-是否
           - zua2-lao6-houn2-紙老虎
       shantou:
         status: unattested
@@ -125927,7 +125923,6 @@ items:
         status: attested
         attested_entries:
           - mê5-iaoh4-暝吆
-          - suan3-iaoh4-散約
       shantou:
         status: unattested
   - syllable: iaoh8
@@ -126548,6 +126543,7 @@ items:
           - lib8-iêh4-立約
           - niu2-iêh4-紐約
           - sig4-iêh4-失約
+          - suan3-iaoh4-散約
           - êg8-臆
         sandhi_attested_entries:
           - ioh8-piang3-藥片
@@ -183663,9 +183659,7 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: attested
-        attested_entries:
-          - kuê1-ngaing2-科研
+        status: unattested
       shantou:
         status: unattested
   - syllable: ngaing3
@@ -188063,6 +188057,7 @@ items:
       chaozhou:
         status: attested
         attested_entries:
+          - kuê1-ngaing2-科研
           - ngiêng2-研
       shantou:
         status: unattested
@@ -281789,9 +281784,7 @@ items:
       chaoyang:
         status: unattested
       chaozhou:
-        status: attested
-        attested_entries:
-          - hiab8-un7-叶韻
+        status: unattested
       shantou:
         status: unattested
   - syllable: unb4
@@ -281944,6 +281937,7 @@ items:
           - cuang5-ung7-huê6-全運會
           - dao5-ung7-投運
           - guang2-ung7-廣韻
+          - hiab8-un7-叶韻
           - hêng6-ung7-幸運
           - mian7-ung7-命運
           - o3-ung7-huê6-奧運會

@@ -99,6 +99,10 @@ diverging from it.
     (`<speaker>-n`), and be capped at `confidence: medium` so the recording stays primary. Never
     generate a syllable that has no recording. → [ADR-0027](docs/adrs/adr-0027.md),
     [ADR-0016](docs/adrs/adr-0016.md)
+17. **A known-wrong `pengim`/`variety` on an imported reading is corrected in `data/patches/`, never
+    by hand-editing `data/entries/`.** These entries mirror an import source and must stay
+    byte-identical to it; `readEntryFiles()` applies patches at load time, and a patch that stops
+    matching fails `npm run validate` instead of silently no-op'ing. → [ADR-0028](docs/adrs/adr-0028.md)
 
 ## Common Commands
 
