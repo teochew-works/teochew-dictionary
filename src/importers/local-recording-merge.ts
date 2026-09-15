@@ -91,19 +91,26 @@ export async function mergeLocalRecording(
 
   const key = proposal.pengim
 
+  // Deliberately optional on `LocalRecordingProposal` (issue #288: the
+  // elicitation UI defers speaker assignment to this merge step) — a caller
+  // must resolve one (e.g. the CLI's `--speaker` flag) before merging.
+  const speaker = proposal.speaker
+  if (!speaker) {
+    throw new Error(`proposal for '${key}' has no speaker recorded — resolve one before merging (e.g. --speaker=<id>)`)
+  }
+  const resolvedProposal = { ...proposal, speaker }
+
   const path = join(audioDir, `${variety}.yaml`)
   const audio: Audio = loadAudioFile(path) ?? { audio: { id: variety, variety }, clips: {}, wordClips: {} }
 
   const existingClips = audio.clips ?? {}
   const existingList = Object.hasOwn(existingClips, key) ? existingClips[key]! : []
-  const dupIndex = existingList.findIndex((c) => c.speaker === proposal.speaker)
+  const dupIndex = existingList.findIndex((c) => c.speaker === speaker)
   if (dupIndex !== -1 && !force) {
-    throw new Error(
-      `'${proposal.speaker}' already has a clip at '${key}' in clips for '${variety}' (${path}) — pass --force to overwrite`,
-    )
+    throw new Error(`'${speaker}' already has a clip at '${key}' in clips for '${variety}' (${path}) — pass --force to overwrite`)
   }
 
-  const { url, checksum } = await rehostLocalRecording(proposal, {
+  const { url, checksum } = await rehostLocalRecording(resolvedProposal, {
     ...rehostOptions,
     readBytes: readBytes ?? ((p) => readFileSync(join(rootDir, p))),
     // Only meaningful when dupIndex !== -1: the S3 key is derived from
@@ -117,7 +124,7 @@ export async function mergeLocalRecording(
     checksum,
     confidence,
     sources: [LOCAL_RECORDING_SOURCE],
-    speaker: proposal.speaker,
+    speaker,
     recorded: proposal.recordedDate,
   }
 

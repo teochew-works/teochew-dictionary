@@ -9,7 +9,7 @@ import { assetFilename, rehostLocalRecording, resolveLocalRecordingProposal } fr
 import type { LocalRecordingProposal } from '../src/importers/local-recording-types.js'
 import type { PutObjectParams } from '../src/importers/s3-upload.js'
 
-function proposal(overrides: Partial<LocalRecordingProposal> = {}): LocalRecordingProposal {
+function proposal(overrides: Partial<LocalRecordingProposal> = {}): LocalRecordingProposal & { speaker: string } {
   return {
     pengim: 'dio5',
     syllableCount: 1,

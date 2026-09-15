@@ -115,7 +115,12 @@ export function saveRecording(body: SaveRecordingBody, deps: SaveRecordingDeps =
   const { pengim, speaker, recordedDate, consentAcknowledged, audioBase64, mimeType } = body
 
   if (typeof pengim !== 'string' || pengim.trim() === '') return { ok: false, error: 'pengim is required' }
-  if (typeof speaker !== 'string' || speaker.trim() === '') return { ok: false, error: 'speaker is required' }
+  // Unset entirely is allowed — speaker assignment can be deferred to merge
+  // time (the elicitation UI, issue #288) — but an explicitly blank one
+  // isn't, same as before.
+  if (speaker !== undefined && (typeof speaker !== 'string' || speaker.trim() === '')) {
+    return { ok: false, error: 'speaker must be a non-empty string when provided' }
+  }
   if (typeof recordedDate !== 'string' || !/^\d{4}-\d{2}-\d{2}$/u.test(recordedDate)) {
     return { ok: false, error: 'recordedDate must be YYYY-MM-DD' }
   }
@@ -139,8 +144,12 @@ export function saveRecording(body: SaveRecordingBody, deps: SaveRecordingDeps =
 
   const existing = findLocalRecordingProposals(pengim, VARIETY, stagingDir)
 
+  const speakerValue = typeof speaker === 'string' ? speaker.trim() : undefined
+
   const ext = MIME_EXTENSIONS[baseMimeType]!
-  const filename = `${slugify(pengim)}__${slugify(speaker)}__${idSuffix()}${ext}`
+  // 'unassigned' is a filename placeholder only — never written into the
+  // proposal itself, which omits `speaker` entirely in that case.
+  const filename = `${slugify(pengim)}__${speakerValue ? slugify(speakerValue) : 'unassigned'}__${idSuffix()}${ext}`
   const absPath = join(recordingsDir, filename)
   const localPath = relative(ROOT, absPath)
 
@@ -152,7 +161,7 @@ export function saveRecording(body: SaveRecordingBody, deps: SaveRecordingDeps =
     pengim,
     syllableCount: 1,
     localPath,
-    speaker,
+    ...(speakerValue ? { speaker: speakerValue } : {}),
     recordedDate,
     consentAcknowledged: true,
     variety: VARIETY,

@@ -211,8 +211,24 @@ describe('saveRecording', () => {
     expect(saveRecording(validBody({ pengim: undefined }), { recordingsDir, stagingDir })).toEqual({ ok: false, error: 'pengim is required' })
   })
 
-  it('rejects a missing or blank speaker', () => {
-    expect(saveRecording(validBody({ speaker: '  ' }), { recordingsDir, stagingDir })).toEqual({ ok: false, error: 'speaker is required' })
+  it('rejects a blank (but present) speaker', () => {
+    expect(saveRecording(validBody({ speaker: '  ' }), { recordingsDir, stagingDir })).toEqual({
+      ok: false,
+      error: 'speaker must be a non-empty string when provided',
+    })
+  })
+
+  it('accepts a request with speaker omitted entirely (issue #288: assignment deferred to merge time)', () => {
+    const result = saveRecording(validBody({ speaker: undefined }), {
+      recordingsDir,
+      stagingDir,
+      idSuffix: () => 'fixedid',
+      writeFile: () => {},
+    })
+    expect(result).toEqual({ ok: true, localPath: expect.stringContaining('dio5__unassigned__fixedid.wav') })
+
+    const staged = readLocalRecordingStaging(stagingDir)
+    expect(staged?.proposals[0]).not.toHaveProperty('speaker')
   })
 
   it('rejects a malformed recordedDate', () => {
