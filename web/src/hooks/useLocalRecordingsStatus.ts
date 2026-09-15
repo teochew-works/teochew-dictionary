@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 /** Duplicated from the server-side `PublishedClip` in web/vite-plugins/local-recordings-handlers.ts — web/ has no access to the root project's types. */
 export interface PublishedClip {
@@ -8,14 +8,25 @@ export interface PublishedClip {
   synthesis?: 'world-retune' | 'cross-splice'
 }
 
+/** Duplicated from the server-side `StagedClip` — see `PublishedClip`'s comment above. */
+export interface StagedClip {
+  localPath: string
+  recordedDate: string
+}
+
 export interface LocalRecordingsStatus {
   published: Map<string, PublishedClip[]>
   pending: Set<string>
+  /** Every staged (not yet merged) proposal, by syllable — a syllable can have more than one (issue #288). */
+  staged: Map<string, StagedClip[]>
+  /** Re-fetches the status — call after staging or deleting a proposal so the UI reflects it immediately. */
+  refresh: () => void
 }
 
 interface StatusResponse {
   published?: Record<string, PublishedClip[]>
   pending?: string[]
+  staged?: Record<string, StagedClip[]>
 }
 
 /**
@@ -27,7 +38,9 @@ interface StatusResponse {
  * so a stray call from a non-dev context is harmless rather than an error.
  */
 export function useLocalRecordingsStatus(): LocalRecordingsStatus | null {
-  const [status, setStatus] = useState<LocalRecordingsStatus | null>(null)
+  const [status, setStatus] = useState<Omit<LocalRecordingsStatus, 'refresh'> | null>(null)
+  const [refreshToken, setRefreshToken] = useState(0)
+  const refresh = useCallback(() => setRefreshToken((t) => t + 1), [])
 
   useEffect(() => {
     if (!import.meta.env.DEV) return
@@ -37,7 +50,11 @@ export function useLocalRecordingsStatus(): LocalRecordingsStatus | null {
       .then((res) => (res.ok ? (res.json() as Promise<StatusResponse>) : null))
       .then((data) => {
         if (cancelled || !data) return
-        setStatus({ published: new Map(Object.entries(data.published ?? {})), pending: new Set(data.pending ?? []) })
+        setStatus({
+          published: new Map(Object.entries(data.published ?? {})),
+          pending: new Set(data.pending ?? []),
+          staged: new Map(Object.entries(data.staged ?? {})),
+        })
       })
       .catch(() => {
         // Dev-only convenience data — if it's unavailable, rows just render without a badge.
@@ -46,7 +63,7 @@ export function useLocalRecordingsStatus(): LocalRecordingsStatus | null {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [refreshToken])
 
-  return status
+  return status ? { ...status, refresh } : null
 }

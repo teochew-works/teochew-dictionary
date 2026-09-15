@@ -1,7 +1,9 @@
-import { afterEach, describe, expect, it, vi } from 'vitest'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { ElicitationView } from './ElicitationView'
 import type { SoundsData } from '../types/sounds'
+
+const CONSENT_STORAGE_KEY = 'teochew-dictionary:elicitation-consent-acknowledged'
 
 // jsdom's Blob has no arrayBuffer() (unlike every real browser) — FileReader
 // is the one jsdom API that can actually read one back out.
@@ -42,12 +44,12 @@ function stubMedia() {
 }
 
 /**
- * Only `target` needs a second session (exactly one real clip); every other
- * fixture sound has either two real clips (already has one) so it can still
- * serve as an axis reference without itself entering the queue. `target`'s
- * axis-mates are each engineered to match exactly one of initial/rime/tone,
- * so every reference group has exactly one candidate — no `Math.random`
- * mocking needed anywhere in this file.
+ * Only `TARGET` needs a second session (exactly one real, published clip);
+ * every other fixture sound has either two real clips (already has one) so
+ * it can still serve as an axis reference without itself entering the
+ * queue. `TARGET`'s axis-mates are each engineered to match exactly one of
+ * initial/rime/tone, so every reference group has exactly one candidate —
+ * no `Math.random` mocking needed anywhere in this file.
  */
 const TARGET = {
   pengim: 'da1',
@@ -116,17 +118,6 @@ const ALREADY_DONE = {
   ],
 }
 
-const PENDING = {
-  pengim: 'pending1',
-  ipa: 'pe¹¹',
-  initial: 'p',
-  rime: 'e',
-  tone: 6,
-  occurrences: 1,
-  examples: [],
-  clips: [{ url: 'pending.wav', speaker: 'jky' }],
-}
-
 const NO_RECORDING = {
   pengim: 'never1',
   ipa: 'ne³³',
@@ -140,10 +131,10 @@ const NO_RECORDING = {
 
 const FULL_FIXTURE: SoundsData = {
   variety: 'chaozhou',
-  sounds: [TARGET, SAME_INITIAL, SAME_RIME, SAME_TONE, ALREADY_DONE, PENDING, NO_RECORDING],
+  sounds: [TARGET, SAME_INITIAL, SAME_RIME, SAME_TONE, ALREADY_DONE, NO_RECORDING],
 }
 
-function stubFetch(data: SoundsData, opts: { pending?: string[]; onSave?: (body: unknown) => void } = {}) {
+function stubFetch(data: SoundsData, opts: { onSave?: (body: unknown) => void } = {}) {
   vi.stubGlobal(
     'fetch',
     vi.fn((input: RequestInfo | URL, init?: RequestInit) => {
@@ -153,13 +144,31 @@ function stubFetch(data: SoundsData, opts: { pending?: string[]; onSave?: (body:
           opts.onSave?.(JSON.parse(init.body as string))
           return Promise.resolve(new Response(JSON.stringify({ ok: true }), { status: 200 }))
         }
-        return Promise.resolve(
-          new Response(JSON.stringify({ published: {}, pending: opts.pending ?? [] }), { status: 200 }),
-        )
+        return Promise.resolve(new Response(JSON.stringify({ published: {}, pending: [], staged: {} }), { status: 200 }))
       }
       return Promise.resolve(new Response(JSON.stringify(data), { status: 200 }))
     }),
   )
+}
+
+/** Simulates a live staging store: DELETE actually removes from the map returned by the next GET. */
+function stubFetchWithStaged(data: SoundsData, initialStaged: Record<string, { localPath: string; recordedDate: string }[]>) {
+  const staged = structuredClone(initialStaged)
+  const fetchMock = vi.fn((input: RequestInfo | URL, init?: RequestInit) => {
+    const url = typeof input === 'string' ? input : input.toString()
+    if (url.includes('/api/local-recordings')) {
+      if (init?.method === 'POST') return Promise.resolve(new Response(JSON.stringify({ ok: true }), { status: 200 }))
+      if (init?.method === 'DELETE') {
+        const { localPath } = JSON.parse(init.body as string) as { localPath: string }
+        for (const key of Object.keys(staged)) staged[key] = staged[key]!.filter((t) => t.localPath !== localPath)
+        return Promise.resolve(new Response(JSON.stringify({ ok: true }), { status: 200 }))
+      }
+      return Promise.resolve(new Response(JSON.stringify({ published: {}, pending: [], staged }), { status: 200 }))
+    }
+    return Promise.resolve(new Response(JSON.stringify(data), { status: 200 }))
+  })
+  vi.stubGlobal('fetch', fetchMock)
+  return fetchMock
 }
 
 async function recordAClip() {
@@ -170,34 +179,38 @@ async function recordAClip() {
 }
 
 describe('ElicitationView', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
   afterEach(() => {
     vi.unstubAllGlobals()
   })
 
   it('shows the one syllable that needs a second session, with a progress count', async () => {
-    stubFetch(FULL_FIXTURE, { pending: [PENDING.pengim] })
+    stubFetch(FULL_FIXTURE)
     render(<ElicitationView />)
 
     expect(await screen.findByText('da1')).toBeInTheDocument()
     expect(screen.getByText('1 syllable still need a second session')).toBeInTheDocument()
-    // Neither the already-published, pending, nor never-recorded syllables show as the target.
     expect(screen.queryByText('zo8')).not.toBeInTheDocument()
-    expect(screen.queryByText('pending1')).not.toBeInTheDocument()
     expect(screen.queryByText('never1')).not.toBeInTheDocument()
   })
 
-  it('shows exactly one reference candidate per axis', async () => {
-    stubFetch(FULL_FIXTURE, { pending: [PENDING.pengim] })
+  it('shows a "Same sound" reference to the target\'s own existing recording, plus one candidate per axis', async () => {
+    stubFetch(FULL_FIXTURE)
     render(<ElicitationView />)
 
     await screen.findByText('da1')
+    expect(screen.getByText('Same sound')).toBeInTheDocument()
+    expect(screen.getByLabelText('Play your existing recording of da1')).toBeInTheDocument()
     expect(screen.getByText('do2')).toBeInTheDocument() // same initial
     expect(screen.getByText('ba5')).toBeInTheDocument() // same rime
     expect(screen.getByText('bi1')).toBeInTheDocument() // same tone
     expect(screen.queryByText('no reference available')).not.toBeInTheDocument()
   })
 
-  it('omits a reference group with no candidate instead of erroring', async () => {
+  it('omits an axis reference group with no candidate instead of erroring', async () => {
     const sparse: SoundsData = { variety: 'chaozhou', sounds: [TARGET, SAME_INITIAL] }
     stubFetch(sparse)
     render(<ElicitationView />)
@@ -209,18 +222,87 @@ describe('ElicitationView', () => {
   })
 
   it('shows nothing left to record when the queue is empty', async () => {
-    const noneNeeded: SoundsData = { variety: 'chaozhou', sounds: [ALREADY_DONE, PENDING, NO_RECORDING] }
-    stubFetch(noneNeeded, { pending: [PENDING.pengim] })
+    const noneNeeded: SoundsData = { variety: 'chaozhou', sounds: [ALREADY_DONE, NO_RECORDING] }
+    stubFetch(noneNeeded)
     render(<ElicitationView />)
 
     expect(await screen.findByText('Nothing left to record right now.')).toBeInTheDocument()
     expect(screen.getByText('0 syllables still need a second session')).toBeInTheDocument()
   })
 
+  it('a syllable with a staged-but-unmerged take stays in the pool and shows its staged takes', async () => {
+    stubFetchWithStaged(
+      { variety: 'chaozhou', sounds: [TARGET] },
+      { da1: [{ localPath: 'data/staging/recordings/chaozhou/da1__unassigned__abc.webm', recordedDate: '2026-09-15' }] },
+    )
+    render(<ElicitationView />)
+
+    expect(await screen.findByText('da1')).toBeInTheDocument()
+    expect(screen.getByText('1 syllable still need a second session')).toBeInTheDocument()
+    expect(screen.getByText('Staged take for da1')).toBeInTheDocument()
+    expect(screen.getByText('2026-09-15')).toBeInTheDocument()
+  })
+
+  it('deletes a staged take', async () => {
+    const fetchMock = stubFetchWithStaged(
+      { variety: 'chaozhou', sounds: [TARGET] },
+      { da1: [{ localPath: 'data/staging/recordings/chaozhou/da1__unassigned__abc.webm', recordedDate: '2026-09-15' }] },
+    )
+    render(<ElicitationView />)
+
+    await screen.findByText('Staged take for da1')
+    fireEvent.click(screen.getByRole('button', { name: 'Delete' }))
+
+    await waitFor(() => expect(screen.queryByText('Staged take for da1')).not.toBeInTheDocument())
+    const deleteCall = fetchMock.mock.calls.find(([, init]) => (init as RequestInit | undefined)?.method === 'DELETE')
+    expect(JSON.parse((deleteCall?.[1] as RequestInit).body as string)).toEqual({
+      localPath: 'data/staging/recordings/chaozhou/da1__unassigned__abc.webm',
+    })
+  })
+
+  it('remembers consent across renders (only needs to be checked once)', async () => {
+    localStorage.setItem(CONSENT_STORAGE_KEY, 'true')
+    stubFetch(FULL_FIXTURE)
+    render(<ElicitationView />)
+
+    await screen.findByText('da1')
+    expect(screen.getByLabelText(/AUDIO-CONSENT\.md/)).toBeChecked()
+  })
+
+  it('persists consent to localStorage when checked', async () => {
+    stubFetch(FULL_FIXTURE)
+    render(<ElicitationView />)
+
+    await screen.findByText('da1')
+    expect(screen.getByLabelText(/AUDIO-CONSENT\.md/)).not.toBeChecked()
+    fireEvent.click(screen.getByLabelText(/AUDIO-CONSENT\.md/))
+
+    expect(localStorage.getItem(CONSENT_STORAGE_KEY)).toBe('true')
+  })
+
+  it('re-picks a different target without excluding the current one from the pool', async () => {
+    const A = { pengim: 'ra1', ipa: 'ra³³', initial: 'r', rime: 'a', tone: 1, occurrences: 1, examples: [], clips: [{ url: 'a.wav', speaker: 'jky' }] }
+    const B = { pengim: 'sb2', ipa: 'sb⁵³', initial: 's', rime: 'e', tone: 2, occurrences: 1, examples: [], clips: [{ url: 'b.wav', speaker: 'jky' }] }
+    stubFetch({ variety: 'chaozhou', sounds: [A, B] })
+    render(<ElicitationView />)
+
+    await screen.findByText('2 syllables still need a second session')
+    const pengimEl = () => document.querySelector('.elicitation-view__target-pengim')?.textContent
+    const first = pengimEl()
+    expect(['ra1', 'sb2']).toContain(first)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Re-pick' }))
+
+    expect(pengimEl()).not.toBe(first)
+    expect(['ra1', 'sb2']).toContain(pengimEl())
+    // Neither target was excluded from the pool by re-picking.
+    expect(screen.getByText('2 syllables still need a second session')).toBeInTheDocument()
+  })
+
   it('records and stages a take without a speaker field in the request body', async () => {
     stubMedia()
     let savedBody: Record<string, unknown> | undefined
-    stubFetch(FULL_FIXTURE, { pending: [PENDING.pengim], onSave: (b) => (savedBody = b as Record<string, unknown>) })
+    stubFetch(FULL_FIXTURE, { onSave: (b) => (savedBody = b as Record<string, unknown>) })
     render(<ElicitationView />)
 
     await screen.findByText('da1')
@@ -230,10 +312,34 @@ describe('ElicitationView', () => {
     fireEvent.click(screen.getByLabelText(/AUDIO-CONSENT\.md/))
     fireEvent.click(screen.getByRole('button', { name: 'Save to staging' }))
 
-    await screen.findByText('Nothing left to record right now.')
+    await screen.findByRole('button', { name: '● Start recording' })
     expect(savedBody).toMatchObject({ pengim: 'da1', consentAcknowledged: true, mimeType: 'audio/webm;codecs=opus' })
     expect(savedBody).not.toHaveProperty('speaker')
     expect(typeof savedBody?.audioBase64).toBe('string')
+  })
+
+  it('stays on the same target after saving, so a second take can be recorded for it without re-checking consent', async () => {
+    stubMedia()
+    const saves: Record<string, unknown>[] = []
+    stubFetch(FULL_FIXTURE, { onSave: (b) => saves.push(b as Record<string, unknown>) })
+    render(<ElicitationView />)
+
+    await screen.findByText('da1')
+    await recordAClip()
+    fireEvent.click(screen.getByLabelText(/AUDIO-CONSENT\.md/))
+    fireEvent.click(screen.getByRole('button', { name: 'Save to staging' }))
+    await screen.findByRole('button', { name: '● Start recording' })
+    expect(screen.getByText('da1')).toBeInTheDocument()
+
+    // Consent stays checked — no need to click it again for the second take.
+    expect(screen.getByLabelText(/AUDIO-CONSENT\.md/)).toBeChecked()
+    await recordAClip()
+    fireEvent.click(screen.getByRole('button', { name: 'Save to staging' }))
+    await screen.findByRole('button', { name: '● Start recording' })
+
+    expect(saves).toHaveLength(2)
+    expect(saves[0]).toMatchObject({ pengim: 'da1' })
+    expect(saves[1]).toMatchObject({ pengim: 'da1' })
   })
 
   it('shows an inline error and stays on the preview when the save request fails', async () => {
@@ -246,7 +352,7 @@ describe('ElicitationView', () => {
           if (init?.method === 'POST') {
             return Promise.resolve(new Response(JSON.stringify({ ok: false, error: 'consentAcknowledged must be true' }), { status: 400 }))
           }
-          return Promise.resolve(new Response(JSON.stringify({ published: {}, pending: [PENDING.pengim] }), { status: 200 }))
+          return Promise.resolve(new Response(JSON.stringify({ published: {}, pending: [], staged: {} }), { status: 200 }))
         }
         return Promise.resolve(new Response(JSON.stringify(FULL_FIXTURE), { status: 200 }))
       }),

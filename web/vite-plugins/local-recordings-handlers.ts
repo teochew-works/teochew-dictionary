@@ -31,11 +31,25 @@ export interface PublishedClip {
   synthesis?: 'world-retune' | 'cross-splice'
 }
 
+/** Enough detail about one staged (not yet merged) proposal to list and delete it from the elicitation UI. */
+export interface StagedClip {
+  /** Stable id for this staged proposal — its path relative to the repo root, unique per recording. */
+  localPath: string
+  recordedDate: string
+}
+
 export interface StatusResult {
   /** Syllable keys with one or more published clips in data/phonology/audio/<variety>.yaml, with playback data. */
   published: Record<string, PublishedClip[]>
   /** Syllable keys with a proposal already staged, awaiting `npm run merge:local-recording`. */
   pending: string[]
+  /**
+   * Every staged proposal for this variety, grouped by syllable — a
+   * syllable can have more than one entry here (issue #288's elicitation UI
+   * intentionally allows recording several takes of the same second-session
+   * target before a human picks which to merge).
+   */
+  staged: Record<string, StagedClip[]>
 }
 
 export interface StatusDeps {
@@ -46,7 +60,12 @@ export interface StatusDeps {
 export function getStatus(deps: StatusDeps = {}): StatusResult {
   const audioPath = join(deps.audioDir ?? AUDIO_METADATA_DIR, `${VARIETY}.yaml`)
   const audio = loadOptionalFile(audioPath, audioSchema)
-  const staged = readLocalRecordingStaging(deps.stagingDir)
+  const staged = (readLocalRecordingStaging(deps.stagingDir)?.proposals ?? []).filter((p) => p.variety === VARIETY)
+
+  const stagedByPengim: Record<string, StagedClip[]> = {}
+  for (const p of staged) {
+    ;(stagedByPengim[p.pengim] ??= []).push({ localPath: p.localPath, recordedDate: p.recordedDate })
+  }
 
   return {
     published: Object.fromEntries(
@@ -59,7 +78,8 @@ export function getStatus(deps: StatusDeps = {}): StatusResult {
         })),
       ]),
     ),
-    pending: (staged?.proposals ?? []).filter((p) => p.variety === VARIETY).map((p) => p.pengim),
+    pending: staged.map((p) => p.pengim),
+    staged: stagedByPengim,
   }
 }
 
@@ -105,11 +125,16 @@ export interface SaveRecordingDeps {
  * and appends a `LocalRecordingProposal` (via `appendLocalRecordingProposal`)
  * — never touches `data/phonology/audio/*.yaml` directly. Publishing stays a
  * separate, human-run `npm run merge:local-recording` step (REVIEW.md § 17).
- * When a proposal is already staged for the same pengim+variety (a syllable
- * marked "pending" on the Sounds tab), that older proposal and its raw
- * recording file are removed as part of the same save — this project keeps
- * at most one staged proposal per pengim+variety (issue #135); see
- * `findLocalRecordingProposals`.
+ *
+ * When `speaker` is given and a proposal is already staged for the same
+ * pengim+variety (a syllable marked "pending" on the Sounds tab), that older
+ * proposal and its raw recording file are replaced as part of the same save
+ * — the Sounds tab's `RecordClipButton` keeps at most one staged proposal
+ * per pengim+variety this way (issue #135; see `findLocalRecordingProposals`).
+ * When `speaker` is omitted (the elicitation UI, issue #288: speaker
+ * assignment deferred to merge time), no replacement happens — multiple
+ * takes of the same second-session target are meant to accumulate as
+ * separate staged proposals until a human picks which to merge.
  */
 export function saveRecording(body: SaveRecordingBody, deps: SaveRecordingDeps = {}): SaveRecordingResult {
   const { pengim, speaker, recordedDate, consentAcknowledged, audioBase64, mimeType } = body
@@ -142,9 +167,8 @@ export function saveRecording(body: SaveRecordingBody, deps: SaveRecordingDeps =
     stagingDir,
   } = deps
 
-  const existing = findLocalRecordingProposals(pengim, VARIETY, stagingDir)
-
   const speakerValue = typeof speaker === 'string' ? speaker.trim() : undefined
+  const existing = speakerValue ? findLocalRecordingProposals(pengim, VARIETY, stagingDir) : []
 
   const ext = MIME_EXTENSIONS[baseMimeType]!
   // 'unassigned' is a filename placeholder only — never written into the
@@ -175,4 +199,38 @@ export function saveRecording(body: SaveRecordingBody, deps: SaveRecordingDeps =
   for (const { proposal: old } of existing) rmSync(join(ROOT, old.localPath), { force: true })
 
   return { ok: true, localPath }
+}
+
+export interface DeleteRecordingBody {
+  localPath?: unknown
+}
+
+export type DeleteRecordingResult = { ok: true } | { ok: false; error: string }
+
+export interface DeleteRecordingDeps {
+  /** Injectable for tests — avoids touching the real data/staging/. */
+  stagingDir?: string
+  /** Injectable for tests — avoids a real filesystem delete. */
+  removeFile?: (path: string) => void
+}
+
+/**
+ * Deletes one staged proposal by its `localPath` (the id `getStatus`'s
+ * `staged` field hands back) — the elicitation UI's counterpart to
+ * recording a take, so a contributor can discard a bad one without waiting
+ * for `npm run merge:local-recording` to ever see it.
+ */
+export function deleteRecording(body: DeleteRecordingBody, deps: DeleteRecordingDeps = {}): DeleteRecordingResult {
+  const { localPath } = body
+  if (typeof localPath !== 'string' || localPath.trim() === '') return { ok: false, error: 'localPath is required' }
+
+  const { stagingDir, removeFile = (path) => rmSync(path, { force: true }) } = deps
+
+  const staged = readLocalRecordingStaging(stagingDir)
+  const index = staged?.proposals.findIndex((p) => p.localPath === localPath) ?? -1
+  if (!staged || index === -1) return { ok: false, error: `no staged proposal at '${localPath}'` }
+
+  removeLocalRecordingProposal(index, stagingDir)
+  removeFile(join(ROOT, localPath))
+  return { ok: true }
 }

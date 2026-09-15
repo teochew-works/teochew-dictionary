@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useSounds } from '../hooks/useSounds'
-import { useLocalRecordingsStatus, type PublishedClip } from '../hooks/useLocalRecordingsStatus'
+import { useLocalRecordingsStatus, type PublishedClip, type StagedClip } from '../hooks/useLocalRecordingsStatus'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
 import { useAudioRecorder } from '../hooks/useAudioRecorder'
 import { PlayClipButton, clipLabel } from '../components/PlayClipButton'
@@ -27,7 +27,32 @@ import './ElicitationView.css'
  * which every build already carries. A future pass can bias these toward
  * genuine worst-confusion pairs once that work lands; this ships the
  * elicitation flow independently of it.
+ *
+ * A syllable stays in the pool until it has a second *published* real
+ * clip — staging one or more takes doesn't remove it, so a contributor can
+ * record several takes of the same target before a human picks which to
+ * merge, and "Re-pick" (unlike a "Skip" that implied the target was done
+ * with) just moves on to a different random target without excluding this
+ * one from being picked again later.
  */
+
+const CONSENT_STORAGE_KEY = 'teochew-dictionary:elicitation-consent-acknowledged'
+
+function readStoredConsent(): boolean {
+  try {
+    return localStorage.getItem(CONSENT_STORAGE_KEY) === 'true'
+  } catch {
+    return false
+  }
+}
+
+function storeConsent(value: boolean): void {
+  try {
+    localStorage.setItem(CONSENT_STORAGE_KEY, String(value))
+  } catch {
+    // localStorage unavailable — inconvenient, not fatal.
+  }
+}
 
 type Axis = 'initial' | 'rime' | 'tone'
 
@@ -60,28 +85,31 @@ export function ElicitationView() {
   const { playingId, play } = useAudioPlayer()
   const recorder = useAudioRecorder()
 
-  const [consentAcknowledged, setConsentAcknowledged] = useState(false)
+  const [consentAcknowledged, setConsentAcknowledged] = useState(readStoredConsent)
   const [saving, setSaving] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
-  const [justSaved, setJustSaved] = useState<Set<string>>(() => new Set())
+  const [deletingPath, setDeletingPath] = useState<string | null>(null)
+  const [deleteError, setDeleteError] = useState<string | null>(null)
   const [currentPengim, setCurrentPengim] = useState<string | null>(null)
 
+  const setConsent = (value: boolean) => {
+    setConsentAcknowledged(value)
+    storeConsent(value)
+  }
+
   const published = localRecordings?.published
-  const pending = localRecordings?.pending ?? new Set<string>()
 
   const bySound = useMemo(() => new Map((data?.sounds ?? []).map((s) => [s.pengim, s])), [data])
 
-  // Needs a second session: exactly one real (non-synthesis) clip today —
-  // zero means no first session yet (not this UI's job), two or more means
-  // a second session already exists. Also skip anything already staged
-  // (`pending`) or just recorded in this browser tab.
+  // Needs a second session: exactly one real (non-synthesis), *published*
+  // clip today — zero means no first session yet (not this UI's job), two
+  // or more means a second session is already merged. A staged-but-unmerged
+  // take doesn't count either way, so a target stays pickable for further
+  // takes until a human actually merges one.
   const queue = useMemo(() => {
     if (!data) return []
-    return data.sounds.filter((s) => {
-      if (pending.has(s.pengim) || justSaved.has(s.pengim)) return false
-      return realClips(s, published).length === 1
-    })
-  }, [data, published, pending, justSaved])
+    return data.sounds.filter((s) => realClips(s, published).length === 1)
+  }, [data, published])
 
   // Keep `currentPengim` pointed at something still in the queue, picking a
   // fresh random one whenever it falls out (queue changes, or nothing chosen yet).
@@ -91,6 +119,8 @@ export function ElicitationView() {
   }, [queue, currentPengim])
 
   const current = currentPengim ? (bySound.get(currentPengim) ?? null) : null
+
+  const sameSoundClip = current ? realClips(current, published)[0] : undefined
 
   const references = useMemo(() => {
     const result: Partial<Record<Axis, Sound>> = {}
@@ -105,9 +135,10 @@ export function ElicitationView() {
     return result
   }, [current, data, published])
 
-  const skip = () => {
+  const stagedTakes: StagedClip[] = (current && localRecordings?.staged.get(current.pengim)) || []
+
+  const rePick = () => {
     recorder.reset()
-    setConsentAcknowledged(false)
     setSaveError(null)
     const next = pickRandom(queue.filter((s) => s.pengim !== currentPengim))
     setCurrentPengim(next?.pengim ?? currentPengim)
@@ -136,14 +167,33 @@ export function ElicitationView() {
       const result = (await res.json()) as { ok: boolean; error?: string }
       if (!res.ok || !result.ok) throw new Error(result.error ?? `save failed (HTTP ${res.status})`)
 
-      setJustSaved((prev) => new Set(prev).add(current.pengim))
+      localRecordings?.refresh()
+      // Stay on the same target — recording another take of it is welcome.
+      // Move on with "Re-pick" when you're done with this one.
       recorder.reset()
-      setConsentAcknowledged(false)
-      setCurrentPengim(null)
     } catch (e) {
       setSaveError(e instanceof Error ? e.message : 'save failed')
     } finally {
       setSaving(false)
+    }
+  }
+
+  const deleteStagedTake = async (localPath: string) => {
+    setDeletingPath(localPath)
+    setDeleteError(null)
+    try {
+      const res = await fetch('/api/local-recordings', {
+        method: 'DELETE',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ localPath }),
+      })
+      const result = (await res.json()) as { ok: boolean; error?: string }
+      if (!res.ok || !result.ok) throw new Error(result.error ?? `delete failed (HTTP ${res.status})`)
+      localRecordings?.refresh()
+    } catch (e) {
+      setDeleteError(e instanceof Error ? e.message : 'delete failed')
+    } finally {
+      setDeletingPath(null)
     }
   }
 
@@ -174,6 +224,24 @@ export function ElicitationView() {
           </div>
 
           <div className="elicitation-view__references">
+            {sameSoundClip && (
+              <div className="elicitation-view__reference">
+                <span className="elicitation-view__reference-label" title="your own existing recording of this exact syllable">
+                  Same sound
+                </span>
+                <span className="elicitation-view__reference-clip">
+                  <PlayClipButton
+                    id={`elicit-ref-self:${current.pengim}`}
+                    clip={sameSoundClip}
+                    label={clipLabel(sameSoundClip, 0, 1)}
+                    ariaLabel={`Play your existing recording of ${current.pengim}`}
+                    playingId={playingId}
+                    onPlay={play}
+                  />
+                </span>
+              </div>
+            )}
+
             {AXES.map(({ axis, label, description }) => {
               const ref = references[axis]
               return (
@@ -212,7 +280,7 @@ export function ElicitationView() {
               <input
                 type="checkbox"
                 checked={consentAcknowledged}
-                onChange={(e) => setConsentAcknowledged(e.target.checked)}
+                onChange={(e) => setConsent(e.target.checked)}
                 disabled={disableInputs}
               />
               I have read{' '}
@@ -246,8 +314,8 @@ export function ElicitationView() {
               </span>
             )}
 
-            <button type="button" className="elicitation-view__skip" onClick={skip}>
-              Skip
+            <button type="button" className="elicitation-view__skip" onClick={rePick}>
+              Re-pick
             </button>
 
             {(recorder.error ?? saveError) && (
@@ -256,6 +324,33 @@ export function ElicitationView() {
               </span>
             )}
           </div>
+
+          {stagedTakes.length > 0 && (
+            <div className="elicitation-view__staged">
+              <span className="elicitation-view__staged-heading">
+                Staged take{stagedTakes.length === 1 ? '' : 's'} for {current.pengim}
+              </span>
+              <ul className="elicitation-view__staged-list">
+                {stagedTakes.map((take) => (
+                  <li key={take.localPath} className="elicitation-view__staged-item">
+                    <span>{take.recordedDate}</span>
+                    <button
+                      type="button"
+                      onClick={() => deleteStagedTake(take.localPath)}
+                      disabled={deletingPath === take.localPath}
+                    >
+                      {deletingPath === take.localPath ? 'Deleting…' : 'Delete'}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              {deleteError && (
+                <span className="elicitation-view__error" role="alert">
+                  {deleteError}
+                </span>
+              )}
+            </div>
+          )}
         </div>
       )}
     </div>

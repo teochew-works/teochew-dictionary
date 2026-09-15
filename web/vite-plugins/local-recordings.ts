@@ -1,18 +1,20 @@
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import type { Plugin } from 'vite'
 
-import { getStatus, saveRecording, type SaveRecordingBody } from './local-recordings-handlers.js'
+import { deleteRecording, getStatus, saveRecording, type DeleteRecordingBody, type SaveRecordingBody } from './local-recordings-handlers.js'
 
 /**
  * Dev-only backend for the Sounds tab's "record" control (issue #128,
- * `data/phonology/REVIEW.md` § 17): `GET /api/local-recordings` reports
- * which syllables already have a published clip or a staged proposal,
- * `POST /api/local-recordings` stages a newly-recorded one. Registered via
- * `configureServer`, which Vite only ever calls while running `vite dev` —
- * never during `vite build` — so this route (and everything it can do to
- * the filesystem) simply does not exist in the production bundle. See
- * web/vite.config.ts, which additionally only includes this plugin when
- * `command === 'serve'`, belt-and-suspenders on top of that.
+ * `data/phonology/REVIEW.md` § 17) and the elicitation UI (issue #288):
+ * `GET /api/local-recordings` reports which syllables already have a
+ * published clip or a staged proposal, `POST /api/local-recordings` stages
+ * a newly-recorded one, `DELETE /api/local-recordings` discards a staged
+ * one by `localPath`. Registered via `configureServer`, which Vite only
+ * ever calls while running `vite dev` — never during `vite build` — so this
+ * route (and everything it can do to the filesystem) simply does not exist
+ * in the production bundle. See web/vite.config.ts, which additionally only
+ * includes this plugin when `command === 'serve'`, belt-and-suspenders on
+ * top of that.
  */
 
 function readJsonBody(req: IncomingMessage): Promise<unknown> {
@@ -50,6 +52,16 @@ export function localRecordingsPlugin(): Plugin {
           readJsonBody(req)
             .then((body) => {
               const result = saveRecording(body as SaveRecordingBody)
+              sendJson(res, result.ok ? 200 : 400, result)
+            })
+            .catch(() => sendJson(res, 400, { ok: false, error: 'invalid JSON body' }))
+          return
+        }
+
+        if (req.method === 'DELETE') {
+          readJsonBody(req)
+            .then((body) => {
+              const result = deleteRecording(body as DeleteRecordingBody)
               sendJson(res, result.ok ? 200 : 400, result)
             })
             .catch(() => sendJson(res, 400, { ok: false, error: 'invalid JSON body' }))
