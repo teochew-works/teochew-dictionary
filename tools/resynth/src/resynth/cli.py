@@ -1,4 +1,4 @@
-"""`resynth features|synthesize <job.json> [--out <result.json>]`
+"""`resynth features|synthesize|mfcc <job.json> [--out <result.json>]`
 
 One process per batch, not per clip: the corpus is ~3,000 clips and WORLD
 analysis is ~0.15 s each, so interpreter start-up per clip would dominate.
@@ -20,10 +20,13 @@ import os
 import sys
 from multiprocessing import Pool
 
-from . import FEATURES_VERSION
+from . import FEATURES_VERSION, MFCC_VERSION
 from .audio import read_wav
 from .audio import write_wav
-from .features import AnalysisParams, extract_features, params_as_json
+from .features import AnalysisParams, extract_features
+from .features import params_as_json as features_params_as_json
+from .mfcc import MfccParams, extract_mfcc
+from .mfcc import params_as_json as mfcc_params_as_json
 from .synthesize import Target, render
 
 
@@ -47,8 +50,16 @@ def _synthesize_one(args: tuple[dict, AnalysisParams]) -> tuple[str, dict | None
         return clip["id"], None, f"{type(e).__name__}: {e}"
 
 
-def _run(job: dict, worker, jobs: int | None) -> dict:
-    params = AnalysisParams.from_json(job.get("params"))
+def _mfcc_one(args: tuple[dict, MfccParams]) -> tuple[str, list[list[float]] | None, str | None]:
+    clip, params = args
+    try:
+        return clip["id"], extract_mfcc(read_wav(clip["wav"]), params), None
+    except Exception as e:  # noqa: BLE001 — reported per clip, by design
+        return clip["id"], None, f"{type(e).__name__}: {e}"
+
+
+def _run(job: dict, worker, jobs: int | None, version: int, parse_params, params_to_json) -> dict:
+    params = parse_params(job.get("params"))
     work = [(clip, params) for clip in job.get("clips", [])]
     clips: dict[str, dict] = {}
     errors: dict[str, str] = {}
@@ -66,18 +77,22 @@ def _run(job: dict, worker, jobs: int | None) -> dict:
     else:
         with Pool(processes=processes) as pool:
             collect(pool.imap_unordered(worker, work))
-    return {"version": FEATURES_VERSION, "params": params_as_json(params), "clips": clips, "errors": errors}
+    return {"version": version, "params": params_to_json(params), "clips": clips, "errors": errors}
 
 
 def run_features(job: dict, jobs: int | None = None) -> dict:
-    return _run(job, _features_one, jobs)
+    return _run(job, _features_one, jobs, FEATURES_VERSION, AnalysisParams.from_json, features_params_as_json)
 
 
 def run_synthesize(job: dict, jobs: int | None = None) -> dict:
     """Each clip: `{id, wav, out, target}` → renders `out` and reports the
     output's own features (measured by the same extractor grading uses, so
     the caller's self-check is against the same numbers)."""
-    return _run(job, _synthesize_one, jobs)
+    return _run(job, _synthesize_one, jobs, FEATURES_VERSION, AnalysisParams.from_json, features_params_as_json)
+
+
+def run_mfcc(job: dict, jobs: int | None = None) -> dict:
+    return _run(job, _mfcc_one, jobs, MFCC_VERSION, MfccParams.from_json, mfcc_params_as_json)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -94,6 +109,11 @@ def main(argv: list[str] | None = None) -> int:
     synth.add_argument("--out", help="write the JSON result here instead of stdout")
     synth.add_argument("--jobs", type=int, help="worker processes (default: every core)")
 
+    mfcc = sub.add_parser("mfcc", help="extract per-clip MFCC sequences for a batch of WAV files")
+    mfcc.add_argument("job", help="path to the JSON job file")
+    mfcc.add_argument("--out", help="write the JSON result here instead of stdout")
+    mfcc.add_argument("--jobs", type=int, help="worker processes (default: every core)")
+
     args = parser.parse_args(argv)
 
     with open(args.job, encoding="utf-8") as f:
@@ -103,6 +123,8 @@ def main(argv: list[str] | None = None) -> int:
         result = run_features(job, args.jobs)
     elif args.command == "synthesize":
         result = run_synthesize(job, args.jobs)
+    elif args.command == "mfcc":
+        result = run_mfcc(job, args.jobs)
     else:  # pragma: no cover — argparse rejects unknown subcommands
         parser.error(f"unknown command {args.command}")
         return 2

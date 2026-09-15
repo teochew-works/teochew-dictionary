@@ -15,6 +15,7 @@ that way — logic that isn't signal processing belongs in TypeScript.
 uv sync                          # once; pins Python 3.12 via .python-version
 uv run resynth features job.json --out result.json
 uv run resynth synthesize job.json --out result.json   # both take --jobs N (default: every core)
+uv run resynth mfcc job.json --out result.json         # per-clip MFCC sequences (issue #279)
 uv run pytest                    # synthetic-signal tests, no fixtures on disk
 ```
 
@@ -68,3 +69,22 @@ which is audible as a weak sibilant), the whole is set by RMS under a peak ceili
 gets 5 ms edge fades and a fixed pad of silence. The output's
 features are measured by the same extractor `features` uses, so the caller's self-check is against
 the same numbers the targets came from.
+
+## Job / result shape (`mfcc`)
+
+```jsonc
+// job
+{ "params": { "frameMs": 25, "hopMs": 10, "nMels": 40, "nMfcc": 13, "silenceDb": -30 },
+  "clips": [ { "id": "<sha256>", "wav": "/abs/path.wav" } ] }
+// result
+{ "version": 1, "params": { … }, "clips": { "<sha256>": [[13 floats], …] }, "errors": { "<sha256>": "why" } }
+```
+
+Per-clip MFCC frame sequences for the syllable classifier (issue #279) — spectral-envelope detail
+for identifying *which* syllable a clip is, not the f0/duration/level measurements `features`
+extracts for tone grading. Each clip is trimmed to its active region (same `silenceDb` threshold as
+`features`) before framing, so leading/trailing silence doesn't dilute the syllable's spectral shape
+or bias a downstream DTW comparison toward whichever clip happens to have less of it. Frames are
+25 ms / 10 ms hop by default, Hamming-windowed, run through a 40-filter mel filterbank and a 13-point
+DCT-II (including c0). Versioned independently of `FEATURES_VERSION`: tuning MFCC parameters
+shouldn't invalidate the (execution-costly) WORLD feature cache, or vice versa.

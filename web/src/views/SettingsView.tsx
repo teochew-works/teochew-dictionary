@@ -11,6 +11,7 @@ import {
 import { readAudioMode, writeAudioMode } from '../settings/audioMode'
 import type { AudioMode } from '../settings/audioMode'
 import { readMogherLinks, writeMogherLinks } from '../settings/mogherLinks'
+import { readSpeakToSearch, writeSpeakToSearch } from '../settings/speakToSearch'
 import { buildBackup, restoreBackup } from '../backup/backup'
 import { InstallPrompt } from '../pwa/InstallPrompt'
 import { OfflineDataToggle } from '../pwa/OfflineDataToggle'
@@ -34,6 +35,7 @@ export function SettingsView() {
   const [pronunciationDisplay, setPronunciationDisplay] = useState<PronunciationField[]>(readPronunciationDisplay)
   const [audioMode, setAudioMode] = useState<AudioMode>(readAudioMode)
   const [mogherLinks, setMogherLinks] = useState(readMogherLinks)
+  const [speakToSearch, setSpeakToSearch] = useState(readSpeakToSearch)
   const [backupStatus, setBackupStatus] = useState<{ kind: 'ok' | 'error'; message: string } | null>(null)
   const importInputRef = useRef<HTMLInputElement>(null)
 
@@ -71,6 +73,11 @@ export function SettingsView() {
   function toggleMogherLinks(value: boolean) {
     setMogherLinks(value)
     writeMogherLinks(value)
+  }
+
+  function toggleSpeakToSearch(value: boolean) {
+    setSpeakToSearch(value)
+    writeSpeakToSearch(value)
   }
 
   async function exportBackup() {
@@ -171,6 +178,23 @@ export function SettingsView() {
             onChange={(e) => toggleMogherLinks(e.target.checked)}
           />
           Link to mogher.com
+        </label>
+      </fieldset>
+
+      <fieldset className="settings-view__group">
+        <legend>Speak to search</legend>
+        <p className="settings-view__hint">
+          Experimental, and tuned to one speaker's voice — it compares your recording against a
+          fixed set of reference clips, so accuracy varies a lot by speaker and will often be
+          wrong for a voice unlike the one it was tuned to.
+        </p>
+        <label className="settings-view__toggle">
+          <input
+            type="checkbox"
+            checked={speakToSearch}
+            onChange={(e) => toggleSpeakToSearch(e.target.checked)}
+          />
+          Enable the microphone search button
         </label>
       </fieldset>
 

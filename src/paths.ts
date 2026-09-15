@@ -29,6 +29,14 @@ export const WORDLISTS_DIR = join(DATA_DIR, 'wordlists')
 export const SYLLABLE_INVENTORY_FILE = join(WORDLISTS_DIR, 'syllable-inventory.yaml')
 export const WIKTIONARY_WORDLIST_FILE = join(WORDLISTS_DIR, 'wiktionary-teochew-index.yaml')
 export const STARTER_DECKS_FILE = join(WORDLISTS_DIR, 'starter-decks.yaml')
+/**
+ * Precomputed MFCC reference bank for the web app's speak-to-search feature
+ * (issue #279's follow-up) — jky's per-syllable MFCC vectors, regenerated
+ * manually via `npm run audio:build-search-bank` (it needs the corpus and
+ * the Python tool, neither available in the offline `npm run build`/CI
+ * pipeline) and committed here like `syllable-inventory.yaml`.
+ */
+export const AUDIO_SEARCH_BANK_FILE = join(WORDLISTS_DIR, 'audio-search-bank.json')
 export const DIST_DIR = join(ROOT, 'dist')
 
 /**
@@ -50,6 +58,8 @@ export const WIKTEXTRACT_MIN_FILE = join(CACHE_DIR, 'teochew-relevant.min.jsonl'
 export const AUDIO_CLIP_CACHE_DIR = join(CACHE_DIR, 'audio-clips')
 /** Per-clip features keyed by bare sha256 hex — see `src/audio/features.ts`. */
 export const AUDIO_FEATURES_FILE = join(CACHE_DIR, 'audio-features.json')
+/** Per-clip MFCC sequences for the syllable classifier, keyed by bare sha256 hex — see `src/audio/mfcc.ts` (issue #279). */
+export const AUDIO_MFCC_FILE = join(CACHE_DIR, 'audio-mfcc.json')
 /**
  * `audio:synthesize` output: `<variety>/<syllable>.wav` plus a `report.json`.
  * Under `.cache` rather than `data/staging/` because, unlike a recording

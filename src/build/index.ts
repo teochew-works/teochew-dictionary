@@ -1,9 +1,9 @@
-import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { createHash } from 'node:crypto'
 import Database from 'better-sqlite3'
 
-import { DIST_DIR } from '../paths.js'
+import { AUDIO_SEARCH_BANK_FILE, DIST_DIR } from '../paths.js'
 import { loadEntries, loadSources } from '../data/load.js'
 import { listVarieties, loadVariety } from '../phonology/load.js'
 import { emitAllSchemas } from '../schema/emit.js'
@@ -16,7 +16,7 @@ import { buildStarterDecks } from './starter-decks.js'
 /**
  * Build the distributable artifacts from the YAML source of truth.
  *
- * Seven outputs, for seven consumers:
+ * Seven outputs, for seven consumers, plus one optional passthrough:
  *   dict.json           — the whole dataset, for anything that can hold it in memory
  *   dict.ndjson         — one entry per line, for streaming and for diff-friendly review
  *   dict.sqlite         — indexed, with FTS5, for a real lookup path
@@ -26,6 +26,9 @@ import { buildStarterDecks } from './starter-decks.js'
  *                         for the Sounds tab's Chart view (issue #171, staged tier issue #183)
  *   starter-decks.json  — the curated marketplace catalog of themed beginner decks,
  *                         for the web UI's flashcards Marketplace pane (issue #199)
+ *   audio-search-bank.json — passed through from `data/wordlists/` if present, for the web UI's
+ *                         speak-to-search feature (issue #279's follow-up) — see the emit below
+ *                         for why it's a passthrough rather than derived here.
  *
  * dict.sqlite also gets a sibling dict.sqlite.manifest.json — a small JSON file a
  * remote consumer (the mobile app's freshness check) can fetch cheaply before
@@ -80,6 +83,15 @@ export function build(): BuildResult {
   const soundsData = buildSounds(loaded)
   emit('sounds.json', JSON.stringify(soundsData, null, 2))
   emit('syllable-chart.json', JSON.stringify(buildSyllableChart(soundsData.sounds), null, 2))
+
+  // Passed through, not derived here: needs the corpus and the Python tool
+  // (see `src/cli/audio-build-search-bank.ts`), neither available in this
+  // offline build. Absent on a checkout that hasn't run that command yet —
+  // skipped rather than failing the build, since the feature it feeds is
+  // optional.
+  if (existsSync(AUDIO_SEARCH_BANK_FILE)) {
+    emit('audio-search-bank.json', readFileSync(AUDIO_SEARCH_BANK_FILE, 'utf8'))
+  }
 
   const starterDecks = buildStarterDecks(loaded)
   emit('starter-decks.json', JSON.stringify({ decks: starterDecks.decks }, null, 2))

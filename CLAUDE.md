@@ -123,12 +123,17 @@ npm run xref -- <source>       # refresh a cached external phonology chart
 npm run audio:verify           # fetch every clip and verify its checksum
 npm run audio:grade            # cache every clip, extract features, report per-tone stats + outliers
 npm run merge:resynth          # publish passing renders as the <speaker>-n tier (ADR-0027)
+npm run audio:build-search-bank # regenerate data/wordlists/audio-search-bank.json (web speak-to-search)
+npm run audio:classify-eval    # held-out accuracy of the whole-syllable classifier (issue #280 baseline)
+npm run audio:classify-axes    # rank a clip by combined initial/rime/tone axes (issue #280)
+npm run audio:verify-eval      # leave-one-out tone/rime accuracy, gated by checkedness/nasalisation (issue #280)
 ```
 
 Offline but cache-dependent (needs an `audio:grade` run first):
 
 ```bash
 npm run audio:synthesize [-- --write]   # re-render clips toward per-part targets into .cache/audio-synth/
+npm run audio:classify -- <clip>        # identify which Peng'im syllable a clip of jky's own voice most likely is
 ```
 
 Regeneration and maintenance:
