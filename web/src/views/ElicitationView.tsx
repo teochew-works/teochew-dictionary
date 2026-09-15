@@ -34,6 +34,11 @@ import './ElicitationView.css'
  * merge, and "Re-pick" (unlike a "Skip" that implied the target was done
  * with) just moves on to a different random target without excluding this
  * one from being picked again later.
+ *
+ * Picking isn't uniform: `pickingWeight` favors a target with fewer staged
+ * takes so far, and separately favors one whose initial/rime/tone is shared
+ * by few other recorded syllables (a rare axis component has little else to
+ * fall back on, so an independent take of it is worth more).
  */
 
 const CONSENT_STORAGE_KEY = 'teochew-dictionary:elicitation-consent-acknowledged'
@@ -123,6 +128,38 @@ function stagedWeight(pengim: string, staged: Map<string, StagedClip[]> | undefi
   return 1 / (count + 1)
 }
 
+/** How many other *recorded* syllables share each axis value, for `axisRarityWeight` below. */
+type AxisCounts = Record<Axis, Map<string | number | null, number>>
+
+function buildAxisCounts(sounds: Sound[], published: Map<string, PublishedClip[]> | undefined): AxisCounts {
+  const counts: AxisCounts = { initial: new Map(), rime: new Map(), tone: new Map() }
+  for (const s of sounds) {
+    if (realClips(s, published).length === 0) continue
+    for (const { axis } of AXES) {
+      const v = axisValue(s, axis)
+      counts[axis].set(v, (counts[axis].get(v) ?? 0) + 1)
+    }
+  }
+  return counts
+}
+
+/**
+ * Favors a target whose initial, rime, or tone is shared by few other
+ * recorded syllables — a rare axis component has few (if any) reference
+ * samples available elsewhere, so an independent second-session take of it
+ * is worth more than one more take of an axis component the corpus already
+ * has plenty of. Each axis contributes independently (a syllable rare on
+ * several axes at once is favored more, not just as much as being rare on one).
+ */
+function axisRarityWeight(sound: Sound, axisCounts: AxisCounts): number {
+  let weight = 1
+  for (const { axis } of AXES) {
+    const count = axisCounts[axis].get(axisValue(sound, axis)) ?? 1
+    weight *= 1 / count
+  }
+  return weight
+}
+
 /** Published + staged, so a bucket actually moves as takes are recorded — the pool itself only advances on a merge, but this reflects effort in progress too. */
 function totalTakeCount(sound: Sound, published: Map<string, PublishedClip[]> | undefined, staged: Map<string, StagedClip[]> | undefined): number {
   return realClips(sound, published).length + (staged?.get(sound.pengim)?.length ?? 0)
@@ -164,13 +201,21 @@ export function ElicitationView() {
     return data.sounds.filter((s) => realClips(s, published).length === 1)
   }, [data, published])
 
+  const axisCounts = useMemo(() => buildAxisCounts(data?.sounds ?? [], published), [data, published])
+
+  // Combines both picking biases: fewer staged takes so far, and a rarer
+  // initial/rime/tone (few other recorded syllables share it, so there's
+  // little else to fall back on for that component).
+  const pickingWeight = (s: Sound) => stagedWeight(s.pengim, staged) * axisRarityWeight(s, axisCounts)
+
   // Keep `currentPengim` pointed at something still in the queue, picking a
-  // fresh one — weighted toward targets with fewer staged takes so far —
-  // whenever it falls out (queue changes, or nothing chosen yet).
+  // fresh one — weighted as above — whenever it falls out (queue changes, or
+  // nothing chosen yet).
   useEffect(() => {
     if (currentPengim && queue.some((s) => s.pengim === currentPengim)) return
-    setCurrentPengim(pickWeightedRandom(queue, (s) => stagedWeight(s.pengim, staged))?.pengim ?? null)
-  }, [queue, currentPengim, staged])
+    setCurrentPengim(pickWeightedRandom(queue, pickingWeight)?.pengim ?? null)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [queue, currentPengim, staged, axisCounts])
 
   const current = currentPengim ? (bySound.get(currentPengim) ?? null) : null
 
@@ -217,7 +262,7 @@ export function ElicitationView() {
     recorder.reset()
     setSaveError(null)
     const candidates = queue.filter((s) => s.pengim !== currentPengim)
-    const next = pickWeightedRandom(candidates, (s) => stagedWeight(s.pengim, staged))
+    const next = pickWeightedRandom(candidates, pickingWeight)
     setCurrentPengim(next?.pengim ?? currentPengim)
   }
 

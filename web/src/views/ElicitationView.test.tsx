@@ -432,6 +432,47 @@ describe('ElicitationView', () => {
     expect(await screen.findByText('wa1')).toBeInTheDocument()
   })
 
+  it('weights picking toward a target whose axis components are rarer among recorded syllables', async () => {
+    const RARE = { pengim: 'rb2', ipa: 'rb⁵³', initial: 'r', rime: 'b', tone: 2, occurrences: 1, examples: [], clips: [{ url: 'r.wav', speaker: 'jky' }] }
+    const COMMON = { pengim: 'ca1', ipa: 'ca³³', initial: 'c', rime: 'a', tone: 1, occurrences: 1, examples: [], clips: [{ url: 'c.wav', speaker: 'jky' }] }
+    const done = (pengim: string, initial: string, rime: string, tone: number) => ({
+      pengim,
+      ipa: `${pengim}-ipa`,
+      initial,
+      rime,
+      tone,
+      occurrences: 1,
+      examples: [],
+      clips: [
+        { url: `${pengim}-a.wav`, speaker: 'jky' },
+        { url: `${pengim}-b.wav`, speaker: 'jky-2' },
+      ],
+    })
+    // Three other recorded syllables share COMMON's initial, three share its
+    // rime, three share its tone — none share anything with RARE. Neither
+    // COMMON nor RARE is itself in the queue-competing set (done() gives two
+    // real clips, so these only inflate the axis-frequency counts).
+    const fillers = [
+      done('cx1', 'c', 'x', 3),
+      done('cy1', 'c', 'y', 4),
+      done('cz1', 'c', 'z', 5),
+      done('xa1', 'x', 'a', 3),
+      done('ya1', 'y', 'a', 4),
+      done('za1', 'z', 'a', 5),
+      done('p1', 'p', 'n', 1),
+      done('q1', 'q', 'o', 1),
+      done('s1', 's', 'p', 1),
+    ]
+    // weight(COMMON) = 1 * (1/4 · 1/4 · 1/4) ≈ 0.0156, weight(RARE) = 1 * (1/1 · 1/1 · 1/1) = 1,
+    // total ≈ 1.0156 — all but a sliver of that range favors RARE.
+    stubFetch({ variety: 'chaozhou', sounds: [COMMON, RARE, ...fillers] })
+    vi.spyOn(Math, 'random').mockReturnValue(0.5)
+
+    render(<ElicitationView />)
+
+    expect(await screen.findByText('rb2')).toBeInTheDocument()
+  })
+
   it('lets a staged take be played back', async () => {
     vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined)
     vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
