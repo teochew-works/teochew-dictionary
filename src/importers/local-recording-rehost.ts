@@ -22,8 +22,14 @@ export function resolveLocalRecordingProposal(
   return proposals.find((p) => p.pengim === arg)
 }
 
-/** A plain-ASCII asset filename derived from the proposal's pengim key and speaker, keeping the local file's own extension. */
-export function assetFilename(proposal: LocalRecordingProposal): string {
+/**
+ * A plain-ASCII asset filename derived from the proposal's pengim key and
+ * speaker, keeping the local file's own extension. Takes a proposal with
+ * `speaker` resolved — `LocalRecordingProposal` itself leaves it optional
+ * (issue #288's deferred-assignment case) but re-hosting only ever happens
+ * once a speaker id has been decided.
+ */
+export function assetFilename(proposal: LocalRecordingProposal & { speaker: string }): string {
   return slugAssetFilename(proposal.pengim, proposal.speaker, proposal.localPath)
 }
 
@@ -45,7 +51,7 @@ export interface LocalRehostResult {
 }
 
 export async function rehostLocalRecording(
-  proposal: LocalRecordingProposal,
+  proposal: LocalRecordingProposal & { speaker: string },
   options: LocalRehostOptions = {},
 ): Promise<LocalRehostResult> {
   const { readBytes = (path) => readFileSync(path), headObject, putObject, overwrite } = options

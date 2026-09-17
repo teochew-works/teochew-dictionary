@@ -154,6 +154,29 @@ describe('mergeLocalRecording', () => {
     expect(result.checksum).toMatch(/^sha256:[0-9a-f]{64}$/u)
   })
 
+  it('refuses to merge a proposal with no speaker resolved (issue #288: deferred assignment)', async () => {
+    const { speaker: _speaker, ...withoutSpeaker } = proposal()
+    await expect(
+      mergeLocalRecording(withoutSpeaker as LocalRecordingProposal, {
+        variety: 'chaozhou',
+        audioDir,
+        rootDir,
+        readBytes: () => Buffer.from('x'),
+        ...rehostOptions,
+      }),
+    ).rejects.toThrow(/has no speaker recorded/)
+  })
+
+  it('merges a proposal once a speaker is resolved onto it, even though the type allows it to be absent', async () => {
+    const { speaker: _speaker, ...withoutSpeaker } = proposal()
+    const result = await mergeLocalRecording(
+      { ...(withoutSpeaker as LocalRecordingProposal), speaker: 'resolved-later' },
+      { variety: 'chaozhou', audioDir, rootDir, readBytes: () => Buffer.from('x'), ...rehostOptions },
+    )
+    const written = parseYaml(readFileSync(result.path, 'utf8'))
+    expect(written.clips.dio5[0].speaker).toBe('resolved-later')
+  })
+
   it('defaults confidence to high and accepts an override', async () => {
     const result = await mergeLocalRecording(proposal(), {
       variety: 'chaozhou',

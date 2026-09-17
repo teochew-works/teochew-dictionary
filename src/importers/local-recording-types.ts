@@ -15,8 +15,14 @@ export interface LocalRecordingProposal {
   syllableCount: 1
   /** Path to the raw clip bytes, relative to the repo root — see data/staging/recordings/. */
   localPath: string
-  /** Pseudonymous speaker id per AUDIO-CONSENT.md, entered by whoever ran the recording session. */
-  speaker: string
+  /**
+   * Pseudonymous speaker id per AUDIO-CONSENT.md, entered by whoever ran the
+   * recording session — or left unset when speaker assignment is
+   * deliberately deferred to `npm run merge:local-recording` time (the
+   * elicitation UI, issue #288: a second session for an existing speaker
+   * doesn't get a pseudonym until it's actually merged).
+   */
+  speaker?: string
   /** YYYY-MM-DD the clip was recorded. */
   recordedDate: string
   /**

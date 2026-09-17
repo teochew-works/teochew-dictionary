@@ -3,18 +3,23 @@ import { useDictionary } from './hooks/useDictionary'
 import { DictionaryView } from './views/DictionaryView'
 import { FlashcardsView, parseFlashcardsDrawer, formatFlashcardsDrawer, type FlashcardsDrawer } from './views/FlashcardsView'
 import { SoundsView, parseSoundsRoute, formatSoundsRoute, type SoundsRoute } from './views/SoundsView'
+import { ElicitationView } from './views/ElicitationView'
 import { SettingsView } from './views/SettingsView'
 import { DonateView } from './views/DonateView'
 import { AboutView } from './views/AboutView'
 import { UpdatePrompt } from './pwa/UpdatePrompt'
 import './App.css'
 
-type Tab = 'dictionary' | 'flashcards' | 'sounds' | 'settings' | 'donate' | 'about'
+type Tab = 'dictionary' | 'flashcards' | 'sounds' | 'elicit' | 'settings' | 'donate' | 'about'
 
 const TABS: { id: Tab; label: string }[] = [
   { id: 'dictionary', label: 'Dictionary' },
   { id: 'flashcards', label: 'Flashcards' },
   { id: 'sounds', label: 'Sounds' },
+  // Dev-only (issue #288, mirroring RecordClipButton's own DEV gating): a
+  // second-session recording tool has no reason to exist in a static,
+  // write-backend-less production build.
+  ...(import.meta.env.DEV ? [{ id: 'elicit' as const, label: 'Elicit' }] : []),
   { id: 'settings', label: 'Settings' },
   { id: 'donate', label: 'Donate' },
   { id: 'about', label: 'About' },
@@ -34,7 +39,7 @@ type Route =
   | { tab: 'dictionary'; entryId: string | null }
   | { tab: 'sounds'; soundsRoute: SoundsRoute }
   | { tab: 'flashcards'; flashcardsDrawer: FlashcardsDrawer }
-  | { tab: 'settings' | 'donate' | 'about' }
+  | { tab: 'elicit' | 'settings' | 'donate' | 'about' }
 
 function routeFromHash(hash: string): Route {
   const raw = hash.replace(/^#/, '')
@@ -94,14 +99,14 @@ export function App() {
       </header>
 
       <main className="app__main">
-        {/* Sounds has its own data source (dist/sounds.json via useSounds inside
-            SoundsView), and Settings, Donate and About only touch localStorage or are
-            static — none of the four depend on dict.json, so none are gated
-            behind the dictionary's loading/error state below. */}
-        {tab !== 'sounds' && tab !== 'settings' && tab !== 'donate' && tab !== 'about' && loading && (
+        {/* Sounds and Elicit share dist/sounds.json (via useSounds), and Settings,
+            Donate and About only touch localStorage or are static — none of these
+            depend on dict.json, so none are gated behind the dictionary's
+            loading/error state below. */}
+        {tab !== 'sounds' && tab !== 'elicit' && tab !== 'settings' && tab !== 'donate' && tab !== 'about' && loading && (
           <p className="app__status">Loading dictionary…</p>
         )}
-        {tab !== 'sounds' && tab !== 'settings' && tab !== 'donate' && tab !== 'about' && error && (
+        {tab !== 'sounds' && tab !== 'elicit' && tab !== 'settings' && tab !== 'donate' && tab !== 'about' && error && (
           <p className="app__status app__status--error">
             Couldn't load the dictionary ({error}). If you're running this locally, make sure you've run{' '}
             <code>npm run build</code> in the repo root first.
@@ -114,6 +119,7 @@ export function App() {
           <FlashcardsView entries={data.entries} drawer={route.flashcardsDrawer} onDrawerChange={setFlashcardsDrawer} />
         )}
         {route.tab === 'sounds' && <SoundsView route={route.soundsRoute} onRouteChange={setSoundsRoute} />}
+        {tab === 'elicit' && import.meta.env.DEV && <ElicitationView />}
         {tab === 'settings' && <SettingsView />}
         {tab === 'donate' && <DonateView />}
         {tab === 'about' && <AboutView />}

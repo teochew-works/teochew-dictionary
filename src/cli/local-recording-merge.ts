@@ -6,18 +6,23 @@ import { dim, green, red } from './colour.js'
 
 /**
  * `npm run merge:local-recording -- <index-or-pengim> --variety=<id>
- *   [--confidence=high|medium|low] [--force]`
+ *   [--confidence=high|medium|low] [--force] [--speaker=<id>]`
  *
  * Re-hosts one staged local-recording proposal to S3 (issue #270; see
  * ../importers/local-recording-merge.js for the actual logic) and writes it
  * into data/phonology/audio/<variety>.yaml, then removes the now-redundant
  * staged proposal and local file. `--variety` has no default: judging accent
  * fit stays a human call, per data/phonology/REVIEW.md § 16/§ 17.
+ *
+ * `--speaker` assigns a speaker id at merge time for a proposal staged
+ * without one (the elicitation UI, issue #288, defers this deliberately) —
+ * required when the proposal has none, refused if it would silently
+ * override one the proposal already carries.
  */
 
 const USAGE =
   'usage: npm run merge:local-recording -- <proposal-index-or-pengim> --variety=<id> ' +
-  '[--confidence=high|medium|low] [--force]'
+  '[--confidence=high|medium|low] [--force] [--speaker=<id>]'
 
 const args = process.argv.slice(2)
 const flags = args.filter((a) => a.startsWith('--'))
@@ -72,8 +77,22 @@ if (!proposal) {
 }
 const proposalIndex = staged.proposals.indexOf(proposal)
 
+const speakerFlag = flagValue('speaker')
+if (proposal.speaker && speakerFlag !== undefined && speakerFlag !== proposal.speaker) {
+  console.error(
+    `proposal for '${proposal.pengim}' already has speaker '${proposal.speaker}' — ` +
+      `--speaker=${speakerFlag} would override it; omit --speaker or pass the matching value`,
+  )
+  process.exit(2)
+}
+if (!proposal.speaker && !speakerFlag) {
+  console.error(`proposal for '${proposal.pengim}' has no speaker yet — pass --speaker=<id> to assign one now`)
+  process.exit(2)
+}
+const resolvedProposal = proposal.speaker ? proposal : { ...proposal, speaker: speakerFlag! }
+
 try {
-  const result = await mergeLocalRecording(proposal, {
+  const result = await mergeLocalRecording(resolvedProposal, {
     variety,
     confidence: confidenceFlag as (typeof CONFIDENCE)[number] | undefined,
     force,
