@@ -804,6 +804,24 @@ describe('deriveReadingAudio', () => {
   })
 })
 
+describe('deriveReadingAudio — primary-take filtering (ADR-0029)', () => {
+  const sources = new Map<string, Source>([source('fixture', 'import', 'CC-BY-4.0')].map((s) => [s.id, s]))
+
+  it('picks the one primary take over two training takes, even when a training take has a later recorded date or higher confidence', () => {
+    const syllables = parsePengim('dio5')
+    const table = audio({
+      dio5: [
+        clip({ speaker: 'a', primary: true, confidence: 'medium', recorded: '2020-01-01' }),
+        clip({ speaker: 'a', take: 2, confidence: 'high', recorded: '2026-09-01', checksum: OTHER_CHECKSUM }),
+        clip({ speaker: 'a', take: 3, confidence: 'high', recorded: '2026-09-02', checksum: THIRD_CHECKSUM }),
+      ],
+    })
+    const resolved = deriveReadingAudio(syllables, table, sources)
+    expect(resolved).toHaveLength(1)
+    expect(resolved[0]).toMatchObject({ speaker: 'a', confidence: 'medium' })
+  })
+})
+
 describe('deriveReadingSandhiAudio', () => {
   const sources = new Map<string, Source>(
     [source('fixture', 'import', 'CC-BY-4.0')].map((s) => [s.id, s]),

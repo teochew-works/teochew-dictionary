@@ -5,6 +5,7 @@ import { join } from 'node:path'
 import type { Audio, AudioClip } from '@teochew/core'
 import { IMPORTER_USER_AGENT, fetchWithRetry } from '../importers/types.js'
 import { AUDIO_CLIP_CACHE_DIR } from '../paths.js'
+import { isPrimary } from './primary.js'
 
 /**
  * A local copy of every published clip, keyed by the manifest's own checksum
@@ -45,6 +46,26 @@ export interface ManifestClip {
 export function manifestClips(audio: Audio): ManifestClip[] {
   return Object.entries(audio.clips).flatMap(([key, clips]) =>
     clips.map((clip, index) => ({ key, index, path: `clips.${key}[${index}]`, clip })),
+  )
+}
+
+/**
+ * `manifestClips`, filtered down to each key's one *primary* take (ADR-0029)
+ * — the view every consumer that leaves `data/` must use (the build, the
+ * `-n` render tier, `audio:grade`), so that a speaker's non-primary takes
+ * (training-only, per ADR-0029) never leak into `dist/`, a synthesis target,
+ * or a corpus statistic. `isPrimary` already excludes `synthesis` renders
+ * too, so filtering through it alone is enough — no separate
+ * recordings-only variant is needed.
+ *
+ * Like `manifestClips`, this only covers `clips`, not `wordClips` — keeping
+ * the same scope rather than widening it here.
+ */
+export function primaryClips(audio: Audio): ManifestClip[] {
+  return Object.entries(audio.clips).flatMap(([key, clips]) =>
+    clips
+      .map((clip, index) => ({ key, index, path: `clips.${key}[${index}]`, clip }))
+      .filter((entry) => isPrimary(entry.clip, clips)),
   )
 }
 

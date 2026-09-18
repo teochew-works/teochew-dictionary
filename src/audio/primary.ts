@@ -37,3 +37,27 @@ export function isPrimary(clip: AudioClip, clips: readonly AudioClip[]): boolean
   if (clip.speaker === undefined) return true
   return clips.filter((c) => c.synthesis === undefined && c.speaker === clip.speaker).length <= 1
 }
+
+/**
+ * The clips at one key that leave `data/` for `dist/`, the web UI and the
+ * mobile app (ADR-0029): every already-published `synthesis` render
+ * (ADR-0027) plus each remaining speaker's primary take.
+ *
+ * Deliberately *not* a plain `isPrimary` filter — `isPrimary` calls every
+ * render non-primary, but for a narrower reason than "never leaves `data/`":
+ * it exists so `merge:resynth` never treats a render as a valid *source* to
+ * derive from (a render of a render). A render already publishes as the
+ * sole clip of its own `<speaker>-n` id, so it was never part of the
+ * take-group problem `isPrimary` otherwise solves, and dropping it here
+ * would silently remove every published render from `dist/` — the opposite
+ * of what ADR-0027 shipped it for. `src/build/enrich.ts` and
+ * `src/build/sounds.ts` both filter through this before anything else runs;
+ * `src/cli/audio-grade.ts` and `src/cli/audio-synthesize.ts` want the
+ * stricter `isPrimary` instead, since a render must never feed grading
+ * statistics or be mistaken for a synthesis source.
+ *
+ * @param clips every clip at one key, in manifest order.
+ */
+export function publishedClipsAt(clips: readonly AudioClip[]): AudioClip[] {
+  return clips.filter((c) => c.synthesis !== undefined || isPrimary(c, clips))
+}
