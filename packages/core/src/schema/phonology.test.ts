@@ -77,3 +77,63 @@ describe('audioClip url/cafUrl host allowlist', () => {
     expect(audioSchema.safeParse(audioWithUrl('https://daidb11aas52z.cloudfront.net/')).success).toBe(false)
   })
 })
+
+/**
+ * Accept/reject coverage for `audioClip.take`/`primary` (ADR-0029, issue
+ * #290). Cross-clip rules (uniqueness of `(speaker, take)`, exactly-one-primary
+ * per group) belong to `src/validate/index.ts`, not this schema — these tests
+ * only cover what a single clip may carry.
+ */
+describe('audioClip take/primary', () => {
+  it('accepts a clip with take: 2', () => {
+    expect(audioSchema.safeParse(audioWithUrl(GITHUB_URL, { take: 2 })).success).toBe(true)
+  })
+
+  it('accepts a clip with primary: true', () => {
+    expect(audioSchema.safeParse(audioWithUrl(GITHUB_URL, { primary: true })).success).toBe(true)
+  })
+
+  it('accepts an existing-style clip with neither take nor primary', () => {
+    expect(audioSchema.safeParse(audioWithUrl(GITHUB_URL)).success).toBe(true)
+  })
+
+  it('rejects take: 1 (absent means first take, so 1 is never spelled out)', () => {
+    expect(audioSchema.safeParse(audioWithUrl(GITHUB_URL, { take: 1 })).success).toBe(false)
+  })
+
+  it('rejects take: 0', () => {
+    expect(audioSchema.safeParse(audioWithUrl(GITHUB_URL, { take: 0 })).success).toBe(false)
+  })
+
+  it('rejects a non-integer take', () => {
+    expect(audioSchema.safeParse(audioWithUrl(GITHUB_URL, { take: 2.5 })).success).toBe(false)
+  })
+
+  it('rejects primary: false (literal true only, no false state)', () => {
+    expect(audioSchema.safeParse(audioWithUrl(GITHUB_URL, { primary: false })).success).toBe(false)
+  })
+
+  it('rejects a synthesis clip that also carries take', () => {
+    const result = audioSchema.safeParse(
+      audioWithUrl(GITHUB_URL, {
+        confidence: 'medium',
+        synthesis: 'world-retune',
+        derivedFrom: `sha256:${'c'.repeat(64)}`,
+        take: 2,
+      }),
+    )
+    expect(result.success).toBe(false)
+  })
+
+  it('rejects a synthesis clip that also carries primary', () => {
+    const result = audioSchema.safeParse(
+      audioWithUrl(GITHUB_URL, {
+        confidence: 'medium',
+        synthesis: 'world-retune',
+        derivedFrom: `sha256:${'c'.repeat(64)}`,
+        primary: true,
+      }),
+    )
+    expect(result.success).toBe(false)
+  })
+})

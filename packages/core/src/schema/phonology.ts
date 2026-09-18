@@ -258,6 +258,29 @@ const audioClip = z.object({
     .regex(/^sha256:[0-9a-fA-F]{64}$/u)
     .transform((s) => s.toLowerCase())
     .optional(),
+  /**
+   * Which take of this syllable by this `speaker` this clip is (ADR-0029,
+   * issue #290). Absent means the speaker's first take at this key — every
+   * clip that predates ADR-0029 is implicitly take 1. Assigned by the merge
+   * CLI as the group's max `take` + 1 and **never renumbered**: it is part of
+   * the clip's asset path (`<speaker>/<pengim>-take<N>.<ext>`), so changing it
+   * would silently repoint a URL that's already been published/mirrored.
+   * Cross-clip uniqueness of `(speaker, take)` within a key is enforced in
+   * `src/validate/index.ts`, not by this schema.
+   */
+  take: z.number().int().min(2).optional(),
+  /**
+   * Marks this clip as the one that reaches `dist/`/playback within its
+   * `(pengim, speaker)` group (ADR-0029, issue #290) — the others are
+   * training-only (held-out eval, corpus grading). A lone clip is implicitly
+   * primary, so none of the existing manifest entries need this set. Literal
+   * `true` only, same shape as `consentAcknowledged` on a staging proposal
+   * (`src/importers/local-recording-types.ts`): there is no `primary: false`
+   * state to represent. The group-level rule — a group of more than one clip
+   * has exactly one primary — is enforced in `src/validate/index.ts`, not by
+   * this schema, which only knows about a single clip at a time.
+   */
+  primary: z.literal(true).optional(),
 }).refine((clip) => (clip.cafUrl === undefined) === (clip.cafChecksum === undefined), {
   message: 'cafUrl and cafChecksum must be either both present or both absent',
 }).refine((clip) => clip.trimStartMs === undefined || clip.trimEndMs === undefined || clip.trimEndMs > clip.trimStartMs, {
@@ -268,6 +291,9 @@ const audioClip = z.object({
   message: "a synthesised clip's confidence is capped at medium — the recording it derives from stays primary (ADR-0027)",
 }).refine((clip) => clip.derivedFrom === undefined || clip.derivedFrom !== clip.checksum, {
   message: 'derivedFrom must name a different clip (a clip cannot derive from itself)',
+}).refine((clip) => clip.synthesis === undefined || (clip.take === undefined && clip.primary === undefined), {
+  message:
+    'a synthesised clip carries neither take nor primary — a render is published for the primary recording only, and its group is always size 1 (ADR-0029)',
 })
 
 export const audioSchema = z.object({
