@@ -862,11 +862,38 @@ npm run merge:lingualibre -- <index-or-commonsTitle> --variety=<id>
 re-hosts it as a GitHub Release asset and writes it straight into
 `data/phonology/audio/<variety>.yaml` (`clips` or `wordClips`, per
 `syllableCount`) — `--variety` has no default, since judging accent fit stays
-a human call. `--force` overwrites an already-merged key; otherwise a repeat
-run refuses rather than silently clobbering a clip already chosen among
-duplicate candidates. `npm run rehost:lingualibre -- <index-or-commonsTitle>`
+a human call. Merging is idempotent by checksum: identical bytes already at
+the key are a no-op (exit 0, nothing uploaded or written). A different
+recording from a speaker who already has a clip there is appended as a
+further, training-only take rather than replacing it — pass `--primary` to
+publish the new take instead of the existing one (ADR-0029, issue #290).
+`--force` is gone: there is nothing left for it to authorise overwriting.
+`npm run rehost:lingualibre -- <index-or-commonsTitle>`
 still exists underneath for the bytes-only step (checksum + upload, no YAML
 write) if you want to hand-write the entry yourself.
+
+**Multiple takes per speaker (ADR-0029, issue #290).** `clips[<pengim>]` (and
+`wordClips`) may hold more than one clip from the same `speaker` — `checksum`
+is a clip's identity, `speaker` is a person's. Two optional fields say which
+take is published: `take` (an integer ≥ 2; absent means the speaker's first
+take at that key) and `primary: true` (exactly one clip in a group of more
+than one; a lone clip is implicitly primary):
+
+```yaml
+ku3:
+  - { url: …/jky/ku3.webm,       speaker: jky, primary: true, … }   # existing entry + one new line
+  - { url: …/jky/ku3-take2.webm, speaker: jky, take: 2, … }         # training-only
+```
+
+Only the primary clip in each `(pengim, speaker)` group reaches `dist/`, the
+web UI, and the ADR-0027 `-n` render tier; the other takes exist for the
+held-out classifier eval and are never listenable in the UI. Because a take's
+asset path (`<speaker>/<pengim>-take<N>.<ext>`) is immutable, a re-recording
+never overwrites the previous take's bytes — no CloudFront invalidation is
+needed for a recording merge any more (still needed for an `-n` render
+re-published by `merge:resynth --force`). `npm run merge:local-recording --
+<pengim> --variety=<id> --all [--primary=<index-or-localPath>]` merges every
+staged take of a syllable in one go, the elicitation UI's (#288) usual case.
 
 A clip's `sources` cites whichever of `lingualibre` / `lingualibre-ccby4` /
 `lingualibre-cc0` matches its own Commons-reported licence — the category
@@ -994,7 +1021,10 @@ are, so `check` stays fast, offline, and CI-safe
 
 **Grading the corpus for consistency** (issue #259). The clips were recorded
 over many sessions, and vary in level, pitch and length far more than the
-tones they carry do. `npm run audio:grade` caches every clip locally
+tones they carry do. `npm run audio:grade` pools each speaker's *primary*
+clip only — a speaker's other takes and any `-n` synthesis render are
+excluded (ADR-0029), so neither inflates a syllable's weight in the per-tone
+medians. It caches every primary clip locally
 (`.cache/audio-clips/`, keyed by checksum — one download ever), extracts
 per-clip features through the Python tool in
 [`tools/resynth/`](tools/resynth/README.md), and prints per-tone /
@@ -1019,7 +1049,9 @@ against the same yardsticks, writing a `report.json`. This produces a
 default) takes the renders that passed their self-check, encodes them to
 WebM/Opus plus a CAF sibling, uploads both to S3 behind CloudFront
 (ADR-0026, issue #270) at `<speaker>-n/<pengim-key>`, and appends a clip
-beside each recording under speaker id `<speaker>-n` with
+beside each *primary* recording (ADR-0029 — a render's `derivedFrom` must
+name a primary, so the `-n` group at a key is always size 1) under speaker id
+`<speaker>-n` with
 `synthesis: world-retune`,
 `derivedFrom: <the recording's checksum>`, the
 `teochew-dictionary-audio-resynth` source and confidence `medium` — so the
