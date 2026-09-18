@@ -79,6 +79,13 @@ async function defaultFetchBytes(url: string): Promise<Buffer> {
 export interface RehostOptions {
   /** Injectable for tests — avoids a real network call. */
   fetchBytes?: (url: string) => Promise<Buffer>
+  /**
+   * Bytes the caller has already fetched. `mergeLinguaLibreClip` hashes before
+   * it uploads (a clip's identity is its checksum, ADR-0029), so it has them
+   * in hand by the time it gets here — passing them avoids a second download
+   * of the very bytes the checksum was taken from.
+   */
+  bytes?: Buffer
   /** Injectable for tests — avoids a real AWS call. */
   headObject?: UploadBytesToS3Options['headObject']
   /** Injectable for tests — avoids a real AWS call. */
@@ -99,10 +106,16 @@ export interface RehostResult {
   checksum: string
 }
 
-export async function rehostClip(proposal: AudioClipProposal, options: RehostOptions = {}): Promise<RehostResult> {
-  const { fetchBytes = defaultFetchBytes, headObject, putObject, take } = options
+/** `proposal`'s bytes, fetched the way `rehostClip` would — so a caller can checksum them before deciding to publish them (ADR-0029). */
+export async function linguaLibreClipBytes(proposal: AudioClipProposal, options: RehostOptions = {}): Promise<Buffer> {
+  const { fetchBytes = defaultFetchBytes, bytes } = options
+  return bytes ?? (await fetchBytes(proposal.commonsUrl))
+}
 
-  const bytes = await fetchBytes(proposal.commonsUrl)
+export async function rehostClip(proposal: AudioClipProposal, options: RehostOptions = {}): Promise<RehostResult> {
+  const { headObject, putObject, take } = options
+
+  const bytes = await linguaLibreClipBytes(proposal, options)
   const filename = assetFilename(proposal, take)
   const { url, checksum } = await uploadBytesToS3(bytes, {
     key: audioClipKey(filename),

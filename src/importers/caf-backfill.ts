@@ -53,10 +53,10 @@ export interface BackfillCafOpusOptions extends EncodeCafOptions {
    * path, so a same-speaker re-recording now lands at a fresh key on its
    * own rather than needing this), independent of which upload epoch
    * produced the source `.webm`. This remains here for the one case `take`
-   * doesn't cover: re-encoding the *same* take in place (e.g. a `--force`
-   * re-merge that replaces a clip's bytes without bumping `take`, issue
-   * #134) still writes to an already-occupied key, which `uploadBytesToS3`
-   * refuses unless this is set. Only set it once the existing CAF at that
+   * doesn't cover: re-encoding the *same* take in place — a CAF produced by
+   * an older encoder setting, or one whose source clip was itself replaced in
+   * place (ADR-0027's `-n` renders, which `merge:resynth --force` still
+   * re-publishes at a fixed path). Only set it once the existing CAF at that
    * key is confirmed stale, the same caution `audio-mirror-to-s3 --overwrite`
    * asks for.
    */

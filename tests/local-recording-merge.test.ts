@@ -1,14 +1,18 @@
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { parse as parseYaml, stringify } from 'yaml'
+import { parse as parseYaml, parseDocument, stringify } from 'yaml'
 
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 
-import { GITHUB_REPO } from '@teochew/core'
+import { audioSchema, GITHUB_REPO, type AudioClip, type Source } from '@teochew/core'
 import { mergeLocalRecording } from '../src/importers/local-recording-merge.js'
 import { appendLocalRecordingProposal, readLocalRecordingStaging } from '../src/importers/local-recording-staging.js'
 import type { LocalRecordingProposal } from '../src/importers/local-recording-types.js'
+import type { PutObjectParams } from '../src/importers/s3-upload.js'
+import { checkAudio } from '../src/validate/index.js'
+
+const CDN = 'https://daidb11aas52z.cloudfront.net/teochew/clips'
 
 function proposal(overrides: Partial<LocalRecordingProposal> = {}): LocalRecordingProposal {
   return {
@@ -19,6 +23,16 @@ function proposal(overrides: Partial<LocalRecordingProposal> = {}): LocalRecordi
     recordedDate: '2026-08-23',
     consentAcknowledged: true,
     variety: 'chaozhou',
+    ...overrides,
+  }
+}
+
+/** A clip already sitting in a fixture manifest — the shape a merge would have written earlier. */
+function existingClip(overrides: Partial<AudioClip> & { url: string; checksum: string }): AudioClip {
+  return {
+    confidence: 'high',
+    sources: ['teochew-dictionary-audio'],
+    speaker: 'speaker-1',
     ...overrides,
   }
 }
@@ -105,53 +119,21 @@ describe('mergeLocalRecording', () => {
     expect(Object.keys(written.clips).sort()).toEqual(['dio5', 'existing1'])
   })
 
-  it('appends a distinct speaker as a second clip at an already-used key, without needing force (issue #134)', async () => {
-    const base = { variety: 'chaozhou', audioDir, rootDir, readBytes: () => Buffer.from('x'), ...rehostOptions }
-    await mergeLocalRecording(proposal({ speaker: 'first-speaker' }), base)
-    const result = await mergeLocalRecording(proposal({ speaker: 'second-speaker' }), base)
-    const written = parseYaml(readFileSync(result.path, 'utf8'))
-    expect(written.clips.dio5.map((c: { speaker: string }) => c.speaker).sort()).toEqual([
-      'first-speaker',
-      'second-speaker',
-    ])
-  })
-
-  it('refuses to overwrite the same speaker\'s existing clip at a key without force', async () => {
-    const opts = { variety: 'chaozhou', audioDir, rootDir, readBytes: () => Buffer.from('x'), ...rehostOptions }
-    await mergeLocalRecording(proposal(), opts)
-    await expect(mergeLocalRecording(proposal(), opts)).rejects.toThrow(/already has a clip/)
-  })
-
-  it('replaces that speaker\'s existing clip in place when force is set — the list does not grow', async () => {
-    const base = { variety: 'chaozhou', audioDir, rootDir, readBytes: () => Buffer.from('x'), ...rehostOptions }
-    await mergeLocalRecording(proposal(), base)
-    const result = await mergeLocalRecording(proposal({ recordedDate: '2026-08-24' }), { ...base, force: true })
-    const written = parseYaml(readFileSync(result.path, 'utf8'))
-    expect(written.clips.dio5).toHaveLength(1)
-    expect(written.clips.dio5[0].recorded).toBe('2026-08-24')
-  })
-
-  it('forwards force as overwrite to the S3 re-host so a live, checksum-mismatched object is actually replaced', async () => {
-    // Seed the YAML entry via the normal (no live S3 object) path, matching
-    // the scenario where the clip was published in an earlier run.
-    const seedOpts = { variety: 'chaozhou', audioDir, rootDir, readBytes: () => Buffer.from('x'), ...rehostOptions }
-    await mergeLocalRecording(proposal(), seedOpts)
-
-    // Now S3 already holds this speaker's previously-published bytes at this key
-    // — a re-recording must be able to replace them when force is set. Before
-    // the fix, force only bypassed the YAML dup check; the S3-level checksum
-    // guard below still rejected, since `overwrite` was never forwarded to it.
-    const staleObject = { checksum: `sha256:${'b'.repeat(64)}` }
-    const result = await mergeLocalRecording(proposal({ recordedDate: '2026-08-25' }), {
-      variety: 'chaozhou',
-      audioDir,
-      rootDir,
-      readBytes: () => Buffer.from('new take'),
-      headObject: async () => staleObject,
-      putObject: async () => {},
-      force: true,
+  it('appends a distinct speaker as a second clip at an already-used key, without needing a flag (issue #134)', async () => {
+    const base = { variety: 'chaozhou', audioDir, rootDir, ...rehostOptions }
+    await mergeLocalRecording(proposal({ speaker: 'first-speaker' }), { ...base, readBytes: () => Buffer.from('x') })
+    const result = await mergeLocalRecording(proposal({ speaker: 'second-speaker' }), {
+      ...base,
+      readBytes: () => Buffer.from('y'),
     })
-    expect(result.checksum).toMatch(/^sha256:[0-9a-f]{64}$/u)
+
+    const written = parseYaml(readFileSync(result.path, 'utf8'))
+    expect(written.clips.dio5.map((c: AudioClip) => c.speaker).sort()).toEqual(['first-speaker', 'second-speaker'])
+    // Each is alone in its own speaker's group, so both are implicitly
+    // primary: no `take`, no `primary`, and today's asset path (ADR-0029).
+    expect(result).toMatchObject({ disposition: 'appended-first', take: 1, primary: true })
+    expect(written.clips.dio5.every((c: AudioClip) => c.take === undefined && c.primary === undefined)).toBe(true)
+    expect(result.url).toBe(`${CDN}/second-speaker/dio5.wav`)
   })
 
   it('refuses to merge a proposal with no speaker resolved (issue #288: deferred assignment)', async () => {
@@ -220,6 +202,227 @@ describe('mergeLocalRecording', () => {
     expect(readFileSync(path, 'utf8')).toContain(handComment)
   })
 
+  describe('takes (ADR-0029, issue #290)', () => {
+    /** Merges `bytes` as `speaker`'s recording of dio5, with the S3 calls stubbed and every put recorded. */
+    async function merge(
+      bytes: string,
+      overrides: { speaker?: string; primary?: boolean; recordedDate?: string } = {},
+      puts: PutObjectParams[] = [],
+    ) {
+      const { primary, ...proposalOverrides } = overrides
+      return mergeLocalRecording(proposal(proposalOverrides), {
+        variety: 'chaozhou',
+        audioDir,
+        rootDir,
+        primary,
+        readBytes: () => Buffer.from(bytes),
+        headObject: async () => undefined,
+        putObject: async (params) => {
+          puts.push(params)
+        },
+      })
+    }
+
+    const clipsAt = (path: string): AudioClip[] => parseYaml(readFileSync(path, 'utf8')).clips.dio5
+
+    it('is a no-op when the same bytes are already merged at the key — nothing uploaded, nothing written', async () => {
+      const first = await merge('same bytes')
+      const before = readFileSync(first.path, 'utf8')
+
+      const puts: PutObjectParams[] = []
+      const again = await merge('same bytes', {}, puts)
+
+      expect(again.disposition).toBe('already-merged')
+      expect(again.take).toBe(1)
+      expect(again.primary).toBe(true)
+      expect(again.url).toBe(first.url)
+      expect(puts).toEqual([])
+      expect(readFileSync(first.path, 'utf8')).toBe(before)
+    })
+
+    it('reports an already-merged clip by another speaker too — identity is the checksum, not the speaker', async () => {
+      await merge('shared bytes', { speaker: 'first-speaker' })
+      const again = await merge('shared bytes', { speaker: 'second-speaker' })
+      expect(again.disposition).toBe('already-merged')
+      expect(clipsAt(again.path)).toHaveLength(1)
+    })
+
+    it('appends a second take as take 2 at its own asset path, and marks the existing clip primary in place', async () => {
+      await merge('take one')
+      const puts: PutObjectParams[] = []
+      const result = await merge('take two', { recordedDate: '2026-08-24' }, puts)
+
+      expect(result).toMatchObject({ disposition: 'appended-take', take: 2, primary: false })
+      expect(puts[0]?.key).toBe('teochew/clips/speaker-1/dio5-take2.wav')
+      expect(result.url).toBe(`${CDN}/speaker-1/dio5-take2.wav`)
+
+      const clips = clipsAt(result.path)
+      expect(clips).toHaveLength(2)
+      // The group has just grown past one, so the validator now demands an
+      // explicit primary — spliced into the clip that was implicitly it.
+      expect(clips[0]).toMatchObject({ url: `${CDN}/speaker-1/dio5.wav`, primary: true })
+      expect(clips[0]?.take).toBeUndefined()
+      expect(clips[1]).toMatchObject({ take: 2, recorded: '2026-08-24' })
+      expect(clips[1]?.primary).toBeUndefined()
+    })
+
+    it('leaves the existing markers alone for a third take, once a primary is explicit', async () => {
+      await merge('take one')
+      await merge('take two')
+      const result = await merge('take three')
+
+      expect(result).toMatchObject({ disposition: 'appended-take', take: 3, primary: false })
+      const clips = clipsAt(result.path)
+      expect(clips.map((c) => c.primary)).toEqual([true, undefined, undefined])
+      expect(clips.map((c) => c.take)).toEqual([undefined, 2, 3])
+    })
+
+    it('moves the primary marker onto the new take under `primary`, clearing the old one', async () => {
+      await merge('take one')
+      await merge('take two')
+      const result = await merge('take three', { primary: true })
+
+      expect(result).toMatchObject({ disposition: 'appended-take', take: 3, primary: true })
+      const clips = clipsAt(result.path)
+      expect(clips.map((c) => c.primary)).toEqual([undefined, undefined, true])
+      // Removed outright rather than written as `primary: false` — ADR-0029
+      // gives the field no false state to say "not this one".
+      expect('primary' in clips[0]!).toBe(false)
+    })
+
+    it('numbers a take over a gap: existing takes 1 and 3 give take 4, never a reused 2', async () => {
+      // Takes are part of an immutable asset path and are never renumbered, so
+      // a deleted take 2 must leave its number behind with its old object.
+      writeFileSync(
+        join(audioDir, 'chaozhou.yaml'),
+        stringify({
+          audio: { id: 'chaozhou', variety: 'chaozhou' },
+          clips: {
+            dio5: [
+              existingClip({ url: `${CDN}/speaker-1/dio5.wav`, checksum: `sha256:${'a'.repeat(64)}`, primary: true }),
+              existingClip({ url: `${CDN}/speaker-1/dio5-take3.wav`, checksum: `sha256:${'b'.repeat(64)}`, take: 3 }),
+            ],
+          },
+        }),
+      )
+
+      const puts: PutObjectParams[] = []
+      const result = await merge('a fourth take', {}, puts)
+      expect(result.take).toBe(4)
+      expect(puts[0]?.key).toBe('teochew/clips/speaker-1/dio5-take4.wav')
+      expect(clipsAt(result.path)[2]).toMatchObject({ take: 4 })
+    })
+
+    it('ignores an ADR-0027 render at the key when sizing the speaker\'s group, and leaves it untouched', async () => {
+      const recordingChecksum = `sha256:${'a'.repeat(64)}`
+      writeFileSync(
+        join(audioDir, 'chaozhou.yaml'),
+        stringify({
+          audio: { id: 'chaozhou', variety: 'chaozhou' },
+          clips: {
+            dio5: [
+              existingClip({ url: `${CDN}/speaker-1/dio5.wav`, checksum: recordingChecksum }),
+              existingClip({
+                url: `${CDN}/speaker-1-n/dio5.webm`,
+                checksum: `sha256:${'b'.repeat(64)}`,
+                speaker: 'speaker-1-n',
+                confidence: 'medium',
+                synthesis: 'world-retune',
+                derivedFrom: recordingChecksum,
+              }),
+            ],
+          },
+        }),
+      )
+
+      const result = await merge('a real second take')
+      // Take 2, not 3: the render is a derived tier under its own speaker id,
+      // never one of speaker-1's takes.
+      expect(result.take).toBe(2)
+
+      const clips = clipsAt(result.path)
+      expect(clips).toHaveLength(3)
+      expect(clips[0]).toMatchObject({ primary: true })
+      expect(clips[1]).toMatchObject({ speaker: 'speaker-1-n', synthesis: 'world-retune' })
+      expect(clips[1]?.primary).toBeUndefined()
+    })
+
+    it('leaves every other entry in the manifest byte-identical when appending a take', async () => {
+      // The real chaozhou.yaml is 4 MB of hand-formatted flow-style YAML whose
+      // own header invites hand-editing a clip, so a merge must touch one key
+      // and nothing else. Compared against the document's own round-trip
+      // rather than the source text: `yaml` re-emits the whole document on
+      // every write, so "unchanged" can only mean "identical to what writing
+      // it back without any edit would have produced".
+      const path = join(audioDir, 'chaozhou.yaml')
+      const source = [
+        '# Audio clip metadata for the \'chaozhou\' variety.',
+        'audio:',
+        '  id: chaozhou',
+        '  variety: chaozhou',
+        'clips:',
+        '  {',
+        '    ang1:',
+        '      [',
+        `        { url: ${CDN}/speaker-1/ang1.wav, confidence: high, sources: [ teochew-dictionary-audio ], speaker: speaker-1, checksum: sha256:${'c'.repeat(64)} },`,
+        '      ],',
+        '    dio5:',
+        '      [',
+        `        { url: ${CDN}/speaker-1/dio5.wav, confidence: high, sources: [ teochew-dictionary-audio ], speaker: speaker-1, checksum: sha256:${'a'.repeat(64)} },`,
+        '      ],',
+        '    # hand note: ziu1 is a Chaoyang-accented recording, verify before reuse',
+        '    ziu1:',
+        '      [',
+        `        { url: ${CDN}/speaker-1/ziu1.wav, confidence: high, sources: [ teochew-dictionary-audio ], speaker: speaker-1, checksum: sha256:${'d'.repeat(64)} },`,
+        '      ],',
+        '  }',
+        '',
+      ].join('\n')
+      writeFileSync(path, source)
+
+      const baseline = parseDocument(source).toString()
+      await merge('a second take')
+      const after = readFileSync(path, 'utf8')
+
+      const before = (text: string): string => text.slice(0, text.indexOf('dio5:'))
+      const following = (text: string): string => text.slice(text.indexOf('ziu1:'))
+      expect(before(after)).toBe(before(baseline))
+      expect(following(after)).toBe(following(baseline))
+      expect(after).toContain('# hand note: ziu1 is a Chaoyang-accented recording, verify before reuse')
+    })
+
+    it('produces a manifest that passes the validator (checkAudio), takes and all', async () => {
+      await merge('take one')
+      await merge('take two')
+      const result = await merge('take three', { primary: true })
+      await mergeLocalRecording(proposal({ speaker: 'speaker-2' }), {
+        variety: 'chaozhou',
+        audioDir,
+        rootDir,
+        readBytes: () => Buffer.from('another speaker entirely'),
+        headObject: async () => undefined,
+        putObject: async () => {},
+      })
+
+      const parsed = audioSchema.parse(parseYaml(readFileSync(result.path, 'utf8')))
+      const sourceMap = new Map<string, Source>([
+        [
+          'teochew-dictionary-audio',
+          { id: 'teochew-dictionary-audio', name: 'Teochew Dictionary audio', kind: 'import', licence: 'CC-BY-4.0' },
+        ],
+      ])
+      const issues = checkAudio(
+        'data/phonology/audio/chaozhou.yaml',
+        parsed,
+        'chaozhou',
+        new Set(['chaozhou']),
+        sourceMap,
+        new Set(['dio5']),
+      )
+      expect(issues).toEqual([])
+    })
+  })
+
   describe('cleanup when proposalIndex is given', () => {
     let stagingDir: string
 
@@ -248,6 +451,25 @@ describe('mergeLocalRecording', () => {
         ...rehostOptions,
       })
 
+      expect(readLocalRecordingStaging(stagingDir)?.proposals).toHaveLength(0)
+      expect(existsSync(localAbsPath)).toBe(false)
+    })
+
+    it('still clears staging when the bytes turn out to be already merged (a resumed run)', async () => {
+      const localAbsPath = join(rootDir, 'recordings/chaozhou/dio5.wav')
+      mkdirSync(join(rootDir, 'recordings/chaozhou'), { recursive: true })
+      writeFileSync(localAbsPath, 'real bytes')
+
+      const p = proposal({ localPath: 'recordings/chaozhou/dio5.wav' })
+      const base = { variety: 'chaozhou', audioDir, rootDir, stagingDir, ...rehostOptions }
+      await mergeLocalRecording(p, base)
+
+      // Same bytes, staged again (or a cleanup interrupted last time): the
+      // clip is published, so the staged copy is redundant either way.
+      appendLocalRecordingProposal(p, stagingDir)
+      const result = await mergeLocalRecording(p, { ...base, proposalIndex: 0 })
+
+      expect(result.disposition).toBe('already-merged')
       expect(readLocalRecordingStaging(stagingDir)?.proposals).toHaveLength(0)
       expect(existsSync(localAbsPath)).toBe(false)
     })

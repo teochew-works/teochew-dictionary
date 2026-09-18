@@ -7,7 +7,14 @@ import { loadOptionalFile } from '../phonology/load.js'
 import { audioSchema, CONFIDENCE, type Audio } from '@teochew/core'
 import type { LocalRecordingProposal } from './local-recording-types.js'
 import { LOCAL_RECORDING_SOURCE, removeLocalRecordingProposal } from './local-recording-staging.js'
-import { rehostLocalRecording, resolveLocalRecordingProposal, type LocalRehostOptions } from './local-recording-rehost.js'
+import {
+  localRecordingBytes,
+  rehostLocalRecording,
+  resolveLocalRecordingProposals,
+  type LocalRehostOptions,
+} from './local-recording-rehost.js'
+import { applyTakePlanToDoc, applyTakePlanToList, planTakeMerge, takeFields, type TakeDisposition } from './clip-takes.js'
+import { checksumBytes } from './s3-upload.js'
 
 /**
  * Re-hosts a staged local-recording proposal and writes it straight into
@@ -18,9 +25,15 @@ import { rehostLocalRecording, resolveLocalRecordingProposal, type LocalRehostOp
  * per-clip licence recovered from import metadata. Always writes into
  * `clips`, never `wordClips` — the Sounds tab's record control only ever
  * captures a single syllable.
+ *
+ * Since ADR-0029 (issue #290) a speaker may hold more than one clip at a key:
+ * the bytes are hashed first, an identical clip already at the key is a no-op,
+ * and anything else appends — as this speaker's first take, or as
+ * `take: N + 1` at its own immutable asset path. `./clip-takes.js` holds that
+ * decision, shared with the Lingua Libre merge.
  */
 
-export { resolveLocalRecordingProposal }
+export { resolveLocalRecordingProposals }
 
 function loadAudioFile(path: string): Audio | null {
   return loadOptionalFile(path, audioSchema)
@@ -44,12 +57,13 @@ export interface MergeLocalRecordingOptions extends LocalRehostOptions {
   variety: string
   confidence?: (typeof CONFIDENCE)[number]
   /**
-   * A distinct speaker's clip at an already-used key is always appended — no
-   * flag needed. `force` only matters when `proposal.speaker` already has a
-   * clip at this key: without it, that's refused; with it, that speaker's
-   * existing clip is replaced (issue #134).
+   * Designate the merged clip as the take this speaker publishes, moving
+   * `primary: true` off whichever of their takes holds it (ADR-0029). Off by
+   * default, which is #288's case: a new take lands training-only and what a
+   * learner hears cannot change. Ignored when this is the speaker's first clip
+   * at the key — a lone clip is implicitly primary already.
    */
-  force?: boolean
+  primary?: boolean
   /** Injectable for tests — avoids writing into the real data/phonology/audio/. */
   audioDir?: string
   /** Injectable for tests — avoids resolving proposal.localPath against the real repo root. */
@@ -57,8 +71,12 @@ export interface MergeLocalRecordingOptions extends LocalRehostOptions {
   /**
    * `proposal`'s index in data/staging/teochew-dictionary-audio.yaml. When
    * given, a successful merge removes that staged proposal and its local
-   * recording file (both now redundant once the clip lives on a Release).
-   * Omit to skip that cleanup — e.g. in a test with no real staging file.
+   * recording file (both now redundant once the clip is published). An
+   * `already-merged` result counts as success for this purpose: those exact
+   * bytes are already in the bucket, so the staged copy is just as redundant,
+   * and a re-run after an interrupted cleanup finishes the job rather than
+   * leaving the proposal staged forever. Omit to skip the cleanup — e.g. in a
+   * test with no real staging file.
    */
   proposalIndex?: number
   /** Injectable for tests — avoids touching the real data/staging/. */
@@ -71,6 +89,12 @@ export interface MergeLocalRecordingResult {
   key: string
   url: string
   checksum: string
+  /** What the merge did — see `TakeDisposition` (./clip-takes.js). The CLI prints a line per disposition. */
+  disposition: TakeDisposition
+  /** The take number this clip carries at the key; 1 means the speaker's first, written with no `take` field. */
+  take: number
+  /** Whether this clip is the one of its speaker's takes that leaves `data/` — explicitly or, when it is alone, implicitly. */
+  primary: boolean
 }
 
 export async function mergeLocalRecording(
@@ -80,7 +104,7 @@ export async function mergeLocalRecording(
   const {
     variety,
     confidence = 'high',
-    force = false,
+    primary = false,
     audioDir = AUDIO_METADATA_DIR,
     rootDir = ROOT,
     proposalIndex,
@@ -105,18 +129,45 @@ export async function mergeLocalRecording(
 
   const existingClips = audio.clips ?? {}
   const existingList = Object.hasOwn(existingClips, key) ? existingClips[key]! : []
-  const dupIndex = existingList.findIndex((c) => c.speaker === speaker)
-  if (dupIndex !== -1 && !force) {
-    throw new Error(`'${speaker}' already has a clip at '${key}' in clips for '${variety}' (${path}) — pass --force to overwrite`)
+
+  // Hashed before anything is uploaded, because the checksum is what decides
+  // whether to upload at all (ADR-0029): re-running a merge that already
+  // succeeded must cost nothing and change nothing, not re-publish bytes.
+  const rehostWithRoot = { ...rehostOptions, readBytes: readBytes ?? ((p: string) => readFileSync(join(rootDir, p))) }
+  const bytes = localRecordingBytes(proposal, rehostWithRoot)
+  const checksum = checksumBytes(bytes)
+
+  const plan = planTakeMerge(existingList, { speaker, checksum, primary })
+
+  /** Drops the staged proposal and its local file — the clip is published, so both are redundant. */
+  const cleanUpStaging = (): void => {
+    if (proposalIndex === undefined) return
+    removeLocalRecordingProposal(proposalIndex, stagingDir)
+    rmSync(join(rootDir, proposal.localPath), { force: true })
   }
 
-  const { url, checksum } = await rehostLocalRecording(resolvedProposal, {
-    ...rehostOptions,
-    readBytes: readBytes ?? ((p) => readFileSync(join(rootDir, p))),
-    // Only meaningful when dupIndex !== -1: the S3 key is derived from
-    // pengim + speaker, so it only pre-exists here when this speaker
-    // already has a clip at this key — the exact case `force` is for.
-    overwrite: force,
+  if (plan.disposition === 'already-merged') {
+    const existing = existingList[plan.existingIndex!]!
+    cleanUpStaging()
+    return {
+      path,
+      variety,
+      key,
+      url: existing.url,
+      checksum,
+      disposition: plan.disposition,
+      take: plan.take,
+      primary: plan.primary,
+    }
+  }
+
+  const { url } = await rehostLocalRecording(resolvedProposal, {
+    ...rehostWithRoot,
+    bytes,
+    // Absent for a first take, so that clip lands at exactly the path it
+    // would have before ADR-0029; present for any later take, which is what
+    // makes the paths immutable and `--force` unnecessary.
+    ...(plan.take > 1 ? { take: plan.take } : {}),
   })
 
   const clip = {
@@ -126,11 +177,14 @@ export async function mergeLocalRecording(
     sources: [LOCAL_RECORDING_SOURCE],
     speaker,
     recorded: proposal.recordedDate,
+    ...takeFields(plan),
   }
 
-  const newList =
-    dupIndex !== -1 ? existingList.map((c, i) => (i === dupIndex ? clip : c)) : [...existingList, clip]
+  const newList = applyTakePlanToList(existingList, clip, plan)
 
+  // Parsed before anything is written: proves the whole key — the appended
+  // clip and any spliced `primary` marker alike — is valid against the schema
+  // rather than leaving `npm run validate` to discover it afterwards.
   const updated: Audio = audioSchema.parse({ ...audio, clips: { ...existingClips, [key]: newList } })
 
   mkdirSync(audioDir, { recursive: true })
@@ -140,16 +194,23 @@ export async function mergeLocalRecording(
   // comments (audioFileHeader's own text invites editing a clip by hand).
   if (existsSync(path)) {
     const doc = parseDocument(readFileSync(path, 'utf8'))
-    doc.setIn(['clips', key], updated.clips![key])
+    applyTakePlanToDoc(doc, 'clips', key, clip, plan)
     writeFileSync(path, doc.toString())
   } else {
     writeFileSync(path, audioFileHeader(variety) + stringify(updated))
   }
 
-  if (proposalIndex !== undefined) {
-    removeLocalRecordingProposal(proposalIndex, stagingDir)
-    rmSync(join(rootDir, proposal.localPath), { force: true })
-  }
+  cleanUpStaging()
 
-  return { path, variety, key, url, checksum }
+  return {
+    path,
+    variety,
+    key,
+    url,
+    checksum,
+    disposition: plan.disposition,
+    take: plan.take,
+    // A first take is primary without saying so; a later one only when asked.
+    primary: plan.disposition === 'appended-first' || plan.primary,
+  }
 }

@@ -5,10 +5,11 @@ import { parse as parseYaml, stringify } from 'yaml'
 
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 
-import { GITHUB_REPO } from '@teochew/core'
+import { GITHUB_REPO, type AudioClip } from '@teochew/core'
 import { licenceSourceId, mergeLinguaLibreClip } from '../src/importers/lingualibre-merge.js'
 import type { AudioClipProposal } from '../src/importers/audio-types.js'
 import type { Source } from '@teochew/core'
+import type { PutObjectParams } from '../src/importers/s3-upload.js'
 
 function proposal(overrides: Partial<AudioClipProposal> = {}): AudioClipProposal {
   return {
@@ -171,35 +172,18 @@ describe('mergeLinguaLibreClip', () => {
     expect(Object.keys(written.clips).sort()).toEqual(['dio5', 'existing1'])
   })
 
-  it('appends a distinct speaker as a second clip at an already-used key, without needing force (issue #134)', async () => {
+  it('appends a distinct speaker as a second clip at an already-used key, without needing a flag (issue #134)', async () => {
     await mergeLinguaLibreClip(proposal({ speaker: 'First' }), { variety: 'chaozhou', audioDir, ...rehostOptions })
     const result = await mergeLinguaLibreClip(proposal({ speaker: 'Second' }), {
       variety: 'chaozhou',
       audioDir,
       ...rehostOptions,
+      fetchBytes: async () => Buffer.from('a different recording'),
     })
     const written = parseYaml(readFileSync(result.path, 'utf8'))
-    expect(written.clips.dio5.map((c: { speaker: string }) => c.speaker).sort()).toEqual(['First', 'Second'])
-  })
-
-  it('refuses to overwrite the same speaker\'s existing clip at a key without force', async () => {
-    await mergeLinguaLibreClip(proposal(), { variety: 'chaozhou', audioDir, ...rehostOptions })
-    await expect(mergeLinguaLibreClip(proposal(), { variety: 'chaozhou', audioDir, ...rehostOptions })).rejects.toThrow(
-      /already has a clip/,
-    )
-  })
-
-  it('replaces that speaker\'s existing clip in place when force is set — the list does not grow', async () => {
-    await mergeLinguaLibreClip(proposal(), { variety: 'chaozhou', audioDir, ...rehostOptions })
-    const result = await mergeLinguaLibreClip(proposal({ uploadDate: '2024-03-01' }), {
-      variety: 'chaozhou',
-      audioDir,
-      force: true,
-      ...rehostOptions,
-    })
-    const written = parseYaml(readFileSync(result.path, 'utf8'))
-    expect(written.clips.dio5).toHaveLength(1)
-    expect(written.clips.dio5[0].recorded).toBe('2024-03-01')
+    expect(written.clips.dio5.map((c: AudioClip) => c.speaker).sort()).toEqual(['First', 'Second'])
+    expect(result).toMatchObject({ disposition: 'appended-first', take: 1, primary: true })
+    expect(written.clips.dio5.every((c: AudioClip) => c.take === undefined && c.primary === undefined)).toBe(true)
   })
 
   it('rejects a proposal whose licence has no known source mapping', async () => {
@@ -255,5 +239,67 @@ describe('mergeLinguaLibreClip', () => {
 
     await mergeLinguaLibreClip(proposal(), { variety: 'chaozhou', audioDir, ...rehostOptions })
     expect(readFileSync(path, 'utf8')).toContain(handComment)
+  })
+
+  describe('takes (ADR-0029, issue #290)', () => {
+    /** Merges `bytes` as `proposal`'s clip, with the network and S3 calls stubbed and every put recorded. */
+    async function merge(
+      bytes: string,
+      overrides: Partial<AudioClipProposal> & { primary?: boolean } = {},
+      puts: PutObjectParams[] = [],
+    ) {
+      const { primary, ...proposalOverrides } = overrides
+      return mergeLinguaLibreClip(proposal(proposalOverrides), {
+        variety: 'chaozhou',
+        audioDir,
+        sources: SOURCES,
+        primary,
+        fetchBytes: async () => Buffer.from(bytes),
+        headObject: async () => undefined,
+        putObject: async (params) => {
+          puts.push(params)
+        },
+      })
+    }
+
+    it('is a no-op when the same bytes are already merged at the key — nothing uploaded, nothing written', async () => {
+      const first = await merge('same bytes')
+      const before = readFileSync(first.path, 'utf8')
+
+      const puts: PutObjectParams[] = []
+      const again = await merge('same bytes', {}, puts)
+
+      expect(again).toMatchObject({ disposition: 'already-merged', take: 1, primary: true, url: first.url })
+      expect(puts).toEqual([])
+      expect(readFileSync(first.path, 'utf8')).toBe(before)
+    })
+
+    it('appends a second take as take 2 at its own asset path, marking the existing clip primary', async () => {
+      await merge('take one')
+      const puts: PutObjectParams[] = []
+      const result = await merge('take two', {}, puts)
+
+      expect(result).toMatchObject({ disposition: 'appended-take', take: 2, primary: false })
+      expect(puts[0]?.key).toBe('teochew/clips/someone/dio5-take2.wav')
+
+      const clips: AudioClip[] = parseYaml(readFileSync(result.path, 'utf8')).clips.dio5
+      expect(clips.map((c) => c.primary)).toEqual([true, undefined])
+      expect(clips.map((c) => c.take)).toEqual([undefined, 2])
+    })
+
+    it('gives wordClips the same treatment — takes are per (key, speaker), whichever bucket the key lives in', async () => {
+      const word = { pengim: 'dio5 ziu1', syllableCount: 2 } as const
+      await merge('take one', word)
+      const puts: PutObjectParams[] = []
+      const second = await merge('take two', word, puts)
+      const third = await merge('take three', { ...word, primary: true })
+
+      expect(second).toMatchObject({ bucket: 'wordClips', disposition: 'appended-take', take: 2 })
+      expect(puts[0]?.key).toBe('teochew/clips/someone/dio5-ziu1-take2.wav')
+
+      const clips: AudioClip[] = parseYaml(readFileSync(third.path, 'utf8')).wordClips['dio5 ziu1']
+      expect(clips.map((c) => c.take)).toEqual([undefined, 2, 3])
+      expect(clips.map((c) => c.primary)).toEqual([undefined, undefined, true])
+    })
   })
 })

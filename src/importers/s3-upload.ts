@@ -32,7 +32,16 @@ export const AUDIO_CDN_BASE = `https://${AUDIO_CDN_HOST}`
 /** The key prefix every clip and CAF alternate is uploaded under — see `audioClipKey`/`audioAssetPath`. */
 export const AUDIO_CLIP_PREFIX = 'teochew/clips/'
 
-function sha256(bytes: Buffer): string {
+/**
+ * The `sha256:<hex>` checksum the audio manifest stores for a clip, and the
+ * one `uploadBytesToS3` records in the object's metadata.
+ *
+ * Exported because a clip's checksum is its *identity* (ADR-0029): the merge
+ * importers hash the bytes before deciding whether to upload them at all — the
+ * same bytes already at a key are already merged, and re-uploading them is not
+ * merely wasteful but the only way a second take could ever clobber a first.
+ */
+export function checksumBytes(bytes: Buffer): string {
   return `sha256:${createHash('sha256').update(bytes).digest('hex')}`
 }
 
@@ -230,7 +239,7 @@ export async function uploadBytesToS3(
   options: UploadBytesToS3Options,
 ): Promise<UploadBytesToS3Result> {
   const { key, contentType, overwrite = false, headObject = defaultHeadObject, putObject = defaultPutObject } = options
-  const checksum = sha256(bytes)
+  const checksum = checksumBytes(bytes)
   const url = `${AUDIO_CDN_BASE}/${key}`
 
   const existing = await headObject(key)
