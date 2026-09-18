@@ -51,6 +51,7 @@ describe('getStatus', () => {
         {
           url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5.wav',
           speaker: 'speaker-1',
+          primary: true,
         },
       ],
     })
@@ -77,6 +78,7 @@ describe('getStatus', () => {
     const [clip] = getStatus({ audioDir, stagingDir }).published.dio5 ?? []
     expect(clip).toEqual({
       url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5.wav',
+      primary: true,
     })
     expect(clip).not.toHaveProperty('speaker')
   })
@@ -111,10 +113,86 @@ describe('getStatus', () => {
       {
         url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5-a.wav',
         speaker: 'speaker-1',
+        primary: true,
       },
       {
         url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-lingualibre/dio5-b.wav',
         speaker: 'speaker-2',
+        primary: true,
+      },
+    ])
+  })
+
+  it('marks only the take flagged `primary: true` primary within a same-speaker group, and includes `take` (ADR-0029)', () => {
+    writeFileSync(
+      join(audioDir, 'chaozhou.yaml'),
+      stringify({
+        audio: { id: 'chaozhou', variety: 'chaozhou' },
+        clips: {
+          ku3: [
+            {
+              url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-jky/ku3.webm',
+              confidence: 'high',
+              sources: ['x'],
+              speaker: 'jky',
+              primary: true,
+              checksum: `sha256:${'a'.repeat(64)}`,
+            },
+            {
+              url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-jky/ku3-take2.webm',
+              confidence: 'medium',
+              sources: ['x'],
+              speaker: 'jky',
+              take: 2,
+              checksum: `sha256:${'b'.repeat(64)}`,
+            },
+          ],
+        },
+      }),
+    )
+
+    expect(getStatus({ audioDir, stagingDir }).published.ku3).toEqual([
+      {
+        url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-jky/ku3.webm',
+        speaker: 'jky',
+        primary: true,
+      },
+      {
+        url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-jky/ku3-take2.webm',
+        speaker: 'jky',
+        take: 2,
+        primary: false,
+      },
+    ])
+  })
+
+  it('never marks a synthesis render primary, even with no other take at the key', () => {
+    writeFileSync(
+      join(audioDir, 'chaozhou.yaml'),
+      stringify({
+        audio: { id: 'chaozhou', variety: 'chaozhou' },
+        clips: {
+          ku3: [
+            {
+              url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-jky-n/ku3.webm',
+              confidence: 'medium',
+              sources: ['x'],
+              speaker: 'jky-n',
+              synthesis: 'world-retune',
+              derivedFrom: `sha256:${'a'.repeat(64)}`,
+              checksum: `sha256:${'c'.repeat(64)}`,
+            },
+          ],
+        },
+      }),
+    )
+
+    expect(getStatus({ audioDir, stagingDir }).published.ku3).toEqual([
+      {
+        url: 'https://github.com/teochew-works/teochew-dictionary/releases/download/audio-jky-n/ku3.webm',
+        speaker: 'jky-n',
+        synthesis: 'world-retune',
+        primary: false,
       },
     ])
   })
