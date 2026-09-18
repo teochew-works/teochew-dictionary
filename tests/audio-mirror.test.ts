@@ -248,6 +248,22 @@ describe('mirrorAudioToS3', () => {
     expect(putCalls[0]?.key).toBe('teochew/clips/unknown-speaker/dio5.webm')
   })
 
+  it('mirrors a second take to its own -take<N> key (ADR-0029, issue #290)', async () => {
+    const audio = audioTable({ dio5: [clip({ take: 2 })] })
+    const putCalls: PutObjectParams[] = []
+
+    await mirrorAudioToS3(audio, {
+      write: true,
+      fetchBytes: fakeBytes({ [GITHUB_WEBM]: WEBM_BYTES }),
+      headObject: async () => undefined,
+      putObject: async (params) => {
+        putCalls.push(params)
+      },
+    })
+
+    expect(putCalls[0]?.key).toBe('teochew/clips/jky/dio5-take2.webm')
+  })
+
   it('reports progress after each target, in order, with a running scanned/total count', async () => {
     const withCaf = clip({ cafUrl: GITHUB_CAF, cafChecksum: sha256(CAF_BYTES) })
     const audio = audioTable({ dio5: [withCaf] })

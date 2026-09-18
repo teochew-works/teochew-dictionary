@@ -66,6 +66,18 @@ describe('assetFilename', () => {
     const b = assetFilename(proposal({ pengim: 'dio5', speaker: 'Bob', commonsUrl: '.../x.wav' }))
     expect(a).not.toBe(b)
   })
+
+  it('reproduces today\'s path unchanged when take is absent (regression, ADR-0029)', () => {
+    expect(assetFilename(proposal({ pengim: 'dio5', speaker: 'Someone', commonsUrl: '.../x.wav' }))).toBe(
+      'someone/dio5.wav',
+    )
+  })
+
+  it('appends -take<N> when take is given (ADR-0029, issue #290)', () => {
+    expect(
+      assetFilename(proposal({ pengim: 'dio5', speaker: 'Someone', commonsUrl: '.../x.wav' }), 2),
+    ).toBe('someone/dio5-take2.wav')
+  })
 })
 
 describe('rehostClip', () => {
@@ -112,5 +124,22 @@ describe('rehostClip', () => {
         putObject: async () => {},
       }),
     ).rejects.toThrow(/refusing to overwrite/)
+  })
+
+  it('uploads a second take to its own -take<N> key (ADR-0029, issue #290)', async () => {
+    const bytes = Buffer.from('fake audio bytes')
+    const putCalls: PutObjectParams[] = []
+
+    const result = await rehostClip(proposal(), {
+      take: 2,
+      fetchBytes: async () => bytes,
+      headObject: async () => undefined,
+      putObject: async (params) => {
+        putCalls.push(params)
+      },
+    })
+
+    expect(putCalls[0]?.key).toBe('teochew/clips/someone/dio5-ziu1-take2.wav')
+    expect(result.url).toBe('https://daidb11aas52z.cloudfront.net/teochew/clips/someone/dio5-ziu1-take2.wav')
   })
 })

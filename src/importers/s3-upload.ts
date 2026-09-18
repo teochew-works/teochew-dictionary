@@ -97,22 +97,31 @@ function slugSegment(s: string): string {
  * alternate share, one directory per speaker — not a flat
  * `<pengim-key>-<speaker><ext>` filename. `mergeLinguaLibreClip`/
  * `mergeLocalRecording` already let a distinct speaker's clip append at an
- * already-used pengim key with no flag needed (issue #134), so the key must
+ * already-used pengim key with no flag needed (issue #134), so the path must
  * disambiguate speakers on its own; nesting by speaker does that the same
  * way a flat hyphenated name would, but also keeps this project's own
  * "pengim is the primary key, speaker is per-clip" shape (see how
  * `data/phonology/audio/*.yaml` itself is structured) rather than
  * inverting it.
  *
+ * `take` (ADR-0029, issue #290) disambiguates a second recording by the
+ * *same* speaker at the same key, which the plain `<speaker>/<pengim-key>`
+ * shape above cannot: absent (every clip that predates ADR-0029, and a
+ * speaker's first take) keeps today's path unchanged — every one of the
+ * corpus's existing 6,167 objects stays exactly where it is — and present
+ * appends `-take<N>` to the filename, before `ext`. Paths are immutable and
+ * a take is never renumbered, so this suffix, once assigned, is permanent.
+ *
  * Shared by `lingualibre-rehost.ts`'s `slugAssetFilename` (for the source
  * clip) and `caf-backfill.ts` (for its CAF alternate) so both land under the
- * same `<speaker>/<pengim-key>` directory — deriving straight from `key` and
- * `speaker` rather than parsing a source URL keeps this correct regardless
- * of which host (GitHub Release, pre-migration; or CloudFront) that source
- * clip currently lives at.
+ * same `<speaker>/<pengim-key>[-take<N>]` directory — deriving straight from
+ * `key`, `speaker` and `take` rather than parsing a source URL keeps this
+ * correct regardless of which host (GitHub Release, pre-migration; or
+ * CloudFront) that source clip currently lives at.
  */
-export function audioAssetPath(key: string, speaker: string, ext: string): string {
-  return `${slugSegment(speaker)}/${slugSegment(key)}${ext}`
+export function audioAssetPath(key: string, speaker: string, ext: string, take?: number): string {
+  const suffix = take !== undefined ? `-take${take}` : ''
+  return `${slugSegment(speaker)}/${slugSegment(key)}${suffix}${ext}`
 }
 
 /**
@@ -124,8 +133,8 @@ export function audioAssetPath(key: string, speaker: string, ext: string): strin
 export const FALLBACK_SPEAKER = 'unknown-speaker'
 
 /** `audioAssetPath`, tolerating a clip with no recorded `speaker` — see `FALLBACK_SPEAKER`. */
-export function audioAssetPathForClip(key: string, speaker: string | undefined, ext: string): string {
-  return audioAssetPath(key, speaker ?? FALLBACK_SPEAKER, ext)
+export function audioAssetPathForClip(key: string, speaker: string | undefined, ext: string, take?: number): string {
+  return audioAssetPath(key, speaker ?? FALLBACK_SPEAKER, ext, take)
 }
 
 let sharedClient: S3Client | undefined

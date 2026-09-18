@@ -27,10 +27,12 @@ export function resolveLocalRecordingProposal(
  * speaker, keeping the local file's own extension. Takes a proposal with
  * `speaker` resolved — `LocalRecordingProposal` itself leaves it optional
  * (issue #288's deferred-assignment case) but re-hosting only ever happens
- * once a speaker id has been decided.
+ * once a speaker id has been decided. `take` (ADR-0029, issue #290) is not
+ * on `LocalRecordingProposal` either — the merge step decides it — so it is
+ * passed in explicitly, same as `lingualibre-rehost.ts`'s `assetFilename`.
  */
-export function assetFilename(proposal: LocalRecordingProposal & { speaker: string }): string {
-  return slugAssetFilename(proposal.pengim, proposal.speaker, proposal.localPath)
+export function assetFilename(proposal: LocalRecordingProposal & { speaker: string }, take?: number): string {
+  return slugAssetFilename(proposal.pengim, proposal.speaker, proposal.localPath, take)
 }
 
 export interface LocalRehostOptions {
@@ -42,6 +44,12 @@ export interface LocalRehostOptions {
   putObject?: UploadBytesToS3Options['putObject']
   /** Forwarded to `uploadBytesToS3` — allows replacing this speaker's own stale clip at this key (issue #134). */
   overwrite?: boolean
+  /**
+   * Which take of this speaker's recording of this key this is (ADR-0029,
+   * issue #290) — forwarded to `assetFilename`/`audioAssetPath`. Absent
+   * means the speaker's first take at this key, reproducing today's path.
+   */
+  take?: number
 }
 
 export interface LocalRehostResult {
@@ -54,10 +62,10 @@ export async function rehostLocalRecording(
   proposal: LocalRecordingProposal & { speaker: string },
   options: LocalRehostOptions = {},
 ): Promise<LocalRehostResult> {
-  const { readBytes = (path) => readFileSync(path), headObject, putObject, overwrite } = options
+  const { readBytes = (path) => readFileSync(path), headObject, putObject, overwrite, take } = options
 
   const bytes = readBytes(proposal.localPath)
-  const filename = assetFilename(proposal)
+  const filename = assetFilename(proposal, take)
   const { url, checksum } = await uploadBytesToS3(bytes, {
     key: audioClipKey(filename),
     contentType: contentTypeForFilename(filename),

@@ -78,6 +78,14 @@ describe('assetFilename', () => {
     const b = assetFilename(proposal({ pengim: 'dio5', speaker: 'speaker-2' }))
     expect(a).not.toBe(b)
   })
+
+  it('reproduces today\'s path unchanged when take is absent (regression, ADR-0029)', () => {
+    expect(assetFilename(proposal({ pengim: 'dio5', speaker: 'speaker-1' }))).toBe('speaker-1/dio5.wav')
+  })
+
+  it('appends -take<N> when take is given (ADR-0029, issue #290)', () => {
+    expect(assetFilename(proposal({ pengim: 'dio5', speaker: 'speaker-1' }), 2)).toBe('speaker-1/dio5-take2.wav')
+  })
 })
 
 describe('rehostLocalRecording', () => {
@@ -123,6 +131,23 @@ describe('rehostLocalRecording', () => {
         putObject: async () => {},
       }),
     ).rejects.toThrow(/refusing to overwrite/)
+  })
+
+  it('uploads a second take to its own -take<N> key (ADR-0029, issue #290)', async () => {
+    const bytes = Buffer.from('fake audio bytes')
+    const putCalls: PutObjectParams[] = []
+
+    const result = await rehostLocalRecording(proposal(), {
+      take: 2,
+      readBytes: () => bytes,
+      headObject: async () => undefined,
+      putObject: async (params) => {
+        putCalls.push(params)
+      },
+    })
+
+    expect(putCalls[0]?.key).toBe('teochew/clips/speaker-1/dio5-take2.wav')
+    expect(result.url).toBe('https://daidb11aas52z.cloudfront.net/teochew/clips/speaker-1/dio5-take2.wav')
   })
 
   it('defaults to reading proposal.localPath from disk when readBytes is not injected', async () => {
