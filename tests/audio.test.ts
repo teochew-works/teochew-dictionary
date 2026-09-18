@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { GITHUB_REPO, audioSchema } from '@teochew/core'
 import { checkAudio } from '../src/validate/index.js'
+import { isPrimary } from '../src/audio/primary.js'
 import { deriveReadingAudio, deriveReadingSandhiAudio, deriveReadingWordAudio } from '../src/build/enrich.js'
 import { parsePengim } from '../src/phonology/syllable.js'
 import { applySandhi } from '../src/phonology/sandhi.js'
@@ -12,6 +13,7 @@ const VALID_URL = AUDIO_CLIP_URL
 const VALID_WORD_URL = AUDIO_WORD_CLIP_URL
 const VALID_CHECKSUM = `sha256:${'a'.repeat(64)}`
 const OTHER_CHECKSUM = `sha256:${'b'.repeat(64)}`
+const THIRD_CHECKSUM = `sha256:${'c'.repeat(64)}`
 
 function source(id: string, kind: SourceKind = 'import', licence?: string): Source {
   return { id, name: id, kind, ...(licence !== undefined && { licence }) }
@@ -424,22 +426,189 @@ describe('checkAudio', () => {
   })
 
   it('passes distinct speakers at the same clips key — the whole point of issue #134', () => {
-    const table = audio({ dio5: [clip({ speaker: 'a' }), clip({ speaker: 'b' })] })
+    const table = audio({ dio5: [clip({ speaker: 'a' }), clip({ speaker: 'b', checksum: OTHER_CHECKSUM })] })
     const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
     expect(issues).toEqual([])
   })
 
-  it('flags more than one clip from the same speaker at the same clips key — should have been caught at merge time', () => {
-    const table = audio({ dio5: [clip({ speaker: 'a' }), clip({ speaker: 'a' })] })
+  it('passes two takes from one speaker when exactly one is primary (ADR-0029)', () => {
+    const table = audio({
+      dio5: [clip({ speaker: 'a', primary: true }), clip({ speaker: 'a', take: 2, checksum: OTHER_CHECKSUM })],
+    })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toEqual([])
+  })
+
+  it('flags two takes from one speaker with none marked primary — a human must pick what is published', () => {
+    const table = audio({
+      dio5: [clip({ speaker: 'a' }), clip({ speaker: 'a', take: 2, checksum: OTHER_CHECKSUM })],
+    })
     const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
     expect(issues).toHaveLength(1)
-    expect(issues[0]?.message).toContain("more than one clip from speaker 'a'")
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'clips.dio5' })
+    expect(issues[0]?.message).toContain("2 clips from speaker 'a' and none marked `primary: true`")
+  })
+
+  it('flags two takes from one speaker both marked primary, naming both', () => {
+    const table = audio({
+      dio5: [
+        clip({ speaker: 'a', primary: true }),
+        clip({ speaker: 'a', take: 2, primary: true, checksum: OTHER_CHECKSUM }),
+      ],
+    })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]?.message).toContain("2 clips from speaker 'a' marked `primary: true` (clips.dio5[0], clips.dio5[1])")
+  })
+
+  it('flags a duplicated take number from one speaker', () => {
+    const table = audio({
+      dio5: [
+        clip({ speaker: 'a', primary: true }),
+        clip({ speaker: 'a', take: 2, checksum: OTHER_CHECKSUM }),
+        clip({ speaker: 'a', take: 2, checksum: THIRD_CHECKSUM }),
+      ],
+    })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'clips.dio5[2]' })
+    expect(issues[0]?.message).toContain("more than one take 2 from speaker 'a'")
+  })
+
+  it("flags two takeless clips from one speaker — issue #134's error, now as two take 1s", () => {
+    const table = audio({ dio5: [clip({ speaker: 'a' }), clip({ speaker: 'a', checksum: OTHER_CHECKSUM })] })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(2)
+    expect(issues[0]?.message).toContain("more than one take 1 from speaker 'a'")
+    expect(issues[1]?.message).toContain('none marked `primary: true`')
+  })
+
+  it('flags the same checksum twice at one key, even across speakers — the same bytes merged twice', () => {
+    const table = audio({ dio5: [clip({ speaker: 'a' }), clip({ speaker: 'b' })] })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'clips.dio5[1]' })
+    expect(issues[0]?.message).toContain(`more than one clip with checksum ${VALID_CHECKSUM}`)
+  })
+
+  it('passes a lone clip that redundantly marks itself primary — harmless, and what a merge leaves behind', () => {
+    const table = audio({ dio5: clip({ speaker: 'a', primary: true }) })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toEqual([])
+  })
+
+  it('flags a render that derives from a non-primary take (ADR-0029)', () => {
+    const render = clip({
+      checksum: THIRD_CHECKSUM,
+      speaker: 'jky-n',
+      synthesis: 'world-retune',
+      derivedFrom: OTHER_CHECKSUM,
+      confidence: 'medium',
+    })
+    const table = audio({
+      dio5: [clip({ speaker: 'jky', primary: true }), clip({ speaker: 'jky', take: 2, checksum: OTHER_CHECKSUM }), render],
+    })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'clips.dio5[2].derivedFrom' })
+    expect(issues[0]?.message).toContain('names a non-primary take')
+  })
+
+  it("passes a render that derives from its speaker's primary take", () => {
+    const render = clip({
+      checksum: THIRD_CHECKSUM,
+      speaker: 'jky-n',
+      synthesis: 'world-retune',
+      derivedFrom: VALID_CHECKSUM,
+      confidence: 'medium',
+    })
+    const table = audio({
+      dio5: [clip({ speaker: 'jky', primary: true }), clip({ speaker: 'jky', take: 2, checksum: OTHER_CHECKSUM }), render],
+    })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toEqual([])
+  })
+
+  it('applies the take rules to wordClips too', () => {
+    const table = audioTable({}, {
+      'dio5 ziu1': [
+        clip({ url: VALID_WORD_URL, speaker: 'a' }),
+        clip({ url: VALID_WORD_URL, speaker: 'a', take: 2, checksum: OTHER_CHECKSUM }),
+      ],
+    })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'wordClips.dio5 ziu1' })
+    expect(issues[0]?.message).toContain('none marked `primary: true`')
+  })
+
+  it('applies the derivedFrom rule to wordClips too — it used to skip them entirely', () => {
+    const render = clip({
+      url: VALID_WORD_URL,
+      checksum: THIRD_CHECKSUM,
+      speaker: 'jky-n',
+      synthesis: 'world-retune',
+      derivedFrom: OTHER_CHECKSUM,
+      confidence: 'medium',
+    })
+    const table = audioTable({}, {
+      'dio5 ziu1': [
+        clip({ url: VALID_WORD_URL, speaker: 'jky', primary: true }),
+        clip({ url: VALID_WORD_URL, speaker: 'jky', take: 2, checksum: OTHER_CHECKSUM }),
+        render,
+      ],
+    })
+    const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
+    expect(issues).toHaveLength(1)
+    expect(issues[0]).toMatchObject({ level: 'error', path: 'wordClips.dio5 ziu1[2].derivedFrom' })
+    expect(issues[0]?.message).toContain('names a non-primary take')
   })
 
   it('does not flag more than one clip with no speaker at all — nothing to dedupe against', () => {
-    const table = audio({ dio5: [clip({ speaker: undefined }), clip({ speaker: undefined })] })
+    const table = audio({ dio5: [clip({ speaker: undefined }), clip({ speaker: undefined, checksum: OTHER_CHECKSUM })] })
     const issues = checkAudio('f.yaml', table, 'chaozhou', varietyIds, sourceMap, legalSyllables)
     expect(issues).toEqual([])
+  })
+})
+
+describe('isPrimary', () => {
+  it('treats a lone clip as primary without it saying so — every pre-ADR-0029 manifest entry', () => {
+    const only = clip({ speaker: 'jky' })
+    expect(isPrimary(only, [only])).toBe(true)
+  })
+
+  it('treats the clip marked primary in a group of takes as the primary, and the others as not', () => {
+    const first = clip({ speaker: 'jky', primary: true })
+    const second = clip({ speaker: 'jky', take: 2, checksum: OTHER_CHECKSUM })
+    expect(isPrimary(first, [first, second])).toBe(true)
+    expect(isPrimary(second, [first, second])).toBe(false)
+  })
+
+  it('groups by speaker — another speaker\'s takes never demote a lone clip', () => {
+    const lone = clip({ speaker: 'other' })
+    const first = clip({ speaker: 'jky', primary: true, checksum: OTHER_CHECKSUM })
+    const second = clip({ speaker: 'jky', take: 2, checksum: THIRD_CHECKSUM })
+    expect(isPrimary(lone, [lone, first, second])).toBe(true)
+  })
+
+  it('never treats a render as primary — it is a derived tier, not a take (ADR-0027)', () => {
+    const recording = clip({ speaker: 'jky' })
+    const render = clip({
+      speaker: 'jky-n',
+      synthesis: 'world-retune',
+      derivedFrom: VALID_CHECKSUM,
+      confidence: 'medium',
+      checksum: OTHER_CHECKSUM,
+    })
+    expect(isPrimary(render, [recording, render])).toBe(false)
+    // …and a render alongside a lone recording doesn't stop that recording being primary.
+    expect(isPrimary(recording, [recording, render])).toBe(true)
+  })
+
+  it('treats a clip with no speaker as primary — there is no group for it to compete in', () => {
+    const anon = clip({ speaker: undefined })
+    const other = clip({ speaker: undefined, checksum: OTHER_CHECKSUM })
+    expect(isPrimary(anon, [anon, other])).toBe(true)
   })
 })
 

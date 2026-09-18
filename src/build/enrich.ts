@@ -68,7 +68,7 @@ function toAudioReference(key: string, clip: AudioClip, audio: Audio, sources: M
  * no clips at all (full coverage is then impossible regardless of speaker)
  * or when no single speaker recorded a clip at every syllable. Clips with no
  * `speaker` are never counted toward any candidate — there's no identity to
- * match, same convention as `checkDuplicateSpeakers` in ../validate/index.ts.
+ * match, same convention as `checkTakeGroups` in ../validate/index.ts.
  */
 function bestCommonSpeaker(perSyllableClips: AudioClip[][]): string | null {
   if (perSyllableClips.length === 0 || perSyllableClips.some((clips) => clips.length === 0)) return null
