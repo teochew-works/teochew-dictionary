@@ -1,3 +1,4 @@
+import { publishedClipsAt } from '../audio/primary.js'
 import { loadAudioIfExists, loadPengimScheme, loadPojScheme, loadVariety } from '../phonology/load.js'
 import { syllablesToIpa } from '../phonology/ipa.js'
 import { syllablesToPoj } from '../phonology/poj.js'
@@ -29,12 +30,25 @@ export type { AudioReference, EnrichedReading, EnrichedEntry }
 const CONFIDENCE_RANK: Record<Confidence, number> = { high: 0, medium: 1, low: 2 }
 
 /**
+ * The clips at one manifest key (`audio.clips[key]` or `audio.wordClips[key]`),
+ * filtered to what leaves `data/` (ADR-0029: `publishedClipsAt`) — the one
+ * place every selector below reads a key's clip list from `audio`, so a
+ * training-only take never reaches `selectPrimaryClip`, `bestCommonSpeaker`,
+ * `clipsFor` or `selectReadingClips`. After this filter a key has at most
+ * one clip per speaker, so `find(c => c.speaker === s)` downstream is
+ * unambiguous again.
+ */
+function primaryClipsAt(clips: AudioClip[] | undefined): AudioClip[] {
+  return publishedClipsAt(clips ?? [])
+}
+
+/**
  * Picks the one clip a single-clip consumer (Dictionary-tab playback, CLI
  * lookup) shows for a syllable/reading that has more than one (issue #134):
- * highest `confidence` wins; ties broken by the most recent `recorded` date;
- * a clip missing `recorded` sorts as older than one that has it. If still
- * tied (e.g. both undefined), the earlier clip in the list wins — `sort` is
- * stable, so this falls out of the comparator alone.
+ * highest `confidence` wins across primaries — ties broken by the most
+ * recent `recorded` date; a clip missing `recorded` sorts as older than one
+ * that has it. If still tied (e.g. both undefined), the earlier clip in the
+ * list wins — `sort` is stable, so this falls out of the comparator alone.
  */
 function selectPrimaryClip(clips: AudioClip[]): AudioClip {
   return [...clips].sort((a, b) => {
@@ -68,7 +82,11 @@ function toAudioReference(key: string, clip: AudioClip, audio: Audio, sources: M
  * no clips at all (full coverage is then impossible regardless of speaker)
  * or when no single speaker recorded a clip at every syllable. Clips with no
  * `speaker` are never counted toward any candidate — there's no identity to
- * match, same convention as `checkDuplicateSpeakers` in ../validate/index.ts.
+ * match, same convention as `checkTakeGroups` in ../validate/index.ts.
+ *
+ * Callers pass already primary-filtered clips (`primaryClipsAt`, ADR-0029),
+ * so at most one clip per speaker exists at each syllable here — `clipsFor`
+ * below relies on that to use a plain `find`.
  */
 function bestCommonSpeaker(perSyllableClips: AudioClip[][]): string | null {
   if (perSyllableClips.length === 0 || perSyllableClips.some((clips) => clips.length === 0)) return null
@@ -150,7 +168,7 @@ export function deriveReadingAudio(
 ): (AudioReference | null)[] {
   if (!audio) return syllables.map(() => null)
   const keys = syllables.map((s) => s.raw)
-  const picks = selectReadingClips(keys.map((k) => audio.clips[k] ?? []))
+  const picks = selectReadingClips(keys.map((k) => primaryClipsAt(audio.clips[k])))
   return keys.map((key, i) => (picks[i] ? toAudioReference(key, picks[i]!, audio, sources) : null))
 }
 
@@ -174,7 +192,7 @@ export function deriveReadingSandhiAudio(
 ): (AudioReference | null)[] {
   if (!audio) return citationAudio
   const keys = sandhi.syllables.map((s) => s.surface)
-  const picks = selectReadingClips(keys.map((k) => audio.clips[k] ?? []))
+  const picks = selectReadingClips(keys.map((k) => primaryClipsAt(audio.clips[k])))
   return keys.map((key, i) => (picks[i] ? toAudioReference(key, picks[i]!, audio, sources) : (citationAudio[i] ?? null)))
 }
 
@@ -189,8 +207,9 @@ export function deriveReadingWordAudio(
   audio: Audio | null,
   sources: Map<string, Source>,
 ): AudioReference | null {
-  const clips = audio?.wordClips?.[pengim]
-  if (!audio || !clips || clips.length === 0) return null
+  if (!audio) return null
+  const clips = primaryClipsAt(audio.wordClips?.[pengim])
+  if (clips.length === 0) return null
   const clip = selectPrimaryClip(clips)
 
   const resolved = resolveLicenceOrThrow(clip.sources, sources, `${audio.audio.id}/${pengim}`)

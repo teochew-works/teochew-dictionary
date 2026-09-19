@@ -5,6 +5,7 @@ import { join, relative } from 'node:path'
 import { AUDIO_METADATA_DIR, DATA_DIR, ROOT } from '../../src/paths.js'
 import { loadOptionalFile } from '../../src/phonology/load.js'
 import { audioSchema } from '@teochew/core'
+import { isPrimary } from '../../src/audio/primary.js'
 import {
   appendLocalRecordingProposal,
   findLocalRecordingProposals,
@@ -29,6 +30,16 @@ export interface PublishedClip {
   speaker?: string
   /** Set when the clip is a re-rendering of a recording (ADR-0027); the play button labels it. */
   synthesis?: 'world-retune' | 'cross-splice'
+  /** Which take of this syllable by this speaker (ADR-0029, issue #290) — absent means their first take. */
+  take?: number
+  /**
+   * Whether this is the one clip of its speaker's that leaves `data/` (ADR-0029) — computed here,
+   * server-side, from the raw manifest via `isPrimary` (src/audio/primary.ts), so the dev-only elicitation view
+   * never has to re-derive it (or guess from array position) client-side. `getStatus` always sets
+   * this explicitly; optional only so a plain `{ url }` literal (a staged, not-yet-merged take has
+   * no take/primary concept at all) still satisfies this type elsewhere in `web/`.
+   */
+  primary?: boolean
 }
 
 /** Enough detail about one staged (not yet merged) proposal to list and delete it from the elicitation UI. */
@@ -75,6 +86,8 @@ export function getStatus(deps: StatusDeps = {}): StatusResult {
           url: clip.url,
           ...(clip.speaker ? { speaker: clip.speaker } : {}),
           ...(clip.synthesis ? { synthesis: clip.synthesis } : {}),
+          ...(clip.take !== undefined ? { take: clip.take } : {}),
+          primary: isPrimary(clip, clips),
         })),
       ]),
     ),

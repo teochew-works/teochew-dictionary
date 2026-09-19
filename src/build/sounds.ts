@@ -1,4 +1,5 @@
 import type { Synthesis } from '@teochew/core'
+import { publishedClipsAt } from '../audio/primary.js'
 import type { LoadedEntry } from '../data/load.js'
 import { loadAudioIfExists, loadPengimScheme } from '../phonology/load.js'
 import {
@@ -62,10 +63,12 @@ export interface Sound {
   occurrences: number
   examples: SoundExample[]
   /**
-   * Every recorded clip for this syllable (issue #134), not just one — the
-   * Sounds tab lets a visitor play and compare all of them, unlike the
-   * Dictionary tab's single-clip-per-reading playback (see
-   * `selectPrimaryClip` in `./enrich.js`). Empty when the syllable has no
+   * Every published clip for this syllable (`publishedClipsAt`, ADR-0029) —
+   * each recording speaker's primary take plus any `synthesis` render, not
+   * just one — the Sounds tab lets a visitor play and compare every speaker,
+   * unlike the Dictionary tab's single-clip-per-reading playback (see
+   * `selectPrimaryClip` in `./enrich.js`). A speaker's non-primary takes are
+   * training-only and never surface here. Empty when the syllable has no
    * recording yet.
    */
   clips: SoundClip[]
@@ -141,7 +144,7 @@ export function buildSounds(
       gloss: entry.senses[0]?.gloss_en[0] ?? '',
     }))
 
-    const clips = (audio?.clips[syllableRaw] ?? []).map((c) => ({
+    const clips = publishedClipsAt(audio?.clips[syllableRaw] ?? []).map((c) => ({
       url: c.url,
       ...(c.cafUrl ? { cafUrl: c.cafUrl } : {}),
       ...(c.speaker ? { speaker: c.speaker } : {}),

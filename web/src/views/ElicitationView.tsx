@@ -28,12 +28,22 @@ import './ElicitationView.css'
  * genuine worst-confusion pairs once that work lands; this ships the
  * elicitation flow independently of it.
  *
- * A syllable stays in the pool until it has a second *published* real
- * clip — staging one or more takes doesn't remove it, so a contributor can
- * record several takes of the same target before a human picks which to
- * merge, and "Re-pick" (unlike a "Skip" that implied the target was done
- * with) just moves on to a different random target without excluding this
- * one from being picked again later.
+ * A syllable stays in the pool until jky has a second, *merged* take —
+ * staging one or more takes doesn't remove it, so a contributor can record
+ * several takes of the same target before a human picks which to merge, and
+ * "Re-pick" (unlike a "Skip" that implied the target was done with) just
+ * moves on to a different random target without excluding this one from
+ * being picked again later.
+ *
+ * Multiple takes per speaker (ADR-0029, issue #290) replaced the old
+ * "exactly one real, published clip" pool test — the manifest can now hold
+ * more than one clip for jky at a key, distinguished by `take`/`primary`
+ * (only `getStatus`'s live payload carries them; `sounds.json`'s `clips`
+ * already filters to primaries only, same as every other consumer, so a
+ * syllable falls back to looking done-until-proven-otherwise there). A
+ * target leaves the pool once jky has any merged, non-primary take — the
+ * explicit signal a human already merged a second session — not merely once
+ * a second clip of any kind exists.
  *
  * Picking isn't uniform: `pickingWeight` favors a target with fewer staged
  * takes so far, and separately favors one whose initial/rime/tone has had
@@ -74,16 +84,53 @@ const AXIS_NAMES: Record<Axis, string> = { initial: 'Initial', rime: 'Rime', ton
 /** Up to this many random reference samples per axis, when that many candidates exist. */
 const MAX_REFERENCES_PER_AXIS = 3
 
+/**
+ * This whole view exists for jky's second recording session (issue #288) —
+ * the pool test below is scoped to this one speaker's takes, not "any
+ * speaker with two clips", so a second contributor's recordings (should any
+ * ever be added) neither empty the pool early nor get mistaken for a merged
+ * jky session.
+ */
+const TARGET_SPEAKER = 'jky'
+
 function axisValue(sound: Sound, axis: Axis): string | number | null {
   return sound[axis]
 }
 
 function mergedClips(sound: Sound, published: Map<string, PublishedClip[]> | undefined): PublishedClip[] {
-  return published?.get(sound.pengim) ?? sound.clips
+  const live = published?.get(sound.pengim)
+  if (live) return live
+  // `sounds.json` (built dist/) already filters every key to primaries only
+  // (ADR-0029, same as every other consumer) — a clip reaching this fallback
+  // has no live take/primary data, but it's the one that made it to dist, so
+  // it's primary by construction.
+  return sound.clips.map((c) => ({ ...c, primary: true }))
 }
 
 function realClips(sound: Sound, published: Map<string, PublishedClip[]> | undefined): PublishedClip[] {
   return mergedClips(sound, published).filter((c) => !c.synthesis)
+}
+
+/** The clip flagged `primary: true` server-side — never assume array position, since a `--primary` reassignment (ADR-0029) can leave the primary anywhere in the group. Falls back to the first clip only as a last resort (e.g. no clip in an unexpected shape is flagged at all). */
+function primaryClip(clips: PublishedClip[]): PublishedClip | undefined {
+  return clips.find((c) => c.primary) ?? clips[0]
+}
+
+/** jky's own real (non-synthesis) clips at this syllable — the group the pool test and the "Same sound" reference both read from. */
+function targetSpeakerClips(sound: Sound, published: Map<string, PublishedClip[]> | undefined): PublishedClip[] {
+  return realClips(sound, published).filter((c) => c.speaker === TARGET_SPEAKER)
+}
+
+/**
+ * Needs a second session: jky has a first (primary) take at this syllable
+ * and no merged second one yet. Zero clips means no first session at all
+ * (not this UI's job, same as before); any non-primary clip means a human
+ * already merged a second take, so every clip found must be primary for the
+ * target to still be pickable.
+ */
+function needsSecondSession(sound: Sound, published: Map<string, PublishedClip[]> | undefined): boolean {
+  const clips = targetSpeakerClips(sound, published)
+  return clips.length > 0 && clips.every((c) => c.primary)
 }
 
 /** A common headword character using this syllable, for visual context alongside the audio — the same examples the Sounds tab shows. */
@@ -200,14 +247,13 @@ export function ElicitationView() {
 
   const bySound = useMemo(() => new Map((data?.sounds ?? []).map((s) => [s.pengim, s])), [data])
 
-  // Needs a second session: exactly one real (non-synthesis), *published*
-  // clip today — zero means no first session yet (not this UI's job), two
-  // or more means a second session is already merged. A staged-but-unmerged
+  // Needs a second session: see `needsSecondSession` — jky has a first
+  // (primary) take and no merged non-primary one yet. A staged-but-unmerged
   // take doesn't count either way, so a target stays pickable for further
   // takes until a human actually merges one.
   const queue = useMemo(() => {
     if (!data) return []
-    return data.sounds.filter((s) => realClips(s, published).length === 1)
+    return data.sounds.filter((s) => needsSecondSession(s, published))
   }, [data, published])
 
   const axisCounts = useMemo(() => buildAxisStagedCounts(data?.sounds ?? [], staged), [data, staged])
@@ -228,7 +274,7 @@ export function ElicitationView() {
 
   const current = currentPengim ? (bySound.get(currentPengim) ?? null) : null
 
-  const sameSoundClip = current ? realClips(current, published)[0] : undefined
+  const sameSoundClip = current ? primaryClip(targetSpeakerClips(current, published)) : undefined
 
   // Picked once per target — deliberately keyed on `currentPengim` alone, not
   // on `current`/`data`/`published` object identity, so a re-render that
@@ -424,7 +470,7 @@ export function ElicitationView() {
                     <span className="elicitation-view__reference-samples">
                       {refs.map((ref) => {
                         const clips = realClips(ref, published)
-                        const clip = clips[0]!
+                        const clip = primaryClip(clips)!
                         const character = commonCharacter(ref)
                         return (
                           <span key={ref.pengim} className="elicitation-view__reference-clip">

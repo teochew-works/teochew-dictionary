@@ -6,6 +6,14 @@ export interface PublishedClip {
   speaker?: string
   /** Set when the clip is a re-rendering of a recording (ADR-0027); the play button labels it. */
   synthesis?: 'world-retune' | 'cross-splice'
+  /** Which take of this syllable by this speaker (ADR-0029) — absent means their first take. */
+  take?: number
+  /**
+   * Whether this is the one clip of its speaker's that leaves `data/` (ADR-0029) — computed
+   * server-side. `getStatus` always sets this explicitly; optional only so a plain `{ url }`
+   * literal (e.g. a staged, not-yet-merged take) still satisfies this type elsewhere in `web/`.
+   */
+  primary?: boolean
 }
 
 /** Duplicated from the server-side `StagedClip` — see `PublishedClip`'s comment above. */

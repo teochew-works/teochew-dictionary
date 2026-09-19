@@ -4,9 +4,10 @@ import { join } from 'node:path'
 
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 
+import { primaryClips } from '../src/audio/clip-cache.js'
 import { FEATURES_VERSION } from '../src/audio/features.js'
 import { synthesizeClips, type SynthJobClip } from '../src/audio/synthesize.js'
-import { DU2_FEATURES, RENDER_INFO } from './helpers/audio-fixtures.js'
+import { DU2_FEATURES, RENDER_INFO, audioTable, makeClipFixture } from './helpers/audio-fixtures.js'
 
 const TARGET = { contourHz: Array(20).fill(140), voicedMs: 450, onsetMs: null, rmsDb: -12.5 }
 
@@ -92,5 +93,28 @@ describe('synthesizeClips', () => {
         runResynth: (_s, _j, outPath) => writeFileSync(outPath, JSON.stringify({ version: 1, clips: {}, errors: {} })),
       }),
     ).toThrow(/version 1, expected 2/)
+  })
+})
+
+describe('audio:synthesize renders primaries only (ADR-0029)', () => {
+  const clip = makeClipFixture(`sha256:${'a'.repeat(64)}`)
+
+  it('excludes a non-primary take and a synthesis render from the clips it would render', () => {
+    const audio = audioTable({
+      du2: [
+        clip({ speaker: 'jky', primary: true }),
+        clip({ speaker: 'jky', take: 2, checksum: `sha256:${'b'.repeat(64)}` }),
+        clip({
+          speaker: 'jky-n',
+          synthesis: 'world-retune',
+          derivedFrom: `sha256:${'a'.repeat(64)}`,
+          confidence: 'medium',
+          checksum: `sha256:${'c'.repeat(64)}`,
+        }),
+      ],
+    })
+    const clips = primaryClips(audio)
+    expect(clips).toHaveLength(1)
+    expect(clips[0]!.clip).toMatchObject({ speaker: 'jky', primary: true })
   })
 })

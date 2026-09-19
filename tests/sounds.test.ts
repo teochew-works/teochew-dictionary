@@ -197,6 +197,33 @@ describe('buildSounds', () => {
     expect(a1.clips).toEqual([{ url: 'https://a.example/1.webm', cafUrl: 'https://a.example/1.caf' }])
   })
 
+  it('collapses a speaker\'s multiple takes to their one primary clip, but keeps a separate speaker\'s render (ADR-0029)', () => {
+    const audio: Audio = {
+      audio: { id: 'chaozhou', variety: 'chaozhou' },
+      clips: {
+        a1: [
+          { url: 'https://a.example/1', confidence: 'medium', sources: ['x'], checksum: `sha256:${'a'.repeat(64)}`, speaker: 'jky', primary: true },
+          { url: 'https://a.example/2', confidence: 'high', sources: ['x'], checksum: `sha256:${'b'.repeat(64)}`, speaker: 'jky', take: 2 },
+          { url: 'https://a.example/3', confidence: 'high', sources: ['x'], checksum: `sha256:${'c'.repeat(64)}`, speaker: 'jky', take: 3 },
+          {
+            url: 'https://a.example/1n',
+            confidence: 'medium',
+            sources: ['x'],
+            checksum: `sha256:${'d'.repeat(64)}`,
+            speaker: 'jky-n',
+            synthesis: 'world-retune',
+            derivedFrom: `sha256:${'a'.repeat(64)}`,
+          },
+        ],
+      },
+    }
+    const data = buildSounds([entry({ id: 'a', headword: '阿', readings: [{ pengim: 'a1', variety: 'chaozhou' }] })], undefined, audio)
+    expect(data.sounds.find((s) => s.pengim === 'a1')!.clips).toEqual([
+      { url: 'https://a.example/1', speaker: 'jky' },
+      { url: 'https://a.example/1n', speaker: 'jky-n', synthesis: 'world-retune' },
+    ])
+  })
+
   it('gives a syllable with no recorded clips an empty list, not undefined', () => {
     const data = buildSounds(
       [entry({ id: 'a', headword: '阿', readings: [{ pengim: 'a1', variety: 'chaozhou' }] })],

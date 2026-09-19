@@ -12,14 +12,40 @@ import type { LocalRecordingProposal } from './local-recording-types.js'
  * staged there by the Sounds tab's record control.
  */
 
-/** Resolves a CLI arg to a staged proposal: a numeric index, or an exact `pengim` match. */
-export function resolveLocalRecordingProposal(
+export interface ResolveProposalsOptions {
+  /**
+   * Narrows a `pengim` match to proposals staged for this variety. The CLI
+   * passes its `--variety`, so `--all` for a syllable recorded in two
+   * varieties cannot sweep both into one variety's manifest. A numeric index
+   * deliberately ignores this — merging a proposal into a variety other than
+   * the one it was staged under is a judgment call a human is allowed to make
+   * (REVIEW.md § 16), and naming the index is how they make it explicitly.
+   */
+  variety?: string
+}
+
+/**
+ * Resolves a CLI arg to the staged proposals it names: a numeric index (at
+ * most one), or an exact `pengim` match — *every* proposal for that syllable,
+ * in staging order, not just the first.
+ *
+ * Plural since ADR-0029 (issue #290): the elicitation UI stages several takes
+ * of one target under one pengim key, and a `.find()` here made every take but
+ * the earliest unreachable by name. The caller decides what to do with more
+ * than one — `src/cli/local-recording-merge.ts` merges them all under `--all`,
+ * and otherwise lists them and asks which.
+ */
+export function resolveLocalRecordingProposals(
   arg: string,
   proposals: LocalRecordingProposal[],
-): LocalRecordingProposal | undefined {
+  options: ResolveProposalsOptions = {},
+): LocalRecordingProposal[] {
   const asIndex = Number(arg)
-  if (Number.isInteger(asIndex) && String(asIndex) === arg) return proposals[asIndex]
-  return proposals.find((p) => p.pengim === arg)
+  if (Number.isInteger(asIndex) && String(asIndex) === arg) {
+    const proposal = proposals[asIndex]
+    return proposal ? [proposal] : []
+  }
+  return proposals.filter((p) => p.pengim === arg && (options.variety === undefined || p.variety === options.variety))
 }
 
 /**
@@ -27,10 +53,12 @@ export function resolveLocalRecordingProposal(
  * speaker, keeping the local file's own extension. Takes a proposal with
  * `speaker` resolved — `LocalRecordingProposal` itself leaves it optional
  * (issue #288's deferred-assignment case) but re-hosting only ever happens
- * once a speaker id has been decided.
+ * once a speaker id has been decided. `take` (ADR-0029, issue #290) is not
+ * on `LocalRecordingProposal` either — the merge step decides it — so it is
+ * passed in explicitly, same as `lingualibre-rehost.ts`'s `assetFilename`.
  */
-export function assetFilename(proposal: LocalRecordingProposal & { speaker: string }): string {
-  return slugAssetFilename(proposal.pengim, proposal.speaker, proposal.localPath)
+export function assetFilename(proposal: LocalRecordingProposal & { speaker: string }, take?: number): string {
+  return slugAssetFilename(proposal.pengim, proposal.speaker, proposal.localPath, take)
 }
 
 export interface LocalRehostOptions {
@@ -40,8 +68,18 @@ export interface LocalRehostOptions {
   headObject?: UploadBytesToS3Options['headObject']
   /** Injectable for tests — avoids a real AWS call. */
   putObject?: UploadBytesToS3Options['putObject']
-  /** Forwarded to `uploadBytesToS3` — allows replacing this speaker's own stale clip at this key (issue #134). */
-  overwrite?: boolean
+  /**
+   * Bytes the caller has already read. `mergeLocalRecording` hashes before it
+   * uploads (a clip's identity is its checksum, ADR-0029), so it has them in
+   * hand by the time it gets here and passing them saves re-reading the file.
+   */
+  bytes?: Buffer
+  /**
+   * Which take of this speaker's recording of this key this is (ADR-0029,
+   * issue #290) — forwarded to `assetFilename`/`audioAssetPath`. Absent
+   * means the speaker's first take at this key, reproducing today's path.
+   */
+  take?: number
 }
 
 export interface LocalRehostResult {
@@ -50,20 +88,25 @@ export interface LocalRehostResult {
   checksum: string
 }
 
+/** `proposal`'s raw bytes, read the way `rehostLocalRecording` would — so a caller can checksum them before deciding to publish them (ADR-0029). */
+export function localRecordingBytes(proposal: LocalRecordingProposal, options: LocalRehostOptions = {}): Buffer {
+  const { readBytes = (path: string) => readFileSync(path), bytes } = options
+  return bytes ?? readBytes(proposal.localPath)
+}
+
 export async function rehostLocalRecording(
   proposal: LocalRecordingProposal & { speaker: string },
   options: LocalRehostOptions = {},
 ): Promise<LocalRehostResult> {
-  const { readBytes = (path) => readFileSync(path), headObject, putObject, overwrite } = options
+  const { headObject, putObject, take } = options
 
-  const bytes = readBytes(proposal.localPath)
-  const filename = assetFilename(proposal)
+  const bytes = localRecordingBytes(proposal, options)
+  const filename = assetFilename(proposal, take)
   const { url, checksum } = await uploadBytesToS3(bytes, {
     key: audioClipKey(filename),
     contentType: contentTypeForFilename(filename),
     headObject,
     putObject,
-    overwrite,
   })
 
   return { proposal, url, checksum }

@@ -44,12 +44,21 @@ function stubMedia() {
 }
 
 /**
- * Only `TARGET` needs a second session (exactly one real, published clip);
- * every other fixture sound has either two real clips (already has one) so
- * it can still serve as an axis reference without itself entering the
- * queue. `TARGET`'s axis-mates are each engineered to match exactly one of
- * initial/rime/tone, so every reference group has exactly one candidate —
- * no `Math.random` mocking needed anywhere in this file.
+ * Only `TARGET` needs a second session (jky has a lone clip and no merged
+ * second take yet, via the dist-fallback path since no test here overrides
+ * `published` for it). Every other fixture sound's clip has no `speaker` at
+ * all — it has *some* real recording, so it's a valid axis reference, but no
+ * clip attributed to jky, so it's automatically out of jky's pool without
+ * needing a live `published` payload to explain why. `TARGET`'s axis-mates
+ * are each engineered to match exactly one of initial/rime/tone, so every
+ * reference group has exactly one candidate — no `Math.random` mocking
+ * needed anywhere in this file.
+ *
+ * A handful of dedicated tests below exercise the live take/primary payload
+ * directly (`secondSessionDone`) — that's the only way to represent "jky's
+ * second take is already merged", since `sounds.json`'s dist-fallback clips
+ * (used here) already collapse to one clip per speaker (ADR-0029) and so
+ * can never themselves show a merged non-primary take.
  */
 const TARGET = {
   pengim: 'da1',
@@ -62,6 +71,20 @@ const TARGET = {
   clips: [{ url: 'target.wav', speaker: 'jky' }],
 }
 
+/**
+ * A `published` entry (ADR-0029) representing a syllable where jky's second
+ * take has already been merged: the original take (now non-primary) is
+ * listed *before* the take a human later re-designated primary via
+ * `--primary` — array order doesn't track which one is primary, so any code
+ * that assumes `[0]` is primary gets this one wrong.
+ */
+function secondSessionDone(pengim: string) {
+  return [
+    { url: `${pengim}-take1.wav`, speaker: 'jky', primary: false },
+    { url: `${pengim}-take2.wav`, speaker: 'jky', take: 2, primary: true },
+  ]
+}
+
 const SAME_INITIAL = {
   pengim: 'do2',
   ipa: 'do⁵³',
@@ -70,10 +93,7 @@ const SAME_INITIAL = {
   tone: 2,
   occurrences: 1,
   examples: [],
-  clips: [
-    { url: 'ref-initial-a.wav', speaker: 'jky' },
-    { url: 'ref-initial-b.wav', speaker: 'jky-2' },
-  ],
+  clips: [{ url: 'ref-initial.wav' }],
 }
 
 const SAME_RIME = {
@@ -84,10 +104,7 @@ const SAME_RIME = {
   tone: 5,
   occurrences: 1,
   examples: [],
-  clips: [
-    { url: 'ref-rime-a.wav', speaker: 'jky' },
-    { url: 'ref-rime-b.wav', speaker: 'jky-2' },
-  ],
+  clips: [{ url: 'ref-rime.wav' }],
 }
 
 const SAME_TONE = {
@@ -98,10 +115,7 @@ const SAME_TONE = {
   tone: 1,
   occurrences: 1,
   examples: [],
-  clips: [
-    { url: 'ref-tone-a.wav', speaker: 'jky' },
-    { url: 'ref-tone-b.wav', speaker: 'jky-2' },
-  ],
+  clips: [{ url: 'ref-tone.wav' }],
 }
 
 const ALREADY_DONE = {
@@ -112,10 +126,7 @@ const ALREADY_DONE = {
   tone: 8,
   occurrences: 1,
   examples: [],
-  clips: [
-    { url: 'done-a.wav', speaker: 'jky' },
-    { url: 'done-b.wav', speaker: 'jky-2' },
-  ],
+  clips: [{ url: 'done.wav' }],
 }
 
 const NO_RECORDING = {
@@ -134,7 +145,7 @@ const FULL_FIXTURE: SoundsData = {
   sounds: [TARGET, SAME_INITIAL, SAME_RIME, SAME_TONE, ALREADY_DONE, NO_RECORDING],
 }
 
-/** Four same-initial candidates (more than MAX_REFERENCES_PER_AXIS), each with its own example character. */
+/** Four same-initial candidates (more than MAX_REFERENCES_PER_AXIS), each with its own example character. No `speaker`, same reasoning as `SAME_INITIAL` above. */
 const MANY_SAME_INITIAL = ['do2', 'do3', 'do4', 'do5'].map((pengim, i) => ({
   pengim,
   ipa: `${pengim}-ipa`,
@@ -143,13 +154,13 @@ const MANY_SAME_INITIAL = ['do2', 'do3', 'do4', 'do5'].map((pengim, i) => ({
   tone: i + 2,
   occurrences: 1,
   examples: [{ headword: `字${i}`, pengim, gloss: 'x' }],
-  clips: [
-    { url: `${pengim}-a.wav`, speaker: 'jky' },
-    { url: `${pengim}-b.wav`, speaker: 'jky-2' },
-  ],
+  clips: [{ url: `${pengim}.wav` }],
 }))
 
-function stubFetch(data: SoundsData, opts: { onSave?: (body: unknown) => void } = {}) {
+function stubFetch(
+  data: SoundsData,
+  opts: { onSave?: (body: unknown) => void; published?: Record<string, unknown[]> } = {},
+) {
   vi.stubGlobal(
     'fetch',
     vi.fn((input: RequestInfo | URL, init?: RequestInit) => {
@@ -159,7 +170,9 @@ function stubFetch(data: SoundsData, opts: { onSave?: (body: unknown) => void } 
           opts.onSave?.(JSON.parse(init.body as string))
           return Promise.resolve(new Response(JSON.stringify({ ok: true }), { status: 200 }))
         }
-        return Promise.resolve(new Response(JSON.stringify({ published: {}, pending: [], staged: {} }), { status: 200 }))
+        return Promise.resolve(
+          new Response(JSON.stringify({ published: opts.published ?? {}, pending: [], staged: {} }), { status: 200 }),
+        )
       }
       return Promise.resolve(new Response(JSON.stringify(data), { status: 200 }))
     }),
@@ -167,7 +180,11 @@ function stubFetch(data: SoundsData, opts: { onSave?: (body: unknown) => void } 
 }
 
 /** Simulates a live staging store: DELETE actually removes from the map returned by the next GET. */
-function stubFetchWithStaged(data: SoundsData, initialStaged: Record<string, { localPath: string; recordedDate: string }[]>) {
+function stubFetchWithStaged(
+  data: SoundsData,
+  initialStaged: Record<string, { localPath: string; recordedDate: string }[]>,
+  published: Record<string, unknown[]> = {},
+) {
   const staged = structuredClone(initialStaged)
   const fetchMock = vi.fn((input: RequestInfo | URL, init?: RequestInit) => {
     const url = typeof input === 'string' ? input : input.toString()
@@ -178,7 +195,7 @@ function stubFetchWithStaged(data: SoundsData, initialStaged: Record<string, { l
         for (const key of Object.keys(staged)) staged[key] = staged[key]!.filter((t) => t.localPath !== localPath)
         return Promise.resolve(new Response(JSON.stringify({ ok: true }), { status: 200 }))
       }
-      return Promise.resolve(new Response(JSON.stringify({ published: {}, pending: [], staged }), { status: 200 }))
+      return Promise.resolve(new Response(JSON.stringify({ published, pending: [], staged }), { status: 200 }))
     }
     return Promise.resolve(new Response(JSON.stringify(data), { status: 200 }))
   })
@@ -262,6 +279,53 @@ describe('ElicitationView', () => {
     render(<ElicitationView />)
 
     expect(await screen.findByText('Nothing left to record right now.')).toBeInTheDocument()
+  })
+
+  it('excludes a syllable from the pool once jky has a merged (non-primary) second take (ADR-0029)', async () => {
+    const DONE = { pengim: 'ku3', ipa: 'ku³³', initial: 'k', rime: 'u', tone: 3, occurrences: 1, examples: [], clips: [] }
+    stubFetch({ variety: 'chaozhou', sounds: [DONE] }, { published: { ku3: secondSessionDone('ku3') } })
+    render(<ElicitationView />)
+
+    expect(await screen.findByText('Nothing left to record right now.')).toBeInTheDocument()
+  })
+
+  it('keeps a syllable with a lone jky (primary) clip in the pool', async () => {
+    const ALONE = { pengim: 'ta1', ipa: 'ta³³', initial: 't', rime: 'a', tone: 1, occurrences: 1, examples: [], clips: [] }
+    stubFetch({ variety: 'chaozhou', sounds: [ALONE] }, { published: { ta1: [{ url: 'a.wav', speaker: 'jky', primary: true }] } })
+    render(<ElicitationView />)
+
+    expect(await screen.findByText('ta1')).toBeInTheDocument()
+  })
+
+  it('plays the primary take as an axis reference clip, even when it is not first in the list', async () => {
+    const played: string[] = []
+    vi.spyOn(HTMLMediaElement.prototype, 'play').mockImplementation(function (this: HTMLMediaElement) {
+      played.push(this.src)
+      return Promise.resolve()
+    })
+    vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {})
+    // REF shares TARGET's initial ('d') and is the only "Same initial" candidate.
+    const ref = { pengim: 'do2', ipa: 'do⁵³', initial: 'd', rime: 'o', tone: 2, occurrences: 1, examples: [], clips: [] }
+    stubFetch(
+      { variety: 'chaozhou', sounds: [TARGET, ref] },
+      {
+        published: {
+          da1: [{ url: 'target.wav', speaker: 'jky', primary: true }],
+          do2: [
+            { url: 'https://x.test/do2-take1.wav', speaker: 'jky', primary: false },
+            { url: 'https://x.test/do2-take2.wav', speaker: 'jky', take: 2, primary: true },
+          ],
+        },
+      },
+    )
+    render(<ElicitationView />)
+
+    await screen.findByText('da1')
+    const playButton = screen.getByLabelText('Play reference recording do2')
+    fireEvent.click(playButton)
+
+    expect(played.some((src) => src.includes('do2-take2.wav'))).toBe(true)
+    expect(played.some((src) => src.includes('do2-take1.wav'))).toBe(false)
   })
 
   it('a syllable with a staged-but-unmerged take stays in the pool and shows its staged takes', async () => {
@@ -448,13 +512,10 @@ describe('ElicitationView', () => {
       tone,
       occurrences: 1,
       examples: [],
-      // Two real clips (already has a second, merged session) so these never
-      // compete with COMMON/RARE for the pick themselves — they only exist
-      // to carry a staged take that inflates COMMON's axis-staged counts.
-      clips: [
-        { url: `${pengim}-a.wav`, speaker: 'jky' },
-        { url: `${pengim}-b.wav`, speaker: 'jky-2' },
-      ],
+      // No jky clip at all, so these are automatically out of jky's pool and
+      // never compete with COMMON/RARE for the pick themselves — they only
+      // exist to carry a staged take that inflates COMMON's axis-staged counts.
+      clips: [],
     })
     // Three other staged syllables share COMMON's initial, three share its
     // rime, three share its tone — none share anything with RARE. Neither

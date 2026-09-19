@@ -633,6 +633,17 @@ others stay put)". True of the *data shape*, and true within GitHub — but the 
 other host validates today. Moving hosting means widening that regex first, which is a
 `@teochew/core` change and carries a version bump ([ADR-0024](../../docs/adrs/adr-0024.md)).
 
+**Update 2026-09-19 (issue #290): a speaker's clips at one key are no longer
+capped at one, and the asset path changes shape accordingly,
+[ADR-0029](../../docs/adrs/adr-0029.md).** `checksum`, not `speaker`, is now a
+clip's identity — the same bytes merged twice is a no-op, and a genuinely new
+recording from a speaker who already has a clip at the key is appended as a
+further `take` rather than replacing it. `audioAssetPath` grows an optional
+`take` argument: absent (every clip that predates this) still resolves to
+`<speaker>/<pengim>.<ext>`; a second-or-later take gets its own immutable
+`<speaker>/<pengim>-take<N>.<ext>`, so a re-recording never overwrites a
+previous take's bytes.
+
 ## 13. Audio licensing and speaker consent · issue #33
 
 > Recorded as [ADR-0015](../../docs/adrs/adr-0015.md).
@@ -979,7 +990,9 @@ licence-classification fix first.** `npm run merge:lingualibre --
 re-hosts a staged proposal and writes it straight into
 `data/phonology/audio/<variety>.yaml`, replacing the old hand-copy step —
 still per-clip and human-driven, `--variety` has no default, and an existing
-key is left alone unless `--force` is passed.
+key is left alone unless `--force` is passed. *(Update 2026-09-19, issue
+#290: `--force` no longer exists — see § 17's update below, which covers both
+merge CLIs.)*
 
 Running the importer for real against the live Commons category staged 164
 proposals from the 2,138 files it found (127 single-syllable, 37
@@ -1111,14 +1124,38 @@ logic is factored out into a shared `uploadBytesToRelease` helper that both
 the existing fetch-from-Commons path and a new
 `src/importers/local-recording-rehost.ts` (read-from-disk) call, rather than
 duplicating it. `src/importers/local-recording-merge.ts` mirrors
-`mergeLinguaLibreClip` otherwise: refuses to overwrite an existing key
-without `--force`, builds a clip with `sources: ['teochew-dictionary-audio']`
+`mergeLinguaLibreClip` otherwise: builds a clip with
+`sources: ['teochew-dictionary-audio']`
 and `confidence: 'high'` (a direct first-party recording, not scraped
 metadata of uncertain fit), validates with `audioSchema.parse`, writes back
 with the same comment-preserving `parseDocument`/`setIn` mutation. On
 success it deletes the now-redundant staged proposal and local file — once
 the bytes live on a Release, the staged copy is only a liability (a second,
 driftable copy of the same clip).
+
+**Update 2026-09-19 (issue #290): both merges append takes instead of
+refusing or overwriting, [ADR-0029](../../docs/adrs/adr-0029.md).** #288's
+elicitation UI lets a contributor stage several takes of one target before a
+human picks one, which broke the assumption underneath the paragraph above —
+"refuses to overwrite an existing key without `--force`" meant at most one
+take per speaker could ever be published, and `--force` was real data loss (a
+merged-then-cleaned-up staged take is not recoverable, and the overwritten S3
+object needed a manual CloudFront invalidation before the new bytes served).
+Both `mergeLocalRecording` and `mergeLinguaLibreClip` now key on `checksum`:
+identical bytes already at the key are a no-op; a new recording from a
+speaker with nothing there yet is appended exactly as before; a new recording
+from a speaker who already has a clip is appended as `take: N+1`,
+training-only, and `--primary` is what designates it the one that plays
+instead. `--force` is retired from both CLIs — there is nothing left for it
+to authorise. Because each take gets its own immutable asset path, a
+re-recording no longer needs a CloudFront invalidation (that requirement
+remains for an ADR-0027 `-n` render, which `merge:resynth --force` still
+re-publishes in place). `npm run merge:local-recording -- <pengim>
+--variety=<id> --all [--primary=<index-or-localPath>]` merges every staged
+take of a syllable in one call, which is exactly #288's multi-take case —
+pass `--dry-run` first to preview the disposition/take/primary of each take
+with no upload, manifest write or staging cleanup, useful given the 414 takes
+already staged when this landed.
 
 ## Individual entries flagged `needs_review`
 

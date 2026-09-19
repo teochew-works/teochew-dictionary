@@ -1,4 +1,5 @@
 import { readAudioStaging } from '../importers/audio-staging.js'
+import { describeTake } from '../importers/clip-takes.js'
 import { mergeLinguaLibreClip, resolveProposal } from '../importers/lingualibre-merge.js'
 import { CONFIDENCE } from '@teochew/core'
 import { listVarieties } from '../phonology/load.js'
@@ -6,17 +7,24 @@ import { dim, green, red } from './colour.js'
 
 /**
  * `npm run merge:lingualibre -- <index-or-commonsTitle> --variety=<id>
- *   [--confidence=high|medium|low] [--force]`
+ *   [--confidence=high|medium|low] [--primary]`
  *
  * Re-hosts one staged Lingua Libre proposal to S3 (issue #270; see
  * ../importers/lingualibre-merge.js for the actual logic) and writes it into
  * data/phonology/audio/<variety>.yaml. `--variety` has no default: judging
  * accent fit stays a human call, per data/phonology/REVIEW.md § 16.
+ *
+ * Re-running this is safe and silent: identical bytes already at the key are
+ * reported as already merged and exit 0. A *different* recording from a
+ * speaker who already has a clip there is appended as a further take, and
+ * `--primary` is how you say the new one is the take that should be published
+ * — without it the existing clip keeps playing (ADR-0029, issue #290).
+ * `--force` is gone with the overwrite it used to authorise.
  */
 
 const USAGE =
   'usage: npm run merge:lingualibre -- <proposal-index-or-commonsTitle> --variety=<id> ' +
-  '[--confidence=high|medium|low] [--force]'
+  '[--confidence=high|medium|low] [--primary]'
 
 const args = process.argv.slice(2)
 const flags = args.filter((a) => a.startsWith('--'))
@@ -39,7 +47,15 @@ function boolFlag(name: string): boolean {
 
 const variety = flagValue('variety')
 const confidenceFlag = flagValue('confidence')
-const force = boolFlag('force')
+const primary = boolFlag('primary')
+
+if (flags.some((f) => f === '--force' || f.startsWith('--force='))) {
+  console.error(
+    '--force was retired with ADR-0029 (issue #290): a merge can no longer overwrite anything. Identical bytes ' +
+      'are a no-op, and a new recording appends as its own take — pass --primary if it should be the published one.',
+  )
+  process.exit(2)
+}
 
 if (positional.length !== 1 || !variety) {
   console.error(USAGE)
@@ -74,11 +90,21 @@ try {
   const result = await mergeLinguaLibreClip(proposal, {
     variety,
     confidence: confidenceFlag as (typeof CONFIDENCE)[number] | undefined,
-    force,
+    primary,
   })
-  console.log(`${green('✓')} merged '${result.key}' → ${result.bucket}.${JSON.stringify(result.key)} in ${result.path}`)
-  console.log(`  source: ${result.sourceId}`)
-  console.log(dim('  run `npm run validate` to confirm.'))
+
+  if (result.disposition === 'already-merged') {
+    // Exit 0, not an error: the clip a human asked for is published, which is
+    // the outcome they wanted. Re-running a merge must be free of surprises.
+    console.log(`${green('✓')} '${result.key}' is already merged — these exact bytes are at ${result.url}`)
+    console.log(dim('  nothing uploaded, nothing written.'))
+  } else {
+    console.log(`${green('✓')} merged '${result.key}' → ${result.bucket}.${JSON.stringify(result.key)} in ${result.path}`)
+    console.log(`  source: ${result.sourceId}`)
+    console.log(`  ${describeTake(result)}`)
+    console.log(`  url: ${result.url}`)
+    console.log(dim('  run `npm run validate` to confirm.'))
+  }
 } catch (e) {
   console.error(`${red('✗')} ${(e as Error).message}`)
   process.exit(1)

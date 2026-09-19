@@ -22,8 +22,8 @@ const clip = (overrides: Partial<Audio['clips'][string][number]> = {}) => ({
  * tested against, so a fixture's expected key can never drift from what
  * production code actually computes.
  */
-function s3Key(key: string, speaker: string | undefined, ext: string): string {
-  return audioClipKey(audioAssetPathForClip(key, speaker, ext))
+function s3Key(key: string, speaker: string | undefined, ext: string, take?: number): string {
+  return audioClipKey(audioAssetPathForClip(key, speaker, ext, take))
 }
 
 function objectAt(key: string): BucketObject {
@@ -116,6 +116,17 @@ describe('collectReferencedKeys', () => {
     // by a GitHub url, as stranded.
     expect(collectReferencedKeys([preMigration])).toEqual(new Set([key]))
     expect(collectReferencedKeys([postMigration])).toEqual(new Set([key]))
+  })
+
+  it('folds take into the referenced key so a second take is not treated as stranded (ADR-0029, issue #290)', () => {
+    const firstTakeKey = s3Key('a1', 'jky', '.webm')
+    const secondTakeKey = s3Key('a1', 'jky', '.webm', 2)
+    const audio = audioTable('chaozhou', {
+      a1: [clip({ speaker: 'jky' }), clip({ speaker: 'jky', take: 2 })],
+    })
+
+    expect(collectReferencedKeys([audio])).toEqual(new Set([firstTakeKey, secondTakeKey]))
+    expect(secondTakeKey).not.toBe(firstTakeKey)
   })
 
   it('combines every variety at once — cross-variety safety (issue #241)', async () => {

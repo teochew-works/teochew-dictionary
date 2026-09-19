@@ -13,6 +13,7 @@ import {
   loadSandhi,
   loadVariety,
 } from '../phonology/load.js'
+import { isPrimary } from '../audio/primary.js'
 import { tryParsePengim } from '../phonology/syllable.js'
 import { toIpa } from '../phonology/ipa.js'
 import { toPoj } from '../phonology/poj.js'
@@ -494,18 +495,14 @@ function stripDiacritics(s: string): string {
 }
 
 /**
- * Defense-in-depth against a hand-edit bypassing `mergeLocalRecording`'s/
- * `mergeLinguaLibreClip`'s per-speaker uniqueness check (issue #134): flags
- * more than one clip from the same named speaker under one `clips`/
- * `wordClips` key. Clips with no `speaker` at all are never compared —
- * there's no identity to dedupe against.
- */
-/**
- * A synthesised clip's `derivedFrom` must name a *recording* at the same
- * key (ADR-0027): the render is of this syllable, from this syllable's own
- * clip, and a chain of renders-of-renders would launder provenance. The
- * schema already pairs `derivedFrom` with `synthesis` and caps confidence;
- * this is the cross-clip half it cannot see.
+ * A synthesised clip's `derivedFrom` must name a *primary recording* at the
+ * same key (ADR-0027, ADR-0029): the render is of this syllable, from this
+ * syllable's own clip, a chain of renders-of-renders would launder
+ * provenance, and since only primaries leave `data/` a render of a
+ * training-only take would publish a tier with nothing published underneath
+ * it. The schema already pairs `derivedFrom` with `synthesis`, caps
+ * confidence, and keeps `take`/`primary` off a render; this is the cross-clip
+ * half it cannot see.
  */
 function checkDerivedFrom(file: string, clips: AudioClip[], path: string): Issue[] {
   const issues: Issue[] = []
@@ -516,22 +513,107 @@ function checkDerivedFrom(file: string, clips: AudioClip[], path: string): Issue
       issues.push(err(file, `derivedFrom names no clip at this key — a render must derive from a recording of the same syllable`, undefined, `${path}[${i}].derivedFrom`))
     } else if (source.synthesis !== undefined) {
       issues.push(err(file, `derivedFrom names a synthesised clip — a render must derive from a recording, not from another render`, undefined, `${path}[${i}].derivedFrom`))
+    } else if (!isPrimary(source, clips)) {
+      issues.push(err(file, `derivedFrom names a non-primary take — a render must derive from the take its speaker publishes (ADR-0029)`, undefined, `${path}[${i}].derivedFrom`))
     }
   })
   return issues
 }
 
-function checkDuplicateSpeakers(file: string, key: string, clips: AudioClip[], path: string): Issue[] {
-  const seen = new Set<string>()
-  const dupes = new Set<string>()
-  for (const clip of clips) {
-    if (!clip.speaker) continue
-    if (seen.has(clip.speaker)) dupes.add(clip.speaker)
-    seen.add(clip.speaker)
+/** `take` is absent on a speaker's first take at a key (ADR-0029). */
+function takeNumber(clip: AudioClip): number {
+  return clip.take ?? 1
+}
+
+/**
+ * The cross-clip half of ADR-0029, and defense-in-depth against a hand-edit
+ * bypassing the merge CLIs (issue #134's rule, refined rather than reverted).
+ * Under one `clips`/`wordClips` key:
+ *
+ * 1. `(speaker, take)` is unique — an absent `take` counts as 1, so the old
+ *    one-clip-per-speaker error is just this rule with no takes assigned.
+ * 2. A speaker's group of more than one *recording* carries exactly one
+ *    `primary: true`. Neither none nor several can be resolved by guessing:
+ *    which take a learner hears is a human decision, and the alternative
+ *    (lowest take wins) makes deleting the primary silently promote another.
+ *    A lone clip is implicitly primary and may say so redundantly.
+ * 3. `checksum` is unique — the same bytes merged twice, under one speaker or
+ *    two. Identity of a clip is its checksum (ADR-0029), so this is the one
+ *    rule that looks across speakers.
+ *
+ * Clips with no `speaker` at all are never grouped — there's no identity to
+ * compare against — but they are still checked for duplicate bytes. Synthesis
+ * renders take part in (1) and (3) but not (2): the schema keeps `take` and
+ * `primary` off them entirely, so a duplicated render fails as two take 1s.
+ */
+function checkTakeGroups(file: string, key: string, clips: AudioClip[], path: string): Issue[] {
+  const issues: Issue[] = []
+
+  const groups = new Map<string, { clip: AudioClip; index: number }[]>()
+  clips.forEach((clip, index) => {
+    if (!clip.speaker) return
+    const group = groups.get(clip.speaker) ?? []
+    group.push({ clip, index })
+    groups.set(clip.speaker, group)
+  })
+
+  for (const [speaker, group] of groups) {
+    const seenTakes = new Set<number>()
+    for (const { clip, index } of group) {
+      const take = takeNumber(clip)
+      if (seenTakes.has(take)) {
+        issues.push(
+          err(
+            file,
+            `'${key}' has more than one take ${take} from speaker '${speaker}' — (speaker, take) must be unique within a key, and an absent \`take\` is take 1`,
+            undefined,
+            `${path}[${index}]`,
+          ),
+        )
+      }
+      seenTakes.add(take)
+    }
+
+    const recordings = group.filter(({ clip }) => clip.synthesis === undefined)
+    if (recordings.length < 2) continue
+    const primaries = recordings.filter(({ clip }) => clip.primary === true)
+    if (primaries.length === 0) {
+      issues.push(
+        err(
+          file,
+          `'${key}' has ${recordings.length} clips from speaker '${speaker}' and none marked \`primary: true\` — mark the take that should be published`,
+          undefined,
+          path,
+        ),
+      )
+    } else if (primaries.length > 1) {
+      issues.push(
+        err(
+          file,
+          `'${key}' has ${primaries.length} clips from speaker '${speaker}' marked \`primary: true\` (${primaries.map(({ index }) => `${path}[${index}]`).join(', ')}) — exactly one take is published`,
+          undefined,
+          path,
+        ),
+      )
+    }
   }
-  return [...dupes].map((speaker) =>
-    err(file, `'${key}' has more than one clip from speaker '${speaker}'`, undefined, path),
-  )
+
+  const seenChecksums = new Set<string>()
+  clips.forEach((clip, index) => {
+    if (seenChecksums.has(clip.checksum)) {
+      issues.push(
+        err(
+          file,
+          `'${key}' has more than one clip with checksum ${clip.checksum} — the same bytes merged twice`,
+          undefined,
+          `${path}[${index}]`,
+        ),
+      )
+    }
+    seenChecksums.add(clip.checksum)
+  })
+
+  return issues
 }
 
 export function checkAudio(
@@ -559,7 +641,7 @@ export function checkAudio(
       issues.push(err(file, `'${syllable}' is not a legal Peng'im syllable`, undefined, path))
     }
 
-    issues.push(...checkDuplicateSpeakers(file, syllable, clips, path))
+    issues.push(...checkTakeGroups(file, syllable, clips, path))
     issues.push(...checkDerivedFrom(file, clips, path))
 
     clips.forEach((clip, i) => {
@@ -627,7 +709,11 @@ export function checkAudio(
       }
     }
 
-    issues.push(...checkDuplicateSpeakers(file, key, clips, path))
+    // Same cross-clip rules as `clips` — a whole-word key can hold takes and
+    // a render just as a syllable key can, and `checkDerivedFrom` skipping
+    // `wordClips` was an oversight, not a decision.
+    issues.push(...checkTakeGroups(file, key, clips, path))
+    issues.push(...checkDerivedFrom(file, clips, path))
 
     clips.forEach((clip, i) => {
       const clipPath = `${path}[${i}]`

@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 
 import {
   audioAssetPath,
+  audioAssetPathForClip,
   audioClipKey,
   contentTypeForFilename,
   uploadBytesToS3,
@@ -55,6 +56,33 @@ describe('audioAssetPath', () => {
 
   it('gives two different speakers of the same syllable two different paths', () => {
     expect(audioAssetPath('dio5', 'alice', '.wav')).not.toBe(audioAssetPath('dio5', 'bob', '.wav'))
+  })
+
+  it('reproduces today\'s path unchanged when take is absent (regression, ADR-0029)', () => {
+    expect(audioAssetPath('dio5', 'jky', '.webm')).toBe('jky/dio5.webm')
+    expect(audioAssetPath('dio5', 'jky', '.webm', undefined)).toBe('jky/dio5.webm')
+  })
+
+  it('appends -take<N> before the extension when take is present (ADR-0029, issue #290)', () => {
+    expect(audioAssetPath('dio5', 'jky', '.webm', 2)).toBe('jky/dio5-take2.webm')
+  })
+
+  it('still transliterates ê in a take path', () => {
+    expect(audioAssetPath('sêg4', 'jky', '.webm', 3)).toBe('jky/sexg4-take3.webm')
+  })
+})
+
+describe('audioAssetPathForClip', () => {
+  it('threads take through to audioAssetPath', () => {
+    expect(audioAssetPathForClip('dio5', 'jky', '.webm', 2)).toBe('jky/dio5-take2.webm')
+  })
+
+  it('reproduces today\'s path unchanged when take is absent (regression)', () => {
+    expect(audioAssetPathForClip('dio5', 'jky', '.webm')).toBe('jky/dio5.webm')
+  })
+
+  it('falls back to the unknown-speaker directory with take still applied', () => {
+    expect(audioAssetPathForClip('dio5', undefined, '.webm', 2)).toBe('unknown-speaker/dio5-take2.webm')
   })
 })
 

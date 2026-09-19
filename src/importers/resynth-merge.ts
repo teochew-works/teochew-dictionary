@@ -6,6 +6,7 @@ import { parseDocument } from 'yaml'
 import type { Audio, AudioClip } from '@teochew/core'
 import { checksumHex } from '../audio/clip-cache.js'
 import type { ClipFeatures } from '../audio/features.js'
+import { isPrimary } from '../audio/primary.js'
 import type { RenderInfo } from '../audio/synthesize.js'
 import type { RenderCheck } from '../audio/targets.js'
 import { AUDIO_SYNTH_DIR } from '../paths.js'
@@ -24,6 +25,12 @@ import { cleanupTmpDir, resolveTmpDir } from './types.js'
  * `synthesis`/`derivedFrom` set, confidence `medium`, the dedicated source
  * id, and trim bounds written directly since the render placed its own
  * pad. The recording is never touched.
+ *
+ * The source a render's `derivedFrom` names must be its speaker's *primary*
+ * take (ADR-0029, `isPrimary` in `../audio/primary.js`) — a render of a
+ * training-only take is refused, since `audio:synthesize` never produces one
+ * (it renders primaries only) and a stale report naming one is a sign the
+ * manifest changed underneath it.
  *
  * The `-n` speaker directory keeps the tier's objects segregated from the
  * recordings' own (`jky/…`) without any tag/release bookkeeping — S3 has no
@@ -171,9 +178,15 @@ export async function mergeResynth(
     }
 
     const clips = audio.clips[key] ?? []
-    const sourceIndex = clips.findIndex((c) => checksumHex(c.checksum) === render.id && c.synthesis === undefined)
+    const sourceIndex = clips.findIndex((c) => checksumHex(c.checksum) === render.id && isPrimary(c, clips))
     if (sourceIndex === -1) {
-      result.errors.push({ key, message: `render derives from ${render.id.slice(0, 12)}…, which is not a recording at '${key}' — re-run audio:synthesize` })
+      const nonPrimaryMatch = clips.some((c) => checksumHex(c.checksum) === render.id && c.synthesis === undefined)
+      result.errors.push({
+        key,
+        message: nonPrimaryMatch
+          ? `render derives from ${render.id.slice(0, 12)}…, a non-primary take at '${key}' — merge:resynth only publishes renders of a speaker's primary take (ADR-0029)`
+          : `render derives from ${render.id.slice(0, 12)}…, which is not a recording at '${key}' — re-run audio:synthesize`,
+      })
       continue
     }
     const source = clips[sourceIndex]!

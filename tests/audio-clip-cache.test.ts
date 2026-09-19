@@ -5,7 +5,7 @@ import { join } from 'node:path'
 
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 
-import { checksumHex, clipCachePath, ensureClipCached, manifestClips } from '../src/audio/clip-cache.js'
+import { checksumHex, clipCachePath, ensureClipCached, manifestClips, primaryClips } from '../src/audio/clip-cache.js'
 import { audioTable, makeClipFixture } from './helpers/audio-fixtures.js'
 
 const BYTES = Buffer.from('real webm bytes')
@@ -89,5 +89,22 @@ describe('clip cache', () => {
   it('walks syllable clips in manifest order and skips wordClips', () => {
     const audio = audioTable({ du2: clip(), dua7: [clip(), clip({ speaker: 'b' })] }, { 'du2 dua7': clip() })
     expect(manifestClips(audio).map((c) => c.path)).toEqual(['clips.du2[0]', 'clips.dua7[0]', 'clips.dua7[1]'])
+  })
+
+  it('primaryClips keeps one clip per real speaker and excludes every synthesis render (ADR-0029)', () => {
+    const jkyPrimary = clip({ speaker: 'jky', primary: true })
+    const jkyTake2 = clip({ speaker: 'jky', take: 2, checksum: `sha256:${'b'.repeat(64)}` })
+    const jkyTake3 = clip({ speaker: 'jky', take: 3, checksum: `sha256:${'c'.repeat(64)}` })
+    const jkyRender = clip({
+      speaker: 'jky-n',
+      synthesis: 'world-retune',
+      derivedFrom: jkyPrimary.checksum,
+      confidence: 'medium',
+      checksum: `sha256:${'d'.repeat(64)}`,
+    })
+    const abc = clip({ speaker: 'abc', checksum: `sha256:${'e'.repeat(64)}` })
+    const audio = audioTable({ dio5: [jkyPrimary, jkyTake2, jkyTake3, jkyRender, abc] })
+
+    expect(primaryClips(audio).map((c) => c.clip)).toEqual([jkyPrimary, abc])
   })
 })

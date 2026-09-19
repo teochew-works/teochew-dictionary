@@ -31,7 +31,7 @@ export function resolveProposal(arg: string, proposals: AudioClipProposal[]): Au
 }
 
 /**
- * A plain-ASCII `<speaker>/<pengim-key><ext>` relative path (see
+ * A plain-ASCII `<speaker>/<pengim-key>[-take<N>]<ext>` relative path (see
  * `audioAssetPath`, s3-upload.ts), keeping whatever extension
  * `sourcePathOrUrl` ends in (falling back to `.wav`). Shared by
  * `assetFilename` below and `local-recording-rehost.ts`'s equivalent, which
@@ -41,16 +41,26 @@ export function resolveProposal(arg: string, proposals: AudioClipProposal[]): Au
  * `mergeLinguaLibreClip`/`mergeLocalRecording` explicitly let a distinct
  * speaker's clip append at an already-used pengim key with no flag needed —
  * a path keyed on `key` alone would let a second speaker's upload silently
- * collide with (or get refused against) the first speaker's clip.
+ * collide with (or get refused against) the first speaker's clip. `take`
+ * (ADR-0029, issue #290) further disambiguates a second recording by the
+ * *same* speaker at the same key; absent means the speaker's first take and
+ * reproduces today's path unchanged.
  */
-export function slugAssetFilename(key: string, speaker: string, sourcePathOrUrl: string): string {
+export function slugAssetFilename(key: string, speaker: string, sourcePathOrUrl: string, take?: number): string {
   const ext = sourcePathOrUrl.match(/\.[a-zA-Z0-9]+$/u)?.[0]?.toLowerCase() ?? '.wav'
-  return audioAssetPath(key, speaker, ext)
+  return audioAssetPath(key, speaker, ext, take)
 }
 
-/** A plain-ASCII, hyphenated asset filename derived from the proposal's pengim key and speaker, keeping the source's own extension. */
-export function assetFilename(proposal: AudioClipProposal): string {
-  return slugAssetFilename(proposal.pengim, proposal.speaker, proposal.commonsUrl)
+/**
+ * A plain-ASCII, hyphenated asset filename derived from the proposal's
+ * pengim key and speaker, keeping the source's own extension. `take`
+ * (ADR-0029, issue #290) is not part of `AudioClipProposal` — a staged
+ * proposal predates the merge decision that assigns it — so the merge step
+ * passes it in explicitly once it has decided this is a second take rather
+ * than the speaker's first.
+ */
+export function assetFilename(proposal: AudioClipProposal, take?: number): string {
+  return slugAssetFilename(proposal.pengim, proposal.speaker, proposal.commonsUrl, take)
 }
 
 /**
@@ -69,10 +79,25 @@ async function defaultFetchBytes(url: string): Promise<Buffer> {
 export interface RehostOptions {
   /** Injectable for tests — avoids a real network call. */
   fetchBytes?: (url: string) => Promise<Buffer>
+  /**
+   * Bytes the caller has already fetched. `mergeLinguaLibreClip` hashes before
+   * it uploads (a clip's identity is its checksum, ADR-0029), so it has them
+   * in hand by the time it gets here — passing them avoids a second download
+   * of the very bytes the checksum was taken from.
+   */
+  bytes?: Buffer
   /** Injectable for tests — avoids a real AWS call. */
   headObject?: UploadBytesToS3Options['headObject']
   /** Injectable for tests — avoids a real AWS call. */
   putObject?: UploadBytesToS3Options['putObject']
+  /**
+   * Which take of this speaker's recording of this key this is (ADR-0029,
+   * issue #290) — forwarded to `assetFilename`/`audioAssetPath`. Absent
+   * means the speaker's first take at this key, reproducing today's path.
+   * Not on `AudioClipProposal` itself: the merge step, not the staged
+   * proposal, decides the take number, so it is threaded in here.
+   */
+  take?: number
 }
 
 export interface RehostResult {
@@ -81,11 +106,17 @@ export interface RehostResult {
   checksum: string
 }
 
-export async function rehostClip(proposal: AudioClipProposal, options: RehostOptions = {}): Promise<RehostResult> {
-  const { fetchBytes = defaultFetchBytes, headObject, putObject } = options
+/** `proposal`'s bytes, fetched the way `rehostClip` would — so a caller can checksum them before deciding to publish them (ADR-0029). */
+export async function linguaLibreClipBytes(proposal: AudioClipProposal, options: RehostOptions = {}): Promise<Buffer> {
+  const { fetchBytes = defaultFetchBytes, bytes } = options
+  return bytes ?? (await fetchBytes(proposal.commonsUrl))
+}
 
-  const bytes = await fetchBytes(proposal.commonsUrl)
-  const filename = assetFilename(proposal)
+export async function rehostClip(proposal: AudioClipProposal, options: RehostOptions = {}): Promise<RehostResult> {
+  const { headObject, putObject, take } = options
+
+  const bytes = await linguaLibreClipBytes(proposal, options)
+  const filename = assetFilename(proposal, take)
   const { url, checksum } = await uploadBytesToS3(bytes, {
     key: audioClipKey(filename),
     contentType: contentTypeForFilename(filename),

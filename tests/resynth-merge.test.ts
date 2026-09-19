@@ -196,6 +196,23 @@ describe('mergeResynth', () => {
     expect(result.merged.map((m) => m.key)).toEqual(['dua7'])
   })
 
+  it('refuses a render whose derivedFrom names a non-primary take (ADR-0029)', async () => {
+    const take2Sha = 'c'.repeat(64)
+    const audio: Audio = {
+      audio: { id: 'chaozhou', variety: 'chaozhou' },
+      clips: {
+        du2: [
+          recording({ speaker: 'jky', primary: true }),
+          recording({ speaker: 'jky', take: 2, checksum: `sha256:${take2Sha}` }),
+        ],
+      },
+    }
+    writeManifest(audio)
+    const result = await mergeResynth(manifest, audio, report({ du2: renderOf(take2Sha) }), { ...fakeTools(dir), write: true })
+    expect(result.errors).toEqual([{ key: 'du2', message: expect.stringContaining('non-primary take') }])
+    expect(result.merged).toEqual([])
+  })
+
   it('honours --only and --skip-caf', async () => {
     const audio: Audio = { audio: { id: 'chaozhou', variety: 'chaozhou' }, clips: { du2: [recording()], dua7: [recording({ checksum: `sha256:${OTHER_SHA}` })] } }
     writeManifest(audio)

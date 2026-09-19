@@ -5,7 +5,7 @@ import { join } from 'node:path'
 
 import { describe, expect, it } from 'vitest'
 
-import { assetFilename, rehostLocalRecording, resolveLocalRecordingProposal } from '../src/importers/local-recording-rehost.js'
+import { assetFilename, rehostLocalRecording, resolveLocalRecordingProposals } from '../src/importers/local-recording-rehost.js'
 import type { LocalRecordingProposal } from '../src/importers/local-recording-types.js'
 import type { PutObjectParams } from '../src/importers/s3-upload.js'
 
@@ -26,23 +26,50 @@ function sha256(bytes: Buffer): string {
   return `sha256:${createHash('sha256').update(bytes).digest('hex')}`
 }
 
-describe('resolveLocalRecordingProposal', () => {
+describe('resolveLocalRecordingProposals', () => {
   const proposals = [proposal({ pengim: 'dio5' }), proposal({ pengim: 'ang1' })]
 
-  it('resolves a numeric index', () => {
-    expect(resolveLocalRecordingProposal('1', proposals)).toBe(proposals[1])
+  it('resolves a numeric index to exactly that one proposal', () => {
+    expect(resolveLocalRecordingProposals('1', proposals)).toEqual([proposals[1]])
   })
 
   it('resolves an exact pengim match', () => {
-    expect(resolveLocalRecordingProposal('ang1', proposals)).toBe(proposals[1])
+    expect(resolveLocalRecordingProposals('ang1', proposals)).toEqual([proposals[1]])
   })
 
-  it('returns undefined for an out-of-range index', () => {
-    expect(resolveLocalRecordingProposal('5', proposals)).toBeUndefined()
+  it('returns every staged take of one pengim, in staging order (ADR-0029, issue #290)', () => {
+    // The elicitation UI (issue #288) stages several takes of one target under
+    // one key — a `.find()` here made every take but the earliest unreachable.
+    const takes = [
+      proposal({ pengim: 'ku3', localPath: 'a.webm' }),
+      proposal({ pengim: 'ang1' }),
+      proposal({ pengim: 'ku3', localPath: 'b.webm' }),
+      proposal({ pengim: 'ku3', localPath: 'c.webm' }),
+    ]
+    expect(resolveLocalRecordingProposals('ku3', takes).map((p) => p.localPath)).toEqual(['a.webm', 'b.webm', 'c.webm'])
   })
 
-  it('returns undefined for an unmatched pengim', () => {
-    expect(resolveLocalRecordingProposal('bhue2', proposals)).toBeUndefined()
+  it('narrows a pengim match to one variety when asked', () => {
+    const takes = [
+      proposal({ pengim: 'ku3', variety: 'chaozhou', localPath: 'cz.webm' }),
+      proposal({ pengim: 'ku3', variety: 'shantou', localPath: 'st.webm' }),
+    ]
+    expect(resolveLocalRecordingProposals('ku3', takes, { variety: 'chaozhou' }).map((p) => p.localPath)).toEqual([
+      'cz.webm',
+    ])
+  })
+
+  it('ignores the variety narrowing for an explicit index — merging across varieties stays a human call', () => {
+    const takes = [proposal({ pengim: 'ku3', variety: 'shantou', localPath: 'st.webm' })]
+    expect(resolveLocalRecordingProposals('0', takes, { variety: 'chaozhou' })).toEqual([takes[0]])
+  })
+
+  it('returns nothing for an out-of-range index', () => {
+    expect(resolveLocalRecordingProposals('5', proposals)).toEqual([])
+  })
+
+  it('returns nothing for an unmatched pengim', () => {
+    expect(resolveLocalRecordingProposals('bhue2', proposals)).toEqual([])
   })
 })
 
@@ -77,6 +104,14 @@ describe('assetFilename', () => {
     const a = assetFilename(proposal({ pengim: 'dio5', speaker: 'speaker-1' }))
     const b = assetFilename(proposal({ pengim: 'dio5', speaker: 'speaker-2' }))
     expect(a).not.toBe(b)
+  })
+
+  it('reproduces today\'s path unchanged when take is absent (regression, ADR-0029)', () => {
+    expect(assetFilename(proposal({ pengim: 'dio5', speaker: 'speaker-1' }))).toBe('speaker-1/dio5.wav')
+  })
+
+  it('appends -take<N> when take is given (ADR-0029, issue #290)', () => {
+    expect(assetFilename(proposal({ pengim: 'dio5', speaker: 'speaker-1' }), 2)).toBe('speaker-1/dio5-take2.wav')
   })
 })
 
@@ -123,6 +158,23 @@ describe('rehostLocalRecording', () => {
         putObject: async () => {},
       }),
     ).rejects.toThrow(/refusing to overwrite/)
+  })
+
+  it('uploads a second take to its own -take<N> key (ADR-0029, issue #290)', async () => {
+    const bytes = Buffer.from('fake audio bytes')
+    const putCalls: PutObjectParams[] = []
+
+    const result = await rehostLocalRecording(proposal(), {
+      take: 2,
+      readBytes: () => bytes,
+      headObject: async () => undefined,
+      putObject: async (params) => {
+        putCalls.push(params)
+      },
+    })
+
+    expect(putCalls[0]?.key).toBe('teochew/clips/speaker-1/dio5-take2.wav')
+    expect(result.url).toBe('https://daidb11aas52z.cloudfront.net/teochew/clips/speaker-1/dio5-take2.wav')
   })
 
   it('defaults to reading proposal.localPath from disk when readBytes is not injected', async () => {

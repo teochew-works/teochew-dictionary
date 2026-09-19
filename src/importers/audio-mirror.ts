@@ -178,6 +178,11 @@ function speakerFor(audio: Audio, target: MirrorTarget): string | undefined {
   return audio[target.bucket]?.[target.pengimKey]?.[target.index]?.speaker
 }
 
+/** The `take` of the one clip a target came from (ADR-0029, issue #290) — same lookup shape as `speakerFor`, and for the same reason. */
+function takeFor(audio: Audio, target: MirrorTarget): number | undefined {
+  return audio[target.bucket]?.[target.pengimKey]?.[target.index]?.take
+}
+
 /**
  * The S3 key `mirrorAudioToS3` uploads (or would upload) `target` to —
  * derived structurally from the clip's pengim key, speaker and extension,
@@ -189,9 +194,20 @@ function speakerFor(audio: Audio, target: MirrorTarget): string | undefined {
  * object mirroring just wrote already sits at exactly this key. Comparing
  * reclaim's referenced set against manifest URLs instead of this derived key
  * made every freshly-mirrored object look stranded and delete-eligible.
+ *
+ * Includes the clip's `take` (ADR-0029, issue #290), same as `speaker` —
+ * a second take by the same speaker at the same key lands at its own,
+ * distinct S3 object, so this must fold `take` in too or every take past
+ * the first would look stranded against the one path this function derived
+ * for the pair.
  */
 export function expectedS3KeyFor(audio: Audio, target: MirrorTarget): string {
-  const path = audioAssetPathForClip(target.pengimKey, speakerFor(audio, target), extensionOf(target.sourceUrl))
+  const path = audioAssetPathForClip(
+    target.pengimKey,
+    speakerFor(audio, target),
+    extensionOf(target.sourceUrl),
+    takeFor(audio, target),
+  )
   return audioClipKey(path)
 }
 

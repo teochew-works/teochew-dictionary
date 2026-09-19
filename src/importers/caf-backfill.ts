@@ -21,12 +21,13 @@ import { encodeCaf, type EncodeCafOptions } from './caf-encode.js'
  * comment-bearing manifests, not hand-tuned entry files, so mutate-in-place
  * is the right technique here, not byte-offset splicing).
  *
- * The CAF key is derived from the source clip's own pengim key and speaker
- * (`audioAssetPath`, s3-upload.ts) — the same `<speaker>/<pengim-key>`
- * directory `lingualibre-rehost.ts`'s `slugAssetFilename` uses for the
- * source clip itself, so a CAF and its source webm always land as siblings
- * regardless of which host (GitHub Release, pre-migration; or CloudFront)
- * the source `url` currently points at. S3 has no per-"folder"
+ * The CAF key is derived from the source clip's own pengim key, speaker and
+ * `take` (`audioAssetPath`, s3-upload.ts; ADR-0029, issue #290) — the same
+ * `<speaker>/<pengim-key>[-take<N>]` directory `lingualibre-rehost.ts`'s
+ * `slugAssetFilename` uses for the source clip itself, so a CAF and its
+ * source webm always land as siblings regardless of which host (GitHub
+ * Release, pre-migration; or CloudFront) the source `url` currently points
+ * at. S3 has no per-"folder"
  * object-count cap the way a GitHub Release does, so unlike the
  * release-tag rollover this module used to need (issue #228/#233/#239,
  * removed in issue #270), there is nothing to allocate.
@@ -47,12 +48,15 @@ export interface BackfillCafOpusOptions extends EncodeCafOptions {
   write?: boolean
   /**
    * Forwarded to `uploadBytesToS3` — off by default. The CAF key is derived
-   * purely from the source clip's pengim key and speaker
-   * (`audioAssetPathForClip`), independent of which upload epoch produced
-   * the source `.webm`, so a legitimate re-recording by the same speaker at
-   * the same key (a `--force` re-merge, issue #134) re-encodes to different
-   * bytes at an already-occupied key — `uploadBytesToS3` refuses that
-   * overwrite unless this is set. Only set it once the existing CAF at that
+   * from the source clip's pengim key, speaker and `take`
+   * (`audioAssetPathForClip`; ADR-0029, issue #290 gave every take its own
+   * path, so a same-speaker re-recording now lands at a fresh key on its
+   * own rather than needing this), independent of which upload epoch
+   * produced the source `.webm`. This remains here for the one case `take`
+   * doesn't cover: re-encoding the *same* take in place — a CAF produced by
+   * an older encoder setting, or one whose source clip was itself replaced in
+   * place (ADR-0027's `-n` renders, which `merge:resynth --force` still
+   * re-publishes at a fixed path). Only set it once the existing CAF at that
    * key is confirmed stale, the same caution `audio-mirror-to-s3 --overwrite`
    * asks for.
    */
@@ -144,7 +148,7 @@ export async function backfillCafOpus(
           continue
         }
 
-        const cafPath = audioAssetPathForClip(key, clip.speaker, '.caf')
+        const cafPath = audioAssetPathForClip(key, clip.speaker, '.caf', clip.take)
         const { url: cafUrl, checksum: cafChecksum } = await uploadBytesToS3(cafBytes, {
           key: audioClipKey(cafPath),
           contentType: contentTypeForFilename(cafPath),

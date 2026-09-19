@@ -1,4 +1,4 @@
-import { clipCachePath, ensureClipCached, manifestClips, type ManifestClip } from '../audio/clip-cache.js'
+import { clipCachePath, ensureClipCached, primaryClips, type ManifestClip } from '../audio/clip-cache.js'
 import {
   DEFAULT_ANALYSIS_PARAMS,
   emptyFeaturesCache,
@@ -18,10 +18,16 @@ import { bold, dim, green, red, yellow } from './colour.js'
  * `npm run audio:grade -- [--variety=<id>] [--refresh] [--z=2.5] [--outliers=40]`
  * (issue #259)
  *
- * Caches every published clip locally, extracts per-clip features through
+ * Caches every published *primary* clip locally (ADR-0029's `primaryClips`,
+ * `src/audio/clip-cache.ts`), extracts per-clip features through
  * tools/resynth/, and prints the corpus's per-tone / per-coda / per-initial
  * statistics plus the clips furthest from them — the ones worth a listen,
- * and the targets `audio:synthesize` renders toward.
+ * and the targets `audio:synthesize` renders toward. `primaryClips` also
+ * excludes `synthesis` renders, so a published `-n` render no longer
+ * self-referentially feeds the very statistics it was rendered toward — a
+ * bug that predates ADR-0029 (see the audio pipeline post-mortem in
+ * `local-recording-overwrite-bugs-2026-09`), fixed here as a side effect of
+ * switching to the primaries-only view.
  *
  * Network-touching (it fills `.cache/audio-clips/`), so deliberately kept out
  * of `npm run check` like `audio:verify`. Incremental after the first run:
@@ -87,7 +93,7 @@ let failures = 0
 
 for (const id of varieties) {
   const audio = loadAudio(id)
-  const clips = manifestClips(audio)
+  const clips = primaryClips(audio)
   console.log(bold(`${id}: ${clips.length} clip${clips.length === 1 ? '' : 's'}`))
 
   // 1. Bytes. One fetch per clip ever, keyed by checksum.

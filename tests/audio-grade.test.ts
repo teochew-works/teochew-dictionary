@@ -1,8 +1,10 @@
 import { describe, expect, it } from 'vitest'
 
+import { primaryClips } from '../src/audio/clip-cache.js'
 import type { ClipFeatures } from '../src/audio/features.js'
 import { codaClass, computeCorpusStats, gradeClip, gradeCorpus, hzToSemitones, median, spread, toneCodaKey } from '../src/audio/grade.js'
 import { parseSyllable } from '../src/phonology/syllable.js'
+import { audioTable, makeClipFixture } from './helpers/audio-fixtures.js'
 
 function features(overrides: Partial<ClipFeatures> & { f0Hz?: number | null } = {}): ClipFeatures {
   const { f0Hz = 130, ...rest } = overrides
@@ -174,6 +176,33 @@ describe('gradeCorpus', () => {
     const inputs = [...group(1, 10, 140, 650), like(1, 143, 650, 'mild')]
     expect(gradeCorpus(inputs, { outlierZ: 2.5 }).clips.find((c) => c.id === 'mild')!.flags).toEqual([])
     expect(gradeCorpus(inputs, { outlierZ: 1 }).clips.find((c) => c.id === 'mild')!.flags.length).toBeGreaterThan(0)
+  })
+})
+
+describe('audio:grade pools primaries only (ADR-0029, bug 3)', () => {
+  const clip = makeClipFixture(`sha256:${'a'.repeat(64)}`)
+
+  it('excludes a non-primary take and a synthesis render from the clip set audio:grade builds its corpus from', () => {
+    const audio = audioTable({
+      dio5: [
+        clip({ speaker: 'jky', primary: true }),
+        clip({ speaker: 'jky', take: 2, checksum: `sha256:${'b'.repeat(64)}` }),
+        clip({
+          speaker: 'jky-n',
+          synthesis: 'world-retune',
+          derivedFrom: `sha256:${'a'.repeat(64)}`,
+          confidence: 'medium',
+          checksum: `sha256:${'c'.repeat(64)}`,
+        }),
+      ],
+    })
+    const clips = primaryClips(audio)
+    // Before ADR-0029, `manifestClips` fed all three into gradeCorpus — the
+    // training take double-counted the same speaker, and the `-n` render
+    // self-referentially fed the very statistics it was rendered toward.
+    expect(clips).toHaveLength(1)
+    expect(clips[0]!.clip.speaker).toBe('jky')
+    expect(clips[0]!.clip.synthesis).toBeUndefined()
   })
 })
 

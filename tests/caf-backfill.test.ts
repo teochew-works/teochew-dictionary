@@ -125,6 +125,19 @@ describe('backfillCafOpus', () => {
     expect(tools.putCalls.map((p) => p.key)).toEqual(['teochew/clips/alice/dio5.caf', 'teochew/clips/bob/dio5.caf'])
   })
 
+  it('gives a second take of the same speaker/key its own -take<N> CAF key (ADR-0029, issue #290)', async () => {
+    const path = join(dir, 'chaozhou.yaml')
+    const table = audioTable({
+      dio5: [clip(), clip({ take: 2, url: WEBM_URL_2 })],
+    })
+    writeFileSync(path, stringify(table))
+    const tools = fakeTools(mkdtempSync(join(tmpdir(), 'caf-backfill-tmp-')))
+
+    await backfillCafOpus(path, table, { write: true, ...tools })
+
+    expect(tools.putCalls.map((p) => p.key)).toEqual(['teochew/clips/jky/dio5.caf', 'teochew/clips/jky/dio5-take2.caf'])
+  })
+
   it('falls back to a placeholder speaker directory when a clip has none (a hand-edited entry)', async () => {
     const path = join(dir, 'chaozhou.yaml')
     const noSpeaker = clip({ speaker: undefined })

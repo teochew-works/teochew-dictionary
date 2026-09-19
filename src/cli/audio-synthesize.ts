@@ -1,7 +1,7 @@
 import { existsSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-import { checksumHex, clipCachePath, manifestClips } from '../audio/clip-cache.js'
+import { checksumHex, clipCachePath, primaryClips } from '../audio/clip-cache.js'
 import { loadFeaturesCache, type ClipFeatures } from '../audio/features.js'
 import { computeCorpusStats, type CorpusStats } from '../audio/grade.js'
 import { synthesizeClips, type RenderedClip, type SynthJobClip } from '../audio/synthesize.js'
@@ -92,12 +92,14 @@ let failures = 0
 
 for (const variety of varieties) {
   const audio = loadAudio(variety)
-  // Recordings only: a synthesized clip is never a source to derive from or
+  // Primaries only (ADR-0029's `primaryClips`, which also excludes every
+  // `synthesis` render): a non-primary take is training-only and must never
+  // be rendered, and a synthesized clip is never a source to derive from or
   // a corpus yardstick to synthesize toward — including it would let a key
   // that already has a published `<speaker>-n` render collide with its own
   // recording under the same manifest key, and self-referentially skew the
   // per-tone/coda/initial statistics toward whatever synthesis already did.
-  const clips = manifestClips(audio).filter((entry) => entry.clip.synthesis === undefined)
+  const clips = primaryClips(audio)
   console.log(bold(`${variety}: ${clips.length} clip${clips.length === 1 ? '' : 's'}`))
 
   // Yardsticks come from the whole corpus, whatever --only selects.
