@@ -2,14 +2,14 @@ import { readLocalRecordingStaging } from '../importers/local-recording-staging.
 import { describeTake } from '../importers/clip-takes.js'
 import { mergeLocalRecording, resolveLocalRecordingProposals } from '../importers/local-recording-merge.js'
 import type { LocalRecordingProposal } from '../importers/local-recording-types.js'
-import { CONFIDENCE } from '@teochew/core'
+import { CONFIDENCE, type AudioClip } from '@teochew/core'
 import { listVarieties } from '../phonology/load.js'
 import { dim, green, red } from './colour.js'
 
 /**
  * `npm run merge:local-recording -- <index-or-pengim> --variety=<id>
  *   [--confidence=high|medium|low] [--speaker=<id>] [--all]
- *   [--primary[=<index-or-localPath>]]`
+ *   [--primary[=<index-or-localPath>]] [--dry-run]`
  *
  * Re-hosts staged local-recording proposals to S3 (issue #270; see
  * ../importers/local-recording-merge.js for the actual logic) and writes them
@@ -33,11 +33,23 @@ import { dim, green, red } from './colour.js'
  *
  * `--force` is gone with ADR-0029: identical bytes are a no-op, and different
  * bytes get their own immutable asset path, so there is nothing to overwrite.
+ *
+ * `--dry-run` runs the same hashing and `planTakeMerge` decision a real merge
+ * would — so the printed disposition, take and primary are exactly what a
+ * real run would produce — but uploads nothing, writes nothing to the
+ * manifest, and leaves staging untouched. Unlike `merge:resynth` and the
+ * `backfill:*` scripts, this merge writes by default: `--dry-run` is opt-in,
+ * not the other way around, since a single-clip merge is not a batch
+ * backfill. For an `--all` batch, later takes are previewed against the
+ * earlier ones in the same batch as if they had already been appended
+ * (`MergeLocalRecordingOptions.existingListOverride`/`result.simulatedList`
+ * in ../importers/local-recording-merge.js), so a preview shows take 2, 3,
+ * 4, … rather than take 2 four times.
  */
 
 const USAGE =
   'usage: npm run merge:local-recording -- <proposal-index-or-pengim> --variety=<id> ' +
-  '[--confidence=high|medium|low] [--speaker=<id>] [--all] [--primary[=<index-or-localPath>]]'
+  '[--confidence=high|medium|low] [--speaker=<id>] [--all] [--primary[=<index-or-localPath>]] [--dry-run]'
 
 const args = process.argv.slice(2)
 const flags = args.filter((a) => a.startsWith('--'))
@@ -69,6 +81,7 @@ const primaryValue = flagValue('primary')
 const primaryBoolean = primaryValue === 'true' || primaryValue === 'false'
 const primaryTarget = primaryBoolean ? undefined : primaryValue
 const primaryBare = flags.includes('--primary') || primaryValue === 'true'
+const dryRun = boolFlag('dry-run')
 
 if (flagGiven('force')) {
   console.error(
@@ -172,6 +185,12 @@ function currentIndex(proposal: LocalRecordingProposal): number | undefined {
   return index === -1 ? undefined : index
 }
 
+// A dry run writes nothing, so nothing on disk reflects the earlier
+// proposals in this batch — each call's `simulatedList` is threaded into the
+// next one's `existingListOverride` so a `--all` preview reports take
+// 2, 3, 4, … rather than take 2 four times (see the header comment).
+let simulatedList: AudioClip[] | undefined
+
 for (const proposal of matches) {
   const resolvedProposal = proposal.speaker ? proposal : { ...proposal, speaker: speakerFlag! }
 
@@ -183,7 +202,10 @@ for (const proposal of matches) {
       // designates whichever of a batch it named.
       primary: primaryProposal ? primaryProposal === proposal : primaryBare && primaryTarget === undefined,
       proposalIndex: currentIndex(proposal),
+      dryRun,
+      existingListOverride: simulatedList,
     })
+    simulatedList = result.simulatedList ?? simulatedList
 
     if (result.disposition === 'already-merged') {
       // Exit 0, not an error: the clip is published, which is the outcome the
@@ -191,7 +213,9 @@ for (const proposal of matches) {
       console.log(`${green('✓')} '${result.key}' is already merged — these exact bytes are at ${result.url}`)
       console.log(dim('  nothing uploaded, nothing written.'))
     } else {
-      console.log(`${green('✓')} merged '${result.key}' → clips.${JSON.stringify(result.key)} in ${result.path}`)
+      console.log(
+        `${green('✓')} ${dryRun ? 'would merge' : 'merged'} '${result.key}' → clips.${JSON.stringify(result.key)} in ${result.path}`,
+      )
       console.log(`  ${describeTake(result)}`)
       console.log(`  url: ${result.url}`)
     }
@@ -201,4 +225,5 @@ for (const proposal of matches) {
   }
 }
 
-console.log(dim('  run `npm run validate` to confirm.'))
+if (dryRun) console.log(dim('  dry run — omit --dry-run to upload the asset(s) and update the manifest.'))
+else console.log(dim('  run `npm run validate` to confirm.'))

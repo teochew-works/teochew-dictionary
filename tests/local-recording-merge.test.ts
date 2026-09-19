@@ -9,7 +9,7 @@ import { audioSchema, GITHUB_REPO, type AudioClip, type Source } from '@teochew/
 import { mergeLocalRecording } from '../src/importers/local-recording-merge.js'
 import { appendLocalRecordingProposal, readLocalRecordingStaging } from '../src/importers/local-recording-staging.js'
 import type { LocalRecordingProposal } from '../src/importers/local-recording-types.js'
-import type { PutObjectParams } from '../src/importers/s3-upload.js'
+import { checksumBytes, type PutObjectParams } from '../src/importers/s3-upload.js'
 import { checkAudio } from '../src/validate/index.js'
 
 const CDN = 'https://daidb11aas52z.cloudfront.net/teochew/clips'
@@ -420,6 +420,188 @@ describe('mergeLocalRecording', () => {
         new Set(['dio5']),
       )
       expect(issues).toEqual([])
+    })
+  })
+
+  describe('--dry-run (issue #290: previewing the 414-take staging backlog)', () => {
+    let stagingDir: string
+
+    beforeEach(() => {
+      stagingDir = mkdtempSync(join(tmpdir(), 'local-recording-merge-dry-run-staging-'))
+    })
+
+    afterEach(() => {
+      rmSync(stagingDir, { recursive: true, force: true })
+    })
+
+    it('performs no putObject, leaves the manifest byte-identical, and leaves staging untouched', async () => {
+      const path = join(audioDir, 'chaozhou.yaml')
+      const manifest = stringify({
+        audio: { id: 'chaozhou', variety: 'chaozhou' },
+        clips: {
+          dio5: [existingClip({ url: `${CDN}/speaker-1/dio5.wav`, checksum: `sha256:${'a'.repeat(64)}` })],
+        },
+      })
+      writeFileSync(path, manifest)
+
+      const localAbsPath = join(rootDir, 'recordings/chaozhou/dio5.wav')
+      mkdirSync(join(rootDir, 'recordings/chaozhou'), { recursive: true })
+      writeFileSync(localAbsPath, 'a second take')
+
+      const p = proposal({ localPath: 'recordings/chaozhou/dio5.wav' })
+      appendLocalRecordingProposal(p, stagingDir)
+
+      const puts: PutObjectParams[] = []
+      const result = await mergeLocalRecording(p, {
+        variety: 'chaozhou',
+        audioDir,
+        rootDir,
+        stagingDir,
+        proposalIndex: 0,
+        dryRun: true,
+        readBytes: () => Buffer.from('a second take'),
+        headObject: async () => undefined,
+        putObject: async (params) => {
+          puts.push(params)
+        },
+      })
+
+      expect(puts).toEqual([])
+      expect(readFileSync(path, 'utf8')).toBe(manifest)
+      expect(readLocalRecordingStaging(stagingDir)?.proposals).toHaveLength(1)
+      expect(existsSync(localAbsPath)).toBe(true)
+      expect(result).toMatchObject({ disposition: 'appended-take', take: 2, primary: false })
+      expect(result.url).toBe(`${CDN}/speaker-1/dio5-take2.wav`)
+    })
+
+    it('returns the same disposition, take, primary, checksum and url a real merge would', async () => {
+      const path = join(audioDir, 'chaozhou.yaml')
+      const manifest = stringify({
+        audio: { id: 'chaozhou', variety: 'chaozhou' },
+        clips: {
+          dio5: [existingClip({ url: `${CDN}/speaker-1/dio5.wav`, checksum: `sha256:${'a'.repeat(64)}` })],
+        },
+      })
+      writeFileSync(path, manifest)
+
+      const base = {
+        variety: 'chaozhou',
+        audioDir,
+        rootDir,
+        readBytes: () => Buffer.from('a real second take'),
+        headObject: async () => undefined,
+        putObject: async () => {},
+      }
+
+      const dryResult = await mergeLocalRecording(proposal(), { ...base, dryRun: true })
+      // The dry run above must not have touched the manifest — otherwise the
+      // "real" merge below would be planning against the dry run's own effect.
+      expect(readFileSync(path, 'utf8')).toBe(manifest)
+
+      const realResult = await mergeLocalRecording(proposal(), base)
+
+      expect(dryResult).toMatchObject({
+        disposition: realResult.disposition,
+        take: realResult.take,
+        primary: realResult.primary,
+        checksum: realResult.checksum,
+      })
+      expect(dryResult.url).toBe(realResult.url)
+    })
+
+    it('reports already-merged and still cleans up nothing when the bytes are already published', async () => {
+      const existingChecksum = checksumBytes(Buffer.from('same bytes'))
+      const path = join(audioDir, 'chaozhou.yaml')
+      const manifest = stringify({
+        audio: { id: 'chaozhou', variety: 'chaozhou' },
+        clips: {
+          dio5: [existingClip({ url: `${CDN}/speaker-1/dio5.wav`, checksum: existingChecksum })],
+        },
+      })
+      writeFileSync(path, manifest)
+
+      const localAbsPath = join(rootDir, 'recordings/chaozhou/dio5.wav')
+      mkdirSync(join(rootDir, 'recordings/chaozhou'), { recursive: true })
+      writeFileSync(localAbsPath, 'same bytes')
+
+      const p = proposal({ localPath: 'recordings/chaozhou/dio5.wav' })
+      appendLocalRecordingProposal(p, stagingDir)
+
+      const result = await mergeLocalRecording(p, {
+        variety: 'chaozhou',
+        audioDir,
+        rootDir,
+        stagingDir,
+        proposalIndex: 0,
+        dryRun: true,
+        readBytes: () => Buffer.from('same bytes'),
+        headObject: async () => undefined,
+        putObject: async () => {
+          throw new Error('must not upload in a dry run')
+        },
+      })
+
+      expect(result).toMatchObject({ disposition: 'already-merged', take: 1, primary: true, url: `${CDN}/speaker-1/dio5.wav` })
+      expect(readFileSync(path, 'utf8')).toBe(manifest)
+      expect(readLocalRecordingStaging(stagingDir)?.proposals).toHaveLength(1)
+      expect(existsSync(localAbsPath)).toBe(true)
+    })
+
+    it('threads simulatedList across a batch so takes preview as 2, 3, 4 rather than repeating', async () => {
+      const path = join(audioDir, 'chaozhou.yaml')
+      writeFileSync(
+        path,
+        stringify({
+          audio: { id: 'chaozhou', variety: 'chaozhou' },
+          clips: {
+            dio5: [existingClip({ url: `${CDN}/speaker-1/dio5.wav`, checksum: `sha256:${'a'.repeat(64)}` })],
+          },
+        }),
+      )
+
+      let existingListOverride: AudioClip[] | undefined
+      const takes: number[] = []
+      for (const bytes of ['take two', 'take three', 'take four']) {
+        const result = await mergeLocalRecording(proposal(), {
+          variety: 'chaozhou',
+          audioDir,
+          rootDir,
+          dryRun: true,
+          existingListOverride,
+          readBytes: () => Buffer.from(bytes),
+          headObject: async () => undefined,
+          putObject: async () => {},
+        })
+        existingListOverride = result.simulatedList
+        takes.push(result.take)
+      }
+
+      expect(takes).toEqual([2, 3, 4])
+      // Nothing was ever written — the manifest still shows only the
+      // original clip the batch started from.
+      expect(parseYaml(readFileSync(path, 'utf8')).clips.dio5).toHaveLength(1)
+    })
+
+    it('previews takes 1, 2, 3 for a brand-new speaker with nothing published yet', async () => {
+      let existingListOverride: AudioClip[] | undefined
+      const takes: number[] = []
+      for (const bytes of ['a', 'b', 'c']) {
+        const result = await mergeLocalRecording(proposal({ speaker: 'new-speaker' }), {
+          variety: 'chaozhou',
+          audioDir,
+          rootDir,
+          dryRun: true,
+          existingListOverride,
+          readBytes: () => Buffer.from(bytes),
+          headObject: async () => undefined,
+          putObject: async () => {},
+        })
+        existingListOverride = result.simulatedList
+        takes.push(result.take)
+      }
+
+      expect(takes).toEqual([1, 2, 3])
+      expect(existsSync(join(audioDir, 'chaozhou.yaml'))).toBe(false)
     })
   })
 

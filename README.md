@@ -859,7 +859,7 @@ Once a clip is worth keeping:
 npm run merge:lingualibre -- <index-or-commonsTitle> --variety=<id>
 ```
 
-re-hosts it as a GitHub Release asset and writes it straight into
+re-hosts it to S3 behind CloudFront (issue #270, [ADR-0026](docs/adrs/adr-0026.md)) and writes it straight into
 `data/phonology/audio/<variety>.yaml` (`clips` or `wordClips`, per
 `syllableCount`) — `--variety` has no default, since judging accent fit stays
 a human call. Merging is idempotent by checksum: identical bytes already at
@@ -893,7 +893,9 @@ never overwrites the previous take's bytes — no CloudFront invalidation is
 needed for a recording merge any more (still needed for an `-n` render
 re-published by `merge:resynth --force`). `npm run merge:local-recording --
 <pengim> --variety=<id> --all [--primary=<index-or-localPath>]` merges every
-staged take of a syllable in one go, the elicitation UI's (#288) usual case.
+staged take of a syllable in one go, the elicitation UI's (#288) usual case —
+pass `--dry-run` first to preview the disposition/take/primary each staged
+take would get, with no upload, manifest write or staging cleanup.
 
 A clip's `sources` cites whichever of `lingualibre` / `lingualibre-ccby4` /
 `lingualibre-cc0` matches its own Commons-reported licence — the category
@@ -1064,27 +1066,28 @@ recording stays default playback and the render is reachable, labelled
 
 ## Commands
 
-| | |
-|---|---|
-| `npm run validate` | check the dataset; non-zero exit on error |
-| `npm run build` | validate, then emit `dist/` |
-| `npm run lookup -- <query>` | search the built dictionary |
-| `npm run import -- <source>` | fetch proposals into `data/staging/` |
-| `npm run inventory` | regenerate `data/wordlists/syllable-inventory.yaml` |
-| `npm run wordlist:wiktionary` | regenerate `data/wordlists/wiktionary-teochew-index.yaml` |
-| `npm run batch:wiktionary -- --limit=N` | list the next Wiktionary merge batch (issue #68) |
-| `npm run cache:wiktionary` | sync Wiktionary wikitext into `.cache/wiktionary-pages/` (issue #79) |
-| `npm run xref -- <source>` | refresh a cached external phonology chart |
-| `npm run audio:verify` | fetch every audio clip and verify its checksum |
-| `npm run audio:grade` | cache every clip, extract features, report per-tone statistics and outliers (issue #259) |
-| `npm run audio:synthesize [-- --write]` | re-render every clip toward its parts' targets into `.cache/audio-synth/`, offline; dry-run by default (issue #259) |
-| `npm run merge:resynth [-- --write]` | publish passing renders as the `<speaker>-n` tier: encode, re-host, append to the manifest (ADR-0027) |
-| `npm run rehost:lingualibre -- <index-or-title>` | re-host a staged Lingua Libre clip as a GitHub Release asset (issue #106) |
-| `npm run merge:lingualibre -- <index-or-title> --variety=<id>` | re-host and merge a staged Lingua Libre clip into `data/phonology/audio/<variety>.yaml` (issue #106) |
-| `npm run schema` | emit the JSON Schemas alone |
-| `npm run backfill:mandarin-level -- <path> [-- --write]` | derive `level` from an HSK cognate match (issue #110) |
-| `npm test` | unit tests + dataset guards |
-| `npm run check` | typecheck + test + validate |
+|                                                                                         |                                                                                                                                                                                   |
+|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `npm run validate`                                                                      | check the dataset; non-zero exit on error                                                                                                                                         |
+| `npm run build`                                                                         | validate, then emit `dist/`                                                                                                                                                       |
+| `npm run lookup -- <query>`                                                             | search the built dictionary                                                                                                                                                       |
+| `npm run import -- <source>`                                                            | fetch proposals into `data/staging/`                                                                                                                                              |
+| `npm run inventory`                                                                     | regenerate `data/wordlists/syllable-inventory.yaml`                                                                                                                               |
+| `npm run wordlist:wiktionary`                                                           | regenerate `data/wordlists/wiktionary-teochew-index.yaml`                                                                                                                         |
+| `npm run batch:wiktionary -- --limit=N`                                                 | list the next Wiktionary merge batch (issue #68)                                                                                                                                  |
+| `npm run cache:wiktionary`                                                              | sync Wiktionary wikitext into `.cache/wiktionary-pages/` (issue #79)                                                                                                              |
+| `npm run xref -- <source>`                                                              | refresh a cached external phonology chart                                                                                                                                         |
+| `npm run audio:verify`                                                                  | fetch every audio clip and verify its checksum                                                                                                                                    |
+| `npm run audio:grade`                                                                   | cache every clip, extract features, report per-tone statistics and outliers (issue #259)                                                                                          |
+| `npm run audio:synthesize [-- --write]`                                                 | re-render every clip toward its parts' targets into `.cache/audio-synth/`, offline; dry-run by default (issue #259)                                                               |
+| `npm run merge:resynth [-- --write]`                                                    | publish passing renders as the `<speaker>-n` tier: encode, re-host, append to the manifest (ADR-0027)                                                                             |
+| `npm run rehost:lingualibre -- <index-or-title>`                                        | re-host a staged Lingua Libre clip to S3 behind CloudFront, no manifest write (issue #106, issue #270)                                                                            |
+| `npm run merge:lingualibre -- <index-or-title> --variety=<id>`                          | re-host and merge a staged Lingua Libre clip into `data/phonology/audio/<variety>.yaml` (issue #106)                                                                              |
+| `npm run merge:local-recording -- <index-or-pengim> --variety=<id> [--all] [--dry-run]` | re-host and merge staged local-recording take(s) into `data/phonology/audio/<variety>.yaml`; `--dry-run` previews with no upload, write or staging cleanup (issue #128, ADR-0029) |
+| `npm run schema`                                                                        | emit the JSON Schemas alone                                                                                                                                                       |
+| `npm run backfill:mandarin-level -- <path> [-- --write]`                                | derive `level` from an HSK cognate match (issue #110)                                                                                                                             |
+| `npm test`                                                                              | unit tests + dataset guards                                                                                                                                                       |
+| `npm run check`                                                                         | typecheck + test + validate                                                                                                                                                       |
 
 ---
 

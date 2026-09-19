@@ -1152,7 +1152,10 @@ re-recording no longer needs a CloudFront invalidation (that requirement
 remains for an ADR-0027 `-n` render, which `merge:resynth --force` still
 re-publishes in place). `npm run merge:local-recording -- <pengim>
 --variety=<id> --all [--primary=<index-or-localPath>]` merges every staged
-take of a syllable in one call, which is exactly #288's multi-take case.
+take of a syllable in one call, which is exactly #288's multi-take case —
+pass `--dry-run` first to preview the disposition/take/primary of each take
+with no upload, manifest write or staging cleanup, useful given the 414 takes
+already staged when this landed.
 
 ## Individual entries flagged `needs_review`
 

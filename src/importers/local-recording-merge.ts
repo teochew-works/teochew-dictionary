@@ -4,17 +4,18 @@ import { parseDocument, stringify } from 'yaml'
 
 import { AUDIO_METADATA_DIR, ROOT } from '../paths.js'
 import { loadOptionalFile } from '../phonology/load.js'
-import { audioSchema, CONFIDENCE, type Audio } from '@teochew/core'
+import { audioSchema, CONFIDENCE, type Audio, type AudioClip } from '@teochew/core'
 import type { LocalRecordingProposal } from './local-recording-types.js'
 import { LOCAL_RECORDING_SOURCE, removeLocalRecordingProposal } from './local-recording-staging.js'
 import {
+  assetFilename,
   localRecordingBytes,
   rehostLocalRecording,
   resolveLocalRecordingProposals,
   type LocalRehostOptions,
 } from './local-recording-rehost.js'
 import { applyTakePlanToDoc, applyTakePlanToList, planTakeMerge, takeFields, type TakeDisposition } from './clip-takes.js'
-import { checksumBytes } from './s3-upload.js'
+import { AUDIO_CDN_BASE, audioClipKey, checksumBytes } from './s3-upload.js'
 
 /**
  * Re-hosts a staged local-recording proposal and writes it straight into
@@ -31,6 +32,15 @@ import { checksumBytes } from './s3-upload.js'
  * and anything else appends — as this speaker's first take, or as
  * `take: N + 1` at its own immutable asset path. `./clip-takes.js` holds that
  * decision, shared with the Lingua Libre merge.
+ *
+ * `options.dryRun` runs every step above — hashing, `planTakeMerge`, schema
+ * validation of the resulting manifest — but skips the upload, the manifest
+ * write and the staging cleanup, returning the `url` the clip *would* land at
+ * (issue #290: 414 staged takes need a preview before the first real batch
+ * merge). `options.existingListOverride`/`result.simulatedList` let a caller
+ * chain several dry-run calls for the same key: since nothing is written,
+ * each call would otherwise plan against the same on-disk list and report
+ * take 2 for every proposal in a `--all` batch instead of take 2, 3, 4, ….
  */
 
 export { resolveLocalRecordingProposals }
@@ -81,6 +91,24 @@ export interface MergeLocalRecordingOptions extends LocalRehostOptions {
   proposalIndex?: number
   /** Injectable for tests — avoids touching the real data/staging/. */
   stagingDir?: string
+  /**
+   * Preview only: hash the bytes and run `planTakeMerge` exactly as a real
+   * merge would, but perform no upload, no manifest write and no staging
+   * cleanup. `result.url` is the CloudFront URL the clip would be uploaded
+   * to; `result.simulatedList` is the key's clips after this (still
+   * hypothetical) merge, for chaining into the next call's
+   * `existingListOverride`.
+   */
+  dryRun?: boolean
+  /**
+   * Plan against this list of clips instead of reading `existingClips[key]`
+   * from the manifest on disk. A dry run writes nothing, so a `--all` batch
+   * previewing several takes of the same key must thread each call's
+   * `result.simulatedList` in here for the next one — otherwise every
+   * proposal plans against the same unchanged on-disk list and reports the
+   * same take number instead of 2, 3, 4, ….
+   */
+  existingListOverride?: readonly AudioClip[]
 }
 
 export interface MergeLocalRecordingResult {
@@ -95,6 +123,12 @@ export interface MergeLocalRecordingResult {
   take: number
   /** Whether this clip is the one of its speaker's takes that leaves `data/` — explicitly or, when it is alone, implicitly. */
   primary: boolean
+  /**
+   * The key's clips after this merge — dry-run only. Chain into the next
+   * call's `existingListOverride` to preview a `--all` batch's take numbers
+   * without writing anything.
+   */
+  simulatedList?: AudioClip[]
 }
 
 export async function mergeLocalRecording(
@@ -109,6 +143,8 @@ export async function mergeLocalRecording(
     rootDir = ROOT,
     proposalIndex,
     stagingDir,
+    dryRun = false,
+    existingListOverride,
     readBytes,
     ...rehostOptions
   } = options
@@ -128,7 +164,7 @@ export async function mergeLocalRecording(
   const audio: Audio = loadAudioFile(path) ?? { audio: { id: variety, variety }, clips: {}, wordClips: {} }
 
   const existingClips = audio.clips ?? {}
-  const existingList = Object.hasOwn(existingClips, key) ? existingClips[key]! : []
+  const existingList = existingListOverride ?? (Object.hasOwn(existingClips, key) ? existingClips[key]! : [])
 
   // Hashed before anything is uploaded, because the checksum is what decides
   // whether to upload at all (ADR-0029): re-running a merge that already
@@ -158,17 +194,26 @@ export async function mergeLocalRecording(
       disposition: plan.disposition,
       take: plan.take,
       primary: plan.primary,
+      ...(dryRun ? { simulatedList: applyTakePlanToList(existingList, existing, plan) } : {}),
     }
   }
 
-  const { url } = await rehostLocalRecording(resolvedProposal, {
-    ...rehostWithRoot,
-    bytes,
-    // Absent for a first take, so that clip lands at exactly the path it
-    // would have before ADR-0029; present for any later take, which is what
-    // makes the paths immutable and `--force` unnecessary.
-    ...(plan.take > 1 ? { take: plan.take } : {}),
-  })
+  const rehostTake = plan.take > 1 ? plan.take : undefined
+  // A dry run never uploads: the CloudFront URL is reproduced from the same
+  // `assetFilename`/`audioClipKey` a real `rehostLocalRecording` builds it
+  // from, without the S3 round trip.
+  const url = dryRun
+    ? `${AUDIO_CDN_BASE}/${audioClipKey(assetFilename(resolvedProposal, rehostTake))}`
+    : (
+        await rehostLocalRecording(resolvedProposal, {
+          ...rehostWithRoot,
+          bytes,
+          // Absent for a first take, so that clip lands at exactly the path
+          // it would have before ADR-0029; present for any later take, which
+          // is what makes the paths immutable and `--force` unnecessary.
+          ...(rehostTake !== undefined ? { take: rehostTake } : {}),
+        })
+      ).url
 
   const clip = {
     url,
@@ -182,10 +227,26 @@ export async function mergeLocalRecording(
 
   const newList = applyTakePlanToList(existingList, clip, plan)
 
-  // Parsed before anything is written: proves the whole key — the appended
-  // clip and any spliced `primary` marker alike — is valid against the schema
-  // rather than leaving `npm run validate` to discover it afterwards.
+  // Parsed whether or not this is a dry run: proves the whole key — the
+  // appended clip and any spliced `primary` marker alike — is valid against
+  // the schema rather than leaving `npm run validate` (or an interrupted
+  // real merge) to discover it afterwards, and gives a preview the same
+  // confidence a real merge has before it writes anything.
   const updated: Audio = audioSchema.parse({ ...audio, clips: { ...existingClips, [key]: newList } })
+
+  if (dryRun) {
+    return {
+      path,
+      variety,
+      key,
+      url,
+      checksum,
+      disposition: plan.disposition,
+      take: plan.take,
+      primary: plan.disposition === 'appended-first' || plan.primary,
+      simulatedList: newList,
+    }
+  }
 
   mkdirSync(audioDir, { recursive: true })
 
