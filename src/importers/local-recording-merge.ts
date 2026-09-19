@@ -175,9 +175,9 @@ export async function mergeLocalRecording(
 
   const plan = planTakeMerge(existingList, { speaker, checksum, primary })
 
-  /** Drops the staged proposal and its local file — the clip is published, so both are redundant. */
+  /** Drops the staged proposal and its local file — the clip is published, so both are redundant. Never in a dry run: nothing was published. */
   const cleanUpStaging = (): void => {
-    if (proposalIndex === undefined) return
+    if (dryRun || proposalIndex === undefined) return
     removeLocalRecordingProposal(proposalIndex, stagingDir)
     rmSync(join(rootDir, proposal.localPath), { force: true })
   }
