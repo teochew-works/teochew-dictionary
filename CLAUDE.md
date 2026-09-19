@@ -103,6 +103,11 @@ diverging from it.
     by hand-editing `data/entries/`.** These entries mirror an import source and must stay
     byte-identical to it; `readEntryFiles()` applies patches at load time, and a patch that stops
     matching fails `npm run validate` instead of silently no-op'ing. → [ADR-0028](docs/adrs/adr-0028.md)
+18. **Only `primary` clips leave `data/`.** A speaker may hold several takes at one key — extra ones
+    carry `take: N` (≥ 2, assigned at merge, never renumbered because it is in the asset path) and
+    exist for research tooling only. Exactly one clip in a `(pengim, speaker)` group of more than one
+    is `primary: true`; `dist/`, the UI, the app and the `-n` render tier see only primaries.
+    → [ADR-0029](docs/adrs/adr-0029.md)
 
 ## Common Commands
 

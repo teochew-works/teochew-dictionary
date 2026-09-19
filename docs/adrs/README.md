@@ -62,6 +62,7 @@ by Michael Nygard.
 | [ADR-0026](adr-0026.md) | ✅ Accepted | 2026-09-07 | Serve Audio Direct from Release Assets Until a Named Trigger                   |
 | [ADR-0027](adr-0027.md) | ✅ Accepted | 2026-09-11 | Publish a Resynthesised Speaker Tier Derived from the Project's Own Recordings |
 | [ADR-0028](adr-0028.md) | ✅ Accepted | 2026-09-14 | Load-Time Reading Patches for Upstream-Sourced Errors                          |
+| [ADR-0029](adr-0029.md) | ✅ Accepted | 2026-09-19 | Multiple Takes per Speaker: `take` and `primary` on Audio Clips                |
 
 ADR-0001 through ADR-0022 were written **retrospectively**, in one pass over the project's
 existing record, so their git-derived dates are all the date of adoption rather than the date each
