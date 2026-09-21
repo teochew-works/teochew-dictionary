@@ -1,3 +1,4 @@
+import { useComposedItemRef } from '../decks/dnd/useComposedItemRef'
 import { usePreference } from '../settings/usePreference'
 import { readLevelFilter, writeLevelFilter } from '../settings/levelFilter'
 import { readPromptMode, writePromptMode } from '../settings/promptMode'
@@ -66,63 +67,11 @@ function setEquals<T>(a: Set<T>, b: Set<T>): boolean {
   return a.size === b.size && [...a].every((v) => b.has(v))
 }
 
-type ItemRef = (el: HTMLElement | null) => void
-
-/**
- * Composes the several per-deck element refs a card needs — drag source,
- * FLIP measurement, card drop target — into one, cached per deck id.
- *
- * Without the cache each render hands React a brand-new ref function for
- * every deck, so React detaches and re-attaches every element: real DOM work
- * on the path a drag re-renders. The factories are read through a ref so the
- * composed function itself never has to change.
- */
-function useComposedItemRef(...factories: ((id: string) => ItemRef)[]): (id: string) => ItemRef {
-  const cache = useRef(new Map<string, ItemRef>())
-  const factoriesRef = useRef(factories)
-  factoriesRef.current = factories
-
-  return useCallback((id: string) => {
-    let composed = cache.current.get(id)
-    if (!composed) {
-      composed = (el) => {
-        for (const factory of factoriesRef.current) factory(id)(el)
-      }
-      cache.current.set(id, composed)
-    }
-    return composed
-  }, [])
-}
-
 const EMPTY_STATS: DeckStats = { total: 0, kept: 0, due: 0, fresh: 0, learned: 0 }
 
-/** What the bottom dock is showing: nothing, the dictionary, one deck's cards, or the starter-deck marketplace. */
-export type FlashcardsDrawer = { mode: 'dictionary' } | { mode: 'deck'; deckId: string } | { mode: 'marketplace' } | null
-
-/** Parses the part of the hash after `flashcards/` (or `''` if there was none). */
-export function parseFlashcardsDrawer(rest: string): FlashcardsDrawer {
-  const slash = rest.indexOf('/')
-  const mode = slash === -1 ? rest : rest.slice(0, slash)
-  const arg = slash === -1 ? '' : rest.slice(slash + 1)
-  if (mode === 'marketplace') return { mode: 'marketplace' }
-  if (mode === 'dictionary') return { mode: 'dictionary' }
-  if (mode === 'deck' && arg) return { mode: 'deck', deckId: decodeURIComponent(arg) }
-  return null
-}
-
-/** Formats a `FlashcardsDrawer` back into the part of the hash after `flashcards/`. Closed (the default) has no suffix. */
-export function formatFlashcardsDrawer(drawer: FlashcardsDrawer): string {
-  switch (drawer?.mode) {
-    case 'marketplace':
-      return 'flashcards/marketplace'
-    case 'deck':
-      return `flashcards/deck/${encodeURIComponent(drawer.deckId)}`
-    case 'dictionary':
-      return 'flashcards/dictionary'
-    default:
-      return 'flashcards'
-  }
-}
+export { parseFlashcardsDrawer, formatFlashcardsDrawer } from '../flashcards/route'
+import type { FlashcardsDrawer } from '../flashcards/route'
+export type { FlashcardsDrawer } from '../flashcards/route'
 
 /**
  * The flashcards screen: a library of decks on the left, the decks in play
@@ -149,6 +98,8 @@ interface FlashcardsViewProps {
 
 export function FlashcardsView({ entries, drawer: controlledDrawer, onDrawerChange }: FlashcardsViewProps) {
   const decksStore = useDecksStore()
+  const [organising, setOrganising] = useState(false)
+  const studyRef = useRef<HTMLElement>(null)
   const [mode, setMode] = usePreference(readPromptMode)
   const [pronunciation, setPronunciation] = usePreference(readPronunciationMode)
   const [pronunciationDisplay] = usePreference(readPronunciationDisplay)
@@ -708,7 +659,13 @@ export function FlashcardsView({ entries, drawer: controlledDrawer, onDrawerChan
   }
 
   return (
-    <div className="flashcards-view">
+    <div className={organising ? 'flashcards-view' : 'flashcards-view flashcards-view--focused'}>
+      <header className="study-intro">
+        <div><h2>Study</h2><p>{Math.max(0, totalCount - reviewedCount).toLocaleString()} left in this session</p></div>
+        <button type="button" onClick={() => { setOrganising(false); setRailOpenOnPhone(false); studyRef.current?.focus() }}>Continue studying</button>
+        <button type="button" onClick={() => { setRailOpenOnPhone(false); setDrawer({ mode: 'marketplace' }) }}>Starter decks</button>
+        <button type="button" aria-expanded={organising} onClick={() => { setOrganising(!organising); setRailOpenOnPhone(!organising) }}>Manage decks</button>
+      </header>
       <LiveRegion message={announcement} />
 
       <div className={railOpenOnPhone ? 'shell shell--rail-open' : 'shell'}>
@@ -824,7 +781,7 @@ export function FlashcardsView({ entries, drawer: controlledDrawer, onDrawerChan
               type="button"
               className="pill bar__decks-toggle"
               aria-expanded={railOpenOnPhone}
-              onClick={() => setRailOpenOnPhone((v) => !v)}
+              onClick={() => { setOrganising(true); setRailOpenOnPhone((v) => !v) }}
             >
               ☰ Decks
             </button>
@@ -924,7 +881,7 @@ export function FlashcardsView({ entries, drawer: controlledDrawer, onDrawerChan
             </p>
           )}
 
-          <section className="study">{renderStudy()}</section>
+          <section className="study" ref={studyRef} tabIndex={-1} aria-label="Current study card">{renderStudy()}</section>
 
           <Drawer
             open={drawerOpen}
