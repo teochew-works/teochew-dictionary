@@ -1,0 +1,44 @@
+{
+  "sha256": "c4815b0b0e1dcded82ce955fe2d55b002f4ba604685b2d6e4d90740d34f77270",
+  "original": {
+    "bytes": 48887163,
+    "gzipBytes": 2730951
+  },
+  "minified": {
+    "bytes": 29962270,
+    "gzipBytes": 2299668
+  },
+  "projectedIndex": {
+    "bytes": 3978431,
+    "gzipBytes": 962936
+  },
+  "shardSizes": [
+    {
+      "entriesPerShard": 64,
+      "count": 254,
+      "gzipBytes": 2452336,
+      "maxShardGzipBytes": 12416,
+      "totalWithIndexGzipBytes": 3415272
+    },
+    {
+      "entriesPerShard": 128,
+      "count": 127,
+      "gzipBytes": 2370752,
+      "maxShardGzipBytes": 21951,
+      "totalWithIndexGzipBytes": 3333688
+    },
+    {
+      "entriesPerShard": 256,
+      "count": 64,
+      "gzipBytes": 2334779,
+      "maxShardGzipBytes": 40829,
+      "totalWithIndexGzipBytes": 3297715
+    }
+  ],
+  "limitations": [
+    "Size-only projection, not a complete search/filter/study artifact.",
+    "No browser fetch, worker transfer, rendering or device benchmark.",
+    "Shard sizes exclude manifest, HTTP headers and cache/version management.",
+    "Original source order determines shard membership; not a stable production format."
+  ]
+}
