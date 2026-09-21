@@ -112,3 +112,14 @@
   font-size: 1.75rem;
 }
 .app__brand small { display: block; font-size: 0.75rem; color: var(--color-muted); font-weight: 400; }
+
+.app__more { padding: var(--space-6); overflow: auto; }
+.app__more nav { display: grid; gap: var(--space-3); max-width: 32rem; }
+.app__more a {
+  display: block; padding: var(--space-4); color: var(--color-fg);
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--r-md); text-decoration: none;
+}
+@media (max-width: 640px) {
+  .app__tab { flex: 1 1 0; min-width: 0; padding: 0.5rem 0.25rem; font-size: 0.875rem; }
+}
