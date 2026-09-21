@@ -103,3 +103,12 @@
 .app__status--error {
   color: var(--color-danger);
 }
+
+.app__brand { display: flex; align-items: center; gap: var(--space-3); }
+.app__brand-mark {
+  display: grid; place-items: center; width: 2.5rem; height: 2.5rem;
+  border-radius: var(--r-md); background: var(--color-accent);
+  color: var(--color-accent-fg); font-family: var(--font-headword);
+  font-size: 1.75rem;
+}
+.app__brand small { display: block; font-size: 0.75rem; color: var(--color-muted); font-weight: 400; }

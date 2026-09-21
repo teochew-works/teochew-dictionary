@@ -88,7 +88,7 @@ export function App() {
     <div className="app">
       <UpdatePrompt />
       <header className="app__header">
-        <h1>Teochew Dictionary</h1>
+        <h1 className="app__brand"><span className="app__brand-mark" aria-hidden="true">潮</span><span>Teochew Dictionary<small lang="zh-Hant">潮州話</small></span></h1>
         <nav className="app__tabs">
           {TABS.map(({ id, label }) => (
             <a key={id} href={`#${id}`} className={tab === id ? 'app__tab app__tab--active' : 'app__tab'}>
