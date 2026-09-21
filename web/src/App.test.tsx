@@ -232,7 +232,7 @@ describe('App Flashcards tab routing (issue #226)', () => {
 
   it('routes opening the marketplace through the hash', async () => {
     render(<App />)
-    fireEvent.click(screen.getByRole('link', { name: 'Flashcards' }))
+    fireEvent.click(screen.getByRole('link', { name: 'Study' }))
     await screen.findByText(/reviewed/)
 
     fireEvent.click(screen.getByRole('button', { name: 'Marketplace' }))
@@ -265,7 +265,8 @@ describe('App Settings tab', () => {
 
   it('shows the Settings tab even before the dictionary has loaded', async () => {
     render(<App />)
-    fireEvent.click(screen.getByRole('link', { name: 'Settings' }))
+    fireEvent.click(screen.getByRole('link', { name: 'More' }))
+    fireEvent.click(await screen.findByRole('link', { name: 'Settings' }))
     expect(await screen.findByRole('heading', { name: 'Settings' })).toBeInTheDocument()
     expect(screen.getByLabelText('Show licensing info')).toBeInTheDocument()
   })
@@ -286,8 +287,22 @@ describe('App Donate tab', () => {
 
   it('shows the Donate tab even before the dictionary has loaded', async () => {
     render(<App />)
-    fireEvent.click(screen.getByRole('link', { name: 'Donate' }))
+    fireEvent.click(screen.getByRole('link', { name: 'More' }))
+    fireEvent.click(await screen.findByRole('link', { name: 'Support / Donate' }))
     expect(await screen.findByRole('heading', { name: 'Donate' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'GitHub Sponsors' })).toBeInTheDocument()
+  })
+})
+
+
+describe('primary navigation', () => {
+  afterEach(() => { window.location.hash = ''; vi.unstubAllGlobals() })
+  it('keeps secondary deep links and marks More active', async () => {
+    window.location.hash = '#settings'
+    vi.stubGlobal('fetch', vi.fn(() => new Promise(() => {})))
+    render(<App />)
+    expect(screen.getByRole('heading', { name: 'Settings' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'More' })).toHaveAttribute('aria-current', 'page')
+    expect(screen.getByRole('navigation', { name: 'Primary' }).querySelectorAll('a')).toHaveLength(4)
   })
 })
