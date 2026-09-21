@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import type { Dict } from '../types/dictMeta'
 import { fetchDict } from '../pwa/offlineData'
 
@@ -17,13 +17,15 @@ export interface DictionaryState {
  * device with the Settings "Available offline" toggle on reads its own
  * cached copy instead of hitting the network at all (mobile.md §9).
  */
-export function useDictionary(): DictionaryState {
+export function useDictionary(enabled = true): DictionaryState {
   const [state, setState] = useState<DictionaryState>({ data: null, loading: true, error: null })
 
+  const request = useRef<Promise<Dict> | null>(null)
   useEffect(() => {
+    if (!enabled) return
     let cancelled = false
 
-    fetchDict()
+    request.current ??= fetchDict()
       .then((res) => {
         if (!res.ok) throw new Error(`fetch failed: ${res.status} ${res.statusText}`)
         return res.json() as Promise<Dict>
@@ -39,8 +41,11 @@ export function useDictionary(): DictionaryState {
           reading_count: entries.reduce((n, e) => n + e.readings.length, 0),
         }
         const visible = { ...data, entries, meta }
-        if (!cancelled) setState({ data: visible, loading: false, error: null })
+        return visible
       })
+    request.current.then((visible) => {
+      if (!cancelled) setState({ data: visible, loading: false, error: null })
+    })
       .catch((err: unknown) => {
         if (!cancelled) {
           const message = err instanceof Error ? err.message : String(err)
@@ -51,7 +56,7 @@ export function useDictionary(): DictionaryState {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [enabled])
 
   return state
 }

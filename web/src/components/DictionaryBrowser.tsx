@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react'
+import { useDeferredValue, useMemo, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
 import { createSearchIndex, search } from '../search/searchIndex'
 import { EntryDeckMenu } from './EntryDeckMenu'
@@ -48,7 +48,8 @@ export function DictionaryBrowser({
   /** The row the open menu belongs to — the panel is portalled, so it positions from this. */
   const menuAnchorRef = useRef<HTMLElement | null>(null)
   const index = useMemo(() => createSearchIndex(entries), [entries])
-  const results = useMemo(() => (query.trim() ? search(index, query).slice(0, MAX_RESULTS) : []), [index, query])
+  const deferredQuery = useDeferredValue(query)
+  const results = useMemo(() => (deferredQuery.trim() ? search(index, deferredQuery).slice(0, MAX_RESULTS) : []), [index, deferredQuery])
 
   return (
     <>
