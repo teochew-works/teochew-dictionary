@@ -10,3 +10,7 @@ dist/
 web/node_modules/
 web/dist/
 web/public/data/
+
+# Browser regression artifacts
+web/test-results/
+web/playwright-report/

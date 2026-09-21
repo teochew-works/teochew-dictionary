@@ -1,3 +1,4 @@
+import './SegmentedControl.css'
 import { AUDIO_MODE_LABELS } from '../settings/audioMode'
 import type { AudioMode } from '../settings/audioMode'
 

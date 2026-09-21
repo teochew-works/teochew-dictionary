@@ -1,3 +1,4 @@
+import { ViewErrorBoundary } from './components/ViewErrorBoundary'
 import { useEffect, useState, lazy, Suspense } from 'react'
 import { useDictionary } from './hooks/useDictionary'
 import { DictionaryView, type DictionarySession } from './views/DictionaryView'
@@ -108,6 +109,7 @@ export function App() {
       </header>
 
       <main className="app__main">
+        <ViewErrorBoundary key={tab}>
         <Suspense fallback={<p className="app__status" role="status">Loading view…</p>}>
         {/* Sounds and Elicit share dist/sounds.json (via useSounds), and Settings,
             Donate and About only touch localStorage or are static — none of these
@@ -142,6 +144,7 @@ export function App() {
           </section>
         )}
       </Suspense>
+        </ViewErrorBoundary>
       </main>
     </div>
   )

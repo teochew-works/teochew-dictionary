@@ -61,3 +61,25 @@ bytes after optimisation; a stable loaded dataset should need one shared index;
 representative search ranking must remain unchanged. Timing budgets require a
 browser baseline on a named device before adoption. Do not convert Node proxy
 numbers into unsupported mobile latency claims.
+
+## Initial implementation validation (2026-09-21)
+
+- Rebuilt the complete root dataset: 16,245 entries, 19,350 readings. Existing
+  validation reports 310 warnings; this series does not alter dictionary data.
+- The original web baseline passed 767 tests. Additional regression coverage was
+  added alongside navigation, preference, dictionary and loading changes.
+- In-app Chromium at 320 × 740: Settings and Dictionary navigation render without
+  horizontal page overflow; search for 潮州 returns five results and the selected
+  entry exposes a labelled Add to deck form. A test deck was created using that
+  form in a local preview origin.
+- The route-splitting review caught an audio-selector style dependency on Study;
+  shared component CSS now owns those rules. Replacing build files while a page
+  remained open also reproduced a lazy-chunk fetch failure; a view error boundary
+  now provides a reload action instead of a blank app.
+- Desktop Dictionary branding was visually inspected. These observations do not
+  complete the full viewport/theme matrix, real-device testing or learner review.
+- Browser regression cases are collected for desktop and phone, with isolated
+  fixtures. PWA update/offline, real audio and full accessibility audits remain
+  explicit follow-ups; service workers are blocked in the smoke suite.
+
+All PRs remain draft until their outstanding review/validation items are resolved.
