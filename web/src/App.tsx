@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useDictionary } from './hooks/useDictionary'
-import { DictionaryView } from './views/DictionaryView'
+import { DictionaryView, type DictionarySession } from './views/DictionaryView'
 import { FlashcardsView, parseFlashcardsDrawer, formatFlashcardsDrawer, type FlashcardsDrawer } from './views/FlashcardsView'
 import { SoundsView, parseSoundsRoute, formatSoundsRoute, type SoundsRoute } from './views/SoundsView'
 import { ElicitationView } from './views/ElicitationView'
@@ -66,6 +66,7 @@ function routeFromHash(hash: string): Route {
 
 export function App() {
   const { data, loading, error } = useDictionary()
+  const [dictionarySession, setDictionarySession] = useState<DictionarySession>({ query: '', sortMode: 'relevance', scrollTop: 0, shown: 200 })
   const [route, setRoute] = useState<Route>(() => routeFromHash(window.location.hash))
   const tab = route.tab
   const activeTab = SECONDARY_TABS.some((item) => item.id === tab) ? 'more' : tab
@@ -119,7 +120,7 @@ export function App() {
           </p>
         )}
         {data && route.tab === 'dictionary' && (
-          <DictionaryView entries={data.entries} selectedId={route.entryId} onSelectEntry={selectEntry} />
+          <DictionaryView session={dictionarySession} onSessionChange={setDictionarySession} entries={data.entries} selectedId={route.entryId} onSelectEntry={selectEntry} />
         )}
         {data && route.tab === 'flashcards' && (
           <FlashcardsView entries={data.entries} drawer={route.flashcardsDrawer} onDrawerChange={setFlashcardsDrawer} />

@@ -306,3 +306,18 @@ describe('primary navigation', () => {
     expect(screen.getByRole('navigation', { name: 'Primary' }).querySelectorAll('a')).toHaveLength(4)
   })
 })
+
+
+describe('dictionary session context', () => {
+  afterEach(() => { window.location.hash = ''; vi.unstubAllGlobals() })
+  it('retains a query across navigation to More and back', async () => {
+    window.location.hash = '#dictionary'
+    vi.stubGlobal('fetch', vi.fn(() => Promise.resolve(new Response(JSON.stringify(FIXTURE)))))
+    render(<App />)
+    fireEvent.change(await screen.findByRole('searchbox'), { target: { value: 'Chaozhou' } })
+    fireEvent.click(screen.getByRole('link', { name: 'More' }))
+    await screen.findByRole('heading', { name: 'More' })
+    fireEvent.click(screen.getByRole('link', { name: 'Dictionary' }))
+    expect(await screen.findByRole('searchbox')).toHaveValue('Chaozhou')
+  })
+})
