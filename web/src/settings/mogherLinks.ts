@@ -1,3 +1,4 @@
+import { preferenceChanged } from './usePreference'
 const MOGHER_LINKS_KEY = 'teochew-dictionary:mogher-links'
 
 export function readMogherLinks(): boolean {
@@ -11,6 +12,7 @@ export function readMogherLinks(): boolean {
 export function writeMogherLinks(value: boolean): void {
   try {
     localStorage.setItem(MOGHER_LINKS_KEY, String(value))
+    preferenceChanged()
   } catch {
     // localStorage unavailable (e.g. private browsing) — toggle still works, just doesn't persist.
   }

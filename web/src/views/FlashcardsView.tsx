@@ -1,3 +1,8 @@
+import { usePreference } from '../settings/usePreference'
+import { readLevelFilter, writeLevelFilter } from '../settings/levelFilter'
+import { readPromptMode, writePromptMode } from '../settings/promptMode'
+import { readPronunciationDisplay } from '../settings/pronunciationDisplay'
+import { readPronunciationMode, writePronunciationMode } from '../settings/pronunciationMode'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useSrsQueue } from '../srs/useSrsQueue'
 import { newCardState, previewIntervals } from '@teochew/core'
@@ -28,17 +33,10 @@ import { useFlip } from '../decks/dnd/useFlip'
 import type { CardDropState } from '../components/DeckCard'
 import {
   PROMPT_MODE_LABELS,
-  readPromptMode,
-  writePromptMode,
   DEFAULT_LEVEL_FILTER,
   LEVEL_FILTER_ORDER,
   levelFilterLabel,
-  readLevelFilter,
-  writeLevelFilter,
   DEFAULT_PRONUNCIATION_MODE,
-  readPronunciationMode,
-  writePronunciationMode,
-  readPronunciationDisplay,
   firstEmptyStage,
   resolveDecks,
   runDeckPipeline,
@@ -48,7 +46,6 @@ import {
   type PromptMode,
   type LevelFilterValue,
   type PronunciationMode,
-  type PronunciationField,
   type Deck,
 } from '@teochew/core'
 import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly'
@@ -152,12 +149,12 @@ interface FlashcardsViewProps {
 
 export function FlashcardsView({ entries, drawer: controlledDrawer, onDrawerChange }: FlashcardsViewProps) {
   const decksStore = useDecksStore()
-  const [mode, setMode] = useState<PromptMode>(readPromptMode)
-  const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
-  const [pronunciationDisplay] = useState<PronunciationField[]>(readPronunciationDisplay)
-  const [audioMode, setAudioMode] = useState<AudioMode>(readAudioMode)
-  const [levelFilter, setLevelFilter] = useState<Set<LevelFilterValue>>(readLevelFilter)
-  const [fullAudioOnly, setFullAudioOnly] = useState<boolean>(readFullAudioOnly)
+  const [mode, setMode] = usePreference(readPromptMode)
+  const [pronunciation, setPronunciation] = usePreference(readPronunciationMode)
+  const [pronunciationDisplay] = usePreference(readPronunciationDisplay)
+  const [audioMode, setAudioMode] = usePreference(readAudioMode)
+  const [levelFilter, setLevelFilter] = usePreference(readLevelFilter)
+  const [fullAudioOnly, setFullAudioOnly] = usePreference(readFullAudioOnly)
   const [announcement, setAnnouncement] = useState('')
   const announce = useCallback((message: string) => setAnnouncement(message), [])
   const [internalDrawer, setInternalDrawer] = useState<FlashcardsDrawer>(null)

@@ -1,3 +1,7 @@
+import { AudioAvailabilityControl } from '../components/AudioAvailabilityControl'
+import { usePreference } from '../settings/usePreference'
+import { readPronunciationDisplay } from '../settings/pronunciationDisplay'
+import { readPronunciationMode, writePronunciationMode } from '../settings/pronunciationMode'
 import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { createSearchIndex, search } from '../search/searchIndex'
 import { readShowLicence, writeShowLicence } from '../settings/showLicence'
@@ -17,12 +21,8 @@ import {
   sortFlat,
   hasAudio,
   hasFullAudio,
-  readPronunciationMode,
-  writePronunciationMode,
-  readPronunciationDisplay,
   type SortMode,
   type PronunciationMode,
-  type PronunciationField,
   type EnrichedEntry,
 } from '@teochew/core'
 import './DictionaryView.css'
@@ -70,19 +70,19 @@ export function DictionaryView({
   const [internalSelectedId, setInternalSelectedId] = useState<string | null>(null)
   const selectedId = controlledSelectedId !== undefined ? controlledSelectedId : internalSelectedId
   const setSelectedId = onSelectEntry ?? setInternalSelectedId
-  const [showLicence, setShowLicence] = useState(readShowLicence)
+  const [showLicence, setShowLicence] = usePreference(readShowLicence)
   // Persisted as of the Settings tab (issue #173) — previously deliberately
   // not persisted here, because narrowing the visible entries silently across
   // a reload was worse than re-ticking a box. That tradeoff is reversed now
   // that this is a named, discoverable setting shared with the Settings tab
   // rather than an easily-forgotten local toggle.
-  const [audioOnly, setAudioOnly] = useState(readAudioOnly)
-  const [fullAudioOnly, setFullAudioOnly] = useState(readFullAudioOnly)
+  const [audioOnly, setAudioOnly] = usePreference(readAudioOnly)
+  const [fullAudioOnly, setFullAudioOnly] = usePreference(readFullAudioOnly)
   const [sortMode, setSortMode] = useState<SortMode>('relevance')
-  const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
-  const [pronunciationDisplay] = useState<PronunciationField[]>(readPronunciationDisplay)
-  const [audioMode, setAudioMode] = useState<AudioMode>(readAudioMode)
-  const [mogherLinks] = useState(readMogherLinks)
+  const [pronunciation, setPronunciation] = usePreference(readPronunciationMode)
+  const [pronunciationDisplay] = usePreference(readPronunciationDisplay)
+  const [audioMode, setAudioMode] = usePreference(readAudioMode)
+  const [mogherLinks] = usePreference(readMogherLinks)
   // Below the phone breakpoint the filters collapse behind the "Filters"
   // summary, which otherwise pushes the first result 200px down the screen
   // (mobile.md §3.3). Above it that summary is `display: none`, so the
@@ -218,18 +218,8 @@ export function DictionaryView({
               />
               Show licensing info
             </label>
-            <label className="dictionary-view__toggle">
-              <input type="checkbox" checked={audioOnly} onChange={(e) => toggleAudioOnly(e.target.checked)} />
-              Only entries with audio
-            </label>
-            <label className="dictionary-view__toggle">
-              <input
-                type="checkbox"
-                checked={fullAudioOnly}
-                onChange={(e) => toggleFullAudioOnly(e.target.checked)}
-              />
-              Only fully recorded audio
-            </label>
+<AudioAvailabilityControl audioOnly={audioOnly} fullAudioOnly={fullAudioOnly}
+              onChange={(any, full) => { toggleAudioOnly(any); toggleFullAudioOnly(full) }} />
           </div>
           <div className="dictionary-view__controls">
             <select

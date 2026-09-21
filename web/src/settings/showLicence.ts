@@ -1,3 +1,4 @@
+import { preferenceChanged } from './usePreference'
 const SHOW_LICENCE_KEY = 'teochew-dictionary:show-licence'
 
 /**
@@ -18,6 +19,7 @@ export function readShowLicence(): boolean {
 export function writeShowLicence(value: boolean): void {
   try {
     localStorage.setItem(SHOW_LICENCE_KEY, String(value))
+    preferenceChanged()
   } catch {
     // localStorage unavailable (e.g. private browsing) — toggle still works, just doesn't persist.
   }

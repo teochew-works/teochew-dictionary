@@ -1,3 +1,4 @@
+import { preferenceChanged } from './usePreference'
 // Key predates this module (originally flashcards/audioFilter.ts) and is kept
 // as-is rather than renamed, so existing users' stored preference survives
 // the relocation into a shared setting (issue #173).
@@ -14,6 +15,7 @@ export function readFullAudioOnly(): boolean {
 export function writeFullAudioOnly(value: boolean): void {
   try {
     localStorage.setItem(FULL_AUDIO_ONLY_KEY, String(value))
+    preferenceChanged()
   } catch {
     // localStorage unavailable — choice still applies this session, just doesn't persist.
   }
