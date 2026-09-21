@@ -324,3 +324,23 @@ Audio playback was on this list for v1 and no longer is — the UI shipped in
 issue #114. Chaozhou recordings now cover all 3,088 attested syllables (issues
 #128/#36); what's still missing is whole-word clips, and all of Shantou/Chaoyang
 (issue #37).
+
+## Browser regression checks
+
+From `web/`, install the Chromium test browser once with
+`npx playwright install chromium`, then run `npm run test:browser` after building
+the root dataset. The dedicated `web-browser.yml` workflow installs browser
+system dependencies and runs this separately from the fast offline unit checks.
+
+The suite uses isolated test contexts, a small dictionary fixture and blocked
+service workers. It checks lookup/add-to-deck/study/return, phone navigation,
+preference persistence, direct Settings loading, and critical accessibility
+findings. It attaches light/dark screenshots and all axe findings. It does not
+claim PWA/offline-update coverage or WCAG conformance: those and real-device audio,
+keyboard/screen-reader and learner checks remain in
+`docs/design/modernisation/README.md`.
+
+The modernisation PRs are a dependent draft stack for issue #296. Review and merge
+in order, retargeting/rebasing dependent PRs as needed. The regression PR also
+contains shared-selector styling and lazy-view error recovery discovered during
+browser validation; do not release the lazy-loading change without those fixes.
