@@ -1,11 +1,13 @@
+import { AudioAvailabilityControl } from '../components/AudioAvailabilityControl'
+import { usePreference } from '../settings/usePreference'
+import { readPronunciationDisplay, writePronunciationDisplay } from '../settings/pronunciationDisplay'
+import { readPronunciationMode, writePronunciationMode } from '../settings/pronunciationMode'
 import { useRef, useState } from 'react'
 import { readShowLicence, writeShowLicence } from '../settings/showLicence'
 import { readAudioOnly, writeAudioOnly } from '../settings/audioOnly'
 import { readFullAudioOnly, writeFullAudioOnly } from '../settings/fullAudioOnly'
-import { readPronunciationMode, writePronunciationMode, type PronunciationMode } from '@teochew/core'
+import { type PronunciationMode } from '@teochew/core'
 import {
-  readPronunciationDisplay,
-  writePronunciationDisplay,
   type PronunciationField,
 } from '@teochew/core'
 import { readAudioMode, writeAudioMode } from '../settings/audioMode'
@@ -27,13 +29,13 @@ import './SettingsView.css'
  * isn't the only place to change them, just the discoverable one.
  */
 export function SettingsView() {
-  const [showLicence, setShowLicence] = useState(readShowLicence)
-  const [audioOnly, setAudioOnly] = useState(readAudioOnly)
-  const [fullAudioOnly, setFullAudioOnly] = useState(readFullAudioOnly)
-  const [pronunciation, setPronunciation] = useState<PronunciationMode>(readPronunciationMode)
-  const [pronunciationDisplay, setPronunciationDisplay] = useState<PronunciationField[]>(readPronunciationDisplay)
-  const [audioMode, setAudioMode] = useState<AudioMode>(readAudioMode)
-  const [mogherLinks, setMogherLinks] = useState(readMogherLinks)
+  const [showLicence, setShowLicence] = usePreference(readShowLicence)
+  const [audioOnly, setAudioOnly] = usePreference(readAudioOnly)
+  const [fullAudioOnly, setFullAudioOnly] = usePreference(readFullAudioOnly)
+  const [pronunciation, setPronunciation] = usePreference(readPronunciationMode)
+  const [pronunciationDisplay, setPronunciationDisplay] = usePreference(readPronunciationDisplay)
+  const [audioMode, setAudioMode] = usePreference(readAudioMode)
+  const [mogherLinks, setMogherLinks] = usePreference(readMogherLinks)
   const [backupStatus, setBackupStatus] = useState<{ kind: 'ok' | 'error'; message: string } | null>(null)
   const importInputRef = useRef<HTMLInputElement>(null)
 
@@ -129,18 +131,8 @@ export function SettingsView() {
           />
           Show licensing info
         </label>
-        <label className="settings-view__toggle">
-          <input type="checkbox" checked={audioOnly} onChange={(e) => toggleAudioOnly(e.target.checked)} />
-          Only entries with audio
-        </label>
-        <label className="settings-view__toggle">
-          <input
-            type="checkbox"
-            checked={fullAudioOnly}
-            onChange={(e) => toggleFullAudioOnly(e.target.checked)}
-          />
-          Only fully recorded audio
-        </label>
+<AudioAvailabilityControl audioOnly={audioOnly} fullAudioOnly={fullAudioOnly}
+              onChange={(any, full) => { toggleAudioOnly(any); toggleFullAudioOnly(full) }} />
       </fieldset>
 
       <fieldset className="settings-view__group">

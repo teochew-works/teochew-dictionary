@@ -32,8 +32,8 @@ describe('SettingsView', () => {
   it('leaves every toggle unchecked by default, except sandhi pronunciation and show licensing info', () => {
     render(<SettingsView />)
     expect(screen.getByLabelText('Show licensing info')).toBeChecked()
-    expect(screen.getByLabelText('Only entries with audio')).not.toBeChecked()
-    expect(screen.getByLabelText('Only fully recorded audio')).not.toBeChecked()
+    expect(screen.getByLabelText('Audio availability')).toHaveValue('all')
+    expect(screen.getByLabelText('Audio availability')).toHaveValue('all')
     expect(screen.getByLabelText('Use sandhi pronunciation')).toBeChecked()
     expect(screen.getByLabelText('Link to mogher.com')).not.toBeChecked()
   })
@@ -42,8 +42,8 @@ describe('SettingsView', () => {
     render(<SettingsView />)
 
     fireEvent.click(screen.getByLabelText('Show licensing info'))
-    fireEvent.click(screen.getByLabelText('Only entries with audio'))
-    fireEvent.click(screen.getByLabelText('Only fully recorded audio'))
+    fireEvent.change(screen.getByLabelText('Audio availability'), { target: { value: 'any' } })
+    fireEvent.change(screen.getByLabelText('Audio availability'), { target: { value: 'full' } })
     fireEvent.click(screen.getByLabelText('Use sandhi pronunciation'))
     fireEvent.click(screen.getByLabelText('Link to mogher.com'))
 

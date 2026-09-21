@@ -1,3 +1,4 @@
+import { usePreference } from '../settings/usePreference'
 import { useMemo, useRef, useState } from 'react'
 import { useSounds } from '../hooks/useSounds'
 import { useSyllableChart } from '../hooks/useSyllableChart'
@@ -193,7 +194,7 @@ export function SoundsView({ route: controlledRoute, onRouteChange }: SoundsView
   const selectedCell = route.mode === 'chart' ? route.cell : null
   const setSelectedCell = (cell: SelectedCell | null) => setRoute({ mode: 'chart', cell })
   const [audioCoverageOn, setAudioCoverageOn] = useState(false)
-  const [mogherLinks] = useState(readMogherLinks)
+  const [mogherLinks] = usePreference(readMogherLinks)
 
   // Drag-to-resize the detail panel (issue #171): width is measured from the
   // pointer to the chart body's right edge, since the panel is pinned there,

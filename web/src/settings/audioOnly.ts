@@ -1,3 +1,4 @@
+import { preferenceChanged } from './usePreference'
 const AUDIO_ONLY_KEY = 'teochew-dictionary:audio-only'
 
 export function readAudioOnly(): boolean {
@@ -11,6 +12,7 @@ export function readAudioOnly(): boolean {
 export function writeAudioOnly(value: boolean): void {
   try {
     localStorage.setItem(AUDIO_ONLY_KEY, String(value))
+    preferenceChanged()
   } catch {
     // localStorage unavailable (e.g. private browsing) — toggle still works, just doesn't persist.
   }

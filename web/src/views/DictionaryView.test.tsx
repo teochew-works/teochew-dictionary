@@ -93,11 +93,11 @@ describe('DictionaryView', () => {
 
   it('persists the audio-only toggle across remounts (issue #173)', () => {
     const { unmount } = render(<DictionaryView entries={ENTRIES} />)
-    fireEvent.click(screen.getByLabelText('Only entries with audio'))
+    fireEvent.change(screen.getByLabelText('Audio availability'), { target: { value: 'any' } })
     unmount()
 
     render(<DictionaryView entries={ENTRIES} />)
-    expect(screen.getByLabelText('Only entries with audio')).toBeChecked()
+    expect(screen.getByLabelText('Audio availability')).toHaveValue('any')
   })
 
   it('persists the tone-type select via the shared pronunciation-mode setting', () => {
@@ -257,25 +257,25 @@ describe('DictionaryView audio filter', () => {
 
   it('is off by default, listing entries with and without recordings alike', () => {
     render(<DictionaryView entries={[RECORDED, SILENT]} />)
-    expect(screen.getByLabelText('Only entries with audio')).not.toBeChecked()
+    expect(screen.getByLabelText('Audio availability')).toHaveValue('all')
     expect(headwords()).toEqual(['木', '柴'])
   })
 
   it('narrows the list to entries that have a recording, and restores it when unticked', () => {
     render(<DictionaryView entries={[RECORDED, SILENT]} />)
-    const toggle = screen.getByLabelText('Only entries with audio')
+    const toggle = screen.getByLabelText('Audio availability')
 
-    fireEvent.click(toggle)
+    fireEvent.change(toggle, { target: { value: 'any' } })
     expect(headwords()).toEqual(['木'])
 
-    fireEvent.click(toggle)
+    fireEvent.change(toggle, { target: { value: 'all' } })
     expect(headwords()).toEqual(['木', '柴'])
   })
 
   it('applies in grouped sort modes too, not just the flat list', () => {
     render(<DictionaryView entries={[RECORDED, SILENT]} />)
     fireEvent.change(screen.getByLabelText('Sort dictionary by'), { target: { value: 'level' } })
-    fireEvent.click(screen.getByLabelText('Only entries with audio'))
+    fireEvent.change(screen.getByLabelText('Audio availability'), { target: { value: 'any' } })
 
     expect([...document.querySelectorAll('.entry-tree__label')].map((n) => n.textContent)).toEqual(['A1'])
     expect(headwords()).toEqual(['木'])
@@ -283,7 +283,7 @@ describe('DictionaryView audio filter', () => {
 
   it('says the dictionary has no recordings rather than "No matches" when none exist at all', () => {
     render(<DictionaryView entries={[SILENT]} />)
-    fireEvent.click(screen.getByLabelText('Only entries with audio'))
+    fireEvent.change(screen.getByLabelText('Audio availability'), { target: { value: 'any' } })
 
     expect(screen.getByText('No recordings in the dictionary yet.')).toBeInTheDocument()
     expect(screen.queryByText('No matches.')).not.toBeInTheDocument()
@@ -291,7 +291,7 @@ describe('DictionaryView audio filter', () => {
 
   it('distinguishes a search that excluded every recording from an empty dataset', () => {
     render(<DictionaryView entries={[RECORDED, SILENT]} />)
-    fireEvent.click(screen.getByLabelText('Only entries with audio'))
+    fireEvent.change(screen.getByLabelText('Audio availability'), { target: { value: 'any' } })
     fireEvent.change(screen.getByLabelText('Search the dictionary'), { target: { value: 'firewood' } })
 
     expect(screen.getByText('No matches with a recording.')).toBeInTheDocument()
@@ -300,7 +300,7 @@ describe('DictionaryView audio filter', () => {
   it('keeps a selected entry readable after the filter hides it from the list', () => {
     render(<DictionaryView entries={[RECORDED, SILENT]} />)
     fireEvent.click(screen.getByText('柴'))
-    fireEvent.click(screen.getByLabelText('Only entries with audio'))
+    fireEvent.change(screen.getByLabelText('Audio availability'), { target: { value: 'any' } })
 
     expect(headwords()).toEqual(['木'])
     expect(screen.getByRole('heading', { name: '柴' })).toBeInTheDocument()
@@ -344,28 +344,28 @@ describe('DictionaryView full-audio-only filter', () => {
 
   it('is off by default, listing partially and fully recorded entries alike', () => {
     render(<DictionaryView entries={[FULL, PARTIAL]} />)
-    expect(screen.getByLabelText('Only fully recorded audio')).not.toBeChecked()
+    expect(screen.getByLabelText('Audio availability')).toHaveValue('all')
     expect(headwords()).toEqual(['木', '柴'])
   })
 
   it('narrows the list to entries that are fully recorded, and restores it when unticked', () => {
     render(<DictionaryView entries={[FULL, PARTIAL]} />)
-    const toggle = screen.getByLabelText('Only fully recorded audio')
+    const toggle = screen.getByLabelText('Audio availability')
 
-    fireEvent.click(toggle)
+    fireEvent.change(toggle, { target: { value: 'full' } })
     expect(headwords()).toEqual(['木'])
 
-    fireEvent.click(toggle)
+    fireEvent.change(toggle, { target: { value: 'all' } })
     expect(headwords()).toEqual(['木', '柴'])
   })
 
   it('persists across remounts', () => {
     const { unmount } = render(<DictionaryView entries={[FULL, PARTIAL]} />)
-    fireEvent.click(screen.getByLabelText('Only fully recorded audio'))
+    fireEvent.change(screen.getByLabelText('Audio availability'), { target: { value: 'full' } })
     unmount()
 
     render(<DictionaryView entries={[FULL, PARTIAL]} />)
-    expect(screen.getByLabelText('Only fully recorded audio')).toBeChecked()
+    expect(screen.getByLabelText('Audio availability')).toHaveValue('full')
     expect(headwords()).toEqual(['木'])
   })
 })

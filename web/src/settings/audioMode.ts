@@ -1,3 +1,4 @@
+import { preferenceChanged } from './usePreference'
 export type AudioMode = 'component' | 'combined' | 'both'
 
 export const AUDIO_MODE_LABELS: Record<AudioMode, string> = {
@@ -29,6 +30,7 @@ export function readAudioMode(): AudioMode {
 export function writeAudioMode(mode: AudioMode): void {
   try {
     localStorage.setItem(AUDIO_MODE_KEY, mode)
+    preferenceChanged()
   } catch {
     // localStorage unavailable — mode still applies this session, just doesn't persist.
   }
