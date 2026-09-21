@@ -1,0 +1,54 @@
+{
+  "environment": {
+    "node": "v26.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpu": "Apple M5 Max"
+  },
+  "sha256": "c4815b0b0e1dcded82ce955fe2d55b002f4ba604685b2d6e4d90740d34f77270",
+  "bytes": 48887163,
+  "gzipBytes": 2730951,
+  "entries": 16244,
+  "parseMs": 71.474042,
+  "indexMs": 20.52600000000001,
+  "queries": [
+    {
+      "query": "潮州",
+      "count": 5,
+      "medianMs": 23.94074999999998,
+      "maxMs": 44.54154199999999
+    },
+    {
+      "query": "eat",
+      "count": 411,
+      "medianMs": 27.216417000000092,
+      "maxMs": 29.030916999999988
+    },
+    {
+      "query": "wood",
+      "count": 43,
+      "medianMs": 26.51366699999994,
+      "maxMs": 26.69212499999992
+    },
+    {
+      "query": "dio5 ziu1",
+      "count": 5,
+      "medianMs": 66.2282090000001,
+      "maxMs": 68.41204199999993
+    },
+    {
+      "query": "vegtable",
+      "count": 22,
+      "medianMs": 64.43045800000004,
+      "maxMs": 64.67612500000018
+    }
+  ],
+  "memorySnapshotBytes": {
+    "rss": 326205440,
+    "heapTotal": 120930304,
+    "heapUsed": 92090016,
+    "external": 105255794,
+    "arrayBuffers": 54453434
+  },
+  "limitation": "Node desktop proxy; Fuse timings exclude application reranking and rendering; memory is a snapshot, not peak."
+}
