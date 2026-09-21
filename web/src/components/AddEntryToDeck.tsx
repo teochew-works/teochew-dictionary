@@ -22,7 +22,7 @@ export function AddEntryToDeck({ entryId }: { entryId: string }) {
       </select></label>
       {!deckId && <label>New deck name{' '}<input value={name} onChange={event => setName(event.target.value)} required /></label>}
       <button type="submit" disabled={!deckId && !name.trim()}>Add word</button>
-      {saved && <p role="status">Word saved. <a href="#flashcards" onClick={() => store.addToPlay(saved)}>Study this deck</a></p>}
+      {saved && <p role="status">Word saved. <a href="#flashcards" onClick={() => store.setInPlay([saved])}>Study this deck</a></p>}
     </form>
   </details>
 }
