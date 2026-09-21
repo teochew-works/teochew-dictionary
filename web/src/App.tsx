@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, lazy, Suspense } from 'react'
 import { useDictionary } from './hooks/useDictionary'
 import { DictionaryView, type DictionarySession } from './views/DictionaryView'
-import { FlashcardsView } from './views/FlashcardsView'
+const FlashcardsView = lazy(() => import('./views/FlashcardsView').then(module => ({ default: module.FlashcardsView })))
 import { parseFlashcardsDrawer, formatFlashcardsDrawer, type FlashcardsDrawer } from './flashcards/route'
-import { SoundsView, parseSoundsRoute, formatSoundsRoute, type SoundsRoute } from './views/SoundsView'
+import { parseSoundsRoute, formatSoundsRoute, type SoundsRoute } from './types/soundsRoute'
+const SoundsView = lazy(() => import('./views/SoundsView').then(module => ({ default: module.SoundsView })))
 import { ElicitationView } from './views/ElicitationView'
 import { SettingsView } from './views/SettingsView'
 import { DonateView } from './views/DonateView'
@@ -66,9 +67,9 @@ function routeFromHash(hash: string): Route {
 }
 
 export function App() {
-  const { data, loading, error } = useDictionary()
   const [dictionarySession, setDictionarySession] = useState<DictionarySession>({ query: '', sortMode: 'relevance', scrollTop: 0, shown: 200 })
   const [route, setRoute] = useState<Route>(() => routeFromHash(window.location.hash))
+  const { data, loading, error } = useDictionary(route.tab === 'dictionary' || route.tab === 'flashcards')
   const tab = route.tab
   const activeTab = SECONDARY_TABS.some((item) => item.id === tab) ? 'more' : tab
 
@@ -107,6 +108,7 @@ export function App() {
       </header>
 
       <main className="app__main">
+        <Suspense fallback={<p className="app__status" role="status">Loading view…</p>}>
         {/* Sounds and Elicit share dist/sounds.json (via useSounds), and Settings,
             Donate and About only touch localStorage or are static — none of these
             depend on dict.json, so none are gated behind the dictionary's
@@ -116,8 +118,8 @@ export function App() {
         )}
         {tab !== 'sounds' && tab !== 'elicit' && tab !== 'settings' && tab !== 'donate' && tab !== 'about' && tab !== 'more' && error && (
           <p className="app__status app__status--error">
-            Couldn't load the dictionary ({error}). If you're running this locally, make sure you've run{' '}
-            <code>npm run build</code> in the repo root first.
+            Couldn't load the dictionary. Check your connection, then <button type="button" onClick={() => window.location.reload()}>Try again</button>.
+            {import.meta.env.DEV && <span> {error}. Run <code>npm run build</code> in the repo root if data is missing.</span>}
           </p>
         )}
         {data && route.tab === 'dictionary' && (
@@ -139,6 +141,7 @@ export function App() {
             </nav>
           </section>
         )}
+      </Suspense>
       </main>
     </div>
   )

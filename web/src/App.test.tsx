@@ -321,3 +321,16 @@ describe('dictionary session context', () => {
     expect(await screen.findByRole('searchbox')).toHaveValue('Chaozhou')
   })
 })
+
+describe('demand-driven dictionary loading', () => {
+  afterEach(() => { window.location.hash = ''; vi.unstubAllGlobals() })
+  it('does not download dictionary data for a direct Settings visit', () => {
+    window.location.hash = '#settings'
+    const fetcher = vi.fn((_input: RequestInfo | URL, _init?: RequestInit) => new Promise<Response>(() => {}))
+    vi.stubGlobal('fetch', fetcher)
+    render(<App />)
+    expect(screen.getByRole('heading', { name: 'Settings' })).toBeInTheDocument()
+    // Offline settings may inspect Content-Length with HEAD, but must not download the body.
+    expect(fetcher.mock.calls.filter(([, init]) => init?.method !== 'HEAD')).toHaveLength(0)
+  })
+})

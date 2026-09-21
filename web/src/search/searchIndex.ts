@@ -8,8 +8,12 @@ import type { EnrichedEntry } from '@teochew/core'
  * headword itself is weighted higher since an exact/near-exact character match
  * is almost always what a user searching by hanzi wants first.
  */
+const indexes = new WeakMap<EnrichedEntry[], Fuse<EnrichedEntry>>()
+
 export function createSearchIndex(entries: EnrichedEntry[]): Fuse<EnrichedEntry> {
-  return new Fuse(entries, {
+  const cached = indexes.get(entries)
+  if (cached) return cached
+  const index = new Fuse(entries, {
     keys: [
       { name: 'headword', weight: 3 },
       { name: 'search_keys', weight: 1 },
@@ -24,6 +28,8 @@ export function createSearchIndex(entries: EnrichedEntry[]): Fuse<EnrichedEntry>
     threshold: 0.2,
     ignoreLocation: true,
   })
+  indexes.set(entries, index)
+  return index
 }
 
 /**
