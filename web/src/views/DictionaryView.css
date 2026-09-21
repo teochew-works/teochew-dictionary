@@ -475,3 +475,10 @@
     font-size: 0.9rem;
   }
 }
+
+.dictionary-view__result-count { margin: 0.5rem 0; color: var(--color-muted); font-size: 0.875rem; }
+.dictionary-view__result-count button { margin-left: 0.5rem; }
+.entry-detail__add { margin-bottom: 1rem; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--r-md); }
+.entry-detail__add summary { cursor: pointer; min-height: 2rem; }
+.entry-detail__add form { display: grid; gap: 0.75rem; padding-top: 0.5rem; }
+.entry-detail__add input, .entry-detail__add select, .entry-detail__add button { min-height: 44px; max-width: 100%; }

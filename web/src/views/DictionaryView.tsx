@@ -1,8 +1,9 @@
+import { AddEntryToDeck } from '../components/AddEntryToDeck'
 import { AudioAvailabilityControl } from '../components/AudioAvailabilityControl'
 import { usePreference } from '../settings/usePreference'
 import { readPronunciationDisplay } from '../settings/pronunciationDisplay'
 import { readPronunciationMode, writePronunciationMode } from '../settings/pronunciationMode'
-import { useDeferredValue, useEffect, useMemo, useState } from 'react'
+import { useDeferredValue, useEffect, useMemo, useState, useRef } from 'react'
 import { createSearchIndex, search } from '../search/searchIndex'
 import { readShowLicence, writeShowLicence } from '../settings/showLicence'
 import { readAudioOnly, writeAudioOnly } from '../settings/audioOnly'
@@ -52,12 +53,23 @@ const SORT_MODE_LABELS: Record<SortMode, string> = {
   level: 'Level',
 }
 
+export interface DictionarySession {
+  query: string
+  sortMode: SortMode
+  scrollTop: number
+  shown: number
+}
+
 export function DictionaryView({
   entries,
+  session,
+  onSessionChange,
   selectedId: controlledSelectedId,
   onSelectEntry,
 }: {
   entries: EnrichedEntry[]
+  session?: DictionarySession
+  onSessionChange?: (session: DictionarySession) => void
   // Both optional so the view still works standalone (as in this file's own
   // tests): uncontrolled internal state when the parent doesn't route
   // selection through the URL, controlled when it does (App.tsx, mobile.md
@@ -66,7 +78,7 @@ export function DictionaryView({
   selectedId?: string | null
   onSelectEntry?: (id: string | null) => void
 }) {
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState(session?.query ?? '')
   const [internalSelectedId, setInternalSelectedId] = useState<string | null>(null)
   const selectedId = controlledSelectedId !== undefined ? controlledSelectedId : internalSelectedId
   const setSelectedId = onSelectEntry ?? setInternalSelectedId
@@ -78,7 +90,7 @@ export function DictionaryView({
   // rather than an easily-forgotten local toggle.
   const [audioOnly, setAudioOnly] = usePreference(readAudioOnly)
   const [fullAudioOnly, setFullAudioOnly] = usePreference(readFullAudioOnly)
-  const [sortMode, setSortMode] = useState<SortMode>('relevance')
+  const [sortMode, setSortMode] = useState<SortMode>(session?.sortMode ?? 'relevance')
   const [pronunciation, setPronunciation] = usePreference(readPronunciationMode)
   const [pronunciationDisplay] = usePreference(readPronunciationDisplay)
   const [audioMode, setAudioMode] = usePreference(readAudioMode)
@@ -149,13 +161,24 @@ export function DictionaryView({
 
   // Sorting and grouping run over everything — they are cheap, and capping
   // before them would change *which* entries you see rather than only how many.
-  const [shown, setShown] = useState(PAGE_SIZE)
+  const [shown, setShown] = useState(session?.shown ?? PAGE_SIZE)
+  const resultKey = JSON.stringify([deferredQuery, effectiveSort, audioOnly, fullAudioOnly, pronunciation])
+  const previousResultKey = useRef(resultKey)
   useEffect(() => {
-    setShown(PAGE_SIZE)
-  }, [deferredQuery, effectiveSort, audioOnly, fullAudioOnly, pronunciation])
+    if (previousResultKey.current !== resultKey) {
+      previousResultKey.current = resultKey
+      setShown(PAGE_SIZE)
+    }
+  }, [resultKey])
 
   const visibleEntries = useMemo(() => sortedEntries.slice(0, shown), [sortedEntries, shown])
   const visibleGroups = useMemo(() => capGroups(groups, shown), [groups, shown])
+  const listRef = useRef<HTMLDivElement>(null)
+  const scrollTop = useRef(session?.scrollTop ?? 0)
+  useEffect(() => { if (listRef.current) listRef.current.scrollTop = scrollTop.current }, [])
+  useEffect(() => {
+    onSessionChange?.({ query, sortMode, shown, scrollTop: scrollTop.current })
+  }, [query, sortMode, shown, onSessionChange])
   const hidden = results.length - shown
 
   const selected = results.find((e) => e.id === selectedId) ?? entries.find((e) => e.id === selectedId) ?? null
@@ -187,7 +210,10 @@ export function DictionaryView({
 
   return (
     <div className={selected ? 'dictionary-view dictionary-view--detail-open' : 'dictionary-view'}>
-      <div className="dictionary-view__list-pane">
+      <div className="dictionary-view__list-pane" ref={listRef} onScroll={(event) => {
+        scrollTop.current = event.currentTarget.scrollTop
+        onSessionChange?.({ query, sortMode, shown, scrollTop: scrollTop.current })
+      }}>
         <input
           type="search"
           className="dictionary-view__search"
@@ -196,6 +222,9 @@ export function DictionaryView({
           onChange={(e) => setQuery(e.target.value)}
           aria-label="Search the dictionary"
         />
+        <p className="dictionary-view__result-count" role="status">{results.length.toLocaleString()} results
+          {(audioOnly || fullAudioOnly) && <button type="button" onClick={() => { toggleAudioOnly(false); toggleFullAudioOnly(false) }}>Clear audio filter</button>}
+        </p>
         <details
           className="dictionary-view__filters"
           open={!isPhone || filtersOpenOnPhone}
@@ -304,6 +333,7 @@ export function DictionaryView({
             {/* Keyed so selecting another entry remounts the pane: EntryDetail
                 owns the audio player, and a clip should stop when the user
                 navigates away from the entry it belongs to. */}
+            <AddEntryToDeck key={`add-${selected.id}`} entryId={selected.id} />
             <EntryDetail
               key={selected.id}
               entry={selected}
