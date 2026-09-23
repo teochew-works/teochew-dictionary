@@ -13,10 +13,19 @@ import { localRecordingsPlugin } from './vite-plugins/local-recordings.js'
 // hardcoded '/' — hardcoding either one breaks the other on whichever host
 // wasn't hardcoded for (mobile.md §4).
 const base = process.env.GH_PAGES === 'true' ? '/teochew-dictionary/' : '/'
+const origin = process.env.SITE_ORIGIN || 'https://teochew-works.github.io'
 
 export default defineConfig(({ command }) => ({
   base,
   plugins: [
+    {
+      name: 'site-metadata',
+      transformIndexHtml(html) {
+        const canonical = new URL(base, origin).href
+        const image = new URL(`${base}og-image.png`, origin).href
+        return html.replaceAll('__SITE_CANONICAL__', canonical).replaceAll('__SITE_IMAGE__', image)
+      },
+    },
     react(),
     // Dev-server-only: gives the Sounds tab's record control somewhere to
     // POST to (issue #128, data/phonology/REVIEW.md § 17). `configureServer`
@@ -58,7 +67,10 @@ export default defineConfig(({ command }) => ({
         // large share of a constrained iOS quota; Settings' "Available
         // offline" toggle (mobile.md §9) is what opts a device in.
         globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
-        globIgnores: ['data/**'],
+        globIgnores: ['data/**', 'entry/**', 'browse/**'],
+        // A navigation to a real generated page must reach the server, even
+        // when this site's service worker is already installed.
+        navigateFallbackDenylist: [new RegExp(`^${base}(?:entry|browse)/`)],
       },
     }),
   ],

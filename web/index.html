@@ -23,15 +23,16 @@
       name="description"
       content="A free, searchable dictionary and flashcard trainer for Teochew (潮州話). Look up by Chinese characters, Peng'im, POJ, or English gloss."
     />
+    <link rel="canonical" href="__SITE_CANONICAL__" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://teochew-works.github.io/teochew-dictionary/" />
+    <meta property="og:url" content="__SITE_CANONICAL__" />
     <meta property="og:title" content="Teochew Dictionary" />
     <meta
       property="og:description"
       content="A free, searchable dictionary and flashcard trainer for Teochew (潮州話). Look up by Chinese characters, Peng'im, POJ, or English gloss."
     />
-    <meta property="og:image" content="https://teochew-works.github.io/teochew-dictionary/og-image.png" />
+    <meta property="og:image" content="__SITE_IMAGE__" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
@@ -41,13 +42,22 @@
       name="twitter:description"
       content="A free, searchable dictionary and flashcard trainer for Teochew (潮州話). Look up by Chinese characters, Peng'im, POJ, or English gloss."
     />
-    <meta name="twitter:image" content="https://teochew-works.github.io/teochew-dictionary/og-image.png" />
+    <meta name="twitter:image" content="__SITE_IMAGE__" />
+
+    <style>
+      .site-intro { padding: .35rem 1.25rem; font: .9rem/1.35 system-ui,sans-serif; border-bottom: 1px solid #888 }
+      .site-intro p { margin: .2rem 0 }
+      .site-intro a { color: #a63d2f }
+    </style>
 
     <!-- Anonymous, cookieless visit counts (ADR-0025) — no PII, no cookies.
          TODO: replace with the real site code once it exists. -->
     <script data-goatcounter="https://teochew-dictionary.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </head>
   <body>
+    <aside class="site-intro">
+      <p>Look up Teochew words by Chinese characters, Peng'im, POJ, or English meaning. <a href="%BASE_URL%browse/1/">Browse all dictionary entries</a>.</p>
+    </aside>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
