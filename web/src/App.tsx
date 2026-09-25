@@ -36,6 +36,7 @@ const TABS: { id: Tab; label: string }[] = [
  * `drawer`/`onDrawerChange`).
  */
 type Route =
+  | { tab: 'home' }
   | { tab: 'dictionary'; entryId: string | null }
   | { tab: 'sounds'; soundsRoute: SoundsRoute }
   | { tab: 'flashcards'; flashcardsDrawer: FlashcardsDrawer }
@@ -43,6 +44,7 @@ type Route =
 
 function routeFromHash(hash: string): Route {
   const raw = hash.replace(/^#/, '')
+  if (!raw) return { tab: 'home' }
   const slash = raw.indexOf('/')
   const id = slash === -1 ? raw : raw.slice(0, slash)
   const tab = TABS.some((t) => t.id === id) ? (id as Tab) : 'dictionary'
@@ -60,8 +62,8 @@ function routeFromHash(hash: string): Route {
 }
 
 export function App() {
-  const { data, loading, error } = useDictionary()
   const [route, setRoute] = useState<Route>(() => routeFromHash(window.location.hash))
+  const { data, loading, error } = useDictionary(route.tab === 'dictionary' || route.tab === 'flashcards')
   const tab = route.tab
 
   // Real `#tab` links give Cmd/Ctrl+click and middle-click their native
@@ -99,6 +101,9 @@ export function App() {
       </header>
 
       <main className="app__main">
+        {route.tab === 'home' && (
+          <p className="app__status">Choose Dictionary to search, or use the browse link above to explore entries.</p>
+        )}
         {/* Sounds and Elicit share dist/sounds.json (via useSounds), and Settings,
             Donate and About only touch localStorage or are static — none of these
             depend on dict.json, so none are gated behind the dictionary's

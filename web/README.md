@@ -57,6 +57,36 @@ npm run build
 Produces `web/dist/` — a static bundle deployable to any static host, no
 server required.
 
+The build also generates static HTML for every visible, complete dictionary
+entry at `entry/<key>/`, 200-entry browse pages at `browse/<page>/`, and
+`sitemap.xml`. An entry key is `e-` followed by the lowercase hexadecimal
+UTF-8 bytes of its exact ID; this reversible mapping is safe for Unicode,
+reserved URL characters, and case-insensitive filesystems. `hidden` entries
+and records without a headword, reading, or English gloss are excluded and
+reported by the generator. The generated pages contain meanings and
+pronunciations without JavaScript; their interactive-dictionary links retain
+the original `#dictionary/<id>` route for search, audio, and study actions.
+The plain homepage does not fetch `dict.json`; opening Dictionary or
+Flashcards, including an old hash deep link, loads it when needed.
+
+The production Pages build uses `GH_PAGES=true`, so canonical URLs and links
+use `/teochew-dictionary/`. A normal build uses `/` for local or root-hosted
+preview. `SITE_ORIGIN` can override the default
+`https://teochew-works.github.io` when building for another origin. The
+generator runs after Vite clears `dist`, removes stale generated directories,
+and validates every sitemap URL and page link. Generated pages are excluded
+from Workbox precaching and navigation fallback; dictionary-data offline
+access remains an explicit Settings opt-in.
+
+After deploying, check the homepage, browse pages, representative entry URLs,
+and a missing entry with direct HTTP requests outside an installed service
+worker. The missing URL should return HTTP 404. The site owner then verifies
+the URL-prefix property `https://teochew-works.github.io/teochew-dictionary/`
+in Search Console with Google's supplied token, submits
+`https://teochew-works.github.io/teochew-dictionary/sitemap.xml`, and checks
+live URL inspection and subsequent Page indexing reports. Search Console
+access and Google's indexing decisions are separate from the build checks.
+
 ## Preview a production build
 
 ```bash

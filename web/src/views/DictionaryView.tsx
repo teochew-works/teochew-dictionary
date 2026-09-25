@@ -10,6 +10,7 @@ import { EntryList } from '../components/EntryList'
 import { EntryTree } from '../components/EntryTree'
 import { EntryDetail } from '../components/EntryDetail'
 import { AudioModeControl } from '../components/AudioModeControl'
+import { entryPath } from '../../shared/publicUrls.mjs'
 import {
   capGroups,
   groupEntries,
@@ -323,6 +324,9 @@ export function DictionaryView({
               mogherLinks={mogherLinks}
               audioMode={audioMode}
             />
+            <p className="dictionary-view__canonical-link">
+              <a href={entryPath(selected.id, import.meta.env.BASE_URL)}>Open shareable entry page</a>
+            </p>
           </>
 
         ) : (

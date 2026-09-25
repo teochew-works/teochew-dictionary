@@ -37,6 +37,7 @@ const FIXTURE: Dict = {
 
 describe('App', () => {
   beforeEach(() => {
+    window.location.hash = ''
     vi.stubGlobal(
       'fetch',
       vi.fn(() => Promise.resolve(new Response(JSON.stringify(FIXTURE), { status: 200 }))),
@@ -45,11 +46,24 @@ describe('App', () => {
 
   afterEach(() => {
     vi.unstubAllGlobals()
+    window.location.hash = ''
   })
 
-  it('loads the dictionary and shows the entry in the Dictionary tab', async () => {
+  it('keeps the homepage light until the Dictionary tab is opened', async () => {
     render(<App />)
+    expect(fetch).not.toHaveBeenCalled()
+    fireEvent.click(screen.getByRole('link', { name: 'Dictionary' }))
     expect(await screen.findByText('潮州')).toBeInTheDocument()
+  })
+
+  it('reuses the dictionary after visiting a tab that does not need it', async () => {
+    render(<App />)
+    fireEvent.click(screen.getByRole('link', { name: 'Dictionary' }))
+    await screen.findByText('潮州')
+    fireEvent.click(screen.getByRole('link', { name: 'About' }))
+    fireEvent.click(screen.getByRole('link', { name: 'Dictionary' }))
+    await screen.findByText('潮州')
+    expect(fetch).toHaveBeenCalledTimes(1)
   })
 })
 
@@ -60,6 +74,7 @@ describe('App with a hidden entry', () => {
   }
 
   beforeEach(() => {
+    window.location.hash = ''
     vi.stubGlobal(
       'fetch',
       vi.fn(() => Promise.resolve(new Response(JSON.stringify(FIXTURE_WITH_HIDDEN), { status: 200 }))),
@@ -68,10 +83,12 @@ describe('App with a hidden entry', () => {
 
   afterEach(() => {
     vi.unstubAllGlobals()
+    window.location.hash = ''
   })
 
   it('does not show entries flagged hidden', async () => {
     render(<App />)
+    fireEvent.click(screen.getByRole('link', { name: 'Dictionary' }))
     expect(await screen.findByText('潮州')).toBeInTheDocument()
     expect(screen.queryByText('隱藏詞')).not.toBeInTheDocument()
   })
@@ -111,7 +128,7 @@ describe('App Sounds tab', () => {
 
   it('fetches and shows the sound inventory only once the Sounds tab is selected', async () => {
     render(<App />)
-    await screen.findByText('潮州')
+    expect(fetch).not.toHaveBeenCalled()
     expect(screen.queryByText('tie⁵⁵')).not.toBeInTheDocument()
 
     fireEvent.click(screen.getByRole('link', { name: 'Sounds' }))
@@ -137,6 +154,7 @@ describe('App dictionary entry routing (issue #194)', () => {
 
   it('routes a selected entry through the hash and back again', async () => {
     render(<App />)
+    fireEvent.click(screen.getByRole('link', { name: 'Dictionary' }))
     fireEvent.click(await screen.findByText('潮州'))
 
     expect(window.location.hash).toBe(`#dictionary/${encodeURIComponent('dio5-ziu1-潮州')}`)

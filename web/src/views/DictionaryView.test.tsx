@@ -3,6 +3,7 @@ import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { DictionaryView } from './DictionaryView'
 import type { AudioReference, EnrichedEntry } from '@teochew/core'
 import { makeEntry as makeBaseEntry, makeReading } from '../test/entryFixtures'
+import { entryPath } from '../../shared/publicUrls.mjs'
 
 function makeEntry({
   id,
@@ -76,6 +77,13 @@ describe('DictionaryView', () => {
     render(<DictionaryView entries={ENTRIES} />)
     expect(screen.getByText('食茶学字')).toBeInTheDocument()
     expect(screen.getByText('Select an entry to see its details.')).toBeInTheDocument()
+  })
+
+  it('links an existing selected entry to its static canonical page', () => {
+    render(<DictionaryView entries={ENTRIES} selectedId={ENTRIES[0]!.id} onSelectEntry={() => {}} />)
+    expect(screen.getByRole('link', { name: 'Open shareable entry page' })).toHaveAttribute(
+      'href', entryPath(ENTRIES[0]!.id, import.meta.env.BASE_URL),
+    )
   })
 
   it('hides licence info once toggled off and persists the choice across remounts', () => {

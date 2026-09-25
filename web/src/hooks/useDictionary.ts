@@ -9,7 +9,8 @@ export interface DictionaryState {
 }
 
 /**
- * Fetches the synced dist/dict.json once on mount. Always goes through
+ * Fetches the synced dist/dict.json when a dictionary-dependent tab opens.
+ * The plain homepage and unrelated tabs leave the corpus unloaded. Goes through
  * BASE_URL (Vite's build-time `base`) rather than a hardcoded path, since the
  * app is served from a subpath on GitHub Pages — see vite.config.ts.
  *
@@ -17,11 +18,14 @@ export interface DictionaryState {
  * device with the Settings "Available offline" toggle on reads its own
  * cached copy instead of hitting the network at all (mobile.md §9).
  */
-export function useDictionary(): DictionaryState {
-  const [state, setState] = useState<DictionaryState>({ data: null, loading: true, error: null })
+export function useDictionary(enabled = true): DictionaryState {
+  const [state, setState] = useState<DictionaryState>({ data: null, loading: enabled, error: null })
 
   useEffect(() => {
+    if (!enabled || state.data) return
     let cancelled = false
+
+    setState((previous) => previous.data ? previous : { data: null, loading: true, error: null })
 
     fetchDict()
       .then((res) => {
@@ -51,7 +55,7 @@ export function useDictionary(): DictionaryState {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [enabled, state.data])
 
   return state
 }
